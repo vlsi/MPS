@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3239565862706583464" modelId="r:152d593f-ba35-45f9-9f5c-99ac31b57587(jetbrains.mps.lang.refactoring.scripts)">
+  <root nodeRef="r:152d593f-ba35-45f9-9f5c-99ac31b57587(jetbrains.mps.lang.refactoring.scripts)/3239565862706583464">
     <nodeInfo nodeId="3239565862706583464" fileName="RemoveKeystrokes_MigrationScript.java" startLine="11" startPosition="79" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3239565862706583465" fileName="RemoveKeystrokes_MigrationScript.java" startLine="14" startPosition="31" endLine="15" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3239565862706583465" fileName="RemoveKeystrokes_MigrationScript.java" startLine="18" startPosition="41" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2024340988248531910" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/2024340988248531910">
     <nodeInfo nodeId="2024340988248531955" fileName="JUnit3MethodWrapper.java" startLine="14" startPosition="44" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2024340988248531965" fileName="JUnit3MethodWrapper.java" startLine="18" startPosition="31" endLine="19" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2024340988248531972" fileName="JUnit3MethodWrapper.java" startLine="24" startPosition="41" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -39,7 +39,7 @@
     <scopeInfo nodeId="2024340988248531967" fileName="JUnit3MethodWrapper.java" startLine="22" startPosition="0" endLine="31" endPosition="0" />
     <unitInfo nodeId="2024340988248531910" fileName="JUnit3MethodWrapper.java" startLine="13" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit3MethodWrapper" />
   </root>
-  <root nodeId="2024340988248531992" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/2024340988248531992">
     <nodeInfo nodeId="2024340988248531998" fileName="JUnit3TestWrapper.java" startLine="18" startPosition="48" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2024340988248532008" fileName="JUnit3TestWrapper.java" startLine="22" startPosition="31" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2024340988248532015" fileName="JUnit3TestWrapper.java" startLine="28" startPosition="29" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -94,7 +94,7 @@
     <unitInfo nodeId="2024340988248532062" fileName="JUnit3TestWrapper.java" startLine="44" startPosition="17" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit3TestWrapper$3" />
     <unitInfo nodeId="2024340988248531992" fileName="JUnit3TestWrapper.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit3TestWrapper" />
   </root>
-  <root nodeId="2024340988248532071" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/2024340988248532071">
     <nodeInfo nodeId="2024340988248532139" fileName="JUnit4MethodWrapper.java" startLine="19" startPosition="44" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2024340988248532149" fileName="JUnit4MethodWrapper.java" startLine="23" startPosition="31" endLine="24" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2024340988248532156" fileName="JUnit4MethodWrapper.java" startLine="29" startPosition="41" endLine="30" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -206,7 +206,7 @@
     </scopeInfo>
     <unitInfo nodeId="2024340988248532071" fileName="JUnit4MethodWrapper.java" startLine="18" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit4MethodWrapper" />
   </root>
-  <root nodeId="2024340988248532176" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/2024340988248532176">
     <nodeInfo nodeId="2024340988248532210" fileName="JUnit4TestWrapper.java" startLine="21" startPosition="41" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2024340988248532220" fileName="JUnit4TestWrapper.java" startLine="25" startPosition="31" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2024340988248532227" fileName="JUnit4TestWrapper.java" startLine="31" startPosition="29" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -278,7 +278,7 @@
     <unitInfo nodeId="2024340988248532274" fileName="JUnit4TestWrapper.java" startLine="47" startPosition="17" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit4TestWrapper$3" />
     <unitInfo nodeId="2024340988248532176" fileName="JUnit4TestWrapper.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit4TestWrapper" />
   </root>
-  <root nodeId="2024340988248532283" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/2024340988248532283">
     <nodeInfo nodeId="2024340988248532289" fileName="LanguageTestWrapper.java" startLine="34" startPosition="42" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2024340988248532299" fileName="LanguageTestWrapper.java" startLine="38" startPosition="31" endLine="39" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2024340988248532308" fileName="LanguageTestWrapper.java" startLine="42" startPosition="34" endLine="43" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -511,7 +511,7 @@
     <unitInfo nodeId="6572468330877292516" fileName="LanguageTestWrapper.java" startLine="83" startPosition="348" endLine="87" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper$2" />
     <unitInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="33" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper" />
   </root>
-  <root nodeId="2024340988248532422" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/2024340988248532422">
     <nodeInfo nodeId="2024340988248532574" fileName="TestNodeWrapperFactory.java" startLine="24" startPosition="244" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2024340988248532585" fileName="TestNodeWrapperFactory.java" startLine="26" startPosition="7" endLine="27" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2024340988248532593" fileName="TestNodeWrapperFactory.java" startLine="29" startPosition="38" endLine="30" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -767,7 +767,7 @@
     <unitInfo nodeId="2024340988248532553" fileName="TestNodeWrapperFactory.java" startLine="196" startPosition="108" endLine="200" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory$6" />
     <unitInfo nodeId="2024340988248532422" fileName="TestNodeWrapperFactory.java" startLine="20" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory" />
   </root>
-  <root nodeId="5881102044690178561" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/5881102044690178561">
     <nodeInfo nodeId="5881102044690178706" fileName="TestRunParameters.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestRunner" />
     <nodeInfo nodeId="5881102044690178709" fileName="TestRunParameters.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVmParameters" />
     <nodeInfo nodeId="5881102044690178713" fileName="TestRunParameters.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassPath" />
@@ -855,7 +855,7 @@
     </scopeInfo>
     <unitInfo nodeId="5881102044690178561" fileName="TestRunParameters.java" startLine="14" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunParameters" />
   </root>
-  <root nodeId="5881102044690179017" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/5881102044690179017">
     <nodeInfo nodeId="5881102044690179022" fileName="AbstractTestWrapper.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFqName" />
     <nodeInfo nodeId="5881102044690179030" fileName="AbstractTestWrapper.java" startLine="26" startPosition="47" endLine="27" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5881102044690179043" fileName="AbstractTestWrapper.java" startLine="30" startPosition="65" endLine="31" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -975,7 +975,7 @@
     <unitInfo nodeId="5881102044690179263" fileName="AbstractTestWrapper.java" startLine="119" startPosition="47" endLine="123" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper$1" />
     <unitInfo nodeId="5881102044690179017" fileName="AbstractTestWrapper.java" startLine="21" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper" />
   </root>
-  <root nodeId="5881102044690179271" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/5881102044690179271">
     <nodeInfo nodeId="5881102044690179272" fileName="ITestNodeWrapper.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()null" />
     <nodeInfo nodeId="5881102044690179276" fileName="ITestNodeWrapper.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodePointer#()Ljetbrains/mps/smodel/SNodePointer;" />
     <nodeInfo nodeId="5881102044690179280" fileName="ITestNodeWrapper.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTestCase#()Z" />
@@ -996,7 +996,7 @@
     <scopeInfo nodeId="5881102044690179300" fileName="ITestNodeWrapper.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
     <unitInfo nodeId="5881102044690179271" fileName="ITestNodeWrapper.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
   </root>
-  <root nodeId="5881102044690182514" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/5881102044690182514">
     <nodeInfo nodeId="5881102044690182515" fileName="TestRunState.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="lock" />
     <nodeInfo nodeId="5881102044690183267" fileName="TestRunState.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestMethods" />
     <nodeInfo nodeId="5881102044690183274" fileName="TestRunState.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestToMethodsMap" />
@@ -1351,7 +1351,7 @@
     <unitInfo nodeId="5881102044690182531" fileName="TestRunState.java" startLine="53" startPosition="45" endLine="63" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState$3" />
     <unitInfo nodeId="5881102044690182514" fileName="TestRunState.java" startLine="22" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState" />
   </root>
-  <root nodeId="5881102044690183390" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/5881102044690183390">
     <nodeInfo nodeId="5881102044690183588" fileName="UnitTestProcessListener.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBuffer" />
     <nodeInfo nodeId="5881102044690183593" fileName="UnitTestProcessListener.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDispatcher" />
     <nodeInfo nodeId="5881102044690183596" fileName="UnitTestProcessListener.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLastEvent" />
@@ -1429,14 +1429,14 @@
     </scopeInfo>
     <unitInfo nodeId="5881102044690183390" fileName="UnitTestProcessListener.java" startLine="12" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener" />
   </root>
-  <root nodeId="5881102044690375193" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/5881102044690375193">
     <nodeInfo nodeId="5881102044690375194" fileName="TestView.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
     <nodeInfo nodeId="5881102044690375198" fileName="TestView.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#()V" />
     <scopeInfo nodeId="5881102044690375194" fileName="TestView.java" startLine="7" startPosition="0" endLine="8" endPosition="0" />
     <scopeInfo nodeId="5881102044690375198" fileName="TestView.java" startLine="8" startPosition="0" endLine="9" endPosition="0" />
     <unitInfo nodeId="5881102044690375193" fileName="TestView.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestView" />
   </root>
-  <root nodeId="5881102044690375203" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/5881102044690375203">
     <nodeInfo nodeId="5881102044690375204" fileName="TestStateListener.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTestStart#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
     <nodeInfo nodeId="5881102044690375210" fileName="TestStateListener.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTestEnd#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
     <nodeInfo nodeId="5881102044690375216" fileName="TestStateListener.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTestError#(Ljetbrains/mps/baseLanguage/unitTest/execution/TestEvent;)V" />
@@ -1460,7 +1460,7 @@
     </scopeInfo>
     <unitInfo nodeId="5881102044690375203" fileName="TestStateListener.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateListener" />
   </root>
-  <root nodeId="5881102044690784748" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/5881102044690784748">
     <nodeInfo nodeId="5881102044690784940" fileName="TestEventsDispatcher.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
     <nodeInfo nodeId="5881102044690784948" fileName="TestEventsDispatcher.java" startLine="13" startPosition="55" endLine="14" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5881102044690784753" fileName="TestEventsDispatcher.java" startLine="17" startPosition="51" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1522,7 +1522,7 @@
     </scopeInfo>
     <unitInfo nodeId="5881102044690784748" fileName="TestEventsDispatcher.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" />
   </root>
-  <root nodeId="6062668769034832918" modelId="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)">
+  <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/6062668769034832918">
     <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebuggerSettings_String" />
     <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualMachineParameter_String" />
     <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJrePath_String" />

@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Math_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.Math_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.StructureAspectDescriptor" />
-  <root nodeId="1237214452656" modelId="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)">
+  <root nodeRef="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/1237214452656">
     <nodeInfo nodeId="1237214452656" fileName="CastTargetDescriptor.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1237214452656" fileName="CastTargetDescriptor.java" startLine="30" startPosition="27" endLine="31" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237214452656" fileName="CastTargetDescriptor.java" startLine="34" startPosition="36" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -168,7 +168,7 @@
     <unitInfo nodeId="1237214452656" fileName="CastTargetDescriptor.java" startLine="9" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.CastTargetDescriptor" />
     <unitInfo nodeId="1237214452656" fileName="CastTargetDescriptor_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.CastTargetDescriptor_PropertySupport" />
   </root>
-  <root nodeId="1238402737615" modelId="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)">
+  <root nodeRef="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/1238402737615">
     <nodeInfo nodeId="1238402737615" fileName="RoundingMode.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1238402737615" fileName="RoundingMode.java" startLine="21" startPosition="27" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238402737615" fileName="RoundingMode.java" startLine="25" startPosition="36" endLine="26" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -298,7 +298,7 @@
     <unitInfo nodeId="1238402737615" fileName="RoundingMode.java" startLine="9" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.RoundingMode" />
     <unitInfo nodeId="1238402737615" fileName="RoundingMode_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.RoundingMode_PropertySupport" />
   </root>
-  <root nodeId="1238404910647" modelId="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)">
+  <root nodeRef="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/1238404910647">
     <nodeInfo nodeId="1238404910647" fileName="PrecisionSetting.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1238404910647" fileName="PrecisionSetting.java" startLine="18" startPosition="27" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238404910647" fileName="PrecisionSetting.java" startLine="22" startPosition="36" endLine="23" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -416,7 +416,7 @@
     <unitInfo nodeId="1238404910647" fileName="PrecisionSetting.java" startLine="9" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.PrecisionSetting" />
     <unitInfo nodeId="1238404910647" fileName="PrecisionSetting_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.structure.PrecisionSetting_PropertySupport" />
   </root>
-  <root nodeId="758819215871666038" modelId="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)">
+  <root nodeRef="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)/758819215871666038">
     <nodeInfo nodeId="758819215871666038" fileName="MatrixNormKind.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="758819215871666038" fileName="MatrixNormKind.java" startLine="17" startPosition="27" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="758819215871666038" fileName="MatrixNormKind.java" startLine="21" startPosition="36" endLine="22" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

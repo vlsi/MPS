@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6409088484822290043" modelId="r:f8782353-0e04-4839-89bc-f82736040629(jetbrains.mps.debugger.decisionTable.runtime)">
+  <root nodeRef="r:f8782353-0e04-4839-89bc-f82736040629(jetbrains.mps.debugger.decisionTable.runtime)/6409088484822290043">
     <nodeInfo nodeId="6409088484822290045" fileName="IDecisionTable.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="decide#(II)I" />
     <scopeInfo nodeId="6409088484822290045" fileName="IDecisionTable.java" startLine="7" startPosition="0" endLine="8" endPosition="0">
       <varInfo nodeId="6409088484822290050" varName="x" />

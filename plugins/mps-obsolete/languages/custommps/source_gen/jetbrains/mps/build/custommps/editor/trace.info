@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1233149986967" modelId="r:e349d949-52e2-480e-b3d2-1f6a387b356a(jetbrains.mps.build.custommps.editor)">
+  <root nodeRef="r:e349d949-52e2-480e-b3d2-1f6a387b356a(jetbrains.mps.build.custommps.editor)/1233149986967">
     <nodeInfo nodeId="1233150089461" fileName="MPSBuild_Editor.java" startLine="117" startPosition="69" endLine="117" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1233152528145" fileName="MPSBuild_Editor.java" startLine="123" startPosition="69" endLine="123" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1233159047869" fileName="MPSBuild_Editor.java" startLine="129" startPosition="69" endLine="129" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -412,7 +412,7 @@
     </scopeInfo>
     <unitInfo nodeId="1233149986967" fileName="MPSBuild_Editor.java" startLine="27" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.MPSBuild_Editor" />
   </root>
-  <root nodeId="1233679325694" modelId="r:e349d949-52e2-480e-b3d2-1f6a387b356a(jetbrains.mps.build.custommps.editor)">
+  <root nodeRef="r:e349d949-52e2-480e-b3d2-1f6a387b356a(jetbrains.mps.build.custommps.editor)/1233679325694">
     <nodeInfo nodeId="1233679515310" fileName="LibraryFolder_Editor.java" startLine="77" startPosition="69" endLine="77" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1233679524799" fileName="LibraryFolder_Editor.java" startLine="83" startPosition="69" endLine="83" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1233679563489" fileName="LibraryFolder_Editor.java" startLine="89" startPosition="69" endLine="89" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -721,7 +721,7 @@
     </scopeInfo>
     <unitInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="25" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.LibraryFolder_Editor" />
   </root>
-  <root nodeId="1233937590204" modelId="r:e349d949-52e2-480e-b3d2-1f6a387b356a(jetbrains.mps.build.custommps.editor)">
+  <root nodeRef="r:e349d949-52e2-480e-b3d2-1f6a387b356a(jetbrains.mps.build.custommps.editor)/1233937590204">
     <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="14" startPosition="68" endLine="15" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="15" startPosition="34" endLine="16" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="27" startPosition="7" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

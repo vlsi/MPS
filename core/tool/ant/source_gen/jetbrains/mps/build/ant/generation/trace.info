@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4003657351907886493" modelId="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)">
+  <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/4003657351907886493">
     <nodeInfo nodeId="4003657351907886564" fileName="GenerateTask.java" startLine="11" startPosition="3" endLine="12" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907886571" fileName="GenerateTask.java" startLine="12" startPosition="77" endLine="13" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6180231420008238394" fileName="GenerateTask.java" startLine="13" startPosition="81" endLine="14" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -44,8 +44,8 @@
     <scopeInfo nodeId="6180231420008238412" fileName="GenerateTask.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
     <unitInfo nodeId="4003657351907886493" fileName="GenerateTask.java" startLine="10" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.build.ant.generation.GenerateTask" />
   </root>
-  <root nodeId="4003657351907889940" modelId="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)" />
-  <root nodeId="4003657351907890045" modelId="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)">
+  <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/4003657351907889940" />
+  <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/4003657351907890045">
     <nodeInfo nodeId="4003657351907890054" fileName="PerfomanceReport.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STDOUT" />
     <nodeInfo nodeId="4003657351907890048" fileName="PerfomanceReport.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFile" />
     <nodeInfo nodeId="4003657351907890051" fileName="PerfomanceReport.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsToConsole" />
@@ -86,7 +86,7 @@
     <scopeInfo nodeId="4003657351907890094" fileName="PerfomanceReport.java" startLine="33" startPosition="0" endLine="44" endPosition="0" />
     <unitInfo nodeId="4003657351907890045" fileName="PerfomanceReport.java" startLine="9" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.ant.generation.PerfomanceReport" />
   </root>
-  <root nodeId="4003657351907891908" modelId="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)">
+  <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/4003657351907891908">
     <nodeInfo nodeId="4003657351907892082" fileName="TestGenerationOnTeamcity.java" startLine="16" startPosition="3" endLine="17" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907892089" fileName="TestGenerationOnTeamcity.java" startLine="17" startPosition="83" endLine="18" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907892096" fileName="TestGenerationOnTeamcity.java" startLine="18" startPosition="80" endLine="19" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

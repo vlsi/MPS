@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1387087080747689091" modelId="r:03ad510e-98f5-4385-abd9-8622281bf6f7(collections.gwt.jetbrains.mps.internal.collections.runtime)">
+  <root nodeRef="r:03ad510e-98f5-4385-abd9-8622281bf6f7(collections.gwt.jetbrains.mps.internal.collections.runtime)/1387087080747689091">
     <nodeInfo nodeId="1387087080747689092" fileName="CollectionUtils.java" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="1387087080747689093" fileName="CollectionUtils.java" startLine="1" startPosition="0" endLine="1" endPosition="51" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="1387087080747689188" fileName="CollectionUtils.java" startLine="2" startPosition="0" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
@@ -130,7 +130,7 @@
     <nodeInfo nodeId="1387087080747689114" fileName="CollectionUtils.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <unitInfo nodeId="1387087080747689091" fileName="CollectionUtils.java" startLine="1" startPosition="0" endLine="33" endPosition="0" unitName="collections.gwt.jetbrains.mps.internal.collections.runtime.CollectionUtils$java" />
   </root>
-  <root nodeId="1387087080747689115" modelId="r:03ad510e-98f5-4385-abd9-8622281bf6f7(collections.gwt.jetbrains.mps.internal.collections.runtime)">
+  <root nodeRef="r:03ad510e-98f5-4385-abd9-8622281bf6f7(collections.gwt.jetbrains.mps.internal.collections.runtime)/1387087080747689115">
     <nodeInfo nodeId="1387087080747689116" fileName="ClassUtils.java" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="1387087080747689117" fileName="ClassUtils.java" startLine="1" startPosition="0" endLine="1" endPosition="51" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="1387087080747689118" fileName="ClassUtils.java" startLine="2" startPosition="0" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
@@ -188,7 +188,7 @@
     <nodeInfo nodeId="1387087080747689134" fileName="ClassUtils.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <unitInfo nodeId="1387087080747689115" fileName="ClassUtils.java" startLine="1" startPosition="0" endLine="15" endPosition="0" unitName="collections.gwt.jetbrains.mps.internal.collections.runtime.ClassUtils$java" />
   </root>
-  <root nodeId="3687926015106425029" modelId="r:03ad510e-98f5-4385-abd9-8622281bf6f7(collections.gwt.jetbrains.mps.internal.collections.runtime)">
+  <root nodeRef="r:03ad510e-98f5-4385-abd9-8622281bf6f7(collections.gwt.jetbrains.mps.internal.collections.runtime)/3687926015106425029">
     <nodeInfo nodeId="3687926015106425030" fileName="ArrayUtils.java" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="3687926015106425031" fileName="ArrayUtils.java" startLine="1" startPosition="0" endLine="1" endPosition="51" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3687926015106425032" fileName="ArrayUtils.java" startLine="2" startPosition="0" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2052504288806109972" modelId="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)">
+  <root nodeRef="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)/2052504288806109972">
     <nodeInfo nodeId="2052504288806111876" fileName="ChangesStripActionsHelper.java" startLine="40" startPosition="106" endLine="41" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2052504288806111902" fileName="ChangesStripActionsHelper.java" startLine="44" startPosition="103" endLine="45" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2052504288806113924" fileName="ChangesStripActionsHelper.java" startLine="48" startPosition="93" endLine="49" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -400,7 +400,7 @@
     <unitInfo nodeId="2638118297328304981" fileName="ChangesStripActionsHelper.java" startLine="87" startPosition="55" endLine="109" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper$1" />
     <unitInfo nodeId="2052504288806109972" fileName="ChangesStripActionsHelper.java" startLine="35" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper" />
   </root>
-  <root nodeId="2881457021876857496" modelId="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)">
+  <root nodeRef="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)/2881457021876857496">
     <nodeInfo nodeId="2881457021876857518" fileName="PopupPanel.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPainter" />
     <nodeInfo nodeId="2881457021876857838" fileName="PopupPanel.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeGroup" />
     <nodeInfo nodeId="2837442331563682692" fileName="PopupPanel.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMouseListener" />
@@ -510,7 +510,7 @@
     <unitInfo nodeId="2837442331563679319" fileName="PopupPanel.java" startLine="110" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.PopupPanel$MyFocusListener" />
     <unitInfo nodeId="2881457021876857496" fileName="PopupPanel.java" startLine="23" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.PopupPanel" />
   </root>
-  <root nodeId="4477049948824855836" modelId="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)">
+  <root nodeRef="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)/4477049948824855836">
     <nodeInfo nodeId="1455391539105549287" fileName="BaseVersionEditorComponent.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScrollPane" />
     <nodeInfo nodeId="4477049948824882325" fileName="BaseVersionEditorComponent.java" startLine="33" startPosition="98" endLine="34" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4477049948824882337" fileName="BaseVersionEditorComponent.java" startLine="34" startPosition="28" endLine="35" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -594,7 +594,7 @@
     <unitInfo nodeId="3407638002087261696" fileName="BaseVersionEditorComponent.java" startLine="50" startPosition="22" endLine="54" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.editor.BaseVersionEditorComponent$3" />
     <unitInfo nodeId="4477049948824855836" fileName="BaseVersionEditorComponent.java" startLine="30" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.BaseVersionEditorComponent" />
   </root>
-  <root nodeId="6402272430682173534" modelId="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)">
+  <root nodeRef="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)/6402272430682173534">
     <nodeInfo nodeId="6402272430682173535" fileName="EditorHighlighter.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorComponent" />
     <nodeInfo nodeId="166132277801270136" fileName="EditorHighlighter.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangesMessages" />
     <nodeInfo nodeId="6402272430682178240" fileName="EditorHighlighter.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDifference" />
@@ -881,7 +881,7 @@
     <unitInfo nodeId="1998524321632141957" fileName="EditorHighlighter.java" startLine="51" startPosition="81" endLine="112" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.editor.EditorHighlighter$1" />
     <unitInfo nodeId="6402272430682173534" fileName="EditorHighlighter.java" startLine="39" startPosition="0" endLine="267" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.EditorHighlighter" />
   </root>
-  <root nodeId="6402272430682179765" modelId="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)">
+  <root nodeRef="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)/6402272430682179765">
     <nodeInfo nodeId="6080400160196223146" fileName="EditorHighlighterFactory.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorsHighlighters" />
     <nodeInfo nodeId="5694457522929144926" fileName="EditorHighlighterFactory.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageBusConnection" />
     <nodeInfo nodeId="6402272430682179779" fileName="EditorHighlighterFactory.java" startLine="21" startPosition="52" endLine="22" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -940,7 +940,7 @@
     <unitInfo nodeId="5643745088231031265" fileName="EditorHighlighterFactory.java" startLine="53" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.EditorHighlighterFactory$MyEditorComponentCreateListener" />
     <unitInfo nodeId="6402272430682179765" fileName="EditorHighlighterFactory.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.EditorHighlighterFactory" />
   </root>
-  <root nodeId="867367425399189430" modelId="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)">
+  <root nodeRef="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)/867367425399189430">
     <nodeInfo nodeId="867367425399189431" fileName="ChangeStripsPainter.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="AREA_WIDTH" />
     <nodeInfo nodeId="867367425399189435" fileName="ChangeStripsPainter.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ARROW_HEIGHT" />
     <nodeInfo nodeId="867367425399190870" fileName="ChangeStripsPainter.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="AREA_FRAME_COLOR" />
@@ -1263,7 +1263,7 @@
     <unitInfo nodeId="2472608513402197573" fileName="ChangeStripsPainter.java" startLine="135" startPosition="88" endLine="140" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.editor.ChangeStripsPainter$1" />
     <unitInfo nodeId="867367425399189430" fileName="ChangeStripsPainter.java" startLine="35" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.editor.ChangeStripsPainter" />
   </root>
-  <root nodeId="867367425399245463" modelId="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)">
+  <root nodeRef="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)/867367425399245463">
     <nodeInfo nodeId="867367425399245502" fileName="StripsChangeGroupLayout.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorHighlighter" />
     <nodeInfo nodeId="867367425399296040" fileName="StripsChangeGroupLayout.java" startLine="18" startPosition="71" endLine="19" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="867367425399296055" fileName="StripsChangeGroupLayout.java" startLine="19" startPosition="98" endLine="20" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

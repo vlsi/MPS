@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3816167865390946785" modelId="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)">
+  <root nodeRef="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)/3816167865390946785">
     <nodeInfo nodeId="3816167865390946787" fileName="Node.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Node#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="3816167865390946793" fileName="Node.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Ljetbrains/jetpad/builders/sandbox/Node;)V" />
     <nodeInfo nodeId="2679357232283934851" fileName="Node.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setXYZ#(I)V" />
@@ -38,7 +38,7 @@
     </scopeInfo>
     <unitInfo nodeId="3816167865390946785" fileName="Node.java" startLine="6" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.jetpad.builders.sandbox.Node" />
   </root>
-  <root nodeId="7057666463730252450" modelId="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)">
+  <root nodeRef="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)/7057666463730252450">
     <nodeInfo nodeId="6666322667909804025" fileName="Abc.java" startLine="10" startPosition="28" endLine="11" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6666322667909804025" fileName="Abc.java" startLine="11" startPosition="55" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6666322667909804025" fileName="Abc.java" startLine="12" startPosition="49" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -95,7 +95,7 @@
     <unitInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="20" startPosition="8" endLine="43" endPosition="5" unitName="jetbrains.jetpad.builders.sandbox.Abc$2" />
     <unitInfo nodeId="7057666463730252450" fileName="Abc.java" startLine="7" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.jetpad.builders.sandbox.Abc" />
   </root>
-  <root nodeId="8009360033695026859" modelId="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)">
+  <root nodeRef="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)/8009360033695026859">
     <nodeInfo nodeId="8009360033695026865" fileName="As.java" startLine="7" startPosition="15" endLine="8" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8009360033695026864" fileName="As.java" startLine="8" startPosition="18" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8009360033695026864" fileName="As.java" startLine="9" startPosition="28" endLine="10" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

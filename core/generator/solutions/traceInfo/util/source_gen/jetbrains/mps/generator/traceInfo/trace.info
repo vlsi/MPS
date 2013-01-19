@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3483822302719455901" modelId="r:41bf31ae-8e87-4132-b404-f244ad8a3001(jetbrains.mps.generator.traceInfo)">
+  <root nodeRef="r:41bf31ae-8e87-4132-b404-f244ad8a3001(jetbrains.mps.generator.traceInfo)/3483822302719455901">
     <nodeInfo nodeId="3483822302719455925" fileName="JavaTraceInfoResourceProvider.java" startLine="15" startPosition="63" endLine="16" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3483822302719455928" fileName="JavaTraceInfoResourceProvider.java" startLine="16" startPosition="33" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3483822302719455956" fileName="JavaTraceInfoResourceProvider.java" startLine="18" startPosition="112" endLine="19" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -27,7 +27,7 @@
     </scopeInfo>
     <unitInfo nodeId="3483822302719455901" fileName="JavaTraceInfoResourceProvider.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.JavaTraceInfoResourceProvider" />
   </root>
-  <root nodeId="5111910545577563820" modelId="r:41bf31ae-8e87-4132-b404-f244ad8a3001(jetbrains.mps.generator.traceInfo)">
+  <root nodeRef="r:41bf31ae-8e87-4132-b404-f244ad8a3001(jetbrains.mps.generator.traceInfo)/5111910545577563820">
     <nodeInfo nodeId="5111910545577563832" fileName="TraceDown.java" startLine="27" startPosition="56" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5111910545577563838" fileName="TraceDown.java" startLine="28" startPosition="35" endLine="29" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5111910545577563852" fileName="TraceDown.java" startLine="30" startPosition="28" endLine="31" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -146,7 +146,7 @@
     <unitInfo nodeId="5288964220667812426" fileName="TraceDown.java" startLine="78" startPosition="70" endLine="82" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceDown$3" />
     <unitInfo nodeId="5111910545577563820" fileName="TraceDown.java" startLine="22" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.TraceDown" />
   </root>
-  <root nodeId="7521671656020564904" modelId="r:41bf31ae-8e87-4132-b404-f244ad8a3001(jetbrains.mps.generator.traceInfo)">
+  <root nodeRef="r:41bf31ae-8e87-4132-b404-f244ad8a3001(jetbrains.mps.generator.traceInfo)/7521671656020564904">
     <nodeInfo nodeId="7521671656020564913" fileName="TraceInfoCache.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TRACE_FILE_NAME" />
     <nodeInfo nodeId="7521671656020564917" fileName="TraceInfoCache.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="7922457109334008370" fileName="TraceInfoCache.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE_LOCK" />
@@ -428,7 +428,7 @@
     <unitInfo nodeId="7521671656020564959" fileName="TraceInfoCache.java" startLine="51" startPosition="56" endLine="55" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceInfoCache$1" />
     <unitInfo nodeId="7521671656020564904" fileName="TraceInfoCache.java" startLine="31" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
   </root>
-  <root nodeId="7521671656020565367" modelId="r:41bf31ae-8e87-4132-b404-f244ad8a3001(jetbrains.mps.generator.traceInfo)">
+  <root nodeRef="r:41bf31ae-8e87-4132-b404-f244ad8a3001(jetbrains.mps.generator.traceInfo)/7521671656020565367">
     <nodeInfo nodeId="7921341742263216042" fileName="TraceInfoUtil.java" startLine="41" startPosition="104" endLine="42" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7921341742263216080" fileName="TraceInfoUtil.java" startLine="43" startPosition="23" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7921341742263220006" fileName="TraceInfoUtil.java" startLine="45" startPosition="5" endLine="46" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

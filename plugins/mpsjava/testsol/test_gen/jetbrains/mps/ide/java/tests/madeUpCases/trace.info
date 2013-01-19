@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4795297196607456968" modelId="r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)">
+  <root nodeRef="r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)/4795297196607456968">
     <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="15" startPosition="46" endLine="16" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="16" startPosition="131" endLine="17" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="21" startPosition="47" endLine="22" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -68,7 +68,7 @@
     <unitInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="38" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody" />
     <unitInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="12" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test" />
   </root>
-  <root nodeId="4795297196607520928" modelId="r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)">
+  <root nodeRef="r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)/4795297196607520928">
     <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="21" startPosition="47" endLine="22" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="22" startPosition="131" endLine="23" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="27" startPosition="59" endLine="28" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

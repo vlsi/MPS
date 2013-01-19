@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2546981710035415466" modelId="r:a57f848c-1484-448a-8207-f1fed72b47ee(jetbrains.mps.tool.builder.check)">
+  <root nodeRef="r:a57f848c-1484-448a-8207-f1fed72b47ee(jetbrains.mps.tool.builder.check)/2546981710035415466">
     <nodeInfo nodeId="2546981710035415469" fileName="TestBrokenReferencesWorker.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBuildServerMessageFormat" />
     <nodeInfo nodeId="2546981710035415473" fileName="TestBrokenReferencesWorker.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUsedHeap" />
     <nodeInfo nodeId="2546981710035415476" fileName="TestBrokenReferencesWorker.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUsedNonHeap" />

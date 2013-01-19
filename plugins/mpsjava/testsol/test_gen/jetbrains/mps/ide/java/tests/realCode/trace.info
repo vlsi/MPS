@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="7016215775330902578" modelId="r:160abcc6-9e67-4700-883d-b19377a315a7(jetbrains.mps.ide.java.tests.realCode@tests)">
+  <root nodeRef="r:160abcc6-9e67-4700-883d-b19377a315a7(jetbrains.mps.ide.java.tests.realCode@tests)/7016215775330902578">
     <nodeInfo nodeId="7016215775330902578" fileName="BytecodeVsSourceStubs_Test.java" startLine="15" startPosition="45" endLine="16" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7016215775330902578" fileName="BytecodeVsSourceStubs_Test.java" startLine="16" startPosition="128" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8083368042256451495" fileName="BytecodeVsSourceStubs_Test.java" startLine="22" startPosition="47" endLine="23" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

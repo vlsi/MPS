@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="CustomViewersInitializer_CustomApplicationPlugin.java" startLine="13" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.CustomViewersInitializer_CustomApplicationPlugin" />
-  <root nodeId="2244048449136669030" modelId="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)">
+  <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/2244048449136669030">
     <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCreators" />
     <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="29" startPosition="24" endLine="30" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="31" startPosition="33" endLine="32" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -96,7 +96,7 @@
     <unitInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="53" startPosition="65" endLine="63" endPosition="7" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.DebugInfoProvider_CustomApplicationPlugin$2" />
     <unitInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="23" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.DebugInfoProvider_CustomApplicationPlugin" />
   </root>
-  <root nodeId="2929731761237869234" modelId="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)">
+  <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/2929731761237869234">
     <nodeInfo nodeId="2929731761237869234" fileName="CollectionsWatchables.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourCategory" />
     <nodeInfo nodeId="2929731761237869234" fileName="CollectionsWatchables.java" startLine="16" startPosition="62" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2929731761237869234" fileName="CollectionsWatchables.java" startLine="20" startPosition="45" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -167,7 +167,7 @@
     <unitInfo nodeId="2929731761237869234" fileName="CollectionsWatchables.java" startLine="61" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.CollectionsWatchables$MyWatchable_size" />
     <unitInfo nodeId="2929731761237869234" fileName="CollectionsWatchables.java" startLine="9" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.CollectionsWatchables" />
   </root>
-  <root nodeId="2929731761237869240" modelId="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)">
+  <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/2929731761237869240">
     <nodeInfo nodeId="2929731761237869240" fileName="ListViewer_WrapperFactory.java" startLine="24" startPosition="59" endLine="25" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237869240" fileName="ListViewer_WrapperFactory.java" startLine="31" startPosition="58" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2929731761237869240" fileName="ListViewer_WrapperFactory.java" startLine="33" startPosition="28" endLine="34" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -236,7 +236,7 @@
     <unitInfo nodeId="2929731761237869240" fileName="ListViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.ListViewer_WrapperFactory$ListViewerWrapper" />
     <unitInfo nodeId="2929731761237869240" fileName="ListViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.ListViewer_WrapperFactory" />
   </root>
-  <root nodeId="2929731761237869279" modelId="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)">
+  <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/2929731761237869279">
     <nodeInfo nodeId="2929731761237869279" fileName="MapEntryViewer_WrapperFactory.java" startLine="24" startPosition="59" endLine="25" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237869279" fileName="MapEntryViewer_WrapperFactory.java" startLine="31" startPosition="58" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2929731761237869279" fileName="MapEntryViewer_WrapperFactory.java" startLine="33" startPosition="28" endLine="34" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -319,7 +319,7 @@
     <unitInfo nodeId="2929731761237869279" fileName="MapEntryViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.MapEntryViewer_WrapperFactory$MapEntryViewerWrapper" />
     <unitInfo nodeId="2929731761237869279" fileName="MapEntryViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.MapEntryViewer_WrapperFactory" />
   </root>
-  <root nodeId="2929731761237869354" modelId="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)">
+  <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/2929731761237869354">
     <nodeInfo nodeId="2929731761237869354" fileName="MapViewer_WrapperFactory.java" startLine="24" startPosition="59" endLine="25" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237869354" fileName="MapViewer_WrapperFactory.java" startLine="31" startPosition="58" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2929731761237869354" fileName="MapViewer_WrapperFactory.java" startLine="33" startPosition="28" endLine="34" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -390,7 +390,7 @@
     <unitInfo nodeId="2929731761237869354" fileName="MapViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.MapViewer_WrapperFactory$MapViewerWrapper" />
     <unitInfo nodeId="2929731761237869354" fileName="MapViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.MapViewer_WrapperFactory" />
   </root>
-  <root nodeId="2929731761237869400" modelId="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)">
+  <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/2929731761237869400">
     <nodeInfo nodeId="2929731761237869400" fileName="SetViewer_WrapperFactory.java" startLine="24" startPosition="59" endLine="25" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237869400" fileName="SetViewer_WrapperFactory.java" startLine="31" startPosition="58" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2929731761237869400" fileName="SetViewer_WrapperFactory.java" startLine="33" startPosition="28" endLine="34" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -460,7 +460,7 @@
     <unitInfo nodeId="2929731761237869400" fileName="SetViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SetViewer_WrapperFactory$SetViewerWrapper" />
     <unitInfo nodeId="2929731761237869400" fileName="SetViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SetViewer_WrapperFactory" />
   </root>
-  <root nodeId="2929731761237871799" modelId="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)">
+  <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/2929731761237871799">
     <nodeInfo nodeId="2929731761237871799" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="24" startPosition="59" endLine="25" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237871799" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="31" startPosition="58" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2929731761237871799" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="33" startPosition="28" endLine="34" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -540,7 +540,7 @@
     <unitInfo nodeId="2929731761237871799" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.IndexedTupleViewer_WrapperFactory$IndexedTupleViewerWrapper" />
     <unitInfo nodeId="2929731761237871799" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.IndexedTupleViewer_WrapperFactory" />
   </root>
-  <root nodeId="2929731761237871846" modelId="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)">
+  <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/2929731761237871846">
     <nodeInfo nodeId="2929731761237871846" fileName="TuplesWatchables.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourCategory" />
     <nodeInfo nodeId="2929731761237871846" fileName="TuplesWatchables.java" startLine="16" startPosition="62" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2929731761237871846" fileName="TuplesWatchables.java" startLine="20" startPosition="45" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -559,7 +559,7 @@
     <unitInfo nodeId="2929731761237871846" fileName="TuplesWatchables.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.TuplesWatchables$MyWatchable_element" />
     <unitInfo nodeId="2929731761237871846" fileName="TuplesWatchables.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.TuplesWatchables" />
   </root>
-  <root nodeId="2929731761237871848" modelId="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)">
+  <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/2929731761237871848">
     <nodeInfo nodeId="2929731761237871848" fileName="SNodeViewer_WrapperFactory.java" startLine="26" startPosition="59" endLine="27" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2929731761237871848" fileName="SNodeViewer_WrapperFactory.java" startLine="33" startPosition="58" endLine="34" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2929731761237871848" fileName="SNodeViewer_WrapperFactory.java" startLine="35" startPosition="28" endLine="36" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -681,7 +681,7 @@
     <unitInfo nodeId="2929731761237871848" fileName="SNodeViewer_WrapperFactory.java" startLine="46" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeViewer_WrapperFactory$SNodeViewerWrapper" />
     <unitInfo nodeId="2929731761237871848" fileName="SNodeViewer_WrapperFactory.java" startLine="22" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeViewer_WrapperFactory" />
   </root>
-  <root nodeId="2929731761237872032" modelId="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)">
+  <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/2929731761237872032">
     <nodeInfo nodeId="2929731761237872032" fileName="SNodeWatchables.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourCategory" />
     <nodeInfo nodeId="2929731761237872032" fileName="SNodeWatchables.java" startLine="16" startPosition="60" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2929731761237872032" fileName="SNodeWatchables.java" startLine="20" startPosition="45" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -778,7 +778,7 @@
     <unitInfo nodeId="2929731761237872032" fileName="SNodeWatchables.java" startLine="85" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeWatchables$MyWatchable_text" />
     <unitInfo nodeId="2929731761237872032" fileName="SNodeWatchables.java" startLine="9" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeWatchables" />
   </root>
-  <root nodeId="5494815557703847191" modelId="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)">
+  <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/5494815557703847191">
     <nodeInfo nodeId="5494815557703847191" fileName="Plugin_PluginInitializer.java" startLine="17" startPosition="51" endLine="18" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5494815557703847191" fileName="Plugin_PluginInitializer.java" startLine="19" startPosition="9" endLine="20" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5494815557703847191" fileName="Plugin_PluginInitializer.java" startLine="27" startPosition="36" endLine="28" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -807,7 +807,7 @@
     <unitInfo nodeId="5494815557703847191" fileName="Plugin_PluginInitializer.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Plugin_PluginInitializer" />
     <unitInfo nodeId="5494815557703847191" fileName="plugin.xml" startLine="1" startPosition="0" endLine="21" endPosition="14" unitName="jetbrains.mps.debugger.java.customViewers.plugin.plugin.plugin" />
   </root>
-  <root nodeId="7162597690968011947" modelId="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)">
+  <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/7162597690968011947">
     <nodeInfo nodeId="7162597690968011947" fileName="Plugin_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690968011947" fileName="Plugin_ApplicationPlugin.java" startLine="18" startPosition="27" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690968011947" fileName="Plugin_ApplicationPlugin.java" startLine="22" startPosition="62" endLine="23" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

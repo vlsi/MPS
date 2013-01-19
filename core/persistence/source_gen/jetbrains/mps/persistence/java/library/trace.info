@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6619269785060746035" modelId="r:adc783db-1c21-4910-9cf7-6a22bf949a4a(jetbrains.mps.persistence.java.library)">
+  <root nodeRef="r:adc783db-1c21-4910-9cf7-6a22bf949a4a(jetbrains.mps.persistence.java.library)/6619269785060746035">
     <nodeInfo nodeId="6619269785060746044" fileName="JavaClassStubConstants.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaClassStubConstants#()V" />
     <nodeInfo nodeId="6619269785060746037" fileName="JavaClassStubConstants.java" startLine="8" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STUB_TYPE" />
     <scopeInfo nodeId="6619269785060746047" fileName="JavaClassStubConstants.java" startLine="13" startPosition="35" endLine="13" endPosition="35" />
     <scopeInfo nodeId="6619269785060746044" fileName="JavaClassStubConstants.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
     <unitInfo nodeId="6619269785060746035" fileName="JavaClassStubConstants.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.persistence.java.library.JavaClassStubConstants" />
   </root>
-  <root nodeId="6619269785060746048" modelId="r:adc783db-1c21-4910-9cf7-6a22bf949a4a(jetbrains.mps.persistence.java.library)">
+  <root nodeRef="r:adc783db-1c21-4910-9cf7-6a22bf949a4a(jetbrains.mps.persistence.java.library)/6619269785060746048">
     <nodeInfo nodeId="6619269785060746050" fileName="JavaClassStubModelDescriptor.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6619269785060746057" fileName="JavaClassStubModelDescriptor.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="6619269785060746060" fileName="JavaClassStubModelDescriptor.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelRoot" />
@@ -141,7 +141,7 @@
     <unitInfo nodeId="6619269785060746401" fileName="JavaClassStubModelDescriptor.java" startLine="129" startPosition="27" endLine="133" endPosition="5" unitName="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor$2" />
     <unitInfo nodeId="6619269785060746048" fileName="JavaClassStubModelDescriptor.java" startLine="30" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" />
   </root>
-  <root nodeId="6619269785060746414" modelId="r:adc783db-1c21-4910-9cf7-6a22bf949a4a(jetbrains.mps.persistence.java.library)">
+  <root nodeRef="r:adc783db-1c21-4910-9cf7-6a22bf949a4a(jetbrains.mps.persistence.java.library)/6619269785060746414">
     <nodeInfo nodeId="6619269785060746425" fileName="JavaClassStubModelRootFactory.java" startLine="12" startPosition="29" endLine="13" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6619269785060746417" fileName="JavaClassStubModelRootFactory.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaClassStubModelRootFactory#()V" />
     <nodeInfo nodeId="6619269785060746421" fileName="JavaClassStubModelRootFactory.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create#()Lorg/jetbrains/mps/openapi/persistence/ModelRoot;" />
@@ -151,7 +151,7 @@
     <scopeInfo nodeId="6619269785060746421" fileName="JavaClassStubModelRootFactory.java" startLine="12" startPosition="0" endLine="15" endPosition="0" />
     <unitInfo nodeId="6619269785060746414" fileName="JavaClassStubModelRootFactory.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.persistence.java.library.JavaClassStubModelRootFactory" />
   </root>
-  <root nodeId="6619269785060746428" modelId="r:adc783db-1c21-4910-9cf7-6a22bf949a4a(jetbrains.mps.persistence.java.library)">
+  <root nodeRef="r:adc783db-1c21-4910-9cf7-6a22bf949a4a(jetbrains.mps.persistence.java.library)/6619269785060746428">
     <nodeInfo nodeId="6619269785060746439" fileName="JavaClassStubsModelRoot.java" startLine="30" startPosition="27" endLine="31" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6619269785060746462" fileName="JavaClassStubsModelRoot.java" startLine="41" startPosition="39" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6619269785060746464" fileName="JavaClassStubsModelRoot.java" startLine="42" startPosition="22" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

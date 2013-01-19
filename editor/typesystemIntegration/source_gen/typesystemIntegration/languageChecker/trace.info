@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5031859272495377247" modelId="r:74808b88-3d1c-4dc8-8642-164154f3f3a7(typesystemIntegration.languageChecker)">
+  <root nodeRef="r:74808b88-3d1c-4dc8-8642-164154f3f3a7(typesystemIntegration.languageChecker)/5031859272495377247">
     <nodeInfo nodeId="5031859272495377268" fileName="AutoResolver.java" startLine="32" startPosition="145" endLine="33" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5031859272495377290" fileName="AutoResolver.java" startLine="34" startPosition="120" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5031859272495377299" fileName="AutoResolver.java" startLine="37" startPosition="59" endLine="38" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -114,7 +114,7 @@
     <unitInfo nodeId="5236817883989791702" fileName="AutoResolver.java" startLine="52" startPosition="49" endLine="61" endPosition="9" unitName="typesystemIntegration.languageChecker.AutoResolver$1" />
     <unitInfo nodeId="5031859272495377247" fileName="AutoResolver.java" startLine="28" startPosition="0" endLine="102" endPosition="0" unitName="typesystemIntegration.languageChecker.AutoResolver" />
   </root>
-  <root nodeId="7390982340086719450" modelId="r:74808b88-3d1c-4dc8-8642-164154f3f3a7(typesystemIntegration.languageChecker)">
+  <root nodeRef="r:74808b88-3d1c-4dc8-8642-164154f3f3a7(typesystemIntegration.languageChecker)/7390982340086719450">
     <nodeInfo nodeId="7390982340086719451" fileName="LanguageEditorChecker.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessagesChanged" />
     <nodeInfo nodeId="7390982340086719455" fileName="LanguageEditorChecker.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRules" />
     <nodeInfo nodeId="7390982340086719462" fileName="LanguageEditorChecker.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodePointersToComponents" />

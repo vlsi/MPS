@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2819311507031209172" modelId="r:7e5623b0-f241-4ce8-8fe7-d8a5c8c44458(jetbrains.mps.traceInfo.testWeaving.data)">
+  <root nodeRef="r:7e5623b0-f241-4ce8-8fe7-d8a5c8c44458(jetbrains.mps.traceInfo.testWeaving.data)/2819311507031209172">
     <nodeInfo nodeId="2819311507031225979" fileName="TestInterpreted.java" startLine="10" startPosition="39" endLine="11" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2819311507031225980" fileName="TestInterpreted.java" startLine="14" startPosition="39" endLine="15" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2819311507031225981" fileName="TestInterpreted.java" startLine="18" startPosition="43" endLine="19" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -94,7 +94,7 @@
     <scopeInfo nodeId="2819311507031225988" fileName="TestInterpreted.java" startLine="94" startPosition="0" endLine="97" endPosition="0" />
     <unitInfo nodeId="2819311507031209172" fileName="TestInterpreted.java" startLine="6" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeaving.data.TestInterpreted" />
   </root>
-  <root nodeId="6186432342008485032" modelId="r:7e5623b0-f241-4ce8-8fe7-d8a5c8c44458(jetbrains.mps.traceInfo.testWeaving.data)">
+  <root nodeRef="r:7e5623b0-f241-4ce8-8fe7-d8a5c8c44458(jetbrains.mps.traceInfo.testWeaving.data)/6186432342008485032">
     <nodeInfo nodeId="6186432342008485050" fileName="TestGenerated.java" startLine="10" startPosition="37" endLine="11" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008486843" fileName="TestGenerated.java" startLine="14" startPosition="37" endLine="15" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008486845" fileName="TestGenerated.java" startLine="18" startPosition="41" endLine="19" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

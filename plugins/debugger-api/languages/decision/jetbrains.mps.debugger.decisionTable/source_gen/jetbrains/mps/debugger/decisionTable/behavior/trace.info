@@ -7,7 +7,7 @@
   <unitInfo fileName="DecisionTable_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.behavior.DecisionTable_BehaviorDescriptor" />
   <unitInfo fileName="XVariableReference_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.behavior.XVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="YVariableReference_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.behavior.YVariableReference_BehaviorDescriptor" />
-  <root nodeId="6409088484822359269" modelId="r:c73e9724-16b0-49e7-8784-5ffdef72f96d(jetbrains.mps.debugger.decisionTable.behavior)">
+  <root nodeRef="r:c73e9724-16b0-49e7-8784-5ffdef72f96d(jetbrains.mps.debugger.decisionTable.behavior)/6409088484822359269">
     <nodeInfo nodeId="6409088484822359639" fileName="DecisionTable_Behavior.java" startLine="16" startPosition="105" endLine="17" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5202024118203900110" fileName="DecisionTable_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6409088484822359269" fileName="DecisionTable_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

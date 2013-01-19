@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1365200781785613152" modelId="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)">
+  <root nodeRef="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)/1365200781785613152">
     <nodeInfo nodeId="1365200781785613175" fileName="ClassloaderUtil.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_CLASS_ARRAY" />
     <nodeInfo nodeId="1365200781785613205" fileName="ClassloaderUtil.java" startLine="36" startPosition="9" endLine="37" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1365200781785613207" fileName="ClassloaderUtil.java" startLine="37" startPosition="35" endLine="38" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -281,7 +281,7 @@
     </scopeInfo>
     <unitInfo nodeId="1365200781785613152" fileName="ClassloaderUtil.java" startLine="21" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.tool.builder.util.ClassloaderUtil" />
   </root>
-  <root nodeId="1365200781786323609" modelId="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)">
+  <root nodeRef="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)/1365200781786323609">
     <nodeInfo nodeId="1365200781786323627" fileName="ContainerUtil.java" startLine="12" startPosition="92" endLine="13" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1365200781786323634" fileName="ContainerUtil.java" startLine="14" startPosition="32" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1365200781786323610" fileName="ContainerUtil.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContainerUtil#()V" />
@@ -300,7 +300,7 @@
     </scopeInfo>
     <unitInfo nodeId="1365200781786323609" fileName="ContainerUtil.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.tool.builder.util.ContainerUtil" />
   </root>
-  <root nodeId="4774692914340655529" modelId="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)">
+  <root nodeRef="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)/4774692914340655529">
     <nodeInfo nodeId="4774692914340655631" fileName="PathManager.java" startLine="75" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MPS_DASH" />
     <nodeInfo nodeId="4774692914340655635" fileName="PathManager.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DOT_JAR" />
     <nodeInfo nodeId="4774692914340655639" fileName="PathManager.java" startLine="77" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODULES_PREFIX" />
@@ -831,7 +831,7 @@
     <unitInfo nodeId="4774692914340657036" fileName="PathManager.java" startLine="456" startPosition="0" endLine="462" endPosition="0" unitName="jetbrains.mps.tool.builder.util.PathManager$StringHolder" />
     <unitInfo nodeId="4774692914340655529" fileName="PathManager.java" startLine="32" startPosition="0" endLine="463" endPosition="0" unitName="jetbrains.mps.tool.builder.util.PathManager" />
   </root>
-  <root nodeId="5900076103425047615" modelId="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)">
+  <root nodeRef="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)/5900076103425047615">
     <nodeInfo nodeId="5900076103425047618" fileName="MapPathMacrosProvider.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="macros" />
     <nodeInfo nodeId="5900076103425047627" fileName="MapPathMacrosProvider.java" startLine="13" startPosition="60" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5900076103425047643" fileName="MapPathMacrosProvider.java" startLine="17" startPosition="39" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -862,7 +862,7 @@
     </scopeInfo>
     <unitInfo nodeId="5900076103425047615" fileName="MapPathMacrosProvider.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.tool.builder.util.MapPathMacrosProvider" />
   </root>
-  <root nodeId="5900076103425675110" modelId="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)">
+  <root nodeRef="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)/5900076103425675110">
     <nodeInfo nodeId="5900076103425675113" fileName="SetLibraryContributor.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="libraryPaths" />
     <nodeInfo nodeId="5900076103425675121" fileName="SetLibraryContributor.java" startLine="12" startPosition="84" endLine="13" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5900076103425675133" fileName="SetLibraryContributor.java" startLine="16" startPosition="63" endLine="17" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -880,7 +880,7 @@
     <scopeInfo nodeId="5900076103425675138" fileName="SetLibraryContributor.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
     <unitInfo nodeId="5900076103425675110" fileName="SetLibraryContributor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.tool.builder.util.SetLibraryContributor" />
   </root>
-  <root nodeId="878521226300613674" modelId="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)">
+  <root nodeRef="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)/878521226300613674">
     <nodeInfo nodeId="878521226300613683" fileName="MpsPlatform.java" startLine="15" startPosition="29" endLine="16" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226300613687" fileName="MpsPlatform.java" startLine="16" startPosition="33" endLine="17" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226300613691" fileName="MpsPlatform.java" startLine="17" startPosition="40" endLine="18" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

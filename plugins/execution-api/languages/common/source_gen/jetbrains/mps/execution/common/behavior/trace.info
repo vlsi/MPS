@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.execution.common.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="IGeneratedToClass_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor" />
-  <root nodeId="946964771156905389" modelId="r:59b8a6cf-a3a9-4109-98b7-d13bb426ef49(jetbrains.mps.execution.common.behavior)">
+  <root nodeRef="r:59b8a6cf-a3a9-4109-98b7-d13bb426ef49(jetbrains.mps.execution.common.behavior)/946964771156905389">
     <nodeInfo nodeId="946964771156905492" fileName="IGeneratedToClass_Behavior.java" startLine="20" startPosition="89" endLine="21" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="946964771156905498" fileName="IGeneratedToClass_Behavior.java" startLine="21" startPosition="92" endLine="22" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156905507" fileName="IGeneratedToClass_Behavior.java" startLine="25" startPosition="79" endLine="26" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

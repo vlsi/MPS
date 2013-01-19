@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1169333190357286292" modelId="r:ab35dba0-4d05-45fe-8a07-0916d087799f(jetbrains.mps.tool.builder.paths)">
+  <root nodeRef="r:ab35dba0-4d05-45fe-8a07-0916d087799f(jetbrains.mps.tool.builder.paths)/1169333190357286292">
     <nodeInfo nodeId="1169333190357286497" fileName="IRedirects.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRedirect#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
     <scopeInfo nodeId="1169333190357286497" fileName="IRedirects.java" startLine="8" startPosition="0" endLine="9" endPosition="0">
       <varInfo nodeId="1169333190357286509" varName="path" />
     </scopeInfo>
     <unitInfo nodeId="1169333190357286292" fileName="IRedirects.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.tool.builder.paths.IRedirects" />
   </root>
-  <root nodeId="1343659934891345537" modelId="r:ab35dba0-4d05-45fe-8a07-0916d087799f(jetbrains.mps.tool.builder.paths)">
+  <root nodeRef="r:ab35dba0-4d05-45fe-8a07-0916d087799f(jetbrains.mps.tool.builder.paths)/1343659934891345537">
     <nodeInfo nodeId="1343659934891345539" fileName="ModuleOutputPaths.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sortedOutDirs" />
     <nodeInfo nodeId="1343659934891345543" fileName="ModuleOutputPaths.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sortedTestOutDirs" />
     <nodeInfo nodeId="1343659934891345547" fileName="ModuleOutputPaths.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sortedOutCacheDirs" />
@@ -167,7 +167,7 @@
     <unitInfo nodeId="1343659934891345703" fileName="ModuleOutputPaths.java" startLine="84" startPosition="18" endLine="88" endPosition="5" unitName="jetbrains.mps.tool.builder.paths.ModuleOutputPaths$13" />
     <unitInfo nodeId="1343659934891345537" fileName="ModuleOutputPaths.java" startLine="19" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.tool.builder.paths.ModuleOutputPaths" />
   </root>
-  <root nodeId="1343659934891487707" modelId="r:ab35dba0-4d05-45fe-8a07-0916d087799f(jetbrains.mps.tool.builder.paths)">
+  <root nodeRef="r:ab35dba0-4d05-45fe-8a07-0916d087799f(jetbrains.mps.tool.builder.paths)/1343659934891487707">
     <nodeInfo nodeId="1343659934891487709" fileName="OutputPathRedirects.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="outputRoot" />
     <nodeInfo nodeId="1343659934891487712" fileName="OutputPathRedirects.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cachesOutputRoot" />
     <nodeInfo nodeId="1343659934891487715" fileName="OutputPathRedirects.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="useTransientOutput" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5487985028841950969" modelId="r:3724dc70-6fdc-4547-80f9-abf8c26b2717(jetbrains.mps.calculator.pluginSolution.plugin)">
+  <root nodeRef="r:3724dc70-6fdc-4547-80f9-abf8c26b2717(jetbrains.mps.calculator.pluginSolution.plugin)/5487985028841950969">
     <nodeInfo nodeId="5487985028841950969" fileName="ExecuteCalculator_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841950969" fileName="ExecuteCalculator_Action.java" startLine="21" startPosition="37" endLine="22" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841950969" fileName="ExecuteCalculator_Action.java" startLine="22" startPosition="42" endLine="23" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -139,7 +139,7 @@
     <unitInfo nodeId="5487985028841950987" fileName="ExecuteCalculator_Action.java" startLine="71" startPosition="39" endLine="80" endPosition="9" unitName="jetbrains.mps.calculator.pluginSolution.plugin.ExecuteCalculator_Action$1" />
     <unitInfo nodeId="5487985028841950969" fileName="ExecuteCalculator_Action.java" startLine="18" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.calculator.pluginSolution.plugin.ExecuteCalculator_Action" />
   </root>
-  <root nodeId="5487985028841951123" modelId="r:3724dc70-6fdc-4547-80f9-abf8c26b2717(jetbrains.mps.calculator.pluginSolution.plugin)">
+  <root nodeRef="r:3724dc70-6fdc-4547-80f9-abf8c26b2717(jetbrains.mps.calculator.pluginSolution.plugin)/5487985028841951123">
     <nodeInfo nodeId="5487985028841951123" fileName="NodeActionsAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841951123" fileName="NodeActionsAddition_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="5487985028841951123" fileName="NodeActionsAddition_ActionGroup.java" startLine="12" startPosition="44" endLine="13" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -158,7 +158,7 @@
     <scopeInfo nodeId="5487985028841951123" fileName="NodeActionsAddition_ActionGroup.java" startLine="12" startPosition="0" endLine="22" endPosition="0" />
     <unitInfo nodeId="5487985028841951123" fileName="NodeActionsAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.calculator.pluginSolution.plugin.NodeActionsAddition_ActionGroup" />
   </root>
-  <root nodeId="7162597690968188472" modelId="r:3724dc70-6fdc-4547-80f9-abf8c26b2717(jetbrains.mps.calculator.pluginSolution.plugin)">
+  <root nodeRef="r:3724dc70-6fdc-4547-80f9-abf8c26b2717(jetbrains.mps.calculator.pluginSolution.plugin)/7162597690968188472">
     <nodeInfo nodeId="7162597690968188472" fileName="PluginSolution_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690968188472" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690968188472" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

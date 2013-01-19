@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="1569627462441400262" modelId="r:9b7a7baa-7b52-4b41-8293-5aa14d41220f(jetbrains.mps.baseLanguage.overloadedOperators.constraints)">
+  <root nodeRef="r:9b7a7baa-7b52-4b41-8293-5aa14d41220f(jetbrains.mps.baseLanguage.overloadedOperators.constraints)/1569627462441400262">
     <nodeInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="19" startPosition="44" endLine="20" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="24" startPosition="83" endLine="25" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="28" startPosition="44" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -38,7 +38,7 @@
     <unitInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="26" startPosition="35" endLine="47" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperatorUsage_Constraints$1" />
     <unitInfo nodeId="1569627462441400262" fileName="CustomOperatorUsage_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.CustomOperatorUsage_Constraints" />
   </root>
-  <root nodeId="2838654975957288939" modelId="r:9b7a7baa-7b52-4b41-8293-5aa14d41220f(jetbrains.mps.baseLanguage.overloadedOperators.constraints)">
+  <root nodeRef="r:9b7a7baa-7b52-4b41-8293-5aa14d41220f(jetbrains.mps.baseLanguage.overloadedOperators.constraints)/2838654975957288939">
     <nodeInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="30" startPosition="49" endLine="31" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="35" startPosition="83" endLine="36" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="39" startPosition="44" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -97,7 +97,7 @@
     <unitInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="37" startPosition="42" endLine="69" endPosition="5" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.BinaryOperationReference_Constraints$1" />
     <unitInfo nodeId="2838654975957288939" fileName="BinaryOperationReference_Constraints.java" startLine="29" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.BinaryOperationReference_Constraints" />
   </root>
-  <root nodeId="2838654975957402179" modelId="r:9b7a7baa-7b52-4b41-8293-5aa14d41220f(jetbrains.mps.baseLanguage.overloadedOperators.constraints)">
+  <root nodeRef="r:9b7a7baa-7b52-4b41-8293-5aa14d41220f(jetbrains.mps.baseLanguage.overloadedOperators.constraints)/2838654975957402179">
     <nodeInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="19" startPosition="39" endLine="20" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="24" startPosition="83" endLine="25" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2838654975957402179" fileName="CustomOperator_Constraints.java" startLine="28" startPosition="44" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

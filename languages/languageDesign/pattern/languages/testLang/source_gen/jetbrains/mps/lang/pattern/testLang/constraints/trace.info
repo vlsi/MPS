@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="1563914226484898755" modelId="r:02c98d9f-8736-40ad-9bbb-eeffd3fee9b8(jetbrains.mps.lang.pattern.testLang.constraints)">
+  <root nodeRef="r:02c98d9f-8736-40ad-9bbb-eeffd3fee9b8(jetbrains.mps.lang.pattern.testLang.constraints)/1563914226484898755">
     <nodeInfo nodeId="1563914226484898755" fileName="TestPropertyVariableReference_Constraints.java" startLine="19" startPosition="54" endLine="20" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1563914226484898755" fileName="TestPropertyVariableReference_Constraints.java" startLine="24" startPosition="83" endLine="25" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1563914226484898755" fileName="TestPropertyVariableReference_Constraints.java" startLine="28" startPosition="44" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -38,7 +38,7 @@
     <unitInfo nodeId="1563914226484898755" fileName="TestPropertyVariableReference_Constraints.java" startLine="26" startPosition="38" endLine="47" endPosition="5" unitName="jetbrains.mps.lang.pattern.testLang.constraints.TestPropertyVariableReference_Constraints$1" />
     <unitInfo nodeId="1563914226484898755" fileName="TestPropertyVariableReference_Constraints.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.constraints.TestPropertyVariableReference_Constraints" />
   </root>
-  <root nodeId="8707387027762047794" modelId="r:02c98d9f-8736-40ad-9bbb-eeffd3fee9b8(jetbrains.mps.lang.pattern.testLang.constraints)">
+  <root nodeRef="r:02c98d9f-8736-40ad-9bbb-eeffd3fee9b8(jetbrains.mps.lang.pattern.testLang.constraints)/8707387027762047794">
     <nodeInfo nodeId="8707387027762047794" fileName="TestVariableReference_Constraints.java" startLine="26" startPosition="46" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8707387027762047794" fileName="TestVariableReference_Constraints.java" startLine="31" startPosition="83" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8707387027762047794" fileName="TestVariableReference_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

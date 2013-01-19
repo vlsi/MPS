@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2476748692227884194" modelId="r:7f073096-c94d-44be-8c16-e03c412508f0(jetbrains.mps.debugger.java.runtime.evaluation.transform)">
+  <root nodeRef="r:7f073096-c94d-44be-8c16-e03c412508f0(jetbrains.mps.debugger.java.runtime.evaluation.transform)/2476748692227884194">
     <nodeInfo nodeId="2476748692227884416" fileName="TransformatorImpl.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LTYPE" />
     <nodeInfo nodeId="2476748692227884420" fileName="TransformatorImpl.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="RTYPE" />
     <nodeInfo nodeId="2476748692227884424" fileName="TransformatorImpl.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CTYPE" />
@@ -2316,7 +2316,7 @@
     <unitInfo nodeId="2476748692227884490" fileName="TransformatorImpl.java" startLine="747" startPosition="46" endLine="760" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorImpl$45" />
     <unitInfo nodeId="2476748692227884194" fileName="TransformatorImpl.java" startLine="34" startPosition="0" endLine="1388" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformatorImpl" />
   </root>
-  <root nodeId="2476748692227887190" modelId="r:7f073096-c94d-44be-8c16-e03c412508f0(jetbrains.mps.debugger.java.runtime.evaluation.transform)">
+  <root nodeRef="r:7f073096-c94d-44be-8c16-e03c412508f0(jetbrains.mps.debugger.java.runtime.evaluation.transform)/2476748692227887190">
     <nodeInfo nodeId="2476748692227887191" fileName="TransformationUtil.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2476748692227887205" fileName="TransformationUtil.java" startLine="38" startPosition="102" endLine="39" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2476748692227887216" fileName="TransformationUtil.java" startLine="39" startPosition="87" endLine="40" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5152,7 +5152,7 @@
     <unitInfo nodeId="2476748692227888362" fileName="TransformationUtil.java" startLine="255" startPosition="50" endLine="259" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformationUtil$3" />
     <unitInfo nodeId="2476748692227887190" fileName="TransformationUtil.java" startLine="32" startPosition="0" endLine="1592" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.transform.TransformationUtil" />
   </root>
-  <root nodeId="7157912897227100955" modelId="r:7f073096-c94d-44be-8c16-e03c412508f0(jetbrains.mps.debugger.java.runtime.evaluation.transform)">
+  <root nodeRef="r:7f073096-c94d-44be-8c16-e03c412508f0(jetbrains.mps.debugger.java.runtime.evaluation.transform)/7157912897227100955">
     <nodeInfo nodeId="7157912897227102623" fileName="TransformatorBuilderImpl.java" startLine="13" startPosition="25" endLine="14" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7157912897227102636" fileName="TransformatorBuilderImpl.java" startLine="19" startPosition="25" endLine="20" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2476748692227960270" fileName="TransformatorBuilderImpl.java" startLine="24" startPosition="93" endLine="25" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

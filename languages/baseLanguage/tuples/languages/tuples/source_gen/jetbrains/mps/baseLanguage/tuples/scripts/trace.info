@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5684843424312914767" modelId="r:e1f907d4-9f20-482f-9ee2-2b580163f28a(jetbrains.mps.baseLanguage.tuples.scripts)">
+  <root nodeRef="r:e1f907d4-9f20-482f-9ee2-2b580163f28a(jetbrains.mps.baseLanguage.tuples.scripts)/5684843424312914767">
     <nodeInfo nodeId="5684843424312914767" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="26" startPosition="82" endLine="27" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="29" startPosition="31" endLine="30" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5684843424312914770" fileName="UpdateTuplesRuntime_MigrationScript.java" startLine="33" startPosition="41" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

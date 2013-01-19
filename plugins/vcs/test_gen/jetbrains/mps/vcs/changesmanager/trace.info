@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3089989024970166387" modelId="r:e7e02271-4574-4bd7-8641-cf8bca0b1900(jetbrains.mps.vcs.changesmanager@tests)">
+  <root nodeRef="r:e7e02271-4574-4bd7-8641-cf8bca0b1900(jetbrains.mps.vcs.changesmanager@tests)/3089989024970166387">
     <nodeInfo nodeId="3089989024970167949" fileName="ChangesManagerTest.java" startLine="93" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DESTINATION_PROJECT_DIR" />
     <nodeInfo nodeId="3089989024970174146" fileName="ChangesManagerTest.java" startLine="94" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROJECT_ARCHIVE" />
     <nodeInfo nodeId="3089989024970174155" fileName="ChangesManagerTest.java" startLine="95" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROJECT_FILE" />
@@ -1315,7 +1315,7 @@
     <unitInfo nodeId="5364815602089922589" fileName="ChangesManagerTest.java" startLine="204" startPosition="25" endLine="240" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManagerTest$3" />
     <unitInfo nodeId="3089989024970166387" fileName="ChangesManagerTest.java" startLine="92" startPosition="0" endLine="1102" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManagerTest" />
   </root>
-  <root nodeId="3619977242337243528" modelId="r:e7e02271-4574-4bd7-8641-cf8bca0b1900(jetbrains.mps.vcs.changesmanager@tests)">
+  <root nodeRef="r:e7e02271-4574-4bd7-8641-cf8bca0b1900(jetbrains.mps.vcs.changesmanager@tests)/3619977242337243528">
     <nodeInfo nodeId="3619977242337243705" fileName="DummyFileEditor.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFile" />
     <nodeInfo nodeId="3619977242337243696" fileName="DummyFileEditor.java" startLine="29" startPosition="57" endLine="30" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3619977242337243537" fileName="DummyFileEditor.java" startLine="34" startPosition="36" endLine="35" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />

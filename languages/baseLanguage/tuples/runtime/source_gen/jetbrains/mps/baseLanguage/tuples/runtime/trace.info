@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1238932916942" modelId="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)">
+  <root nodeRef="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)/1238932916942">
     <nodeInfo nodeId="1238932916943" fileName="MultiTuple.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY" />
     <nodeInfo nodeId="1238932916952" fileName="MultiTuple.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="values" />
     <nodeInfo nodeId="1238932917200" fileName="MultiTuple.java" startLine="12" startPosition="43" endLine="13" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1286,7 +1286,7 @@
     <unitInfo nodeId="1238932916942" fileName="MultiTuple.java" startLine="849" startPosition="0" endLine="1018" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple$_9" />
     <unitInfo nodeId="1238932916942" fileName="MultiTuple.java" startLine="7" startPosition="0" endLine="1099" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
   </root>
-  <root nodeId="1238932923132" modelId="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)">
+  <root nodeRef="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)/1238932923132">
     <nodeInfo nodeId="4690171080784600068" fileName="Tuples.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assign#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
     <nodeInfo nodeId="4690171080784600078" fileName="Tuples.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_0#(null)null" />
     <nodeInfo nodeId="4690171080784600083" fileName="Tuples.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_0#()null" />

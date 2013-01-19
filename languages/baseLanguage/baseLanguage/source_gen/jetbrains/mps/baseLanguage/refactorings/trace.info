@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2869783065404758436" modelId="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)">
+  <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/2869783065404758436">
     <nodeInfo nodeId="2869783065404758436" fileName="MakeFieldFinal.java" startLine="18" startPosition="39" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2869783065404758436" fileName="MakeFieldFinal.java" startLine="22" startPosition="52" endLine="23" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2869783065404832785" fileName="MakeFieldFinal.java" startLine="26" startPosition="69" endLine="27" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -54,7 +54,7 @@
     <unitInfo nodeId="2869783065404758436" fileName="MakeFieldFinal.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal" />
     <unitInfo nodeId="2869783065404822208" fileName="MakeFieldFinal_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal_Target" />
   </root>
-  <root nodeId="418677511065471952" modelId="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)">
+  <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/418677511065471952">
     <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="18" startPosition="29" endLine="19" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="19" startPosition="46" endLine="20" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="23" startPosition="39" endLine="24" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -126,7 +126,7 @@
     <unitInfo nodeId="418677511065471952" fileName="MoveStaticMethod.java" startLine="17" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod" />
     <unitInfo nodeId="418677511065471956" fileName="MoveStaticMethod_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod_Target" />
   </root>
-  <root nodeId="4946830740863976385" modelId="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)">
+  <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/4946830740863976385">
     <nodeInfo nodeId="4946830740863976385" fileName="ConvertAnonymousClass.java" startLine="12" startPosition="34" endLine="13" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4946830740863976385" fileName="ConvertAnonymousClass.java" startLine="16" startPosition="39" endLine="17" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4946830740863976385" fileName="ConvertAnonymousClass.java" startLine="20" startPosition="47" endLine="21" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -180,7 +180,7 @@
     <unitInfo nodeId="4946830740863976385" fileName="ConvertAnonymousClass.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.ConvertAnonymousClass" />
     <unitInfo nodeId="4946830740863976401" fileName="ConvertAnonymousClass_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.ConvertAnonymousClass_Target" />
   </root>
-  <root nodeId="5142438244426791432" modelId="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)">
+  <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/5142438244426791432">
     <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="18" startPosition="28" endLine="19" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="19" startPosition="46" endLine="20" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="23" startPosition="39" endLine="24" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -253,7 +253,7 @@
     <unitInfo nodeId="5142438244426791432" fileName="MoveStaticField.java" startLine="17" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticField" />
     <unitInfo nodeId="5142438244426854472" fileName="MoveStaticField_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticField_Target" />
   </root>
-  <root nodeId="5161277940733430086" modelId="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)">
+  <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/5161277940733430086">
     <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="20" startPosition="34" endLine="21" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="24" startPosition="39" endLine="25" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="28" startPosition="52" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -335,7 +335,7 @@
     <unitInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="19" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature" />
     <unitInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature_Target" />
   </root>
-  <root nodeId="7874812549549771289" modelId="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)">
+  <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/7874812549549771289">
     <nodeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="23" startPosition="25" endLine="24" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="24" startPosition="42" endLine="25" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="28" startPosition="39" endLine="29" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -421,7 +421,7 @@
     <unitInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="22" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.RenameMethod" />
     <unitInfo nodeId="7874812549549771310" fileName="RenameMethod_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.RenameMethod_Target" />
   </root>
-  <root nodeId="9118878263582100185" modelId="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)">
+  <root nodeRef="r:670849b7-16c0-48d8-82da-52656f3bd77d(jetbrains.mps.baseLanguage.refactorings)/9118878263582100185">
     <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="25" startPosition="28" endLine="26" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="26" startPosition="46" endLine="27" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="27" startPosition="52" endLine="28" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

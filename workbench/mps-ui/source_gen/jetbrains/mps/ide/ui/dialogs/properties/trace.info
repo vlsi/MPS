@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3995997045458686420" modelId="r:25996281-7301-4cd9-9368-f68f49d5af63(jetbrains.mps.ide.ui.dialogs.properties)">
+  <root nodeRef="r:25996281-7301-4cd9-9368-f68f49d5af63(jetbrains.mps.ide.ui.dialogs.properties)/3995997045458686420">
     <nodeInfo nodeId="3995997045458686421" fileName="StateUtil.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="normal" />
     <nodeInfo nodeId="3995997045458686429" fileName="StateUtil.java" startLine="22" startPosition="75" endLine="23" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3995997045458686442" fileName="StateUtil.java" startLine="26" startPosition="70" endLine="27" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -91,7 +91,7 @@
     <unitInfo nodeId="3995997045458686496" fileName="StateUtil.java" startLine="41" startPosition="55" endLine="45" endPosition="7" unitName="jetbrains.mps.ide.ui.dialogs.properties.StateUtil$1" />
     <unitInfo nodeId="3995997045458686420" fileName="StateUtil.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.StateUtil" />
   </root>
-  <root nodeId="3995997045458695685" modelId="r:25996281-7301-4cd9-9368-f68f49d5af63(jetbrains.mps.ide.ui.dialogs.properties)">
+  <root nodeRef="r:25996281-7301-4cd9-9368-f68f49d5af63(jetbrains.mps.ide.ui.dialogs.properties)/3995997045458695685">
     <nodeInfo nodeId="2613030424380742001" fileName="ModelProperties.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="USE_MODEL_FOLDER_FOR_GENERATION" />
     <nodeInfo nodeId="3995997045458695688" fileName="ModelProperties.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myImportedModels" />
     <nodeInfo nodeId="3995997045458695692" fileName="ModelProperties.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUsedLanguages" />
@@ -341,7 +341,7 @@
     <unitInfo nodeId="3995997045458695857" fileName="ModelProperties.java" startLine="88" startPosition="55" endLine="115" endPosition="5" unitName="jetbrains.mps.ide.ui.dialogs.properties.ModelProperties$1" />
     <unitInfo nodeId="3995997045458695685" fileName="ModelProperties.java" startLine="25" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.ModelProperties" />
   </root>
-  <root nodeId="3995997045458704258" modelId="r:25996281-7301-4cd9-9368-f68f49d5af63(jetbrains.mps.ide.ui.dialogs.properties)">
+  <root nodeRef="r:25996281-7301-4cd9-9368-f68f49d5af63(jetbrains.mps.ide.ui.dialogs.properties)/3995997045458704258">
     <nodeInfo nodeId="3995997045458704832" fileName="MappingSelectTree.java" startLine="27" startPosition="44" endLine="28" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3995997045458704833" fileName="MappingSelectTree.java" startLine="28" startPosition="12" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3995997045458704837" fileName="MappingSelectTree.java" startLine="29" startPosition="66" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -588,7 +588,7 @@
     <unitInfo nodeId="3995997045458704261" fileName="MappingSelectTree.java" startLine="38" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.MappingSelectTree$CheckBoxNodeRenderer" />
     <unitInfo nodeId="3995997045458704258" fileName="MappingSelectTree.java" startLine="26" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.MappingSelectTree" />
   </root>
-  <root nodeId="3995997045458704854" modelId="r:25996281-7301-4cd9-9368-f68f49d5af63(jetbrains.mps.ide.ui.dialogs.properties)">
+  <root nodeRef="r:25996281-7301-4cd9-9368-f68f49d5af63(jetbrains.mps.ide.ui.dialogs.properties)/3995997045458704854">
     <nodeInfo nodeId="3995997045458704857" fileName="EditOperandDialog.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
     <nodeInfo nodeId="3995997045458704860" fileName="EditOperandDialog.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainComponent" />
     <nodeInfo nodeId="3995997045458704863" fileName="EditOperandDialog.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />

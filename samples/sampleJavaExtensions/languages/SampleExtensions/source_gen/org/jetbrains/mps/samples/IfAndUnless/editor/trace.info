@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="393299394024627231" modelId="r:619da97d-f387-4d46-8414-92a0443bdc0b(org.jetbrains.mps.samples.IfAndUnless.editor)">
+  <root nodeRef="r:619da97d-f387-4d46-8414-92a0443bdc0b(org.jetbrains.mps.samples.IfAndUnless.editor)/393299394024627231">
     <nodeInfo nodeId="393299394024627243" fileName="UnlessStatement_Editor.java" startLine="86" startPosition="58" endLine="86" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="393299394024627231" fileName="UnlessStatement_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="393299394024627236" fileName="UnlessStatement_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -195,7 +195,7 @@
     </scopeInfo>
     <unitInfo nodeId="393299394024627231" fileName="UnlessStatement_Editor.java" startLine="19" startPosition="0" endLine="119" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.editor.UnlessStatement_Editor" />
   </root>
-  <root nodeId="954830572075948207" modelId="r:619da97d-f387-4d46-8414-92a0443bdc0b(org.jetbrains.mps.samples.IfAndUnless.editor)">
+  <root nodeRef="r:619da97d-f387-4d46-8414-92a0443bdc0b(org.jetbrains.mps.samples.IfAndUnless.editor)/954830572075948207">
     <nodeInfo nodeId="954830572075974238" fileName="MyIfStatement_Editor.java" startLine="127" startPosition="58" endLine="127" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="954830572075948207" fileName="MyIfStatement_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="954830572075973683" fileName="MyIfStatement_Editor.java" startLine="26" startPosition="89" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -428,7 +428,7 @@
     </scopeInfo>
     <unitInfo nodeId="954830572075948207" fileName="MyIfStatement_Editor.java" startLine="21" startPosition="0" endLine="139" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.editor.MyIfStatement_Editor" />
   </root>
-  <root nodeId="954830572075974239" modelId="r:619da97d-f387-4d46-8414-92a0443bdc0b(org.jetbrains.mps.samples.IfAndUnless.editor)">
+  <root nodeRef="r:619da97d-f387-4d46-8414-92a0443bdc0b(org.jetbrains.mps.samples.IfAndUnless.editor)/954830572075974239">
     <nodeInfo nodeId="954830572075974239" fileName="Flow_Editor.java" startLine="32" startPosition="79" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="954830572075974244" fileName="Flow_Editor.java" startLine="37" startPosition="101" endLine="38" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="954830572075974244" fileName="Flow_Editor.java" startLine="41" startPosition="66" endLine="42" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

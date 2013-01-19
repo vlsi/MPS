@@ -43,7 +43,7 @@
   <unitInfo fileName="NodePropertyConstraint_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint_BehaviorDescriptor" />
   <unitInfo fileName="NodeReferentConstraint_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_BehaviorDescriptor" />
   <unitInfo fileName="NodeScopeFactory_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodeScopeFactory_BehaviorDescriptor" />
-  <root nodeId="1213877261402" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877261402">
     <nodeInfo nodeId="1213877261414" fileName="NodeDefaultSearchScope_Behavior.java" startLine="14" startPosition="129" endLine="15" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877261423" fileName="NodeDefaultSearchScope_Behavior.java" startLine="17" startPosition="135" endLine="18" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877261438" fileName="NodeDefaultSearchScope_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -63,7 +63,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877261402" fileName="NodeDefaultSearchScope_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_Behavior" />
   </root>
-  <root nodeId="1213877292344" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877292344">
     <nodeInfo nodeId="1213877292356" fileName="NodePropertyConstraint_Behavior.java" startLine="14" startPosition="141" endLine="15" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877292365" fileName="NodePropertyConstraint_Behavior.java" startLine="17" startPosition="147" endLine="18" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877292378" fileName="NodePropertyConstraint_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -83,7 +83,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877292344" fileName="NodePropertyConstraint_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint_Behavior" />
   </root>
-  <root nodeId="1213877330449" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877330449">
     <nodeInfo nodeId="1213877330452" fileName="ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914719469" fileName="ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914719484" fileName="ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -118,7 +118,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877330449" fileName="ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior" />
   </root>
-  <root nodeId="1213877345068" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877345068">
     <nodeInfo nodeId="1213877345071" fileName="ConstraintFunction_CanBeAChild_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914719210" fileName="ConstraintFunction_CanBeAChild_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914719225" fileName="ConstraintFunction_CanBeAChild_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -148,7 +148,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877345068" fileName="ConstraintFunction_CanBeAChild_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAChild_Behavior" />
   </root>
-  <root nodeId="1213877399321" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877399321">
     <nodeInfo nodeId="1213877399334" fileName="NodeReferentConstraint_Behavior.java" startLine="14" startPosition="127" endLine="15" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877399345" fileName="NodeReferentConstraint_Behavior.java" startLine="17" startPosition="133" endLine="18" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877399360" fileName="NodeReferentConstraint_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -168,7 +168,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877399321" fileName="NodeReferentConstraint_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_Behavior" />
   </root>
-  <root nodeId="1213877530539" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877530539">
     <nodeInfo nodeId="1213877530542" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877530550" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="20" startPosition="150" endLine="21" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877530556" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="21" startPosition="96" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -214,7 +214,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877530539" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyGetter_Behavior" />
   </root>
-  <root nodeId="1213877537278" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1213877537278">
     <nodeInfo nodeId="1213877537281" fileName="ConstraintFunction_CanBeAParent_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914718716" fileName="ConstraintFunction_CanBeAParent_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914718731" fileName="ConstraintFunction_CanBeAParent_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -244,7 +244,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877537278" fileName="ConstraintFunction_CanBeAParent_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAParent_Behavior" />
   </root>
-  <root nodeId="1217541907773" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1217541907773">
     <nodeInfo nodeId="7432497532426444545" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="23" startPosition="83" endLine="24" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7432497532426444569" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="25" startPosition="27" endLine="26" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7432497532426445444" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="27" startPosition="5" endLine="28" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -355,7 +355,7 @@
     </scopeInfo>
     <unitInfo nodeId="1217541907773" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="19" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior" />
   </root>
-  <root nodeId="1227085021513" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1227085021513">
     <nodeInfo nodeId="1227085030989" fileName="ConstraintFunction_CanBeARoot_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914724172" fileName="ConstraintFunction_CanBeARoot_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914724187" fileName="ConstraintFunction_CanBeARoot_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -382,7 +382,7 @@
     </scopeInfo>
     <unitInfo nodeId="1227085021513" fileName="ConstraintFunction_CanBeARoot_Behavior.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeARoot_Behavior" />
   </root>
-  <root nodeId="1262430001741498895" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1262430001741498895">
     <nodeInfo nodeId="1262430001741498893" fileName="ConstraintFunctionParameter_childConcept_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741498895" fileName="ConstraintFunctionParameter_childConcept_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741498895" fileName="ConstraintFunctionParameter_childConcept_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_dontUseParameterObject_1262430001741498340#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
@@ -396,7 +396,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741498895" fileName="ConstraintFunctionParameter_childConcept_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_childConcept_Behavior" />
   </root>
-  <root nodeId="1262430001741523488" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1262430001741523488">
     <nodeInfo nodeId="1262430001741523486" fileName="ConstraintFunctionParameter_checkedNode_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741523488" fileName="ConstraintFunctionParameter_checkedNode_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741523488" fileName="ConstraintFunctionParameter_checkedNode_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_dontUseParameterObject_1262430001741498340#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
@@ -410,7 +410,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741523488" fileName="ConstraintFunctionParameter_checkedNode_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_checkedNode_Behavior" />
   </root>
-  <root nodeId="1262430001741639195" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1262430001741639195">
     <nodeInfo nodeId="1262430001741639193" fileName="ConstraintFunctionParameter_link_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741639195" fileName="ConstraintFunctionParameter_link_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741639195" fileName="ConstraintFunctionParameter_link_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_dontUseParameterObject_1262430001741498340#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
@@ -424,7 +424,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741639195" fileName="ConstraintFunctionParameter_link_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_link_Behavior" />
   </root>
-  <root nodeId="1262430001741642959" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1262430001741642959">
     <nodeInfo nodeId="1262430001741642957" fileName="ConstraintFunctionParameter_childNode_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642959" fileName="ConstraintFunctionParameter_childNode_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741642959" fileName="ConstraintFunctionParameter_childNode_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_dontUseParameterObject_1262430001741498340#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
@@ -438,7 +438,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741642959" fileName="ConstraintFunctionParameter_childNode_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_childNode_Behavior" />
   </root>
-  <root nodeId="1262430001741703027" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1262430001741703027">
     <nodeInfo nodeId="1262430001741703025" fileName="ConstraintsFunctionParameter_node_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703027" fileName="ConstraintsFunctionParameter_node_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703027" fileName="ConstraintsFunctionParameter_node_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_dontUseParameterObject_1262430001741498340#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
@@ -452,7 +452,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741703027" fileName="ConstraintsFunctionParameter_node_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintsFunctionParameter_node_Behavior" />
   </root>
-  <root nodeId="1262430001741703895" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/1262430001741703895">
     <nodeInfo nodeId="1262430001741703893" fileName="ConstraintFunctionParameter_parentNode_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703895" fileName="ConstraintFunctionParameter_parentNode_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703895" fileName="ConstraintFunctionParameter_parentNode_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_dontUseParameterObject_1262430001741498340#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
@@ -466,7 +466,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741703895" fileName="ConstraintFunctionParameter_parentNode_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunctionParameter_parentNode_Behavior" />
   </root>
-  <root nodeId="2990203945683058804" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/2990203945683058804">
     <nodeInfo nodeId="2990203945683059027" fileName="ConstraintFunction_ReferentSearchScope_Validator_Behavior.java" startLine="24" startPosition="6" endLine="25" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914725375" fileName="ConstraintFunction_ReferentSearchScope_Validator_Behavior.java" startLine="28" startPosition="117" endLine="29" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914725390" fileName="ConstraintFunction_ReferentSearchScope_Validator_Behavior.java" startLine="29" startPosition="301" endLine="30" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -493,7 +493,7 @@
     </scopeInfo>
     <unitInfo nodeId="2990203945683058804" fileName="ConstraintFunction_ReferentSearchScope_Validator_Behavior.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Validator_Behavior" />
   </root>
-  <root nodeId="3044950653914717718" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914717718">
     <nodeInfo nodeId="3044950653914717682" fileName="ConstraintFunction_RefSetHandlerKeepsReference_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914717697" fileName="ConstraintFunction_RefSetHandlerKeepsReference_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914717702" fileName="ConstraintFunction_RefSetHandlerKeepsReference_Behavior.java" startLine="18" startPosition="171" endLine="19" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -514,7 +514,7 @@
     </scopeInfo>
     <unitInfo nodeId="3044950653914717718" fileName="ConstraintFunction_RefSetHandlerKeepsReference_Behavior.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_RefSetHandlerKeepsReference_Behavior" />
   </root>
-  <root nodeId="3044950653914718708" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914718708">
     <nodeInfo nodeId="3044950653914718677" fileName="ConstraintFunction_PropertyValidator_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914718692" fileName="ConstraintFunction_PropertyValidator_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914718697" fileName="ConstraintFunction_PropertyValidator_Behavior.java" startLine="18" startPosition="171" endLine="19" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -534,7 +534,7 @@
     </scopeInfo>
     <unitInfo nodeId="3044950653914718708" fileName="ConstraintFunction_PropertyValidator_Behavior.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyValidator_Behavior" />
   </root>
-  <root nodeId="3044950653914718829" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914718829">
     <nodeInfo nodeId="3044950653914718798" fileName="ConstraintFunction_PropertySetter_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914718813" fileName="ConstraintFunction_PropertySetter_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914718818" fileName="ConstraintFunction_PropertySetter_Behavior.java" startLine="18" startPosition="171" endLine="19" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -554,7 +554,7 @@
     </scopeInfo>
     <unitInfo nodeId="3044950653914718829" fileName="ConstraintFunction_PropertySetter_Behavior.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertySetter_Behavior" />
   </root>
-  <root nodeId="3044950653914720299" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914720299">
     <nodeInfo nodeId="3044950653914720278" fileName="ConstraintFunction_GetAlternativeIcon_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914720293" fileName="ConstraintFunction_GetAlternativeIcon_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914720297" fileName="ConstraintFunction_GetAlternativeIcon_Behavior.java" startLine="18" startPosition="171" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -572,7 +572,7 @@
     </scopeInfo>
     <unitInfo nodeId="3044950653914720299" fileName="ConstraintFunction_GetAlternativeIcon_Behavior.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_GetAlternativeIcon_Behavior" />
   </root>
-  <root nodeId="3044950653914722935" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914722935">
     <nodeInfo nodeId="3044950653914722899" fileName="ConstraintFunction_ReferentSetHandler_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914722914" fileName="ConstraintFunction_ReferentSetHandler_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914722919" fileName="ConstraintFunction_ReferentSetHandler_Behavior.java" startLine="18" startPosition="171" endLine="19" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -593,7 +593,7 @@
     </scopeInfo>
     <unitInfo nodeId="3044950653914722935" fileName="ConstraintFunction_ReferentSetHandler_Behavior.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSetHandler_Behavior" />
   </root>
-  <root nodeId="3044950653914723982" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/3044950653914723982">
     <nodeInfo nodeId="3044950653914723946" fileName="ConstraintFunction_ReferentSearchScope_Presentation_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914723961" fileName="ConstraintFunction_ReferentSearchScope_Presentation_Behavior.java" startLine="17" startPosition="301" endLine="18" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914723966" fileName="ConstraintFunction_ReferentSearchScope_Presentation_Behavior.java" startLine="18" startPosition="177" endLine="19" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -614,7 +614,7 @@
     </scopeInfo>
     <unitInfo nodeId="3044950653914723982" fileName="ConstraintFunction_ReferentSearchScope_Presentation_Behavior.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Presentation_Behavior" />
   </root>
-  <root nodeId="5676632058862813504" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/5676632058862813504">
     <nodeInfo nodeId="5676632058862845524" fileName="ConstraintFunction_ReferentSearchScope_Scope_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5676632058862845525" fileName="ConstraintFunction_ReferentSearchScope_Scope_Behavior.java" startLine="20" startPosition="60" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5676632058862845525" fileName="ConstraintFunction_ReferentSearchScope_Scope_Behavior.java" startLine="21" startPosition="30" endLine="22" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -640,7 +640,7 @@
     <scopeInfo nodeId="5676632058862845525" fileName="ConstraintFunction_ReferentSearchScope_Scope_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0" />
     <unitInfo nodeId="5676632058862813504" fileName="ConstraintFunction_ReferentSearchScope_Scope_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Scope_Behavior" />
   </root>
-  <root nodeId="7494912800760359233" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/7494912800760359233">
     <nodeInfo nodeId="7494912800760359238" fileName="ConstraintFunction_CanBeAnAncestor_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914721344" fileName="ConstraintFunction_CanBeAnAncestor_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914721359" fileName="ConstraintFunction_CanBeAnAncestor_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -669,7 +669,7 @@
     </scopeInfo>
     <unitInfo nodeId="7494912800760359233" fileName="ConstraintFunction_CanBeAnAncestor_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAnAncestor_Behavior" />
   </root>
-  <root nodeId="8952337903384645665" modelId="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)/8952337903384645665">
     <nodeInfo nodeId="8952337903384645678" fileName="ConceptConstraints_Behavior.java" startLine="21" startPosition="82" endLine="22" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6261424444345978693" fileName="ConceptConstraints_Behavior.java" startLine="25" startPosition="100" endLine="26" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4960272075650318163" fileName="ConceptConstraints_Behavior.java" startLine="31" startPosition="42" endLine="32" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

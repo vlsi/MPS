@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="5202024118203914179" modelId="r:f9895147-288e-44e3-852e-62d0bff7f07d(jetbrains.mps.debugger.decisionTable.constraints)">
+  <root nodeRef="r:f9895147-288e-44e3-852e-62d0bff7f07d(jetbrains.mps.debugger.decisionTable.constraints)/5202024118203914179">
     <nodeInfo nodeId="5202024118203914179" fileName="XVariableReference_Constraints.java" startLine="21" startPosition="43" endLine="22" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5202024118203914179" fileName="XVariableReference_Constraints.java" startLine="26" startPosition="43" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5202024118203914179" fileName="XVariableReference_Constraints.java" startLine="31" startPosition="200" endLine="32" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -103,7 +103,7 @@
     <unitInfo nodeId="5202024118203914179" fileName="XVariableReference_Constraints.java" startLine="44" startPosition="31" endLine="55" endPosition="5" unitName="jetbrains.mps.debugger.decisionTable.constraints.XVariableReference_Constraints$1" />
     <unitInfo nodeId="5202024118203914179" fileName="XVariableReference_Constraints.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.constraints.XVariableReference_Constraints" />
   </root>
-  <root nodeId="5202024118203919168" modelId="r:f9895147-288e-44e3-852e-62d0bff7f07d(jetbrains.mps.debugger.decisionTable.constraints)">
+  <root nodeRef="r:f9895147-288e-44e3-852e-62d0bff7f07d(jetbrains.mps.debugger.decisionTable.constraints)/5202024118203919168">
     <nodeInfo nodeId="5202024118203919168" fileName="YVariableReference_Constraints.java" startLine="21" startPosition="43" endLine="22" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5202024118203919168" fileName="YVariableReference_Constraints.java" startLine="26" startPosition="43" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5202024118203919168" fileName="YVariableReference_Constraints.java" startLine="31" startPosition="200" endLine="32" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -205,7 +205,7 @@
     <unitInfo nodeId="5202024118203919168" fileName="YVariableReference_Constraints.java" startLine="44" startPosition="31" endLine="55" endPosition="5" unitName="jetbrains.mps.debugger.decisionTable.constraints.YVariableReference_Constraints$1" />
     <unitInfo nodeId="5202024118203919168" fileName="YVariableReference_Constraints.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.constraints.YVariableReference_Constraints" />
   </root>
-  <root nodeId="5202024118204000603" modelId="r:f9895147-288e-44e3-852e-62d0bff7f07d(jetbrains.mps.debugger.decisionTable.constraints)">
+  <root nodeRef="r:f9895147-288e-44e3-852e-62d0bff7f07d(jetbrains.mps.debugger.decisionTable.constraints)/5202024118204000603">
     <nodeInfo nodeId="5202024118204000603" fileName="DecideOperation_Constraints.java" startLine="17" startPosition="40" endLine="18" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5202024118204000603" fileName="DecideOperation_Constraints.java" startLine="22" startPosition="43" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5202024118204000603" fileName="DecideOperation_Constraints.java" startLine="27" startPosition="200" endLine="28" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

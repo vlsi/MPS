@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1167245582276" modelId="r:00000000-0000-4000-0000-011c8959057d(jetbrains.mps.baseLanguage.logging.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959057d(jetbrains.mps.baseLanguage.logging.editor)/1167245582276">
     <nodeInfo nodeId="1167245583616" fileName="LogStatement_Editor.java" startLine="110" startPosition="58" endLine="110" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1167245583619" fileName="LogStatement_Editor.java" startLine="127" startPosition="58" endLine="127" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1167245582276" fileName="LogStatement_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -307,7 +307,7 @@
     </scopeInfo>
     <unitInfo nodeId="1167245582276" fileName="LogStatement_Editor.java" startLine="24" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.editor.LogStatement_Editor" />
   </root>
-  <root nodeId="1168401886773" modelId="r:00000000-0000-4000-0000-011c8959057d(jetbrains.mps.baseLanguage.logging.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959057d(jetbrains.mps.baseLanguage.logging.editor)/1168401886773">
     <nodeInfo nodeId="1168401886773" fileName="PrintStatement_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168401913942" fileName="PrintStatement_Editor.java" startLine="30" startPosition="106" endLine="31" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1168401913942" fileName="PrintStatement_Editor.java" startLine="34" startPosition="66" endLine="35" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Editor_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.Editor_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="415" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor" />
-  <root nodeId="1083928804390" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1083928804390">
     <nodeInfo nodeId="1083928804390" fileName="_YesNoDefault_Enum.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1083928804390" fileName="_YesNoDefault_Enum.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1083928804390" fileName="_YesNoDefault_Enum.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -112,7 +112,7 @@
     <unitInfo nodeId="1083928804390" fileName="_YesNoDefault_Enum.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._YesNoDefault_Enum" />
     <unitInfo nodeId="1083928804390" fileName="_YesNoDefault_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._YesNoDefault_Enum_PropertySupport" />
   </root>
-  <root nodeId="1083952545109" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1083952545109">
     <nodeInfo nodeId="1083952545109" fileName="_Colors_Enum.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1083952545109" fileName="_Colors_Enum.java" startLine="31" startPosition="27" endLine="32" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1083952545109" fileName="_Colors_Enum.java" startLine="35" startPosition="36" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -282,7 +282,7 @@
     <unitInfo nodeId="1083952545109" fileName="_Colors_Enum.java" startLine="9" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._Colors_Enum" />
     <unitInfo nodeId="1083952545109" fileName="_Colors_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._Colors_Enum_PropertySupport" />
   </root>
-  <root nodeId="1101211480448" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1101211480448">
     <nodeInfo nodeId="1101211480448" fileName="_FontStyle_Enum.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1101211480448" fileName="_FontStyle_Enum.java" startLine="18" startPosition="27" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1101211480448" fileName="_FontStyle_Enum.java" startLine="22" startPosition="36" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -400,7 +400,7 @@
     <unitInfo nodeId="1101211480448" fileName="_FontStyle_Enum.java" startLine="9" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._FontStyle_Enum" />
     <unitInfo nodeId="1101211480448" fileName="_FontStyle_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._FontStyle_Enum_PropertySupport" />
   </root>
-  <root nodeId="1130847686886" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1130847686886">
     <nodeInfo nodeId="1130847686886" fileName="UnderlineStyle.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1130847686886" fileName="UnderlineStyle.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1130847686886" fileName="UnderlineStyle.java" startLine="20" startPosition="36" endLine="21" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -510,7 +510,7 @@
     <unitInfo nodeId="1130847686886" fileName="UnderlineStyle.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.UnderlineStyle" />
     <unitInfo nodeId="1130847686886" fileName="UnderlineStyle_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.UnderlineStyle_PropertySupport" />
   </root>
-  <root nodeId="1130926557197" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1130926557197">
     <nodeInfo nodeId="1130926557197" fileName="FocusPolicy.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1130926557197" fileName="FocusPolicy.java" startLine="17" startPosition="27" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1130926557197" fileName="FocusPolicy.java" startLine="21" startPosition="36" endLine="22" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -624,7 +624,7 @@
     <unitInfo nodeId="1130926557197" fileName="FocusPolicy.java" startLine="9" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.FocusPolicy" />
     <unitInfo nodeId="1130926557197" fileName="FocusPolicy_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.FocusPolicy_PropertySupport" />
   </root>
-  <root nodeId="1138197387103" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1138197387103">
     <nodeInfo nodeId="1138197387103" fileName="_Layout_Constraints_Enum.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1138197387103" fileName="_Layout_Constraints_Enum.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1138197387103" fileName="_Layout_Constraints_Enum.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -734,7 +734,7 @@
     <unitInfo nodeId="1138197387103" fileName="_Layout_Constraints_Enum.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._Layout_Constraints_Enum" />
     <unitInfo nodeId="1138197387103" fileName="_Layout_Constraints_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._Layout_Constraints_Enum_PropertySupport" />
   </root>
-  <root nodeId="1139535328871" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1139535328871">
     <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="55" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="57" startPosition="27" endLine="58" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="61" startPosition="36" endLine="62" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1008,7 +1008,7 @@
     <unitInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="9" startPosition="0" endLine="268" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellActionId" />
     <unitInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellActionId_PropertySupport" />
   </root>
-  <root nodeId="1139744471051" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1139744471051">
     <nodeInfo nodeId="1139744471051" fileName="_ImageAlignment_Enum.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1139744471051" fileName="_ImageAlignment_Enum.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139744471051" fileName="_ImageAlignment_Enum.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1118,7 +1118,7 @@
     <unitInfo nodeId="1139744471051" fileName="_ImageAlignment_Enum.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._ImageAlignment_Enum" />
     <unitInfo nodeId="1139744471051" fileName="_ImageAlignment_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._ImageAlignment_Enum_PropertySupport" />
   </root>
-  <root nodeId="1140813780565" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1140813780565">
     <nodeInfo nodeId="1140813780565" fileName="RightTransformAnchorTag.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1140813780565" fileName="RightTransformAnchorTag.java" startLine="20" startPosition="27" endLine="21" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1140813780565" fileName="RightTransformAnchorTag.java" startLine="24" startPosition="36" endLine="25" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1244,7 +1244,7 @@
     <unitInfo nodeId="1140813780565" fileName="RightTransformAnchorTag.java" startLine="9" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.RightTransformAnchorTag" />
     <unitInfo nodeId="1140813780565" fileName="RightTransformAnchorTag_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.RightTransformAnchorTag_PropertySupport" />
   </root>
-  <root nodeId="1141091053936" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1141091053936">
     <nodeInfo nodeId="1141091053936" fileName="CellKeyMapCaretPolicy.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1141091053936" fileName="CellKeyMapCaretPolicy.java" startLine="17" startPosition="27" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1141091053936" fileName="CellKeyMapCaretPolicy.java" startLine="21" startPosition="36" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1358,7 +1358,7 @@
     <unitInfo nodeId="1141091053936" fileName="CellKeyMapCaretPolicy.java" startLine="9" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellKeyMapCaretPolicy" />
     <unitInfo nodeId="1141091053936" fileName="CellKeyMapCaretPolicy_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellKeyMapCaretPolicy_PropertySupport" />
   </root>
-  <root nodeId="1143891911797" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1143891911797">
     <nodeInfo nodeId="1143891911797" fileName="_LeftRight_Enum.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1143891911797" fileName="_LeftRight_Enum.java" startLine="15" startPosition="27" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1143891911797" fileName="_LeftRight_Enum.java" startLine="19" startPosition="36" endLine="20" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1464,7 +1464,7 @@
     <unitInfo nodeId="1143891911797" fileName="_LeftRight_Enum.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._LeftRight_Enum" />
     <unitInfo nodeId="1143891911797" fileName="_LeftRight_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._LeftRight_Enum_PropertySupport" />
   </root>
-  <root nodeId="1197893505573" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1197893505573">
     <nodeInfo nodeId="1197893505573" fileName="_CaretPosition_Enum.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1197893505573" fileName="_CaretPosition_Enum.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197893505573" fileName="_CaretPosition_Enum.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1574,7 +1574,7 @@
     <unitInfo nodeId="1197893505573" fileName="_CaretPosition_Enum.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._CaretPosition_Enum" />
     <unitInfo nodeId="1197893505573" fileName="_CaretPosition_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._CaretPosition_Enum_PropertySupport" />
   </root>
-  <root nodeId="1201268793545" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1201268793545">
     <nodeInfo nodeId="1201268793545" fileName="SelectPosition.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1201268793545" fileName="SelectPosition.java" startLine="15" startPosition="27" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1201268793545" fileName="SelectPosition.java" startLine="19" startPosition="36" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1680,7 +1680,7 @@
     <unitInfo nodeId="1201268793545" fileName="SelectPosition.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.SelectPosition" />
     <unitInfo nodeId="1201268793545" fileName="SelectPosition_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.SelectPosition_PropertySupport" />
   </root>
-  <root nodeId="1216308376568" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1216308376568">
     <nodeInfo nodeId="1216308376568" fileName="_NextLine_Enum.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1216308376568" fileName="_NextLine_Enum.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1216308376568" fileName="_NextLine_Enum.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1790,7 +1790,7 @@
     <unitInfo nodeId="1216308376568" fileName="_NextLine_Enum.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._NextLine_Enum" />
     <unitInfo nodeId="1216308376568" fileName="_NextLine_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._NextLine_Enum_PropertySupport" />
   </root>
-  <root nodeId="1226504633752" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1226504633752">
     <nodeInfo nodeId="1226504633752" fileName="_Enum_Measure.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1226504633752" fileName="_Enum_Measure.java" startLine="15" startPosition="27" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226504633752" fileName="_Enum_Measure.java" startLine="19" startPosition="36" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1896,7 +1896,7 @@
     <unitInfo nodeId="1226504633752" fileName="_Enum_Measure.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._Enum_Measure" />
     <unitInfo nodeId="1226504633752" fileName="_Enum_Measure_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._Enum_Measure_PropertySupport" />
   </root>
-  <root nodeId="1235999709834" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1235999709834">
     <nodeInfo nodeId="1235999709834" fileName="AlignEnum.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1235999709834" fileName="AlignEnum.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1235999709834" fileName="AlignEnum.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2006,7 +2006,7 @@
     <unitInfo nodeId="1235999709834" fileName="AlignEnum.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.AlignEnum" />
     <unitInfo nodeId="1235999709834" fileName="AlignEnum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.AlignEnum_PropertySupport" />
   </root>
-  <root nodeId="1239805001815" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1239805001815">
     <nodeInfo nodeId="1239805001815" fileName="_FloatOrInteger_String_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239805001815" fileName="_FloatOrInteger_String_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239805001815" fileName="_FloatOrInteger_String_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2024,7 +2024,7 @@
     </scopeInfo>
     <unitInfo nodeId="1239805001815" fileName="_FloatOrInteger_String_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._FloatOrInteger_String_PropertySupport" />
   </root>
-  <root nodeId="6820251943131810951" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/6820251943131810951">
     <nodeInfo nodeId="6820251943131810951" fileName="TableComponentEnum.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="6820251943131810951" fileName="TableComponentEnum.java" startLine="15" startPosition="27" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6820251943131810951" fileName="TableComponentEnum.java" startLine="19" startPosition="36" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2130,7 +2130,7 @@
     <unitInfo nodeId="6820251943131810951" fileName="TableComponentEnum.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.TableComponentEnum" />
     <unitInfo nodeId="6820251943131810951" fileName="TableComponentEnum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.TableComponentEnum_PropertySupport" />
   </root>
-  <root nodeId="7620205565664606377" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/7620205565664606377">
     <nodeInfo nodeId="7620205565664606377" fileName="DefaultBaseLineEnum.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="7620205565664606377" fileName="DefaultBaseLineEnum.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7620205565664606377" fileName="DefaultBaseLineEnum.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2240,7 +2240,7 @@
     <unitInfo nodeId="7620205565664606377" fileName="DefaultBaseLineEnum.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.DefaultBaseLineEnum" />
     <unitInfo nodeId="7620205565664606377" fileName="DefaultBaseLineEnum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.DefaultBaseLineEnum_PropertySupport" />
   </root>
-  <root nodeId="8255250703325730686" modelId="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/8255250703325730686">
     <nodeInfo nodeId="8255250703325730686" fileName="ScriptSwitchEnum.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="8255250703325730686" fileName="ScriptSwitchEnum.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8255250703325730686" fileName="ScriptSwitchEnum.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

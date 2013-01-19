@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6896005762093561042" modelId="r:2b3a069e-e3c3-42b0-a488-e42c2c3e5ae0(jetbrains.mps.core.properties.constraints)">
+  <root nodeRef="r:2b3a069e-e3c3-42b0-a488-e42c2c3e5ae0(jetbrains.mps.core.properties.constraints)/6896005762093561042">
     <nodeInfo nodeId="6896005762093561423" fileName="PropEscapeUtil.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="hexDigit" />
     <nodeInfo nodeId="6896005762093561062" fileName="PropEscapeUtil.java" startLine="26" startPosition="89" endLine="27" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6896005762093561068" fileName="PropEscapeUtil.java" startLine="27" startPosition="28" endLine="28" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4832363360995121627" modelId="r:80bd416f-3ae2-40ea-8a6b-f0c4572f9ff8(jetbrains.mps.ide.actions.nodes)">
+  <root nodeRef="r:80bd416f-3ae2-40ea-8a6b-f0c4572f9ff8(jetbrains.mps.ide.actions.nodes)/4832363360995121627">
     <nodeInfo nodeId="4832363360995121656" fileName="GoToRulesHelper.java" startLine="41" startPosition="97" endLine="42" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1071422968910407171" fileName="GoToRulesHelper.java" startLine="43" startPosition="28" endLine="44" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1071422968910407148" fileName="GoToRulesHelper.java" startLine="45" startPosition="35" endLine="46" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

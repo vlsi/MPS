@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1194533670612" modelId="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)/1194533670612">
     <nodeInfo nodeId="1194537616584" fileName="DependenciesCollector.java" startLine="26" startPosition="120" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1194537876793" fileName="DependenciesCollector.java" startLine="29" startPosition="156" endLine="30" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1194538029691" fileName="DependenciesCollector.java" startLine="32" startPosition="5" endLine="33" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -500,10 +500,10 @@
     <unitInfo nodeId="1194969746832" fileName="DependenciesCollector.java" startLine="115" startPosition="165" endLine="119" endPosition="31" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$1" />
     <unitInfo nodeId="1194533670612" fileName="DependenciesCollector.java" startLine="22" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector" />
   </root>
-  <root nodeId="1196177069451" modelId="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)/1196177069451">
     <unitInfo nodeId="1196177069451" fileName="InferenceMethod.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.InferenceMethod" />
   </root>
-  <root nodeId="1223644778913" modelId="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)/1223644778913">
     <unitInfo nodeId="1223644778913" fileName="CheckingMethod.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.CheckingMethod" />
   </root>
 </debugInfo>

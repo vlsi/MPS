@@ -14,7 +14,7 @@
   <unitInfo fileName="DebuggerReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference_BehaviorDescriptor" />
   <unitInfo fileName="DebuggerType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.DebuggerType_BehaviorDescriptor" />
   <unitInfo fileName="GetDebuggerSettings_Function_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function_BehaviorDescriptor" />
-  <root nodeId="1262430001741703317" modelId="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)">
+  <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/1262430001741703317">
     <nodeInfo nodeId="1262430001741703315" fileName="GetDebuggerSettings_Function_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703317" fileName="GetDebuggerSettings_Function_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741703317" fileName="GetDebuggerSettings_Function_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
@@ -28,7 +28,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741703317" fileName="GetDebuggerSettings_Function_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function_Behavior" />
   </root>
-  <root nodeId="1262430001741720248" modelId="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)">
+  <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/1262430001741720248">
     <nodeInfo nodeId="1262430001741720246" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="16" startPosition="84" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914726367" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914726382" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -52,7 +52,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741720248" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableToConcept_Behavior" />
   </root>
-  <root nodeId="2511103526757024634" modelId="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)">
+  <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/2511103526757024634">
     <nodeInfo nodeId="2511103526757024634" fileName="DebuggerReference_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="2511103526757024636" fileName="DebuggerReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="2511103526757024634" fileName="DebuggerReference_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
@@ -60,7 +60,7 @@
     </scopeInfo>
     <unitInfo nodeId="2511103526757024634" fileName="DebuggerReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference_Behavior" />
   </root>
-  <root nodeId="3044950653914719163" modelId="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)">
+  <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/3044950653914719163">
     <nodeInfo nodeId="3044950653914719137" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914719152" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914719157" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="18" startPosition="178" endLine="19" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

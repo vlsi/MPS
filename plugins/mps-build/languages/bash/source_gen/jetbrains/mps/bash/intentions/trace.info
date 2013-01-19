@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.bash.intentions.IntentionsDescriptor" />
-  <root nodeId="1109366303090554669" modelId="r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)">
+  <root nodeRef="r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)/1109366303090554669">
     <nodeInfo nodeId="1109366303090554669" fileName="CommentOutCommand_Intention.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1109366303090554669" fileName="CommentOutCommand_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1109366303090554669" fileName="CommentOutCommand_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -95,7 +95,7 @@
     <unitInfo nodeId="1109366303090554669" fileName="CommentOutCommand_Intention.java" startLine="75" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.bash.intentions.CommentOutCommand_Intention$IntentionImplementation" />
     <unitInfo nodeId="1109366303090554669" fileName="CommentOutCommand_Intention.java" startLine="19" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.bash.intentions.CommentOutCommand_Intention" />
   </root>
-  <root nodeId="1635896182103803015" modelId="r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)">
+  <root nodeRef="r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)/1635896182103803015">
     <nodeInfo nodeId="1635896182103803015" fileName="CreateProperVariableReferance_Intention.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1635896182103803015" fileName="CreateProperVariableReferance_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1635896182103803015" fileName="CreateProperVariableReferance_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -178,7 +178,7 @@
     <unitInfo nodeId="1635896182103803015" fileName="CreateProperVariableReferance_Intention.java" startLine="68" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.bash.intentions.CreateProperVariableReferance_Intention$IntentionImplementation" />
     <unitInfo nodeId="1635896182103803015" fileName="CreateProperVariableReferance_Intention.java" startLine="19" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.bash.intentions.CreateProperVariableReferance_Intention" />
   </root>
-  <root nodeId="2362837471607836376" modelId="r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)">
+  <root nodeRef="r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)/2362837471607836376">
     <nodeInfo nodeId="2362837471607836376" fileName="AddCommentedText_Intention.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="2362837471607836376" fileName="AddCommentedText_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2362837471607836376" fileName="AddCommentedText_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -275,7 +275,7 @@
     <unitInfo nodeId="2362837471607836376" fileName="AddCommentedText_Intention.java" startLine="80" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.bash.intentions.AddCommentedText_Intention$IntentionImplementation" />
     <unitInfo nodeId="2362837471607836376" fileName="AddCommentedText_Intention.java" startLine="19" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.bash.intentions.AddCommentedText_Intention" />
   </root>
-  <root nodeId="2362837471608610775" modelId="r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)">
+  <root nodeRef="r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)/2362837471608610775">
     <nodeInfo nodeId="2362837471608610775" fileName="AsyncExecution_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="2362837471608610775" fileName="AsyncExecution_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2362837471608610775" fileName="AsyncExecution_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -371,7 +371,7 @@
     <unitInfo nodeId="2362837471608610775" fileName="AsyncExecution_Intention.java" startLine="82" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.bash.intentions.AsyncExecution_Intention$IntentionImplementation" />
     <unitInfo nodeId="2362837471608610775" fileName="AsyncExecution_Intention.java" startLine="21" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.bash.intentions.AsyncExecution_Intention" />
   </root>
-  <root nodeId="3138930635767444923" modelId="r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)">
+  <root nodeRef="r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)/3138930635767444923">
     <nodeInfo nodeId="3138930635767444923" fileName="UncommentCommand_Intention.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="3138930635767444923" fileName="UncommentCommand_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3138930635767444923" fileName="UncommentCommand_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

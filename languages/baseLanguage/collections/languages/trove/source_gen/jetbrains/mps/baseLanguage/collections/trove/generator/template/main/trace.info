@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="20" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.QueriesGenerated" />
   <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.generator.template.main.StringUtils" />
-  <root nodeId="5499565529811338419" modelId="r:ebb8ae5f-56d5-4098-b394-5abea5520e3a(jetbrains.mps.baseLanguage.collections.trove.generator.template.main@generator)">
+  <root nodeRef="r:ebb8ae5f-56d5-4098-b394-5abea5520e3a(jetbrains.mps.baseLanguage.collections.trove.generator.template.main@generator)/5499565529811338419">
     <nodeInfo nodeId="4737294400113452187" fileName="QueriesGenerated.java" startLine="21" startPosition="154" endLine="22" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4737294400113452193" fileName="QueriesGenerated.java" startLine="22" startPosition="139" endLine="23" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5499565529811713158" fileName="QueriesGenerated.java" startLine="26" startPosition="154" endLine="27" endPosition="344" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

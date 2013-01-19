@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2114063490211106082" modelId="r:d864a11b-e866-4f4e-9918-3263949314ec(jetbrains.mps.actions.runtime.impl)">
+  <root nodeRef="r:d864a11b-e866-4f4e-9918-3263949314ec(jetbrains.mps.actions.runtime.impl)/2114063490211106082">
     <nodeInfo nodeId="2114063490211283609" fileName="ChildSubstituteActionsUtil.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2114063490211317371" fileName="ChildSubstituteActionsUtil.java" startLine="43" startPosition="66" endLine="44" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2114063490211317382" fileName="ChildSubstituteActionsUtil.java" startLine="44" startPosition="77" endLine="45" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -238,7 +238,7 @@
     <unitInfo nodeId="980957902828767835" fileName="ChildSubstituteActionsUtil.java" startLine="80" startPosition="51" endLine="88" endPosition="5" unitName="jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil$1" />
     <unitInfo nodeId="2114063490211106082" fileName="ChildSubstituteActionsUtil.java" startLine="37" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil" />
   </root>
-  <root nodeId="3183807064450207102" modelId="r:d864a11b-e866-4f4e-9918-3263949314ec(jetbrains.mps.actions.runtime.impl)">
+  <root nodeRef="r:d864a11b-e866-4f4e-9918-3263949314ec(jetbrains.mps.actions.runtime.impl)/3183807064450207102">
     <nodeInfo nodeId="3183807064450235849" fileName="ActionsUtil.java" startLine="12" startPosition="55" endLine="13" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3183807064450207104" fileName="ActionsUtil.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ActionsUtil#()V" />
     <nodeInfo nodeId="3183807064450233781" fileName="ActionsUtil.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInstanceOfIType#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -250,7 +250,7 @@
     </scopeInfo>
     <unitInfo nodeId="3183807064450207102" fileName="ActionsUtil.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.actions.runtime.impl.ActionsUtil" />
   </root>
-  <root nodeId="580018013243964801" modelId="r:d864a11b-e866-4f4e-9918-3263949314ec(jetbrains.mps.actions.runtime.impl)">
+  <root nodeRef="r:d864a11b-e866-4f4e-9918-3263949314ec(jetbrains.mps.actions.runtime.impl)/580018013243964801">
     <nodeInfo nodeId="580018013244120233" fileName="NodeFactoryUtil.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="580018013244133966" fileName="NodeFactoryUtil.java" startLine="29" startPosition="96" endLine="30" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="580018013244133982" fileName="NodeFactoryUtil.java" startLine="31" startPosition="41" endLine="32" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -306,7 +306,7 @@
     <unitInfo nodeId="580018013244136490" fileName="NodeFactoryUtil.java" startLine="39" startPosition="17" endLine="43" endPosition="5" unitName="jetbrains.mps.actions.runtime.impl.NodeFactoryUtil$2" />
     <unitInfo nodeId="580018013243964801" fileName="NodeFactoryUtil.java" startLine="23" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.actions.runtime.impl.NodeFactoryUtil" />
   </root>
-  <root nodeId="580018013244146960" modelId="r:d864a11b-e866-4f4e-9918-3263949314ec(jetbrains.mps.actions.runtime.impl)">
+  <root nodeRef="r:d864a11b-e866-4f4e-9918-3263949314ec(jetbrains.mps.actions.runtime.impl)/580018013244146960">
     <nodeInfo nodeId="580018013244304334" fileName="SideTransformUtil.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4593006192738256309" fileName="SideTransformUtil.java" startLine="47" startPosition="162" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="580018013244312033" fileName="SideTransformUtil.java" startLine="50" startPosition="38" endLine="51" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -499,7 +499,7 @@
     <unitInfo nodeId="580018013244306308" fileName="SideTransformUtil.java" startLine="89" startPosition="20" endLine="93" endPosition="7" unitName="jetbrains.mps.actions.runtime.impl.SideTransformUtil$5" />
     <unitInfo nodeId="580018013244146960" fileName="SideTransformUtil.java" startLine="41" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.actions.runtime.impl.SideTransformUtil" />
   </root>
-  <root nodeId="7184282099853726941" modelId="r:d864a11b-e866-4f4e-9918-3263949314ec(jetbrains.mps.actions.runtime.impl)">
+  <root nodeRef="r:d864a11b-e866-4f4e-9918-3263949314ec(jetbrains.mps.actions.runtime.impl)/7184282099853726941">
     <nodeInfo nodeId="7184282099853726976" fileName="NodeIconUtil.java" startLine="16" startPosition="134" endLine="17" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7184282099853727130" fileName="NodeIconUtil.java" startLine="18" startPosition="5" endLine="19" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7184282099853726943" fileName="NodeIconUtil.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeIconUtil#()V" />

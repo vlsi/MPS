@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2204726755035753584" modelId="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)">
+  <root nodeRef="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)/2204726755035753584">
     <nodeInfo nodeId="5220699420101818583" fileName="JXSingleTaskPaneContainer.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTpanes" />
     <nodeInfo nodeId="5220699420101882976" fileName="JXSingleTaskPaneContainer.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTpanes_trans" />
     <nodeInfo nodeId="5220699420101874644" fileName="JXSingleTaskPaneContainer.java" startLine="20" startPosition="68" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -82,7 +82,7 @@
     <unitInfo nodeId="5220699420101874625" fileName="JXSingleTaskPaneContainer.java" startLine="18" startPosition="56" endLine="34" endPosition="3" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPaneContainer$1" />
     <unitInfo nodeId="2204726755035753584" fileName="JXSingleTaskPaneContainer.java" startLine="15" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPaneContainer" />
   </root>
-  <root nodeId="5220699420101883037" modelId="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)">
+  <root nodeRef="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)/5220699420101883037">
     <nodeInfo nodeId="3784331761033100070" fileName="JXSingleTaskPane.java" startLine="8" startPosition="29" endLine="9" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5220699420101883098" fileName="JXSingleTaskPane.java" startLine="13" startPosition="47" endLine="14" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5220699420101883051" fileName="JXSingleTaskPane.java" startLine="15" startPosition="51" endLine="16" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -104,7 +104,7 @@
     </scopeInfo>
     <unitInfo nodeId="5220699420101883037" fileName="JXSingleTaskPane.java" startLine="7" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ui.swing.runtime.JXSingleTaskPane" />
   </root>
-  <root nodeId="7948103825060305166" modelId="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)">
+  <root nodeRef="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)/7948103825060305166">
     <nodeInfo nodeId="7948103825060355728" fileName="DockLayout.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ZERO" />
     <nodeInfo nodeId="7948103825060361344" fileName="DockLayout.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MAX" />
     <nodeInfo nodeId="7948103825060319924" fileName="DockLayout.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="componentData" />
@@ -356,7 +356,7 @@
     <scopeInfo nodeId="7948103825060355868" fileName="DockLayout.java" startLine="174" startPosition="0" endLine="205" endPosition="0" />
     <unitInfo nodeId="7948103825060305166" fileName="DockLayout.java" startLine="17" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.ui.swing.runtime.DockLayout" />
   </root>
-  <root nodeId="7948103825060318837" modelId="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)">
+  <root nodeRef="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)/7948103825060318837">
     <nodeInfo nodeId="7948103825060318861" fileName="DockLayoutData.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="7948103825060318853" fileName="DockLayoutData.java" startLine="15" startPosition="31" endLine="16" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7948103825060319916" fileName="DockLayoutData.java" startLine="21" startPosition="33" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -380,7 +380,7 @@
     </scopeInfo>
     <unitInfo nodeId="7948103825060318837" fileName="DockLayoutData.java" startLine="6" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ui.swing.runtime.DockLayoutData" />
   </root>
-  <root nodeId="8717063129899353109" modelId="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)">
+  <root nodeRef="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)/8717063129899353109">
     <nodeInfo nodeId="8717063129899353842" fileName="JComponentIterator.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="panel" />
     <nodeInfo nodeId="8717063129899353845" fileName="JComponentIterator.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="children" />
     <nodeInfo nodeId="8717063129899353849" fileName="JComponentIterator.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="idx" />
@@ -431,7 +431,7 @@
     <scopeInfo nodeId="8717063129899353974" fileName="JComponentIterator.java" startLine="45" startPosition="0" endLine="53" endPosition="0" />
     <unitInfo nodeId="8717063129899353109" fileName="JComponentIterator.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ui.swing.runtime.JComponentIterator" />
   </root>
-  <root nodeId="9201869079511422099" modelId="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)">
+  <root nodeRef="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)/9201869079511422099">
     <nodeInfo nodeId="9201869079511422971" fileName="VerticalStackLayout.java" startLine="22" startPosition="44" endLine="23" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9201869079511423046" fileName="VerticalStackLayout.java" startLine="23" startPosition="41" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9201869079511423052" fileName="VerticalStackLayout.java" startLine="24" startPosition="16" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1180688328445" modelId="r:00000000-0000-4000-0000-011c895905b0(jetbrains.mps.ypath.treepaths)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905b0(jetbrains.mps.ypath.treepaths)/1180688328445">
     <nodeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="13" startPosition="33" endLine="14" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1180688328445" fileName="FileTreePath.java" startLine="17" startPosition="39" endLine="18" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1180688350262" fileName="FileTreePath.java" startLine="22" startPosition="42" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

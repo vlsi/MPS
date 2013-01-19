@@ -5,7 +5,7 @@
   <unitInfo fileName="InputFieldReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.calculator.behavior.InputFieldReference_BehaviorDescriptor" />
   <unitInfo fileName="InputField_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.calculator.behavior.InputField_BehaviorDescriptor" />
   <unitInfo fileName="OutputField_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.calculator.behavior.OutputField_BehaviorDescriptor" />
-  <root nodeId="4159153485696906651" modelId="r:97129371-9ac5-4a71-bfd5-5b11db119de9(jetbrains.mps.calculator.behavior)">
+  <root nodeRef="r:97129371-9ac5-4a71-bfd5-5b11db119de9(jetbrains.mps.calculator.behavior)/4159153485696906651">
     <nodeInfo nodeId="4159153485696906725" fileName="Calculator_Behavior.java" startLine="16" startPosition="99" endLine="17" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4159153485696906738" fileName="Calculator_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4159153485696906651" fileName="Calculator_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

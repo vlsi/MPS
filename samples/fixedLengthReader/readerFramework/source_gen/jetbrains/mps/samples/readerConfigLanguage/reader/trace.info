@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3515521059660696290" modelId="r:5ceb4cd2-85c0-4fdb-aeb0-9917270f3853(jetbrains.mps.samples.readerConfigLanguage.reader)">
+  <root nodeRef="r:5ceb4cd2-85c0-4fdb-aeb0-9917270f3853(jetbrains.mps.samples.readerConfigLanguage.reader)/3515521059660696290">
     <nodeInfo nodeId="3515521059660696292" fileName="ReaderStrategy.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReaderStrategy#(Ljava/lang/String;Ljava/lang/Class;)V" />
     <nodeInfo nodeId="3515521059660696300" fileName="ReaderStrategy.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="AddFieldExtractor#(IILjava/lang/String;)V" />
     <scopeInfo nodeId="3515521059660696299" fileName="ReaderStrategy.java" startLine="7" startPosition="64" endLine="7" endPosition="64" />
@@ -16,7 +16,7 @@
     </scopeInfo>
     <unitInfo nodeId="3515521059660696290" fileName="ReaderStrategy.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.reader.ReaderStrategy" />
   </root>
-  <root nodeId="3515521059660696316" modelId="r:5ceb4cd2-85c0-4fdb-aeb0-9917270f3853(jetbrains.mps.samples.readerConfigLanguage.reader)">
+  <root nodeRef="r:5ceb4cd2-85c0-4fdb-aeb0-9917270f3853(jetbrains.mps.samples.readerConfigLanguage.reader)/3515521059660696316">
     <nodeInfo nodeId="3515521059660696318" fileName="Reader.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Reader#()V" />
     <nodeInfo nodeId="3515521059660696322" fileName="Reader.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="AddStrategy#(Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;)V" />
     <scopeInfo nodeId="3515521059660696321" fileName="Reader.java" startLine="7" startPosition="19" endLine="7" endPosition="19" />

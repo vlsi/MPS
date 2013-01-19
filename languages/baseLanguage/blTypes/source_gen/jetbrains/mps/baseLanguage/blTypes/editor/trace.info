@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1159268590362" modelId="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)/1159268590362">
     <nodeInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1159268590367" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="34" startPosition="99" endLine="35" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1159268590367" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="38" startPosition="66" endLine="39" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -189,7 +189,7 @@
     <unitInfo nodeId="1159268590367" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="33" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.PrimitiveTypeDescriptor_Editor$extendsListHandler_7ntfj2_d0" />
     <unitInfo nodeId="1159268590362" fileName="PrimitiveTypeDescriptor_Editor.java" startLine="28" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.PrimitiveTypeDescriptor_Editor" />
   </root>
-  <root nodeId="1159268661793" modelId="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)/1159268661793">
     <nodeInfo nodeId="1159268661795" fileName="PrimitiveTypeRef_Editor.java" startLine="78" startPosition="58" endLine="78" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1159268661793" fileName="PrimitiveTypeRef_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1159268661796" fileName="PrimitiveTypeRef_Editor.java" startLine="28" startPosition="32" endLine="29" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -307,7 +307,7 @@
     <unitInfo nodeId="1159268661796" fileName="PrimitiveTypeRef_Editor.java" startLine="27" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.PrimitiveTypeRef_Editor$_Inline_om7tp_a0a" />
     <unitInfo nodeId="1159268661793" fileName="PrimitiveTypeRef_Editor.java" startLine="22" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.PrimitiveTypeRef_Editor" />
   </root>
-  <root nodeId="1159276917821" modelId="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)/1159276917821">
     <nodeInfo nodeId="1159276917828" fileName="FunctionType_Editor.java" startLine="130" startPosition="58" endLine="130" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1159276917821" fileName="FunctionType_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1159276917825" fileName="FunctionType_Editor.java" startLine="32" startPosition="97" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -523,7 +523,7 @@
     <unitInfo nodeId="1159276917825" fileName="FunctionType_Editor.java" startLine="31" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.FunctionType_Editor$paramListHandler_bqk3nx_c0" />
     <unitInfo nodeId="1159276917821" fileName="FunctionType_Editor.java" startLine="26" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.FunctionType_Editor" />
   </root>
-  <root nodeId="1161696750123" modelId="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)/1161696750123">
     <nodeInfo nodeId="1219697884425" fileName="BLArrayType_Editor.java" startLine="84" startPosition="58" endLine="84" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1161696750123" fileName="BLArrayType_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1219697884426" fileName="BLArrayType_Editor.java" startLine="27" startPosition="33" endLine="28" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -657,7 +657,7 @@
     <unitInfo nodeId="1219697884426" fileName="BLArrayType_Editor.java" startLine="26" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.BLArrayType_Editor$_Inline_ryq81t_a0a" />
     <unitInfo nodeId="1161696750123" fileName="BLArrayType_Editor.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.BLArrayType_Editor" />
   </root>
-  <root nodeId="1162556281717" modelId="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)/1162556281717">
     <nodeInfo nodeId="1162556281717" fileName="BarConcept_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209476414626" fileName="BarConcept_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209476414626" fileName="BarConcept_Editor.java" startLine="22" startPosition="96" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -733,7 +733,7 @@
     </scopeInfo>
     <unitInfo nodeId="1162556281717" fileName="BarConcept_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.editor.BarConcept_Editor" />
   </root>
-  <root nodeId="1209476308551" modelId="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)/1209476308551">
     <nodeInfo nodeId="1209476308551" fileName="FooConcept_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209476379606" fileName="FooConcept_Editor.java" startLine="27" startPosition="33" endLine="28" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1209476379606" fileName="FooConcept_Editor.java" startLine="31" startPosition="69" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

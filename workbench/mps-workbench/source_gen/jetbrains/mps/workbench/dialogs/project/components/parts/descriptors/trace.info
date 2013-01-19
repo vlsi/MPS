@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1560298786499489453" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)">
+  <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499489453">
     <nodeInfo nodeId="1560298786499489465" fileName="EditableStringDescriptor.java" startLine="11" startPosition="74" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499489473" fileName="EditableStringDescriptor.java" startLine="15" startPosition="41" endLine="16" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499489456" fileName="EditableStringDescriptor.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditableStringDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
@@ -15,8 +15,8 @@
     <scopeInfo nodeId="1560298786499489469" fileName="EditableStringDescriptor.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="1560298786499489453" fileName="EditableStringDescriptor.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.EditableStringDescriptor" />
   </root>
-  <root nodeId="1560298786499489905" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)" />
-  <root nodeId="1560298786499491464" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)">
+  <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499489905" />
+  <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499491464">
     <nodeInfo nodeId="1560298786499491476" fileName="StringPathDescriptor.java" startLine="11" startPosition="70" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499491484" fileName="StringPathDescriptor.java" startLine="15" startPosition="45" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499491467" fileName="StringPathDescriptor.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringPathDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
@@ -31,7 +31,7 @@
     <scopeInfo nodeId="1560298786499491480" fileName="StringPathDescriptor.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="1560298786499491464" fileName="StringPathDescriptor.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor" />
   </root>
-  <root nodeId="1560298786499491489" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)">
+  <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499491489">
     <nodeInfo nodeId="1560298786499491501" fileName="BooleanDescriptor.java" startLine="13" startPosition="67" endLine="14" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499491509" fileName="BooleanDescriptor.java" startLine="17" startPosition="45" endLine="18" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499491518" fileName="BooleanDescriptor.java" startLine="21" startPosition="41" endLine="22" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -50,9 +50,9 @@
     <scopeInfo nodeId="1560298786499491514" fileName="BooleanDescriptor.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="1560298786499491489" fileName="BooleanDescriptor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.BooleanDescriptor" />
   </root>
-  <root nodeId="1560298786499492161" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)" />
-  <root nodeId="1560298786499492191" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)" />
-  <root nodeId="1560298786499493471" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)">
+  <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499492161" />
+  <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499492191" />
+  <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499493471">
     <nodeInfo nodeId="1560298786499493483" fileName="ModuleDescriptor.java" startLine="11" startPosition="66" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499493491" fileName="ModuleDescriptor.java" startLine="15" startPosition="45" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499493474" fileName="ModuleDescriptor.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
@@ -67,7 +67,7 @@
     <scopeInfo nodeId="1560298786499493487" fileName="ModuleDescriptor.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="1560298786499493471" fileName="ModuleDescriptor.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModuleDescriptor" />
   </root>
-  <root nodeId="1560298786499494704" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)">
+  <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499494704">
     <nodeInfo nodeId="1560298786499494707" fileName="ManagerDescriptor.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
     <nodeInfo nodeId="1560298786499494721" fileName="ManagerDescriptor.java" startLine="16" startPosition="88" endLine="17" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499494725" fileName="ManagerDescriptor.java" startLine="17" startPosition="31" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -89,7 +89,7 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499494704" fileName="ManagerDescriptor.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor" />
   </root>
-  <root nodeId="1560298786499495292" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)">
+  <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499495292">
     <nodeInfo nodeId="1560298786499495295" fileName="DepDescriptor.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
     <nodeInfo nodeId="1560298786499495309" fileName="DepDescriptor.java" startLine="14" startPosition="84" endLine="15" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499495313" fileName="DepDescriptor.java" startLine="15" startPosition="31" endLine="16" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -110,8 +110,8 @@
     <scopeInfo nodeId="1560298786499495319" fileName="DepDescriptor.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
     <unitInfo nodeId="1560298786499495292" fileName="DepDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.DepDescriptor" />
   </root>
-  <root nodeId="1560298786499495705" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)" />
-  <root nodeId="1560298786499497407" modelId="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)">
+  <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499495705" />
+  <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499497407">
     <nodeInfo nodeId="1560298786499497419" fileName="ModelDescriptor.java" startLine="11" startPosition="65" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499497427" fileName="ModelDescriptor.java" startLine="15" startPosition="45" endLine="16" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499497410" fileName="ModelDescriptor.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />

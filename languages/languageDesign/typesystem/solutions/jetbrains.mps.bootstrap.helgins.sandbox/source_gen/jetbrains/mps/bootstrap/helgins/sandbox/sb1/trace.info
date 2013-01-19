@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1186475525107" modelId="r:00000000-0000-4000-0000-011c895905ca(jetbrains.mps.bootstrap.helgins.sandbox.sb1)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905ca(jetbrains.mps.bootstrap.helgins.sandbox.sb1)/1186475525107">
     <nodeInfo nodeId="1196960455591" fileName="AClssssssssssssssssass.java" startLine="16" startPosition="5" endLine="17" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196960455593" fileName="AClssssssssssssssssass.java" startLine="18" startPosition="7" endLine="19" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196960455593" fileName="AClssssssssssssssssass.java" startLine="19" startPosition="44" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

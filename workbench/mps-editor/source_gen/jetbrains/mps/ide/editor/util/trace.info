@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2808756344206283880" modelId="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)">
+  <root nodeRef="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)/2808756344206283880">
     <nodeInfo nodeId="457552532821321542" fileName="GoToHelper.java" startLine="48" startPosition="43" endLine="49" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="457552532821380832" fileName="GoToHelper.java" startLine="50" startPosition="5" endLine="51" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2808756344206284083" fileName="GoToHelper.java" startLine="54" startPosition="131" endLine="55" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -258,7 +258,7 @@
     <unitInfo nodeId="2808756344206283882" fileName="GoToHelper.java" startLine="142" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper$DefaultNodeNavigationItemCellRenderer" />
     <unitInfo nodeId="2808756344206283880" fileName="GoToHelper.java" startLine="43" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper" />
   </root>
-  <root nodeId="2808756344206284331" modelId="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)">
+  <root nodeRef="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)/2808756344206284331">
     <nodeInfo nodeId="2808756344206284452" fileName="NodeListCellRenderer.java" startLine="22" startPosition="36" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2808756344206284469" fileName="NodeListCellRenderer.java" startLine="26" startPosition="128" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2808756344206284471" fileName="NodeListCellRenderer.java" startLine="27" startPosition="16" endLine="28" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -373,7 +373,7 @@
     <unitInfo nodeId="2808756344206284336" fileName="NodeListCellRenderer.java" startLine="80" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ide.editor.util.NodeListCellRenderer$LeftRenderer" />
     <unitInfo nodeId="2808756344206284331" fileName="NodeListCellRenderer.java" startLine="21" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.ide.editor.util.NodeListCellRenderer" />
   </root>
-  <root nodeId="4491627601716787026" modelId="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)">
+  <root nodeRef="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)/4491627601716787026">
     <nodeInfo nodeId="4491627601716787044" fileName="EditorComponentUtil.java" startLine="26" startPosition="131" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4491627601716787058" fileName="EditorComponentUtil.java" startLine="28" startPosition="49" endLine="29" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4491627601716787062" fileName="EditorComponentUtil.java" startLine="29" startPosition="40" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -517,7 +517,7 @@
     </scopeInfo>
     <unitInfo nodeId="4491627601716787026" fileName="EditorComponentUtil.java" startLine="21" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.ide.editor.util.EditorComponentUtil" />
   </root>
-  <root nodeId="7973955287399271868" modelId="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)">
+  <root nodeRef="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)/7973955287399271868">
     <nodeInfo nodeId="1684996642972287829" fileName="EditorUtil.java" startLine="33" startPosition="112" endLine="34" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7973955287399271882" fileName="EditorUtil.java" startLine="39" startPosition="98" endLine="40" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1684996642972648922" fileName="EditorUtil.java" startLine="43" startPosition="131" endLine="44" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

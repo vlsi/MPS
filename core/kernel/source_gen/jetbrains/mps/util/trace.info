@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2089287822043606602" modelId="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)">
+  <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/2089287822043606602">
     <nodeInfo nodeId="4951414497584670777" fileName="SNodeOperations.java" startLine="37" startPosition="27" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4951414497584670785" fileName="SNodeOperations.java" startLine="39" startPosition="5" endLine="40" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4951414497584670796" fileName="SNodeOperations.java" startLine="41" startPosition="32" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -358,7 +358,7 @@
     <unitInfo nodeId="559469824002248604" fileName="SNodeOperations.java" startLine="234" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.util.SNodeOperations$DescendantsIterable" />
     <unitInfo nodeId="2089287822043606602" fileName="SNodeOperations.java" startLine="32" startPosition="0" endLine="287" endPosition="0" unitName="jetbrains.mps.util.SNodeOperations" />
   </root>
-  <root nodeId="4972886494893373483" modelId="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)">
+  <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/4972886494893373483">
     <nodeInfo nodeId="4972886494893402206" fileName="LongestCommonSubsequenceFinder.java" startLine="106" startPosition="29" endLine="106" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4972886494893401571" fileName="LongestCommonSubsequenceFinder.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myA" />
     <nodeInfo nodeId="4972886494893401577" fileName="LongestCommonSubsequenceFinder.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myB" />
@@ -508,7 +508,7 @@
     <unitInfo nodeId="4972886494893402205" fileName="LongestCommonSubsequenceFinder.java" startLine="87" startPosition="118" endLine="119" endPosition="7" unitName="jetbrains.mps.util.LongestCommonSubsequenceFinder$1" />
     <unitInfo nodeId="4972886494893373483" fileName="LongestCommonSubsequenceFinder.java" startLine="17" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.util.LongestCommonSubsequenceFinder" />
   </root>
-  <root nodeId="5504093910384079631" modelId="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)">
+  <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/5504093910384079631">
     <nodeInfo nodeId="5504093910384079639" fileName="StringsIO.java" startLine="24" startPosition="27" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5504093910384079645" fileName="StringsIO.java" startLine="26" startPosition="5" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5504093910384079648" fileName="StringsIO.java" startLine="28" startPosition="9" endLine="29" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -573,7 +573,7 @@
     </scopeInfo>
     <unitInfo nodeId="5504093910384079631" fileName="StringsIO.java" startLine="19" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.util.StringsIO" />
   </root>
-  <root nodeId="5755638771828906585" modelId="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)">
+  <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/5755638771828906585">
     <nodeInfo nodeId="5755638771828834267" fileName="ModuleNameUtil.java" startLine="11" startPosition="59" endLine="12" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5755638771828834273" fileName="ModuleNameUtil.java" startLine="12" startPosition="48" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5755638771828834278" fileName="ModuleNameUtil.java" startLine="13" startPosition="65" endLine="14" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -592,7 +592,7 @@
     </scopeInfo>
     <unitInfo nodeId="5755638771828906585" fileName="ModuleNameUtil.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.util.ModuleNameUtil" />
   </root>
-  <root nodeId="7295777740694844259" modelId="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)">
+  <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/7295777740694844259">
     <nodeInfo nodeId="6442525078792060505" fileName="SNodeCompare.java" startLine="23" startPosition="65" endLine="24" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6442525078792060513" fileName="SNodeCompare.java" startLine="24" startPosition="86" endLine="25" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7295777740694849925" fileName="SNodeCompare.java" startLine="27" startPosition="99" endLine="28" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -764,7 +764,7 @@
     <unitInfo nodeId="2732852465125742167" fileName="SNodeCompare.java" startLine="42" startPosition="131" endLine="46" endPosition="5" unitName="jetbrains.mps.util.SNodeCompare$2" />
     <unitInfo nodeId="7295777740694844259" fileName="SNodeCompare.java" startLine="19" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.util.SNodeCompare" />
   </root>
-  <root nodeId="8018595893829093050" modelId="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)">
+  <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/8018595893829093050">
     <nodeInfo nodeId="8018595893829093195" fileName="DisjointSets.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" />
     <nodeInfo nodeId="8018595893829093204" fileName="DisjointSets.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRank" />
     <nodeInfo nodeId="8018595893829093222" fileName="DisjointSets.java" startLine="19" startPosition="49" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

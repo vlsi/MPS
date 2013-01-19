@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2298333944697014852" modelId="r:7cb72aee-d3e2-47e9-9964-3abda6a73a9a(jetbrains.mps.make.service)">
+  <root nodeRef="r:7cb72aee-d3e2-47e9-9964-3abda6a73a9a(jetbrains.mps.make.service)/2298333944697014852">
     <nodeInfo nodeId="4671800353872913144" fileName="AbstractMakeService.java" startLine="31" startPosition="173" endLine="32" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4671800353872913112" fileName="AbstractMakeService.java" startLine="32" startPosition="51" endLine="33" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4671800353872688731" fileName="AbstractMakeService.java" startLine="41" startPosition="146" endLine="42" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -146,7 +146,7 @@
     <unitInfo nodeId="2298333944697025522" fileName="AbstractMakeService.java" startLine="36" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.make.service.AbstractMakeService$AbstractInputProcessor" />
     <unitInfo nodeId="2298333944697014852" fileName="AbstractMakeService.java" startLine="27" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.make.service.AbstractMakeService" />
   </root>
-  <root nodeId="7184932954667864779" modelId="r:7cb72aee-d3e2-47e9-9964-3abda6a73a9a(jetbrains.mps.make.service)">
+  <root nodeRef="r:7cb72aee-d3e2-47e9-9964-3abda6a73a9a(jetbrains.mps.make.service)/7184932954667864779">
     <nodeInfo nodeId="5278788114521227636" fileName="CoreMakeTask.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2298333944697014183" fileName="CoreMakeTask.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
     <nodeInfo nodeId="2298333944697014170" fileName="CoreMakeTask.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScripts" />

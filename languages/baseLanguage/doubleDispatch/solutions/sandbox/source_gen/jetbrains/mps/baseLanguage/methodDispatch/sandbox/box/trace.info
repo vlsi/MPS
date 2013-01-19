@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="143681448798969379" modelId="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)">
+  <root nodeRef="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)/143681448798969379">
     <nodeInfo nodeId="143681448798971132" fileName="Descendant.java" startLine="10" startPosition="41" endLine="11" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3112508579546709597" fileName="Descendant.java" startLine="14" startPosition="45" endLine="15" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3112508579547258715" fileName="Descendant.java" startLine="18" startPosition="42" endLine="19" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -92,37 +92,37 @@
     </scopeInfo>
     <unitInfo nodeId="143681448798969379" fileName="Descendant.java" startLine="6" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Descendant" />
   </root>
-  <root nodeId="2323553266850069117" modelId="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)">
+  <root nodeRef="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)/2323553266850069117">
     <nodeInfo nodeId="2323553266850069119" fileName="Arg1.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Arg1#()V" />
     <scopeInfo nodeId="2323553266850069122" fileName="Arg1.java" startLine="7" startPosition="17" endLine="7" endPosition="17" />
     <scopeInfo nodeId="2323553266850069119" fileName="Arg1.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <unitInfo nodeId="2323553266850069117" fileName="Arg1.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg1" />
   </root>
-  <root nodeId="2323553266850069150" modelId="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)">
+  <root nodeRef="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)/2323553266850069150">
     <nodeInfo nodeId="2323553266850069152" fileName="Arg2.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Arg2#()V" />
     <scopeInfo nodeId="2323553266850069155" fileName="Arg2.java" startLine="7" startPosition="17" endLine="7" endPosition="17" />
     <scopeInfo nodeId="2323553266850069152" fileName="Arg2.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <unitInfo nodeId="2323553266850069150" fileName="Arg2.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg2" />
   </root>
-  <root nodeId="2323553266850070343" modelId="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)">
+  <root nodeRef="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)/2323553266850070343">
     <nodeInfo nodeId="2323553266850070345" fileName="Arg3.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Arg3#()V" />
     <scopeInfo nodeId="2323553266850070348" fileName="Arg3.java" startLine="7" startPosition="17" endLine="7" endPosition="17" />
     <scopeInfo nodeId="2323553266850070345" fileName="Arg3.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <unitInfo nodeId="2323553266850070343" fileName="Arg3.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg3" />
   </root>
-  <root nodeId="2323553266850070380" modelId="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)">
+  <root nodeRef="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)/2323553266850070380">
     <nodeInfo nodeId="2323553266850070382" fileName="Arg4.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Arg4#()V" />
     <scopeInfo nodeId="2323553266850070385" fileName="Arg4.java" startLine="7" startPosition="17" endLine="7" endPosition="17" />
     <scopeInfo nodeId="2323553266850070382" fileName="Arg4.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <unitInfo nodeId="2323553266850070380" fileName="Arg4.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg4" />
   </root>
-  <root nodeId="2323553266850070418" modelId="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)">
+  <root nodeRef="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)/2323553266850070418">
     <nodeInfo nodeId="2323553266850070420" fileName="Arg5.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Arg5#()V" />
     <scopeInfo nodeId="2323553266850070423" fileName="Arg5.java" startLine="7" startPosition="17" endLine="7" endPosition="17" />
     <scopeInfo nodeId="2323553266850070420" fileName="Arg5.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <unitInfo nodeId="2323553266850070418" fileName="Arg5.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Arg5" />
   </root>
-  <root nodeId="35825318245951521" modelId="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)">
+  <root nodeRef="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)/35825318245951521">
     <nodeInfo nodeId="3166734731696776490" fileName="Further.java" startLine="26" startPosition="28" endLine="27" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3166734731696776490" fileName="Further.java" startLine="28" startPosition="10" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3166734731696776490" fileName="Further.java" startLine="29" startPosition="5" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -166,7 +166,7 @@
     </scopeInfo>
     <unitInfo nodeId="35825318245951521" fileName="Further.java" startLine="6" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.methodDispatch.sandbox.box.Further" />
   </root>
-  <root nodeId="4496691318496301641" modelId="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)">
+  <root nodeRef="r:8eeaa327-aebc-455a-9dff-c6d2e8c68659(jetbrains.mps.baseLanguage.methodDispatch.sandbox.box)/4496691318496301641">
     <nodeInfo nodeId="2379134940432582510" fileName="TestClass.java" startLine="7" startPosition="22" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4496691318496612498" fileName="TestClass.java" startLine="12" startPosition="36" endLine="13" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4496691318496612498" fileName="TestClass.java" startLine="14" startPosition="44" endLine="15" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

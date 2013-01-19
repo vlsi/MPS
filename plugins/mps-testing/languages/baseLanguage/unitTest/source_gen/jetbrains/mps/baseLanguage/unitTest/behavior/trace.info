@@ -21,7 +21,7 @@
   <unitInfo fileName="PrepareMethod_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.PrepareMethod_BehaviorDescriptor" />
   <unitInfo fileName="TestMethodList_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethodList_BehaviorDescriptor" />
   <unitInfo fileName="TestMethod_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethod_BehaviorDescriptor" />
-  <root nodeId="1213877238815" modelId="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)/1213877238815">
     <nodeInfo nodeId="1216135819363" fileName="TestMethod_Behavior.java" startLine="22" startPosition="73" endLine="23" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1216135832838" fileName="TestMethod_Behavior.java" startLine="23" startPosition="28" endLine="24" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1216136637489" fileName="TestMethod_Behavior.java" startLine="27" startPosition="74" endLine="28" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -70,7 +70,7 @@
     <scopeInfo nodeId="7727541049306224048" fileName="TestMethod_Behavior.java" startLine="39" startPosition="0" endLine="45" endPosition="0" />
     <unitInfo nodeId="1213877238815" fileName="TestMethod_Behavior.java" startLine="18" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethod_Behavior" />
   </root>
-  <root nodeId="1213877487741" modelId="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)/1213877487741">
     <nodeInfo nodeId="1216131536070" fileName="BTestCase_Behavior.java" startLine="21" startPosition="78" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8084800926155112013" fileName="BTestCase_Behavior.java" startLine="22" startPosition="26" endLine="23" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8084800926155111998" fileName="BTestCase_Behavior.java" startLine="24" startPosition="264" endLine="25" endPosition="345" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -187,7 +187,7 @@
     <unitInfo nodeId="8084800926155112048" fileName="BTestCase_Behavior.java" startLine="28" startPosition="184" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_Behavior$1" />
     <unitInfo nodeId="1213877487741" fileName="BTestCase_Behavior.java" startLine="17" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_Behavior" />
   </root>
-  <root nodeId="1215620458415" modelId="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)/1215620458415">
     <nodeInfo nodeId="3310779261129403094" fileName="ITestable_Behavior.java" startLine="14" startPosition="88" endLine="15" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215620458415" fileName="ITestable_Behavior.java" startLine="19" startPosition="85" endLine="20" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215620458415" fileName="ITestable_Behavior.java" startLine="24" startPosition="118" endLine="25" endPosition="271" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -214,7 +214,7 @@
     </scopeInfo>
     <unitInfo nodeId="1215620458415" fileName="ITestable_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior" />
   </root>
-  <root nodeId="1216130717292" modelId="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)/1216130717292">
     <nodeInfo nodeId="1229279172100" fileName="ITestCase_Behavior.java" startLine="17" startPosition="75" endLine="18" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229279129626" fileName="ITestCase_Behavior.java" startLine="21" startPosition="81" endLine="22" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2148145109766218410" fileName="ITestCase_Behavior.java" startLine="25" startPosition="88" endLine="26" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -292,7 +292,7 @@
     </scopeInfo>
     <unitInfo nodeId="1216130717292" fileName="ITestCase_Behavior.java" startLine="13" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior" />
   </root>
-  <root nodeId="1216134497652" modelId="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)/1216134497652">
     <nodeInfo nodeId="1216134497652" fileName="ITestMethod_Behavior.java" startLine="15" startPosition="70" endLine="16" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1216134497652" fileName="ITestMethod_Behavior.java" startLine="20" startPosition="71" endLine="21" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1216134497652" fileName="ITestMethod_Behavior.java" startLine="25" startPosition="103" endLine="26" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

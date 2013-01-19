@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1164650085521" modelId="r:00000000-0000-4000-0000-011c895903bb(jetbrains.mps.baseLanguage.collections.sandbox.model2)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903bb(jetbrains.mps.baseLanguage.collections.sandbox.model2)/1164650085521">
     <nodeInfo nodeId="1164650208554" fileName="User.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="identity" />
     <nodeInfo nodeId="1164650354530" fileName="User.java" startLine="12" startPosition="37" endLine="13" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1164652248458" fileName="User.java" startLine="16" startPosition="33" endLine="17" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -18,7 +18,7 @@
     <scopeInfo nodeId="1164650289722" fileName="User.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
     <unitInfo nodeId="1164650085521" fileName="User.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.sandbox.model2.User" />
   </root>
-  <root nodeId="1164650249839" modelId="r:00000000-0000-4000-0000-011c895903bb(jetbrains.mps.baseLanguage.collections.sandbox.model2)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903bb(jetbrains.mps.baseLanguage.collections.sandbox.model2)/1164650249839">
     <nodeInfo nodeId="1164650264891" fileName="PasswordIdentity.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="identity" />
     <nodeInfo nodeId="1164650536796" fileName="PasswordIdentity.java" startLine="9" startPosition="49" endLine="10" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1164652281668" fileName="PasswordIdentity.java" startLine="13" startPosition="33" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -45,7 +45,7 @@
     </scopeInfo>
     <unitInfo nodeId="1164650249839" fileName="PasswordIdentity.java" startLine="6" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.sandbox.model2.PasswordIdentity" />
   </root>
-  <root nodeId="1164651095574" modelId="r:00000000-0000-4000-0000-011c895903bb(jetbrains.mps.baseLanguage.collections.sandbox.model2)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903bb(jetbrains.mps.baseLanguage.collections.sandbox.model2)/1164651095574">
     <nodeInfo nodeId="1164651496569" fileName="FindUserUtil.java" startLine="10" startPosition="48" endLine="11" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1164651504496" fileName="FindUserUtil.java" startLine="11" startPosition="70" endLine="12" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1164651148034" fileName="FindUserUtil.java" startLine="15" startPosition="69" endLine="16" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

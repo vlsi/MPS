@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Nanoc_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.nanoc.structure.Nanoc_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.nanoc.structure.StructureAspectDescriptor" />
-  <root nodeId="6585869519574764228" modelId="r:d65f98fc-790c-41b3-9614-f2de26685b21(jetbrains.mps.nanoc.structure)">
+  <root nodeRef="r:d65f98fc-790c-41b3-9614-f2de26685b21(jetbrains.mps.nanoc.structure)/6585869519574764228">
     <nodeInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -20,7 +20,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574764228" fileName="c_id_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.nanoc.structure.c_id_PropertySupport" />
   </root>
-  <root nodeId="7211731935130600900" modelId="r:d65f98fc-790c-41b3-9614-f2de26685b21(jetbrains.mps.nanoc.structure)">
+  <root nodeRef="r:d65f98fc-790c-41b3-9614-f2de26685b21(jetbrains.mps.nanoc.structure)/7211731935130600900">
     <nodeInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -38,7 +38,7 @@
     </scopeInfo>
     <unitInfo nodeId="7211731935130600900" fileName="c_int_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.nanoc.structure.c_int_PropertySupport" />
   </root>
-  <root nodeId="7211731935130600901" modelId="r:d65f98fc-790c-41b3-9614-f2de26685b21(jetbrains.mps.nanoc.structure)">
+  <root nodeRef="r:d65f98fc-790c-41b3-9614-f2de26685b21(jetbrains.mps.nanoc.structure)/7211731935130600901">
     <nodeInfo nodeId="7211731935130600901" fileName="c_float_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7211731935130600901" fileName="c_float_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7211731935130600901" fileName="c_float_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

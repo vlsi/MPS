@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="113254018726283913" modelId="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)/113254018726283913">
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="18" startPosition="76" endLine="19" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="21" startPosition="31" endLine="22" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="25" startPosition="41" endLine="26" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -780,7 +780,7 @@
     <unitInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="130" startPosition="28" endLine="359" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.EditorContext_MigrationScript$4" />
     <unitInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="17" startPosition="0" endLine="683" endPosition="0" unitName="jetbrains.mps.lang.editor.scripts.EditorContext_MigrationScript" />
   </root>
-  <root nodeId="1234198385755" modelId="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)/1234198385755">
     <nodeInfo nodeId="1234198385755" fileName="HorizontalGapMigration_MigrationScript.java" startLine="18" startPosition="85" endLine="19" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1234791340838" fileName="HorizontalGapMigration_MigrationScript.java" startLine="21" startPosition="31" endLine="22" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234791340838" fileName="HorizontalGapMigration_MigrationScript.java" startLine="25" startPosition="41" endLine="26" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1022,7 +1022,7 @@
     <unitInfo nodeId="1234797058467" fileName="HorizontalGapMigration_MigrationScript.java" startLine="158" startPosition="28" endLine="195" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.HorizontalGapMigration_MigrationScript$6" />
     <unitInfo nodeId="1234198385755" fileName="HorizontalGapMigration_MigrationScript.java" startLine="17" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.lang.editor.scripts.HorizontalGapMigration_MigrationScript" />
   </root>
-  <root nodeId="1237726848485" modelId="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)/1237726848485">
     <nodeInfo nodeId="1237726848485" fileName="MigrationToIndentLayout_MigrationScript.java" startLine="17" startPosition="86" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1237726877650" fileName="MigrationToIndentLayout_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237726877650" fileName="MigrationToIndentLayout_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1103,7 +1103,7 @@
     <unitInfo nodeId="1237817800468" fileName="MigrationToIndentLayout_MigrationScript.java" startLine="44" startPosition="28" endLine="74" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.MigrationToIndentLayout_MigrationScript$2" />
     <unitInfo nodeId="1237726848485" fileName="MigrationToIndentLayout_MigrationScript.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.editor.scripts.MigrationToIndentLayout_MigrationScript" />
   </root>
-  <root nodeId="2554389230519698147" modelId="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)/2554389230519698147">
     <nodeInfo nodeId="2554389230519698147" fileName="MigrateAttributeConstant_MigrationScript.java" startLine="25" startPosition="87" endLine="26" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2554389230519698821" fileName="MigrateAttributeConstant_MigrationScript.java" startLine="28" startPosition="31" endLine="29" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2554389230519698821" fileName="MigrateAttributeConstant_MigrationScript.java" startLine="32" startPosition="41" endLine="33" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1241,7 +1241,7 @@
     <unitInfo nodeId="2554389230519698821" fileName="MigrateAttributeConstant_MigrationScript.java" startLine="27" startPosition="28" endLine="63" endPosition="5" unitName="jetbrains.mps.lang.editor.scripts.MigrateAttributeConstant_MigrationScript$1" />
     <unitInfo nodeId="2554389230519698147" fileName="MigrateAttributeConstant_MigrationScript.java" startLine="24" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.editor.scripts.MigrateAttributeConstant_MigrationScript" />
   </root>
-  <root nodeId="3500491402030546638" modelId="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)/3500491402030546638">
     <nodeInfo nodeId="2970389781193035791" fileName="MigrationUtil.java" startLine="21" startPosition="116" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2970389781193035796" fileName="MigrationUtil.java" startLine="22" startPosition="72" endLine="23" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="2970389781193035803" fileName="MigrationUtil.java" startLine="23" startPosition="81" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />

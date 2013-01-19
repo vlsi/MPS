@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.script.intentions.IntentionsDescriptor" />
-  <root nodeId="5434557751114211965" modelId="r:b58ac159-1e62-40c6-8c0d-e9511a9824de(jetbrains.mps.lang.script.intentions)">
+  <root nodeRef="r:b58ac159-1e62-40c6-8c0d-e9511a9824de(jetbrains.mps.lang.script.intentions)/5434557751114211965">
     <nodeInfo nodeId="5434557751114211965" fileName="ConvertToFQNameSpecification_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="5434557751114211965" fileName="ConvertToFQNameSpecification_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5434557751114211965" fileName="ConvertToFQNameSpecification_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

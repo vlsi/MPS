@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4079382982702596668" modelId="r:87dca7c3-9c03-4bb2-90a6-6d5e60f0974a(jetbrains.mps.baseLanguage.checkedDots.editor)">
+  <root nodeRef="r:87dca7c3-9c03-4bb2-90a6-6d5e60f0974a(jetbrains.mps.baseLanguage.checkedDots.editor)/4079382982702596668">
     <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="53" startPosition="58" endLine="53" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4079382982702596670" fileName="CheckedDotExpression_Editor.java" startLine="26" startPosition="89" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -122,7 +122,7 @@
     </scopeInfo>
     <unitInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="21" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDotExpression_Editor" />
   </root>
-  <root nodeId="4549711462049999198" modelId="r:87dca7c3-9c03-4bb2-90a6-6d5e60f0974a(jetbrains.mps.baseLanguage.checkedDots.editor)">
+  <root nodeRef="r:87dca7c3-9c03-4bb2-90a6-6d5e60f0974a(jetbrains.mps.baseLanguage.checkedDots.editor)/4549711462049999198">
     <nodeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="14" startPosition="95" endLine="15" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="21" startPosition="66" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -158,7 +158,7 @@
     <unitInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_DeleteOperation$CheckedDot_Actions_DeleteOperation_DELETE" />
     <unitInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_DeleteOperation" />
   </root>
-  <root nodeId="5314141825909190989" modelId="r:87dca7c3-9c03-4bb2-90a6-6d5e60f0974a(jetbrains.mps.baseLanguage.checkedDots.editor)">
+  <root nodeRef="r:87dca7c3-9c03-4bb2-90a6-6d5e60f0974a(jetbrains.mps.baseLanguage.checkedDots.editor)/5314141825909190989">
     <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="14" startPosition="95" endLine="15" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="21" startPosition="64" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

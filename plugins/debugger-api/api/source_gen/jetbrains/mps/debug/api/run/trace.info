@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4474271214082913232" modelId="r:0cf7389f-e174-4742-a3d2-15c79317838a(jetbrains.mps.debug.api.run)">
+  <root nodeRef="r:0cf7389f-e174-4742-a3d2-15c79317838a(jetbrains.mps.debug.api.run)/4474271214082913232">
     <nodeInfo nodeId="4474271214082913239" fileName="IDebuggerConfiguration.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
     <nodeInfo nodeId="4474271214082913234" fileName="IDebuggerConfiguration.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDebuggerSettings#()Ljetbrains/mps/debug/api/IDebuggerSettings;" />
     <scopeInfo nodeId="4474271214082913239" fileName="IDebuggerConfiguration.java" startLine="12" startPosition="0" endLine="13" endPosition="0" />
     <scopeInfo nodeId="4474271214082913234" fileName="IDebuggerConfiguration.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
     <unitInfo nodeId="4474271214082913232" fileName="IDebuggerConfiguration.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.debug.api.run.IDebuggerConfiguration" />
   </root>
-  <root nodeId="4474271214082913266" modelId="r:0cf7389f-e174-4742-a3d2-15c79317838a(jetbrains.mps.debug.api.run)">
+  <root nodeRef="r:0cf7389f-e174-4742-a3d2-15c79317838a(jetbrains.mps.debug.api.run)/4474271214082913266">
     <nodeInfo nodeId="4474271214082913270" fileName="DebuggerRunProfileState.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4474271214082913280" fileName="DebuggerRunProfileState.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUpdated" />
     <nodeInfo nodeId="4474271214082913295" fileName="DebuggerRunProfileState.java" startLine="21" startPosition="20" endLine="22" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

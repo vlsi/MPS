@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="689680155165915350" modelId="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)/689680155165915350">
     <nodeInfo nodeId="689680155165915354" fileName="MinusExpression_Editor.java" startLine="41" startPosition="58" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="689680155165915350" fileName="MinusExpression_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="689680155165915351" fileName="MinusExpression_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -75,7 +75,7 @@
     </scopeInfo>
     <unitInfo nodeId="689680155165915350" fileName="MinusExpression_Editor.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.nanoj.editor.MinusExpression_Editor" />
   </root>
-  <root nodeId="689680155165915355" modelId="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)/689680155165915355">
     <nodeInfo nodeId="689680155165915365" fileName="NanoClass_Editor.java" startLine="85" startPosition="58" endLine="85" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="689680155165915355" fileName="NanoClass_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="689680155165915356" fileName="NanoClass_Editor.java" startLine="22" startPosition="88" endLine="23" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -245,7 +245,7 @@
     </scopeInfo>
     <unitInfo nodeId="689680155165915355" fileName="NanoClass_Editor.java" startLine="17" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.nanoj.editor.NanoClass_Editor" />
   </root>
-  <root nodeId="689680155165915369" modelId="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)/689680155165915369">
     <nodeInfo nodeId="689680155165915375" fileName="VarDecl_Editor.java" startLine="51" startPosition="58" endLine="51" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="689680155165915369" fileName="VarDecl_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="689680155165915370" fileName="VarDecl_Editor.java" startLine="22" startPosition="89" endLine="23" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -373,7 +373,7 @@
     </scopeInfo>
     <unitInfo nodeId="689680155165915369" fileName="VarDecl_Editor.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.nanoj.editor.VarDecl_Editor" />
   </root>
-  <root nodeId="689680155165915376" modelId="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)/689680155165915376">
     <nodeInfo nodeId="689680155165915376" fileName="NanoStatementList_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="689680155165915380" fileName="NanoStatementList_Editor.java" startLine="26" startPosition="95" endLine="27" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="689680155165915380" fileName="NanoStatementList_Editor.java" startLine="30" startPosition="66" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -506,7 +506,7 @@
     <unitInfo nodeId="689680155165915380" fileName="NanoStatementList_Editor.java" startLine="25" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.nanoj.editor.NanoStatementList_Editor$bodyListHandler_9k6qx_b0" />
     <unitInfo nodeId="689680155165915376" fileName="NanoStatementList_Editor.java" startLine="20" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.nanoj.editor.NanoStatementList_Editor" />
   </root>
-  <root nodeId="689680155165915383" modelId="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)/689680155165915383">
     <nodeInfo nodeId="689680155165915383" fileName="NanoExpression_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="689680155165915384" fileName="NanoExpression_Editor.java" startLine="16" startPosition="84" endLine="17" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="689680155165915384" fileName="NanoExpression_Editor.java" startLine="17" startPosition="101" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -529,7 +529,7 @@
     </scopeInfo>
     <unitInfo nodeId="689680155165915383" fileName="NanoExpression_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.nanoj.editor.NanoExpression_Editor" />
   </root>
-  <root nodeId="689680155165915385" modelId="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)/689680155165915385">
     <nodeInfo nodeId="689680155165915385" fileName="NanoStatement_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="689680155165915386" fileName="NanoStatement_Editor.java" startLine="16" startPosition="84" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="689680155165915386" fileName="NanoStatement_Editor.java" startLine="17" startPosition="100" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -552,7 +552,7 @@
     </scopeInfo>
     <unitInfo nodeId="689680155165915385" fileName="NanoStatement_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.nanoj.editor.NanoStatement_Editor" />
   </root>
-  <root nodeId="689680155165915387" modelId="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905dd(jetbrains.mps.nanoj.editor)/689680155165915387">
     <nodeInfo nodeId="689680155165915388" fileName="VarDeclReference_Editor.java" startLine="68" startPosition="58" endLine="68" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="689680155165915387" fileName="VarDeclReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="689680155165915389" fileName="VarDeclReference_Editor.java" startLine="23" startPosition="33" endLine="24" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

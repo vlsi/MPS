@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2206718243407875628" modelId="r:f8a06b4b-9088-41e6-bae2-4b34baea9294(jetbrains.mps.generator.info)">
+  <root nodeRef="r:f8a06b4b-9088-41e6-bae2-4b34baea9294(jetbrains.mps.generator.info)/2206718243407875628">
     <nodeInfo nodeId="2206718243407918213" fileName="ForeignPathsProvider.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="belongsToForeignPath#(Ljetbrains/mps/vfs/IFile;)Ljava/lang/String;" />
     <scopeInfo nodeId="2206718243407918213" fileName="ForeignPathsProvider.java" startLine="8" startPosition="0" endLine="9" endPosition="0">
       <varInfo nodeId="2206718243407918218" varName="path" />
     </scopeInfo>
     <unitInfo nodeId="2206718243407875628" fileName="ForeignPathsProvider.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.generator.info.ForeignPathsProvider" />
   </root>
-  <root nodeId="3736427613779562236" modelId="r:f8a06b4b-9088-41e6-bae2-4b34baea9294(jetbrains.mps.generator.info)">
+  <root nodeRef="r:f8a06b4b-9088-41e6-bae2-4b34baea9294(jetbrains.mps.generator.info)/3736427613779562236">
     <nodeInfo nodeId="3736427613779562237" fileName="GeneratedFilesInfo.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="listGenerated#(Ljetbrains/mps/vfs/IFile;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="3736427613779562237" fileName="GeneratedFilesInfo.java" startLine="8" startPosition="0" endLine="9" endPosition="0">
       <varInfo nodeId="3736427613779562238" varName="dir" />
     </scopeInfo>
     <unitInfo nodeId="3736427613779562236" fileName="GeneratedFilesInfo.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.generator.info.GeneratedFilesInfo" />
   </root>
-  <root nodeId="3736427613779562245" modelId="r:f8a06b4b-9088-41e6-bae2-4b34baea9294(jetbrains.mps.generator.info)">
+  <root nodeRef="r:f8a06b4b-9088-41e6-bae2-4b34baea9294(jetbrains.mps.generator.info)/3736427613779562245">
     <nodeInfo nodeId="3736427613779562360" fileName="GeneratorPathsComponent.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="2206718243407920859" fileName="GeneratorPathsComponent.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_LIST" />
     <nodeInfo nodeId="2206718243407875661" fileName="GeneratorPathsComponent.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignPathsProviders" />

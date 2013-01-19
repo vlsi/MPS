@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1174921457453" modelId="r:00000000-0000-4000-0000-011c89590520(jetbrains.mps.regexp.sandbox)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590520(jetbrains.mps.regexp.sandbox)/1174921457453">
     <nodeInfo nodeId="1175254959727" fileName="YYY.java" startLine="12" startPosition="24" endLine="13" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1175254972364" fileName="YYY.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_y3g_b0a0b" />
     <nodeInfo nodeId="5324518929218979365" fileName="YYY.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="YYY#()V" />

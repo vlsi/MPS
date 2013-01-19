@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3908032508224771122" modelId="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)">
+  <root nodeRef="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)/3908032508224771122">
     <nodeInfo nodeId="3908032508224771140" fileName="BaseMpsRunConfiguration.java" startLine="12" startPosition="94" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3908032508224771129" fileName="BaseMpsRunConfiguration.java" startLine="16" startPosition="48" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7521473491034214420" fileName="BaseMpsRunConfiguration.java" startLine="20" startPosition="36" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -25,7 +25,7 @@
     <scopeInfo nodeId="7521473491034214410" fileName="BaseMpsRunConfiguration.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
     <unitInfo nodeId="3908032508224771122" fileName="BaseMpsRunConfiguration.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration" />
   </root>
-  <root nodeId="3908032508224771150" modelId="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)">
+  <root nodeRef="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)/3908032508224771150">
     <nodeInfo nodeId="3908032508224771151" fileName="ConsoleProcessListener.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConsoleView" />
     <nodeInfo nodeId="3908032508224771159" fileName="ConsoleProcessListener.java" startLine="15" startPosition="58" endLine="16" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3908032508224771208" fileName="ConsoleProcessListener.java" startLine="21" startPosition="48" endLine="22" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -50,7 +50,7 @@
     </scopeInfo>
     <unitInfo nodeId="3908032508224771150" fileName="ConsoleProcessListener.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" />
   </root>
-  <root nodeId="3908032508224771217" modelId="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)">
+  <root nodeRef="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)/3908032508224771217">
     <nodeInfo nodeId="3908032508224771223" fileName="DefaultExecutionConsole.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="3908032508224771237" fileName="DefaultExecutionConsole.java" startLine="15" startPosition="102" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3908032508224771241" fileName="DefaultExecutionConsole.java" startLine="16" startPosition="24" endLine="17" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -78,7 +78,7 @@
     <scopeInfo nodeId="3908032508224771252" fileName="DefaultExecutionConsole.java" startLine="24" startPosition="0" endLine="30" endPosition="0" />
     <unitInfo nodeId="3908032508224771217" fileName="DefaultExecutionConsole.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" />
   </root>
-  <root nodeId="3908032508224771272" modelId="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)">
+  <root nodeRef="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)/3908032508224771272">
     <nodeInfo nodeId="3908032508224771286" fileName="DefaultExecutionResult.java" startLine="17" startPosition="101" endLine="18" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3908032508224771290" fileName="DefaultExecutionResult.java" startLine="18" startPosition="31" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3908032508224771305" fileName="DefaultExecutionResult.java" startLine="22" startPosition="45" endLine="23" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -103,7 +103,7 @@
     </scopeInfo>
     <unitInfo nodeId="3908032508224771272" fileName="DefaultExecutionResult.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" />
   </root>
-  <root nodeId="6875903550967223425" modelId="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)">
+  <root nodeRef="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)/6875903550967223425">
     <nodeInfo nodeId="6875903550967223545" fileName="ConsoleCreator.java" startLine="12" startPosition="84" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6875903550967223552" fileName="ConsoleCreator.java" startLine="13" startPosition="66" endLine="14" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6875903550967223554" fileName="ConsoleCreator.java" startLine="14" startPosition="58" endLine="15" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -121,7 +121,7 @@
     </scopeInfo>
     <unitInfo nodeId="6875903550967223425" fileName="ConsoleCreator.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.execution.api.configurations.ConsoleCreator" />
   </root>
-  <root nodeId="7037083547575991021" modelId="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)">
+  <root nodeRef="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)/7037083547575991021">
     <nodeInfo nodeId="7037083547576022690" fileName="BaseMpsBeforeTaskProvider.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="6396510228602725948" fileName="BaseMpsBeforeTaskProvider.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAlias" />
     <nodeInfo nodeId="6396510228602725951" fileName="BaseMpsBeforeTaskProvider.java" startLine="24" startPosition="49" endLine="25" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="14" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults.QueriesGenerated" />
-  <root nodeId="1143148725345" modelId="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)/1143148725345">
     <nodeInfo nodeId="1199879671618" fileName="QueriesGenerated.java" startLine="15" startPosition="148" endLine="16" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1216411056408" fileName="QueriesGenerated.java" startLine="19" startPosition="145" endLine="20" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1199971784022" fileName="QueriesGenerated.java" startLine="23" startPosition="145" endLine="24" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

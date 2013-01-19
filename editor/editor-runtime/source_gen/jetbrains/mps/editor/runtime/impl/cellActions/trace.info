@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2298389068003719485" modelId="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)">
+  <root nodeRef="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)/2298389068003719485">
     <nodeInfo nodeId="2298389068003719999" fileName="CellAction_DeleteEasily.java" startLine="15" startPosition="54" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2298389068003719502" fileName="CellAction_DeleteEasily.java" startLine="19" startPosition="52" endLine="20" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2298389068003720054" fileName="CellAction_DeleteEasily.java" startLine="23" startPosition="40" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -40,7 +40,7 @@
     <unitInfo nodeId="2298389068003720020" fileName="CellAction_DeleteEasily.java" startLine="25" startPosition="98" endLine="29" endPosition="5" unitName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily$1" />
     <unitInfo nodeId="2298389068003719485" fileName="CellAction_DeleteEasily.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily" />
   </root>
-  <root nodeId="2298389068003806582" modelId="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)">
+  <root nodeRef="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)/2298389068003806582">
     <nodeInfo nodeId="2298389068003806585" fileName="CellAction_DeletePropertyOrNode.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySemanticNode" />
     <nodeInfo nodeId="2298389068003806588" fileName="CellAction_DeletePropertyOrNode.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPropertyName" />
     <nodeInfo nodeId="2298389068003806599" fileName="CellAction_DeletePropertyOrNode.java" startLine="14" startPosition="83" endLine="15" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -75,7 +75,7 @@
     </scopeInfo>
     <unitInfo nodeId="2298389068003806582" fileName="CellAction_DeletePropertyOrNode.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeletePropertyOrNode" />
   </root>
-  <root nodeId="2298389068003808761" modelId="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)">
+  <root nodeRef="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)/2298389068003808761">
     <nodeInfo nodeId="2298389068003808764" fileName="CellAction_DeleteSmart.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySource" />
     <nodeInfo nodeId="2298389068003808767" fileName="CellAction_DeleteSmart.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLink" />
     <nodeInfo nodeId="2298389068003808770" fileName="CellAction_DeleteSmart.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTarget" />

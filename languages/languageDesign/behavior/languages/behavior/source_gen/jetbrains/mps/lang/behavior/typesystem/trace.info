@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.TypesystemDescriptor" />
-  <root nodeId="1225195203269" modelId="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)">
+  <root nodeRef="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)/1225195203269">
     <nodeInfo nodeId="1225195203271" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="26" startPosition="124" endLine="27" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1225195203282" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="28" startPosition="111" endLine="29" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225195203290" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="31" startPosition="167" endLine="32" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -78,7 +78,7 @@
     </scopeInfo>
     <unitInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.check_ConceptBehavior_NonTypesystemRule" />
   </root>
-  <root nodeId="1225195239759" modelId="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)">
+  <root nodeRef="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)/1225195239759">
     <nodeInfo nodeId="1225195239776" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="20" startPosition="124" endLine="21" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5527038142169120625" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="23" startPosition="7" endLine="24" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5527038142169120625" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="24" startPosition="55" endLine="25" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -161,7 +161,7 @@
     </scopeInfo>
     <unitInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.typeof_SuperNodeExpression_InferenceRule" />
   </root>
-  <root nodeId="1225196556158" modelId="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)">
+  <root nodeRef="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)/1225196556158">
     <nodeInfo nodeId="1225196556160" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="21" startPosition="121" endLine="22" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1225196556169" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1225196556169" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="24" startPosition="50" endLine="25" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -218,7 +218,7 @@
     </scopeInfo>
     <unitInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.typeof_ThisNodeExpression_InferenceRule" />
   </root>
-  <root nodeId="1227262734777" modelId="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)">
+  <root nodeRef="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)/1227262734777">
     <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="26" startPosition="9" endLine="27" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -266,7 +266,7 @@
     </scopeInfo>
     <unitInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.check_ConceptMethodDeclaration_NonTypesystemRule" />
   </root>
-  <root nodeId="3834658221333152923" modelId="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)">
+  <root nodeRef="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)/3834658221333152923">
     <nodeInfo nodeId="3834658221333152931" fileName="FixMethodSignature_QuickFix.java" startLine="15" startPosition="44" endLine="16" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3834658221333152937" fileName="FixMethodSignature_QuickFix.java" startLine="19" startPosition="35" endLine="20" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3834658221333152950" fileName="FixMethodSignature_QuickFix.java" startLine="20" startPosition="323" endLine="21" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

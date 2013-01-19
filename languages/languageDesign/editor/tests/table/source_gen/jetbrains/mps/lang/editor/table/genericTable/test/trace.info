@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1626657127781621490" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/1626657127781621490">
     <nodeInfo nodeId="1626657127781621490" fileName="TabNavigation_Test.java" startLine="20" startPosition="53" endLine="21" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1626657127781621490" fileName="TabNavigation_Test.java" startLine="21" startPosition="134" endLine="22" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1626657127781621490" fileName="TabNavigation_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -24,7 +24,7 @@
     <unitInfo nodeId="1626657127781621490" fileName="TabNavigation_Test.java" startLine="25" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.TabNavigation_Test$TestBody" />
     <unitInfo nodeId="1626657127781621490" fileName="TabNavigation_Test.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.TabNavigation_Test" />
   </root>
-  <root nodeId="1626657127781667188" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/1626657127781667188">
     <nodeInfo nodeId="1626657127781667188" fileName="TabNavigationNextLine_Test.java" startLine="20" startPosition="61" endLine="21" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1626657127781667188" fileName="TabNavigationNextLine_Test.java" startLine="21" startPosition="134" endLine="22" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1626657127781667188" fileName="TabNavigationNextLine_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -48,7 +48,7 @@
     <unitInfo nodeId="1626657127781667188" fileName="TabNavigationNextLine_Test.java" startLine="25" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.TabNavigationNextLine_Test$TestBody" />
     <unitInfo nodeId="1626657127781667188" fileName="TabNavigationNextLine_Test.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.TabNavigationNextLine_Test" />
   </root>
-  <root nodeId="2025581204008440327" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/2025581204008440327">
     <nodeInfo nodeId="2025581204008440327" fileName="LocalHomeFromColumnSelection_Test.java" startLine="18" startPosition="68" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2025581204008440327" fileName="LocalHomeFromColumnSelection_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2025581204008440327" fileName="LocalHomeFromColumnSelection_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -73,7 +73,7 @@
     <unitInfo nodeId="2025581204008440327" fileName="LocalHomeFromColumnSelection_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.LocalHomeFromColumnSelection_Test$TestBody" />
     <unitInfo nodeId="2025581204008440327" fileName="LocalHomeFromColumnSelection_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.LocalHomeFromColumnSelection_Test" />
   </root>
-  <root nodeId="2025581204008442830" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/2025581204008442830">
     <nodeInfo nodeId="2025581204008442830" fileName="LocalEndFromColumnSelection_Test.java" startLine="18" startPosition="67" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2025581204008442830" fileName="LocalEndFromColumnSelection_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2025581204008442830" fileName="LocalEndFromColumnSelection_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -98,7 +98,7 @@
     <unitInfo nodeId="2025581204008442830" fileName="LocalEndFromColumnSelection_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.LocalEndFromColumnSelection_Test$TestBody" />
     <unitInfo nodeId="2025581204008442830" fileName="LocalEndFromColumnSelection_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.LocalEndFromColumnSelection_Test" />
   </root>
-  <root nodeId="2025581204008533737" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/2025581204008533737">
     <nodeInfo nodeId="2025581204008533737" fileName="MoveElementsUpFromCoumnSelection_Test.java" startLine="18" startPosition="72" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2025581204008533737" fileName="MoveElementsUpFromCoumnSelection_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2025581204008533737" fileName="MoveElementsUpFromCoumnSelection_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -123,7 +123,7 @@
     <unitInfo nodeId="2025581204008533737" fileName="MoveElementsUpFromCoumnSelection_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.MoveElementsUpFromCoumnSelection_Test$TestBody" />
     <unitInfo nodeId="2025581204008533737" fileName="MoveElementsUpFromCoumnSelection_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.MoveElementsUpFromCoumnSelection_Test" />
   </root>
-  <root nodeId="2025581204008533796" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/2025581204008533796">
     <nodeInfo nodeId="2025581204008533796" fileName="MoveElementsDownFromCoumnSelection_Test.java" startLine="18" startPosition="74" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2025581204008533796" fileName="MoveElementsDownFromCoumnSelection_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2025581204008533796" fileName="MoveElementsDownFromCoumnSelection_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -148,7 +148,7 @@
     <unitInfo nodeId="2025581204008533796" fileName="MoveElementsDownFromCoumnSelection_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.MoveElementsDownFromCoumnSelection_Test$TestBody" />
     <unitInfo nodeId="2025581204008533796" fileName="MoveElementsDownFromCoumnSelection_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.MoveElementsDownFromCoumnSelection_Test" />
   </root>
-  <root nodeId="5097407566121950102" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/5097407566121950102">
     <nodeInfo nodeId="5097407566121950102" fileName="RootHomeFromColumnSelection_Test.java" startLine="18" startPosition="67" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5097407566121950102" fileName="RootHomeFromColumnSelection_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5097407566121950102" fileName="RootHomeFromColumnSelection_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -173,7 +173,7 @@
     <unitInfo nodeId="5097407566121950102" fileName="RootHomeFromColumnSelection_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RootHomeFromColumnSelection_Test$TestBody" />
     <unitInfo nodeId="5097407566121950102" fileName="RootHomeFromColumnSelection_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RootHomeFromColumnSelection_Test" />
   </root>
-  <root nodeId="5097407566121988446" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/5097407566121988446">
     <nodeInfo nodeId="5097407566121988446" fileName="RootEndFromColumnSelection_Test.java" startLine="18" startPosition="66" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5097407566121988446" fileName="RootEndFromColumnSelection_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5097407566121988446" fileName="RootEndFromColumnSelection_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -198,7 +198,7 @@
     <unitInfo nodeId="5097407566121988446" fileName="RootEndFromColumnSelection_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RootEndFromColumnSelection_Test$TestBody" />
     <unitInfo nodeId="5097407566121988446" fileName="RootEndFromColumnSelection_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RootEndFromColumnSelection_Test" />
   </root>
-  <root nodeId="5476958923832872824" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/5476958923832872824">
     <nodeInfo nodeId="5476958923832872824" fileName="SelectUpFromColumnSelection_Test.java" startLine="18" startPosition="67" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5476958923832872824" fileName="SelectUpFromColumnSelection_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5476958923832872824" fileName="SelectUpFromColumnSelection_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -223,7 +223,7 @@
     <unitInfo nodeId="5476958923832872824" fileName="SelectUpFromColumnSelection_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.SelectUpFromColumnSelection_Test$TestBody" />
     <unitInfo nodeId="5476958923832872824" fileName="SelectUpFromColumnSelection_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.SelectUpFromColumnSelection_Test" />
   </root>
-  <root nodeId="5476958923832881572" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/5476958923832881572">
     <nodeInfo nodeId="5476958923832881572" fileName="SelectDownFromColumnSelection_Test.java" startLine="18" startPosition="69" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5476958923832881572" fileName="SelectDownFromColumnSelection_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5476958923832881572" fileName="SelectDownFromColumnSelection_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -248,7 +248,7 @@
     <unitInfo nodeId="5476958923832881572" fileName="SelectDownFromColumnSelection_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.SelectDownFromColumnSelection_Test$TestBody" />
     <unitInfo nodeId="5476958923832881572" fileName="SelectDownFromColumnSelection_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.SelectDownFromColumnSelection_Test" />
   </root>
-  <root nodeId="5481602834662762302" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/5481602834662762302">
     <nodeInfo nodeId="5481602834662762302" fileName="InsertRowBefore_FromFirstCell_ByIns_Test.java" startLine="18" startPosition="75" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5481602834662762302" fileName="InsertRowBefore_FromFirstCell_ByIns_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5481602834662762302" fileName="InsertRowBefore_FromFirstCell_ByIns_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -272,7 +272,7 @@
     <unitInfo nodeId="5481602834662762302" fileName="InsertRowBefore_FromFirstCell_ByIns_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.InsertRowBefore_FromFirstCell_ByIns_Test$TestBody" />
     <unitInfo nodeId="5481602834662762302" fileName="InsertRowBefore_FromFirstCell_ByIns_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.InsertRowBefore_FromFirstCell_ByIns_Test" />
   </root>
-  <root nodeId="5481602834662808045" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/5481602834662808045">
     <nodeInfo nodeId="5481602834662808045" fileName="InsertRowBefore_FromLastCell_ByIns_Test.java" startLine="18" startPosition="74" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5481602834662808045" fileName="InsertRowBefore_FromLastCell_ByIns_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5481602834662808045" fileName="InsertRowBefore_FromLastCell_ByIns_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -296,7 +296,7 @@
     <unitInfo nodeId="5481602834662808045" fileName="InsertRowBefore_FromLastCell_ByIns_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.InsertRowBefore_FromLastCell_ByIns_Test$TestBody" />
     <unitInfo nodeId="5481602834662808045" fileName="InsertRowBefore_FromLastCell_ByIns_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.InsertRowBefore_FromLastCell_ByIns_Test" />
   </root>
-  <root nodeId="6170050146384276436" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/6170050146384276436">
     <nodeInfo nodeId="6170050146384276436" fileName="Create_Test.java" startLine="18" startPosition="46" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6170050146384276436" fileName="Create_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6170050146384276436" fileName="Create_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -320,7 +320,7 @@
     <unitInfo nodeId="6170050146384276436" fileName="Create_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.Create_Test$TestBody" />
     <unitInfo nodeId="6170050146384276436" fileName="Create_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.Create_Test" />
   </root>
-  <root nodeId="6170050146384276465" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/6170050146384276465">
     <nodeInfo nodeId="6170050146384276465" fileName="RemoveRow_FromLastCell_Test.java" startLine="18" startPosition="62" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6170050146384276465" fileName="RemoveRow_FromLastCell_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6170050146384276465" fileName="RemoveRow_FromLastCell_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -344,7 +344,7 @@
     <unitInfo nodeId="6170050146384276465" fileName="RemoveRow_FromLastCell_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveRow_FromLastCell_Test$TestBody" />
     <unitInfo nodeId="6170050146384276465" fileName="RemoveRow_FromLastCell_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveRow_FromLastCell_Test" />
   </root>
-  <root nodeId="6170050146384276509" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/6170050146384276509">
     <nodeInfo nodeId="6170050146384276509" fileName="EditCell_Test.java" startLine="18" startPosition="48" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6170050146384276509" fileName="EditCell_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6170050146384276509" fileName="EditCell_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -370,7 +370,7 @@
     <unitInfo nodeId="6170050146384276509" fileName="EditCell_Test.java" startLine="23" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.EditCell_Test$TestBody" />
     <unitInfo nodeId="6170050146384276509" fileName="EditCell_Test.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.EditCell_Test" />
   </root>
-  <root nodeId="6170050146384276559" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/6170050146384276559">
     <nodeInfo nodeId="6170050146384276559" fileName="InsertRowAfter_Test.java" startLine="18" startPosition="54" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6170050146384276559" fileName="InsertRowAfter_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6170050146384276559" fileName="InsertRowAfter_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -394,7 +394,7 @@
     <unitInfo nodeId="6170050146384276559" fileName="InsertRowAfter_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.InsertRowAfter_Test$TestBody" />
     <unitInfo nodeId="6170050146384276559" fileName="InsertRowAfter_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.InsertRowAfter_Test" />
   </root>
-  <root nodeId="6341395909949371892" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/6341395909949371892">
     <nodeInfo nodeId="6341395909949371892" fileName="InsertRowBefore_Test.java" startLine="18" startPosition="55" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6341395909949371892" fileName="InsertRowBefore_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6341395909949371892" fileName="InsertRowBefore_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -418,7 +418,7 @@
     <unitInfo nodeId="6341395909949371892" fileName="InsertRowBefore_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.InsertRowBefore_Test$TestBody" />
     <unitInfo nodeId="6341395909949371892" fileName="InsertRowBefore_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.InsertRowBefore_Test" />
   </root>
-  <root nodeId="6610030841081007203" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/6610030841081007203">
     <nodeInfo nodeId="6610030841081007203" fileName="RemoveLastCell_Test.java" startLine="18" startPosition="54" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6610030841081007203" fileName="RemoveLastCell_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6610030841081007203" fileName="RemoveLastCell_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -443,7 +443,7 @@
     <unitInfo nodeId="6610030841081007203" fileName="RemoveLastCell_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveLastCell_Test$TestBody" />
     <unitInfo nodeId="6610030841081007203" fileName="RemoveLastCell_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveLastCell_Test" />
   </root>
-  <root nodeId="6814837785823339529" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/6814837785823339529">
     <nodeInfo nodeId="6814837785823339529" fileName="InsertColumnBefore_Test.java" startLine="18" startPosition="58" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6814837785823339529" fileName="InsertColumnBefore_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6814837785823339529" fileName="InsertColumnBefore_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -467,7 +467,7 @@
     <unitInfo nodeId="6814837785823339529" fileName="InsertColumnBefore_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.InsertColumnBefore_Test$TestBody" />
     <unitInfo nodeId="6814837785823339529" fileName="InsertColumnBefore_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.InsertColumnBefore_Test" />
   </root>
-  <root nodeId="6814837785823361407" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/6814837785823361407">
     <nodeInfo nodeId="6814837785823361407" fileName="InsertColumnAfter_Test.java" startLine="18" startPosition="57" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6814837785823361407" fileName="InsertColumnAfter_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6814837785823361407" fileName="InsertColumnAfter_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -491,7 +491,7 @@
     <unitInfo nodeId="6814837785823361407" fileName="InsertColumnAfter_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.InsertColumnAfter_Test$TestBody" />
     <unitInfo nodeId="6814837785823361407" fileName="InsertColumnAfter_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.InsertColumnAfter_Test" />
   </root>
-  <root nodeId="6814837785823361474" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/6814837785823361474">
     <nodeInfo nodeId="6814837785823361474" fileName="RemoveColumn_Test.java" startLine="18" startPosition="52" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6814837785823361474" fileName="RemoveColumn_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6814837785823361474" fileName="RemoveColumn_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -516,7 +516,7 @@
     <unitInfo nodeId="6814837785823361474" fileName="RemoveColumn_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveColumn_Test$TestBody" />
     <unitInfo nodeId="6814837785823361474" fileName="RemoveColumn_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveColumn_Test" />
   </root>
-  <root nodeId="7541022036347681895" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/7541022036347681895">
     <nodeInfo nodeId="7541022036347681895" fileName="SelectLeftInCell_Test.java" startLine="18" startPosition="56" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7541022036347681895" fileName="SelectLeftInCell_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7541022036347681895" fileName="SelectLeftInCell_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -540,7 +540,7 @@
     <unitInfo nodeId="7541022036347681895" fileName="SelectLeftInCell_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.SelectLeftInCell_Test$TestBody" />
     <unitInfo nodeId="7541022036347681895" fileName="SelectLeftInCell_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.SelectLeftInCell_Test" />
   </root>
-  <root nodeId="8064689248313190611" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/8064689248313190611">
     <nodeInfo nodeId="8064689248313190611" fileName="SelectRow_Test.java" startLine="18" startPosition="49" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8064689248313190611" fileName="SelectRow_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8064689248313190611" fileName="SelectRow_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -566,7 +566,7 @@
     <unitInfo nodeId="8064689248313190611" fileName="SelectRow_Test.java" startLine="23" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.SelectRow_Test$TestBody" />
     <unitInfo nodeId="8064689248313190611" fileName="SelectRow_Test.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.SelectRow_Test" />
   </root>
-  <root nodeId="8143909488490604939" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/8143909488490604939">
     <nodeInfo nodeId="8143909488490604939" fileName="RemoveRow_FromFirstCell_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8143909488490604939" fileName="RemoveRow_FromFirstCell_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8143909488490604939" fileName="RemoveRow_FromFirstCell_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -590,7 +590,7 @@
     <unitInfo nodeId="8143909488490604939" fileName="RemoveRow_FromFirstCell_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveRow_FromFirstCell_Test$TestBody" />
     <unitInfo nodeId="8143909488490604939" fileName="RemoveRow_FromFirstCell_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveRow_FromFirstCell_Test" />
   </root>
-  <root nodeId="8316952525720946148" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/8316952525720946148">
     <nodeInfo nodeId="8316952525720946148" fileName="RemoveLastRow_Test.java" startLine="18" startPosition="53" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8316952525720946148" fileName="RemoveLastRow_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8316952525720946148" fileName="RemoveLastRow_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -614,7 +614,7 @@
     <unitInfo nodeId="8316952525720946148" fileName="RemoveLastRow_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveLastRow_Test$TestBody" />
     <unitInfo nodeId="8316952525720946148" fileName="RemoveLastRow_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveLastRow_Test" />
   </root>
-  <root nodeId="8316952525720946183" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/8316952525720946183">
     <nodeInfo nodeId="8316952525720946183" fileName="CreateRowInEmptyTable_Test.java" startLine="18" startPosition="61" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8316952525720946183" fileName="CreateRowInEmptyTable_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8316952525720946183" fileName="CreateRowInEmptyTable_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -638,7 +638,7 @@
     <unitInfo nodeId="8316952525720946183" fileName="CreateRowInEmptyTable_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.CreateRowInEmptyTable_Test$TestBody" />
     <unitInfo nodeId="8316952525720946183" fileName="CreateRowInEmptyTable_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.CreateRowInEmptyTable_Test" />
   </root>
-  <root nodeId="8316952525720946217" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/8316952525720946217">
     <nodeInfo nodeId="8316952525720946217" fileName="CreateCellInEmptyRow_Test.java" startLine="18" startPosition="60" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8316952525720946217" fileName="CreateCellInEmptyRow_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8316952525720946217" fileName="CreateCellInEmptyRow_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -663,7 +663,7 @@
     <unitInfo nodeId="8316952525720946217" fileName="CreateCellInEmptyRow_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.CreateCellInEmptyRow_Test$TestBody" />
     <unitInfo nodeId="8316952525720946217" fileName="CreateCellInEmptyRow_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.CreateCellInEmptyRow_Test" />
   </root>
-  <root nodeId="9080919888312484967" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/9080919888312484967">
     <nodeInfo nodeId="9080919888312484967" fileName="HomeFromColumnSelection_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9080919888312484967" fileName="HomeFromColumnSelection_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9080919888312484967" fileName="HomeFromColumnSelection_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -688,7 +688,7 @@
     <unitInfo nodeId="9080919888312484967" fileName="HomeFromColumnSelection_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.HomeFromColumnSelection_Test$TestBody" />
     <unitInfo nodeId="9080919888312484967" fileName="HomeFromColumnSelection_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.HomeFromColumnSelection_Test" />
   </root>
-  <root nodeId="9080919888312497299" modelId="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)">
+  <root nodeRef="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)/9080919888312497299">
     <nodeInfo nodeId="9080919888312497299" fileName="EndFromColumnSelection_Test.java" startLine="18" startPosition="62" endLine="19" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9080919888312497299" fileName="EndFromColumnSelection_Test.java" startLine="19" startPosition="134" endLine="20" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9080919888312497299" fileName="EndFromColumnSelection_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

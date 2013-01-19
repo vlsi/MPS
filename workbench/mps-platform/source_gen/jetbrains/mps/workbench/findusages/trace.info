@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2810982631457564914" modelId="r:9e8a9ffa-c450-4841-b749-c11aa0f49452(jetbrains.mps.workbench.findusages)">
+  <root nodeRef="r:9e8a9ffa-c450-4841-b749-c11aa0f49452(jetbrains.mps.workbench.findusages)/2810982631457564914">
     <nodeInfo nodeId="2810982631457564926" fileName="StubModelsFastFindSupport.java" startLine="47" startPosition="31" endLine="48" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3839513696112247262" fileName="StubModelsFastFindSupport.java" startLine="51" startPosition="34" endLine="52" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2810982631457564945" fileName="StubModelsFastFindSupport.java" startLine="56" startPosition="36" endLine="57" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -182,7 +182,7 @@
     <unitInfo nodeId="4614401897484748097" fileName="StubModelsFastFindSupport.java" startLine="130" startPosition="53" endLine="138" endPosition="9" unitName="jetbrains.mps.workbench.findusages.StubModelsFastFindSupport$4" />
     <unitInfo nodeId="2810982631457564914" fileName="StubModelsFastFindSupport.java" startLine="43" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.workbench.findusages.StubModelsFastFindSupport" />
   </root>
-  <root nodeId="2810982631457565446" modelId="r:9e8a9ffa-c450-4841-b749-c11aa0f49452(jetbrains.mps.workbench.findusages)">
+  <root nodeRef="r:9e8a9ffa-c450-4841-b749-c11aa0f49452(jetbrains.mps.workbench.findusages)/2810982631457565446">
     <nodeInfo nodeId="2810982631457565470" fileName="StubModelsIndexer.java" startLine="24" startPosition="31" endLine="25" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2810982631457565483" fileName="StubModelsIndexer.java" startLine="32" startPosition="36" endLine="33" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="303301571174689164" fileName="StubModelsIndexer.java" startLine="41" startPosition="66" endLine="42" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -239,7 +239,7 @@
     <unitInfo nodeId="2810982631457565449" fileName="StubModelsIndexer.java" startLine="36" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.workbench.findusages.StubModelsIndexer$MyFileTypeIdIndexer" />
     <unitInfo nodeId="2810982631457565446" fileName="StubModelsIndexer.java" startLine="20" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.workbench.findusages.StubModelsIndexer" />
   </root>
-  <root nodeId="3822554386093951004" modelId="r:9e8a9ffa-c450-4841-b749-c11aa0f49452(jetbrains.mps.workbench.findusages)">
+  <root nodeRef="r:9e8a9ffa-c450-4841-b749-c11aa0f49452(jetbrains.mps.workbench.findusages)/3822554386093951004">
     <nodeInfo nodeId="303301571174689096" fileName="ClassifierCacher.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
     <nodeInfo nodeId="303301571174689387" fileName="ClassifierCacher.java" startLine="39" startPosition="49" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="303301571174689335" fileName="ClassifierCacher.java" startLine="43" startPosition="41" endLine="44" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

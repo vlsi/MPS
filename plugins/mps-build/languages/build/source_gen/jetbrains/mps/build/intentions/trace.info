@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.build.intentions.IntentionsDescriptor" />
-  <root nodeId="8706695667516275787" modelId="r:9e44d7c5-70f5-4986-acea-57d3ad3ce28f(jetbrains.mps.build.intentions)">
+  <root nodeRef="r:9e44d7c5-70f5-4986-acea-57d3ad3ce28f(jetbrains.mps.build.intentions)/8706695667516275787">
     <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="23" startPosition="30" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8706695667516275787" fileName="AddCustomLocationJavaJar_Intention.java" startLine="27" startPosition="35" endLine="28" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

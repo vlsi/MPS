@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1816315258006256019" modelId="r:384e57ce-4d4c-47a2-afd9-84eefcee3d73(jetbrains.mps.debug.sampleLanguage.editor)">
+  <root nodeRef="r:384e57ce-4d4c-47a2-afd9-84eefcee3d73(jetbrains.mps.debug.sampleLanguage.editor)/1816315258006256019">
     <nodeInfo nodeId="1816315258006256048" fileName="WannabeMethod_Editor.java" startLine="118" startPosition="58" endLine="118" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1816315258006256022" fileName="WannabeMethod_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -294,7 +294,7 @@
     </scopeInfo>
     <unitInfo nodeId="1816315258006256019" fileName="WannabeMethod_Editor.java" startLine="20" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeMethod_Editor" />
   </root>
-  <root nodeId="1816315258006256063" modelId="r:384e57ce-4d4c-47a2-afd9-84eefcee3d73(jetbrains.mps.debug.sampleLanguage.editor)">
+  <root nodeRef="r:384e57ce-4d4c-47a2-afd9-84eefcee3d73(jetbrains.mps.debug.sampleLanguage.editor)/1816315258006256063">
     <nodeInfo nodeId="1816315258006256068" fileName="WannabeMethodCall_Editor.java" startLine="85" startPosition="58" endLine="85" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1816315258006256069" fileName="WannabeMethodCall_Editor.java" startLine="24" startPosition="33" endLine="25" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -439,7 +439,7 @@
     <unitInfo nodeId="1816315258006256069" fileName="WannabeMethodCall_Editor.java" startLine="23" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeMethodCall_Editor$_Inline_6urdah_a0a" />
     <unitInfo nodeId="1816315258006256063" fileName="WannabeMethodCall_Editor.java" startLine="18" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.editor.WannabeMethodCall_Editor" />
   </root>
-  <root nodeId="1816315258006256081" modelId="r:384e57ce-4d4c-47a2-afd9-84eefcee3d73(jetbrains.mps.debug.sampleLanguage.editor)">
+  <root nodeRef="r:384e57ce-4d4c-47a2-afd9-84eefcee3d73(jetbrains.mps.debug.sampleLanguage.editor)/1816315258006256081">
     <nodeInfo nodeId="1816315258006256081" fileName="WannabeClass_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1816315258006256102" fileName="WannabeClass_Editor.java" startLine="33" startPosition="99" endLine="34" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1816315258006256102" fileName="WannabeClass_Editor.java" startLine="37" startPosition="66" endLine="38" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

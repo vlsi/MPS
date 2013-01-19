@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6543581031674027297" modelId="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)">
+  <root nodeRef="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)/6543581031674027297">
     <nodeInfo nodeId="6543581031674027302" fileName="Deque.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addFirst#(null)V" />
     <nodeInfo nodeId="6543581031674027308" fileName="Deque.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addLast#(null)V" />
     <nodeInfo nodeId="6543581031674027314" fileName="Deque.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="descendingIterator#()Ljava/util/Iterator;" />
@@ -51,7 +51,7 @@
     </scopeInfo>
     <unitInfo nodeId="6543581031674027297" fileName="Deque.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
   </root>
-  <root nodeId="6543581031674032086" modelId="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)">
+  <root nodeRef="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)/6543581031674032086">
     <nodeInfo nodeId="6543581031674032118" fileName="LinkedList.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="serialVersionUID" />
     <nodeInfo nodeId="6543581031674032132" fileName="LinkedList.java" startLine="15" startPosition="43" endLine="16" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674032144" fileName="LinkedList.java" startLine="19" startPosition="34" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

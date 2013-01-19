@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2546981710035421490" modelId="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)">
+  <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/2546981710035421490">
     <nodeInfo nodeId="2546981710035421492" fileName="IMessageFormat.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="escapeBuildMessage#(Ljava/lang/StringBuffer;)Ljava/lang/StringBuffer;" />
     <nodeInfo nodeId="2546981710035421499" fileName="IMessageFormat.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="escapeBuildMessage#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="2546981710035421506" fileName="IMessageFormat.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLinesSeparator#()Ljava/lang/String;" />
@@ -35,7 +35,7 @@
     </scopeInfo>
     <unitInfo nodeId="2546981710035421490" fileName="IMessageFormat.java" startLine="7" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.tool.common.IMessageFormat" />
   </root>
-  <root nodeId="7910428321252775322" modelId="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)">
+  <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/7910428321252775322">
     <nodeInfo nodeId="7910428321252775325" fileName="TeamCityMessageFormat.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LINES_SEPARATOR" />
     <nodeInfo nodeId="7910428321252775329" fileName="TeamCityMessageFormat.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SERVER_PREFIX" />
     <nodeInfo nodeId="7910428321252775333" fileName="TeamCityMessageFormat.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SERVER_TEST_FAILED_PREFIX" />
@@ -135,7 +135,7 @@
     </scopeInfo>
     <unitInfo nodeId="7910428321252775322" fileName="TeamCityMessageFormat.java" startLine="9" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.tool.common.TeamCityMessageFormat" />
   </root>
-  <root nodeId="7910428321252780319" modelId="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)">
+  <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/7910428321252780319">
     <nodeInfo nodeId="7910428321252809155" fileName="ScriptProperties.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMPILE" />
     <nodeInfo nodeId="7910428321252809353" fileName="ScriptProperties.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRICT_MODE" />
     <nodeInfo nodeId="7910428321252809553" fileName="ScriptProperties.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARALLEL_MODE" />
@@ -149,7 +149,7 @@
     <scopeInfo nodeId="7910428321252780321" fileName="ScriptProperties.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
     <unitInfo nodeId="7910428321252780319" fileName="ScriptProperties.java" startLine="6" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.tool.common.ScriptProperties" />
   </root>
-  <root nodeId="878521226297927156" modelId="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)">
+  <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/878521226297927156">
     <nodeInfo nodeId="878521226297927158" fileName="Script.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_TODO" />
     <nodeInfo nodeId="878521226297927162" fileName="Script.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_MODEL" />
     <nodeInfo nodeId="878521226297927166" fileName="Script.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT_MODULE" />
@@ -607,7 +607,7 @@
     </scopeInfo>
     <unitInfo nodeId="878521226297927156" fileName="Script.java" startLine="22" startPosition="0" endLine="341" endPosition="0" unitName="jetbrains.mps.tool.common.Script" />
   </root>
-  <root nodeId="878521226297928383" modelId="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)">
+  <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/878521226297928383">
     <nodeInfo nodeId="878521226297928385" fileName="ScriptData.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ROOT_TASKDATA" />
     <nodeInfo nodeId="878521226297928389" fileName="ScriptData.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROP_WORKER" />
     <nodeInfo nodeId="878521226297928393" fileName="ScriptData.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROP_FAILONERROR" />

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4701043456212926006" modelId="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)">
+  <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/4701043456212926006">
     <nodeInfo nodeId="4701043456212926008" fileName="SourcePosition.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SourcePosition#()V" />
     <scopeInfo nodeId="4701043456212926011" fileName="SourcePosition.java" startLine="7" startPosition="27" endLine="7" endPosition="27" />
     <scopeInfo nodeId="4701043456212926008" fileName="SourcePosition.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <unitInfo nodeId="4701043456212926006" fileName="SourcePosition.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.debug.api.source.SourcePosition" />
   </root>
-  <root nodeId="4701043456212926012" modelId="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)">
+  <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/4701043456212926012">
     <nodeInfo nodeId="4701043456212926013" fileName="NodeSourcePosition.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="4701043456212926021" fileName="NodeSourcePosition.java" startLine="11" startPosition="48" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4701043456212926032" fileName="NodeSourcePosition.java" startLine="16" startPosition="25" endLine="17" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -45,7 +45,7 @@
     </scopeInfo>
     <unitInfo nodeId="4701043456212926012" fileName="NodeSourcePosition.java" startLine="8" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.debug.api.source.NodeSourcePosition" />
   </root>
-  <root nodeId="4701043456212926071" modelId="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)">
+  <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/4701043456212926071">
     <nodeInfo nodeId="4701043456212926072" fileName="TextSourcePosition.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFile" />
     <nodeInfo nodeId="4701043456212926075" fileName="TextSourcePosition.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLine" />
     <nodeInfo nodeId="4701043456212941492" fileName="TextSourcePosition.java" startLine="12" startPosition="66" endLine="13" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -98,7 +98,7 @@
     </scopeInfo>
     <unitInfo nodeId="4701043456212926071" fileName="TextSourcePosition.java" startLine="8" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.debug.api.source.TextSourcePosition" />
   </root>
-  <root nodeId="7048882195103542592" modelId="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)">
+  <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/7048882195103542592">
     <nodeInfo nodeId="7576820355142635290" fileName="IPositionProvider.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accepts#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Z" />
     <nodeInfo nodeId="7048882195103542598" fileName="IPositionProvider.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPosition#(Ljetbrains/mps/debug/api/programState/ILocation;)null" />
     <nodeInfo nodeId="7048882195103545987" fileName="IPositionProvider.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPosition#(Ljava/lang/String;Ljava/lang/String;I)null" />
@@ -115,7 +115,7 @@
     </scopeInfo>
     <unitInfo nodeId="7048882195103542592" fileName="IPositionProvider.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.debug.api.source.IPositionProvider" />
   </root>
-  <root nodeId="7048882195103545633" modelId="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)">
+  <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/7048882195103545633">
     <nodeInfo nodeId="7576820355142721216" fileName="PositionProvider.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="7576820355142673168" fileName="PositionProvider.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myKeysToProviders" />
     <nodeInfo nodeId="7576820355142721221" fileName="PositionProvider.java" startLine="26" startPosition="44" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -241,7 +241,7 @@
     <unitInfo nodeId="7576820355142673522" fileName="PositionProvider.java" startLine="51" startPosition="120" endLine="55" endPosition="7" unitName="jetbrains.mps.debug.api.source.PositionProvider$2" />
     <unitInfo nodeId="7048882195103545633" fileName="PositionProvider.java" startLine="22" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.debug.api.source.PositionProvider" />
   </root>
-  <root nodeId="7048882195103545922" modelId="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)">
+  <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/7048882195103545922">
     <nodeInfo nodeId="7048882195103545952" fileName="NodePositionProvider.java" startLine="23" startPosition="63" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7048882195103545954" fileName="NodePositionProvider.java" startLine="25" startPosition="5" endLine="26" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7048882195103545961" fileName="NodePositionProvider.java" startLine="27" startPosition="23" endLine="28" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -327,7 +327,7 @@
     <unitInfo nodeId="4701043456212939404" fileName="NodePositionProvider.java" startLine="52" startPosition="52" endLine="60" endPosition="5" unitName="jetbrains.mps.debug.api.source.NodePositionProvider$1" />
     <unitInfo nodeId="7048882195103545922" fileName="NodePositionProvider.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.debug.api.source.NodePositionProvider" />
   </root>
-  <root nodeId="7048882195103546169" modelId="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)">
+  <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/7048882195103546169">
     <nodeInfo nodeId="7048882195103546281" fileName="TextPositionProvider.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="7048882195103546285" fileName="TextPositionProvider.java" startLine="18" startPosition="48" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7048882195103546210" fileName="TextPositionProvider.java" startLine="24" startPosition="63" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

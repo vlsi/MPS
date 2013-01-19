@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2282909602806268536" modelId="r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)">
+  <root nodeRef="r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)/2282909602806268536">
     <nodeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="24" startPosition="43" endLine="25" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="25" startPosition="127" endLine="26" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="30" startPosition="46" endLine="31" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -283,7 +283,7 @@
     <unitInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="113" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test$TestBody" />
     <unitInfo nodeId="2282909602806268536" fileName="SLinkListAccess_ListModifyingOperaions_Test.java" startLine="21" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test" />
   </root>
-  <root nodeId="278471160714179981" modelId="r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)">
+  <root nodeRef="r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)/278471160714179981">
     <nodeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="25" startPosition="45" endLine="26" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="26" startPosition="127" endLine="27" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

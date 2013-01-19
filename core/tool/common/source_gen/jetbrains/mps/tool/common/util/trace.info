@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1631042080099030756" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)" />
-  <root nodeId="1631042080099114865" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/1631042080099030756" />
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/1631042080099114865">
     <nodeInfo nodeId="1631042080099114883" fileName="StringUtil.java" startLine="13" startPosition="105" endLine="14" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1631042080099114889" fileName="StringUtil.java" startLine="14" startPosition="42" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1631042080099114895" fileName="StringUtil.java" startLine="15" startPosition="45" endLine="16" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -164,7 +164,7 @@
     </scopeInfo>
     <unitInfo nodeId="1631042080099114865" fileName="StringUtil.java" startLine="9" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.tool.common.util.StringUtil" />
   </root>
-  <root nodeId="5198178184416561107" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/5198178184416561107">
     <nodeInfo nodeId="5198178184416561188" fileName="FileLoader.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootDir" />
     <nodeInfo nodeId="5198178184416561191" fileName="FileLoader.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootDirAbsolutePath" />
     <nodeInfo nodeId="5198178184416573438" fileName="FileLoader.java" startLine="22" startPosition="54" endLine="23" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -332,7 +332,7 @@
     <unitInfo nodeId="5198178184416561109" fileName="FileLoader.java" startLine="110" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.tool.common.util.FileLoader$MyResource" />
     <unitInfo nodeId="5198178184416561107" fileName="FileLoader.java" startLine="17" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.tool.common.util.FileLoader" />
   </root>
-  <root nodeId="5198178184416572441" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/5198178184416572441">
     <nodeInfo nodeId="5198178184416572610" fileName="JarLoader.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myDebugTime" />
     <nodeInfo nodeId="5198178184416572663" fileName="JarLoader.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NS_THRESHOLD" />
     <nodeInfo nodeId="5198178184416572604" fileName="JarLoader.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myURL" />
@@ -550,7 +550,7 @@
     <unitInfo nodeId="5198178184416572443" fileName="JarLoader.java" startLine="139" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.tool.common.util.JarLoader$MyResource" />
     <unitInfo nodeId="5198178184416572441" fileName="JarLoader.java" startLine="19" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.tool.common.util.JarLoader" />
   </root>
-  <root nodeId="5198178184416573141" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/5198178184416573141">
     <nodeInfo nodeId="5198178184416573153" fileName="FileUtil.java" startLine="15" startPosition="50" endLine="16" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5198178184416573161" fileName="FileUtil.java" startLine="16" startPosition="59" endLine="17" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8638838189258272755" fileName="FileUtil.java" startLine="21" startPosition="81" endLine="22" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -588,7 +588,7 @@
     </scopeInfo>
     <unitInfo nodeId="5198178184416573141" fileName="FileUtil.java" startLine="10" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.tool.common.util.FileUtil" />
   </root>
-  <root nodeId="5198178184416573167" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/5198178184416573167">
     <nodeInfo nodeId="5198178184416573189" fileName="URLUtil.java" startLine="16" startPosition="31" endLine="17" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5198178184416573191" fileName="URLUtil.java" startLine="18" startPosition="5" endLine="19" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5198178184416573196" fileName="URLUtil.java" startLine="19" startPosition="48" endLine="20" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -670,7 +670,7 @@
     </scopeInfo>
     <unitInfo nodeId="5198178184416573167" fileName="URLUtil.java" startLine="10" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.tool.common.util.URLUtil" />
   </root>
-  <root nodeId="5198178184416573444" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/5198178184416573444">
     <nodeInfo nodeId="5198178184416573447" fileName="Timed.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5198178184416573452" fileName="Timed.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourReferences" />
     <nodeInfo nodeId="5198178184416573462" fileName="Timed.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLastCheckedAccessCount" />
@@ -745,7 +745,7 @@
     <unitInfo nodeId="5198178184416573629" fileName="Timed.java" startLine="67" startPosition="39" endLine="75" endPosition="5" unitName="jetbrains.mps.tool.common.util.Timed$1" />
     <unitInfo nodeId="5198178184416573444" fileName="Timed.java" startLine="12" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.tool.common.util.Timed" />
   </root>
-  <root nodeId="5198178184416574646" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/5198178184416574646">
     <nodeInfo nodeId="5198178184416574651" fileName="TimedComputable.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAcquireCount" />
     <nodeInfo nodeId="5198178184416574667" fileName="TimedComputable.java" startLine="14" startPosition="22" endLine="15" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5198178184416574670" fileName="TimedComputable.java" startLine="15" startPosition="20" endLine="16" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -782,7 +782,7 @@
     <scopeInfo nodeId="5198178184416574663" fileName="TimedComputable.java" startLine="14" startPosition="0" endLine="23" endPosition="0" />
     <unitInfo nodeId="5198178184416574646" fileName="TimedComputable.java" startLine="7" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.tool.common.util.TimedComputable" />
   </root>
-  <root nodeId="5198178184416574735" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/5198178184416574735">
     <nodeInfo nodeId="5198178184416574766" fileName="ConcurrencyUtil.java" startLine="35" startPosition="38" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5198178184416574770" fileName="ConcurrencyUtil.java" startLine="37" startPosition="7" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5198178184416574772" fileName="ConcurrencyUtil.java" startLine="39" startPosition="5" endLine="40" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -928,7 +928,7 @@
     <unitInfo nodeId="5198178184416575018" fileName="ConcurrencyUtil.java" startLine="112" startPosition="82" endLine="118" endPosition="5" unitName="jetbrains.mps.tool.common.util.ConcurrencyUtil$2" />
     <unitInfo nodeId="5198178184416574735" fileName="ConcurrencyUtil.java" startLine="22" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.tool.common.util.ConcurrencyUtil" />
   </root>
-  <root nodeId="6740693110299850048" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/6740693110299850048">
     <nodeInfo nodeId="6740693110299850062" fileName="UrlClassLoader.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myDebugTime" />
     <nodeInfo nodeId="6740693110299850066" fileName="UrlClassLoader.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NS_THRESHOLD" />
     <nodeInfo nodeId="6740693110299850051" fileName="UrlClassLoader.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassPath" />
@@ -1137,7 +1137,7 @@
     </scopeInfo>
     <unitInfo nodeId="6740693110299850048" fileName="UrlClassLoader.java" startLine="18" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.tool.common.util.UrlClassLoader" />
   </root>
-  <root nodeId="6740693110299850542" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/6740693110299850542">
     <nodeInfo nodeId="6740693110299868126" fileName="ClassPath.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myDebugTime" />
     <nodeInfo nodeId="6740693110299868130" fileName="ClassPath.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NS_THRESHOLD" />
     <nodeInfo nodeId="6740693110299868134" fileName="ClassPath.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourOrder" />
@@ -1382,7 +1382,7 @@
     <unitInfo nodeId="5198178184416560737" fileName="ClassPath.java" startLine="166" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.tool.common.util.ClassPath$MyEnumeration" />
     <unitInfo nodeId="6740693110299850542" fileName="ClassPath.java" startLine="20" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.tool.common.util.ClassPath" />
   </root>
-  <root nodeId="6740693110299868256" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/6740693110299868256">
     <nodeInfo nodeId="6740693110299868257" fileName="Loader.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myURL" />
     <nodeInfo nodeId="6740693110299868266" fileName="Loader.java" startLine="13" startPosition="29" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6740693110299868274" fileName="Loader.java" startLine="17" startPosition="30" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1407,7 +1407,7 @@
     <scopeInfo nodeId="6740693110299868270" fileName="Loader.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
     <unitInfo nodeId="6740693110299868256" fileName="Loader.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.tool.common.util.Loader" />
   </root>
-  <root nodeId="6740693110299868293" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/6740693110299868293">
     <nodeInfo nodeId="5198178184416560602" fileName="ClasspathCache.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassPackagesCache" />
     <nodeInfo nodeId="5198178184416560613" fileName="ClasspathCache.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResourcePackagesCache" />
     <nodeInfo nodeId="5198178184416560636" fileName="ClasspathCache.java" startLine="17" startPosition="68" endLine="18" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1449,8 +1449,8 @@
     </scopeInfo>
     <unitInfo nodeId="6740693110299868293" fileName="ClasspathCache.java" startLine="10" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.tool.common.util.ClasspathCache" />
   </root>
-  <root nodeId="8638838189258283708" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)" />
-  <root nodeId="8638838189258348895" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/8638838189258283708" />
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/8638838189258348895">
     <nodeInfo nodeId="8638838189258348919" fileName="PathUtil.java" startLine="15" startPosition="45" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8638838189258348921" fileName="PathUtil.java" startLine="17" startPosition="5" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8638838189258348929" fileName="PathUtil.java" startLine="18" startPosition="49" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1502,7 +1502,7 @@
     </scopeInfo>
     <unitInfo nodeId="8638838189258348895" fileName="PathUtil.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.tool.common.util.PathUtil" />
   </root>
-  <root nodeId="8638838189258387911" modelId="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
+  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/8638838189258387911">
     <nodeInfo nodeId="8638838189258387913" fileName="SystemInfo.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OS_NAME" />
     <nodeInfo nodeId="8638838189258387920" fileName="SystemInfo.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OS_VERSION" />
     <nodeInfo nodeId="8638838189258387927" fileName="SystemInfo.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OS_ARCH" />

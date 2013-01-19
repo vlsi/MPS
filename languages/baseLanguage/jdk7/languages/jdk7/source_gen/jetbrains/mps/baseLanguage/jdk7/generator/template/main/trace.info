@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="19" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.QueriesGenerated" />
   <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.TemplateModelImpl" />
-  <root nodeId="400642802550418959" modelId="r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)">
+  <root nodeRef="r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)/400642802550418959">
     <nodeInfo nodeId="400642802550418959" fileName="Mappingmain.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rules" />
     <nodeInfo nodeId="400642802550418959" fileName="Mappingmain.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="400642802550418959" fileName="Mappingmain.java" startLine="28" startPosition="43" endLine="29" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -112,7 +112,7 @@
     <unitInfo nodeId="400642802550418959" fileName="Mappingmain.java" startLine="81" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Mappingmain$ReductionRule0" />
     <unitInfo nodeId="400642802550418959" fileName="Mappingmain.java" startLine="24" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.generator.template.main.Mappingmain" />
   </root>
-  <root nodeId="400642802550420129" modelId="r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)">
+  <root nodeRef="r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)/400642802550420129">
     <nodeInfo nodeId="3708576844065084050" fileName="QueriesGenerated.java" startLine="20" startPosition="153" endLine="21" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3708576844065084085" fileName="QueriesGenerated.java" startLine="21" startPosition="196" endLine="22" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="400642802550422234" fileName="QueriesGenerated.java" startLine="25" startPosition="149" endLine="26" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.QueriesGenerated" />
   <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.TemplateModelImpl" />
-  <root nodeId="7980748436587788164" modelId="r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)">
+  <root nodeRef="r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)/7980748436587788164">
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rules" />
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="7980748436587788164" fileName="Mappingmain.java" startLine="37" startPosition="43" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

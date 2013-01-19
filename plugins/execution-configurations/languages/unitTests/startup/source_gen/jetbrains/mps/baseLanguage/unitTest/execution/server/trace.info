@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3310779261129642822" modelId="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)">
+  <root nodeRef="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)/3310779261129642822">
     <nodeInfo nodeId="3310779261129642877" fileName="TransformationTestRunner.java" startLine="16" startPosition="9" endLine="17" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3310779261129642879" fileName="TransformationTestRunner.java" startLine="17" startPosition="31" endLine="18" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3310779261129642889" fileName="TransformationTestRunner.java" startLine="19" startPosition="27" endLine="20" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -38,7 +38,7 @@
     <unitInfo nodeId="3310779261129642909" fileName="TransformationTestRunner.java" startLine="26" startPosition="39" endLine="30" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestRunner$1" />
     <unitInfo nodeId="3310779261129642822" fileName="TransformationTestRunner.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestRunner" />
   </root>
-  <root nodeId="5881102044690167886" modelId="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)">
+  <root nodeRef="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)/5881102044690167886">
     <nodeInfo nodeId="5881102044690168082" fileName="TestRunner.java" startLine="26" startPosition="33" endLine="27" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5881102044690168085" fileName="TestRunner.java" startLine="27" startPosition="12" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5881102044690168091" fileName="TestRunner.java" startLine="28" startPosition="35" endLine="29" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -196,7 +196,7 @@
     <unitInfo nodeId="5881102044690167908" fileName="TestRunner.java" startLine="79" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestRunner$MyRunListener" />
     <unitInfo nodeId="5881102044690167886" fileName="TestRunner.java" startLine="20" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestRunner" />
   </root>
-  <root nodeId="5881102044690168334" modelId="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)">
+  <root nodeRef="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)/5881102044690168334">
     <nodeInfo nodeId="5881102044690168349" fileName="CommandOutputStream.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLastChar" />
     <nodeInfo nodeId="5881102044690168352" fileName="CommandOutputStream.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPrintOut" />
     <nodeInfo nodeId="5881102044690168339" fileName="CommandOutputStream.java" startLine="13" startPosition="47" endLine="14" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1784947186835625271" modelId="r:de82dfab-9448-49ba-813e-2b0579f7fb15(jetbrains.mps.ide.platform.actions)">
+  <root nodeRef="r:de82dfab-9448-49ba-813e-2b0579f7fb15(jetbrains.mps.ide.platform.actions)/1784947186835625271">
     <unitInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="1" startPosition="0" endLine="34" endPosition="13" unitName="jetbrains.mps.ide.platform.actions.PlatformActions" />
   </root>
-  <root nodeId="227146524086541067" modelId="r:de82dfab-9448-49ba-813e-2b0579f7fb15(jetbrains.mps.ide.platform.actions)">
+  <root nodeRef="r:de82dfab-9448-49ba-813e-2b0579f7fb15(jetbrains.mps.ide.platform.actions)/227146524086541067">
     <nodeInfo nodeId="227146524086541067" fileName="GoToNodeById_Action.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="227146524086541067" fileName="GoToNodeById_Action.java" startLine="26" startPosition="32" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="227146524086541067" fileName="GoToNodeById_Action.java" startLine="27" startPosition="40" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4003657351907888946" modelId="r:d276bb84-684c-461d-9dd5-44923097d981(jetbrains.mps.build.ant.make)" />
-  <root nodeId="4003657351907889485" modelId="r:d276bb84-684c-461d-9dd5-44923097d981(jetbrains.mps.build.ant.make)">
+  <root nodeRef="r:d276bb84-684c-461d-9dd5-44923097d981(jetbrains.mps.build.ant.make)/4003657351907888946" />
+  <root nodeRef="r:d276bb84-684c-461d-9dd5-44923097d981(jetbrains.mps.build.ant.make)/4003657351907889485">
     <nodeInfo nodeId="4003657351907889498" fileName="MakeTask.java" startLine="14" startPosition="57" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4003657351907889488" fileName="MakeTask.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeTask#()V" />
     <nodeInfo nodeId="4003657351907889492" fileName="MakeTask.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWorkerClass#()Ljava/lang/Class;" />

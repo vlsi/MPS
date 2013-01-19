@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4224832660979881712" modelId="r:ee4e3a40-94e5-448b-94ee-afa0fd22e4ed(jetbrains.mps.smodel.persistence.def.refactoring)">
+  <root nodeRef="r:ee4e3a40-94e5-448b-94ee-afa0fd22e4ed(jetbrains.mps.smodel.persistence.def.refactoring)/4224832660979881712">
     <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
     <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="historyhandler" />
     <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="elementhandler" />
@@ -448,7 +448,7 @@
     <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="172" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$ElementElementHandler" />
     <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="20" startPosition="0" endLine="387" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler" />
   </root>
-  <root nodeId="4224832660979881893" modelId="r:ee4e3a40-94e5-448b-94ee-afa0fd22e4ed(jetbrains.mps.smodel.persistence.def.refactoring)">
+  <root nodeRef="r:ee4e3a40-94e5-448b-94ee-afa0fd22e4ed(jetbrains.mps.smodel.persistence.def.refactoring)/4224832660979881893">
     <nodeInfo nodeId="4224832660979882225" fileName="HistoryWriter.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODIFICATION_HISTORY" />
     <nodeInfo nodeId="4224832660979882229" fileName="HistoryWriter.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODIFICATION_ELEMENT" />
     <nodeInfo nodeId="4224832660979882233" fileName="HistoryWriter.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENCIES" />

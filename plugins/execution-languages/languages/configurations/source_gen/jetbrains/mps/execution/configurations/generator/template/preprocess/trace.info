@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="25" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.execution.configurations.generator.template.preprocess.QueriesGenerated" />
-  <root nodeId="5916922432461069145" modelId="r:2a0121e0-959c-434f-b621-0b4c60f1f305(jetbrains.mps.execution.configurations.generator.template.preprocess@generator)">
+  <root nodeRef="r:2a0121e0-959c-434f-b621-0b4c60f1f305(jetbrains.mps.execution.configurations.generator.template.preprocess@generator)/5916922432461069145">
     <nodeInfo nodeId="5916922432461075190" fileName="QueriesGenerated.java" startLine="28" startPosition="39" endLine="29" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5916922432461075294" fileName="QueriesGenerated.java" startLine="35" startPosition="46" endLine="36" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3977898382491957540" fileName="QueriesGenerated.java" startLine="41" startPosition="213" endLine="42" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

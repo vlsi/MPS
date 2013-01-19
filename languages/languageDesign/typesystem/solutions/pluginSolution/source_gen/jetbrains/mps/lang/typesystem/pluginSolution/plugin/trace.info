@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1381359735925524321" modelId="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)">
+  <root nodeRef="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)/1381359735925524321">
     <nodeInfo nodeId="7423714904715845308" fileName="AuxilaryRuntimeModel.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="7423714904715846982" fileName="AuxilaryRuntimeModel.java" startLine="16" startPosition="33" endLine="17" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7423714904715831229" fileName="AuxilaryRuntimeModel.java" startLine="26" startPosition="29" endLine="27" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -37,7 +37,7 @@
     <unitInfo nodeId="1381359735925524324" fileName="AuxilaryRuntimeModel.java" startLine="30" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.AuxilaryRuntimeModel$AuxModelDescriptor" />
     <unitInfo nodeId="1381359735925524321" fileName="AuxilaryRuntimeModel.java" startLine="13" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.AuxilaryRuntimeModel" />
   </root>
-  <root nodeId="5487985028841908585" modelId="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)">
+  <root nodeRef="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)/5487985028841908585">
     <nodeInfo nodeId="5487985028841908585" fileName="TypesystemActions_ActionGroup.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841908585" fileName="TypesystemActions_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="5487985028841908585" fileName="TypesystemActions_ActionGroup.java" startLine="12" startPosition="42" endLine="13" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -57,7 +57,7 @@
     <scopeInfo nodeId="5487985028841908585" fileName="TypesystemActions_ActionGroup.java" startLine="12" startPosition="0" endLine="23" endPosition="0" />
     <unitInfo nodeId="5487985028841908585" fileName="TypesystemActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TypesystemActions_ActionGroup" />
   </root>
-  <root nodeId="5487985028841908720" modelId="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)">
+  <root nodeRef="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)/5487985028841908720">
     <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="29" startPosition="32" endLine="30" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="30" startPosition="57" endLine="31" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -177,7 +177,7 @@
     <unitInfo nodeId="6277318027977430247" fileName="ShowNodeType_Action.java" startLine="78" startPosition="48" endLine="84" endPosition="7" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowNodeType_Action$1" />
     <unitInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="26" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowNodeType_Action" />
   </root>
-  <root nodeId="5487985028841909059" modelId="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)">
+  <root nodeRef="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)/5487985028841909059">
     <nodeInfo nodeId="5487985028841909059" fileName="Default_KeymapChanges.java" startLine="11" startPosition="34" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="5487985028841909059" fileName="Default_KeymapChanges.java" startLine="12" startPosition="14" endLine="13" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841909059" fileName="Default_KeymapChanges.java" startLine="13" startPosition="126" endLine="14" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -197,7 +197,7 @@
     <scopeInfo nodeId="5487985028841909059" fileName="Default_KeymapChanges.java" startLine="11" startPosition="0" endLine="17" endPosition="0" />
     <unitInfo nodeId="5487985028841909059" fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.Default_KeymapChanges" />
   </root>
-  <root nodeId="7162597690967702203" modelId="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)">
+  <root nodeRef="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)/7162597690967702203">
     <nodeInfo nodeId="7162597690967702203" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690967702203" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="27" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690967702203" fileName="PluginSolution_ApplicationPlugin.java" startLine="23" startPosition="30" endLine="24" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

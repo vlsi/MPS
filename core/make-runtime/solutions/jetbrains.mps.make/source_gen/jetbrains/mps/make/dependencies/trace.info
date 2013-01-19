@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1077540970775387654" modelId="r:d357a980-6a2b-481f-acb3-29792a9d3728(jetbrains.mps.make.dependencies)">
+  <root nodeRef="r:d357a980-6a2b-481f-acb3-29792a9d3728(jetbrains.mps.make.dependencies)/1077540970775387654">
     <nodeInfo nodeId="5541828167401385635" fileName="ModulesClusterizer.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1077540970775395300" fileName="ModulesClusterizer.java" startLine="40" startPosition="42" endLine="41" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1077540970775395207" fileName="ModulesClusterizer.java" startLine="45" startPosition="42" endLine="46" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -171,7 +171,7 @@
     <unitInfo nodeId="198406549333194312" fileName="ModulesClusterizer.java" startLine="52" startPosition="63" endLine="60" endPosition="5" unitName="jetbrains.mps.make.dependencies.ModulesClusterizer$3" />
     <unitInfo nodeId="1077540970775387654" fileName="ModulesClusterizer.java" startLine="32" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.make.dependencies.ModulesClusterizer" />
   </root>
-  <root nodeId="5888262800849895741" modelId="r:d357a980-6a2b-481f-acb3-29792a9d3728(jetbrains.mps.make.dependencies)">
+  <root nodeRef="r:d357a980-6a2b-481f-acb3-29792a9d3728(jetbrains.mps.make.dependencies)/5888262800849895741">
     <nodeInfo nodeId="7959437477381204310" fileName="ModulesCluster.java" startLine="143" startPosition="27" endLine="143" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7959437477381204312" fileName="ModulesCluster.java" startLine="146" startPosition="27" endLine="146" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7959437477381204330" fileName="ModulesCluster.java" startLine="157" startPosition="27" endLine="157" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

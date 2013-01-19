@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1289622777586550823" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/1289622777586550823">
     <nodeInfo nodeId="1289622777586562732" fileName="MPSBaseLanguage.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourInstance" />
     <nodeInfo nodeId="1289622777586562755" fileName="MPSBaseLanguage.java" startLine="14" startPosition="22" endLine="15" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1289622777586562758" fileName="MPSBaseLanguage.java" startLine="15" startPosition="17" endLine="16" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -16,7 +16,7 @@
     <scopeInfo nodeId="1289622777586562750" fileName="MPSBaseLanguage.java" startLine="13" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="1289622777586550823" fileName="MPSBaseLanguage.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.MPSBaseLanguage" />
   </root>
-  <root nodeId="3024565449487105984" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3024565449487105984">
     <nodeInfo nodeId="6405505214478649502" fileName="InstanceMethodCall_InstanceMethodScope.java" startLine="10" startPosition="88" endLine="11" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3024565449487105995" fileName="InstanceMethodCall_InstanceMethodScope.java" startLine="11" startPosition="26" endLine="12" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3024565449487105987" fileName="InstanceMethodCall_InstanceMethodScope.java" startLine="9" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InstanceMethodCall_InstanceMethodScope#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -27,7 +27,7 @@
     </scopeInfo>
     <unitInfo nodeId="3024565449487105984" fileName="InstanceMethodCall_InstanceMethodScope.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.InstanceMethodCall_InstanceMethodScope" />
   </root>
-  <root nodeId="3024565449487117498" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3024565449487117498">
     <nodeInfo nodeId="6405505214478649593" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="17" startPosition="107" endLine="18" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3024565449487117511" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="18" startPosition="58" endLine="19" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3024565449487117523" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="23" startPosition="59" endLine="24" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -59,7 +59,7 @@
     </scopeInfo>
     <unitInfo nodeId="3024565449487117498" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.SuperMethodCall_InstanceMethodScope" />
   </root>
-  <root nodeId="3024565449487117567" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3024565449487117567">
     <nodeInfo nodeId="3024565449487117756" fileName="VisibleClassConstructorsScope.java" startLine="29" startPosition="68" endLine="30" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6405505214478649614" fileName="VisibleClassConstructorsScope.java" startLine="34" startPosition="82" endLine="35" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3024565449487117770" fileName="VisibleClassConstructorsScope.java" startLine="35" startPosition="76" endLine="36" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -169,7 +169,7 @@
     <unitInfo nodeId="3024565449487117570" fileName="VisibleClassConstructorsScope.java" startLine="65" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibleClassConstructorsScope$ConstructorDeclarationReferenceInfoResolver" />
     <unitInfo nodeId="3024565449487117567" fileName="VisibleClassConstructorsScope.java" startLine="26" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibleClassConstructorsScope" />
   </root>
-  <root nodeId="3161373106581136687" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581136687">
     <nodeInfo nodeId="3161373106581137773" fileName="ClassifierAndSuperClassifiersCache.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="keyProducer" />
     <nodeInfo nodeId="3161373106581139647" fileName="ClassifierAndSuperClassifiersCache.java" startLine="36" startPosition="74" endLine="37" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3161373106581139655" fileName="ClassifierAndSuperClassifiersCache.java" startLine="41" startPosition="74" endLine="42" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -894,7 +894,7 @@
     <unitInfo nodeId="3161373106581137640" fileName="ClassifierAndSuperClassifiersCache.java" startLine="274" startPosition="0" endLine="436" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersCache$MethodsDataSet" />
     <unitInfo nodeId="3161373106581136687" fileName="ClassifierAndSuperClassifiersCache.java" startLine="32" startPosition="0" endLine="542" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersCache" />
   </root>
-  <root nodeId="3161373106581136688" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581136688">
     <nodeInfo nodeId="3161373106581136690" fileName="ClassifiersCache.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="keyProducer" />
     <nodeInfo nodeId="3161373106581136695" fileName="ClassifiersCache.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassifiersByName" />
     <nodeInfo nodeId="3161373106581136706" fileName="ClassifiersCache.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNameByClassifier" />
@@ -1130,7 +1130,7 @@
     <unitInfo nodeId="3161373106581136745" fileName="ClassifiersCache.java" startLine="172" startPosition="83" endLine="176" endPosition="5" unitName="jetbrains.mps.baseLanguage.search.ClassifiersCache$1" />
     <unitInfo nodeId="3161373106581136688" fileName="ClassifiersCache.java" startLine="26" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifiersCache" />
   </root>
-  <root nodeId="3161373106581137350" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581137350">
     <nodeInfo nodeId="2990203945682755988" fileName="VisibilityUtil.java" startLine="22" startPosition="80" endLine="23" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2990203945682755992" fileName="VisibilityUtil.java" startLine="24" startPosition="96" endLine="25" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2933227483039242799" fileName="VisibilityUtil.java" startLine="27" startPosition="122" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1269,7 +1269,7 @@
     <unitInfo nodeId="4228096044112618479" fileName="VisibilityUtil.java" startLine="104" startPosition="137" endLine="108" endPosition="5" unitName="jetbrains.mps.baseLanguage.search.VisibilityUtil$1" />
     <unitInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="18" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibilityUtil" />
   </root>
-  <root nodeId="3161373106581139670" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581139670">
     <nodeInfo nodeId="3161373106581139695" fileName="ReachableClassifiersScope.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScope" />
     <nodeInfo nodeId="3161373106581139698" fileName="ReachableClassifiersScope.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="6405505214478649556" fileName="ReachableClassifiersScope.java" startLine="36" startPosition="80" endLine="37" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -1500,7 +1500,7 @@
     <unitInfo nodeId="3161373106581139673" fileName="ReachableClassifiersScope.java" startLine="70" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope$ClassifierReferenceInfoResolver" />
     <unitInfo nodeId="3161373106581139670" fileName="ReachableClassifiersScope.java" startLine="30" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" />
   </root>
-  <root nodeId="3161373106581139869" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581139869">
     <nodeInfo nodeId="2706803607794599099" fileName="GenericTypesUtil.java" startLine="18" startPosition="107" endLine="19" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2706803607794599092" fileName="GenericTypesUtil.java" startLine="21" startPosition="100" endLine="22" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2706803607794599105" fileName="GenericTypesUtil.java" startLine="23" startPosition="5" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1573,7 +1573,7 @@
     </scopeInfo>
     <unitInfo nodeId="3161373106581139869" fileName="GenericTypesUtil.java" startLine="11" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.GenericTypesUtil" />
   </root>
-  <root nodeId="3161373106581140033" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581140033">
     <nodeInfo nodeId="3161373106581140035" fileName="InstanceMethodReferenceInfoResolver.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInstanceType" />
     <nodeInfo nodeId="3161373106581140038" fileName="InstanceMethodReferenceInfoResolver.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActualArguments" />
     <nodeInfo nodeId="3161373106581140042" fileName="InstanceMethodReferenceInfoResolver.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySearchScope" />
@@ -1618,7 +1618,7 @@
     </scopeInfo>
     <unitInfo nodeId="3161373106581140033" fileName="InstanceMethodReferenceInfoResolver.java" startLine="13" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.InstanceMethodReferenceInfoResolver" />
   </root>
-  <root nodeId="3161373106581140178" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581140178">
     <nodeInfo nodeId="3161373106581140180" fileName="StaticMethodReferenceInfoResolver.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClass" />
     <nodeInfo nodeId="3161373106581140183" fileName="StaticMethodReferenceInfoResolver.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActualArguments" />
     <nodeInfo nodeId="3161373106581140187" fileName="StaticMethodReferenceInfoResolver.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySearchScope" />
@@ -1662,7 +1662,7 @@
     </scopeInfo>
     <unitInfo nodeId="3161373106581140178" fileName="StaticMethodReferenceInfoResolver.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.StaticMethodReferenceInfoResolver" />
   </root>
-  <root nodeId="3161373106581140309" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581140309">
     <nodeInfo nodeId="3161373106581140312" fileName="LocalVariablesScope.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextNode" />
     <nodeInfo nodeId="3161373106581140315" fileName="LocalVariablesScope.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocalVariables" />
     <nodeInfo nodeId="6405505214478624750" fileName="LocalVariablesScope.java" startLine="30" startPosition="49" endLine="31" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -1932,7 +1932,7 @@
     <unitInfo nodeId="3161373106581140766" fileName="LocalVariablesScope.java" startLine="170" startPosition="17" endLine="182" endPosition="7" unitName="jetbrains.mps.baseLanguage.search.LocalVariablesScope$3" />
     <unitInfo nodeId="3161373106581140309" fileName="LocalVariablesScope.java" startLine="24" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.LocalVariablesScope" />
   </root>
-  <root nodeId="3161373106581140806" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581140806">
     <nodeInfo nodeId="3161373106581140809" fileName="ClassifierAndSuperClassifiersScope.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTopClassifier" />
     <nodeInfo nodeId="3161373106581140812" fileName="ClassifierAndSuperClassifiersScope.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOriginalConstraint" />
     <nodeInfo nodeId="7055390039634090093" fileName="ClassifierAndSuperClassifiersScope.java" startLine="27" startPosition="92" endLine="28" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -2147,7 +2147,7 @@
     <unitInfo nodeId="3161373106581141377" fileName="ClassifierAndSuperClassifiersScope.java" startLine="180" startPosition="17" endLine="187" endPosition="7" unitName="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope$3" />
     <unitInfo nodeId="3161373106581140806" fileName="ClassifierAndSuperClassifiersScope.java" startLine="21" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope" />
   </root>
-  <root nodeId="3161373106581141431" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581141431">
     <nodeInfo nodeId="3161373106581141434" fileName="IClassifiersSearchScope.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INTERFACE" />
     <nodeInfo nodeId="3161373106581141438" fileName="IClassifiersSearchScope.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLASS" />
     <nodeInfo nodeId="3161373106581141442" fileName="IClassifiersSearchScope.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ANNOTATION" />
@@ -2170,7 +2170,7 @@
     <scopeInfo nodeId="3161373106581141514" fileName="IClassifiersSearchScope.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
     <unitInfo nodeId="3161373106581141431" fileName="IClassifiersSearchScope.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
   </root>
-  <root nodeId="3161373106581141525" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581141525">
     <nodeInfo nodeId="3161373106581141528" fileName="AllSubclassifiersScope.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="model" />
     <nodeInfo nodeId="3161373106581141531" fileName="AllSubclassifiersScope.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="scope" />
     <nodeInfo nodeId="3161373106581141534" fileName="AllSubclassifiersScope.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="visitedClassifiersMap" />
@@ -2285,7 +2285,7 @@
     <unitInfo nodeId="2434295018755137900" fileName="AllSubclassifiersScope.java" startLine="92" startPosition="20" endLine="96" endPosition="7" unitName="jetbrains.mps.baseLanguage.search.AllSubclassifiersScope$3" />
     <unitInfo nodeId="3161373106581141525" fileName="AllSubclassifiersScope.java" startLine="22" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.AllSubclassifiersScope" />
   </root>
-  <root nodeId="3161373106581141805" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581141805">
     <nodeInfo nodeId="3161373106581141809" fileName="AbstractClassifiersScope.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConstraint" />
     <nodeInfo nodeId="3161373106581141817" fileName="AbstractClassifiersScope.java" startLine="24" startPosition="54" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161373106581141827" fileName="AbstractClassifiersScope.java" startLine="28" startPosition="30" endLine="29" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2417,7 +2417,7 @@
     </scopeInfo>
     <unitInfo nodeId="3161373106581141805" fileName="AbstractClassifiersScope.java" startLine="19" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.AbstractClassifiersScope" />
   </root>
-  <root nodeId="3161373106581142281" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581142281">
     <nodeInfo nodeId="2433178749262262897" fileName="VisibleClassifiersScope.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextNode" />
     <nodeInfo nodeId="6405505214478649617" fileName="VisibleClassifiersScope.java" startLine="20" startPosition="78" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3161373106581142293" fileName="VisibleClassifiersScope.java" startLine="21" startPosition="63" endLine="22" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -2470,7 +2470,7 @@
     </scopeInfo>
     <unitInfo nodeId="3161373106581142281" fileName="VisibleClassifiersScope.java" startLine="15" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibleClassifiersScope" />
   </root>
-  <root nodeId="3161373106581142361" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581142361">
     <nodeInfo nodeId="4229436243469283959" fileName="MethodResolveUtil.java" startLine="36" startPosition="92" endLine="37" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2706803607794581182" fileName="MethodResolveUtil.java" startLine="40" startPosition="129" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2706803607794581186" fileName="MethodResolveUtil.java" startLine="41" startPosition="45" endLine="42" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2812,7 +2812,7 @@
     <unitInfo nodeId="2706803607794600198" fileName="MethodResolveUtil.java" startLine="200" startPosition="66" endLine="204" endPosition="7" unitName="jetbrains.mps.baseLanguage.search.MethodResolveUtil$2" />
     <unitInfo nodeId="3161373106581142361" fileName="MethodResolveUtil.java" startLine="32" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.MethodResolveUtil" />
   </root>
-  <root nodeId="3161373106581143187" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581143187">
     <nodeInfo nodeId="169011195923766810" fileName="ClassifierVisibleMembersScope.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassifierType" />
     <nodeInfo nodeId="3161373106581143190" fileName="ClassifierVisibleMembersScope.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextNode" />
     <nodeInfo nodeId="3161373106581143193" fileName="ClassifierVisibleMembersScope.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassifierScope" />
@@ -2884,7 +2884,7 @@
     <unitInfo nodeId="169011195923765450" fileName="ClassifierVisibleMembersScope.java" startLine="34" startPosition="42" endLine="39" endPosition="5" unitName="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope$1" />
     <unitInfo nodeId="3161373106581143187" fileName="ClassifierVisibleMembersScope.java" startLine="18" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope" />
   </root>
-  <root nodeId="3161373106581143413" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581143413">
     <nodeInfo nodeId="1874070707401052380" fileName="VisibleThrowablesScope.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="THROWABLE_FQ_NAME" />
     <nodeInfo nodeId="6405505214478649643" fileName="VisibleThrowablesScope.java" startLine="19" startPosition="91" endLine="20" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3161373106581143425" fileName="VisibleThrowablesScope.java" startLine="20" startPosition="55" endLine="21" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -2919,7 +2919,7 @@
     <unitInfo nodeId="1874070707401109145" fileName="VisibleThrowablesScope.java" startLine="28" startPosition="129" endLine="32" endPosition="7" unitName="jetbrains.mps.baseLanguage.search.VisibleThrowablesScope$1" />
     <unitInfo nodeId="3161373106581143413" fileName="VisibleThrowablesScope.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibleThrowablesScope" />
   </root>
-  <root nodeId="3161373106581143470" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581143470">
     <nodeInfo nodeId="3671207155728925344" fileName="ClassifierVisibleStaticMembersScope.java" startLine="14" startPosition="119" endLine="15" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3671207155728925348" fileName="ClassifierVisibleStaticMembersScope.java" startLine="15" startPosition="115" endLine="16" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3573019447813594675" fileName="ClassifierVisibleStaticMembersScope.java" startLine="16" startPosition="117" endLine="17" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -2958,7 +2958,7 @@
     </scopeInfo>
     <unitInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope" />
   </root>
-  <root nodeId="3896109655413979709" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3896109655413979709">
     <nodeInfo nodeId="3896109655413989216" fileName="ClassifierSuccessors.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="8118629307786932848" fileName="ClassifierSuccessors.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFastFinder" />
     <nodeInfo nodeId="3896109655413989226" fileName="ClassifierSuccessors.java" startLine="19" startPosition="25" endLine="20" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3007,7 +3007,7 @@
     <unitInfo nodeId="8118629307786920923" fileName="ClassifierSuccessors.java" startLine="49" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors$Finder" />
     <unitInfo nodeId="3896109655413979709" fileName="ClassifierSuccessors.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" />
   </root>
-  <root nodeId="4579166930940566542" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/4579166930940566542">
     <nodeInfo nodeId="4579166930940578066" fileName="ParameterScope.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="params" />
     <nodeInfo nodeId="6405505214478624754" fileName="ParameterScope.java" startLine="20" startPosition="44" endLine="21" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8866852874177041155" fileName="ParameterScope.java" startLine="21" startPosition="83" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3059,7 +3059,7 @@
     </scopeInfo>
     <unitInfo nodeId="4579166930940566542" fileName="ParameterScope.java" startLine="15" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ParameterScope" />
   </root>
-  <root nodeId="6192102952330246943" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/6192102952330246943">
     <nodeInfo nodeId="6192102952330317342" fileName="MpsScopesUtil.java" startLine="18" startPosition="79" endLine="19" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="852907523808703510" fileName="MpsScopesUtil.java" startLine="20" startPosition="121" endLine="21" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="852907523808703475" fileName="MpsScopesUtil.java" startLine="22" startPosition="5" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -3108,7 +3108,7 @@
     </scopeInfo>
     <unitInfo nodeId="6192102952330246943" fileName="MpsScopesUtil.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.MpsScopesUtil" />
   </root>
-  <root nodeId="8442551749397137296" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/8442551749397137296">
     <nodeInfo nodeId="8442551749397137336" fileName="BaseLanguageUtil.java" startLine="15" startPosition="33" endLine="16" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8442551749397137344" fileName="BaseLanguageUtil.java" startLine="18" startPosition="41" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8442551749397137355" fileName="BaseLanguageUtil.java" startLine="21" startPosition="71" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3148,7 +3148,7 @@
     </scopeInfo>
     <unitInfo nodeId="8442551749397137296" fileName="BaseLanguageUtil.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.BaseLanguageUtil" />
   </root>
-  <root nodeId="8857362468665994749" modelId="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)">
+  <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/8857362468665994749">
     <nodeInfo nodeId="8857362468665994977" fileName="IClassifiersSearchScopeAdapter.java" startLine="18" startPosition="159" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8857362468665995245" fileName="IClassifiersSearchScopeAdapter.java" startLine="21" startPosition="158" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8857362468665995261" fileName="IClassifiersSearchScopeAdapter.java" startLine="24" startPosition="161" endLine="25" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

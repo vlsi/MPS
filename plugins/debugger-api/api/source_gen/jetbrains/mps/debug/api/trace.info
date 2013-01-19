@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4474271214082912940" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082912940">
     <nodeInfo nodeId="4474271214082916837" fileName="AbstractDebugSession.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProcessHandler" />
     <nodeInfo nodeId="4474271214082916840" fileName="AbstractDebugSession.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListeners" />
     <nodeInfo nodeId="4474271214082916847" fileName="AbstractDebugSession.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExecutionState" />
@@ -198,7 +198,7 @@
     <unitInfo nodeId="4474271214082912943" fileName="AbstractDebugSession.java" startLine="164" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.debug.api.AbstractDebugSession$ExecutionState" />
     <unitInfo nodeId="4474271214082912940" fileName="AbstractDebugSession.java" startLine="15" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.debug.api.AbstractDebugSession" />
   </root>
-  <root nodeId="4474271214082912941" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082912941">
     <nodeInfo nodeId="4474271214082915235" fileName="IDebugger.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDebugSessionCreator#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/AbstractDebugSessionCreator;" />
     <nodeInfo nodeId="4474271214082915243" fileName="IDebugger.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
     <nodeInfo nodeId="4474271214082915248" fileName="IDebugger.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBreakpointsProvider#()Ljetbrains/mps/debug/api/breakpoints/IBreakpointsProvider;" />
@@ -215,7 +215,7 @@
     </scopeInfo>
     <unitInfo nodeId="4474271214082912941" fileName="IDebugger.java" startLine="14" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debug.api.IDebugger" />
   </root>
-  <root nodeId="4474271214082913032" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082913032">
     <nodeInfo nodeId="4474271214082913035" fileName="Debuggers.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4474271214082913040" fileName="Debuggers.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebuggers" />
     <nodeInfo nodeId="4474271214082913055" fileName="Debuggers.java" startLine="22" startPosition="36" endLine="23" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -295,7 +295,7 @@
     </scopeInfo>
     <unitInfo nodeId="4474271214082913032" fileName="Debuggers.java" startLine="13" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.debug.api.Debuggers" />
   </root>
-  <root nodeId="4474271214082913267" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082913267">
     <nodeInfo nodeId="4474271214082914358" fileName="EmptyDebuggerSettings.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myInstance" />
     <nodeInfo nodeId="4474271214082914379" fileName="EmptyDebuggerSettings.java" startLine="15" startPosition="53" endLine="16" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214082914387" fileName="EmptyDebuggerSettings.java" startLine="20" startPosition="28" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -316,7 +316,7 @@
     </scopeInfo>
     <unitInfo nodeId="4474271214082913267" fileName="EmptyDebuggerSettings.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.debug.api.EmptyDebuggerSettings" />
   </root>
-  <root nodeId="4474271214082913334" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082913334">
     <nodeInfo nodeId="4474271214082913343" fileName="IDebuggerSettings.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEmpty#()Z" />
     <nodeInfo nodeId="4474271214082913336" fileName="IDebuggerSettings.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCommandLine#(Z)Ljava/lang/String;" />
     <scopeInfo nodeId="4474271214082913343" fileName="IDebuggerSettings.java" startLine="10" startPosition="0" endLine="11" endPosition="0" />
@@ -325,7 +325,7 @@
     </scopeInfo>
     <unitInfo nodeId="4474271214082913334" fileName="IDebuggerSettings.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.debug.api.IDebuggerSettings" />
   </root>
-  <root nodeId="4474271214082913453" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082913453">
     <nodeInfo nodeId="4474271214082913455" fileName="AbstractDebugSessionCreator.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4474271214082913476" fileName="AbstractDebugSessionCreator.java" startLine="19" startPosition="146" endLine="20" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214082913492" fileName="AbstractDebugSessionCreator.java" startLine="23" startPosition="127" endLine="24" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -351,7 +351,7 @@
     </scopeInfo>
     <unitInfo nodeId="4474271214082913453" fileName="AbstractDebugSessionCreator.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.debug.api.AbstractDebugSessionCreator" />
   </root>
-  <root nodeId="4474271214082913514" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082913514">
     <nodeInfo nodeId="4474271214082914408" fileName="AbstractUiState.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NO_FRAME" />
     <nodeInfo nodeId="4474271214082914413" fileName="AbstractUiState.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAbstractDebugSession" />
     <nodeInfo nodeId="4474271214082914422" fileName="AbstractUiState.java" startLine="17" startPosition="59" endLine="18" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -457,7 +457,7 @@
     <scopeInfo nodeId="4474271214082914515" fileName="AbstractUiState.java" startLine="36" startPosition="0" endLine="47" endPosition="0" />
     <unitInfo nodeId="4474271214082913514" fileName="AbstractUiState.java" startLine="13" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.debug.api.AbstractUiState" />
   </root>
-  <root nodeId="4474271214082913515" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082913515">
     <nodeInfo nodeId="1331672133304148678" fileName="DebuggableFramesSelector.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="4701043456212925511" fileName="DebuggableFramesSelector.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySession" />
     <nodeInfo nodeId="1331672133304148683" fileName="DebuggableFramesSelector.java" startLine="18" startPosition="82" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -550,7 +550,7 @@
     </scopeInfo>
     <unitInfo nodeId="4474271214082913515" fileName="DebuggableFramesSelector.java" startLine="14" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.api.DebuggableFramesSelector" />
   </root>
-  <root nodeId="4474271214082913702" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082913702">
     <nodeInfo nodeId="4474271214082913759" fileName="DebugSessionManagerComponent.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProcessesToSessions" />
     <nodeInfo nodeId="4474271214082913769" fileName="DebugSessionManagerComponent.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDebugSessionListeners" />
     <nodeInfo nodeId="4474271214082913776" fileName="DebugSessionManagerComponent.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunContentListener" />
@@ -761,7 +761,7 @@
     <unitInfo nodeId="4474271214082913743" fileName="DebugSessionManagerComponent.java" startLine="169" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.debug.api.DebugSessionManagerComponent$MyRunContentListener" />
     <unitInfo nodeId="4474271214082913702" fileName="DebugSessionManagerComponent.java" startLine="21" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
   </root>
-  <root nodeId="4474271214082914203" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082914203">
     <nodeInfo nodeId="4474271214082914213" fileName="IDebuggableFramesSelector.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findDeepestDebuggableFrameIndex#(Ljava/util/List;)I" />
     <nodeInfo nodeId="4474271214082914220" fileName="IDebuggableFramesSelector.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDebuggableFrame#(Ljetbrains/mps/debug/api/programState/IStackFrame;)Z" />
     <nodeInfo nodeId="4474271214082914227" fileName="IDebuggableFramesSelector.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDebuggablePosition#(Ljava/lang/String;Ljava/lang/String;I)Z" />
@@ -793,7 +793,7 @@
     </scopeInfo>
     <unitInfo nodeId="4474271214082914203" fileName="IDebuggableFramesSelector.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.debug.api.IDebuggableFramesSelector" />
   </root>
-  <root nodeId="4474271214082914260" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082914260">
     <nodeInfo nodeId="4474271214082914268" fileName="BreakpointInfo.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCreationTime" />
     <nodeInfo nodeId="4474271214082914273" fileName="BreakpointInfo.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsEnabled" />
     <nodeInfo nodeId="7897202388614200016" fileName="BreakpointInfo.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocation" />
@@ -836,7 +836,7 @@
     </scopeInfo>
     <unitInfo nodeId="4474271214082914260" fileName="BreakpointInfo.java" startLine="9" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debug.api.BreakpointInfo" />
   </root>
-  <root nodeId="4474271214082914772" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082914772">
     <nodeInfo nodeId="4474271214082914786" fileName="AbstractDebugger.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointsProviderManager" />
     <nodeInfo nodeId="4474271214082914789" fileName="AbstractDebugger.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebuggers" />
     <nodeInfo nodeId="4474271214082914792" fileName="AbstractDebugger.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointsProvider" />
@@ -891,7 +891,7 @@
     </scopeInfo>
     <unitInfo nodeId="4474271214082914772" fileName="AbstractDebugger.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.debug.api.AbstractDebugger" />
   </root>
-  <root nodeId="4474271214082914913" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082914913">
     <nodeInfo nodeId="8149197049716796172" fileName="BreakpointCreatorsManager.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCreators" />
     <nodeInfo nodeId="8149197049716796216" fileName="BreakpointCreatorsManager.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAddedByConceptCreators" />
     <nodeInfo nodeId="4474271214082914953" fileName="BreakpointCreatorsManager.java" startLine="39" startPosition="36" endLine="40" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1032,7 +1032,7 @@
     <unitInfo nodeId="8149197049716796787" fileName="BreakpointCreatorsManager.java" startLine="74" startPosition="57" endLine="78" endPosition="5" unitName="jetbrains.mps.debug.api.BreakpointCreatorsManager$3" />
     <unitInfo nodeId="4474271214082914913" fileName="BreakpointCreatorsManager.java" startLine="31" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.debug.api.BreakpointCreatorsManager" />
   </root>
-  <root nodeId="4474271214082915164" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082915164">
     <nodeInfo nodeId="4474271214082915171" fileName="DebuggerNotPresentException.java" startLine="7" startPosition="40" endLine="8" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4474271214082915178" fileName="DebuggerNotPresentException.java" startLine="11" startPosition="54" endLine="12" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4474271214082915188" fileName="DebuggerNotPresentException.java" startLine="15" startPosition="71" endLine="16" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1058,7 +1058,7 @@
     </scopeInfo>
     <unitInfo nodeId="4474271214082915164" fileName="DebuggerNotPresentException.java" startLine="6" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debug.api.DebuggerNotPresentException" />
   </root>
-  <root nodeId="4474271214082915266" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082915266">
     <nodeInfo nodeId="4474271214082915268" fileName="SessionChangeListener.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stateChanged#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
     <nodeInfo nodeId="4474271214082915274" fileName="SessionChangeListener.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
     <nodeInfo nodeId="4474271214082915280" fileName="SessionChangeListener.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
@@ -1077,7 +1077,7 @@
     </scopeInfo>
     <unitInfo nodeId="4474271214082915266" fileName="SessionChangeListener.java" startLine="6" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.debug.api.SessionChangeListener" />
   </root>
-  <root nodeId="4474271214082915303" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082915303">
     <nodeInfo nodeId="4474271214082915367" fileName="BreakpointManagerComponent.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4474271214082915372" fileName="BreakpointManagerComponent.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BREAKPOINTS_LIST_ELEMENT" />
     <nodeInfo nodeId="4474271214082915376" fileName="BreakpointManagerComponent.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DUMMY_IO" />
@@ -1481,7 +1481,7 @@
     <unitInfo nodeId="4474271214082915320" fileName="BreakpointManagerComponent.java" startLine="293" startPosition="0" endLine="309" endPosition="0" unitName="jetbrains.mps.debug.api.BreakpointManagerComponent$BreakpointManagerListener" />
     <unitInfo nodeId="4474271214082915303" fileName="BreakpointManagerComponent.java" startLine="30" startPosition="0" endLine="332" endPosition="0" unitName="jetbrains.mps.debug.api.BreakpointManagerComponent" />
   </root>
-  <root nodeId="4474271214082916323" modelId="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)">
+  <root nodeRef="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)/4474271214082916323">
     <nodeInfo nodeId="4474271214082916326" fileName="SessionChangeAdapter.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SessionChangeAdapter#()V" />
     <nodeInfo nodeId="4474271214082916330" fileName="SessionChangeAdapter.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stateChanged#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
     <nodeInfo nodeId="4474271214082916337" fileName="SessionChangeAdapter.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />

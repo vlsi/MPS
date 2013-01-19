@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4871586248217809898" modelId="r:9e383f3b-cf02-4e9f-861b-72b030ba5e68(jetbrains.mps.debugger.java.api.evaluation.transform)">
+  <root nodeRef="r:9e383f3b-cf02-4e9f-861b-72b030ba5e68(jetbrains.mps.debugger.java.api.evaluation.transform)/4871586248217809898">
     <nodeInfo nodeId="4871586248217809912" fileName="TransformatorBuilder.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="7494124042451449896" fileName="TransformatorBuilder.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOCK" />
     <nodeInfo nodeId="8321799582438650785" fileName="TransformatorBuilder.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljetbrains/mps/debugger/java/api/evaluation/transform/TransformatorBuilder/Transformator;" />

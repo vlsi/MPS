@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6585869519574700070" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
+  <root nodeRef="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)/6585869519574700070">
     <nodeInfo nodeId="6585869519574700075" fileName="CExpressionStatement_Editor.java" startLine="41" startPosition="58" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574700070" fileName="CExpressionStatement_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6585869519574700072" fileName="CExpressionStatement_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -75,7 +75,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574700070" fileName="CExpressionStatement_Editor.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CExpressionStatement_Editor" />
   </root>
-  <root nodeId="6585869519574772764" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
+  <root nodeRef="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)/6585869519574772764">
     <nodeInfo nodeId="6585869519574772766" fileName="VarRef_Editor.java" startLine="68" startPosition="58" endLine="68" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574772764" fileName="VarRef_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6585869519574772767" fileName="VarRef_Editor.java" startLine="23" startPosition="33" endLine="24" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -186,7 +186,7 @@
     <unitInfo nodeId="6585869519574772767" fileName="VarRef_Editor.java" startLine="22" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarRef_Editor$_Inline_kzlle8_a0a" />
     <unitInfo nodeId="6585869519574772764" fileName="VarRef_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarRef_Editor" />
   </root>
-  <root nodeId="6585869519574772771" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
+  <root nodeRef="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)/6585869519574772771">
     <nodeInfo nodeId="6585869519574772781" fileName="CAssignmentExpression_Editor.java" startLine="42" startPosition="58" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574772776" fileName="CAssignmentExpression_Editor.java" startLine="59" startPosition="58" endLine="59" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574772771" fileName="CAssignmentExpression_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -296,7 +296,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574772771" fileName="CAssignmentExpression_Editor.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CAssignmentExpression_Editor" />
   </root>
-  <root nodeId="6585869519574787845" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
+  <root nodeRef="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)/6585869519574787845">
     <nodeInfo nodeId="6585869519574787854" fileName="CFor_Editor.java" startLine="98" startPosition="58" endLine="98" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574787858" fileName="CFor_Editor.java" startLine="115" startPosition="58" endLine="115" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574787862" fileName="CFor_Editor.java" startLine="132" startPosition="58" endLine="132" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -591,7 +591,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574787845" fileName="CFor_Editor.java" startLine="18" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CFor_Editor" />
   </root>
-  <root nodeId="7211731935130582971" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
+  <root nodeRef="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)/7211731935130582971">
     <nodeInfo nodeId="2886182022232400657" fileName="CType_Editor.java" startLine="19" startPosition="69" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7211731935130582971" fileName="CType_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2886182022232400657" fileName="CType_Editor.java" startLine="17" startPosition="88" endLine="18" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -615,7 +615,7 @@
     </scopeInfo>
     <unitInfo nodeId="7211731935130582971" fileName="CType_Editor.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CType_Editor" />
   </root>
-  <root nodeId="7211731935130582986" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
+  <root nodeRef="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)/7211731935130582986">
     <nodeInfo nodeId="6585869519574765702" fileName="VarDecl_Editor.java" startLine="60" startPosition="58" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7211731935130582986" fileName="VarDecl_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6585869519574765692" fileName="VarDecl_Editor.java" startLine="26" startPosition="89" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -758,7 +758,7 @@
     </scopeInfo>
     <unitInfo nodeId="7211731935130582986" fileName="VarDecl_Editor.java" startLine="21" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarDecl_Editor" />
   </root>
-  <root nodeId="7211731935130582992" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
+  <root nodeRef="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)/7211731935130582992">
     <nodeInfo nodeId="7211731935130582997" fileName="VarDeclStatement_Editor.java" startLine="106" startPosition="58" endLine="106" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7211731935130582992" fileName="VarDeclStatement_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7211731935130582999" fileName="VarDeclStatement_Editor.java" startLine="32" startPosition="99" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -923,7 +923,7 @@
     <unitInfo nodeId="7211731935130582999" fileName="VarDeclStatement_Editor.java" startLine="31" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarDeclStatement_Editor$varDeclListHandler_fcfntz_b0" />
     <unitInfo nodeId="7211731935130582992" fileName="VarDeclStatement_Editor.java" startLine="26" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.nanoc.editor.VarDeclStatement_Editor" />
   </root>
-  <root nodeId="7211731935130600482" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
+  <root nodeRef="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)/7211731935130600482">
     <nodeInfo nodeId="7211731935130600482" fileName="CBody_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7211731935130600484" fileName="CBody_Editor.java" startLine="27" startPosition="101" endLine="28" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7211731935130600484" fileName="CBody_Editor.java" startLine="31" startPosition="66" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1028,7 +1028,7 @@
     <unitInfo nodeId="7211731935130600484" fileName="CBody_Editor.java" startLine="26" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CBody_Editor$statementListHandler_g01rur_a0" />
     <unitInfo nodeId="7211731935130600482" fileName="CBody_Editor.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CBody_Editor" />
   </root>
-  <root nodeId="7211731935130600830" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
+  <root nodeRef="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)/7211731935130600830">
     <nodeInfo nodeId="7211731935130600839" fileName="CWhile_Editor.java" startLine="80" startPosition="58" endLine="80" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7211731935130600830" fileName="CWhile_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7211731935130600832" fileName="CWhile_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1219,7 +1219,7 @@
     </scopeInfo>
     <unitInfo nodeId="7211731935130600830" fileName="CWhile_Editor.java" startLine="18" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CWhile_Editor" />
   </root>
-  <root nodeId="7211731935130600864" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
+  <root nodeRef="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)/7211731935130600864">
     <nodeInfo nodeId="7211731935130600876" fileName="CParenthesis_Editor.java" startLine="49" startPosition="58" endLine="49" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7211731935130600864" fileName="CParenthesis_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7211731935130600869" fileName="CParenthesis_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1311,7 +1311,7 @@
     </scopeInfo>
     <unitInfo nodeId="7211731935130600864" fileName="CParenthesis_Editor.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CParenthesis_Editor" />
   </root>
-  <root nodeId="7211731935130600879" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
+  <root nodeRef="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)/7211731935130600879">
     <nodeInfo nodeId="2886182022232400271" fileName="CBinaryOp_Editor.java" startLine="33" startPosition="69" endLine="33" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7211731935130600886" fileName="CBinaryOp_Editor.java" startLine="42" startPosition="58" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7211731935130600890" fileName="CBinaryOp_Editor.java" startLine="59" startPosition="58" endLine="59" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1421,7 +1421,7 @@
     </scopeInfo>
     <unitInfo nodeId="7211731935130600879" fileName="CBinaryOp_Editor.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.nanoc.editor.CBinaryOp_Editor" />
   </root>
-  <root nodeId="7211731935130600903" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
+  <root nodeRef="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)/7211731935130600903">
     <nodeInfo nodeId="7211731935130600903" fileName="IntConst_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7211731935130600905" fileName="IntConst_Editor.java" startLine="19" startPosition="87" endLine="20" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7211731935130600905" fileName="IntConst_Editor.java" startLine="20" startPosition="82" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1464,7 +1464,7 @@
     </scopeInfo>
     <unitInfo nodeId="7211731935130600903" fileName="IntConst_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.nanoc.editor.IntConst_Editor" />
   </root>
-  <root nodeId="7211731935130600908" modelId="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)">
+  <root nodeRef="r:3cd1c3c6-3978-46fc-a30a-280a28282f0d(jetbrains.mps.nanoc.editor)/7211731935130600908">
     <nodeInfo nodeId="7211731935130600927" fileName="File_Editor.java" startLine="68" startPosition="58" endLine="68" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7211731935130600908" fileName="File_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7211731935130600910" fileName="File_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

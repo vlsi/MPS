@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="1280144168199457725" modelId="r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)">
+  <root nodeRef="r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)/1280144168199457725">
     <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="35" startPosition="42" endLine="36" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="40" startPosition="83" endLine="41" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="44" startPosition="44" endLine="45" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -71,7 +71,7 @@
     <unitInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="42" startPosition="32" endLine="80" endPosition="5" unitName="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints$1" />
     <unitInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="34" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints" />
   </root>
-  <root nodeId="1280144168199519457" modelId="r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)">
+  <root nodeRef="r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)/1280144168199519457">
     <nodeInfo nodeId="1280144168199519457" fileName="TestCaseRef_Constraints.java" startLine="22" startPosition="36" endLine="23" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1280144168199519457" fileName="TestCaseRef_Constraints.java" startLine="27" startPosition="83" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1280144168199519457" fileName="TestCaseRef_Constraints.java" startLine="31" startPosition="44" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -111,7 +111,7 @@
     <unitInfo nodeId="1280144168199519457" fileName="TestCaseRef_Constraints.java" startLine="29" startPosition="35" endLine="54" endPosition="5" unitName="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints$1" />
     <unitInfo nodeId="1280144168199519457" fileName="TestCaseRef_Constraints.java" startLine="21" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints" />
   </root>
-  <root nodeId="1280144168199745453" modelId="r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)">
+  <root nodeRef="r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)/1280144168199745453">
     <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="16" startPosition="36" endLine="17" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="21" startPosition="82" endLine="22" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="25" startPosition="37" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -143,7 +143,7 @@
     <unitInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="23" startPosition="31" endLine="34" endPosition="5" unitName="jetbrains.mps.testbench.suite.constraints.ModuleSuite_Constraints$1" />
     <unitInfo nodeId="1280144168199745453" fileName="ModuleSuite_Constraints.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.ModuleSuite_Constraints" />
   </root>
-  <root nodeId="4504141816188599490" modelId="r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)">
+  <root nodeRef="r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)/4504141816188599490">
     <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="38" startPosition="42" endLine="39" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="43" startPosition="83" endLine="44" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4504141816188599490" fileName="JUnit4TestCaseRef_Constraints.java" startLine="47" startPosition="44" endLine="48" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

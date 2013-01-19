@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6531435794299649861" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299649861">
     <nodeInfo nodeId="6531435794299649867" fileName="AccountingException.java" startLine="7" startPosition="32" endLine="8" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6531435794299649874" fileName="AccountingException.java" startLine="11" startPosition="40" endLine="12" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6531435794299649863" fileName="AccountingException.java" startLine="7" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AccountingException#()V" />
@@ -13,7 +13,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299649861" fileName="AccountingException.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="postingrules.AccountingException" />
   </root>
-  <root nodeId="6531435794299649876" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299649876">
     <nodeInfo nodeId="6531435794299649890" fileName="AccountingTransaction.java" startLine="9" startPosition="85" endLine="10" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6531435794299649899" fileName="AccountingTransaction.java" startLine="10" startPosition="55" endLine="11" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6531435794299649904" fileName="AccountingTransaction.java" startLine="11" startPosition="29" endLine="12" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -31,7 +31,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299649876" fileName="AccountingTransaction.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="postingrules.AccountingTransaction" />
   </root>
-  <root nodeId="6531435794299650125" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299650125">
     <nodeInfo nodeId="6531435794299650127" fileName="Subject.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addEntry#(Lpostingrules/Entry;Lpostingrules/AccountType;)V" />
     <nodeInfo nodeId="6531435794299650135" fileName="Subject.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdjuster#()Lpostingrules/Subject;" />
     <nodeInfo nodeId="6531435794299650139" fileName="Subject.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reverseEntry#(Lpostingrules/Entry;)V" />
@@ -49,7 +49,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299650125" fileName="Subject.java" startLine="6" startPosition="0" endLine="12" endPosition="0" unitName="postingrules.Subject" />
   </root>
-  <root nodeId="6531435794299650989" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299650989">
     <nodeInfo nodeId="6531435794299650991" fileName="AgreementRegistry.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAgreements" />
     <nodeInfo nodeId="6531435794299651007" fileName="AgreementRegistry.java" startLine="14" startPosition="65" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6531435794299651019" fileName="AgreementRegistry.java" startLine="18" startPosition="53" endLine="19" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -69,7 +69,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299650989" fileName="AgreementRegistry.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="postingrules.AgreementRegistry" />
   </root>
-  <root nodeId="6531435794299651026" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299651026">
     <nodeInfo nodeId="6531435794299651029" fileName="MonetaryEvent.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAmount" />
     <nodeInfo nodeId="6531435794299651046" fileName="MonetaryEvent.java" startLine="11" startPosition="113" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6531435794299651051" fileName="MonetaryEvent.java" startLine="12" startPosition="53" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -88,7 +88,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299651026" fileName="MonetaryEvent.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="postingrules.MonetaryEvent" />
   </root>
-  <root nodeId="6531435794299651139" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299651139">
     <nodeInfo nodeId="6531435794299653671" fileName="Entry.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDate" />
     <nodeInfo nodeId="6531435794299653674" fileName="Entry.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAccount" />
     <nodeInfo nodeId="6531435794299653677" fileName="Entry.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAmount" />
@@ -150,7 +150,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299651139" fileName="Entry.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="postingrules.Entry" />
   </root>
-  <root nodeId="6531435794299651140" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299651140">
     <nodeInfo nodeId="6531435794299651142" fileName="AccountingEvent.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myType" />
     <nodeInfo nodeId="6531435794299651145" fileName="AccountingEvent.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWhenOccurred" />
     <nodeInfo nodeId="6531435794299651148" fileName="AccountingEvent.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWhenNoticed" />
@@ -306,7 +306,7 @@
     <scopeInfo nodeId="6531435794299651232" fileName="AccountingEvent.java" startLine="45" startPosition="0" endLine="54" endPosition="0" />
     <unitInfo nodeId="6531435794299651140" fileName="AccountingEvent.java" startLine="13" startPosition="0" endLine="132" endPosition="0" unitName="postingrules.AccountingEvent" />
   </root>
-  <root nodeId="6531435794299651566" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299651566">
     <nodeInfo nodeId="6531435794299651572" fileName="MissingPostingRuleException.java" startLine="7" startPosition="40" endLine="8" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6531435794299651579" fileName="MissingPostingRuleException.java" startLine="11" startPosition="48" endLine="12" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6531435794299651568" fileName="MissingPostingRuleException.java" startLine="7" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MissingPostingRuleException#()V" />
@@ -319,7 +319,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299651566" fileName="MissingPostingRuleException.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="postingrules.MissingPostingRuleException" />
   </root>
-  <root nodeId="6531435794299652198" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299652198">
     <nodeInfo nodeId="6531435794299652209" fileName="TaxEvent.java" startLine="8" startPosition="62" endLine="9" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6531435794299652221" fileName="TaxEvent.java" startLine="9" startPosition="106" endLine="10" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6531435794299652226" fileName="TaxEvent.java" startLine="10" startPosition="39" endLine="11" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
@@ -331,7 +331,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299652198" fileName="TaxEvent.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="postingrules.TaxEvent" />
   </root>
-  <root nodeId="6531435794299652730" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299652730">
     <nodeInfo nodeId="6531435794299652733" fileName="Usage.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAmount" />
     <nodeInfo nodeId="6531435794299652748" fileName="Usage.java" startLine="11" startPosition="93" endLine="12" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6531435794299652753" fileName="Usage.java" startLine="12" startPosition="64" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -364,7 +364,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299652730" fileName="Usage.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="postingrules.Usage" />
   </root>
-  <root nodeId="6531435794299653396" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299653396">
     <nodeInfo nodeId="6531435794299653398" fileName="ServiceAgreement.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValues" />
     <nodeInfo nodeId="6531435794299653407" fileName="ServiceAgreement.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPostingRules" />
     <nodeInfo nodeId="6531435794299653422" fileName="ServiceAgreement.java" startLine="18" startPosition="41" endLine="19" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -445,7 +445,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299653396" fileName="ServiceAgreement.java" startLine="11" startPosition="0" endLine="63" endPosition="0" unitName="postingrules.ServiceAgreement" />
   </root>
-  <root nodeId="6531435794299653584" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299653584">
     <nodeInfo nodeId="6531435794299653595" fileName="PoorCapPR.java" startLine="9" startPosition="57" endLine="10" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6531435794299653604" fileName="PoorCapPR.java" startLine="13" startPosition="56" endLine="14" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6531435794299653613" fileName="PoorCapPR.java" startLine="14" startPosition="52" endLine="15" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -468,7 +468,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299653584" fileName="PoorCapPR.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="postingrules.PoorCapPR" />
   </root>
-  <root nodeId="6531435794299653800" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299653800">
     <nodeInfo nodeId="6531435794299653802" fileName="PostingRule.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myType" />
     <nodeInfo nodeId="6531435794299653805" fileName="PostingRule.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTaxable" />
     <nodeInfo nodeId="6531435794299653816" fileName="PostingRule.java" startLine="11" startPosition="62" endLine="12" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -511,13 +511,13 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299653800" fileName="PostingRule.java" startLine="7" startPosition="0" endLine="35" endPosition="0" unitName="postingrules.PostingRule" />
   </root>
-  <root nodeId="6531435794299654331" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299654331">
     <nodeInfo nodeId="6531435794299654336" fileName="AccountType.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AccountType#()V" />
     <scopeInfo nodeId="6531435794299654339" fileName="AccountType.java" startLine="11" startPosition="17" endLine="11" endPosition="17" />
     <scopeInfo nodeId="6531435794299654336" fileName="AccountType.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
     <unitInfo nodeId="6531435794299654331" fileName="AccountType.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="postingrules.AccountType" />
   </root>
-  <root nodeId="6531435794299654975" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299654975">
     <nodeInfo nodeId="6531435794299654979" fileName="Customer.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myServiceAgreement" />
     <nodeInfo nodeId="6531435794299654982" fileName="Customer.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAccounts" />
     <nodeInfo nodeId="6531435794299654993" fileName="Customer.java" startLine="15" startPosition="32" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -624,7 +624,7 @@
     <scopeInfo nodeId="6531435794299655147" fileName="Customer.java" startLine="73" startPosition="0" endLine="84" endPosition="0" />
     <unitInfo nodeId="6531435794299654975" fileName="Customer.java" startLine="11" startPosition="0" endLine="89" endPosition="0" unitName="postingrules.Customer" />
   </root>
-  <root nodeId="6531435794299655211" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299655211">
     <nodeInfo nodeId="6531435794299655214" fileName="Adjustment.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNewEvents" />
     <nodeInfo nodeId="6531435794299655221" fileName="Adjustment.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOldEvents" />
     <nodeInfo nodeId="6531435794299655236" fileName="Adjustment.java" startLine="13" startPosition="81" endLine="14" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
@@ -662,7 +662,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299655211" fileName="Adjustment.java" startLine="9" startPosition="0" endLine="35" endPosition="0" unitName="postingrules.Adjustment" />
   </root>
-  <root nodeId="6531435794299655311" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299655311">
     <nodeInfo nodeId="6531435794299655313" fileName="EventList.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEvents" />
     <nodeInfo nodeId="6531435794299655320" fileName="EventList.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProcessingErrors" />
     <nodeInfo nodeId="6531435794299655337" fileName="EventList.java" startLine="15" startPosition="40" endLine="16" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -719,7 +719,7 @@
     <scopeInfo nodeId="6531435794299655397" fileName="EventList.java" startLine="38" startPosition="0" endLine="47" endPosition="0" />
     <unitInfo nodeId="6531435794299655311" fileName="EventList.java" startLine="8" startPosition="0" endLine="48" endPosition="0" unitName="postingrules.EventList" />
   </root>
-  <root nodeId="6531435794299655543" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299655543">
     <nodeInfo nodeId="6531435794299655546" fileName="EventType.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="USAGE" />
     <nodeInfo nodeId="6531435794299655552" fileName="EventType.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TAX" />
     <nodeInfo nodeId="6531435794299655558" fileName="EventType.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SERVICE_CALL" />
@@ -741,7 +741,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299655543" fileName="EventType.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="postingrules.EventType" />
   </root>
-  <root nodeId="6531435794299656295" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299656295">
     <nodeInfo nodeId="6531435794299656306" fileName="MultiplyByRatePR.java" startLine="8" startPosition="64" endLine="9" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6531435794299656315" fileName="MultiplyByRatePR.java" startLine="12" startPosition="56" endLine="13" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6531435794299656321" fileName="MultiplyByRatePR.java" startLine="13" startPosition="35" endLine="14" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -760,7 +760,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299656295" fileName="MultiplyByRatePR.java" startLine="7" startPosition="0" endLine="17" endPosition="0" unitName="postingrules.MultiplyByRatePR" />
   </root>
-  <root nodeId="6531435794299656580" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299656580">
     <nodeInfo nodeId="6531435794299656583" fileName="AmountFormulaPR.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMultiplier" />
     <nodeInfo nodeId="6531435794299656586" fileName="AmountFormulaPR.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFixedFee" />
     <nodeInfo nodeId="6531435794299656601" fileName="AmountFormulaPR.java" startLine="11" startPosition="98" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -785,7 +785,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299656580" fileName="AmountFormulaPR.java" startLine="7" startPosition="0" endLine="22" endPosition="0" unitName="postingrules.AmountFormulaPR" />
   </root>
-  <root nodeId="6531435794299656641" modelId="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)">
+  <root nodeRef="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)/6531435794299656641">
     <nodeInfo nodeId="6531435794299656643" fileName="Account.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEntries" />
     <nodeInfo nodeId="6531435794299656650" fileName="Account.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrency" />
     <nodeInfo nodeId="6531435794299656653" fileName="Account.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myType" />

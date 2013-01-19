@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1236699935298" modelId="r:f6ac4dc8-7952-47a8-af10-2331849a8476(jetbrains.mps.sampleXML.textGen)">
+  <root nodeRef="r:f6ac4dc8-7952-47a8-af10-2331849a8476(jetbrains.mps.sampleXML.textGen)/1236699935298">
     <nodeInfo nodeId="1237981101372" fileName="Document_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237981101372" fileName="Document_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2341412953773657688" fileName="Document_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -17,7 +17,7 @@
     </scopeInfo>
     <unitInfo nodeId="1236699935298" fileName="Document_TextGen.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.sampleXML.textGen.Document_TextGen" />
   </root>
-  <root nodeId="1236700479964" modelId="r:f6ac4dc8-7952-47a8-af10-2331849a8476(jetbrains.mps.sampleXML.textGen)">
+  <root nodeRef="r:f6ac4dc8-7952-47a8-af10-2331849a8476(jetbrains.mps.sampleXML.textGen)/1236700479964">
     <nodeInfo nodeId="1236700571834" fileName="ElementCreator.java" startLine="17" startPosition="72" endLine="18" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1236700571840" fileName="ElementCreator.java" startLine="18" startPosition="73" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1236700791060" fileName="ElementCreator.java" startLine="19" startPosition="68" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

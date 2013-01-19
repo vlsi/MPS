@@ -18,7 +18,7 @@
   <unitInfo fileName="UltimateContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.UltimateContainer_BehaviorDescriptor" />
   <unitInfo fileName="XElement_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.XElement_BehaviorDescriptor" />
   <unitInfo fileName="YElement_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.YElement_BehaviorDescriptor" />
-  <root nodeId="2882388703616228638" modelId="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)">
+  <root nodeRef="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)/2882388703616228638">
     <nodeInfo nodeId="2882388703616228649" fileName="Table_Behavior.java" startLine="18" startPosition="265" endLine="19" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2882388703616228657" fileName="Table_Behavior.java" startLine="20" startPosition="270" endLine="21" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2882388703616228663" fileName="Table_Behavior.java" startLine="21" startPosition="123" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -57,7 +57,7 @@
     </scopeInfo>
     <unitInfo nodeId="2882388703616228638" fileName="Table_Behavior.java" startLine="16" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Table_Behavior" />
   </root>
-  <root nodeId="7483705179651302808" modelId="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)">
+  <root nodeRef="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)/7483705179651302808">
     <nodeInfo nodeId="7483705179651302811" fileName="StateMachine_Behavior.java" startLine="12" startPosition="43" endLine="13" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7483705179651319695" fileName="StateMachine_Behavior.java" startLine="14" startPosition="37" endLine="15" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7483705179651319713" fileName="StateMachine_Behavior.java" startLine="15" startPosition="115" endLine="16" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -111,7 +111,7 @@
     </scopeInfo>
     <unitInfo nodeId="7483705179651302808" fileName="StateMachine_Behavior.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.StateMachine_Behavior" />
   </root>
-  <root nodeId="7651593722933724230" modelId="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)">
+  <root nodeRef="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)/7651593722933724230">
     <nodeInfo nodeId="7651593722933724234" fileName="LightWeightDecisionTable_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7651593722933755850" fileName="LightWeightDecisionTable_Behavior.java" startLine="10" startPosition="103" endLine="11" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7651593722933755858" fileName="LightWeightDecisionTable_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -127,7 +127,7 @@
     </scopeInfo>
     <unitInfo nodeId="7651593722933724230" fileName="LightWeightDecisionTable_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.LightWeightDecisionTable_Behavior" />
   </root>
-  <root nodeId="7943979732673457913" modelId="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)">
+  <root nodeRef="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)/7943979732673457913">
     <nodeInfo nodeId="7943979732673457921" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStateMachine_7943979732673457916#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -141,7 +141,7 @@
     </scopeInfo>
     <unitInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement_Behavior" />
   </root>
-  <root nodeId="8506335436194799574" modelId="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)">
+  <root nodeRef="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)/8506335436194799574">
     <nodeInfo nodeId="2422839104779457221" fileName="HierarchycalTable_Behavior.java" startLine="18" startPosition="268" endLine="19" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2422839104779457227" fileName="HierarchycalTable_Behavior.java" startLine="19" startPosition="121" endLine="20" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2422839104779457235" fileName="HierarchycalTable_Behavior.java" startLine="20" startPosition="59" endLine="21" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

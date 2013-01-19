@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2722286076674321023" modelId="r:21243d57-0512-4c07-bcfd-21ee53d2aeb3(jetbrains.mps.vcs.changesmanager.roots)">
+  <root nodeRef="r:21243d57-0512-4c07-bcfd-21ee53d2aeb3(jetbrains.mps.vcs.changesmanager.roots)/2722286076674321023">
     <nodeInfo nodeId="2722286076674321044" fileName="NodeFileStatusMappingExt.java" startLine="17" startPosition="88" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2722286076674321627" fileName="NodeFileStatusMappingExt.java" startLine="22" startPosition="113" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2722286076674321274" fileName="NodeFileStatusMappingExt.java" startLine="23" startPosition="48" endLine="24" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -34,7 +34,7 @@
     </scopeInfo>
     <unitInfo nodeId="2722286076674321023" fileName="NodeFileStatusMappingExt.java" startLine="16" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMappingExt" />
   </root>
-  <root nodeId="5332932484372864216" modelId="r:21243d57-0512-4c07-bcfd-21ee53d2aeb3(jetbrains.mps.vcs.changesmanager.roots)">
+  <root nodeRef="r:21243d57-0512-4c07-bcfd-21ee53d2aeb3(jetbrains.mps.vcs.changesmanager.roots)/5332932484372864216">
     <nodeInfo nodeId="5332932484372873505" fileName="NodeTabColorProvider.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileStatusMapping" />
     <nodeInfo nodeId="5332932484372873510" fileName="NodeTabColorProvider.java" startLine="22" startPosition="71" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7963818663057826246" fileName="NodeTabColorProvider.java" startLine="29" startPosition="49" endLine="30" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

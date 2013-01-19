@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1178529045424" modelId="r:00000000-0000-4000-0000-011c8959051d(jetbrains.mps.regexp.examples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959051d(jetbrains.mps.regexp.examples)/1178529045424">
     <nodeInfo nodeId="1178529080149" fileName="EmailExample.java" startLine="13" startPosition="5" endLine="14" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1178529080149" fileName="EmailExample.java" startLine="14" startPosition="49" endLine="15" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1178529104619" fileName="EmailExample.java" startLine="16" startPosition="33" endLine="17" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -27,7 +27,7 @@
     </scopeInfo>
     <unitInfo nodeId="1178529045424" fileName="EmailExample.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.regexp.examples.EmailExample" />
   </root>
-  <root nodeId="1178535069057" modelId="r:00000000-0000-4000-0000-011c8959051d(jetbrains.mps.regexp.examples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959051d(jetbrains.mps.regexp.examples)/1178535069057">
     <nodeInfo nodeId="1178535102780" fileName="BaseLanguageIntegration.java" startLine="14" startPosition="5" endLine="15" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1178535102780" fileName="BaseLanguageIntegration.java" startLine="15" startPosition="49" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1178535102799" fileName="BaseLanguageIntegration.java" startLine="17" startPosition="33" endLine="18" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

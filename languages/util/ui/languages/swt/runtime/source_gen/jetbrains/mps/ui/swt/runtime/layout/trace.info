@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8508807536212520494" modelId="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)">
+  <root nodeRef="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)/8508807536212520494">
     <nodeInfo nodeId="6502165566452098002" fileName="GridLayoutUtil.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PADDING" />
     <nodeInfo nodeId="6502165566452098122" fileName="GridLayoutUtil.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FLAG" />
     <nodeInfo nodeId="6502165566452099902" fileName="GridLayoutUtil.java" startLine="22" startPosition="69" endLine="23" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -327,7 +327,7 @@
     </scopeInfo>
     <unitInfo nodeId="8508807536212520494" fileName="GridLayoutUtil.java" startLine="15" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.ui.swt.runtime.layout.GridLayoutUtil" />
   </root>
-  <root nodeId="9003987136928266009" modelId="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)">
+  <root nodeRef="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)/9003987136928266009">
     <nodeInfo nodeId="9003987136928266010" fileName="DockLayout.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ZERO" />
     <nodeInfo nodeId="9003987136928266017" fileName="DockLayout.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="north" />
     <nodeInfo nodeId="9003987136928266020" fileName="DockLayout.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="south" />
@@ -509,7 +509,7 @@
     </scopeInfo>
     <unitInfo nodeId="9003987136928266009" fileName="DockLayout.java" startLine="14" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.ui.swt.runtime.layout.DockLayout" />
   </root>
-  <root nodeId="9003987136928268772" modelId="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)">
+  <root nodeRef="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)/9003987136928268772">
     <nodeInfo nodeId="9003987136928268782" fileName="DockLayoutData.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="9003987136928268785" fileName="DockLayoutData.java" startLine="15" startPosition="31" endLine="16" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9003987136928268774" fileName="DockLayoutData.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DockLayoutData#(Ljava/lang/String;)V" />

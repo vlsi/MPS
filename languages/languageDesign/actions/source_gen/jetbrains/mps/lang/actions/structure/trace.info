@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Actions_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Actions_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="243" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.StructureAspectDescriptor" />
-  <root nodeId="1140829206022" modelId="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)/1140829206022">
     <nodeInfo nodeId="1140829206022" fileName="SideTransformTag.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1140829206022" fileName="SideTransformTag.java" startLine="19" startPosition="27" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1140829206022" fileName="SideTransformTag.java" startLine="23" startPosition="36" endLine="24" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -124,7 +124,7 @@
     <unitInfo nodeId="1140829206022" fileName="SideTransformTag.java" startLine="9" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformTag" />
     <unitInfo nodeId="1140829206022" fileName="SideTransformTag_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformTag_PropertySupport" />
   </root>
-  <root nodeId="1215604970641" modelId="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)/1215604970641">
     <nodeInfo nodeId="1215604970641" fileName="Side.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1215604970641" fileName="Side.java" startLine="15" startPosition="27" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215604970641" fileName="Side.java" startLine="19" startPosition="36" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

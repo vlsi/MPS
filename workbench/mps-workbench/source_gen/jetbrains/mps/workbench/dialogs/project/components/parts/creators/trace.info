@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1560298786499489241" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)" />
-  <root nodeId="1560298786499489975" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)">
+  <root nodeRef="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)/1560298786499489241" />
+  <root nodeRef="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)/1560298786499489975">
     <nodeInfo nodeId="1560298786499489978" fileName="SourcePathChooser.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
     <nodeInfo nodeId="1560298786499489986" fileName="SourcePathChooser.java" startLine="13" startPosition="49" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499489996" fileName="SourcePathChooser.java" startLine="17" startPosition="27" endLine="18" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -24,15 +24,15 @@
     <scopeInfo nodeId="1560298786499489992" fileName="SourcePathChooser.java" startLine="17" startPosition="0" endLine="26" endPosition="0" />
     <unitInfo nodeId="1560298786499489975" fileName="SourcePathChooser.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.SourcePathChooser" />
   </root>
-  <root nodeId="1560298786499490215" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)" />
-  <root nodeId="1560298786499490300" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)" />
-  <root nodeId="1560298786499491378" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)" />
-  <root nodeId="1560298786499492327" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)" />
-  <root nodeId="1560298786499492785" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)" />
-  <root nodeId="1560298786499493158" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)" />
-  <root nodeId="1560298786499495733" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)" />
-  <root nodeId="1560298786499495913" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)" />
-  <root nodeId="1560298786499496008" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)">
+  <root nodeRef="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)/1560298786499490215" />
+  <root nodeRef="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)/1560298786499490300" />
+  <root nodeRef="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)/1560298786499491378" />
+  <root nodeRef="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)/1560298786499492327" />
+  <root nodeRef="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)/1560298786499492785" />
+  <root nodeRef="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)/1560298786499493158" />
+  <root nodeRef="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)/1560298786499495733" />
+  <root nodeRef="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)/1560298786499495913" />
+  <root nodeRef="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)/1560298786499496008">
     <nodeInfo nodeId="1560298786499496012" fileName="ModelRootChooser.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
     <nodeInfo nodeId="8126194856994007480" fileName="ModelRootChooser.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBundleHome" />
     <nodeInfo nodeId="1560298786499496020" fileName="ModelRootChooser.java" startLine="27" startPosition="66" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -108,7 +108,7 @@
     <unitInfo nodeId="1552421828371567259" fileName="ModelRootChooser.java" startLine="69" startPosition="8" endLine="73" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelRootChooser$1" />
     <unitInfo nodeId="1560298786499496008" fileName="ModelRootChooser.java" startLine="23" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelRootChooser" />
   </root>
-  <root nodeId="1560298786499497434" modelId="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)">
+  <root nodeRef="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)/1560298786499497434">
     <nodeInfo nodeId="1560298786499497441" fileName="ModulePathChooser.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
     <nodeInfo nodeId="1560298786499497457" fileName="ModulePathChooser.java" startLine="15" startPosition="49" endLine="16" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499497467" fileName="ModulePathChooser.java" startLine="19" startPosition="25" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

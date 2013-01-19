@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.script.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="6970965131508596231" modelId="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)/6970965131508596231">
     <nodeInfo nodeId="6970965131508596231" fileName="MigrationScriptPart_Constraints.java" startLine="8" startPosition="44" endLine="9" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6970965131508596231" fileName="MigrationScriptPart_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrationScriptPart_Constraints#()V" />
     <scopeInfo nodeId="6970965131508596231" fileName="MigrationScriptPart_Constraints.java" startLine="8" startPosition="44" endLine="9" endPosition="69" />
     <scopeInfo nodeId="6970965131508596231" fileName="MigrationScriptPart_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
     <unitInfo nodeId="6970965131508596231" fileName="MigrationScriptPart_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.script.constraints.MigrationScriptPart_Constraints" />
   </root>
-  <root nodeId="849077997121906173" modelId="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)/849077997121906173">
     <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="35" startPosition="43" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="40" startPosition="200" endLine="41" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

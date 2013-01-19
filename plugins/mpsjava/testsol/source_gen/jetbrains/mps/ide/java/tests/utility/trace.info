@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8083368042256321540" modelId="r:6ea8585f-7b0c-4c4e-a3ae-330a49f753b2(jetbrains.mps.ide.java.tests.utility)">
+  <root nodeRef="r:6ea8585f-7b0c-4c4e-a3ae-330a49f753b2(jetbrains.mps.ide.java.tests.utility)/8083368042256321540">
     <nodeInfo nodeId="887121589775378602" fileName="Utils.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourModule" />
     <nodeInfo nodeId="8083368042256270269" fileName="Utils.java" startLine="53" startPosition="49" endLine="54" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8083368042256319027" fileName="Utils.java" startLine="54" startPosition="155" endLine="55" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -548,7 +548,7 @@
     <unitInfo nodeId="8051061021619746361" fileName="Utils.java" startLine="274" startPosition="56" endLine="278" endPosition="5" unitName="jetbrains.mps.ide.java.tests.utility.Utils$2" />
     <unitInfo nodeId="8083368042256321540" fileName="Utils.java" startLine="47" startPosition="0" endLine="385" endPosition="0" unitName="jetbrains.mps.ide.java.tests.utility.Utils" />
   </root>
-  <root nodeId="8083368042256395971" modelId="r:6ea8585f-7b0c-4c4e-a3ae-330a49f753b2(jetbrains.mps.ide.java.tests.utility)">
+  <root nodeRef="r:6ea8585f-7b0c-4c4e-a3ae-330a49f753b2(jetbrains.mps.ide.java.tests.utility)/8083368042256395971">
     <nodeInfo nodeId="7339047227027414511" fileName="NodePatcher.java" startLine="30" startPosition="171" endLine="31" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8083368042256398823" fileName="NodePatcher.java" startLine="43" startPosition="66" endLine="44" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7149447565294019920" fileName="NodePatcher.java" startLine="50" startPosition="168" endLine="51" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

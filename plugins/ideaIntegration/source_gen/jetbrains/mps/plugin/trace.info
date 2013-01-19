@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8611316981187517974" modelId="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)">
+  <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8611316981187517974">
     <nodeInfo nodeId="8611316981187585813" fileName="PluginStateWidget.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="8611316981187585818" fileName="PluginStateWidget.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INITIAL_DELAY" />
     <nodeInfo nodeId="8611316981187585822" fileName="PluginStateWidget.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CRITICAL_DELAY" />
@@ -204,7 +204,7 @@
     <unitInfo nodeId="8611316981187585664" fileName="PluginStateWidget.java" startLine="163" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.plugin.PluginStateWidget$State" />
     <unitInfo nodeId="8611316981187517974" fileName="PluginStateWidget.java" startLine="22" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.plugin.PluginStateWidget" />
   </root>
-  <root nodeId="8632185942131070856" modelId="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)">
+  <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8632185942131070856">
     <nodeInfo nodeId="8632185942131070858" fileName="MPSPlugin.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="8632185942131070863" fileName="MPSPlugin.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourInstance" />
     <nodeInfo nodeId="8632185942131070866" fileName="MPSPlugin.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPlugin" />
@@ -318,7 +318,7 @@
     <scopeInfo nodeId="8632185942131070957" fileName="MPSPlugin.java" startLine="43" startPosition="0" endLine="60" endPosition="0" />
     <unitInfo nodeId="8632185942131070856" fileName="MPSPlugin.java" startLine="13" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.plugin.MPSPlugin" />
   </root>
-  <root nodeId="8632185942131071134" modelId="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)">
+  <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8632185942131071134">
     <nodeInfo nodeId="8632185942131071343" fileName="MPSProjectIDEHandler.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="8632185942131071348" fileName="MPSProjectIDEHandler.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="8632185942131071357" fileName="MPSProjectIDEHandler.java" startLine="47" startPosition="71" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -546,7 +546,7 @@
     <unitInfo nodeId="8632185942131071534" fileName="MPSProjectIDEHandler.java" startLine="159" startPosition="45" endLine="189" endPosition="5" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler$6" />
     <unitInfo nodeId="8632185942131071134" fileName="MPSProjectIDEHandler.java" startLine="43" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler" />
   </root>
-  <root nodeId="8632185942131071966" modelId="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)">
+  <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8632185942131071966">
     <nodeInfo nodeId="8632185942131071984" fileName="IdeaJavaCompilerImpl.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="8632185942131071987" fileName="IdeaJavaCompilerImpl.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIdeaProjectHandler" />
     <nodeInfo nodeId="8632185942131071996" fileName="IdeaJavaCompilerImpl.java" startLine="18" startPosition="48" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -622,7 +622,7 @@
     <unitInfo nodeId="8632185942131072010" fileName="IdeaJavaCompilerImpl.java" startLine="23" startPosition="19" endLine="27" endPosition="5" unitName="jetbrains.mps.plugin.IdeaJavaCompilerImpl$1" />
     <unitInfo nodeId="8632185942131071966" fileName="IdeaJavaCompilerImpl.java" startLine="14" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.plugin.IdeaJavaCompilerImpl" />
   </root>
-  <root nodeId="8632185942131072152" modelId="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)">
+  <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8632185942131072152">
     <nodeInfo nodeId="8632185942131072167" fileName="IdeaNavigationProvider.java" startLine="15" startPosition="75" endLine="16" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8632185942131072354" fileName="IdeaNavigationProvider.java" startLine="20" startPosition="13" endLine="21" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8632185942131072366" fileName="IdeaNavigationProvider.java" startLine="22" startPosition="32" endLine="23" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -776,7 +776,7 @@
     <unitInfo nodeId="8632185942131072320" fileName="IdeaNavigationProvider.java" startLine="92" startPosition="28" endLine="105" endPosition="5" unitName="jetbrains.mps.plugin.IdeaNavigationProvider$4" />
     <unitInfo nodeId="8632185942131072152" fileName="IdeaNavigationProvider.java" startLine="10" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.plugin.IdeaNavigationProvider" />
   </root>
-  <root nodeId="8632185942131072990" modelId="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)">
+  <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8632185942131072990">
     <nodeInfo nodeId="8632185942131073061" fileName="PluginStateMonitor.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="8632185942131073074" fileName="PluginStateMonitor.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStatusBar" />
     <nodeInfo nodeId="8611316981187585901" fileName="PluginStateMonitor.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWidget" />

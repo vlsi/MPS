@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.script.typesystem.TypesystemDescriptor" />
-  <root nodeId="1177463041902" modelId="r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)/1177463041902">
     <nodeInfo nodeId="1177463235295" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="21" startPosition="117" endLine="22" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209063748602" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209063748602" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="24" startPosition="46" endLine="25" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -58,7 +58,7 @@
     </scopeInfo>
     <unitInfo nodeId="1177463041902" fileName="typeof_MigrationScriptPart_node_InferenceRule.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.script.typesystem.typeof_MigrationScriptPart_node_InferenceRule" />
   </root>
-  <root nodeId="2598676492883170109" modelId="r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)/2598676492883170109">
     <nodeInfo nodeId="2598676492883176318" fileName="check_FactoryMigrationScriptPath_NonTypesystemRule.java" startLine="26" startPosition="117" endLine="27" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2598676492883176352" fileName="check_FactoryMigrationScriptPath_NonTypesystemRule.java" startLine="29" startPosition="7" endLine="30" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2598676492883176352" fileName="check_FactoryMigrationScriptPath_NonTypesystemRule.java" startLine="30" startPosition="60" endLine="31" endPosition="426" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -122,7 +122,7 @@
     <scopeInfo nodeId="2598676492883176348" fileName="check_FactoryMigrationScriptPath_NonTypesystemRule.java" startLine="51" startPosition="0" endLine="61" endPosition="0" />
     <unitInfo nodeId="2598676492883170109" fileName="check_FactoryMigrationScriptPath_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.script.typesystem.check_FactoryMigrationScriptPath_NonTypesystemRule" />
   </root>
-  <root nodeId="7867202088808416390" modelId="r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)/7867202088808416390">
     <nodeInfo nodeId="7867202088808423945" fileName="check_PullUpMethod_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7867202088808423945" fileName="check_PullUpMethod_NonTypesystemRule.java" startLine="23" startPosition="60" endLine="24" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7867202088808416390" fileName="check_PullUpMethod_NonTypesystemRule.java" startLine="29" startPosition="46" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

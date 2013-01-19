@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2975785153735131708" modelId="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)">
+  <root nodeRef="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)/2975785153735131708">
     <nodeInfo nodeId="2975785153735220471" fileName="ThreadSafe_Editor.java" startLine="39" startPosition="67" endLine="39" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2975785153735131708" fileName="ThreadSafe_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1149858909222" fileName="ThreadSafe_Editor.java" startLine="20" startPosition="89" endLine="21" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -60,7 +60,7 @@
     </scopeInfo>
     <unitInfo nodeId="2975785153735131708" fileName="ThreadSafe_Editor.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.ThreadSafe_Editor" />
   </root>
-  <root nodeId="2975785153735230339" modelId="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)">
+  <root nodeRef="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)/2975785153735230339">
     <nodeInfo nodeId="2975785153735230346" fileName="NonThreadSafeClass_Editor.java" startLine="39" startPosition="67" endLine="39" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2975785153735230339" fileName="NonThreadSafeClass_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735230341" fileName="NonThreadSafeClass_Editor.java" startLine="20" startPosition="88" endLine="21" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -120,7 +120,7 @@
     </scopeInfo>
     <unitInfo nodeId="2975785153735230339" fileName="NonThreadSafeClass_Editor.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.NonThreadSafeClass_Editor" />
   </root>
-  <root nodeId="633195941006921790" modelId="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)">
+  <root nodeRef="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)/633195941006921790">
     <nodeInfo nodeId="633195941006921790" fileName="ThreadPool_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="633195941006921792" fileName="ThreadPool_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="633195941006921792" fileName="ThreadPool_Editor.java" startLine="22" startPosition="96" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -213,7 +213,7 @@
     </scopeInfo>
     <unitInfo nodeId="633195941006921790" fileName="ThreadPool_Editor.java" startLine="16" startPosition="0" endLine="62" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.ThreadPool_Editor" />
   </root>
-  <root nodeId="633195941006997134" modelId="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)">
+  <root nodeRef="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)/633195941006997134">
     <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="13" startPosition="95" endLine="14" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="20" startPosition="57" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -245,7 +245,7 @@
     <unitInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.RemoveThreadPoolReference$RemoveThreadPoolReference_DELETE" />
     <unitInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.RemoveThreadPoolReference" />
   </root>
-  <root nodeId="8923957828369515244" modelId="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)">
+  <root nodeRef="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)/8923957828369515244">
     <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="60" startPosition="58" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1188212207003" fileName="ParallelLoopVariable_Editor.java" startLine="28" startPosition="89" endLine="29" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -350,7 +350,7 @@
     </scopeInfo>
     <unitInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="23" startPosition="0" endLine="76" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.ParallelLoopVariable_Editor" />
   </root>
-  <root nodeId="8923957828369554093" modelId="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)">
+  <root nodeRef="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)/8923957828369554093">
     <nodeInfo nodeId="8923957828369554101" fileName="ParallelFor_Editor.java" startLine="131" startPosition="58" endLine="131" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8923957828369554105" fileName="ParallelFor_Editor.java" startLine="148" startPosition="58" endLine="148" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8923957828369554093" fileName="ParallelFor_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

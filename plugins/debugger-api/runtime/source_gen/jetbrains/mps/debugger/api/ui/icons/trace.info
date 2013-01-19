@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IconContainer.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.icons.IconContainer" />
-  <root nodeId="4474271214083117745" modelId="r:e60874cf-5ffd-4123-9760-5f88ff8e0a5a(jetbrains.mps.debugger.api.ui.icons)">
+  <root nodeRef="r:e60874cf-5ffd-4123-9760-5f88ff8e0a5a(jetbrains.mps.debugger.api.ui.icons)/4474271214083117745">
     <nodeInfo nodeId="4474271214083120006" fileName="Icons.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BREAKPOINT" />
     <nodeInfo nodeId="4474271214083120015" fileName="Icons.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INV_BREAKPOINT" />
     <nodeInfo nodeId="4474271214083120024" fileName="Icons.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DISABLED_BREAKPOINT" />

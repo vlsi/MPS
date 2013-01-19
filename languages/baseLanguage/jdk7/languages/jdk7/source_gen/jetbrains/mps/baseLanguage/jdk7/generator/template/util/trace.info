@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1194605474582747067" modelId="r:91efff54-b103-4338-b907-08418b213738(jetbrains.mps.baseLanguage.jdk7.generator.template.util)">
+  <root nodeRef="r:91efff54-b103-4338-b907-08418b213738(jetbrains.mps.baseLanguage.jdk7.generator.template.util)/1194605474582747067">
     <nodeInfo nodeId="1194605474582747178" fileName="SwitchGenUtil.java" startLine="23" startPosition="39" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1194605474582747178" fileName="SwitchGenUtil.java" startLine="27" startPosition="37" endLine="28" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1194605474582747186" fileName="SwitchGenUtil.java" startLine="31" startPosition="38" endLine="32" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

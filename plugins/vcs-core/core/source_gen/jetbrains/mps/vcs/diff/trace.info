@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3834754559947571411" modelId="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)">
+  <root nodeRef="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)/3834754559947571411">
     <nodeInfo nodeId="3834754559947609967" fileName="ChangeSet.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelChanges#()Ljava/util/List;" />
     <nodeInfo nodeId="3834754559947609974" fileName="ChangeSet.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelChanges#(Ljava/lang/Class;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="3834754559947609987" fileName="ChangeSet.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOldModel#()Ljetbrains/mps/smodel/SModel;" />
@@ -15,7 +15,7 @@
     <scopeInfo nodeId="3834754559947609996" fileName="ChangeSet.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
     <unitInfo nodeId="3834754559947571411" fileName="ChangeSet.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.vcs.diff.ChangeSet" />
   </root>
-  <root nodeId="4652592318748341229" modelId="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)">
+  <root nodeRef="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)/4652592318748341229">
     <nodeInfo nodeId="4652592318748342174" fileName="ChangeSetBuilder.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOldModel" />
     <nodeInfo nodeId="4652592318748342177" fileName="ChangeSetBuilder.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNewModel" />
     <nodeInfo nodeId="4652592318748342180" fileName="ChangeSetBuilder.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeSet" />
@@ -567,7 +567,7 @@
     <unitInfo nodeId="4652592318748341230" fileName="ChangeSetBuilder.java" startLine="325" startPosition="0" endLine="333" endPosition="0" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder$DefaultPropertySupport" />
     <unitInfo nodeId="4652592318748341229" fileName="ChangeSetBuilder.java" startLine="46" startPosition="0" endLine="411" endPosition="0" unitName="jetbrains.mps.vcs.diff.ChangeSetBuilder" />
   </root>
-  <root nodeId="581692556693547169" modelId="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)">
+  <root nodeRef="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)/581692556693547169">
     <nodeInfo nodeId="581692556693547180" fileName="ModelChangeSet.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangesForRoot#(Lorg/jetbrains/mps/openapi/model/SNodeId;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="581692556693562890" fileName="ModelChangeSet.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedRoots#()Ljava/lang/Iterable;" />
     <scopeInfo nodeId="581692556693547180" fileName="ModelChangeSet.java" startLine="10" startPosition="0" endLine="11" endPosition="0">
@@ -576,7 +576,7 @@
     <scopeInfo nodeId="581692556693562890" fileName="ModelChangeSet.java" startLine="11" startPosition="0" endLine="12" endPosition="0" />
     <unitInfo nodeId="581692556693547169" fileName="ModelChangeSet.java" startLine="9" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.vcs.diff.ModelChangeSet" />
   </root>
-  <root nodeId="7082523601896740167" modelId="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)">
+  <root nodeRef="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)/7082523601896740167">
     <nodeInfo nodeId="7082523601896740168" fileName="ChangeSetImpl.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOldModel" />
     <nodeInfo nodeId="7082523601896740171" fileName="ChangeSetImpl.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNewModel" />
     <nodeInfo nodeId="7082523601896740174" fileName="ChangeSetImpl.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelChanges" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1575175756409680350" modelId="r:2efa673f-09db-4f93-9b0a-ba8232fe1b01(jetbrains.mps.testActions.util)">
+  <root nodeRef="r:2efa673f-09db-4f93-9b0a-ba8232fe1b01(jetbrains.mps.testActions.util)/1575175756409680350">
     <nodeInfo nodeId="1575175756409680356" fileName="FlyingActionsFinder.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActionManager" />
     <nodeInfo nodeId="4484885613884975931" fileName="FlyingActionsFinder.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFlyingActions" />
     <nodeInfo nodeId="1575175756409685624" fileName="FlyingActionsFinder.java" startLine="20" startPosition="33" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

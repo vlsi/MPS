@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="1239575860624" modelId="r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)">
+  <root nodeRef="r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)/1239575860624">
     <nodeInfo nodeId="1239575860624" fileName="NamedTupleComponentDeclaration_Constraints.java" startLine="8" startPosition="55" endLine="9" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1239575860624" fileName="NamedTupleComponentDeclaration_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NamedTupleComponentDeclaration_Constraints#()V" />
     <scopeInfo nodeId="1239575860624" fileName="NamedTupleComponentDeclaration_Constraints.java" startLine="8" startPosition="55" endLine="9" endPosition="88" />
     <scopeInfo nodeId="1239575860624" fileName="NamedTupleComponentDeclaration_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
     <unitInfo nodeId="1239575860624" fileName="NamedTupleComponentDeclaration_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentDeclaration_Constraints" />
   </root>
-  <root nodeId="1239575916907" modelId="r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)">
+  <root nodeRef="r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)/1239575916907">
     <nodeInfo nodeId="1239575916907" fileName="NamedTupleComponentReference_Constraints.java" startLine="24" startPosition="53" endLine="25" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1239575916907" fileName="NamedTupleComponentReference_Constraints.java" startLine="29" startPosition="83" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239575916907" fileName="NamedTupleComponentReference_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -52,7 +52,7 @@
     <unitInfo nodeId="1239575916907" fileName="NamedTupleComponentReference_Constraints.java" startLine="31" startPosition="47" endLine="56" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_Constraints$1" />
     <unitInfo nodeId="1239575916907" fileName="NamedTupleComponentReference_Constraints.java" startLine="23" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_Constraints" />
   </root>
-  <root nodeId="1239576894334" modelId="r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)">
+  <root nodeRef="r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)/1239576894334">
     <nodeInfo nodeId="1239576894334" fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="31" startPosition="59" endLine="32" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1239576894334" fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="36" startPosition="43" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239576894334" fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="41" startPosition="200" endLine="42" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -155,7 +155,7 @@
     <unitInfo nodeId="1239576894334" fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="72" startPosition="36" endLine="97" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints$2" />
     <unitInfo nodeId="1239576894334" fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="30" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints" />
   </root>
-  <root nodeId="1240488415103" modelId="r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)">
+  <root nodeRef="r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)/1240488415103">
     <nodeInfo nodeId="1240573408991" fileName="TupleIntefaceUtils.java" startLine="24" startPosition="53" endLine="25" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240573261715" fileName="TupleIntefaceUtils.java" startLine="28" startPosition="65" endLine="29" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240573261723" fileName="TupleIntefaceUtils.java" startLine="29" startPosition="80" endLine="30" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -283,7 +283,7 @@
     <unitInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="76" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils$Property" />
     <unitInfo nodeId="1240488415103" fileName="TupleIntefaceUtils.java" startLine="20" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils" />
   </root>
-  <root nodeId="1652220223504359701" modelId="r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)">
+  <root nodeRef="r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)/1652220223504359701">
     <nodeInfo nodeId="1652220223504359701" fileName="NamedTupleType_Constraints.java" startLine="25" startPosition="39" endLine="26" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1652220223504359701" fileName="NamedTupleType_Constraints.java" startLine="30" startPosition="83" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1652220223504359701" fileName="NamedTupleType_Constraints.java" startLine="34" startPosition="44" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

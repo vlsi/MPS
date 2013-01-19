@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.TypesystemDescriptor" />
-  <root nodeId="2323553266854757446" modelId="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)">
+  <root nodeRef="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)/2323553266854757446">
     <nodeInfo nodeId="2323553266854805648" fileName="DisptachParamIsClass_NonTypesystemRule.java" startLine="25" startPosition="39" endLine="26" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2323553266854817530" fileName="DisptachParamIsClass_NonTypesystemRule.java" startLine="28" startPosition="19" endLine="29" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3166734731694143939" fileName="DisptachParamIsClass_NonTypesystemRule.java" startLine="30" startPosition="5" endLine="31" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -75,7 +75,7 @@
     <unitInfo nodeId="2323553266854805157" fileName="DisptachParamIsClass_NonTypesystemRule.java" startLine="24" startPosition="95" endLine="28" endPosition="5" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DisptachParamIsClass_NonTypesystemRule$1" />
     <unitInfo nodeId="2323553266854757446" fileName="DisptachParamIsClass_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DisptachParamIsClass_NonTypesystemRule" />
   </root>
-  <root nodeId="6855443792548948757" modelId="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)">
+  <root nodeRef="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)/6855443792548948757">
     <nodeInfo nodeId="6855443792548949204" fileName="DispatchGroup.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDescriptor" />
     <nodeInfo nodeId="6855443792548949214" fileName="DispatchGroup.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGroupsByClass" />
     <nodeInfo nodeId="6855443792548949226" fileName="DispatchGroup.java" startLine="25" startPosition="71" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -301,7 +301,7 @@
     <unitInfo nodeId="6855443792548948758" fileName="DispatchGroup.java" startLine="112" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup$ClassMethodGroup" />
     <unitInfo nodeId="6855443792548948757" fileName="DispatchGroup.java" startLine="21" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroup" />
   </root>
-  <root nodeId="6855443792548949232" modelId="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)">
+  <root nodeRef="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)/6855443792548949232">
     <nodeInfo nodeId="6855443792548949250" fileName="DispatchGroupDescriptor.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="methodName" />
     <nodeInfo nodeId="3166734731696174829" fileName="DispatchGroupDescriptor.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isStatic" />
     <nodeInfo nodeId="6855443792548949256" fileName="DispatchGroupDescriptor.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="otherParamTypes" />
@@ -417,7 +417,7 @@
     <unitInfo nodeId="4661992271516545615" fileName="DispatchGroupDescriptor.java" startLine="72" startPosition="64" endLine="76" endPosition="5" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroupDescriptor$2" />
     <unitInfo nodeId="6855443792548949232" fileName="DispatchGroupDescriptor.java" startLine="16" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchGroupDescriptor" />
   </root>
-  <root nodeId="6855443792548949309" modelId="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)">
+  <root nodeRef="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)/6855443792548949309">
     <nodeInfo nodeId="6855443792548949327" fileName="DispatchMethodCollector.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="groups" />
     <nodeInfo nodeId="3166734731675672298" fileName="DispatchMethodCollector.java" startLine="20" startPosition="54" endLine="21" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3166734731696106441" fileName="DispatchMethodCollector.java" startLine="24" startPosition="41" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -510,7 +510,7 @@
     <unitInfo nodeId="3166734731696544948" fileName="DispatchMethodCollector.java" startLine="47" startPosition="127" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchMethodCollector$2" />
     <unitInfo nodeId="6855443792548949309" fileName="DispatchMethodCollector.java" startLine="17" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchMethodCollector" />
   </root>
-  <root nodeId="6855443792548949391" modelId="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)">
+  <root nodeRef="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)/6855443792548949391">
     <nodeInfo nodeId="35825318244943729" fileName="DispatchUtil.java" startLine="92" startPosition="27" endLine="92" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6855443792548949581" fileName="DispatchUtil.java" startLine="26" startPosition="51" endLine="27" endPosition="337" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3166734731696040564" fileName="DispatchUtil.java" startLine="32" startPosition="39" endLine="33" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -678,7 +678,7 @@
     <unitInfo nodeId="35825318244939944" fileName="DispatchUtil.java" startLine="47" startPosition="55" endLine="119" endPosition="5" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil$3" />
     <unitInfo nodeId="6855443792548949391" fileName="DispatchUtil.java" startLine="22" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.typesystem.DispatchUtil" />
   </root>
-  <root nodeId="6855443792548952024" modelId="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)">
+  <root nodeRef="r:7a94bb66-9653-4830-af67-903eb2cfbd29(jetbrains.mps.baseLanguage.doubleDispatch.typesystem)/6855443792548952024">
     <nodeInfo nodeId="6855443792549033544" fileName="DispatchArgsHierarchy_NonTypesystemRule.java" startLine="26" startPosition="39" endLine="27" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3166734731696060244" fileName="DispatchArgsHierarchy_NonTypesystemRule.java" startLine="31" startPosition="39" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3166734731694410178" fileName="DispatchArgsHierarchy_NonTypesystemRule.java" startLine="34" startPosition="7" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />

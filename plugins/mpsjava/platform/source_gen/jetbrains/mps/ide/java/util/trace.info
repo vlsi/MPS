@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4193578441191911527" modelId="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)">
+  <root nodeRef="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)/4193578441191911527">
     <nodeInfo nodeId="4193578441191970303" fileName="JavaCopyPasteDataConverter.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MIN_TEXT_LENGTH_TO_CONVERT" />
     <nodeInfo nodeId="4193578441191921069" fileName="JavaCopyPasteDataConverter.java" startLine="24" startPosition="31" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4193578441191921073" fileName="JavaCopyPasteDataConverter.java" startLine="28" startPosition="34" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -61,7 +61,7 @@
     </scopeInfo>
     <unitInfo nodeId="4193578441191911527" fileName="JavaCopyPasteDataConverter.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.java.util.JavaCopyPasteDataConverter" />
   </root>
-  <root nodeId="5646944109420335310" modelId="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)">
+  <root nodeRef="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)/5646944109420335310">
     <nodeInfo nodeId="5646944109420336544" fileName="JavaPaster.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5646944109420336563" fileName="JavaPaster.java" startLine="42" startPosition="117" endLine="43" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5646944109420336572" fileName="JavaPaster.java" startLine="44" startPosition="27" endLine="45" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -293,7 +293,7 @@
     <unitInfo nodeId="1418985936284183497" fileName="JavaPaster.java" startLine="99" startPosition="52" endLine="103" endPosition="11" unitName="jetbrains.mps.ide.java.util.JavaPaster$1" />
     <unitInfo nodeId="5646944109420335310" fileName="JavaPaster.java" startLine="36" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.ide.java.util.JavaPaster" />
   </root>
-  <root nodeId="5778265495851109956" modelId="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)">
+  <root nodeRef="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)/5778265495851109956">
     <nodeInfo nodeId="5778265495851109972" fileName="StubResolver.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="JAVA_STUB" />
     <nodeInfo nodeId="9073603541474867540" fileName="StubResolver.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUsedModels" />
     <nodeInfo nodeId="9073603541474871880" fileName="StubResolver.java" startLine="49" startPosition="25" endLine="50" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -500,6 +500,6 @@
     <unitInfo nodeId="2742102018362199421" fileName="StubResolver.java" startLine="149" startPosition="85" endLine="157" endPosition="9" unitName="jetbrains.mps.ide.java.util.StubResolver$4" />
     <unitInfo nodeId="5778265495851109956" fileName="StubResolver.java" startLine="45" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.ide.java.util.StubResolver" />
   </root>
-  <root nodeId="8183587472722977035" modelId="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)" />
+  <root nodeRef="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)/8183587472722977035" />
 </debugInfo>
 

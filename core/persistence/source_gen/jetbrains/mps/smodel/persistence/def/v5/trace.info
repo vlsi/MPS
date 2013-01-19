@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2286463592495096552" modelId="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)">
+  <root nodeRef="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)/2286463592495096552">
     <nodeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
     <nodeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="modelhandler" />
     <nodeInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="persistencehandler" />
@@ -699,7 +699,7 @@
     <unitInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="158" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler$ModelElementHandler" />
     <unitInfo nodeId="2286463592495096552" fileName="ModelReader5Handler.java" startLine="29" startPosition="0" endLine="605" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler" />
   </root>
-  <root nodeId="651246788329828609" modelId="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)">
+  <root nodeRef="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)/651246788329828609">
     <nodeInfo nodeId="651246788329828609" fileName="LineToContentMapReader5Handler.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
     <nodeInfo nodeId="651246788329828609" fileName="LineToContentMapReader5Handler.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="modelhandler" />
     <nodeInfo nodeId="651246788329828609" fileName="LineToContentMapReader5Handler.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nodehandler" />
@@ -1098,7 +1098,7 @@
     <unitInfo nodeId="651246788329828609" fileName="LineToContentMapReader5Handler.java" startLine="141" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.LineToContentMapReader5Handler$ModelElementHandler" />
     <unitInfo nodeId="651246788329828609" fileName="LineToContentMapReader5Handler.java" startLine="16" startPosition="0" endLine="344" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.LineToContentMapReader5Handler" />
   </root>
-  <root nodeId="8837498651724313880" modelId="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)">
+  <root nodeRef="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)/8837498651724313880">
     <nodeInfo nodeId="8837498651724313930" fileName="LineContentAccumulator.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLineToContentMap" />
     <nodeInfo nodeId="8837498651724313937" fileName="LineContentAccumulator.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeIdStack" />
     <nodeInfo nodeId="8837498651724313885" fileName="LineContentAccumulator.java" startLine="25" startPosition="57" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

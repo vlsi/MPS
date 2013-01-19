@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="121110127371512982" modelId="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)">
+  <root nodeRef="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)/121110127371512982">
     <nodeInfo nodeId="121110127371513854" fileName="FileStructurePopup.java" startLine="122" startPosition="55" endLine="123" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="121110127371513862" fileName="FileStructurePopup.java" startLine="123" startPosition="53" endLine="124" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="121110127371513864" fileName="FileStructurePopup.java" startLine="125" startPosition="7" endLine="126" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1066,7 +1066,7 @@
     <unitInfo nodeId="121110127371513137" fileName="FileStructurePopup.java" startLine="764" startPosition="0" endLine="909" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$MyTreeSpeedSearch" />
     <unitInfo nodeId="121110127371512982" fileName="FileStructurePopup.java" startLine="114" startPosition="0" endLine="962" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup" />
   </root>
-  <root nodeId="121110127371584518" modelId="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)">
+  <root nodeRef="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)/121110127371584518">
     <nodeInfo nodeId="121110127371584520" fileName="TreeStructureActionsOwner.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActions" />
     <nodeInfo nodeId="121110127371584527" fileName="TreeStructureActionsOwner.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="121110127371584535" fileName="TreeStructureActionsOwner.java" startLine="19" startPosition="67" endLine="20" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1119,7 +1119,7 @@
     </scopeInfo>
     <unitInfo nodeId="121110127371584518" fileName="TreeStructureActionsOwner.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.TreeStructureActionsOwner" />
   </root>
-  <root nodeId="397101727194120959" modelId="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)">
+  <root nodeRef="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)/397101727194120959">
     <nodeInfo nodeId="397101727194125937" fileName="NodeChooserDialog.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
     <nodeInfo nodeId="397101727194120976" fileName="NodeChooserDialog.java" startLine="28" startPosition="81" endLine="29" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="397101727194120992" fileName="NodeChooserDialog.java" startLine="29" startPosition="25" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1222,7 +1222,7 @@
     <unitInfo nodeId="397101727194123504" fileName="NodeChooserDialog.java" startLine="32" startPosition="45" endLine="58" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$1" />
     <unitInfo nodeId="397101727194120959" fileName="NodeChooserDialog.java" startLine="25" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog" />
   </root>
-  <root nodeId="890761188649854308" modelId="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)">
+  <root nodeRef="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)/890761188649854308">
     <nodeInfo nodeId="8178553721056070910" fileName="NodeTreeModel.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FAKE_ROOT" />
     <nodeInfo nodeId="890761188649876466" fileName="NodeTreeModel.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootNodes#()[Ljetbrains/mps/smodel/SNodePointer;" />
     <nodeInfo nodeId="890761188649876471" fileName="NodeTreeModel.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#(Ljetbrains/mps/smodel/SNodePointer;)[Ljetbrains/mps/smodel/SNodePointer;" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="3315811491560252601" modelId="r:222f0e6e-34ee-4504-a848-5e0f34db2f2f(jetbrains.mps.transformation.test.inputLang.constraints)">
+  <root nodeRef="r:222f0e6e-34ee-4504-a848-5e0f34db2f2f(jetbrains.mps.transformation.test.inputLang.constraints)/3315811491560252601">
     <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="22" startPosition="40" endLine="23" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="27" startPosition="83" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="31" startPosition="44" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -43,7 +43,7 @@
     <unitInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="29" startPosition="38" endLine="56" endPosition="5" unitName="jetbrains.mps.transformation.test.inputLang.constraints.RefTestParamRef_Constraints$1" />
     <unitInfo nodeId="3315811491560252601" fileName="RefTestParamRef_Constraints.java" startLine="21" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.constraints.RefTestParamRef_Constraints" />
   </root>
-  <root nodeId="5934496548013477090" modelId="r:222f0e6e-34ee-4504-a848-5e0f34db2f2f(jetbrains.mps.transformation.test.inputLang.constraints)">
+  <root nodeRef="r:222f0e6e-34ee-4504-a848-5e0f34db2f2f(jetbrains.mps.transformation.test.inputLang.constraints)/5934496548013477090">
     <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="22" startPosition="42" endLine="23" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="27" startPosition="83" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5934496548013477090" fileName="RefTestMethodCall_Constraints.java" startLine="31" startPosition="44" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

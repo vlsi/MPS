@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ExtensionDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.plugin.ExtensionDescriptor" />
-  <root nodeId="5633688998557455347" modelId="r:a6657f88-2637-4f34-9cd2-e8804cb17987(jetbrains.mps.baseLanguage.collections.trove.plugin)">
+  <root nodeRef="r:a6657f88-2637-4f34-9cd2-e8804cb17987(jetbrains.mps.baseLanguage.collections.trove.plugin)/5633688998557455347">
     <nodeInfo nodeId="5633688998557455347" fileName="Extension_customContainers5633688998557455347_.java" startLine="18" startPosition="59" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841887664" fileName="Extension_customContainers5633688998557455347_.java" startLine="24" startPosition="35" endLine="25" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841887670" fileName="Extension_customContainers5633688998557455347_.java" startLine="25" startPosition="49" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="1227089946706" modelId="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)/1227089946706">
     <nodeInfo nodeId="1227089946706" fileName="IntentionDeclaration_Constraints.java" startLine="15" startPosition="45" endLine="16" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1227089946706" fileName="IntentionDeclaration_Constraints.java" startLine="20" startPosition="42" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227089946706" fileName="IntentionDeclaration_Constraints.java" startLine="25" startPosition="120" endLine="26" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -36,7 +36,7 @@
     </scopeInfo>
     <unitInfo nodeId="1227089946706" fileName="IntentionDeclaration_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.intentions.constraints.IntentionDeclaration_Constraints" />
   </root>
-  <root nodeId="6263518417926802270" modelId="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)/6263518417926802270">
     <nodeInfo nodeId="6263518417926802270" fileName="SurroundWithIntentionDeclaration_Constraints.java" startLine="15" startPosition="57" endLine="16" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6263518417926802270" fileName="SurroundWithIntentionDeclaration_Constraints.java" startLine="20" startPosition="42" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6263518417926802270" fileName="SurroundWithIntentionDeclaration_Constraints.java" startLine="25" startPosition="120" endLine="26" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -3,7 +3,7 @@
   <unitInfo fileName="QueriesGenerated.java" startLine="31" startPosition="36" endLine="41" endPosition="9" unitName="jetbrains.mps.debugger.java.privateMembers.actions.QueriesGenerated$1" />
   <unitInfo fileName="QueriesGenerated.java" startLine="45" startPosition="57" endLine="63" endPosition="13" unitName="jetbrains.mps.debugger.java.privateMembers.actions.QueriesGenerated$2" />
   <unitInfo fileName="QueriesGenerated.java" startLine="24" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.debugger.java.privateMembers.actions.QueriesGenerated" />
-  <root nodeId="6113527081580345349" modelId="r:9693cb33-473b-4be0-90b5-49a4eae89013(jetbrains.mps.debugger.java.privateMembers.actions)">
+  <root nodeRef="r:9693cb33-473b-4be0-90b5-49a4eae89013(jetbrains.mps.debugger.java.privateMembers.actions)/6113527081580345349">
     <nodeInfo nodeId="6113527081580345361" fileName="QueriesGenerated.java" startLine="32" startPosition="35" endLine="33" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6113527081580345371" fileName="QueriesGenerated.java" startLine="33" startPosition="170" endLine="34" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6113527081580345380" fileName="QueriesGenerated.java" startLine="34" startPosition="92" endLine="35" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

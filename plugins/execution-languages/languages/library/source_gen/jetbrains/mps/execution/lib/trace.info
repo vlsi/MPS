@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="_Adapters.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.execution.lib._Adapters$_return_P0_E0_to_Runnable_adapter" />
   <unitInfo fileName="_Adapters.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.execution.lib._Adapters" />
-  <root nodeId="1977878056377381089" modelId="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)">
+  <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/1977878056377381089">
     <nodeInfo nodeId="1977878056377381089" fileName="ExecutionTool.java" startLine="12" startPosition="26" endLine="13" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1977878056377381089" fileName="ExecutionTool.java" startLine="16" startPosition="108" endLine="17" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1977878056377381089" fileName="ExecutionTool.java" startLine="20" startPosition="49" endLine="21" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -53,7 +53,7 @@
     </scopeInfo>
     <unitInfo nodeId="1977878056377381089" fileName="ExecutionTool.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.execution.lib.ExecutionTool" />
   </root>
-  <root nodeId="1977878056377381098" modelId="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)">
+  <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/1977878056377381098">
     <nodeInfo nodeId="1977878056377381303" fileName="MultiConceptNode_Configuration.java" startLine="33" startPosition="5" endLine="34" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1977878056377381314" fileName="MultiConceptNode_Configuration.java" startLine="35" startPosition="25" endLine="36" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="1977878056377381316" fileName="MultiConceptNode_Configuration.java" startLine="37" startPosition="7" endLine="38" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -284,7 +284,7 @@
     <unitInfo nodeId="1977878056377381098" fileName="MultiConceptNode_Configuration_Editor.java" startLine="38" startPosition="14" endLine="42" endPosition="5" unitName="jetbrains.mps.execution.lib.MultiConceptNode_Configuration_Editor$1" />
     <unitInfo nodeId="1977878056377381098" fileName="MultiConceptNode_Configuration_Editor.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.execution.lib.MultiConceptNode_Configuration_Editor" />
   </root>
-  <root nodeId="1977878056377381335" modelId="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)">
+  <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/1977878056377381335">
     <nodeInfo nodeId="1977878056377381484" fileName="Node_Configuration.java" startLine="27" startPosition="5" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1977878056377381495" fileName="Node_Configuration.java" startLine="29" startPosition="25" endLine="30" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="1977878056377381497" fileName="Node_Configuration.java" startLine="31" startPosition="7" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -495,7 +495,7 @@
     <unitInfo nodeId="1977878056377381335" fileName="Node_Configuration_Editor.java" startLine="39" startPosition="14" endLine="43" endPosition="5" unitName="jetbrains.mps.execution.lib.Node_Configuration_Editor$1" />
     <unitInfo nodeId="1977878056377381335" fileName="Node_Configuration_Editor.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.execution.lib.Node_Configuration_Editor" />
   </root>
-  <root nodeId="8278380780105768314" modelId="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)">
+  <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/8278380780105768314">
     <nodeInfo nodeId="6072045827976706427" fileName="NodeByConcept_Configuration.java" startLine="27" startPosition="5" endLine="28" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8278380780105768463" fileName="NodeByConcept_Configuration.java" startLine="30" startPosition="27" endLine="31" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6072045827976706430" fileName="NodeByConcept_Configuration.java" startLine="32" startPosition="29" endLine="33" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -710,7 +710,7 @@
     <unitInfo nodeId="8278380780105768314" fileName="NodeByConcept_Configuration_Editor.java" startLine="48" startPosition="14" endLine="52" endPosition="5" unitName="jetbrains.mps.execution.lib.NodeByConcept_Configuration_Editor$3" />
     <unitInfo nodeId="8278380780105768314" fileName="NodeByConcept_Configuration_Editor.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.execution.lib.NodeByConcept_Configuration_Editor" />
   </root>
-  <root nodeId="8278380780105899265" modelId="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)">
+  <root nodeRef="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)/8278380780105899265">
     <nodeInfo nodeId="6072045827976707228" fileName="NodeBySeveralConcepts_Configuration.java" startLine="32" startPosition="5" endLine="33" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6072045827976707235" fileName="NodeBySeveralConcepts_Configuration.java" startLine="35" startPosition="27" endLine="36" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6072045827976707246" fileName="NodeBySeveralConcepts_Configuration.java" startLine="37" startPosition="29" endLine="38" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

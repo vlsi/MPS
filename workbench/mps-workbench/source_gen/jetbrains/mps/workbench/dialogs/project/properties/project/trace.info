@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3201642974933580312" modelId="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)">
+  <root nodeRef="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)/3201642974933580312">
     <nodeInfo nodeId="3201642974933580314" fileName="ProjectProperties.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_NAME" />
     <nodeInfo nodeId="3201642974933580318" fileName="ProjectProperties.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_MODULES" />
     <nodeInfo nodeId="3201642974933580330" fileName="ProjectProperties.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_GEN_CONFIGS" />
@@ -72,7 +72,7 @@
     <unitInfo nodeId="4543209876460383282" fileName="ProjectProperties.java" startLine="57" startPosition="129" endLine="61" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties$1" />
     <unitInfo nodeId="3201642974933580312" fileName="ProjectProperties.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties" />
   </root>
-  <root nodeId="3201642974933583134" modelId="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)">
+  <root nodeRef="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)/3201642974933583134">
     <nodeInfo nodeId="3201642974933583137" fileName="ProjectPropertiesComponent.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="3201642974933583142" fileName="ProjectPropertiesComponent.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="3201642974933583145" fileName="ProjectPropertiesComponent.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditableDescriptor" />
@@ -142,7 +142,7 @@
     <unitInfo nodeId="3201642974933583251" fileName="ProjectPropertiesComponent.java" startLine="46" startPosition="46" endLine="50" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent$2" />
     <unitInfo nodeId="3201642974933583134" fileName="ProjectPropertiesComponent.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent" />
   </root>
-  <root nodeId="3201642974933584605" modelId="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)">
+  <root nodeRef="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)/3201642974933584605">
     <nodeInfo nodeId="3201642974933584645" fileName="TestConfigurationDialog.java" startLine="79" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODELS_PROPERTY" />
     <nodeInfo nodeId="3201642974933584722" fileName="TestConfigurationDialog.java" startLine="80" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="3201642974933584727" fileName="TestConfigurationDialog.java" startLine="81" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODEL" />
@@ -631,7 +631,7 @@
     <unitInfo nodeId="3201642974933584642" fileName="TestConfigurationDialog.java" startLine="289" startPosition="0" endLine="416" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog$ModelsPanel" />
     <unitInfo nodeId="3201642974933584605" fileName="TestConfigurationDialog.java" startLine="78" startPosition="0" endLine="445" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog" />
   </root>
-  <root nodeId="3201642974933586123" modelId="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)">
+  <root nodeRef="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)/3201642974933586123">
     <nodeInfo nodeId="3201642974933586128" fileName="ProjectPropertiesPrefsPage.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="3201642974933586131" fileName="ProjectPropertiesPrefsPage.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="3201642974933586139" fileName="ProjectPropertiesPrefsPage.java" startLine="20" startPosition="54" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -701,7 +701,7 @@
     <scopeInfo nodeId="3201642974933586233" fileName="ProjectPropertiesPrefsPage.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
     <unitInfo nodeId="3201642974933586123" fileName="ProjectPropertiesPrefsPage.java" startLine="16" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage" />
   </root>
-  <root nodeId="3201642974933587319" modelId="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)">
+  <root nodeRef="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)/3201642974933587319">
     <nodeInfo nodeId="5833516341015551055" fileName="ProjectPropertiesDialog.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
     <nodeInfo nodeId="3201642974933587327" fileName="ProjectPropertiesDialog.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="3201642974933587330" fileName="ProjectPropertiesDialog.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperties" />
@@ -1001,7 +1001,7 @@
     <unitInfo nodeId="5397760977728015937" fileName="ProjectPropertiesDialog.java" startLine="263" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog$TestConfigListModel" />
     <unitInfo nodeId="3201642974933587319" fileName="ProjectPropertiesDialog.java" startLine="38" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" />
   </root>
-  <root nodeId="7767836446863523822" modelId="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)">
+  <root nodeRef="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)/7767836446863523822">
     <nodeInfo nodeId="7767836446863523839" fileName="ProjectPrefsExtraPanel.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EP_NAME" />
     <nodeInfo nodeId="7767836446863523823" fileName="ProjectPrefsExtraPanel.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
     <nodeInfo nodeId="7767836446863523827" fileName="ProjectPrefsExtraPanel.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isModified#()Z" />

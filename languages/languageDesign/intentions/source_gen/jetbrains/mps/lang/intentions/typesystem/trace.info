@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.intentions.typesystem.TypesystemDescriptor" />
-  <root nodeId="1192798450063" modelId="r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)/1192798450063">
     <nodeInfo nodeId="1192798450065" fileName="typeof_ConceptFunctionParameter_node_InferenceRule.java" startLine="21" startPosition="142" endLine="22" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1223982145698" fileName="typeof_ConceptFunctionParameter_node_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1223982145698" fileName="typeof_ConceptFunctionParameter_node_InferenceRule.java" startLine="24" startPosition="71" endLine="25" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -58,7 +58,7 @@
     </scopeInfo>
     <unitInfo nodeId="1192798450063" fileName="typeof_ConceptFunctionParameter_node_InferenceRule.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.intentions.typesystem.typeof_ConceptFunctionParameter_node_InferenceRule" />
   </root>
-  <root nodeId="1240319537225" modelId="r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)/1240319537225">
     <nodeInfo nodeId="1240322248784" fileName="typeof_QueryBlock_InferenceRule.java" startLine="20" startPosition="118" endLine="21" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240322152910" fileName="typeof_QueryBlock_InferenceRule.java" startLine="21" startPosition="214" endLine="22" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240319537225" fileName="typeof_QueryBlock_InferenceRule.java" startLine="25" startPosition="46" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -114,7 +114,7 @@
     </scopeInfo>
     <unitInfo nodeId="1240319537225" fileName="typeof_QueryBlock_InferenceRule.java" startLine="16" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.intentions.typesystem.typeof_QueryBlock_InferenceRule" />
   </root>
-  <root nodeId="1240322703523" modelId="r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)/1240322703523">
     <nodeInfo nodeId="1240322768265" fileName="typeof_ConceptFunctionParameter_parameter_InferenceRule.java" startLine="19" startPosition="122" endLine="20" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240322726298" fileName="typeof_ConceptFunctionParameter_parameter_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240322726298" fileName="typeof_ConceptFunctionParameter_parameter_InferenceRule.java" startLine="22" startPosition="51" endLine="23" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -157,7 +157,7 @@
     </scopeInfo>
     <unitInfo nodeId="1240322703523" fileName="typeof_ConceptFunctionParameter_parameter_InferenceRule.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.intentions.typesystem.typeof_ConceptFunctionParameter_parameter_InferenceRule" />
   </root>
-  <root nodeId="3618415754251192148" modelId="r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)/3618415754251192148">
     <nodeInfo nodeId="3618415754251192278" fileName="typeof_ConceptFunctionParameter_childNode_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3618415754251192278" fileName="typeof_ConceptFunctionParameter_childNode_InferenceRule.java" startLine="20" startPosition="46" endLine="21" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3618415754251192278" fileName="typeof_ConceptFunctionParameter_childNode_InferenceRule.java" startLine="21" startPosition="206" endLine="22" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

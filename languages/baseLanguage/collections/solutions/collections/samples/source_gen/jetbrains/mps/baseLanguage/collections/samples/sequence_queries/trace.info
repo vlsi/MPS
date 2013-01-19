@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1153940807216" modelId="r:00000000-0000-4000-0000-011c895903b8(jetbrains.mps.baseLanguage.collections.samples.sequence_queries)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903b8(jetbrains.mps.baseLanguage.collections.samples.sequence_queries)/1153940807216">
     <nodeInfo nodeId="1224754223483" fileName="Main_map_operation.java" startLine="48" startPosition="27" endLine="48" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223621" fileName="Main_map_operation.java" startLine="120" startPosition="27" endLine="120" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223624" fileName="Main_map_operation.java" startLine="123" startPosition="27" endLine="123" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -166,7 +166,7 @@
     <unitInfo nodeId="1224754223621" fileName="Main_map_operation.java" startLine="72" startPosition="73" endLine="145" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_map_operation$2" />
     <unitInfo nodeId="1153940807216" fileName="Main_map_operation.java" startLine="13" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_map_operation" />
   </root>
-  <root nodeId="1153941117383" modelId="r:00000000-0000-4000-0000-011c895903b8(jetbrains.mps.baseLanguage.collections.samples.sequence_queries)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903b8(jetbrains.mps.baseLanguage.collections.samples.sequence_queries)/1153941117383">
     <nodeInfo nodeId="1224754223337" fileName="Main_forEach_operation.java" startLine="47" startPosition="27" endLine="47" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223329" fileName="Main_forEach_operation.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
     <nodeInfo nodeId="1224754223329" fileName="Main_forEach_operation.java" startLine="29" startPosition="28" endLine="30" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
@@ -252,7 +252,7 @@
     <unitInfo nodeId="1224754223329" fileName="Main_forEach_operation.java" startLine="17" startPosition="54" endLine="66" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_operation$1" />
     <unitInfo nodeId="1153941117383" fileName="Main_forEach_operation.java" startLine="12" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_forEach_operation" />
   </root>
-  <root nodeId="1153941284364" modelId="r:00000000-0000-4000-0000-011c895903b8(jetbrains.mps.baseLanguage.collections.samples.sequence_queries)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903b8(jetbrains.mps.baseLanguage.collections.samples.sequence_queries)/1153941284364">
     <nodeInfo nodeId="1224754223365" fileName="Main_where_select_operations.java" startLine="50" startPosition="27" endLine="50" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223370" fileName="Main_where_select_operations.java" startLine="53" startPosition="27" endLine="53" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223364" fileName="Main_where_select_operations.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
@@ -348,7 +348,7 @@
     <unitInfo nodeId="1224754223364" fileName="Main_where_select_operations.java" startLine="18" startPosition="54" endLine="68" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_where_select_operations$1" />
     <unitInfo nodeId="1153941284364" fileName="Main_where_select_operations.java" startLine="13" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.sequence_queries.Main_where_select_operations" />
   </root>
-  <root nodeId="1154036214581" modelId="r:00000000-0000-4000-0000-011c895903b8(jetbrains.mps.baseLanguage.collections.samples.sequence_queries)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903b8(jetbrains.mps.baseLanguage.collections.samples.sequence_queries)/1154036214581">
     <nodeInfo nodeId="1224754223444" fileName="Main_forEach_loop.java" startLine="45" startPosition="27" endLine="45" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
     <nodeInfo nodeId="1224754223436" fileName="Main_forEach_loop.java" startLine="27" startPosition="28" endLine="28" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="445606167100192267" modelId="r:234b331b-e592-4abc-a46f-b0dfd2e2ce5e(jetbrains.mps.vcs.diff.merge@tests)">
+  <root nodeRef="r:234b331b-e592-4abc-a46f-b0dfd2e2ce5e(jetbrains.mps.vcs.diff.merge@tests)/445606167100192267">
     <nodeInfo nodeId="445606167100248122" fileName="MergeCoreTest.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TESTDATA_HOME" />
     <nodeInfo nodeId="68133678146704940" fileName="MergeCoreTest.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourPlayRefactoringWas" />
     <nodeInfo nodeId="68133678146704944" fileName="MergeCoreTest.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourMergeDriverModeWas" />
@@ -92,7 +92,7 @@
     <unitInfo nodeId="1099962754143794508" fileName="MergeCoreTest.java" startLine="56" startPosition="24" endLine="60" endPosition="5" unitName="jetbrains.mps.vcs.diff.merge.MergeCoreTest$3" />
     <unitInfo nodeId="445606167100192267" fileName="MergeCoreTest.java" startLine="24" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.vcs.diff.merge.MergeCoreTest" />
   </root>
-  <root nodeId="445606167100287301" modelId="r:234b331b-e592-4abc-a46f-b0dfd2e2ce5e(jetbrains.mps.vcs.diff.merge@tests)">
+  <root nodeRef="r:234b331b-e592-4abc-a46f-b0dfd2e2ce5e(jetbrains.mps.vcs.diff.merge@tests)/445606167100287301">
     <nodeInfo nodeId="445606167100351130" fileName="MergeData.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CHANGES_MINE_TXT" />
     <nodeInfo nodeId="445606167100351254" fileName="MergeData.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CHANGES_REPOSITORY_TXT" />
     <nodeInfo nodeId="445606167100351538" fileName="MergeData.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myZipFileFile" />

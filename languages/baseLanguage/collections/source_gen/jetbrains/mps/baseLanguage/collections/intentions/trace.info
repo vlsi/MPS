@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.IntentionsDescriptor" />
-  <root nodeId="1193396656620" modelId="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)/1193396656620">
     <nodeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="29" startPosition="30" endLine="30" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="33" startPosition="35" endLine="34" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -115,7 +115,7 @@
     <unitInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="79" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.ConvertForEachStatementToForeachStatement_Intention$IntentionImplementation" />
     <unitInfo nodeId="1193396656620" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="23" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.ConvertForEachStatementToForeachStatement_Intention" />
   </root>
-  <root nodeId="1206658014161" modelId="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)/1206658014161">
     <nodeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -203,7 +203,7 @@
     <unitInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="78" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.CreateInitializer_Intention$IntentionImplementation" />
     <unitInfo nodeId="1206658014161" fileName="CreateInitializer_Intention.java" startLine="22" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.CreateInitializer_Intention" />
   </root>
-  <root nodeId="1237739140549" modelId="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)/1237739140549">
     <nodeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -291,7 +291,7 @@
     <unitInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="76" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.add_init_values_Intention$IntentionImplementation" />
     <unitInfo nodeId="1237739140549" fileName="add_init_values_Intention.java" startLine="20" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.add_init_values_Intention" />
   </root>
-  <root nodeId="1237739246401" modelId="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)/1237739246401">
     <nodeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -379,7 +379,7 @@
     <unitInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="76" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.add_copy_from_Intention$IntentionImplementation" />
     <unitInfo nodeId="1237739246401" fileName="add_copy_from_Intention.java" startLine="20" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.add_copy_from_Intention" />
   </root>
-  <root nodeId="2261417478149151571" modelId="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)/2261417478149151571">
     <nodeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -522,7 +522,7 @@
     <unitInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="78" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.Add_Comparator_Intention$IntentionImplementation" />
     <unitInfo nodeId="2261417478149151571" fileName="Add_Comparator_Intention.java" startLine="22" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.Add_Comparator_Intention" />
   </root>
-  <root nodeId="2826767102480497650" modelId="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)/2826767102480497650">
     <nodeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -610,7 +610,7 @@
     <unitInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="74" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.add_sequence_initializer_Intention$IntentionImplementation" />
     <unitInfo nodeId="2826767102480497650" fileName="add_sequence_initializer_Intention.java" startLine="18" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.add_sequence_initializer_Intention" />
   </root>
-  <root nodeId="309173295241374789" modelId="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)/309173295241374789">
     <nodeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -729,7 +729,7 @@
     <unitInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="79" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.IterateOverSequence_Intention$IntentionImplementation" />
     <unitInfo nodeId="309173295241374789" fileName="IterateOverSequence_Intention.java" startLine="22" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.IterateOverSequence_Intention" />
   </root>
-  <root nodeId="4863683935051453872" modelId="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)/4863683935051453872">
     <nodeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -829,7 +829,7 @@
     <unitInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="70" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.RemoveSetElementOperation_replace_Intention$IntentionImplementation" />
     <unitInfo nodeId="4863683935051453872" fileName="RemoveSetElementOperation_replace_Intention.java" startLine="21" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.RemoveSetElementOperation_replace_Intention" />
   </root>
-  <root nodeId="4863683935051469795" modelId="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)/4863683935051469795">
     <nodeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -929,7 +929,7 @@
     <unitInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="70" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.AddSetElementOperation_replace_Intention$IntentionImplementation" />
     <unitInfo nodeId="4863683935051469795" fileName="AddSetElementOperation_replace_Intention.java" startLine="21" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.AddSetElementOperation_replace_Intention" />
   </root>
-  <root nodeId="4863683935051516260" modelId="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)/4863683935051516260">
     <nodeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1029,7 +1029,7 @@
     <unitInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="70" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.AddAllSetElementsOperation_replace_Intention$IntentionImplementation" />
     <unitInfo nodeId="4863683935051516260" fileName="AddAllSetElementsOperation_replace_Intention.java" startLine="21" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.AddAllSetElementsOperation_replace_Intention" />
   </root>
-  <root nodeId="4863683935051516296" modelId="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)/4863683935051516296">
     <nodeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4863683935051516296" fileName="RemoveAllSetElementsOperation_replace_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

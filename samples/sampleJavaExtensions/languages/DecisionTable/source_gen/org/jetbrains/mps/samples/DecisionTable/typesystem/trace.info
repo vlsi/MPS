@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.typesystem.TypesystemDescriptor" />
-  <root nodeId="1987251859607011636" modelId="r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)">
+  <root nodeRef="r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)/1987251859607011636">
     <nodeInfo nodeId="1987251859607019360" fileName="typeof_DecisionTable_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1987251859607019360" fileName="typeof_DecisionTable_InferenceRule.java" startLine="23" startPosition="55" endLine="24" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1987251859607019360" fileName="typeof_DecisionTable_InferenceRule.java" startLine="24" startPosition="216" endLine="25" endPosition="345" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

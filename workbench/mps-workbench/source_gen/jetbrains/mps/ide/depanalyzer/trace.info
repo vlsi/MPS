@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3131436097929922645" modelId="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)">
+  <root nodeRef="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)/3131436097929922645">
     <nodeInfo nodeId="3131436097929922660" fileName="DependencyTree.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="4584053716645516213" fileName="DependencyTree.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModules" />
     <nodeInfo nodeId="6830499346919777341" fileName="DependencyTree.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myShowRuntime" />
@@ -157,7 +157,7 @@
     <unitInfo nodeId="8401817752074459608" fileName="DependencyTree.java" startLine="98" startPosition="18" endLine="102" endPosition="5" unitName="jetbrains.mps.ide.depanalyzer.DependencyTree$3" />
     <unitInfo nodeId="3131436097929922645" fileName="DependencyTree.java" startLine="33" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.ide.depanalyzer.DependencyTree" />
   </root>
-  <root nodeId="3131436097929923142" modelId="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)">
+  <root nodeRef="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)/3131436097929923142">
     <nodeInfo nodeId="7732415541001061654" fileName="DependencyTreeNode.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLink" />
     <nodeInfo nodeId="5239301882070488633" fileName="DependencyTreeNode.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLinkedNode" />
     <nodeInfo nodeId="7732415541001061680" fileName="DependencyTreeNode.java" startLine="16" startPosition="91" endLine="17" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -233,7 +233,7 @@
     </scopeInfo>
     <unitInfo nodeId="3131436097929923142" fileName="DependencyTreeNode.java" startLine="12" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ide.depanalyzer.DependencyTreeNode" />
   </root>
-  <root nodeId="4584053716645504515" modelId="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)">
+  <root nodeRef="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)/4584053716645504515">
     <nodeInfo nodeId="7653827905501443878" fileName="ModuleDependencyNode.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModules" />
     <nodeInfo nodeId="8261829475851811608" fileName="ModuleDependencyNode.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInitialized" />
     <nodeInfo nodeId="978271742633931673" fileName="ModuleDependencyNode.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCyclic" />
@@ -435,7 +435,7 @@
     <unitInfo nodeId="9102965682596470383" fileName="ModuleDependencyNode.java" startLine="149" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.ide.depanalyzer.ModuleDependencyNode$DepDependencyNode" />
     <unitInfo nodeId="4584053716645504515" fileName="ModuleDependencyNode.java" startLine="26" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.ide.depanalyzer.ModuleDependencyNode" />
   </root>
-  <root nodeId="6059554334738541128" modelId="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)">
+  <root nodeRef="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)/6059554334738541128">
     <nodeInfo nodeId="8150898248362568762" fileName="ModuleDependenciesView.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeftTree" />
     <nodeInfo nodeId="8150898248364139410" fileName="ModuleDependenciesView.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRightTree" />
     <nodeInfo nodeId="5660841153991296776" fileName="ModuleDependenciesView.java" startLine="48" startPosition="65" endLine="49" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -728,7 +728,7 @@
     <unitInfo nodeId="2442969026332309259" fileName="ModuleDependenciesView.java" startLine="216" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.ide.depanalyzer.ModuleDependenciesView$MyToggleAction" />
     <unitInfo nodeId="6059554334738541128" fileName="ModuleDependenciesView.java" startLine="44" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.ide.depanalyzer.ModuleDependenciesView" />
   </root>
-  <root nodeId="691189692235652543" modelId="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)">
+  <root nodeRef="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)/691189692235652543">
     <nodeInfo nodeId="691189692235661067" fileName="DependencyPathTree.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAllDependencies" />
     <nodeInfo nodeId="6904963720429810502" fileName="DependencyPathTree.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="4661162987546350151" fileName="DependencyPathTree.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myShowAllPaths" />
@@ -981,7 +981,7 @@
     <unitInfo nodeId="4224922001290486563" fileName="DependencyPathTree.java" startLine="164" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.ide.depanalyzer.DependencyPathTree$LinkFrom" />
     <unitInfo nodeId="691189692235652543" fileName="DependencyPathTree.java" startLine="39" startPosition="0" endLine="231" endPosition="0" unitName="jetbrains.mps.ide.depanalyzer.DependencyPathTree" />
   </root>
-  <root nodeId="978271742633844808" modelId="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)">
+  <root nodeRef="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)/978271742633844808">
     <nodeInfo nodeId="978271742633845002" fileName="DependencyUtil.java" startLine="30" startPosition="120" endLine="31" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="978271742633845009" fileName="DependencyUtil.java" startLine="31" startPosition="99" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="111710558725769972" fileName="DependencyUtil.java" startLine="33" startPosition="24" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

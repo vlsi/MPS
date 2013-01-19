@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Build_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.structure.Build_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="277" endPosition="0" unitName="jetbrains.mps.build.structure.StructureAspectDescriptor" />
-  <root nodeId="1979010778009209124" modelId="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)">
+  <root nodeRef="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/1979010778009209124">
     <nodeInfo nodeId="1979010778009209124" fileName="BuildLayout_TarCompression.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1979010778009209124" fileName="BuildLayout_TarCompression.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1979010778009209124" fileName="BuildLayout_TarCompression.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -112,7 +112,7 @@
     <unitInfo nodeId="1979010778009209124" fileName="BuildLayout_TarCompression.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.build.structure.BuildLayout_TarCompression" />
     <unitInfo nodeId="1979010778009209124" fileName="BuildLayout_TarCompression_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.structure.BuildLayout_TarCompression_PropertySupport" />
   </root>
-  <root nodeId="4198392933254416814" modelId="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)">
+  <root nodeRef="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/4198392933254416814">
     <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="18" startPosition="27" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="22" startPosition="36" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -230,7 +230,7 @@
     <unitInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle.java" startLine="9" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.structure.BuildLayout_CopyFilterEolStyle" />
     <unitInfo nodeId="4198392933254416814" fileName="BuildLayout_CopyFilterEolStyle_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.structure.BuildLayout_CopyFilterEolStyle_PropertySupport" />
   </root>
-  <root nodeId="5248329904288265463" modelId="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)">
+  <root nodeRef="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/5248329904288265463">
     <nodeInfo nodeId="5248329904288265463" fileName="BuildSource_JavaContentFolderKind.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="5248329904288265463" fileName="BuildSource_JavaContentFolderKind.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5248329904288265463" fileName="BuildSource_JavaContentFolderKind.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -340,7 +340,7 @@
     <unitInfo nodeId="5248329904288265463" fileName="BuildSource_JavaContentFolderKind.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.build.structure.BuildSource_JavaContentFolderKind" />
     <unitInfo nodeId="5248329904288265463" fileName="BuildSource_JavaContentFolderKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.structure.BuildSource_JavaContentFolderKind_PropertySupport" />
   </root>
-  <root nodeId="7801138212747054659" modelId="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)">
+  <root nodeRef="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/7801138212747054659">
     <nodeInfo nodeId="7801138212747054659" fileName="BuildLayout_UnixFilemode_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7801138212747054659" fileName="BuildLayout_UnixFilemode_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7801138212747054659" fileName="BuildLayout_UnixFilemode_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -358,7 +358,7 @@
     </scopeInfo>
     <unitInfo nodeId="7801138212747054659" fileName="BuildLayout_UnixFilemode_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.build.structure.BuildLayout_UnixFilemode_PropertySupport" />
   </root>
-  <root nodeId="8618885170173708134" modelId="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)">
+  <root nodeRef="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/8618885170173708134">
     <nodeInfo nodeId="8618885170173708134" fileName="FileName_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8618885170173708134" fileName="FileName_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8618885170173708134" fileName="FileName_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -376,7 +376,7 @@
     </scopeInfo>
     <unitInfo nodeId="8618885170173708134" fileName="FileName_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.build.structure.FileName_PropertySupport" />
   </root>
-  <root nodeId="9184644532457106613" modelId="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)">
+  <root nodeRef="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/9184644532457106613">
     <nodeInfo nodeId="9184644532457106613" fileName="AntRegexFlags_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9184644532457106613" fileName="AntRegexFlags_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9184644532457106613" fileName="AntRegexFlags_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

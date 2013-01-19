@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3531370237489972135" modelId="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)">
+  <root nodeRef="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)/3531370237489972135">
     <nodeInfo nodeId="429607733396471353" fileName="MergeDriverBackupUtil.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="backupDirPath" />
     <nodeInfo nodeId="3531370237489972167" fileName="MergeDriverBackupUtil.java" startLine="19" startPosition="34" endLine="20" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3531370237489972250" fileName="MergeDriverBackupUtil.java" startLine="23" startPosition="105" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -86,7 +86,7 @@
     </scopeInfo>
     <unitInfo nodeId="3531370237489972135" fileName="MergeDriverBackupUtil.java" startLine="16" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.vcs.util.MergeDriverBackupUtil" />
   </root>
-  <root nodeId="3531370237490043789" modelId="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)">
+  <root nodeRef="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)/3531370237490043789">
     <nodeInfo nodeId="3531370237490043798" fileName="MergeVersion.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuffix" />
     <nodeInfo nodeId="3531370237490043807" fileName="MergeVersion.java" startLine="13" startPosition="31" endLine="14" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3531370237490043815" fileName="MergeVersion.java" startLine="17" startPosition="29" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -100,12 +100,12 @@
     <scopeInfo nodeId="3531370237490043811" fileName="MergeVersion.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
     <unitInfo nodeId="3531370237490043789" fileName="MergeVersion.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.vcs.util.MergeVersion" />
   </root>
-  <root nodeId="3531370237490043817" modelId="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)">
+  <root nodeRef="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)/3531370237490043817">
     <nodeInfo nodeId="3531370237490043819" fileName="ModelVersion.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuffix#()Ljava/lang/String;" />
     <scopeInfo nodeId="3531370237490043819" fileName="ModelVersion.java" startLine="7" startPosition="0" endLine="8" endPosition="0" />
     <unitInfo nodeId="3531370237490043817" fileName="ModelVersion.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.vcs.util.ModelVersion" />
   </root>
-  <root nodeId="3531370237490043869" modelId="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)">
+  <root nodeRef="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)/3531370237490043869">
     <nodeInfo nodeId="3531370237490043882" fileName="MergeConstants.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CURRENT" />
     <nodeInfo nodeId="3531370237490043956" fileName="MergeConstants.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ORIGINAL" />
     <nodeInfo nodeId="3531370237490043977" fileName="MergeConstants.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LAST_REVISION" />

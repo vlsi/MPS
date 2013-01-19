@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1197995958228" modelId="r:00000000-0000-4000-0000-011c895905b7(featuresDemo)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905b7(featuresDemo)/1197995958228">
     <nodeInfo nodeId="1227876790258" fileName="DOM_NG.java" startLine="150" startPosition="30" endLine="150" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="21" startPosition="19" endLine="22" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="22" startPosition="58" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -289,7 +289,7 @@
     <unitInfo nodeId="1197997357467" fileName="DOM_NG.java" startLine="94" startPosition="0" endLine="178" endPosition="0" unitName="featuresDemo.DOM_NG$Feature_attributes" />
     <unitInfo nodeId="1197995958228" fileName="DOM_NG.java" startLine="20" startPosition="0" endLine="278" endPosition="0" unitName="featuresDemo.DOM_NG" />
   </root>
-  <root nodeId="1197998525686" modelId="r:00000000-0000-4000-0000-011c895905b7(featuresDemo)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905b7(featuresDemo)/1197998525686">
     <nodeInfo nodeId="1197998561024" fileName="DomDemo.java" startLine="15" startPosition="42" endLine="16" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197998576455" fileName="DomDemo.java" startLine="17" startPosition="9" endLine="18" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197998576461" fileName="DomDemo.java" startLine="18" startPosition="66" endLine="19" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -318,7 +318,7 @@
     </scopeInfo>
     <unitInfo nodeId="1197998525686" fileName="DomDemo.java" startLine="14" startPosition="0" endLine="28" endPosition="0" unitName="featuresDemo.DomDemo" />
   </root>
-  <root nodeId="1198846127773" modelId="r:00000000-0000-4000-0000-011c895905b7(featuresDemo)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905b7(featuresDemo)/1198846127773">
     <nodeInfo nodeId="1198846127773" fileName="FILE_NG.java" startLine="16" startPosition="20" endLine="17" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1198846127773" fileName="FILE_NG.java" startLine="17" startPosition="62" endLine="18" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1198863383496" fileName="FILE_NG.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
@@ -439,7 +439,7 @@
     <unitInfo nodeId="1198846127773" fileName="FILE_NG.java" startLine="106" startPosition="0" endLine="130" endPosition="0" unitName="featuresDemo.FILE_NG$Desc_Feature_parent" />
     <unitInfo nodeId="1198846127773" fileName="FILE_NG.java" startLine="15" startPosition="0" endLine="131" endPosition="0" unitName="featuresDemo.FILE_NG" />
   </root>
-  <root nodeId="1198852328670" modelId="r:00000000-0000-4000-0000-011c895905b7(featuresDemo)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905b7(featuresDemo)/1198852328670">
     <nodeInfo nodeId="1198852354928" fileName="FileDemo.java" startLine="10" startPosition="42" endLine="11" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198861617528" fileName="FileDemo.java" startLine="12" startPosition="234" endLine="13" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1198861603053" fileName="FileDemo.java" startLine="11" startPosition="57" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />

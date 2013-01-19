@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3995997045458515128" modelId="r:ebb14179-d192-43be-86ee-73001bbf35b0(jetbrains.mps.ide.ui.dialogs.properties.renderers)">
+  <root nodeRef="r:ebb14179-d192-43be-86ee-73001bbf35b0(jetbrains.mps.ide.ui.dialogs.properties.renderers)/3995997045458515128">
     <nodeInfo nodeId="3995997045458515129" fileName="RuleOperandRenderer.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRenderersCache" />
     <nodeInfo nodeId="7093733149214777667" fileName="RuleOperandRenderer.java" startLine="38" startPosition="24" endLine="39" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6466271953722286428" fileName="RuleOperandRenderer.java" startLine="41" startPosition="53" endLine="42" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -104,7 +104,7 @@
     <unitInfo nodeId="7093733149214777845" fileName="RuleOperandRenderer.java" startLine="55" startPosition="60" endLine="65" endPosition="9" unitName="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer$1" />
     <unitInfo nodeId="3995997045458515128" fileName="RuleOperandRenderer.java" startLine="31" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer" />
   </root>
-  <root nodeId="3995997045458515690" modelId="r:ebb14179-d192-43be-86ee-73001bbf35b0(jetbrains.mps.ide.ui.dialogs.properties.renderers)">
+  <root nodeRef="r:ebb14179-d192-43be-86ee-73001bbf35b0(jetbrains.mps.ide.ui.dialogs.properties.renderers)/3995997045458515690">
     <nodeInfo nodeId="3995997045458515726" fileName="RuleTypeRenderer.java" startLine="25" startPosition="6" endLine="26" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3995997045458515738" fileName="RuleTypeRenderer.java" startLine="26" startPosition="122" endLine="27" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3995997045458515748" fileName="RuleTypeRenderer.java" startLine="30" startPosition="73" endLine="31" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

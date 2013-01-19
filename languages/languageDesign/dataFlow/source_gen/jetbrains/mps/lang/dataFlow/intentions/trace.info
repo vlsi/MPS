@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.intentions.IntentionsDescriptor" />
-  <root nodeId="1206534526647" modelId="r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)/1206534526647">
     <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="23" startPosition="30" endLine="24" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="27" startPosition="35" endLine="28" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -90,7 +90,7 @@
     <unitInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="73" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.intentions.RemoveMayBeUnreachable_Intention$IntentionImplementation" />
     <unitInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="17" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.intentions.RemoveMayBeUnreachable_Intention" />
   </root>
-  <root nodeId="1206534589230" modelId="r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)/1206534589230">
     <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

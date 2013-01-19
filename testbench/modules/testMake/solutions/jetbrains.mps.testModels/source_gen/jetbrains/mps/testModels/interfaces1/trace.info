@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2265759664131825325" modelId="r:93a6ef2e-9f35-4228-b460-87597e0be7c4(jetbrains.mps.testModels.interfaces1)">
+  <root nodeRef="r:93a6ef2e-9f35-4228-b460-87597e0be7c4(jetbrains.mps.testModels.interfaces1)/2265759664131825325">
     <nodeInfo nodeId="2265759664131825332" fileName="MyClass.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="bbb#()V" />
     <scopeInfo nodeId="2265759664131825335" fileName="MyClass.java" startLine="8" startPosition="21" endLine="8" endPosition="21" />
     <scopeInfo nodeId="2265759664131825332" fileName="MyClass.java" startLine="8" startPosition="0" endLine="10" endPosition="0" />

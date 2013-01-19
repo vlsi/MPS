@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5628633142282726006" modelId="r:eccef71a-aa33-4ad5-b44f-afac5cbda4d8(jetbrains.mps.plugins.pluginparts.runconfigs)">
+  <root nodeRef="r:eccef71a-aa33-4ad5-b44f-afac5cbda4d8(jetbrains.mps.plugins.pluginparts.runconfigs)/5628633142282726006">
     <nodeInfo nodeId="5628633142282726804" fileName="BaseConfigCreator.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySourceElement" />
     <nodeInfo nodeId="5628633142282726817" fileName="BaseConfigCreator.java" startLine="31" startPosition="90" endLine="32" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5628633142282726830" fileName="BaseConfigCreator.java" startLine="35" startPosition="71" endLine="36" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -114,7 +114,7 @@
     <unitInfo nodeId="5628633142282726896" fileName="BaseConfigCreator.java" startLine="59" startPosition="71" endLine="70" endPosition="5" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator$1" />
     <unitInfo nodeId="5628633142282726006" fileName="BaseConfigCreator.java" startLine="26" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator" />
   </root>
-  <root nodeId="5628633142282726547" modelId="r:eccef71a-aa33-4ad5-b44f-afac5cbda4d8(jetbrains.mps.plugins.pluginparts.runconfigs)">
+  <root nodeRef="r:eccef71a-aa33-4ad5-b44f-afac5cbda4d8(jetbrains.mps.plugins.pluginparts.runconfigs)/5628633142282726547">
     <nodeInfo nodeId="7374258348461644059" fileName="BaseRunConfig.java" startLine="19" startPosition="87" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5628633142282726569" fileName="BaseRunConfig.java" startLine="23" startPosition="36" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5628633142282726575" fileName="BaseRunConfig.java" startLine="27" startPosition="33" endLine="28" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

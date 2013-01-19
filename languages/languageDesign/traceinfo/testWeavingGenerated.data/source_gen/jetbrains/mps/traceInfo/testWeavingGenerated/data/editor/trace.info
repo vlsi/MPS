@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6186432342008329120" modelId="r:e1a02aa6-2632-4f05-9c75-0febc533f533(jetbrains.mps.traceInfo.testWeavingGenerated.data.editor)">
+  <root nodeRef="r:e1a02aa6-2632-4f05-9c75-0febc533f533(jetbrains.mps.traceInfo.testWeavingGenerated.data.editor)/6186432342008329120">
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008329131" fileName="RootConcept_Editor.java" startLine="31" startPosition="98" endLine="32" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6186432342008329131" fileName="RootConcept_Editor.java" startLine="35" startPosition="66" endLine="36" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -547,7 +547,7 @@
     <unitInfo nodeId="6186432342008537268" fileName="RootConcept_Editor.java" startLine="138" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.RootConcept_Editor$weaveEachManyListHandler_aw3qer_b8a" />
     <unitInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="25" startPosition="0" endLine="319" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.RootConcept_Editor" />
   </root>
-  <root nodeId="6186432342008485033" modelId="r:e1a02aa6-2632-4f05-9c75-0febc533f533(jetbrains.mps.traceInfo.testWeavingGenerated.data.editor)">
+  <root nodeRef="r:e1a02aa6-2632-4f05-9c75-0febc533f533(jetbrains.mps.traceInfo.testWeavingGenerated.data.editor)/6186432342008485033">
     <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008485035" fileName="ChildConceptWeaveEach_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008485035" fileName="ChildConceptWeaveEach_Editor.java" startLine="22" startPosition="99" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -623,7 +623,7 @@
     </scopeInfo>
     <unitInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveEach_Editor" />
   </root>
-  <root nodeId="6186432342008485041" modelId="r:e1a02aa6-2632-4f05-9c75-0febc533f533(jetbrains.mps.traceInfo.testWeavingGenerated.data.editor)">
+  <root nodeRef="r:e1a02aa6-2632-4f05-9c75-0febc533f533(jetbrains.mps.traceInfo.testWeavingGenerated.data.editor)/6186432342008485041">
     <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008485043" fileName="ChildConceptWeave_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008485043" fileName="ChildConceptWeave_Editor.java" startLine="22" startPosition="99" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -699,7 +699,7 @@
     </scopeInfo>
     <unitInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeave_Editor" />
   </root>
-  <root nodeId="6186432342008533339" modelId="r:e1a02aa6-2632-4f05-9c75-0febc533f533(jetbrains.mps.traceInfo.testWeavingGenerated.data.editor)">
+  <root nodeRef="r:e1a02aa6-2632-4f05-9c75-0febc533f533(jetbrains.mps.traceInfo.testWeavingGenerated.data.editor)/6186432342008533339">
     <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008533341" fileName="ChildConceptWeaveMany_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008533341" fileName="ChildConceptWeaveMany_Editor.java" startLine="22" startPosition="99" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -775,7 +775,7 @@
     </scopeInfo>
     <unitInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.ChildConceptWeaveMany_Editor" />
   </root>
-  <root nodeId="6186432342008533349" modelId="r:e1a02aa6-2632-4f05-9c75-0febc533f533(jetbrains.mps.traceInfo.testWeavingGenerated.data.editor)">
+  <root nodeRef="r:e1a02aa6-2632-4f05-9c75-0febc533f533(jetbrains.mps.traceInfo.testWeavingGenerated.data.editor)/6186432342008533349">
     <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008533351" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008533351" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="22" startPosition="99" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

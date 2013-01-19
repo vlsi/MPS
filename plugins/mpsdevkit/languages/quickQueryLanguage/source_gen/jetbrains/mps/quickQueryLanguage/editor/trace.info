@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1218793625941" modelId="r:00000000-0000-4000-0000-011c8959050d(jetbrains.mps.quickQueryLanguage.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959050d(jetbrains.mps.quickQueryLanguage.editor)/1218793625941">
     <nodeInfo nodeId="1218795568071" fileName="ModelQuery_Editor.java" startLine="153" startPosition="58" endLine="153" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218795923674" fileName="ModelQuery_Editor.java" startLine="170" startPosition="58" endLine="170" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1218793625941" fileName="ModelQuery_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -297,7 +297,7 @@
     <unitInfo nodeId="1218795568072" fileName="ModelQuery_Editor.java" startLine="28" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.editor.ModelQuery_Editor$_Inline_1kyme_a1b0" />
     <unitInfo nodeId="1218793625941" fileName="ModelQuery_Editor.java" startLine="23" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.editor.ModelQuery_Editor" />
   </root>
-  <root nodeId="1219745771774" modelId="r:00000000-0000-4000-0000-011c8959050d(jetbrains.mps.quickQueryLanguage.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959050d(jetbrains.mps.quickQueryLanguage.editor)/1219745771774">
     <nodeInfo nodeId="1219745786565" fileName="ReplaceModelQuery_Editor.java" startLine="200" startPosition="58" endLine="200" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1219745786576" fileName="ReplaceModelQuery_Editor.java" startLine="217" startPosition="58" endLine="217" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1219746142479" fileName="ReplaceModelQuery_Editor.java" startLine="234" startPosition="58" endLine="234" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

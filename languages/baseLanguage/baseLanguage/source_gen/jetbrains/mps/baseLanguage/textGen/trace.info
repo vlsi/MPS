@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1214046978376812376" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1214046978376812376">
     <nodeInfo nodeId="1214046978376812379" fileName="VariableReference_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1214046978376812379" fileName="VariableReference_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1214046978376812376" fileName="VariableReference_TextGen.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -11,7 +11,7 @@
     </scopeInfo>
     <unitInfo nodeId="1214046978376812376" fileName="VariableReference_TextGen.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.VariableReference_TextGen" />
   </root>
-  <root nodeId="1234796104060" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234796104060">
     <nodeInfo nodeId="1237463992096" fileName="BaseLanguageTextGen.java" startLine="31" startPosition="52" endLine="32" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992096" fileName="BaseLanguageTextGen.java" startLine="34" startPosition="34" endLine="35" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992096" fileName="BaseLanguageTextGen.java" startLine="36" startPosition="60" endLine="37" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -455,7 +455,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234796104060" fileName="BaseLanguageTextGen.java" startLine="29" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen" />
   </root>
-  <root nodeId="1234803609335" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234803609335">
     <nodeInfo nodeId="1237463993282" fileName="AndExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993282" fileName="AndExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463993282" fileName="AndExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -472,7 +472,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234803609335" fileName="AndExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.AndExpression_TextGen" />
   </root>
-  <root nodeId="1234886608901" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234886608901">
     <nodeInfo nodeId="1234886608901" fileName="Annotation_TextGen.java" startLine="22" startPosition="44" endLine="23" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237981627363" fileName="Annotation_TextGen.java" startLine="24" startPosition="5" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237981627363" fileName="Annotation_TextGen.java" startLine="25" startPosition="47" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -565,7 +565,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234886608901" fileName="Annotation_TextGen.java" startLine="20" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.Annotation_TextGen" />
   </root>
-  <root nodeId="1234886915639" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234886915639">
     <nodeInfo nodeId="1234886980347" fileName="AnnotationInstance_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1237463992897" fileName="AnnotationInstance_TextGen.java" startLine="15" startPosition="18" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992897" fileName="AnnotationInstance_TextGen.java" startLine="15" startPosition="18" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -616,7 +616,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234886915639" fileName="AnnotationInstance_TextGen.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.AnnotationInstance_TextGen" />
   </root>
-  <root nodeId="1234887379769" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234887379769">
     <nodeInfo nodeId="1237463992462" fileName="AnnotationInstanceExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992462" fileName="AnnotationInstanceExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992462" fileName="AnnotationInstanceExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -628,7 +628,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234887379769" fileName="AnnotationInstanceExpression_TextGen.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.AnnotationInstanceExpression_TextGen" />
   </root>
-  <root nodeId="1234887419578" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234887419578">
     <nodeInfo nodeId="1237463991698" fileName="AnnotationInstanceValue_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991698" fileName="AnnotationInstanceValue_TextGen.java" startLine="13" startPosition="102" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991698" fileName="AnnotationInstanceValue_TextGen.java" startLine="14" startPosition="23" endLine="15" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -643,7 +643,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234887419578" fileName="AnnotationInstanceValue_TextGen.java" startLine="11" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.AnnotationInstanceValue_TextGen" />
   </root>
-  <root nodeId="1234887488963" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234887488963">
     <nodeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="22" startPosition="44" endLine="23" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="23" startPosition="61" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4021391592916153941" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="26" startPosition="207" endLine="27" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -716,7 +716,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234887488963" fileName="AnnotationMethodDeclaration_TextGen.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.AnnotationMethodDeclaration_TextGen" />
   </root>
-  <root nodeId="1234887555845" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234887555845">
     <nodeInfo nodeId="1234887555845" fileName="AnonymousClass_TextGen.java" startLine="17" startPosition="44" endLine="18" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237981649232" fileName="AnonymousClass_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237981649232" fileName="AnonymousClass_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -802,7 +802,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234887555845" fileName="AnonymousClass_TextGen.java" startLine="15" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.AnonymousClass_TextGen" />
   </root>
-  <root nodeId="1234888787417" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234888787417">
     <nodeInfo nodeId="1237463991703" fileName="AnonymousClassCreator_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991703" fileName="AnonymousClassCreator_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991703" fileName="AnonymousClassCreator_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -814,7 +814,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234888787417" fileName="AnonymousClassCreator_TextGen.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.AnonymousClassCreator_TextGen" />
   </root>
-  <root nodeId="1234888829413" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234888829413">
     <nodeInfo nodeId="1237463993012" fileName="ArrayAccessExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993012" fileName="ArrayAccessExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463993012" fileName="ArrayAccessExpression_TextGen.java" startLine="12" startPosition="147" endLine="13" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -832,7 +832,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234888829413" fileName="ArrayAccessExpression_TextGen.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ArrayAccessExpression_TextGen" />
   </root>
-  <root nodeId="1234888870976" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234888870976">
     <nodeInfo nodeId="1237463991777" fileName="ArrayCreator_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991777" fileName="ArrayCreator_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991777" fileName="ArrayCreator_TextGen.java" startLine="15" startPosition="88" endLine="16" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -853,7 +853,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234888870976" fileName="ArrayCreator_TextGen.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ArrayCreator_TextGen" />
   </root>
-  <root nodeId="1234888916067" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234888916067">
     <nodeInfo nodeId="1237463992578" fileName="ArrayCreatorWithInitializer_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992578" fileName="ArrayCreatorWithInitializer_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992578" fileName="ArrayCreatorWithInitializer_TextGen.java" startLine="13" startPosition="155" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -879,7 +879,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234888916067" fileName="ArrayCreatorWithInitializer_TextGen.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ArrayCreatorWithInitializer_TextGen" />
   </root>
-  <root nodeId="1234889016866" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234889016866">
     <nodeInfo nodeId="1237463993243" fileName="ArrayLengthOperation_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993243" fileName="ArrayLengthOperation_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234889016866" fileName="ArrayLengthOperation_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -890,7 +890,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234889016866" fileName="ArrayLengthOperation_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ArrayLengthOperation_TextGen" />
   </root>
-  <root nodeId="1234889037948" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234889037948">
     <nodeInfo nodeId="1237463993099" fileName="ArrayLiteral_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463993099" fileName="ArrayLiteral_TextGen.java" startLine="15" startPosition="73" endLine="16" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463993099" fileName="ArrayLiteral_TextGen.java" startLine="17" startPosition="99" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -913,7 +913,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234889037948" fileName="ArrayLiteral_TextGen.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ArrayLiteral_TextGen" />
   </root>
-  <root nodeId="1234890240213" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234890240213">
     <nodeInfo nodeId="1237463992656" fileName="ArrayType_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992656" fileName="ArrayType_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992656" fileName="ArrayType_TextGen.java" startLine="12" startPosition="155" endLine="13" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -927,7 +927,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234890240213" fileName="ArrayType_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ArrayType_TextGen" />
   </root>
-  <root nodeId="1234890261494" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234890261494">
     <nodeInfo nodeId="1234890261494" fileName="AssertStatement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237556661627" fileName="AssertStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237556661627" fileName="AssertStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -976,7 +976,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234890261494" fileName="AssertStatement_TextGen.java" startLine="14" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.AssertStatement_TextGen" />
   </root>
-  <root nodeId="1234890392776" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234890392776">
     <nodeInfo nodeId="1237463992019" fileName="BitwiseAndExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992019" fileName="BitwiseAndExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992019" fileName="BitwiseAndExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -993,7 +993,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234890392776" fileName="BitwiseAndExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.BitwiseAndExpression_TextGen" />
   </root>
-  <root nodeId="1234890432474" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234890432474">
     <nodeInfo nodeId="1237463992165" fileName="BitwiseNotExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992165" fileName="BitwiseNotExpression_TextGen.java" startLine="12" startPosition="22" endLine="13" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992165" fileName="BitwiseNotExpression_TextGen.java" startLine="12" startPosition="22" endLine="13" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1008,7 +1008,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234890432474" fileName="BitwiseNotExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.BitwiseNotExpression_TextGen" />
   </root>
-  <root nodeId="1234890471522" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234890471522">
     <nodeInfo nodeId="1237463993271" fileName="BitwiseOrExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993271" fileName="BitwiseOrExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463993271" fileName="BitwiseOrExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1025,7 +1025,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234890471522" fileName="BitwiseOrExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.BitwiseOrExpression_TextGen" />
   </root>
-  <root nodeId="1234890501829" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234890501829">
     <nodeInfo nodeId="1237463993229" fileName="BitwiseXorExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993229" fileName="BitwiseXorExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463993229" fileName="BitwiseXorExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1042,7 +1042,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234890501829" fileName="BitwiseXorExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.BitwiseXorExpression_TextGen" />
   </root>
-  <root nodeId="1234890557996" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234890557996">
     <nodeInfo nodeId="1234890557996" fileName="BlockStatement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234890590734" fileName="BlockStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1234890695265" fileName="BlockStatement_TextGen.java" startLine="23" startPosition="130" endLine="24" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1116,7 +1116,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234890557996" fileName="BlockStatement_TextGen.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.BlockStatement_TextGen" />
   </root>
-  <root nodeId="1234890802087" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234890802087">
     <nodeInfo nodeId="1237463993188" fileName="BooleanConstant_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993188" fileName="BooleanConstant_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234890802087" fileName="BooleanConstant_TextGen.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -1127,7 +1127,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234890802087" fileName="BooleanConstant_TextGen.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.BooleanConstant_TextGen" />
   </root>
-  <root nodeId="1234890826228" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234890826228">
     <nodeInfo nodeId="1237463992162" fileName="BooleanType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992162" fileName="BooleanType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234890826228" fileName="BooleanType_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -1138,7 +1138,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234890826228" fileName="BooleanType_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.BooleanType_TextGen" />
   </root>
-  <root nodeId="1234890841265" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234890841265">
     <nodeInfo nodeId="1234890841265" fileName="BreakStatement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992683" fileName="BreakStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992683" fileName="BreakStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1193,7 +1193,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234890841265" fileName="BreakStatement_TextGen.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.BreakStatement_TextGen" />
   </root>
-  <root nodeId="1234890924622" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234890924622">
     <nodeInfo nodeId="1237463992345" fileName="ByteType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992345" fileName="ByteType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234890924622" fileName="ByteType_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -1204,7 +1204,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234890924622" fileName="ByteType_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ByteType_TextGen" />
   </root>
-  <root nodeId="1234890940910" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234890940910">
     <nodeInfo nodeId="1237463992545" fileName="CastExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992545" fileName="CastExpression_TextGen.java" startLine="12" startPosition="21" endLine="13" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992545" fileName="CastExpression_TextGen.java" startLine="12" startPosition="21" endLine="13" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1222,7 +1222,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234890940910" fileName="CastExpression_TextGen.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.CastExpression_TextGen" />
   </root>
-  <root nodeId="1234890997638" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234890997638">
     <nodeInfo nodeId="1234890997638" fileName="CatchClause_TextGen.java" startLine="18" startPosition="44" endLine="19" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992173" fileName="CatchClause_TextGen.java" startLine="20" startPosition="5" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992173" fileName="CatchClause_TextGen.java" startLine="21" startPosition="39" endLine="22" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1265,7 +1265,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234890997638" fileName="CatchClause_TextGen.java" startLine="16" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.CatchClause_TextGen" />
   </root>
-  <root nodeId="1234891066969" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234891066969">
     <nodeInfo nodeId="1237463992302" fileName="CharConstant_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992302" fileName="CharConstant_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234891066969" fileName="CharConstant_TextGen.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -1276,7 +1276,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234891066969" fileName="CharConstant_TextGen.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.CharConstant_TextGen" />
   </root>
-  <root nodeId="1234891149163" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234891149163">
     <nodeInfo nodeId="1237463993240" fileName="CharType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993240" fileName="CharType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234891149163" fileName="CharType_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -1287,7 +1287,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234891149163" fileName="CharType_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.CharType_TextGen" />
   </root>
-  <root nodeId="1234891178357" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234891178357">
     <nodeInfo nodeId="1234891178357" fileName="ClassConcept_TextGen.java" startLine="22" startPosition="44" endLine="23" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3926476116131899112" fileName="ClassConcept_TextGen.java" startLine="25" startPosition="211" endLine="26" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3926476116131899112" fileName="ClassConcept_TextGen.java" startLine="25" startPosition="211" endLine="26" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1381,7 +1381,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234891178357" fileName="ClassConcept_TextGen.java" startLine="20" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ClassConcept_TextGen" />
   </root>
-  <root nodeId="1234891338660" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234891338660">
     <nodeInfo nodeId="1237463992492" fileName="GenericDeclarationTextGen2.java" startLine="13" startPosition="115" endLine="14" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992492" fileName="GenericDeclarationTextGen2.java" startLine="16" startPosition="97" endLine="17" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992492" fileName="GenericDeclarationTextGen2.java" startLine="18" startPosition="123" endLine="19" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1407,7 +1407,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234891338660" fileName="GenericDeclarationTextGen2.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.GenericDeclarationTextGen2" />
   </root>
-  <root nodeId="1234892337624" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234892337624">
     <nodeInfo nodeId="1237981721418" fileName="ClassCreator_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237981721418" fileName="ClassCreator_TextGen.java" startLine="12" startPosition="56" endLine="13" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237981721418" fileName="ClassCreator_TextGen.java" startLine="13" startPosition="198" endLine="14" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1421,7 +1421,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234892337624" fileName="ClassCreator_TextGen.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ClassCreator_TextGen" />
   </root>
-  <root nodeId="1234892420461" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234892420461">
     <nodeInfo nodeId="1237463992726" fileName="ClassifierClassExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992726" fileName="ClassifierClassExpression_TextGen.java" startLine="12" startPosition="199" endLine="13" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992726" fileName="ClassifierClassExpression_TextGen.java" startLine="11" startPosition="42" endLine="13" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1433,7 +1433,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234892420461" fileName="ClassifierClassExpression_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ClassifierClassExpression_TextGen" />
   </root>
-  <root nodeId="1234892447096" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234892447096">
     <nodeInfo nodeId="1237981829525" fileName="ClassifierType_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237981829525" fileName="ClassifierType_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991894" fileName="ClassifierType_TextGen.java" startLine="15" startPosition="98" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1461,7 +1461,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234892447096" fileName="ClassifierType_TextGen.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ClassifierType_TextGen" />
   </root>
-  <root nodeId="1234892549516" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234892549516">
     <nodeInfo nodeId="1234892549516" fileName="CommentedStatementsBlock_TextGen.java" startLine="17" startPosition="44" endLine="18" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991875" fileName="CommentedStatementsBlock_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991875" fileName="CommentedStatementsBlock_TextGen.java" startLine="20" startPosition="25" endLine="21" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1511,7 +1511,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234892549516" fileName="CommentedStatementsBlock_TextGen.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.CommentedStatementsBlock_TextGen" />
   </root>
-  <root nodeId="1234892777974" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234892777974">
     <nodeInfo nodeId="1237463992427" fileName="ConceptFunctionParameter_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992427" fileName="ConceptFunctionParameter_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234892777974" fileName="ConceptFunctionParameter_TextGen.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -1522,7 +1522,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234892777974" fileName="ConceptFunctionParameter_TextGen.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ConceptFunctionParameter_TextGen" />
   </root>
-  <root nodeId="1234892820096" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234892820096">
     <nodeInfo nodeId="1237463991924" fileName="GenericNewExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991924" fileName="GenericNewExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235067598648" fileName="GenericNewExpression_TextGen.java" startLine="13" startPosition="69" endLine="14" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1545,7 +1545,7 @@
     </scopeInfo>
     <unitInfo nodeId="1234892820096" fileName="GenericNewExpression_TextGen.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.GenericNewExpression_TextGen" />
   </root>
-  <root nodeId="1235067626785" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235067626785">
     <nodeInfo nodeId="1237463993191" fileName="GreaterThanExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993191" fileName="GreaterThanExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463993191" fileName="GreaterThanExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1562,7 +1562,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235067626785" fileName="GreaterThanExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.GreaterThanExpression_TextGen" />
   </root>
-  <root nodeId="1235067670076" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235067670076">
     <nodeInfo nodeId="1237463992584" fileName="GreaterThanOrEqualsExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992584" fileName="GreaterThanOrEqualsExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992584" fileName="GreaterThanOrEqualsExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1579,7 +1579,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235067670076" fileName="GreaterThanOrEqualsExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.GreaterThanOrEqualsExpression_TextGen" />
   </root>
-  <root nodeId="1235067710648" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235067710648">
     <nodeInfo nodeId="1237463991661" fileName="HexIntegerLiteral_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991661" fileName="HexIntegerLiteral_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235067710648" fileName="HexIntegerLiteral_TextGen.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -1590,7 +1590,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235067710648" fileName="HexIntegerLiteral_TextGen.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.HexIntegerLiteral_TextGen" />
   </root>
-  <root nodeId="1235067749472" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235067749472">
     <nodeInfo nodeId="1235067749472" fileName="IfStatement_TextGen.java" startLine="17" startPosition="44" endLine="18" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237558539834" fileName="IfStatement_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237558539834" fileName="IfStatement_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1657,7 +1657,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235067749472" fileName="IfStatement_TextGen.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.IfStatement_TextGen" />
   </root>
-  <root nodeId="1235068025775" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235068025775">
     <nodeInfo nodeId="1237463993043" fileName="InstanceInitializer_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993043" fileName="InstanceInitializer_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236685148176" fileName="InstanceInitializer_TextGen.java" startLine="12" startPosition="31" endLine="13" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1681,7 +1681,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235068025775" fileName="InstanceInitializer_TextGen.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.InstanceInitializer_TextGen" />
   </root>
-  <root nodeId="1235068084774" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235068084774">
     <nodeInfo nodeId="1237981977290" fileName="InstanceMethodCallOperation_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237981977290" fileName="InstanceMethodCallOperation_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235068084774" fileName="InstanceMethodCallOperation_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -1692,7 +1692,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235068084774" fileName="InstanceMethodCallOperation_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.InstanceMethodCallOperation_TextGen" />
   </root>
-  <root nodeId="1235068110028" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235068110028">
     <nodeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="23" startPosition="44" endLine="24" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="24" startPosition="61" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4021391592914126901" fileName="InstanceMethodDeclaration_TextGen.java" startLine="27" startPosition="207" endLine="28" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1836,7 +1836,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235068110028" fileName="InstanceMethodDeclaration_TextGen.java" startLine="21" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.InstanceMethodDeclaration_TextGen" />
   </root>
-  <root nodeId="1235068603610" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235068603610">
     <nodeInfo nodeId="1237463992818" fileName="InstanceOfExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992818" fileName="InstanceOfExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992818" fileName="InstanceOfExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1853,7 +1853,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235068603610" fileName="InstanceOfExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.InstanceOfExpression_TextGen" />
   </root>
-  <root nodeId="1235068647697" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235068647697">
     <nodeInfo nodeId="1237463991647" fileName="IntegerConstant_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991647" fileName="IntegerConstant_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235068647697" fileName="IntegerConstant_TextGen.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -1864,7 +1864,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235068647697" fileName="IntegerConstant_TextGen.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.IntegerConstant_TextGen" />
   </root>
-  <root nodeId="1235068672666" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235068672666">
     <nodeInfo nodeId="1237463991840" fileName="IntegerType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991840" fileName="IntegerType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235068672666" fileName="IntegerType_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -1875,7 +1875,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235068672666" fileName="IntegerType_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.IntegerType_TextGen" />
   </root>
-  <root nodeId="1235068684876" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235068684876">
     <nodeInfo nodeId="1235068684876" fileName="Interface_TextGen.java" startLine="23" startPosition="44" endLine="24" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237982032621" fileName="Interface_TextGen.java" startLine="25" startPosition="5" endLine="26" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237982032621" fileName="Interface_TextGen.java" startLine="26" startPosition="47" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1951,7 +1951,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235068684876" fileName="Interface_TextGen.java" startLine="21" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.Interface_TextGen" />
   </root>
-  <root nodeId="1235130112612" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130112612">
     <nodeInfo nodeId="1237463992251" fileName="LessThanExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992251" fileName="LessThanExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992251" fileName="LessThanExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1968,7 +1968,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130112612" fileName="LessThanExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.LessThanExpression_TextGen" />
   </root>
-  <root nodeId="1235130149678" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130149678">
     <nodeInfo nodeId="1237463993246" fileName="LessThanOrEqualsExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993246" fileName="LessThanOrEqualsExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463993246" fileName="LessThanOrEqualsExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1985,7 +1985,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130149678" fileName="LessThanOrEqualsExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.LessThanOrEqualsExpression_TextGen" />
   </root>
-  <root nodeId="1235130247219" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130247219">
     <nodeInfo nodeId="1235130247219" fileName="LocalVariableDeclarationStatement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237560517491" fileName="LocalVariableDeclarationStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237560517491" fileName="LocalVariableDeclarationStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2023,7 +2023,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130247219" fileName="LocalVariableDeclarationStatement_TextGen.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.LocalVariableDeclarationStatement_TextGen" />
   </root>
-  <root nodeId="1235130339063" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130339063">
     <nodeInfo nodeId="1237463992497" fileName="LongType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992497" fileName="LongType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235130339063" fileName="LongType_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -2034,7 +2034,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130339063" fileName="LongType_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.LongType_TextGen" />
   </root>
-  <root nodeId="1235130354959" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130354959">
     <nodeInfo nodeId="1237463992900" fileName="LowerBoundType_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992900" fileName="LowerBoundType_TextGen.java" startLine="12" startPosition="28" endLine="13" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992900" fileName="LowerBoundType_TextGen.java" startLine="12" startPosition="28" endLine="13" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2048,7 +2048,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130354959" fileName="LowerBoundType_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.LowerBoundType_TextGen" />
   </root>
-  <root nodeId="1235130431827" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130431827">
     <nodeInfo nodeId="1237463991835" fileName="MinusExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991835" fileName="MinusExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991835" fileName="MinusExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2065,7 +2065,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130431827" fileName="MinusExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.MinusExpression_TextGen" />
   </root>
-  <root nodeId="1235130467132" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130467132">
     <nodeInfo nodeId="1237463991749" fileName="MulExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991749" fileName="MulExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991749" fileName="MulExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2082,7 +2082,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130467132" fileName="MulExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.MulExpression_TextGen" />
   </root>
-  <root nodeId="1235130500647" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130500647">
     <nodeInfo nodeId="1237463992865" fileName="NotEqualsExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992865" fileName="NotEqualsExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992865" fileName="NotEqualsExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2099,7 +2099,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130500647" fileName="NotEqualsExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.NotEqualsExpression_TextGen" />
   </root>
-  <root nodeId="1235130548876" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130548876">
     <nodeInfo nodeId="1237463993134" fileName="NotExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463993134" fileName="NotExpression_TextGen.java" startLine="12" startPosition="22" endLine="13" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993134" fileName="NotExpression_TextGen.java" startLine="12" startPosition="22" endLine="13" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2114,7 +2114,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130548876" fileName="NotExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.NotExpression_TextGen" />
   </root>
-  <root nodeId="1235130597164" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130597164">
     <nodeInfo nodeId="1237463992299" fileName="NullLiteral_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992299" fileName="NullLiteral_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235130597164" fileName="NullLiteral_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -2125,7 +2125,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130597164" fileName="NullLiteral_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.NullLiteral_TextGen" />
   </root>
-  <root nodeId="1235130615183" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130615183">
     <nodeInfo nodeId="1237463992053" fileName="OrExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992053" fileName="OrExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992053" fileName="OrExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2142,7 +2142,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130615183" fileName="OrExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.OrExpression_TextGen" />
   </root>
-  <root nodeId="1235130646085" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130646085">
     <nodeInfo nodeId="1237982140449" fileName="ParameterDeclaration_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237982140449" fileName="ParameterDeclaration_TextGen.java" startLine="10" startPosition="48" endLine="11" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237982140449" fileName="ParameterDeclaration_TextGen.java" startLine="9" startPosition="42" endLine="11" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2154,7 +2154,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130646085" fileName="ParameterDeclaration_TextGen.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ParameterDeclaration_TextGen" />
   </root>
-  <root nodeId="1235130699507" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130699507">
     <nodeInfo nodeId="1237463992622" fileName="ParenthesizedExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992622" fileName="ParenthesizedExpression_TextGen.java" startLine="12" startPosition="21" endLine="13" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992622" fileName="ParenthesizedExpression_TextGen.java" startLine="12" startPosition="21" endLine="13" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2169,7 +2169,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130699507" fileName="ParenthesizedExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ParenthesizedExpression_TextGen" />
   </root>
-  <root nodeId="1235130778882" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130778882">
     <nodeInfo nodeId="1237463991794" fileName="PlusExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991794" fileName="PlusExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991794" fileName="PlusExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2186,7 +2186,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130778882" fileName="PlusExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.PlusExpression_TextGen" />
   </root>
-  <root nodeId="1235130814902" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130814902">
     <nodeInfo nodeId="1237463992215" fileName="PostfixDecrementExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992215" fileName="PostfixDecrementExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992215" fileName="PostfixDecrementExpression_TextGen.java" startLine="12" startPosition="152" endLine="13" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2200,7 +2200,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130814902" fileName="PostfixDecrementExpression_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.PostfixDecrementExpression_TextGen" />
   </root>
-  <root nodeId="1235130845453" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130845453">
     <nodeInfo nodeId="1237463991938" fileName="PostfixIncrementExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991938" fileName="PostfixIncrementExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991938" fileName="PostfixIncrementExpression_TextGen.java" startLine="12" startPosition="152" endLine="13" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2214,7 +2214,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130845453" fileName="PostfixIncrementExpression_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.PostfixIncrementExpression_TextGen" />
   </root>
-  <root nodeId="1235130883519" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130883519">
     <nodeInfo nodeId="1235130883519" fileName="RemarkStatement_TextGen.java" startLine="15" startPosition="44" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992823" fileName="RemarkStatement_TextGen.java" startLine="18" startPosition="63" endLine="19" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992823" fileName="RemarkStatement_TextGen.java" startLine="19" startPosition="27" endLine="20" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2255,7 +2255,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130883519" fileName="RemarkStatement_TextGen.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.RemarkStatement_TextGen" />
   </root>
-  <root nodeId="1235130950225" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130950225">
     <nodeInfo nodeId="1237463991769" fileName="RemExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991769" fileName="RemExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991769" fileName="RemExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2272,7 +2272,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130950225" fileName="RemExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.RemExpression_TextGen" />
   </root>
-  <root nodeId="1235130986968" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235130986968">
     <nodeInfo nodeId="1235130986968" fileName="ReturnStatement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991733" fileName="ReturnStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991733" fileName="ReturnStatement_TextGen.java" startLine="19" startPosition="25" endLine="20" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2315,7 +2315,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235130986968" fileName="ReturnStatement_TextGen.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ReturnStatement_TextGen" />
   </root>
-  <root nodeId="1235131071246" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235131071246">
     <nodeInfo nodeId="1237463992487" fileName="ShiftLeftExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992487" fileName="ShiftLeftExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992487" fileName="ShiftLeftExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2332,7 +2332,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235131071246" fileName="ShiftLeftExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ShiftLeftExpression_TextGen" />
   </root>
-  <root nodeId="1235131109350" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235131109350">
     <nodeInfo nodeId="1237463992943" fileName="ShiftRightExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992943" fileName="ShiftRightExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992943" fileName="ShiftRightExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2349,7 +2349,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235131109350" fileName="ShiftRightExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ShiftRightExpression_TextGen" />
   </root>
-  <root nodeId="1235131150614" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235131150614">
     <nodeInfo nodeId="1237463991689" fileName="ShortType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991689" fileName="ShortType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235131150614" fileName="ShortType_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -2360,7 +2360,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235131150614" fileName="ShortType_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ShortType_TextGen" />
   </root>
-  <root nodeId="1235131198738" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235131198738">
     <nodeInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="19" startPosition="44" endLine="20" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235131285423" fileName="StatementList_TextGen.java" startLine="21" startPosition="5" endLine="22" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1235131415878" fileName="StatementList_TextGen.java" startLine="23" startPosition="36" endLine="24" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2403,7 +2403,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235131198738" fileName="StatementList_TextGen.java" startLine="17" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.StatementList_TextGen" />
   </root>
-  <root nodeId="1235131598665" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235131598665">
     <nodeInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="20" startPosition="44" endLine="21" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4021391592916578527" fileName="StaticFieldDeclaration_TextGen.java" startLine="23" startPosition="206" endLine="24" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592916578527" fileName="StaticFieldDeclaration_TextGen.java" startLine="23" startPosition="206" endLine="24" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2466,7 +2466,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235131598665" fileName="StaticFieldDeclaration_TextGen.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.StaticFieldDeclaration_TextGen" />
   </root>
-  <root nodeId="1235131688885" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235131688885">
     <nodeInfo nodeId="1237463992353" fileName="StaticFieldReference_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992353" fileName="StaticFieldReference_TextGen.java" startLine="12" startPosition="194" endLine="13" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992353" fileName="StaticFieldReference_TextGen.java" startLine="13" startPosition="21" endLine="14" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2479,7 +2479,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235131688885" fileName="StaticFieldReference_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.StaticFieldReference_TextGen" />
   </root>
-  <root nodeId="1235131758155" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235131758155">
     <nodeInfo nodeId="1237463992933" fileName="StaticMethodCall_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992933" fileName="StaticMethodCall_TextGen.java" startLine="12" startPosition="192" endLine="13" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992933" fileName="StaticMethodCall_TextGen.java" startLine="13" startPosition="21" endLine="14" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2492,7 +2492,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235131758155" fileName="StaticMethodCall_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.StaticMethodCall_TextGen" />
   </root>
-  <root nodeId="1235131802112" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235131802112">
     <nodeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="23" startPosition="44" endLine="24" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="24" startPosition="61" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4021391592916153926" fileName="StaticMethodDeclaration_TextGen.java" startLine="27" startPosition="207" endLine="28" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2623,7 +2623,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235131802112" fileName="StaticMethodDeclaration_TextGen.java" startLine="21" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.StaticMethodDeclaration_TextGen" />
   </root>
-  <root nodeId="1235132901797" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235132901797">
     <nodeInfo nodeId="1237463992679" fileName="StringLiteral_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992679" fileName="StringLiteral_TextGen.java" startLine="15" startPosition="13" endLine="16" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992679" fileName="StringLiteral_TextGen.java" startLine="11" startPosition="22" endLine="15" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2636,7 +2636,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235132901797" fileName="StringLiteral_TextGen.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.StringLiteral_TextGen" />
   </root>
-  <root nodeId="1235133002982" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235133002982">
     <nodeInfo nodeId="1237463992452" fileName="StringType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992452" fileName="StringType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235133002982" fileName="StringType_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -2647,7 +2647,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235133002982" fileName="StringType_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.StringType_TextGen" />
   </root>
-  <root nodeId="1235133040740" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235133040740">
     <nodeInfo nodeId="1235133040740" fileName="SuperConstructorInvocation_TextGen.java" startLine="17" startPosition="44" endLine="18" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237560947761" fileName="SuperConstructorInvocation_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237560947761" fileName="SuperConstructorInvocation_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2694,7 +2694,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235133040740" fileName="SuperConstructorInvocation_TextGen.java" startLine="15" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.SuperConstructorInvocation_TextGen" />
   </root>
-  <root nodeId="1235133147898" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235133147898">
     <nodeInfo nodeId="1237463991692" fileName="SuperMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991692" fileName="SuperMethodCall_TextGen.java" startLine="10" startPosition="26" endLine="11" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991692" fileName="SuperMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="11" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2706,7 +2706,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235133147898" fileName="SuperMethodCall_TextGen.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.SuperMethodCall_TextGen" />
   </root>
-  <root nodeId="1235133163324" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235133163324">
     <nodeInfo nodeId="1235133163324" fileName="SwitchStatement_TextGen.java" startLine="17" startPosition="44" endLine="18" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652593672362426981" fileName="SwitchStatement_TextGen.java" startLine="20" startPosition="73" endLine="21" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652593672362426981" fileName="SwitchStatement_TextGen.java" startLine="21" startPosition="27" endLine="22" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2809,7 +2809,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235133163324" fileName="SwitchStatement_TextGen.java" startLine="15" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.SwitchStatement_TextGen" />
   </root>
-  <root nodeId="1235133645843" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235133645843">
     <nodeInfo nodeId="1235133645843" fileName="SynchronizedStatement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237561763783" fileName="SynchronizedStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237561763783" fileName="SynchronizedStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2860,7 +2860,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235133645843" fileName="SynchronizedStatement_TextGen.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.SynchronizedStatement_TextGen" />
   </root>
-  <root nodeId="1235133778848" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235133778848">
     <nodeInfo nodeId="1237463993159" fileName="TernaryOperatorExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463993159" fileName="TernaryOperatorExpression_TextGen.java" startLine="12" startPosition="21" endLine="13" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993159" fileName="TernaryOperatorExpression_TextGen.java" startLine="12" startPosition="21" endLine="13" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2898,7 +2898,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235133778848" fileName="TernaryOperatorExpression_TextGen.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.TernaryOperatorExpression_TextGen" />
   </root>
-  <root nodeId="1235133911716" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235133911716">
     <nodeInfo nodeId="1235133911716" fileName="ThisConstructorInvocation_TextGen.java" startLine="17" startPosition="44" endLine="18" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237561931908" fileName="ThisConstructorInvocation_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237561931908" fileName="ThisConstructorInvocation_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2945,7 +2945,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235133911716" fileName="ThisConstructorInvocation_TextGen.java" startLine="15" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ThisConstructorInvocation_TextGen" />
   </root>
-  <root nodeId="1235134015467" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235134015467">
     <nodeInfo nodeId="1237463991785" fileName="ThisExpression_TextGen.java" startLine="12" startPosition="75" endLine="13" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991785" fileName="ThisExpression_TextGen.java" startLine="13" startPosition="113" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992689" fileName="ThisExpression_TextGen.java" startLine="15" startPosition="12" endLine="16" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2964,7 +2964,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235134015467" fileName="ThisExpression_TextGen.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ThisExpression_TextGen" />
   </root>
-  <root nodeId="1235134113124" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235134113124">
     <nodeInfo nodeId="1235134113124" fileName="ThrowStatement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992617" fileName="ThrowStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992617" fileName="ThrowStatement_TextGen.java" startLine="19" startPosition="25" endLine="20" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3000,7 +3000,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235134113124" fileName="ThrowStatement_TextGen.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ThrowStatement_TextGen" />
   </root>
-  <root nodeId="1235134154741" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235134154741">
     <nodeInfo nodeId="1235134154741" fileName="TryCatchStatement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237561998578" fileName="TryCatchStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237561998578" fileName="TryCatchStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3060,7 +3060,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235134154741" fileName="TryCatchStatement_TextGen.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.TryCatchStatement_TextGen" />
   </root>
-  <root nodeId="1235134292973" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235134292973">
     <nodeInfo nodeId="1235134292973" fileName="TryStatement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237562079483" fileName="TryStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237562079483" fileName="TryStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3132,7 +3132,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235134292973" fileName="TryStatement_TextGen.java" startLine="14" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.TryStatement_TextGen" />
   </root>
-  <root nodeId="1235148827560" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235148827560">
     <nodeInfo nodeId="1237463993111" fileName="TypeVariableDeclaration_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993111" fileName="TypeVariableDeclaration_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463993225" fileName="TypeVariableDeclaration_TextGen.java" startLine="14" startPosition="67" endLine="15" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3162,7 +3162,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235148827560" fileName="TypeVariableDeclaration_TextGen.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.TypeVariableDeclaration_TextGen" />
   </root>
-  <root nodeId="1235149154430" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235149154430">
     <nodeInfo nodeId="1237463993018" fileName="TypeVariableReference_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993018" fileName="TypeVariableReference_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235149154430" fileName="TypeVariableReference_TextGen.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -3173,7 +3173,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235149154430" fileName="TypeVariableReference_TextGen.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.TypeVariableReference_TextGen" />
   </root>
-  <root nodeId="1235149177249" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235149177249">
     <nodeInfo nodeId="1237463993388" fileName="UpperBoundType_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463993388" fileName="UpperBoundType_TextGen.java" startLine="12" startPosition="30" endLine="13" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993388" fileName="UpperBoundType_TextGen.java" startLine="12" startPosition="30" endLine="13" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3187,7 +3187,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235149177249" fileName="UpperBoundType_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.UpperBoundType_TextGen" />
   </root>
-  <root nodeId="1235149213342" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235149213342">
     <nodeInfo nodeId="1237463992235" fileName="VariableArityType_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992235" fileName="VariableArityType_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992235" fileName="VariableArityType_TextGen.java" startLine="12" startPosition="155" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3201,7 +3201,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235149213342" fileName="VariableArityType_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.VariableArityType_TextGen" />
   </root>
-  <root nodeId="1235149266702" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235149266702">
     <nodeInfo nodeId="1237982300767" fileName="VariableDeclaration_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237982300767" fileName="VariableDeclaration_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235149266702" fileName="VariableDeclaration_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -3212,7 +3212,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235149266702" fileName="VariableDeclaration_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.VariableDeclaration_TextGen" />
   </root>
-  <root nodeId="1235149361338" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235149361338">
     <nodeInfo nodeId="1235149433908" fileName="VarType_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1235149397110" fileName="VarType_TextGen.java" startLine="15" startPosition="132" endLine="16" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1235149456544" fileName="VarType_TextGen.java" startLine="16" startPosition="135" endLine="17" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3240,7 +3240,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235149361338" fileName="VarType_TextGen.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.VarType_TextGen" />
   </root>
-  <root nodeId="1235149549592" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235149549592">
     <nodeInfo nodeId="1237463992660" fileName="Visibility_TextGen.java" startLine="11" startPosition="103" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992660" fileName="Visibility_TextGen.java" startLine="11" startPosition="103" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463993051" fileName="Visibility_TextGen.java" startLine="14" startPosition="105" endLine="15" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3263,7 +3263,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235149549592" fileName="Visibility_TextGen.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.Visibility_TextGen" />
   </root>
-  <root nodeId="1235149638269" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235149638269">
     <nodeInfo nodeId="1237463991930" fileName="VoidType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991930" fileName="VoidType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235149638269" fileName="VoidType_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -3274,7 +3274,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235149638269" fileName="VoidType_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.VoidType_TextGen" />
   </root>
-  <root nodeId="1235149653150" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235149653150">
     <nodeInfo nodeId="1235149653150" fileName="WhileStatement_TextGen.java" startLine="17" startPosition="44" endLine="18" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9056323058805042969" fileName="WhileStatement_TextGen.java" startLine="20" startPosition="69" endLine="21" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9056323058805042969" fileName="WhileStatement_TextGen.java" startLine="21" startPosition="27" endLine="22" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3338,7 +3338,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235149653150" fileName="WhileStatement_TextGen.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.WhileStatement_TextGen" />
   </root>
-  <root nodeId="1235149803040" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235149803040">
     <nodeInfo nodeId="1237463991823" fileName="WildCardType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991823" fileName="WildCardType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235149803040" fileName="WildCardType_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -3349,7 +3349,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235149803040" fileName="WildCardType_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.WildCardType_TextGen" />
   </root>
-  <root nodeId="1235567804739" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235567804739">
     <nodeInfo nodeId="1260930188116638766" fileName="EnumConstantReference_TextGen.java" startLine="12" startPosition="123" endLine="13" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1260930188116638766" fileName="EnumConstantReference_TextGen.java" startLine="12" startPosition="123" endLine="13" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991969" fileName="EnumConstantReference_TextGen.java" startLine="14" startPosition="12" endLine="15" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3369,7 +3369,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235567804739" fileName="EnumConstantReference_TextGen.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.EnumConstantReference_TextGen" />
   </root>
-  <root nodeId="1235567952587" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235567952587">
     <nodeInfo nodeId="1237463993070" fileName="FieldReferenceOperation_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993070" fileName="FieldReferenceOperation_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235567952587" fileName="FieldReferenceOperation_TextGen.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -3380,7 +3380,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235567952587" fileName="FieldReferenceOperation_TextGen.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.FieldReferenceOperation_TextGen" />
   </root>
-  <root nodeId="1235570534877" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235570534877">
     <nodeInfo nodeId="1237463992465" fileName="EnumValueOfExpression_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992465" fileName="EnumValueOfExpression_TextGen.java" startLine="13" startPosition="194" endLine="14" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992465" fileName="EnumValueOfExpression_TextGen.java" startLine="14" startPosition="21" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3397,7 +3397,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235570534877" fileName="EnumValueOfExpression_TextGen.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.EnumValueOfExpression_TextGen" />
   </root>
-  <root nodeId="1235570593532" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235570593532">
     <nodeInfo nodeId="1237463992686" fileName="EnumValuesExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992686" fileName="EnumValuesExpression_TextGen.java" startLine="12" startPosition="193" endLine="13" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992686" fileName="EnumValuesExpression_TextGen.java" startLine="11" startPosition="42" endLine="13" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3409,7 +3409,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235570593532" fileName="EnumValuesExpression_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.EnumValuesExpression_TextGen" />
   </root>
-  <root nodeId="1235588368122" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235588368122">
     <nodeInfo nodeId="1235588368122" fileName="ExpressionStatement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237558036615" fileName="ExpressionStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237558036615" fileName="ExpressionStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3447,7 +3447,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235588368122" fileName="ExpressionStatement_TextGen.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ExpressionStatement_TextGen" />
   </root>
-  <root nodeId="1235590065729" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235590065729">
     <nodeInfo nodeId="1237463992009" fileName="DotExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992009" fileName="DotExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992009" fileName="DotExpression_TextGen.java" startLine="12" startPosition="149" endLine="13" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3464,7 +3464,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235590065729" fileName="DotExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.DotExpression_TextGen" />
   </root>
-  <root nodeId="1235739414982" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235739414982">
     <nodeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="23" startPosition="44" endLine="24" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="24" startPosition="61" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4021391592916153956" fileName="ConstructorDeclaration_TextGen.java" startLine="27" startPosition="207" endLine="28" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3586,7 +3586,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235739414982" fileName="ConstructorDeclaration_TextGen.java" startLine="21" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ConstructorDeclaration_TextGen" />
   </root>
-  <root nodeId="1235739850731" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235739850731">
     <nodeInfo nodeId="1235739850731" fileName="ContinueStatement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992093" fileName="ContinueStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992093" fileName="ContinueStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3635,7 +3635,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235739850731" fileName="ContinueStatement_TextGen.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ContinueStatement_TextGen" />
   </root>
-  <root nodeId="1235740038236" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235740038236">
     <nodeInfo nodeId="1237463992357" fileName="DimensionExpression_TextGen.java" startLine="12" startPosition="72" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992357" fileName="DimensionExpression_TextGen.java" startLine="13" startPosition="23" endLine="14" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992357" fileName="DimensionExpression_TextGen.java" startLine="13" startPosition="23" endLine="14" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3657,7 +3657,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235740038236" fileName="DimensionExpression_TextGen.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.DimensionExpression_TextGen" />
   </root>
-  <root nodeId="1235740077306" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235740077306">
     <nodeInfo nodeId="1237463991942" fileName="DivExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463991942" fileName="DivExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463991942" fileName="DivExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3674,7 +3674,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235740077306" fileName="DivExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.DivExpression_TextGen" />
   </root>
-  <root nodeId="1235740133835" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235740133835">
     <nodeInfo nodeId="1237463992137" fileName="DoubleType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992137" fileName="DoubleType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235740133835" fileName="DoubleType_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -3685,7 +3685,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235740133835" fileName="DoubleType_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.DoubleType_TextGen" />
   </root>
-  <root nodeId="1235740153717" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235740153717">
     <nodeInfo nodeId="1235740153717" fileName="DoWhileStatement_TextGen.java" startLine="17" startPosition="44" endLine="18" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9056323058805042938" fileName="DoWhileStatement_TextGen.java" startLine="20" startPosition="69" endLine="21" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9056323058805042938" fileName="DoWhileStatement_TextGen.java" startLine="21" startPosition="27" endLine="22" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3749,7 +3749,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235740153717" fileName="DoWhileStatement_TextGen.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.DoWhileStatement_TextGen" />
   </root>
-  <root nodeId="1235740434208" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235740434208">
     <nodeInfo nodeId="1237463993058" fileName="ElsifClause_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463993058" fileName="ElsifClause_TextGen.java" startLine="12" startPosition="30" endLine="13" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463993058" fileName="ElsifClause_TextGen.java" startLine="12" startPosition="30" endLine="13" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3776,7 +3776,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235740434208" fileName="ElsifClause_TextGen.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ElsifClause_TextGen" />
   </root>
-  <root nodeId="1235740524220" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235740524220">
     <nodeInfo nodeId="1235740524220" fileName="EnumClass_TextGen.java" startLine="22" startPosition="44" endLine="23" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237981873433" fileName="EnumClass_TextGen.java" startLine="24" startPosition="5" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237981873433" fileName="EnumClass_TextGen.java" startLine="25" startPosition="47" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3883,7 +3883,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235740524220" fileName="EnumClass_TextGen.java" startLine="20" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.EnumClass_TextGen" />
   </root>
-  <root nodeId="1235740896598" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235740896598">
     <nodeInfo nodeId="1237559715364" fileName="EnumConstantDeclaration_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237559715364" fileName="EnumConstantDeclaration_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235740961278" fileName="EnumConstantDeclaration_TextGen.java" startLine="15" startPosition="76" endLine="16" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3949,7 +3949,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235740896598" fileName="EnumConstantDeclaration_TextGen.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.EnumConstantDeclaration_TextGen" />
   </root>
-  <root nodeId="1235741062707" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235741062707">
     <nodeInfo nodeId="1237463992850" fileName="EqualsExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992850" fileName="EqualsExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992850" fileName="EqualsExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3966,7 +3966,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235741062707" fileName="EqualsExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.EqualsExpression_TextGen" />
   </root>
-  <root nodeId="1235741237980" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235741237980">
     <nodeInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="20" startPosition="44" endLine="21" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4021391592916578510" fileName="FieldDeclaration_TextGen.java" startLine="23" startPosition="206" endLine="24" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4021391592916578510" fileName="FieldDeclaration_TextGen.java" startLine="23" startPosition="206" endLine="24" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4019,7 +4019,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235741237980" fileName="FieldDeclaration_TextGen.java" startLine="18" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.FieldDeclaration_TextGen" />
   </root>
-  <root nodeId="1235741309022" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235741309022">
     <nodeInfo nodeId="1235741361611" fileName="FloatingPointConstant_TextGen.java" startLine="11" startPosition="63" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237463992607" fileName="FloatingPointConstant_TextGen.java" startLine="13" startPosition="5" endLine="14" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992607" fileName="FloatingPointConstant_TextGen.java" startLine="13" startPosition="5" endLine="14" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4033,7 +4033,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235741309022" fileName="FloatingPointConstant_TextGen.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.FloatingPointConstant_TextGen" />
   </root>
-  <root nodeId="1235741389634" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235741389634">
     <nodeInfo nodeId="1237463992449" fileName="FloatType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992449" fileName="FloatType_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235741389634" fileName="FloatType_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -4044,7 +4044,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235741389634" fileName="FloatType_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.FloatType_TextGen" />
   </root>
-  <root nodeId="1235741412435" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235741412435">
     <nodeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="19" startPosition="44" endLine="20" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="20" startPosition="61" endLine="21" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9056323058805042907" fileName="ForeachStatement_TextGen.java" startLine="23" startPosition="69" endLine="24" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4127,7 +4127,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235741412435" fileName="ForeachStatement_TextGen.java" startLine="17" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ForeachStatement_TextGen" />
   </root>
-  <root nodeId="1235741566211" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235741566211">
     <nodeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="20" startPosition="44" endLine="21" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="21" startPosition="61" endLine="22" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9056323058805042864" fileName="ForStatement_TextGen.java" startLine="24" startPosition="69" endLine="25" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4253,7 +4253,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235741566211" fileName="ForStatement_TextGen.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ForStatement_TextGen" />
   </root>
-  <root nodeId="1235743565312" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235743565312">
     <nodeInfo nodeId="1237982078940" fileName="LocalVariableDeclaration_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237982078940" fileName="LocalVariableDeclaration_TextGen.java" startLine="10" startPosition="48" endLine="11" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237982078940" fileName="LocalVariableDeclaration_TextGen.java" startLine="9" startPosition="42" endLine="11" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4265,7 +4265,7 @@
     </scopeInfo>
     <unitInfo nodeId="1235743565312" fileName="LocalVariableDeclaration_TextGen.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.LocalVariableDeclaration_TextGen" />
   </root>
-  <root nodeId="1236013739107" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1236013739107">
     <nodeInfo nodeId="1236013791614" fileName="StringTextGen.java" startLine="8" startPosition="77" endLine="9" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1236013906425" fileName="StringTextGen.java" startLine="10" startPosition="78" endLine="11" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1236014091202" fileName="StringTextGen.java" startLine="13" startPosition="116" endLine="14" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4357,7 +4357,7 @@
     </scopeInfo>
     <unitInfo nodeId="1236013739107" fileName="StringTextGen.java" startLine="7" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.StringTextGen" />
   </root>
-  <root nodeId="1237807733680" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1237807733680">
     <nodeInfo nodeId="1237807733680" fileName="CommentedStatement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237807754606" fileName="CommentedStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237807754606" fileName="CommentedStatement_TextGen.java" startLine="19" startPosition="25" endLine="20" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4400,7 +4400,7 @@
     </scopeInfo>
     <unitInfo nodeId="1237807733680" fileName="CommentedStatement_TextGen.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.CommentedStatement_TextGen" />
   </root>
-  <root nodeId="1239710466732" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1239710466732">
     <nodeInfo nodeId="1239710517374" fileName="PrefixDecrementExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239710517374" fileName="PrefixDecrementExpression_TextGen.java" startLine="12" startPosition="22" endLine="13" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239710517374" fileName="PrefixDecrementExpression_TextGen.java" startLine="12" startPosition="22" endLine="13" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4414,7 +4414,7 @@
     </scopeInfo>
     <unitInfo nodeId="1239710466732" fileName="PrefixDecrementExpression_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.PrefixDecrementExpression_TextGen" />
   </root>
-  <root nodeId="1239710558961" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1239710558961">
     <nodeInfo nodeId="1239710626965" fileName="PrefixIncrementExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239710626965" fileName="PrefixIncrementExpression_TextGen.java" startLine="12" startPosition="22" endLine="13" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239710626965" fileName="PrefixIncrementExpression_TextGen.java" startLine="12" startPosition="22" endLine="13" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4428,7 +4428,7 @@
     </scopeInfo>
     <unitInfo nodeId="1239710558961" fileName="PrefixIncrementExpression_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.PrefixIncrementExpression_TextGen" />
   </root>
-  <root nodeId="1251851371723517310" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1251851371723517310">
     <nodeInfo nodeId="1251851371723517313" fileName="ArrayClassExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1251851371723517313" fileName="ArrayClassExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1251851371723517313" fileName="ArrayClassExpression_TextGen.java" startLine="12" startPosition="151" endLine="13" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4442,7 +4442,7 @@
     </scopeInfo>
     <unitInfo nodeId="1251851371723517310" fileName="ArrayClassExpression_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ArrayClassExpression_TextGen" />
   </root>
-  <root nodeId="1465982738260537463" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1465982738260537463">
     <nodeInfo nodeId="1465982738260562395" fileName="StaticInitializer_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1465982738260562395" fileName="StaticInitializer_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1465982738260574107" fileName="StaticInitializer_TextGen.java" startLine="12" startPosition="38" endLine="13" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4467,7 +4467,7 @@
     </scopeInfo>
     <unitInfo nodeId="1465982738260537463" fileName="StaticInitializer_TextGen.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.StaticInitializer_TextGen" />
   </root>
-  <root nodeId="1465982738277807934" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1465982738277807934">
     <nodeInfo nodeId="1465982738277813644" fileName="PlaceholderMember_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1465982738277813644" fileName="PlaceholderMember_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1465982738277807934" fileName="PlaceholderMember_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -4478,7 +4478,7 @@
     </scopeInfo>
     <unitInfo nodeId="1465982738277807934" fileName="PlaceholderMember_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.PlaceholderMember_TextGen" />
   </root>
-  <root nodeId="1830039279190474291" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1830039279190474291">
     <nodeInfo nodeId="1830039279190477852" fileName="AdditionalForLoopVariable_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1830039279190477852" fileName="AdditionalForLoopVariable_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1830039279190477864" fileName="AdditionalForLoopVariable_TextGen.java" startLine="14" startPosition="73" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4497,7 +4497,7 @@
     </scopeInfo>
     <unitInfo nodeId="1830039279190474291" fileName="AdditionalForLoopVariable_TextGen.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.AdditionalForLoopVariable_TextGen" />
   </root>
-  <root nodeId="2580416627845806804" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/2580416627845806804">
     <nodeInfo nodeId="2580416627845831546" fileName="ImplicitAnnotationInstanceValue_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2580416627845831546" fileName="ImplicitAnnotationInstanceValue_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2580416627845831546" fileName="ImplicitAnnotationInstanceValue_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4509,7 +4509,7 @@
     </scopeInfo>
     <unitInfo nodeId="2580416627845806804" fileName="ImplicitAnnotationInstanceValue_TextGen.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ImplicitAnnotationInstanceValue_TextGen" />
   </root>
-  <root nodeId="2820489544401960245" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/2820489544401960245">
     <nodeInfo nodeId="2820489544401960248" fileName="DefaultClassCreator_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2820489544401960248" fileName="DefaultClassCreator_TextGen.java" startLine="12" startPosition="193" endLine="13" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2820489544401960248" fileName="DefaultClassCreator_TextGen.java" startLine="13" startPosition="102" endLine="14" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4522,7 +4522,7 @@
     </scopeInfo>
     <unitInfo nodeId="2820489544401960245" fileName="DefaultClassCreator_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.DefaultClassCreator_TextGen" />
   </root>
-  <root nodeId="320030840061144158" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/320030840061144158">
     <nodeInfo nodeId="320030840061144161" fileName="ShiftRightUnsignedExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="320030840061144161" fileName="ShiftRightUnsignedExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="320030840061144161" fileName="ShiftRightUnsignedExpression_TextGen.java" startLine="12" startPosition="156" endLine="13" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4539,7 +4539,7 @@
     </scopeInfo>
     <unitInfo nodeId="320030840061144158" fileName="ShiftRightUnsignedExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ShiftRightUnsignedExpression_TextGen" />
   </root>
-  <root nodeId="3408882292339889057" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/3408882292339889057">
     <nodeInfo nodeId="5574237510125076808" fileName="BaseClassConceptTextGen.java" startLine="16" startPosition="136" endLine="17" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5574237510125076808" fileName="BaseClassConceptTextGen.java" startLine="17" startPosition="26" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5574237510125076811" fileName="BaseClassConceptTextGen.java" startLine="18" startPosition="30" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4680,7 +4680,7 @@
     </scopeInfo>
     <unitInfo nodeId="3408882292339889057" fileName="BaseClassConceptTextGen.java" startLine="14" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.BaseClassConceptTextGen" />
   </root>
-  <root nodeId="3409542372145539379" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/3409542372145539379">
     <nodeInfo nodeId="3409542372145539379" fileName="Statement_TextGen.java" startLine="15" startPosition="44" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3409542372145553432" fileName="Statement_TextGen.java" startLine="18" startPosition="149" endLine="19" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3409542372145553432" fileName="Statement_TextGen.java" startLine="19" startPosition="54" endLine="20" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4720,7 +4720,7 @@
     </scopeInfo>
     <unitInfo nodeId="3409542372145539379" fileName="Statement_TextGen.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.Statement_TextGen" />
   </root>
-  <root nodeId="4269842503727610175" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/4269842503727610175">
     <nodeInfo nodeId="4269842503727782059" fileName="LongLiteral_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4269842503727782059" fileName="LongLiteral_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4269842503727610175" fileName="LongLiteral_TextGen.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -4731,7 +4731,7 @@
     </scopeInfo>
     <unitInfo nodeId="4269842503727610175" fileName="LongLiteral_TextGen.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.LongLiteral_TextGen" />
   </root>
-  <root nodeId="4564374268190746435" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/4564374268190746435">
     <nodeInfo nodeId="4564374268190746438" fileName="PrimitiveClassExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4564374268190746438" fileName="PrimitiveClassExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4564374268190746438" fileName="PrimitiveClassExpression_TextGen.java" startLine="12" startPosition="155" endLine="13" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4745,7 +4745,7 @@
     </scopeInfo>
     <unitInfo nodeId="4564374268190746435" fileName="PrimitiveClassExpression_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.PrimitiveClassExpression_TextGen" />
   </root>
-  <root nodeId="4571635105384638795" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/4571635105384638795">
     <nodeInfo nodeId="4571635105384639077" fileName="ContextClassifiersInRoot.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="contextClassifiersCache" />
     <nodeInfo nodeId="7520879497544097064" fileName="ContextClassifiersInRoot.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nestedClassifiersCache" />
     <nodeInfo nodeId="7520879497544097357" fileName="ContextClassifiersInRoot.java" startLine="23" startPosition="76" endLine="24" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4890,7 +4890,7 @@
     <unitInfo nodeId="7520879497544097108" fileName="ContextClassifiersInRoot.java" startLine="27" startPosition="33" endLine="31" endPosition="5" unitName="jetbrains.mps.baseLanguage.textGen.ContextClassifiersInRoot$2" />
     <unitInfo nodeId="4571635105384638795" fileName="ContextClassifiersInRoot.java" startLine="17" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ContextClassifiersInRoot" />
   </root>
-  <root nodeId="5205855332950472840" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/5205855332950472840">
     <nodeInfo nodeId="5205855332950472843" fileName="ArrayCloneOperation_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5205855332950472843" fileName="ArrayCloneOperation_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5205855332950472840" fileName="ArrayCloneOperation_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -4901,7 +4901,7 @@
     </scopeInfo>
     <unitInfo nodeId="5205855332950472840" fileName="ArrayCloneOperation_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ArrayCloneOperation_TextGen" />
   </root>
-  <root nodeId="5245668348356342300" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/5245668348356342300">
     <nodeInfo nodeId="4555902841936368788" fileName="LastStatementUtil.java" startLine="17" startPosition="117" endLine="18" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4555902841936368817" fileName="LastStatementUtil.java" startLine="19" startPosition="5" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4555902841936342283" fileName="LastStatementUtil.java" startLine="20" startPosition="0" endLine="21" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -4962,7 +4962,7 @@
     </scopeInfo>
     <unitInfo nodeId="5245668348356342300" fileName="LastStatementUtil.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.LastStatementUtil" />
   </root>
-  <root nodeId="6136230684045923685" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/6136230684045923685">
     <nodeInfo nodeId="6136230684046056257" fileName="ImportsContext.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="USER_OBJECT_KEY" />
     <nodeInfo nodeId="8461140963537453279" fileName="ImportsContext.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="buffer" />
     <nodeInfo nodeId="6136230684045986177" fileName="ImportsContext.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="packageName" />
@@ -5102,7 +5102,7 @@
     </scopeInfo>
     <unitInfo nodeId="6136230684045923685" fileName="ImportsContext.java" startLine="17" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ImportsContext" />
   </root>
-  <root nodeId="6227066020986630956" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/6227066020986630956">
     <nodeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="17" startPosition="61" endLine="18" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6227066020986645916" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -5148,7 +5148,7 @@
     </scopeInfo>
     <unitInfo nodeId="6227066020986630956" fileName="PlaceholderMethodDeclaration_TextGen.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.PlaceholderMethodDeclaration_TextGen" />
   </root>
-  <root nodeId="6329021646629175165" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/6329021646629175165">
     <nodeInfo nodeId="6329021646629175165" fileName="SingleLineComment_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8803274112754161792" fileName="SingleLineComment_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8803274112754161792" fileName="SingleLineComment_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5194,7 +5194,7 @@
     </scopeInfo>
     <unitInfo nodeId="6329021646629175165" fileName="SingleLineComment_TextGen.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.SingleLineComment_TextGen" />
   </root>
-  <root nodeId="7024111702304495342" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/7024111702304495342">
     <nodeInfo nodeId="7024111702304495345" fileName="BaseAssignmentExpression_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7024111702304495345" fileName="BaseAssignmentExpression_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7024111702304495345" fileName="BaseAssignmentExpression_TextGen.java" startLine="14" startPosition="148" endLine="15" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5213,7 +5213,7 @@
     </scopeInfo>
     <unitInfo nodeId="7024111702304495342" fileName="BaseAssignmentExpression_TextGen.java" startLine="12" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.BaseAssignmentExpression_TextGen" />
   </root>
-  <root nodeId="764900287025024925" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/764900287025024925">
     <nodeInfo nodeId="764900287025025945" fileName="FloatingPointFloatConstant_TextGen.java" startLine="11" startPosition="63" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="764900287025025952" fileName="FloatingPointFloatConstant_TextGen.java" startLine="13" startPosition="5" endLine="14" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="764900287025025952" fileName="FloatingPointFloatConstant_TextGen.java" startLine="13" startPosition="5" endLine="14" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5227,7 +5227,7 @@
     </scopeInfo>
     <unitInfo nodeId="764900287025024925" fileName="FloatingPointFloatConstant_TextGen.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.FloatingPointFloatConstant_TextGen" />
   </root>
-  <root nodeId="7671513720556341061" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/7671513720556341061">
     <nodeInfo nodeId="7671513720556341070" fileName="SimpleCache.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cache" />
     <nodeInfo nodeId="7671513720556341079" fileName="SimpleCache.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="innerGet#(null)null" />
     <nodeInfo nodeId="7671513720556341095" fileName="SimpleCache.java" startLine="17" startPosition="33" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -5251,7 +5251,7 @@
     </scopeInfo>
     <unitInfo nodeId="7671513720556341061" fileName="SimpleCache.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.SimpleCache" />
   </root>
-  <root nodeId="7812454656619184158" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/7812454656619184158">
     <nodeInfo nodeId="7812454656619184161" fileName="LocalMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7812454656619184161" fileName="LocalMethodCall_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7812454656619184158" fileName="LocalMethodCall_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -5262,7 +5262,7 @@
     </scopeInfo>
     <unitInfo nodeId="7812454656619184158" fileName="LocalMethodCall_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.LocalMethodCall_TextGen" />
   </root>
-  <root nodeId="8064396509828214712" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/8064396509828214712">
     <nodeInfo nodeId="8064396509828214715" fileName="UnaryMinus_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8064396509828214715" fileName="UnaryMinus_TextGen.java" startLine="12" startPosition="21" endLine="13" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8064396509828214715" fileName="UnaryMinus_TextGen.java" startLine="12" startPosition="21" endLine="13" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5276,7 +5276,7 @@
     </scopeInfo>
     <unitInfo nodeId="8064396509828214712" fileName="UnaryMinus_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.UnaryMinus_TextGen" />
   </root>
-  <root nodeId="8803274112754353727" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/8803274112754353727">
     <nodeInfo nodeId="8803274112754355364" fileName="TextCommentPart_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8803274112754355364" fileName="TextCommentPart_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8803274112754353727" fileName="TextCommentPart_TextGen.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -5287,7 +5287,7 @@
     </scopeInfo>
     <unitInfo nodeId="8803274112754353727" fileName="TextCommentPart_TextGen.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.TextCommentPart_TextGen" />
   </root>
-  <root nodeId="8803274112754355374" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/8803274112754355374">
     <nodeInfo nodeId="8803274112754355377" fileName="StatementCommentPart_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8803274112754355377" fileName="StatementCommentPart_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8803274112754355374" fileName="StatementCommentPart_TextGen.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

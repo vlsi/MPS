@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2253323551303625635" modelId="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)">
+  <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/2253323551303625635">
     <nodeInfo nodeId="1162831315436726752" fileName="BaseVersionUtil.java" startLine="23" startPosition="71" endLine="24" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9197004340779183130" fileName="BaseVersionUtil.java" startLine="29" startPosition="43" endLine="30" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7675522084224246220" fileName="BaseVersionUtil.java" startLine="32" startPosition="9" endLine="33" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -52,7 +52,7 @@
     </scopeInfo>
     <unitInfo nodeId="2253323551303625635" fileName="BaseVersionUtil.java" startLine="19" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.BaseVersionUtil" />
   </root>
-  <root nodeId="2722286076674338162" modelId="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)">
+  <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/2722286076674338162">
     <nodeInfo nodeId="2722286076674338593" fileName="NodeFileStatusMapping.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRegistry" />
     <nodeInfo nodeId="2722286076674338596" fileName="NodeFileStatusMapping.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileStatusMap" />
     <nodeInfo nodeId="2722286076674338605" fileName="NodeFileStatusMapping.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGlobalListener" />
@@ -269,7 +269,7 @@
     <unitInfo nodeId="2722286076674338163" fileName="NodeFileStatusMapping.java" startLine="162" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$MyGlobalListener" />
     <unitInfo nodeId="2722286076674338162" fileName="NodeFileStatusMapping.java" startLine="36" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping" />
   </root>
-  <root nodeId="2722286076674338626" modelId="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)">
+  <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/2722286076674338626">
     <nodeInfo nodeId="2722286076674338627" fileName="NodeFileStatusProvider.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="2722286076674338630" fileName="NodeFileStatusProvider.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMapping" />
     <nodeInfo nodeId="2722286076674338639" fileName="NodeFileStatusProvider.java" startLine="22" startPosition="99" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -318,7 +318,7 @@
     </scopeInfo>
     <unitInfo nodeId="2722286076674338626" fileName="NodeFileStatusProvider.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusProvider" />
   </root>
-  <root nodeId="3161776655522572366" modelId="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)">
+  <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/3161776655522572366">
     <nodeInfo nodeId="3161776655522589430" fileName="CurrentDifference.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandQueue" />
     <nodeInfo nodeId="3161776655522589434" fileName="CurrentDifference.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDescriptor" />
     <nodeInfo nodeId="3161776655522682290" fileName="CurrentDifference.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTracking" />
@@ -446,7 +446,7 @@
     <unitInfo nodeId="2956808471871059392" fileName="CurrentDifference.java" startLine="105" startPosition="35" endLine="109" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifference$3" />
     <unitInfo nodeId="3161776655522572366" fileName="CurrentDifference.java" startLine="14" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
   </root>
-  <root nodeId="3161776655522589894" modelId="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)">
+  <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/3161776655522589894">
     <nodeInfo nodeId="3161776655522590037" fileName="CurrentDifferenceRegistry.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDifferences" />
     <nodeInfo nodeId="3161776655522590051" fileName="CurrentDifferenceRegistry.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelRepositoryListener" />
     <nodeInfo nodeId="3161776655522590056" fileName="CurrentDifferenceRegistry.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandQueue" />
@@ -614,7 +614,7 @@
     <unitInfo nodeId="1893726572739275518" fileName="CurrentDifferenceRegistry.java" startLine="140" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry$MyFileStatusListener" />
     <unitInfo nodeId="3161776655522589894" fileName="CurrentDifferenceRegistry.java" startLine="29" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
   </root>
-  <root nodeId="3161776655522682154" modelId="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)">
+  <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/3161776655522682154">
     <nodeInfo nodeId="3161776655522682367" fileName="ChangesTracking.java" startLine="73" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="3161776655522682160" fileName="ChangesTracking.java" startLine="74" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDifference" />
     <nodeInfo nodeId="3161776655522682325" fileName="ChangesTracking.java" startLine="75" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myQueue" />
@@ -1324,7 +1324,7 @@
     <unitInfo nodeId="3285276019551683346" fileName="ChangesTracking.java" startLine="354" startPosition="0" endLine="555" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector" />
     <unitInfo nodeId="3161776655522682154" fileName="ChangesTracking.java" startLine="72" startPosition="0" endLine="582" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesTracking" />
   </root>
-  <root nodeId="3722815385094205361" modelId="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)">
+  <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/3722815385094205361">
     <nodeInfo nodeId="3722815385094206094" fileName="SimpleCommandQueue.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThread" />
     <nodeInfo nodeId="2324506610466057419" fileName="SimpleCommandQueue.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDisposed" />
     <nodeInfo nodeId="5217921753725803652" fileName="SimpleCommandQueue.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHadExceptions" />
@@ -1427,7 +1427,7 @@
     <unitInfo nodeId="3722815385094244335" fileName="SimpleCommandQueue.java" startLine="59" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue$MyExecutorThread" />
     <unitInfo nodeId="3722815385094205361" fileName="SimpleCommandQueue.java" startLine="10" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
   </root>
-  <root nodeId="6389979038222847043" modelId="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)">
+  <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/6389979038222847043">
     <nodeInfo nodeId="6389979038222846393" fileName="EventConsumingMapping.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodesToUnconsumedEvents" />
     <nodeInfo nodeId="5217921753725856155" fileName="EventConsumingMapping.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAddedNodesToEvents" />
     <nodeInfo nodeId="6389979038222939926" fileName="EventConsumingMapping.java" startLine="25" startPosition="46" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1531,7 +1531,7 @@
     <unitInfo nodeId="6389979038222939905" fileName="EventConsumingMapping.java" startLine="31" startPosition="37" endLine="35" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EventConsumingMapping$2" />
     <unitInfo nodeId="6389979038222847043" fileName="EventConsumingMapping.java" startLine="18" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.EventConsumingMapping" />
   </root>
-  <root nodeId="6756213824749053844" modelId="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)">
+  <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/6756213824749053844">
     <nodeInfo nodeId="6756213824749053890" fileName="CurrentDifferenceListener.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeAdded#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
     <nodeInfo nodeId="6756213824749053900" fileName="CurrentDifferenceListener.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeRemoved#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
     <nodeInfo nodeId="6756213824749053920" fileName="CurrentDifferenceListener.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeUpdateStarted#()V" />
@@ -1546,7 +1546,7 @@
     <scopeInfo nodeId="6756213824749053924" fileName="CurrentDifferenceListener.java" startLine="13" startPosition="0" endLine="14" endPosition="0" />
     <unitInfo nodeId="6756213824749053844" fileName="CurrentDifferenceListener.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceListener" />
   </root>
-  <root nodeId="6756213824749156025" modelId="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)">
+  <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/6756213824749156025">
     <nodeInfo nodeId="6756213824749156027" fileName="CurrentDifferenceAdapter.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CurrentDifferenceAdapter#()V" />
     <nodeInfo nodeId="6756213824749156057" fileName="CurrentDifferenceAdapter.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeAdded#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
     <nodeInfo nodeId="6756213824749156050" fileName="CurrentDifferenceAdapter.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeRemoved#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
@@ -1568,7 +1568,7 @@
     <scopeInfo nodeId="6756213824749156032" fileName="CurrentDifferenceAdapter.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
     <unitInfo nodeId="6756213824749156025" fileName="CurrentDifferenceAdapter.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" />
   </root>
-  <root nodeId="8579517044346265736" modelId="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)">
+  <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/8579517044346265736">
     <nodeInfo nodeId="8579517044346265743" fileName="CurrentDifferenceBroadcaster.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListeners" />
     <nodeInfo nodeId="8579517044346265897" fileName="CurrentDifferenceBroadcaster.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandQueue" />
     <nodeInfo nodeId="8579517044346265911" fileName="CurrentDifferenceBroadcaster.java" startLine="17" startPosition="72" endLine="18" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

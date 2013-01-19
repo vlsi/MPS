@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1563914226484855981" modelId="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)">
+  <root nodeRef="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)/1563914226484855981">
     <nodeInfo nodeId="1563914226484855981" fileName="Patternv3_Test.java" startLine="32" startPosition="45" endLine="33" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1563914226484855981" fileName="Patternv3_Test.java" startLine="33" startPosition="116" endLine="34" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1563914226484855981" fileName="Patternv3_Test.java" startLine="42" startPosition="26" endLine="43" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -235,7 +235,7 @@
     <unitInfo nodeId="1563914226484855981" fileName="Patternv3_Test.java" startLine="37" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.lang.pattern.test.Patternv3_Test$TestBody" />
     <unitInfo nodeId="1563914226484855981" fileName="Patternv3_Test.java" startLine="26" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.lang.pattern.test.Patternv3_Test" />
   </root>
-  <root nodeId="1563914226484862621" modelId="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)">
+  <root nodeRef="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)/1563914226484862621">
     <nodeInfo nodeId="1563914226484862621" fileName="PatternListPattern_Test.java" startLine="33" startPosition="45" endLine="34" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1563914226484862621" fileName="PatternListPattern_Test.java" startLine="34" startPosition="116" endLine="35" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1563914226484862621" fileName="PatternListPattern_Test.java" startLine="43" startPosition="35" endLine="44" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -512,7 +512,7 @@
     <unitInfo nodeId="1563914226484862621" fileName="PatternListPattern_Test.java" startLine="38" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.lang.pattern.test.PatternListPattern_Test$TestBody" />
     <unitInfo nodeId="1563914226484862621" fileName="PatternListPattern_Test.java" startLine="27" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.lang.pattern.test.PatternListPattern_Test" />
   </root>
-  <root nodeId="1563914226484895490" modelId="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)">
+  <root nodeRef="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)/1563914226484895490">
     <nodeInfo nodeId="1563914226484895490" fileName="PatternProperty_Test.java" startLine="29" startPosition="45" endLine="30" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1563914226484895490" fileName="PatternProperty_Test.java" startLine="30" startPosition="116" endLine="31" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1563914226484895490" fileName="PatternProperty_Test.java" startLine="39" startPosition="32" endLine="40" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -748,7 +748,7 @@
     <unitInfo nodeId="1563914226484895490" fileName="PatternProperty_Test.java" startLine="34" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.lang.pattern.test.PatternProperty_Test$TestBody" />
     <unitInfo nodeId="1563914226484895490" fileName="PatternProperty_Test.java" startLine="23" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.lang.pattern.test.PatternProperty_Test" />
   </root>
-  <root nodeId="1563914226484981153" modelId="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)">
+  <root nodeRef="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)/1563914226484981153">
     <nodeInfo nodeId="1563914226484981153" fileName="Patternv1_Test.java" startLine="33" startPosition="45" endLine="34" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1563914226484981153" fileName="Patternv1_Test.java" startLine="34" startPosition="116" endLine="35" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1563914226484981153" fileName="Patternv1_Test.java" startLine="43" startPosition="26" endLine="44" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1025,7 +1025,7 @@
     <unitInfo nodeId="1563914226484981153" fileName="Patternv1_Test.java" startLine="38" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.lang.pattern.test.Patternv1_Test$TestBody" />
     <unitInfo nodeId="1563914226484981153" fileName="Patternv1_Test.java" startLine="27" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.lang.pattern.test.Patternv1_Test" />
   </root>
-  <root nodeId="2879868312063084275" modelId="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)">
+  <root nodeRef="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)/2879868312063084275">
     <nodeInfo nodeId="4855904478356985692" fileName="PatternOrPattern_Test.java" startLine="196" startPosition="19" endLine="196" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4855904478357000966" fileName="PatternOrPattern_Test.java" startLine="242" startPosition="19" endLine="242" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2879868312063084275" fileName="PatternOrPattern_Test.java" startLine="31" startPosition="45" endLine="32" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1462,7 +1462,7 @@
     <unitInfo nodeId="2879868312063084275" fileName="PatternOrPattern_Test.java" startLine="36" startPosition="0" endLine="309" endPosition="0" unitName="jetbrains.mps.lang.pattern.test.PatternOrPattern_Test$TestBody" />
     <unitInfo nodeId="2879868312063084275" fileName="PatternOrPattern_Test.java" startLine="25" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.lang.pattern.test.PatternOrPattern_Test" />
   </root>
-  <root nodeId="4855904478357165289" modelId="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)">
+  <root nodeRef="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)/4855904478357165289">
     <nodeInfo nodeId="4855904478357165305" fileName="PatternOrPattern2_Test.java" startLine="182" startPosition="19" endLine="182" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4855904478357165310" fileName="PatternOrPattern2_Test.java" startLine="256" startPosition="19" endLine="256" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4855904478357165289" fileName="PatternOrPattern2_Test.java" startLine="31" startPosition="45" endLine="32" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1899,7 +1899,7 @@
     <unitInfo nodeId="4855904478357165289" fileName="PatternOrPattern2_Test.java" startLine="36" startPosition="0" endLine="309" endPosition="0" unitName="jetbrains.mps.lang.pattern.test.PatternOrPattern2_Test$TestBody" />
     <unitInfo nodeId="4855904478357165289" fileName="PatternOrPattern2_Test.java" startLine="25" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.lang.pattern.test.PatternOrPattern2_Test" />
   </root>
-  <root nodeId="815823070325240409" modelId="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)">
+  <root nodeRef="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)/815823070325240409">
     <nodeInfo nodeId="815823070325240427" fileName="Patternv2_Test.java" startLine="116" startPosition="29" endLine="116" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="815823070325240409" fileName="Patternv2_Test.java" startLine="32" startPosition="45" endLine="33" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="815823070325240409" fileName="Patternv2_Test.java" startLine="33" startPosition="116" endLine="34" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2302,7 +2302,7 @@
     <unitInfo nodeId="815823070325240409" fileName="Patternv2_Test.java" startLine="37" startPosition="0" endLine="263" endPosition="0" unitName="jetbrains.mps.lang.pattern.test.Patternv2_Test$TestBody" />
     <unitInfo nodeId="815823070325240409" fileName="Patternv2_Test.java" startLine="26" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.lang.pattern.test.Patternv2_Test" />
   </root>
-  <root nodeId="8263735385373599995" modelId="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)">
+  <root nodeRef="r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)/8263735385373599995">
     <nodeInfo nodeId="8263735385373599997" fileName="PatternMultipleOr_Test.java" startLine="84" startPosition="17" endLine="84" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8297918475033171168" fileName="PatternMultipleOr_Test.java" startLine="189" startPosition="19" endLine="189" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8297918475033171173" fileName="PatternMultipleOr_Test.java" startLine="235" startPosition="19" endLine="235" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4727801710070560812" modelId="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)">
+  <root nodeRef="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)/4727801710070560812">
     <nodeInfo nodeId="4727801710070560825" fileName="IValueProxy.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="javaEquals#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Z" />
     <nodeInfo nodeId="4727801710070560815" fileName="IValueProxy.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getJDIValue#()Lcom/sun/jdi/Value;" />
     <nodeInfo nodeId="4727801710070560820" fileName="IValueProxy.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getJavaValue#()Ljava/lang/Object;" />
@@ -11,7 +11,7 @@
     <scopeInfo nodeId="4727801710070560820" fileName="IValueProxy.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
     <unitInfo nodeId="4727801710070560812" fileName="IValueProxy.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy" />
   </root>
-  <root nodeId="4727801710070560831" modelId="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)">
+  <root nodeRef="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)/4727801710070560831">
     <nodeInfo nodeId="4727801710070560858" fileName="IterableProxy.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValueProxy" />
     <nodeInfo nodeId="4775046149728399095" fileName="IterableProxy.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThreadReference" />
     <nodeInfo nodeId="4727801710070560867" fileName="IterableProxy.java" startLine="14" startPosition="87" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -79,7 +79,7 @@
     <unitInfo nodeId="4727801710070560837" fileName="IterableProxy.java" startLine="29" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debugger.java.api.evaluation.proxies.IterableProxy$MyIterator" />
     <unitInfo nodeId="4727801710070560831" fileName="IterableProxy.java" startLine="10" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debugger.java.api.evaluation.proxies.IterableProxy" />
   </root>
-  <root nodeId="4727801710070560969" modelId="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)">
+  <root nodeRef="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)/4727801710070560969">
     <nodeInfo nodeId="4727801710070560994" fileName="IterableArrayProxy.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValueProxy" />
     <nodeInfo nodeId="4727801710070561003" fileName="IterableArrayProxy.java" startLine="10" startPosition="58" endLine="11" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4727801710070561012" fileName="IterableArrayProxy.java" startLine="15" startPosition="33" endLine="16" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -110,7 +110,7 @@
     <unitInfo nodeId="4727801710070560975" fileName="IterableArrayProxy.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.debugger.java.api.evaluation.proxies.IterableArrayProxy$MyIterator" />
     <unitInfo nodeId="4727801710070560969" fileName="IterableArrayProxy.java" startLine="7" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debugger.java.api.evaluation.proxies.IterableArrayProxy" />
   </root>
-  <root nodeId="4727801710070562884" modelId="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)">
+  <root nodeRef="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)/4727801710070562884">
     <nodeInfo nodeId="4727801710070562894" fileName="IArrayValueProxy.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setElement#(Lcom/sun/jdi/Value;I)V" />
     <nodeInfo nodeId="4727801710070562903" fileName="IArrayValueProxy.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLength#()I" />
     <nodeInfo nodeId="4727801710070562887" fileName="IArrayValueProxy.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementAt#(I)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
@@ -124,7 +124,7 @@
     </scopeInfo>
     <unitInfo nodeId="4727801710070562884" fileName="IArrayValueProxy.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy" />
   </root>
-  <root nodeId="4727801710070562907" modelId="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)">
+  <root nodeRef="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)/4727801710070562907">
     <nodeInfo nodeId="4727801710070562926" fileName="ProxyEqualsUtil.java" startLine="11" startPosition="27" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4727801710070562933" fileName="ProxyEqualsUtil.java" startLine="14" startPosition="25" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4727801710070562942" fileName="ProxyEqualsUtil.java" startLine="17" startPosition="25" endLine="18" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -146,7 +146,7 @@
     </scopeInfo>
     <unitInfo nodeId="4727801710070562907" fileName="ProxyEqualsUtil.java" startLine="6" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.api.evaluation.proxies.ProxyEqualsUtil" />
   </root>
-  <root nodeId="4727801710070563570" modelId="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)">
+  <root nodeRef="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)/4727801710070563570">
     <nodeInfo nodeId="4727801710070563581" fileName="IObjectValueProxy.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
     <nodeInfo nodeId="4727801710070563593" fileName="IObjectValueProxy.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeSuperMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
     <nodeInfo nodeId="4727801710070563605" fileName="IObjectValueProxy.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInstanceOf#(Ljava/lang/String;)Z" />
@@ -171,7 +171,7 @@
     </scopeInfo>
     <unitInfo nodeId="4727801710070563570" fileName="IObjectValueProxy.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy" />
   </root>
-  <root nodeId="4727801710070563612" modelId="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)">
+  <root nodeRef="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)/4727801710070563612">
     <nodeInfo nodeId="4727801710070563632" fileName="ValueProxy.java" startLine="13" startPosition="39" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4727801710070563644" fileName="ValueProxy.java" startLine="19" startPosition="30" endLine="20" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7157912897227775913" fileName="ValueProxy.java" startLine="25" startPosition="32" endLine="26" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -189,10 +189,10 @@
     <scopeInfo nodeId="4727801710070563648" fileName="ValueProxy.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
     <unitInfo nodeId="4727801710070563612" fileName="ValueProxy.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.debugger.java.api.evaluation.proxies.ValueProxy" />
   </root>
-  <root nodeId="4727801710070563864" modelId="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)">
+  <root nodeRef="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)/4727801710070563864">
     <unitInfo nodeId="4727801710070563864" fileName="INullValueProxy.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.debugger.java.api.evaluation.proxies.INullValueProxy" />
   </root>
-  <root nodeId="4727801710070563868" modelId="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)">
+  <root nodeRef="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)/4727801710070563868">
     <nodeInfo nodeId="4727801710070563882" fileName="VoidValueProxy.java" startLine="9" startPosition="43" endLine="10" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4727801710070563891" fileName="VoidValueProxy.java" startLine="14" startPosition="48" endLine="15" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4727801710070563872" fileName="VoidValueProxy.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VoidValueProxy#(Lcom/sun/jdi/Value;)V" />
@@ -207,7 +207,7 @@
     </scopeInfo>
     <unitInfo nodeId="4727801710070563868" fileName="VoidValueProxy.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debugger.java.api.evaluation.proxies.VoidValueProxy" />
   </root>
-  <root nodeId="4727801710070563929" modelId="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)">
+  <root nodeRef="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)/4727801710070563929">
     <nodeInfo nodeId="4727801710070563941" fileName="PrimitiveValueProxy.java" startLine="8" startPosition="48" endLine="9" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4727801710070563948" fileName="PrimitiveValueProxy.java" startLine="12" startPosition="45" endLine="13" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4727801710070563967" fileName="PrimitiveValueProxy.java" startLine="18" startPosition="70" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -229,7 +229,7 @@
     </scopeInfo>
     <unitInfo nodeId="4727801710070563929" fileName="PrimitiveValueProxy.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy" />
   </root>
-  <root nodeId="7157912897227220271" modelId="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)">
+  <root nodeRef="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)/7157912897227220271">
     <nodeInfo nodeId="7157912897227220637" fileName="MirrorUtil.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="7494124042451449896" fileName="MirrorUtil.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOCK" />
     <nodeInfo nodeId="7157912897227220723" fileName="MirrorUtil.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />

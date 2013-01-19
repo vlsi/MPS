@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8974276187400029900" modelId="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)">
+  <root nodeRef="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)/8974276187400029900">
     <nodeInfo nodeId="6976585500156879192" fileName="IconResource_Editor.java" startLine="49" startPosition="5" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8974276187400029902" fileName="IconResource_Editor.java" startLine="61" startPosition="5" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8974276187400029913" fileName="IconResource_Editor.java" startLine="73" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -412,7 +412,7 @@
     <unitInfo nodeId="8974276187400029941" fileName="IconResource_Editor.java" startLine="184" startPosition="48" endLine="194" endPosition="7" unitName="jetbrains.mps.lang.resources.editor.IconResource_Editor$2" />
     <unitInfo nodeId="8974276187400029900" fileName="IconResource_Editor.java" startLine="32" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.lang.resources.editor.IconResource_Editor" />
   </root>
-  <root nodeId="8974276187400029952" modelId="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)">
+  <root nodeRef="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)/8974276187400029952">
     <nodeInfo nodeId="8974276187400029956" fileName="IconResourceExpression_Editor.java" startLine="57" startPosition="58" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8974276187400029952" fileName="IconResourceExpression_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400029953" fileName="IconResourceExpression_Editor.java" startLine="21" startPosition="88" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -521,7 +521,7 @@
     </scopeInfo>
     <unitInfo nodeId="8974276187400029952" fileName="IconResourceExpression_Editor.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.resources.editor.IconResourceExpression_Editor" />
   </root>
-  <root nodeId="8974276187400029959" modelId="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)">
+  <root nodeRef="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)/8974276187400029959">
     <nodeInfo nodeId="8974276187400029959" fileName="IconResourceBundle_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400029964" fileName="IconResourceBundle_Editor.java" startLine="33" startPosition="97" endLine="34" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8974276187400029964" fileName="IconResourceBundle_Editor.java" startLine="37" startPosition="66" endLine="38" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -723,7 +723,7 @@
     <unitInfo nodeId="8974276187400029964" fileName="IconResourceBundle_Editor.java" startLine="32" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.resources.editor.IconResourceBundle_Editor$iconsListHandler_e2moj5_d0" />
     <unitInfo nodeId="8974276187400029959" fileName="IconResourceBundle_Editor.java" startLine="27" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.lang.resources.editor.IconResourceBundle_Editor" />
   </root>
-  <root nodeId="8974276187400029971" modelId="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)">
+  <root nodeRef="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)/8974276187400029971">
     <nodeInfo nodeId="8974276187400029975" fileName="IconResourceDeclaration_Editor.java" startLine="45" startPosition="58" endLine="45" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8974276187400029971" fileName="IconResourceDeclaration_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400029972" fileName="IconResourceDeclaration_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -835,7 +835,7 @@
     </scopeInfo>
     <unitInfo nodeId="8974276187400029971" fileName="IconResourceDeclaration_Editor.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.resources.editor.IconResourceDeclaration_Editor" />
   </root>
-  <root nodeId="8974276187400029977" modelId="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)">
+  <root nodeRef="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)/8974276187400029977">
     <nodeInfo nodeId="8974276187400029983" fileName="IconResourceReference_Editor.java" startLine="104" startPosition="58" endLine="104" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8974276187400029977" fileName="IconResourceReference_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400029984" fileName="IconResourceReference_Editor.java" startLine="29" startPosition="33" endLine="30" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

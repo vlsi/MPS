@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.execution.commands.intentions.IntentionsDescriptor" />
-  <root nodeId="2168104298250372811" modelId="r:611f7e3f-ffc4-4896-a805-c9fe694989ca(jetbrains.mps.execution.commands.intentions)">
+  <root nodeRef="r:611f7e3f-ffc4-4896-a805-c9fe694989ca(jetbrains.mps.execution.commands.intentions)/2168104298250372811">
     <nodeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -119,7 +119,7 @@
     <unitInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="87" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.execution.commands.intentions.ConvertToItems_Intention$IntentionImplementation" />
     <unitInfo nodeId="2168104298250372811" fileName="ConvertToItems_Intention.java" startLine="19" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.execution.commands.intentions.ConvertToItems_Intention" />
   </root>
-  <root nodeId="2168104298250389155" modelId="r:611f7e3f-ffc4-4896-a805-c9fe694989ca(jetbrains.mps.execution.commands.intentions)">
+  <root nodeRef="r:611f7e3f-ffc4-4896-a805-c9fe694989ca(jetbrains.mps.execution.commands.intentions)/2168104298250389155">
     <nodeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="30" startPosition="30" endLine="31" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2168104298250389155" fileName="ConvertToList_Intention.java" startLine="34" startPosition="35" endLine="35" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
