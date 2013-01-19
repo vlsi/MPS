@@ -73,13 +73,13 @@
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690967691224" />
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8418469470840880071">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToSNodeOpenAPI" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Migrate to node OpenAPI" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8418469470841235721">
       <property name="name" nameId="tpck.1169194664001" value="Migration30" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="caption" nameId="tp4k.1204991940915" value="Migration 3.0" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7949796796600715200">
@@ -87,8 +87,8 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1719872688913296344">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToNewSNodeMethods" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Migrate to new SNode methods" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7039601390004640869">
       <property name="name" nameId="tpck.1169194664001" value="ApiTransformations" />
@@ -98,18 +98,18 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5636695426879360410">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToNewSNodeAccess" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Migrate to new SNodeAccess (one pass only!)" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1478877201356791037">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToSNodeIdOpenAPI" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Migrate to node id OpenAPI" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6941165737436787361">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToSNodeReferenceOpenAPI" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Migrate to node reference OpenAPI" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Migrate to node id OpenAPI" />
     </node>
   </roots>
   <root id="5487985028841902721">
@@ -10698,7 +10698,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6941165737436787383">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1478877201356068635" resolveInfo="migrateSNodeId" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6941165737190628651" resolveInfo="migrateSNodeReference" />
             </node>
           </node>
         </node>
