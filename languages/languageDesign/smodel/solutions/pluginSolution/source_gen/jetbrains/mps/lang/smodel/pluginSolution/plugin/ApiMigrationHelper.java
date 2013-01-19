@@ -98,7 +98,7 @@ public class ApiMigrationHelper {
       }
 
       SNode n = (SNode) rNode;
-      if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+      if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.ClassifierType") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(n), "jetbrains.mps.baseLanguage.structure.CastExpression"))) {
         SetSequence.fromSet(changedClassUsages).addElement(rNode);
         continue;
       }
