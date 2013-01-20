@@ -131,7 +131,7 @@ public class ApiMigrationHelper {
         continue;
       }
 
-      SNode newMethod = getNewMethod((SNode) ref.getTargetNode());
+      SNode newMethod = getNewMethod((SNode) ref.getTargetNode(), newNode);
       if (newMethod != null) {
         SetSequence.fromSet(changedMethodCalls).addElement(MultiTuple.<SNode,jetbrains.mps.smodel.SReference>from(rNode, ((jetbrains.mps.smodel.SReference) new StaticReference(ref.getRole(), rNode, newMethod))));
         continue;
@@ -308,9 +308,8 @@ public class ApiMigrationHelper {
     }).toListSequence()), false, "usages");
   }
 
-  private SNode getNewMethod(SNode old) {
-    SNode newSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0a0k(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
-    for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(newSnodeNode))) {
+  private SNode getNewMethod(SNode old, SNode newClass) {
+    for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(newClass))) {
       if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(method, old)) {
         return method;
       }
@@ -376,13 +375,6 @@ public class ApiMigrationHelper {
     }
     quotedNode_3.addChild("expression", quotedNode_4);
     return quotedNode_3;
-  }
-
-  private static SNode _quotation_createNode_yke5lt_a0a0a0k() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode")));
-    return quotedNode_1;
   }
 
   private static boolean eq_yke5lt_a0b0i(Object a, Object b) {
