@@ -19,7 +19,6 @@ public class GenerateChunksTask extends MpsLoadTask {
 
   public static final String STRICT_MODE = "STRICT_MODE";
   public static final String PARALLEL_MODE = "PARALLEL_MODE";
-  public static final String CORE_LIB_PROPERTY = "mps.core.libraries";
 
   public GenerateChunksTask() {
   }
@@ -57,7 +56,7 @@ public class GenerateChunksTask extends MpsLoadTask {
 
   @Override
   protected void checkMpsHome() {
-    // do not check 
+    // do not check: there is no mps_home for us 
   }
 
   @Override
@@ -86,6 +85,7 @@ public class GenerateChunksTask extends MpsLoadTask {
       if ((mpsWorkbenchHome != null && mpsWorkbenchHome.length() > 0)) {
         gatherAllClassesAndJarsUnder(new File(mpsWorkbenchHome, "lib"), classPath);
       }
+      // fixme layout changes is 3.0 
       myWhatToDo.addLibrary(new File(mpsCoreHome, "mps-core/languages/devkits").getAbsolutePath(), new File(mpsCoreHome, "mps-core/languages/devkits"), false);
     } else {
       throw new BuildException("Dependency on MPS build scripts is required to generate MPS modules.");
