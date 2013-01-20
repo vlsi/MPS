@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class GenerationContextOp_PropertyPatternRef_Constraints extends BaseConstraintsDescriptor {
   public GenerationContextOp_PropertyPatternRef_Constraints() {
@@ -58,5 +59,5 @@ public class GenerationContextOp_PropertyPatternRef_Constraints extends BaseCons
     return references;
   }
 
-  private static SNodeReference breakingNode_wqjpsb_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902ee(jetbrains.mps.lang.generator.generationContext.constraints)", "1758784108619297785");
+  private static SNodePointer breakingNode_wqjpsb_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902ee(jetbrains.mps.lang.generator.generationContext.constraints)", "1758784108619297785");
 }

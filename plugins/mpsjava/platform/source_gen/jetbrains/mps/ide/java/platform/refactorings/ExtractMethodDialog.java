@@ -10,7 +10,6 @@ import javax.swing.JCheckBox;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.project.Project;
@@ -39,6 +38,7 @@ import javax.swing.border.EmptyBorder;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.SModelReference;
@@ -316,7 +316,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myStaticTarget = (dialog.getResult() != null ?
-          dialog.getResult().resolve(MPSModuleRepository.getInstance()) :
+          ((SNodePointer) dialog.getResult()).getNode() :
           null
         );
       }

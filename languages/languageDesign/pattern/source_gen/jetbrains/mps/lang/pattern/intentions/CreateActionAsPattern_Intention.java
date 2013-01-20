@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.pattern.editor.PatternAddingUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -61,7 +61,7 @@ public class CreateActionAsPattern_Intention implements IntentionFactory {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)", "4413230749907735528");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)", "4413230749907735528");
   }
 
   public boolean isSurroundWith() {

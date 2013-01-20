@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class RefTestParamRef_Constraints extends BaseConstraintsDescriptor {
   public RefTestParamRef_Constraints() {
@@ -57,5 +58,5 @@ public class RefTestParamRef_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_3tjqgh_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:222f0e6e-34ee-4504-a848-5e0f34db2f2f(jetbrains.mps.transformation.test.inputLang.constraints)", "3315811491560252603");
+  private static SNodePointer breakingNode_3tjqgh_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:222f0e6e-34ee-4504-a848-5e0f34db2f2f(jetbrains.mps.transformation.test.inputLang.constraints)", "3315811491560252603");
 }

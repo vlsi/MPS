@@ -11,7 +11,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.nodeEditor.CreateFromUsageUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -65,7 +65,7 @@ public class NewTemplateInWeaveEach_Intention implements IntentionFactory {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1216319039419");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1216319039419");
   }
 
   public boolean isSurroundWith() {

@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildMps_ModuleDependencyExtendLanguage_Constraints extends BaseConstraintsDescriptor {
   public BuildMps_ModuleDependencyExtendLanguage_Constraints() {
@@ -79,6 +80,6 @@ public class BuildMps_ModuleDependencyExtendLanguage_Constraints extends BaseCon
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.mps.structure.BuildMps_Language") || SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(parentNode), "jetbrains.mps.build.mps.structure.BuildMps_Language");
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "4278635856200794938");
-  private static SNodeReference breakingNode_x6a53i_a0a0a0a0a1a0b0a1a3 = new jetbrains.mps.smodel.SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561902804");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "4278635856200794938");
+  private static SNodePointer breakingNode_x6a53i_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561902804");
 }

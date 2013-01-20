@@ -4,7 +4,6 @@ package jetbrains.mps.execution.lib;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -16,6 +15,7 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.logging.Logger;
@@ -76,7 +76,7 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
     final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        return node.value = check_q2vl_a0a0a1a0(getNodePointer());
+        return node.value = check_q2vl_a0a0a1a0(((SNodePointer) getNodePointer()));
       }
     }));
     return node.value;
@@ -86,7 +86,7 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
     if (this.getModelId() == null || this.getNodeId() == null) {
       return null;
     }
-    return new jetbrains.mps.smodel.SNodePointer(this.getModelId(), this.getNodeId());
+    return new SNodePointer(this.getModelId(), this.getNodeId());
   }
 
   public void setNode(@Nullable final SNode node) {
@@ -158,9 +158,9 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
 
   private static Logger LOG = Logger.getLogger(Node_Configuration.class);
 
-  private static SNode check_q2vl_a0a0a1a0(SNodeReference checkedDotOperand) {
+  private static SNode check_q2vl_a0a0a1a0(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
+      return checkedDotOperand.getNode();
     }
     return null;
   }

@@ -9,7 +9,7 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -53,7 +53,7 @@ public class CreateAntiquotation_Intention implements IntentionFactory {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new jetbrains.mps.smodel.SNodePointer("r:f4b34c7d-c02f-43b9-b6e7-feff8966461c(jetbrains.mps.lang.quotation.intentions)", "1227885451240");
+    return new SNodePointer("r:f4b34c7d-c02f-43b9-b6e7-feff8966461c(jetbrains.mps.lang.quotation.intentions)", "1227885451240");
   }
 
   public boolean isSurroundWith() {

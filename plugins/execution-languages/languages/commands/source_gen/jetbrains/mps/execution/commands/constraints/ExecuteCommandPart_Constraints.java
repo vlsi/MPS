@@ -23,6 +23,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
   public ExecuteCommandPart_Constraints() {
@@ -101,5 +102,5 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
     return null;
   }
 
-  private static SNodeReference breakingNode_kwfdao_a0a1a0a0a2 = new jetbrains.mps.smodel.SNodePointer("r:fa479534-722a-48ea-9a2e-0d6cd7ab1559(jetbrains.mps.execution.commands.constraints)", "3445893456318180892");
+  private static SNodePointer breakingNode_kwfdao_a0a1a0a0a2 = new SNodePointer("r:fa479534-722a-48ea-9a2e-0d6cd7ab1559(jetbrains.mps.execution.commands.constraints)", "3445893456318180892");
 }

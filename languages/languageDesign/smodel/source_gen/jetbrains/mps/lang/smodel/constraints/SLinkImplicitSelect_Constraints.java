@@ -23,6 +23,7 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
   public SLinkImplicitSelect_Constraints() {
@@ -187,6 +188,6 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
     }
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "8405512791876074476");
-  private static SNodeReference breakingNode_f4oi2a_a0a1a0a0a1a0b0a1a3 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "8405512791876074490");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "8405512791876074476");
+  private static SNodePointer breakingNode_f4oi2a_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "8405512791876074490");
 }

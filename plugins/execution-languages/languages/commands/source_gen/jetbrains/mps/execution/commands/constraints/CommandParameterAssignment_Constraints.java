@@ -18,6 +18,7 @@ import jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class CommandParameterAssignment_Constraints extends BaseConstraintsDescriptor {
   public CommandParameterAssignment_Constraints() {
@@ -72,6 +73,6 @@ public class CommandParameterAssignment_Constraints extends BaseConstraintsDescr
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.execution.commands.structure.CommandBuilderExpression");
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:fa479534-722a-48ea-9a2e-0d6cd7ab1559(jetbrains.mps.execution.commands.constraints)", "856705193941282450");
-  private static SNodeReference breakingNode_3py8zl_a0a1a0a0a1a0b0a1a3 = new jetbrains.mps.smodel.SNodePointer("r:fa479534-722a-48ea-9a2e-0d6cd7ab1559(jetbrains.mps.execution.commands.constraints)", "856705193941282441");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:fa479534-722a-48ea-9a2e-0d6cd7ab1559(jetbrains.mps.execution.commands.constraints)", "856705193941282450");
+  private static SNodePointer breakingNode_3py8zl_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:fa479534-722a-48ea-9a2e-0d6cd7ab1559(jetbrains.mps.execution.commands.constraints)", "856705193941282441");
 }

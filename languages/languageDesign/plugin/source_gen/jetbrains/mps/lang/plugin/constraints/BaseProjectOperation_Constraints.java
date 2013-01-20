@@ -15,7 +15,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class BaseProjectOperation_Constraints extends BaseConstraintsDescriptor {
   public BaseProjectOperation_Constraints() {
@@ -53,5 +53,5 @@ public class BaseProjectOperation_Constraints extends BaseConstraintsDescriptor 
     return quotedNode_1;
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "3339131993542058156");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "3339131993542058156");
 }

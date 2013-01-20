@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor {
   public StaticFieldReference_Constraints() {
@@ -82,6 +83,6 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
     return references;
   }
 
-  private static SNodeReference breakingNode_amrbnf_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137439");
-  private static SNodeReference breakingNode_amrbnf_a0a0a0a0a1a0b0a2a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137459");
+  private static SNodePointer breakingNode_amrbnf_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137439");
+  private static SNodePointer breakingNode_amrbnf_a0a0a0a0a1a0b0a2a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137459");
 }

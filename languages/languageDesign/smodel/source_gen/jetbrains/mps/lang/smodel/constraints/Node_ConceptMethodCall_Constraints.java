@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Node_ConceptMethodCall_Constraints extends BaseConstraintsDescriptor {
   public Node_ConceptMethodCall_Constraints() {
@@ -83,5 +84,5 @@ public class Node_ConceptMethodCall_Constraints extends BaseConstraintsDescripto
     return references;
   }
 
-  private static SNodeReference breakingNode_zb7xc_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104840562");
+  private static SNodePointer breakingNode_zb7xc_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104840562");
 }

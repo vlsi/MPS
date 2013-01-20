@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class PropertyReference_Constraints extends BaseConstraintsDescriptor {
   public PropertyReference_Constraints() {
@@ -77,5 +78,5 @@ public class PropertyReference_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_57atcm_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137292");
+  private static SNodePointer breakingNode_57atcm_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137292");
 }

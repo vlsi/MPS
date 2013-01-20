@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class GWTModule_Constraints extends BaseConstraintsDescriptor {
   public GWTModule_Constraints() {
@@ -64,5 +64,5 @@ public class GWTModule_Constraints extends BaseConstraintsDescriptor {
     return true;
   }
 
-  private static SNodeReference canBeParentBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:89cc78ad-43cd-4987-b5dd-bcde38d4fbd9(jetbrains.mps.gwt.client.constraints)", "2968360207538671956");
+  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:89cc78ad-43cd-4987-b5dd-bcde38d4fbd9(jetbrains.mps.gwt.client.constraints)", "2968360207538671956");
 }

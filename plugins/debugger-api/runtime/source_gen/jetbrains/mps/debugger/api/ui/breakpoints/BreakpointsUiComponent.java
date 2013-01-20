@@ -27,6 +27,7 @@ import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
@@ -124,7 +125,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
           null :
           editedNode.getContainingRoot()
         );
-        return new jetbrains.mps.smodel.SNodePointer(rootNode);
+        return new SNodePointer(rootNode);
       }
     });
     if (rootPointer == null) {
@@ -175,10 +176,10 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
   protected void toggleBreakpoint(@NotNull SNode node) {
     SNode root = node.getContainingRoot();
     IBreakpoint breakpoint = null;
-    Set<ILocationBreakpoint> mpsBreakpointSet = myBreakpointsManagerComponent.getBreakpoints(new jetbrains.mps.smodel.SNodePointer(root));
+    Set<ILocationBreakpoint> mpsBreakpointSet = myBreakpointsManagerComponent.getBreakpoints(new SNodePointer(root));
     if (mpsBreakpointSet != null) {
       for (ILocationBreakpoint mpsBreakpoint : mpsBreakpointSet) {
-        if (mpsBreakpoint.getLocation().getNodePointer().equals(new jetbrains.mps.smodel.SNodePointer(node))) {
+        if (((SNodePointer) mpsBreakpoint.getLocation().getNodePointer()).equals(new SNodePointer(node))) {
           breakpoint = mpsBreakpoint;
           break;
         }

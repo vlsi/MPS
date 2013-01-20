@@ -14,8 +14,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -29,6 +27,7 @@ import javax.swing.JComponent;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ReplacementView {
   private UsagesView myUsagesView;
@@ -88,7 +87,7 @@ public class ReplacementView {
   public List<SNode> getExecuteResult(List<SNodeReference> nodes) {
     List<SNode> results = ListSequence.fromList(new ArrayList<SNode>());
     for (SNodeReference nodePointer : nodes) {
-      ListSequence.fromList(results).addElement(nodePointer.resolve(MPSModuleRepository.getInstance()));
+      ListSequence.fromList(results).addElement(((SNodePointer) nodePointer).getNode());
     }
     return results;
   }

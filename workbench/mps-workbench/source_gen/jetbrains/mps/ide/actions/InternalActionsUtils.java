@@ -11,6 +11,7 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -49,7 +50,7 @@ public class InternalActionsUtils {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (Object concept : FindUtils.getSearchResults(new EmptyProgressMonitor(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder").getSearchResults()) {
-          ListSequence.fromList(concepts).addElement(new jetbrains.mps.smodel.SNodePointer(((SearchResult<SNode>) concept).getObject()));
+          ListSequence.fromList(concepts).addElement(new SNodePointer(((SearchResult<SNode>) concept).getObject()));
         }
       }
     });
@@ -126,7 +127,7 @@ public class InternalActionsUtils {
         SearchResults results = new SearchResults<SNode>();
         for (SNode node : ListSequence.fromList(nodes).select(new ISelector<SNodeReference, SNode>() {
           public SNode select(SNodeReference it) {
-            return it.resolve(MPSModuleRepository.getInstance());
+            return ((SNodePointer) it).getNode();
           }
         }).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

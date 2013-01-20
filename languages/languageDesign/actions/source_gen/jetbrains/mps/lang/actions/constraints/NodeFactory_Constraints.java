@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.search.ModelNodesSearchScope;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
   public NodeFactory_Constraints() {
@@ -76,5 +77,5 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_i503fz_a0a1a0a0a1a0b0a1a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1213104859361");
+  private static SNodePointer breakingNode_i503fz_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1213104859361");
 }

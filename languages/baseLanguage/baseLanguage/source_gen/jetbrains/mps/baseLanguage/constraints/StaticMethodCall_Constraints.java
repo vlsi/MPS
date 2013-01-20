@@ -19,6 +19,7 @@ import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.scopes.MethodsScope;
 import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
   public StaticMethodCall_Constraints() {
@@ -59,5 +60,5 @@ public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_8qp2eq_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137643");
+  private static SNodePointer breakingNode_8qp2eq_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137643");
 }

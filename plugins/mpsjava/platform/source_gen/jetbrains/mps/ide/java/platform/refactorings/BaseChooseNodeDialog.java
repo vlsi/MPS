@@ -34,6 +34,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
+import jetbrains.mps.smodel.SNodePointer;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.Dimension;
@@ -131,7 +132,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
         if (selectedNode instanceof ModelTreeNode) {
           ModelTreeNode treeNode = ((ModelTreeNode) selectedNode);
           if (treeNode.getUserObject() instanceof SNodeReference) {
-            mySelectedNode = ((SNodeReference) treeNode.getUserObject());
+            mySelectedNode = ((SNodePointer) treeNode.getUserObject());
             getOKAction().setEnabled(true);
             return;
           }

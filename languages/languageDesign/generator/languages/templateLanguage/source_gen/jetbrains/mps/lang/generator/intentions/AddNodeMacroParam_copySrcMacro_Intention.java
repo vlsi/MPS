@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import jetbrains.mps.intentions.IntentionExecutable;
 import java.util.List;
@@ -66,7 +66,7 @@ public class AddNodeMacroParam_copySrcMacro_Intention implements IntentionFactor
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1240595838065");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1240595838065");
   }
 
   public boolean isSurroundWith() {

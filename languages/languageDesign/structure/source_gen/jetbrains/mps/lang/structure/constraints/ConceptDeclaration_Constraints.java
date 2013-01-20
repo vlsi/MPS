@@ -20,6 +20,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ConceptDeclaration_Constraints() {
@@ -82,6 +83,6 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
     return LanguageAspect.STRUCTURE.is(model) || SModelStereotype.isGeneratorModel(model);
   }
 
-  private static SNodeReference canBeRootBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1227087258260");
-  private static SNodeReference breakingNode_8geshg_a0a0a0a0a1a0b0a1a4 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "843447540011607884");
+  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1227087258260");
+  private static SNodePointer breakingNode_8geshg_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "843447540011607884");
 }

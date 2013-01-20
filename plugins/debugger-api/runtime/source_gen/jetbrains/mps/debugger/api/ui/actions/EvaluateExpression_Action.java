@@ -27,6 +27,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
 
@@ -82,9 +83,9 @@ public class EvaluateExpression_Action extends BaseAction {
                   public Iterable<SNode> iterable() {
                     return selection.getSelectedNodes();
                   }
-                })).select(new ISelector<SNode, SNodeReference>() {
-                  public SNodeReference select(SNode it) {
-                    return new jetbrains.mps.smodel.SNodePointer(it);
+                })).select(new ISelector<SNode, SNodePointer>() {
+                  public SNodePointer select(SNode it) {
+                    return new SNodePointer(it);
                   }
                 }));
               }

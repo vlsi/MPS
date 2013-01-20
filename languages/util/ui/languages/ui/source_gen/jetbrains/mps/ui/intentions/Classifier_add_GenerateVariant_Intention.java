@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import jetbrains.mps.intentions.IntentionExecutable;
 import java.util.List;
@@ -65,7 +65,7 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new jetbrains.mps.smodel.SNodePointer("r:8cdffe0e-82a6-47c0-9a63-88679c2baa24(jetbrains.mps.ui.intentions)", "8905126934806239993");
+    return new SNodePointer("r:8cdffe0e-82a6-47c0-9a63-88679c2baa24(jetbrains.mps.ui.intentions)", "8905126934806239993");
   }
 
   public boolean isSurroundWith() {

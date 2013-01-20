@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -56,7 +56,7 @@ public class ChildAspectDefinition_makeOptional_Intention implements IntentionFa
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new jetbrains.mps.smodel.SNodePointer("r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)", "6030013275786405059");
+    return new SNodePointer("r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)", "6030013275786405059");
   }
 
   public boolean isSurroundWith() {

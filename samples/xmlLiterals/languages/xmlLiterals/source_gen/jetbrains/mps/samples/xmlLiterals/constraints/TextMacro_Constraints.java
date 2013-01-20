@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TextMacro_Constraints extends BaseConstraintsDescriptor {
   public TextMacro_Constraints() {
@@ -35,5 +35,5 @@ public class TextMacro_Constraints extends BaseConstraintsDescriptor {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral", true, false) != null);
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:522aace3-e88f-4df7-82be-4ab3d6ccd8bc(jetbrains.mps.samples.xmlLiterals.constraints)", "9152904044274469614");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:522aace3-e88f-4df7-82be-4ab3d6ccd8bc(jetbrains.mps.samples.xmlLiterals.constraints)", "9152904044274469614");
 }

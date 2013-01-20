@@ -22,6 +22,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class FieldReferenceOperation_Constraints extends BaseConstraintsDescriptor {
   public FieldReferenceOperation_Constraints() {
@@ -64,5 +65,5 @@ public class FieldReferenceOperation_Constraints extends BaseConstraintsDescript
     return references;
   }
 
-  private static SNodeReference breakingNode_dv0ljq_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137096");
+  private static SNodePointer breakingNode_dv0ljq_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137096");
 }

@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class MigratedToMethodAnnotation_Constraints extends BaseConstraintsDescriptor {
   public MigratedToMethodAnnotation_Constraints() {
@@ -53,5 +54,5 @@ public class MigratedToMethodAnnotation_Constraints extends BaseConstraintsDescr
     return references;
   }
 
-  private static SNodeReference breakingNode_7tm0hp_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "8080932314785854857");
+  private static SNodePointer breakingNode_7tm0hp_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "8080932314785854857");
 }

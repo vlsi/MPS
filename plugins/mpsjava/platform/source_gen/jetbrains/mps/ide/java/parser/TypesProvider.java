@@ -34,6 +34,7 @@ import jetbrains.mps.ide.java.newparser.FeatureKind;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.smodel.SNodePointer;
 import org.eclipse.jdt.internal.compiler.lookup.FieldBinding;
 import org.eclipse.jdt.internal.compiler.lookup.ParameterizedFieldBinding;
 import org.eclipse.jdt.internal.compiler.lookup.Binding;
@@ -243,7 +244,7 @@ public class TypesProvider {
   }
 
   private SNodeReference getRegularMPSNodePointerFromForeignId(SModelReference modelReference, org.jetbrains.mps.openapi.model.SNodeId nodeId, FeatureKind targetKind) {
-    return new jetbrains.mps.smodel.SNodePointer(modelReference, nodeId);
+    return new SNodePointer(modelReference, nodeId);
   }
 
   private org.jetbrains.mps.openapi.model.SNodeId createMethodId(MethodBinding method, BinaryTypeBinding classBinding) {
@@ -289,7 +290,7 @@ public class TypesProvider {
     if (aClass instanceof SourceTypeBinding) {
       SNode adapter = myReferentsCreator.myBindingMap.get(aClass);
       if ((adapter != null)) {
-        return new jetbrains.mps.smodel.SNodePointer(adapter);
+        return new SNodePointer(adapter);
       }
     }
     if (aClass instanceof ParameterizedTypeBinding) {

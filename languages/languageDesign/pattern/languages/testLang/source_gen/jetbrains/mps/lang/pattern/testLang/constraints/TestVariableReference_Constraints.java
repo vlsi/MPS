@@ -21,6 +21,7 @@ import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TestVariableReference_Constraints extends BaseConstraintsDescriptor {
   public TestVariableReference_Constraints() {
@@ -64,5 +65,5 @@ public class TestVariableReference_Constraints extends BaseConstraintsDescriptor
     return references;
   }
 
-  private static SNodeReference breakingNode_t68zsq_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:02c98d9f-8736-40ad-9bbb-eeffd3fee9b8(jetbrains.mps.lang.pattern.testLang.constraints)", "8707387027762047796");
+  private static SNodePointer breakingNode_t68zsq_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:02c98d9f-8736-40ad-9bbb-eeffd3fee9b8(jetbrains.mps.lang.pattern.testLang.constraints)", "8707387027762047796");
 }

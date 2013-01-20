@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TabbedToolOperation_Constraints extends BaseConstraintsDescriptor {
   public TabbedToolOperation_Constraints() {
@@ -38,5 +38,5 @@ public class TabbedToolOperation_Constraints extends BaseConstraintsDescriptor {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(dotExpression, "operand", true)), "jetbrains.mps.lang.plugin.structure.ToolType"), "tool", false), "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration");
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "8096638938275444163");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "8096638938275444163");
 }

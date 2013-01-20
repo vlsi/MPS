@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8169228734285724684" modelId="r:a2048a3e-d79c-4d25-ab38-9294b02bd901(jetbrains.mps.build.workflow.util)">
+  <root nodeRef="r:a2048a3e-d79c-4d25-ab38-9294b02bd901(jetbrains.mps.build.workflow.util)/8169228734285724684">
     <nodeInfo nodeId="8169228734285725042" fileName="XmlSignature.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sb" />
     <nodeInfo nodeId="8169228734285725047" fileName="XmlSignature.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="hasErrors" />
     <nodeInfo nodeId="8169228734285725038" fileName="XmlSignature.java" startLine="20" startPosition="25" endLine="21" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

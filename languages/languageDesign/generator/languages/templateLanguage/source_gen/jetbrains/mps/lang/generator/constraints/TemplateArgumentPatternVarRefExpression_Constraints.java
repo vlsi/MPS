@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TemplateArgumentPatternVarRefExpression_Constraints extends BaseConstraintsDescriptor {
   public TemplateArgumentPatternVarRefExpression_Constraints() {
@@ -79,6 +80,6 @@ public class TemplateArgumentPatternVarRefExpression_Constraints extends BaseCon
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.generator.structure.ITemplateCall");
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4665309944889460329");
-  private static SNodeReference breakingNode_u4q1ju_a0a1a0a0a1a0b0a1a3 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4665309944889434725");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4665309944889460329");
+  private static SNodePointer breakingNode_u4q1ju_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4665309944889434725");
 }

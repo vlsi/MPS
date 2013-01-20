@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ResourceType_comparableWith_IResource_ComparisonRule extends ComparisonRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
@@ -86,5 +87,5 @@ public class ResourceType_comparableWith_IResource_ComparisonRule extends Compar
     }
   }
 
-  private static SNodeReference SNODE_POINTER_v5k8je_a0a0a0a0b0c0a0a0a0a0a0f = new jetbrains.mps.smodel.SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256");
+  private static SNodePointer SNODE_POINTER_v5k8je_a0a0a0a0b0c0a0a0a0a0a0f = new SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256");
 }

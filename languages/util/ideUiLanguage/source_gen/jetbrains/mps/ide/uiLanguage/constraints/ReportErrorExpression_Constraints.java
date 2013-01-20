@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ReportErrorExpression_Constraints extends BaseConstraintsDescriptor {
   public ReportErrorExpression_Constraints() {
@@ -34,5 +34,5 @@ public class ReportErrorExpression_Constraints extends BaseConstraintsDescriptor
     return DialogUtil.dialogAccessible(parentNode);
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895904ae(jetbrains.mps.ide.uiLanguage.constraints)", "1213107437577");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895904ae(jetbrains.mps.ide.uiLanguage.constraints)", "1213107437577");
 }

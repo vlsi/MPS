@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class AbstractFunctionType_Constraints extends BaseConstraintsDescriptor {
   public AbstractFunctionType_Constraints() {
@@ -36,5 +36,5 @@ public class AbstractFunctionType_Constraints extends BaseConstraintsDescriptor 
     return LanguageAspect.TYPESYSTEM.is(SNodeOperations.getModel(parentNode));
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "5612111951671408001");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "5612111951671408001");
 }

@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ForeignParametersExpression_Constraints extends BaseConstraintsDescriptor {
   public ForeignParametersExpression_Constraints() {
@@ -67,5 +68,5 @@ public class ForeignParametersExpression_Constraints extends BaseConstraintsDesc
     return references;
   }
 
-  private static SNodeReference breakingNode_3lfdwm_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "3344436107830239604");
+  private static SNodePointer breakingNode_3lfdwm_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "3344436107830239604");
 }

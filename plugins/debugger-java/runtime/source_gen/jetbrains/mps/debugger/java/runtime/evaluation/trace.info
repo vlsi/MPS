@@ -518,8 +518,8 @@
     <nodeInfo nodeId="671562190169411346" fileName="EvaluationProvider.java" startLine="72" startPosition="51" endLine="73" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2891362368264673326" fileName="EvaluationProvider.java" startLine="75" startPosition="25" endLine="76" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="671562190169411354" fileName="EvaluationProvider.java" startLine="82" startPosition="32" endLine="83" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7239101982553512158" fileName="EvaluationProvider.java" startLine="87" startPosition="63" endLine="88" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="671562190169411376" fileName="EvaluationProvider.java" startLine="92" startPosition="109" endLine="93" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7239101982553512158" fileName="EvaluationProvider.java" startLine="87" startPosition="63" endLine="88" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="671562190169411376" fileName="EvaluationProvider.java" startLine="92" startPosition="111" endLine="93" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="671562190169411387" fileName="EvaluationProvider.java" startLine="96" startPosition="43" endLine="97" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="985506188610764283" fileName="EvaluationProvider.java" startLine="98" startPosition="30" endLine="99" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="671562190169411403" fileName="EvaluationProvider.java" startLine="103" startPosition="31" endLine="104" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -542,8 +542,8 @@
     <nodeInfo nodeId="985506188610764189" fileName="EvaluationProvider.java" startLine="176" startPosition="88" endLine="177" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="985506188610764151" fileName="EvaluationProvider.java" startLine="179" startPosition="32" endLine="180" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="985506188610764193" fileName="EvaluationProvider.java" startLine="181" startPosition="7" endLine="182" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="985506188610764079" fileName="EvaluationProvider.java" startLine="183" startPosition="5" endLine="184" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="985506188610764203" fileName="EvaluationProvider.java" startLine="188" startPosition="122" endLine="189" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="985506188610764079" fileName="EvaluationProvider.java" startLine="183" startPosition="5" endLine="184" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="985506188610764203" fileName="EvaluationProvider.java" startLine="188" startPosition="124" endLine="189" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="985506188610764212" fileName="EvaluationProvider.java" startLine="191" startPosition="32" endLine="192" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="985506188610764217" fileName="EvaluationProvider.java" startLine="193" startPosition="7" endLine="194" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="985506188610764092" fileName="EvaluationProvider.java" startLine="195" startPosition="5" endLine="196" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -632,7 +632,7 @@
     <scopeInfo nodeId="206112649481382807" fileName="EvaluationProvider.java" startLine="66" startPosition="25" endLine="67" endPosition="33" />
     <scopeInfo nodeId="6788924733585957956" fileName="EvaluationProvider.java" startLine="75" startPosition="25" endLine="76" endPosition="130" />
     <scopeInfo nodeId="671562190169411353" fileName="EvaluationProvider.java" startLine="82" startPosition="32" endLine="83" endPosition="42" />
-    <scopeInfo nodeId="7239101982553512151" fileName="EvaluationProvider.java" startLine="87" startPosition="63" endLine="88" endPosition="88" />
+    <scopeInfo nodeId="7239101982553512151" fileName="EvaluationProvider.java" startLine="87" startPosition="63" endLine="88" endPosition="90" />
     <scopeInfo nodeId="985506188610764255" fileName="EvaluationProvider.java" startLine="98" startPosition="30" endLine="99" endPosition="19" />
     <scopeInfo nodeId="671562190169411450" fileName="EvaluationProvider.java" startLine="118" startPosition="47" endLine="119" endPosition="32" />
     <scopeInfo nodeId="671562190169411462" fileName="EvaluationProvider.java" startLine="126" startPosition="42" endLine="127" endPosition="34" />
@@ -746,10 +746,10 @@
     <scopeInfo nodeId="8197435796639315649" fileName="EvaluationProvider.java" startLine="132" startPosition="0" endLine="139" endPosition="0" />
     <scopeInfo nodeId="671562190169411606" fileName="EvaluationProvider.java" startLine="199" startPosition="0" endLine="206" endPosition="0" />
     <scopeInfo nodeId="671562190169411628" fileName="EvaluationProvider.java" startLine="207" startPosition="0" endLine="214" endPosition="0" />
-    <scopeInfo nodeId="671562190169411596" fileName="EvaluationProvider.java" startLine="176" startPosition="88" endLine="184" endPosition="161">
+    <scopeInfo nodeId="671562190169411596" fileName="EvaluationProvider.java" startLine="176" startPosition="88" endLine="184" endPosition="163">
       <varInfo nodeId="985506188610764190" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="7239101982553469420" fileName="EvaluationProvider.java" startLine="188" startPosition="122" endLine="196" endPosition="122">
+    <scopeInfo nodeId="7239101982553469420" fileName="EvaluationProvider.java" startLine="188" startPosition="124" endLine="196" endPosition="122">
       <varInfo nodeId="985506188610764204" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="671562190169411338" fileName="EvaluationProvider.java" startLine="71" startPosition="0" endLine="80" endPosition="0" />
@@ -789,7 +789,7 @@
       <varInfo nodeId="671562190169411520" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="1137554513386372373" fileName="EvaluationProvider.java" startLine="144" startPosition="0" endLine="161" endPosition="0" />
-    <scopeInfo nodeId="671562190169411364" fileName="EvaluationProvider.java" startLine="92" startPosition="109" endLine="110" endPosition="38">
+    <scopeInfo nodeId="671562190169411364" fileName="EvaluationProvider.java" startLine="92" startPosition="111" endLine="110" endPosition="38">
       <varInfo nodeId="671562190169411377" varName="state" />
     </scopeInfo>
     <scopeInfo nodeId="671562190169411507" fileName="EvaluationProvider.java" startLine="142" startPosition="29" endLine="161" endPosition="7" />

@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class OrPatternVariableReference_Constraints extends BaseConstraintsDescriptor {
   public OrPatternVariableReference_Constraints() {
@@ -59,5 +60,5 @@ public class OrPatternVariableReference_Constraints extends BaseConstraintsDescr
     return null;
   }
 
-  private static SNodeReference breakingNode_8aolto_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)", "5642650895629225739");
+  private static SNodePointer breakingNode_8aolto_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)", "5642650895629225739");
 }

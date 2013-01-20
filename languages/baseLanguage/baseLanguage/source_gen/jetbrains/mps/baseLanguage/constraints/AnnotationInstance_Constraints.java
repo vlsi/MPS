@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class AnnotationInstance_Constraints extends BaseConstraintsDescriptor {
   public AnnotationInstance_Constraints() {
@@ -40,5 +40,5 @@ public class AnnotationInstance_Constraints extends BaseConstraintsDescriptor {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.AnnotationInstance", true, false) != null);
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2030079436469605453");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2030079436469605453");
 }

@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
 import jetbrains.mps.debugger.java.runtime.engine.RequestManager;
@@ -30,7 +31,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
   }
 
   public LineBreakpoint(@NotNull SNode node, Project project) {
-    this(new jetbrains.mps.smodel.SNodePointer(node), project);
+    this(new SNodePointer(node), project);
   }
 
   @Override

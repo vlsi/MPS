@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   private String myFqName;
 
   public AbstractTestWrapper(@NotNull N node) {
-    myNodePointer = new jetbrains.mps.smodel.SNodePointer(node);
+    myNodePointer = new SNodePointer(node);
   }
 
   public AbstractTestWrapper(@NotNull SNodeReference nodePointer) {
@@ -33,7 +34,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
 
   @Nullable
   public N getNode() {
-    return (N) myNodePointer.resolve(MPSModuleRepository.getInstance());
+    return (N) ((SNodePointer) myNodePointer).getNode();
   }
 
   @NotNull

@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ContainerTemplate_Constraints extends BaseConstraintsDescriptor {
   public ContainerTemplate_Constraints() {
@@ -79,5 +80,5 @@ public class ContainerTemplate_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_cxbh0p_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "4391079257750389363");
+  private static SNodePointer breakingNode_cxbh0p_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "4391079257750389363");
 }

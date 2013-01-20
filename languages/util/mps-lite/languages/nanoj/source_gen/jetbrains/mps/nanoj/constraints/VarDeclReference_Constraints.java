@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class VarDeclReference_Constraints extends BaseConstraintsDescriptor {
   public VarDeclReference_Constraints() {
@@ -72,5 +73,5 @@ public class VarDeclReference_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_6gh6zs_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905dc(jetbrains.mps.nanoj.constraints)", "689680155165915394");
+  private static SNodePointer breakingNode_6gh6zs_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905dc(jetbrains.mps.nanoj.constraints)", "689680155165915394");
 }

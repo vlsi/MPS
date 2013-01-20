@@ -137,7 +137,7 @@
     <nodeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="23" startPosition="87" endLine="24" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodePointers" />
     <nodeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="30" startPosition="50" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="34" startPosition="63" endLine="35" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="34" startPosition="65" endLine="35" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="35" startPosition="36" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841950962" fileName="MakeNodePointers_BeforeTask.java" startLine="39" startPosition="45" endLine="40" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeNodePointers_BeforeTask#()V" />
@@ -151,7 +151,7 @@
     <scopeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="23" startPosition="87" endLine="24" endPosition="15" />
     <scopeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="30" startPosition="50" endLine="31" endPosition="17" />
     <scopeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="39" startPosition="45" endLine="40" endPosition="68" />
-    <scopeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="34" startPosition="63" endLine="36" endPosition="18" />
+    <scopeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="34" startPosition="65" endLine="36" endPosition="18" />
     <scopeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="5487985028841950959" fileName="MakeNodePointers_BeforeTask.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />

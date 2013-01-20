@@ -26,6 +26,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class CustomContainerCreator_Constraints extends BaseConstraintsDescriptor {
   public CustomContainerCreator_Constraints() {
@@ -86,5 +87,5 @@ public class CustomContainerCreator_Constraints extends BaseConstraintsDescripto
     return references;
   }
 
-  private static SNodeReference breakingNode_tzy4hl_a0a1a0a0a1a0b0a1a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "9034802358628295001");
+  private static SNodePointer breakingNode_tzy4hl_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "9034802358628295001");
 }

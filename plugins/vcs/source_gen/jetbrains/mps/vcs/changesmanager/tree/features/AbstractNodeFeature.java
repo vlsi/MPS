@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.changesmanager.tree.features;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public abstract class AbstractNodeFeature extends Feature {
   private SNodeReference myNodeRef;
@@ -20,10 +21,10 @@ public abstract class AbstractNodeFeature extends Feature {
 
   @Override
   public boolean equals(Object object) {
-    return myNodeRef.equals(((AbstractNodeFeature) object).myNodeRef);
+    return ((SNodePointer) myNodeRef).equals(((AbstractNodeFeature) object).myNodeRef);
   }
 
   protected final String getNodePointerString() {
-    return jetbrains.mps.smodel.SNodePointer.serialize(myNodeRef);
+    return SNodePointer.serialize(myNodeRef);
   }
 }

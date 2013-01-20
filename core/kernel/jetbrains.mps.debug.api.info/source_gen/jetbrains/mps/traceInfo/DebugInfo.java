@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -26,6 +25,7 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.LinkedHashMap;
 import org.jdom.Element;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jdom.DataConversionException;
 
@@ -247,7 +247,7 @@ public class DebugInfo {
     if (myRoots != null) {
       Iterable<SNodeReference> sorted = SetSequence.fromSet(MapSequence.fromMap(myRoots).keySet()).sort(new ISelector<SNodeReference, String>() {
         public String select(SNodeReference it) {
-          return jetbrains.mps.smodel.SNodePointer.serialize(((SNodeReference) it));
+          return SNodePointer.serialize(((SNodePointer) it));
         }
       }, true);
       for (SNodeReference id : sorted) {
@@ -256,7 +256,7 @@ public class DebugInfo {
           dir.toXml(element);
         } else {
           Element e = new Element(DebugInfo.ROOT);
-          e.setAttribute(DebugInfo.NODE_REF_ATTR, jetbrains.mps.smodel.SNodePointer.serialize(((SNodeReference) id)));
+          e.setAttribute(DebugInfo.NODE_REF_ATTR, SNodePointer.serialize(((SNodePointer) id)));
           dir.toXml(e);
           element.addContent(e);
         }
@@ -277,11 +277,11 @@ public class DebugInfo {
         String rootId = re.getAttributeValue(DebugInfo.NODE_REF_ATTR);
         SNodeReference rootRef;
         if (rootId != null) {
-          rootRef = jetbrains.mps.smodel.SNodePointer.deserialize(rootId);
+          rootRef = SNodePointer.deserialize(rootId);
         } else {
           String nodeId = re.getAttributeValue("nodeId");
           String modelId = re.getAttributeValue("modelId");
-          rootRef = new jetbrains.mps.smodel.SNodePointer(modelId, nodeId);
+          rootRef = new SNodePointer(modelId, nodeId);
         }
 
         MapSequence.fromMap(info.myRoots).put(rootRef, DebugInfoRoot.fromXml(re, rootRef));

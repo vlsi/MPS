@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildMps_IdeaPluginGroupCustomModule_Constraints extends BaseConstraintsDescriptor {
   public BuildMps_IdeaPluginGroupCustomModule_Constraints() {
@@ -62,5 +63,5 @@ public class BuildMps_IdeaPluginGroupCustomModule_Constraints extends BaseConstr
     return references;
   }
 
-  private static SNodeReference breakingNode_q09jue_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "4034578608468929486");
+  private static SNodePointer breakingNode_q09jue_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "4034578608468929486");
 }

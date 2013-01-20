@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildExternalLayoutDependency_Constraints extends BaseConstraintsDescriptor {
   public BuildExternalLayoutDependency_Constraints() {
@@ -57,5 +58,5 @@ public class BuildExternalLayoutDependency_Constraints extends BaseConstraintsDe
     return references;
   }
 
-  private static SNodeReference breakingNode_cnlg4i_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "8258189873530172586");
+  private static SNodePointer breakingNode_cnlg4i_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "8258189873530172586");
 }

@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class DefaultGenerationParameterId_Constraints extends BaseConstraintsDescriptor {
   public DefaultGenerationParameterId_Constraints() {
@@ -54,5 +55,5 @@ public class DefaultGenerationParameterId_Constraints extends BaseConstraintsDes
     return references;
   }
 
-  private static SNodeReference breakingNode_e4b5n5_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:6ac9dcee-e5c4-42f1-9aa2-41caa61ece8e(jetbrains.mps.lang.generator.generationParameters.constraints)", "3064182000795632367");
+  private static SNodePointer breakingNode_e4b5n5_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:6ac9dcee-e5c4-42f1-9aa2-41caa61ece8e(jetbrains.mps.lang.generator.generationParameters.constraints)", "3064182000795632367");
 }

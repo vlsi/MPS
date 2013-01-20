@@ -29,6 +29,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ActionDataParameterDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ActionDataParameterDeclaration_Constraints() {
@@ -101,5 +102,5 @@ public class ActionDataParameterDeclaration_Constraints extends BaseConstraintsD
     return quotedNode_1;
   }
 
-  private static SNodeReference breakingNode_lb7xg4_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1217254460030");
+  private static SNodePointer breakingNode_lb7xg4_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1217254460030");
 }

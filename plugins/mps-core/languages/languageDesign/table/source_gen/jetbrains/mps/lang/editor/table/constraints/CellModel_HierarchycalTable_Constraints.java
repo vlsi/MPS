@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDescriptor {
   public CellModel_HierarchycalTable_Constraints() {
@@ -113,7 +114,7 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
     return references;
   }
 
-  private static SNodeReference breakingNode_6tiwsq_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544941639");
-  private static SNodeReference breakingNode_6tiwsq_a0a1a0a0a1a0b0a2a1 = new jetbrains.mps.smodel.SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544941680");
-  private static SNodeReference breakingNode_6tiwsq_a0a1a0a0a1a0b0a3a1 = new jetbrains.mps.smodel.SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544946224");
+  private static SNodePointer breakingNode_6tiwsq_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544941639");
+  private static SNodePointer breakingNode_6tiwsq_a0a1a0a0a1a0b0a2a1 = new SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544941680");
+  private static SNodePointer breakingNode_6tiwsq_a0a1a0a0a1a0b0a3a1 = new SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544946224");
 }

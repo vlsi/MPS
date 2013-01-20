@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class StaticFieldDeclaration_Constraints extends BaseConstraintsDescriptor {
   public StaticFieldDeclaration_Constraints() {
@@ -42,5 +42,5 @@ public class StaticFieldDeclaration_Constraints extends BaseConstraintsDescripto
     return true;
   }
 
-  private static SNodeReference canBeParentBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "267392325913486103");
+  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "267392325913486103");
 }

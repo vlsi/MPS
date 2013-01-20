@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class EnumConstantReference_Constraints extends BaseConstraintsDescriptor {
   public EnumConstantReference_Constraints() {
@@ -56,5 +57,5 @@ public class EnumConstantReference_Constraints extends BaseConstraintsDescriptor
     return references;
   }
 
-  private static SNodeReference breakingNode_xpgkri_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136870");
+  private static SNodePointer breakingNode_xpgkri_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136870");
 }

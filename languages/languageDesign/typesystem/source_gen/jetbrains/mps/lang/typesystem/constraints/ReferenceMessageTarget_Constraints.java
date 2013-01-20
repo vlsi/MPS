@@ -22,6 +22,7 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ReferenceMessageTarget_Constraints extends BaseConstraintsDescriptor {
   public ReferenceMessageTarget_Constraints() {
@@ -69,5 +70,5 @@ public class ReferenceMessageTarget_Constraints extends BaseConstraintsDescripto
     return references;
   }
 
-  private static SNodeReference breakingNode_h95xiq_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1227101206988");
+  private static SNodePointer breakingNode_h95xiq_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1227101206988");
 }

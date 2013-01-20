@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Classifier_Constraints extends BaseConstraintsDescriptor {
   public Classifier_Constraints() {
@@ -100,5 +101,5 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
     return properties;
   }
 
-  private static SNodeReference breakingNode_z47b7w_a0a2a0a0a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136860");
+  private static SNodePointer breakingNode_z47b7w_a0a2a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136860");
 }

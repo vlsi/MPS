@@ -13,9 +13,9 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -52,11 +52,11 @@ public class RuleOperandRenderer implements TableCellRenderer {
       if (refC.getNodeID().equals("*")) {
         nodeName = NameUtil.shortNameFromLongName(modelRef.getLongName()) + ".*";
       } else {
-        final SNodeReference p = new jetbrains.mps.smodel.SNodePointer(refC.getModelUID(), refC.getNodeID());
+        final SNodeReference p = new SNodePointer(refC.getModelUID(), refC.getNodeID());
         nodeName = ModelAccess.instance().runReadAction(new Computable<String>() {
           public String compute() {
-            SModelDescriptor model = p.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(p.getModelReference());
-            SNode node = p.resolve(MPSModuleRepository.getInstance());
+            SModelDescriptor model = ((SNodePointer) p).getModel();
+            SNode node = ((SNodePointer) p).getNode();
             if (model == null || node == null) {
               return null;
             }
@@ -65,7 +65,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
           }
         });
         if (nodeName == null) {
-          String nodeString = p.toString();
+          String nodeString = ((SNodePointer) p).toString();
           return new JLabel("NOT FOUND: " + nodeString);
         }
       }

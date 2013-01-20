@@ -262,7 +262,7 @@
     <nodeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="124" startPosition="62" endLine="125" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="128" startPosition="75" endLine="129" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="133" startPosition="48" endLine="134" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="137" startPosition="48" endLine="138" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="137" startPosition="48" endLine="138" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="141" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="35" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
     <nodeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="67" startPosition="12" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -334,7 +334,7 @@
     <scopeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="124" startPosition="62" endLine="125" endPosition="57" />
     <scopeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="128" startPosition="75" endLine="129" endPosition="72" />
     <scopeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="133" startPosition="48" endLine="134" endPosition="80" />
-    <scopeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="137" startPosition="48" endLine="138" endPosition="119" />
+    <scopeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="137" startPosition="48" endLine="138" endPosition="121" />
     <scopeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="92" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="8750596094204760417" fileName="DemoApplication_Configuration.java" startLine="96" startPosition="61" endLine="98" endPosition="19">
       <varInfo nodeId="8750596094204760417" varName="state" />

@@ -68,7 +68,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-1y364c3x08ezyxfrbl16vh2nde1fe7q" />
   <dep model="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" hash="-91wvu25tpvya2n087a9a6npfbmauvuy" />
   <dep model="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)" hash="-5fnaz2tb9ti47ane9krvlem856qu3z5" />
-  <dep model="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" hash="bufb2l4qewa8lssgpszsnsapg0o1og6" />
+  <dep model="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" hash="6g7l5dt2z59hkm9i3q6u5y4300pbzob" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
   <common hash="gvg9zp76eddbza7pg4rxh870b14k3g" />
   <source id="2482360940803570809" name="RefactoringView" hash="-62co5aor9pcnyp09eu3xex691ire5l5">

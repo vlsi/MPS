@@ -5,6 +5,7 @@ package jetbrains.mps.ide.dataFlow.presentation;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.dataFlow.framework.instructions.IfJumpInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.JumpInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
@@ -19,7 +20,7 @@ public class GraphCreator implements IGraphCreator<InstructionWrapper> {
     Instruction instruction = wrapper.getInstruction();
     SNodeReference pointer;
     if (instruction.getSource() instanceof SNode) {
-      pointer = new jetbrains.mps.smodel.SNodePointer(((SNode) instruction.getSource()));
+      pointer = new SNodePointer(((SNode) instruction.getSource()));
     } else {
       pointer = null;
     }

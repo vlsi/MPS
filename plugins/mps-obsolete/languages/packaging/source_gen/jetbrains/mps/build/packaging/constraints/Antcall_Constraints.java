@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Antcall_Constraints extends BaseConstraintsDescriptor {
   public Antcall_Constraints() {
@@ -80,5 +81,5 @@ public class Antcall_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_adydoe_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)", "1224178316888");
+  private static SNodePointer breakingNode_adydoe_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)", "1224178316888");
 }

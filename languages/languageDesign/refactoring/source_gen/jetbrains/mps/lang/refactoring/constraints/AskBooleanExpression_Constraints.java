@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class AskBooleanExpression_Constraints extends BaseConstraintsDescriptor {
   public AskBooleanExpression_Constraints() {
@@ -77,6 +78,6 @@ public class AskBooleanExpression_Constraints extends BaseConstraintsDescriptor 
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.refactoring.structure.InitClause", true, false) != null);
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "4312073247720489859");
-  private static SNodeReference breakingNode_t92tgv_a0a1a0a0a1a0b0a1a3 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "4312073247720715119");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "4312073247720489859");
+  private static SNodePointer breakingNode_t92tgv_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "4312073247720715119");
 }

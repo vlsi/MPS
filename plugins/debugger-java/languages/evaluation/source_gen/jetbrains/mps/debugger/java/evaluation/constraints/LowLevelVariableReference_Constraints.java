@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.runtime.impl.ProviderGeneratedSearchScope;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class LowLevelVariableReference_Constraints extends BaseConstraintsDescriptor {
   public LowLevelVariableReference_Constraints() {
@@ -72,5 +73,5 @@ public class LowLevelVariableReference_Constraints extends BaseConstraintsDescri
     return references;
   }
 
-  private static SNodeReference breakingNode_8w715n_a0a2a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6146091894852366855");
+  private static SNodePointer breakingNode_8w715n_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6146091894852366855");
 }

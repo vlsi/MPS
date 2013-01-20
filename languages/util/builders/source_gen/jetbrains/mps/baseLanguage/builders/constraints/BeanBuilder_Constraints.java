@@ -15,6 +15,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.baseLanguage.scopes.VisibleClassConstructorsScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class BeanBuilder_Constraints extends BaseConstraintsDescriptor {
   public BeanBuilder_Constraints() {
@@ -49,5 +50,5 @@ public class BeanBuilder_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_w6lght_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)", "3671207155728838948");
+  private static SNodePointer breakingNode_w6lght_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)", "3671207155728838948");
 }

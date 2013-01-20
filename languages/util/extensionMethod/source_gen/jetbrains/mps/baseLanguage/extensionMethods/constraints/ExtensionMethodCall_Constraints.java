@@ -29,6 +29,7 @@ import java.util.HashSet;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
   public ExtensionMethodCall_Constraints() {
@@ -98,5 +99,5 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_1t8qmy_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "7997068947889524884");
+  private static SNodePointer breakingNode_1t8qmy_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "7997068947889524884");
 }

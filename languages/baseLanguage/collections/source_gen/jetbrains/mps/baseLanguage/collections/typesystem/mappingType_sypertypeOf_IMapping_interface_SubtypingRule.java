@@ -15,6 +15,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
@@ -122,5 +123,5 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
     return quotedNode_3;
   }
 
-  private static SNodeReference SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0e = new jetbrains.mps.smodel.SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030190");
+  private static SNodePointer SNODE_POINTER_y1o6nk_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030190");
 }

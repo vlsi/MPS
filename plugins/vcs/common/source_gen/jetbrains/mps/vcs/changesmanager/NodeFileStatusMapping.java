@@ -4,9 +4,6 @@ package jetbrains.mps.vcs.changesmanager;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import java.util.Map;
-
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -17,6 +14,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -61,7 +59,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       public void run() {
         FileStatusManager fsm = FileStatusManager.getInstance(myProject);
         MPSNodesVirtualFileSystem nvfs = MPSNodesVirtualFileSystem.getInstance();
-        SNode currentNode = nodePointer.resolve(MPSModuleRepository.getInstance());
+        SNode currentNode = ((SNodePointer) nodePointer).getNode();
         if (currentNode == null) {
           return;
         }
@@ -132,7 +130,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     final Wrappers._T<SNodeReference> nodePointer = new Wrappers._T<SNodeReference>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        nodePointer.value = new jetbrains.mps.smodel.SNodePointer(root);
+        nodePointer.value = new SNodePointer(root);
         myRegistry.getCommandQueue().runTask(new Runnable() {
           public void run() {
             ModelAccess.instance().runReadAction(new Runnable() {
@@ -180,7 +178,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
 
     private void addAffectedRoot(@NotNull ModelChange change) {
       if (change.getRootId() != null) {
-        ListSequence.fromList(myAffectedRoots).addElement(new jetbrains.mps.smodel.SNodePointer(change.getChangeSet().getNewModel().getSModelReference(), change.getRootId()));
+        ListSequence.fromList(myAffectedRoots).addElement(new SNodePointer(change.getChangeSet().getNewModel().getSModelReference(), change.getRootId()));
       }
     }
 

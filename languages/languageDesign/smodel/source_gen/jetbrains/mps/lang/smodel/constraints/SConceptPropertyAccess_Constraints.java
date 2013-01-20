@@ -20,6 +20,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class SConceptPropertyAccess_Constraints extends BaseConstraintsDescriptor {
   public SConceptPropertyAccess_Constraints() {
@@ -64,5 +65,5 @@ public class SConceptPropertyAccess_Constraints extends BaseConstraintsDescripto
     return references;
   }
 
-  private static SNodeReference breakingNode_y71jzm_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104860200");
+  private static SNodePointer breakingNode_y71jzm_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104860200");
 }

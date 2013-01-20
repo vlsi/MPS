@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ExtractStaticMethod_CallExpression_Constraints extends BaseConstraintsDescriptor {
   public ExtractStaticMethod_CallExpression_Constraints() {
@@ -51,5 +52,5 @@ public class ExtractStaticMethod_CallExpression_Constraints extends BaseConstrai
     return references;
   }
 
-  private static SNodeReference breakingNode_v4p7j2_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "5857910569715972164");
+  private static SNodePointer breakingNode_v4p7j2_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "5857910569715972164");
 }

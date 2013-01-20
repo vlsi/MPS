@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.smodel.SNodePointer;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -54,7 +55,7 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
     }
     myScripts = new ArrayList<SNodeReference>();
     for (SNode scriptNode : scriptNodes) {
-      myScripts.add(new jetbrains.mps.smodel.SNodePointer(scriptNode));
+      myScripts.add(new SNodePointer(scriptNode));
     }
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {

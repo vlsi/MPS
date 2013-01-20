@@ -33,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.execution.lib.ui.BaseChooserComponent" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.ui.BaseChooserComponent" file="BaseChooserComponent.java">

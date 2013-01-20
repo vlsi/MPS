@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessEvent;
@@ -48,7 +49,7 @@ public class JavaCommand_Test extends BaseTransformationTest4 {
               return eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0b(SPropertyOperations.getString(it, "name"), Main.class.getSimpleName());
             }
           });
-          pointer.value = new jetbrains.mps.smodel.SNodePointer(mainNode);
+          pointer.value = new SNodePointer(mainNode);
         }
       });
       this.checkProcess(new Java_Command().createProcess(pointer.value), Main.MESSAGE + "\n");

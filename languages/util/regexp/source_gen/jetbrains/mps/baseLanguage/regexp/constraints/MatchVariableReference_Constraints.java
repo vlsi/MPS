@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class MatchVariableReference_Constraints extends BaseConstraintsDescriptor {
   public MatchVariableReference_Constraints() {
@@ -47,5 +48,5 @@ public class MatchVariableReference_Constraints extends BaseConstraintsDescripto
     return references;
   }
 
-  private static SNodeReference breakingNode_8gk9io_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "1213104858751");
+  private static SNodePointer breakingNode_8gk9io_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "1213104858751");
 }

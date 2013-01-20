@@ -5,6 +5,7 @@ package jetbrains.mps.debugger.java.runtime.evaluation.model;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -26,7 +27,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   public void updateLowLevelVariable(SNode variable) {
     if (myIsHighLevelInfoAvailable) {
       SPropertyOperations.set(variable, "name", myHighLevelName);
-      SPropertyOperations.set(variable, "highLevelNodeId", jetbrains.mps.smodel.SNodePointer.serialize(myHighLevelNode));
+      SPropertyOperations.set(variable, "highLevelNodeId", SNodePointer.serialize(myHighLevelNode));
     } else {
       SPropertyOperations.set(variable, "name", myLowLevelName);
     }
@@ -43,7 +44,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
   public void setHighLevelNode(SNode node) {
     myIsHighLevelInfoAvailable = true;
-    myHighLevelNode = new jetbrains.mps.smodel.SNodePointer(node);
+    myHighLevelNode = new SNodePointer(node);
     myHighLevelType = SNodeOperations.copyNode(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type"));
     myHighLevelName = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept") ?
       SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") :

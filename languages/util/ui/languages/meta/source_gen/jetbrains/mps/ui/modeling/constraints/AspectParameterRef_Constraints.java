@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class AspectParameterRef_Constraints extends BaseConstraintsDescriptor {
   public AspectParameterRef_Constraints() {
@@ -49,5 +50,5 @@ public class AspectParameterRef_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_r04u18_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "5572604531249478151");
+  private static SNodePointer breakingNode_r04u18_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "5572604531249478151");
 }

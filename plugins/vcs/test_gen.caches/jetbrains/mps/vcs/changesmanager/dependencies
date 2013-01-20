@@ -99,6 +99,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.junit.After" />
     <classNode dependClassName="org.junit.AfterClass" />
     <classNode dependClassName="org.junit.Assert" />
@@ -122,12 +123,12 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile" />
     <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="com.intellij.openapi.command.undo.DocumentReferenceProvider" />
     <classNode extendsClassName="com.intellij.openapi.fileEditor.FileEditor" />
   </dependency>

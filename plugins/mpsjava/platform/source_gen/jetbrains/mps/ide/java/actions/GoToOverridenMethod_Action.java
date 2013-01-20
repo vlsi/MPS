@@ -33,6 +33,7 @@ import jetbrains.mps.baseLanguage.util.OverridingMethodsFinder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.logging.Logger;
 
 public class GoToOverridenMethod_Action extends BaseAction {
@@ -141,7 +142,7 @@ public class GoToOverridenMethod_Action extends BaseAction {
     Set<Tuples._2<SNodeReference, SNode>> result = SetSequence.fromSet(new HashSet<Tuples._2<SNodeReference, SNode>>());
     if (overridenMethods != null) {
       for (Tuples._2<SNode, SNode> entry : overridenMethods) {
-        SetSequence.fromSet(result).addElement(MultiTuple.<SNodeReference,SNode>from(new jetbrains.mps.smodel.SNodePointer(entry._0()), entry._1()));
+        SetSequence.fromSet(result).addElement(MultiTuple.<SNodeReference,SNode>from(((SNodeReference) new SNodePointer(entry._0())), entry._1()));
       }
     }
     return result;

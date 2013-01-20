@@ -24,6 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class GroupReference_Constraints extends BaseConstraintsDescriptor {
   public GroupReference_Constraints() {
@@ -124,6 +125,6 @@ public class GroupReference_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_60vk01_a0a3a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "2948583337000056360");
-  private static SNodeReference breakingNode_60vk01_a0a3a0a0a1a0b0a2a1 = new jetbrains.mps.smodel.SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "2948583337000056409");
+  private static SNodePointer breakingNode_60vk01_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "2948583337000056360");
+  private static SNodePointer breakingNode_60vk01_a0a3a0a0a1a0b0a2a1 = new SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "2948583337000056409");
 }

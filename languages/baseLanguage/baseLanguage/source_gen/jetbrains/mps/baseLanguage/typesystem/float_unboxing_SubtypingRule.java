@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
@@ -83,5 +84,5 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
     return quotedNode_1;
   }
 
-  private static SNodeReference SNODE_POINTER_4czxhf_a0a0a0a0b0c0a0a0a0a0a0e = new jetbrains.mps.smodel.SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Float");
+  private static SNodePointer SNODE_POINTER_4czxhf_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Float");
 }

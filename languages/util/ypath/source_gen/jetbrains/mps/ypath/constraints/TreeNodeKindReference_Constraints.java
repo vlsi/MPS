@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TreeNodeKindReference_Constraints extends BaseConstraintsDescriptor {
   public TreeNodeKindReference_Constraints() {
@@ -57,5 +58,5 @@ public class TreeNodeKindReference_Constraints extends BaseConstraintsDescriptor
     return references;
   }
 
-  private static SNodeReference breakingNode_uciz5j_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104858820");
+  private static SNodePointer breakingNode_uciz5j_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104858820");
 }

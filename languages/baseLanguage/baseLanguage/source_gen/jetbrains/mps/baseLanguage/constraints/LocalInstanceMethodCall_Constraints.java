@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.baseLanguage.scopes.MigrationScopes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class LocalInstanceMethodCall_Constraints extends BaseConstraintsDescriptor {
   public LocalInstanceMethodCall_Constraints() {
@@ -50,5 +51,5 @@ public class LocalInstanceMethodCall_Constraints extends BaseConstraintsDescript
     return references;
   }
 
-  private static SNodeReference breakingNode_z8dgx7_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "575279248907340046");
+  private static SNodePointer breakingNode_z8dgx7_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "575279248907340046");
 }

@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class AddStatement_Constraints extends BaseConstraintsDescriptor {
   public AddStatement_Constraints() {
@@ -55,6 +55,6 @@ public class AddStatement_Constraints extends BaseConstraintsDescriptor {
     return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.plugin.structure.GroupAnchor"));
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1227013118716");
-  private static SNodeReference canBeParentBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1227014460147");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1227013118716");
+  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1227014460147");
 }

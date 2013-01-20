@@ -21,6 +21,7 @@ import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ThisExpression_Constraints extends BaseConstraintsDescriptor {
   public ThisExpression_Constraints() {
@@ -88,6 +89,6 @@ public class ThisExpression_Constraints extends BaseConstraintsDescriptor {
     return ConstraintsUtil.isInNonStaticClasssifierContext(parentNode);
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213619162021");
-  private static SNodeReference breakingNode_cfy36u_a0a0a0a0a1a0b0a1a3 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137648");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213619162021");
+  private static SNodePointer breakingNode_cfy36u_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137648");
 }

@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 
@@ -55,7 +56,7 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
         if (node == null) {
           return null;
         }
-        return new jetbrains.mps.smodel.SNodePointer(node);
+        return new SNodePointer(node);
       }
     });
   }

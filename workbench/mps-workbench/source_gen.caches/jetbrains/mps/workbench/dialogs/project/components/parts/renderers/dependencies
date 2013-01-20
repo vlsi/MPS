@@ -137,6 +137,7 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="javax.swing.table.TableCellRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.StringPathRenderer" file="StringPathRenderer.java">

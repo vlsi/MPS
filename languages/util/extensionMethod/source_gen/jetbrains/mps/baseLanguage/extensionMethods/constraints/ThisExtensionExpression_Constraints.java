@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ThisExtensionExpression_Constraints extends BaseConstraintsDescriptor {
   public ThisExtensionExpression_Constraints() {
@@ -35,5 +35,5 @@ public class ThisExtensionExpression_Constraints extends BaseConstraintsDescript
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", true, false) != null;
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "3316739663067259130");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "3316739663067259130");
 }

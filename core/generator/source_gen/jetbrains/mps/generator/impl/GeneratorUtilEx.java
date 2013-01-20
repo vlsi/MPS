@@ -14,7 +14,7 @@ import java.util.LinkedList;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -111,7 +111,7 @@ public class GeneratorUtilEx {
       generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
       return null;
     }
-    generator.getGenerationTracer().pushRuleConsequence(new jetbrains.mps.smodel.SNodePointer(ruleConsequence));
+    generator.getGenerationTracer().pushRuleConsequence(new SNodePointer(ruleConsequence));
     if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule")) {
       SNode message = SLinkOperations.getTarget(SNodeOperations.cast(ruleConsequence, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule"), "generatorMessage", true);
       DismissTopMappingRuleException.MessageType messageType = processGeneratorMessage(message, inputNode, null, ruleNode, generator);

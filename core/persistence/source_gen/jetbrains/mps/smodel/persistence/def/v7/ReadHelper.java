@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.logging.Logger;
 
 public class ReadHelper {
@@ -73,7 +74,7 @@ public class ReadHelper {
       null :
       jetbrains.mps.smodel.SNodeId.fromString(text)
     );
-    result.o2 = new jetbrains.mps.smodel.SNodePointer(modelRef, nodeId);
+    result.o2 = new SNodePointer(modelRef, nodeId);
     return result;
   }
 

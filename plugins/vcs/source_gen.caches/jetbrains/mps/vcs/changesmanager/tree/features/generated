@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ctue4rfkkgs877qk6aod979iu4u3wsa">
+<dependencies version="2" modelHash="-7cb3kktfwi0og43xcggjjon0kqh8ja8">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-czkeaawxav2uxfhwhouknmgxwcerk0t" />
@@ -12,7 +11,7 @@
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-aurdhr4pnjsfnuy33i926r0e5rlfi6u" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
   <common hash="4otpsurt9mtlr2kc3z4hzv7hy05yhai" />
-  <source id="5060092229902868246" name="DeletedChildFeature" hash="ahlzndqlkta1dyot09l2rabqgg62hex">
+  <source id="5060092229902868246" name="DeletedChildFeature" hash="-dgqcptxqtil9wv3sfzpwbkzhqyy6ss6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DeletedChildFeature.java" />
   </source>
@@ -24,11 +23,11 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Feature.java" />
   </source>
-  <source id="5060092229902868472" name="NodeAggregationFeature" hash="2mujhx473i5cakejdeemziclvt8yrnr">
+  <source id="5060092229902868472" name="NodeAggregationFeature" hash="-2lo2fjonbzepg2ja29c43a5u2g4f8rs">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NodeAggregationFeature.java" />
   </source>
-  <source id="5060092229902868493" name="NodeFeature" hash="5ltq2t2cc0mt282qlzxkarv3j8w5sht">
+  <source id="5060092229902868493" name="NodeFeature" hash="ajangqh2zpwjyvhhf9k168y50ohmu2o">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -36,23 +35,21 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="NodeFeature.java" />
   </source>
-  <source id="5060092229902868543" name="PropertiesFeature" hash="4xk2vcoudutbbupaubzazcvdvnqvepk">
+  <source id="5060092229902868543" name="PropertiesFeature" hash="23s68xvc6stneqx7qreim39gntcy3fu">
     <file name="PropertiesFeature.java" />
   </source>
-  <source id="5060092229902868568" name="PropertyFeature" hash="-by4o3zw0l6p1uf3cs01esemk4c7efrz">
+  <source id="5060092229902868568" name="PropertyFeature" hash="2mq5qniljz9nbgt6htkub315sh42uu9">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="PropertyFeature.java" />
   </source>
-  <source id="5060092229902868645" name="ReferenceFeature" hash="bh24xi19l6l6epxgh9fckxhngem08ow">
+  <source id="5060092229902868645" name="ReferenceFeature" hash="-cdlkoa8iraz3om8w2uaat1ftux0thal">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ReferenceFeature.java" />
   </source>
-  <source id="5060092229902868722" name="ReferencesFeature" hash="8bf8h2m6zfch8pqitkki7bgud5uhd44">
+  <source id="5060092229902868722" name="ReferencesFeature" hash="dnhtq6e058a5rn93owb8swf2vtwyc2i">
     <file name="ReferencesFeature.java" />
   </source>
-  <source id="6277750378633134066" name="AbstractNodeFeature" hash="-7pk3u9tl3dwzc08nm8v332chxsn9w26">
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
+  <source id="6277750378633134066" name="AbstractNodeFeature" hash="-6dlg2el9w3a1ewx2v4iy35uaaikqyjb">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="AbstractNodeFeature.java" />

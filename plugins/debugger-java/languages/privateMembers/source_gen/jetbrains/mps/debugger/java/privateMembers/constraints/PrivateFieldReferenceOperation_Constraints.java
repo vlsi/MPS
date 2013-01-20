@@ -20,6 +20,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class PrivateFieldReferenceOperation_Constraints extends BaseConstraintsDescriptor {
   public PrivateFieldReferenceOperation_Constraints() {
@@ -65,5 +66,5 @@ public class PrivateFieldReferenceOperation_Constraints extends BaseConstraintsD
     return references;
   }
 
-  private static SNodeReference breakingNode_cgwyr9_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)", "6825241477451043708");
+  private static SNodePointer breakingNode_cgwyr9_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)", "6825241477451043708");
 }

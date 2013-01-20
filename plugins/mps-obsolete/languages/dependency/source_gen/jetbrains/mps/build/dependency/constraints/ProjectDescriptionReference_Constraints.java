@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ProjectDescriptionReference_Constraints extends BaseConstraintsDescriptor {
   public ProjectDescriptionReference_Constraints() {
@@ -48,5 +49,5 @@ public class ProjectDescriptionReference_Constraints extends BaseConstraintsDesc
     return references;
   }
 
-  private static SNodeReference breakingNode_all8lr_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895904cc(jetbrains.mps.build.dependency.constraints)", "1224776378344");
+  private static SNodePointer breakingNode_all8lr_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895904cc(jetbrains.mps.build.dependency.constraints)", "1224776378344");
 }

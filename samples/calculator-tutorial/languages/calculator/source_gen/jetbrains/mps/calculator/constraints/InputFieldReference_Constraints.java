@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class InputFieldReference_Constraints extends BaseConstraintsDescriptor {
   public InputFieldReference_Constraints() {
@@ -57,5 +58,5 @@ public class InputFieldReference_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_43tbk9_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:ac9571c5-26be-4fef-b5fd-705a2c38e949(jetbrains.mps.calculator.constraints)", "4159153485696906648");
+  private static SNodePointer breakingNode_43tbk9_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:ac9571c5-26be-4fef-b5fd-705a2c38e949(jetbrains.mps.calculator.constraints)", "4159153485696906648");
 }

@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.ListIterator;
@@ -91,7 +92,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private void addLocationBreakpoint(ILocationBreakpoint breakpoint) {
     SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
-      SNodeReference rootPointer = new jetbrains.mps.smodel.SNodePointer(node.getContainingRoot());
+      SNodeReference rootPointer = new SNodePointer(node.getContainingRoot());
       Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
       if (breakpointsForRoot == null) {
         breakpointsForRoot = new HashSet<ILocationBreakpoint>();
@@ -99,7 +100,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       }
       //  check the following assumption: one breakpoint for one node 
       for (ILocationBreakpoint breakpointForRoot : breakpointsForRoot) {
-        if (breakpointForRoot.getLocation().getNodePointer().equals(breakpoint.getLocation().getNodePointer())) {
+        if (((SNodePointer) breakpointForRoot.getLocation().getNodePointer()).equals(breakpoint.getLocation().getNodePointer())) {
           LOG.error("Trying to add a second breakpoint for node", breakpointForRoot.getLocation().getSNode());
           break;
         }
@@ -128,7 +129,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
       SNode root = node.getContainingRoot();
-      SNodeReference rootPointer = new jetbrains.mps.smodel.SNodePointer(root);
+      SNodeReference rootPointer = new SNodePointer(root);
       Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
       if (breakpointsForRoot != null) {
         breakpointsForRoot.remove(breakpoint);

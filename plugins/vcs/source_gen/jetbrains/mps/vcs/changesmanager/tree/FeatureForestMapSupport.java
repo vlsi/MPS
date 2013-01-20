@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.vcs.changesmanager.tree.features.PropertyFeature;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
@@ -64,13 +64,13 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
     SModelReference modelReference = change.getChangeSet().getNewModel().getSModelReference();
     if (change instanceof AddRootChange) {
       AddRootChange arc = ((AddRootChange) change);
-      ListSequence.fromList(result).addElement(new NodeFeature(new jetbrains.mps.smodel.SNodePointer(modelReference, arc.getRootId())));
+      ListSequence.fromList(result).addElement(new NodeFeature(new SNodePointer(modelReference, arc.getRootId())));
     } else if (change instanceof SetPropertyChange) {
       SetPropertyChange spc = ((SetPropertyChange) change);
-      ListSequence.fromList(result).addElement(new PropertyFeature(new jetbrains.mps.smodel.SNodePointer(modelReference, spc.getAffectedNodeId()), spc.getPropertyName()));
+      ListSequence.fromList(result).addElement(new PropertyFeature(new SNodePointer(modelReference, spc.getAffectedNodeId()), spc.getPropertyName()));
     } else if (change instanceof SetReferenceChange) {
       SetReferenceChange src = ((SetReferenceChange) change);
-      ListSequence.fromList(result).addElement(new ReferenceFeature(new jetbrains.mps.smodel.SNodePointer(modelReference, src.getAffectedNodeId()), src.getRole()));
+      ListSequence.fromList(result).addElement(new ReferenceFeature(new SNodePointer(modelReference, src.getAffectedNodeId()), src.getRole()));
     } else if (change instanceof NodeGroupChange) {
       NodeGroupChange ngc = ((NodeGroupChange) change);
       SNodeId parentId = ngc.getParentNodeId();
@@ -78,12 +78,12 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
       int end = ngc.getResultEnd();
       String role = ngc.getRole();
       if (begin == end) {
-        ListSequence.fromList(result).addElement(new DeletedChildFeature(new jetbrains.mps.smodel.SNodePointer(modelReference, parentId), role, begin));
+        ListSequence.fromList(result).addElement(new DeletedChildFeature(new SNodePointer(modelReference, parentId), role, begin));
       } else {
         List<SNode> changeChildren = ((List) IterableUtil.asList(change.getChangeSet().getNewModel().getNodeById(parentId).getChildren(role)));
         for (int i = begin; i < end; i++) {
           if (i < ListSequence.fromList(changeChildren).count()) {
-            ListSequence.fromList(result).addElement(new NodeFeature(new jetbrains.mps.smodel.SNodePointer(modelReference, ListSequence.fromList(changeChildren).getElement(i).getNodeId())));
+            ListSequence.fromList(result).addElement(new NodeFeature(new SNodePointer(modelReference, ListSequence.fromList(changeChildren).getElement(i).getNodeId())));
           }
         }
       }

@@ -16,6 +16,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ypath.actions.TreePathAspectUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TreePathAdapterExpression_Constraints extends BaseConstraintsDescriptor {
   public TreePathAdapterExpression_Constraints() {
@@ -51,5 +52,5 @@ public class TreePathAdapterExpression_Constraints extends BaseConstraintsDescri
     return references;
   }
 
-  private static SNodeReference breakingNode_dk7qst_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104858654");
+  private static SNodePointer breakingNode_dk7qst_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104858654");
 }

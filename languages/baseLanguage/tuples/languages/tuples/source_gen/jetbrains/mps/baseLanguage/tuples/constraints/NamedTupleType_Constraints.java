@@ -20,6 +20,7 @@ import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class NamedTupleType_Constraints extends BaseConstraintsDescriptor {
   public NamedTupleType_Constraints() {
@@ -67,5 +68,5 @@ public class NamedTupleType_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_rcfzhs_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1652220223504359703");
+  private static SNodePointer breakingNode_rcfzhs_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1652220223504359703");
 }

@@ -24,6 +24,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ForeachWithErasure_NonTypesystemRule() {
@@ -126,5 +127,5 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     return quotedNode_1;
   }
 
-  private static SNodeReference SNODE_POINTER_aftnu9_a0a0a0a0b0c0a0a0a0a0c0b = new jetbrains.mps.smodel.SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_aftnu9_a0a0a0a0b0c0a0a0a0a0c0b = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 }

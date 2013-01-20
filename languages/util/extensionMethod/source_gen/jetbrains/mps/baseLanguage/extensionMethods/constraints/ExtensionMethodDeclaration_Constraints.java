@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ExtensionMethodDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ExtensionMethodDeclaration_Constraints() {
@@ -39,5 +39,5 @@ public class ExtensionMethodDeclaration_Constraints extends BaseConstraintsDescr
     return true;
   }
 
-  private static SNodeReference canBeParentBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "2763618064981525309");
+  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "2763618064981525309");
 }

@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.typesystem.typesystem.RulesUtil;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class MessageStatement_Constraints extends BaseConstraintsDescriptor {
   public MessageStatement_Constraints() {
@@ -35,5 +35,5 @@ public class MessageStatement_Constraints extends BaseConstraintsDescriptor {
     return RulesUtil.withinCheckingItem(parentNode);
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "919572754501607736");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "919572754501607736");
 }

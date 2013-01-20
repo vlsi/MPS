@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeAttributeQualifier_Constraints extends BaseConstraintsDescriptor {
   public NodeAttributeQualifier_Constraints() {
@@ -63,5 +64,5 @@ public class NodeAttributeQualifier_Constraints extends BaseConstraintsDescripto
     return references;
   }
 
-  private static SNodeReference breakingNode_40vqv7_a0a3a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "6407023681583036866");
+  private static SNodePointer breakingNode_40vqv7_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "6407023681583036866");
 }

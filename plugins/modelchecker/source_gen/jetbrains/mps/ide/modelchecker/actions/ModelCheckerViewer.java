@@ -27,6 +27,7 @@ import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
@@ -166,7 +167,7 @@ public abstract class ModelCheckerViewer extends JPanel {
       }
     }).where(new IWhereFilter<ModelCheckerIssue>() {
       public boolean accept(ModelCheckerIssue sr) {
-        return sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(new jetbrains.mps.smodel.SNodePointer(((ModelCheckerIssue.NodeIssue) sr).getNode())) && sr.isFixable();
+        return sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(new SNodePointer(((ModelCheckerIssue.NodeIssue) sr).getNode())) && sr.isFixable();
       }
     }).toListSequence();
   }

@@ -30,6 +30,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class JUnit3TestCaseRef_Constraints extends BaseConstraintsDescriptor {
   public JUnit3TestCaseRef_Constraints() {
@@ -88,5 +89,5 @@ public class JUnit3TestCaseRef_Constraints extends BaseConstraintsDescriptor {
     return quotedNode_1;
   }
 
-  private static SNodeReference breakingNode_qx1fe9_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)", "1280144168199457729");
+  private static SNodePointer breakingNode_qx1fe9_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)", "1280144168199457729");
 }

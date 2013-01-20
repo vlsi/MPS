@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildSourceMacroRelativePath_Constraints extends BaseConstraintsDescriptor {
   public BuildSourceMacroRelativePath_Constraints() {
@@ -72,5 +73,5 @@ public class BuildSourceMacroRelativePath_Constraints extends BaseConstraintsDes
     return references;
   }
 
-  private static SNodeReference breakingNode_6szw9x_a0a2a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "7389400916848182175");
+  private static SNodePointer breakingNode_6szw9x_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "7389400916848182175");
 }

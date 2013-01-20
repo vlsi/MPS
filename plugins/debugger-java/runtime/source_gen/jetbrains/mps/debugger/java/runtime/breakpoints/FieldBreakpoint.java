@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
@@ -33,7 +34,7 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
   }
 
   public FieldBreakpoint(@NotNull SNode node, Project project) {
-    this(new jetbrains.mps.smodel.SNodePointer(node), project);
+    this(new SNodePointer(node), project);
   }
 
   private boolean updateFieldName() {

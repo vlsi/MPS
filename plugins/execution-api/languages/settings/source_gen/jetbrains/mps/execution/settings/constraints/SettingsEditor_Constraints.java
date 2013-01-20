@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class SettingsEditor_Constraints extends BaseConstraintsDescriptor {
   public SettingsEditor_Constraints() {
@@ -35,5 +35,5 @@ public class SettingsEditor_Constraints extends BaseConstraintsDescriptor {
     return childConcept != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression");
   }
 
-  private static SNodeReference canBeAncesctorBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067202");
+  private static SNodePointer canBeAncesctorBreakingPoint = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067202");
 }

@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class RefactoringParameterReference_Constraints extends BaseConstraintsDescriptor {
   public RefactoringParameterReference_Constraints() {
@@ -49,5 +50,5 @@ public class RefactoringParameterReference_Constraints extends BaseConstraintsDe
     return references;
   }
 
-  private static SNodeReference breakingNode_vznh2k_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "5497648299878491897");
+  private static SNodePointer breakingNode_vznh2k_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "5497648299878491897");
 }

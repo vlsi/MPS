@@ -13,7 +13,6 @@ import com.intellij.openapi.project.Project;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBList;
 import com.intellij.openapi.actionSystem.AnAction;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -21,6 +20,7 @@ import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import javax.swing.border.TitledBorder;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -99,7 +99,7 @@ public class ListPanel extends JPanel {
         final Wrappers._T<ITestNodeWrapper> wrapper = new Wrappers._T<ITestNodeWrapper>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            wrapper.value = TestNodeWrapperFactory.tryToWrap(resultNode.resolve(MPSModuleRepository.getInstance()));
+            wrapper.value = TestNodeWrapperFactory.tryToWrap(((SNodePointer) resultNode).getNode());
           }
         });
         if (wrapper.value == null) {

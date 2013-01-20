@@ -10,14 +10,14 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IBlockListener" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.IBlock" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.AltBlock" file="AltBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.ArrowHead" file="ArrowHead.java">
@@ -71,6 +71,7 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.IGraphCreator" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.IBlock" file="IBlock.java">
@@ -79,7 +80,7 @@
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IBlockListener" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.IBlockListener" file="IBlockListener.java">
     <classNode dependClassName="java.awt.event.MouseEvent" />
@@ -108,7 +109,7 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.Line" file="Line.java">
@@ -135,14 +136,14 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.ReturnBlock" file="ReturnBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog" file="ShowCFGDialog.java">
@@ -176,14 +177,14 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.WriteBlock" file="WriteBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>
 </dependenciesRoot>

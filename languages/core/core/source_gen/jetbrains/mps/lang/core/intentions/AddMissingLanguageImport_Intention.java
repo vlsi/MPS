@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -57,7 +57,7 @@ public class AddMissingLanguageImport_Intention implements IntentionFactory {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "1209383918929");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "1209383918929");
   }
 
   public boolean isSurroundWith() {

@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsDescriptor {
   public ExtractStaticInnerClassCreator_Constraints() {
@@ -86,5 +87,5 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
     return references;
   }
 
-  private static SNodeReference breakingNode_4gp7p5_a0a3a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "5822086619725599108");
+  private static SNodePointer breakingNode_4gp7p5_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "5822086619725599108");
 }

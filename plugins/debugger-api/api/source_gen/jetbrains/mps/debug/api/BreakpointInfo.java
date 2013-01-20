@@ -5,6 +5,7 @@ package jetbrains.mps.debug.api;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class BreakpointInfo {
   public long myCreationTime = -1;
@@ -34,10 +35,10 @@ public class BreakpointInfo {
   }
 
   public String getLocation() {
-    return jetbrains.mps.smodel.SNodePointer.serialize(myLocation);
+    return SNodePointer.serialize(myLocation);
   }
 
   public void setLocation(String location) {
-    myLocation = jetbrains.mps.smodel.SNodePointer.deserialize(location);
+    myLocation = SNodePointer.deserialize(location);
   }
 }

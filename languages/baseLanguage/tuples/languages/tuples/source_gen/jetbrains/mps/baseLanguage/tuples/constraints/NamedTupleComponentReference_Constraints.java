@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class NamedTupleComponentReference_Constraints extends BaseConstraintsDescriptor {
   public NamedTupleComponentReference_Constraints() {
@@ -57,5 +58,5 @@ public class NamedTupleComponentReference_Constraints extends BaseConstraintsDes
     return references;
   }
 
-  private static SNodeReference breakingNode_2jtvdm_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239575924538");
+  private static SNodePointer breakingNode_2jtvdm_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239575924538");
 }

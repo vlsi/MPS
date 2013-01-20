@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeKindSpecificCase_Constraints extends BaseConstraintsDescriptor {
   public NodeKindSpecificCase_Constraints() {
@@ -49,5 +50,5 @@ public class NodeKindSpecificCase_Constraints extends BaseConstraintsDescriptor 
     return references;
   }
 
-  private static SNodeReference breakingNode_c9o13_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104860503");
+  private static SNodePointer breakingNode_c9o13_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104860503");
 }

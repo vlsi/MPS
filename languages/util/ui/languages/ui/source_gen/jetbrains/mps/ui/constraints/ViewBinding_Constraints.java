@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ViewBinding_Constraints extends BaseConstraintsDescriptor {
   public ViewBinding_Constraints() {
@@ -57,5 +58,5 @@ public class ViewBinding_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_w3orvv_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)", "8115675450774409689");
+  private static SNodePointer breakingNode_w3orvv_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)", "8115675450774409689");
 }

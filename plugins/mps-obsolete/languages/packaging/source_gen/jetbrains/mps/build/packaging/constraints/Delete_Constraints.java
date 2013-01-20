@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Delete_Constraints extends BaseConstraintsDescriptor {
   public Delete_Constraints() {
@@ -35,7 +35,7 @@ public class Delete_Constraints extends BaseConstraintsDescriptor {
     return eq_ycrh01_a0a0d(SPropertyOperations.getString(link, "role"), "delete");
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)", "1213107435808");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)", "1213107435808");
 
   private static boolean eq_ycrh01_a0a0d(Object a, Object b) {
     return (a != null ?

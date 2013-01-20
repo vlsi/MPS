@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nls;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -52,14 +53,14 @@ public class TestUtils {
     String[] split = pointerString.split(POINTER_SEPARATOR);
     SModelReference smodelId = SModelReference.fromString(split[0]);
     SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(split[1]);
-    return new jetbrains.mps.smodel.SNodePointer(smodelId, id);
+    return new SNodePointer(smodelId, id);
   }
 
   public static String pointerToString(@NotNull final SNodeReference pointer) {
     final Wrappers._T<String> value = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        value.value = (pointer.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(pointer.getModelReference())).getSModelReference().toString() + POINTER_SEPARATOR + pointer.resolve(MPSModuleRepository.getInstance()).getNodeId().toString();
+        value.value = ((SNodePointer) pointer).getModel().getSModelReference().toString() + POINTER_SEPARATOR + ((SNodePointer) pointer).getNode().getNodeId().toString();
       }
     });
     return value.value;
@@ -117,7 +118,7 @@ __switch__:
                       this.__CP__ = 2;
                       break;
                     case 4:
-                      this._6_node = check_6qi07j_a0a0a0a0a1a5(stringToPointer(_2_pointerString));
+                      this._6_node = check_6qi07j_a0a0a0a0a1a5(((SNodePointer) stringToPointer(_2_pointerString)));
                       this.__CP__ = 7;
                       break;
                     case 8:
@@ -148,13 +149,13 @@ __switch__:
   public static ClonableList nodesToCloneableList(List<SNode> nodes) {
     return new ClonableList(ListSequence.fromList(nodes).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return TestUtils.pointerToString(new jetbrains.mps.smodel.SNodePointer(it));
+        return TestUtils.pointerToString(new SNodePointer(it));
       }
     }).toListSequence());
   }
 
   public static ClonableList nodeToCloneableList(SNode node) {
-    return new ClonableList(TestUtils.pointerToString(new jetbrains.mps.smodel.SNodePointer(node)));
+    return new ClonableList(TestUtils.pointerToString(new SNodePointer(node)));
   }
 
   @Nullable
@@ -257,9 +258,9 @@ __switch__:
     });
   }
 
-  private static SNode check_6qi07j_a0a0a0a0a1a5(SNodeReference checkedDotOperand) {
+  private static SNode check_6qi07j_a0a0a0a0a1a5(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
+      return checkedDotOperand.getNode();
     }
     return null;
   }

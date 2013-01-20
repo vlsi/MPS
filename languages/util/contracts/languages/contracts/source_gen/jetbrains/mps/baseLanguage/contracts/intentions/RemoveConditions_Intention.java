@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -61,7 +61,7 @@ public class RemoveConditions_Intention implements IntentionFactory {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new jetbrains.mps.smodel.SNodePointer("r:3070cbe8-0c27-49bc-b3e1-822ee20455cd(jetbrains.mps.baseLanguage.contracts.intentions)", "6302815655306137097");
+    return new SNodePointer("r:3070cbe8-0c27-49bc-b3e1-822ee20455cd(jetbrains.mps.baseLanguage.contracts.intentions)", "6302815655306137097");
   }
 
   public boolean isSurroundWith() {

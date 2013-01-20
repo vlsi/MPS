@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Interface_Constraints extends BaseConstraintsDescriptor {
   public Interface_Constraints() {
@@ -67,6 +68,6 @@ public class Interface_Constraints extends BaseConstraintsDescriptor {
     return true;
   }
 
-  private static SNodeReference breakingNode_y7fug_a0a0a0a0a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137248");
-  private static SNodeReference canBeParentBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2949815620934480594");
+  private static SNodePointer breakingNode_y7fug_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137248");
+  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2949815620934480594");
 }

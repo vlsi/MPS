@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class PropertyNameRefExpression_Constraints extends BaseConstraintsDescriptor {
   public PropertyNameRefExpression_Constraints() {
@@ -49,5 +50,5 @@ public class PropertyNameRefExpression_Constraints extends BaseConstraintsDescri
     return references;
   }
 
-  private static SNodeReference breakingNode_yrvtld_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "5253134957341870627");
+  private static SNodePointer breakingNode_yrvtld_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "5253134957341870627");
 }

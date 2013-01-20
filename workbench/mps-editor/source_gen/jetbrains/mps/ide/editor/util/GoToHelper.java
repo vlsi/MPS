@@ -8,8 +8,6 @@ import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.awt.Point;
 import java.util.List;
-
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -35,6 +33,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -128,9 +127,9 @@ public class GoToHelper {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             List<SNode> list = FindUtils.executeFinder(finderClassName, method, GlobalScope.getInstance(), new ProgressMonitorAdapter(p));
-            SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodeReference>() {
-              public SNodeReference select(SNode it) {
-                return new jetbrains.mps.smodel.SNodePointer(it);
+            SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodePointer>() {
+              public SNodePointer select(SNode it) {
+                return new SNodePointer(it);
               }
             }));
           }
@@ -166,7 +165,7 @@ public class GoToHelper {
     }
 
     protected SNode getLabelNode(NodeNavigatable element) {
-      return element.getNodePointer().resolve(MPSModuleRepository.getInstance());
+      return ((SNodePointer) element.getNodePointer()).getNode();
     }
 
     protected SNode getContainerNode(NodeNavigatable element) {
@@ -194,7 +193,7 @@ public class GoToHelper {
     }
 
     protected SNode getLabelNode(NodeNavigatable element) {
-      SNode node = element.getNodePointer().resolve(MPSModuleRepository.getInstance());
+      SNode node = ((SNodePointer) element.getNodePointer()).getNode();
       if (node == null) {
         return null;
       }

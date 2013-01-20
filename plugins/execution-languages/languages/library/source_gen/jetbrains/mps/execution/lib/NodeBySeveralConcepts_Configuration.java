@@ -4,7 +4,6 @@ package jetbrains.mps.execution.lib;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -15,6 +14,7 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -79,7 +79,7 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
 
   @Nullable
   public SNode getNode() {
-    return getNodePointer().resolve(MPSModuleRepository.getInstance());
+    return ((SNodePointer) getNodePointer()).getNode();
   }
 
   @Nullable
@@ -87,7 +87,7 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
     if (this.getModelId() == null || this.getNodeId() == null) {
       return null;
     }
-    return new jetbrains.mps.smodel.SNodePointer(this.getModelId(), this.getNodeId());
+    return new SNodePointer(this.getModelId(), this.getNodeId());
   }
 
   public void setNode(@Nullable SNode node) {

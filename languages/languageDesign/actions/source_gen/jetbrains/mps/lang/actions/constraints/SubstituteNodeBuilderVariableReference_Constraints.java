@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class SubstituteNodeBuilderVariableReference_Constraints extends BaseConstraintsDescriptor {
   public SubstituteNodeBuilderVariableReference_Constraints() {
@@ -58,5 +59,5 @@ public class SubstituteNodeBuilderVariableReference_Constraints extends BaseCons
     return references;
   }
 
-  private static SNodeReference breakingNode_vdmjo3_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1213104855839");
+  private static SNodePointer breakingNode_vdmjo3_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1213104855839");
 }

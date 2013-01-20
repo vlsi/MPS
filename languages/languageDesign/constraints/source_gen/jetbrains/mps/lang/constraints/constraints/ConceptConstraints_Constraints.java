@@ -37,6 +37,7 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
   public ConceptConstraints_Constraints() {
@@ -175,7 +176,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
     return null;
   }
 
-  private static SNodeReference canBeRootBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "1227089025593");
-  private static SNodeReference breakingNode_guz8cy_a0a0a0a0a1a0b0a1a4 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "7966406217186699970");
-  private static SNodeReference breakingNode_guz8cy_a0a1a0a0a1a0b0a2a4 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "5629249995614139014");
+  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "1227089025593");
+  private static SNodePointer breakingNode_guz8cy_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "7966406217186699970");
+  private static SNodePointer breakingNode_guz8cy_a0a1a0a0a1a0b0a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "5629249995614139014");
 }

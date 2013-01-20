@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.persistence.indexing.FastGoToRegistry;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -51,7 +51,7 @@ public class JavaSourceStubNavigationContributor implements NodeNavigationContri
           }
 
           public SNodeReference getNodeReference() {
-            return new jetbrains.mps.smodel.SNodePointer((SNode) rootNode);
+            return new SNodePointer((SNode) rootNode);
           }
         });
       }

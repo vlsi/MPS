@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class EnclosingContextCompartmentExpression_Constraints extends BaseConstraintsDescriptor {
   public EnclosingContextCompartmentExpression_Constraints() {
@@ -35,5 +35,5 @@ public class EnclosingContextCompartmentExpression_Constraints extends BaseConst
     return SNodeOperations.isInstanceOf(SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.ui.structure.IUIObjectContextProvider"}, true, false), "jetbrains.mps.ui.structure.IUIObjectContextProvider");
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)", "5894005964488415082");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)", "5894005964488415082");
 }

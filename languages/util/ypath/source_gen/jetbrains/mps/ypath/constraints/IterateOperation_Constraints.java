@@ -20,6 +20,7 @@ import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class IterateOperation_Constraints extends BaseConstraintsDescriptor {
   public IterateOperation_Constraints() {
@@ -60,5 +61,5 @@ public class IterateOperation_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_8h4ewy_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104845582");
+  private static SNodePointer breakingNode_8h4ewy_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104845582");
 }

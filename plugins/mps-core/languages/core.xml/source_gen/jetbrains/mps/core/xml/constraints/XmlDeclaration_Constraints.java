@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class XmlDeclaration_Constraints extends BaseConstraintsDescriptor {
   public XmlDeclaration_Constraints() {
@@ -35,5 +35,5 @@ public class XmlDeclaration_Constraints extends BaseConstraintsDescriptor {
     return SNodeOperations.getIndexInParent(node) <= 0;
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)", "3374336260036088532");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)", "3374336260036088532");
 }

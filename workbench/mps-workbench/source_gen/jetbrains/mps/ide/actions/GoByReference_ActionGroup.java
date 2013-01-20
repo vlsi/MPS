@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -58,7 +58,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
         SNode targetNode = ref.getTargetNode();
         if (targetNode != null) {
           String text = "[" + ref.getRole() + "] -> " + ref.getResolveInfo();
-          GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(new jetbrains.mps.smodel.SNodePointer(targetNode), text), PluginId.getId("jetbrains.mps.ide"), new jetbrains.mps.smodel.SNodePointer(targetNode), text);
+          GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(new SNodePointer(targetNode), text), PluginId.getId("jetbrains.mps.ide"), new SNodePointer(targetNode), text);
           continue;
         }
 
@@ -84,7 +84,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
               return;
             }
 
-            GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(new jetbrains.mps.smodel.SNodePointer(newTarget), text), PluginId.getId("jetbrains.mps.ide"), new jetbrains.mps.smodel.SNodePointer(newTarget), text);
+            GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(new SNodePointer(newTarget), text), PluginId.getId("jetbrains.mps.ide"), new SNodePointer(newTarget), text);
           }
         });
 

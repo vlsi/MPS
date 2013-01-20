@@ -4,8 +4,6 @@ package jetbrains.mps.refactoring;
 
 import jetbrains.mps.smodel.SModel;
 import java.util.Map;
-
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import jetbrains.mps.smodel.StaticReference;
@@ -21,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -335,14 +334,14 @@ public class ModelLinkMap {
     }).toListSequence();
     for (SNodeReference ptr : ListSequence.fromList(ptrList)) {
       List<T> list = MapSequence.fromMap(map).removeKey(ptr);
-      MapSequence.fromMap(map).put(new jetbrains.mps.smodel.SNodePointer(newModel, ((SNodePointer) ptr).getNodeId()), list);
+      MapSequence.fromMap(map).put(new SNodePointer(newModel, ((SNodePointer) ptr).getNodeId()), list);
     }
   }
 
   private static SNodeReference ptr(SNode node) {
     return ((node == null) ?
       null :
-      new jetbrains.mps.smodel.SNodePointer(node)
+      new SNodePointer(node)
     );
   }
 }

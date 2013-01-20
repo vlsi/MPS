@@ -27,6 +27,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ResourceClassifierType_Constraints extends BaseConstraintsDescriptor {
   public ResourceClassifierType_Constraints() {
@@ -82,5 +83,5 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
     return quotedNode_1;
   }
 
-  private static SNodeReference breakingNode_ymgo28_a0a3a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "119022571402207416");
+  private static SNodePointer breakingNode_ymgo28_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "119022571402207416");
 }

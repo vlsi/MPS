@@ -24,7 +24,7 @@
   <dep model="r:306cd397-957b-4622-bdc0-c989a7388e3a(jetbrains.mps.execution.commands.generator.template.main@generator)" hash="8hpknomyc7pkc0xyq9jhskaj5f8oywr" />
   <dep model="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)" hash="-4u80ogi4zypy2c0wm8d6ivi1u1w6q7b" />
   <dep model="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)" hash="-2giowqimjuj6ptz8js4pfay8b9l7ifr" />
-  <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="-3rurmyvndlc4k009vecy6nfbwhi3y20" />
+  <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="-7rx3js0hu77djl5l1udjbbwvqptyw29" />
   <dep model="r:cd25c6e5-97ce-4a26-8b73-c9bb310649a3(jetbrains.mps.nanoc.debug.events)" hash="32o3h1z7xb08sh65cb2354gz1pv8lqn" />
   <common hash="jc4non7ae1a2xufrghdpi6jfojpzr" />
   <source id="3990508698139426393" name="CppGDBCreator" hash="9o2rqckmylfnbnxohmqxnhl41nrbktk">

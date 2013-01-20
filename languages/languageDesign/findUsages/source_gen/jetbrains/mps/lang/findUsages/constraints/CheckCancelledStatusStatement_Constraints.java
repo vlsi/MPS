@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class CheckCancelledStatusStatement_Constraints extends BaseConstraintsDescriptor {
   public CheckCancelledStatusStatement_Constraints() {
@@ -35,5 +35,5 @@ public class CheckCancelledStatusStatement_Constraints extends BaseConstraintsDe
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.findUsages.structure.FindBlock", false, false) != null;
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)", "1213107437757");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)", "1213107437757");
 }

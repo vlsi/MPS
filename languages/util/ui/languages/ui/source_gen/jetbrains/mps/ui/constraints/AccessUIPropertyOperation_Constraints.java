@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class AccessUIPropertyOperation_Constraints extends BaseConstraintsDescriptor {
   public AccessUIPropertyOperation_Constraints() {
@@ -69,5 +70,5 @@ public class AccessUIPropertyOperation_Constraints extends BaseConstraintsDescri
     return references;
   }
 
-  private static SNodeReference breakingNode_vhbj14_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)", "1870423755832759853");
+  private static SNodePointer breakingNode_vhbj14_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)", "1870423755832759853");
 }

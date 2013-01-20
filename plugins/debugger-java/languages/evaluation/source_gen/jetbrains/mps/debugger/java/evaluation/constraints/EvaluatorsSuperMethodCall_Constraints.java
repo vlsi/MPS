@@ -20,6 +20,7 @@ import jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_Behavior;
 import jetbrains.mps.baseLanguage.search.SuperMethodCall_InstanceMethodScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class EvaluatorsSuperMethodCall_Constraints extends BaseConstraintsDescriptor {
   public EvaluatorsSuperMethodCall_Constraints() {
@@ -77,6 +78,6 @@ public class EvaluatorsSuperMethodCall_Constraints extends BaseConstraintsDescri
     return (SLinkOperations.getTarget(SNodeOperations.getAncestor(parentNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", false, false), "thisNode", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(DebuggedType_Behavior.call_getHighClassifierType_4544608336420723238(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(parentNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", false, false), "thisNode", true), "debuggedType", true)), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6036237525966325225");
-  private static SNodeReference breakingNode_cyzmhi_a0a1a0a0a1a0b0a1a3 = new jetbrains.mps.smodel.SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6036237525966325249");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6036237525966325225");
+  private static SNodePointer breakingNode_cyzmhi_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6036237525966325249");
 }

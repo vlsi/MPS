@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class UpdateModelClause_Constraints extends BaseConstraintsDescriptor {
   public UpdateModelClause_Constraints() {
@@ -35,5 +35,5 @@ public class UpdateModelClause_Constraints extends BaseConstraintsDescriptor {
     return SConceptOperations.isExactly(childConcept, "jetbrains.mps.baseLanguage.structure.StatementList") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation");
   }
 
-  private static SNodeReference canBeAncesctorBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "2210862369564128647");
+  private static SNodePointer canBeAncesctorBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "2210862369564128647");
 }

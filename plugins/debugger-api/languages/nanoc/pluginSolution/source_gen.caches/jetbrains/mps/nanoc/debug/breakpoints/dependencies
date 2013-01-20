@@ -15,9 +15,9 @@
     <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.BreakpointRequestor" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.RemoveBreakpointRequestor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.AbstractBreakpoint" />
     <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.IBreakpoint" />
     <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointKind" />

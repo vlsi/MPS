@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildMpsLayout_ModuleXml_Constraints extends BaseConstraintsDescriptor {
   public BuildMpsLayout_ModuleXml_Constraints() {
@@ -57,5 +58,5 @@ public class BuildMpsLayout_ModuleXml_Constraints extends BaseConstraintsDescrip
     return references;
   }
 
-  private static SNodeReference breakingNode_k0irpj_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561913827");
+  private static SNodePointer breakingNode_k0irpj_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561913827");
 }

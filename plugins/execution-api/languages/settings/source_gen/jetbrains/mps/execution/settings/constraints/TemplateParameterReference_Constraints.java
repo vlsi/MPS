@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TemplateParameterReference_Constraints extends BaseConstraintsDescriptor {
   public TemplateParameterReference_Constraints() {
@@ -77,6 +78,6 @@ public class TemplateParameterReference_Constraints extends BaseConstraintsDescr
     return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(parentNode), "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate");
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067068");
-  private static SNodeReference breakingNode_hn11y1_a0a1a0a0a1a0b0a1a3 = new jetbrains.mps.smodel.SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067045");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067068");
+  private static SNodePointer breakingNode_hn11y1_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067045");
 }

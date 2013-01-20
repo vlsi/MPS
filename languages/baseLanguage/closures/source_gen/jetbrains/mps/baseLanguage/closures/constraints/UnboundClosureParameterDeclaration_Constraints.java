@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class UnboundClosureParameterDeclaration_Constraints extends BaseConstraintsDescriptor {
   public UnboundClosureParameterDeclaration_Constraints() {
@@ -35,5 +35,5 @@ public class UnboundClosureParameterDeclaration_Constraints extends BaseConstrai
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "1213107436310");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "1213107436310");
 }

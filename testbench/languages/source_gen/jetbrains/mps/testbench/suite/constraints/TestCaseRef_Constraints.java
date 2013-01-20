@@ -17,6 +17,7 @@ import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ModelAndImportedModelsScope;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TestCaseRef_Constraints extends BaseConstraintsDescriptor {
   public TestCaseRef_Constraints() {
@@ -55,5 +56,5 @@ public class TestCaseRef_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_d3a0zo_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)", "1280144168199519459");
+  private static SNodePointer breakingNode_d3a0zo_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)", "1280144168199519459");
 }

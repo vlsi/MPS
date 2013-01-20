@@ -8,10 +8,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.event.MouseEvent;
-
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.awt.Color;
 import org.jetbrains.annotations.Nullable;
@@ -23,7 +22,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.Rectangle;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ShowCFGDialog extends DialogWrapper {
   private JScrollPane myScrollPane;
@@ -43,7 +41,7 @@ public class ShowCFGDialog extends DialogWrapper {
       public void mousePressed(MouseEvent event, final IBlock block) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
-            SNode node = check_wx2hhz_a0a0a0a0a0a0a0a8a3(block.getSourceNode());
+            SNode node = check_wx2hhz_a0a0a0a0a0a0a0a8a3(((SNodePointer) block.getSourceNode()));
             if (node != null) {
               NavigationSupport.getInstance().openNode(operationContext, node, true, true);
             }
@@ -112,9 +110,9 @@ public class ShowCFGDialog extends DialogWrapper {
     }
   }
 
-  private static SNode check_wx2hhz_a0a0a0a0a0a0a0a8a3(SNodeReference checkedDotOperand) {
+  private static SNode check_wx2hhz_a0a0a0a0a0a0a0a8a3(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
+      return checkedDotOperand.getNode();
     }
     return null;
   }

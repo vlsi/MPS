@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -64,7 +64,7 @@ public class SuppressErrors_Intention implements IntentionFactory {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "4222318806802430725");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "4222318806802430725");
   }
 
   public boolean isSurroundWith() {

@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildSource_JavaExternalJarRef_Constraints extends BaseConstraintsDescriptor {
   public BuildSource_JavaExternalJarRef_Constraints() {
@@ -85,5 +86,5 @@ public class BuildSource_JavaExternalJarRef_Constraints extends BaseConstraintsD
     return references;
   }
 
-  private static SNodeReference breakingNode_u5rckp_a0a2a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "5610619299014309456");
+  private static SNodePointer breakingNode_u5rckp_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "5610619299014309456");
 }

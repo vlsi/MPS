@@ -10,6 +10,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Annotation_Constraints extends BaseConstraintsDescriptor {
   public Annotation_Constraints() {
@@ -36,5 +37,5 @@ public class Annotation_Constraints extends BaseConstraintsDescriptor {
     };
   }
 
-  private static SNodeReference breakingNode_9e1z83_a0a0a0a0a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948133146");
+  private static SNodePointer breakingNode_9e1z83_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948133146");
 }

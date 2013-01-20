@@ -485,7 +485,7 @@
     <nodeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="169" startPosition="67" endLine="170" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="173" startPosition="75" endLine="174" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="178" startPosition="48" endLine="179" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="182" startPosition="48" endLine="183" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="182" startPosition="48" endLine="183" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="186" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4197214709893770518" fileName="BuildLanguageProject_Configuration.java" startLine="188" startPosition="58" endLine="189" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="36" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
@@ -593,7 +593,7 @@
     <scopeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="169" startPosition="67" endLine="170" endPosition="62" />
     <scopeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="173" startPosition="75" endLine="174" endPosition="101" />
     <scopeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="178" startPosition="48" endLine="179" endPosition="85" />
-    <scopeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="182" startPosition="48" endLine="183" endPosition="119" />
+    <scopeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="182" startPosition="48" endLine="183" endPosition="121" />
     <scopeInfo nodeId="4197214709893770518" fileName="BuildLanguageProject_Configuration.java" startLine="188" startPosition="58" endLine="189" endPosition="44" />
     <scopeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="41" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="4197214709893770506" fileName="BuildLanguageProject_Configuration.java" startLine="136" startPosition="0" endLine="138" endPosition="0" />

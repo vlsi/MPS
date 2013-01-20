@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class StaticFieldDocReference_Constraints extends BaseConstraintsDescriptor {
   public StaticFieldDocReference_Constraints() {
@@ -64,5 +65,5 @@ public class StaticFieldDocReference_Constraints extends BaseConstraintsDescript
     return quotedNode_1;
   }
 
-  private static SNodeReference breakingNode_9aygvv_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "6501140109493894294");
+  private static SNodePointer breakingNode_9aygvv_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "6501140109493894294");
 }

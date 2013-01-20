@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.usageView.UsageViewBundle;
@@ -77,7 +78,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
               return null;
             }
 
-            return new jetbrains.mps.smodel.SNodePointer(node);
+            return new SNodePointer(node);
           }
         });
 

@@ -22,6 +22,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.scopes.MethodsScope;
 import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class InstanceMethodCallOperation_Constraints extends BaseConstraintsDescriptor {
   public InstanceMethodCallOperation_Constraints() {
@@ -66,5 +67,5 @@ public class InstanceMethodCallOperation_Constraints extends BaseConstraintsDesc
     return references;
   }
 
-  private static SNodeReference breakingNode_w9prmd_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137224");
+  private static SNodePointer breakingNode_w9prmd_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137224");
 }

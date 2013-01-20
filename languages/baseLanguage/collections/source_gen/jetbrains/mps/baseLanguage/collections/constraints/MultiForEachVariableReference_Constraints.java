@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class MultiForEachVariableReference_Constraints extends BaseConstraintsDescriptor {
   public MultiForEachVariableReference_Constraints() {
@@ -57,5 +58,5 @@ public class MultiForEachVariableReference_Constraints extends BaseConstraintsDe
     return references;
   }
 
-  private static SNodeReference breakingNode_n71ttm_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "2499957847193033945");
+  private static SNodePointer breakingNode_n71ttm_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "2499957847193033945");
 }

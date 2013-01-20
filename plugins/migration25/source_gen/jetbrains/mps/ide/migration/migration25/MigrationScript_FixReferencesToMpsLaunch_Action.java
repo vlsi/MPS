@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptExecutor;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
@@ -61,7 +62,7 @@ public class MigrationScript_FixReferencesToMpsLaunch_Action extends BaseAction 
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNodeReference script = new jetbrains.mps.smodel.SNodePointer("r:a931a3fa-17a8-4687-8728-32ddfa9119a3(jetbrains.mps.execution.configurations.deprecated.scripts)", "2182799002613250861");
+      SNodeReference script = new SNodePointer("r:a931a3fa-17a8-4687-8728-32ddfa9119a3(jetbrains.mps.execution.configurations.deprecated.scripts)", "2182799002613250861");
       MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Fix References To MPSLaunch Annotations", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
       if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
         executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));

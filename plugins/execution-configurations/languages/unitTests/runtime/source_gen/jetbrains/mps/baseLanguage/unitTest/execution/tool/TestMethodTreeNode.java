@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -18,7 +19,7 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
   public TestMethodTreeNode(@NotNull IOperationContext operationContext, @NotNull ITestNodeWrapper testMethod) {
     super(operationContext);
     myTestMethod = testMethod;
-    setNodeIdentifier(myTestMethod.getNodePointer().toString());
+    setNodeIdentifier(((SNodePointer) myTestMethod.getNodePointer()).toString());
     setText(myTestMethod.getName());
   }
 

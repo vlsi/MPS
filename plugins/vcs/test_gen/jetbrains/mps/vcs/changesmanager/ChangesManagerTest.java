@@ -72,6 +72,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ModelChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.command.undo.UndoManager;
 import org.junit.Test;
@@ -502,7 +503,7 @@ public class ChangesManagerTest {
           assert node == null || jetbrains.mps.util.SNodeOperations.isRoot(node);
           ListSequence.fromList(affectedNodePointers).addElement((node == null ?
             null :
-            new jetbrains.mps.smodel.SNodePointer(node)
+            new SNodePointer(node)
           ));
         }
       });
@@ -767,7 +768,7 @@ public class ChangesManagerTest {
 
       Assert.assertEquals(ListSequence.fromList(changesBefore).count() - 1, ListSequence.fromList(check_4gxggu_a1a6a8a55(myUiDiff.getChangeSet())).count());
 
-      ListSequence.fromList(affectedNodePointers).addElement(new jetbrains.mps.smodel.SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), changeToPick.getRootId()));
+      ListSequence.fromList(affectedNodePointers).addElement(new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), changeToPick.getRootId()));
     }
 
     MapSequence.fromMap(myExpectedFileStatuses).removeKey("ui.DocumentLayout");
@@ -791,7 +792,7 @@ public class ChangesManagerTest {
 
     List<SNodeReference> affectedRootPointers = ListSequence.fromList(check_4gxggu_a0a0a5a65(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, SNodeReference>() {
       public SNodeReference select(ModelChange ch) {
-        return new jetbrains.mps.smodel.SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), ch.getRootId());
+        return ((SNodeReference) new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), ch.getRootId()));
       }
     }).distinct().toListSequence();
     final List<ModelChange> oppositeChanges = ListSequence.fromList(check_4gxggu_a0a0g0ec(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, ModelChange>() {

@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
@@ -83,5 +84,5 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
     return quotedNode_1;
   }
 
-  private static SNodeReference SNODE_POINTER_qc0dd6_a0a0a0a0b0c0a0a0a0a0a0e = new jetbrains.mps.smodel.SNodePointer("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)", "~SNode");
+  private static SNodePointer SNODE_POINTER_qc0dd6_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)", "~SNode");
 }

@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class DocTypeParameterReference_Constraints extends BaseConstraintsDescriptor {
   public DocTypeParameterReference_Constraints() {
@@ -49,5 +50,5 @@ public class DocTypeParameterReference_Constraints extends BaseConstraintsDescri
     return references;
   }
 
-  private static SNodeReference breakingNode_n7zz7p_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "6832197706140671704");
+  private static SNodePointer breakingNode_n7zz7p_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "6832197706140671704");
 }

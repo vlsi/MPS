@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class RelatedFacetReference_Constraints extends BaseConstraintsDescriptor {
   public RelatedFacetReference_Constraints() {
@@ -55,5 +56,5 @@ public class RelatedFacetReference_Constraints extends BaseConstraintsDescriptor
     return references;
   }
 
-  private static SNodeReference breakingNode_9mk1l7_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "8351679702044320301");
+  private static SNodePointer breakingNode_9mk1l7_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "8351679702044320301");
 }

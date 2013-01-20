@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Variable_Constraints extends BaseConstraintsDescriptor {
   public Variable_Constraints() {
@@ -64,6 +65,6 @@ public class Variable_Constraints extends BaseConstraintsDescriptor {
     return SModelOperations.getModelName(model).startsWith(Variable_Behavior.getPackagingLanguage_5558646027962551669().getModuleFqName());
   }
 
-  private static SNodeReference breakingNode_hakpkp_a0a1a0a0a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)", "1233927017126");
-  private static SNodeReference canBeRootBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)", "5558646027962350388");
+  private static SNodePointer breakingNode_hakpkp_a0a1a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)", "1233927017126");
+  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)", "5558646027962350388");
 }

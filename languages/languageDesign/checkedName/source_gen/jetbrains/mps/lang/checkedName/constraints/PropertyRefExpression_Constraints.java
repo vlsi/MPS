@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class PropertyRefExpression_Constraints extends BaseConstraintsDescriptor {
   public PropertyRefExpression_Constraints() {
@@ -56,5 +57,5 @@ public class PropertyRefExpression_Constraints extends BaseConstraintsDescriptor
     return references;
   }
 
-  private static SNodeReference breakingNode_e11h12_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:bfde7c59-4df1-47aa-b96c-63906ea441df(jetbrains.mps.lang.checkedName.constraints)", "4844813484172611612");
+  private static SNodePointer breakingNode_e11h12_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:bfde7c59-4df1-47aa-b96c-63906ea441df(jetbrains.mps.lang.checkedName.constraints)", "4844813484172611612");
 }

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class IntentionDeclaration_Constraints extends BaseConstraintsDescriptor {
   public IntentionDeclaration_Constraints() {
@@ -36,5 +36,5 @@ public class IntentionDeclaration_Constraints extends BaseConstraintsDescriptor 
     return LanguageAspect.INTENTIONS.is(model) || SModelStereotype.isGeneratorModel(model);
   }
 
-  private static SNodeReference canBeRootBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)", "1227089959348");
+  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)", "1227089959348");
 }

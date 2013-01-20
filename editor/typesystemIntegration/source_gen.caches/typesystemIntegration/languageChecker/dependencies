@@ -67,6 +67,7 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeContextManager" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="typesystemIntegration.languageChecker.AutoResolver" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.BaseEditorChecker" />
   </dependency>

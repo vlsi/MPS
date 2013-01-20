@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class AdditionalForLoopVariable_Constraints extends BaseConstraintsDescriptor {
   public AdditionalForLoopVariable_Constraints() {
@@ -36,5 +36,5 @@ public class AdditionalForLoopVariable_Constraints extends BaseConstraintsDescri
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.ForStatement") && (SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.ForStatement"), "variable", true) != null);
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6791390962478915904");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6791390962478915904");
 }

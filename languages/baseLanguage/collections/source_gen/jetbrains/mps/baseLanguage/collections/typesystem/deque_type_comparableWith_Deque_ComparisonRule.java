@@ -12,6 +12,7 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
@@ -105,5 +106,5 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
     }
   }
 
-  private static SNodeReference SNODE_POINTER_9xe6am_a0a0a0a0b0c0a0a0a0a0a0f = new jetbrains.mps.smodel.SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Deque");
+  private static SNodePointer SNODE_POINTER_9xe6am_a0a0a0a0b0c0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Deque");
 }

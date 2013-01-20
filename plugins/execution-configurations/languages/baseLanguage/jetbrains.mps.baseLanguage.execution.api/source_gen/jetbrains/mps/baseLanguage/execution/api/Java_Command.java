@@ -15,10 +15,9 @@ import jetbrains.mps.execution.api.commands.ListCommandPart;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
 import java.io.FileNotFoundException;
-
-import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.api.IDebugger;
@@ -162,7 +161,7 @@ public class Java_Command {
   }
 
   public ProcessHandler createProcess(final SNodeReference nodePointer) throws ExecutionException {
-    IModule module = check_yvpt_a0a0a3(check_yvpt_a0a0a0d(nodePointer));
+    IModule module = check_yvpt_a0a0a3(check_yvpt_a0a0a0d(((SNodePointer) nodePointer)));
     if (module == null) {
       final Wrappers._T<String> text = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -223,7 +222,7 @@ public class Java_Command {
     final Wrappers._T<String> className = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        className.value = Java_Command.getClassName(node.resolve(MPSModuleRepository.getInstance()));
+        className.value = Java_Command.getClassName(((SNodePointer) node).getNode());
       }
     });
     return className.value;
@@ -371,9 +370,9 @@ public class Java_Command {
     return null;
   }
 
-  private static SModelDescriptor check_yvpt_a0a0a0d(SNodeReference checkedDotOperand) {
+  private static SModelDescriptor check_yvpt_a0a0a0d(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(checkedDotOperand.getModelReference());
+      return checkedDotOperand.getModel();
     }
     return null;
   }

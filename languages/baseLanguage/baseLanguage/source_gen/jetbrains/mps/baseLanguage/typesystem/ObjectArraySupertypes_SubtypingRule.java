@@ -19,6 +19,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
@@ -121,5 +122,5 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     return quotedNode_1;
   }
 
-  private static SNodeReference SNODE_POINTER_gqfgxi_a0a0a0a0b0c0b0b0b0a0b0c0a0a0a0a0a0e = new jetbrains.mps.smodel.SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+  private static SNodePointer SNODE_POINTER_gqfgxi_a0a0a0a0b0c0b0b0b0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
 }

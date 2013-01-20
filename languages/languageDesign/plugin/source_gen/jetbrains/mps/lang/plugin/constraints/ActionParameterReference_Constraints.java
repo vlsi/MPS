@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ActionParameterReference_Constraints extends BaseConstraintsDescriptor {
   public ActionParameterReference_Constraints() {
@@ -72,6 +73,6 @@ public class ActionParameterReference_Constraints extends BaseConstraintsDescrip
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange", true, false) != null);
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1821622352985038327");
-  private static SNodeReference breakingNode_ikwodz_a0a1a0a0a1a0b0a1a3 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1821622352985038348");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1821622352985038327");
+  private static SNodePointer breakingNode_ikwodz_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1821622352985038348");
 }

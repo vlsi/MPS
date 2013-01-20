@@ -27,6 +27,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildExternalLayout_Constraints" file="BuildExternalLayout_Constraints.java">
@@ -58,6 +59,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildLayout_Constraints" file="BuildLayout_Constraints.java">
@@ -124,6 +126,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildLayout_ImportContent_Constraints" file="BuildLayout_ImportContent_Constraints.java">
@@ -148,6 +151,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildLayout_Import_Constraints" file="BuildLayout_Import_Constraints.java">
@@ -172,6 +176,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildLayout_JarManifest_Constraints" file="BuildLayout_JarManifest_Constraints.java">
@@ -227,6 +232,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildSourceMacroRelativePath_Constraints" file="BuildSourceMacroRelativePath_Constraints.java">
@@ -248,6 +254,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildSourcePath_Constraints" file="BuildSourcePath_Constraints.java">
@@ -281,6 +288,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildSource_JavaExternalJarFolderRef_Constraints" file="BuildSource_JavaExternalJarFolderRef_Constraints.java">
@@ -305,6 +313,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildSource_JavaExternalJarRef_Constraints" file="BuildSource_JavaExternalJarRef_Constraints.java">
@@ -329,6 +338,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildSource_JavaLibrary_Constraints" file="BuildSource_JavaLibrary_Constraints.java">
@@ -371,6 +381,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildSource_JavaModule_Constraints" file="BuildSource_JavaModule_Constraints.java">
@@ -455,6 +466,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildVariableMacroInitValue_Constraints" file="BuildVariableMacroInitValue_Constraints.java">

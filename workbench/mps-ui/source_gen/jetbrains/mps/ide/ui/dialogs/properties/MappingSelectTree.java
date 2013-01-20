@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class MappingSelectTree extends Tree {
   public MappingSelectTree(boolean isLeft) {
@@ -179,11 +180,11 @@ public class MappingSelectTree extends Tree {
     }
 
     public SNodeReference getObject() {
-      return (SNodeReference) super.getObject();
+      return (SNodePointer) super.getObject();
     }
 
     public String getText() {
-      return getObject().resolve(MPSModuleRepository.getInstance()).getName();
+      return ((SNodePointer) getObject()).getNode().getName();
     }
   }
 

@@ -33,6 +33,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ClassifierType_Behavior {
   public static void init(SNode thisNode) {
@@ -415,5 +416,5 @@ public class ClassifierType_Behavior {
     return quotedNode_1;
   }
 
-  private static SNodeReference SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0k = new jetbrains.mps.smodel.SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+  private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0k = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
 }

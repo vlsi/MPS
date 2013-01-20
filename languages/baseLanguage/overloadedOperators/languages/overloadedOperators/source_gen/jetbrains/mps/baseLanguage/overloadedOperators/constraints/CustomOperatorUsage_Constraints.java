@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class CustomOperatorUsage_Constraints extends BaseConstraintsDescriptor {
   public CustomOperatorUsage_Constraints() {
@@ -48,5 +49,5 @@ public class CustomOperatorUsage_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_r9ipxt_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:9b7a7baa-7b52-4b41-8293-5aa14d41220f(jetbrains.mps.baseLanguage.overloadedOperators.constraints)", "1569627462441400275");
+  private static SNodePointer breakingNode_r9ipxt_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:9b7a7baa-7b52-4b41-8293-5aa14d41220f(jetbrains.mps.baseLanguage.overloadedOperators.constraints)", "1569627462441400275");
 }

@@ -21,6 +21,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor {
   public OperationDeclaration_Constraints() {
@@ -85,5 +86,5 @@ public class OperationDeclaration_Constraints extends BaseConstraintsDescriptor 
     return properties;
   }
 
-  private static SNodeReference breakingNode_617hs5_a0a1a0a0a2 = new jetbrains.mps.smodel.SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1236703304349");
+  private static SNodePointer breakingNode_617hs5_a0a1a0a0a2 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1236703304349");
 }

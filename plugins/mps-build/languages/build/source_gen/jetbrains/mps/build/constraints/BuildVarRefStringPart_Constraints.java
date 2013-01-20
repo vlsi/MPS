@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class BuildVarRefStringPart_Constraints extends BaseConstraintsDescriptor {
   public BuildVarRefStringPart_Constraints() {
@@ -57,5 +58,5 @@ public class BuildVarRefStringPart_Constraints extends BaseConstraintsDescriptor
     return references;
   }
 
-  private static SNodeReference breakingNode_99t0ze_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "4903714810883713096");
+  private static SNodePointer breakingNode_99t0ze_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "4903714810883713096");
 }

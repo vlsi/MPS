@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class AnnotationInstanceValue_Constraints extends BaseConstraintsDescriptor {
   public AnnotationInstanceValue_Constraints() {
@@ -57,5 +58,5 @@ public class AnnotationInstanceValue_Constraints extends BaseConstraintsDescript
     return references;
   }
 
-  private static SNodeReference breakingNode_orb3ki_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948133115");
+  private static SNodePointer breakingNode_orb3ki_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948133115");
 }

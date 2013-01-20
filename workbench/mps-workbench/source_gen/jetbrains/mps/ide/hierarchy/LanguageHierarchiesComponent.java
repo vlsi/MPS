@@ -25,8 +25,6 @@ import javax.swing.JCheckBox;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.border.LineBorder;
-
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -59,6 +57,7 @@ import java.awt.event.MouseListener;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -383,7 +382,7 @@ outer:
       myRootable = SPropertyOperations.getBoolean(conceptDeclaration, "rootable");
       myIsAbstract = SPropertyOperations.getBoolean(conceptDeclaration, "abstract");
       myNamespace = SModelUtil.getDeclaringLanguage(conceptDeclaration).getModuleFqName();
-      myNodePointer = new jetbrains.mps.smodel.SNodePointer(conceptDeclaration);
+      myNodePointer = new SNodePointer(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
         public void mousePressed(final MouseEvent e) {
           Project project = myOperationContext.getProject();
@@ -416,7 +415,7 @@ outer:
     }
 
     public SNode getNode() {
-      return SNodeOperations.cast(myNodePointer.resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+      return SNodeOperations.cast(((SNodePointer) myNodePointer).getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
     }
 
     public void paint(Graphics graphics) {

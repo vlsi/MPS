@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class YVariableReference_Constraints extends BaseConstraintsDescriptor {
   public YVariableReference_Constraints() {
@@ -77,7 +77,7 @@ public class YVariableReference_Constraints extends BaseConstraintsDescriptor {
     return false;
   }
 
-  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:f9895147-288e-44e3-852e-62d0bff7f07d(jetbrains.mps.debugger.decisionTable.constraints)", "5202024118203919169");
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:f9895147-288e-44e3-852e-62d0bff7f07d(jetbrains.mps.debugger.decisionTable.constraints)", "5202024118203919169");
 
   private static boolean eq_bvxceu_a0a0a0b0e(Object a, Object b) {
     return (a != null ?

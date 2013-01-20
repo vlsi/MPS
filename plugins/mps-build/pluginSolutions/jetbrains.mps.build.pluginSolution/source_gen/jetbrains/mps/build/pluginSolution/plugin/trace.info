@@ -92,7 +92,7 @@
     <nodeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="141" startPosition="58" endLine="142" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="145" startPosition="75" endLine="146" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="150" startPosition="48" endLine="151" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="154" startPosition="48" endLine="155" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="154" startPosition="48" endLine="155" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="158" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="34" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
     <nodeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="43" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkConfiguration#()V" />
@@ -182,7 +182,7 @@
     <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="141" startPosition="58" endLine="142" endPosition="53" />
     <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="145" startPosition="75" endLine="146" endPosition="92" />
     <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="150" startPosition="48" endLine="151" endPosition="76" />
-    <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="154" startPosition="48" endLine="155" endPosition="119" />
+    <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="154" startPosition="48" endLine="155" endPosition="121" />
     <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="43" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="109" startPosition="0" endLine="111" endPosition="0" />
     <scopeInfo nodeId="4468328282078607076" fileName="BuildScript_Configuration.java" startLine="113" startPosition="61" endLine="115" endPosition="19">

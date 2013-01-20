@@ -10,6 +10,7 @@ import jetbrains.mps.ide.java.newparser.FeatureKind;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -51,9 +52,9 @@ public class ForeignReferencesConvertor {
         target = null;
     }
     if (target == null) {
-      return new jetbrains.mps.smodel.SNodePointer(modelReference, nodeId);
+      return new SNodePointer(modelReference, nodeId);
     }
-    return new jetbrains.mps.smodel.SNodePointer(target);
+    return new SNodePointer(target);
   }
 
   private SModelDescriptor regularModelReferenceFromForeign(SModelReference foreingModelReference) {

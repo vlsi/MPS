@@ -15,6 +15,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
@@ -122,5 +123,5 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
     return quotedNode_3;
   }
 
-  private static SNodeReference SNODE_POINTER_cwf9bn_a0a0a0a0b0c0a0a0a0a0a0e = new jetbrains.mps.smodel.SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map");
+  private static SNodePointer SNODE_POINTER_cwf9bn_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map");
 }

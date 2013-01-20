@@ -7,8 +7,6 @@ import java.util.Collection;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
-
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import javax.swing.tree.TreePath;
@@ -28,6 +26,7 @@ import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer;
 import java.awt.Color;
 import javax.swing.UIManager;
@@ -239,7 +238,7 @@ import javax.swing.UIManager;
       if (breakpoint instanceof ILocationBreakpoint) {
         SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
         if (node != null) {
-          return new jetbrains.mps.smodel.SNodePointer(node.getContainingRoot());
+          return new SNodePointer(node.getContainingRoot());
         }
       }
       return null;
@@ -247,7 +246,7 @@ import javax.swing.UIManager;
 
     @Override
     public Icon getIcon(SNodeReference group) {
-      return IconManager.getIconFor(group.resolve(MPSModuleRepository.getInstance()));
+      return IconManager.getIconFor(((SNodePointer) group).getNode());
     }
   }
 

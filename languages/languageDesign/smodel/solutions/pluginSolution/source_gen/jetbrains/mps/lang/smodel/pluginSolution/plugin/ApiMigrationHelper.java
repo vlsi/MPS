@@ -42,6 +42,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.refactoring.RefactoringViewItemImpl;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -288,7 +289,7 @@ public class ApiMigrationHelper {
             for (int i = 0; i < ListSequence.fromList(usages).count(); i++) {
               _FunctionTypes._void_P1_E0<? super SNode> transformer = ListSequence.fromList(transformations).getElement(i)._2();
               for (SNode known : SetSequence.fromSet(ListSequence.fromList(usages).getElement(i)._0())) {
-                SNodeReference np = new jetbrains.mps.smodel.SNodePointer(known);
+                SNodeReference np = new SNodePointer(known);
                 if (ListSequence.fromList(included).contains(np)) {
                   transformer.invoke(known);
                 }
@@ -334,7 +335,7 @@ public class ApiMigrationHelper {
   private static SNode _quotation_createNode_yke5lt_a0a0a0f() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNodeReference")));
+    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeReference")));
     return quotedNode_1;
   }
 

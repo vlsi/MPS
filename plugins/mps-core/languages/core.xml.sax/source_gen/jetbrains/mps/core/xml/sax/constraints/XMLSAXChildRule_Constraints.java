@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class XMLSAXChildRule_Constraints extends BaseConstraintsDescriptor {
   public XMLSAXChildRule_Constraints() {
@@ -48,5 +49,5 @@ public class XMLSAXChildRule_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodeReference breakingNode_1y346m_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140793");
+  private static SNodePointer breakingNode_1y346m_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140793");
 }

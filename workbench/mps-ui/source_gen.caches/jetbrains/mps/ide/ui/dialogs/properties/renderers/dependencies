@@ -27,6 +27,7 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="javax.swing.table.TableCellRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer" file="RuleTypeRenderer.java">

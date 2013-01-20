@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
   private JCheckBox myRemoveAttributes;
@@ -123,11 +124,11 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
   }
 
   public static SNodeReference[] toNodePointers(Iterable<SNode> methods) {
-    return Sequence.fromIterable(methods).select(new ISelector<SNode, SNodeReference>() {
-      public SNodeReference select(SNode it) {
-        return new jetbrains.mps.smodel.SNodePointer(it);
+    return Sequence.fromIterable(methods).select(new ISelector<SNode, SNodePointer>() {
+      public SNodePointer select(SNode it) {
+        return new SNodePointer(it);
       }
-    }).toGenericArray(SNodeReference.class);
+    }).toGenericArray(SNodePointer.class);
   }
 
   private static boolean neq_6zqknj_a0d0c0a0a0a0d0l(Object a, Object b) {

@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class DebuggerIsDebugger_ComparisonRule extends ComparisonRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
@@ -86,5 +87,5 @@ public class DebuggerIsDebugger_ComparisonRule extends ComparisonRule_Runtime {
     }
   }
 
-  private static SNodeReference SNODE_POINTER_wcp5kc_a0a0a0a0b0c0a0a0a0a0a0f = new jetbrains.mps.smodel.SNodePointer("r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)", "4474271214082912941");
+  private static SNodePointer SNODE_POINTER_wcp5kc_a0a0a0a0b0c0a0a0a0a0a0f = new SNodePointer("r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)", "4474271214082912941");
 }
