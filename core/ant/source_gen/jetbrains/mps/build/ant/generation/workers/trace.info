@@ -478,103 +478,109 @@
     <unitInfo nodeId="10342590403826361" fileName="ReducedGenerationWorker.java" startLine="56" startPosition="0" endLine="390" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker" />
   </root>
   <root nodeId="4263887295358465244" modelId="r:e26c23c0-c117-4389-8d76-62e09a48aaa5(jetbrains.mps.build.ant.generation.workers)">
-    <nodeInfo nodeId="4263887295358465626" fileName="ChunksGeneratorWorker.java" startLine="25" startPosition="51" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4263887295358465636" fileName="ChunksGeneratorWorker.java" startLine="29" startPosition="79" endLine="30" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4263887295358465647" fileName="ChunksGeneratorWorker.java" startLine="33" startPosition="79" endLine="34" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3643570831018910853" fileName="ChunksGeneratorWorker.java" startLine="38" startPosition="22" endLine="39" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3643570831018893413" fileName="ChunksGeneratorWorker.java" startLine="39" startPosition="57" endLine="40" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3643570831018893579" fileName="ChunksGeneratorWorker.java" startLine="40" startPosition="48" endLine="41" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3643570831018893648" fileName="ChunksGeneratorWorker.java" startLine="42" startPosition="75" endLine="43" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3643570831018893429" fileName="ChunksGeneratorWorker.java" startLine="44" startPosition="5" endLine="45" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3643570831018893399" fileName="ChunksGeneratorWorker.java" startLine="45" startPosition="130" endLine="46" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3643570831018910884" fileName="ChunksGeneratorWorker.java" startLine="46" startPosition="32" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3643570831018878959" fileName="ChunksGeneratorWorker.java" startLine="47" startPosition="0" endLine="48" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4116272686807915079" fileName="ChunksGeneratorWorker.java" startLine="48" startPosition="23" endLine="49" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3643570831018878961" fileName="ChunksGeneratorWorker.java" startLine="49" startPosition="30" endLine="50" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3643570831018879134" fileName="ChunksGeneratorWorker.java" startLine="50" startPosition="34" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3643570831018879102" fileName="ChunksGeneratorWorker.java" startLine="51" startPosition="0" endLine="52" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3643570831018879203" fileName="ChunksGeneratorWorker.java" startLine="52" startPosition="43" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3643570831018883623" fileName="ChunksGeneratorWorker.java" startLine="54" startPosition="95" endLine="55" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3643570831018879048" fileName="ChunksGeneratorWorker.java" startLine="55" startPosition="45" endLine="56" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3643570831018886374" fileName="ChunksGeneratorWorker.java" startLine="57" startPosition="68" endLine="58" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3643570831018883666" fileName="ChunksGeneratorWorker.java" startLine="59" startPosition="7" endLine="60" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3643570831018883688" fileName="ChunksGeneratorWorker.java" startLine="61" startPosition="22" endLine="62" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3643570831018879089" fileName="ChunksGeneratorWorker.java" startLine="63" startPosition="7" endLine="64" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4116272686807915086" fileName="ChunksGeneratorWorker.java" startLine="65" startPosition="39" endLine="66" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3643570831018879110" fileName="ChunksGeneratorWorker.java" startLine="66" startPosition="30" endLine="67" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3643570831019172370" fileName="ChunksGeneratorWorker.java" startLine="67" startPosition="29" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3643570831018879073" fileName="ChunksGeneratorWorker.java" startLine="70" startPosition="29" endLine="71" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3643570831018879150" fileName="ChunksGeneratorWorker.java" startLine="75" startPosition="5" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3643570831018879119" fileName="ChunksGeneratorWorker.java" startLine="77" startPosition="27" endLine="78" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3643570831018879126" fileName="ChunksGeneratorWorker.java" startLine="79" startPosition="5" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3643570831018879127" fileName="ChunksGeneratorWorker.java" startLine="80" startPosition="0" endLine="81" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3643570831018879129" fileName="ChunksGeneratorWorker.java" startLine="81" startPosition="14" endLine="82" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4263887295358465603" fileName="ChunksGeneratorWorker.java" startLine="85" startPosition="42" endLine="86" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4263887295358465616" fileName="ChunksGeneratorWorker.java" startLine="86" startPosition="129" endLine="87" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4263887295358465620" fileName="ChunksGeneratorWorker.java" startLine="24" startPosition="60" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChunksGeneratorWorker#(Ljetbrains/mps/build/ant/WhatToDo;)V" />
-    <nodeInfo nodeId="4263887295358465628" fileName="ChunksGeneratorWorker.java" startLine="28" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChunksGeneratorWorker#(Ljetbrains/mps/build/ant/WhatToDo;Lorg/apache/tools/ant/ProjectComponent;)V" />
-    <nodeInfo nodeId="4263887295358465639" fileName="ChunksGeneratorWorker.java" startLine="32" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChunksGeneratorWorker#(Ljetbrains/mps/build/ant/WhatToDo;Ljetbrains/mps/build/ant/MpsWorker/AntLogger;)V" />
-    <nodeInfo nodeId="3643570831018893639" fileName="ChunksGeneratorWorker.java" startLine="41" startPosition="112" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3643570831018883792" fileName="ChunksGeneratorWorker.java" startLine="56" startPosition="68" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3643570831018883680" fileName="ChunksGeneratorWorker.java" startLine="60" startPosition="40" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3643570831018879114" fileName="ChunksGeneratorWorker.java" startLine="76" startPosition="0" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3643570831019172375" fileName="ChunksGeneratorWorker.java" startLine="69" startPosition="62" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3643570831019172374" fileName="ChunksGeneratorWorker.java" startLine="68" startPosition="0" endLine="73" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4263887295358465596" fileName="ChunksGeneratorWorker.java" startLine="84" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3643570831018879097" fileName="ChunksGeneratorWorker.java" startLine="64" startPosition="124" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3643570831018883554" fileName="ChunksGeneratorWorker.java" startLine="53" startPosition="0" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3643570831018878886" fileName="ChunksGeneratorWorker.java" startLine="36" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="work#()V" />
-    <scopeInfo nodeId="4263887295358465625" fileName="ChunksGeneratorWorker.java" startLine="25" startPosition="51" endLine="26" endPosition="20" />
-    <scopeInfo nodeId="4263887295358465635" fileName="ChunksGeneratorWorker.java" startLine="29" startPosition="79" endLine="30" endPosition="31" />
-    <scopeInfo nodeId="4263887295358465646" fileName="ChunksGeneratorWorker.java" startLine="33" startPosition="79" endLine="34" endPosition="28" />
-    <scopeInfo nodeId="3643570831018893642" fileName="ChunksGeneratorWorker.java" startLine="42" startPosition="75" endLine="43" endPosition="61" />
-    <scopeInfo nodeId="3643570831018883795" fileName="ChunksGeneratorWorker.java" startLine="57" startPosition="68" endLine="58" endPosition="57" />
-    <scopeInfo nodeId="3643570831018883681" fileName="ChunksGeneratorWorker.java" startLine="61" startPosition="22" endLine="62" endPosition="92" />
-    <scopeInfo nodeId="3643570831019172376" fileName="ChunksGeneratorWorker.java" startLine="70" startPosition="29" endLine="71" endPosition="83" />
-    <scopeInfo nodeId="3643570831018879117" fileName="ChunksGeneratorWorker.java" startLine="77" startPosition="27" endLine="78" endPosition="52" />
-    <scopeInfo nodeId="4263887295358465602" fileName="ChunksGeneratorWorker.java" startLine="85" startPosition="42" endLine="87" endPosition="29">
+    <nodeInfo nodeId="4263887295358465626" fileName="ChunksGeneratorWorker.java" startLine="26" startPosition="51" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4263887295358465636" fileName="ChunksGeneratorWorker.java" startLine="30" startPosition="79" endLine="31" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4263887295358465647" fileName="ChunksGeneratorWorker.java" startLine="34" startPosition="79" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3643570831018910853" fileName="ChunksGeneratorWorker.java" startLine="39" startPosition="22" endLine="40" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3643570831018893413" fileName="ChunksGeneratorWorker.java" startLine="40" startPosition="57" endLine="41" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3643570831018893579" fileName="ChunksGeneratorWorker.java" startLine="41" startPosition="48" endLine="42" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3643570831018893648" fileName="ChunksGeneratorWorker.java" startLine="43" startPosition="75" endLine="44" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6847223228477662846" fileName="ChunksGeneratorWorker.java" startLine="46" startPosition="101" endLine="47" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3643570831018893429" fileName="ChunksGeneratorWorker.java" startLine="48" startPosition="5" endLine="49" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3643570831018893399" fileName="ChunksGeneratorWorker.java" startLine="49" startPosition="130" endLine="50" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3643570831018910884" fileName="ChunksGeneratorWorker.java" startLine="50" startPosition="32" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3643570831018878959" fileName="ChunksGeneratorWorker.java" startLine="51" startPosition="0" endLine="52" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4116272686807915079" fileName="ChunksGeneratorWorker.java" startLine="52" startPosition="23" endLine="53" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3643570831018878961" fileName="ChunksGeneratorWorker.java" startLine="53" startPosition="30" endLine="54" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3643570831018879134" fileName="ChunksGeneratorWorker.java" startLine="54" startPosition="34" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3643570831018879102" fileName="ChunksGeneratorWorker.java" startLine="55" startPosition="0" endLine="56" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3643570831018879203" fileName="ChunksGeneratorWorker.java" startLine="56" startPosition="43" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3643570831018883623" fileName="ChunksGeneratorWorker.java" startLine="58" startPosition="95" endLine="59" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3643570831018879048" fileName="ChunksGeneratorWorker.java" startLine="59" startPosition="45" endLine="60" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3643570831018886374" fileName="ChunksGeneratorWorker.java" startLine="61" startPosition="68" endLine="62" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3643570831018883666" fileName="ChunksGeneratorWorker.java" startLine="63" startPosition="7" endLine="64" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3643570831018883688" fileName="ChunksGeneratorWorker.java" startLine="65" startPosition="22" endLine="66" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3643570831018879089" fileName="ChunksGeneratorWorker.java" startLine="67" startPosition="7" endLine="68" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4116272686807915086" fileName="ChunksGeneratorWorker.java" startLine="69" startPosition="39" endLine="70" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3643570831018879110" fileName="ChunksGeneratorWorker.java" startLine="70" startPosition="30" endLine="71" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3643570831019172370" fileName="ChunksGeneratorWorker.java" startLine="71" startPosition="29" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3643570831018879073" fileName="ChunksGeneratorWorker.java" startLine="74" startPosition="29" endLine="75" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3643570831018879150" fileName="ChunksGeneratorWorker.java" startLine="79" startPosition="5" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3643570831018879119" fileName="ChunksGeneratorWorker.java" startLine="81" startPosition="27" endLine="82" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3643570831018879126" fileName="ChunksGeneratorWorker.java" startLine="83" startPosition="5" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3643570831018879127" fileName="ChunksGeneratorWorker.java" startLine="84" startPosition="0" endLine="85" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3643570831018879129" fileName="ChunksGeneratorWorker.java" startLine="85" startPosition="14" endLine="86" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4263887295358465603" fileName="ChunksGeneratorWorker.java" startLine="89" startPosition="42" endLine="90" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4263887295358465616" fileName="ChunksGeneratorWorker.java" startLine="90" startPosition="129" endLine="91" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4263887295358465620" fileName="ChunksGeneratorWorker.java" startLine="25" startPosition="60" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChunksGeneratorWorker#(Ljetbrains/mps/build/ant/WhatToDo;)V" />
+    <nodeInfo nodeId="4263887295358465628" fileName="ChunksGeneratorWorker.java" startLine="29" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChunksGeneratorWorker#(Ljetbrains/mps/build/ant/WhatToDo;Lorg/apache/tools/ant/ProjectComponent;)V" />
+    <nodeInfo nodeId="4263887295358465639" fileName="ChunksGeneratorWorker.java" startLine="33" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChunksGeneratorWorker#(Ljetbrains/mps/build/ant/WhatToDo;Ljetbrains/mps/build/ant/MpsWorker/AntLogger;)V" />
+    <nodeInfo nodeId="3643570831018893639" fileName="ChunksGeneratorWorker.java" startLine="42" startPosition="112" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6847223228477662778" fileName="ChunksGeneratorWorker.java" startLine="45" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3643570831018883792" fileName="ChunksGeneratorWorker.java" startLine="60" startPosition="68" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3643570831018883680" fileName="ChunksGeneratorWorker.java" startLine="64" startPosition="40" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3643570831018879114" fileName="ChunksGeneratorWorker.java" startLine="80" startPosition="0" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3643570831019172375" fileName="ChunksGeneratorWorker.java" startLine="73" startPosition="62" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3643570831019172374" fileName="ChunksGeneratorWorker.java" startLine="72" startPosition="0" endLine="77" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4263887295358465596" fileName="ChunksGeneratorWorker.java" startLine="88" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3643570831018879097" fileName="ChunksGeneratorWorker.java" startLine="68" startPosition="124" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3643570831018883554" fileName="ChunksGeneratorWorker.java" startLine="57" startPosition="0" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3643570831018878886" fileName="ChunksGeneratorWorker.java" startLine="37" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="work#()V" />
+    <scopeInfo nodeId="4263887295358465625" fileName="ChunksGeneratorWorker.java" startLine="26" startPosition="51" endLine="27" endPosition="20" />
+    <scopeInfo nodeId="4263887295358465635" fileName="ChunksGeneratorWorker.java" startLine="30" startPosition="79" endLine="31" endPosition="31" />
+    <scopeInfo nodeId="4263887295358465646" fileName="ChunksGeneratorWorker.java" startLine="34" startPosition="79" endLine="35" endPosition="28" />
+    <scopeInfo nodeId="3643570831018893642" fileName="ChunksGeneratorWorker.java" startLine="43" startPosition="75" endLine="44" endPosition="61" />
+    <scopeInfo nodeId="6847223228477662781" fileName="ChunksGeneratorWorker.java" startLine="46" startPosition="101" endLine="47" endPosition="75" />
+    <scopeInfo nodeId="3643570831018883795" fileName="ChunksGeneratorWorker.java" startLine="61" startPosition="68" endLine="62" endPosition="57" />
+    <scopeInfo nodeId="3643570831018883681" fileName="ChunksGeneratorWorker.java" startLine="65" startPosition="22" endLine="66" endPosition="92" />
+    <scopeInfo nodeId="3643570831019172376" fileName="ChunksGeneratorWorker.java" startLine="74" startPosition="29" endLine="75" endPosition="83" />
+    <scopeInfo nodeId="3643570831018879117" fileName="ChunksGeneratorWorker.java" startLine="81" startPosition="27" endLine="82" endPosition="52" />
+    <scopeInfo nodeId="4263887295358465602" fileName="ChunksGeneratorWorker.java" startLine="89" startPosition="42" endLine="91" endPosition="29">
       <varInfo nodeId="4263887295358465604" varName="mpsWorker" />
     </scopeInfo>
-    <scopeInfo nodeId="4263887295358465620" fileName="ChunksGeneratorWorker.java" startLine="24" startPosition="60" endLine="27" endPosition="3">
+    <scopeInfo nodeId="4263887295358465620" fileName="ChunksGeneratorWorker.java" startLine="25" startPosition="60" endLine="28" endPosition="3">
       <varInfo nodeId="4263887295358465623" varName="whatToDo" />
     </scopeInfo>
-    <scopeInfo nodeId="4263887295358465628" fileName="ChunksGeneratorWorker.java" startLine="28" startPosition="0" endLine="31" endPosition="3">
+    <scopeInfo nodeId="4263887295358465628" fileName="ChunksGeneratorWorker.java" startLine="29" startPosition="0" endLine="32" endPosition="3">
       <varInfo nodeId="4263887295358465633" varName="component" />
       <varInfo nodeId="4263887295358465631" varName="whatToDo" />
     </scopeInfo>
-    <scopeInfo nodeId="4263887295358465639" fileName="ChunksGeneratorWorker.java" startLine="32" startPosition="0" endLine="35" endPosition="3">
+    <scopeInfo nodeId="4263887295358465639" fileName="ChunksGeneratorWorker.java" startLine="33" startPosition="0" endLine="36" endPosition="3">
       <varInfo nodeId="4263887295358465644" varName="logger" />
       <varInfo nodeId="4263887295358465642" varName="whatToDo" />
     </scopeInfo>
-    <scopeInfo nodeId="3643570831018893639" fileName="ChunksGeneratorWorker.java" startLine="41" startPosition="112" endLine="44" endPosition="5">
+    <scopeInfo nodeId="3643570831018893639" fileName="ChunksGeneratorWorker.java" startLine="42" startPosition="112" endLine="45" endPosition="5">
       <varInfo nodeId="3643570831018893639" varName="jar" />
     </scopeInfo>
-    <scopeInfo nodeId="3643570831018883792" fileName="ChunksGeneratorWorker.java" startLine="56" startPosition="68" endLine="59" endPosition="7">
+    <scopeInfo nodeId="6847223228477662778" fileName="ChunksGeneratorWorker.java" startLine="45" startPosition="5" endLine="48" endPosition="5">
+      <varInfo nodeId="6847223228477662778" varName="entry" />
+    </scopeInfo>
+    <scopeInfo nodeId="3643570831018883792" fileName="ChunksGeneratorWorker.java" startLine="60" startPosition="68" endLine="63" endPosition="7">
       <varInfo nodeId="3643570831018883792" varName="modulePath" />
     </scopeInfo>
-    <scopeInfo nodeId="3643570831019172375" fileName="ChunksGeneratorWorker.java" startLine="69" startPosition="62" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="4263887295358465596" fileName="ChunksGeneratorWorker.java" startLine="84" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="3643570831019172375" fileName="ChunksGeneratorWorker.java" startLine="73" startPosition="62" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="4263887295358465596" fileName="ChunksGeneratorWorker.java" startLine="88" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="4263887295358465599" varName="args" />
     </scopeInfo>
-    <scopeInfo nodeId="3643570831018879101" fileName="ChunksGeneratorWorker.java" startLine="65" startPosition="39" endLine="73" endPosition="11" />
-    <scopeInfo nodeId="3643570831018883557" fileName="ChunksGeneratorWorker.java" startLine="54" startPosition="95" endLine="74" endPosition="7">
+    <scopeInfo nodeId="3643570831018879101" fileName="ChunksGeneratorWorker.java" startLine="69" startPosition="39" endLine="77" endPosition="11" />
+    <scopeInfo nodeId="3643570831018883557" fileName="ChunksGeneratorWorker.java" startLine="58" startPosition="95" endLine="78" endPosition="7">
       <varInfo nodeId="3643570831018883667" varName="bootstrap" />
       <varInfo nodeId="3643570831018879090" varName="go" />
       <varInfo nodeId="3643570831018883624" varName="modulePaths" />
       <varInfo nodeId="3643570831018879049" varName="modules" />
     </scopeInfo>
-    <scopeInfo nodeId="3643570831018883554" fileName="ChunksGeneratorWorker.java" startLine="53" startPosition="0" endLine="75" endPosition="5">
+    <scopeInfo nodeId="3643570831018883554" fileName="ChunksGeneratorWorker.java" startLine="57" startPosition="0" endLine="79" endPosition="5">
       <varInfo nodeId="3643570831018883554" varName="chunk" />
     </scopeInfo>
-    <scopeInfo nodeId="3643570831018878889" fileName="ChunksGeneratorWorker.java" startLine="38" startPosition="22" endLine="82" endPosition="20">
+    <scopeInfo nodeId="3643570831018878889" fileName="ChunksGeneratorWorker.java" startLine="39" startPosition="22" endLine="86" endPosition="20">
       <varInfo nodeId="3643570831018878962" varName="doneSomething" />
       <varInfo nodeId="3643570831018893414" varName="environment" />
       <varInfo nodeId="3643570831018893580" varName="libraries" />
       <varInfo nodeId="3643570831018879103" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="3643570831018878886" fileName="ChunksGeneratorWorker.java" startLine="36" startPosition="0" endLine="84" endPosition="0" />
-    <unitInfo nodeId="3643570831019172375" fileName="ChunksGeneratorWorker.java" startLine="69" startPosition="50" endLine="73" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.ChunksGeneratorWorker$1" />
-    <unitInfo nodeId="4263887295358465244" fileName="ChunksGeneratorWorker.java" startLine="24" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.ChunksGeneratorWorker" />
+    <scopeInfo nodeId="3643570831018878886" fileName="ChunksGeneratorWorker.java" startLine="37" startPosition="0" endLine="88" endPosition="0" />
+    <unitInfo nodeId="3643570831019172375" fileName="ChunksGeneratorWorker.java" startLine="73" startPosition="50" endLine="77" endPosition="9" unitName="jetbrains.mps.build.ant.generation.workers.ChunksGeneratorWorker$1" />
+    <unitInfo nodeId="4263887295358465244" fileName="ChunksGeneratorWorker.java" startLine="25" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.ChunksGeneratorWorker" />
   </root>
   <root nodeId="7795897115019498548" modelId="r:e26c23c0-c117-4389-8d76-62e09a48aaa5(jetbrains.mps.build.ant.generation.workers)">
     <nodeInfo nodeId="7795897115019498680" fileName="GeneratorWorker.java" startLine="53" startPosition="48" endLine="54" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageHandler" />

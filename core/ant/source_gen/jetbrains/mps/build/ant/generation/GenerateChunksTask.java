@@ -73,10 +73,12 @@ public class GenerateChunksTask extends MpsLoadTask {
     if ((mpsHome != null && mpsHome.length() > 0)) {
       // buildMPS 
       gatherAllClassesAndJarsUnder(new File(mpsHome, "lib"), classPath);
+      myWhatToDo.addLibrary("devkits", new File(mpsHome, "languages/devkits"), false);
     } else if ((pluginHome != null && pluginHome.length() > 0) && (ideaHome != null && ideaHome.length() > 0)) {
       // buildPlugin + IDEA 
       gatherAllClassesAndJarsUnder(new File(ideaHome, "lib"), classPath);
       gatherAllClassesAndJarsUnder(new File(pluginHome, "mps-core/lib"), classPath);
+      myWhatToDo.addLibrary("devkits", new File(pluginHome, "mps-core/languages/devkits"), false);
     } else if ((mpsCoreHome != null && mpsCoreHome.length() > 0) && (ideaHome != null && ideaHome.length() > 0)) {
       // buildCore + IDEA (in 2.5 this is in our scripts only) 
       gatherAllClassesAndJarsUnder(new File(ideaHome, "lib"), classPath);
@@ -84,6 +86,7 @@ public class GenerateChunksTask extends MpsLoadTask {
       if ((mpsWorkbenchHome != null && mpsWorkbenchHome.length() > 0)) {
         gatherAllClassesAndJarsUnder(new File(mpsWorkbenchHome, "lib"), classPath);
       }
+      myWhatToDo.addLibrary(new File(mpsCoreHome, "mps-core/languages/devkits").getAbsolutePath(), new File(mpsCoreHome, "mps-core/languages/devkits"), false);
     } else {
       throw new BuildException("Dependency on MPS build scripts is required to generate MPS modules.");
     }

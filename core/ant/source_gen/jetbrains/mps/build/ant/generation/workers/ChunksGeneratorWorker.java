@@ -11,6 +11,7 @@ import java.io.File;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.List;
@@ -41,6 +42,9 @@ public class ChunksGeneratorWorker extends GeneratorWorker {
     Map<String, File> libraries = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
     for (String jar : ListSequence.fromList(myWhatToDo.getLibraryJars())) {
       MapSequence.fromMap(libraries).put(jar, new File(jar));
+    }
+    for (Map.Entry<String, File> entry : SetSequence.fromSet(myWhatToDo.getLibraries().entrySet())) {
+      MapSequence.fromMap(libraries).put(entry.getKey(), entry.getValue());
     }
     environment.init(myWhatToDo.getMacro(), false, libraries, myWhatToDo.getLogLevel(), new MpsWorker.MyMessageHandlerAppender());
     setEnvironment(environment);
