@@ -59,8 +59,7 @@ public class ChunksGeneratorWorker extends GeneratorWorker {
       }
       Boolean bootstrap = chunk.value();
       if (bootstrap) {
-        warning("Skipping bootstrap chunk " + chunk.key());
-        continue;
+        warning("Found bootstrap chunk " + chunk.key() + ". Generation may be impossible.");
       }
       MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, Collections.EMPTY_SET);
       if (go.hasAnythingToGenerate()) {
