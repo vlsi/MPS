@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
@@ -130,7 +131,7 @@ public class DefaultCellInfo implements CellInfo {
           if (editorComponent.getEditedNode() != null &&
             EqualUtil.equals(myNodePointer.getModelReference(),
               editorComponent.getEditedNode().getModel().getSModelReference())) {
-            node = editorComponent.getEditedNode().getModel().getNodeById(myNodePointer.getNodeId());
+            node = editorComponent.getEditedNode().getModel().getNodeById(((SNodePointer) myNodePointer).getNodeId());
           } else {
             node = myNodePointer.resolve(MPSModuleRepository.getInstance());
           }

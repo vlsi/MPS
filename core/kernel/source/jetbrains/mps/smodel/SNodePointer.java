@@ -21,22 +21,22 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-public class SNodeReference implements SNodeReference {
+public class SNodePointer implements SNodeReference {
   private SModelReference myModelReference;
   private SNodeId myNodeId;
 
-  public SNodeReference(String modelUID, String nodeId) {
+  public SNodePointer(String modelUID, String nodeId) {
     this(SModelReference.fromString(modelUID), jetbrains.mps.smodel.SNodeId.fromString(nodeId));
   }
 
-  public SNodeReference(SNode node) {
+  public SNodePointer(SNode node) {
     if (node == null) return;
     SModel model = node.getModel();
     myModelReference = model.getSModelReference();
     myNodeId = node.getNodeId();
   }
 
-  public SNodeReference(SModelReference modelReference, SNodeId nodeId) {
+  public SNodePointer(SModelReference modelReference, SNodeId nodeId) {
     myModelReference = modelReference;
     myNodeId = nodeId;
   }
@@ -76,9 +76,9 @@ public class SNodeReference implements SNodeReference {
 
   public boolean equals(Object o) {
     if (this == o) return true;
-    if (o == null || !(o instanceof SNodeReference)) return false;
+    if (o == null || !(o instanceof SNodePointer)) return false;
 
-    SNodeReference np = (SNodeReference) o;
+    SNodePointer np = (SNodePointer) o;
     return EqualUtil.equals(myModelReference, np.myModelReference) && EqualUtil.equals(myNodeId, np.myNodeId);
   }
 
@@ -94,8 +94,9 @@ public class SNodeReference implements SNodeReference {
   }
 
   public static String serialize(SNodeReference p) {
-    SModelReference ref = p.myModelReference;
-    SNodeId id = p.myNodeId;
+    SNodePointer np = (SNodePointer) p;
+    SModelReference ref = np.myModelReference;
+    SNodeId id = np.myNodeId;
 
     assert ref != null && id != null;
 

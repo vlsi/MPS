@@ -4,6 +4,8 @@ package jetbrains.mps.refactoring;
 
 import jetbrains.mps.smodel.SModel;
 import java.util.Map;
+
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import jetbrains.mps.smodel.StaticReference;
@@ -89,7 +91,7 @@ public class ModelLinkMap {
     res |= move(myTargetMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<StaticReference>() {
       public void invoke(StaticReference ref) {
         ref.setTargetSModelReference(newPtr.getModelReference());
-        ref.setTargetNodeId(newPtr.getNodeId());
+        ref.setTargetNodeId(((SNodePointer) newPtr).getNodeId());
       }
     });
     res |= move(myNodeTypeMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<SNode>() {
@@ -333,7 +335,7 @@ public class ModelLinkMap {
     }).toListSequence();
     for (SNodeReference ptr : ListSequence.fromList(ptrList)) {
       List<T> list = MapSequence.fromMap(map).removeKey(ptr);
-      MapSequence.fromMap(map).put(new jetbrains.mps.smodel.SNodePointer(newModel, ptr.getNodeId()), list);
+      MapSequence.fromMap(map).put(new jetbrains.mps.smodel.SNodePointer(newModel, ((SNodePointer) ptr).getNodeId()), list);
     }
   }
 

@@ -9,6 +9,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -85,7 +87,7 @@ public class WriteHelper {
   public String genReferenceId(@Nullable SNodeReference pointer) {
     return (pointer == null ?
       null :
-      genReferenceString(pointer.getModelReference(), pointer.getNodeId().toString())
+      genReferenceString(pointer.getModelReference(), ((SNodePointer) pointer).getNodeId().toString())
     );
   }
 

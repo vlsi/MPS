@@ -6,6 +6,7 @@ import com.intellij.openapi.components.AbstractProjectComponent;
 import java.util.Map;
 
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -96,7 +97,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
           List<ModelChange> modelChanges = check_onkh7z_a0d0b0a0a0a0j(diff.getChangeSet());
           List<ModelChange> rootChanges = ListSequence.fromList(modelChanges).where(new IWhereFilter<ModelChange>() {
             public boolean accept(ModelChange ch) {
-              return root.getNodeId().equals(ch.getRootId());
+              return ((SNodePointer) root).getNodeId().equals(ch.getRootId());
             }
           }).toListSequence();
           if (ListSequence.fromList(rootChanges).count() != 0) {
