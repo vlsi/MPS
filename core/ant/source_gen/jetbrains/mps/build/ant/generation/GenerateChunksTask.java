@@ -68,6 +68,7 @@ public class GenerateChunksTask extends MpsLoadTask {
     String pluginHome = getProject().getProperty("artifacts.buildPlugin");
     String ideaHome = getProject().getProperty("artifacts.IDEA");
     String mpsCoreHome = getProject().getProperty("artifacts.buildCore");
+    String mpsWorkbenchHome = getProject().getProperty("artifacts.buildWorkbench");
 
     if ((mpsHome != null && mpsHome.length() > 0)) {
       // buildMPS 
@@ -75,13 +76,14 @@ public class GenerateChunksTask extends MpsLoadTask {
     } else if ((pluginHome != null && pluginHome.length() > 0) && (ideaHome != null && ideaHome.length() > 0)) {
       // buildPlugin + IDEA 
       gatherAllClassesAndJarsUnder(new File(ideaHome, "lib"), classPath);
-      // todo: plugin layout! 
       gatherAllClassesAndJarsUnder(new File(pluginHome, "mps-core/lib"), classPath);
     } else if ((mpsCoreHome != null && mpsCoreHome.length() > 0) && (ideaHome != null && ideaHome.length() > 0)) {
       // buildCore + IDEA (in 2.5 this is in our scripts only) 
-      // todo: layout! 
-      gatherAllClassesAndJarsUnder(new File(mpsCoreHome, "mps-core/lib"), classPath);
       gatherAllClassesAndJarsUnder(new File(ideaHome, "lib"), classPath);
+      gatherAllClassesAndJarsUnder(new File(mpsCoreHome, "mps-core/lib"), classPath);
+      if ((mpsWorkbenchHome != null && mpsWorkbenchHome.length() > 0)) {
+        gatherAllClassesAndJarsUnder(new File(mpsWorkbenchHome, "lib"), classPath);
+      }
     } else {
       throw new BuildException("Dependency on MPS build scripts is required to generate MPS modules.");
     }
