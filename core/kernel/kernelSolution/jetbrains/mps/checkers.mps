@@ -671,7 +671,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8887378328853538111" resolveInfo="checkingNodeContext" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8887378328853569032">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~CheckingNodeContext%dgetBreakingNode()%cjetbrains%dmps%dsmodel%dSNodePointer" resolveInfo="getBreakingNode" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~CheckingNodeContext%dgetBreakingNode()%corg%djetbrains%dmps%dopenapi%dmodel%dSNodeReference" resolveInfo="getBreakingNode" />
               </node>
             </node>
           </node>
@@ -719,7 +719,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8887378328853538111" resolveInfo="checkingNodeContext" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8887378328853569066">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~CheckingNodeContext%dsetBreakingNode(jetbrains%dmps%dsmodel%dSNodePointer)%cvoid" resolveInfo="setBreakingNode" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~CheckingNodeContext%dsetBreakingNode(org%djetbrains%dmps%dopenapi%dmodel%dSNodeReference)%cvoid" resolveInfo="setBreakingNode" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="8887378328853569067" />
                   </node>
                 </node>
@@ -4670,7 +4670,7 @@
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5452980714151365159" resolveInfo="scopeProvider" />
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2774990161568292700">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~ReferenceScopeProvider%dgetSearchScopeValidatorNode()%cjetbrains%dmps%dsmodel%dSNodePointer" resolveInfo="getSearchScopeValidatorNode" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~ReferenceScopeProvider%dgetSearchScopeValidatorNode()%corg%djetbrains%dmps%dopenapi%dmodel%dSNodeReference" resolveInfo="getSearchScopeValidatorNode" />
                                     </node>
                                   </node>
                                 </node>
@@ -4687,7 +4687,7 @@
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5452980714151365159" resolveInfo="scopeProvider" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1945570412226687513">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~ReferenceScopeProvider%dgetSearchScopeValidatorNode()%cjetbrains%dmps%dsmodel%dSNodePointer" resolveInfo="getSearchScopeValidatorNode" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fwv2.~ReferenceScopeProvider%dgetSearchScopeValidatorNode()%corg%djetbrains%dmps%dopenapi%dmodel%dSNodeReference" resolveInfo="getSearchScopeValidatorNode" />
                                 </node>
                               </node>
                             </node>
