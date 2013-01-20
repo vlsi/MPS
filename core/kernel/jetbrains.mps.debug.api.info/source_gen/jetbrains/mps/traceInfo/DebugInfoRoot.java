@@ -6,8 +6,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.TreeSet;
 import java.util.HashSet;
-
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -80,7 +78,7 @@ public class DebugInfoRoot {
   }
 
   public SNode findNode(@NonNls String nodeId) {
-    return new SNodePointer(((SModelReference) myNodeRef.getModelReference()), SNodeId.fromString(nodeId)).resolve(MPSModuleRepository.getInstance());
+    return new SNodePointer(((SModelReference) myNodeRef.getModelReference()), SNodeId.fromString(nodeId)).getNode();
   }
 
   /*package*/ void toXml(Element container) {

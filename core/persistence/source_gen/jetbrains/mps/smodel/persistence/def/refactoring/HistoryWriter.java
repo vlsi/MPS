@@ -71,7 +71,7 @@ public class HistoryWriter {
   }
 
   private String genId(SNodePointer ptr) {
-    return myHelper.genReferenceId(ptr.getModelReference(), ptr.getNodeId());
+    return myHelper.genReferenceId(ptr);
   }
 
   public Element saveData(StructureModification.Entry data) {

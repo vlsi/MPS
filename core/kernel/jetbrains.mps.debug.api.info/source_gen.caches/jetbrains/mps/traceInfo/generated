@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="co4s8piz9dzzapbye1azxp0x75ga4hr">
+<dependencies version="2" modelHash="-eeb0hrql2sl7brwbjuwudi86nsco4lh">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -74,7 +74,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DebugInfoRoot.java" />
   </source>
-  <source id="2897370900776712137" name="DebugInfo" hash="-sdmcxzm9qcnioxeqt658c2db2i3qkp">
+  <source id="2897370900776712137" name="DebugInfo" hash="5qnk5nq322jiqfpkipfi61tp457v275">
     <dep root="2897370900776710930" />
     <dep root="2897370900776711484" />
     <dep root="2897370900776711721" />

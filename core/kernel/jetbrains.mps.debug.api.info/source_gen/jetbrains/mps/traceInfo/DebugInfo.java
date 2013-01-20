@@ -247,7 +247,7 @@ public class DebugInfo {
     if (myRoots != null) {
       Iterable<SNodeReference> sorted = SetSequence.fromSet(MapSequence.fromMap(myRoots).keySet()).sort(new ISelector<SNodeReference, String>() {
         public String select(SNodeReference it) {
-          return ((SNodePointer) it).getNodeId().toString();
+          return SNodePointer.serialize(((SNodePointer) it));
         }
       }, true);
       for (SNodeReference id : sorted) {

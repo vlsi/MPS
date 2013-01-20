@@ -14,7 +14,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.smodel.SReference;
@@ -82,16 +81,11 @@ public class WriteHelper {
     return new StringBuilder().append(index).append(MODEL_SEPARATOR_CHAR).append(name).toString();
   }
 
-  @NotNull
-  public String genReferenceId(@NotNull SModelReference ref, @NotNull SNodeId nodeId) {
-    return genReferenceString(ref, nodeId.toString());
-  }
-
   @Nullable
-  private String genReferenceId(@Nullable SNodePointer pointer) {
+  public String genReferenceId(@Nullable SNodePointer pointer) {
     return (pointer == null ?
       null :
-      genReferenceId(pointer.getModelReference(), pointer.getNodeId())
+      genReferenceString(pointer.getModelReference(), pointer.getNodeId().toString())
     );
   }
 
@@ -99,7 +93,7 @@ public class WriteHelper {
   private String genReferenceId(@Nullable SNode node) {
     return ((node == null) ?
       null :
-      genReferenceId(SNodeOperations.getModel(node).getSModelReference(), node.getNodeId())
+      genReferenceId(node.getReference())
     );
   }
 

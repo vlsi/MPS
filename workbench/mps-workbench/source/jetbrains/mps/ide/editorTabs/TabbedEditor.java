@@ -15,7 +15,13 @@
  */
 package jetbrains.mps.ide.editorTabs;
 
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.IdeActions;
+import com.intellij.openapi.actionSystem.LangDataKeys;
+import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
@@ -38,8 +44,14 @@ import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.util.EqualUtil;
@@ -48,13 +60,14 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
 import java.util.List;
 import java.util.Set;
 
-public class TabbedEditor extends BaseNodeEditor{
+public class TabbedEditor extends BaseNodeEditor {
   private TabsComponent myTabsComponent;
   private SModelListener myModelListener = new MyNameListener();
   private SNodePointer myBaseNode;
@@ -198,7 +211,7 @@ public class TabbedEditor extends BaseNodeEditor{
 
       model.addModelListener(myModelListener);
 
-      if (ModelAccess.instance().isInEDT()){
+      if (ModelAccess.instance().isInEDT()) {
         updateProperties();
       } else {
         ModelAccess.instance().runReadInEDT(new Runnable() {
@@ -299,16 +312,15 @@ public class TabbedEditor extends BaseNodeEditor{
 
   public static class TabbedEditorState extends BaseEditorState implements EditorState {
     private static final String NODE = "node";
-    private static final String NODE_ID = "nodeId";
-    private static final String MODEL_ID = "modelId";
+    private static final String NODE_REF = "node_ref";
+
 
     private SNodePointer myCurrentNode;
 
     public void save(Element e) {
       super.save(e);
       Element node = new Element(NODE);
-      node.setAttribute(NODE_ID, myCurrentNode.getNodeId().toString());
-      node.setAttribute(MODEL_ID, myCurrentNode.getModelReference().toString());
+      node.setAttribute(NODE_REF, SNodePointer.serialize(myCurrentNode));
       e.addContent(node);
     }
 
@@ -316,9 +328,15 @@ public class TabbedEditor extends BaseNodeEditor{
       super.load(e);
       Element nodeElem = e.getChild(NODE);
 
-      String nodeId = nodeElem.getAttributeValue(NODE_ID);
-      String modelId = nodeElem.getAttributeValue(MODEL_ID);
-      myCurrentNode = new SNodePointer(modelId, nodeId);
+      String val = nodeElem.getAttributeValue(NODE_REF);
+      if (val != null) {
+        myCurrentNode = SNodePointer.deserialize(val);
+      } else {
+        //todo remove after 3.0
+        String nodeId = nodeElem.getAttributeValue("nodeId");
+        String modelId = nodeElem.getAttributeValue("modelId");
+        myCurrentNode = new SNodePointer(modelId, nodeId);
+      }
     }
 
     public int hashCode() {

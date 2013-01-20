@@ -90,7 +90,7 @@ public class NodeNodeData extends BaseNodeData {
   }
 
   public Object getIdObject() {
-    return isResultNode() ? (getNodePointer().getModelReference() + "/" + getNodePointer().getNodeId() + "/" + getPlainText()) : getNode();
+    return isResultNode() ? (SNodePointer.serialize(getNodePointer()) + "/" + getPlainText()) : getNode();
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {

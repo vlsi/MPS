@@ -28,15 +28,19 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable {
   private static final String ELEMENT_FAVORITES_LIST = "favorites_list";
   private static final String FAVORITES_ROOT = "favorite_root";
   private static final String ATTRIBUTE_NAME = "name";
   private static final String MODULE_REFERENCE = "module_ref";
-  private static final String SMODEL_REFERENCE = "model_ref";
-  private static final String SNODE_POINTER = "node_pointer";
+  private static final String SNODE_REFERENCE = "node_ref";
   private final Map<String, List<Object>> myName2FavoritesRoots = new LinkedHashMap<String, List<Object>>();
   private final Project myProject;
   private List<MPSFavoritesListener> myListeners = new ArrayList<MPSFavoritesListener>();
@@ -57,13 +61,12 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
     for (Object root : roots) {
       final Element favoriteRoot = new Element(FAVORITES_ROOT);
       if (root instanceof SModelReference) {
-        favoriteRoot.setAttribute(SMODEL_REFERENCE, root.toString());
+        favoriteRoot.setAttribute("model_ref", root.toString());
       } else if (root instanceof ModuleReference) {
         favoriteRoot.setAttribute(MODULE_REFERENCE, root.toString());
       } else if (root instanceof SNodePointer) {
         SNodePointer nodePointer = (SNodePointer) root;
-        favoriteRoot.setAttribute(SMODEL_REFERENCE, nodePointer.getModelReference().toString());
-        favoriteRoot.setAttribute(SNODE_POINTER, nodePointer.getNodeId().toString());
+        favoriteRoot.setAttribute(SNODE_REFERENCE, SNodePointer.serialize(nodePointer));
       }
       element.addContent(favoriteRoot);
     }
@@ -78,15 +81,21 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
         result.add(ModuleReference.fromString(moduleRef));
         continue;
       }
-      final String modelRef = favoriteElement.getAttributeValue(SMODEL_REFERENCE);
-      if (modelRef != null) {
-        final String nodeId = favoriteElement.getAttributeValue(SNODE_POINTER);
-        if (nodeId == null) {
-          SModelReference modelReference = SModelReference.fromString(modelRef);
-          result.add(modelReference);
-        } else {
-          SNodePointer nodePointer = new SNodePointer(modelRef, nodeId);
-          result.add(nodePointer);
+      String snodeRef = favoriteElement.getAttributeValue(SNODE_REFERENCE);
+      if (snodeRef != null) {
+        result.add(SNodePointer.deserialize(snodeRef));
+      } else {
+        //todo obsolete, remove after 3.0
+        final String modelRef = favoriteElement.getAttributeValue("model_ref");
+        if (modelRef != null) {
+          final String nodeId = favoriteElement.getAttributeValue("node_pointer");
+          if (nodeId == null) {
+            SModelReference modelReference = SModelReference.fromString(modelRef);
+            result.add(modelReference);
+          } else {
+            SNodePointer nodePointer = new SNodePointer(modelRef, nodeId);
+            result.add(nodePointer);
+          }
         }
       }
     }
