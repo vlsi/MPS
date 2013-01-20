@@ -46,8 +46,8 @@
   
   <path id="path.mps.ant.path">
     <pathelement location="${mps_home}/lib/mps-backend.jar" />
-    <pathelement location="${mps_home}/lib/jdom.jar" />
-    <pathelement location="${mps_home}/lib/log4j.jar" />
+    <pathelement location="${artifacts.IDEA}/lib/jdom.jar" />
+    <pathelement location="${artifacts.IDEA}/lib/log4j.jar" />
     <pathelement location="${mps_home}/lib/mps-core.jar" />
   </path>
   
