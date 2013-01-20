@@ -5,6 +5,7 @@ package jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.temp
 import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -24,7 +25,7 @@ public class Templateaaaaa implements TemplateDeclarationWeavingAware {
   }
 
   public SNodeReference getTemplateNode() {
-    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "933643154466320524");
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "933643154466320524");
   }
 
   private Map<String, Object> getParametersAsMap() {
@@ -74,7 +75,7 @@ public class Templateaaaaa implements TemplateDeclarationWeavingAware {
     return TemplateUtil.singletonList(tnodepart0);
   }
 
-  private static SNodeReference templateNode_54ml0j_a0a0a1a4 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "7870321878389731890");
-  private static SNodeReference templateNode_54ml0j_a0a0a1a3a1a4 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "7870321878389731891");
-  private static SNodeReference weaveTfConst_54ml0j_a0c0g = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "7870321878389731892");
+  private static SNodePointer templateNode_54ml0j_a0a0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "7870321878389731890");
+  private static SNodePointer templateNode_54ml0j_a0a0a1a3a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "7870321878389731891");
+  private static SNodePointer weaveTfConst_54ml0j_a0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "7870321878389731892");
 }

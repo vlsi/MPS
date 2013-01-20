@@ -14,6 +14,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Templatemap__RootConcept implements TemplateDeclaration {
   public Templatemap__RootConcept() {
@@ -112,12 +113,12 @@ public class Templatemap__RootConcept implements TemplateDeclaration {
     return TemplateUtil.singletonList(tnode1);
   }
 
-  private static SNodeReference template_56x90y_a0a1 = new jetbrains.mps.smodel.SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490321");
-  private static SNodeReference templateNode_56x90y_a0a0a1a2 = new jetbrains.mps.smodel.SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490321");
-  private static SNodeReference propertyMacro_56x90y_c0b0c0c0b0c = new jetbrains.mps.smodel.SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490328");
-  private static SNodeReference templateNode_56x90y_a0a0a1a4a1a2 = new jetbrains.mps.smodel.SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490322");
-  private static SNodeReference templateNode_56x90y_a0a0a1a5a1a2 = new jetbrains.mps.smodel.SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490323");
-  private static SNodeReference templateNode_56x90y_a0a0a1a3a1a5a1a2 = new jetbrains.mps.smodel.SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490324");
-  private static SNodeReference templateNode_56x90y_a0a0a1a4a1a5a1a2 = new jetbrains.mps.smodel.SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490325");
-  private static SNodeReference templateNode_56x90y_a0a0a1a5a1a5a1a2 = new jetbrains.mps.smodel.SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490326");
+  private static SNodePointer template_56x90y_a0a1 = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490321");
+  private static SNodePointer templateNode_56x90y_a0a0a1a2 = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490321");
+  private static SNodePointer propertyMacro_56x90y_c0b0c0c0b0c = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490328");
+  private static SNodePointer templateNode_56x90y_a0a0a1a4a1a2 = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490322");
+  private static SNodePointer templateNode_56x90y_a0a0a1a5a1a2 = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490323");
+  private static SNodePointer templateNode_56x90y_a0a0a1a3a1a5a1a2 = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490324");
+  private static SNodePointer templateNode_56x90y_a0a0a1a4a1a5a1a2 = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490325");
+  private static SNodePointer templateNode_56x90y_a0a0a1a5a1a5a1a2 = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490326");
 }

@@ -4,6 +4,7 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import java.util.Collections;
 import java.util.Collection;
@@ -18,11 +19,11 @@ public class Switchbetter__switch3 implements TemplateSwitchMapping {
   }
 
   public SNodeReference getSwitchNode() {
-    return new jetbrains.mps.smodel.SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809075904");
+    return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809075904");
   }
 
   public SNodeReference getModifiesSwitch() {
-    return new jetbrains.mps.smodel.SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066874");
+    return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066874");
   }
 
   public Iterable<TemplateReductionRule> getReductionRules() {
@@ -37,5 +38,5 @@ public class Switchbetter__switch3 implements TemplateSwitchMapping {
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }
 
-  private static SNodeReference conseq_r4cs19_a0a0a4_0 = new jetbrains.mps.smodel.SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809075905");
+  private static SNodePointer conseq_r4cs19_a0a0a4_0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809075905");
 }

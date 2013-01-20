@@ -15,6 +15,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TemplateOutputRoot__by__MappingRule implements TemplateDeclaration {
   public TemplateOutputRoot__by__MappingRule() {
@@ -53,8 +54,8 @@ public class TemplateOutputRoot__by__MappingRule implements TemplateDeclaration 
     return TemplateUtil.singletonList(tnode1);
   }
 
-  private static SNodeReference template_d5hm2j_a0a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195168984336");
-  private static SNodeReference templateNode_d5hm2j_a0a0a1a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195168984336");
-  private static SNodeReference propertyMacro_d5hm2j_c0b0c0d0b0c = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195598330257");
-  private static SNodeReference copySrcListMacro_d5hm2j_a0a0a1a5a1a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195170582046");
+  private static SNodePointer template_d5hm2j_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195168984336");
+  private static SNodePointer templateNode_d5hm2j_a0a0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195168984336");
+  private static SNodePointer propertyMacro_d5hm2j_c0b0c0d0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195598330257");
+  private static SNodePointer copySrcListMacro_d5hm2j_a0a0a1a5a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195170582046");
 }

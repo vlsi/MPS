@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.MappingScriptContext;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Scripttest__preMappingScript implements TemplateMappingScript {
   public Scripttest__preMappingScript() {
@@ -32,5 +33,5 @@ public class Scripttest__preMappingScript implements TemplateMappingScript {
     QueriesGenerated.mappingScript_CodeBlock_1195509228078(generator.getGeneratorSessionContext(), new MappingScriptContext(model, mappingScriptNode, generator));
   }
 
-  private static SNodeReference mappingScriptNode = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195509228077");
+  private static SNodePointer mappingScriptNode = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195509228077");
 }

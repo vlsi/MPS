@@ -14,6 +14,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TemplateOutputRoot implements TemplateDeclaration {
   public TemplateOutputRoot() {
@@ -52,7 +53,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
     return TemplateUtil.singletonList(tnode1);
   }
 
-  private static SNodeReference template_q702qm_a0a1 = new jetbrains.mps.smodel.SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086886");
-  private static SNodeReference templateNode_q702qm_a0a0a1a2 = new jetbrains.mps.smodel.SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086886");
-  private static SNodeReference copySrcListMacro_q702qm_a0a0a1a5a1a2 = new jetbrains.mps.smodel.SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086893");
+  private static SNodePointer template_q702qm_a0a1 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086886");
+  private static SNodePointer templateNode_q702qm_a0a0a1a2 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086886");
+  private static SNodePointer copySrcListMacro_q702qm_a0a0a1a5a1a2 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086893");
 }

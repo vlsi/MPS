@@ -13,6 +13,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Templatemap__outputNode implements TemplateDeclaration {
   public Templatemap__outputNode() {
@@ -62,8 +63,8 @@ public class Templatemap__outputNode implements TemplateDeclaration {
     return tlist1;
   }
 
-  private static SNodeReference template_wi2k8y_a0a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738789586");
-  private static SNodeReference nodeMacroRef_wi2k8y_a0a0a1a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "4684453936266155603");
-  private static SNodeReference templateNode_wi2k8y_a0a0a3a1a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738789586");
-  private static SNodeReference templateNode_wi2k8y_a0a0a1a5a3a1a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738814182");
+  private static SNodePointer template_wi2k8y_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738789586");
+  private static SNodePointer nodeMacroRef_wi2k8y_a0a0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "4684453936266155603");
+  private static SNodePointer templateNode_wi2k8y_a0a0a3a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738789586");
+  private static SNodePointer templateNode_wi2k8y_a0a0a1a5a3a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738814182");
 }

@@ -11,6 +11,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
@@ -44,10 +45,10 @@ public class TemplateModelImpl implements TemplateModel {
   }
 
   public TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments) {
-    if (!(modelRef_wo91o7_a0a5.equals(template.getModelReference()))) {
+    if (!(modelRef_wo91o7_a0a5.equals(((SNodePointer) template).getModelReference()))) {
       return null;
     }
-    SNodeId id = template.getNodeId();
+    SNodeId id = ((SNodePointer) template).getNodeId();
     if (id instanceof jetbrains.mps.smodel.SNodeId.Regular) {
       long idValue = ((jetbrains.mps.smodel.SNodeId.Regular) id).getId();
       if (idValue == 9020561928507177266L) {

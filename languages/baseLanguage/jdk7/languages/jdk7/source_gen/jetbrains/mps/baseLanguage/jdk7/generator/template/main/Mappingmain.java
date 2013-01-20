@@ -8,6 +8,7 @@ import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import java.util.Collections;
@@ -39,7 +40,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public SNodeReference getMappingNode() {
-    return new jetbrains.mps.smodel.SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550418959");
+    return new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550418959");
   }
 
   public boolean isApplicable(ITemplateGenerator generator) {
@@ -114,6 +115,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
   }
 
-  private static SNodeReference reductionRule_417xrn_a0a3p = new jetbrains.mps.smodel.SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550418980");
-  private static SNodeReference conseq_417xrn_a0a0a5p = new jetbrains.mps.smodel.SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550420131");
+  private static SNodePointer reductionRule_417xrn_a0a3p = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550418980");
+  private static SNodePointer conseq_417xrn_a0a0a5p = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550420131");
 }
