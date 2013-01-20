@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.math.behavior.MathSymbol_Behavior;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class MathSymbolIndexReference_Constraints extends BaseConstraintsDescriptor {
   public MathSymbolIndexReference_Constraints() {
@@ -45,7 +45,7 @@ public class MathSymbolIndexReference_Constraints extends BaseConstraintsDescrip
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_cdbkmw_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -54,5 +54,5 @@ public class MathSymbolIndexReference_Constraints extends BaseConstraintsDescrip
     return references;
   }
 
-  private static SNodePointer breakingNode_cdbkmw_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)", "1237825752099");
+  private static SNodeReference breakingNode_cdbkmw_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)", "1237825752099");
 }

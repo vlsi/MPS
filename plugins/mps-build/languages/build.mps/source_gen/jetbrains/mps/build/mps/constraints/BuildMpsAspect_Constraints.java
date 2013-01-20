@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BuildMpsAspect_Constraints extends BaseConstraintsDescriptor {
   public BuildMpsAspect_Constraints() {
@@ -42,5 +42,5 @@ public class BuildMpsAspect_Constraints extends BaseConstraintsDescriptor {
     }) || parentNode.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator");
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "6503355885715456080");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "6503355885715456080");
 }

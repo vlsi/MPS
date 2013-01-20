@@ -21,20 +21,20 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Evgeny Gryaznov, 11/19/10
  */
 public class ReferenceInfo_Template extends ReferenceInfo_TemplateBase {
-  private SNodePointer myTemplateSourceNode;
+  private SNodeReference myTemplateSourceNode;
   private String myTemplateTargetNode;
   private TemplateContext myContext;
   private String myResolveInfo;
 
 
-  public ReferenceInfo_Template(@NotNull SNode outputSourceNode, String role, SNodePointer sourceNode, String targetNodeId, String resolveInfo, TemplateContext context) {
+  public ReferenceInfo_Template(@NotNull SNode outputSourceNode, String role, SNodeReference sourceNode, String targetNodeId, String resolveInfo, TemplateContext context) {
     super(outputSourceNode, role, context.getInput());
     myContext = context;
     myTemplateSourceNode = sourceNode;

@@ -9,7 +9,7 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Collections;
 import jetbrains.mps.lang.editor.behavior.ConceptEditorDeclaration_Behavior;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -49,7 +49,7 @@ public class GenerateSingleLineDefaultEditor_Intention implements IntentionFacto
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "5469351333089013987");
+    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "5469351333089013987");
   }
 
   public boolean isSurroundWith() {

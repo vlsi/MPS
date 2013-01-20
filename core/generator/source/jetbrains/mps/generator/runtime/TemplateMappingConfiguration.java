@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 
@@ -27,7 +27,7 @@ public interface TemplateMappingConfiguration {
 
   boolean isTopPriority();
 
-  SNodePointer getMappingNode();
+  SNodeReference getMappingNode();
 
   boolean isApplicable(ITemplateGenerator generator) throws GenerationException;
 

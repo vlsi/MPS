@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class NamedFacetReference_Constraints extends BaseConstraintsDescriptor {
   public NamedFacetReference_Constraints() {
@@ -39,7 +39,7 @@ public class NamedFacetReference_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_n4zw7m_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -48,5 +48,5 @@ public class NamedFacetReference_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_n4zw7m_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "1919086248986845084");
+  private static SNodeReference breakingNode_n4zw7m_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "1919086248986845084");
 }

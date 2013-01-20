@@ -77,7 +77,7 @@ public class ShowMembers_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<String> title = new Wrappers._T<String>();
-      // model contains only SNodePointers 
+      // model contains only SNodeReferences 
       final Wrappers._T<MemberContainerStructureModel> model = new Wrappers._T<MemberContainerStructureModel>();
 
       ModelAccess.instance().runReadAction(new Runnable() {

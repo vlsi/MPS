@@ -31,7 +31,7 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -135,16 +135,16 @@ public class TemplateProcessor {
     // templateNode has unprocessed node-macros?
     SNode nextMacro = nextMacro(templateNode, prevMacro);
     if (nextMacro != null) {
-      myTracer.pushMacro(new SNodePointer(nextMacro));
+      myTracer.pushMacro(new jetbrains.mps.smodel.SNodePointer(nextMacro));
       try {
         return applyMacro(nextMacro, templateNode, context, mappingName);
       } finally {
-        myTracer.closeMacro(new SNodePointer(nextMacro));
+        myTracer.closeMacro(new jetbrains.mps.smodel.SNodePointer(nextMacro));
       }
     }
 
     // templateNode has no unprocessed node-macros - create output instance for the tempate node
-    myTracer.pushTemplateNode(new SNodePointer(templateNode));
+    myTracer.pushTemplateNode(new jetbrains.mps.smodel.SNodePointer(templateNode));
     jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(templateNode.getConcept().getId());
     GeneratorMappings mappings = myGenerator.getMappings();
     mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNode, outputNode);
@@ -228,7 +228,7 @@ public class TemplateProcessor {
       }
     } finally {
       myTracer.pushOutputNode(GenerationTracerUtil.getSNodePointer(myOutputModel, outputNode));
-      myTracer.closeTemplateNode(new SNodePointer(templateNode));
+      myTracer.closeTemplateNode(new jetbrains.mps.smodel.SNodePointer(templateNode));
     }
     return Collections.singletonList(((SNode) outputNode));
   }
@@ -261,7 +261,7 @@ public class TemplateProcessor {
     } else if (macroConceptFQName.equals(RuleUtil.concept_CopySrcNodeMacro) || macroConceptFQName.equals(RuleUtil.concept_CopySrcListMacro)) {
       // $COPY-SRC$ / $COPY-SRCL$
       List<SNode> newInputNodes = getNewInputNodes(macro, templateContext);
-      SNodePointer templateNodeRef = templateNode == null ? null : new SNodePointer(templateNode);
+      SNodeReference templateNodeRef = templateNode == null ? null : new jetbrains.mps.smodel.SNodePointer(templateNode);
       for (SNode newInputNode : newInputNodes) {
         Collection<SNode> _outputNodes = myGenerator.copySrc(mappingName, templateNodeRef, null, newInputNode, myReductionContext);
         if (_outputNodes != null) {
@@ -323,7 +323,7 @@ public class TemplateProcessor {
           for (SNode node : nodesToWeave) {
             try {
               myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(node));
-              myTracer.pushRuleConsequence(new SNodePointer(macro));
+              myTracer.pushRuleConsequence(new jetbrains.mps.smodel.SNodePointer(macro));
               SNode consequence = RuleUtil.getWeaveMacro_Consequence(macro);
               if (consequence == null) {
                 myGenerator.showErrorMessage(templateContext.getInput(), macro, "couldn't evaluate weave macro: no consequence");
@@ -441,7 +441,7 @@ public class TemplateProcessor {
         return null;
       }
 
-      final SNodePointer switchPtr = new SNodePointer(templateSwitch);
+      final SNodeReference switchPtr = new jetbrains.mps.smodel.SNodePointer(templateSwitch);
       SNode newInputNode = getNewInputNode(macro, templateContext);
       if (newInputNode == null) {
         TemplateSwitchMapping tswitch = myGenerator.getSwitch(switchPtr);
@@ -455,7 +455,7 @@ public class TemplateProcessor {
       if (inputChanged) {
         myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
       }
-      myTracer.pushSwitch(new SNodePointer(templateSwitch));
+      myTracer.pushSwitch(new jetbrains.mps.smodel.SNodePointer(templateSwitch));
       try {
         final TemplateContext switchContext = templateContext.subContext(mappingName, newInputNode);
 
@@ -533,7 +533,7 @@ public class TemplateProcessor {
       if (inputChanged) {
         myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
       }
-      myTracer.pushTemplateNode(new SNodePointer(includeTemplate));
+      myTracer.pushTemplateNode(new jetbrains.mps.smodel.SNodePointer(includeTemplate));
 
       try {
         for (SNode fragment : fragments) {
@@ -581,7 +581,7 @@ public class TemplateProcessor {
       if (inputChanged) {
         myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
       }
-      myTracer.pushTemplateNode(new SNodePointer(template));
+      myTracer.pushTemplateNode(new jetbrains.mps.smodel.SNodePointer(template));
 
       try {
         for (SNode fragment : fragments) {
@@ -708,7 +708,7 @@ public class TemplateProcessor {
 
           TemplateExecutionEnvironment env = new TemplateExecutionEnvironmentImpl(myGenerator, myReductionContext, null, myTracer);
           for (SNode outputNodeToWeave : outputNodesToWeave) {
-            env.weaveNode(contextParentNode, childRole, outputNodeToWeave, new SNodePointer(templateFragment), context.getInput());
+            env.weaveNode(contextParentNode, childRole, outputNodeToWeave, new jetbrains.mps.smodel.SNodePointer(templateFragment), context.getInput());
           }
         } catch (DismissTopMappingRuleException e) {
           myGenerator.showErrorMessage(context.getInput(), templateFragment, macro, "wrong template: dismission in weave macro is not supported");

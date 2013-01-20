@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class EditableUIPropertyAccessCode_Constraints extends BaseConstraintsDescriptor {
   public EditableUIPropertyAccessCode_Constraints() {
@@ -47,7 +47,7 @@ public class EditableUIPropertyAccessCode_Constraints extends BaseConstraintsDes
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_aaoztm_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -56,5 +56,5 @@ public class EditableUIPropertyAccessCode_Constraints extends BaseConstraintsDes
     return references;
   }
 
-  private static SNodePointer breakingNode_aaoztm_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "8938819815716373408");
+  private static SNodeReference breakingNode_aaoztm_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "8938819815716373408");
 }

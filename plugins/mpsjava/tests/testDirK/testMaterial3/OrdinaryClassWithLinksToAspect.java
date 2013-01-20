@@ -16,12 +16,12 @@
 package jetbrains.mps.ide.java.testMaterial3;
 
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Cyril.Konopko, 08.12.2009
  */
-public class OrdinaryClassWithLinksToAspect extends SNodePointer {
+public class OrdinaryClassWithLinksToAspect extends SNodeReference {
   public OrdinaryClassWithLinksToAspect(SNode node) {
     super(node);    //To change body of overridden methods use File | Settings | File Templates.
   }

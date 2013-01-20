@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class NotEditableVaraileReference_Constraints extends BaseConstraintsDescriptor {
   public NotEditableVaraileReference_Constraints() {
@@ -51,7 +51,7 @@ public class NotEditableVaraileReference_Constraints extends BaseConstraintsDesc
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_5rh4qw_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -60,5 +60,5 @@ public class NotEditableVaraileReference_Constraints extends BaseConstraintsDesc
     return references;
   }
 
-  private static SNodePointer breakingNode_5rh4qw_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:94b1feee-20bf-48e9-9677-814a5fdcaf90(jetbrains.mps.lang.editor.editorTest.constraints)", "4965160547087600888");
+  private static SNodeReference breakingNode_5rh4qw_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:94b1feee-20bf-48e9-9677-814a5fdcaf90(jetbrains.mps.lang.editor.editorTest.constraints)", "4965160547087600888");
 }

@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
@@ -42,7 +42,7 @@ public class InstanceMethodCallOperation_Constraints extends BaseConstraintsDesc
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_w9prmd_a0a0a0a0a1a0b0a1a1;
           }
 
@@ -66,5 +66,5 @@ public class InstanceMethodCallOperation_Constraints extends BaseConstraintsDesc
     return references;
   }
 
-  private static SNodePointer breakingNode_w9prmd_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137224");
+  private static SNodeReference breakingNode_w9prmd_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137224");
 }

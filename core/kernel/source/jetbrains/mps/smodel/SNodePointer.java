@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -21,22 +21,22 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-public class SNodePointer implements SNodeReference {
+public class SNodeReference implements SNodeReference {
   private SModelReference myModelReference;
   private SNodeId myNodeId;
 
-  public SNodePointer(String modelUID, String nodeId) {
+  public SNodeReference(String modelUID, String nodeId) {
     this(SModelReference.fromString(modelUID), jetbrains.mps.smodel.SNodeId.fromString(nodeId));
   }
 
-  public SNodePointer(SNode node) {
+  public SNodeReference(SNode node) {
     if (node == null) return;
     SModel model = node.getModel();
     myModelReference = model.getSModelReference();
     myNodeId = node.getNodeId();
   }
 
-  public SNodePointer(SModelReference modelReference, SNodeId nodeId) {
+  public SNodeReference(SModelReference modelReference, SNodeId nodeId) {
     myModelReference = modelReference;
     myNodeId = nodeId;
   }
@@ -76,9 +76,9 @@ public class SNodePointer implements SNodeReference {
 
   public boolean equals(Object o) {
     if (this == o) return true;
-    if (o == null || !(o instanceof SNodePointer)) return false;
+    if (o == null || !(o instanceof SNodeReference)) return false;
 
-    SNodePointer np = (SNodePointer) o;
+    SNodeReference np = (SNodeReference) o;
     return EqualUtil.equals(myModelReference, np.myModelReference) && EqualUtil.equals(myNodeId, np.myNodeId);
   }
 
@@ -93,7 +93,7 @@ public class SNodePointer implements SNodeReference {
     return sum;
   }
 
-  public static String serialize(SNodePointer p) {
+  public static String serialize(SNodeReference p) {
     SModelReference ref = p.myModelReference;
     SNodeId id = p.myNodeId;
 
@@ -102,10 +102,10 @@ public class SNodePointer implements SNodeReference {
     return ref.toString() + "/" + id.toString();
   }
 
-  public static SNodePointer deserialize(String from) {
+  public static SNodeReference deserialize(String from) {
     String[] split = from.split("/");
     assert split.length == 2;
-    return new SNodePointer(split[0], split[1]);
+    return new jetbrains.mps.smodel.SNodePointer(split[0], split[1]);
   }
 
   //-----------------deprecated----------------------

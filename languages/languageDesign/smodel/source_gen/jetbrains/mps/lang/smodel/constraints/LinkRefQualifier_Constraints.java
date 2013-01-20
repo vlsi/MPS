@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class LinkRefQualifier_Constraints extends BaseConstraintsDescriptor {
   public LinkRefQualifier_Constraints() {
@@ -42,7 +42,7 @@ public class LinkRefQualifier_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_cgym5w_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -51,5 +51,5 @@ public class LinkRefQualifier_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_cgym5w_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104859122");
+  private static SNodeReference breakingNode_cgym5w_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104859122");
 }

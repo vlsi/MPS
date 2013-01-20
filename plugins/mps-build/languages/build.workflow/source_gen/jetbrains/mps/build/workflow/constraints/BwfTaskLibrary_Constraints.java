@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BwfTaskLibrary_Constraints extends BaseConstraintsDescriptor {
   public BwfTaskLibrary_Constraints() {
@@ -35,5 +35,5 @@ public class BwfTaskLibrary_Constraints extends BaseConstraintsDescriptor {
     return SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfTask") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfTaskPart") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfMacro") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency");
   }
 
-  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "1117643560963285902");
+  private static SNodeReference canBeParentBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "1117643560963285902");
 }

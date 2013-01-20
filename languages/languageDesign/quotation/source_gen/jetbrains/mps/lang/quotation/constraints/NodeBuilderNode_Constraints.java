@@ -13,7 +13,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -65,7 +65,7 @@ public class NodeBuilderNode_Constraints extends BaseConstraintsDescriptor {
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_ij2gcp_a0a0a0a0a1a0b0a1a3;
           }
 
@@ -104,6 +104,6 @@ public class NodeBuilderNode_Constraints extends BaseConstraintsDescriptor {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink") && SPropertyOperations.hasValue(SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), "link", false), "metaClass", "aggregation", "reference") || SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.quotation.structure.NodeBuilderList") || SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.quotation.structure.NodeBuilder");
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "8182547171709478764");
-  private static SNodePointer breakingNode_ij2gcp_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "8182547171709535913");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "8182547171709478764");
+  private static SNodeReference breakingNode_ij2gcp_a0a0a0a0a1a0b0a1a3 = new jetbrains.mps.smodel.SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "8182547171709535913");
 }

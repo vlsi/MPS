@@ -33,7 +33,7 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.progress.ProgressMonitor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -395,7 +395,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
    * returns null if no reductions found
    */
   @Nullable
-  Collection<SNode> tryToReduce(TemplateContext context, SNodePointer templateSwitch, String mappingName, @NotNull ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> tryToReduce(TemplateContext context, SNodeReference templateSwitch, String mappingName, @NotNull ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
     SNode inputNode = context.getInput();
     TemplateReductionRule reductionRule = null;
     checkGenerationCanceledFast();
@@ -463,7 +463,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected void checkGenerationCanceledFast() throws GenerationCanceledException {
   }
 
-  Collection<SNode> copySrc(String mappingName, SNodePointer templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> copySrc(String mappingName, SNodeReference templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
     if (inputNode.getModel() != getInputModel() || inputNode.getModel() == null) {
 
       // adapt external node
@@ -659,7 +659,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myRuleManager;
   }
 
-  public TemplateSwitchMapping getSwitch(SNodePointer switch_) {
+  public TemplateSwitchMapping getSwitch(SNodeReference switch_) {
     return myRuleManager.getSwitch(switch_);
   }
 
@@ -680,7 +680,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myChanged = true;
   }
 
-  private void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodePointer templateNode, boolean isCopied) {
+  private void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
     synchronized (this) {
       registerInModel(outputRoot, inputNode, templateNode);
       myNewToOldRoot.put(outputRoot, inputNode);
@@ -695,7 +695,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myDependenciesBuilder.rootReplaced(old, new_);
   }
 
-  protected void registerInModel(SNode outputRoot, SNode inputNode, SNodePointer templateNode) {
+  protected void registerInModel(SNode outputRoot, SNode inputNode, SNodeReference templateNode) {
     myOutputRoots.add(outputRoot);
   }
 

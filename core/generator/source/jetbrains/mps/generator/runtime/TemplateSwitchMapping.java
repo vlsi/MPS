@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 
@@ -25,13 +25,13 @@ import java.util.Collection;
  */
 public interface TemplateSwitchMapping {
 
-  SNodePointer getSwitchNode();
+  SNodeReference getSwitchNode();
 
-  SNodePointer getModifiesSwitch();
+  SNodeReference getModifiesSwitch();
 
   Iterable<TemplateReductionRule> getReductionRules();
 
-  Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingName, TemplateContext context) throws GenerationException;
+  Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingName, TemplateContext context) throws GenerationException;
 
-  void processNull(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, TemplateContext context);
+  void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context);
 }

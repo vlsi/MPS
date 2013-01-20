@@ -5,7 +5,7 @@ package jetbrains.mps.checkers;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -31,7 +31,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
   }
 
   public SNode getBreakingNodeAndClearContext(CheckingNodeContext checkingNodeContext) {
-    SNodePointer breakingNodePointer = checkingNodeContext.getBreakingNode();
+    SNodeReference breakingNodePointer = checkingNodeContext.getBreakingNode();
     if (breakingNodePointer == null) {
       return null;
     } else {

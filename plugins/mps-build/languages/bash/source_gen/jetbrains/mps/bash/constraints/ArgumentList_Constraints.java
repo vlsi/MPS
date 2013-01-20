@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.bash.behavior.ExternalCommandDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ArgumentList_Constraints extends BaseConstraintsDescriptor {
   public ArgumentList_Constraints() {
@@ -36,5 +36,5 @@ public class ArgumentList_Constraints extends BaseConstraintsDescriptor {
     return ExternalCommandDeclaration_Behavior.call_isArgsListEnabled_3147078024750286840(SNodeOperations.cast(parentNode, "jetbrains.mps.bash.structure.ExternalCommandDeclaration"));
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:32c4fb44-9e66-4976-aa43-e37da5fe27dd(jetbrains.mps.bash.constraints)", "3147078024748687820");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:32c4fb44-9e66-4976-aa43-e37da5fe27dd(jetbrains.mps.bash.constraints)", "3147078024748687820");
 }

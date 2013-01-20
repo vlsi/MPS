@@ -26,7 +26,7 @@ import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import javax.swing.JComponent;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -85,9 +85,9 @@ public class ReplacementView {
     this.myUsagesView.dispose();
   }
 
-  public List<SNode> getExecuteResult(List<SNodePointer> nodes) {
+  public List<SNode> getExecuteResult(List<SNodeReference> nodes) {
     List<SNode> results = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNodePointer nodePointer : nodes) {
+    for (SNodeReference nodePointer : nodes) {
       ListSequence.fromList(results).addElement(nodePointer.resolve(MPSModuleRepository.getInstance()));
     }
     return results;

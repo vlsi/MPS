@@ -24,7 +24,7 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.ArrayUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -64,9 +64,9 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
         favoriteRoot.setAttribute("model_ref", root.toString());
       } else if (root instanceof ModuleReference) {
         favoriteRoot.setAttribute(MODULE_REFERENCE, root.toString());
-      } else if (root instanceof SNodePointer) {
-        SNodePointer nodePointer = (SNodePointer) root;
-        favoriteRoot.setAttribute(SNODE_REFERENCE, SNodePointer.serialize(nodePointer));
+      } else if (root instanceof SNodeReference) {
+        SNodeReference nodePointer = (SNodeReference) root;
+        favoriteRoot.setAttribute(SNODE_REFERENCE, jetbrains.mps.smodel.SNodePointer.serialize(nodePointer));
       }
       element.addContent(favoriteRoot);
     }
@@ -83,7 +83,7 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
       }
       String snodeRef = favoriteElement.getAttributeValue(SNODE_REFERENCE);
       if (snodeRef != null) {
-        result.add(SNodePointer.deserialize(snodeRef));
+        result.add(jetbrains.mps.smodel.SNodePointer.deserialize(snodeRef));
       } else {
         //todo obsolete, remove after 3.0
         final String modelRef = favoriteElement.getAttributeValue("model_ref");
@@ -93,7 +93,7 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
             SModelReference modelReference = SModelReference.fromString(modelRef);
             result.add(modelReference);
           } else {
-            SNodePointer nodePointer = new SNodePointer(modelRef, nodeId);
+            SNodeReference nodePointer = new jetbrains.mps.smodel.SNodePointer(modelRef, nodeId);
             result.add(nodePointer);
           }
         }

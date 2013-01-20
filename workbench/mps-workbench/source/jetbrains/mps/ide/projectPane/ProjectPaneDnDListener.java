@@ -24,7 +24,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
@@ -106,7 +106,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
 
     dtde.acceptDrop(dtde.getDropAction());
 
-    final List<Pair<SNodePointer, String>> sourceNodes = (List<Pair<SNodePointer, String>>) source;
+    final List<Pair<SNodeReference, String>> sourceNodes = (List<Pair<SNodeReference, String>>) source;
     Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     JFrame frame = WindowManager.getInstance().getFrame(project);
     final String targetPackage = (getTargetVirtualPackage(treePath) == null) ? "" : getTargetVirtualPackage(treePath);
@@ -133,10 +133,10 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     });
   }
 
-  private List<Pair<SNode, String>> getNodesToMove(@NotNull SModelDescriptor targetModel, String virtualPackage, List<Pair<SNodePointer, String>> sourceNodes) {
+  private List<Pair<SNode, String>> getNodesToMove(@NotNull SModelDescriptor targetModel, String virtualPackage, List<Pair<SNodeReference, String>> sourceNodes) {
     if (targetModel == null) return Collections.emptyList();
     List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>();
-    for (final Pair<SNodePointer, String> node : sourceNodes) {
+    for (final Pair<SNodeReference, String> node : sourceNodes) {
       SNode snode = node.o1.resolve(MPSModuleRepository.getInstance());
 
       if (snode==null) continue;

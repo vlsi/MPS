@@ -18,24 +18,24 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening;
 
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-class ImportantNodes extends HashMap<SModelReference, Set<SNodePointer>> {
-  public void add(SNodePointer node) {
+class ImportantNodes extends HashMap<SModelReference, Set<SNodeReference>> {
+  public void add(SNodeReference node) {
     SModelReference modelRef = node.resolve(MPSModuleRepository.getInstance()).getModel().getSModelReference();
 
-    Set<SNodePointer> nodes = get(modelRef);
+    Set<SNodeReference> nodes = get(modelRef);
     nodes.add(node);
     put(modelRef, nodes);
   }
 
-  public Set<SNodePointer> get(SModelReference modelRef) {
-    Set<SNodePointer> nodes = super.get(modelRef);
+  public Set<SNodeReference> get(SModelReference modelRef) {
+    Set<SNodeReference> nodes = super.get(modelRef);
     if (nodes != null) return nodes;
-    return new HashSet<SNodePointer>();
+    return new HashSet<SNodeReference>();
   }
 }

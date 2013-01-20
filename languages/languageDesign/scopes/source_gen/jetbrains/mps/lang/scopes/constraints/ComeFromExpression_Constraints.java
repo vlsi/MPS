@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
@@ -41,7 +41,7 @@ public class ComeFromExpression_Constraints extends BaseConstraintsDescriptor {
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_t1q7r2_a0a0a0a0a1a0b0a1a1;
           }
 
@@ -64,5 +64,5 @@ public class ComeFromExpression_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_t1q7r2_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:ff944d67-5440-4132-a4a9-2198c9221961(jetbrains.mps.lang.scopes.constraints)", "8077936094962945825");
+  private static SNodeReference breakingNode_t1q7r2_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:ff944d67-5440-4132-a4a9-2198c9221961(jetbrains.mps.lang.scopes.constraints)", "8077936094962945825");
 }

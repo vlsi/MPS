@@ -8,7 +8,7 @@ import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
@@ -44,8 +44,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
     return this.myModel;
   }
 
-  public SNodePointer getMappingNode() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206459766745");
+  public SNodeReference getMappingNode() {
+    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206459766745");
   }
 
   public boolean isApplicable(ITemplateGenerator generator) {
@@ -96,7 +96,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.transformation.test.inputLang.structure.InputNode_B";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3q;
     }
 
@@ -144,7 +144,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3r;
     }
 
@@ -192,7 +192,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.transformation.test.inputLang.structure.InputNode";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3s;
     }
 
@@ -232,7 +232,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public RootMappingRule0() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return rootMappingRule_417xrn_a0a1t;
     }
 
@@ -261,15 +261,15 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
   }
 
-  private static SNodePointer reductionRule_417xrn_a0a3q = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206461848250");
-  private static SNodePointer conseq_417xrn_a0a0a5q = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206461864723");
-  private static SNodePointer templateNode_417xrn_a0a0a2a5q = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206461864724");
-  private static SNodePointer reductionRule_417xrn_a0a3r = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460387609");
-  private static SNodePointer conseq_417xrn_a0a0a5r = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460444835");
-  private static SNodePointer templateNode_417xrn_a0a0a2a5r = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460444836");
-  private static SNodePointer reductionRule_417xrn_a0a3s = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460378545");
-  private static SNodePointer conseq_417xrn_a0a0a5s = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460405394");
-  private static SNodePointer templateNode_417xrn_a0a0a2a5s = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460409521");
-  private static SNodePointer rootMappingRule_417xrn_a0a1t = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460083385");
-  private static SNodePointer rootMappingRule_417xrn_b0b0a0a5t = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460083385");
+  private static SNodeReference reductionRule_417xrn_a0a3q = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206461848250");
+  private static SNodeReference conseq_417xrn_a0a0a5q = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206461864723");
+  private static SNodeReference templateNode_417xrn_a0a0a2a5q = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206461864724");
+  private static SNodeReference reductionRule_417xrn_a0a3r = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460387609");
+  private static SNodeReference conseq_417xrn_a0a0a5r = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460444835");
+  private static SNodeReference templateNode_417xrn_a0a0a2a5r = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460444836");
+  private static SNodeReference reductionRule_417xrn_a0a3s = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460378545");
+  private static SNodeReference conseq_417xrn_a0a0a5s = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460405394");
+  private static SNodeReference templateNode_417xrn_a0a0a2a5s = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460409521");
+  private static SNodeReference rootMappingRule_417xrn_a0a1t = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460083385");
+  private static SNodeReference rootMappingRule_417xrn_b0b0a0a5t = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460083385");
 }

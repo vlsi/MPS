@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class HashMapCreator_Constraints extends BaseConstraintsDescriptor {
   public HashMapCreator_Constraints() {
@@ -38,5 +38,5 @@ public class HashMapCreator_Constraints extends BaseConstraintsDescriptor {
     return (dtype == null) || SConceptOperations.isSuperConceptOf(SNodeOperations.getConceptDeclaration(dtype), "jetbrains.mps.baseLanguage.collections.structure.MapType");
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1241447266746");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "1241447266746");
 }

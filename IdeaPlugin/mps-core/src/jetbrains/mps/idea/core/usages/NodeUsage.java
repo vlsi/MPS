@@ -35,7 +35,7 @@ import jetbrains.mps.idea.core.usages.rules.UsageByCategory;
 import jetbrains.mps.idea.core.usages.rules.UsageInMPS;
 import jetbrains.mps.idea.core.usages.rules.UsageInModel;
 import jetbrains.mps.idea.core.usages.rules.UsageInRoot;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
@@ -50,7 +50,7 @@ public class NodeUsage extends NodeNavigatable implements Usage, UsagePresentati
   private String myRole;
   private String myCategory;
 
-  public NodeUsage(@NotNull SNodePointer node, @NotNull Project project, String category) {
+  public NodeUsage(@NotNull SNodeReference node, @NotNull Project project, String category) {
     super(node, project);
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -188,7 +188,7 @@ public class NodeUsage extends NodeNavigatable implements Usage, UsagePresentati
   }
 
   @Override
-  public SNodePointer getRoot() {
+  public SNodeReference getRoot() {
     return myRootNode;
   }
 

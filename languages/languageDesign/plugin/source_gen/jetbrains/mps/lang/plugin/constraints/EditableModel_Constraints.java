@@ -14,7 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class EditableModel_Constraints extends BaseConstraintsDescriptor {
   public EditableModel_Constraints() {
@@ -48,5 +48,5 @@ public class EditableModel_Constraints extends BaseConstraintsDescriptor {
     return quotedNode_1;
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "8713489730824201066");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "8713489730824201066");
 }

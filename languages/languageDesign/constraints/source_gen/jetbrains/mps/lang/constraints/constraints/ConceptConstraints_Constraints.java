@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -99,7 +99,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_guz8cy_a0a0a0a0a1a0b0a1a4;
           }
 
@@ -148,7 +148,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_guz8cy_a0a1a0a0a1a0b0a2a4;
           }
         };
@@ -175,7 +175,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
     return null;
   }
 
-  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "1227089025593");
-  private static SNodePointer breakingNode_guz8cy_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "7966406217186699970");
-  private static SNodePointer breakingNode_guz8cy_a0a1a0a0a1a0b0a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "5629249995614139014");
+  private static SNodeReference canBeRootBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "1227089025593");
+  private static SNodeReference breakingNode_guz8cy_a0a0a0a0a1a0b0a1a4 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "7966406217186699970");
+  private static SNodeReference breakingNode_guz8cy_a0a1a0a0a1a0b0a2a4 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "5629249995614139014");
 }

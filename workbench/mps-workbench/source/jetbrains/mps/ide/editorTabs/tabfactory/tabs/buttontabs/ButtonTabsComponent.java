@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JComponent;
@@ -39,7 +39,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   private List<ButtonEditorTab> myRealTabs = new ArrayList<ButtonEditorTab>();
   private ActionToolbar myToolbar = null;
 
-  public ButtonTabsComponent(SNodePointer baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, IOperationContext operationContext) {
+  public ButtonTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, IOperationContext operationContext) {
     super(baseNode, possibleTabs, editor, callback, showGrayed, null, operationContext);
 
     getComponent().addHierarchyListener(new HierarchyListener() {
@@ -155,7 +155,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     myRealTabs.get(index).getSelectTabAction().actionPerformed(event);
   }
 
-  protected boolean isTabUpdateNeeded(SNodePointer node) {
+  protected boolean isTabUpdateNeeded(SNodeReference node) {
     return getLastNode().equals(node);
   }
 

@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class AbstractAntiquotation_Constraints extends BaseConstraintsDescriptor {
   public AbstractAntiquotation_Constraints() {
@@ -35,5 +35,5 @@ public class AbstractAntiquotation_Constraints extends BaseConstraintsDescriptor
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", true, false) == null);
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "1809207813036530205");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "1809207813036530205");
 }

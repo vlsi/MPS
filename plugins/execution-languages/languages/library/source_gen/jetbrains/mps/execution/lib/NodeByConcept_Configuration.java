@@ -15,7 +15,7 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.logging.Logger;
@@ -77,11 +77,11 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
     return check_h3hwcn_a0a0(getNodePointer());
   }
 
-  public SNodePointer getNodePointer() {
+  public SNodeReference getNodePointer() {
     if (this.getModelId() == null || this.getNodeId() == null) {
       return null;
     }
-    return new SNodePointer(this.getModelId(), this.getNodeId());
+    return new jetbrains.mps.smodel.SNodePointer(this.getModelId(), this.getNodeId());
   }
 
   public void setNode(@Nullable SNode node) {
@@ -149,7 +149,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
 
   private static Logger LOG = Logger.getLogger(NodeByConcept_Configuration.class);
 
-  private static SNode check_h3hwcn_a0a0(SNodePointer checkedDotOperand) {
+  private static SNode check_h3hwcn_a0a0(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }

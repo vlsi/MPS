@@ -26,7 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -49,7 +49,7 @@ public class ShowImplementationComponent extends JPanel {
   private List<String> myNodeLabels = new ArrayList<String>();
   private List<Icon> myModuleIcons = new ArrayList<Icon>();
   private List<String> myModuleLabels = new ArrayList<String>();
-  private List<SNodePointer> myOriginalNodePointers = new ArrayList<SNodePointer>();
+  private List<SNodeReference> myOriginalNodePointers = new ArrayList<SNodeReference>();
 
   private TemporaryModelOwner myModelOwner = new TemporaryModelOwner();
 
@@ -62,7 +62,7 @@ public class ShowImplementationComponent extends JPanel {
       myNodeLabels.add(node.getPresentation());
       myModuleIcons.add(IconManager.getIconFor(node.getModel().getModelDescriptor().getModule()));
       myModuleLabels.add(node.getModel().getModelDescriptor().getModule().getModuleFqName());
-      myOriginalNodePointers.add(new SNodePointer(node));
+      myOriginalNodePointers.add(new jetbrains.mps.smodel.SNodePointer(node));
     }
 
     myEditor = new EmbeddableEditor(context, myModelOwner, myNodes.get(0), false);

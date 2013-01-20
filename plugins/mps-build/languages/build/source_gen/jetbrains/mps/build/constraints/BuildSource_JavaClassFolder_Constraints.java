@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BuildSource_JavaClassFolder_Constraints extends BaseConstraintsDescriptor {
   public BuildSource_JavaClassFolder_Constraints() {
@@ -35,5 +35,5 @@ public class BuildSource_JavaClassFolder_Constraints extends BaseConstraintsDesc
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.build.structure.BuildSource_JavaLibrary", true, false) != null);
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1258644073389103468");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1258644073389103468");
 }

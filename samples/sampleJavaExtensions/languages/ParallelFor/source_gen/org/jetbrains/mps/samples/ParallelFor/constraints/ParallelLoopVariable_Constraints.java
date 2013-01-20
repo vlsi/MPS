@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ParallelLoopVariable_Constraints extends BaseConstraintsDescriptor {
   public ParallelLoopVariable_Constraints() {
@@ -59,5 +59,5 @@ public class ParallelLoopVariable_Constraints extends BaseConstraintsDescriptor 
     return SNodeOperations.isInstanceOf(parentNode, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor");
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:30f28ecb-3abe-411d-8f10-86fc65916e39(org.jetbrains.mps.samples.ParallelFor.constraints)", "47688671297852481");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:30f28ecb-3abe-411d-8f10-86fc65916e39(org.jetbrains.mps.samples.ParallelFor.constraints)", "47688671297852481");
 }

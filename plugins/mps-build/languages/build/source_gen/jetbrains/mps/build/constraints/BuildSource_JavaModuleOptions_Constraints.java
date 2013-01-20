@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -52,7 +52,7 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_q5t0js_a0a2a0a0a1a0b0a1a1;
           }
 
@@ -72,7 +72,7 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
     return references;
   }
 
-  private static SNodePointer breakingNode_q5t0js_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1659807394254175447");
+  private static SNodeReference breakingNode_q5t0js_a0a2a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1659807394254175447");
 
   public static boolean isEmpty_q5t0js_a0a0a0b0a0a0b0a1a0b0b(String str) {
     return str == null || str.length() == 0;

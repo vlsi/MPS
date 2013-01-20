@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -40,7 +40,7 @@ import java.util.Set;
 public class NodeIconUpdater extends AbstractProjectComponent {
   private SModelCommandListener myCommandListener = new MyCommandListener();
   private SModelListener myModelListener = new MyModelListener();
-  private final Set<SNodePointer> myUpdatedRoots = new HashSet<SNodePointer>();
+  private final Set<SNodeReference> myUpdatedRoots = new HashSet<SNodeReference>();
   private FileEditorManagerEx myFileEditorManagerEx;
 
   @Override
@@ -67,7 +67,7 @@ public class NodeIconUpdater extends AbstractProjectComponent {
       if (root == null) return;
       if (root.getModel() == null) return;
       synchronized (myUpdatedRoots) {
-        myUpdatedRoots.add(new SNodePointer(event.getModel().getSModelReference(), root.getNodeId()));
+        myUpdatedRoots.add(new jetbrains.mps.smodel.SNodePointer(event.getModel().getSModelReference(), root.getNodeId()));
       }
     }
   }
@@ -79,7 +79,7 @@ public class NodeIconUpdater extends AbstractProjectComponent {
         @Override
         public void run() {
           synchronized (myUpdatedRoots) {
-            for (SNodePointer root : myUpdatedRoots) {
+            for (SNodeReference root : myUpdatedRoots) {
               if (root.resolve(MPSModuleRepository.getInstance()) != null) {
                 MPSNodesVirtualFileSystem nodeVfs = MPSNodesVirtualFileSystem.getInstance();
                 if (nodeVfs.hasVirtualFileFor(root)) {

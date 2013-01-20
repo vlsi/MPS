@@ -37,7 +37,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -94,7 +94,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     final PasteNodeData pasteNodeData = data;
 
     //this is used in case node is in repo to pass it into invokeLater
-    final SNodePointer selectedNodePointer = new SNodePointer(nodeSelected);
+    final SNodeReference selectedNodePointer = new jetbrains.mps.smodel.SNodePointer(nodeSelected);
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modeltoPaste, context.getOperationContext());

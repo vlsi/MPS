@@ -20,7 +20,7 @@ import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.*;
 
@@ -161,7 +161,7 @@ public class PartitioningSolver {
     for (List<TemplateMappingConfiguration> mappingSet : mappingSets) {
       Collections.sort(mappingSet, new Comparator<TemplateMappingConfiguration>() {
         public int compare(TemplateMappingConfiguration o1, TemplateMappingConfiguration o2) {
-          return SNodePointer.serialize(o1.getMappingNode()).compareTo((SNodePointer.serialize(o2.getMappingNode())));
+          return jetbrains.mps.smodel.SNodePointer.serialize(o1.getMappingNode()).compareTo((jetbrains.mps.smodel.SNodePointer.serialize(o2.getMappingNode())));
         }
       });
     }

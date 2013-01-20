@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import java.util.List;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -72,7 +72,7 @@ public class EvaluateExpression_Action extends BaseAction {
     try {
       IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);
       if (evaluationProvider != null) {
-        final List<SNodePointer> nodePointers = ListSequence.fromList(new ArrayList<SNodePointer>());
+        final List<SNodeReference> nodePointers = ListSequence.fromList(new ArrayList<SNodeReference>());
         if (((EditorComponent) MapSequence.fromMap(_params).get("component")) != null) {
           final Selection selection = ((EditorComponent) MapSequence.fromMap(_params).get("component")).getSelectionManager().getSelection();
           if ((selection instanceof EditorCellLabelSelection && ((EditorCellLabelSelection) selection).hasNonTrivialSelection()) || (selection instanceof EditorCellSelection && !((selection instanceof EditorCellLabelSelection))) || (selection instanceof MultipleSelection)) {
@@ -82,9 +82,9 @@ public class EvaluateExpression_Action extends BaseAction {
                   public Iterable<SNode> iterable() {
                     return selection.getSelectedNodes();
                   }
-                })).select(new ISelector<SNode, SNodePointer>() {
-                  public SNodePointer select(SNode it) {
-                    return new SNodePointer(it);
+                })).select(new ISelector<SNode, SNodeReference>() {
+                  public SNodeReference select(SNode it) {
+                    return new jetbrains.mps.smodel.SNodePointer(it);
                   }
                 }));
               }

@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.Project;
@@ -78,14 +78,14 @@ public class GenerateSetters_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNodePointer[] fields;
+      SNodeReference[] fields;
       SNode classConcept = GenerateSetters_Action.this.getClassConcept(_params);
 
-      fields = Sequence.fromIterable(GenerateSetters_Action.this.getFieldDeclarationsWithoutSetters(classConcept, _params)).select(new ISelector<SNode, SNodePointer>() {
-        public SNodePointer select(SNode it) {
-          return new SNodePointer(it);
+      fields = Sequence.fromIterable(GenerateSetters_Action.this.getFieldDeclarationsWithoutSetters(classConcept, _params)).select(new ISelector<SNode, SNodeReference>() {
+        public SNodeReference select(SNode it) {
+          return new jetbrains.mps.smodel.SNodePointer(it);
         }
-      }).toGenericArray(SNodePointer.class);
+      }).toGenericArray(SNodeReference.class);
 
       SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(fields, false, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject());
       selectFieldsDialog.setTitle("Select Fields to Generate Setters");
@@ -95,11 +95,11 @@ public class GenerateSetters_Action extends BaseAction {
         return;
       }
 
-      SNodePointer[] selectedFields = Sequence.fromIterable(((Iterable<SNodePointer>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodePointer.class);
+      SNodeReference[] selectedFields = Sequence.fromIterable(((Iterable<SNodeReference>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodeReference.class);
 
       SNode lastAdded = null;
       Project project = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject();
-      for (SNodePointer fieldPtr : selectedFields) {
+      for (SNodeReference fieldPtr : selectedFields) {
         final SNode field = SNodeOperations.cast(fieldPtr.resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, project);
         // Method creation begins 

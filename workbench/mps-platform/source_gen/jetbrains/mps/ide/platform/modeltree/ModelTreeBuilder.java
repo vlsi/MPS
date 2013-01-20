@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -58,7 +58,7 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
   }
 
   public static ModelTreeNode createSNodeTreeNode(SNode node) {
-    return new ModelTreeNode(node.getPresentation(), IconManager.getIconFor(node), new SNodePointer(node));
+    return new ModelTreeNode(node.getPresentation(), IconManager.getIconFor(node), new jetbrains.mps.smodel.SNodePointer(node));
   }
 
   public static ModelTreeNode createFolderTreeNode(String folderName) {

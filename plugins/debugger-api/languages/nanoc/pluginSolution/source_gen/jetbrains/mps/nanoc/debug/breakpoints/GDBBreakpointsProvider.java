@@ -14,7 +14,7 @@ import jetbrains.mps.debug.api.BreakpointInfo;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointPropertiesUi;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import java.util.Arrays;
 
@@ -44,7 +44,7 @@ public class GDBBreakpointsProvider implements IBreakpointsProvider<GDBBreakpoin
 
   @Nullable
   public ILocationBreakpoint createFromNode(@NotNull SNode node, @NotNull GDBBreakpoint.GDBBreakpointKind kind, Project project) {
-    return new GDBBreakpoint(new SNodePointer(node), project);
+    return new GDBBreakpoint(new jetbrains.mps.smodel.SNodePointer(node), project);
   }
 
   @Nullable

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class TreePathOperation_Constraints extends BaseConstraintsDescriptor {
   public TreePathOperation_Constraints() {
@@ -36,5 +36,5 @@ public class TreePathOperation_Constraints extends BaseConstraintsDescriptor {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression") && (link == SLinkOperations.findLinkDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression", "operation"));
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "5626852792500016115");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "5626852792500016115");
 }

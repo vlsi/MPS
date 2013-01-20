@@ -51,7 +51,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import java.awt.Font;
 import jetbrains.mps.nodeEditor.EditorSettings;
@@ -355,7 +355,7 @@ outer:
   }
 
   public static class ConceptContainer {
-    private SNodePointer myNodePointer;
+    private SNodeReference myNodePointer;
     private int myX;
     private int myY;
     private int myWidth;
@@ -383,7 +383,7 @@ outer:
       myRootable = SPropertyOperations.getBoolean(conceptDeclaration, "rootable");
       myIsAbstract = SPropertyOperations.getBoolean(conceptDeclaration, "abstract");
       myNamespace = SModelUtil.getDeclaringLanguage(conceptDeclaration).getModuleFqName();
-      myNodePointer = new SNodePointer(conceptDeclaration);
+      myNodePointer = new jetbrains.mps.smodel.SNodePointer(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
         public void mousePressed(final MouseEvent e) {
           Project project = myOperationContext.getProject();

@@ -45,7 +45,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -314,7 +314,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         }
       }
 
-      return new TabbedEditor(new SNodePointer(node), tabs, context);
+      return new TabbedEditor(new jetbrains.mps.smodel.SNodePointer(node), tabs, context);
     }
   }
 }

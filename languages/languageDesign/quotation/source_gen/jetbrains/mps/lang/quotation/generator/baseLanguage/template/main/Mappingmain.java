@@ -7,7 +7,7 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import java.util.Collections;
@@ -38,8 +38,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
     return this.myModel;
   }
 
-  public SNodePointer getMappingNode() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887556");
+  public SNodeReference getMappingNode() {
+    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887556");
   }
 
   public boolean isApplicable(ITemplateGenerator generator) {
@@ -90,7 +90,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.lang.quotation.structure.Quotation";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3p;
     }
 
@@ -126,7 +126,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.lang.quotation.structure.NodeBuilder";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3q;
     }
 
@@ -162,7 +162,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.lang.quotation.structure.NodeBuilderNode";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3r;
     }
 
@@ -186,10 +186,10 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
   }
 
-  private static SNodePointer reductionRule_417xrn_a0a3p = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887579");
-  private static SNodePointer conseq_417xrn_a0a0a5p = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1025590056398399703");
-  private static SNodePointer reductionRule_417xrn_a0a3q = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1006429225401295240");
-  private static SNodePointer conseq_417xrn_a0a0a5q = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1006429225401295799");
-  private static SNodePointer reductionRule_417xrn_a0a3r = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709774");
-  private static SNodePointer conseq_417xrn_a0a0a5r = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709778");
+  private static SNodeReference reductionRule_417xrn_a0a3p = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887579");
+  private static SNodeReference conseq_417xrn_a0a0a5p = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1025590056398399703");
+  private static SNodeReference reductionRule_417xrn_a0a3q = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1006429225401295240");
+  private static SNodeReference conseq_417xrn_a0a0a5q = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1006429225401295799");
+  private static SNodeReference reductionRule_417xrn_a0a3r = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709774");
+  private static SNodeReference conseq_417xrn_a0a0a5r = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709778");
 }

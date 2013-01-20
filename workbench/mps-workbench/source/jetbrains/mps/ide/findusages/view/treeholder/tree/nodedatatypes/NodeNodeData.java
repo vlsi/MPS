@@ -28,7 +28,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.StringUtil;
@@ -42,7 +42,7 @@ public class NodeNodeData extends BaseNodeData {
 
   private static final String NODE = "node";
 
-  private SNodePointer myNodePointer;
+  private SNodeReference myNodePointer;
 
   public NodeNodeData(PathItemRole role, SNode node, boolean isResultNode, INodeRepresentator nodeRepresentator, boolean resultsSection) {
     super(
@@ -55,7 +55,7 @@ public class NodeNodeData extends BaseNodeData {
       isResultNode,
       resultsSection
     );
-    myNodePointer = new SNodePointer(node);
+    myNodePointer = new jetbrains.mps.smodel.SNodePointer(node);
   }
 
   public NodeNodeData(PathItemRole role, SearchResult result, boolean isResultNode, INodeRepresentator nodeRepresentator, boolean resultsSection) {
@@ -69,14 +69,14 @@ public class NodeNodeData extends BaseNodeData {
       isResultNode,
       resultsSection
     );
-    myNodePointer = new SNodePointer((SNode) result.getPathObject());
+    myNodePointer = new jetbrains.mps.smodel.SNodePointer((SNode) result.getPathObject());
   }
 
   public NodeNodeData(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
-  public SNodePointer getNodePointer() {
+  public SNodeReference getNodePointer() {
     return myNodePointer;
   }
 
@@ -90,7 +90,7 @@ public class NodeNodeData extends BaseNodeData {
   }
 
   public Object getIdObject() {
-    return isResultNode() ? (SNodePointer.serialize(getNodePointer()) + "/" + getPlainText()) : getNode();
+    return isResultNode() ? (jetbrains.mps.smodel.SNodePointer.serialize(getNodePointer()) + "/" + getPlainText()) : getNode();
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {
@@ -105,7 +105,7 @@ public class NodeNodeData extends BaseNodeData {
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     List children = element.getChild(NODE).getChildren();
-    myNodePointer = new SNodePointer((SNode) null);
+    myNodePointer = new jetbrains.mps.smodel.SNodePointer((SNode) null);
     if (!children.isEmpty()) {
       myNodePointer = ComponentsUtil.nodePointerFromElement((Element) children.get(0));
     }

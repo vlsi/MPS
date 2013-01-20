@@ -18,7 +18,7 @@ package jetbrains.mps.project.validation;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.IterableUtil;
 
 import java.util.ArrayList;

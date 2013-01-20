@@ -5,7 +5,7 @@ package jetbrains.mps.execution.configurations.pluginSolution.plugin;
 import jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider;
 import com.intellij.openapi.util.Key;
 import java.util.List;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 
@@ -25,13 +25,13 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
   }
 
   public static class MakeNodePointers_BeforeTask_RunTask extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask<MakeNodePointers_BeforeTask.MakeNodePointers_BeforeTask_RunTask> {
-    private List<SNodePointer> myNodePointers;
+    private List<SNodeReference> myNodePointers;
 
     public MakeNodePointers_BeforeTask_RunTask() {
       super(KEY);
     }
 
-    public boolean configure(List<SNodePointer> nodePointers) {
+    public boolean configure(List<SNodeReference> nodePointers) {
       myNodePointers = nodePointers;
       return true;
     }

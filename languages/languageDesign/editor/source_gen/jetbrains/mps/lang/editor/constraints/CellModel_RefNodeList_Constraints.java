@@ -20,7 +20,7 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class CellModel_RefNodeList_Constraints extends BaseConstraintsDescriptor {
   public CellModel_RefNodeList_Constraints() {
@@ -53,7 +53,7 @@ public class CellModel_RefNodeList_Constraints extends BaseConstraintsDescriptor
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_gjggyh_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -62,5 +62,5 @@ public class CellModel_RefNodeList_Constraints extends BaseConstraintsDescriptor
     return references;
   }
 
-  private static SNodePointer breakingNode_gjggyh_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1213104860419");
+  private static SNodeReference breakingNode_gjggyh_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1213104860419");
 }

@@ -10,7 +10,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelFqName;
@@ -44,7 +44,7 @@ public class TemplateModelImpl implements TemplateModel {
     return switches;
   }
 
-  public TemplateDeclaration loadTemplate(SNodePointer template, Object... arguments) {
+  public TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments) {
     if (!(modelRef_wo91o7_a0a5.equals(template.getModelReference()))) {
       return null;
     }

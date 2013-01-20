@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ReportConfigurationErrorStatement_Constraints extends BaseConstraintsDescriptor {
   public ReportConfigurationErrorStatement_Constraints() {
@@ -35,5 +35,5 @@ public class ReportConfigurationErrorStatement_Constraints extends BaseConstrain
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.execution.settings.structure.CheckProperties_Function", false, false) != null);
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067078");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067078");
 }

@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 public class DropRootRuleContext extends TemplateQueryContextWithRule {
@@ -25,7 +25,7 @@ public class DropRootRuleContext extends TemplateQueryContextWithRule {
     super(inputNode, ruleNode, generator);
   }
 
-  public DropRootRuleContext(SNode inputNode, @NotNull SNodePointer ruleNode, @NotNull ITemplateGenerator generator) {
+  public DropRootRuleContext(SNode inputNode, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
     super(inputNode, ruleNode, generator);
   }
 }

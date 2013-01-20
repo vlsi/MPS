@@ -5,7 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -17,10 +17,10 @@ import jetbrains.mps.logging.Logger;
 
 public class EditGivenNode_Action extends BaseAction {
   private static final Icon ICON = null;
-  private SNodePointer targetNode;
+  private SNodeReference targetNode;
   private String text;
 
-  public EditGivenNode_Action(SNodePointer targetNode_par, String text_par) {
+  public EditGivenNode_Action(SNodeReference targetNode_par, String text_par) {
     super("<no caption>", "", ICON);
     this.targetNode = targetNode_par;
     this.text = text_par;
@@ -70,14 +70,14 @@ public class EditGivenNode_Action extends BaseAction {
     StringBuilder res = new StringBuilder();
     res.append(super.getActionId());
     res.append("#");
-    res.append(targetNode_State((SNodePointer) this.targetNode));
+    res.append(targetNode_State((SNodeReference) this.targetNode));
     res.append("!");
     res.append(text_State((String) this.text));
     res.append("!");
     return res.toString();
   }
 
-  public static String targetNode_State(SNodePointer object) {
+  public static String targetNode_State(SNodeReference object) {
     return object.toString();
   }
 

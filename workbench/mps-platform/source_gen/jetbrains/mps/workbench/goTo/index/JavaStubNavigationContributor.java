@@ -23,7 +23,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.smodel.LanguageID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -85,7 +85,7 @@ public class JavaStubNavigationContributor implements NodeNavigationContributor,
         }
 
         public SNodeReference getNodeReference() {
-          return new SNodePointer(model, new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(cls)));
+          return new jetbrains.mps.smodel.SNodePointer(model, new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(cls)));
         }
 
         public SConcept getConcept() {

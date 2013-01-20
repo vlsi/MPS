@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class XMLSAXAttributeReference_Constraints extends BaseConstraintsDescriptor {
   public XMLSAXAttributeReference_Constraints() {
@@ -72,7 +72,7 @@ public class XMLSAXAttributeReference_Constraints extends BaseConstraintsDescrip
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_4osf4s_a0a1a0a0a1a0b0a1a3;
           }
         };
@@ -85,6 +85,6 @@ public class XMLSAXAttributeReference_Constraints extends BaseConstraintsDescrip
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator", true, false) != null);
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140728");
-  private static SNodePointer breakingNode_4osf4s_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140676");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140728");
+  private static SNodeReference breakingNode_4osf4s_a0a1a0a0a1a0b0a1a3 = new jetbrains.mps.smodel.SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140676");
 }

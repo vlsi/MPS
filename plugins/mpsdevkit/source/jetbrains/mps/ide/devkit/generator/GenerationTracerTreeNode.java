@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import java.util.Map;
@@ -47,7 +47,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     myProject = project;
     myTracerNode = tracerNode;
 
-    SNodePointer nodePointer = myTracerNode.getNodePointer();
+    SNodeReference nodePointer = myTracerNode.getNodePointer();
     if (nodePointer != null) {
       setNodeIdentifier("" + nodePointer.hashCode());
     } else {
@@ -64,7 +64,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
 
   protected void doUpdatePresentation() {
     Kind kind = myTracerNode.getKind();
-    SNodePointer nodePointer = myTracerNode.getNodePointer();
+    SNodeReference nodePointer = myTracerNode.getNodePointer();
     if (nodePointer != null) {
       if (kind == Kind.APPROXIMATE_OUTPUT || kind == Kind.APPROXIMATE_INPUT) {
         setText("[approximate location] " + nodePointer.toString());
@@ -190,7 +190,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        SNodePointer nodePointer = myTracerNode.getNodePointer();
+        SNodeReference nodePointer = myTracerNode.getNodePointer();
         if (nodePointer == null) return;
         SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
         if (node == null) {

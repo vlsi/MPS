@@ -42,7 +42,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
@@ -90,7 +90,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return ApplicationManager.getApplication().getComponent(IntentionsManager.class);
   }
 
-  private Map<Intention, SNodePointer> myNodesByIntentions = new HashMap<Intention, SNodePointer>();
+  private Map<Intention, SNodeReference> myNodesByIntentions = new HashMap<Intention, SNodeReference>();
   private Map<String, Set<Intention>> myIntentions = new HashMap<String, Set<Intention>>();
   private Set<String> myDisabledIntentionsCache = new HashSet<String>();
   private HashMap<Class, ModuleReference> myIntentionsLanguages = new HashMap<Class, ModuleReference>();
@@ -301,7 +301,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   @Nullable
   public synchronized SNode getNodeByIntention(Intention intention) {
     checkLoaded();
-    SNodePointer pointer = myNodesByIntentions.get(intention);
+    SNodeReference pointer = myNodesByIntentions.get(intention);
     return pointer != null ? pointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 
@@ -319,7 +319,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   //-------------reloading-----------------
 
-  public synchronized void addIntention(Intention intention, @Nullable ModuleReference lang, @Nullable SNodePointer node) {
+  public synchronized void addIntention(Intention intention, @Nullable ModuleReference lang, @Nullable SNodeReference node) {
     Set<Intention> intentions = myIntentions.get(intention.getConcept());
     if (intentions == null) {
       intentions = new HashSet<Intention>();
@@ -392,7 +392,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         if (refactoring.isShowAsIntention()) {
           Intention intention = new MigrationRefactoringAdapter(refactoring, migrationScript);
           ModuleReference moduleRef = language.getModuleReference();
-          SNodePointer node = new SNodePointer(migrationScript);
+          SNodeReference node = new jetbrains.mps.smodel.SNodePointer(migrationScript);
           IntentionsManager.getInstance().addIntention(intention, moduleRef, node);
         }
       }

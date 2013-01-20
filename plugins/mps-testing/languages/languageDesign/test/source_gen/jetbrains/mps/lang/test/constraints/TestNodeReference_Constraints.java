@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class TestNodeReference_Constraints extends BaseConstraintsDescriptor {
   public TestNodeReference_Constraints() {
@@ -53,7 +53,7 @@ public class TestNodeReference_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_i5q66v_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -62,5 +62,5 @@ public class TestNodeReference_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_i5q66v_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)", "1213104844718");
+  private static SNodeReference breakingNode_i5q66v_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)", "1213104844718");
 }

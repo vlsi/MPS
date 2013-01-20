@@ -25,14 +25,14 @@ import com.intellij.psi.PsiFile;
 import com.intellij.usages.UsageTarget;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import org.jetbrains.annotations.NotNull;
 
 public class NodeUsageTarget extends NodeNavigatable implements UsageTarget {
 
-  public NodeUsageTarget(@NotNull SNodePointer node, @NotNull Project project) {
+  public NodeUsageTarget(@NotNull SNodeReference node, @NotNull Project project) {
     super(node, project);
   }
 

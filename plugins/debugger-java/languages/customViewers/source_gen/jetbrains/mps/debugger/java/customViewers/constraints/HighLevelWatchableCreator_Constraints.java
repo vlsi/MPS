@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class HighLevelWatchableCreator_Constraints extends BaseConstraintsDescriptor {
   public HighLevelWatchableCreator_Constraints() {
@@ -48,7 +48,7 @@ public class HighLevelWatchableCreator_Constraints extends BaseConstraintsDescri
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_fcwqku_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -57,5 +57,5 @@ public class HighLevelWatchableCreator_Constraints extends BaseConstraintsDescri
     return references;
   }
 
-  private static SNodePointer breakingNode_fcwqku_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)", "43370322128311164");
+  private static SNodeReference breakingNode_fcwqku_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)", "43370322128311164");
 }

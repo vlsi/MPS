@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class SideTransformMenuPart_Constraints extends BaseConstraintsDescriptor {
   public SideTransformMenuPart_Constraints() {
@@ -35,5 +35,5 @@ public class SideTransformMenuPart_Constraints extends BaseConstraintsDescriptor
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", false, false) != null;
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1371735981988471174");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1371735981988471174");
 }

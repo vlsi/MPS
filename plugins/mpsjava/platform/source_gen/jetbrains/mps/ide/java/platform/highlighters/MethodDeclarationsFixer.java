@@ -6,7 +6,7 @@ import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import java.util.Set;
 
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
@@ -53,17 +53,17 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private static boolean DISABLED = false;
-  private Set<SNodePointer> myCheckedMethodCalls = new HashSet<SNodePointer>();
-  private Map<SNodePointer, Set<SNodePointer>> myMethodDeclsToCheckedMethodCalls = new HashMap<SNodePointer, Set<SNodePointer>>();
-  private Map<Pair<String, String>, Set<SNodePointer>> myMethodConceptsAndNamesToCheckedMethodCalls = new HashMap<Pair<String, String>, Set<SNodePointer>>();
-  private Map<SNodePointer, SNodePointer> myParametersToCheckedMethodCalls = new HashMap<SNodePointer, SNodePointer>();
-  private Map<SNodePointer, SNodePointer> myMethodCallsToSetDecls = new HashMap<SNodePointer, SNodePointer>();
-  private Set<SNodePointer> myCurrentExpressionsWithChangedTypes = new HashSet<SNodePointer>();
+  private Set<SNodeReference> myCheckedMethodCalls = new HashSet<SNodeReference>();
+  private Map<SNodeReference, Set<SNodeReference>> myMethodDeclsToCheckedMethodCalls = new HashMap<SNodeReference, Set<SNodeReference>>();
+  private Map<Pair<String, String>, Set<SNodeReference>> myMethodConceptsAndNamesToCheckedMethodCalls = new HashMap<Pair<String, String>, Set<SNodeReference>>();
+  private Map<SNodeReference, SNodeReference> myParametersToCheckedMethodCalls = new HashMap<SNodeReference, SNodeReference>();
+  private Map<SNodeReference, SNodeReference> myMethodCallsToSetDecls = new HashMap<SNodeReference, SNodeReference>();
+  private Set<SNodeReference> myCurrentExpressionsWithChangedTypes = new HashSet<SNodeReference>();
   private final Object myRecalculatedTypesLock = new Object();
   private TypeRecalculatedListener myTypeRecalculatedListener = new TypeRecalculatedListener() {
     public void typeWillBeRecalculatedForTerm(SNode term) {
       synchronized (myRecalculatedTypesLock) {
-        myCurrentExpressionsWithChangedTypes.add(new SNodePointer(term));
+        myCurrentExpressionsWithChangedTypes.add(new jetbrains.mps.smodel.SNodePointer(term));
       }
     }
   };
@@ -103,9 +103,9 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         testAndFixMethodCall(methodCall, reResolvedTargets);
       }
     } else {
-      Set<SNodePointer> expressionsWithChangedTypes;
+      Set<SNodeReference> expressionsWithChangedTypes;
       synchronized (myRecalculatedTypesLock) {
-        expressionsWithChangedTypes = new HashSet<SNodePointer>(myCurrentExpressionsWithChangedTypes);
+        expressionsWithChangedTypes = new HashSet<SNodeReference>(myCurrentExpressionsWithChangedTypes);
         myCurrentExpressionsWithChangedTypes.clear();
       }
       SModelEventVisitor visitor = new SModelEventVisitorAdapter() {
@@ -141,7 +141,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         }
         event.accept(visitor);
       }
-      for (SNodePointer expressionWithChangedType : expressionsWithChangedTypes) {
+      for (SNodeReference expressionWithChangedType : expressionsWithChangedTypes) {
         expressionTypeChanged(expressionWithChangedType.resolve(MPSModuleRepository.getInstance()), reResolvedTargets);
       }
     }
@@ -193,23 +193,23 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       if (baseMethodDeclaration == null || (good && newTarget != baseMethodDeclaration)) {
         reResolvedTargets.put(methodCallNode, newTarget);
       }
-      SNodePointer methodCallPointer = new SNodePointer(methodCallNode);
-      SNodePointer newTargetPointer = new SNodePointer(newTarget);
+      SNodeReference methodCallPointer = new jetbrains.mps.smodel.SNodePointer(methodCallNode);
+      SNodeReference newTargetPointer = new jetbrains.mps.smodel.SNodePointer(newTarget);
       myMethodCallsToSetDecls.put(methodCallPointer, newTargetPointer);
       myCheckedMethodCalls.add(methodCallPointer);
       for (SNode actualArgument : SLinkOperations.getTargets(methodCallNode, "actualArgument", true)) {
-        myParametersToCheckedMethodCalls.put(new SNodePointer(actualArgument), methodCallPointer);
+        myParametersToCheckedMethodCalls.put(new jetbrains.mps.smodel.SNodePointer(actualArgument), methodCallPointer);
       }
-      Set<SNodePointer> nodeSet = myMethodDeclsToCheckedMethodCalls.get(newTargetPointer);
+      Set<SNodeReference> nodeSet = myMethodDeclsToCheckedMethodCalls.get(newTargetPointer);
       if (nodeSet == null) {
-        nodeSet = new HashSet<SNodePointer>();
+        nodeSet = new HashSet<SNodeReference>();
         myMethodDeclsToCheckedMethodCalls.put(newTargetPointer, nodeSet);
       }
       nodeSet.add(methodCallPointer);
       Pair<String, String> key = new Pair<String, String>(newTarget.getConcept().getConceptId(), methodName);
-      Set<SNodePointer> nodesByNameAndConcept = myMethodConceptsAndNamesToCheckedMethodCalls.get(key);
+      Set<SNodeReference> nodesByNameAndConcept = myMethodConceptsAndNamesToCheckedMethodCalls.get(key);
       if (nodesByNameAndConcept == null) {
-        nodesByNameAndConcept = new HashSet<SNodePointer>();
+        nodesByNameAndConcept = new HashSet<SNodeReference>();
         myMethodConceptsAndNamesToCheckedMethodCalls.put(key, nodesByNameAndConcept);
       }
       nodesByNameAndConcept.add(methodCallPointer);
@@ -297,22 +297,22 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void methodDeclarationNameChanged(SNode method, Map<SNode, SNode> resolveTargets) {
-    Set<SNodePointer> methodCallPointers = myMethodDeclsToCheckedMethodCalls.get(new SNodePointer(method));
+    Set<SNodeReference> methodCallPointers = myMethodDeclsToCheckedMethodCalls.get(new jetbrains.mps.smodel.SNodePointer(method));
     for (SNode methodCall : Sequence.fromIterable(getMethodCalls(methodCallPointers))) {
       testAndFixMethodCall(methodCall, resolveTargets);
     }
   }
 
-  private Iterable<SNode> getMethodCalls(Set<SNodePointer> methodCallPointers) {
+  private Iterable<SNode> getMethodCalls(Set<SNodeReference> methodCallPointers) {
     if (methodCallPointers == null) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
-    return SetSequence.fromSet(methodCallPointers).where(new IWhereFilter<SNodePointer>() {
-      public boolean accept(SNodePointer it) {
+    return SetSequence.fromSet(methodCallPointers).where(new IWhereFilter<SNodeReference>() {
+      public boolean accept(SNodeReference it) {
         return it != null;
       }
-    }).select(new ISelector<SNodePointer, SNode>() {
-      public SNode select(SNodePointer it) {
+    }).select(new ISelector<SNodeReference, SNode>() {
+      public SNode select(SNodeReference it) {
         return SNodeOperations.cast(it.resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.IMethodCall");
       }
     }).where(new IWhereFilter<SNode>() {
@@ -323,14 +323,14 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void methodDeclarationSignatureChanged(SNode method, Map<SNode, SNode> resolveTargets) {
-    Set<SNodePointer> methodCallPointers = myMethodConceptsAndNamesToCheckedMethodCalls.get(new Pair<String, String>(method.getConcept().getConceptId(), method.getName()));
+    Set<SNodeReference> methodCallPointers = myMethodConceptsAndNamesToCheckedMethodCalls.get(new Pair<String, String>(method.getConcept().getConceptId(), method.getName()));
     for (SNode methodCall : Sequence.fromIterable(getMethodCalls(methodCallPointers))) {
       testAndFixMethodCall(methodCall, resolveTargets);
     }
   }
 
   private void methodCallDeclarationChanged(SNode methodCall, Map<SNode, SNode> resolveTargets) {
-    SNodePointer methodCallPointer = new SNodePointer(methodCall);
+    SNodeReference methodCallPointer = new jetbrains.mps.smodel.SNodePointer(methodCall);
     if (myCheckedMethodCalls.contains(methodCallPointer) && SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) == myMethodCallsToSetDecls.get(methodCallPointer).resolve(MPSModuleRepository.getInstance())) {
       return;
     }
@@ -338,7 +338,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void expressionTypeChanged(SNode expression, Map<SNode, SNode> resolveTargets) {
-    SNodePointer methodCallPointer = myParametersToCheckedMethodCalls.get(new SNodePointer(expression));
+    SNodeReference methodCallPointer = myParametersToCheckedMethodCalls.get(new jetbrains.mps.smodel.SNodePointer(expression));
     if (methodCallPointer != null) {
       SNode methodCall = SNodeOperations.cast(methodCallPointer.resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.IMethodCall");
       if (methodCall != null) {
@@ -352,10 +352,10 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       testAndFixMethodCall(methodCall, resolveTargets);
     }
     SNode parent = SNodeOperations.getParent(child);
-    SNodePointer parentPointer = new SNodePointer(parent);
+    SNodeReference parentPointer = new jetbrains.mps.smodel.SNodePointer(parent);
     if (myCheckedMethodCalls.contains(parentPointer)) {
       SNode p = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.IMethodCall");
-      myParametersToCheckedMethodCalls.put(new SNodePointer(child), parentPointer);
+      myParametersToCheckedMethodCalls.put(new jetbrains.mps.smodel.SNodePointer(child), parentPointer);
       testAndFixMethodCall(p, resolveTargets);
     }
     SNode formalParam = SNodeOperations.getAncestor(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration", true, false);
@@ -365,8 +365,8 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void nodeRemoved(SNode child, SNode formerParent, SModel m, Map<SNode, SNode> resolveTargets) {
-    if (myCheckedMethodCalls.contains(new SNodePointer(m.getSModelReference(), formerParent.getNodeId()))) {
-      myParametersToCheckedMethodCalls.remove(new SNodePointer(m.getSModelReference(), child.getNodeId()));
+    if (myCheckedMethodCalls.contains(new jetbrains.mps.smodel.SNodePointer(m.getSModelReference(), formerParent.getNodeId()))) {
+      myParametersToCheckedMethodCalls.remove(new jetbrains.mps.smodel.SNodePointer(m.getSModelReference(), child.getNodeId()));
       testAndFixMethodCall(SNodeOperations.cast(formerParent, "jetbrains.mps.baseLanguage.structure.IMethodCall"), resolveTargets);
     }
     if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {

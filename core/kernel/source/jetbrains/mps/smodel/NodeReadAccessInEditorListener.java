@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Pair;
@@ -23,11 +23,11 @@ import java.util.Set;
 
 public class NodeReadAccessInEditorListener implements INodesReadListener {
   protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
-  protected HashSet<SNodePointer> myReferentTargetsToDependOn = new HashSet<SNodePointer>();
-  protected HashSet<Pair<SNodePointer, String>> myDirtilyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
-  protected HashSet<Pair<SNodePointer, String>> myExistenceReadAccessProperties = new HashSet<Pair<SNodePointer, String>>();
+  protected HashSet<SNodeReference> myReferentTargetsToDependOn = new HashSet<SNodeReference>();
+  protected HashSet<Pair<SNodeReference, String>> myDirtilyReadAccessedProperties = new HashSet<Pair<SNodeReference, String>>();
+  protected HashSet<Pair<SNodeReference, String>> myExistenceReadAccessProperties = new HashSet<Pair<SNodeReference, String>>();
 
-  private Set<Pair<SNodePointer, String>> myCleanlyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
+  private Set<Pair<SNodeReference, String>> myCleanlyReadAccessedProperties = new HashSet<Pair<SNodeReference, String>>();
 
   private static final Logger LOG = Logger.getLogger(NodeReadAccessInEditorListener.class);
 
@@ -35,21 +35,21 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
     return myNodesToDependOn;
   }
 
-  public Set<SNodePointer> getRefTargetsToDependOn() {
+  public Set<SNodeReference> getRefTargetsToDependOn() {
     return myReferentTargetsToDependOn;
   }
 
-  public HashSet<Pair<SNodePointer, String>> getDirtilyReadAccessedProperties() {
+  public HashSet<Pair<SNodeReference, String>> getDirtilyReadAccessedProperties() {
     return myDirtilyReadAccessedProperties;
   }
 
-  public HashSet<Pair<SNodePointer, String>> getExistenceReadAccessProperties() {
+  public HashSet<Pair<SNodeReference, String>> getExistenceReadAccessProperties() {
     return myExistenceReadAccessProperties;
   }
 
-  public Set<Pair<SNodePointer, String>> popCleanlyReadAccessedProperties() {
-    Set<Pair<SNodePointer, String>> result = myCleanlyReadAccessedProperties;
-    myCleanlyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
+  public Set<Pair<SNodeReference, String>> popCleanlyReadAccessedProperties() {
+    Set<Pair<SNodeReference, String>> result = myCleanlyReadAccessedProperties;
+    myCleanlyReadAccessedProperties = new HashSet<Pair<SNodeReference, String>>();
     return result;
   }
 
@@ -61,18 +61,18 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
     myNodesToDependOn.addAll(nodes);
   }
 
-  public void addRefTargetsToDependOn(Set<SNodePointer> targets) {
+  public void addRefTargetsToDependOn(Set<SNodeReference> targets) {
     myReferentTargetsToDependOn.addAll(targets);
   }
 
   public void propertyDirtyReadAccess(SNode node, String propertyName) {
-    myDirtilyReadAccessedProperties.add(new Pair<SNodePointer, String>(new SNodePointer(node), propertyName));
+    myDirtilyReadAccessedProperties.add(new Pair<SNodeReference, String>(new jetbrains.mps.smodel.SNodePointer(node), propertyName));
     //refactored here from calling after unique usage
     nodeUnclassifiedReadAccess(node);
   }
 
   public void propertyCleanReadAccess(SNode node, String propertyName) {
-    myCleanlyReadAccessedProperties.add(new Pair<SNodePointer, String>(new SNodePointer(node), propertyName));
+    myCleanlyReadAccessedProperties.add(new Pair<SNodeReference, String>(new jetbrains.mps.smodel.SNodePointer(node), propertyName));
   }
 
   public void nodeUnclassifiedReadAccess(SNode node) {
@@ -85,21 +85,21 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
   }
 
   public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
-     addRefTargetToDependOn(new SNodePointer(referent));
+     addRefTargetToDependOn(new jetbrains.mps.smodel.SNodePointer(referent));
   }
 
-  public void addRefTargetToDependOn(SNodePointer target) {
+  public void addRefTargetToDependOn(SNodeReference target) {
     myReferentTargetsToDependOn.add(target);
   }
 
   public void propertyExistenceAccess(SNode node, String propertyName) {
-    myExistenceReadAccessProperties.add(new Pair<SNodePointer, String>(new SNodePointer(node), propertyName));
+    myExistenceReadAccessProperties.add(new Pair<SNodeReference, String>(new jetbrains.mps.smodel.SNodePointer(node), propertyName));
     //refactored here from from calling after unique usage
     nodeUnclassifiedReadAccess(node);
   }
 
   public void clearCleanlyReadAccessProperties() {
-    myCleanlyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
+    myCleanlyReadAccessedProperties = new HashSet<Pair<SNodeReference, String>>();
   }
 
   public void nodeChildReadAccess(SNode node, String childRole, SNode child) {

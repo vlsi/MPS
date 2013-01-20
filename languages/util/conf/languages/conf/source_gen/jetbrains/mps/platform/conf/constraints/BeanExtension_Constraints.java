@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BeanExtension_Constraints extends BaseConstraintsDescriptor {
   public BeanExtension_Constraints() {
@@ -59,7 +59,7 @@ public class BeanExtension_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_9o6n0z_a0a3a0a0a1a0b0a1a1;
           }
         };
@@ -68,5 +68,5 @@ public class BeanExtension_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_9o6n0z_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "8515964913726225384");
+  private static SNodeReference breakingNode_9o6n0z_a0a3a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "8515964913726225384");
 }

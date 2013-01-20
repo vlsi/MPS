@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Evgeny Gryaznov, 12/7/10
  */
 public interface TemplateRuleWithCondition {
 
-  SNodePointer getRuleNode();
+  SNodeReference getRuleNode();
 
   boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 }

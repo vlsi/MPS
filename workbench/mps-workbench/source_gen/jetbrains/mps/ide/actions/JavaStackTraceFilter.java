@@ -5,7 +5,7 @@ package jetbrains.mps.ide.actions;
 import com.intellij.execution.filters.Filter;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -74,13 +74,13 @@ public class JavaStackTraceFilter implements Filter {
       return null;
     }
 
-    final SNodePointer nodeToShow = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-      public SNodePointer compute() {
+    final SNodeReference nodeToShow = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
+      public SNodeReference compute() {
         SNode node = TraceInfoUtil.getJavaNode(unitName, fileName, lineNumber);
         if (node == null) {
           return null;
         }
-        return new SNodePointer(node);
+        return new jetbrains.mps.smodel.SNodePointer(node);
       }
     });
 

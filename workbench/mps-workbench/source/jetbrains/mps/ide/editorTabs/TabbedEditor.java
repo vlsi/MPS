@@ -50,7 +50,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -70,7 +70,7 @@ import java.util.Set;
 public class TabbedEditor extends BaseNodeEditor {
   private TabsComponent myTabsComponent;
   private SModelListener myModelListener = new MyNameListener();
-  private SNodePointer myBaseNode;
+  private SNodeReference myBaseNode;
   private Set<RelationDescriptor> myPossibleTabs;
   private IOperationContext myContext;
   private BaseNavigationAction myNextTabAction;
@@ -78,7 +78,7 @@ public class TabbedEditor extends BaseNodeEditor {
 
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     public void settingsChanged() {
-      SNodePointer node = getCurrentEditorComponent() == null ? null : getCurrentEditorComponent().getEditedNodePointer();
+      SNodeReference node = getCurrentEditorComponent() == null ? null : getCurrentEditorComponent().getEditedNodePointer();
       JComponent comp = myTabsComponent.getComponent();
       if (comp != null) {
         getComponent().remove(comp);
@@ -91,7 +91,7 @@ public class TabbedEditor extends BaseNodeEditor {
   };
   private MPSNodeVirtualFile myVirtualFile;
 
-  public TabbedEditor(SNodePointer baseNode, Set<RelationDescriptor> possibleTabs, @NotNull IOperationContext context) {
+  public TabbedEditor(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, @NotNull IOperationContext context) {
     super(context);
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
@@ -182,7 +182,7 @@ public class TabbedEditor extends BaseNodeEditor {
 
   private void showNodeInternal(SNode node, boolean select, boolean fromTabs) {
     SNode containingRoot = node.getModel() != null && node.getModel().isRoot(node) ? node : node.getContainingRoot();
-    SNodePointer currentlyEditedNode = getCurrentlyEditedNode();
+    SNodeReference currentlyEditedNode = getCurrentlyEditedNode();
     EditorComponent editor = getCurrentEditorComponent();
     if (editor == null) {
       showEditor();
@@ -192,7 +192,7 @@ public class TabbedEditor extends BaseNodeEditor {
     boolean rootChange = getCurrentlyEditedNode() == null || (containingRoot != currentlyEditedNode.resolve(MPSModuleRepository.getInstance()));
 
     if (!fromTabs) {
-      myTabsComponent.setLastNode(new SNodePointer(node));
+      myTabsComponent.setLastNode(new jetbrains.mps.smodel.SNodePointer(node));
     }
 
     if (rootChange) {
@@ -229,7 +229,7 @@ public class TabbedEditor extends BaseNodeEditor {
   }
 
   private SModelDescriptor getCurrentNodeModel() {
-    SNodePointer n = getCurrentlyEditedNode();
+    SNodeReference n = getCurrentlyEditedNode();
     if (n == null) return null;
     return SModelRepository.getInstance().getModelDescriptor(n.getModelReference());
   }
@@ -260,7 +260,7 @@ public class TabbedEditor extends BaseNodeEditor {
 
     List<DefaultActionGroup> groups = CreateGroupsBuilder.getCreateGroups(myBaseNode, myPossibleTabs, myTabsComponent.getCurrentTabAspect(), new NodeChangeCallback() {
       public void changeNode(SNode node) {
-        myTabsComponent.setLastNode(new SNodePointer(node));
+        myTabsComponent.setLastNode(new jetbrains.mps.smodel.SNodePointer(node));
         showNode(node, !(node.getModel() != null && node.getModel().isRoot(node)));
       }
     });
@@ -275,7 +275,7 @@ public class TabbedEditor extends BaseNodeEditor {
 
   private class MyNameListener extends SModelAdapter {
     public void propertyChanged(SModelPropertyEvent event) {
-      SNodePointer pointer = new SNodePointer(event.getNode());
+      SNodeReference pointer = new jetbrains.mps.smodel.SNodePointer(event.getNode());
       if (event.getPropertyName().equals(SNodeUtil.property_INamedConcept_name) && pointer.equals(getCurrentlyEditedNode())) {
         updateProperties();
       }
@@ -297,7 +297,7 @@ public class TabbedEditor extends BaseNodeEditor {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (state instanceof TabbedEditorState) {
-          SNodePointer nodePointer = ((TabbedEditorState) state).myCurrentNode;
+          SNodeReference nodePointer = ((TabbedEditorState) state).myCurrentNode;
           SNode node = nodePointer == null ? null : nodePointer.resolve(MPSModuleRepository.getInstance());
           if (node != null) {
             showNode(node, false);
@@ -315,12 +315,12 @@ public class TabbedEditor extends BaseNodeEditor {
     private static final String NODE_REF = "node_ref";
 
 
-    private SNodePointer myCurrentNode;
+    private SNodeReference myCurrentNode;
 
     public void save(Element e) {
       super.save(e);
       Element node = new Element(NODE);
-      node.setAttribute(NODE_REF, SNodePointer.serialize(myCurrentNode));
+      node.setAttribute(NODE_REF, jetbrains.mps.smodel.SNodePointer.serialize(myCurrentNode));
       e.addContent(node);
     }
 
@@ -330,12 +330,12 @@ public class TabbedEditor extends BaseNodeEditor {
 
       String val = nodeElem.getAttributeValue(NODE_REF);
       if (val != null) {
-        myCurrentNode = SNodePointer.deserialize(val);
+        myCurrentNode = jetbrains.mps.smodel.SNodePointer.deserialize(val);
       } else {
         //todo remove after 3.0
         String nodeId = nodeElem.getAttributeValue("nodeId");
         String modelId = nodeElem.getAttributeValue("modelId");
-        myCurrentNode = new SNodePointer(modelId, nodeId);
+        myCurrentNode = new jetbrains.mps.smodel.SNodePointer(modelId, nodeId);
       }
     }
 

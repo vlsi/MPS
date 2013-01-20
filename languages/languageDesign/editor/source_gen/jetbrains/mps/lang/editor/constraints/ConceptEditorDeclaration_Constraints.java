@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ConceptEditorDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ConceptEditorDeclaration_Constraints() {
@@ -62,5 +62,5 @@ public class ConceptEditorDeclaration_Constraints extends BaseConstraintsDescrip
     return LanguageAspect.EDITOR.is(model) || SModelStereotype.isGeneratorModel(model);
   }
 
-  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1227090187426");
+  private static SNodeReference canBeRootBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1227090187426");
 }

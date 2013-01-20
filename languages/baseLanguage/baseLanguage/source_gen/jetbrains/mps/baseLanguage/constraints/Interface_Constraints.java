@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.constraints;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
@@ -32,7 +32,7 @@ public class Interface_Constraints extends BaseConstraintsDescriptor {
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseScopeProvider() {
       @Override
-      public SNodePointer getSearchScopeValidatorNode() {
+      public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_y7fug_a0a0a0a0a2;
       }
 
@@ -67,6 +67,6 @@ public class Interface_Constraints extends BaseConstraintsDescriptor {
     return true;
   }
 
-  private static SNodePointer breakingNode_y7fug_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137248");
-  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2949815620934480594");
+  private static SNodeReference breakingNode_y7fug_a0a0a0a0a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137248");
+  private static SNodeReference canBeParentBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2949815620934480594");
 }

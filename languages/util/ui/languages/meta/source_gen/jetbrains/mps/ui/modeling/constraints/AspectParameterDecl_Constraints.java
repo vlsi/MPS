@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class AspectParameterDecl_Constraints extends BaseConstraintsDescriptor {
   public AspectParameterDecl_Constraints() {
@@ -63,7 +63,7 @@ public class AspectParameterDecl_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_4j5hjt_a0a1a0a0a1a0b0a1a2;
           }
         };
@@ -72,5 +72,5 @@ public class AspectParameterDecl_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_4j5hjt_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "5572604531249633268");
+  private static SNodeReference breakingNode_4j5hjt_a0a1a0a0a1a0b0a1a2 = new jetbrains.mps.smodel.SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "5572604531249633268");
 }

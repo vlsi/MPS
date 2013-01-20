@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -139,7 +139,7 @@ public abstract class AbstractIntention implements Intention {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        SNode intentionNode = ((SNodePointer) getIntentionNodeReference()).resolve(MPSModuleRepository.getInstance());
+        SNode intentionNode = ((SNodeReference) getIntentionNodeReference()).resolve(MPSModuleRepository.getInstance());
         if (intentionNode != null) {
           return intentionNode.getName();
         } else {

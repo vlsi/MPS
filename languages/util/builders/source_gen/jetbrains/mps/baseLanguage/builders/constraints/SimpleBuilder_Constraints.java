@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderDeclaration_Behavior;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
   public SimpleBuilder_Constraints() {
@@ -75,7 +75,7 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_r83cww_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -84,5 +84,5 @@ public class SimpleBuilder_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_r83cww_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)", "7288041816793179321");
+  private static SNodeReference breakingNode_r83cww_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)", "7288041816793179321");
 }

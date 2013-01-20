@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -82,7 +82,7 @@ public class WriteHelper {
   }
 
   @Nullable
-  public String genReferenceId(@Nullable SNodePointer pointer) {
+  public String genReferenceId(@Nullable SNodeReference pointer) {
     return (pointer == null ?
       null :
       genReferenceString(pointer.getModelReference(), pointer.getNodeId().toString())

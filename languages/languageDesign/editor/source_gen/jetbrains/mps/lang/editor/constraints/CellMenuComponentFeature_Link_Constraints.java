@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class CellMenuComponentFeature_Link_Constraints extends BaseConstraintsDescriptor {
   public CellMenuComponentFeature_Link_Constraints() {
@@ -45,7 +45,7 @@ public class CellMenuComponentFeature_Link_Constraints extends BaseConstraintsDe
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_1eovyz_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -54,5 +54,5 @@ public class CellMenuComponentFeature_Link_Constraints extends BaseConstraintsDe
     return references;
   }
 
-  private static SNodePointer breakingNode_1eovyz_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1213104846220");
+  private static SNodeReference breakingNode_1eovyz_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1213104846220");
 }

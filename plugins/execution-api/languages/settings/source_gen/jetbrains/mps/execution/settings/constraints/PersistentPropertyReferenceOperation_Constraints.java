@@ -19,7 +19,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class PersistentPropertyReferenceOperation_Constraints extends BaseConstraintsDescriptor {
   public PersistentPropertyReferenceOperation_Constraints() {
@@ -50,7 +50,7 @@ public class PersistentPropertyReferenceOperation_Constraints extends BaseConstr
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_yui4e7_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -59,5 +59,5 @@ public class PersistentPropertyReferenceOperation_Constraints extends BaseConstr
     return references;
   }
 
-  private static SNodePointer breakingNode_yui4e7_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067090");
+  private static SNodeReference breakingNode_yui4e7_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067090");
 }

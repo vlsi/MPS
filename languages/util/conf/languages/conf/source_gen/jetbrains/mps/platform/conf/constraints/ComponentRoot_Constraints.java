@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ComponentRoot_Constraints extends BaseConstraintsDescriptor {
   public ComponentRoot_Constraints() {
@@ -34,5 +34,5 @@ public class ComponentRoot_Constraints extends BaseConstraintsDescriptor {
     return ConfigurationXmlRootNode_constraintsUtil.canBeParent(link, childConcept);
   }
 
-  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "5246455451713054249");
+  private static SNodeReference canBeParentBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "5246455451713054249");
 }

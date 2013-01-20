@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -56,7 +56,7 @@ public class BuildMps_IdeaPluginGroup_Constraints extends BaseConstraintsDescrip
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_h6r07b_a0a2a0a0a1a0b0a1a1;
           }
 
@@ -76,5 +76,5 @@ public class BuildMps_IdeaPluginGroup_Constraints extends BaseConstraintsDescrip
     return references;
   }
 
-  private static SNodePointer breakingNode_h6r07b_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561913833");
+  private static SNodeReference breakingNode_h6r07b_a0a2a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561913833");
 }

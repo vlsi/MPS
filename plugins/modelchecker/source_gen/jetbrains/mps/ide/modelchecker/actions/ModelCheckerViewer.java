@@ -21,7 +21,7 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.ArrayList;
 import java.util.Set;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -159,14 +159,14 @@ public abstract class ModelCheckerViewer extends JPanel {
   }
 
   private List<ModelCheckerIssue> getIssuesToFix() {
-    final Set<SNodePointer> includedResultNodes = SetSequence.fromSetWithValues(new HashSet<SNodePointer>(), myUsagesView.getIncludedResultNodes());
+    final Set<SNodeReference> includedResultNodes = SetSequence.fromSetWithValues(new HashSet<SNodeReference>(), myUsagesView.getIncludedResultNodes());
     return ListSequence.fromList(((List<SearchResult<ModelCheckerIssue>>) getSearchResults().getSearchResults())).select(new ISelector<SearchResult<ModelCheckerIssue>, ModelCheckerIssue>() {
       public ModelCheckerIssue select(SearchResult<ModelCheckerIssue> sr) {
         return sr.getObject();
       }
     }).where(new IWhereFilter<ModelCheckerIssue>() {
       public boolean accept(ModelCheckerIssue sr) {
-        return sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(new SNodePointer(((ModelCheckerIssue.NodeIssue) sr).getNode())) && sr.isFixable();
+        return sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(new jetbrains.mps.smodel.SNodePointer(((ModelCheckerIssue.NodeIssue) sr).getNode())) && sr.isFixable();
       }
     }).toListSequence();
   }

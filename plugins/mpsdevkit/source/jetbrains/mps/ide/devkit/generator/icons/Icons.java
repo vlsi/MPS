@@ -22,7 +22,7 @@ import jetbrains.mps.ide.devkit.generator.TracerNode;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
@@ -53,7 +53,7 @@ public class Icons {
   }
 
   private static Icon getMainIcon(TracerNode tracerNode) {
-    SNodePointer nodePointer = tracerNode.getNodePointer();
+    SNodeReference nodePointer = tracerNode.getNodePointer();
     if (nodePointer != null) {
       SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
       if (node != null) {

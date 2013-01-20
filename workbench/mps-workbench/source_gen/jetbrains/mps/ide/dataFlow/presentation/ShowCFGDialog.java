@@ -23,7 +23,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.Rectangle;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ShowCFGDialog extends DialogWrapper {
   private JScrollPane myScrollPane;
@@ -112,7 +112,7 @@ public class ShowCFGDialog extends DialogWrapper {
     }
   }
 
-  private static SNode check_wx2hhz_a0a0a0a0a0a0a0a8a3(SNodePointer checkedDotOperand) {
+  private static SNode check_wx2hhz_a0a0a0a0a0a0a0a8a3(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }

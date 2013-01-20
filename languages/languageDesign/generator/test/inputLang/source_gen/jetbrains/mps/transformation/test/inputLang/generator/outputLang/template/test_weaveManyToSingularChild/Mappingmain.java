@@ -8,7 +8,7 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import java.util.Collections;
@@ -41,8 +41,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
     return this.myModel;
   }
 
-  public SNodePointer getMappingNode() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738629621");
+  public SNodeReference getMappingNode() {
+    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738629621");
   }
 
   public boolean isApplicable(ITemplateGenerator generator) {
@@ -85,7 +85,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public RootMappingRule0() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return rootMappingRule_417xrn_a0a1q;
     }
 
@@ -118,7 +118,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public WeavingRule0() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return weavingRule_417xrn_a0a1r;
     }
 
@@ -148,8 +148,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
   }
 
-  private static SNodePointer rootMappingRule_417xrn_a0a1q = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738658950");
-  private static SNodePointer rootMappingRule_417xrn_b0b0a0a5q = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738658950");
-  private static SNodePointer weavingRule_417xrn_a0a1r = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738863683");
-  private static SNodePointer weavingConseq_417xrn_a0a0a6r = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738992786");
+  private static SNodeReference rootMappingRule_417xrn_a0a1q = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738658950");
+  private static SNodeReference rootMappingRule_417xrn_b0b0a0a5q = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738658950");
+  private static SNodeReference weavingRule_417xrn_a0a1r = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738863683");
+  private static SNodeReference weavingConseq_417xrn_a0a0a6r = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738992786");
 }

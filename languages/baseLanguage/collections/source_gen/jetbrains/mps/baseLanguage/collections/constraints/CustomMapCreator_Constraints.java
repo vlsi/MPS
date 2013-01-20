@@ -23,7 +23,7 @@ import jetbrains.mps.baseLanguage.collections.behavior.CustomContainersUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
   public CustomMapCreator_Constraints() {
@@ -71,7 +71,7 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_rduypo_a0a1a0a0a1a0b0a1a2;
           }
         };
@@ -80,5 +80,5 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_rduypo_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "9034802358628290362");
+  private static SNodeReference breakingNode_rduypo_a0a1a0a0a1a0b0a1a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "9034802358628290362");
 }

@@ -24,7 +24,7 @@ import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class NamedTupleComponentAccessOperation_Constraints extends BaseConstraintsDescriptor {
@@ -89,7 +89,7 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_snq09y_a0a1a0a0a1a0b0a1a4;
           }
         };
@@ -102,6 +102,6 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
     return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), false) != null);
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239576963984");
-  private static SNodePointer breakingNode_snq09y_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239576899058");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239576963984");
+  private static SNodeReference breakingNode_snq09y_a0a1a0a0a1a0b0a1a4 = new jetbrains.mps.smodel.SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239576899058");
 }

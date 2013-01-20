@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
@@ -100,7 +100,7 @@ abstract class SReferenceBase extends SReference {
       if (force && myImmatureTargetNode != null) {
         if (getSourceNode().getModel() != null && !jetbrains.mps.util.SNodeOperations.isDisposed(getSourceNode())) {
           error("Impossible to resolve immature reference",
-            new ProblemDescription(new SNodePointer(myImmatureTargetNode),
+            new ProblemDescription(new jetbrains.mps.smodel.SNodePointer(myImmatureTargetNode),
               "ImmatureTargetNode(modelID: " +
                 (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
                 ", nodeID: " + myImmatureTargetNode.getNodeId().toString() +

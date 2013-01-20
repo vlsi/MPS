@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.runtime.evaluation.model;
 
 import jetbrains.mps.baseLanguage.search.AbstractClassifiersScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
@@ -66,13 +66,13 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   private AbstractClassifiersScope myScope;
   private boolean myVariablesInitialized = false;
-  protected SNodePointer myEvaluatorPointer;
+  protected SNodeReference myEvaluatorPointer;
 
-  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, boolean isShowContext, List<SNodePointer> nodesToImport) {
+  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, boolean isShowContext, List<SNodeReference> nodesToImport) {
     this(project, session, module, new StackFrameContext(session.getUiState()), isShowContext, nodesToImport);
   }
 
-  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, EvaluationContext context, boolean isShowContext, final List<SNodePointer> nodesToImport) {
+  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, EvaluationContext context, boolean isShowContext, final List<SNodeReference> nodesToImport) {
     super(project, session, module, context, isShowContext);
     ListSequence.fromList(myLanguages).addSequence(LinkedListSequence.fromLinkedList(LinkedListSequence.fromListAndArray(new LinkedList<Language>(), ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class), ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class))));
 
@@ -121,11 +121,11 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     }
   }
 
-  public void createNodesToShow(EditableSModelDescriptor auxilaryModel, List<SNodePointer> nodesToImport) {
+  public void createNodesToShow(EditableSModelDescriptor auxilaryModel, List<SNodeReference> nodesToImport) {
     SNode evaluator = createEvaluator(auxilaryModel);
     SModel smodel = auxilaryModel.getSModel();
     smodel.addRoot(evaluator);
-    myEvaluatorPointer = new SNodePointer(evaluator);
+    myEvaluatorPointer = new jetbrains.mps.smodel.SNodePointer(evaluator);
 
     SModel locationModel = getLocationModel();
     if (locationModel != null) {
@@ -145,9 +145,9 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     return evaluatorConcept;
   }
 
-  private void tryToImport(List<SNodePointer> nodesToImport) {
-    List<SNode> nodes = CopyUtil.copy(ListSequence.fromList(nodesToImport).select(new ISelector<SNodePointer, SNode>() {
-      public SNode select(SNodePointer it) {
+  private void tryToImport(List<SNodeReference> nodesToImport) {
+    List<SNode> nodes = CopyUtil.copy(ListSequence.fromList(nodesToImport).select(new ISelector<SNodeReference, SNode>() {
+      public SNode select(SNodeReference it) {
         return (SNode) it.resolve(MPSModuleRepository.getInstance());
       }
     }).where(new IWhereFilter<SNode>() {
@@ -209,7 +209,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       if (neq_qkk2f2_a0a1a0a31(SNodeOperations.getModel(SLinkOperations.getTargetNode(reference)), myAuxModel.getSModel()) && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept")) {
         SNode matchingVar = ListSequence.fromList(SLinkOperations.getTargets(getNodeToShow(), "variables", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode variable) {
-            return eq_qkk2f2_a0a0a0a0a0a0a1a0a31(SNodePointer.deserialize(SPropertyOperations.getString(variable, "highLevelNodeId")), SLinkOperations.getTargetNode(reference).getReference());
+            return eq_qkk2f2_a0a0a0a0a0a0a1a0a31(jetbrains.mps.smodel.SNodePointer.deserialize(SPropertyOperations.getString(variable, "highLevelNodeId")), SLinkOperations.getTargetNode(reference).getReference());
           }
         });
         if (matchingVar == null) {
@@ -352,7 +352,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   public LowLevelEvaluationModel copy(final boolean isShowConetxt) {
     LowLevelEvaluationModel evaluationModel;
     final SNode evaluator = getNodeToShow();
-    evaluationModel = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule, isShowConetxt, ListSequence.fromList(new ArrayList<SNodePointer>())) {
+    evaluationModel = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule, isShowConetxt, ListSequence.fromList(new ArrayList<SNodeReference>())) {
       @Override
       protected SNode createEvaluator(SModelDescriptor model) {
         SNode newEvaluator = (SNode) CopyUtil.copyAndPreserveId(evaluator, true);

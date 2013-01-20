@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.runtime.impl.ProviderGeneratedSearchScope;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
   public ConstantValue_Constraints() {
@@ -81,7 +81,7 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_r7ripe_a0a2a0a0a1a0b0a1a2;
           }
         };
@@ -90,5 +90,5 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_r7ripe_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "1585405235656398265");
+  private static SNodeReference breakingNode_r7ripe_a0a2a0a0a1a0b0a1a2 = new jetbrains.mps.smodel.SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "1585405235656398265");
 }

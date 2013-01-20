@@ -9,7 +9,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 
@@ -65,7 +65,7 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_2rsa22_a0a0a0a0b0c0a0a0a0a0a0f;
+          SNodeReference pointer = SNODE_POINTER_2rsa22_a0a0a0a0b0c0a0a0a0a0a0f;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -105,5 +105,5 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
     }
   }
 
-  private static SNodePointer SNODE_POINTER_2rsa22_a0a0a0a0b0c0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Deque");
+  private static SNodeReference SNODE_POINTER_2rsa22_a0a0a0a0b0c0a0a0a0a0a0f = new jetbrains.mps.smodel.SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Deque");
 }

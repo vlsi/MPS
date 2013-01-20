@@ -31,7 +31,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -45,7 +45,7 @@ import java.util.Collections;
 /**
  * evgeny, 11/9/11
  */
-public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements ValidateableNode {
+public class MPSProjectViewNode extends ProjectViewNode<SNodeReference> implements ValidateableNode {
   private Icon myIcon;
   private MPSNodeVirtualFile myVirtualFile;
 
@@ -58,7 +58,7 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
    * @param viewSettings the settings of the project view.
    */
   public MPSProjectViewNode(Project project, SNode node, ViewSettings viewSettings) {
-    super(project, new SNodePointer(node), viewSettings);
+    super(project, new jetbrains.mps.smodel.SNodePointer(node), viewSettings);
     myIcon = IconManager.getIconFor(node);
     if (getValue().getNode() != null) {
       // has valid virtual file
@@ -69,7 +69,7 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
   @Override
   public boolean contains(@NotNull VirtualFile file) {
     if (file instanceof MPSNodeVirtualFile) {
-      SNodePointer ptr = ((MPSNodeVirtualFile) file).getSNodePointer();
+      SNodeReference ptr = ((MPSNodeVirtualFile) file).getSNodePointer();
       return ptr.equals(getValue());
     }
     return false;

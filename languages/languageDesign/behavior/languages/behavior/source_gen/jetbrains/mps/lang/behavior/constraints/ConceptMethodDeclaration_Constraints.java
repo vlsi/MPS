@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ConceptMethodDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ConceptMethodDeclaration_Constraints() {
@@ -77,7 +77,7 @@ public class ConceptMethodDeclaration_Constraints extends BaseConstraintsDescrip
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_sgoqec_a0a1a0a0a4a0b0a1a1;
           }
         };
@@ -86,5 +86,5 @@ public class ConceptMethodDeclaration_Constraints extends BaseConstraintsDescrip
     return references;
   }
 
-  private static SNodePointer breakingNode_sgoqec_a0a1a0a0a4a0b0a1a1 = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "1225194475680");
+  private static SNodeReference breakingNode_sgoqec_a0a1a0a0a4a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "1225194475680");
 }

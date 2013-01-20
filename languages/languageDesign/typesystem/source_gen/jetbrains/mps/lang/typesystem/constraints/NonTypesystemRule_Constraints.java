@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class NonTypesystemRule_Constraints extends BaseConstraintsDescriptor {
   public NonTypesystemRule_Constraints() {
@@ -36,5 +36,5 @@ public class NonTypesystemRule_Constraints extends BaseConstraintsDescriptor {
     return LanguageAspect.TYPESYSTEM.is(model) || SModelStereotype.isGeneratorModel(model);
   }
 
-  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1227088613158");
+  private static SNodeReference canBeRootBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1227088613158");
 }

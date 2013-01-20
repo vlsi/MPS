@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -88,14 +88,14 @@ public class GenerateToString_Action extends BaseAction {
     try {
       final SNode classConcept = GenerateToString_Action.this.getClassConcept(_params);
 
-      final Wrappers._T<SNodePointer[]> fields = new Wrappers._T<SNodePointer[]>();
+      final Wrappers._T<SNodeReference[]> fields = new Wrappers._T<SNodeReference[]>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          fields.value = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
-            public SNodePointer select(SNode it) {
-              return new SNodePointer(it);
+          fields.value = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).select(new ISelector<SNode, SNodeReference>() {
+            public SNodeReference select(SNode it) {
+              return new jetbrains.mps.smodel.SNodePointer(it);
             }
-          }).toGenericArray(SNodePointer.class);
+          }).toGenericArray(SNodeReference.class);
         }
       });
 
@@ -107,14 +107,14 @@ public class GenerateToString_Action extends BaseAction {
         return;
       }
 
-      SNodePointer[] selectedFields = Sequence.fromIterable(((Iterable<SNodePointer>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodePointer.class);
+      SNodeReference[] selectedFields = Sequence.fromIterable(((Iterable<SNodeReference>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodeReference.class);
       final SNode rightmostExpression;
-      SNodePointer firstField = (selectedFields != null && selectedFields.length > 0 ?
+      SNodeReference firstField = (selectedFields != null && selectedFields.length > 0 ?
         selectedFields[0] :
         null
       );
       SNode currentExpression = null;
-      for (SNodePointer fieldPtr : selectedFields) {
+      for (SNodeReference fieldPtr : selectedFields) {
         SNode field = SNodeOperations.cast(fieldPtr.resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         SNode fieldRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(fieldRef, "variableDeclaration", field, false);

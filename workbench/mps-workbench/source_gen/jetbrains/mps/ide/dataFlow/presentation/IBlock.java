@@ -4,14 +4,14 @@ package jetbrains.mps.ide.dataFlow.presentation;
 
 import java.awt.Graphics;
 import java.awt.Component;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Set;
 import java.awt.event.MouseEvent;
 
 public interface IBlock {
   public void paint(Graphics g);
   public void relayout(Component component);
-  public SNodePointer getSourceNode();
+  public SNodeReference getSourceNode();
   public int getX();
   public int getY();
   public int getWidth();

@@ -27,7 +27,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -39,7 +39,7 @@ import java.util.List;
 
 public class NodeExplorerComponent {
   private MyTree myTree = new MyTree();
-  private SNodePointer myNode;
+  private SNodeReference myNode;
   private JScrollPane myScrollPane;
 
   public NodeExplorerComponent() {
@@ -52,7 +52,7 @@ public class NodeExplorerComponent {
   }
 
   public void showNode(SNode node, Project project) {
-    myNode = node == null ? null : new SNodePointer(node);
+    myNode = node == null ? null : new jetbrains.mps.smodel.SNodePointer(node);
     myTree.setOperationContext(new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
     myTree.rebuildNow();
   }
@@ -116,12 +116,12 @@ public class NodeExplorerComponent {
   }
 
   private class MyReferentsNode extends TextTreeNode {
-    private SNodePointer myNode;
+    private SNodeReference myNode;
     private boolean myIsInitialized = false;
 
     public MyReferentsNode(SNode node, IOperationContext operationContext) {
       super("referents", operationContext);
-      myNode = new SNodePointer(node);
+      myNode = new jetbrains.mps.smodel.SNodePointer(node);
     }
 
     protected void doInit() {
@@ -140,12 +140,12 @@ public class NodeExplorerComponent {
   }
 
   private class MyPropertiesNode extends TextTreeNode {
-    private SNodePointer myNode;
+    private SNodeReference myNode;
     private boolean myIsInitialized = false;
 
     public MyPropertiesNode(SNode node, IOperationContext operationContext) {
       super("properties", operationContext);
-      myNode = new SNodePointer(node);
+      myNode = new jetbrains.mps.smodel.SNodePointer(node);
     }
 
     protected void doInit() {

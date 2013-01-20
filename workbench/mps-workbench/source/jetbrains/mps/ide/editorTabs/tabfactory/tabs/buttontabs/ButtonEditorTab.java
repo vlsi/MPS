@@ -24,7 +24,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
@@ -41,11 +41,11 @@ class ButtonEditorTab {
     private NodeChangeCallback myCallback;
     private int myIndex;
     private RelationDescriptor myDescriptor;
-    private SNodePointer myBaseNode;
+    private SNodeReference myBaseNode;
     private TabColorProvider myTabColorProvider;
     private SelectTabAction mySelectTabAction;
 
-    public ButtonEditorTab(ButtonTabsComponent tabComponent, NodeChangeCallback callback, int index, RelationDescriptor descriptor, SNodePointer baseNode, TabColorProvider tabColorProvider, JComponent editor) {
+    public ButtonEditorTab(ButtonTabsComponent tabComponent, NodeChangeCallback callback, int index, RelationDescriptor descriptor, SNodeReference baseNode, TabColorProvider tabColorProvider, JComponent editor) {
         myTabComponent = tabComponent;
         myCallback = callback;
         myIndex = index;
@@ -118,13 +118,13 @@ class ButtonEditorTab {
     @Nullable
     private Color getButtonForegroundColor() {
         if (myTabColorProvider != null) {
-            List<SNodePointer> nodePointers = ModelAccess.instance().runReadAction(new Computable<List<SNodePointer>>() {
+            List<SNodeReference> nodePointers = ModelAccess.instance().runReadAction(new Computable<List<SNodeReference>>() {
                 @Override
-                public List<SNodePointer> compute() {
+                public List<SNodeReference> compute() {
                   List<SNode> nodes = myDescriptor.getNodes(myBaseNode.resolve(MPSModuleRepository.getInstance()));
-                    List<SNodePointer> nodePointers = new ArrayList<SNodePointer>();
+                    List<SNodeReference> nodePointers = new ArrayList<SNodeReference>();
                     for (SNode n : nodes) {
-                        nodePointers.add(new SNodePointer(n));
+                        nodePointers.add(new jetbrains.mps.smodel.SNodePointer(n));
                     }
                     return nodePointers;
                 }

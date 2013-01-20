@@ -71,7 +71,7 @@ import org.eclipse.jdt.internal.compiler.lookup.FieldBinding;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.eclipse.jdt.internal.compiler.lookup.ParameterizedFieldBinding;
 import org.eclipse.jdt.internal.compiler.lookup.ProblemBinding;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.eclipse.jdt.internal.compiler.lookup.ParameterizedTypeBinding;
 import org.eclipse.jdt.internal.compiler.lookup.MethodBinding;
 import org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding;
@@ -676,7 +676,7 @@ public class JavaConverterTreeBuilder {
     SNode result;
     ReferenceBinding declaredClassBinding = getDeclaredClassBinding(fieldBinding);
     if (fieldBinding.isStatic()) {
-      SNodePointer classifierPointer = myTypesProvider.createClassifierPointer(declaredClassBinding);
+      SNodeReference classifierPointer = myTypesProvider.createClassifierPointer(declaredClassBinding);
       if (fieldBinding.declaringClass.isEnum()) {
         SNode enumConstantReference = SModelOperations.createNewNode(myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.EnumConstantReference");
         role = "enumConstantDeclaration";

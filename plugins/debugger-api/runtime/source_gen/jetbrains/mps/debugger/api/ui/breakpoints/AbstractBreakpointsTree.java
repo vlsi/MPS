@@ -26,7 +26,7 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer;
 import java.awt.Color;
@@ -229,24 +229,24 @@ import javax.swing.UIManager;
     }
   }
 
-  private class RootGroupKind extends GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, SNodePointer> {
+  private class RootGroupKind extends GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, SNodeReference> {
     private RootGroupKind() {
     }
 
     @Override
-    public SNodePointer getGroup(@NotNull AbstractBreakpointsTree.BreakpointNodeData breakpointNodeData) {
+    public SNodeReference getGroup(@NotNull AbstractBreakpointsTree.BreakpointNodeData breakpointNodeData) {
       IBreakpoint breakpoint = breakpointNodeData.getBreakpoint();
       if (breakpoint instanceof ILocationBreakpoint) {
         SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
         if (node != null) {
-          return new SNodePointer(node.getContainingRoot());
+          return new jetbrains.mps.smodel.SNodePointer(node.getContainingRoot());
         }
       }
       return null;
     }
 
     @Override
-    public Icon getIcon(SNodePointer group) {
+    public Icon getIcon(SNodeReference group) {
       return IconManager.getIconFor(group.resolve(MPSModuleRepository.getInstance()));
     }
   }

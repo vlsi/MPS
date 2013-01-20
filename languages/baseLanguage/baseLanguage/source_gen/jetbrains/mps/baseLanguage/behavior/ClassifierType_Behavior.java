@@ -25,7 +25,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -310,7 +310,7 @@ public class ClassifierType_Behavior {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0k;
+          SNodeReference pointer = SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0k;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -415,5 +415,5 @@ public class ClassifierType_Behavior {
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0k = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+  private static SNodeReference SNODE_POINTER_hz3823_a0a0a0a0b0c0a0a0a0b0b0a0a0k = new jetbrains.mps.smodel.SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
 }

@@ -20,13 +20,13 @@ import jetbrains.mps.ide.ui.smodel.UpdatableSNodeTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collections;
 import java.util.List;
 
-class NodeFavoritesRoot extends FavoritesRoot<SNodePointer> {
-  public NodeFavoritesRoot(SNodePointer value) {
+class NodeFavoritesRoot extends FavoritesRoot<SNodeReference> {
+  public NodeFavoritesRoot(SNodeReference value) {
     super(value);
   }
 

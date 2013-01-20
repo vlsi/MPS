@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -53,7 +53,7 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_2cenap_a0a0a0a0b0c0a0a0a0a0a0e;
+          SNodeReference pointer = SNODE_POINTER_2cenap_a0a0a0a0b0c0a0a0a0a0a0e;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a.getReferenceTarget("concept")))) {
             return false;
           }
@@ -83,5 +83,5 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_2cenap_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
+  private static SNodeReference SNODE_POINTER_2cenap_a0a0a0a0b0c0a0a0a0a0a0e = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
 }

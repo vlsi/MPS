@@ -4,7 +4,7 @@ package jetbrains.mps.ide.platform.dialogs.choosers;
 
 import com.intellij.ide.util.treeView.smartTree.TreeModel;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.ide.util.treeView.smartTree.Grouper;
 import com.intellij.ide.util.treeView.smartTree.Sorter;
@@ -28,14 +28,14 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.choose.nodes.NodePresentation;
 
 public abstract class NodeTreeModel implements TreeModel {
-  private static SNodePointer FAKE_ROOT = new SNodePointer(null);
+  private static SNodeReference FAKE_ROOT = new jetbrains.mps.smodel.SNodePointer(null);
 
   public NodeTreeModel() {
   }
 
-  public abstract SNodePointer[] getRootNodes();
+  public abstract SNodeReference[] getRootNodes();
 
-  public abstract SNodePointer[] getChildren(SNodePointer node);
+  public abstract SNodeReference[] getChildren(SNodeReference node);
 
   @NotNull
   public Grouper[] getGroupers() {
@@ -58,14 +58,14 @@ public abstract class NodeTreeModel implements TreeModel {
   }
 
   private class NodeTreeElement implements StructureViewTreeElement {
-    private final SNodePointer myNode;
+    private final SNodeReference myNode;
 
-    public NodeTreeElement(SNodePointer node) {
+    public NodeTreeElement(SNodeReference node) {
       this.myNode = node;
     }
 
     public TreeElement[] getChildren() {
-      SNodePointer[] children = ((myNode == NodeTreeModel.FAKE_ROOT) ?
+      SNodeReference[] children = ((myNode == NodeTreeModel.FAKE_ROOT) ?
         NodeTreeModel.this.getRootNodes() :
         NodeTreeModel.this.getChildren(myNode)
       );
@@ -129,7 +129,7 @@ public abstract class NodeTreeModel implements TreeModel {
   }
 
   protected static class NodeTreeElementPresentation extends NodePresentation {
-    public NodeTreeElementPresentation(SNodePointer node) {
+    public NodeTreeElementPresentation(SNodeReference node) {
       super(node.resolve(MPSModuleRepository.getInstance()));
     }
 

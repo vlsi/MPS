@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ReturnBlockDocTag_Constraints extends BaseConstraintsDescriptor {
   public ReturnBlockDocTag_Constraints() {
@@ -37,5 +37,5 @@ public class ReturnBlockDocTag_Constraints extends BaseConstraintsDescriptor {
     return !((returnType != null) && SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "8970989240998521777");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "8970989240998521777");
 }

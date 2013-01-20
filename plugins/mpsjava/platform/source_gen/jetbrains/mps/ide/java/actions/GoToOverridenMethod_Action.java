@@ -16,7 +16,7 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
@@ -104,7 +104,7 @@ public class GoToOverridenMethod_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoOverriden");
-      final Wrappers._T<Set<Tuples._2<SNodePointer, SNode>>> overridenMethods = new Wrappers._T<Set<Tuples._2<SNodePointer, SNode>>>();
+      final Wrappers._T<Set<Tuples._2<SNodeReference, SNode>>> overridenMethods = new Wrappers._T<Set<Tuples._2<SNodeReference, SNode>>>();
       final String[] methodName = new String[1];
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
         public void run(@NotNull ProgressIndicator p0) {
@@ -116,8 +116,8 @@ public class GoToOverridenMethod_Action extends BaseAction {
           });
         }
       });
-      GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods.value).select(new ISelector<Tuples._2<SNodePointer, SNode>, SNodePointer>() {
-        public SNodePointer select(Tuples._2<SNodePointer, SNode> it) {
+      GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods.value).select(new ISelector<Tuples._2<SNodeReference, SNode>, SNodeReference>() {
+        public SNodeReference select(Tuples._2<SNodeReference, SNode> it) {
           return it._0();
         }
       }).toListSequence(), GoToHelper.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent()), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))), methodName[0]);
@@ -134,14 +134,14 @@ public class GoToOverridenMethod_Action extends BaseAction {
     return SNodeOperations.getAncestor(GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
   }
 
-  private Set<Tuples._2<SNodePointer, SNode>> getOverridenMethod(final Map<String, Object> _params) {
+  private Set<Tuples._2<SNodeReference, SNode>> getOverridenMethod(final Map<String, Object> _params) {
     SNode method = GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params);
     SNode classifier = GoToOverridenMethod_Action.this.getClassifier(_params);
     Set<Tuples._2<SNode, SNode>> overridenMethods = new OverridingMethodsFinder(classifier, Sequence.<SNode>singleton(method)).getOverridenMethods(method);
-    Set<Tuples._2<SNodePointer, SNode>> result = SetSequence.fromSet(new HashSet<Tuples._2<SNodePointer, SNode>>());
+    Set<Tuples._2<SNodeReference, SNode>> result = SetSequence.fromSet(new HashSet<Tuples._2<SNodeReference, SNode>>());
     if (overridenMethods != null) {
       for (Tuples._2<SNode, SNode> entry : overridenMethods) {
-        SetSequence.fromSet(result).addElement(MultiTuple.<SNodePointer,SNode>from(new SNodePointer(entry._0()), entry._1()));
+        SetSequence.fromSet(result).addElement(MultiTuple.<SNodeReference,SNode>from(new jetbrains.mps.smodel.SNodePointer(entry._0()), entry._1()));
       }
     }
     return result;

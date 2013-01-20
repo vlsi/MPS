@@ -8,7 +8,7 @@ import jetbrains.mps.checkers.AbstractConstraintsChecker;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.Map;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.checkers.LanguageErrorsComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -46,12 +46,12 @@ import jetbrains.mps.logging.Logger;
 public class LanguageEditorChecker extends BaseEditorChecker {
   private boolean myMessagesChanged = false;
   private Set<AbstractConstraintsChecker> myRules = SetSequence.fromSet(new HashSet<AbstractConstraintsChecker>());
-  private Map<SNodePointer, LanguageErrorsComponent> myNodePointersToComponents = MapSequence.fromMap(new HashMap<SNodePointer, LanguageErrorsComponent>());
+  private Map<SNodeReference, LanguageErrorsComponent> myNodePointersToComponents = MapSequence.fromMap(new HashMap<SNodeReference, LanguageErrorsComponent>());
   private Set<EditorComponent> myEditorComponents = SetSequence.fromSet(new HashSet<EditorComponent>());
   private EditorComponent.EditorDisposeListener myDisposeListener = new EditorComponent.EditorDisposeListener() {
     public void editorWillBeDisposed(EditorComponent editorComponent) {
       SetSequence.fromSet(myEditorComponents).removeElement(editorComponent);
-      SNodePointer sNodePointer = editorComponent.getEditedNodePointer();
+      SNodeReference sNodePointer = editorComponent.getEditedNodePointer();
       if (sNodePointer != null) {
         MapSequence.fromMap(myNodePointersToComponents).removeKey(sNodePointer);
       }
@@ -116,8 +116,8 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   }
 
   private void clearForModel(SModelReference modelReference) {
-    Set<SNodePointer> sNodePointers2Remove = SetSequence.fromSet(new HashSet<SNodePointer>());
-    for (SNodePointer sNodePointer : SetSequence.fromSetWithValues(new HashSet<SNodePointer>(), MapSequence.fromMap(myNodePointersToComponents).keySet())) {
+    Set<SNodeReference> sNodePointers2Remove = SetSequence.fromSet(new HashSet<SNodeReference>());
+    for (SNodeReference sNodePointer : SetSequence.fromSetWithValues(new HashSet<SNodeReference>(), MapSequence.fromMap(myNodePointersToComponents).keySet())) {
       if (sNodePointer.getModelReference().equals(modelReference)) {
         MapSequence.fromMap(myNodePointersToComponents).get(sNodePointer).dispose();
         MapSequence.fromMap(myNodePointersToComponents).removeKey(sNodePointer);
@@ -162,7 +162,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     myMessagesChanged = false;
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
     SNode sNode = editorComponent.getEditedNode();
-    SNodePointer sNodePointer = editorComponent.getEditedNodePointer();
+    SNodeReference sNodePointer = editorComponent.getEditedNodePointer();
 
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     if (sNode == null) {
@@ -181,7 +181,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       // after model is replaced but before it is disposed (this can happen asyncronously) 
       return result;
     }
-    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myNodePointersToComponents).get(new SNodePointer(SNodeOperations.getContainingRoot(sNode)));
+    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myNodePointersToComponents).get(new jetbrains.mps.smodel.SNodePointer(SNodeOperations.getContainingRoot(sNode)));
     if (errorsComponent == null) {
       errorsComponent = new LanguageErrorsComponent(sNode);
       MapSequence.fromMap(myNodePointersToComponents).put(sNodePointer, errorsComponent);
@@ -218,7 +218,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   }
 
   public void clear(SNode node, EditorComponent component) {
-    SNodePointer sNodePointer = component.getEditedNodePointer();
+    SNodeReference sNodePointer = component.getEditedNodePointer();
     if (sNodePointer == null) {
       return;
     }

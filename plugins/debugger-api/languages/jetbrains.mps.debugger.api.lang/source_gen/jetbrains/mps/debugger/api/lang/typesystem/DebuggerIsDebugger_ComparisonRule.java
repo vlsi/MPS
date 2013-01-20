@@ -9,7 +9,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class DebuggerIsDebugger_ComparisonRule extends ComparisonRule_Runtime {
@@ -62,7 +62,7 @@ public class DebuggerIsDebugger_ComparisonRule extends ComparisonRule_Runtime {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_wcp5kc_a0a0a0a0b0c0a0a0a0a0a0f;
+          SNodeReference pointer = SNODE_POINTER_wcp5kc_a0a0a0a0b0c0a0a0a0a0a0f;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_DebuggerIsDebugger_1iq6h2_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -86,5 +86,5 @@ public class DebuggerIsDebugger_ComparisonRule extends ComparisonRule_Runtime {
     }
   }
 
-  private static SNodePointer SNODE_POINTER_wcp5kc_a0a0a0a0b0c0a0a0a0a0a0f = new SNodePointer("r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)", "4474271214082912941");
+  private static SNodeReference SNODE_POINTER_wcp5kc_a0a0a0a0b0c0a0a0a0a0a0f = new jetbrains.mps.smodel.SNodePointer("r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)", "4474271214082912941");
 }

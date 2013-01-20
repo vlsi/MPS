@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -49,7 +49,7 @@ public class ClassifierDocReference_Constraints extends BaseConstraintsDescripto
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_9t8845_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -64,5 +64,5 @@ public class ClassifierDocReference_Constraints extends BaseConstraintsDescripto
     return quotedNode_1;
   }
 
-  private static SNodePointer breakingNode_9t8845_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "2546654756694393841");
+  private static SNodeReference breakingNode_9t8845_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "2546654756694393841");
 }

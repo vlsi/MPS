@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class EvaluatorsThisExpression_Constraints extends BaseConstraintsDescriptor {
   public EvaluatorsThisExpression_Constraints() {
@@ -36,5 +36,5 @@ public class EvaluatorsThisExpression_Constraints extends BaseConstraintsDescrip
     return (SLinkOperations.getTarget(SNodeOperations.getAncestor(parentNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", true, false), "thisNode", true) != null);
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6036237525966315980");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6036237525966315980");
 }

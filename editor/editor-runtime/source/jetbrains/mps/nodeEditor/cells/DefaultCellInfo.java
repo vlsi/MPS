@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
@@ -32,7 +32,7 @@ public class DefaultCellInfo implements CellInfo {
   private static final String NODE_REF = "node_ref";
   private static final String PARENT = "parent";
 
-  private SNodePointer myNodePointer;
+  private SNodeReference myNodePointer;
   private String myCellId;
   private int myCellNumber;
   private boolean myIsInList = false;
@@ -43,7 +43,7 @@ public class DefaultCellInfo implements CellInfo {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode n = cell.getSNode();
-        myNodePointer = (n == null || n.getModel() == null) ? null : new SNodePointer(n);
+        myNodePointer = (n == null || n.getModel() == null) ? null : new jetbrains.mps.smodel.SNodePointer(n);
       }
     });
 
@@ -71,7 +71,7 @@ public class DefaultCellInfo implements CellInfo {
     e.setAttribute(IS_IN_LIST, "" + myIsInList);
     Element nodeElement = new Element(NODE);
     assert myNodePointer != null;
-    nodeElement.setAttribute(NODE_REF, SNodePointer.serialize(myNodePointer));
+    nodeElement.setAttribute(NODE_REF, jetbrains.mps.smodel.SNodePointer.serialize(myNodePointer));
     e.addContent(nodeElement);
     if (myParentInfo instanceof DefaultCellInfo) {
       Element parentElement = new Element(PARENT);
@@ -105,7 +105,7 @@ public class DefaultCellInfo implements CellInfo {
       if (parentInfo == null) return null;
     }
     final DefaultCellInfo result = new DefaultCellInfo();
-    result.myNodePointer = SNodePointer.deserialize(ref);
+    result.myNodePointer = jetbrains.mps.smodel.SNodePointer.deserialize(ref);
     result.myCellId = cellId;
     result.myParentInfo = parentInfo;
     result.myIsInList = isInList;

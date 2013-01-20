@@ -4,7 +4,7 @@ package jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.temp
 
 import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -26,8 +26,8 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
     this.myRight = right;
   }
 
-  public SNodePointer getTemplateNode() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617065");
+  public SNodeReference getTemplateNode() {
+    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617065");
   }
 
   private Map<String, Object> getParametersAsMap() {
@@ -101,14 +101,14 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     TemplateContext contextWithParams = context.subContext(getParametersAsMap());
     SNode tnodepart0 = applyPart0(environment, contextWithParams);
-    SNodePointer weaveTf0 = weaveTfConst_eum2xg_a0c0h;
+    SNodeReference weaveTf0 = weaveTfConst_eum2xg_a0c0h;
     environment.weaveNode(outputContextNode, "statement", tnodepart0, weaveTf0, contextWithParams.getInput());
     return TemplateUtil.singletonList(tnodepart0);
   }
 
-  private static SNodePointer templateNode_eum2xg_a0a0a1a5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617074");
-  private static SNodePointer templateNode_eum2xg_a0a0a1a3a1a5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617076");
-  private static SNodePointer copySrcMacro_eum2xg_a0a0a1a3a1a3a1a5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617088");
-  private static SNodePointer copySrcMacro_eum2xg_a0a0a1a4a1a3a1a5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617084");
-  private static SNodePointer weaveTfConst_eum2xg_a0c0h = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617082");
+  private static SNodeReference templateNode_eum2xg_a0a0a1a5 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617074");
+  private static SNodeReference templateNode_eum2xg_a0a0a1a3a1a5 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617076");
+  private static SNodeReference copySrcMacro_eum2xg_a0a0a1a3a1a3a1a5 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617088");
+  private static SNodeReference copySrcMacro_eum2xg_a0a0a1a4a1a3a1a5 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617084");
+  private static SNodeReference weaveTfConst_eum2xg_a0c0h = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617082");
 }

@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescriptor {
   public BuildSource_JavaOptions_Constraints() {
@@ -67,7 +67,7 @@ public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescript
     }) || parentNode.getConcept().getConceptId().startsWith("jetbrains.mps.lang.generator");
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "927724900262213629");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "927724900262213629");
 
   public static boolean isEmpty_c7ipzi_a0a0a1a1a0b0a1a3(String str) {
     return str == null || str.length() == 0;

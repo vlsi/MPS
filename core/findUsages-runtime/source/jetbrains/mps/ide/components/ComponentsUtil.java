@@ -17,7 +17,7 @@ package jetbrains.mps.ide.components;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
 /**
@@ -54,9 +54,9 @@ public class ComponentsUtil {
     return modelDescriptor.getSModel().getNodeById(id);
   }
 
-  public static SNodePointer nodePointerFromElement(Element nodeElement) {
+  public static SNodeReference nodePointerFromElement(Element nodeElement) {
     String modelUID = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
-    return new SNodePointer(modelUID, id);
+    return new jetbrains.mps.smodel.SNodePointer(modelUID, id);
   }
 }

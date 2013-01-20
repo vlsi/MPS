@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -152,19 +152,19 @@ public class DynamicReference extends SReferenceBase {
   }
 
   public static class DynamicReferenceOrigin {
-    private final SNodePointer template;
-    private final SNodePointer inputNode;
+    private final SNodeReference template;
+    private final SNodeReference inputNode;
 
-    public DynamicReferenceOrigin(SNodePointer template, SNodePointer inputNode) {
+    public DynamicReferenceOrigin(SNodeReference template, SNodeReference inputNode) {
       this.template = template;
       this.inputNode = inputNode;
     }
 
-    public SNodePointer getTemplate() {
+    public SNodeReference getTemplate() {
       return template;
     }
 
-    public SNodePointer getInputNode() {
+    public SNodeReference getInputNode() {
       return inputNode;
     }
   }

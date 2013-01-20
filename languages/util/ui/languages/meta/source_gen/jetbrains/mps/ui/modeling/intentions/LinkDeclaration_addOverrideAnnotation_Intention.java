@@ -9,7 +9,7 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -53,7 +53,7 @@ public class LinkDeclaration_addOverrideAnnotation_Intention implements Intentio
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)", "6247544121092588774");
+    return new jetbrains.mps.smodel.SNodePointer("r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)", "6247544121092588774");
   }
 
   public boolean isSurroundWith() {

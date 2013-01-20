@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class AdvanceWorkStatement_Constraints extends BaseConstraintsDescriptor {
   public AdvanceWorkStatement_Constraints() {
@@ -52,7 +52,7 @@ public class AdvanceWorkStatement_Constraints extends BaseConstraintsDescriptor 
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_vuepmh_a0a3a0a0a1a0b0a1a1;
           }
         };
@@ -61,5 +61,5 @@ public class AdvanceWorkStatement_Constraints extends BaseConstraintsDescriptor 
     return references;
   }
 
-  private static SNodePointer breakingNode_vuepmh_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:56325792-0540-48ec-8d52-897a8821cc64(jetbrains.mps.make.script.constraints)", "682890046602395485");
+  private static SNodeReference breakingNode_vuepmh_a0a3a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:56325792-0540-48ec-8d52-897a8821cc64(jetbrains.mps.make.script.constraints)", "682890046602395485");
 }

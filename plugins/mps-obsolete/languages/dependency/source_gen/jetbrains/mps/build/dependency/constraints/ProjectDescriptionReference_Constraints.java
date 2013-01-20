@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ProjectDescriptionReference_Constraints extends BaseConstraintsDescriptor {
   public ProjectDescriptionReference_Constraints() {
@@ -39,7 +39,7 @@ public class ProjectDescriptionReference_Constraints extends BaseConstraintsDesc
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_all8lr_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -48,5 +48,5 @@ public class ProjectDescriptionReference_Constraints extends BaseConstraintsDesc
     return references;
   }
 
-  private static SNodePointer breakingNode_all8lr_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895904cc(jetbrains.mps.build.dependency.constraints)", "1224776378344");
+  private static SNodeReference breakingNode_all8lr_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895904cc(jetbrains.mps.build.dependency.constraints)", "1224776378344");
 }

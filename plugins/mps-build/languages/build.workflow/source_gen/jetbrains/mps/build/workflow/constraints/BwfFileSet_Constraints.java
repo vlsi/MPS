@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BwfFileSet_Constraints extends BaseConstraintsDescriptor {
   public BwfFileSet_Constraints() {
@@ -35,5 +35,5 @@ public class BwfFileSet_Constraints extends BaseConstraintsDescriptor {
     return SConceptOperations.isExactly(childConcept, "jetbrains.mps.core.xml.structure.XmlElement") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfPathReference");
   }
 
-  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "7926701909975791099");
+  private static SNodeReference canBeParentBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "7926701909975791099");
 }

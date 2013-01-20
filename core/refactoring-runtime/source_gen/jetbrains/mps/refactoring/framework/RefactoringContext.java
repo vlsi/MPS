@@ -27,7 +27,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
@@ -185,7 +185,7 @@ public class RefactoringContext {
       myMoveMap.put(new StructureModificationData.FullNodeId(key), new StructureModificationData.FullNodeId(target));
       myCachesAreUpToDate = false;
 
-      ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new SNodePointer(key), new SNodePointer(target)));
+      ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new jetbrains.mps.smodel.SNodePointer(key), new jetbrains.mps.smodel.SNodePointer(target)));
     }
     for (SNode node : sourceNodes) {
       node.delete();
@@ -197,7 +197,7 @@ public class RefactoringContext {
     myMoveMap.put(new StructureModificationData.FullNodeId(whatNode), new StructureModificationData.FullNodeId(withNode));
     myCachesAreUpToDate = false;
 
-    ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new SNodePointer(whatNode), new SNodePointer(withNode)));
+    ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new jetbrains.mps.smodel.SNodePointer(whatNode), new jetbrains.mps.smodel.SNodePointer(withNode)));
     whatNode.delete();
   }
 
@@ -222,7 +222,7 @@ public class RefactoringContext {
       myMoveMap.put(new StructureModificationData.FullNodeId(key), new StructureModificationData.FullNodeId(target));
       myCachesAreUpToDate = false;
 
-      ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new SNodePointer(key), new SNodePointer(target)));
+      ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new jetbrains.mps.smodel.SNodePointer(key), new jetbrains.mps.smodel.SNodePointer(target)));
     }
     for (SNode node : sourceNodes) {
       node.delete();
@@ -300,7 +300,7 @@ public class RefactoringContext {
       }
 
       if (!(newFeatureName.equals(oldFeatureName))) {
-        ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.RenameNode(new SNodePointer(feature), renameType, newFeatureName, oldFeatureName));
+        ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.RenameNode(new jetbrains.mps.smodel.SNodePointer(feature), renameType, newFeatureName, oldFeatureName));
       } else
       if (kind == StructureModificationData.ConceptFeatureKind.CONCEPT && !(oldConceptFQName.equals(newConceptFQName))) {
       }

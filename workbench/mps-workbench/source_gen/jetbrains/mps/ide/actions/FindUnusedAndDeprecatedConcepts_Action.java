@@ -18,7 +18,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import java.util.List;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -71,8 +71,8 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
         }
       });
 
-      List<SNodePointer> concepts = ListSequence.fromList(InternalActionsUtils.getAllConcepts()).where(new IWhereFilter<SNodePointer>() {
-        public boolean accept(final SNodePointer it) {
+      List<SNodeReference> concepts = ListSequence.fromList(InternalActionsUtils.getAllConcepts()).where(new IWhereFilter<SNodeReference>() {
+        public boolean accept(final SNodeReference it) {
           final Wrappers._boolean isOk = new Wrappers._boolean(false);
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {

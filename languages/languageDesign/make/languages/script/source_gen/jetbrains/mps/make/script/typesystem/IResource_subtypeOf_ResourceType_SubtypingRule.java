@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -53,7 +53,7 @@ public class IResource_subtypeOf_ResourceType_SubtypingRule extends SubtypingRul
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_f565s9_a0a0a0a0b0c0a0a0a0a0a0e;
+          SNodeReference pointer = SNODE_POINTER_f565s9_a0a0a0a0b0c0a0a0a0a0a0e;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IResource_subtypeOf_ResourceType_ajr7u7_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -83,5 +83,5 @@ public class IResource_subtypeOf_ResourceType_SubtypingRule extends SubtypingRul
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_f565s9_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256");
+  private static SNodeReference SNODE_POINTER_f565s9_a0a0a0a0b0c0a0a0a0a0a0e = new jetbrains.mps.smodel.SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256");
 }

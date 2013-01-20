@@ -10,7 +10,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.List;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
@@ -59,13 +59,13 @@ public class FindNotMigratableLinks_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final List<SNodePointer> usages = ListSequence.fromList(new ArrayList<SNodePointer>());
+      final List<SNodeReference> usages = ListSequence.fromList(new ArrayList<SNodeReference>());
 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           for (SNode link : Arrays.asList(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "method"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "staticField"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "staticInnerClassifiers"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "constructor"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "staticMethod"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "field"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "property"))) {
             for (SNode node : Sequence.fromIterable(NonMigratableUsagesFinder.findNonMigratableUsages(link))) {
-              ListSequence.fromList(usages).addElement(new SNodePointer(node));
+              ListSequence.fromList(usages).addElement(new jetbrains.mps.smodel.SNodePointer(node));
             }
           }
         }

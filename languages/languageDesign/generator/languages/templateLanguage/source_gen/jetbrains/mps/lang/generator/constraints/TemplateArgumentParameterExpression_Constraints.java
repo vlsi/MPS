@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class TemplateArgumentParameterExpression_Constraints extends BaseConstraintsDescriptor {
   public TemplateArgumentParameterExpression_Constraints() {
@@ -62,7 +62,7 @@ public class TemplateArgumentParameterExpression_Constraints extends BaseConstra
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_teh60w_a0a1a0a0a1a0b0a1a3;
           }
         };
@@ -75,6 +75,6 @@ public class TemplateArgumentParameterExpression_Constraints extends BaseConstra
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.generator.structure.ITemplateCall");
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "5005282049925943770");
-  private static SNodePointer breakingNode_teh60w_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "5005282049925940096");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "5005282049925943770");
+  private static SNodeReference breakingNode_teh60w_a0a1a0a0a1a0b0a1a3 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "5005282049925940096");
 }

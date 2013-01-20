@@ -40,7 +40,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.refactoring.RefactoringViewItemImpl;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -281,14 +281,14 @@ public class ApiMigrationHelper {
 
     ip.getComponent(RefactoringView.class).showRefactoringView(ip, new RefactoringViewAction() {
       public void performAction(RefactoringViewItem refactoringViewItem) {
-        final List<SNodePointer> included = ((RefactoringViewItemImpl) refactoringViewItem).getUsagesView().getIncludedResultNodes();
+        final List<SNodeReference> included = ((RefactoringViewItemImpl) refactoringViewItem).getUsagesView().getIncludedResultNodes();
         refactoringViewItem.close();
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             for (int i = 0; i < ListSequence.fromList(usages).count(); i++) {
               _FunctionTypes._void_P1_E0<? super SNode> transformer = ListSequence.fromList(transformations).getElement(i)._2();
               for (SNode known : SetSequence.fromSet(ListSequence.fromList(usages).getElement(i)._0())) {
-                SNodePointer np = new SNodePointer(known);
+                SNodeReference np = new jetbrains.mps.smodel.SNodePointer(known);
                 if (ListSequence.fromList(included).contains(np)) {
                   transformer.invoke(known);
                 }
@@ -334,7 +334,7 @@ public class ApiMigrationHelper {
   private static SNode _quotation_createNode_yke5lt_a0a0a0f() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNodePointer")));
+    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNodeReference")));
     return quotedNode_1;
   }
 

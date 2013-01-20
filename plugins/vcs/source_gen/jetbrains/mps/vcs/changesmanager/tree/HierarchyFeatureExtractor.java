@@ -9,7 +9,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class HierarchyFeatureExtractor implements TreeNodeFeatureExtractor {
   public HierarchyFeatureExtractor() {
@@ -20,7 +20,7 @@ public class HierarchyFeatureExtractor implements TreeNodeFeatureExtractor {
     if (treeNode instanceof HierarchyTreeNode) {
       SNode node = ((HierarchyTreeNode) treeNode).getNode();
       if (node != null) {
-        return new NodeFeature(new SNodePointer(node));
+        return new NodeFeature(new jetbrains.mps.smodel.SNodePointer(node));
       }
     }
     return null;

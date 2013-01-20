@@ -21,7 +21,7 @@ import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class UIObject_Constraints extends BaseConstraintsDescriptor {
   public UIObject_Constraints() {
@@ -61,7 +61,7 @@ public class UIObject_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_8gus11_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -70,5 +70,5 @@ public class UIObject_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_8gus11_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "1719339442170193747");
+  private static SNodeReference breakingNode_8gus11_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:3cad8b0f-ef3c-442c-8c6f-1ab422f65805(jetbrains.mps.ui.modeling.constraints)", "1719339442170193747");
 }

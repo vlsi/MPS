@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.settings;
 
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nls;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -45,17 +45,17 @@ public class TestUtils {
   }
 
   @Nullable
-  public static SNodePointer stringToPointer(@Nls String pointerString) {
+  public static SNodeReference stringToPointer(@Nls String pointerString) {
     if ((pointerString == null || pointerString.length() == 0)) {
       return null;
     }
     String[] split = pointerString.split(POINTER_SEPARATOR);
     SModelReference smodelId = SModelReference.fromString(split[0]);
     SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(split[1]);
-    return new SNodePointer(smodelId, id);
+    return new jetbrains.mps.smodel.SNodePointer(smodelId, id);
   }
 
-  public static String pointerToString(@NotNull final SNodePointer pointer) {
+  public static String pointerToString(@NotNull final SNodeReference pointer) {
     final Wrappers._T<String> value = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -148,13 +148,13 @@ __switch__:
   public static ClonableList nodesToCloneableList(List<SNode> nodes) {
     return new ClonableList(ListSequence.fromList(nodes).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return TestUtils.pointerToString(new SNodePointer(it));
+        return TestUtils.pointerToString(new jetbrains.mps.smodel.SNodePointer(it));
       }
     }).toListSequence());
   }
 
   public static ClonableList nodeToCloneableList(SNode node) {
-    return new ClonableList(TestUtils.pointerToString(new SNodePointer(node)));
+    return new ClonableList(TestUtils.pointerToString(new jetbrains.mps.smodel.SNodePointer(node)));
   }
 
   @Nullable
@@ -257,7 +257,7 @@ __switch__:
     });
   }
 
-  private static SNode check_6qi07j_a0a0a0a0a1a5(SNodePointer checkedDotOperand) {
+  private static SNode check_6qi07j_a0a0a0a0a1a5(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }

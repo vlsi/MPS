@@ -6,7 +6,7 @@ import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
@@ -27,13 +27,13 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
   private final BreakpointLocation myLocation;
   private String myFieldName;
 
-  public FieldBreakpoint(@NotNull SNodePointer nodePointer, Project project) {
+  public FieldBreakpoint(@NotNull SNodeReference nodePointer, Project project) {
     super(project);
     myLocation = new BreakpointLocation(nodePointer);
   }
 
   public FieldBreakpoint(@NotNull SNode node, Project project) {
-    this(new SNodePointer(node), project);
+    this(new jetbrains.mps.smodel.SNodePointer(node), project);
   }
 
   private boolean updateFieldName() {

@@ -21,21 +21,21 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
 public class NodeHolder implements IHolder<SNode> {
   private static final String NODE = "node";
 
-  private SNodePointer myNodePointer = new SNodePointer((SNode) null);
+  private SNodeReference myNodePointer = new jetbrains.mps.smodel.SNodePointer((SNode) null);
 
   public NodeHolder(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
   public NodeHolder(SNode node) {
-    myNodePointer = new SNodePointer(node);
+    myNodePointer = new jetbrains.mps.smodel.SNodePointer(node);
   }
 
   public SNode getObject() {
@@ -58,7 +58,7 @@ public class NodeHolder implements IHolder<SNode> {
     if (node == null) {
       throw new CantLoadSomethingException("node is null");
     }
-    myNodePointer = new SNodePointer(node);
+    myNodePointer = new jetbrains.mps.smodel.SNodePointer(node);
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {

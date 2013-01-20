@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class XMLSAXFieldReference_Constraints extends BaseConstraintsDescriptor {
   public XMLSAXFieldReference_Constraints() {
@@ -46,7 +46,7 @@ public class XMLSAXFieldReference_Constraints extends BaseConstraintsDescriptor 
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_ar46fh_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -55,5 +55,5 @@ public class XMLSAXFieldReference_Constraints extends BaseConstraintsDescriptor 
     return references;
   }
 
-  private static SNodePointer breakingNode_ar46fh_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140741");
+  private static SNodeReference breakingNode_ar46fh_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140741");
 }

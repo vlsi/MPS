@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ControlAbstractionDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ControlAbstractionDeclaration_Constraints() {
@@ -35,5 +35,5 @@ public class ControlAbstractionDeclaration_Constraints extends BaseConstraintsDe
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer");
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "4448365440079055839");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "4448365440079055839");
 }

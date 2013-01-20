@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class RefactoringContextExpression_Constraints extends BaseConstraintsDescriptor {
   public RefactoringContextExpression_Constraints() {
@@ -35,5 +35,5 @@ public class RefactoringContextExpression_Constraints extends BaseConstraintsDes
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", false, false) != null) && (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.refactoring.structure.CommitClause", false, false) == null);
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "5934994956487117014");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "5934994956487117014");
 }

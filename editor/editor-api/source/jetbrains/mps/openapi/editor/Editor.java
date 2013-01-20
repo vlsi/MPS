@@ -17,14 +17,14 @@ package jetbrains.mps.openapi.editor;
 
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 public interface Editor {
 
   EditorComponent getCurrentEditorComponent();
 
-  SNodePointer getCurrentlyEditedNode();
+  SNodeReference getCurrentlyEditedNode();
 
   EditorContext getEditorContext();
 

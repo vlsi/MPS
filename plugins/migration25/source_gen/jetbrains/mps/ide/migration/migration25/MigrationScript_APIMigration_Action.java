@@ -10,7 +10,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptExecutor;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
@@ -61,7 +61,7 @@ public class MigrationScript_APIMigration_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNodePointer script = new SNodePointer("r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)", "8954236049244973041");
+      SNodeReference script = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)", "8954236049244973041");
 
       MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "MPS API Migration", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
       if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {

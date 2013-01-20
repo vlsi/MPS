@@ -16,7 +16,7 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
@@ -132,9 +132,9 @@ public class NodesWriter {
   protected void writeUserObject(ModelOutputStream os, Object object) throws IOException {
     if (object == null) {
       os.writeInt(USER_NULL);
-    } else if (object instanceof SNodePointer) {
+    } else if (object instanceof SNodeReference) {
       os.writeInt(USER_NODE_POINTER);
-      os.writeNodePointer((SNodePointer) object);
+      os.writeNodePointer((SNodeReference) object);
     } else if (object instanceof String) {
       os.writeInt(USER_STRING);
       os.writeString((String) object);
@@ -163,7 +163,7 @@ public class NodesWriter {
 
   protected boolean isKnownUserObject(Object object) {
     return object == null
-      || object instanceof SNodePointer
+      || object instanceof SNodeReference
       || object instanceof Serializable
       || object instanceof SNodeId
       || object instanceof SModelId

@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -57,7 +57,7 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_9omwya_a0a0a0a0b0c0a0a0a0a0a0e;
+          SNodeReference pointer = SNODE_POINTER_9omwya_a0a0a0a0b0c0a0a0a0a0a0e;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -108,5 +108,5 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
     return quotedNode_2;
   }
 
-  private static SNodePointer SNODE_POINTER_9omwya_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~SortedSet");
+  private static SNodeReference SNODE_POINTER_9omwya_a0a0a0a0b0c0a0a0a0a0a0e = new jetbrains.mps.smodel.SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~SortedSet");
 }

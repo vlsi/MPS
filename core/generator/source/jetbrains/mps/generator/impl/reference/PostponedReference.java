@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl.reference;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateGenerator;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -105,7 +105,7 @@ public class PostponedReference extends SReference {
       SNode inputNode = myReferenceInfo.getInputNode();
       boolean validInputNode = inputNode != null && inputNode.getModel() != null;
       if (validInputNode || templateNode != null) {
-        dynamicReference.setOrigin(new DynamicReferenceOrigin(templateNode != null ? new SNodePointer(templateNode) : null, validInputNode ? new SNodePointer(inputNode) : null));
+        dynamicReference.setOrigin(new DynamicReferenceOrigin(templateNode != null ? new jetbrains.mps.smodel.SNodePointer(templateNode) : null, validInputNode ? new jetbrains.mps.smodel.SNodePointer(inputNode) : null));
       }
 
       myReplacementReference = dynamicReference;

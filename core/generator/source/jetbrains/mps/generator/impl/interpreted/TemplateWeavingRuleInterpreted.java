@@ -28,7 +28,7 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
@@ -81,8 +81,8 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
   }
 
   @Override
-  public SNodePointer getRuleNode() {
-    return new SNodePointer(ruleNode);
+  public SNodeReference getRuleNode() {
+    return new jetbrains.mps.smodel.SNodePointer(ruleNode);
   }
 
   @Override
@@ -151,7 +151,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       return false;
     }
 
-    environment.getTracer().pushRuleConsequence(new SNodePointer(consequenceNode));
+    environment.getTracer().pushRuleConsequence(new jetbrains.mps.smodel.SNodePointer(consequenceNode));
     return consequence.apply(environment, context, outputContextNode);
   }
 
@@ -198,7 +198,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
             templateFragmentNode, context);
           String childRole = templateFragmentNode.getRoleInParent();
           for (SNode outputNodeToWeave : outputNodesToWeave) {
-            environment.weaveNode(contextParentNode, childRole, outputNodeToWeave, new SNodePointer(templateFragment), context.getInput());
+            environment.weaveNode(contextParentNode, childRole, outputNodeToWeave, new jetbrains.mps.smodel.SNodePointer(templateFragment), context.getInput());
           }
         } catch (DismissTopMappingRuleException e) {
           environment.getGenerator().showErrorMessage(context.getInput(), templateFragment, ruleNode, "wrong template: dismission of weaving rule is not supported");

@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class EventType_Constraints extends BaseConstraintsDescriptor {
   public EventType_Constraints() {
@@ -51,7 +51,7 @@ public class EventType_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_l0z0yd_a0a3a0a0a1a0b0a1a1;
           }
         };
@@ -60,5 +60,5 @@ public class EventType_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_l0z0yd_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)", "5224413709454208139");
+  private static SNodeReference breakingNode_l0z0yd_a0a3a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)", "5224413709454208139");
 }

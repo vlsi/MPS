@@ -18,7 +18,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class MatchPropertyOperation_Constraints extends BaseConstraintsDescriptor {
   public MatchPropertyOperation_Constraints() {
@@ -49,7 +49,7 @@ public class MatchPropertyOperation_Constraints extends BaseConstraintsDescripto
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_cb3j36_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -58,5 +58,5 @@ public class MatchPropertyOperation_Constraints extends BaseConstraintsDescripto
     return references;
   }
 
-  private static SNodePointer breakingNode_cb3j36_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104836709");
+  private static SNodeReference breakingNode_cb3j36_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104836709");
 }

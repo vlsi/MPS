@@ -5,7 +5,7 @@ package jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.temp
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -24,11 +24,11 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
     rules = TemplateUtil.<TemplateReductionRule>asIterable(new SwitchcustomStatement.ReductionRule0(), new SwitchcustomStatement.ReductionRule1());
   }
 
-  public SNodePointer getSwitchNode() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088655");
+  public SNodeReference getSwitchNode() {
+    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088655");
   }
 
-  public SNodePointer getModifiesSwitch() {
+  public SNodeReference getModifiesSwitch() {
     return null;
   }
 
@@ -36,11 +36,11 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
     return rules;
   }
 
-  public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingLabel, final TemplateContext context) {
+  public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) {
     return null;
   }
 
-  public void processNull(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, TemplateContext context) {
+  public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }
 
   public class ReductionRule0 implements TemplateReductionRule {
@@ -55,7 +55,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
       return "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_68cped_a0a3h;
     }
 
@@ -102,7 +102,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
       return "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_68cped_a0a3i;
     }
 
@@ -138,10 +138,10 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
     }
   }
 
-  private static SNodePointer reductionRule_68cped_a0a3h = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088657");
-  private static SNodePointer conseq_68cped_a0a0a5h = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090600");
-  private static SNodePointer templateNode_68cped_a0a0a2a5h = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090602");
-  private static SNodePointer reductionRule_68cped_a0a3i = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090603");
-  private static SNodePointer conseq_68cped_a0a0a5i = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090622");
-  private static SNodePointer templateNode_68cped_a0a0a2a5i = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090625");
+  private static SNodeReference reductionRule_68cped_a0a3h = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088657");
+  private static SNodeReference conseq_68cped_a0a0a5h = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090600");
+  private static SNodeReference templateNode_68cped_a0a0a2a5h = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090602");
+  private static SNodeReference reductionRule_68cped_a0a3i = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090603");
+  private static SNodeReference conseq_68cped_a0a0a5i = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090622");
+  private static SNodeReference templateNode_68cped_a0a0a2a5i = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090625");
 }

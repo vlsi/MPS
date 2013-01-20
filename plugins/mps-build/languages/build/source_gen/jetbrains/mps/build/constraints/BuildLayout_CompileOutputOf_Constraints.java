@@ -13,7 +13,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -55,7 +55,7 @@ public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDesc
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_yp60el_a0a0a0a0a1a0b0a1a3;
           }
 
@@ -79,6 +79,6 @@ public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDesc
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.structure.BuildLayout_Jar");
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "2591537044435952572");
-  private static SNodePointer breakingNode_yp60el_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1224588814561883819");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "2591537044435952572");
+  private static SNodeReference breakingNode_yp60el_a0a0a0a0a1a0b0a1a3 = new jetbrains.mps.smodel.SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1224588814561883819");
 }

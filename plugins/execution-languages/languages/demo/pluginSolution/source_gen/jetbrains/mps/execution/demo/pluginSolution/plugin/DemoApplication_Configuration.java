@@ -28,7 +28,7 @@ import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.logging.Logger;
 
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
@@ -135,7 +135,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
   }
 
   public Object[] createMakeNodePointersTask() {
-    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodePointer>(), this.getNode().getNodePointer())};
+    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNodePointer())};
   }
 
   private static Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);

@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -72,7 +72,7 @@ public class JUnit3TestCaseRef_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_qx1fe9_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -88,5 +88,5 @@ public class JUnit3TestCaseRef_Constraints extends BaseConstraintsDescriptor {
     return quotedNode_1;
   }
 
-  private static SNodePointer breakingNode_qx1fe9_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)", "1280144168199457729");
+  private static SNodeReference breakingNode_qx1fe9_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)", "1280144168199457729");
 }

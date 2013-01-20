@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class InstructionReference_Constraints extends BaseConstraintsDescriptor {
   public InstructionReference_Constraints() {
@@ -48,7 +48,7 @@ public class InstructionReference_Constraints extends BaseConstraintsDescriptor 
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_yymroq_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -57,5 +57,5 @@ public class InstructionReference_Constraints extends BaseConstraintsDescriptor 
     return references;
   }
 
-  private static SNodePointer breakingNode_yymroq_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)", "7383406024685167123");
+  private static SNodeReference breakingNode_yymroq_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)", "7383406024685167123");
 }

@@ -32,7 +32,7 @@ import jetbrains.mps.progress.CancellationMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.util.Computable;

@@ -29,24 +29,24 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.nodes.NodePresentation;
 
 public abstract class NodeTreeElement implements StructureViewTreeElement {
-  protected SNodePointer myNode;
+  protected SNodeReference myNode;
 
-  public NodeTreeElement(SNodePointer node) {
+  public NodeTreeElement(SNodeReference node) {
     myNode = node;
   }
 
-  public SNodePointer getValue() {
+  public SNodeReference getValue() {
     return myNode;
   }
 
   public ItemPresentation getPresentation() {
-    //todo use SNodePointer here, get rid of read action
+    //todo use SNodeReference here, get rid of read action
     return ModelAccess.instance().runReadAction(new Computable<ItemPresentation>() {
       public ItemPresentation compute() {
         return new NodeTreeElementPresentation();

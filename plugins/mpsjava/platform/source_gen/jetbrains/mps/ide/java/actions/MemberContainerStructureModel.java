@@ -4,7 +4,7 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel;
 import com.intellij.ide.structureView.StructureViewModel;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -16,31 +16,31 @@ import com.intellij.ide.structureView.FileEditorPositionListener;
 import org.jetbrains.annotations.Nullable;
 
 public class MemberContainerStructureModel extends NodeTreeModel implements StructureViewModel {
-  private final SNodePointer container;
-  private final SNodePointer[] members;
+  private final SNodeReference container;
+  private final SNodeReference[] members;
 
   public MemberContainerStructureModel(SNode memberContainer) {
-    container = new SNodePointer(memberContainer);
-    members = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), memberContainer, "virtual_getMembers_1213877531970", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
-      public SNodePointer select(SNode it) {
-        return new SNodePointer(it);
+    container = new jetbrains.mps.smodel.SNodePointer(memberContainer);
+    members = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), memberContainer, "virtual_getMembers_1213877531970", new Object[]{})).select(new ISelector<SNode, SNodeReference>() {
+      public SNodeReference select(SNode it) {
+        return new jetbrains.mps.smodel.SNodePointer(it);
       }
-    }).where(new IWhereFilter<SNodePointer>() {
-      public boolean accept(SNodePointer it) {
+    }).where(new IWhereFilter<SNodeReference>() {
+      public boolean accept(SNodeReference it) {
         return !(it.equals(container));
       }
-    }).toGenericArray(SNodePointer.class);
+    }).toGenericArray(SNodeReference.class);
   }
 
-  public SNodePointer[] getRootNodes() {
-    return new SNodePointer[]{container};
+  public SNodeReference[] getRootNodes() {
+    return new SNodeReference[]{container};
   }
 
-  public SNodePointer[] getChildren(SNodePointer node) {
+  public SNodeReference[] getChildren(SNodeReference node) {
     if (node.equals(container)) {
       return members;
     } else {
-      return new SNodePointer[0];
+      return new SNodeReference[0];
     }
   }
 

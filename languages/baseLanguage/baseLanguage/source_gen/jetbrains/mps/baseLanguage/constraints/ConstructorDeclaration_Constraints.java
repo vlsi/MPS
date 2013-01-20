@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ConstructorDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ConstructorDeclaration_Constraints() {
@@ -83,5 +83,5 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.core.structure.INamedConcept") && SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.core.structure.IResolveInfo");
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213107437659");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213107437659");
 }

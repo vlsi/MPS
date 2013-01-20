@@ -19,7 +19,7 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -102,7 +102,7 @@ public final class TextGenBuffer {
   private Message prepare(MessageKind kind, String text, @Nullable SNode node) {
     Message message = new Message(kind, text);
     if (node != null && node.getModel() != null && node.getModel() != null && !node.getModel().isTransient()) {
-      message.setHintObject(new SNodePointer(node));
+      message.setHintObject(new jetbrains.mps.smodel.SNodePointer(node));
     }
     return message;
   }

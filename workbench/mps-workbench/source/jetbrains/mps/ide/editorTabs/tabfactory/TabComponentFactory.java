@@ -24,13 +24,13 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.EditorSettings.MyState;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
 import java.util.Set;
 
 public abstract class TabComponentFactory {
-  public static TabsComponent createTabsComponent(final SNodePointer baseNode, final Set<RelationDescriptor> possibleTabs, JComponent component, NodeChangeCallback callback, CreateModeCallback createModeCallback, IOperationContext operationContext) {
+  public static TabsComponent createTabsComponent(final SNodeReference baseNode, final Set<RelationDescriptor> possibleTabs, JComponent component, NodeChangeCallback callback, CreateModeCallback createModeCallback, IOperationContext operationContext) {
     MyState state = ApplicationManager.getApplication().getComponent(EditorSettings.class).getState();
     if (!state.isShow()) return new EmptyTabsComponent(baseNode);
 

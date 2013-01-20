@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class EventReference_Constraints extends BaseConstraintsDescriptor {
   public EventReference_Constraints() {
@@ -59,7 +59,7 @@ public class EventReference_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_fz49k4_a0a1a0a0a1a0b0a1a3;
           }
         };
@@ -72,6 +72,6 @@ public class EventReference_Constraints extends BaseConstraintsDescriptor {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.editor.tableTests.structure.Transition");
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5eda252d-8f97-48fa-a19c-1626b2b52512(jetbrains.mps.lang.editor.tableTests.constraints)", "6767735723023353502");
-  private static SNodePointer breakingNode_fz49k4_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:5eda252d-8f97-48fa-a19c-1626b2b52512(jetbrains.mps.lang.editor.tableTests.constraints)", "7943979732673276526");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:5eda252d-8f97-48fa-a19c-1626b2b52512(jetbrains.mps.lang.editor.tableTests.constraints)", "6767735723023353502");
+  private static SNodeReference breakingNode_fz49k4_a0a1a0a0a1a0b0a1a3 = new jetbrains.mps.smodel.SNodePointer("r:5eda252d-8f97-48fa-a19c-1626b2b52512(jetbrains.mps.lang.editor.tableTests.constraints)", "7943979732673276526");
 }

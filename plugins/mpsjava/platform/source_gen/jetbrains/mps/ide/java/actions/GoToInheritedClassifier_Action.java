@@ -18,7 +18,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
@@ -123,7 +123,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
         }
       });
 
-      final List<SNodePointer> nodes = ListSequence.fromList(new ArrayList<SNodePointer>());
+      final List<SNodeReference> nodes = ListSequence.fromList(new ArrayList<SNodeReference>());
 
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
         public void run(@NotNull final ProgressIndicator p) {
@@ -131,20 +131,20 @@ public class GoToInheritedClassifier_Action extends BaseAction {
             public void run() {
               for (String finderClass : ListSequence.fromList(finderClasses)) {
                 List<SNode> list = FindUtils.executeFinder(finderClass, ((SNode) MapSequence.fromMap(_params).get("classifierNode")), GlobalScope.getInstance(), new ProgressMonitorAdapter(p));
-                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodePointer>() {
-                  public SNodePointer select(SNode it) {
-                    return new SNodePointer(it);
+                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodeReference>() {
+                  public SNodeReference select(SNode it) {
+                    return new jetbrains.mps.smodel.SNodePointer(it);
                   }
                 }));
                 ListSequence.fromList(nodes).addSequence(ListSequence.fromList(list).where(new IWhereFilter<SNode>() {
                   public boolean accept(SNode it) {
                     return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumClass");
                   }
-                }).translate(new ITranslator2<SNode, SNodePointer>() {
-                  public Iterable<SNodePointer> translate(SNode it) {
-                    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).select(new ISelector<SNode, SNodePointer>() {
-                      public SNodePointer select(SNode e) {
-                        return new SNodePointer(e);
+                }).translate(new ITranslator2<SNode, SNodeReference>() {
+                  public Iterable<SNodeReference> translate(SNode it) {
+                    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).select(new ISelector<SNode, SNodeReference>() {
+                      public SNodeReference select(SNode e) {
+                        return new jetbrains.mps.smodel.SNodePointer(e);
                       }
                     });
                   }

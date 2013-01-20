@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class SEnum_MemberOperation_Constraints extends BaseConstraintsDescriptor {
   public SEnum_MemberOperation_Constraints() {
@@ -46,7 +46,7 @@ public class SEnum_MemberOperation_Constraints extends BaseConstraintsDescriptor
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_h040h8_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -55,5 +55,5 @@ public class SEnum_MemberOperation_Constraints extends BaseConstraintsDescriptor
     return references;
   }
 
-  private static SNodePointer breakingNode_h040h8_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1240148891886");
+  private static SNodeReference breakingNode_h040h8_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1240148891886");
 }

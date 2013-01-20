@@ -4,7 +4,7 @@ package jetbrains.mps.refactoring;
 
 import jetbrains.mps.smodel.SModel;
 import java.util.Map;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -29,11 +29,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ModelLinkMap {
   private SModel myModel;
-  private Map<SNodePointer, List<StaticReference>> myTargetMap = MapSequence.fromMap(new HashMap<SNodePointer, List<StaticReference>>());
-  private Map<SNodePointer, List<SNode>> myNodeTypeMap = MapSequence.fromMap(new HashMap<SNodePointer, List<SNode>>());
-  private Map<SNodePointer, List<SNode>> myNodeRoleMap = MapSequence.fromMap(new HashMap<SNodePointer, List<SNode>>());
-  private Map<SNodePointer, List<SReference>> myRefRoleMap = MapSequence.fromMap(new HashMap<SNodePointer, List<SReference>>());
-  private Map<SNodePointer, List<Pair<SNode, String>>> myPropNameMap = MapSequence.fromMap(new HashMap<SNodePointer, List<Pair<SNode, String>>>());
+  private Map<SNodeReference, List<StaticReference>> myTargetMap = MapSequence.fromMap(new HashMap<SNodeReference, List<StaticReference>>());
+  private Map<SNodeReference, List<SNode>> myNodeTypeMap = MapSequence.fromMap(new HashMap<SNodeReference, List<SNode>>());
+  private Map<SNodeReference, List<SNode>> myNodeRoleMap = MapSequence.fromMap(new HashMap<SNodeReference, List<SNode>>());
+  private Map<SNodeReference, List<SReference>> myRefRoleMap = MapSequence.fromMap(new HashMap<SNodeReference, List<SReference>>());
+  private Map<SNodeReference, List<Pair<SNode, String>>> myPropNameMap = MapSequence.fromMap(new HashMap<SNodeReference, List<Pair<SNode, String>>>());
   private Map<SModelReference, List<DynamicReference>> myDynRefMap = MapSequence.fromMap(new HashMap<SModelReference, List<DynamicReference>>());
 
   public ModelLinkMap(SModel model) {
@@ -60,23 +60,23 @@ public class ModelLinkMap {
     return this;
   }
 
-  public void addTargetLocation(SNodePointer ptr, StaticReference ref) {
+  public void addTargetLocation(SNodeReference ptr, StaticReference ref) {
     addValue(myTargetMap, ptr, ref);
   }
 
-  public void addTypeLocation(SNodePointer ptr, SNode node) {
+  public void addTypeLocation(SNodeReference ptr, SNode node) {
     addValue(myNodeTypeMap, ptr, node);
   }
 
-  public void addRoleLocation(SNodePointer ptr, SNode node) {
+  public void addRoleLocation(SNodeReference ptr, SNode node) {
     addValue(myNodeRoleMap, ptr, node);
   }
 
-  public void addRoleLocation(SNodePointer ptr, SReference ref) {
+  public void addRoleLocation(SNodeReference ptr, SReference ref) {
     addValue(myRefRoleMap, ptr, ref);
   }
 
-  public void addNameLocation(SNodePointer ptr, SNode node, String name) {
+  public void addNameLocation(SNodeReference ptr, SNode node, String name) {
     addValue(myPropNameMap, ptr, new Pair<SNode, String>(node, name));
   }
 
@@ -84,7 +84,7 @@ public class ModelLinkMap {
     addValue(myDynRefMap, model, ref);
   }
 
-  public boolean moveNode(SNodePointer oldPtr, final SNodePointer newPtr) {
+  public boolean moveNode(SNodeReference oldPtr, final SNodeReference newPtr) {
     boolean res = false;
     res |= move(myTargetMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<StaticReference>() {
       public void invoke(StaticReference ref) {
@@ -117,7 +117,7 @@ public class ModelLinkMap {
     return res;
   }
 
-  public boolean deleteNode(SNodePointer ptr) {
+  public boolean deleteNode(SNodeReference ptr) {
     boolean res = false;
     res |= delete(myNodeTypeMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode node) {
@@ -142,7 +142,7 @@ public class ModelLinkMap {
     return res;
   }
 
-  public boolean setName(SNodePointer ptr, final String name) {
+  public boolean setName(SNodeReference ptr, final String name) {
     boolean res = false;
     res |= setProp(myNodeTypeMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode node) {
@@ -162,7 +162,7 @@ public class ModelLinkMap {
     return res;
   }
 
-  public boolean setRole(SNodePointer ptr, final String role) {
+  public boolean setRole(SNodeReference ptr, final String role) {
     // todo: rename correspondent link attribute roles 
     boolean res = false;
     res |= setProp(myNodeRoleMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
@@ -203,7 +203,7 @@ public class ModelLinkMap {
       });
       MapSequence.fromMap(myDynRefMap).put(newModel, list);
     }
-    for (SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myTargetMap).keySet())) {
+    for (SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myTargetMap).keySet())) {
       if (model.equals(ptr.getModelReference())) {
         res = true;
         ListSequence.fromList(MapSequence.fromMap(myTargetMap).get(ptr)).visitAll(new IVisitor<StaticReference>() {
@@ -214,7 +214,7 @@ public class ModelLinkMap {
       }
     }
     // update conceptFqNames (if it was structure model) 
-    for (SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeTypeMap).keySet())) {
+    for (SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeTypeMap).keySet())) {
       if (model.equals(ptr.getModelReference())) {
         res = true;
         ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
@@ -241,28 +241,28 @@ public class ModelLinkMap {
           for (SModel.ImportElement i : ListSequence.fromList(myModel.getAdditionalModelVersions())) {
             RoleIdsComponent.modelVersionRead(i);
           }
-          for (final SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeRoleMap).keySet())) {
+          for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeRoleMap).keySet())) {
             ListSequence.fromList(MapSequence.fromMap(myNodeRoleMap).get(ptr)).visitAll(new IVisitor<SNode>() {
               public void visit(SNode n) {
                 RoleIdsComponent.nodeRoleRead(n, ptr);
               }
             });
           }
-          for (final SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeTypeMap).keySet())) {
+          for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeTypeMap).keySet())) {
             ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
               public void visit(SNode n) {
                 RoleIdsComponent.conceptRead(n, ptr);
               }
             });
           }
-          for (final SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myRefRoleMap).keySet())) {
+          for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myRefRoleMap).keySet())) {
             ListSequence.fromList(MapSequence.fromMap(myRefRoleMap).get(ptr)).visitAll(new IVisitor<SReference>() {
               public void visit(SReference r) {
                 RoleIdsComponent.referenceRoleRead(r, ptr);
               }
             });
           }
-          for (final SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myPropNameMap).keySet())) {
+          for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myPropNameMap).keySet())) {
             ListSequence.fromList(MapSequence.fromMap(myPropNameMap).get(ptr)).visitAll(new IVisitor<Pair<SNode, String>>() {
               public void visit(Pair<SNode, String> nP) {
                 RoleIdsComponent.propertyNameRead(nP.o1, nP.o2, ptr);
@@ -285,7 +285,7 @@ public class ModelLinkMap {
     ListSequence.fromList(list).addElement(value);
   }
 
-  private static <T> boolean move(Map<SNodePointer, List<T>> map, SNodePointer ptr, SNodePointer newPtr, final _FunctionTypes._void_P1_E0<? super T> f) {
+  private static <T> boolean move(Map<SNodeReference, List<T>> map, SNodeReference ptr, SNodeReference newPtr, final _FunctionTypes._void_P1_E0<? super T> f) {
     List<T> list = map.remove(ptr);
     if (list == null) {
       return false;
@@ -299,7 +299,7 @@ public class ModelLinkMap {
     return true;
   }
 
-  private static <T> boolean delete(Map<SNodePointer, List<T>> map, SNodePointer ptr, final _FunctionTypes._void_P1_E0<? super T> f) {
+  private static <T> boolean delete(Map<SNodeReference, List<T>> map, SNodeReference ptr, final _FunctionTypes._void_P1_E0<? super T> f) {
     List<T> list = map.remove(ptr);
     if (list == null) {
       return false;
@@ -312,7 +312,7 @@ public class ModelLinkMap {
     return true;
   }
 
-  private static <T> boolean setProp(Map<SNodePointer, List<T>> map, SNodePointer ptr, final _FunctionTypes._void_P1_E0<? super T> f) {
+  private static <T> boolean setProp(Map<SNodeReference, List<T>> map, SNodeReference ptr, final _FunctionTypes._void_P1_E0<? super T> f) {
     List<T> list = MapSequence.fromMap(map).get(ptr);
     if (list == null) {
       return false;
@@ -325,22 +325,22 @@ public class ModelLinkMap {
     return true;
   }
 
-  private static <T> void updatePtrMap(Map<SNodePointer, List<T>> map, final SModelReference oldModel, SModelReference newModel) {
-    List<SNodePointer> ptrList = SetSequence.fromSet(MapSequence.fromMap(map).keySet()).where(new IWhereFilter<SNodePointer>() {
-      public boolean accept(SNodePointer it) {
+  private static <T> void updatePtrMap(Map<SNodeReference, List<T>> map, final SModelReference oldModel, SModelReference newModel) {
+    List<SNodeReference> ptrList = SetSequence.fromSet(MapSequence.fromMap(map).keySet()).where(new IWhereFilter<SNodeReference>() {
+      public boolean accept(SNodeReference it) {
         return oldModel.equals(it.getModelReference());
       }
     }).toListSequence();
-    for (SNodePointer ptr : ListSequence.fromList(ptrList)) {
+    for (SNodeReference ptr : ListSequence.fromList(ptrList)) {
       List<T> list = MapSequence.fromMap(map).removeKey(ptr);
-      MapSequence.fromMap(map).put(new SNodePointer(newModel, ptr.getNodeId()), list);
+      MapSequence.fromMap(map).put(new jetbrains.mps.smodel.SNodePointer(newModel, ptr.getNodeId()), list);
     }
   }
 
-  private static SNodePointer ptr(SNode node) {
+  private static SNodeReference ptr(SNode node) {
     return ((node == null) ?
       null :
-      new SNodePointer(node)
+      new jetbrains.mps.smodel.SNodePointer(node)
     );
   }
 }

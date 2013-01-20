@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 
@@ -25,7 +25,7 @@ import java.util.Collection;
  */
 public interface TemplateReductionRule {
 
-  SNodePointer getRuleNode();
+  SNodeReference getRuleNode();
 
   String getApplicableConcept();
 

@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class XmlDoctypeDeclaration_Constraints extends BaseConstraintsDescriptor {
   public XmlDoctypeDeclaration_Constraints() {
@@ -65,5 +65,5 @@ public class XmlDoctypeDeclaration_Constraints extends BaseConstraintsDescriptor
     }).isEmpty();
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)", "3374336260036089913");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)", "3374336260036089913");
 }

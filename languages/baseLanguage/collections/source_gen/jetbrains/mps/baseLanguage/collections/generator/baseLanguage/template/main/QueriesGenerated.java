@@ -29,7 +29,7 @@ import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -2725,7 +2725,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0a81;
+          SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0a81;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_QueriesGenerated_x583g4_a0a0a0a0s.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -2761,7 +2761,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0jc;
+          SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0jc;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_QueriesGenerated_x583g4_a0a0a0a16.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -2797,7 +2797,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0mc;
+          SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0mc;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_QueriesGenerated_x583g4_a0a0a0a46.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -2833,7 +2833,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0rc;
+          SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0rc;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_QueriesGenerated_x583g4_a0a0a0a96.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -2869,7 +2869,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0dd;
+          SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0dd;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_QueriesGenerated_x583g4_a0a0a0a18.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -2905,7 +2905,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0fd;
+          SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0fd;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_QueriesGenerated_x583g4_a0a0a0a38.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -2941,7 +2941,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0jd;
+          SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0jd;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_QueriesGenerated_x583g4_a0a0a0a78.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -2977,7 +2977,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0nd;
+          SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0nd;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_QueriesGenerated_x583g4_a0a0a0a19.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -3013,7 +3013,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0rd;
+          SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0rd;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_QueriesGenerated_x583g4_a0a0a0a59.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -3049,7 +3049,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0fe;
+          SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0fe;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_QueriesGenerated_x583g4_a0a0a0a901.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -3085,7 +3085,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0ng;
+          SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0ng;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_QueriesGenerated_x583g4_a0a0a0a961.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -3137,15 +3137,15 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0a81 = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024311");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0jc = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030017");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0mc = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674036653");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0rc = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674036081");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0dd = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024974");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0fd = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674025209");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0jd = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674036880");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0nd = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674036013");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0rd = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674026272");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0fe = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024899");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0ng = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024810");
+  private static SNodeReference SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0a81 = new jetbrains.mps.smodel.SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024311");
+  private static SNodeReference SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0jc = new jetbrains.mps.smodel.SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674030017");
+  private static SNodeReference SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0mc = new jetbrains.mps.smodel.SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674036653");
+  private static SNodeReference SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0rc = new jetbrains.mps.smodel.SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674036081");
+  private static SNodeReference SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0dd = new jetbrains.mps.smodel.SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024974");
+  private static SNodeReference SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0fd = new jetbrains.mps.smodel.SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674025209");
+  private static SNodeReference SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0jd = new jetbrains.mps.smodel.SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674036880");
+  private static SNodeReference SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0nd = new jetbrains.mps.smodel.SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674036013");
+  private static SNodeReference SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0rd = new jetbrains.mps.smodel.SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674026272");
+  private static SNodeReference SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0fe = new jetbrains.mps.smodel.SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024899");
+  private static SNodeReference SNODE_POINTER_x583g4_a0a0a0a0b0c0a0a0b0a0a0ng = new jetbrains.mps.smodel.SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024810");
 }

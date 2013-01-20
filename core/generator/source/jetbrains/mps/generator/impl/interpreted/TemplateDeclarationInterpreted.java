@@ -24,7 +24,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 
@@ -49,8 +49,8 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
   }
 
   @Override
-  public SNodePointer getTemplateNode() {
-    return new SNodePointer(myTemplateNode);
+  public SNodeReference getTemplateNode() {
+    return new jetbrains.mps.smodel.SNodePointer(myTemplateNode);
   }
 
   private Map<String, Object> getArgumentsAsMap() {
@@ -72,7 +72,7 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
         return null;
       }
 
-      environment.getTracer().pushTemplateNode(new SNodePointer(myTemplateNode));
+      environment.getTracer().pushTemplateNode(new jetbrains.mps.smodel.SNodePointer(myTemplateNode));
 
       Collection<SNode> outputNodes = new ArrayList<SNode>();
       for (SNode fragment : fragments) {

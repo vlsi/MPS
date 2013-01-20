@@ -19,7 +19,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.*;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor.ErrorReferenceDescriptor;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor.OkReferenceDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -106,7 +106,7 @@ public class ModelConstraints {
     SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (!SNodeUtil.isInstanceOfConceptDeclaration(concept) || !SNodeUtil.getConceptDeclaration_IsRootable(concept)) {
       if (checkingNodeContext != null) {
-        checkingNodeContext.setBreakingNode(new SNodePointer(concept));
+        checkingNodeContext.setBreakingNode(new jetbrains.mps.smodel.SNodePointer(concept));
       }
       return false;
     }

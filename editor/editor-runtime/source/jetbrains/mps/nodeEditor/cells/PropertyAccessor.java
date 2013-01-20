@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.Hack;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -27,7 +27,7 @@ public class PropertyAccessor implements ModelAccessor {
   private String myPropertyName;
   private boolean myReadOnly;
   private boolean myAllowEmptyText;
-  private final SNodePointer myPropertyDeclaration;
+  private final SNodeReference myPropertyDeclaration;
   private IScope myScope;
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
@@ -35,7 +35,7 @@ public class PropertyAccessor implements ModelAccessor {
     myPropertyName = propertyName;
     myReadOnly = readOnly || node.getModel().isNotEditable() || editorContext.getEditorComponent().isReadOnly();
     myAllowEmptyText = allowEmptyText;
-    myPropertyDeclaration = new SNodePointer(((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName));
+    myPropertyDeclaration = new jetbrains.mps.smodel.SNodePointer(((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName));
     myScope = editorContext.getScope();
   }
 
@@ -44,7 +44,7 @@ public class PropertyAccessor implements ModelAccessor {
     myPropertyName = propertyName;
     myReadOnly = readOnly || node.getModel().isNotEditable();
     myAllowEmptyText = allowEmptyText;
-    myPropertyDeclaration = new SNodePointer(((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName));
+    myPropertyDeclaration = new jetbrains.mps.smodel.SNodePointer(((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName));
     myScope = context.getScope();
   }
 

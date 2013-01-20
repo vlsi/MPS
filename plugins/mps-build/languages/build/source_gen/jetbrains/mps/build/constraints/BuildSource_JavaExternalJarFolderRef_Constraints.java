@@ -19,7 +19,7 @@ import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 
 public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstraintsDescriptor {
@@ -65,7 +65,7 @@ public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstr
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_aht4xu_a0a2a0a0a1a0b0a1a1;
           }
 
@@ -85,5 +85,5 @@ public class BuildSource_JavaExternalJarFolderRef_Constraints extends BaseConstr
     return references;
   }
 
-  private static SNodePointer breakingNode_aht4xu_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "5610619299014531657");
+  private static SNodeReference breakingNode_aht4xu_a0a2a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "5610619299014531657");
 }

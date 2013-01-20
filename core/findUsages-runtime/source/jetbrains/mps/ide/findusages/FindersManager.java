@@ -21,7 +21,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -41,7 +41,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
   }
 
   private Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();
-  private Map<GeneratedFinder, SNodePointer> myNodesByFinder = new HashMap<GeneratedFinder, SNodePointer>();
+  private Map<GeneratedFinder, SNodeReference> myNodesByFinder = new HashMap<GeneratedFinder, SNodeReference>();
   private boolean myLoaded = false;
 
   private LanguageRegistry myLanguageRegistry;
@@ -127,7 +127,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
     load();
   }
 
-  public void addFinder(GeneratedFinder finder, ModuleReference moduleRef, SNodePointer np) {
+  public void addFinder(GeneratedFinder finder, ModuleReference moduleRef, SNodeReference np) {
     String conceptName = finder.getConcept();
     Set<GeneratedFinder> finders = myFinders.get(conceptName);
     if (finders == null) {

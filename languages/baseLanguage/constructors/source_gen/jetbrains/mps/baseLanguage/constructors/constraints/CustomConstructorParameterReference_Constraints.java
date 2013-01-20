@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class CustomConstructorParameterReference_Constraints extends BaseConstraintsDescriptor {
   public CustomConstructorParameterReference_Constraints() {
@@ -86,7 +86,7 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_3lmvlt_a0a1a0a0a1a0b0a1a5;
           }
         };
@@ -103,7 +103,7 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
     return true;
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095369207575");
-  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095369352259");
-  private static SNodePointer breakingNode_3lmvlt_a0a1a0a0a1a0b0a1a5 = new SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095368652009");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095369207575");
+  private static SNodeReference canBeParentBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095369352259");
+  private static SNodeReference breakingNode_3lmvlt_a0a1a0a0a1a0b0a1a5 = new jetbrains.mps.smodel.SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095368652009");
 }

@@ -38,7 +38,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -72,18 +72,18 @@ public class GroupedNodesChooser extends DialogWrapper {
   private boolean myAllowMultiSelection;
   protected final Project myProject;
 
-  private SNodePointer[] myElements;
+  private SNodeReference[] myElements;
   private final HashMap<MemberNode, ParentNode> myNodeToParentMap = new HashMap<MemberNode, ParentNode>();
-  private final HashMap<SNodePointer, MemberNode> myElementToNodeMap = new HashMap<SNodePointer, MemberNode>();
+  private final HashMap<SNodeReference, MemberNode> myElementToNodeMap = new HashMap<SNodeReference, MemberNode>();
   private final ArrayList<ContainerNode> myContainerNodes = new ArrayList<ContainerNode>();
-  private LinkedHashSet<SNodePointer> mySelectedElements;
+  private LinkedHashSet<SNodeReference> mySelectedElements;
 
   @NonNls
   private static final String PROP_SORTED = "MPS.NodesChooser.sorted";
   @NonNls
   private static final String PROP_SHOWCONTAINERS = "MPS.NodesChooser.showContainers";
 
-  public GroupedNodesChooser(SNodePointer[] elements,
+  public GroupedNodesChooser(SNodeReference[] elements,
                              boolean allowEmptySelection,
                              boolean allowMultiSelection,
                              @NotNull Project project
@@ -98,7 +98,7 @@ public class GroupedNodesChooser extends DialogWrapper {
     init();
   }
 
-  public void resetElements(SNodePointer[] elements) {
+  public void resetElements(SNodeReference[] elements) {
     myElements = elements;
     mySelectedNodes.clear();
     myNodeToParentMap.clear();
@@ -136,10 +136,10 @@ public class GroupedNodesChooser extends DialogWrapper {
     final Ref<Integer> count = new Ref<Integer>(0);
     final FactoryMap<Object, ParentNode> map = new FactoryMap<Object, ParentNode>() {
       protected ParentNode create(final Object key) {
-        if (key instanceof SNodePointer) {
-          SNode el = ((SNodePointer) key).resolve(MPSModuleRepository.getInstance());
+        if (key instanceof SNodeReference) {
+          SNode el = ((SNodeReference) key).resolve(MPSModuleRepository.getInstance());
           if (el != null) {
-            final ContainerNode containerNode = new ContainerNode(rootNode, (SNodePointer) key, getText(el), getIcon(el), count);
+            final ContainerNode containerNode = new ContainerNode(rootNode, (SNodeReference) key, getText(el), getIcon(el), count);
             myContainerNodes.add(containerNode);
             return containerNode;
           }
@@ -152,7 +152,7 @@ public class GroupedNodesChooser extends DialogWrapper {
       }
     };
 
-    for (SNodePointer object : myElements) {
+    for (SNodeReference object : myElements) {
       SNode node = object.resolve(MPSModuleRepository.getInstance());
       Object group = getGroupNode(node);
       if (group == null) group = getGroupTitle(node);
@@ -173,9 +173,9 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
   @Nullable
-  protected SNodePointer getGroupNode(SNode node) {
+  protected SNodeReference getGroupNode(SNode node) {
     SNode parent = node.getParent();
-    return parent != null ? new SNodePointer(parent) : null;
+    return parent != null ? new jetbrains.mps.smodel.SNodePointer(parent) : null;
   }
 
   @NotNull
@@ -183,9 +183,9 @@ public class GroupedNodesChooser extends DialogWrapper {
     return "Others";
   }
 
-  public void selectElements(SNodePointer[] elements) {
+  public void selectElements(SNodeReference[] elements) {
     ArrayList<TreePath> selectionPaths = new ArrayList<TreePath>();
-    for (SNodePointer element : elements) {
+    for (SNodeReference element : elements) {
       MemberNode treeNode = myElementToNodeMap.get(element);
       if (treeNode != null) {
         selectionPaths.add(new TreePath(treeNode.getPath()));
@@ -350,14 +350,14 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
   @Nullable
-  private LinkedHashSet<SNodePointer> getSelectedElementsList() {
+  private LinkedHashSet<SNodeReference> getSelectedElementsList() {
     return getExitCode() == OK_EXIT_CODE ? mySelectedElements : null;
   }
 
   @Nullable
-  public List<SNodePointer> getSelectedElements() {
-    final LinkedHashSet<SNodePointer> list = getSelectedElementsList();
-    return list == null ? null : new ArrayList<SNodePointer>(list);
+  public List<SNodeReference> getSelectedElements() {
+    final LinkedHashSet<SNodeReference> list = getSelectedElementsList();
+    return list == null ? null : new ArrayList<SNodeReference>(list);
   }
 
   protected final boolean areElementsSelected() {
@@ -535,7 +535,7 @@ public class GroupedNodesChooser extends DialogWrapper {
           }
         }
       }
-      mySelectedElements = new LinkedHashSet<SNodePointer>();
+      mySelectedElements = new LinkedHashSet<SNodeReference>();
       for (MemberNode selectedNode : mySelectedNodes) {
         mySelectedElements.add(selectedNode.getElement());
       }
@@ -544,11 +544,11 @@ public class GroupedNodesChooser extends DialogWrapper {
 
   private abstract static class ElementNode extends DefaultMutableTreeNode {
     private final int myOrder;
-    private final SNodePointer myElement;
+    private final SNodeReference myElement;
     private final String myText;
     private Icon myIcon;
 
-    public ElementNode(@Nullable DefaultMutableTreeNode parent, SNodePointer nodePointer, String text, Icon icon, Ref<Integer> order) {
+    public ElementNode(@Nullable DefaultMutableTreeNode parent, SNodeReference nodePointer, String text, Icon icon, Ref<Integer> order) {
       myIcon = icon;
       myOrder = order.get();
       order.set(myOrder + 1);
@@ -559,7 +559,7 @@ public class GroupedNodesChooser extends DialogWrapper {
       }
     }
 
-    public SNodePointer getElement() {
+    public SNodeReference getElement() {
       return myElement;
     }
 
@@ -582,19 +582,19 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
   private static class MemberNode extends ElementNode {
-    public MemberNode(ParentNode parent, SNodePointer element, String text, Icon icon, Ref<Integer> order) {
+    public MemberNode(ParentNode parent, SNodeReference element, String text, Icon icon, Ref<Integer> order) {
       super(parent, element, text, icon, order);
     }
   }
 
   private static class ParentNode extends ElementNode {
-    public ParentNode(@Nullable DefaultMutableTreeNode parent, SNodePointer element, String text, Icon icon, Ref<Integer> order) {
+    public ParentNode(@Nullable DefaultMutableTreeNode parent, SNodeReference element, String text, Icon icon, Ref<Integer> order) {
       super(parent, null, text, icon, order);
     }
   }
 
   private static class ContainerNode extends ParentNode {
-    public ContainerNode(DefaultMutableTreeNode parent, SNodePointer element, String text, Icon icon, Ref<Integer> order) {
+    public ContainerNode(DefaultMutableTreeNode parent, SNodeReference element, String text, Icon icon, Ref<Integer> order) {
       super(parent, element, text, icon, order);
     }
   }

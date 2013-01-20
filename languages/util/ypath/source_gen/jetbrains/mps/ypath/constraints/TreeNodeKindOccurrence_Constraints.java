@@ -18,7 +18,7 @@ import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class TreeNodeKindOccurrence_Constraints extends BaseConstraintsDescriptor {
   public TreeNodeKindOccurrence_Constraints() {
@@ -50,7 +50,7 @@ public class TreeNodeKindOccurrence_Constraints extends BaseConstraintsDescripto
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_8c9v72_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -59,5 +59,5 @@ public class TreeNodeKindOccurrence_Constraints extends BaseConstraintsDescripto
     return references;
   }
 
-  private static SNodePointer breakingNode_8c9v72_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104859283");
+  private static SNodeReference breakingNode_8c9v72_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)", "1213104859283");
 }

@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
@@ -54,7 +54,7 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_184bjp_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -84,7 +84,7 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_184bjp_a0a1a0a0a1a0b0a2a1;
           }
         };
@@ -93,6 +93,6 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
     return references;
   }
 
-  private static SNodePointer breakingNode_184bjp_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860270");
-  private static SNodePointer breakingNode_184bjp_a0a1a0a0a1a0b0a2a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860311");
+  private static SNodeReference breakingNode_184bjp_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860270");
+  private static SNodeReference breakingNode_184bjp_a0a1a0a0a1a0b0a2a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860311");
 }

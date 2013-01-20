@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.FlattenIterable;
 
 import java.util.*;
@@ -112,11 +112,11 @@ public class RuleManager {
     return myRuleFinder;
   }
 
-  public FastRuleFinder getRuleFinder(SNodePointer switch_) {
+  public FastRuleFinder getRuleFinder(SNodeReference switch_) {
     return myTemplateSwitchGraph.getRuleFinder(switch_);
   }
 
-  public TemplateSwitchMapping getSwitch(SNodePointer switch_) {
+  public TemplateSwitchMapping getSwitch(SNodeReference switch_) {
     return myTemplateSwitchGraph.getSwitch(switch_);
   }
 

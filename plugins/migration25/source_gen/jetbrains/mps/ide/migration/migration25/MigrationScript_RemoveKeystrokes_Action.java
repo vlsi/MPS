@@ -10,7 +10,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptExecutor;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
@@ -61,7 +61,7 @@ public class MigrationScript_RemoveKeystrokes_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNodePointer script = new SNodePointer("r:152d593f-ba35-45f9-9f5c-99ac31b57587(jetbrains.mps.lang.refactoring.scripts)", "3239565862706583464");
+      SNodeReference script = new jetbrains.mps.smodel.SNodePointer("r:152d593f-ba35-45f9-9f5c-99ac31b57587(jetbrains.mps.lang.refactoring.scripts)", "3239565862706583464");
       MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Remove Keystrokes", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
       if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
         executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));

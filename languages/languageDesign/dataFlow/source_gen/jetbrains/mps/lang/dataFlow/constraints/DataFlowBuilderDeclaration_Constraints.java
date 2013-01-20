@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class DataFlowBuilderDeclaration_Constraints extends BaseConstraintsDescriptor {
   public DataFlowBuilderDeclaration_Constraints() {
@@ -61,5 +61,5 @@ public class DataFlowBuilderDeclaration_Constraints extends BaseConstraintsDescr
     return LanguageAspect.DATA_FLOW.is(model);
   }
 
-  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)", "1227089120379");
+  private static SNodeReference canBeRootBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)", "1227089120379");
 }

@@ -20,7 +20,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class PrivateInstanceMethodCallOperation_Constraints extends BaseConstraintsDescriptor {
   public PrivateInstanceMethodCallOperation_Constraints() {
@@ -59,7 +59,7 @@ public class PrivateInstanceMethodCallOperation_Constraints extends BaseConstrai
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_8iqmcz_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -68,5 +68,5 @@ public class PrivateInstanceMethodCallOperation_Constraints extends BaseConstrai
     return references;
   }
 
-  private static SNodePointer breakingNode_8iqmcz_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)", "6825241477451051017");
+  private static SNodeReference breakingNode_8iqmcz_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)", "6825241477451051017");
 }

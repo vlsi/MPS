@@ -18,7 +18,7 @@ package jetbrains.mps.workbench.choose.nodes;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
@@ -28,12 +28,12 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 
 public class NodePointerPresentation extends BasePresentation {
-  private final SNodePointer myNode;
+  private final SNodeReference myNode;
   private String myModelName = null;
   private String myPresentableText = null;
   private Icon myIcon = null;
 
-  public NodePointerPresentation(@Nullable SNodePointer node) {
+  public NodePointerPresentation(@Nullable SNodeReference node) {
     myNode = node;
   }
 

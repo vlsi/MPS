@@ -8,7 +8,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,7 +20,7 @@ public class NodeFileStatusMappingExt extends NodeFileStatusMapping {
   }
 
   @Override
-  protected void statusChanged(FileStatusManager fsm, MPSNodesVirtualFileSystem nvfs, SNodePointer nodePointer) {
+  protected void statusChanged(FileStatusManager fsm, MPSNodesVirtualFileSystem nvfs, SNodeReference nodePointer) {
     super.statusChanged(fsm, nvfs, nodePointer);
     SNode currentNode = nodePointer.resolve(MPSModuleRepository.getInstance());
     for (RelationDescriptor d : ListSequence.fromList(myProject.getComponent(ProjectPluginManager.class).getTabDescriptors())) {

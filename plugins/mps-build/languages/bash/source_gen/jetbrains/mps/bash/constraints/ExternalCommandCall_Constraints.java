@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bash.behavior.ExternalCommandCall_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ExternalCommandCall_Constraints extends BaseConstraintsDescriptor {
   public ExternalCommandCall_Constraints() {
@@ -43,5 +43,5 @@ public class ExternalCommandCall_Constraints extends BaseConstraintsDescriptor {
     return true;
   }
 
-  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:32c4fb44-9e66-4976-aa43-e37da5fe27dd(jetbrains.mps.bash.constraints)", "3147078024753427277");
+  private static SNodeReference canBeParentBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:32c4fb44-9e66-4976-aa43-e37da5fe27dd(jetbrains.mps.bash.constraints)", "3147078024753427277");
 }

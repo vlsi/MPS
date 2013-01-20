@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -66,7 +66,7 @@ public class CreateTypesystemIntention_Intention implements IntentionFactory {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "3302086321380606109");
+    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "3302086321380606109");
   }
 
   public boolean isSurroundWith() {

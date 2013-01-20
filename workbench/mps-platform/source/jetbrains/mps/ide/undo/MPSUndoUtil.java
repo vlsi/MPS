@@ -20,12 +20,12 @@ import com.intellij.openapi.command.undo.DocumentReferenceManager;
 import com.intellij.openapi.diff.FragmentContent;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
 public class MPSUndoUtil {
-  public static Document getDoc(SNodePointer node) {
+  public static Document getDoc(SNodeReference node) {
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
     return getDoc(file);
   }

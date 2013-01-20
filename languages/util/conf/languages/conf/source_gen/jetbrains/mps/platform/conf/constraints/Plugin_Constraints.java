@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class Plugin_Constraints extends BaseConstraintsDescriptor {
   public Plugin_Constraints() {
@@ -81,5 +81,5 @@ public class Plugin_Constraints extends BaseConstraintsDescriptor {
     return ConfigurationXmlRootNode_constraintsUtil.canBeParent(link, childConcept);
   }
 
-  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "5246455451713051088");
+  private static SNodeReference canBeParentBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "5246455451713051088");
 }

@@ -4,7 +4,7 @@ package jetbrains.mps.ide.script.plugin.migrationtool;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import java.util.List;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -27,13 +27,13 @@ import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 
 public class MigrationScriptFinder implements IFinder {
-  private List<SNodePointer> myScripts = new ArrayList<SNodePointer>();
+  private List<SNodeReference> myScripts = new ArrayList<SNodeReference>();
   private IOperationContext myOperationContext;
   private SearchResults<SNode> myResults;
   private Map<SearchResult<SNode>, AbstractMigrationRefactoring> myMigrationBySearchResult = new IdentityHashMap<SearchResult<SNode>, AbstractMigrationRefactoring>();
   private List<ResultsListener> myResultsListeners = Collections.synchronizedList(new ArrayList<ResultsListener>());
 
-  public MigrationScriptFinder(List<SNodePointer> scripts, IOperationContext context) {
+  public MigrationScriptFinder(List<SNodeReference> scripts, IOperationContext context) {
     myScripts = scripts;
     myOperationContext = context;
   }
@@ -84,7 +84,7 @@ public class MigrationScriptFinder implements IFinder {
     return myResults;
   }
 
-  public List<SNodePointer> getScripts() {
+  public List<SNodeReference> getScripts() {
     return myScripts;
   }
 

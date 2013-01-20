@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class MatchVariableReferenceReplacement_Constraints extends BaseConstraintsDescriptor {
   public MatchVariableReferenceReplacement_Constraints() {
@@ -64,7 +64,7 @@ public class MatchVariableReferenceReplacement_Constraints extends BaseConstrain
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_v9mr27_a0a3a0a0a1a0b0a1a1;
           }
         };
@@ -73,5 +73,5 @@ public class MatchVariableReferenceReplacement_Constraints extends BaseConstrain
     return references;
   }
 
-  private static SNodePointer breakingNode_v9mr27_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "3796137614137558194");
+  private static SNodeReference breakingNode_v9mr27_a0a3a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "3796137614137558194");
 }

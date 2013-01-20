@@ -21,18 +21,18 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Evgeny Gryaznov, 11/19/10
  */
 public class ReferenceInfo_TemplateParent extends ReferenceInfo {
-  private SNodePointer myTemplateSourceNode;
+  private SNodeReference myTemplateSourceNode;
   private int myParentIndex;
   private String myResolveInfo;
 
 
-  public ReferenceInfo_TemplateParent(SNode outputSourceNode, String role, SNodePointer sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
+  public ReferenceInfo_TemplateParent(SNode outputSourceNode, String role, SNodeReference sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
     super(outputSourceNode, role, context.getInput());
     myTemplateSourceNode = sourceNode;
     myParentIndex = parentIndex;

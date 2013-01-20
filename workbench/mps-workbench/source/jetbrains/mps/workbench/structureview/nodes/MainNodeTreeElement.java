@@ -22,7 +22,7 @@ import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,15 +30,15 @@ import java.util.List;
 public class MainNodeTreeElement extends NodeTreeElement {
   private Project myProject;
 
-  public MainNodeTreeElement(Project project, SNodePointer node) {
+  public MainNodeTreeElement(Project project, SNodeReference node) {
     super(node);
     myProject = project;
   }
 
   @Override
-  public SNodePointer getValue() {
+  public SNodeReference getValue() {
     // if getValue() equal for root and leaf caching strategy in CachingChildrenTreeNode fail and you got infinite tree
-    return new SNodePointer(null);
+    return new jetbrains.mps.smodel.SNodePointer(null);
   }
 
   public TreeElement[] getChildren() {
@@ -51,7 +51,7 @@ public class MainNodeTreeElement extends NodeTreeElement {
           for (SNode aspectNode : tab.getNodes(node)) {
             SNode baseNode = tab.getBaseNode(aspectNode);
             boolean bijection = (baseNode == node || baseNode == null);
-            result.add(new AspectTreeElement(new SNodePointer(aspectNode), tab, bijection));
+            result.add(new AspectTreeElement(new jetbrains.mps.smodel.SNodePointer(aspectNode), tab, bijection));
           }
         }
       }

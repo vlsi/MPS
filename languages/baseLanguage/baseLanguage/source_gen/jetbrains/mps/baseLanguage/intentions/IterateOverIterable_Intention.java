@@ -11,7 +11,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Collections;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -66,7 +66,7 @@ public class IterateOverIterable_Intention implements IntentionFactory {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1238764345596");
+    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1238764345596");
   }
 
   public boolean isSurroundWith() {
@@ -124,7 +124,7 @@ public class IterateOverIterable_Intention implements IntentionFactory {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a9;
+          SNodeReference pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a9;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -178,7 +178,7 @@ public class IterateOverIterable_Intention implements IntentionFactory {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0a0a0a0c31;
+          SNodeReference pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0a0a0a0c31;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -218,6 +218,6 @@ public class IterateOverIterable_Intention implements IntentionFactory {
     }
   }
 
-  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a9 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
-  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0a0a0a0c31 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodeReference SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a9 = new jetbrains.mps.smodel.SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodeReference SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0a0a0a0c31 = new jetbrains.mps.smodel.SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 }

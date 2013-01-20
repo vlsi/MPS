@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class DeleteFeatureOperation_Constraints extends BaseConstraintsDescriptor {
   public DeleteFeatureOperation_Constraints() {
@@ -35,5 +35,5 @@ public class DeleteFeatureOperation_Constraints extends BaseConstraintsDescripto
     return (SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.lang.refactoring.structure.OldRefactoring"}, false, false) != null);
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "3302086321381138250");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "3302086321381138250");
 }

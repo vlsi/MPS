@@ -43,7 +43,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -99,8 +99,8 @@ public abstract class EditorCell_Basic implements EditorCell {
   private EditorCellKeyMap myKeyMap;
   private String myCellId;
   private String myRole;
-  private SNodePointer myLinkDeclarationPointer;
-  private SNodePointer myRefNodePointer;
+  private SNodeReference myLinkDeclarationPointer;
+  private SNodeReference myRefNodePointer;
   private boolean myInTree;
   private boolean myIsReferenceCell = false;
   protected int myGapLeft;
@@ -420,7 +420,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
         if (link != null) {
-          myLinkDeclarationPointer = new SNodePointer(link);
+          myLinkDeclarationPointer = new jetbrains.mps.smodel.SNodePointer(link);
           myIsReferenceCell = SNodeUtil.getLinkDeclaration_IsReference(link);
         } else {
           myLinkDeclarationPointer = null;
@@ -447,7 +447,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void setRefNode(SNode refNode) {
-    myRefNodePointer = (refNode != null) ? new SNodePointer(refNode) : null;
+    myRefNodePointer = (refNode != null) ? new jetbrains.mps.smodel.SNodePointer(refNode) : null;
   }
 
   public void setSelected(boolean selected) {

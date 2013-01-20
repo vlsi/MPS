@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BuildLayout_Filemode_Constraints extends BaseConstraintsDescriptor {
   public BuildLayout_Filemode_Constraints() {
@@ -37,5 +37,5 @@ public class BuildLayout_Filemode_Constraints extends BaseConstraintsDescriptor 
     return archive != null && BehaviorReflection.invokeVirtual(Boolean.TYPE, archive, "virtual_hasFileModeAttribute_6408167411310575237", new Object[]{}) || parentNode.getConcept().getConceptId().startsWith("jetbrains.mps.lang.generator");
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "7801138212747054670");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "7801138212747054670");
 }

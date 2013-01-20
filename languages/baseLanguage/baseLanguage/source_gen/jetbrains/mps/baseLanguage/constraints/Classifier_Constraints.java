@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
@@ -47,7 +47,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       }
 
       @Override
-      public SNodePointer getSearchScopeValidatorNode() {
+      public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_z47b7w_a0a2a0a0a2;
       }
 
@@ -100,5 +100,5 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
     return properties;
   }
 
-  private static SNodePointer breakingNode_z47b7w_a0a2a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136860");
+  private static SNodeReference breakingNode_z47b7w_a0a2a0a0a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136860");
 }

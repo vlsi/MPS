@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
@@ -37,7 +37,7 @@ public class BwfSubTaskDependency_Constraints extends BaseConstraintsDescriptor 
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_45r57v_a0a0a0a0a1a0b0a1a1;
           }
 
@@ -57,5 +57,5 @@ public class BwfSubTaskDependency_Constraints extends BaseConstraintsDescriptor 
     return references;
   }
 
-  private static SNodePointer breakingNode_45r57v_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "2769948622284605893");
+  private static SNodeReference breakingNode_45r57v_a0a0a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "2769948622284605893");
 }

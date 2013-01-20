@@ -20,7 +20,7 @@ import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -65,7 +65,7 @@ public class TemplateModelInterpreted implements TemplateModel {
   }
 
   @Override
-  public TemplateDeclaration loadTemplate(SNodePointer template, Object... arguments) {
+  public TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments) {
     assert template.getModelReference().equals(getSModelReference());
     SNode templateNode = myModel.getNodeById(template.getNodeId());
     if (templateNode == null || !RuleUtil.concept_TemplateDeclaration.equals(templateNode.getConcept().getId())) {

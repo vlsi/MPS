@@ -35,7 +35,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -43,7 +43,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class MpsSourcePosition extends SourcePosition {
-  private final SNodePointer myNodePointer;
+  private final SNodeReference myNodePointer;
   private final Project myProject;
   private final NodeNavigatable myNavigatable;
   private final GeneratedSourcePosition mySourcePosition;
@@ -61,11 +61,11 @@ public class MpsSourcePosition extends SourcePosition {
   }
 
   public MPSNodeVirtualFile getRootVirtualFile() {
-    SNodePointer rootPointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+    SNodeReference rootPointer = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
       @Override
-      public SNodePointer compute() {
+      public SNodeReference compute() {
         SNode root = myNodePointer.getNode().getContainingRoot();
-        return new SNodePointer(root.getModel() == null ? null : root);
+        return new jetbrains.mps.smodel.SNodePointer(root.getModel() == null ? null : root);
       }
     });
     return MPSNodesVirtualFileSystem.getInstance().getFileFor(rootPointer);

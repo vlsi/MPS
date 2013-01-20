@@ -10,7 +10,7 @@ import java.awt.Point;
 import java.util.List;
 
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
@@ -53,30 +53,30 @@ public class GoToHelper {
     return new RelativePoint(selectedCell.getEditor(), new Point(selectedCell.getX(), selectedCell.getY()));
   }
 
-  public static void showOverridingMethodsMenu(List<SNodePointer> nodes, RelativePoint point, Project project, String methodName) {
+  public static void showOverridingMethodsMenu(List<SNodeReference> nodes, RelativePoint point, Project project, String methodName) {
     String title = "Choose overriding method of " + methodName + "() to navigate to";
     GoToHelper.MethodCellRenderer renderer = new GoToHelper.MethodCellRenderer();
     GoToHelper.showMenu(point, project, title, nodes, renderer);
   }
 
-  public static void showOverridenMethodsMenu(List<SNodePointer> nodes, RelativePoint point, Project project, String methodName) {
+  public static void showOverridenMethodsMenu(List<SNodeReference> nodes, RelativePoint point, Project project, String methodName) {
     String title = "Choose super method of" + methodName + "()";
     GoToHelper.MethodCellRenderer renderer = new GoToHelper.MethodCellRenderer();
     GoToHelper.showMenu(point, project, title, nodes, renderer);
   }
 
-  public static void showInheritedClassesMenu(List<SNodePointer> nodes, RelativePoint point, Project project) {
+  public static void showInheritedClassesMenu(List<SNodeReference> nodes, RelativePoint point, Project project) {
     String title = "Choose inherited class to navigate to";
     GoToHelper.DefaultNodeNavigationItemCellRenderer renderer = new GoToHelper.DefaultNodeNavigationItemCellRenderer();
     GoToHelper.showMenu(point, project, title, nodes, renderer);
   }
 
-  private static void showMenu(RelativePoint point, Project project, String title, List<SNodePointer> nodes, NodeListCellRenderer renderer) {
+  private static void showMenu(RelativePoint point, Project project, String title, List<SNodeReference> nodes, NodeListCellRenderer renderer) {
     if (ListSequence.fromList(nodes).isEmpty()) {
       return;
     }
     List<NodeNavigatable> navigatables = new ArrayList<NodeNavigatable>();
-    for (SNodePointer node : nodes) {
+    for (SNodeReference node : nodes) {
       navigatables.add(new NodeNavigatable(project, node));
     }
     Collections.sort(navigatables, renderer.getComparator());
@@ -122,15 +122,15 @@ public class GoToHelper {
       }
     });
 
-    final Set<SNodePointer> nodes = SetSequence.fromSet(new HashSet<SNodePointer>());
+    final Set<SNodeReference> nodes = SetSequence.fromSet(new HashSet<SNodeReference>());
     ProgressManager.getInstance().run(new Task.Modal(project, "Searching...", true) {
       public void run(@NotNull final ProgressIndicator p) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             List<SNode> list = FindUtils.executeFinder(finderClassName, method, GlobalScope.getInstance(), new ProgressMonitorAdapter(p));
-            SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodePointer>() {
-              public SNodePointer select(SNode it) {
-                return new SNodePointer(it);
+            SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodeReference>() {
+              public SNodeReference select(SNode it) {
+                return new jetbrains.mps.smodel.SNodePointer(it);
               }
             }));
           }

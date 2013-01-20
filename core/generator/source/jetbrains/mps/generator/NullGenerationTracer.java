@@ -19,7 +19,7 @@ import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Pair;
 
 import java.util.List;
@@ -32,43 +32,43 @@ public class NullGenerationTracer implements IGenerationTracer {
   public final static IGenerationTracer INSTANCE = new NullGenerationTracer();
 
   @Override
-  public void pushInputNode(SNodePointer node) {
+  public void pushInputNode(SNodeReference node) {
   }
 
   @Override
-  public void closeInputNode(SNodePointer node) {
+  public void closeInputNode(SNodeReference node) {
   }
 
   @Override
-  public void popInputNode(SNodePointer node) {
+  public void popInputNode(SNodeReference node) {
   }
 
   @Override
-  public void pushRule(SNodePointer node) {
+  public void pushRule(SNodeReference node) {
   }
 
   @Override
-  public void closeRule(SNodePointer node) {
+  public void closeRule(SNodeReference node) {
   }
 
   @Override
-  public void pushRuleConsequence(SNodePointer node) {
+  public void pushRuleConsequence(SNodeReference node) {
   }
 
   @Override
-  public void pushSwitch(SNodePointer node) {
+  public void pushSwitch(SNodeReference node) {
   }
 
   @Override
-  public void pushMacro(SNodePointer node) {
+  public void pushMacro(SNodeReference node) {
   }
 
   @Override
-  public void closeMacro(SNodePointer node) {
+  public void closeMacro(SNodeReference node) {
   }
 
   @Override
-  public void pushOutputNode(SNodePointer node) {
+  public void pushOutputNode(SNodeReference node) {
   }
 
   @Override
@@ -81,11 +81,11 @@ public class NullGenerationTracer implements IGenerationTracer {
 
 
   @Override
-  public void pushTemplateNode(SNodePointer node) {
+  public void pushTemplateNode(SNodeReference node) {
   }
 
   @Override
-  public void closeTemplateNode(SNodePointer node) {
+  public void closeTemplateNode(SNodeReference node) {
   }
 
   @Override

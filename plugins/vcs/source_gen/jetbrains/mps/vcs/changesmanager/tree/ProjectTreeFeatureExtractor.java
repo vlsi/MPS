@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.smodel.ConceptTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature;
@@ -37,12 +37,12 @@ public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {
     } else if (treeNode.getParent() instanceof MPSTreeNodeEx) {
       node = ((MPSTreeNodeEx) treeNode.getParent()).getSNode();
     }
-    SNodePointer nodePointer = null;
+    SNodeReference nodePointer = null;
     if (node != null) {
       if (node.getModel() == null) {
         return null;
       }
-      nodePointer = new SNodePointer(node);
+      nodePointer = new jetbrains.mps.smodel.SNodePointer(node);
     }
     if (treeNode instanceof SNodeTreeNode || treeNode instanceof ConceptTreeNode) {
       return new NodeFeature(nodePointer);
@@ -50,7 +50,7 @@ public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {
       return new PropertyFeature(nodePointer, ((PropertyTreeNode) treeNode).getProperty());
     } else if (treeNode instanceof ReferenceTreeNode) {
       SReference ref = ((ReferenceTreeNode) treeNode).getRef();
-      return new PropertyFeature(new SNodePointer(ref.getSourceNode()), ref.getRole());
+      return new PropertyFeature(new jetbrains.mps.smodel.SNodePointer(ref.getSourceNode()), ref.getRole());
     } else if (treeNode instanceof PropertiesTreeNode) {
       return new PropertiesFeature(nodePointer);
     } else if (treeNode instanceof ReferencesTreeNode) {

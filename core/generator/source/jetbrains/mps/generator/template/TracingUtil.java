@@ -18,7 +18,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
@@ -42,7 +42,7 @@ public class TracingUtil {
     HashMap<SNode, SNode> nodeMap = new HashMap<SNode, SNode>();
     List<SNode> result = CopyUtil.copy(nodes, nodeMap);
     for (Entry<SNode, SNode> entry : nodeMap.entrySet()) {
-      SNodePointer input = getInput(entry.getKey());
+      SNodeReference input = getInput(entry.getKey());
       if (input != null) {
         putInput(entry.getValue(), input);
       } else {
@@ -53,17 +53,17 @@ public class TracingUtil {
   }
 
   @Nullable
-  public static SNodePointer getInput(SNode output) {
-    return (SNodePointer) output.getUserObject(ORIGINAL_INPUT_NODE);
+  public static SNodeReference getInput(SNode output) {
+    return (SNodeReference) output.getUserObject(ORIGINAL_INPUT_NODE);
   }
 
-  public static void putInput(SNode output, SNodePointer input) {
+  public static void putInput(SNode output, SNodeReference input) {
     output.putUserObject(ORIGINAL_INPUT_NODE, input);
   }
 
   @Nullable
   public static SNode getInputNode(SNode output) {
-    SNodePointer inputNodePointer = (SNodePointer) output.getUserObject(ORIGINAL_INPUT_NODE);
+    SNodeReference inputNodePointer = (SNodeReference) output.getUserObject(ORIGINAL_INPUT_NODE);
     if (inputNodePointer == null) {
       return null;
     }
@@ -71,14 +71,14 @@ public class TracingUtil {
   }
 
   public static void putInputNode(SNode output, SNode input) {
-    output.putUserObject(ORIGINAL_INPUT_NODE, new SNodePointer(input));
+    output.putUserObject(ORIGINAL_INPUT_NODE, new jetbrains.mps.smodel.SNodePointer(input));
   }
 
   public static void fillOriginalNode(SNode inputNode, SNode outputNode, boolean originalInput) {
     if (originalInput) {
       putInputNode(outputNode, inputNode);
     } else {
-      SNodePointer originalInputNode = getInput(inputNode);
+      SNodeReference originalInputNode = getInput(inputNode);
       if (originalInputNode != null) {
         putInput(outputNode, originalInputNode);
       }

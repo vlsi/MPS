@@ -28,20 +28,20 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class NodeNavigatable implements Navigatable {
-  protected final SNodePointer myNode;
+  protected final SNodeReference myNode;
   protected final Project myProject;
   protected String myTextPresentation;
   protected ItemPresentation myItemPresentation;
-  protected SNodePointer myRootNode;
+  protected SNodeReference myRootNode;
   protected VirtualFile myFile;
 
-  public NodeNavigatable(@NotNull SNodePointer node, @NotNull Project project) {
+  public NodeNavigatable(@NotNull SNodeReference node, @NotNull Project project) {
     myNode = node;
     myProject = project;
     myItemPresentation = new NodePointerPresentation(node);
@@ -51,7 +51,7 @@ public abstract class NodeNavigatable implements Navigatable {
       public void run() {
         SNode targetNode = myNode.getNode();
         if (targetNode != null) {
-          myRootNode = new SNodePointer(targetNode.getContainingRoot());
+          myRootNode = new jetbrains.mps.smodel.SNodePointer(targetNode.getContainingRoot());
           myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myRootNode);
         }
       }

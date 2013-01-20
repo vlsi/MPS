@@ -17,7 +17,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 public class TemplateFragmentContext extends TemplateQueryContextWithMacro {
@@ -28,7 +28,7 @@ public class TemplateFragmentContext extends TemplateQueryContextWithMacro {
     myMainContextNode = mainContextNode;
   }
 
-  public TemplateFragmentContext(SNode mainContextNode, @NotNull SNodePointer tfMacro, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
+  public TemplateFragmentContext(SNode mainContextNode, @NotNull SNodeReference tfMacro, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(context.getInput(), tfMacro, context, generator);
     myMainContextNode = mainContextNode;
   }

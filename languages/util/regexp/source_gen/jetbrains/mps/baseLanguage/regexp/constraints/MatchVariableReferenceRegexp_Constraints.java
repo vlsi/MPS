@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDescriptor {
   public MatchVariableReferenceRegexp_Constraints() {
@@ -67,7 +67,7 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_15u81x_a0a3a0a0a1a0b0a1a1;
           }
         };
@@ -76,5 +76,5 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
     return references;
   }
 
-  private static SNodePointer breakingNode_15u81x_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "1213104860360");
+  private static SNodeReference breakingNode_15u81x_a0a3a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "1213104860360");
 }

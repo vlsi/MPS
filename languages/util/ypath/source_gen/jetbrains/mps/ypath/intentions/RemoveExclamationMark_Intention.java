@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -57,7 +57,7 @@ public class RemoveExclamationMark_Intention implements IntentionFactory {
   }
 
   public SNodeReference getIntentionNodeReference() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c895905ab(jetbrains.mps.ypath.intentions)", "1198003127662");
+    return new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895905ab(jetbrains.mps.ypath.intentions)", "1198003127662");
   }
 
   public boolean isSurroundWith() {

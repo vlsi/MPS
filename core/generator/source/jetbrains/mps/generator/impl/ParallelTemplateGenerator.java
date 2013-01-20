@@ -32,7 +32,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -156,7 +156,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected void registerInModel(SNode outputRoot, SNode inputNode, SNodePointer templateNode) {
+  protected void registerInModel(SNode outputRoot, SNode inputNode, SNodeReference templateNode) {
     RootGenerationTask task = myInputToTask.get(new Pair(inputNode, templateNode));
     if (task == null) {
       showErrorMessage(inputNode, templateNode.resolve(MPSModuleRepository.getInstance()), "internal: cannot find task for generated root");

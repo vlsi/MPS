@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ThisNodeExpression_Constraints extends BaseConstraintsDescriptor {
   public ThisNodeExpression_Constraints() {
@@ -34,5 +34,5 @@ public class ThisNodeExpression_Constraints extends BaseConstraintsDescriptor {
     return ConstraintsUtil.isInsideOfNonStaticBehaviorContext(parentNode);
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "2043122710974690751");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "2043122710974690751");
 }

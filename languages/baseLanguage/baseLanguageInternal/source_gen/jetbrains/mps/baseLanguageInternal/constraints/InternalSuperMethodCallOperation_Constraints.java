@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class InternalSuperMethodCallOperation_Constraints extends BaseConstraintsDescriptor {
   public InternalSuperMethodCallOperation_Constraints() {
@@ -35,5 +35,5 @@ public class InternalSuperMethodCallOperation_Constraints extends BaseConstraint
     return true;
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "3731567766880819184");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "3731567766880819184");
 }

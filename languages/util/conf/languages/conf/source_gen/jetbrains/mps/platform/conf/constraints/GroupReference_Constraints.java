@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GroupReference_Constraints extends BaseConstraintsDescriptor {
@@ -71,7 +71,7 @@ public class GroupReference_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_60vk01_a0a3a0a0a1a0b0a1a1;
           }
         };
@@ -115,7 +115,7 @@ public class GroupReference_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_60vk01_a0a3a0a0a1a0b0a2a1;
           }
         };
@@ -124,6 +124,6 @@ public class GroupReference_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_60vk01_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "2948583337000056360");
-  private static SNodePointer breakingNode_60vk01_a0a3a0a0a1a0b0a2a1 = new SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "2948583337000056409");
+  private static SNodeReference breakingNode_60vk01_a0a3a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "2948583337000056360");
+  private static SNodeReference breakingNode_60vk01_a0a3a0a0a1a0b0a2a1 = new jetbrains.mps.smodel.SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "2948583337000056409");
 }

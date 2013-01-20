@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BinaryOperationReference_Constraints extends BaseConstraintsDescriptor {
   public BinaryOperationReference_Constraints() {
@@ -61,7 +61,7 @@ public class BinaryOperationReference_Constraints extends BaseConstraintsDescrip
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_4xi24e_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -70,5 +70,5 @@ public class BinaryOperationReference_Constraints extends BaseConstraintsDescrip
     return references;
   }
 
-  private static SNodePointer breakingNode_4xi24e_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:9b7a7baa-7b52-4b41-8293-5aa14d41220f(jetbrains.mps.baseLanguage.overloadedOperators.constraints)", "2838654975957288976");
+  private static SNodeReference breakingNode_4xi24e_a0a1a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:9b7a7baa-7b52-4b41-8293-5aa14d41220f(jetbrains.mps.baseLanguage.overloadedOperators.constraints)", "2838654975957288976");
 }

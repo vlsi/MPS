@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ControlAbstractionContainer_Constraints extends BaseConstraintsDescriptor {
   public ControlAbstractionContainer_Constraints() {
@@ -33,11 +33,11 @@ public class ControlAbstractionContainer_Constraints extends BaseConstraintsDesc
       }
 
       @Override
-      public SNodePointer getSearchScopeValidatorNode() {
+      public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_vhsk47_a0a1a0a0a2;
       }
     };
   }
 
-  private static SNodePointer breakingNode_vhsk47_a0a1a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "1229600983430");
+  private static SNodeReference breakingNode_vhsk47_a0a1a0a0a2 = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "1229600983430");
 }

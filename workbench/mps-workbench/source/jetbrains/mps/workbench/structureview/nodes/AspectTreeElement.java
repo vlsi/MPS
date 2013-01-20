@@ -21,7 +21,7 @@ import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.editor.markup.TextAttributes;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 
 import java.awt.Color;
@@ -31,7 +31,7 @@ public class AspectTreeElement extends NodeTreeElement {
   protected boolean myIsBijectional;
   protected RelationDescriptor myAspectDescriptor;
 
-  public AspectTreeElement(SNodePointer node, RelationDescriptor aspectDescriptor, boolean bijectional) {
+  public AspectTreeElement(SNodeReference node, RelationDescriptor aspectDescriptor, boolean bijectional) {
     super(node);
     myAspectDescriptor = aspectDescriptor;
     myIsBijectional = bijectional;
@@ -51,7 +51,7 @@ public class AspectTreeElement extends NodeTreeElement {
 
   @Override
   public ItemPresentation getPresentation() {
-    //todo use SNodePointer here, get rid of read action
+    //todo use SNodeReference here, get rid of read action
     return ModelAccess.instance().runReadAction(new Computable<ItemPresentation>() {
       public ItemPresentation compute() {
         return new NodeTreeElementPresentation() {

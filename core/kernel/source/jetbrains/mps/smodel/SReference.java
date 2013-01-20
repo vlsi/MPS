@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
@@ -112,7 +112,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, resolveInfo);
   }
 
-  public static SReference create(String role, SNode sourceNode, SNodePointer pointer, String resolveInfo) {
+  public static SReference create(String role, SNode sourceNode, SNodeReference pointer, String resolveInfo) {
     return create(role, sourceNode, pointer.getModelReference(), pointer.getNodeId(), resolveInfo);
   }
 
@@ -158,7 +158,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     }
   }
 
-  protected static SNodePointer validNode(SNode node) {
+  protected static SNodeReference validNode(SNode node) {
     if (node == null) {
       return null;
     }
@@ -168,13 +168,13 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
       return null;
     }
     if (!model.isTransient()) {
-      return new SNodePointer(node);
+      return new jetbrains.mps.smodel.SNodePointer(node);
     }
 
     IModule module = model.getModelDescriptor().getModule();
     if (module instanceof TransientModelsModule) {
       if (((TransientModelsModule) module).addModelToKeep(model, false)) {
-        return new SNodePointer(node);
+        return new jetbrains.mps.smodel.SNodePointer(node);
       }
     }
     return null;
@@ -182,16 +182,16 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
   public static class ProblemDescription {
 
-    private SNodePointer myNode;
+    private SNodeReference myNode;
     private String myMessage;
 
-    public ProblemDescription(@NotNull SNodePointer node, String message) {
+    public ProblemDescription(@NotNull SNodeReference node, String message) {
       myNode = node;
       myMessage = message;
     }
 
     @NotNull
-    public SNodePointer getNode() {
+    public SNodeReference getNode() {
       return myNode;
     }
 

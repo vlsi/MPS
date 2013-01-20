@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class PlaceholderMethodDeclaration_Constraints extends BaseConstraintsDescriptor {
   public PlaceholderMethodDeclaration_Constraints() {
@@ -59,7 +59,7 @@ public class PlaceholderMethodDeclaration_Constraints extends BaseConstraintsDes
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.Interface");
   }
 
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "4898614932449980392");
+  private static SNodeReference canBeChildBreakingPoint = new jetbrains.mps.smodel.SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "4898614932449980392");
 
   public static boolean isEmpty_5inea6_a0a0b0b0a1a0b0d(String str) {
     return str == null || str.length() == 0;

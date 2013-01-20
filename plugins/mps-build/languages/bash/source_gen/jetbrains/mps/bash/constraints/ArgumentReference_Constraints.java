@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ArgumentReference_Constraints extends BaseConstraintsDescriptor {
   public ArgumentReference_Constraints() {
@@ -68,7 +68,7 @@ public class ArgumentReference_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_xbl5ia_a0a2a0a0a1a0b0a1a1;
           }
         };
@@ -77,5 +77,5 @@ public class ArgumentReference_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_xbl5ia_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:32c4fb44-9e66-4976-aa43-e37da5fe27dd(jetbrains.mps.bash.constraints)", "3411949499900739977");
+  private static SNodeReference breakingNode_xbl5ia_a0a2a0a0a1a0b0a1a1 = new jetbrains.mps.smodel.SNodePointer("r:32c4fb44-9e66-4976-aa43-e37da5fe27dd(jetbrains.mps.bash.constraints)", "3411949499900739977");
 }

@@ -20,19 +20,19 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseNodePointerItem implements NavigationItem {
-  private final SNodePointer myNode;
+  private final SNodeReference myNode;
   private final NodePointerPresentation myNodePointerPresentation;
 
-  public BaseNodePointerItem(SNodePointer node) {
+  public BaseNodePointerItem(SNodeReference node) {
     myNode = node;
     myNodePointerPresentation = new NodePointerPresentation(myNode);
   }
 
-  public SNodePointer getNodePointer() {
+  public SNodeReference getNodePointer() {
     return myNode;
   }
 

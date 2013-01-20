@@ -20,7 +20,7 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.smodel.runtime.impl.DefaultTextGenDescriptor;
@@ -65,7 +65,7 @@ public class TextGen {
       String error = "Can't generate text from " + node;
       Message m = new Message(MessageKind.ERROR, error);
       if (node != null && node.getModel() != null && !node.getModel().isTransient()) {
-        m.setHintObject(new SNodePointer(node));
+        m.setHintObject(new jetbrains.mps.smodel.SNodePointer(node));
       }
       return new TextGenerationResult(node, NO_TEXTGEN, true, Collections.<IMessage>singleton(m), null, null, null, null);
     } else {

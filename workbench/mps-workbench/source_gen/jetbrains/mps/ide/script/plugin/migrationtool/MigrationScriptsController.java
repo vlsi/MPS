@@ -7,7 +7,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.ThreadUtils;
 import java.util.ArrayList;
 import java.util.Set;
@@ -25,14 +25,14 @@ public abstract class MigrationScriptsController {
     myFinder = finder;
   }
 
-  public Collection<SearchResult<SNode>> computeAliveIncludedResults(final List<SNodePointer> includedResultNodes) {
+  public Collection<SearchResult<SNode>> computeAliveIncludedResults(final List<SNodeReference> includedResultNodes) {
     ThreadUtils.assertEDT();
     final List aliveIncludedResults = new ArrayList<SearchResult<SNode>>();
     final Set aliveIncludedNodes = new HashSet<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<SNodePointer> includedNodes = includedResultNodes;
-        for (SNodePointer includedNode : includedNodes) {
+        List<SNodeReference> includedNodes = includedResultNodes;
+        for (SNodeReference includedNode : includedNodes) {
           if (includedNode.resolve(MPSModuleRepository.getInstance()) != null) {
             aliveIncludedNodes.add(includedNode.resolve(MPSModuleRepository.getInstance()));
           }

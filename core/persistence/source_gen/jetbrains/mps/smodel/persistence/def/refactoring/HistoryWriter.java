@@ -12,7 +12,7 @@ import jetbrains.mps.refactoring.StructureModification;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class HistoryWriter {
   public static final String MODIFICATION_HISTORY = "history";
@@ -70,7 +70,7 @@ public class HistoryWriter {
     return elem;
   }
 
-  private String genId(SNodePointer ptr) {
+  private String genId(SNodeReference ptr) {
     return myHelper.genReferenceId(ptr);
   }
 
