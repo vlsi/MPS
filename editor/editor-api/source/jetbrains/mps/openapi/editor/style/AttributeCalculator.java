@@ -18,9 +18,13 @@ package jetbrains.mps.openapi.editor.style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 /**
+ * Deprecated: all attribute calculators should be replaced by direct call to the corresponding method
+ * by modern editor generator. This interface should be removed after MPS 3.0
+ *
  * User: shatalin
  * Date: 1/11/13
  */
+@Deprecated
 public interface AttributeCalculator<T> {
   T calculate(EditorCell cell);
 }

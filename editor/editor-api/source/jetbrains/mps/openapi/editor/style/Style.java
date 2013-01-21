@@ -31,6 +31,10 @@ public interface Style {
 
   <T> void set(StyleAttribute<T> attribute, T value);
 
+  /**
+   * Deprecated: should be removed after MPS 3.0
+   */
+  @Deprecated
   <T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator);
 
   <T> T get(StyleAttribute<T> attribute);
