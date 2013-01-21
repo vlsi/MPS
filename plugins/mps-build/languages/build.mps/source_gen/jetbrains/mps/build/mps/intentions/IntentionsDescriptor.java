@@ -15,6 +15,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new AddCustomLocationDependency_Intention(), "2798275735916376328");
     add(new AddCustomLocationRuntime_Intention(), "202934866058893735");
     add(new AddCustomPackaging_Intention(), "4034578608468929409");
+    add(new ReloadModulesFromDisk_Intention(), "1753793013241722025");
     add(new ToggleCompactMpsModule_Intention(), "8369506495128778230");
   }
 }
