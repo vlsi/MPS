@@ -242,6 +242,10 @@ public class MPSMakeMediator {
       }
     }
 
+    if (logger.isEnabled()) {
+      logger.logDeletedFiles(makeFacetConfiguration.getDeletedFiles());
+    }
+
     for (String deletedFile : makeFacetConfiguration.getDeletedFiles()) {
       try {
         FSOperations.markDeleted(myContext.getCompileContext(), new File(deletedFile));

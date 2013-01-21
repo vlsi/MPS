@@ -22,8 +22,11 @@ import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
 import jetbrains.mps.jps.model.impl.JpsMPSModuleExtensionImpl;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import org.jetbrains.jps.builders.CompileScopeTestBuilder;
 import org.jetbrains.jps.model.module.JpsModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+
+import static com.intellij.util.io.TestFileSystemBuilder.fs;
 
 import java.io.File;
 import java.util.Arrays;
@@ -54,6 +57,7 @@ public class RebuildProjectTest extends MpsJpsBuildTestCase {
     super.setUp();
     buildParams.clear();
   }
+
 
   public void testBuild_blProject () {
     String models = PathUtil.getParentPath(copyFromUserDirToProject("tests/blProject/models/main.mps", "models/main.mps"));
@@ -95,6 +99,97 @@ public class RebuildProjectTest extends MpsJpsBuildTestCase {
     buildParams.put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
 
     rebuildAll();
+
+    assertOutput(main, fs()
+      .dir("main")
+        .file("ConcoleUtil.class")
+        .file("MainClass.class")
+        .file("ProjectKind.class")
+        .file("SimpleMarker.class")
+    );
+  }
+
+  public void testBuild_blProject_modeldir () {
+    String models = PathUtil.getParentPath(copyFromUserDirToProject("tests/blProject/models/main.mps", "models/main.mps"));
+    JpsModule main = addModule("main", models);
+
+    MPSConfigurationBean configuration = createConfiguration(models);
+    configuration.setGeneratorOutputPath(models);
+
+    DefaultModelRoot dmr = createModelRoot(models);
+    configuration.setModelRoots(Arrays.<ModelRoot>asList(dmr));
+
+    JpsMPSExtensionService.getInstance().setExtension(main, new JpsMPSModuleExtensionImpl(configuration));
+    buildParams.put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
+
+    rebuildAll();
+
+    assertGenerated(
+      "mps-make/main/source_gen.caches/main/dependencies",
+      "mps-make/main/source_gen.caches/main/generated",
+      "models/main/ConcoleUtil.java",
+      "models/main/MainClass.java",
+      "models/main/ProjectKind.java",
+      "models/main/SimpleMarker.java",
+      "models/main/trace.info");
+  }
+
+  public void testBuild_makeTests () {
+    String models = PathUtil.getParentPath(copyFromUserDirToProject("tests/makeTests/models/code.mps", "models/code.mps"));
+    PathUtil.getParentPath(copyFromUserDirToProject("tests/makeTests/models/code2.mps", "models/code2.mps"));
+    PathUtil.getParentPath(copyFromUserDirToProject("tests/makeTests/models/data.mps", "models/data.mps"));
+    PathUtil.getParentPath(copyFromUserDirToProject("tests/makeTests/models/data2.mps", "models/data2.mps"));
+    String srcgen = PathUtil.getParentPath(createFile("src/empty.txt", ""));
+
+
+    JpsModule main = addModule("makeTests", srcgen, models);
+
+    MPSConfigurationBean configuration = createConfiguration(models);
+    configuration.setGeneratorOutputPath(srcgen);
+    configuration.setUseModuleSourceFolder(true);
+
+    DefaultModelRoot dmr = createModelRoot(models);
+    configuration.setModelRoots(Arrays.<ModelRoot>asList(dmr));
+
+    JpsMPSExtensionService.getInstance().setExtension(main, new JpsMPSModuleExtensionImpl(configuration));
+    buildParams.put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
+
+    rebuildAll();
+
+    assertGenerated(
+        "models/Manifest.java",
+          "models/Manifest2.java",
+          "models/trace.info",
+          "models/trace.info",
+          "mps-make/makeTests/source_gen.caches/code/dependencies",
+          "mps-make/makeTests/source_gen.caches/code/generated",
+          "mps-make/makeTests/source_gen.caches/code2/dependencies",
+          "mps-make/makeTests/source_gen.caches/code2/generated",
+          "mps-make/makeTests/source_gen.caches/data/dependencies",
+          "mps-make/makeTests/source_gen.caches/data/generated",
+          "mps-make/makeTests/source_gen.caches/data2/dependencies",
+          "mps-make/makeTests/source_gen.caches/data2/generated",
+          "src/code/Test.java",
+          "src/code/trace.info",
+          "src/code2/Test2.java",
+          "src/code2/trace.info");
+  }
+
+
+  public void testBuild_makeTestBroken () {
+    String models = PathUtil.getParentPath(copyFromUserDirToProject("tests/makeTestBroken/models/broken.mps", "models/broken.mps"));
+    String srcgen = PathUtil.getParentPath(createFile("src/empty.txt", ""));
+    JpsModule main = addModule("makeTestBroken", models, srcgen);
+
+    MPSConfigurationBean configuration = createConfiguration(srcgen);
+
+    DefaultModelRoot dmr = createModelRoot(models);
+    configuration.setModelRoots(Arrays.<ModelRoot>asList(dmr));
+
+    JpsMPSExtensionService.getInstance().setExtension(main, new JpsMPSModuleExtensionImpl(configuration));
+    buildParams.put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
+
+    doBuild(CompileScopeTestBuilder.rebuild().all()).assertFailed();
   }
 
   private MPSConfigurationBean createConfiguration(String srcgen) {
