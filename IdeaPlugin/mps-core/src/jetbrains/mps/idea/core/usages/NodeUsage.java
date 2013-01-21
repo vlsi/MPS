@@ -55,8 +55,8 @@ public class NodeUsage extends NodeNavigatable implements Usage, UsagePresentati
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myModel = myNode.getModelReference();
-        SNode targetNode = myNode.getNode();
+        myModel = ((SModelReference) myNode.getModelReference());
+        SNode targetNode = myNode.resolve(MPSModuleRepository.getInstance());
         if (targetNode != null) {
           myParentPresentation = targetNode.getParent().getPresentation();
           myRole = targetNode.getRoleInParent();
@@ -171,7 +171,7 @@ public class NodeUsage extends NodeNavigatable implements Usage, UsagePresentati
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        SNode node = myNode.getNode();
+        SNode node = myNode.resolve(MPSModuleRepository.getInstance());
         return node != null && !(node.getModel() == null);
       }
     });

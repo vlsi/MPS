@@ -20,6 +20,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.usages.Usage;
 import com.intellij.usages.UsageGroup;
 import com.intellij.usages.impl.rules.FileGroupingRule;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
@@ -35,7 +36,7 @@ class RootNodeUsageGroupingRule extends FileGroupingRule {
   @Override
   public UsageGroup groupUsage(@NotNull Usage usage) {
     if (usage instanceof UsageInRoot) {
-      return new FileUsageGroup(project, MPSNodesVirtualFileSystem.getInstance().getFileFor(((UsageInRoot) usage).getRoot()));
+      return new FileUsageGroup(project, MPSNodesVirtualFileSystem.getInstance().getFileFor(((SNodePointer) ((UsageInRoot) usage).getRoot())));
     }
     return null;
   }

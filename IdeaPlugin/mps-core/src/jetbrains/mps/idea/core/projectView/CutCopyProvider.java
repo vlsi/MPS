@@ -22,6 +22,7 @@ import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -82,7 +83,7 @@ public class CutCopyProvider implements CopyProvider, CutProvider {
       public void run() {
         List<SNode> nodes = new ArrayList<SNode>();
         for (SNodeReference selectedNode : mySelectedNodes) {
-          SNode node = selectedNode.getNode();
+          SNode node = selectedNode.resolve(MPSModuleRepository.getInstance());
           SNode theParent = null;
           if (node != null) {
             nodes.add(node);

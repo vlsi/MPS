@@ -70,7 +70,7 @@ public class NewRootAction extends AnAction {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           @Override
           public void run() {
-            SNode concept = conceptPointer.getNode();
+            SNode concept = conceptPointer.resolve(MPSModuleRepository.getInstance());
             SModel model = myModelDescriptor.getSModel();
             SNode newNode = NodeFactoryManager.createNode(concept, null, null, model, myOperationContext.getScope());
             ((jetbrains.mps.smodel.SNode) newNode).setName(getNameField().getText());
@@ -87,7 +87,7 @@ public class NewRootAction extends AnAction {
       public void run() {
         for (Map.Entry<String, SNodeReference> entry : myConceptFqNameToNodePointerMap.entrySet()) {
           String conceptFqName = entry.getKey();
-          SNode concept = entry.getValue().getNode();
+          SNode concept = entry.getValue().resolve(MPSModuleRepository.getInstance());
           dialog.getKindCombo().addItem(NodePresentationUtil.matchingText(concept), IconManager.getIconForConceptFQName(conceptFqName), conceptFqName);
         }
       }

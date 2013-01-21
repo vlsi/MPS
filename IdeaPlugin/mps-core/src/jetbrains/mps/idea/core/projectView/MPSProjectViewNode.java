@@ -29,7 +29,9 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
@@ -60,9 +62,9 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodeReference> implemen
   public MPSProjectViewNode(Project project, SNode node, ViewSettings viewSettings) {
     super(project, new jetbrains.mps.smodel.SNodePointer(node), viewSettings);
     myIcon = IconManager.getIconFor(node);
-    if (getValue().getNode() != null) {
+    if (getValue().resolve(MPSModuleRepository.getInstance()) != null) {
       // has valid virtual file
-      myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(getValue());
+      myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(((SNodePointer) getValue()));
     }
   }
 
@@ -92,7 +94,7 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodeReference> implemen
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SNode node = getValue().getNode();
+        SNode node = getValue().resolve(MPSModuleRepository.getInstance());
         try {
           name[0] = node.getName();
         } catch (Exception ex) {
@@ -123,7 +125,7 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodeReference> implemen
   public void navigate(final boolean requestFocus) {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
-        SNode root = getValue().getNode();
+        SNode root = getValue().resolve(MPSModuleRepository.getInstance());
         if (root == null) return;
 
         ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
@@ -136,14 +138,14 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodeReference> implemen
   public boolean canNavigate() {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
-        return getValue().getNode() != null;
+        return getValue().resolve(MPSModuleRepository.getInstance()) != null;
       }
     });
   }
 
   @Override
   public boolean isValid() {
-    return getValue().getNode() != null;
+    return getValue().resolve(MPSModuleRepository.getInstance()) != null;
   }
 
   @Override
@@ -151,7 +153,7 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodeReference> implemen
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        return getValue().getNode().getName();
+        return getValue().resolve(MPSModuleRepository.getInstance()).getName();
       }
     });
   }
