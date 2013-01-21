@@ -108,13 +108,10 @@ public class Generators {
         for (String sourcePath : module.getValue()) {
           String sourceCanonical = new File(sourcePath).getCanonicalPath();
           if (!sourcesIncluded.contains(sourceCanonical)) {
-            //todo dirty hack until Julia fixes packaging
-            if (!sourceCanonical.endsWith("languages/languageDesign/smodel/tests_gen")) {
-              assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getKey() + "\ngenerates into\n" + sourcePath;
-              if (new File(sourcePath).exists()) {
-                String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(sourcePath);
-                sourceGenFolders.add(sFolder);
-              }
+            assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getKey() + "\ngenerates into\n" + sourcePath;
+            if (new File(sourcePath).exists()) {
+              String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(sourcePath);
+              sourceGenFolders.add(sFolder);
             }
           }
         }
@@ -183,13 +180,9 @@ public class Generators {
       for (Entry<String, Collection<String>> module : Utils.collectMPSCompiledModulesInfo(dir).entrySet()) {
         for (String sourcePath : module.getValue()) {
           String sourceCanonical = new File(sourcePath).getCanonicalPath();
-          //todo dirty hack until Julia fixes packaging
-          if (!sourceCanonical.endsWith("languages/languageDesign/smodel/tests_gen")) {
-            assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getKey() + "\ngenerates into\n" + sourcePath;
-            if (new File(sourcePath).exists()) {
-              sourceGen.add(sourcePath);
-            }
-
+          assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getKey() + "\ngenerates into\n" + sourcePath;
+          if (new File(sourcePath).exists()) {
+            sourceGen.add(sourcePath);
           }
         }
         classesGen.add(module.getKey() + "/" + AbstractModule.CLASSES_GEN);
