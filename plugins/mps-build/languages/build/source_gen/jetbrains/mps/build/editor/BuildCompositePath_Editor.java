@@ -29,11 +29,10 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.awt.Color;
 
 public class BuildCompositePath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -152,17 +151,13 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_head");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return BuildCompositePath_Editor._StyleParameter_QueryFunction_n78otj_a0a0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
+      style.set(StyleAttributes.TEXT_COLOR, BuildCompositePath_Editor._StyleParameter_QueryFunction_n78otj_a0a0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildCompositePath_Editor.BuildCompositePath_head_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();

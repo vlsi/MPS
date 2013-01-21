@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
@@ -22,85 +21,49 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     return this.createCollection_9277sk_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_9277sk_a0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = XmlProcessingInstruction_Editor.renderingCondition_9277sk_a0a(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_9277sk_a0a(editorContext, node);
-    } else {
-      editorCell = this.createConstant_9277sk_a0a_0(editorContext, node);
-    }
-    return editorCell;
-  }
-
-  private EditorCell createAlternation_9277sk_d0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = XmlProcessingInstruction_Editor.renderingCondition_9277sk_a3a(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_9277sk_a3a(editorContext, node);
-    } else {
-      editorCell = this.createConstant_9277sk_a3a_0(editorContext, node);
-    }
-    return editorCell;
-  }
-
   private EditorCell createCollection_9277sk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9277sk_a");
-    editorCell.addEditorCell(this.createAlternation_9277sk_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9277sk_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9277sk_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9277sk_c0(editorContext, node));
-    editorCell.addEditorCell(this.createAlternation_9277sk_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9277sk_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9277sk_a0a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9277sk_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<?");
-    editorCell.setCellId("Constant_9277sk_a0a");
+    editorCell.setCellId("Constant_9277sk_a0");
     XmlSS_StyleSheet.getXmlPI(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, XmlProcessingInstruction_Editor._StyleParameter_QueryFunction_9277sk_a1a0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9277sk_a0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<?");
-    editorCell.setCellId("Constant_9277sk_a0a_0");
-    XmlSS_StyleSheet.getXmlPI(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_9277sk_a3a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9277sk_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?>");
-    editorCell.setCellId("Constant_9277sk_a3a");
+    editorCell.setCellId("Constant_9277sk_d0");
     XmlSS_StyleSheet.getXmlPI(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_9277sk_a3a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?>");
-    editorCell.setCellId("Constant_9277sk_a3a_0");
-    XmlSS_StyleSheet.getXmlPI(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlProcessingInstruction_Editor._StyleParameter_QueryFunction_9277sk_a1d0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -144,13 +107,11 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_9277sk_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    // see MPS-15260 
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
+  private static boolean _StyleParameter_QueryFunction_9277sk_a1a0(SNode node, EditorContext editorContext) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{}));
   }
 
-  private static boolean renderingCondition_9277sk_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    // see MPS-15260 
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
+  private static boolean _StyleParameter_QueryFunction_9277sk_a1d0(SNode node, EditorContext editorContext) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{}));
   }
 }

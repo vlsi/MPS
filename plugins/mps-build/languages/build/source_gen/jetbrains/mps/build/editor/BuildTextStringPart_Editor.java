@@ -10,13 +10,12 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.behavior.BuildTextStringPart_Behavior;
+import java.awt.Color;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildTextStringPart_Editor extends DefaultNodeEditor {
@@ -71,17 +70,13 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return BuildTextStringPart_Editor._StyleParameter_QueryFunction_zen9g6_a1a0a((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
+      style.set(StyleAttributes.TEXT_COLOR, BuildTextStringPart_Editor._StyleParameter_QueryFunction_zen9g6_a1a0a((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     editorCell.addKeyMap(new BuildSimpleName_text());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -105,17 +100,13 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     buildStyles_StyleSheet.getString(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return BuildTextStringPart_Editor._StyleParameter_QueryFunction_zen9g6_a0a0a((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
+      style.set(StyleAttributes.TEXT_COLOR, BuildTextStringPart_Editor._StyleParameter_QueryFunction_zen9g6_a0a0a((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     editorCell.addKeyMap(new BuildSimpleName_text());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

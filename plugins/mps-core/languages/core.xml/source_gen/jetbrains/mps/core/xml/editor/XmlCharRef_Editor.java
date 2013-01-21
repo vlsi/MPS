@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlCharRef_Editor extends DefaultNodeEditor {
@@ -22,84 +21,48 @@ public class XmlCharRef_Editor extends DefaultNodeEditor {
     return this.createCollection_5huibn_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_5huibn_a0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = XmlCharRef_Editor.renderingCondition_5huibn_a0a(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_5huibn_a0a(editorContext, node);
-    } else {
-      editorCell = this.createConstant_5huibn_a0a_0(editorContext, node);
-    }
-    return editorCell;
-  }
-
-  private EditorCell createAlternation_5huibn_c0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = XmlCharRef_Editor.renderingCondition_5huibn_a2a(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_5huibn_a2a(editorContext, node);
-    } else {
-      editorCell = this.createConstant_5huibn_a2a_0(editorContext, node);
-    }
-    return editorCell;
-  }
-
   private EditorCell createCollection_5huibn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5huibn_a");
-    editorCell.addEditorCell(this.createAlternation_5huibn_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5huibn_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5huibn_b0(editorContext, node));
-    editorCell.addEditorCell(this.createAlternation_5huibn_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5huibn_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5huibn_a0a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5huibn_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&#");
-    editorCell.setCellId("Constant_5huibn_a0a");
+    editorCell.setCellId("Constant_5huibn_a0");
     XmlSS_StyleSheet.getXmlCharRef(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, XmlCharRef_Editor._StyleParameter_QueryFunction_5huibn_a1a0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5huibn_a0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&#");
-    editorCell.setCellId("Constant_5huibn_a0a_0");
-    XmlSS_StyleSheet.getXmlCharRef(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5huibn_a2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5huibn_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_5huibn_a2a");
+    editorCell.setCellId("Constant_5huibn_c0");
     XmlSS_StyleSheet.getXmlCharRef(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5huibn_a2a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_5huibn_a2a_0");
-    XmlSS_StyleSheet.getXmlCharRef(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlCharRef_Editor._StyleParameter_QueryFunction_5huibn_a1c0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -124,13 +87,11 @@ public class XmlCharRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_5huibn_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    // see MPS-15260 
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
+  private static boolean _StyleParameter_QueryFunction_5huibn_a1a0(SNode node, EditorContext editorContext) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{}));
   }
 
-  private static boolean renderingCondition_5huibn_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    // see MPS-15260 
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
+  private static boolean _StyleParameter_QueryFunction_5huibn_a1c0(SNode node, EditorContext editorContext) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{}));
   }
 }

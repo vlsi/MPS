@@ -37,87 +37,49 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createAlternation_poez2y_a0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = XmlEntityRefValue_Editor.renderingCondition_poez2y_a0a(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_poez2y_a0a(editorContext, node);
-    } else {
-      editorCell = this.createConstant_poez2y_a0a_0(editorContext, node);
-    }
-    return editorCell;
-  }
-
-  private EditorCell createAlternation_poez2y_c0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = XmlEntityRefValue_Editor.renderingCondition_poez2y_a2a(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_poez2y_a2a(editorContext, node);
-    } else {
-      editorCell = this.createConstant_poez2y_a2a_0(editorContext, node);
-    }
-    return editorCell;
-  }
-
   private EditorCell createCollection_poez2y_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_poez2y_a");
-    editorCell.addEditorCell(this.createAlternation_poez2y_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_poez2y_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_poez2y_b0(editorContext, node));
-    editorCell.addEditorCell(this.createAlternation_poez2y_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_poez2y_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_poez2y_a0a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_poez2y_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&");
-    editorCell.setCellId("Constant_poez2y_a0a");
+    editorCell.setCellId("Constant_poez2y_a0");
     XmlSS_StyleSheet.getXmlAttrEntityRefValue(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, XmlEntityRefValue_Editor._StyleParameter_QueryFunction_poez2y_a1a0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_poez2y_a0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&");
-    editorCell.setCellId("Constant_poez2y_a0a_0");
-    XmlSS_StyleSheet.getXmlAttrEntityRefValue(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_poez2y_a2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_poez2y_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_poez2y_a2a");
+    editorCell.setCellId("Constant_poez2y_c0");
     XmlSS_StyleSheet.getXmlAttrEntityRefValue(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_poez2y_a2a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_poez2y_a2a_0");
-    XmlSS_StyleSheet.getXmlAttrEntityRefValue(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlEntityRefValue_Editor._StyleParameter_QueryFunction_poez2y_a1c0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -144,13 +106,11 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_poez2y_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    // see MPS-15260 
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_3080189811177340436", new Object[]{});
+  private static boolean _StyleParameter_QueryFunction_poez2y_a1a0(SNode node, EditorContext editorContext) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_3080189811177340436", new Object[]{}));
   }
 
-  private static boolean renderingCondition_poez2y_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    // see MPS-15260 
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_3080189811177340441", new Object[]{});
+  private static boolean _StyleParameter_QueryFunction_poez2y_a1c0(SNode node, EditorContext editorContext) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_3080189811177340441", new Object[]{}));
   }
 }

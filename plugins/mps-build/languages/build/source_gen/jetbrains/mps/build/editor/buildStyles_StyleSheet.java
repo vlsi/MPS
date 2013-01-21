@@ -10,69 +10,69 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import java.awt.Color;
 
 public class buildStyles_StyleSheet {
-  public static Style getOutputLayout(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getOutputLayout(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getArtifactKeyword(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getArtifactKeyword(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     return style;
   }
 
-  public static Style getProjectPartKeyword(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getProjectPartKeyword(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     return style;
   }
 
-  public static Style getMacro(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getMacro(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, new Color(6557304));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getKeyword(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getKeyword(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, new Color(3158064));
     return style;
   }
 
-  public static Style getPlugin(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getPlugin(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, new Color(26214));
     return style;
   }
 
-  public static Style getKeyword_4(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getKeyword_4(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, new Color(6684672));
     return style;
   }
 
-  public static Style getString(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getString(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, new Color(128));
     return style;
   }
 
-  public static Style getHint(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getHint(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }
 
-  public static Style getComment(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getComment(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, new Color(4161375));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     return style;
