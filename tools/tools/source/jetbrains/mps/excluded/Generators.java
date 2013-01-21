@@ -104,7 +104,8 @@ public class Generators {
       // generate lists of source gen and classes gen folders and add as source and excluded to content root
       List<String> sourceGenFolders = new ArrayList<String>();
       List<String> classesGenFolders = new ArrayList<String>();
-      for (Entry<String, Collection<String>> module : Utils.collectMPSCompiledModulesInfo(dir).entrySet()) {
+      MultiMap<String, String> mpsCompiledInfo = Utils.collectMPSCompiledModulesInfo(dir);
+      for (Entry<String, Collection<String>> module : mpsCompiledInfo.entrySet()) {
         for (String sourcePath : module.getValue()) {
           String sourceCanonical = new File(sourcePath).getCanonicalPath();
           if (!sourcesIncluded.contains(sourceCanonical)) {
@@ -116,7 +117,7 @@ public class Generators {
           }
         }
       }
-      for (String modulePath : Utils.collectMPSCompiledModulesInfo(dir).keySet()) {
+      for (String modulePath : mpsCompiledInfo.keySet()) {
         String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(modulePath) + "/" + AbstractModule.CLASSES_GEN;
         classesGenFolders.add(cgFolder);
       }

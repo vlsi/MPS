@@ -61,7 +61,7 @@ public class GenSourcesAndCompilerXmlGenerationTest {
     outer:
     for (File jFile : Utils.withExtension(".java", Utils.files(root))) {
       String cp = jFile.getCanonicalPath();
-      if (cp.contains("sandbox")) continue;
+      //if (cp.contains("sandbox")) continue;
       for (String sourcePath : allSources) {
         if (cp.startsWith(sourcePath + File.separator)) continue outer;
       }
