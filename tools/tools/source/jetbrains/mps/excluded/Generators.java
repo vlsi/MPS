@@ -35,12 +35,12 @@ import java.util.Set;
 
 public class Generators {
   // gensources.iml constants
-  private static final String MODULE_ROOT_MANAGER = "NewModuleRootManager";
-  private static final String CONTENT = "content";
-  private static final String URL = "url";
-  private static final String PATH_START_MODULE = "file://$MODULE_DIR$/../../";
-  private static final String SOURCE_FOLDER = "sourceFolder";
-  private static final String EXCLUDE_FOLDER = "excludeFolder";
+  public static final String MODULE_ROOT_MANAGER = "NewModuleRootManager";
+  public static final String CONTENT = "content";
+  public static final String URL = "url";
+  public static final String PATH_START_MODULE = "file://$MODULE_DIR$/../../";
+  public static final String SOURCE_FOLDER = "sourceFolder";
+  public static final String EXCLUDE_FOLDER = "excludeFolder";
 
   // compiler.xml constants
   private static final String PATH_START_PROJECT = "file://$PROJECT_DIR$/";
