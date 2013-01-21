@@ -1008,18 +1008,16 @@ public class ASTConverter {
   }
 
   protected ASTConverter withIdPrefix(String prefix) {
-    return new ASTConverter.ASTConverterWithState(this, new ASTConverter.State(this.getState(), prefix));
+    return withNewState(new ASTConverter.State(this.getState(), prefix));
   }
 
   protected ASTConverter withTypeVarNames(Set<String> typeaVarNames) {
-    return new ASTConverter.ASTConverterWithState(this, new ASTConverter.State(this.getState(), typeaVarNames));
+    return withNewState(new ASTConverter.State(this.getState(), typeaVarNames));
   }
 
   protected ASTConverter withTypeVarDecls(Iterable<SNode> typeVars) {
-    return new ASTConverter.ASTConverterWithState(this, new ASTConverter.State(this.getState(), typeVars));
+    return withNewState(new ASTConverter.State(this.getState(), typeVars));
   }
-
-
 
   protected ASTConverter.State getState() {
     // default state 
