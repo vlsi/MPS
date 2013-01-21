@@ -79,6 +79,9 @@ public class BuildMpsLayout_Plugin_Behavior {
         }
         return null;
       }
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin")) {
+        return helper.locations().get(thisNode);
+      }
     }
     return BuildLayout_PathElement_Behavior.callSuper_location_7117056644539862594(thisNode, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", helper, artifactId);
   }
@@ -87,6 +90,9 @@ public class BuildMpsLayout_Plugin_Behavior {
     // TODO extract! (it is a copy of Folder behavior) 
     if (artifactId instanceof SNode) {
       final SNode node = (SNode) artifactId;
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin")) {
+        return SLinkOperations.getTarget(thisNode, "plugin", false) == node;
+      }
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node")) {
         return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "children", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

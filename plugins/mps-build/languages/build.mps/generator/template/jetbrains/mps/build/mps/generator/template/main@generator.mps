@@ -9571,6 +9571,19 @@
             <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="6503355885715275745">
               <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6503355885715275748">
                 <property name="tagName" nameId="iuxj.6666499814681415862" value="mps.generate.chunks" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8301447434615469850">
+                  <property name="tagName" nameId="iuxj.6666499814681415862" value="jvmargs" />
+                  <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8301447434615469853">
+                    <property name="tagName" nameId="iuxj.6666499814681415862" value="arg" />
+                    <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                    <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="8301447434615469854">
+                      <property name="attrName" nameId="iuxj.6666499814681447926" value="value" />
+                      <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="8301447434615469855">
+                        <property name="text" nameId="iuxj.6666499814681541920" value="-Dplugin.path" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3643570831019325778">
                   <property name="tagName" nameId="iuxj.6666499814681415862" value="library" />
                   <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
