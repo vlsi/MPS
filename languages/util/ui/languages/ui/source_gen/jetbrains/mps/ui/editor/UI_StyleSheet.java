@@ -9,40 +9,40 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class UI_StyleSheet {
-  public static Style getUIObjectBox(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getUIObjectBox(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     return style;
   }
 
-  public static Style getUIObjectMargins(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getUIObjectMargins(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     return style;
   }
 
-  public static Style getUIObject(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getUIObject(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, new Color(102));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getUIObjectPart(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getUIObjectPart(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, new Color(102));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     return style;
   }
 
-  public static Style getContainerBox(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getContainerBox(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.DRAW_BRACKETS, true);
     style.set(StyleAttributes.BRACKETS_COLOR, new Color(6723993));
     return style;
   }
 
-  public static Style getContainerMargins(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getContainerMargins(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     return style;
   }

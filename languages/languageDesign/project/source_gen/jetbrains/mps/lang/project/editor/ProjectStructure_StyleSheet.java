@@ -9,8 +9,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class ProjectStructure_StyleSheet {
-  public static Style getKeyWord(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getKeyWord(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;

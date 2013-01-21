@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 
@@ -88,17 +87,13 @@ public class StatementList_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, new AttributeCalculator<Boolean>() {
-        public Boolean calculate(EditorCell cell) {
-          return StatementList_Editor._StyleParameter_QueryFunction_u338ov_a1a((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, StatementList_Editor._StyleParameter_QueryFunction_u338ov_a1a((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     editorCell.addEditorCell(this.createRefNodeList_u338ov_a0(editorContext, node));
     return editorCell;
@@ -111,17 +106,13 @@ public class StatementList_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, new AttributeCalculator<Boolean>() {
-        public Boolean calculate(EditorCell cell) {
-          return StatementList_Editor._StyleParameter_QueryFunction_u338ov_a1a0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, StatementList_Editor._StyleParameter_QueryFunction_u338ov_a1a0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;

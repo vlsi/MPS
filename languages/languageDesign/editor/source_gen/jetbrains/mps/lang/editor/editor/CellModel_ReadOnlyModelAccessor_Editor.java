@@ -11,13 +11,12 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
+import java.awt.Color;
 
 public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -83,61 +82,41 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a0b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a1b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a2b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator<Integer>() {
-        public Integer calculate(EditorCell cell) {
-          return CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a3b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
-        public Boolean calculate(EditorCell cell) {
-          return CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a4b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a0b0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
+      style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a1b0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
+      style.set(StyleAttributes.TEXT_COLOR, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a2b0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
+      style.set(StyleAttributes.FONT_STYLE, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a3b0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
+      style.set(StyleAttributes.UNDERLINED, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a4b0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     editorCell.setDefaultText("");
     return editorCell;

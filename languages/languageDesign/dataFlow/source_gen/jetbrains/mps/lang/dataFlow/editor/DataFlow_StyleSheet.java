@@ -8,33 +8,33 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class DataFlow_StyleSheet {
-  public static Style getInstruction(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getInstruction(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     return style;
   }
 
-  public static Style getPosition(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getPosition(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
     return style;
   }
 
-  public static Style getMayBeUnreachable(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getMayBeUnreachable(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "MayBeUnreachable");
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
     return style;
   }
 
-  public static Style getLabel(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getLabel(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     return style;
   }
 
-  public static Style getInsertPosition(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getInsertPosition(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     return style;
   }

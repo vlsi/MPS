@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -70,17 +69,13 @@ public class TestCaseRef_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_aryab1_a0");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator<Boolean>() {
-        public Boolean calculate(EditorCell cell) {
-          return TestCaseRef_Editor._StyleParameter_QueryFunction_aryab1_a0a0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
+      style.set(StyleAttributes.STRIKE_OUT, TestCaseRef_Editor._StyleParameter_QueryFunction_aryab1_a0a0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     editorCell.setDefaultText("");
     return editorCell;

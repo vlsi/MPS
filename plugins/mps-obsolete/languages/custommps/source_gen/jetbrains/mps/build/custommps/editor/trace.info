@@ -722,32 +722,25 @@
     <unitInfo nodeId="1233679325694" fileName="LibraryFolder_Editor.java" startLine="25" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.LibraryFolder_Editor" />
   </root>
   <root nodeId="1233937590204" modelId="r:e349d949-52e2-480e-b3d2-1f6a387b356a(jetbrains.mps.build.custommps.editor)">
-    <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="14" startPosition="68" endLine="15" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="15" startPosition="34" endLine="16" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="27" startPosition="7" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1233937959751" fileName="CustomMpsStyles_StyleSheet.java" startLine="31" startPosition="108" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1233937956200" fileName="CustomMpsStyles_StyleSheet.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_bu7lcg_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="18" startPosition="49" endLine="25" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="18" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calculate#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="16" startPosition="63" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="14" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUndeclaredVaribale#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
-    <scopeInfo nodeId="1233937956201" fileName="CustomMpsStyles_StyleSheet.java" startLine="31" startPosition="108" endLine="32" endPosition="16" />
-    <scopeInfo nodeId="1233937956200" fileName="CustomMpsStyles_StyleSheet.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
+    <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="13" startPosition="74" endLine="14" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="14" startPosition="40" endLine="15" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="22" startPosition="8" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1233937959751" fileName="CustomMpsStyles_StyleSheet.java" startLine="26" startPosition="108" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1233937956200" fileName="CustomMpsStyles_StyleSheet.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_bu7lcg_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="15" startPosition="69" endLine="22" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUndeclaredVaribale#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
+    <scopeInfo nodeId="1233937956201" fileName="CustomMpsStyles_StyleSheet.java" startLine="26" startPosition="108" endLine="27" endPosition="16" />
+    <scopeInfo nodeId="1233937956200" fileName="CustomMpsStyles_StyleSheet.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1233937956200" varName="editorContext" />
       <varInfo nodeId="1233937956200" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="18" startPosition="49" endLine="25" endPosition="11" />
-    <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="18" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="1233937590204" varName="cell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="14" startPosition="68" endLine="28" endPosition="17">
+    <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="13" startPosition="74" endLine="23" endPosition="17">
       <varInfo nodeId="1233937590204" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="14" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="1233937590204" varName="cell" />
+    <scopeInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1233937590204" varName="editorCell" />
     </scopeInfo>
-    <unitInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="17" startPosition="46" endLine="27" endPosition="5" unitName="jetbrains.mps.build.custommps.editor.CustomMpsStyles_StyleSheet$1" />
-    <unitInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.CustomMpsStyles_StyleSheet" />
+    <unitInfo nodeId="1233937590204" fileName="CustomMpsStyles_StyleSheet.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.CustomMpsStyles_StyleSheet" />
   </root>
 </debugInfo>
 

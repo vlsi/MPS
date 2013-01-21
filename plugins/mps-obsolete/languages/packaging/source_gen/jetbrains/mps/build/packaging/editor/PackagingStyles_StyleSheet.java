@@ -11,27 +11,27 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class PackagingStyles_StyleSheet {
-  public static Style getHint(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getHint(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
     return style;
   }
 
-  public static Style getKeyword(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getKeyword(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
     return style;
   }
 
-  public static Style getProjectComponent(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getProjectComponent(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getConfiguration(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getConfiguration(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.WHITE);
     style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.gray);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.3, Measure.SPACES));
@@ -39,8 +39,8 @@ public class PackagingStyles_StyleSheet {
     return style;
   }
 
-  public static Style getSlash(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getSlash(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PADDING_LEFT, new Padding(0.3, Measure.SPACES));
@@ -48,15 +48,15 @@ public class PackagingStyles_StyleSheet {
     return style;
   }
 
-  public static Style getVariable(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getVariable(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getString(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getString(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }

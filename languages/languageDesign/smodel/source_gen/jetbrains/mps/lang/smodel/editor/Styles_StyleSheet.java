@@ -11,16 +11,16 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class Styles_StyleSheet {
-  public static Style getRef_link_role(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getRef_link_role(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     return style;
   }
 
-  public static Style getOperationParameter(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getOperationParameter(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
     return style;
   }

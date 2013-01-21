@@ -8,14 +8,14 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ExecutionSettings_StyleSheet {
-  public static Style getPersistentConfigurationRef(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getPersistentConfigurationRef(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     return style;
   }
 
-  public static Style getPersistentConfigurationRefDeprecated(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getPersistentConfigurationRefDeprecated(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     style.set(StyleAttributes.STRIKE_OUT, true);
     return style;

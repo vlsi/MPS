@@ -8,27 +8,27 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class transformationTest_StyleSheet {
-  public static Style getAssertStyle(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getAssertStyle(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
     return style;
   }
 
-  public static Style getNodeAnnotation(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getNodeAnnotation(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.UNDERLINED, true);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     return style;
   }
 
-  public static Style getNodeProperty(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getNodeProperty(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     return style;
   }
 
-  public static Style getEditorOperation(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getEditorOperation(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     return style;
   }

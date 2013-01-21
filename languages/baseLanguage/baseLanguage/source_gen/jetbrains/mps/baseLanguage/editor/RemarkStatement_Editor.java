@@ -13,12 +13,11 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.behavior.RemarkStatement_Behavior;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import java.awt.Color;
 
 public class RemarkStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -54,28 +53,20 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_value");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator<Integer>() {
-        public Integer calculate(EditorCell cell) {
-          return RemarkStatement_Editor._StyleParameter_QueryFunction_2kc2ry_a0b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return RemarkStatement_Editor._StyleParameter_QueryFunction_2kc2ry_a1b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
+      style.set(StyleAttributes.FONT_STYLE, RemarkStatement_Editor._StyleParameter_QueryFunction_2kc2ry_a0b0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
+      style.set(StyleAttributes.TEXT_COLOR, RemarkStatement_Editor._StyleParameter_QueryFunction_2kc2ry_a1b0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

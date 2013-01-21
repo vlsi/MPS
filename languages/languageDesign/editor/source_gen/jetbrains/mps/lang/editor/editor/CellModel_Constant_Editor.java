@@ -14,13 +14,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
+import java.awt.Color;
 
 public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -163,83 +162,55 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a0b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a1b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a2b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator<Integer>() {
-        public Integer calculate(EditorCell cell) {
-          return CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a3b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.FONT_SIZE, new AttributeCalculator<Integer>() {
-        public Integer calculate(EditorCell cell) {
-          return CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a4b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
-        public Boolean calculate(EditorCell cell) {
-          return CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a5b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator<Boolean>() {
-        public Boolean calculate(EditorCell cell) {
-          return CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a6b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a0b0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
+      style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a1b0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
+      style.set(StyleAttributes.TEXT_COLOR, CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a2b0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
+      style.set(StyleAttributes.FONT_STYLE, CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a3b0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
+      style.set(StyleAttributes.FONT_SIZE, CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a4b0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
+      style.set(StyleAttributes.UNDERLINED, CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a5b0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
+      style.set(StyleAttributes.STRIKE_OUT, CellModel_Constant_Editor._StyleParameter_QueryFunction_8hdu2g_a6b0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
     }
     editorCell.addKeyMap(new _SplitConctantCellIntoWordsKeyMap());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

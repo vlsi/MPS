@@ -34,7 +34,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -672,17 +671,13 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_ueqr71_c0a");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.EDITABLE, new AttributeCalculator<Boolean>() {
-        public Boolean calculate(EditorCell cell) {
-          return ConceptDeclaration_Editor._StyleParameter_QueryFunction_ueqr71_a0c0a((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
+      style.set(StyleAttributes.EDITABLE, ConceptDeclaration_Editor._StyleParameter_QueryFunction_ueqr71_a0c0a((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
       style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     }
     editorCell.setDefaultText("");

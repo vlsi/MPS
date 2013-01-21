@@ -8,23 +8,23 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class RegexpStylesheet_StyleSheet {
-  public static Style getRegexpBrace(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getRegexpBrace(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     style.set(StyleAttributes.MATCHING_LABEL, "regexpBrace");
     return style;
   }
 
-  public static Style getLeftRegexpBrace(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(RegexpStylesheet_StyleSheet.getRegexpBrace(null));
+  public static Style getLeftRegexpBrace(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(RegexpStylesheet_StyleSheet.getRegexpBrace(editorCell));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     return style;
   }
 
-  public static Style getRightRegexpBrace(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(RegexpStylesheet_StyleSheet.getRegexpBrace(null));
+  public static Style getRightRegexpBrace(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(RegexpStylesheet_StyleSheet.getRegexpBrace(editorCell));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     return style;
   }

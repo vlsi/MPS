@@ -3445,49 +3445,49 @@
     <unitInfo nodeId="1209728118074" fileName="ComparatorSortOperation_Editor.java" startLine="27" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ComparatorSortOperation_Editor" />
   </root>
   <root nodeId="1215707949526" modelId="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)">
-    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="11" startPosition="59" endLine="12" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="12" startPosition="34" endLine="13" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="11" startPosition="65" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="12" startPosition="40" endLine="13" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="13" startPosition="57" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="17" startPosition="62" endLine="18" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="18" startPosition="34" endLine="19" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="17" startPosition="68" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="18" startPosition="40" endLine="19" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="19" startPosition="62" endLine="20" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="20" startPosition="59" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="24" startPosition="66" endLine="25" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="25" startPosition="34" endLine="26" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="26" startPosition="69" endLine="27" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="24" startPosition="72" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="25" startPosition="40" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="26" startPosition="75" endLine="27" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="27" startPosition="54" endLine="28" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="28" startPosition="55" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="32" startPosition="67" endLine="33" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="33" startPosition="34" endLine="34" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="34" startPosition="69" endLine="35" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="32" startPosition="73" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="33" startPosition="40" endLine="34" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="34" startPosition="75" endLine="35" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="35" startPosition="54" endLine="36" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="11" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOperation#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
     <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAngleBracket#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
     <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getRightAngleBracket#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
     <nodeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLeftAngleBracket#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
-    <scopeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="11" startPosition="59" endLine="14" endPosition="17">
+    <scopeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="11" startPosition="65" endLine="14" endPosition="17">
       <varInfo nodeId="1215707949526" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="17" startPosition="62" endLine="21" endPosition="17">
+    <scopeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="17" startPosition="68" endLine="21" endPosition="17">
       <varInfo nodeId="1215707949526" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="32" startPosition="67" endLine="36" endPosition="17">
+    <scopeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="32" startPosition="73" endLine="36" endPosition="17">
       <varInfo nodeId="1215707949526" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="11" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="1215707949526" varName="cell" />
+      <varInfo nodeId="1215707949526" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="24" startPosition="66" endLine="29" endPosition="17">
+    <scopeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="24" startPosition="72" endLine="29" endPosition="17">
       <varInfo nodeId="1215707949526" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="1215707949526" varName="cell" />
+      <varInfo nodeId="1215707949526" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="1215707949526" varName="cell" />
+      <varInfo nodeId="1215707949526" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="1215707949526" varName="cell" />
+      <varInfo nodeId="1215707949526" varName="editorCell" />
     </scopeInfo>
     <unitInfo nodeId="1215707949526" fileName="Collections_Style_StyleSheet.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet" />
   </root>

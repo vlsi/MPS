@@ -309,25 +309,25 @@
     <unitInfo nodeId="1870423755832759839" fileName="AccessUIPropertyOperation_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ui.editor.AccessUIPropertyOperation_Editor" />
   </root>
   <root nodeId="1981955196070507149" modelId="r:cfa5d762-ee64-4c5f-8809-eeacacb1b0fb(jetbrains.mps.ui.editor)">
-    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="12" startPosition="61" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="13" startPosition="34" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="17" startPosition="65" endLine="18" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="18" startPosition="34" endLine="19" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="12" startPosition="67" endLine="13" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="13" startPosition="40" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="17" startPosition="71" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="18" startPosition="40" endLine="19" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="19" startPosition="49" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="23" startPosition="58" endLine="24" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="24" startPosition="34" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="23" startPosition="64" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="24" startPosition="40" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="25" startPosition="58" endLine="26" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="26" startPosition="57" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="30" startPosition="62" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="31" startPosition="34" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="30" startPosition="68" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="31" startPosition="40" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="32" startPosition="58" endLine="33" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="33" startPosition="64" endLine="34" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="37" startPosition="62" endLine="38" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="38" startPosition="34" endLine="39" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="37" startPosition="68" endLine="38" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="38" startPosition="40" endLine="39" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="39" startPosition="51" endLine="40" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="40" startPosition="66" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="44" startPosition="66" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="45" startPosition="34" endLine="46" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="44" startPosition="72" endLine="45" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="45" startPosition="40" endLine="46" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="46" startPosition="49" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUIObjectBox#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
     <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUIObjectMargins#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
@@ -335,41 +335,41 @@
     <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUIObject#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
     <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUIObjectPart#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
     <nodeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getContainerBox#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
-    <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="12" startPosition="61" endLine="14" endPosition="17">
+    <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="12" startPosition="67" endLine="14" endPosition="17">
       <varInfo nodeId="1981955196070507149" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="17" startPosition="65" endLine="20" endPosition="17">
+    <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="17" startPosition="71" endLine="20" endPosition="17">
       <varInfo nodeId="1981955196070507149" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="44" startPosition="66" endLine="47" endPosition="17">
+    <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="44" startPosition="72" endLine="47" endPosition="17">
       <varInfo nodeId="1981955196070507149" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="1981955196070507149" varName="cell" />
+      <varInfo nodeId="1981955196070507149" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="23" startPosition="58" endLine="27" endPosition="17">
+    <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="23" startPosition="64" endLine="27" endPosition="17">
       <varInfo nodeId="1981955196070507149" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="30" startPosition="62" endLine="34" endPosition="17">
+    <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="30" startPosition="68" endLine="34" endPosition="17">
       <varInfo nodeId="1981955196070507149" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="37" startPosition="62" endLine="41" endPosition="17">
+    <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="37" startPosition="68" endLine="41" endPosition="17">
       <varInfo nodeId="1981955196070507149" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="1981955196070507149" varName="cell" />
+      <varInfo nodeId="1981955196070507149" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="44" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="1981955196070507149" varName="cell" />
+      <varInfo nodeId="1981955196070507149" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="23" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="1981955196070507149" varName="cell" />
+      <varInfo nodeId="1981955196070507149" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1981955196070507149" varName="cell" />
+      <varInfo nodeId="1981955196070507149" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="37" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="1981955196070507149" varName="cell" />
+      <varInfo nodeId="1981955196070507149" varName="editorCell" />
     </scopeInfo>
     <unitInfo nodeId="1981955196070507149" fileName="UI_StyleSheet.java" startLine="11" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.ui.editor.UI_StyleSheet" />
   </root>

@@ -9,8 +9,8 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import java.awt.Color;
 
 public class workflowStyles_StyleSheet {
-  public static Style getKeyword(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getKeyword(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, new Color(3158064));
     return style;

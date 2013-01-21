@@ -9,8 +9,8 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Styles_StyleSheet {
-  public static Style getGenContext_operation(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getGenContext_operation(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);

@@ -9,43 +9,43 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class MPSLite_Style_StyleSheet {
-  public static Style getMPSLiteOperation(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getMPSLiteOperation(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getMPSLiteProperty(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getMPSLiteProperty(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getMPSLiteChild(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getMPSLiteChild(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getMPSLiteReference(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getMPSLiteReference(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     return style;
   }
 
-  public static Style getMPSLiteOption(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getMPSLiteOption(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     return style;
   }
 
-  public static Style getMPSLiteOptionalPart(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getMPSLiteOptionalPart(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     return style;
   }

@@ -388,56 +388,56 @@
     <unitInfo nodeId="1206443680940" fileName="EmitNopStatement_Editor.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.EmitNopStatement_Editor" />
   </root>
   <root nodeId="1206443695631" modelId="r:00000000-0000-4000-0000-011c89590379(jetbrains.mps.lang.dataFlow.editor)">
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="11" startPosition="61" endLine="12" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="12" startPosition="34" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="11" startPosition="67" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="12" startPosition="40" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="13" startPosition="66" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="17" startPosition="58" endLine="18" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="18" startPosition="34" endLine="19" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="17" startPosition="64" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="18" startPosition="40" endLine="19" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="19" startPosition="58" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="23" startPosition="66" endLine="24" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="24" startPosition="34" endLine="25" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="23" startPosition="72" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="24" startPosition="40" endLine="25" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="25" startPosition="66" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="26" startPosition="63" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="30" startPosition="55" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="31" startPosition="34" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="30" startPosition="61" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="31" startPosition="40" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="32" startPosition="64" endLine="33" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="36" startPosition="64" endLine="37" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="37" startPosition="34" endLine="38" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="36" startPosition="70" endLine="37" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="37" startPosition="40" endLine="38" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="38" startPosition="64" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="11" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstruction#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPosition#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLabel#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInsertPosition#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
     <nodeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMayBeUnreachable#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
-    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="11" startPosition="61" endLine="14" endPosition="17">
+    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="11" startPosition="67" endLine="14" endPosition="17">
       <varInfo nodeId="1206443695631" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="17" startPosition="58" endLine="20" endPosition="17">
+    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="17" startPosition="64" endLine="20" endPosition="17">
       <varInfo nodeId="1206443695631" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="30" startPosition="55" endLine="33" endPosition="17">
+    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="30" startPosition="61" endLine="33" endPosition="17">
       <varInfo nodeId="1206443695631" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="36" startPosition="64" endLine="39" endPosition="17">
+    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="36" startPosition="70" endLine="39" endPosition="17">
       <varInfo nodeId="1206443695631" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="23" startPosition="66" endLine="27" endPosition="17">
+    <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="23" startPosition="72" endLine="27" endPosition="17">
       <varInfo nodeId="1206443695631" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="11" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="1206443695631" varName="cell" />
+      <varInfo nodeId="1206443695631" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="1206443695631" varName="cell" />
+      <varInfo nodeId="1206443695631" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="30" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="1206443695631" varName="cell" />
+      <varInfo nodeId="1206443695631" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="36" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="1206443695631" varName="cell" />
+      <varInfo nodeId="1206443695631" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="23" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="1206443695631" varName="cell" />
+      <varInfo nodeId="1206443695631" varName="editorCell" />
     </scopeInfo>
     <unitInfo nodeId="1206443695631" fileName="DataFlow_StyleSheet.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlow_StyleSheet" />
   </root>

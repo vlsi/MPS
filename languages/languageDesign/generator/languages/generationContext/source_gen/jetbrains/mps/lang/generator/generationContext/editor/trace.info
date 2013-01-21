@@ -1101,17 +1101,17 @@
     <unitInfo nodeId="1218047951855" fileName="GenerationContextOp_CreateUniqueName_Editor.java" startLine="17" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_CreateUniqueName_Editor" />
   </root>
   <root nodeId="1218067348270" modelId="r:00000000-0000-4000-0000-011c895902f0(jetbrains.mps.lang.generator.generationContext.editor)">
-    <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="12" startPosition="70" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="13" startPosition="34" endLine="14" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="12" startPosition="76" endLine="13" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="13" startPosition="40" endLine="14" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="14" startPosition="46" endLine="15" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="15" startPosition="57" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="16" startPosition="62" endLine="17" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="12" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getGenContext_operation#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
-    <scopeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="12" startPosition="70" endLine="17" endPosition="17">
+    <scopeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="12" startPosition="76" endLine="17" endPosition="17">
       <varInfo nodeId="1218067348270" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="12" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="1218067348270" varName="cell" />
+      <varInfo nodeId="1218067348270" varName="editorCell" />
     </scopeInfo>
     <unitInfo nodeId="1218067348270" fileName="Styles_StyleSheet.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.editor.Styles_StyleSheet" />
   </root>

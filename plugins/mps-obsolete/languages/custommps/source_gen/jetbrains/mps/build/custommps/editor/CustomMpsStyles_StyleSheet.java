@@ -6,25 +6,20 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 
 public class CustomMpsStyles_StyleSheet {
-  public static Style getUndeclaredVaribale(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(PackagingStyles_StyleSheet.getVariable(null));
-    style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
-      public Boolean calculate(EditorCell cell) {
-        return CustomMpsStyles_StyleSheet._StyleParameter_QueryFunction_bu7lcg_a0a((cell == null ?
-          null :
-          cell.getSNode()
-        ), (cell == null ?
-          null :
-          cell.getContext()
-        ));
-      }
-    });
+  public static Style getUndeclaredVaribale(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(PackagingStyles_StyleSheet.getVariable(editorCell));
+    style.set(StyleAttributes.UNDERLINED, CustomMpsStyles_StyleSheet._StyleParameter_QueryFunction_bu7lcg_a0a((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
     return style;
   }
 

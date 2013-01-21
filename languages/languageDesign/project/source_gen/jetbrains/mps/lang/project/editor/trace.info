@@ -2122,16 +2122,16 @@
     <unitInfo nodeId="1855399583446133418" fileName="Solution_Editor.java" startLine="26" startPosition="0" endLine="964" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Solution_Editor" />
   </root>
   <root nodeId="269654322145159994" modelId="r:0f9ddbb6-f761-4bd7-8dde-1e5300bd28c2(jetbrains.mps.lang.project.editor)">
-    <nodeInfo nodeId="269654322145159994" fileName="ProjectStructure_StyleSheet.java" startLine="12" startPosition="57" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="269654322145159994" fileName="ProjectStructure_StyleSheet.java" startLine="13" startPosition="34" endLine="14" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="269654322145159994" fileName="ProjectStructure_StyleSheet.java" startLine="12" startPosition="63" endLine="13" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="269654322145159994" fileName="ProjectStructure_StyleSheet.java" startLine="13" startPosition="40" endLine="14" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="269654322145159994" fileName="ProjectStructure_StyleSheet.java" startLine="14" startPosition="63" endLine="15" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="269654322145159994" fileName="ProjectStructure_StyleSheet.java" startLine="15" startPosition="57" endLine="16" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="269654322145159994" fileName="ProjectStructure_StyleSheet.java" startLine="12" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getKeyWord#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/style/Style;" />
-    <scopeInfo nodeId="269654322145159994" fileName="ProjectStructure_StyleSheet.java" startLine="12" startPosition="57" endLine="16" endPosition="17">
+    <scopeInfo nodeId="269654322145159994" fileName="ProjectStructure_StyleSheet.java" startLine="12" startPosition="63" endLine="16" endPosition="17">
       <varInfo nodeId="269654322145159994" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="269654322145159994" fileName="ProjectStructure_StyleSheet.java" startLine="12" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="269654322145159994" varName="cell" />
+      <varInfo nodeId="269654322145159994" varName="editorCell" />
     </scopeInfo>
     <unitInfo nodeId="269654322145159994" fileName="ProjectStructure_StyleSheet.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.project.editor.ProjectStructure_StyleSheet" />
   </root>

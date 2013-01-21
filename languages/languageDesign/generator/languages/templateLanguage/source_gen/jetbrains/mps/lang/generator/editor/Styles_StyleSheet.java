@@ -10,57 +10,57 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import java.awt.Color;
 
 public class Styles_StyleSheet {
-  public static Style getGeneratorKeyWord(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getGeneratorKeyWord(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getReference(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getReference(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     return style;
   }
 
-  public static Style getConstant(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getConstant(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getLiteral(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getLiteral(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getMacroStart(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getMacroStart(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     style.set(StyleAttributes.EDITABLE, true);
     return style;
   }
 
-  public static Style getNodeUnderMacro(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getNodeUnderMacro(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.DRAW_BRACKETS, true);
     style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.LIGHT_BLUE);
     return style;
   }
 
-  public static Style getMappingLabelReference(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getMappingLabelReference(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
     return style;
   }
 
-  public static Style getMacroDescriptionText(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getMacroDescriptionText(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(13497546));
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     return style;

@@ -10,248 +10,248 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import java.awt.Color;
 
 public class BaseLanguageStyle_StyleSheet {
-  public static Style getKeyWord(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getKeyWord(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getCompactKeyWord(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getKeyWord(null));
+  public static Style getCompactKeyWord(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getKeyWord(editorCell));
     return style;
   }
 
-  public static Style getComment(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getComment(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getJavaDoc(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getJavaDoc(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     style.set(StyleAttributes.UNDERLINED, true);
     return style;
   }
 
-  public static Style getField(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getField(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getLocalVariable(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getLocalVariable(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     return style;
   }
 
-  public static Style getParameter(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getParameter(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     return style;
   }
 
-  public static Style getStaticField(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getStaticField(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     return style;
   }
 
-  public static Style getStringLiteral(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getStringLiteral(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getNumericLiteral(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getNumericLiteral(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
     return style;
   }
 
-  public static Style getEmptyCell(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getEmptyCell(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
     return style;
   }
 
-  public static Style getInstanceMethod(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getInstanceMethod(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     return style;
   }
 
-  public static Style getStaticMethod(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getStaticMethod(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     return style;
   }
 
-  public static Style getAnnotation(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getAnnotation(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     return style;
   }
 
-  public static Style getOperator(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getOperator(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }
 
-  public static Style getAnyBracket(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getAnyBracket(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }
 
-  public static Style getParenthesis(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(null));
+  public static Style getParenthesis(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(editorCell));
     style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
     return style;
   }
 
-  public static Style getLeftParen(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
+  public static Style getLeftParen(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(editorCell));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     return style;
   }
 
-  public static Style getLeftParenAfterName(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getLeftParen(null));
+  public static Style getLeftParenAfterName(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getLeftParen(editorCell));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     return style;
   }
 
-  public static Style getRightParen(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
+  public static Style getRightParen(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(editorCell));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     return style;
   }
 
-  public static Style getBrace(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(null));
+  public static Style getBrace(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(editorCell));
     style.set(StyleAttributes.MATCHING_LABEL, "brace");
     return style;
   }
 
-  public static Style getLeftBrace(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
+  public static Style getLeftBrace(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getBrace(editorCell));
     return style;
   }
 
-  public static Style getRightBrace(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
+  public static Style getRightBrace(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getBrace(editorCell));
     return style;
   }
 
-  public static Style getBracket(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(null));
+  public static Style getBracket(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(editorCell));
     style.set(StyleAttributes.MATCHING_LABEL, "bracket");
     return style;
   }
 
-  public static Style getLeftBracket(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
+  public static Style getLeftBracket(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getBracket(editorCell));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     return style;
   }
 
-  public static Style getRightBracket(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
+  public static Style getRightBracket(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getBracket(editorCell));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     return style;
   }
 
-  public static Style getAngleBracket(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(null));
+  public static Style getAngleBracket(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(editorCell));
     style.set(StyleAttributes.MATCHING_LABEL, "angleBracket");
     return style;
   }
 
-  public static Style getLeftAngleBracket(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getAngleBracket(null));
+  public static Style getLeftAngleBracket(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getAngleBracket(editorCell));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     return style;
   }
 
-  public static Style getRightAngleBracket(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getAngleBracket(null));
+  public static Style getRightAngleBracket(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getAngleBracket(editorCell));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     return style;
   }
 
-  public static Style getMethodName(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getMethodName(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     return style;
   }
 
-  public static Style getVariableName(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getVariableName(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     return style;
   }
 
-  public static Style getClassName(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getClassName(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     return style;
   }
 
-  public static Style getSemicolon(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getSemicolon(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     return style;
   }
 
-  public static Style getDot(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getDot(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.SELECTABLE, false);
     return style;
   }
 
-  public static Style getBaseAngleBracket(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getBaseAngleBracket(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "AngleBracket");
     return style;
   }
 
-  public static Style getMatching(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getMatching(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "matching");
     return style;
   }
 
-  public static Style getFoldedCell(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getFoldedCell(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(15790320));
     style.set(StyleAttributes.TEXT_COLOR, new Color(12829635));
     return style;
   }
 
-  public static Style getLabel(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getLabel(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     return style;
   }

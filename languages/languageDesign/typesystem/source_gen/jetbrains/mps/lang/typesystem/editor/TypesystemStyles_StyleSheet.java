@@ -8,16 +8,16 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class TypesystemStyles_StyleSheet {
-  public static Style getInequationLabel(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getInequationLabel(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.DARK_GREEN);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.WHITE);
     style.set(StyleAttributes.NULL_TEXT_COLOR, MPSColors.lightGray);
     return style;
   }
 
-  public static Style getInequationsGroupsLabel(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getInequationsGroupsLabel(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.DARK_MAGENTA);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.WHITE);
     style.set(StyleAttributes.NULL_TEXT_COLOR, MPSColors.lightGray);

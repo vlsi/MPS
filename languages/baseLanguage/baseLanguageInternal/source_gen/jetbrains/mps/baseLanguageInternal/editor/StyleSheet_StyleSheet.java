@@ -10,22 +10,22 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class StyleSheet_StyleSheet {
-  public static Style getInternalKeyword(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getInternalKeyword(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getInternalName(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getInternalName(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     return style;
   }
 
-  public static Style getSquareBracket(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
+  public static Style getSquareBracket(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getBracket(editorCell));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.SELECTABLE, false);
     return style;

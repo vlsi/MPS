@@ -8,8 +8,8 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class TestLanguage_StyleSheet_StyleSheet {
-  public static Style getBaseStyle(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getBaseStyle(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }

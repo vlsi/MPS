@@ -8,30 +8,30 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Collections_Style_StyleSheet {
-  public static Style getOperation(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getOperation(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getAngleBracket(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getAngleBracket(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "AngleBracket");
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     return style;
   }
 
-  public static Style getLeftAngleBracket(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(Collections_Style_StyleSheet.getAngleBracket(null));
+  public static Style getLeftAngleBracket(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(Collections_Style_StyleSheet.getAngleBracket(editorCell));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     return style;
   }
 
-  public static Style getRightAngleBracket(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(Collections_Style_StyleSheet.getAngleBracket(null));
+  public static Style getRightAngleBracket(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(Collections_Style_StyleSheet.getAngleBracket(editorCell));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     return style;
   }

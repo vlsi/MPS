@@ -9,28 +9,28 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class properiesSS_StyleSheet {
-  public static Style getKey(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getKey(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, new Color(128));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getComment(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getComment(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, new Color(8421504));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     return style;
   }
 
-  public static Style getSeparator(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getSeparator(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }
 
-  public static Style getValue(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getValue(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, new Color(32768));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;

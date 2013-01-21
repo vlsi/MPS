@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 
 public class _OpenTag extends AbstractCellProvider {
@@ -54,17 +53,13 @@ public class _OpenTag extends AbstractCellProvider {
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return _OpenTag._StyleParameter_QueryFunction_mtiojs_a0a((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
+      style.set(StyleAttributes.BACKGROUND_COLOR, _OpenTag._StyleParameter_QueryFunction_mtiojs_a0a((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
       style.set(StyleAttributes.EDITABLE, false);
     }
     return editorCell;

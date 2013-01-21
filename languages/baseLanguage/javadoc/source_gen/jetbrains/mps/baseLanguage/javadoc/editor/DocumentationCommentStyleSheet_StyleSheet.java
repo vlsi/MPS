@@ -9,25 +9,25 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class DocumentationCommentStyleSheet_StyleSheet {
-  public static Style getComment(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getComment(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     return style;
   }
 
-  public static Style getCommentTag(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(DocumentationCommentStyleSheet_StyleSheet.getComment(null));
+  public static Style getCommentTag(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(DocumentationCommentStyleSheet_StyleSheet.getComment(editorCell));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     style.set(StyleAttributes.UNDERLINED, true);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     return style;
   }
 
-  public static Style getCommentHTMLTag(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(DocumentationCommentStyleSheet_StyleSheet.getComment(null));
+  public static Style getCommentHTMLTag(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(DocumentationCommentStyleSheet_StyleSheet.getComment(editorCell));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     return style;
   }

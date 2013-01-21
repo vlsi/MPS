@@ -9,15 +9,15 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class TextGenStyles_StyleSheet {
-  public static Style getTextGenOperation(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getTextGenOperation(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
 
-  public static Style getAppendPart(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getAppendPart(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }

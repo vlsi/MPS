@@ -10,34 +10,34 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import java.awt.Color;
 
 public class BashLanguageStyle_StyleSheet {
-  public static Style getVariable(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getVariable(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }
 
-  public static Style getCommandName(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getCommandName(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
     return style;
   }
 
-  public static Style getExternalCommandDescription(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getExternalCommandDescription(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.lightGray);
     return style;
   }
 
-  public static Style getHintStyle(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getHintStyle(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.AUTO_DELETABLE, true);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
     return style;
   }
 
-  public static Style getErrorStyle(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getErrorStyle(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.AUTO_DELETABLE, true);
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.EDITABLE, false);
@@ -47,78 +47,78 @@ public class BashLanguageStyle_StyleSheet {
     return style;
   }
 
-  public static Style getCommentSymbol(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getCommentSymbol(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     return style;
   }
 
-  public static Style getCommentedCommand(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getCommentedCommand(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     return style;
   }
 
-  public static Style getCommentedText(final EditorCell cell) {
-    Style style = new Style(cell);
-    style.putAll(BashLanguageStyle_StyleSheet.getCommentedCommand(null));
+  public static Style getCommentedText(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
+    style.putAll(BashLanguageStyle_StyleSheet.getCommentedCommand(editorCell));
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
     return style;
   }
 
-  public static Style getActivationRecord(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getActivationRecord(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     return style;
   }
 
-  public static Style getShellScriptName(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getShellScriptName(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     return style;
   }
 
-  public static Style getOperator(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getOperator(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }
 
-  public static Style getQuotedWord(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getQuotedWord(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(15004415));
     return style;
   }
 
-  public static Style getParameterExpansion(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getParameterExpansion(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }
 
-  public static Style getNullStyle(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getNullStyle(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.AUTO_DELETABLE, true);
     style.set(StyleAttributes.NULL_TEXT_COLOR, MPSColors.lightGray);
     return style;
   }
 
-  public static Style getSimpleWordStyle(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getSimpleWordStyle(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     return style;
   }
 
-  public static Style getQuotesCommandSubstitution(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getQuotesCommandSubstitution(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.BACKGROUND_COLOR, new Color(16711603));
     return style;
   }
 
-  public static Style getQuoteStyle(final EditorCell cell) {
-    Style style = new Style(cell);
+  public static Style getQuoteStyle(final EditorCell editorCell) {
+    Style style = new Style(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
     return style;
