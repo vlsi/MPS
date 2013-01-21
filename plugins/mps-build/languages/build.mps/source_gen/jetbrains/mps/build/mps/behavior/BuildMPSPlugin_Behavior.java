@@ -50,25 +50,27 @@ public class BuildMPSPlugin_Behavior {
         helper.artifacts().put("mps-core", mpsCoreJar);
         builder.add(mpsCoreJar, mpsCoreModule);
       }
-    }
 
-    SNode jdom = ScopeUtil.getVisibleJarsScope(originalProject).resolve(originalProject, "IDEA::lib/jdom.jar");
-
-    if ((jdom != null)) {
-      SNode jdomJar = SNodeOperations.as(artifacts.findArtifact(jdom), "jetbrains.mps.build.structure.BuildLayout_Node");
-      if ((jdomJar != null)) {
-        helper.artifacts().put("jdom", jdomJar);
-        builder.add(jdomJar, jdom);
+      SNode mpsCore = SNodeOperations.as(SNodeOperations.getContainingRoot(mpsCoreModule), "jetbrains.mps.build.structure.BuildProject");
+      Scope visibleJarsScope = ScopeUtil.getVisibleJarsScope(mpsCore);
+      SNode jdom = visibleJarsScope.resolve(mpsCore, "IDEA::lib/jdom.jar");
+      if ((jdom != null)) {
+        SNode jdomJar = SNodeOperations.as(artifacts.findArtifact(jdom), "jetbrains.mps.build.structure.BuildLayout_Node");
+        if ((jdomJar != null)) {
+          helper.artifacts().put("jdom", jdomJar);
+          builder.add(jdomJar, jdom);
+        }
+      }
+      SNode log4j = visibleJarsScope.resolve(mpsCore, "IDEA::lib/log4j.jar");
+      if ((log4j != null)) {
+        SNode log4jJar = SNodeOperations.as(artifacts.findArtifact(log4j), "jetbrains.mps.build.structure.BuildLayout_Node");
+        if ((log4jJar != null)) {
+          helper.artifacts().put("log4j", log4jJar);
+          builder.add(log4jJar, log4j);
+        }
       }
     }
-    SNode log4j = ScopeUtil.getVisibleJarsScope(originalProject).resolve(originalProject, "IDEA::lib/log4j.jar");
-    if ((log4j != null)) {
-      SNode log4jJar = SNodeOperations.as(artifacts.findArtifact(log4j), "jetbrains.mps.build.structure.BuildLayout_Node");
-      if ((log4jJar != null)) {
-        helper.artifacts().put("log4j", log4jJar);
-        builder.add(log4jJar, log4j);
-      }
-    }
+
   }
 
   public static Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, final SNode kind) {
