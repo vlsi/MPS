@@ -37,7 +37,7 @@ public class GenSourcesAndCompilerXmlGenerationTest {
   public void testGenSourcesIml() throws JDOMException, IOException {
     String previousGenSources = FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML);
     GeneratorsRunner.generateGenSourcesIml();
-    Assert.assertTrue("Regenerate gensources.iml. Run GeneratorsRunner run configuration.", hasSameContent(FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML), previousGenSources));
+    checkHasSameContent(FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML), previousGenSources);
   }
 
   @Test
@@ -61,6 +61,7 @@ public class GenSourcesAndCompilerXmlGenerationTest {
     outer:
     for (File jFile : Utils.withExtension(".java", Utils.files(root))) {
       String cp = jFile.getCanonicalPath();
+      if (cp.contains("sandbox")) continue;
       for (String sourcePath : allSources) {
         if (cp.startsWith(sourcePath + File.separator)) continue outer;
       }
@@ -71,7 +72,7 @@ public class GenSourcesAndCompilerXmlGenerationTest {
     Assert.assertFalse("failed, see log for details", error);
   }
 
-  private boolean hasSameContent(String real, String exp) throws IOException, JDOMException {
+  private void checkHasSameContent(String real, String exp) throws IOException, JDOMException {
     Element realManager = getManagerElement(real);
     Element expManager = getManagerElement(exp);
 
@@ -79,7 +80,7 @@ public class GenSourcesAndCompilerXmlGenerationTest {
     List<Element> realContent = (List<Element>) realManager.getChildren(Generators.CONTENT);
     List<Element> expContent = (List<Element>) expManager.getChildren(Generators.CONTENT);
 
-    if (realContent.size() != expContent.size()) return false;
+    Assert.assertEquals("Run GeneratorsRunner run configuration. Content sizes differ.", expContent.size(), realContent.size());
 
     outer:
     for (Element rRoot : realContent) {
@@ -87,26 +88,27 @@ public class GenSourcesAndCompilerXmlGenerationTest {
       for (Element eRoot : expContent) {
         String eUrl = eRoot.getAttributeValue(Generators.URL);
         if (rUrl.equals(eUrl)) {
-          if (!hasSameFolders(rRoot, eRoot)) return false;
+          checkSamePathsUnder(rRoot, eRoot);
           continue outer;
         }
       }
-      return false;
+      Assert.fail("Run GeneratorsRunner run configuration. Url "+rRoot.getAttributeValue(Generators.URL)+" not expected");
     }
-    return true;
   }
 
-  private boolean hasSameFolders(Element rRoot, Element eRoot) {
-    return hasSamePathsUnderTag(rRoot, eRoot, Generators.SOURCE_FOLDER) && hasSamePathsUnderTag(rRoot, eRoot, Generators.EXCLUDE_FOLDER);
+  private  void checkSamePathsUnder(Element rRoot, Element eRoot) {
+    checkHasSamePathsUnderTag(rRoot, eRoot, Generators.SOURCE_FOLDER) ;
+    checkHasSamePathsUnderTag(rRoot, eRoot, Generators.EXCLUDE_FOLDER);
   }
 
-  private boolean hasSamePathsUnderTag(Element rRoot, Element eRoot, String tag) {
+  private void checkHasSamePathsUnderTag(Element rRoot, Element eRoot, String tag) {
     List<Element> realPaths = (List<Element>) rRoot.getChildren(tag);
     List<Element> expPaths = (List<Element>) eRoot.getChildren(tag);
 
-    if (realPaths.size() != expPaths.size()) return false;
+    Assert.assertEquals("Run GeneratorsRunner run configuration. Content sizes under tag " + tag + " differs for url " + rRoot.getAttributeValue(Generators.URL), expPaths.size(), realPaths.size());
 
-    outer: for (Element rp : realPaths) {
+    outer:
+    for (Element rp : realPaths) {
       String rUrl = rp.getAttributeValue(Generators.URL);
       for (Element ep : expPaths) {
         String eUrl = ep.getAttributeValue(Generators.URL);
@@ -114,10 +116,8 @@ public class GenSourcesAndCompilerXmlGenerationTest {
           continue outer;
         }
       }
-      return false;
+      Assert.fail("Run GeneratorsRunner run configuration. Tag "+tag+": Url "+rRoot.getAttributeValue(Generators.URL)+" not expected");
     }
-
-    return true;
   }
 
   private Element getManagerElement(String real) throws IOException, JDOMException {
