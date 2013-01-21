@@ -32,6 +32,7 @@ import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -64,7 +65,7 @@ public class MpsSourcePosition extends SourcePosition {
     SNodeReference rootPointer = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
       @Override
       public SNodeReference compute() {
-        SNode root = myNodePointer.getNode().getContainingRoot();
+        SNode root = myNodePointer.resolve(MPSModuleRepository.getInstance()).getContainingRoot();
         return new jetbrains.mps.smodel.SNodePointer(root.getModel() == null ? null : root);
       }
     });
