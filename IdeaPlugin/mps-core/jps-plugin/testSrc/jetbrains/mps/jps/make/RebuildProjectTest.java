@@ -69,6 +69,15 @@ public class RebuildProjectTest extends MpsJpsBuildTestCase {
     buildParams.put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
 
     rebuildAll();
+
+    assertGenerated(
+      "mps-make/main/source_gen.caches/main/dependencies",
+      "mps-make/main/source_gen.caches/main/generated",
+      "source_gen/main/ConcoleUtil.java",
+      "source_gen/main/MainClass.java",
+      "source_gen/main/ProjectKind.java",
+      "source_gen/main/SimpleMarker.java",
+      "source_gen/main/trace.info");
   }
 
   public void testBuild_blProject_noSave () {
