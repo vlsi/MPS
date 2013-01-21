@@ -18,6 +18,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import java.awt.Color;
 import com.intellij.openapi.project.Project;
@@ -117,7 +118,11 @@ public class ModuleDependencyNode extends MPSTreeNode {
           return it.getModuleFqName();
         }
       }, true)) {
-        usedlanguages.add(new ModuleDependencyNode.ULangDependencyNode(l, getOperationContext()));
+        Iterable<IModule> langModules = new GlobalModuleDependenciesManager(l).getModules((tree.isShowRuntime() ?
+          GlobalModuleDependenciesManager.Deptype.EXECUTE :
+          GlobalModuleDependenciesManager.Deptype.VISIBLE
+        ));
+        usedlanguages.add(new ModuleDependencyNode.ULangDependencyNode(l, Sequence.fromIterable(langModules).intersect(ListSequence.fromList(myModules)).isNotEmpty(), getOperationContext()));
       }
       add(usedlanguages);
     }
@@ -158,8 +163,11 @@ public class ModuleDependencyNode extends MPSTreeNode {
   }
 
   public static class ULangDependencyNode extends ModuleDependencyNode {
-    public ULangDependencyNode(IModule module, IOperationContext context) {
+    public ULangDependencyNode(IModule module, boolean isBootstrap, IOperationContext context) {
       super(module, context);
+      if (isBootstrap) {
+        setCyclic();
+      }
     }
 
     public boolean isUsedLanguage() {

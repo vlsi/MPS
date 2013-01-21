@@ -183,7 +183,7 @@ public class BookmarksTree extends MPSTree {
     public MyTextTreeNodeUnnumbered(SNodePointer nodePointer) {
       super("bookmark");
       myNodePointer = nodePointer;
-      setNodeIdentifier("bookmark_" + nodePointer.getNodeId().toString());
+      setNodeIdentifier("bookmark_" +nodePointer.toString());
     }
 
     public void navigateToBookmark() {

@@ -4509,6 +4509,19 @@
     </scopeInfo>
     <unitInfo nodeId="2580416627845806804" fileName="ImplicitAnnotationInstanceValue_TextGen.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ImplicitAnnotationInstanceValue_TextGen" />
   </root>
+  <root nodeId="2820489544401960245" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
+    <nodeInfo nodeId="2820489544401960248" fileName="DefaultClassCreator_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2820489544401960248" fileName="DefaultClassCreator_TextGen.java" startLine="12" startPosition="193" endLine="13" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2820489544401960248" fileName="DefaultClassCreator_TextGen.java" startLine="13" startPosition="102" endLine="14" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2820489544401960248" fileName="DefaultClassCreator_TextGen.java" startLine="11" startPosition="42" endLine="14" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2820489544401960245" fileName="DefaultClassCreator_TextGen.java" startLine="11" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="2820489544401960245" fileName="DefaultClassCreator_TextGen.java" startLine="11" startPosition="42" endLine="14" endPosition="22" />
+    <scopeInfo nodeId="2820489544401960248" fileName="DefaultClassCreator_TextGen.java" startLine="11" startPosition="42" endLine="14" endPosition="22" />
+    <scopeInfo nodeId="2820489544401960245" fileName="DefaultClassCreator_TextGen.java" startLine="11" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="2820489544401960245" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="2820489544401960245" fileName="DefaultClassCreator_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.DefaultClassCreator_TextGen" />
+  </root>
   <root nodeId="320030840061144158" modelId="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)">
     <nodeInfo nodeId="320030840061144161" fileName="ShiftRightUnsignedExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="320030840061144161" fileName="ShiftRightUnsignedExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

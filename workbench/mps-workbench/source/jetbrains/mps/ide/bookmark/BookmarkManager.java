@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
 import java.awt.Color;
@@ -279,9 +280,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     for (int i = 0; i < myBookmarks.length; i++) {
       SNodePointer pointer = myBookmarks[i];
       if (pointer != null) {
-        SModelReference sModelReference = pointer.getModelReference();
-        SNodeId id = pointer.getNodeId();
-        state.myBookmarkInfos[i] = new BookmarkInfo(sModelReference.toString(), id.toString(), i);
+        state.myBookmarkInfos[i] = new BookmarkInfo(pointer, i);
       } else {
         state.myBookmarkInfos[i] = new BookmarkInfo();
       }
@@ -290,9 +289,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     for (int i = 0; i < myUnnumberedBookmarks.size(); i++) {
       SNodePointer pointer = myUnnumberedBookmarks.get(i);
       if (pointer != null) {
-        SModelReference sModelReference = pointer.getModelReference();
-        SNodeId id = pointer.getNodeId();
-        state.myUnnumberedBookmarkInfos[i] = new BookmarkInfo(sModelReference.toString(), id.toString(), -1);
+        state.myUnnumberedBookmarkInfos[i] = new BookmarkInfo(pointer, -1);
       } else {
         state.myUnnumberedBookmarkInfos[i] = new BookmarkInfo();
       }
@@ -305,7 +302,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       BookmarkInfo bookmarkInfo = state.myBookmarkInfos[i];
       if (!bookmarkInfo.myIsNull) {
         assert i == bookmarkInfo.myNumber;
-        myBookmarks[i] = new SNodePointer(bookmarkInfo.myModelReference, bookmarkInfo.myNodeId);
+        myBookmarks[i] = ((SNodePointer) bookmarkInfo.myNodeRef);
       } else {
         myBookmarks[i] = null;
       }
@@ -313,7 +310,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     myUnnumberedBookmarks.clear();
     for (BookmarkInfo bookmarkInfo : state.myUnnumberedBookmarkInfos) {
       if (bookmarkInfo != null) {
-        myUnnumberedBookmarks.add(new SNodePointer(bookmarkInfo.myModelReference, bookmarkInfo.myNodeId));
+        myUnnumberedBookmarks.add(bookmarkInfo.myNodeRef);
       }
     }
   }
@@ -330,9 +327,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
   }
 
   public static class BookmarkInfo {
-
-    public String myModelReference;
-    public String myNodeId;
+    private SNodePointer myNodeRef;
     public int myNumber;
     public boolean myIsNull = true;
 
@@ -340,14 +335,25 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       myIsNull = true;
     }
 
-    public BookmarkInfo(String modelReference, String nodeId, int number) {
-      myModelReference = modelReference;
-      myNodeId = nodeId;
+    public BookmarkInfo(SNodePointer nodeRef, int number) {
+      myNodeRef = nodeRef;
       myNumber = number;
       myIsNull = false;
     }
 
+    //for serialization/deserialization
+    @SuppressWarnings("UnusedDeclaration")
+    public String getNodeRef() {
+      if (myNodeRef==null) return "";
+      return SNodePointer.serialize(myNodeRef);
+    }
 
+    //for serialization/deserialization
+    @SuppressWarnings("UnusedDeclaration")
+    public void setNodeRef(String nodeRef) {
+      if (nodeRef.equals("")) return;
+      myNodeRef = SNodePointer.deserialize(nodeRef);
+    }
   }
 
   private static class MnemonicIcon implements Icon {

@@ -3,8 +3,8 @@
   <root nodeId="3575782568432719038" modelId="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)">
     <nodeInfo nodeId="3575782568432719051" fileName="TestMethodTreeNode.java" startLine="18" startPosition="112" endLine="19" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3575782568432719053" fileName="TestMethodTreeNode.java" startLine="19" startPosition="28" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432719059" fileName="TestMethodTreeNode.java" startLine="20" startPosition="30" endLine="21" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432719072" fileName="TestMethodTreeNode.java" startLine="21" startPosition="76" endLine="22" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432719059" fileName="TestMethodTreeNode.java" startLine="20" startPosition="30" endLine="21" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432719072" fileName="TestMethodTreeNode.java" startLine="21" startPosition="64" endLine="22" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3575782568432719087" fileName="TestMethodTreeNode.java" startLine="25" startPosition="32" endLine="26" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3575782568432719094" fileName="TestMethodTreeNode.java" startLine="28" startPosition="25" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3575782568432719104" fileName="TestMethodTreeNode.java" startLine="30" startPosition="31" endLine="31" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1750,8 +1750,8 @@
   <root nodeId="3575782568432724144" modelId="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)">
     <nodeInfo nodeId="3575782568432724157" fileName="TestCaseTreeNode.java" startLine="20" startPosition="108" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3575782568432724159" fileName="TestCaseTreeNode.java" startLine="21" startPosition="28" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432724165" fileName="TestCaseTreeNode.java" startLine="22" startPosition="26" endLine="23" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432724178" fileName="TestCaseTreeNode.java" startLine="23" startPosition="74" endLine="24" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432724165" fileName="TestCaseTreeNode.java" startLine="22" startPosition="26" endLine="23" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432724178" fileName="TestCaseTreeNode.java" startLine="23" startPosition="62" endLine="24" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3575782568432724190" fileName="TestCaseTreeNode.java" startLine="24" startPosition="146" endLine="25" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3575782568432724209" fileName="TestCaseTreeNode.java" startLine="28" startPosition="32" endLine="29" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3575782568432724216" fileName="TestCaseTreeNode.java" startLine="31" startPosition="25" endLine="32" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -20,7 +20,7 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
   public TestCaseTreeNode(@NotNull IOperationContext operationContext, @NotNull ITestNodeWrapper testCase) {
     super(operationContext);
     myTestCase = testCase;
-    setNodeIdentifier(myTestCase.getNodePointer().getNodeId().toString());
+    setNodeIdentifier(myTestCase.getNodePointer().toString());
     setText(SPropertyOperations.getString(SNodeOperations.cast(myTestCase.getNode(), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
     setAdditionalText(myTestCase.getNodePointer().getModelReference().getLongName());
   }

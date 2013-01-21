@@ -42,12 +42,6 @@ public class SNodePointer implements SNodeReference {
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SModel resolveModel(SRepository repo) {
-    if (myModelReference == null) return null;
-    return SModelRepository.getInstance().getModelDescriptor(myModelReference);
-  }
-
-  @Override
   public org.jetbrains.mps.openapi.model.SNode resolve(SRepository repo) {
     if (myNodeId == null) return null;
     SModelDescriptor model = getModel();
@@ -74,7 +68,7 @@ public class SNodePointer implements SNodeReference {
     if (node == null) {
       return "[bad pointer] model=" + myModelReference + " node id=" + myNodeId;
     }
-    return node.toString();
+    return org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node);
   }
 
   public boolean equals(Object o) {
@@ -96,6 +90,23 @@ public class SNodePointer implements SNodeReference {
     return sum;
   }
 
+  public static String serialize(SNodePointer p) {
+    SModelReference ref = p.myModelReference;
+    SNodeId id = p.myNodeId;
+
+    assert ref != null && id != null;
+
+    return ref.toString() + "/" + id.toString();
+  }
+
+  public static SNodePointer deserialize(String from) {
+    String[] split = from.split("/");
+    assert split.length == 2;
+    return new SNodePointer(split[0], split[1]);
+  }
+
+  //-----------------deprecated----------------------
+
   @Deprecated
   /**
    * Inline content in java code, use migration in MPS
@@ -111,10 +122,25 @@ public class SNodePointer implements SNodeReference {
    * @Deprecated in 3.0
    */
   public SModelDescriptor getModel() {
-    return ((SModelDescriptor) resolveModel(MPSModuleRepository.getInstance()));
+    if (getModelReference() == null) return null;
+    return SModelRepository.getInstance().getModelDescriptor(getModelReference());
   }
 
+  @Deprecated
+  /**
+   * Was mostly used for serialization and obtaining debug info. Use corresponding methods instead
+   * @Deprecated in 3.0
+   */
   public SNodeId getNodeId() {
     return myNodeId;
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public String getDebugText() {
+    return toString();
   }
 }

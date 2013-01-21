@@ -21,6 +21,10 @@ import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import java.util.Iterator;
 import java.util.Queue;
 import org.jetbrains.annotations.Nullable;
@@ -217,6 +221,14 @@ public class SNodeOperations {
     for (Object key : Sequence.fromIterable(from.getUserObjectKeys())) {
       to.putUserObject(key, from.getUserObject(key));
     }
+  }
+
+  public static SModelDescriptor getModelFromNodeReference(SNodeReference ref) {
+    SModelReference mr = ref.getModelReference();
+    if (mr == null) {
+      return null;
+    }
+    return SModelRepository.getInstance().getModelDescriptor(mr);
   }
 
   private static class DescendantsIterable implements Iterator<SNode>, Iterable<SNode> {

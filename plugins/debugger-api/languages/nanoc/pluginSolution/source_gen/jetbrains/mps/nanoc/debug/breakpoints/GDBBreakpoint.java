@@ -92,7 +92,7 @@ public class GDBBreakpoint extends AbstractBreakpoint implements IBreakpoint, IL
   }
 
   public static GDBBreakpoint fromInfo(@NotNull BreakpointInfo info, Project project) {
-    return new GDBBreakpoint(new SNodePointer(info.myModelReference, info.myNodeId), project);
+    return new GDBBreakpoint(info.location(), project);
   }
 
   public class GdbBreakpointState {

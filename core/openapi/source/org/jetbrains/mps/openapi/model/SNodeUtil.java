@@ -75,14 +75,14 @@ public class SNodeUtil {
     String nameText;
     String modelName;
     try {
-      if ("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration".equals(node.getConcept().getId())) {
-        String role = SNodeAccessUtil.getProperty((jetbrains.mps.smodel.SNode) node, "role");
-        nameText = (role == null) ? "<no role>" : '"' + role + '"';
+      String role = SNodeAccessUtil.getProperty(node, "role");
+      if (role != null) {
+        nameText = '"' + role + '"';
       } else {
-        String name = SNodeAccessUtil.getProperty((jetbrains.mps.smodel.SNode) node, "role");
-        ;
-        nameText = (name == null) ? "<no name>" : '"' + name + '"';
+        boolean linkDecl = jetbrains.mps.smodel.SNodeUtil.concept_LinkDeclaration.equals(node.getConcept().getId());
+        nameText = linkDecl ? "<no role>" : "<no name>";
       }
+
       nameText = nameText + "[" + node.getNodeId() + "]";
 
       SModel model = node.getContainingModel();

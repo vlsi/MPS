@@ -10,6 +10,7 @@
   <depends>jetbrains.mps.debugger.java</depends>
   <depends>jetbrains.mps.debugger.api</depends>
   <depends>jetbrains.mps.execution.api</depends>
+  <depends>jetbrains.mps.testing</depends>
 
   <project-components>
     <component>

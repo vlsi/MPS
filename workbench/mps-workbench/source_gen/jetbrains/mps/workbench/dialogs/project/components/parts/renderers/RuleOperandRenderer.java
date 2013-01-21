@@ -123,7 +123,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
           }
         });
         if (nodeName == null) {
-          String nodeString = p.getModelReference().getSModelFqName().toString() + ":" + p.getNodeId().toString();
+          String nodeString = p.toString();
           root.add(new TextMPSTreeNode("NOT FOUND: " + nodeString, null));
           return false;
         }

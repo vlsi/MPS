@@ -86,7 +86,7 @@
     <nodeInfo nodeId="226334238991980159" fileName="GDBBreakpoint.java" startLine="81" startPosition="52" endLine="82" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="226334238991962239" fileName="GDBBreakpoint.java" startLine="86" startPosition="43" endLine="87" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1443474765164027493" fileName="GDBBreakpoint.java" startLine="90" startPosition="36" endLine="91" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1443474765164035250" fileName="GDBBreakpoint.java" startLine="94" startPosition="87" endLine="95" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1443474765164035250" fileName="GDBBreakpoint.java" startLine="94" startPosition="87" endLine="95" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1443474765164027432" fileName="GDBBreakpoint.java" startLine="99" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeId" />
     <nodeInfo nodeId="1443474765164027437" fileName="GDBBreakpoint.java" startLine="100" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelId" />
     <nodeInfo nodeId="226334238991980233" fileName="GDBBreakpoint.java" startLine="113" startPosition="37" endLine="114" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -123,7 +123,7 @@
     <scopeInfo nodeId="226334238991961391" fileName="GDBBreakpoint.java" startLine="81" startPosition="52" endLine="82" endPosition="59" />
     <scopeInfo nodeId="226334238991961396" fileName="GDBBreakpoint.java" startLine="86" startPosition="43" endLine="87" endPosition="22" />
     <scopeInfo nodeId="1443474765164027445" fileName="GDBBreakpoint.java" startLine="90" startPosition="36" endLine="91" endPosition="48" />
-    <scopeInfo nodeId="1443474765164027505" fileName="GDBBreakpoint.java" startLine="94" startPosition="87" endLine="95" endPosition="94" />
+    <scopeInfo nodeId="1443474765164027505" fileName="GDBBreakpoint.java" startLine="94" startPosition="87" endLine="95" endPosition="55" />
     <scopeInfo nodeId="226334238991980216" fileName="GDBBreakpoint.java" startLine="113" startPosition="37" endLine="114" endPosition="35" />
     <scopeInfo nodeId="226334238991980221" fileName="GDBBreakpoint.java" startLine="118" startPosition="29" endLine="119" endPosition="35" />
     <scopeInfo nodeId="226334238991980225" fileName="GDBBreakpoint.java" startLine="122" startPosition="38" endLine="123" endPosition="18" />

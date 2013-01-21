@@ -59,6 +59,8 @@ import jetbrains.mps.tool.builder.paths.IRedirects;
 import jetbrains.mps.tool.builder.paths.ModuleOutputPaths;
 import jetbrains.mps.tool.builder.paths.OutputPathRedirects;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.jps.builders.BuildRootIndex;
+import org.jetbrains.jps.builders.java.JavaSourceRootDescriptor;
 import org.jetbrains.jps.builders.storage.BuildDataPaths;
 import org.jetbrains.jps.incremental.FSOperations;
 import org.jetbrains.jps.incremental.ModuleBuildTarget;
@@ -135,9 +137,14 @@ public class MPSMakeMediator {
 
       File outputRoot = getOutputRoot(mpsModule.getModule(), myContext.getCompileContext().getProjectDescriptor().dataManager);
       File cachesOutputRoot = getCachesOutputRoot(mpsModule.getModule(), myContext.getCompileContext().getProjectDescriptor().dataManager);
-      myRedirects.addRedirects(outputPaths, outputRoot.getAbsolutePath(), cachesOutputRoot.getAbsolutePath(), mpsModule.getConfiguration().isUseTransientOutputFolder());
+      boolean useTransientOutputFolder = mpsModule.getConfiguration().isUseTransientOutputFolder();
+      OutputPathRedirects redirects = myRedirects.addRedirects(outputPaths, outputRoot.getAbsolutePath(), cachesOutputRoot.getAbsolutePath(), useTransientOutputFolder);
+      if (useTransientOutputFolder) {
+        BuildRootIndex buildRootIndex = myContext.getCompileContext().getProjectDescriptor().getBuildRootIndex();
+        buildRootIndex.associateTempRoot(myContext.getCompileContext(), target,
+          new JavaSourceRootDescriptor(outputRoot, target, true, true, "", Collections.<File>emptySet()));
+      }
     }
-
 
     GenerationDependenciesCache.getInstance().registerCachePathRedirect(new GenerationDependenciesCache.CachePathRedirect() {
       public IFile redirectTo(IFile outputPath) {
@@ -279,6 +286,10 @@ public class MPSMakeMediator {
       switch (msg.getKind()) {
         case ERROR:
           myContext.getCompileContext().processMessage(
+            new CompilerMessage(MPSMakeConstants.BUILDER_ID,
+              Kind.ERROR,
+              msg.getText()));
+          myContext.getCompileContext().processMessage(
             new CustomBuilderMessage(MPSMakeConstants.BUILDER_ID,
               MPSCustomMessages.MSG_ERROR,
               msg.getText()));
@@ -330,8 +341,10 @@ public class MPSMakeMediator {
   public static class MyRedirects implements IRedirects {
     private List<OutputPathRedirects> myOutputRedirects = new ArrayList<OutputPathRedirects>();
 
-    public void addRedirects (ModuleOutputPaths moduleOutputPaths, String outputRoot, String cachesOutputRoot, boolean useTransientOutputFolder) {
-      myOutputRedirects.add(new OutputPathRedirects(moduleOutputPaths, outputRoot, cachesOutputRoot, useTransientOutputFolder));
+    public OutputPathRedirects addRedirects (ModuleOutputPaths moduleOutputPaths, String outputRoot, String cachesOutputRoot, boolean useTransientOutputFolder) {
+      OutputPathRedirects redirects = new OutputPathRedirects(moduleOutputPaths, outputRoot, cachesOutputRoot, useTransientOutputFolder);
+      myOutputRedirects.add(redirects);
+      return redirects;
     }
 
     public IFile getRedirect(String path) {

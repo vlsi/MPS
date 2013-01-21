@@ -208,7 +208,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       if (neq_qkk2f2_a0a1a0a31(SNodeOperations.getModel(SLinkOperations.getTargetNode(reference)), myAuxModel.getSModel()) && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept")) {
         SNode matchingVar = ListSequence.fromList(SLinkOperations.getTargets(getNodeToShow(), "variables", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode variable) {
-            return eq_qkk2f2_a0a0a0a0a0a0a1a0a31(SPropertyOperations.getString(variable, "highLevelNodeId"), SLinkOperations.getTargetNode(reference).getNodeId().toString());
+            return eq_qkk2f2_a0a0a0a0a0a0a1a0a31(SNodePointer.deserialize(SPropertyOperations.getString(variable, "highLevelNodeId")), SLinkOperations.getTargetNode(reference).getReference());
           }
         });
         if (matchingVar == null) {

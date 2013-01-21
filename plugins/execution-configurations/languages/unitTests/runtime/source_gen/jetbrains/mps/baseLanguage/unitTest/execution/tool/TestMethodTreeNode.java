@@ -18,7 +18,7 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
   public TestMethodTreeNode(@NotNull IOperationContext operationContext, @NotNull ITestNodeWrapper testMethod) {
     super(operationContext);
     myTestMethod = testMethod;
-    setNodeIdentifier(myTestMethod.getNodePointer().getNodeId().toString());
+    setNodeIdentifier(myTestMethod.getNodePointer().toString());
     setText(myTestMethod.getName());
   }
 

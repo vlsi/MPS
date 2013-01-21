@@ -15,6 +15,8 @@ public class FlyingActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       FlyingActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencyLoop_Action");
+      FlyingActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleBootstrapDependency_Action");
+      FlyingActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowDependenciesInViewer_Action");
       FlyingActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action");
       FlyingActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowInDependenciesViewer_Action");
     } catch (Throwable t) {

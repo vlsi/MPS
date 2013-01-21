@@ -22,13 +22,23 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.cells.CellConditions;
+import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.nodeEditor.cells.CellInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.resolve.ResolverComponent;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.SwingUtilities;
 import java.util.HashSet;
@@ -70,52 +80,40 @@ public class CellAction_PasteNode extends EditorCellAction {
     EditorCell pasteTargetCell = getCellToPasteTo(editorComponent.getSelectedCell());
     final CellInfo pasteTargetCellInfo = pasteTargetCell.getCellInfo();
     final SNode nodeSelected = pasteTargetCell.getSNode();
-    final SNodePointer selectedNodePointer = new SNodePointer(nodeSelected);
-    final SModel model = nodeSelected.getModel();
-    // sometimes model is not in repository (paste in merge dialog)
-    final boolean inRepository = model.getModelDescriptor() == selectedNodePointer.getModel();
+    final SModel modeltoPaste = nodeSelected.getModel();
 
-    PasteNodeData data = CopyPasteUtil.getPasteNodeDataFromClipboard(model);
+    // sometimes model is not in repository (paste in merge dialog)
+    final boolean inRepository = SModelRepository.getInstance().getModelDescriptor(modeltoPaste.getSModelId()) != null;
+
+    PasteNodeData data = CopyPasteUtil.getPasteNodeDataFromClipboard(modeltoPaste);
     if (data == null || data.getNodes().isEmpty()) {
-      data = CopyPasteUtil.getConvertedFromClipboard(model, context.getOperationContext().getProject());
+      data = CopyPasteUtil.getConvertedFromClipboard(modeltoPaste, context.getOperationContext().getProject());
       if (data == null || data.getNodes().isEmpty()) return;
     }
     final PasteNodeData pasteNodeData = data;
 
+    //this is used in case node is in repo to pass it into invokeLater
+    final SNodePointer selectedNodePointer = new SNodePointer(nodeSelected);
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, model, context.getOperationContext());
+        final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modeltoPaste, context.getOperationContext());
         ModelAccess.instance().runCommandInEDT(new Runnable() {
           public void run() {
             if (addImportsRunnable != null) {
               addImportsRunnable.run();
             }
-            SNode selectedNode = inRepository ? selectedNodePointer.getNode() : nodeSelected;
-            if (jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode)) {
-              StringBuilder errorText = new StringBuilder("Selected node is disposed: " + selectedNode.toString());
-              SModelReference modelReference = selectedNodePointer.getModelReference();
-              if (modelReference != null) {
-                SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-                if (modelDescriptor != null) {
-                  SModel sModel = modelDescriptor.getSModel();
-                  errorText.append(", sModel.isDisposed(): " + sModel.isDisposed());
-                  SNode node = sModel.getNodeById(selectedNodePointer.getNodeId());
-                  if (node != null) {
-                    errorText.append(", node != null, node.isDisposed(): " + jetbrains.mps.util.SNodeOperations.isDisposed(node));
-                  } else {
-                    errorText.append(", node == null");
-                  }
-                }
-              }
-              LOG.error(errorText.toString());
-              return;
-            }
+
             EditorCell selectedCell = pasteTargetCellInfo.findCell(editorComponent);
             assert selectedCell != null;
 
             List<SNode> pasteNodes = pasteNodeData.getNodes();
 
             if (canPasteBefore(selectedCell, pasteNodes)) {
+              SNode selectedNode = inRepository ? selectedNodePointer.getNode() : nodeSelected;
+              if (jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode)) {
+                LOG.error("Selected node is disposed: node = " + selectedNode.toString()+" ; node pointer = ("+ selectedNodePointer.toString()+")");
+                return;
+              }
               new NodePaster(pasteNodes).pasteRelative(selectedNode, PastePlaceHint.BEFORE_ANCHOR);
             } else {
               new NodePaster(pasteNodes).paste(selectedCell);
@@ -123,7 +121,7 @@ public class CellAction_PasteNode extends EditorCellAction {
 
             Set<SReference> requireResolveReferences = new HashSet<SReference>();
             for (SReference ref : pasteNodeData.getRequireResolveReferences()) {
-              //ref can be detached from model while using copy/paste handlers
+              //ref can be detached from modeltoPaste while using copy/paste handlers
               if (ref.getSourceNode() == null || ref.getSourceNode().getModel() == null) continue;
               requireResolveReferences.add(ref);
             }

@@ -47,10 +47,14 @@ public class JpsLibSolution extends Solution {
         return null;
       }
 
-      final String scheme = "jar://";
+      final String jarscheme = "jar://";
+      final String filescheme = "file://";
       String path = libRoot.getUrl();
-      if (path.startsWith(scheme)) {
-        path = path.substring(scheme.length());
+      if (path.startsWith(jarscheme)) {
+        path = path.substring(jarscheme.length());
+      }
+      if (path.startsWith(filescheme)) {
+        path = path.substring(filescheme.length());
       }
       if (path.endsWith("!/")) {
         path = path.substring(0, path.length() - 2);
