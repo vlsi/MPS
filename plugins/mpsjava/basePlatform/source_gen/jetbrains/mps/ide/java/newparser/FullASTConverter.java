@@ -964,11 +964,15 @@ public class FullASTConverter extends ASTConverter {
     if (x.receiver instanceof ThisReference && ((ThisReference) x.receiver).isImplicitThis()) {
       // it's a local call, f() 
 
-      SNode unkCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UnknownLocalCall", null);
-      SPropertyOperations.set(unkCall, "callee", methodName);
+      // <node> 
+      // <node> 
 
-      result = unkCall;
-      call = unkCall;
+      SNode lmc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
+      org.jetbrains.mps.openapi.model.SReference ref = new DynamicReference("baseMethodDeclaration", lmc, null, methodName);
+      lmc.setReference("baseMethodDeclaration", ref);
+
+      result = lmc;
+      call = lmc;
 
     } else {
       // it's something.method(...) 
@@ -1010,8 +1014,16 @@ public class FullASTConverter extends ASTConverter {
         result = unkDotCall;
         call = unkDotCall;
 
+      } else if (x.receiver instanceof SuperReference) {
+        SNode smc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SuperMethodCall", null);
+        org.jetbrains.mps.openapi.model.SReference ref = new DynamicReference("baseMethodDeclaration", smc, null, methodName);
+        smc.setReference(ref.getRole(), ref);
+
+        result = smc;
+        call = smc;
+
       } else {
-        // we can already know that is should be an InstanceMethodCall 
+        // we can already know that it should be an InstanceMethodCall 
 
         SNode dotExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
         SLinkOperations.setTarget(dotExpr, "operand", convertExpressionWrap(x.receiver), true);
@@ -1019,7 +1031,7 @@ public class FullASTConverter extends ASTConverter {
         SNode instCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
         SLinkOperations.setTarget(dotExpr, "operation", instCall, true);
 
-        SReference sref = new DynamicReference("baseMethodDeclaration", instCall, null, methodName);
+        org.jetbrains.mps.openapi.model.SReference sref = new DynamicReference("baseMethodDeclaration", instCall, null, methodName);
         instCall.setReference(sref.getRole(), sref);
 
         result = dotExpr;
