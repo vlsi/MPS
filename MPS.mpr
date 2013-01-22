@@ -189,7 +189,6 @@
       <modulePath path="${project}/languages/languageDesign/traceinfo/traceMacro.testlang/jetbrains.mps.traceInfo.tracemacro.testlang.mpl" folder="traceInfo" />
       <modulePath path="${project}/languages/languageDesign/typesystem/jetbrains.mps.lang.typesystem.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/languages/test/jetbrains.mps.bootstrap.helgins.test.mpl" folder="core.language-design" />
-      <modulePath path="${project}/languages/languageDesign/typesystem/solutions/jetbrains.mps.bootstrap.helgins.sandbox/jetbrains.mps.lang.typesystem.sandbox.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/solutions/pluginSolution/jetbrains.mps.lang.typesystem.pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/util/builders/jetbrains.mps.baseLanguage.builders.mpl" folder="baseLanguage.builders" />
       <modulePath path="${project}/languages/util/builders/sandbox/jetbrains.mps.baseLanguage.builders.sandbox.msd" folder="baseLanguage.builders" />
