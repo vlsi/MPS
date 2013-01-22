@@ -4,6 +4,11 @@ package jetbrains.mps.build.mps.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.util.VisibleArtifacts;
+import jetbrains.mps.build.util.RequiredDependenciesBuilder;
+import jetbrains.mps.build.mps.util.RequiredPlugins;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class BuildMps_IdeaPlugin_Behavior {
   public static void init(SNode thisNode) {
@@ -18,5 +23,20 @@ public class BuildMps_IdeaPlugin_Behavior {
 
   public static SNode call_getProject_1224588814562002122(SNode thisNode) {
     return SNodeOperations.as(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.build.structure.BuildProject");
+  }
+
+  public static void virtual_fetchDependencies_5908258303322131137(final SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
+    RequiredPlugins plugins = new RequiredPlugins(artifacts.getGenContext(), Sequence.<SNode>singleton(thisNode));
+    plugins.collectDependency();
+    for (SNode plugin : Sequence.fromIterable(plugins.getDependency()).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.getContainingRoot(it) != SNodeOperations.getContainingRoot(thisNode);
+      }
+    })) {
+      SNode pluginArtifact = SNodeOperations.as(artifacts.findArtifact(plugin), "jetbrains.mps.build.structure.BuildLayout_Node");
+      if (pluginArtifact != null) {
+        builder.add(pluginArtifact, plugin);
+      }
+    }
   }
 }

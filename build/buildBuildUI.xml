@@ -287,10 +287,10 @@
       <library file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
       <library file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
       <library file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
-      <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/languages/jetbrains.mps.debugger.api.lang.jar" />
+      <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/languages/debugger-api/jetbrains.mps.debugger.api.lang.jar" />
       <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/lib/debugger-api.jar" />
-      <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-java/languages/jetbrains.mps.debugger.java.evaluation.jar" />
-      <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-java/languages/jetbrains.mps.debugger.java.privateMembers.jar" />
+      <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-java/languages/debugger-java/jetbrains.mps.debugger.java.evaluation.jar" />
+      <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-java/languages/debugger-java/jetbrains.mps.debugger.java.privateMembers.jar" />
       <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-java/lib/debugger-java.jar" />
       <library file="${artifacts.buildExecutionPlugin}/plugins/execution-configurations/languages/jetbrains.mps.baseLanguage.execution.startup.jar" />
       <library file="${artifacts.buildExecutionPlugin}/plugins/execution-configurations/lib/execution-configurations.jar" />

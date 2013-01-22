@@ -5,15 +5,22 @@ package jetbrains.mps.build.mps.behavior;
 import jetbrains.mps.build.behavior.BuildProjectPart_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildExternalDependency_BehaviorDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.build.util.VisibleArtifacts;
+import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.build.behavior.BuildStringContainer_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class BuildMps_IdeaPlugin_BehaviorDescriptor extends BuildProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildStringContainer_BehaviorDescriptor {
+public class BuildMps_IdeaPlugin_BehaviorDescriptor extends BuildProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildStringContainer_BehaviorDescriptor, BuildExternalDependency_BehaviorDescriptor {
   public BuildMps_IdeaPlugin_BehaviorDescriptor() {
+  }
+
+  public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
+    BuildMps_IdeaPlugin_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
   }
 
   @Nullable

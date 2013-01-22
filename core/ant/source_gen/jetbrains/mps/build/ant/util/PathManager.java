@@ -70,7 +70,7 @@ public class PathManager {
   private static final String MPS_DASH = "mps-";
   private static final String DOT_JAR = ".jar";
   private static final String MODULES_PREFIX = "!/modules";
-  private static final FilenameFilter JARS = new FilenameFilter() {
+  public static final FilenameFilter JARS = new FilenameFilter() {
     @Override
     public boolean accept(File dir, String name) {
       return name.endsWith(PathManager.DOT_JAR);

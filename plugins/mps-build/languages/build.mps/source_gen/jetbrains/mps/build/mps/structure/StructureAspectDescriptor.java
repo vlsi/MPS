@@ -56,7 +56,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 19:
         return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_Group", "jetbrains.mps.build.structure.BuildProjectPart", false, new String[]{"jetbrains.mps.build.structure.BuildProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
       case 20:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", "jetbrains.mps.build.structure.BuildProjectPart", false, new String[]{"jetbrains.mps.build.structure.BuildProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.build.structure.BuildStringContainer"}, new String[]{"id"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", "jetbrains.mps.build.structure.BuildProjectPart", false, new String[]{"jetbrains.mps.build.structure.BuildProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.build.structure.BuildStringContainer", "jetbrains.mps.build.structure.BuildExternalDependency"}, new String[]{"id"}, new String[]{});
       case 21:
         return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 22:
