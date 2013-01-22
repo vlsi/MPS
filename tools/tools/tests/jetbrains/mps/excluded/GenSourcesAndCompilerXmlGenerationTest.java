@@ -33,6 +33,15 @@ import java.util.List;
 import java.util.Set;
 
 public class GenSourcesAndCompilerXmlGenerationTest {
+//  This can be used if you want to see real diff when test fails and you don't know why
+//  @Test
+//  public void testGenSourcesImlObsolete() throws JDOMException, IOException {
+//    String previousGenSources = FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML);
+//    GeneratorsRunner.generateGenSourcesIml();
+//    Assert.assertEquals("Regenerate gensources.iml. Run GeneratorsRunner run configuration.", FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML), previousGenSources);
+//    // todo: cleanup?
+//  }
+
   @Test
   public void testGenSourcesIml() throws JDOMException, IOException {
     String previousGenSources = FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML);
@@ -89,6 +98,7 @@ public class GenSourcesAndCompilerXmlGenerationTest {
         String eUrl = eRoot.getAttributeValue(Generators.URL);
         if (rUrl.equals(eUrl)) {
           checkSamePathsUnder(rRoot, eRoot);
+
           continue outer;
         }
       }
