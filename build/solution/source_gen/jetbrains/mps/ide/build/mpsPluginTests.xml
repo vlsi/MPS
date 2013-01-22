@@ -110,7 +110,6 @@
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-core/testSrc" />
-        <path location="${mps_home}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc" />
         <path location="${mps_home}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen" />
         <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
         <path location="${mps_home}/testbench/source" />
@@ -143,7 +142,6 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-plugin-tests">
       <fileset dir="${mps_home}/IdeaPlugin/mps-core/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/testbench/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
