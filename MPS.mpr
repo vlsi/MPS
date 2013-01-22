@@ -82,7 +82,6 @@
       <modulePath path="${project}/languages/baseLanguage/collections/runtime/collections.runtime.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/runtime/gwt/collections.runtime.gwt.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/collections/samples/jetbrains.mps.baseLanguage.collections.samples.msd" folder="baseLanguage.collections" />
-      <modulePath path="${project}/languages/baseLanguage/collections/solutions/collections/sandbox/collections_sandbox.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/collections/unittest/collections_unittest.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/collections_trove.test/collections_trove.test.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/internalCollections.test/internalCollections.test.msd" folder="baseLanguage.collections" />
