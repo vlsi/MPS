@@ -285,21 +285,10 @@ public class ClassifierResolveUtils {
         if (!(token.equals(SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(imp, "token", true)).last(), "value")))) {
           continue;
         }
-        String pkgName = Tokens_Behavior.call_stringRep_6148840541591441572(imp, 1);
-        // FIXME this ignores scope 
-        List<SModelDescriptor> ms = SModelRepository.getInstance().getModelDescriptorsByModelName(pkgName);
-        for (org.jetbrains.mps.openapi.model.SModel model : ms) {
-          for (SNode r : model.getRootNodes()) {
-            if (!(SNodeOperations.isInstanceOf(r, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-              continue;
-            }
-            if (token.equals(SPropertyOperations.getString(SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier"), "name"))) {
-              return SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier");
-            }
-          }
-        }
-        // if there are single-type imports and we haven't found the type, then it's over 
-        return null;
+
+        String fqName = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
+        SNode cls = resolveFqName(fqName, moduleScope);
+        return cls;
       }
 
       // putting on-demand imports into model list 
@@ -322,7 +311,7 @@ public class ClassifierResolveUtils {
     }
 
     // let's see if its an fqName (i.e. starting with a package name) 
-    SNode c = tryFindInModels(refText, moduleScope);
+    SNode c = resolveFqName(refText, moduleScope);
     if ((c != null)) {
       return c;
     }
@@ -453,7 +442,7 @@ public class ClassifierResolveUtils {
     return curr;
   }
 
-  public static SNode tryFindInModels(String refText, SModuleScope moduleScope) {
+  public static SNode resolveFqName(String refText, SModuleScope moduleScope) {
     // FIXME constant 20 
     int[] dotPositions = new int[20];
     int lastDot = -1;
