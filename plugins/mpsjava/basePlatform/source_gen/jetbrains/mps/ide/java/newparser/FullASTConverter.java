@@ -194,8 +194,6 @@ public class FullASTConverter extends ASTConverter {
           result.add(statement);
         }
       }
-    } else {
-      System.out.println("No statements: " + ss);
     }
     return result;
   }

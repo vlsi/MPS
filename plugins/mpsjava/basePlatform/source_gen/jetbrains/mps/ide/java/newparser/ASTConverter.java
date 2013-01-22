@@ -385,7 +385,7 @@ public class ASTConverter {
 
     if (method.javadoc != null) {
       AttributeOperations.createAndSetAttrbiute(result, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment");
-      // <node> 
+      MapSequence.fromMap(myJavadocs).put(method.javadoc.sourceStart, AttributeOperations.getAttribute(result, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))));
     }
 
     return result;
