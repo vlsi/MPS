@@ -8,7 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -34,7 +35,9 @@ public class BuildLayout_CopyFilterFixCRLF_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_vd01i9_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "fix eol:");
     editorCell.setCellId("Constant_vd01i9_a0");
-    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -42,10 +45,9 @@ public class BuildLayout_CopyFilterFixCRLF_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_vd01i9_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_vd01i9_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -53,7 +55,9 @@ public class BuildLayout_CopyFilterFixCRLF_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_vd01i9_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "remove eof (Ctrl-Z):");
     editorCell.setCellId("Constant_vd01i9_d0");
-    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    buildStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

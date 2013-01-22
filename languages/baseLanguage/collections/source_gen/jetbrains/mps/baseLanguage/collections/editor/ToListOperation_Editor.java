@@ -7,7 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class ToListOperation_Editor extends DefaultNodeEditor {
@@ -18,11 +19,10 @@ public class ToListOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_fiobsf_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "toList");
     editorCell.setCellId("Constant_fiobsf_a");
-    Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.EDITABLE, true);
-    }
+    Style style = new StyleImpl();
+    Collections_Style_StyleSheet.applyOperation(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

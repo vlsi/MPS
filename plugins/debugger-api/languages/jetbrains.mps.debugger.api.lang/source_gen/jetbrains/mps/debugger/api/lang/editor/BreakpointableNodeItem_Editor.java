@@ -14,7 +14,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
@@ -92,10 +93,9 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4n0rw6_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4n0rw6_b0a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_4n0rw6_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4n0rw6_b1a0(editorContext, node));
     return editorCell;
@@ -104,10 +104,9 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4n0rw6_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_4n0rw6_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_4n0rw6_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4n0rw6_b1a(editorContext, node));
     return editorCell;
@@ -124,10 +123,9 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4n0rw6_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4n0rw6_d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_4n0rw6_a3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4n0rw6_b3a(editorContext, node));
     return editorCell;

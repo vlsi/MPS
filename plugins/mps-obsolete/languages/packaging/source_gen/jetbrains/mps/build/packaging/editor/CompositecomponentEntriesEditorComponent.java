@@ -14,8 +14,9 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -81,7 +82,9 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
     private EditorCell createConstant_odw917_a1a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<entries>");
       editorCell.setCellId("Constant_odw917_a1a");
-      PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
+      Style style = new StyleImpl();
+      PackagingStyles_StyleSheet.applyHint(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -90,10 +93,9 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
   private EditorCell createCollection_odw917_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_odw917_a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_odw917_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_odw917_b0(editorContext, node));
     return editorCell;
@@ -103,10 +105,9 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
     AbstractCellListHandler handler = new CompositecomponentEntriesEditorComponent.entryListHandler_odw917_b0(node, "entry", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_entry");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setCanBeFolded(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;

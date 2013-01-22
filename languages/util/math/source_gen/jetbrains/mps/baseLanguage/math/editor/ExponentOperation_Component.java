@@ -30,7 +30,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.ScriptKind;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -125,10 +126,9 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ExponentOperation_Component.ExponentialOperation_generic_cellMenu_a0b0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_spngij_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
+    editorCell.getStyle().putAll(style);
     deleteUpperIndex.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
@@ -153,10 +153,9 @@ public class ExponentOperation_Component extends AbstractCellProvider {
   private EditorCell createEmpty_spngij_c0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setCellId("Empty_spngij_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 }

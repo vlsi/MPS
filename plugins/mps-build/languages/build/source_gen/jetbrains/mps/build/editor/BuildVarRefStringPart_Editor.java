@@ -9,10 +9,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
@@ -46,7 +47,9 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      buildStyles_StyleSheet.getMacro(editorCell).apply(editorCell);
+      Style style = new StyleImpl();
+      buildStyles_StyleSheet.applyMacro(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -62,10 +65,9 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ayjduv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ayjduv_a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.HORIZONTAL_GAP, new Padding(0, Measure.SPACES));
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.HORIZONTAL_GAP, new Padding(0, Measure.SPACES));
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_ayjduv_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_ayjduv_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ayjduv_c0(editorContext, node));
@@ -75,18 +77,17 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ayjduv_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "${");
     editorCell.setCellId("Constant_ayjduv_a0");
-    buildStyles_StyleSheet.getMacro(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, BuildVarRefStringPart_Editor._StyleParameter_QueryFunction_ayjduv_a1a0((editorCell == null ?
-        null :
-        editorCell.getSNode()
-      ), (editorCell == null ?
-        null :
-        editorCell.getContext()
-      )));
-    }
+    Style style = new StyleImpl();
+    buildStyles_StyleSheet.applyMacro(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, BuildVarRefStringPart_Editor._StyleParameter_QueryFunction_ayjduv_a1a0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    editorCell.getStyle().putAll(style);
     delete_BuildStringPart.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -95,18 +96,17 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ayjduv_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ayjduv_c0");
-    buildStyles_StyleSheet.getMacro(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, BuildVarRefStringPart_Editor._StyleParameter_QueryFunction_ayjduv_a1c0((editorCell == null ?
-        null :
-        editorCell.getSNode()
-      ), (editorCell == null ?
-        null :
-        editorCell.getContext()
-      )));
-    }
+    Style style = new StyleImpl();
+    buildStyles_StyleSheet.applyMacro(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, BuildVarRefStringPart_Editor._StyleParameter_QueryFunction_ayjduv_a1c0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    editorCell.getStyle().putAll(style);
     delete_BuildStringPart.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;

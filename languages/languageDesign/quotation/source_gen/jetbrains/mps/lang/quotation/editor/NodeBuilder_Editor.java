@@ -7,7 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -42,10 +43,9 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_x54h4p_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x54h4p_d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_x54h4p_a3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_x54h4p_b3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_x54h4p_c3a(editorContext, node));
@@ -55,14 +55,13 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_x54h4p_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_x54h4p_a0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(7644360));
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-      style.set(StyleAttributes.MATCHING_LABEL, (String) null);
-    }
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(7644360));
+    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.MATCHING_LABEL, (String) null);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -70,13 +69,12 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_x54h4p_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_x54h4p_c0");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(7644360));
-      style.set(StyleAttributes.MATCHING_LABEL, (String) null);
-    }
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(7644360));
+    style.set(StyleAttributes.MATCHING_LABEL, (String) null);
+    editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new _Quotation_createModel());
     editorCell.setDefaultText("");
     return editorCell;

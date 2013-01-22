@@ -8,7 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -33,17 +34,16 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ei20sr_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<![CDATA[");
     editorCell.setCellId("Constant_ei20sr_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, XmlCDATA_Editor._StyleParameter_QueryFunction_ei20sr_a1a0((editorCell == null ?
-        null :
-        editorCell.getSNode()
-      ), (editorCell == null ?
-        null :
-        editorCell.getContext()
-      )));
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, XmlCDATA_Editor._StyleParameter_QueryFunction_ei20sr_a1a0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -51,17 +51,16 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ei20sr_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]]>");
     editorCell.setCellId("Constant_ei20sr_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlCDATA_Editor._StyleParameter_QueryFunction_ei20sr_a1c0((editorCell == null ?
-        null :
-        editorCell.getSNode()
-      ), (editorCell == null ?
-        null :
-        editorCell.getContext()
-      )));
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlCDATA_Editor._StyleParameter_QueryFunction_ei20sr_a1c0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

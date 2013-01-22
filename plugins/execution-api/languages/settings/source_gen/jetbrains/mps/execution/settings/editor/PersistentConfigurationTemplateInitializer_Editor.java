@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -23,7 +25,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet;
-import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -59,7 +60,9 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      ExecutionSettings_StyleSheet.getPersistentConfigurationRef(editorCell).apply(editorCell);
+      Style style = new StyleImpl();
+      ExecutionSettings_StyleSheet.applyPersistentConfigurationRef(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -93,7 +96,9 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      ExecutionSettings_StyleSheet.getPersistentConfigurationRefDeprecated(editorCell).apply(editorCell);
+      Style style = new StyleImpl();
+      ExecutionSettings_StyleSheet.applyPersistentConfigurationRefDeprecated(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -150,8 +155,10 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
-      editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
-      editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      editorCell.getStyle().putAll(style);
       return editorCell;
     }
 
@@ -181,11 +188,10 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
   private EditorCell createConstant_e5b6m9_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_e5b6m9_c0");
-    RunConfigurations_StyleSheet.getLeftOperationBrace(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.black);
-    }
+    Style style = new StyleImpl();
+    RunConfigurations_StyleSheet.applyLeftOperationBrace(style, editorCell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.black);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -193,11 +199,10 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
   private EditorCell createConstant_e5b6m9_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_e5b6m9_e0");
-    RunConfigurations_StyleSheet.getRightOperationBrace(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.black);
-    }
+    Style style = new StyleImpl();
+    RunConfigurations_StyleSheet.applyRightOperationBrace(style, editorCell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.black);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -13,10 +13,11 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -69,7 +70,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
+      Style style = new StyleImpl();
+      Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -85,10 +88,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dms3bp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_dms3bp_a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_dms3bp_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_dms3bp_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_dms3bp_c0(editorContext, node));
@@ -98,10 +100,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dms3bp_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_dms3bp_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_dms3bp_a2a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_dms3bp_b2a(editorContext, node));
@@ -114,10 +115,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dms3bp_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dms3bp_a2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_dms3bp_a0c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_dms3bp_b0c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_dms3bp_c0c0(editorContext, node));
@@ -127,10 +127,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dms3bp_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dms3bp_b2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_dms3bp_a1c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_dms3bp_b1c0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_dms3bp_c1c0(editorContext, node));
@@ -140,10 +139,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dms3bp_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dms3bp_c2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_dms3bp_a2c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_dms3bp_b2c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_dms3bp_c2c0(editorContext, node));
@@ -153,10 +151,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dms3bp_d2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dms3bp_d2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_dms3bp_a3c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_dms3bp_b3c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_dms3bp_c3c0(editorContext, node));
@@ -166,10 +163,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dms3bp_e2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dms3bp_e2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_dms3bp_a4c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_dms3bp_b4c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_dms3bp_c4c0(editorContext, node));
@@ -193,12 +189,11 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_dms3bp_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "map node macro");
     editorCell.setCellId("Constant_dms3bp_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -206,10 +201,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_dms3bp_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_dms3bp_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -224,10 +218,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_dms3bp_b0c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_dms3bp_b0c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -242,10 +235,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_dms3bp_b1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_dms3bp_b1c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -253,10 +245,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_dms3bp_a2c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapped node");
     editorCell.setCellId("Constant_dms3bp_a2c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -264,10 +255,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_dms3bp_b2c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_dms3bp_b2c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -275,10 +265,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_dms3bp_a3c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping func");
     editorCell.setCellId("Constant_dms3bp_a3c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -286,10 +275,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_dms3bp_b3c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_dms3bp_b3c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -297,10 +285,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_dms3bp_a4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "post-processing");
     editorCell.setCellId("Constant_dms3bp_a4c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -308,10 +295,9 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_dms3bp_b4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_dms3bp_b4c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -319,11 +305,10 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_dms3bp_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$MAP_SRC$");
     editorCell.setCellId("Constant_dms3bp_a0_0");
-    Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyMacroStart(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }

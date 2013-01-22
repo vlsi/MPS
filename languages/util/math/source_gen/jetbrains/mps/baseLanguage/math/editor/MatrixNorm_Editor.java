@@ -13,7 +13,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.ScriptKind;
 
@@ -70,11 +71,10 @@ public class MatrixNorm_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_deg");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_SIZE, 10);
-      style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_SIZE, 10);
+    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

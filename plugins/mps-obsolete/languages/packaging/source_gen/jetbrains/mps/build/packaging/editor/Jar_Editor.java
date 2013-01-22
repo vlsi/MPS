@@ -7,7 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
@@ -40,10 +41,9 @@ public class Jar_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5vbi94_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5vbi94_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_5vbi94_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5vbi94_b0a(editorContext, node));
     editorCell.addEditorCell(this.createComponent_5vbi94_c0a(editorContext, node));
@@ -54,11 +54,10 @@ public class Jar_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5vbi94_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5vbi94_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_5vbi94_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5vbi94_b1a(editorContext, node));
     return editorCell;
@@ -75,7 +74,9 @@ public class Jar_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_5vbi94_a0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    PackagingStyles_StyleSheet.applyProjectComponent(style, editorCell);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
@@ -120,10 +121,9 @@ public class Jar_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no title>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -8,7 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -33,18 +34,17 @@ public class XmlCharRef_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_5huibn_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&#");
     editorCell.setCellId("Constant_5huibn_a0");
-    XmlSS_StyleSheet.getXmlCharRef(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, XmlCharRef_Editor._StyleParameter_QueryFunction_5huibn_a1a0((editorCell == null ?
-        null :
-        editorCell.getSNode()
-      ), (editorCell == null ?
-        null :
-        editorCell.getContext()
-      )));
-    }
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlCharRef(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, XmlCharRef_Editor._StyleParameter_QueryFunction_5huibn_a1a0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -52,18 +52,17 @@ public class XmlCharRef_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_5huibn_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_5huibn_c0");
-    XmlSS_StyleSheet.getXmlCharRef(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlCharRef_Editor._StyleParameter_QueryFunction_5huibn_a1c0((editorCell == null ?
-        null :
-        editorCell.getSNode()
-      ), (editorCell == null ?
-        null :
-        editorCell.getContext()
-      )));
-    }
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlCharRef(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlCharRef_Editor._StyleParameter_QueryFunction_5huibn_a1c0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -75,7 +74,9 @@ public class XmlCharRef_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_charCode");
-    XmlSS_StyleSheet.getXmlCharRef(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlCharRef(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

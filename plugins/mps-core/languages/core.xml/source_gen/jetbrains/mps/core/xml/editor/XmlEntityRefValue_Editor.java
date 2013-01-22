@@ -14,7 +14,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.core.xml.constraints.XmlNameUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -49,18 +50,17 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_poez2y_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&");
     editorCell.setCellId("Constant_poez2y_a0");
-    XmlSS_StyleSheet.getXmlAttrEntityRefValue(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, XmlEntityRefValue_Editor._StyleParameter_QueryFunction_poez2y_a1a0((editorCell == null ?
-        null :
-        editorCell.getSNode()
-      ), (editorCell == null ?
-        null :
-        editorCell.getContext()
-      )));
-    }
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlAttrEntityRefValue(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, XmlEntityRefValue_Editor._StyleParameter_QueryFunction_poez2y_a1a0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -69,18 +69,17 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_poez2y_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_poez2y_c0");
-    XmlSS_StyleSheet.getXmlAttrEntityRefValue(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlEntityRefValue_Editor._StyleParameter_QueryFunction_poez2y_a1c0((editorCell == null ?
-        null :
-        editorCell.getSNode()
-      ), (editorCell == null ?
-        null :
-        editorCell.getContext()
-      )));
-    }
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlAttrEntityRefValue(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlEntityRefValue_Editor._StyleParameter_QueryFunction_poez2y_a1c0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -93,7 +92,9 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_entityName");
-    XmlSS_StyleSheet.getXmlAttrEntityRefValue(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlAttrEntityRefValue(style, editorCell);
+    editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlEntityRefValue_Editor.XmlEntityRefValue_entityName_cellMenu_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();

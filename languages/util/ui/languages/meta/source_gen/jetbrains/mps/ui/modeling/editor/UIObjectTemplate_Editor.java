@@ -19,7 +19,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
@@ -236,10 +237,9 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tx8k3j_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tx8k3j_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_tx8k3j_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_tx8k3j_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tx8k3j_c0a(editorContext, node));
@@ -250,10 +250,9 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tx8k3j_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tx8k3j_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_tx8k3j_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tx8k3j_b2a(editorContext, node));
     return editorCell;
@@ -262,10 +261,9 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tx8k3j_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_tx8k3j_e0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_tx8k3j_a4a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_tx8k3j_b4a(editorContext, node));
     return editorCell;
@@ -274,10 +272,9 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tx8k3j_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tx8k3j_a4a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_tx8k3j_a0e0(editorContext, node));
     return editorCell;
   }
@@ -285,10 +282,9 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tx8k3j_b4a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tx8k3j_b4a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_tx8k3j_a1e0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_tx8k3j_b1e0(editorContext, node));
     return editorCell;
@@ -297,10 +293,9 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tx8k3j_k0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tx8k3j_k0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_tx8k3j_a01a(editorContext, node));
     return editorCell;
   }
@@ -308,10 +303,9 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tx8k3j_l0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tx8k3j_l0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_tx8k3j_a11a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_tx8k3j_b11a(editorContext, node));
     return editorCell;
@@ -320,10 +314,9 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tx8k3j_n0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tx8k3j_n0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_tx8k3j_a31a(editorContext, node));
     return editorCell;
   }
@@ -331,10 +324,9 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tx8k3j_o0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tx8k3j_o0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_tx8k3j_a41a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_tx8k3j_b41a(editorContext, node));
     return editorCell;
@@ -343,10 +335,9 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tx8k3j_q0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tx8k3j_q0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_tx8k3j_a61a(editorContext, node));
     return editorCell;
   }
@@ -354,10 +345,9 @@ public class UIObjectTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tx8k3j_r0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tx8k3j_r0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_tx8k3j_a71a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_tx8k3j_b71a(editorContext, node));
     return editorCell;

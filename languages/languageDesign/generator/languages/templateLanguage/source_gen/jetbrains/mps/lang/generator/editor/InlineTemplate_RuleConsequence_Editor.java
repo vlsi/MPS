@@ -8,7 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -33,11 +34,10 @@ public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_3j5n14_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<T ");
     editorCell.setCellId("Constant_3j5n14_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
-      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
+    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -45,11 +45,10 @@ public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_3j5n14_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " T>");
     editorCell.setCellId("Constant_3j5n14_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
-      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
+    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

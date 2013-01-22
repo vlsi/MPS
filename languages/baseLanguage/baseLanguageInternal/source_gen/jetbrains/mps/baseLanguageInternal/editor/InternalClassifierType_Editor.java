@@ -20,6 +20,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -140,8 +142,10 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
-      editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
-      editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      editorCell.getStyle().putAll(style);
       return editorCell;
     }
   }
@@ -186,7 +190,9 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_7zoim2_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_7zoim2_a0a");
-    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    StyleSheet_StyleSheet.applySquareBracket(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -194,7 +200,9 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_7zoim2_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_7zoim2_c0a");
-    StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    StyleSheet_StyleSheet.applyInternalKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -202,7 +210,9 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_7zoim2_e0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_7zoim2_e0a");
-    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    StyleSheet_StyleSheet.applySquareBracket(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -210,7 +220,9 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_7zoim2_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_7zoim2_a0a_0");
-    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    StyleSheet_StyleSheet.applySquareBracket(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -218,7 +230,9 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_7zoim2_c0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_7zoim2_c0a_0");
-    StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    StyleSheet_StyleSheet.applyInternalKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -226,7 +240,9 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_7zoim2_e0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_7zoim2_e0a_0");
-    StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    StyleSheet_StyleSheet.applySquareBracket(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -234,7 +250,9 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_7zoim2_f0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_7zoim2_f0a");
-    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -242,7 +260,9 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_7zoim2_h0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_7zoim2_h0a");
-    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyBaseAngleBracket(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

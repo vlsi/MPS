@@ -16,7 +16,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -53,13 +54,12 @@ public class QuotedWord_Editor extends DefaultNodeEditor {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setCellId("ReadOnlyModelAccessor_9fobtp_a0");
-    BashLanguageStyle_StyleSheet.getQuoteStyle(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.EDITABLE, false);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.MATCHING_LABEL, "quote");
-    }
+    Style style = new StyleImpl();
+    BashLanguageStyle_StyleSheet.applyQuoteStyle(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.MATCHING_LABEL, "quote");
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
@@ -78,13 +78,12 @@ public class QuotedWord_Editor extends DefaultNodeEditor {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setCellId("ReadOnlyModelAccessor_9fobtp_c0");
-    BashLanguageStyle_StyleSheet.getQuoteStyle(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.EDITABLE, false);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.MATCHING_LABEL, "quote");
-    }
+    Style style = new StyleImpl();
+    BashLanguageStyle_StyleSheet.applyQuoteStyle(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.MATCHING_LABEL, "quote");
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
@@ -94,7 +93,9 @@ public class QuotedWord_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no word>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    BashLanguageStyle_StyleSheet.getQuotedWord(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BashLanguageStyle_StyleSheet.applyQuotedWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
     }

@@ -7,7 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
@@ -45,11 +46,10 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ek3l5j_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ek3l5j_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_ek3l5j_a0a(editorContext, node));
     editorCell.addEditorCell(this.createComponent_ek3l5j_b0a(editorContext, node));
     editorCell.addEditorCell(this.createComponent_ek3l5j_c0a(editorContext, node));
@@ -59,10 +59,9 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ek3l5j_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ek3l5j_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_ek3l5j_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ek3l5j_b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ek3l5j_c1a(editorContext, node));
@@ -82,11 +81,10 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ek3l5j_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ek3l5j_a0_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_ek3l5j_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ek3l5j_b0a(editorContext, node));
     return editorCell;
@@ -95,11 +93,10 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ek3l5j_b0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ek3l5j_b0_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_ek3l5j_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ek3l5j_b1a(editorContext, node));
     return editorCell;
@@ -108,7 +105,9 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_ek3l5j_a0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    PackagingStyles_StyleSheet.applyProjectComponent(style, editorCell);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
@@ -145,7 +144,9 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ek3l5j_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "build tools");
     editorCell.setCellId("Constant_ek3l5j_b1a");
-    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    PackagingStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -153,7 +154,9 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ek3l5j_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "path to mps build tools");
     editorCell.setCellId("Constant_ek3l5j_a0a");
-    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    PackagingStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -161,7 +164,9 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ek3l5j_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "path to license");
     editorCell.setCellId("Constant_ek3l5j_a1a");
-    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    PackagingStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

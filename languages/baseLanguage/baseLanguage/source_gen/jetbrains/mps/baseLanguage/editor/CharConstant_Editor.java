@@ -6,7 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -31,10 +32,9 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createProperty_d77dl_a1a_0(editorContext, node);
     }
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
@@ -50,7 +50,9 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_d77dl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "'");
     editorCell.setCellId("Constant_d77dl_a0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -58,7 +60,9 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_d77dl_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "'");
     editorCell.setCellId("Constant_d77dl_c0");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -70,7 +74,9 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_charConstant");
-    BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyStringLiteral(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -89,7 +95,9 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_charConstant_1");
-    BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyCompactKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

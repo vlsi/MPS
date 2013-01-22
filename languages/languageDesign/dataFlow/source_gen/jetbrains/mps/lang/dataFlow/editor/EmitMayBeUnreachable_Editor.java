@@ -8,7 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -32,11 +33,10 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_3gfc5i_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_3gfc5i_a0");
-    DataFlow_StyleSheet.getMayBeUnreachable(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, true);
-    }
+    Style style = new StyleImpl();
+    DataFlow_StyleSheet.applyMayBeUnreachable(style, editorCell);
+    style.set(StyleAttributes.SELECTABLE, true);
+    editorCell.getStyle().putAll(style);
     DataFlowEditorAction_DeleteMayBeUnreachable.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -45,11 +45,10 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_3gfc5i_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_3gfc5i_c0");
-    DataFlow_StyleSheet.getMayBeUnreachable(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, true);
-    }
+    Style style = new StyleImpl();
+    DataFlow_StyleSheet.applyMayBeUnreachable(style, editorCell);
+    style.set(StyleAttributes.SELECTABLE, true);
+    editorCell.getStyle().putAll(style);
     DataFlowEditorAction_DeleteMayBeUnreachable.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;

@@ -14,8 +14,9 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
@@ -73,7 +74,9 @@ public class Library_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_x0ve1k_a1b0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module");
       editorCell.setCellId("Constant_x0ve1k_a1b0");
-      PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
+      Style style = new StyleImpl();
+      PackagingStyles_StyleSheet.applyHint(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -90,10 +93,9 @@ public class Library_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_x0ve1k_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_x0ve1k_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_x0ve1k_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_x0ve1k_b0a(editorContext, node));
     return editorCell;
@@ -102,10 +104,9 @@ public class Library_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_x0ve1k_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_x0ve1k_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_x0ve1k_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_x0ve1k_b1a(editorContext, node));
     return editorCell;
@@ -114,7 +115,9 @@ public class Library_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_x0ve1k_a0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    PackagingStyles_StyleSheet.applyProjectComponent(style, editorCell);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 

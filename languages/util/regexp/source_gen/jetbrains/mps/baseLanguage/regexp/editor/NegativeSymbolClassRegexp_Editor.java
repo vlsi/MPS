@@ -16,10 +16,11 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -87,7 +88,9 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_wznzt8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_wznzt8_a0");
-    RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    RegexpStylesheet_StyleSheet.applyLeftRegexpBrace(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NegativeSymbolClassRegexp_Editor.ReplaceWith_SymbolClassRegexp_cellMenu_a0a0_0()}));
@@ -97,11 +100,10 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_wznzt8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "^");
     editorCell.setCellId("Constant_wznzt8_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    editorCell.getStyle().putAll(style);
     NegativeSymbolClassRegexp_toPositive.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -110,7 +112,9 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_wznzt8_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_wznzt8_d0");
-    RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    RegexpStylesheet_StyleSheet.applyRightRegexpBrace(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.setDefaultText("");
     return editorCell;

@@ -14,7 +14,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -424,10 +425,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_g6pxeq_a0a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g6pxeq_b0a(editorContext, node));
@@ -437,10 +437,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_a0a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g6pxeq_a0a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_g6pxeq_b0a0(editorContext, node));
     return editorCell;
@@ -449,10 +448,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_b0a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g6pxeq_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_g6pxeq_b1a0(editorContext, node));
     return editorCell;
@@ -461,10 +459,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g6pxeq_a2a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g6pxeq_b2a(editorContext, node));
     return editorCell;
@@ -473,10 +470,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_b2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_g6pxeq_a1c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_g6pxeq_b1c0(editorContext, node));
     return editorCell;
@@ -485,10 +481,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_e0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g6pxeq_a4a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g6pxeq_b4a(editorContext, node));
     return editorCell;
@@ -497,10 +492,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_b4a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_b4a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_g6pxeq_a1e0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_g6pxeq_b1e0(editorContext, node));
     return editorCell;
@@ -509,10 +503,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_g0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_g0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g6pxeq_a6a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g6pxeq_b6a(editorContext, node));
     return editorCell;
@@ -521,10 +514,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_b6a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_b6a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_g6pxeq_a1g0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_g6pxeq_b1g0(editorContext, node));
     return editorCell;
@@ -533,10 +525,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_i0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_i0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g6pxeq_a8a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g6pxeq_b8a(editorContext, node));
     return editorCell;
@@ -545,10 +536,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_b8a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_b8a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_g6pxeq_a1i0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_g6pxeq_b1i0(editorContext, node));
     return editorCell;
@@ -557,10 +547,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_k0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_k0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g6pxeq_a01a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g6pxeq_b01a(editorContext, node));
     return editorCell;
@@ -569,10 +558,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_b01a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_b01a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_g6pxeq_a1k0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_g6pxeq_b1k0(editorContext, node));
     return editorCell;
@@ -581,10 +569,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_m0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_m0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g6pxeq_a21a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g6pxeq_b21a(editorContext, node));
     return editorCell;
@@ -593,10 +580,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_b21a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_b21a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_g6pxeq_a1m0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_g6pxeq_b1m0(editorContext, node));
     return editorCell;
@@ -605,10 +591,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_o0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_o0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g6pxeq_a41a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g6pxeq_b41a(editorContext, node));
     return editorCell;
@@ -617,10 +602,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_b41a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_b41a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_g6pxeq_a1o0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_g6pxeq_b1o0(editorContext, node));
     return editorCell;
@@ -629,10 +613,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_q0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_q0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g6pxeq_a61a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g6pxeq_b61a(editorContext, node));
     return editorCell;
@@ -641,10 +624,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_b61a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_b61a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_g6pxeq_a1q0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_g6pxeq_b1q0(editorContext, node));
     return editorCell;
@@ -653,10 +635,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_s0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_s0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g6pxeq_a81a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g6pxeq_b81a(editorContext, node));
     return editorCell;
@@ -665,10 +646,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_b81a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_b81a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_g6pxeq_a1s0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_g6pxeq_b1s0(editorContext, node));
     return editorCell;
@@ -677,10 +657,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_u0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_u0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g6pxeq_a02a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g6pxeq_b02a(editorContext, node));
     return editorCell;
@@ -689,10 +668,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_b02a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_b02a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_g6pxeq_a1u0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_g6pxeq_b1u0(editorContext, node));
     return editorCell;
@@ -701,10 +679,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_w0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_w0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_g6pxeq_a22a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g6pxeq_b22a(editorContext, node));
     return editorCell;
@@ -713,10 +690,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_b22a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_b22a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_g6pxeq_a1w0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_g6pxeq_b1w0(editorContext, node));
     return editorCell;
@@ -725,7 +701,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping configuration");
     editorCell.setCellId("Constant_g6pxeq_a0a0");
-    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -733,7 +711,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "top-priority group");
     editorCell.setCellId("Constant_g6pxeq_a1a0");
-    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyGeneratorKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -741,10 +721,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_g6pxeq_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -752,12 +731,11 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping labels:");
     editorCell.setCellId("Constant_g6pxeq_a2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      style.set(StyleAttributes.UNDERLINED, true);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -765,10 +743,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_g6pxeq_d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -776,12 +753,11 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameters:");
     editorCell.setCellId("Constant_g6pxeq_a4a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      style.set(StyleAttributes.UNDERLINED, true);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -796,12 +772,11 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_a6a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is applicable:");
     editorCell.setCellId("Constant_g6pxeq_a6a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      style.set(StyleAttributes.UNDERLINED, true);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -816,13 +791,12 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_a8a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "conditional root rules:");
     editorCell.setCellId("Constant_g6pxeq_a8a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      style.set(StyleAttributes.UNDERLINED, true);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -830,10 +804,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_g6pxeq_j0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -841,13 +814,12 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_a01a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root mapping rules:");
     editorCell.setCellId("Constant_g6pxeq_a01a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      style.set(StyleAttributes.UNDERLINED, true);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -855,10 +827,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_l0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_g6pxeq_l0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -866,13 +837,12 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_a21a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weaving rules:");
     editorCell.setCellId("Constant_g6pxeq_a21a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      style.set(StyleAttributes.UNDERLINED, true);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -880,10 +850,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_n0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_g6pxeq_n0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -891,13 +860,12 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_a41a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reduction rules:");
     editorCell.setCellId("Constant_g6pxeq_a41a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      style.set(StyleAttributes.UNDERLINED, true);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -905,10 +873,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_p0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_g6pxeq_p0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -916,13 +883,12 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_a61a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pattern rules:");
     editorCell.setCellId("Constant_g6pxeq_a61a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      style.set(StyleAttributes.UNDERLINED, true);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -930,10 +896,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_r0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_g6pxeq_r0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -941,13 +906,12 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_a81a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abandon roots:");
     editorCell.setCellId("Constant_g6pxeq_a81a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      style.set(StyleAttributes.UNDERLINED, true);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -955,10 +919,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_t0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_g6pxeq_t0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -966,13 +929,12 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_a02a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pre-processing scripts:");
     editorCell.setCellId("Constant_g6pxeq_a02a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      style.set(StyleAttributes.UNDERLINED, true);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -980,10 +942,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_v0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_g6pxeq_v0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -991,13 +952,12 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g6pxeq_a22a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "post-processing scripts:");
     editorCell.setCellId("Constant_g6pxeq_a22a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      style.set(StyleAttributes.UNDERLINED, true);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -1024,10 +984,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new MappingConfiguration_Editor.createRootRuleListHandler_g6pxeq_b1i0(node, "createRootRule", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_createRootRule");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -1037,10 +996,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new MappingConfiguration_Editor.rootMappingRuleListHandler_g6pxeq_b1k0(node, "rootMappingRule", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_rootMappingRule");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -1049,10 +1007,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new MappingConfiguration_Editor.weavingMappingRuleListHandler_g6pxeq_b1m0(node, "weavingMappingRule", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_weavingMappingRule");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -1061,10 +1018,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new MappingConfiguration_Editor.reductionMappingRuleListHandler_g6pxeq_b1o0(node, "reductionMappingRule", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_reductionMappingRule");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -1073,10 +1029,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new MappingConfiguration_Editor.patternReductionRuleListHandler_g6pxeq_b1q0(node, "patternReductionRule", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_patternReductionRule");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -1085,10 +1040,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new MappingConfiguration_Editor.dropRootRuleListHandler_g6pxeq_b1s0(node, "dropRootRule", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_dropRootRule");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -1098,10 +1052,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new MappingConfiguration_Editor.preMappingScriptListHandler_g6pxeq_b1u0(node, "preMappingScript", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_preMappingScript");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -1111,10 +1064,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new MappingConfiguration_Editor.postMappingScriptListHandler_g6pxeq_b1w0(node, "postMappingScript", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_postMappingScript");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;

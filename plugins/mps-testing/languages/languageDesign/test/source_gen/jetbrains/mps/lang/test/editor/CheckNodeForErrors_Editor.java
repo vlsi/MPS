@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -32,7 +34,9 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ue6gv5_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
     editorCell.setCellId("Constant_ue6gv5_a0");
-    transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    transformationTest_StyleSheet.applyAssertStyle(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -40,7 +44,9 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ue6gv5_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type errors");
     editorCell.setCellId("Constant_ue6gv5_c0");
-    transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    transformationTest_StyleSheet.applyAssertStyle(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -48,7 +54,9 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ue6gv5_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_ue6gv5_d0");
-    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

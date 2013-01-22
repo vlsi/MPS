@@ -7,7 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -30,7 +31,9 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_fs6ae3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_fs6ae3_a");
-    Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_fs6ae3_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fs6ae3_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_fs6ae3_c0(editorContext, node));
@@ -40,10 +43,9 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_fs6ae3_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_fs6ae3_a_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_fs6ae3_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fs6ae3_b0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fs6ae3_c0(editorContext, node));
@@ -79,45 +81,44 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_fs6ae3_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "R/O model access");
     editorCell.setCellId("Constant_fs6ae3_b0");
-    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a0b0((editorCell == null ?
-        null :
-        editorCell.getSNode()
-      ), (editorCell == null ?
-        null :
-        editorCell.getContext()
-      )));
-      style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a1b0((editorCell == null ?
-        null :
-        editorCell.getSNode()
-      ), (editorCell == null ?
-        null :
-        editorCell.getContext()
-      )));
-      style.set(StyleAttributes.TEXT_COLOR, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a2b0((editorCell == null ?
-        null :
-        editorCell.getSNode()
-      ), (editorCell == null ?
-        null :
-        editorCell.getContext()
-      )));
-      style.set(StyleAttributes.FONT_STYLE, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a3b0((editorCell == null ?
-        null :
-        editorCell.getSNode()
-      ), (editorCell == null ?
-        null :
-        editorCell.getContext()
-      )));
-      style.set(StyleAttributes.UNDERLINED, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a4b0((editorCell == null ?
-        null :
-        editorCell.getSNode()
-      ), (editorCell == null ?
-        null :
-        editorCell.getContext()
-      )));
-    }
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyBordered(style, editorCell);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a0b0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a1b0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    style.set(StyleAttributes.TEXT_COLOR, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a2b0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    style.set(StyleAttributes.FONT_STYLE, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a3b0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    style.set(StyleAttributes.UNDERLINED, CellModel_ReadOnlyModelAccessor_Editor._StyleParameter_QueryFunction_fs6ae3_a4b0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -132,7 +133,9 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_fs6ae3_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Value:");
     editorCell.setCellId("Constant_fs6ae3_c0");
-    Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyHeader(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

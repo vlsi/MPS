@@ -14,7 +14,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -68,11 +69,10 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yn898b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_yn898b_a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BRACKETS, true);
-      style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.gray);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BRACKETS, true);
+    style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.gray);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNodeList_yn898b_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yn898b_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_yn898b_c0(editorContext, node));
@@ -82,10 +82,9 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yn898b_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yn898b_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_yn898b_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_yn898b_b2a(editorContext, node));
     return editorCell;
@@ -94,10 +93,9 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yn898b_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default:");
     editorCell.setCellId("Constant_yn898b_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -105,10 +103,9 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yn898b_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_yn898b_a2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -14,8 +14,9 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -70,7 +71,9 @@ public class IfCommand_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_a9dubz_a5a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<elif ...>>");
       editorCell.setCellId("Constant_a9dubz_a5a");
-      BashLanguageStyle_StyleSheet.getHintStyle(editorCell).apply(editorCell);
+      Style style = new StyleImpl();
+      BashLanguageStyle_StyleSheet.applyHintStyle(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -93,11 +96,10 @@ public class IfCommand_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_a9dubz_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a9dubz_e0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_a9dubz_a4a(editorContext, node));
     return editorCell;
   }
@@ -113,11 +115,10 @@ public class IfCommand_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_a9dubz_b6a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a9dubz_b6a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_a9dubz_a1g0(editorContext, node));
     return editorCell;
   }
@@ -139,10 +140,9 @@ public class IfCommand_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_a9dubz_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "then");
     editorCell.setCellId("Constant_a9dubz_d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -150,10 +150,9 @@ public class IfCommand_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_a9dubz_a6a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "else");
     editorCell.setCellId("Constant_a9dubz_a6a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -161,10 +160,9 @@ public class IfCommand_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_a9dubz_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "fi");
     editorCell.setCellId("Constant_a9dubz_h0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -173,11 +171,10 @@ public class IfCommand_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new IfCommand_Editor.elseIfListHandler_a9dubz_f0(node, "elseIf", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_elseIf");
-    BashLanguageStyle_StyleSheet.getNullStyle(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
+    Style style = new StyleImpl();
+    BashLanguageStyle_StyleSheet.applyNullStyle(style, editorCell);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -188,7 +185,9 @@ public class IfCommand_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<test command>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    BashLanguageStyle_StyleSheet.getNullStyle(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BashLanguageStyle_StyleSheet.applyNullStyle(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -206,7 +205,9 @@ public class IfCommand_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<if true>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    BashLanguageStyle_StyleSheet.getNullStyle(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BashLanguageStyle_StyleSheet.applyNullStyle(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -224,7 +225,9 @@ public class IfCommand_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<if false>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    BashLanguageStyle_StyleSheet.getNullStyle(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BashLanguageStyle_StyleSheet.applyNullStyle(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

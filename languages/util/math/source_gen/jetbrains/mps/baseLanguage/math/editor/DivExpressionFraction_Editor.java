@@ -7,7 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.CellAlign;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -36,11 +37,10 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ksgn1c_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ksgn1c_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_ksgn1c_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCustom_ksgn1c_b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ksgn1c_c1a(editorContext, node));
@@ -55,10 +55,9 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_ksgn1c_b1a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.BASE_LINE_CELL, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.BASE_LINE_CELL, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
@@ -101,20 +100,18 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
   private EditorCell createEmpty_ksgn1c_a0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setCellId("Empty_ksgn1c_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
   private EditorCell createEmpty_ksgn1c_c0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setCellId("Empty_ksgn1c_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 }

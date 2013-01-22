@@ -14,7 +14,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.uiLanguage.editor.Stylesheet_StyleSheet;
@@ -82,10 +83,9 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8w6pz1_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8w6pz1_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_8w6pz1_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8w6pz1_b1a(editorContext, node));
     return editorCell;
@@ -94,10 +94,9 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8w6pz1_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_8w6pz1_b1a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_8w6pz1_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8w6pz1_b1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8w6pz1_c1b0(editorContext, node));
@@ -112,10 +111,9 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8w6pz1_b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8w6pz1_b1b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_8w6pz1_a1b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8w6pz1_b1b1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8w6pz1_c1b1a(editorContext, node));
@@ -132,10 +130,9 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8w6pz1_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8w6pz1_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_8w6pz1_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8w6pz1_b0a(editorContext, node));
     return editorCell;
@@ -144,7 +141,9 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_8w6pz1_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "IDEDialog");
     editorCell.setCellId("Constant_8w6pz1_a0");
-    Stylesheet_StyleSheet.getComponent(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Stylesheet_StyleSheet.applyComponent(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -166,10 +165,9 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_8w6pz1_c1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8w6pz1_c1b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -184,10 +182,9 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_8w6pz1_f1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8w6pz1_f1b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

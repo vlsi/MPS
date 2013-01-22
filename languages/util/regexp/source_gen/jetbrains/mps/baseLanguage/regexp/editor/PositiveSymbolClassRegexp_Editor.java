@@ -16,6 +16,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -83,7 +85,9 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_4p4aum_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_4p4aum_a0");
-    RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    RegexpStylesheet_StyleSheet.applyLeftRegexpBrace(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new PositiveSymbolClassRegexp_Editor.ReplaceWith_SymbolClassRegexp_cellMenu_a0a0()}));
@@ -93,7 +97,9 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_4p4aum_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_4p4aum_c0");
-    RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    RegexpStylesheet_StyleSheet.applyRightRegexpBrace(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.setDefaultText("");
     return editorCell;

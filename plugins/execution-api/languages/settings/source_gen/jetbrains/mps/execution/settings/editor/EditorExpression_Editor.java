@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -45,7 +47,9 @@ public class EditorExpression_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
+      Style style = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -71,14 +75,18 @@ public class EditorExpression_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_f4uw03_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    RunConfigurations_StyleSheet.getOperation(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    RunConfigurations_StyleSheet.applyOperation(style, editorCell);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
   private EditorCell createConstant_f4uw03_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_f4uw03_b0");
-    RunConfigurations_StyleSheet.getLeftOperationBrace(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    RunConfigurations_StyleSheet.applyLeftOperationBrace(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -86,7 +94,9 @@ public class EditorExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_f4uw03_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_f4uw03_d0");
-    RunConfigurations_StyleSheet.getRightOperationBrace(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    RunConfigurations_StyleSheet.applyRightOperationBrace(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

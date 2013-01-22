@@ -7,7 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -36,10 +37,9 @@ public class WannabeMethod_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7k1qaw_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7k1qaw_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_7k1qaw_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7k1qaw_b0a(editorContext, node));
     return editorCell;
@@ -48,10 +48,9 @@ public class WannabeMethod_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7k1qaw_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7k1qaw_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createProperty_7k1qaw_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7k1qaw_b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7k1qaw_c1a(editorContext, node));
@@ -61,10 +60,9 @@ public class WannabeMethod_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7k1qaw_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7k1qaw_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_7k1qaw_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7k1qaw_b2a(editorContext, node));
     return editorCell;

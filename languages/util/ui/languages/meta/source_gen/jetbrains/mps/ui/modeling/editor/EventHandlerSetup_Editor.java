@@ -7,7 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -44,10 +45,9 @@ public class EventHandlerSetup_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5c1jtb_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5c1jtb_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5c1jtb_a0a(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_5c1jtb_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5c1jtb_c0a(editorContext, node));
@@ -63,10 +63,9 @@ public class EventHandlerSetup_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5c1jtb_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5c1jtb_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_5c1jtb_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5c1jtb_b1a(editorContext, node));
     return editorCell;
@@ -75,10 +74,9 @@ public class EventHandlerSetup_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5c1jtb_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5c1jtb_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5c1jtb_a2a(editorContext, node));
     return editorCell;
   }

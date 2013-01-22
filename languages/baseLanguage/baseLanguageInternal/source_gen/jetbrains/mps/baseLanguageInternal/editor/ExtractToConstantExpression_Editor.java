@@ -7,7 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -48,10 +49,9 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kpooje_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kpooje_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_kpooje_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_kpooje_b0a(editorContext, node));
     return editorCell;
@@ -60,7 +60,9 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_kpooje_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extract");
     editorCell.setCellId("Constant_kpooje_a0");
-    StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    StyleSheet_StyleSheet.applyInternalName(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -68,7 +70,9 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_kpooje_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_kpooje_b0");
-    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -76,7 +80,9 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_kpooje_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to constant");
     editorCell.setCellId("Constant_kpooje_d0");
-    StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    StyleSheet_StyleSheet.applyInternalName(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -84,7 +90,9 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_kpooje_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_kpooje_f0");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

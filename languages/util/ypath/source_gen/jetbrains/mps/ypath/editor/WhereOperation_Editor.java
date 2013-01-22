@@ -7,7 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet;
@@ -46,10 +47,9 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qdppnq_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_qdppnq_a0a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_qdppnq_a0a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_qdppnq_b0a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qdppnq_c0a0(editorContext, node));
@@ -59,10 +59,9 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qdppnq_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qdppnq_a0a_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_qdppnq_a0a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qdppnq_b0a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_qdppnq_c0a0(editorContext, node));
@@ -87,7 +86,9 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_qdppnq_a0a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "where");
     editorCell.setCellId("Constant_qdppnq_a0a0_0");
-    Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Collections_Style_StyleSheet.applyOperation(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -95,7 +96,9 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_qdppnq_b0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_qdppnq_b0a0");
-    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -103,7 +106,9 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_qdppnq_d0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_qdppnq_d0a0");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

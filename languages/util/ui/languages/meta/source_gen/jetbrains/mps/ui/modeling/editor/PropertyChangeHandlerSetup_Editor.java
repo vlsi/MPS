@@ -7,7 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -51,10 +52,9 @@ public class PropertyChangeHandlerSetup_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mum76i_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_mum76i_a0a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_mum76i_a0a0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_mum76i_b0a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mum76i_c0a0(editorContext, node));
@@ -68,10 +68,9 @@ public class PropertyChangeHandlerSetup_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mum76i_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_mum76i_b0a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_mum76i_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_mum76i_b1a0(editorContext, node));
     return editorCell;
@@ -80,10 +79,9 @@ public class PropertyChangeHandlerSetup_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mum76i_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_mum76i_c0a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_mum76i_a2a0(editorContext, node));
     return editorCell;
   }
