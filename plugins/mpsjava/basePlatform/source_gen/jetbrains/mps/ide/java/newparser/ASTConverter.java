@@ -474,6 +474,9 @@ public class ASTConverter {
 
   public SNode convertAnnotation(Annotation anno) throws JavaParseException {
     TypeReference typRef = anno.type;
+    if (typRef == null) {
+      return null;
+    }
 
     String name;
     if (typRef instanceof SingleTypeReference) {
@@ -482,7 +485,8 @@ public class ASTConverter {
       StringBuffer sb = new StringBuffer();
       name = ((QualifiedTypeReference) typRef).print(0, sb).toString();
     } else {
-      throw new RuntimeException("FIXME");
+      LOG.error("Unexpected type in annotation: " + typRef.getClass().getName());
+      name = null;
     }
 
     SNode node = buildAnnotationInstance(name);
