@@ -56,8 +56,8 @@ public class StyleAttributes extends jetbrains.mps.editor.runtime.style.StyleAtt
   public static final StyleAttribute<CaretPosition> DEFAULT_CARET_POSITON = new SimpleStyleAttribute<CaretPosition>("default-caret-position"){};
   public static final StyleAttribute<Boolean> AUTO_DELETABLE = new SimpleStyleAttribute<Boolean>("auto-deletable", true){};
 
-  public static final StyleAttribute<Integer> FONT_STYLE = new InheritableStyleAttribute("font-style", Font.PLAIN){};
-  public static final StyleAttribute<Integer> FONT_SIZE = new InheritableStyleAttribute("font-size"){};
+  public static final StyleAttribute<Integer> FONT_STYLE = new InheritableStyleAttribute<Integer>("font-style", Font.PLAIN){};
+  public static final StyleAttribute<Integer> FONT_SIZE = new InheritableStyleAttribute<Integer>("font-size"){};
 
   public static final StyleAttribute<Padding> PADDING_LEFT = new SimpleStyleAttribute<Padding>("padding-left", new Padding(0.0)){};
   public static final StyleAttribute<Padding> PADDING_RIGHT = new SimpleStyleAttribute<Padding>("padding-right", new Padding(0.0)){};
@@ -96,5 +96,5 @@ public class StyleAttributes extends jetbrains.mps.editor.runtime.style.StyleAtt
 
   public static final StyleAttribute<SNode> NAVIGATABLE_NODE = new SimpleStyleAttribute<SNode>("navigatable-node"){};
 
-  public static final StyleAttribute<Integer> MAX_WIDTH = new SimpleStyleAttribute("max.width"){};
+  public static final StyleAttribute<Integer> MAX_WIDTH = new SimpleStyleAttribute<Integer>("max.width"){};
 }
