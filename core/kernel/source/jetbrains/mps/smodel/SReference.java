@@ -58,6 +58,12 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return getTargetNode_internal(false);
   }
 
+  @Override
+  public SLink getLink() {
+    // TODO API (implement)
+    return null;
+  }
+
   protected abstract SNode getTargetNode_internal(boolean silently);
 
   @Nullable
@@ -66,12 +72,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
 
   public abstract boolean isExternal();
-
-  @Override
-  public SLink getLink() {
-    // TODO API (implement)
-    return null;
-  }
 
   //  @Override
   public SModel getTargetModel() {
