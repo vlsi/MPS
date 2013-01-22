@@ -202,7 +202,7 @@ public class Generators {
 
       // find existing
       for (String newRoot : newRoots) {
-        if (sGen.startsWith(newRoot + "/")) {
+        if (sGen.equals(newRoot) ||sGen.startsWith(newRoot + "/")) {
           root = newRoot;
         }
       }
@@ -234,7 +234,7 @@ public class Generators {
     for (String cGen : classesGen) {
       String root = null;
       for (String newRoot : newRoots) {
-        if (cGen.startsWith(newRoot + "/")) {
+        if (cGen.equals(newRoot) || cGen.startsWith(newRoot + "/")) {
           root = newRoot;
         }
       }
