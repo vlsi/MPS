@@ -1329,12 +1329,12 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), "attractsFocus", "3", "0");
   }
 
-  public static boolean ifMacro_Condition_5170495790389308607(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(SPropertyOperations.hasValue(_context.getNode(), "attractsFocus", "0", "0"));
-  }
-
   public static boolean ifMacro_Condition_5170495790389308581(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "focusPolicyApplicable", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_5170495790389308607(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.hasValue(_context.getNode(), "attractsFocus", "0", "0"));
   }
 
   public static boolean ifMacro_Condition_1210374656847835495(final IOperationContext operationContext, final IfMacroContext _context) {
