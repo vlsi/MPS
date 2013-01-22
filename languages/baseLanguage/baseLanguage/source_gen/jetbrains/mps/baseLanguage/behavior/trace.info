@@ -8157,67 +8157,67 @@
     <unitInfo nodeId="1213877476691" fileName="SuperConstructorInvocation_Behavior.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SuperConstructorInvocation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1213877482533">
-    <nodeInfo nodeId="4712480097191918158" fileName="ClassCreator_Behavior.java" startLine="21" startPosition="83" endLine="22" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4712480097191925879" fileName="ClassCreator_Behavior.java" startLine="22" startPosition="189" endLine="23" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4712480097191925886" fileName="ClassCreator_Behavior.java" startLine="23" startPosition="121" endLine="24" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4712480097191925903" fileName="ClassCreator_Behavior.java" startLine="25" startPosition="93" endLine="26" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4712480097191918116" fileName="ClassCreator_Behavior.java" startLine="27" startPosition="5" endLine="28" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5776618742611361877" fileName="ClassCreator_Behavior.java" startLine="31" startPosition="127" endLine="32" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="734555871887342112" fileName="ClassCreator_Behavior.java" startLine="33" startPosition="33" endLine="34" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="9200955719632916135" fileName="ClassCreator_Behavior.java" startLine="34" startPosition="38" endLine="35" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="734555871887342206" fileName="ClassCreator_Behavior.java" startLine="36" startPosition="52" endLine="37" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="734555871887343466" fileName="ClassCreator_Behavior.java" startLine="37" startPosition="78" endLine="38" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="734555871887343560" fileName="ClassCreator_Behavior.java" startLine="39" startPosition="127" endLine="40" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="734555871887343589" fileName="ClassCreator_Behavior.java" startLine="40" startPosition="53" endLine="41" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8896910694239637555" fileName="ClassCreator_Behavior.java" startLine="41" startPosition="82" endLine="42" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5776618742611361888" fileName="ClassCreator_Behavior.java" startLine="45" startPosition="5" endLine="46" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4837286298389011946" fileName="ClassCreator_Behavior.java" startLine="49" startPosition="94" endLine="50" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4712480097191925910" fileName="ClassCreator_Behavior.java" startLine="24" startPosition="81" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isInTypeInferenceContext_4837286298388660615#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="734555871887342984" fileName="ClassCreator_Behavior.java" startLine="38" startPosition="77" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="21" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getInstanceType_8008512149545154471#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="9200955719632916179" fileName="ClassCreator_Behavior.java" startLine="35" startPosition="206" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="734555871887342078" fileName="ClassCreator_Behavior.java" startLine="32" startPosition="189" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="31" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableMethodDeclarations_5776618742611315379#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="1213877482535" fileName="ClassCreator_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="4712480097191925911" fileName="ClassCreator_Behavior.java" startLine="25" startPosition="93" endLine="26" endPosition="143" />
-    <scopeInfo nodeId="4837286298389011944" fileName="ClassCreator_Behavior.java" startLine="49" startPosition="94" endLine="50" endPosition="190" />
-    <scopeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
+    <nodeInfo nodeId="4712480097191918158" fileName="ClassCreator_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4712480097191925879" fileName="ClassCreator_Behavior.java" startLine="23" startPosition="189" endLine="24" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4712480097191925886" fileName="ClassCreator_Behavior.java" startLine="24" startPosition="121" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4712480097191925903" fileName="ClassCreator_Behavior.java" startLine="26" startPosition="93" endLine="27" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4712480097191918116" fileName="ClassCreator_Behavior.java" startLine="28" startPosition="5" endLine="29" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5776618742611361877" fileName="ClassCreator_Behavior.java" startLine="32" startPosition="127" endLine="33" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="734555871887342112" fileName="ClassCreator_Behavior.java" startLine="34" startPosition="33" endLine="35" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9200955719632916135" fileName="ClassCreator_Behavior.java" startLine="35" startPosition="38" endLine="36" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="734555871887342206" fileName="ClassCreator_Behavior.java" startLine="37" startPosition="52" endLine="38" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="734555871887343466" fileName="ClassCreator_Behavior.java" startLine="38" startPosition="99" endLine="39" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="734555871887343560" fileName="ClassCreator_Behavior.java" startLine="40" startPosition="127" endLine="41" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="734555871887343589" fileName="ClassCreator_Behavior.java" startLine="41" startPosition="53" endLine="42" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8896910694239637555" fileName="ClassCreator_Behavior.java" startLine="42" startPosition="82" endLine="43" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5776618742611361888" fileName="ClassCreator_Behavior.java" startLine="46" startPosition="5" endLine="47" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4837286298389011946" fileName="ClassCreator_Behavior.java" startLine="50" startPosition="94" endLine="51" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4712480097191925910" fileName="ClassCreator_Behavior.java" startLine="25" startPosition="81" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isInTypeInferenceContext_4837286298388660615#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="734555871887342984" fileName="ClassCreator_Behavior.java" startLine="39" startPosition="77" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="22" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getInstanceType_8008512149545154471#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="9200955719632916179" fileName="ClassCreator_Behavior.java" startLine="36" startPosition="206" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="734555871887342078" fileName="ClassCreator_Behavior.java" startLine="33" startPosition="189" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="32" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableMethodDeclarations_5776618742611315379#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="1213877482535" fileName="ClassCreator_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="4712480097191925911" fileName="ClassCreator_Behavior.java" startLine="26" startPosition="93" endLine="27" endPosition="143" />
+    <scopeInfo nodeId="4837286298389011944" fileName="ClassCreator_Behavior.java" startLine="50" startPosition="94" endLine="51" endPosition="190" />
+    <scopeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1213877482533" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4712480097191925910" fileName="ClassCreator_Behavior.java" startLine="24" startPosition="81" endLine="27" endPosition="5">
+    <scopeInfo nodeId="4712480097191925910" fileName="ClassCreator_Behavior.java" startLine="25" startPosition="81" endLine="28" endPosition="5">
       <varInfo nodeId="4712480097191925914" varName="typeParameter" />
     </scopeInfo>
-    <scopeInfo nodeId="734555871887342985" fileName="ClassCreator_Behavior.java" startLine="39" startPosition="127" endLine="42" endPosition="133">
+    <scopeInfo nodeId="734555871887342985" fileName="ClassCreator_Behavior.java" startLine="40" startPosition="127" endLine="43" endPosition="133">
       <varInfo nodeId="734555871887343590" varName="classId" />
       <varInfo nodeId="734555871887343561" varName="constructorId" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="50" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1213877482533" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4712480097191917623" fileName="ClassCreator_Behavior.java" startLine="21" startPosition="83" endLine="28" endPosition="26">
+    <scopeInfo nodeId="4712480097191917623" fileName="ClassCreator_Behavior.java" startLine="22" startPosition="83" endLine="29" endPosition="26">
       <varInfo nodeId="4712480097191918159" varName="classConcept" />
       <varInfo nodeId="4712480097191925880" varName="classifierType" />
     </scopeInfo>
-    <scopeInfo nodeId="9200955719632916180" fileName="ClassCreator_Behavior.java" startLine="36" startPosition="52" endLine="43" endPosition="9">
+    <scopeInfo nodeId="9200955719632916180" fileName="ClassCreator_Behavior.java" startLine="37" startPosition="52" endLine="44" endPosition="9">
       <varInfo nodeId="734555871887343467" varName="targetId" />
       <varInfo nodeId="734555871887342207" varName="targetModel" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="21" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="22" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1213877482533" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="734555871887342079" fileName="ClassCreator_Behavior.java" startLine="33" startPosition="33" endLine="44" endPosition="7">
+    <scopeInfo nodeId="734555871887342079" fileName="ClassCreator_Behavior.java" startLine="34" startPosition="33" endLine="45" endPosition="7">
       <varInfo nodeId="9200955719632916136" varName="constructorDeclarationReference" />
     </scopeInfo>
-    <scopeInfo nodeId="5776618742611361856" fileName="ClassCreator_Behavior.java" startLine="31" startPosition="127" endLine="46" endPosition="85">
+    <scopeInfo nodeId="5776618742611361856" fileName="ClassCreator_Behavior.java" startLine="32" startPosition="127" endLine="47" endPosition="85">
       <varInfo nodeId="5776618742611361878" varName="classConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="31" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="32" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="5776618742611361857" varName="methodName" />
       <varInfo nodeId="1213877482533" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="17" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClassCreator_Behavior" />
+    <unitInfo nodeId="1213877482533" fileName="ClassCreator_Behavior.java" startLine="18" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClassCreator_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1213877484358">
     <nodeInfo nodeId="1213877484361" fileName="InstanceMethodCallOperation_Behavior.java" startLine="26" startPosition="86" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

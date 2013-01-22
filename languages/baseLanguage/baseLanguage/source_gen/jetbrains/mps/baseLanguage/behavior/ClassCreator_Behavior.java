@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
@@ -34,7 +35,7 @@ public class ClassCreator_Behavior {
       // special logic for java stubs 
       SReference constructorDeclarationReference = SNodeOperations.getReference(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"));
       if (constructorDeclarationReference != null) {
-        SModel targetModel = constructorDeclarationReference.getTargetModel();
+        SModel targetModel = ((StaticReference) constructorDeclarationReference).getTargetSModel();
         SNodeId targetId = constructorDeclarationReference.getTargetNodeId();
         if (SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(targetModel.getStereotype()) && targetId != null) {
           String constructorId = targetId.toString();
