@@ -85,7 +85,6 @@
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/collections/sandbox/collections_sandbox.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/collections/unittest/collections_unittest.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/collections_trove.test/collections_trove.test.msd" folder="baseLanguage.collections" />
-      <modulePath path="${project}/languages/baseLanguage/collections/solutions/internalCollections.sandbox/internalCollections.sandbox.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/internalCollections.test/internalCollections.test.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/constructors/jetbrains.mps.baseLanguage.constructors.mpl" folder="baseLanguage.constructors" />
       <modulePath path="${project}/languages/baseLanguage/constructors/solutions/jetbrains.mps.baseLanguage.constructors.sandbox/jetbrains.mps.baseLanguage.constructors.sandbox.msd" folder="baseLanguage.constructors" />
@@ -172,7 +171,6 @@
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.unittest/jetbrains.mps.lang.smodel.unittest.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/pluginSolution/jetbrains.mps.lang.smodel.pluginSolution.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/samples/jetbrains.mps.samples.smodelLanguage-samples.msd" folder="samples" />
-      <modulePath path="${project}/languages/languageDesign/smodel/solutions/sandbox/smodel.sandbox.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/typetest/smodelLanguage_typetest.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/structure/jetbrains.mps.lang.structure.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/structure/solutions/pluginSolution/jetbrains.mps.lang.structure.pluginSolution.msd" folder="core.language-design" />
