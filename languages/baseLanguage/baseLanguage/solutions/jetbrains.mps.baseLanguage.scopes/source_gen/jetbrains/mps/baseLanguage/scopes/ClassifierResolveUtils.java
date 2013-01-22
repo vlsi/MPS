@@ -460,17 +460,19 @@ public class ClassifierResolveUtils {
       String pkgName = refText.substring(0, dotPositions[p]);
       // FIXME java.lang isn't resolved this way 
       org.jetbrains.mps.openapi.model.SModel model = moduleScope.resolve(SModelReference.fromString(pkgName));
-      List<SModelDescriptor> models = null;
+      List<org.jetbrains.mps.openapi.model.SModel> models = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
 
-      if (model == null) {
+      if (model != null) {
+        ListSequence.fromList(models).addElement(model);
+      } else {
         // FIXME it's wrong: deprecated and ignores module scope 
-        models = SModelRepository.getInstance().getModelDescriptorsByModelName(pkgName);
+        ListSequence.fromList(models).addSequence(ListSequence.fromList(SModelRepository.getInstance().getModelDescriptorsByModelName(pkgName)));
         if (models.isEmpty()) {
           continue;
         }
       }
 
-      for (SModelDescriptor m : ListSequence.fromList(models)) {
+      for (org.jetbrains.mps.openapi.model.SModel m : ListSequence.fromList(models)) {
         String refTextWithoutPackage = refText.substring(dotPositions[p] + 1);
         StringTokenizer tokenizer = new StringTokenizer(refTextWithoutPackage, ".");
         assert tokenizer.hasMoreTokens();
