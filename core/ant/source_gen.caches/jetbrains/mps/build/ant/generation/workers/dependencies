@@ -48,6 +48,32 @@
     <classNode extendsClassName="jetbrains.mps.make.service.AbstractInputProcessor" />
     <classNode extendsClassName="jetbrains.mps.make.service.AbstractMakeService" />
   </dependency>
+  <dependency className="jetbrains.mps.build.ant.generation.workers.ChunksGeneratorWorker" file="ChunksGeneratorWorker.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.LinkedHashMap" />
+    <classNode dependClassName="java.util.LinkedHashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.build.ant.Environment" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MpsWorker" />
+    <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker" />
+  </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.workers.GeneratorWorker" file="GeneratorWorker.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Boolean" />

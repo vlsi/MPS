@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="emy3amd6h6g62xqgahinkacb7xe4f4c">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="1h96jbg38xkez14vk73630sbzaefb2q" />
+<dependencies version="2" modelHash="-cte26nv2wbzwyrctchc45tv12iq93ro">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7i10haz7koqq8m90ga8a9ciq5bpxeiz" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="1x3xr8k67w2buvi21pv9dhqvhucj5t8" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="a1zgrouzvocts8mn9z8xik6lpn0y8ga" />
-  <common hash="-cajjxf98niiisbc3fil6gfxm2leiq6x">
+  <common hash="-c3cfoylwqc9ajxapg2tbrn97rwho5c3">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="4003657351907889940" name="ConsoleMessageFormat" hash="4uh3mmgyv537jxr2ixgtro3xn12yraa">
@@ -24,6 +24,20 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="GenerateTask.java" />
+  </source>
+  <source id="9096318311151691260" name="Chunk" hash="406b4tjm3b9ucwu2gcp8xjxd7c53n92">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <file name="Chunk.java" />
+  </source>
+  <source id="9096318311151864960" name="ModuleChunkPart" hash="-ejrcab2ynbuhuq0s1h9vhab2mctls9q">
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <file name="ModuleChunkPart.java" />
+  </source>
+  <source id="4263887295358464059" name="GenerateChunksTask" hash="-9slb210vjnxa0hokd8z1cck6o7fdapi">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <file name="GenerateChunksTask.java" />
   </source>
 </dependencies>
 

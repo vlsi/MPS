@@ -29,8 +29,8 @@
   
   <path id="path.mps.ant.path">
     <pathelement location="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" />
-    <pathelement location="${artifacts.buildCore}/mps-core/lib/jdom.jar" />
-    <pathelement location="${artifacts.buildCore}/mps-core/lib/log4j.jar" />
+    <pathelement location="${artifacts.IDEA}/lib/jdom.jar" />
+    <pathelement location="${artifacts.IDEA}/lib/log4j.jar" />
     <pathelement location="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
   </path>
   
@@ -129,6 +129,7 @@
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
           <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="34f23130-e35c-4795-a45a-85d828b16016(jetbrains.mps.gtext.runtime)" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.generictasks.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -406,6 +407,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
@@ -448,6 +450,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
@@ -531,7 +534,10 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xml.jar" />
         <fileset file="${artifacts.buildDeprecatedBuildlanguage}/plugins/mps-obsolete/languages/xml/jetbrains.mps.xml.deprecated.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xmlInternal.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xmlSchema.jar" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.custommps">
@@ -598,6 +604,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -605,7 +612,6 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -614,6 +620,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.buildDeprecatedBuildlanguage}/plugins/mps-obsolete/languages/build/jetbrains.mps.build.generictasks.jar" />
         <fileset file="${artifacts.buildDeprecatedBuildlanguage}/plugins/mps-obsolete/languages/build/jetbrains.mps.buildlanguage.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.runtime.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <fileset file="${artifacts.buildDeprecatedBuildlanguage}/plugins/mps-obsolete/languages/xml/jetbrains.mps.xml.deprecated.jar" />
@@ -700,7 +707,10 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xml.jar" />
         <fileset file="${artifacts.buildDeprecatedBuildlanguage}/plugins/mps-obsolete/languages/xml/jetbrains.mps.xml.deprecated.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xmlInternal.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xmlSchema.jar" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.packaging">
@@ -728,7 +738,8 @@
   
   <target name="generate" depends="fetchDependencies, declare-mps-tasks">
     <echo message="generating" />
-    <mps.generate parallelMode="true" fork="true">
+    <mps.generate.chunks parallelMode="true" fork="true">
+      <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <library file="${artifacts.buildBuild}/plugins/mps-build/languages/build/jetbrains.mps.bash.jar" />
       <library file="${artifacts.buildBuild}/plugins/mps-build/languages/build/jetbrains.mps.build.startup.jar" />
       <library file="${artifacts.buildCoreEx}/plugins/mps-core/languages/xml/jetbrains.mps.core.xml.jar" />
@@ -740,6 +751,7 @@
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.jar" />
@@ -786,6 +798,9 @@
       <library file="${artifacts.buildCore}/mps-core/languages/make/jetbrains.mps.make.script.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.runtime.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xml.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xmlInternal.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xmlSchema.jar" />
       <library file="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" />
       <library file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
       <library file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
@@ -834,7 +849,7 @@
       <chunk>
         <module file="${mps_home}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.buildlanguage.execution/execution.msd" />
       </chunk>
-    </mps.generate>
+    </mps.generate.chunks>
   </target>
   
   <target name="cleanSources">

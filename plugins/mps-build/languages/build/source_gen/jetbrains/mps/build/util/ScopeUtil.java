@@ -9,18 +9,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.scope.FilteringScope;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.scope.DelegatingScope;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
+import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
 
@@ -48,8 +48,8 @@ public class ScopeUtil {
     };
   }
 
-  public static Iterable<Scope> imported(List<SNode> importDeclarations, final SNode concept, final SNode child) {
-    return ListSequence.fromList(importDeclarations).where(new IWhereFilter<SNode>() {
+  public static Iterable<Scope> imported(Iterable<SNode> importDeclarations, final SNode concept, final SNode child) {
+    return Sequence.fromIterable(importDeclarations).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         // searching for smart references 
         return (int) Sequence.fromIterable(SNodeOperations.getReferences(it)).count() == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(Sequence.fromIterable(SNodeOperations.getReferences(it)).first()), "jetbrains.mps.lang.core.structure.ScopeProvider");

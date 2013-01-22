@@ -791,8 +791,7 @@ public class QueriesGenerated {
     String moduleFqName = SPropertyOperations.getString(_context.getNode(), "moduleId");
     IModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleFqName);
     if (module == null) {
-      _context.showErrorMessage(_context.getNode(), "module `" + moduleFqName + "` is not found");
-      return "";
+      return _context.getNode().getPersistentProperty("moduleId");
     }
     return module.getModuleReference().toString();
   }
