@@ -123,7 +123,7 @@
       <property name="name" nameId="tpck.1169194664001" value="Debugger" />
     </node>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6762701973176605162">
-      <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.debugger-api" />
+      <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.debugger.api" />
       <property name="name" nameId="tpck.1169194664001" value="Debugger API for MPS" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="117.105" />
       <property name="descripttion" nameId="tp4k.5023285075122009368" value="Base debugging support for MPS" />

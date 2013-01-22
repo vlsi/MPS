@@ -12,8 +12,8 @@
   <idea-version since-build="117.105"></idea-version>
   
   <depends>jetbrains.mps.execution.languages</depends>
-  <depends>jetbrains.mps.debugger-java</depends>
-  <depends>jetbrains.mps.debugger-api</depends>
+  <depends>jetbrains.mps.debugger.java</depends>
+  <depends>jetbrains.mps.debugger.api</depends>
   
   <application-components>
     <component>

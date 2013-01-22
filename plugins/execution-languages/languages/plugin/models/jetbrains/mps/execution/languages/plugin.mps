@@ -23,10 +23,10 @@
   </roots>
   <root id="6863272677075182370">
     <node role="dependency" roleId="tp4k.5864553086652219115" type="tp4k.IdeaPluginDependency" typeId="tp4k.5864553086652219116" id="375000982841836968">
-      <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.debugger-java" />
+      <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.debugger.java" />
     </node>
     <node role="dependency" roleId="tp4k.5864553086652219115" type="tp4k.IdeaPluginDependency" typeId="tp4k.5864553086652219116" id="375000982841836970">
-      <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.debugger-api" />
+      <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.debugger.api" />
     </node>
   </root>
   <root id="7162597690968035968" />
