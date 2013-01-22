@@ -227,6 +227,7 @@ public class ClassifierResolveUtils {
     //   if yes, use it 
     //   if no, only then traverse all appropriate models 
 
+    org.jetbrains.mps.openapi.model.SModel contextNodeModel = contextNode.getModel().getModelDescriptor();
 
     StringTokenizer tokenizer = new StringTokenizer(refText, ".");
     if (!(tokenizer.hasMoreTokens())) {
@@ -287,7 +288,7 @@ public class ClassifierResolveUtils {
         }
 
         String fqName = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
-        SNode cls = resolveFqName(fqName, moduleScope);
+        SNode cls = resolveFqName(fqName, moduleScope, contextNodeModel);
         return cls;
       }
 
@@ -311,14 +312,22 @@ public class ClassifierResolveUtils {
     }
 
     // let's see if its an fqName (i.e. starting with a package name) 
-    SNode c = resolveFqName(refText, moduleScope);
+    SNode c = resolveFqName(refText, moduleScope, contextNodeModel);
     if ((c != null)) {
       return c;
     }
 
     // finally, let's go through all appropriate models and see if there is such a root 
 
+    // add contextNodeModel in the beginning of sequence 
+    models = Sequence.fromIterable(Sequence.<org.jetbrains.mps.openapi.model.SModel>singleton(contextNodeModel)).concat(Sequence.fromIterable(models));
+
     for (org.jetbrains.mps.openapi.model.SModel model : Sequence.fromIterable(models)) {
+      // FIXME will be unnecessary when transient models live in a separate repository 
+      if (!(model.equals(contextNodeModel)) && model instanceof SModelDescriptor && ((SModelDescriptor) model).isTransient()) {
+        continue;
+      }
+
       // TODO try to use some fast find support 
       Iterable<? extends SNode> roots = model.getRootNodes();
       for (SNode r : roots) {
@@ -342,7 +351,7 @@ public class ClassifierResolveUtils {
     // try to resolve as fq name in current model 
     Iterable<SNode> result;
 
-    result = resolveClassifierByFqName(check_8z6r2b_a0a64a31(SNodeOperations.getModel(contextNode)), refText);
+    result = resolveClassifierByFqName(check_8z6r2b_a0a05a31(SNodeOperations.getModel(contextNode)), refText);
     if (Sequence.fromIterable(result).isNotEmpty()) {
       return ((int) Sequence.fromIterable(result).count() == 1 ?
         Sequence.fromIterable(result).first() :
@@ -351,7 +360,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current scope 
-    Iterable<IModule> visibleModules = check_8z6r2b_a0a05a31(check_8z6r2b_a0a0yb0n(check_8z6r2b_a0a0a05a31(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    Iterable<IModule> visibleModules = check_8z6r2b_a0a45a31(check_8z6r2b_a0a0cc0n(check_8z6r2b_a0a0a45a31(SNodeOperations.getModel(contextNode)))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModelDescriptor>() {
       public Iterable<SModelDescriptor> translate(IModule it) {
         return it.getOwnModelDescriptors();
@@ -442,7 +451,7 @@ public class ClassifierResolveUtils {
     return curr;
   }
 
-  public static SNode resolveFqName(String refText, SModuleScope moduleScope) {
+  public static SNode resolveFqName(String refText, SModuleScope moduleScope, org.jetbrains.mps.openapi.model.SModel contextNodeModel) {
     // FIXME constant 20 
     int[] dotPositions = new int[20];
     int lastDot = -1;
@@ -473,6 +482,12 @@ public class ClassifierResolveUtils {
       }
 
       for (org.jetbrains.mps.openapi.model.SModel m : ListSequence.fromList(models)) {
+
+        // FIXME will be unnecessary when transient models live in a separate repository 
+        if (!(m.equals(contextNodeModel)) && m instanceof SModelDescriptor && ((SModelDescriptor) m).isTransient()) {
+          continue;
+        }
+
         String refTextWithoutPackage = refText.substring(dotPositions[p] + 1);
         StringTokenizer tokenizer = new StringTokenizer(refTextWithoutPackage, ".");
         assert tokenizer.hasMoreTokens();
@@ -563,28 +578,28 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a64a31(SModel checkedDotOperand) {
+  private static SModelDescriptor check_8z6r2b_a0a05a31(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static IScope check_8z6r2b_a0a05a31(IModule checkedDotOperand) {
+  private static IScope check_8z6r2b_a0a45a31(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a0yb0n(SModelDescriptor checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a0cc0n(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a0a05a31(SModel checkedDotOperand) {
+  private static SModelDescriptor check_8z6r2b_a0a0a45a31(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
