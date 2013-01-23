@@ -44,6 +44,7 @@ import com.intellij.ui.components.JBScrollBar;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -91,7 +92,6 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -102,9 +102,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -121,6 +118,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
@@ -133,6 +131,8 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -600,7 +600,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (rootCell instanceof EditorCell_Collection) {
             EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
             EditorCell toSelect;
-            if (focusPolicyCell == null || (focusPolicyCell == rootCell && !focusPolicyCell.hasFocusPolicy())) {
+            if (focusPolicyCell == null || (focusPolicyCell == rootCell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
               toSelect = rootCell.findChild(CellFinders.or(CellFinders.FIRST_EDITABLE, CellFinders.FIRST_SELECTABLE_LEAF));
             } else {
               toSelect = focusPolicyCell;
@@ -2664,7 +2664,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public EditorCell changeSelectionWRTFocusPolicy(@NotNull EditorCell cell) {
     EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
     EditorCell toSelect;
-    if (focusPolicyCell == null || (focusPolicyCell == cell && !focusPolicyCell.hasFocusPolicy())) {
+    if (focusPolicyCell == null || (focusPolicyCell == cell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
       toSelect = cell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE));
       if (toSelect == null) {
         toSelect = cell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
@@ -2677,11 +2677,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     if (toSelect instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) toSelect;
-      if (label.getDefaultCaretPosition() != null) {
-        if (label.getDefaultCaretPosition() == CaretPosition.FIRST) {
+      jetbrains.mps.editor.runtime.style.CaretPosition defaultCaretPosition = label.getStyle().get(StyleAttributes.DEFAULT_CARET_POSITION);
+      if (defaultCaretPosition != null) {
+        if (defaultCaretPosition == jetbrains.mps.editor.runtime.style.CaretPosition.FIRST) {
           label.home();
         }
-        if (label.getDefaultCaretPosition() == CaretPosition.LAST) {
+        if (defaultCaretPosition == jetbrains.mps.editor.runtime.style.CaretPosition.LAST) {
           label.end();
         }
       } else if (!toSelect.isErrorState()) {

@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.nodeEditor;
 
+/**
+ * @deprecated remove after MPS 3.0
+ */
+@Deprecated
 public enum FocusPolicy {
   NONE, ATTRACTS_FOCUS, ATTRACTS_RECURSIVELY, FIRST_EDITABLE_CELL
 }

@@ -18,6 +18,8 @@ package jetbrains.mps.nodeEditor.cells;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -31,11 +33,9 @@ import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
@@ -1066,16 +1066,8 @@ public abstract class EditorCell_Basic implements EditorCell {
     return getParent().getContainingBigCell();
   }
 
-  public boolean hasFocusPolicy() {
-    return getFocusPolicy() != FocusPolicy.NONE;
-  }
-
-  public FocusPolicy getFocusPolicy() {
-    return getStyle().get(StyleAttributes.FOCUS_POLICY);
-  }
-
-  public void setFocusPolicy(FocusPolicy fp) {
-    getStyle().set(StyleAttributes.FOCUS_POLICY, fp);
+  public void setFocusPolicy(jetbrains.mps.nodeEditor.FocusPolicy fp) {
+    getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.valueOf(fp.name()));
   }
 
   public boolean isAbove(EditorCell cell) {

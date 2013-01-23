@@ -15,26 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.style;
 
-public class Padding {
-
-  private double myValue;
-  private Measure myType;
-
+public class Padding extends jetbrains.mps.editor.runtime.style.Padding {
   public Padding(double value, final Measure type) {
-    myValue = value;
-    myType = type;
+    super(value, jetbrains.mps.editor.runtime.style.Measure.valueOf(type.name()));
   }
 
   public Padding(double value) {
-    this(value, Measure.SPACES);
+    super(value);
   }
-
-  public double getValue() {
-    return myValue;
-  }
-
-  public Measure getType() {
-    return myType;
-  }
-
 }

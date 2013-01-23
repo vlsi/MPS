@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
@@ -33,10 +35,9 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.style.Style;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.ArrayWrapper;
 import jetbrains.mps.util.Condition;
@@ -921,7 +922,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       myIsOpening = isOpening;
       String text = getBraceText();
 
-      Style style = new Style();
+      Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, Color.BLUE);
       style.set(StyleAttributes.FONT_STYLE, Font.BOLD);
       style.set(StyleAttributes.PADDING_LEFT, new Padding(0.0));

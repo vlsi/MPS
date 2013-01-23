@@ -57,6 +57,7 @@
       <modulePath path="${project}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" folder="core" />
       <modulePath path="${project}/editor/actions-runtime/jetbrains.mps.actions.runtime.msd" folder="core.editor" />
       <modulePath path="${project}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="core.editor" />
+      <modulePath path="${project}/editor/editorlang-runtime/jetbrains.mps.editorlang.runtime.msd" folder="core.editor" />
       <modulePath path="${project}/editor/typesystemIntegration/typesystemIntegration.msd" folder="core.editor" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/jetbrains.mps.baseLanguage.mpl" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/sandbox/jetbrains.mps.baseLanguage.sandbox.msd" folder="baseLanguage" />

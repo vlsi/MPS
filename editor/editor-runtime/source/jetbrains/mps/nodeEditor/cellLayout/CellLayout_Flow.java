@@ -16,13 +16,14 @@
 package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.openapi.editor.cells.*;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 import java.awt.Rectangle;
 import java.util.ArrayList;

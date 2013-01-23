@@ -1897,6 +1897,13 @@
     <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.actions.Line" file="Line.java">
+    <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="java.awt.Dimension" />
+    <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode extendsClassName="javax.swing.JComponent" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.actions.MPSProjectPaths_Action" file="MPSProjectPaths_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
@@ -3398,23 +3405,35 @@
   <dependency className="jetbrains.mps.ide.actions.ShowParameters_Action" file="ShowParameters_Action.java">
     <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.awt.GridBagConstraints" />
+    <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.Point" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.ParametersInformation" />
+    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="javax.swing.JTextPane" />
+    <classNode dependClassName="javax.swing.border.EmptyBorder" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.ParametersInformation" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.Line" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.StyledTextPrinterImpl" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.tooltips.MPSToolTipManager" />
+    <classNode dependClassName="jetbrains.mps.ide.tooltips.ToolTip" />
     <classNode dependClassName="jetbrains.mps.ide.tooltips.ToolTipData" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -3468,6 +3487,15 @@
     <classNode dependClassName="java.util.Map" />
     <classNode extendsClassName="com.intellij.openapi.project.DumbAware" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.actions.StyledTextPrinterImpl" file="StyledTextPrinterImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.text.BadLocationException" />
+    <classNode dependClassName="javax.swing.text.DefaultStyledDocument" />
+    <classNode dependClassName="javax.swing.text.SimpleAttributeSet" />
+    <classNode dependClassName="javax.swing.text.StyleConstants" />
+    <classNode dependClassName="javax.swing.text.StyledDocument" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.StyledTextPrinter" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.SubmitToTracker_Action" file="SubmitToTracker_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />

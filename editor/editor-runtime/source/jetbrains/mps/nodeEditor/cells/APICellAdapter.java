@@ -99,10 +99,6 @@ public class APICellAdapter {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getSNodeWRTReference();
   }
 
-  public static FocusPolicy getFocusPolicy(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getFocusPolicy();
-  }
-
   public static boolean validate(EditorCell cell, boolean strict, boolean canActivatePopup) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).validate(strict, canActivatePopup);
   }

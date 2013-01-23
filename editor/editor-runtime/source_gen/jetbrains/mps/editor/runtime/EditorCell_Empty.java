@@ -8,7 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.CellSide;
