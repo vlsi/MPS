@@ -109,7 +109,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public final SNode getTargetNodeSilently() {
     try{
       disableLogging();
-      return getTargetNode_internal();
+      return getTargetNode();
     } finally {
       enableLogging();
     }
