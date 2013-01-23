@@ -159,7 +159,7 @@ public class ReferencePersister4 implements IReferencePersister {
     linkElement.setAttribute(ModelPersistence.ROLE, VersionUtil.formVersionedString(reference.getRole(), VersionUtil.getNodeLanguageVersion(node)));
 
     String targetModelInfo = "";
-    if (reference.isExternal()) {
+    if (!((reference instanceof StaticReference) &&(node.getModel().getSModelReference().equals(reference.getTargetSModelReference())))) {
       if (useUIDs) {
         targetModelInfo = reference.getTargetSModelReference().toString() + "#";
       } else {
