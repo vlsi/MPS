@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.IScopeUtils;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.CopyUtil;
@@ -79,7 +80,7 @@ public class DiffTemporaryModule extends AbstractModule {
     // if we can't find model using full reference, try to find by fq-name 
     // this is needed for viewing diff on models saved before MPS 2.0 M5 
     for (IScope scope : ListSequence.fromList(scopes)) {
-      SModelDescriptor md = scope.getModelDescriptor(reference.getSModelFqName());
+      SModelDescriptor md = IScopeUtils.getModelDescriptor(scope, reference.getSModelFqName());
       if (md != null) {
         return md;
       }

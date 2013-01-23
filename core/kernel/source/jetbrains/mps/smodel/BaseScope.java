@@ -13,22 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public abstract class BaseScope implements IScope {
-  public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
-    return getModelDescriptor(new SModelReference(fqName, null));
-  }
-
-  public final Language getLanguage(String fqName) {
-    return getLanguage(new ModuleReference(fqName));
-  }
-
   public Iterable<SModelDescriptor> getOwnModelDescriptors() {
     return getModelDescriptors();
   }
@@ -52,5 +43,16 @@ public abstract class BaseScope implements IScope {
   public SModule resolve(SModuleReference reference) {
     // TODO (implement)
     return null;
+  }
+
+  // deprecated stuff
+  @Deprecated
+  public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
+    return IScopeUtils.getModelDescriptor(this, fqName);
+  }
+
+  @Deprecated
+  public final Language getLanguage(String fqName) {
+    return IScopeUtils.getLanguage(this, fqName);
   }
 }

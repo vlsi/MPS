@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
@@ -45,8 +45,14 @@ public interface IScope extends SModuleScope {
   //-----------deprecated------------
 
   @Deprecated
+  /*
+  Use IScopeUtils.getModelDescriptor(IScope, SModelFqName)
+   */
   SModelDescriptor getModelDescriptor(SModelFqName fqName);
 
   @Deprecated
+  /*
+  Use IScopeUtils.getLanguage(IScope, String)
+   */
   Language getLanguage(String fqName);
 }

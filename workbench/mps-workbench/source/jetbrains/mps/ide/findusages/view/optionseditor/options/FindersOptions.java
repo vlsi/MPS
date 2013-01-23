@@ -23,9 +23,11 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -75,19 +77,18 @@ public class FindersOptions extends BaseOptions {
       assert languageNamespacePlusFindUsages.endsWith(aspectEnding);
       String languageNamespace = languageNamespacePlusFindUsages.substring(0, languageNamespacePlusFindUsages.length() - aspectEnding.length());
 
-      Language l = GlobalScope.getInstance().getLanguage(languageNamespace);
-
-      if (l == null) {
+      IModule module = MPSModuleRepository.getInstance().getModuleByFqName(NameUtil.namespaceFromConceptFQName(languageNamespace));
+      if (!(module instanceof Language)) {
         LOG.error("Can't find a language " + languageNamespace);
         continue;
       }
 
-      Class finderClass = l.getClass(finderClassName);
+      Class finderClass = module.getClass(finderClassName);
       if (finderClass != null) {
         try {
           IFinder finder = (IFinder) finderClass.newInstance();
           if (finder instanceof GeneratedFinder) {
-            finder = new ReloadableFinder(l.getModuleReference(), (GeneratedFinder) finder);
+            finder = new ReloadableFinder(module.getModuleReference(), (GeneratedFinder) finder);
           }
           finders.add(finder);
         } catch (Throwable t) {

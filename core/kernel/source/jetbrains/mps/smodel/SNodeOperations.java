@@ -13,7 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
@@ -38,8 +43,8 @@ public class SNodeOperations {
   }
 
   public static boolean isUnknown(SNode sNode) {
-    Language language = GlobalScope.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(sNode.getConcept().getId()));
-    return language == null || language.findConceptDeclaration(NameUtil.shortNameFromLongName(sNode.getConcept().getId())) == null;
+    IModule language = MPSModuleRepository.getInstance().getModuleByFqName(NameUtil.namespaceFromConceptFQName(sNode.getConcept().getId()));
+    return !(language instanceof Language) || ((Language) language).findConceptDeclaration(NameUtil.shortNameFromLongName(sNode.getConcept().getId())) == null;
   }
 
   public static List<SNode> getConceptLinkTargets(final SNode node, String linkName, boolean lookupHierarchy) {
@@ -81,7 +86,7 @@ public class SNodeOperations {
 
     List<SNode> result = new ArrayList<SNode>();
     Iterable<SNode> conceptLinks = SNodeUtil.getConcept_ConceptLinks(conceptDeclaration);
-    for(SNode conceptLink : conceptLinks) {
+    for (SNode conceptLink : conceptLinks) {
       SNode conceptLinkDeclaration = SNodeUtil.getConceptLink_Declaration(conceptLink);
       if (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName())) {
         result.add(conceptLink);
