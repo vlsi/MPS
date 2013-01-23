@@ -105,18 +105,6 @@ public abstract class DefaultScope extends BaseScope {
     return result;
   }
 
-  //todo replace with iterable
-  @Override
-  public List<SModelDescriptor> getOwnModelDescriptors() {
-    ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    synchronized (LOCK) {
-      for (IModule module : getInitialModules()) {
-        result.addAll(module.getOwnModelDescriptors());
-      }
-    }
-    return result;
-  }
-
   public Iterable<Language> getVisibleLanguages() {
     synchronized (LOCK) {
       initialize();

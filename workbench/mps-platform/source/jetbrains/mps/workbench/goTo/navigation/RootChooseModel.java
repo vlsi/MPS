@@ -142,17 +142,6 @@ public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
     }
 
     @Override
-    public Iterable<SModelDescriptor> getOwnModelDescriptors() {
-      List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-      for (SModelDescriptor descriptor : inner.getOwnModelDescriptors()) {
-        if (!isExcluded(descriptor)) {
-          result.add(descriptor);
-        }
-      }
-      return result;
-    }
-
-    @Override
     public Iterable<Language> getVisibleLanguages() {
       return inner.getVisibleLanguages();
     }

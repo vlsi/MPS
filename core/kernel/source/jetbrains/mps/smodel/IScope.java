@@ -34,7 +34,6 @@ public interface IScope extends SModuleScope {
 
   Iterable<SModelDescriptor> getModelDescriptors();
 
-  Iterable<SModelDescriptor> getOwnModelDescriptors();
 
   Iterable<Language> getVisibleLanguages();
 
@@ -43,6 +42,12 @@ public interface IScope extends SModuleScope {
   Iterable<IModule> getVisibleModules();
 
   //-----------deprecated------------
+
+  @Deprecated
+  /*
+  Use something more meaningful
+   */
+  Iterable<SModelDescriptor> getOwnModelDescriptors();
 
   @Deprecated
   /*

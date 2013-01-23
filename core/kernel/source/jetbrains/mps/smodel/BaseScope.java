@@ -20,10 +20,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public abstract class BaseScope implements IScope {
-  public Iterable<SModelDescriptor> getOwnModelDescriptors() {
-    return getModelDescriptors();
-  }
-
   @Override
   public Iterable<SModule> getModules() {
     return (Iterable) getVisibleModules();
@@ -46,6 +42,11 @@ public abstract class BaseScope implements IScope {
   }
 
   // deprecated stuff
+  @Deprecated
+  public final Iterable<SModelDescriptor> getOwnModelDescriptors() {
+    throw new IllegalStateException();
+  }
+
   @Deprecated
   public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
     return IScopeUtils.getModelDescriptor(this, fqName);
