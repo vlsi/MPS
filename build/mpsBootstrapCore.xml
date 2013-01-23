@@ -56,8 +56,8 @@
   
   <path id="path.mps.ant.path">
     <pathelement location="${mps_home}/lib/mps-backend.jar" />
-    <pathelement location="${mps_home}/lib/jdom.jar" />
-    <pathelement location="${mps_home}/lib/log4j.jar" />
+    <pathelement location="${artifacts.IDEA}/lib/jdom.jar" />
+    <pathelement location="${artifacts.IDEA}/lib/log4j.jar" />
     <pathelement location="${mps_home}/lib/mps-core.jar" />
   </path>
   
@@ -4785,7 +4785,7 @@
   
   <target name="generate" depends="declare-mps-tasks">
     <echo message="generating" />
-    <mps.generate parallelMode="true" fork="true">
+    <mps.generate.chunks parallelMode="true" fork="true">
       <chunk bootstrap="true">
         <module file="${mps_home}/languages/core/stub/Annotations/Annotations.msd" bootstrap="true" />
         <module file="${mps_home}/languages/core/stub/JDK/JDK.msd" bootstrap="true" />
@@ -4890,7 +4890,7 @@
         <module file="${mps_home}/core/generator/solutions/traceInfo/util/jetbrains.mps.traceInfo.cache.msd" />
         <module file="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" />
       </chunk>
-    </mps.generate>
+    </mps.generate.chunks>
   </target>
   
   <target name="cleanSources" />
