@@ -1984,6 +1984,9 @@
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jetbrains.mps.baseLanguage.unitTest.libs.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
+      <library file="${artifacts.buildCore}/mps-core/languages/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
+      <library file="${artifacts.buildCore}/mps-core/languages/devkits/jetbrains.mps.devkit.language-design.devkit" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
@@ -2049,12 +2052,12 @@
         <module file="${mps_home}/languages/util/ui/languages/swt/solutions/pluginSolution/pluginSolution.msd" />
         <module file="${mps_home}/languages/util/ui/languages/swt/runtime/runtime.msd" />
         <module file="${mps_home}/languages/util/ypath/ypath.mpl" bootstrap="true" />
-        <module file="${mps_home}/languages/util/ypath/solutions/pluginSolution/pluginSolution.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/util/ypath/solutions/pluginSolution/pluginSolution.msd" />
         <module file="${mps_home}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/jetbrains.mps.ypath.runtime.msd" bootstrap="true" />
       </chunk>
       <chunk bootstrap="true">
         <module file="${mps_home}/languages/util/ui/languages/ui/ui.mpl" bootstrap="true" />
-        <module file="${mps_home}/languages/util/ui/languages/internal/internal.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/util/ui/languages/internal/internal.mpl" />
         <module file="${mps_home}/languages/util/ypath/solutions/main/main.msd" />
         <module file="${mps_home}/languages/util/ypath/solutions/test/test.msd" />
       </chunk>
