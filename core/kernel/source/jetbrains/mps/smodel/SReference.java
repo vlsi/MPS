@@ -50,6 +50,10 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return myRole;
   }
 
+  public void setRole(String newRole) {
+    myRole = InternUtil.intern(newRole);
+  }
+
   public SNode getSourceNode() {
     return mySourceNode;
   }
@@ -62,16 +66,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return getSourceNode().getConcept().findLink(getRole());
   }
 
-  protected abstract SNode getTargetNode_internal(boolean silently);
-
-  @Nullable
-  public abstract SModelReference getTargetSModelReference();
-
-  public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
-
-  public abstract boolean isExternal();
-
   public void makeDirect() {
+
   }
 
   public boolean makeIndirect() {
@@ -82,19 +78,27 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return myResolveInfo;
   }
 
+  public void setResolveInfo(String info) {
+    myResolveInfo = InternUtil.intern(info);
+  }
+
+//-------------------------
+
+  protected abstract SNode getTargetNode_internal(boolean silently);
+
+  @Nullable
+  public abstract SModelReference getTargetSModelReference();
+
+  public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
+
+  public abstract boolean isExternal();
+
   @Nullable
   public SNodeId getTargetNodeId() {
     SNode targetNode = getTargetNode();
     return targetNode == null ? null : targetNode.getNodeId();
   }
 
-  public void setResolveInfo(String info) {
-    myResolveInfo = InternUtil.intern(info);
-  }
-
-  public void setRole(String newRole) {
-    myRole = InternUtil.intern(newRole);
-  }
 
   public final SNode getTargetNodeSilently() {
     return getTargetNode_internal(true);
