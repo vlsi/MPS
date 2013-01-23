@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.util.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLink;
@@ -103,16 +104,11 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
   @Deprecated
   /**
-   * Inline content in java code, not supposed to be used in MPS
+   * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
   public final SNode getTargetNodeSilently() {
-    try{
-      disableLogging();
-      return getTargetNode();
-    } finally {
-      enableLogging();
-    }
+    return jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(this);
   }
 
   protected abstract SNode getTargetNode_internal();

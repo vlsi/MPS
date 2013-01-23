@@ -283,4 +283,13 @@ public class SNodeOperations {
       return this;
     }
   }
+
+  public static SNode getTargetNodeSilently(org.jetbrains.mps.openapi.model.SReference ref) {
+    try {
+      SReference.disableLogging();
+      return ref.getTargetNode();
+    } finally {
+      SReference.enableLogging();
+    }
+  }
 }
