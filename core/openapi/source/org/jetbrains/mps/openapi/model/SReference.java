@@ -36,10 +36,4 @@ public interface SReference {
   SNode getTargetNode();
 
   SModel getTargetModel();
-
-  /**
-   * Retrieves the textual representation of the reference.
-   * The returned text identifies the target node, so that it can be resolved.
-   */
-  String getText();
 }

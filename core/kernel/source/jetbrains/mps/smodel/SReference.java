@@ -58,22 +58,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return getTargetNode_internal(false);
   }
 
-  @Override
   public SLink getLink() {
-    // TODO API (implement)
-    return null;
-  }
-
-  @Override
-  public org.jetbrains.mps.openapi.model.SModel getTargetModel() {
-    // TODO API (implement)
-    return null;
-  }
-
-  @Override
-  public String getText() {
-    // TODO API (implement)
-    return null;
+    return getSourceNode().getConcept().findLink(getRole());
   }
 
   protected abstract SNode getTargetNode_internal(boolean silently);
