@@ -705,7 +705,7 @@
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="uiLanguage-runtime" />
-    <orderEntry type="module" module-name="ant" />
+    <orderEntry type="module" module-name="ant-mps" />
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="module" module-name="typesystemIntegration" />
     <orderEntry type="module" module-name="testbench" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-85usqn4rw8l0x5sgpdmysmv1spwsq33">
-  <common hash="3qcsckci362sgbz8e2cpkt4oglzq4hz" />
-  <source id="4003657351907888919" name="TestBrokenReferencesOnTeamcity" hash="-6huz414c7mwkguonttzhfd99ola632b">
+<dependencies version="2" modelHash="ew153uttu1ja4b2tm3nvhkrrvtkheyh">
+  <common hash="-anarakhbf6gb9oipcu67asfin2pd42c" />
+  <source id="4003657351907888919" name="TestBrokenReferencesOnTeamcity" hash="-b03jxe18sk44pk04yj3fzvhv4zxu4av">
     <file name="TestBrokenReferencesOnTeamcity.java" />
   </source>
 </dependencies>

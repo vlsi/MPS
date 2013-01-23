@@ -2376,10 +2376,9 @@
     <javac2 destdir="${build.tmp}/java/out/mps-ant" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <pathelement path="${mps_home}/core/tool/builder/source_gen" />
-        <pathelement path="${mps_home}/core/tool/common/source_gen" />
-        <pathelement path="${mps_home}/core/tool/ant/source_gen" />
-        <pathelement path="${mps_home}/core/tool/ant/resources" />
+        <path location="${mps_home}/core/tool/builder/source_gen" />
+        <path location="${mps_home}/core/tool/common/source_gen" />
+        <path location="${mps_home}/core/tool/ant/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
@@ -2396,10 +2395,10 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-ant">
+      <fileset dir="${mps_home}/core/tool/ant/resources" />
       <fileset dir="${mps_home}/core/tool/builder/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/tool/common/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/tool/ant/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/core/tool/ant/resources" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -4666,7 +4665,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build.gentest" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-persistence, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.smodel.runtime, java.compile.jetbrains.mps.lang.traceable, java.compile.mps-ant, java.compile.mps-test, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.build.gentest" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-persistence, java.compile.mps-editor-api, java.compile.mps-editor, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.smodel.runtime, java.compile.jetbrains.mps.lang.traceable, java.compile.mps-test, java.compile.mps-ant, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.gentest" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.gentest" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -4689,8 +4688,8 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <pathelement path="${build.tmp}/java/out/mps-ant" />
         <pathelement path="${build.tmp}/java/out/mps-test" />
+        <pathelement path="${build.tmp}/java/out/mps-ant" />
         <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
         <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
         <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
