@@ -77,7 +77,7 @@ public class FindersOptions extends BaseOptions {
       assert languageNamespacePlusFindUsages.endsWith(aspectEnding);
       String languageNamespace = languageNamespacePlusFindUsages.substring(0, languageNamespacePlusFindUsages.length() - aspectEnding.length());
 
-      IModule module = MPSModuleRepository.getInstance().getModuleByFqName(NameUtil.namespaceFromConceptFQName(languageNamespace));
+      IModule module = MPSModuleRepository.getInstance().getModuleByFqName(languageNamespace);
       if (!(module instanceof Language)) {
         LOG.error("Can't find a language " + languageNamespace);
         continue;

@@ -81,6 +81,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new OptimizeModuleImports_Action());
     addAction(new OptimizeProjectImports_Action());
     addAction(new PasteNode_Action());
+    addAction(new PrintIScopeAndIModuleMethodsUsages_Action());
     addAction(new PrintNodePosition_Action());
     addAction(new QuickCreate_Action());
     addAction(new RemoveAllBookmarks_Action());
