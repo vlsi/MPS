@@ -58,6 +58,11 @@ public class PostponedReference extends SReference {
     return null;
   }
 
+  @Deprecated
+  /**
+   * Use method in SReferenceBase class, as when you change ref, you know what ref it is
+   * @Deprecated in 3.0
+   */
   public void setTargetSModelReference(@NotNull SModelReference modelReference) {
     throw new RuntimeException("not supported");
   }
