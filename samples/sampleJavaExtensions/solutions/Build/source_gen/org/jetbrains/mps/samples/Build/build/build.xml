@@ -15,8 +15,8 @@
   
   <path id="path.mps.ant.path">
     <pathelement location="${artifacts.mpsPlugin}/mps-core/lib/mps-backend.jar" />
-    <pathelement location="${artifacts.mpsPlugin}/mps-core/lib/jdom.jar" />
-    <pathelement location="${artifacts.mpsPlugin}/mps-core/lib/log4j.jar" />
+    <pathelement location="${artifacts.IDEA}/lib/jdom.jar" />
+    <pathelement location="${artifacts.IDEA}/lib/log4j.jar" />
     <pathelement location="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
   </path>
   
@@ -403,7 +403,8 @@
   
   <target name="generate" depends="fetchDependencies, declare-mps-tasks">
     <echo message="generating" />
-    <mps.generate parallelMode="true" fork="true">
+    <mps.generate.chunks parallelMode="true" fork="true">
+      <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -463,7 +464,7 @@
       <chunk bootstrap="true">
         <module file="${basedir}/languages/Money/org.jetbrains.mps.samples.Money.mpl" bootstrap="true" />
       </chunk>
-    </mps.generate>
+    </mps.generate.chunks>
   </target>
   
   <target name="cleanSources">
