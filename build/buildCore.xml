@@ -4824,6 +4824,9 @@
         <module file="${mps_home}/languages/baseLanguage/varVariable/varVariable.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" bootstrap="true" />
         <module file="${mps_home}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
+        <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
+        <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.language-design.devkit" />
         <module file="${mps_home}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/core/generator/solutions/generator/jetbrains.mps.generator.msd" bootstrap="true" />
         <module file="${mps_home}/languages/util/gtext/gtext.mpl" bootstrap="true" />
@@ -4897,7 +4900,7 @@
         <module file="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" />
       </chunk>
       <chunk bootstrap="true">
-        <module file="${mps_home}/languages/languageDesign/test/test.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/test/test.mpl" />
         <module file="${mps_home}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/jetbrains.mps.lang.test.runtime.msd" bootstrap="true" />
       </chunk>
       <chunk>

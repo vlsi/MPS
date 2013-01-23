@@ -218,6 +218,9 @@
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
+      <library file="${artifacts.buildCore}/mps-core/languages/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
+      <library file="${artifacts.buildCore}/mps-core/languages/devkits/jetbrains.mps.devkit.language-design.devkit" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
@@ -254,7 +257,7 @@
       <library file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
       <chunk bootstrap="true">
         <module file="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" bootstrap="true" />
-        <module file="${mps_home}/languages/baseLanguage/collections/languages/trove/trove.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/collections/languages/trove/trove.mpl" />
       </chunk>
     </mps.generate.chunks>
   </target>

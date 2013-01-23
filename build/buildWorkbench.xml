@@ -801,6 +801,9 @@
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
+      <library file="${artifacts.buildCore}/mps-core/languages/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
+      <library file="${artifacts.buildCore}/mps-core/languages/devkits/jetbrains.mps.devkit.language-design.devkit" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.access.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
@@ -855,7 +858,7 @@
       </chunk>
       <chunk bootstrap="true">
         <module file="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide.msd" bootstrap="true" />
-        <module file="${mps_home}/languages/languageDesign/plugin-standalone/standalone.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/plugin-standalone/standalone.mpl" />
       </chunk>
       <chunk>
         <module file="${mps_home}/languages/core/core/solutions/pluginSolution/pluginSolution.msd" />
