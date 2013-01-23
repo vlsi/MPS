@@ -201,6 +201,9 @@
       <zipfileset file="${mps_home}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" prefix="modules/jetbrains.mps.editor.runtime" />
       <zipfileset dir="${mps_home}/editor/editor-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.editor.runtime" />
       <zipfileset dir="${mps_home}/editor/editor-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.editor.runtime/models" />
+      <zipfileset file="${mps_home}/editor/editorlang-runtime/jetbrains.mps.editorlang.runtime.msd" prefix="modules/jetbrains.mps.editorlang.runtime" />
+      <zipfileset dir="${mps_home}/editor/editorlang-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.editorlang.runtime" />
+      <zipfileset dir="${mps_home}/editor/editorlang-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.editorlang.runtime/models" />
       <zipfileset file="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" prefix="modules/typesystemIntegration" />
       <zipfileset dir="${mps_home}/editor/typesystemIntegration" includes="icons/**, resources/**" prefix="modules/typesystemIntegration" />
       <zipfileset dir="${mps_home}/editor/typesystemIntegration/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/typesystemIntegration/models" />
@@ -2380,6 +2383,7 @@
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/editor/editorlang-runtime/source" />
+        <path location="${mps_home}/editor/editorlang-runtime/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
@@ -2395,6 +2399,7 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-editorlang-runtime">
       <fileset dir="${mps_home}/editor/editorlang-runtime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/editor/editorlang-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -4911,6 +4916,7 @@
         <module file="${mps_home}/plugins/mps-core/languages/core.xml.sax/jetbrains.mps.core.xml.sax.mpl" bootstrap="true" />
         <module file="${mps_home}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/editor/editorlang-runtime/jetbrains.mps.editorlang.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/core/generator/solutions/generator/jetbrains.mps.generator.msd" bootstrap="true" />
         <module file="${mps_home}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" bootstrap="true" />
         <module file="${mps_home}/workbench/mps-platform/jetbrains.mps.ide.platform.msd" bootstrap="true" />
