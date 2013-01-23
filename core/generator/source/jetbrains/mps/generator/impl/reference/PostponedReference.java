@@ -41,6 +41,7 @@ public class PostponedReference extends SReference {
     myGenerator = generator;
   }
 
+  @Deprecated
   public boolean isExternal() {
     return false;
   }

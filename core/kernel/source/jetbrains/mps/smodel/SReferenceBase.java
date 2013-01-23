@@ -60,6 +60,7 @@ abstract class SReferenceBase extends SReference {
     myImmatureTargetNode = immatureTargetNode;
   }
 
+  @Deprecated
   public boolean isExternal() {
     SModel m = getSourceNode().getModel();
     if (m == null) return true;

@@ -84,14 +84,11 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
 //-------------------------
 
-  protected abstract SNode getTargetNode_internal(boolean silently);
 
   @Nullable
   public abstract SModelReference getTargetSModelReference();
 
   public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
-
-  public abstract boolean isExternal();
 
   @Nullable
   public SNodeId getTargetNodeId() {
@@ -100,9 +97,29 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
 
+  @Deprecated
+  /**
+   * Inline content in java code, not supposed to be used in MPS
+   * @Deprecated in 3.0
+   */
   public final SNode getTargetNodeSilently() {
-    return getTargetNode_internal(true);
+    try{
+      disableLogging();
+      return getTargetNode_internal(true);
+    } finally {
+      enableLogging();
+    }
   }
+
+  @Deprecated
+  protected abstract SNode getTargetNode_internal(boolean silently);
+
+  @Deprecated
+  /**
+   * Not supposed to be used from outside. Replace with getTargetModelReference comparison
+   * @Deprecated in 3.0
+   */
+  public abstract boolean isExternal();
 
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.getModel() != null && targetNode.getModel() != null) {
