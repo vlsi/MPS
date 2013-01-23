@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="a7cbml9l422k2w070d2ugo9agm9fl4m">
+<dependencies version="2" modelHash="47ofmd7wpaqqlpaac8fxjajng132on9">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -15,20 +15,22 @@
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="akoi29h91omqpsecw70ef5kr7myg10" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-33tlavyfw081dpoo7kr33x973l53rit" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-czkeaawxav2uxfhwhouknmgxwcerk0t" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
+  <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" hash="b6qwmon42e2m3ilphx1s2e0pt88dxyp" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="-6z49i7q33pk0fo43glwhwbtlv5yhu1z" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="3d2lxr8unjxvzzi6xlbsruq2a8tb63l" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-6ms6uh6xw6ogel83ocxgvncpzgdfldf" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="ds41xwd3vhafeazos843c1dygtjbmpd" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="akhdydbhjjog28feg67o2k0h0fepfz2" />
+  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="-bsx9nqeu3phtzjl7qheg3fy1r62vv3m" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-1y364c3x08ezyxfrbl16vh2nde1fe7q" />
   <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" hash="-4b42jm5setauc1jgs0sk12290e8tx1e" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="d5cnpujtqu721m7jpcehnnksdbi4kbf" />
   <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" hash="afbpk577n4rr6r06tqn7v8k6l84h197" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-4gzq8kok50y8e26dglqtgltchbz0r19" />
-  <dep model="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" hash="-cja452tlpi77y592b7a6br566lik3ns" />
+  <dep model="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" hash="blh4gjrww8sng4hzfo6poltto0rj1s5" />
   <dep model="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" hash="-8uu2kgags02k9srspdqlpvea9knugnq" />
   <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="-civmjgp9lyvc1592lp0bed4tl3qfjvc" />
   <dep model="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" hash="59q62tq6g5cztm1y3dn5t4sjwkyyy97" />
@@ -109,6 +111,8 @@
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
@@ -241,14 +245,16 @@
     <file name="GeneratorInternal_IWorkfowParticipants_BehaviorDescriptor.java" />
     <file name="IWorkflowParticipant_BehaviorDescriptor.java" />
   </common>
-  <source id="7389400916848004877" name="BuildLayout_AbstractContainer_Behavior" hash="a94uys0299mfl5vetedxcf5jxr8sb08">
+  <source id="7389400916848004877" name="BuildLayout_AbstractContainer_Behavior" hash="-9e21y3zbkl604v2ohsauqsfco66pf7p">
     <dep root="4701820937132344008" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_AbstractContainer_Behavior.java" />
   </source>
-  <source id="7389400916848182205" name="BuildProject_Behavior" hash="aaqhusiaxsczh63g32mjk4ykmgwlhlo">
+  <source id="7389400916848182205" name="BuildProject_Behavior" hash="4vnr5gjrqpj6kaj5dhxc0lvhhy8i5qr">
     <dep root="1224588814561775849" />
     <dep root="5481553824944787361" />
     <dep root="6547494638219688110" />
@@ -280,7 +286,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BuildProject_Behavior.java" />
   </source>
-  <source id="5481553824944787361" name="BuildSourcePath_Behavior" hash="-e0akvgcocl7kch32pcbhqc2are5wyjw">
+  <source id="5481553824944787361" name="BuildSourcePath_Behavior" hash="3mykzcg1aoea1uu9609epq4p26qa792">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -289,7 +295,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildSourcePath_Behavior.java" />
   </source>
-  <source id="5481553824944831598" name="BuildSourceProjectRelativePath_Behavior" hash="-dge13vzcz4fuz28sdf84jgl21uw2jir">
+  <source id="5481553824944831598" name="BuildSourceProjectRelativePath_Behavior" hash="c9ugcusrgyag68w1k8ut2kabs5hktjv">
     <dep root="4959435991187140512" />
     <dep root="5481553824944787361" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -317,7 +323,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BuildCompositePath_Behavior.java" />
   </source>
-  <source id="4959435991187140512" name="BuildRelativePath_Behavior" hash="19txqg3id3hyoj6dq0oiwj4qarusobv">
+  <source id="4959435991187140512" name="BuildRelativePath_Behavior" hash="yitnkvc4kkruj7s28xmky0zfi3qnwa">
     <dep root="5481553824944787361" />
     <dep root="8618885170173674797" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -325,6 +331,7 @@
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
@@ -334,7 +341,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BuildRelativePath_Behavior.java" />
   </source>
-  <source id="4959435991187146226" name="BuildSourceMacroRelativePath_Behavior" hash="agzuadrdwz1f8k54810cfhc0b794dp6">
+  <source id="4959435991187146226" name="BuildSourceMacroRelativePath_Behavior" hash="-asvg95v9i9jhhgm7lkbkbev4aw00n3u">
     <dep root="4959435991187140512" />
     <dep root="4959435991187146972" />
     <dep root="5481553824944787361" />
@@ -360,7 +367,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BuildFolderMacro_Behavior.java" />
   </source>
-  <source id="4045247515868395483" name="BuildLayout_NamedContainer_Behavior" hash="afxejwjts8yg9q9l7muqkiizq7h5mro">
+  <source id="4045247515868395483" name="BuildLayout_NamedContainer_Behavior" hash="317sdx2248gnnfawyak4tqt0z5yb1ga">
     <dep root="4380385936562003287" />
     <dep root="4701820937132344008" />
     <dep root="5610619299014531544" />
@@ -376,7 +383,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_NamedContainer_Behavior.java" />
   </source>
-  <source id="280273048052522028" name="BuildLayout_Folder_Behavior" hash="1s889kmwy9aqskxdt1d9uwujjm3vaix">
+  <source id="280273048052522028" name="BuildLayout_Folder_Behavior" hash="3sj44p1xzyvbusvxqkzvmtboib1nmdp">
     <dep root="2590001334067676315" />
     <dep root="4045247515868395483" />
     <dep root="4380385936562003287" />
@@ -402,7 +409,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BuildLayout_Folder_Behavior.java" />
   </source>
-  <source id="5584673629410192611" name="BuildLayout_Behavior" hash="-8pwurczqrm2uo4rkpxewwv7tm8lbk8j">
+  <source id="5584673629410192611" name="BuildLayout_Behavior" hash="tmz7s072guynf4w3cboc8ojamkakwx">
     <dep root="4701820937132344008" />
     <dep root="7128123785277710733" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -410,7 +417,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_Behavior.java" />
   </source>
-  <source id="763409143595654857" name="BuildProjectDependency_Behavior" hash="994a0d2hcyx0tu699wjn2bbdpdfftky">
+  <source id="763409143595654857" name="BuildProjectDependency_Behavior" hash="-dnwaksnak9liymniizvkrsmvrxa5hq4">
     <dep root="7128123785277710733" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -420,7 +427,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildProjectDependency_Behavior.java" />
   </source>
-  <source id="5096397858823356720" name="BuildStringPart_Behavior" hash="-4mf2f8oe3yp5tgsizphjxhk2sq98v9c">
+  <source id="5096397858823356720" name="BuildStringPart_Behavior" hash="an64qhsnbawx9qfqc0vt6w17xld78r2">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -447,7 +454,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BuildString_Behavior.java" />
   </source>
-  <source id="4380385936562037064" name="BuildTextStringPart_Behavior" hash="-7qgkqs4hye0ywannoxa4eok10m4w1gk">
+  <source id="4380385936562037064" name="BuildTextStringPart_Behavior" hash="cz1wlw28srrpjt5idh84uaouowjwp47">
     <dep root="5096397858823356720" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -459,7 +466,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildTextStringPart_Behavior.java" />
   </source>
-  <source id="4380385936562037086" name="BuildVarRefStringPart_Behavior" hash="-bfncmn405io2ua5vyezzbnqbx1rcyqc">
+  <source id="4380385936562037086" name="BuildVarRefStringPart_Behavior" hash="ev3oesa13y78vqwivqk1fj251pimz8">
     <dep root="5096397858823356720" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -471,7 +478,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildVarRefStringPart_Behavior.java" />
   </source>
-  <source id="841011766566205092" name="BuildExternalDependency_Behavior" hash="-6kpuc22ikoh6geoc6kvg9bmtgxkq3gz">
+  <source id="841011766566205092" name="BuildExternalDependency_Behavior" hash="-9xvy1orkdf2xk4kd7g76a33zmbgouis">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -480,7 +487,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildExternalDependency_Behavior.java" />
   </source>
-  <source id="841011766566205111" name="BuildLayout_Import_Behavior" hash="-a2sbe471cxizpit7wk44wig61rvzfq2">
+  <source id="841011766566205111" name="BuildLayout_Import_Behavior" hash="d9vfd8i88nxcn4i5bilxt7lr9kelggz">
     <dep root="841011766566205092" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -493,7 +500,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_Import_Behavior.java" />
   </source>
-  <source id="4701820937132344008" name="BuildLayout_Container_Behavior" hash="-4i0w6wcfo4up1mqp0knnf8mg5lykil0">
+  <source id="4701820937132344008" name="BuildLayout_Container_Behavior" hash="1w3a1x6vapgm8tanqwwkf0mx382et55">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -502,7 +509,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_Container_Behavior.java" />
   </source>
-  <source id="4701820937132391104" name="BuildNamedLayout_Behavior" hash="-8xo685771uaetb4yndi6x7ufp32c1uz">
+  <source id="4701820937132391104" name="BuildNamedLayout_Behavior" hash="4l3qtj4a2l3ttm8xcpnpia3qv6a5l4y">
     <dep root="4701820937132344008" />
     <dep root="7128123785277710733" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -514,7 +521,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildNamedLayout_Behavior.java" />
   </source>
-  <source id="2590001334067676315" name="BuildLayout_Node_Behavior" hash="e15zefmexwg72tlrx7haubgsh5lop89">
+  <source id="2590001334067676315" name="BuildLayout_Node_Behavior" hash="-64gpx5y5gp1m03nd7an7qlzp8vm6u6i">
     <dep root="7128123785277710733" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -530,7 +537,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_Node_Behavior.java" />
   </source>
-  <source id="7128123785277710733" name="BuildLayout_PathElement_Behavior" hash="4e2gorh9pcdupu1v7z064ah6hwxmz4w">
+  <source id="7128123785277710733" name="BuildLayout_PathElement_Behavior" hash="-8js32eqd2yy2ht174wj10rlwtwi4e77">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -539,7 +546,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_PathElement_Behavior.java" />
   </source>
-  <source id="7128123785277898836" name="BuildLayout_Zip_Behavior" hash="94a4t65lhah588dsxt2xqlpkb9tr665">
+  <source id="7128123785277898836" name="BuildLayout_Zip_Behavior" hash="1qjlbbdyelkm2e3aajcubyknnxqa39u">
     <dep root="2590001334067676315" />
     <dep root="4380385936562003287" />
     <dep root="6408167411310575209" />
@@ -557,7 +564,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BuildLayout_Zip_Behavior.java" />
   </source>
-  <source id="6547494638219485324" name="BuildLayout_Jar_Behavior" hash="cocpcmc2g5620onehvou0r43a82656o">
+  <source id="6547494638219485324" name="BuildLayout_Jar_Behavior" hash="-7y7fzhj8wu47wh83rp2kiqht8s9vsci">
     <dep root="2590001334067676315" />
     <dep root="4380385936562003287" />
     <dep root="5610619299013425875" />
@@ -585,7 +592,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BuildLayout_Jar_Behavior.java" />
   </source>
-  <source id="6547494638219588845" name="BuildSource_JavaDependencyModule_Behavior" hash="-3959sc3rpx1q2wsbrs4ul5wm3i10ar9">
+  <source id="6547494638219588845" name="BuildSource_JavaDependencyModule_Behavior" hash="6tvq7mw2tyebt4xvo6tdrpaamuarpkm">
     <dep root="841011766566205092" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -607,13 +614,13 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildMacro_Behavior.java" />
   </source>
-  <source id="6547494638219688122" name="BuildVariableMacro_Behavior" hash="-6jyrheumd021rw5i73u9zm2p2jzbvyx">
+  <source id="6547494638219688122" name="BuildVariableMacro_Behavior" hash="-a8h8d2jcymgiktw21qh18v0u1b85zmb">
     <dep root="6547494638219688110" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildVariableMacro_Behavior.java" />
   </source>
-  <source id="2913098736709313158" name="BuildLayout_TransparentContainer_Behavior" hash="-cdik7w1f9kq1krxgyo643m3ausx7qji">
+  <source id="2913098736709313158" name="BuildLayout_TransparentContainer_Behavior" hash="a9768bim8fw251ofeix9g7b4r77s4kj">
     <dep root="4701820937132344008" />
     <dep root="7128123785277710733" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -626,7 +633,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_TransparentContainer_Behavior.java" />
   </source>
-  <source id="2913098736709465779" name="BuildLayout_ExportAsJavaLibrary_Behavior" hash="-dnnda99ludlnhzkm7eat32cf34v40nw">
+  <source id="2913098736709465779" name="BuildLayout_ExportAsJavaLibrary_Behavior" hash="4dc2r91tr1wyflpev7a74tjgoplhvub">
     <dep root="2590001334067676315" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -635,7 +642,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_ExportAsJavaLibrary_Behavior.java" />
   </source>
-  <source id="2913098736709465902" name="BuildSource_JavaDependencyLibrary_Behavior" hash="c40wyt0bwjstgoqyxg8i05x0dc4u6t7">
+  <source id="2913098736709465902" name="BuildSource_JavaDependencyLibrary_Behavior" hash="bl2my377xb6s20440tmen7yrlyrhcxe">
     <dep root="841011766566205092" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -648,7 +655,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildSource_JavaDependencyLibrary_Behavior.java" />
   </source>
-  <source id="6859736767834558025" name="BuildSource_JavaDependencyExternalJar_Behavior" hash="-888e6x584klhu0hk8j5qhota147jnbu">
+  <source id="6859736767834558025" name="BuildSource_JavaDependencyExternalJar_Behavior" hash="-ba1t52pp7s0hg5ijkk9cx4rmch6by5o">
     <dep root="5610619299014309559" />
     <dep root="841011766566205092" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -662,7 +669,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildSource_JavaDependencyExternalJar_Behavior.java" />
   </source>
-  <source id="7181125477683216360" name="BuildExternalLayout_Behavior" hash="-6wfuire0bo4kc1xiohda3s66ahotpfa">
+  <source id="7181125477683216360" name="BuildExternalLayout_Behavior" hash="-6ua1fqhu04s7d4molrdu6j1py9y7ix7">
     <dep root="4701820937132344008" />
     <dep root="7128123785277710733" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -675,7 +682,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildExternalLayout_Behavior.java" />
   </source>
-  <source id="7181125477683370818" name="BuildLayout_FileStub_Behavior" hash="-cj248r4azbnl5nuo9qjcbtqe7smhtnx">
+  <source id="7181125477683370818" name="BuildLayout_FileStub_Behavior" hash="-ctlc5ui0cxpotxd9771m3p4816jovrd">
     <dep root="2590001334067676315" />
     <dep root="4380385936562003287" />
     <dep root="5610619299013425875" />
@@ -686,7 +693,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_FileStub_Behavior.java" />
   </source>
-  <source id="7181125477683417259" name="BuildExternalLayoutDependency_Behavior" hash="bhnvwxq1q632wdfcsqhlmtau3e1fw3d">
+  <source id="7181125477683417259" name="BuildExternalLayoutDependency_Behavior" hash="7l6rkb5oxwvamlfb6vd8wd0q43a2dr4">
     <dep root="7128123785277710733" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -696,7 +703,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildExternalLayoutDependency_Behavior.java" />
   </source>
-  <source id="5610619299013068447" name="BuildLayout_ImportContent_Behavior" hash="alm4fwhe7xtd0unr1xsqsio13aejugn">
+  <source id="5610619299013068447" name="BuildLayout_ImportContent_Behavior" hash="-5zjm5zutdy1xx551u57aijpa7htmvbg">
     <dep root="841011766566205092" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -709,7 +716,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_ImportContent_Behavior.java" />
   </source>
-  <source id="5610619299013425875" name="BuildSource_SingleFile_Behavior" hash="6cb8a6lfa4uio43cgpk2yr803a0i63e">
+  <source id="5610619299013425875" name="BuildSource_SingleFile_Behavior" hash="-dorbif0jisx4ql8wtpmrfuzh3db4fc1">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -718,7 +725,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildSource_SingleFile_Behavior.java" />
   </source>
-  <source id="5610619299013975125" name="BuildInputSingleFile_Behavior" hash="czz6cp788kl1gqua3auqiv8rsiw5luk">
+  <source id="5610619299013975125" name="BuildInputSingleFile_Behavior" hash="6yynqtbwybh9nhghhmoc0ncphqnaz8b">
     <dep root="5481553824944787361" />
     <dep root="5610619299013425875" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -762,7 +769,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildSource_JavaExternalJarRef_Behavior.java" />
   </source>
-  <source id="5610619299014446522" name="BuildSource_JavaLibraryExternalJar_Behavior" hash="e5sxa9gt4zpu7g2524lc0rdd3v4383f">
+  <source id="5610619299014446522" name="BuildSource_JavaLibraryExternalJar_Behavior" hash="7xa6db70j7gd4f304itm8otnz76b628">
     <dep root="5610619299014309559" />
     <dep root="841011766566205092" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -776,7 +783,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildSource_JavaLibraryExternalJar_Behavior.java" />
   </source>
-  <source id="5610619299014531544" name="BuildSource_SingleFolder_Behavior" hash="1s613a2ka8umj28mik9il7zjlotwpig">
+  <source id="5610619299014531544" name="BuildSource_SingleFolder_Behavior" hash="1psgyi74fj7t6cizr1vnumbf197ibdc">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -785,7 +792,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildSource_SingleFolder_Behavior.java" />
   </source>
-  <source id="5610619299014531588" name="BuildInputSingleFolder_Behavior" hash="-asggmk9sodghkr4mty6meuing39hx1z">
+  <source id="5610619299014531588" name="BuildInputSingleFolder_Behavior" hash="2bynsip6mi90h2ppp9863b97mtq8fmh">
     <dep root="5481553824944787361" />
     <dep root="5610619299014531544" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -811,7 +818,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildSource_JavaExternalJarFolderRef_Behavior.java" />
   </source>
-  <source id="5610619299014531836" name="BuildSource_JavaLibraryExternalJarFolder_Behavior" hash="6gplfgy30ern96ujkbtx2cxz86xcerx">
+  <source id="5610619299014531836" name="BuildSource_JavaLibraryExternalJarFolder_Behavior" hash="eply9no68hl6n8vk1n7d859ydyzvm7e">
     <dep root="5610619299014531750" />
     <dep root="841011766566205092" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -826,7 +833,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildSource_JavaCP_Behavior.java" />
   </source>
-  <source id="9184644532456496022" name="BuildLayout_AbstractCopy_Behavior" hash="-dacz6mww6p27zvhdavrdlxqb5a8bovx">
+  <source id="9184644532456496022" name="BuildLayout_AbstractCopy_Behavior" hash="-7ebi18klcl6qi8i7yk25y7sr9ggh9dr">
     <dep root="2590001334067676315" />
     <dep root="5481553824944787361" />
     <dep root="7128123785277710733" />
@@ -844,7 +851,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BuildLayout_AbstractCopy_Behavior.java" />
   </source>
-  <source id="9184644532456897461" name="BuildStringContainer_Behavior" hash="1kkyd9q9ri3mxs415tz4m3j4mzsyx28">
+  <source id="9184644532456897461" name="BuildStringContainer_Behavior" hash="-czccxu9ulmkar1aeg36vs634nv6b9uf">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -854,7 +861,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildStringContainer_Behavior.java" />
   </source>
-  <source id="7655580649838832283" name="BuildLayout_EchoXml_Behavior" hash="e551ibz8ujzarjqe5f65n8rbhmtid9g">
+  <source id="7655580649838832283" name="BuildLayout_EchoXml_Behavior" hash="967i3d1095qsdet7d057dhk0t0zpx9z">
     <dep root="4380385936562003287" />
     <dep root="4701820937132344008" />
     <dep root="9184644532456897461" />
@@ -867,7 +874,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_EchoXml_Behavior.java" />
   </source>
-  <source id="202934866059116664" name="BuildLayout_EchoProperties_Behavior" hash="3109q3josr31sta10ts6uj3v22og3hh">
+  <source id="202934866059116664" name="BuildLayout_EchoProperties_Behavior" hash="2nj414t9yiy3gayar3d52nfhfmxb7cv">
     <dep root="4380385936562003287" />
     <dep root="4701820937132344008" />
     <dep root="9184644532456897461" />
@@ -880,7 +887,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_EchoProperties_Behavior.java" />
   </source>
-  <source id="8577651205286949056" name="BuildLayout_Tar_Behavior" hash="8mo6tkfl3m2w56mdtl2u0ebcnb8basq">
+  <source id="8577651205286949056" name="BuildLayout_Tar_Behavior" hash="-a2z4qgcbygw4i2jzhoh5b03pym9js6z">
     <dep root="2590001334067676315" />
     <dep root="4380385936562003287" />
     <dep root="6408167411310575209" />
@@ -898,7 +905,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BuildLayout_Tar_Behavior.java" />
   </source>
-  <source id="7801138212747310472" name="BuildLayout_Filemode_Behavior" hash="bumsip6o6nyrqzpo71npgwgzz33euwo">
+  <source id="7801138212747310472" name="BuildLayout_Filemode_Behavior" hash="-4rc63lezfe3firy525lpewj45evgar0">
     <dep root="4701820937132344008" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -913,7 +920,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BuildLayout_Filemode_Behavior.java" />
   </source>
-  <source id="6408167411310575209" name="BuildLayout_ContainerAcceptingFileSet_Behavior" hash="adleoffcavkd5cisc044qzzgostw3ra">
+  <source id="6408167411310575209" name="BuildLayout_ContainerAcceptingFileSet_Behavior" hash="6tppudwbde6zbkhseayju0zap46xgs3">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -934,7 +941,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildVariableMacroInitValue_Behavior.java" />
   </source>
-  <source id="1224588814561775849" name="BuildPlugin_Behavior" hash="28d5hhrbhggve9ywug1x0kwsd2xfv5s">
+  <source id="1224588814561775849" name="BuildPlugin_Behavior" hash="-k9hynj6fg0lm0g5te5fu2yy71psp6s">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -946,7 +953,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildPlugin_Behavior.java" />
   </source>
-  <source id="1224588814561807530" name="BuildJavaPlugin_Behavior" hash="cde8kx70epkal8frgjxnqqhuuh5vblq">
+  <source id="1224588814561807530" name="BuildJavaPlugin_Behavior" hash="9a0a8ar9a5fglxsxw3rryx2u5hreq5u">
     <dep root="1224588814561775849" />
     <dep root="7389400916848182205" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -971,7 +978,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BuildJavaPlugin_Behavior.java" />
   </source>
-  <source id="9126048691955220764" name="BuildLayout_File_Behavior" hash="27xl0nvzag698q5t1cmcws2ujxm3hi">
+  <source id="9126048691955220764" name="BuildLayout_File_Behavior" hash="-d4r01j9p2p0hdta3th9ab8vtct3bmgd">
     <dep root="2590001334067676315" />
     <dep root="5481553824944787361" />
     <dep root="5610619299013425875" />
@@ -984,6 +991,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" />
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
@@ -996,13 +1004,13 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_Files_Behavior.java" />
   </source>
-  <source id="6967233722066057022" name="BuildLayout_War_Behavior" hash="62hz3klvjy51m0koviyo8z1i66y5ni9">
+  <source id="6967233722066057022" name="BuildLayout_War_Behavior" hash="371bt6afqrhlmqlr6stoq6507pvo3mb">
     <dep root="6547494638219485324" />
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_War_Behavior.java" />
   </source>
-  <source id="342830306171239604" name="BuildSource_JavaDependencyExternalJarInFolder_Behavior" hash="-77nc700gyi0qbrlaccsfzkbsjru8kux">
+  <source id="342830306171239604" name="BuildSource_JavaDependencyExternalJarInFolder_Behavior" hash="n05910vskm4ynpx8z0ilv6fr43nuqv">
     <dep root="5610619299014531750" />
     <dep root="841011766566205092" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -1031,7 +1039,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BuildLayout_JarManifest_Behavior.java" />
   </source>
-  <source id="7471276865246016972" name="BuildLayout_JarManifest_Attribute_Behavior" hash="-1ka8pz8lix94vxjmyn4j3aq2ncq2umw">
+  <source id="7471276865246016972" name="BuildLayout_JarManifest_Attribute_Behavior" hash="-9rwwvfxgc697mz36gcgnbzummg8x5uf">
     <dep root="9184644532456897461" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
@@ -1041,7 +1049,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="BuildLayout_JarManifest_Attribute_Behavior.java" />
   </source>
-  <source id="2539347366864764587" name="BuildSourceArchiveRelativePath_Behavior" hash="wt8hymwju36f73p7ub7lk96rh8k0s8">
+  <source id="2539347366864764587" name="BuildSourceArchiveRelativePath_Behavior" hash="ewxhev1jd40qxno7giluj8413lt87z8">
     <dep root="4959435991187140512" />
     <dep root="5481553824944787361" />
     <dep root="6854204111265837869" />
@@ -1073,7 +1081,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BuildSourceArchiveRelativePath_Behavior.java" />
   </source>
-  <source id="6854204111265837869" name="IWorkflowParticipant_Behavior" hash="4t7w0azhtejrfxmhckfc4c6mi5qwbac">
+  <source id="6854204111265837869" name="IWorkflowParticipant_Behavior" hash="9svuhe29dkg3astqp8w57asvvdfy9mw">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -1082,7 +1090,7 @@
     <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <file name="IWorkflowParticipant_Behavior.java" />
   </source>
-  <source id="5970181360961342216" name="BuildLayout_InJarNode_Behavior" hash="eo54xbtck5omxcjwyzy2gdwoj3mf9rd">
+  <source id="5970181360961342216" name="BuildLayout_InJarNode_Behavior" hash="4ln1phdf1ltm36estyie9atyiteap4q">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
