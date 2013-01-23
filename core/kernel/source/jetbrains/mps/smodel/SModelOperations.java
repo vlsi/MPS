@@ -247,11 +247,11 @@ public class SModelOperations {
     for (SNode node : sModel.nodes()) {
       Iterable<SReference> references = node.getReferences();
       for (SReference reference : references) {
-        if (!reference.isExternal()) continue;
-        SModelReference targetModelReference = reference.getTargetSModelReference();
-        if (targetModelReference == null || result.contains(targetModelReference)) continue;
+        SModelReference targetModel = reference.getTargetSModelReference();
+        if (sModel.getSModelReference().equals(targetModel)) continue;
+        if (targetModel == null || result.contains(targetModel)) continue;
 
-        result.add(targetModelReference);
+        result.add(targetModel);
       }
     }
     return result;
