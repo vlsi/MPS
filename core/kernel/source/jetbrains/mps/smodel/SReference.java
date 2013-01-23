@@ -59,7 +59,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   public final SNode getTargetNode() {
-    return getTargetNode_internal(false);
+    return getTargetNode_internal();
   }
 
   public SLink getLink() {
@@ -96,7 +96,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return targetNode == null ? null : targetNode.getNodeId();
   }
 
-
   @Deprecated
   /**
    * Inline content in java code, not supposed to be used in MPS
@@ -105,14 +104,13 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public final SNode getTargetNodeSilently() {
     try{
       disableLogging();
-      return getTargetNode_internal(true);
+      return getTargetNode_internal();
     } finally {
       enableLogging();
     }
   }
 
-  @Deprecated
-  protected abstract SNode getTargetNode_internal(boolean silently);
+  protected abstract SNode getTargetNode_internal();
 
   @Deprecated
   /**

@@ -66,7 +66,7 @@ public class PostponedReference extends SReference {
     return SModelRepository.getInstance().getModelDescriptor(getTargetSModelReference());
   }
 
-  protected SNode getTargetNode_internal(boolean silently) {
+  protected SNode getTargetNode_internal() {
     SReference ref = getReplacementReference();
     if (ref == null) return null;
     return ref.getTargetNode();
