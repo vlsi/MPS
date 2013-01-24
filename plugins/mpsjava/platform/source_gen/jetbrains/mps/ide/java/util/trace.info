@@ -99,8 +99,8 @@
     <nodeInfo nodeId="9154129924133556758" fileName="JavaPaster.java" startLine="121" startPosition="11" endLine="122" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="6254820179237854131" fileName="JavaPaster.java" startLine="124" startPosition="7" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6254820179237722143" fileName="JavaPaster.java" startLine="125" startPosition="0" endLine="126" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="9025524024257384034" fileName="JavaPaster.java" startLine="126" startPosition="67" endLine="127" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6956162774782906053" fileName="JavaPaster.java" startLine="127" startPosition="40" endLine="128" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9025524024257384034" fileName="JavaPaster.java" startLine="126" startPosition="67" endLine="127" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6956162774782906053" fileName="JavaPaster.java" startLine="127" startPosition="43" endLine="128" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6254820179237852606" fileName="JavaPaster.java" startLine="128" startPosition="46" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8183587472723150359" fileName="JavaPaster.java" startLine="130" startPosition="37" endLine="131" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1418985936284183547" fileName="JavaPaster.java" startLine="135" startPosition="105" endLine="136" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

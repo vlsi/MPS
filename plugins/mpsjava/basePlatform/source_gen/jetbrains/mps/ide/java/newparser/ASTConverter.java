@@ -308,7 +308,9 @@ public class ASTConverter {
 
       SPropertyOperations.set(fDecl, "name", new String(f.name));
       SLinkOperations.setTarget(fDecl, "type", convertTypeReference(f.type), true);
-      SLinkOperations.setTarget(fDecl, "initializer", convertExpression(f.initialization), true);
+      if (!(myOnlyStubs) && f.initialization != null) {
+        SLinkOperations.setTarget(fDecl, "initializer", convertExpression(f.initialization), true);
+      }
 
       SLinkOperations.setTarget(SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", convertVisibility(f.modifiers), true);
       SPropertyOperations.set(fDecl, "isFinal", "" + (flagSet(f.modifiers, ClassFileConstants.AccFinal)));
