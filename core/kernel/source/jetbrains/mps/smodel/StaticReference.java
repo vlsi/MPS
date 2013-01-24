@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
-
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 //final used by find usages
 public final class StaticReference extends SReferenceBase {
@@ -119,18 +119,13 @@ public final class StaticReference extends SReferenceBase {
 
   public SModel getTargetSModel() {
     SModel current = getSourceNode().getModel();
-    if (!isExternal()) return current;
+    if (current != null && current.getSModelReference().equals(getTargetSModelReference())) return current;
 
     // external
     SModelReference targetModelReference = getTargetSModelReference();
     // 'unresolved' actually.
     // It can be tmp reference created while copy/pasting a node
     if (targetModelReference == null) return null;
-
-    // TODO
-//    if(current == null) {
-//      return null;
-//    }
 
     SModelDescriptor modelDescriptor = null;
     if (current != null && current.getModelDescriptor() != null) {
