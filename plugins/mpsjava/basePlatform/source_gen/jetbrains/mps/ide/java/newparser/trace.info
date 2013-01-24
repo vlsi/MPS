@@ -2005,81 +2005,81 @@
     <nodeInfo nodeId="6528213125912111190" fileName="JavaParser.java" startLine="233" startPosition="51" endLine="234" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3493766494546492437" fileName="JavaParser.java" startLine="235" startPosition="5" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3493766494546492460" fileName="JavaParser.java" startLine="236" startPosition="0" endLine="237" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6072020170586257594" fileName="JavaParser.java" startLine="241" startPosition="53" endLine="242" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8504030010051279153" fileName="JavaParser.java" startLine="243" startPosition="57" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6072020170586273153" fileName="JavaParser.java" startLine="244" startPosition="0" endLine="245" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6072020170586257636" fileName="JavaParser.java" startLine="245" startPosition="34" endLine="246" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8504030010051279150" fileName="JavaParser.java" startLine="247" startPosition="28" endLine="248" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="8504030010051279154" fileName="JavaParser.java" startLine="249" startPosition="9" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8504030010051279068" fileName="JavaParser.java" startLine="252" startPosition="29" endLine="253" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6072020170586257760" fileName="JavaParser.java" startLine="253" startPosition="48" endLine="254" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8504030010051279151" fileName="JavaParser.java" startLine="256" startPosition="11" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4901369180371273362" fileName="JavaParser.java" startLine="263" startPosition="23" endLine="264" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5616839344933922222" fileName="JavaParser.java" startLine="266" startPosition="60" endLine="267" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5616839344933922227" fileName="JavaParser.java" startLine="268" startPosition="12" endLine="269" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1179266876350269826" fileName="JavaParser.java" startLine="273" startPosition="45" endLine="274" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5646944109420331921" fileName="JavaParser.java" startLine="274" startPosition="31" endLine="275" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420331940" fileName="JavaParser.java" startLine="275" startPosition="34" endLine="276" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2229106483906299080" fileName="JavaParser.java" startLine="277" startPosition="80" endLine="278" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2229106483906299098" fileName="JavaParser.java" startLine="279" startPosition="50" endLine="280" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="2229106483906299099" fileName="JavaParser.java" startLine="281" startPosition="7" endLine="282" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1179266876350269797" fileName="JavaParser.java" startLine="283" startPosition="5" endLine="284" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5616839344933921704" fileName="JavaParser.java" startLine="288" startPosition="0" endLine="289" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="UNKNOWN_ERROR" />
-    <nodeInfo nodeId="5616839344933920225" fileName="JavaParser.java" startLine="291" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="pakage" />
-    <nodeInfo nodeId="5616839344933920229" fileName="JavaParser.java" startLine="292" startPosition="0" endLine="293" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="errorMsg" />
-    <nodeInfo nodeId="5616839344933920237" fileName="JavaParser.java" startLine="294" startPosition="58" endLine="295" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5616839344933920267" fileName="JavaParser.java" startLine="295" startPosition="17" endLine="296" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5616839344933920305" fileName="JavaParser.java" startLine="299" startPosition="70" endLine="300" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="5616839344933920334" fileName="JavaParser.java" startLine="300" startPosition="22" endLine="301" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5616839344933923162" fileName="JavaParser.java" startLine="305" startPosition="35" endLine="306" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5616839344933923169" fileName="JavaParser.java" startLine="309" startPosition="32" endLine="310" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5616839344933923176" fileName="JavaParser.java" startLine="313" startPosition="33" endLine="314" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4901369180371273362" fileName="JavaParser.java" startLine="241" startPosition="23" endLine="242" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5616839344933922222" fileName="JavaParser.java" startLine="244" startPosition="60" endLine="245" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5616839344933922227" fileName="JavaParser.java" startLine="246" startPosition="12" endLine="247" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1179266876350269826" fileName="JavaParser.java" startLine="251" startPosition="45" endLine="252" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5646944109420331921" fileName="JavaParser.java" startLine="252" startPosition="31" endLine="253" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420331940" fileName="JavaParser.java" startLine="253" startPosition="34" endLine="254" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2229106483906299080" fileName="JavaParser.java" startLine="255" startPosition="80" endLine="256" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2229106483906299098" fileName="JavaParser.java" startLine="257" startPosition="50" endLine="258" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2229106483906299099" fileName="JavaParser.java" startLine="259" startPosition="7" endLine="260" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1179266876350269797" fileName="JavaParser.java" startLine="261" startPosition="5" endLine="262" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5616839344933921704" fileName="JavaParser.java" startLine="266" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="UNKNOWN_ERROR" />
+    <nodeInfo nodeId="5616839344933920225" fileName="JavaParser.java" startLine="269" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="pakage" />
+    <nodeInfo nodeId="5616839344933920229" fileName="JavaParser.java" startLine="270" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="errorMsg" />
+    <nodeInfo nodeId="5616839344933920237" fileName="JavaParser.java" startLine="272" startPosition="58" endLine="273" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5616839344933920267" fileName="JavaParser.java" startLine="273" startPosition="17" endLine="274" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5616839344933920305" fileName="JavaParser.java" startLine="277" startPosition="70" endLine="278" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="5616839344933920334" fileName="JavaParser.java" startLine="278" startPosition="22" endLine="279" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5616839344933923162" fileName="JavaParser.java" startLine="283" startPosition="35" endLine="284" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5616839344933923169" fileName="JavaParser.java" startLine="287" startPosition="32" endLine="288" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5616839344933923176" fileName="JavaParser.java" startLine="291" startPosition="33" endLine="292" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6072020170586257594" fileName="JavaParser.java" startLine="297" startPosition="53" endLine="298" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8504030010051279153" fileName="JavaParser.java" startLine="299" startPosition="57" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6072020170586273153" fileName="JavaParser.java" startLine="300" startPosition="0" endLine="301" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6072020170586257636" fileName="JavaParser.java" startLine="301" startPosition="34" endLine="302" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8504030010051279150" fileName="JavaParser.java" startLine="303" startPosition="28" endLine="304" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8504030010051279154" fileName="JavaParser.java" startLine="305" startPosition="9" endLine="306" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8504030010051279068" fileName="JavaParser.java" startLine="308" startPosition="29" endLine="309" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6072020170586257760" fileName="JavaParser.java" startLine="309" startPosition="48" endLine="310" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8504030010051279151" fileName="JavaParser.java" startLine="312" startPosition="11" endLine="313" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3493766494546492317" fileName="JavaParser.java" startLine="39" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaParser#()V" />
-    <nodeInfo nodeId="5616839344933922225" fileName="JavaParser.java" startLine="268" startPosition="10" endLine="270" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5616839344933920221" fileName="JavaParser.java" startLine="289" startPosition="0" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nodes" />
+    <nodeInfo nodeId="5616839344933922225" fileName="JavaParser.java" startLine="246" startPosition="10" endLine="248" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5616839344933920221" fileName="JavaParser.java" startLine="267" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nodes" />
     <nodeInfo nodeId="8312519168222600848" fileName="JavaParser.java" startLine="76" startPosition="95" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8312519168222608323" fileName="JavaParser.java" startLine="108" startPosition="44" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8312519168222601021" fileName="JavaParser.java" startLine="117" startPosition="101" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3908372348891050631" fileName="JavaParser.java" startLine="160" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/ide/java/newparser/FullASTConverter/CodeBlock;Ljetbrains/mps/ide/java/newparser/FullASTConverter/CodeBlock;)I" />
     <nodeInfo nodeId="3671703302989071279" fileName="JavaParser.java" startLine="190" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="586875493276852864" fileName="JavaParser.java" startLine="201" startPosition="12" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8504030010051279121" fileName="JavaParser.java" startLine="246" startPosition="246" endLine="249" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4901369180371273333" fileName="JavaParser.java" startLine="262" startPosition="70" endLine="265" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2229106483906299090" fileName="JavaParser.java" startLine="278" startPosition="32" endLine="281" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5616839344933923164" fileName="JavaParser.java" startLine="309" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPackage#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5616839344933923171" fileName="JavaParser.java" startLine="313" startPosition="0" endLine="316" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorMsg#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4901369180371273333" fileName="JavaParser.java" startLine="240" startPosition="70" endLine="243" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2229106483906299090" fileName="JavaParser.java" startLine="256" startPosition="32" endLine="259" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5616839344933923164" fileName="JavaParser.java" startLine="287" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5616839344933923171" fileName="JavaParser.java" startLine="291" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorMsg#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8504030010051279121" fileName="JavaParser.java" startLine="302" startPosition="246" endLine="305" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9140629538072468459" fileName="JavaParser.java" startLine="59" startPosition="62" endLine="63" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4046344333283880884" fileName="JavaParser.java" startLine="153" startPosition="0" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7731963821318721634" fileName="JavaParser.java" startLine="182" startPosition="75" endLine="186" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3493766494546492336" fileName="JavaParser.java" startLine="211" startPosition="37" endLine="215" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6072020170586257754" fileName="JavaParser.java" startLine="252" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5616839344933920217" fileName="JavaParser.java" startLine="294" startPosition="0" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaParseResult#(Ljava/util/List;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5616839344933920293" fileName="JavaParser.java" startLine="299" startPosition="0" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaParseResult#(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5616839344933923156" fileName="JavaParser.java" startLine="304" startPosition="0" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#()Ljava/util/List;" />
+    <nodeInfo nodeId="5616839344933920217" fileName="JavaParser.java" startLine="272" startPosition="0" endLine="276" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaParseResult#(Ljava/util/List;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5616839344933920293" fileName="JavaParser.java" startLine="277" startPosition="0" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaParseResult#(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5616839344933923156" fileName="JavaParser.java" startLine="282" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#()Ljava/util/List;" />
+    <nodeInfo nodeId="6072020170586257754" fileName="JavaParser.java" startLine="308" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="8312519168222600879" fileName="JavaParser.java" startLine="84" startPosition="53" endLine="89" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8312519168222600912" fileName="JavaParser.java" startLine="96" startPosition="57" endLine="101" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8312519168222601043" fileName="JavaParser.java" startLine="124" startPosition="0" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3908372348891050597" fileName="JavaParser.java" startLine="158" startPosition="0" endLine="163" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4312510064178860345" fileName="JavaParser.java" startLine="169" startPosition="132" endLine="174" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3671703302989071215" fileName="JavaParser.java" startLine="188" startPosition="28" endLine="193" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5616839344933922109" fileName="JavaParser.java" startLine="265" startPosition="5" endLine="270" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5616839344933922109" fileName="JavaParser.java" startLine="243" startPosition="5" endLine="248" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5616839344933920205" fileName="JavaParser.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseCompilationUnit#(Ljava/lang/String;)Ljetbrains/mps/ide/java/newparser/JavaParser/JavaParseResult;" />
     <nodeInfo nodeId="7731963821318721595" fileName="JavaParser.java" startLine="181" startPosition="25" endLine="187" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3493766494546492334" fileName="JavaParser.java" startLine="210" startPosition="239" endLine="216" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3493766494546492405" fileName="JavaParser.java" startLine="229" startPosition="41" endLine="235" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="6072020170586257713" fileName="JavaParser.java" startLine="250" startPosition="0" endLine="256" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6072020170586257713" fileName="JavaParser.java" startLine="306" startPosition="0" endLine="312" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7054300446842357318" fileName="JavaParser.java" startLine="193" startPosition="19" endLine="200" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2229106483906299059" fileName="JavaParser.java" startLine="276" startPosition="52" endLine="283" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="2229106483906299059" fileName="JavaParser.java" startLine="254" startPosition="52" endLine="261" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="8312519168222600870" fileName="JavaParser.java" startLine="82" startPosition="0" endLine="91" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5616839344933921985" fileName="JavaParser.java" startLine="262" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="problemDescription#(Lorg/eclipse/jdt/internal/core/util/RecordedParsingInformation;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5616839344933921985" fileName="JavaParser.java" startLine="240" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="problemDescription#(Lorg/eclipse/jdt/internal/core/util/RecordedParsingInformation;)Ljava/lang/String;" />
     <nodeInfo nodeId="3493766494546492321" fileName="JavaParser.java" startLine="208" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="annotateWithmports#(Lorg/eclipse/jdt/internal/compiler/ast/CompilationUnitDeclaration;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="3671703302989070928" fileName="JavaParser.java" startLine="164" startPosition="36" endLine="177" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1179266876350200176" fileName="JavaParser.java" startLine="273" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="peekPackage#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6072020170586257631" fileName="JavaParser.java" startLine="242" startPosition="144" endLine="258" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1179266876350200176" fileName="JavaParser.java" startLine="251" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="peekPackage#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6072020170586257631" fileName="JavaParser.java" startLine="298" startPosition="144" endLine="314" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3671703302989070995" fileName="JavaParser.java" startLine="187" startPosition="7" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3493766494546492356" fileName="JavaParser.java" startLine="220" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="makeImport#(Lorg/eclipse/jdt/internal/compiler/ast/ImportReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6072020170586257589" fileName="JavaParser.java" startLine="240" startPosition="50" endLine="259" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6072020170586257581" fileName="JavaParser.java" startLine="240" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryResolveRoots#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="6072020170586257589" fileName="JavaParser.java" startLine="296" startPosition="57" endLine="315" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9025524024257344848" fileName="JavaParser.java" startLine="296" startPosition="0" endLine="317" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryResolveRoots#(Ljava/util/List;)V" />
     <nodeInfo nodeId="3671703302989070793" fileName="JavaParser.java" startLine="163" startPosition="13" endLine="205" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="9210759828700287228" fileName="JavaParser.java" startLine="144" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachComments#([CLjetbrains/mps/ide/java/newparser/ASTConverter;Lorg/eclipse/jdt/internal/core/util/RecordedParsingInformation;)V" />
     <nodeInfo nodeId="8312519168222600819" fileName="JavaParser.java" startLine="70" startPosition="0" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
@@ -2092,24 +2092,24 @@
     <scopeInfo nodeId="8312519168222600821" fileName="JavaParser.java" startLine="133" startPosition="14" endLine="134" endPosition="108" />
     <scopeInfo nodeId="3908372348891050632" fileName="JavaParser.java" startLine="160" startPosition="86" endLine="161" endPosition="45" />
     <scopeInfo nodeId="3671703302989071280" fileName="JavaParser.java" startLine="190" startPosition="43" endLine="191" endPosition="146" />
-    <scopeInfo nodeId="8504030010051279122" fileName="JavaParser.java" startLine="247" startPosition="28" endLine="248" endPosition="19" />
-    <scopeInfo nodeId="4901369180371273334" fileName="JavaParser.java" startLine="263" startPosition="23" endLine="264" endPosition="18" />
-    <scopeInfo nodeId="5616839344933922111" fileName="JavaParser.java" startLine="266" startPosition="60" endLine="267" endPosition="40" />
-    <scopeInfo nodeId="5616839344933922226" fileName="JavaParser.java" startLine="268" startPosition="12" endLine="269" endPosition="18" />
-    <scopeInfo nodeId="2229106483906299097" fileName="JavaParser.java" startLine="279" startPosition="50" endLine="280" endPosition="14" />
-    <scopeInfo nodeId="5616839344933923159" fileName="JavaParser.java" startLine="305" startPosition="35" endLine="306" endPosition="19" />
-    <scopeInfo nodeId="5616839344933923167" fileName="JavaParser.java" startLine="309" startPosition="32" endLine="310" endPosition="20" />
-    <scopeInfo nodeId="5616839344933923174" fileName="JavaParser.java" startLine="313" startPosition="33" endLine="314" endPosition="22" />
+    <scopeInfo nodeId="4901369180371273334" fileName="JavaParser.java" startLine="241" startPosition="23" endLine="242" endPosition="18" />
+    <scopeInfo nodeId="5616839344933922111" fileName="JavaParser.java" startLine="244" startPosition="60" endLine="245" endPosition="40" />
+    <scopeInfo nodeId="5616839344933922226" fileName="JavaParser.java" startLine="246" startPosition="12" endLine="247" endPosition="18" />
+    <scopeInfo nodeId="2229106483906299097" fileName="JavaParser.java" startLine="257" startPosition="50" endLine="258" endPosition="14" />
+    <scopeInfo nodeId="5616839344933923159" fileName="JavaParser.java" startLine="283" startPosition="35" endLine="284" endPosition="19" />
+    <scopeInfo nodeId="5616839344933923167" fileName="JavaParser.java" startLine="287" startPosition="32" endLine="288" endPosition="20" />
+    <scopeInfo nodeId="5616839344933923174" fileName="JavaParser.java" startLine="291" startPosition="33" endLine="292" endPosition="22" />
+    <scopeInfo nodeId="8504030010051279122" fileName="JavaParser.java" startLine="303" startPosition="28" endLine="304" endPosition="19" />
     <scopeInfo nodeId="3493766494546492317" fileName="JavaParser.java" startLine="39" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="4046344333283880886" fileName="JavaParser.java" startLine="154" startPosition="48" endLine="156" endPosition="70" />
     <scopeInfo nodeId="7731963821318721636" fileName="JavaParser.java" startLine="183" startPosition="77" endLine="185" endPosition="16" />
     <scopeInfo nodeId="586875493276852865" fileName="JavaParser.java" startLine="201" startPosition="14" endLine="203" endPosition="163" />
     <scopeInfo nodeId="3493766494546492341" fileName="JavaParser.java" startLine="212" startPosition="56" endLine="214" endPosition="280" />
-    <scopeInfo nodeId="6072020170586257757" fileName="JavaParser.java" startLine="252" startPosition="29" endLine="254" endPosition="70">
+    <scopeInfo nodeId="5616839344933920220" fileName="JavaParser.java" startLine="272" startPosition="58" endLine="274" endPosition="23" />
+    <scopeInfo nodeId="5616839344933920296" fileName="JavaParser.java" startLine="277" startPosition="70" endLine="279" endPosition="19" />
+    <scopeInfo nodeId="6072020170586257757" fileName="JavaParser.java" startLine="308" startPosition="29" endLine="310" endPosition="70">
       <varInfo nodeId="8504030010051279069" varName="theRightNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5616839344933920220" fileName="JavaParser.java" startLine="294" startPosition="58" endLine="296" endPosition="23" />
-    <scopeInfo nodeId="5616839344933920296" fileName="JavaParser.java" startLine="299" startPosition="70" endLine="301" endPosition="19" />
     <scopeInfo nodeId="5616839344933920208" fileName="JavaParser.java" startLine="43" startPosition="97" endLine="46" endPosition="53">
       <varInfo nodeId="1179266876350269829" varName="pkg" />
     </scopeInfo>
@@ -2132,8 +2132,8 @@
     <scopeInfo nodeId="3671703302989071279" fileName="JavaParser.java" startLine="190" startPosition="0" endLine="193" endPosition="0">
       <varInfo nodeId="3671703302989071279" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5616839344933923164" fileName="JavaParser.java" startLine="309" startPosition="0" endLine="312" endPosition="0" />
-    <scopeInfo nodeId="5616839344933923171" fileName="JavaParser.java" startLine="313" startPosition="0" endLine="316" endPosition="0" />
+    <scopeInfo nodeId="5616839344933923164" fileName="JavaParser.java" startLine="287" startPosition="0" endLine="290" endPosition="0" />
+    <scopeInfo nodeId="5616839344933923171" fileName="JavaParser.java" startLine="291" startPosition="0" endLine="294" endPosition="0" />
     <scopeInfo nodeId="7731963821318721598" fileName="JavaParser.java" startLine="182" startPosition="75" endLine="186" endPosition="9" />
     <scopeInfo nodeId="3493766494546492335" fileName="JavaParser.java" startLine="211" startPosition="37" endLine="215" endPosition="7" />
     <scopeInfo nodeId="3493766494546492336" fileName="JavaParser.java" startLine="211" startPosition="37" endLine="215" endPosition="7">
@@ -2143,17 +2143,17 @@
       <varInfo nodeId="6528213125912095014" varName="tok" />
       <varInfo nodeId="6528213125912101000" varName="token" />
     </scopeInfo>
-    <scopeInfo nodeId="6072020170586257754" fileName="JavaParser.java" startLine="252" startPosition="0" endLine="256" endPosition="0" />
-    <scopeInfo nodeId="5616839344933920217" fileName="JavaParser.java" startLine="294" startPosition="0" endLine="298" endPosition="0">
+    <scopeInfo nodeId="5616839344933920217" fileName="JavaParser.java" startLine="272" startPosition="0" endLine="276" endPosition="0">
       <varInfo nodeId="5616839344933920263" varName="error" />
       <varInfo nodeId="5616839344933920235" varName="ns" />
     </scopeInfo>
-    <scopeInfo nodeId="5616839344933920293" fileName="JavaParser.java" startLine="299" startPosition="0" endLine="303" endPosition="0">
+    <scopeInfo nodeId="5616839344933920293" fileName="JavaParser.java" startLine="277" startPosition="0" endLine="281" endPosition="0">
       <varInfo nodeId="5616839344933920302" varName="error" />
       <varInfo nodeId="5616839344933920297" varName="ns" />
       <varInfo nodeId="5616839344933920299" varName="pkg" />
     </scopeInfo>
-    <scopeInfo nodeId="5616839344933923156" fileName="JavaParser.java" startLine="304" startPosition="0" endLine="308" endPosition="0" />
+    <scopeInfo nodeId="5616839344933923156" fileName="JavaParser.java" startLine="282" startPosition="0" endLine="286" endPosition="0" />
+    <scopeInfo nodeId="6072020170586257754" fileName="JavaParser.java" startLine="308" startPosition="0" endLine="312" endPosition="0" />
     <scopeInfo nodeId="8312519168222600879" fileName="JavaParser.java" startLine="84" startPosition="53" endLine="89" endPosition="11">
       <varInfo nodeId="8312519168222600880" varName="astNode" />
     </scopeInfo>
@@ -2164,7 +2164,7 @@
       <varInfo nodeId="7054300446842357340" varName="commentLine" />
       <varInfo nodeId="7054300446842357375" varName="commentText" />
     </scopeInfo>
-    <scopeInfo nodeId="2229106483906299060" fileName="JavaParser.java" startLine="277" startPosition="80" endLine="282" endPosition="28">
+    <scopeInfo nodeId="2229106483906299060" fileName="JavaParser.java" startLine="255" startPosition="80" endLine="260" endPosition="28">
       <varInfo nodeId="2229106483906299081" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="5616839344933920205" fileName="JavaParser.java" startLine="42" startPosition="0" endLine="48" endPosition="0">
@@ -2182,15 +2182,15 @@
     <scopeInfo nodeId="7054300446842357318" fileName="JavaParser.java" startLine="193" startPosition="19" endLine="200" endPosition="9">
       <varInfo nodeId="7054300446842357319" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="2229106483906299059" fileName="JavaParser.java" startLine="276" startPosition="52" endLine="283" endPosition="5">
+    <scopeInfo nodeId="2229106483906299059" fileName="JavaParser.java" startLine="254" startPosition="52" endLine="261" endPosition="5">
       <varInfo nodeId="2229106483906299062" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="5616839344933921988" fileName="JavaParser.java" startLine="262" startPosition="70" endLine="270" endPosition="5" />
+    <scopeInfo nodeId="5616839344933921988" fileName="JavaParser.java" startLine="240" startPosition="70" endLine="248" endPosition="5" />
     <scopeInfo nodeId="8312519168222600836" fileName="JavaParser.java" startLine="105" startPosition="25" endLine="114" endPosition="0">
       <varInfo nodeId="8312519168222600973" varName="astNodes" />
     </scopeInfo>
     <scopeInfo nodeId="3493766494546492326" fileName="JavaParser.java" startLine="208" startPosition="85" endLine="217" endPosition="14" />
-    <scopeInfo nodeId="5616839344933921985" fileName="JavaParser.java" startLine="262" startPosition="0" endLine="272" endPosition="0">
+    <scopeInfo nodeId="5616839344933921985" fileName="JavaParser.java" startLine="240" startPosition="0" endLine="250" endPosition="0">
       <varInfo nodeId="5616839344933921991" varName="info" />
     </scopeInfo>
     <scopeInfo nodeId="3671703302989070929" fileName="JavaParser.java" startLine="165" startPosition="27" endLine="176" endPosition="17">
@@ -2201,21 +2201,21 @@
       <varInfo nodeId="6528213125912069334" varName="clas" />
       <varInfo nodeId="3493766494546492324" varName="compResult" />
     </scopeInfo>
-    <scopeInfo nodeId="1179266876350200179" fileName="JavaParser.java" startLine="273" startPosition="45" endLine="284" endPosition="34">
+    <scopeInfo nodeId="1179266876350200179" fileName="JavaParser.java" startLine="251" startPosition="45" endLine="262" endPosition="34">
       <varInfo nodeId="5646944109420331941" varName="packageName" />
       <varInfo nodeId="5646944109420331922" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="3671703302989070996" fileName="JavaParser.java" startLine="188" startPosition="28" endLine="200" endPosition="9">
       <varInfo nodeId="3671703302989071216" varName="pos" />
     </scopeInfo>
-    <scopeInfo nodeId="1179266876350200176" fileName="JavaParser.java" startLine="273" startPosition="0" endLine="286" endPosition="0">
+    <scopeInfo nodeId="1179266876350200176" fileName="JavaParser.java" startLine="251" startPosition="0" endLine="264" endPosition="0">
       <varInfo nodeId="1179266876350200182" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="6072020170586257634" fileName="JavaParser.java" startLine="243" startPosition="57" endLine="257" endPosition="0">
+    <scopeInfo nodeId="6072020170586257634" fileName="JavaParser.java" startLine="299" startPosition="57" endLine="313" endPosition="0">
       <varInfo nodeId="6072020170586257637" varName="subst" />
       <varInfo nodeId="6072020170586273154" varName="unkNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6072020170586257631" fileName="JavaParser.java" startLine="242" startPosition="144" endLine="258" endPosition="7">
+    <scopeInfo nodeId="6072020170586257631" fileName="JavaParser.java" startLine="298" startPosition="144" endLine="314" endPosition="7">
       <varInfo nodeId="6072020170586257632" varName="unk" />
     </scopeInfo>
     <scopeInfo nodeId="8312519168222600950" fileName="JavaParser.java" startLine="115" startPosition="22" endLine="132" endPosition="0">
@@ -2229,17 +2229,17 @@
       <varInfo nodeId="3493766494546492388" varName="sb" />
       <varInfo nodeId="3493766494546492380" varName="toks" />
     </scopeInfo>
-    <scopeInfo nodeId="6072020170586257592" fileName="JavaParser.java" startLine="241" startPosition="53" endLine="258" endPosition="7">
+    <scopeInfo nodeId="6072020170586257592" fileName="JavaParser.java" startLine="297" startPosition="53" endLine="314" endPosition="7">
       <varInfo nodeId="6072020170586257595" varName="unknowns" />
     </scopeInfo>
     <scopeInfo nodeId="3493766494546492356" fileName="JavaParser.java" startLine="220" startPosition="0" endLine="239" endPosition="0">
       <varInfo nodeId="3493766494546492358" varName="impRef" />
     </scopeInfo>
-    <scopeInfo nodeId="6072020170586257584" fileName="JavaParser.java" startLine="240" startPosition="50" endLine="259" endPosition="5" />
-    <scopeInfo nodeId="6072020170586257589" fileName="JavaParser.java" startLine="240" startPosition="50" endLine="259" endPosition="5">
+    <scopeInfo nodeId="6072020170586257584" fileName="JavaParser.java" startLine="296" startPosition="57" endLine="315" endPosition="5" />
+    <scopeInfo nodeId="6072020170586257589" fileName="JavaParser.java" startLine="296" startPosition="57" endLine="315" endPosition="5">
       <varInfo nodeId="6072020170586257590" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6072020170586257581" fileName="JavaParser.java" startLine="240" startPosition="0" endLine="261" endPosition="0">
+    <scopeInfo nodeId="9025524024257344848" fileName="JavaParser.java" startLine="296" startPosition="0" endLine="317" endPosition="0">
       <varInfo nodeId="6072020170586257587" varName="roots" />
     </scopeInfo>
     <scopeInfo nodeId="8312519168222600831" fileName="JavaParser.java" startLine="74" startPosition="22" endLine="104" endPosition="0">
@@ -2285,8 +2285,8 @@
     </scopeInfo>
     <unitInfo nodeId="3908372348891050631" fileName="JavaParser.java" startLine="159" startPosition="88" endLine="163" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaParser$1" />
     <unitInfo nodeId="3671703302989071279" fileName="JavaParser.java" startLine="189" startPosition="104" endLine="193" endPosition="9" unitName="jetbrains.mps.ide.java.newparser.JavaParser$2" />
-    <unitInfo nodeId="6072020170586257752" fileName="JavaParser.java" startLine="251" startPosition="59" endLine="256" endPosition="9" unitName="jetbrains.mps.ide.java.newparser.JavaParser$3" />
-    <unitInfo nodeId="5616839344933920215" fileName="JavaParser.java" startLine="287" startPosition="0" endLine="317" endPosition="0" unitName="jetbrains.mps.ide.java.newparser.JavaParser$JavaParseResult" />
+    <unitInfo nodeId="6072020170586257752" fileName="JavaParser.java" startLine="307" startPosition="59" endLine="312" endPosition="9" unitName="jetbrains.mps.ide.java.newparser.JavaParser$3" />
+    <unitInfo nodeId="5616839344933920215" fileName="JavaParser.java" startLine="265" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.ide.java.newparser.JavaParser$JavaParseResult" />
     <unitInfo nodeId="3493766494546492073" fileName="JavaParser.java" startLine="36" startPosition="0" endLine="318" endPosition="0" unitName="jetbrains.mps.ide.java.newparser.JavaParser" />
   </root>
   <root nodeRef="r:b1598fca-3527-4718-b3ee-193781dbf052(jetbrains.mps.ide.java.newparser)/3493766494546492981">
@@ -4793,220 +4793,219 @@
     <nodeInfo nodeId="887121589775378392" fileName="DirParser.java" startLine="64" startPosition="40" endLine="65" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="323909972929548031" fileName="DirParser.java" startLine="65" startPosition="92" endLine="66" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5230611918664183003" fileName="DirParser.java" startLine="67" startPosition="5" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5102728208724367306" fileName="DirParser.java" startLine="68" startPosition="0" endLine="69" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="887121589775378367" fileName="DirParser.java" startLine="69" startPosition="14" endLine="70" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5230611918664008420" fileName="DirParser.java" startLine="73" startPosition="38" endLine="74" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8753353829093752527" fileName="DirParser.java" startLine="78" startPosition="64" endLine="79" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8753353829093752534" fileName="DirParser.java" startLine="79" startPosition="22" endLine="80" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1023591392840735525" fileName="DirParser.java" startLine="81" startPosition="5" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7144131533321217489" fileName="DirParser.java" startLine="83" startPosition="62" endLine="84" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1023591392840703979" fileName="DirParser.java" startLine="85" startPosition="5" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5646944109420332156" fileName="DirParser.java" startLine="89" startPosition="74" endLine="90" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="7651879834197341613" fileName="DirParser.java" startLine="90" startPosition="29" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7651879834197416953" fileName="DirParser.java" startLine="91" startPosition="0" endLine="92" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7651879834197416949" fileName="DirParser.java" startLine="92" startPosition="42" endLine="93" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7651879834197341616" fileName="DirParser.java" startLine="93" startPosition="52" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7651879834197417105" fileName="DirParser.java" startLine="94" startPosition="22" endLine="95" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7651879834197417023" fileName="DirParser.java" startLine="95" startPosition="34" endLine="96" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7651879834197417022" fileName="DirParser.java" startLine="96" startPosition="53" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5646944109420332243" fileName="DirParser.java" startLine="99" startPosition="31" endLine="100" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1179266876350200064" fileName="DirParser.java" startLine="100" startPosition="37" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7651879834197416955" fileName="DirParser.java" startLine="102" startPosition="52" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7651879834197417018" fileName="DirParser.java" startLine="103" startPosition="0" endLine="104" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7651879834197417143" fileName="DirParser.java" startLine="104" startPosition="62" endLine="105" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7651879834197417693" fileName="DirParser.java" startLine="105" startPosition="41" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7651879834197417696" fileName="DirParser.java" startLine="107" startPosition="24" endLine="108" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7651879834197417172" fileName="DirParser.java" startLine="109" startPosition="33" endLine="110" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7651879834197417206" fileName="DirParser.java" startLine="110" startPosition="138" endLine="111" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7651879834197417233" fileName="DirParser.java" startLine="112" startPosition="11" endLine="113" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7651879834197417643" fileName="DirParser.java" startLine="116" startPosition="69" endLine="117" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7651879834197417646" fileName="DirParser.java" startLine="118" startPosition="18" endLine="119" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7651879834197417676" fileName="DirParser.java" startLine="119" startPosition="130" endLine="120" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7651879834197417642" fileName="DirParser.java" startLine="121" startPosition="11" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7651879834197417297" fileName="DirParser.java" startLine="123" startPosition="38" endLine="124" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7651879834197417358" fileName="DirParser.java" startLine="124" startPosition="114" endLine="125" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7651879834197417031" fileName="DirParser.java" startLine="126" startPosition="9" endLine="127" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7651879834197417613" fileName="DirParser.java" startLine="129" startPosition="5" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7651879834197417617" fileName="DirParser.java" startLine="130" startPosition="0" endLine="131" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5597927504164329816" fileName="DirParser.java" startLine="131" startPosition="22" endLine="132" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8154626362021538676" fileName="DirParser.java" startLine="135" startPosition="27" endLine="136" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1179266876350154981" fileName="DirParser.java" startLine="136" startPosition="57" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1179266876350154982" fileName="DirParser.java" startLine="138" startPosition="28" endLine="139" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7651879834197418335" fileName="DirParser.java" startLine="140" startPosition="58" endLine="141" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8154626362021538671" fileName="DirParser.java" startLine="142" startPosition="13" endLine="143" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7651879834197418186" fileName="DirParser.java" startLine="147" startPosition="12" endLine="148" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7651879834197416974" fileName="DirParser.java" startLine="152" startPosition="85" endLine="153" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7651879834197416984" fileName="DirParser.java" startLine="153" startPosition="42" endLine="154" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420332253" fileName="DirParser.java" startLine="157" startPosition="57" endLine="158" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420332258" fileName="DirParser.java" startLine="158" startPosition="64" endLine="159" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420332286" fileName="DirParser.java" startLine="161" startPosition="75" endLine="162" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420332299" fileName="DirParser.java" startLine="162" startPosition="108" endLine="163" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7651879834197417988" fileName="DirParser.java" startLine="164" startPosition="7" endLine="165" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7651879834197417991" fileName="DirParser.java" startLine="165" startPosition="39" endLine="166" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7651879834197417995" fileName="DirParser.java" startLine="166" startPosition="72" endLine="167" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7651879834197418428" fileName="DirParser.java" startLine="168" startPosition="12" endLine="169" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6122461715566550791" fileName="DirParser.java" startLine="173" startPosition="50" endLine="174" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6122461715566550902" fileName="DirParser.java" startLine="175" startPosition="52" endLine="176" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8890409944291606527" fileName="DirParser.java" startLine="176" startPosition="99" endLine="177" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1023591392840705566" fileName="DirParser.java" startLine="178" startPosition="5" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8890409944291607326" fileName="DirParser.java" startLine="179" startPosition="0" endLine="180" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8890409944291608049" fileName="DirParser.java" startLine="180" startPosition="109" endLine="181" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1023591392840705501" fileName="DirParser.java" startLine="181" startPosition="30" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6122461715566550552" fileName="DirParser.java" startLine="182" startPosition="0" endLine="183" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6122461715566550722" fileName="DirParser.java" startLine="189" startPosition="45" endLine="190" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6122461715566550743" fileName="DirParser.java" startLine="192" startPosition="5" endLine="193" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5646944109420331790" fileName="DirParser.java" startLine="196" startPosition="88" endLine="197" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5646944109420331797" fileName="DirParser.java" startLine="197" startPosition="57" endLine="198" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7651879834197418184" fileName="DirParser.java" startLine="147" startPosition="10" endLine="149" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5646944109420332269" fileName="DirParser.java" startLine="168" startPosition="10" endLine="170" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="887121589775378367" fileName="DirParser.java" startLine="68" startPosition="0" endLine="69" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5230611918664008420" fileName="DirParser.java" startLine="72" startPosition="38" endLine="73" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8753353829093752527" fileName="DirParser.java" startLine="77" startPosition="64" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8753353829093752534" fileName="DirParser.java" startLine="78" startPosition="22" endLine="79" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1023591392840735525" fileName="DirParser.java" startLine="80" startPosition="5" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9025524024257831151" fileName="DirParser.java" startLine="82" startPosition="62" endLine="83" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1023591392840703979" fileName="DirParser.java" startLine="84" startPosition="5" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5646944109420332156" fileName="DirParser.java" startLine="88" startPosition="74" endLine="89" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="7651879834197341613" fileName="DirParser.java" startLine="89" startPosition="29" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7651879834197416953" fileName="DirParser.java" startLine="90" startPosition="0" endLine="91" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7651879834197416949" fileName="DirParser.java" startLine="91" startPosition="42" endLine="92" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7651879834197341616" fileName="DirParser.java" startLine="92" startPosition="52" endLine="93" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7651879834197417105" fileName="DirParser.java" startLine="93" startPosition="22" endLine="94" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7651879834197417023" fileName="DirParser.java" startLine="94" startPosition="34" endLine="95" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7651879834197417022" fileName="DirParser.java" startLine="95" startPosition="53" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5646944109420332243" fileName="DirParser.java" startLine="98" startPosition="31" endLine="99" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1179266876350200064" fileName="DirParser.java" startLine="99" startPosition="37" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7651879834197416955" fileName="DirParser.java" startLine="101" startPosition="52" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7651879834197417018" fileName="DirParser.java" startLine="102" startPosition="0" endLine="103" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7651879834197417143" fileName="DirParser.java" startLine="103" startPosition="62" endLine="104" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7651879834197417693" fileName="DirParser.java" startLine="104" startPosition="41" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7651879834197417696" fileName="DirParser.java" startLine="106" startPosition="24" endLine="107" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7651879834197417172" fileName="DirParser.java" startLine="108" startPosition="33" endLine="109" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651879834197417206" fileName="DirParser.java" startLine="109" startPosition="138" endLine="110" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651879834197417233" fileName="DirParser.java" startLine="111" startPosition="11" endLine="112" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7651879834197417643" fileName="DirParser.java" startLine="115" startPosition="69" endLine="116" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651879834197417646" fileName="DirParser.java" startLine="117" startPosition="18" endLine="118" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651879834197417676" fileName="DirParser.java" startLine="118" startPosition="130" endLine="119" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7651879834197417642" fileName="DirParser.java" startLine="120" startPosition="11" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7651879834197417297" fileName="DirParser.java" startLine="122" startPosition="38" endLine="123" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651879834197417358" fileName="DirParser.java" startLine="123" startPosition="114" endLine="124" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7651879834197417031" fileName="DirParser.java" startLine="125" startPosition="9" endLine="126" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651879834197417613" fileName="DirParser.java" startLine="128" startPosition="5" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7651879834197417617" fileName="DirParser.java" startLine="129" startPosition="0" endLine="130" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5597927504164329816" fileName="DirParser.java" startLine="130" startPosition="22" endLine="131" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8154626362021538676" fileName="DirParser.java" startLine="134" startPosition="27" endLine="135" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1179266876350154981" fileName="DirParser.java" startLine="135" startPosition="57" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1179266876350154982" fileName="DirParser.java" startLine="137" startPosition="28" endLine="138" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651879834197418335" fileName="DirParser.java" startLine="139" startPosition="58" endLine="140" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8154626362021538671" fileName="DirParser.java" startLine="141" startPosition="13" endLine="142" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651879834197418186" fileName="DirParser.java" startLine="146" startPosition="12" endLine="147" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651879834197416974" fileName="DirParser.java" startLine="151" startPosition="85" endLine="152" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7651879834197416984" fileName="DirParser.java" startLine="152" startPosition="42" endLine="153" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420332253" fileName="DirParser.java" startLine="156" startPosition="57" endLine="157" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420332258" fileName="DirParser.java" startLine="157" startPosition="64" endLine="158" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420332286" fileName="DirParser.java" startLine="160" startPosition="75" endLine="161" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420332299" fileName="DirParser.java" startLine="161" startPosition="108" endLine="162" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7651879834197417988" fileName="DirParser.java" startLine="163" startPosition="7" endLine="164" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7651879834197417991" fileName="DirParser.java" startLine="164" startPosition="39" endLine="165" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7651879834197417995" fileName="DirParser.java" startLine="165" startPosition="72" endLine="166" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7651879834197418428" fileName="DirParser.java" startLine="167" startPosition="12" endLine="168" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6122461715566550791" fileName="DirParser.java" startLine="172" startPosition="50" endLine="173" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6122461715566550902" fileName="DirParser.java" startLine="174" startPosition="52" endLine="175" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8890409944291606527" fileName="DirParser.java" startLine="175" startPosition="99" endLine="176" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1023591392840705566" fileName="DirParser.java" startLine="177" startPosition="5" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8890409944291607326" fileName="DirParser.java" startLine="178" startPosition="0" endLine="179" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8890409944291608049" fileName="DirParser.java" startLine="179" startPosition="109" endLine="180" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1023591392840705501" fileName="DirParser.java" startLine="180" startPosition="30" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6122461715566550552" fileName="DirParser.java" startLine="181" startPosition="0" endLine="182" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6122461715566550722" fileName="DirParser.java" startLine="188" startPosition="45" endLine="189" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6122461715566550743" fileName="DirParser.java" startLine="191" startPosition="5" endLine="192" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5646944109420331790" fileName="DirParser.java" startLine="195" startPosition="88" endLine="196" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5646944109420331797" fileName="DirParser.java" startLine="196" startPosition="57" endLine="197" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7651879834197418184" fileName="DirParser.java" startLine="146" startPosition="10" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5646944109420332269" fileName="DirParser.java" startLine="167" startPosition="10" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5230611918664057302" fileName="DirParser.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DirParser#(Ljetbrains/mps/project/IModule;)V" />
     <nodeInfo nodeId="8051061021619703361" fileName="DirParser.java" startLine="55" startPosition="0" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5230611918664141594" fileName="DirParser.java" startLine="60" startPosition="39" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5230611918664006459" fileName="DirParser.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addDirectory#(Ljava/io/File;)V" />
-    <nodeInfo nodeId="7144131533321217484" fileName="DirParser.java" startLine="82" startPosition="0" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7651879834197417644" fileName="DirParser.java" startLine="118" startPosition="16" endLine="121" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7651879834197418330" fileName="DirParser.java" startLine="139" startPosition="143" endLine="142" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6122461715566550710" fileName="DirParser.java" startLine="188" startPosition="76" endLine="191" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5230611918664006459" fileName="DirParser.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addDirectory#(Ljava/io/File;)V" />
+    <nodeInfo nodeId="7144131533321217484" fileName="DirParser.java" startLine="81" startPosition="0" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7651879834197417644" fileName="DirParser.java" startLine="117" startPosition="16" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7651879834197418330" fileName="DirParser.java" startLine="138" startPosition="143" endLine="141" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6122461715566550710" fileName="DirParser.java" startLine="187" startPosition="76" endLine="190" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="887121589775377719" fileName="DirParser.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DirParser#(Ljetbrains/mps/project/IModule;Ljava/io/File;)V" />
-    <nodeInfo nodeId="8753353829093752522" fileName="DirParser.java" startLine="77" startPosition="53" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7651879834197417683" fileName="DirParser.java" startLine="108" startPosition="46" endLine="112" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7651879834197341593" fileName="DirParser.java" startLine="152" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseFile#(Ljava/io/File;)Ljetbrains/mps/ide/java/newparser/JavaParser/JavaParseResult;" />
-    <nodeInfo nodeId="5646944109420332277" fileName="DirParser.java" startLine="160" startPosition="34" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6122461715566550824" fileName="DirParser.java" startLine="174" startPosition="37" endLine="178" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420331782" fileName="DirParser.java" startLine="196" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkPackageMatchesSourceDirectory#(Ljava/lang/String;Ljava/io/File;)Z" />
-    <nodeInfo nodeId="6122461715566550704" fileName="DirParser.java" startLine="187" startPosition="62" endLine="192" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7651879834197417623" fileName="DirParser.java" startLine="115" startPosition="26" endLine="121" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7651879834197418271" fileName="DirParser.java" startLine="137" startPosition="0" endLine="144" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8753353829093752522" fileName="DirParser.java" startLine="76" startPosition="53" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7651879834197417683" fileName="DirParser.java" startLine="107" startPosition="46" endLine="111" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7651879834197341593" fileName="DirParser.java" startLine="151" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseFile#(Ljava/io/File;)Ljetbrains/mps/ide/java/newparser/JavaParser/JavaParseResult;" />
+    <nodeInfo nodeId="5646944109420332277" fileName="DirParser.java" startLine="159" startPosition="34" endLine="163" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6122461715566550824" fileName="DirParser.java" startLine="173" startPosition="37" endLine="177" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420331782" fileName="DirParser.java" startLine="195" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkPackageMatchesSourceDirectory#(Ljava/lang/String;Ljava/io/File;)Z" />
+    <nodeInfo nodeId="6122461715566550704" fileName="DirParser.java" startLine="186" startPosition="62" endLine="191" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7651879834197417623" fileName="DirParser.java" startLine="114" startPosition="26" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7651879834197418271" fileName="DirParser.java" startLine="136" startPosition="0" endLine="143" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="887121589775378207" fileName="DirParser.java" startLine="59" startPosition="0" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7651879834197417111" fileName="DirParser.java" startLine="106" startPosition="0" endLine="114" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6122461715566550603" fileName="DirParser.java" startLine="186" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootToCreateModel#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/persistence/ModelRoot;" />
-    <nodeInfo nodeId="1023591392840703606" fileName="DirParser.java" startLine="77" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseDirs#()V" />
-    <nodeInfo nodeId="5597927504164329809" fileName="DirParser.java" startLine="135" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5646944109420332265" fileName="DirParser.java" startLine="159" startPosition="103" endLine="170" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7651879834197417235" fileName="DirParser.java" startLine="114" startPosition="9" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420332308" fileName="DirParser.java" startLine="173" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModel#(Ljava/lang/String;)Ljetbrains/mps/smodel/SModel;" />
-    <nodeInfo nodeId="5597927504164329768" fileName="DirParser.java" startLine="133" startPosition="66" endLine="146" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5646944109420332247" fileName="DirParser.java" startLine="157" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerModelForPackage#(Ljava/lang/String;)Ljetbrains/mps/smodel/SModel;" />
-    <nodeInfo nodeId="7651879834197418050" fileName="DirParser.java" startLine="132" startPosition="32" endLine="149" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="887121589775377723" fileName="DirParser.java" startLine="53" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseDir#(Ljetbrains/mps/ide/java/newparser/JavaParser;Ljava/io/File;)Ljava/util/List;" />
-    <nodeInfo nodeId="5646944109420332167" fileName="DirParser.java" startLine="98" startPosition="39" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5646944109420332160" fileName="DirParser.java" startLine="97" startPosition="0" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5646944109420332148" fileName="DirParser.java" startLine="89" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSourceFromDirectory#(Ljava/io/File;)V" />
+    <nodeInfo nodeId="7651879834197417111" fileName="DirParser.java" startLine="105" startPosition="0" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6122461715566550603" fileName="DirParser.java" startLine="185" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootToCreateModel#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/persistence/ModelRoot;" />
+    <nodeInfo nodeId="1023591392840703606" fileName="DirParser.java" startLine="76" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseDirs#()V" />
+    <nodeInfo nodeId="5597927504164329809" fileName="DirParser.java" startLine="134" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5646944109420332265" fileName="DirParser.java" startLine="158" startPosition="103" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7651879834197417235" fileName="DirParser.java" startLine="113" startPosition="9" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420332308" fileName="DirParser.java" startLine="172" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModel#(Ljava/lang/String;)Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="5597927504164329768" fileName="DirParser.java" startLine="132" startPosition="66" endLine="145" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5646944109420332247" fileName="DirParser.java" startLine="156" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerModelForPackage#(Ljava/lang/String;)Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="7651879834197418050" fileName="DirParser.java" startLine="131" startPosition="32" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="887121589775377723" fileName="DirParser.java" startLine="53" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseDir#(Ljetbrains/mps/ide/java/newparser/JavaParser;Ljava/io/File;)Ljava/util/List;" />
+    <nodeInfo nodeId="5646944109420332167" fileName="DirParser.java" startLine="97" startPosition="39" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5646944109420332160" fileName="DirParser.java" startLine="96" startPosition="0" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5646944109420332148" fileName="DirParser.java" startLine="88" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSourceFromDirectory#(Ljava/io/File;)V" />
     <scopeInfo nodeId="5230611918664057306" fileName="DirParser.java" startLine="44" startPosition="33" endLine="45" endPosition="19" />
     <scopeInfo nodeId="8051061021619703362" fileName="DirParser.java" startLine="56" startPosition="65" endLine="57" endPosition="58" />
     <scopeInfo nodeId="5230611918664141596" fileName="DirParser.java" startLine="61" startPosition="70" endLine="62" endPosition="17" />
-    <scopeInfo nodeId="5230611918664006463" fileName="DirParser.java" startLine="73" startPosition="38" endLine="74" endPosition="56" />
-    <scopeInfo nodeId="7144131533321217487" fileName="DirParser.java" startLine="83" startPosition="62" endLine="84" endPosition="71" />
-    <scopeInfo nodeId="7651879834197417624" fileName="DirParser.java" startLine="116" startPosition="69" endLine="117" endPosition="20" />
-    <scopeInfo nodeId="7651879834197418333" fileName="DirParser.java" startLine="140" startPosition="58" endLine="141" endPosition="51" />
-    <scopeInfo nodeId="7651879834197418185" fileName="DirParser.java" startLine="147" startPosition="12" endLine="148" endPosition="62" />
-    <scopeInfo nodeId="5646944109420332270" fileName="DirParser.java" startLine="168" startPosition="12" endLine="169" endPosition="33" />
-    <scopeInfo nodeId="6122461715566550721" fileName="DirParser.java" startLine="189" startPosition="45" endLine="190" endPosition="20" />
+    <scopeInfo nodeId="5230611918664006463" fileName="DirParser.java" startLine="72" startPosition="38" endLine="73" endPosition="56" />
+    <scopeInfo nodeId="7144131533321217487" fileName="DirParser.java" startLine="82" startPosition="62" endLine="83" endPosition="69" />
+    <scopeInfo nodeId="7651879834197417624" fileName="DirParser.java" startLine="115" startPosition="69" endLine="116" endPosition="20" />
+    <scopeInfo nodeId="7651879834197418333" fileName="DirParser.java" startLine="139" startPosition="58" endLine="140" endPosition="51" />
+    <scopeInfo nodeId="7651879834197418185" fileName="DirParser.java" startLine="146" startPosition="12" endLine="147" endPosition="62" />
+    <scopeInfo nodeId="5646944109420332270" fileName="DirParser.java" startLine="167" startPosition="12" endLine="168" endPosition="33" />
+    <scopeInfo nodeId="6122461715566550721" fileName="DirParser.java" startLine="188" startPosition="45" endLine="189" endPosition="20" />
     <scopeInfo nodeId="887121589775377722" fileName="DirParser.java" startLine="48" startPosition="49" endLine="50" endPosition="83" />
-    <scopeInfo nodeId="8753353829093752525" fileName="DirParser.java" startLine="78" startPosition="64" endLine="80" endPosition="40" />
-    <scopeInfo nodeId="5646944109420332213" fileName="DirParser.java" startLine="99" startPosition="31" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="7651879834197417684" fileName="DirParser.java" startLine="109" startPosition="33" endLine="111" endPosition="33" />
-    <scopeInfo nodeId="7651879834197417645" fileName="DirParser.java" startLine="118" startPosition="18" endLine="120" endPosition="21" />
-    <scopeInfo nodeId="7651879834197417296" fileName="DirParser.java" startLine="123" startPosition="38" endLine="125" endPosition="19" />
-    <scopeInfo nodeId="7651879834197341596" fileName="DirParser.java" startLine="152" startPosition="85" endLine="154" endPosition="55">
+    <scopeInfo nodeId="8753353829093752525" fileName="DirParser.java" startLine="77" startPosition="64" endLine="79" endPosition="40" />
+    <scopeInfo nodeId="5646944109420332213" fileName="DirParser.java" startLine="98" startPosition="31" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="7651879834197417684" fileName="DirParser.java" startLine="108" startPosition="33" endLine="110" endPosition="33" />
+    <scopeInfo nodeId="7651879834197417645" fileName="DirParser.java" startLine="117" startPosition="18" endLine="119" endPosition="21" />
+    <scopeInfo nodeId="7651879834197417296" fileName="DirParser.java" startLine="122" startPosition="38" endLine="124" endPosition="19" />
+    <scopeInfo nodeId="7651879834197341596" fileName="DirParser.java" startLine="151" startPosition="85" endLine="153" endPosition="55">
       <varInfo nodeId="7651879834197416975" varName="contents" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420332285" fileName="DirParser.java" startLine="161" startPosition="75" endLine="163" endPosition="20" />
-    <scopeInfo nodeId="6122461715566550826" fileName="DirParser.java" startLine="175" startPosition="52" endLine="177" endPosition="18" />
-    <scopeInfo nodeId="5646944109420331789" fileName="DirParser.java" startLine="196" startPosition="88" endLine="198" endPosition="61">
+    <scopeInfo nodeId="5646944109420332285" fileName="DirParser.java" startLine="160" startPosition="75" endLine="162" endPosition="20" />
+    <scopeInfo nodeId="6122461715566550826" fileName="DirParser.java" startLine="174" startPosition="52" endLine="176" endPosition="18" />
+    <scopeInfo nodeId="5646944109420331789" fileName="DirParser.java" startLine="195" startPosition="88" endLine="197" endPosition="61">
       <varInfo nodeId="5646944109420331791" varName="pathPostfix" />
     </scopeInfo>
     <scopeInfo nodeId="5230611918664057302" fileName="DirParser.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="5230611918664059277" varName="mod" />
     </scopeInfo>
-    <scopeInfo nodeId="5230611918664006459" fileName="DirParser.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="5230611918664006459" fileName="DirParser.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="5230611918664008401" varName="dir" />
     </scopeInfo>
-    <scopeInfo nodeId="7144131533321217484" fileName="DirParser.java" startLine="82" startPosition="0" endLine="85" endPosition="5">
+    <scopeInfo nodeId="7144131533321217484" fileName="DirParser.java" startLine="81" startPosition="0" endLine="84" endPosition="5">
       <varInfo nodeId="7144131533321217485" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="7651879834197418330" fileName="DirParser.java" startLine="139" startPosition="143" endLine="142" endPosition="13">
+    <scopeInfo nodeId="7651879834197418330" fileName="DirParser.java" startLine="138" startPosition="143" endLine="141" endPosition="13">
       <varInfo nodeId="7651879834197418331" varName="r" />
     </scopeInfo>
-    <scopeInfo nodeId="6122461715566550709" fileName="DirParser.java" startLine="188" startPosition="76" endLine="191" endPosition="7" />
+    <scopeInfo nodeId="6122461715566550709" fileName="DirParser.java" startLine="187" startPosition="76" endLine="190" endPosition="7" />
     <scopeInfo nodeId="887121589775377719" fileName="DirParser.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1023591392840733031" varName="mod" />
       <varInfo nodeId="1023591392840730966" varName="sourceDir" />
     </scopeInfo>
-    <scopeInfo nodeId="8753353829093752522" fileName="DirParser.java" startLine="77" startPosition="53" endLine="81" endPosition="5">
+    <scopeInfo nodeId="8753353829093752522" fileName="DirParser.java" startLine="76" startPosition="53" endLine="80" endPosition="5">
       <varInfo nodeId="8753353829093752523" varName="sourceDir" />
     </scopeInfo>
-    <scopeInfo nodeId="7651879834197341593" fileName="DirParser.java" startLine="152" startPosition="0" endLine="156" endPosition="0">
+    <scopeInfo nodeId="7651879834197341593" fileName="DirParser.java" startLine="151" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="7651879834197341604" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420331782" fileName="DirParser.java" startLine="196" startPosition="0" endLine="200" endPosition="0">
+    <scopeInfo nodeId="5646944109420331782" fileName="DirParser.java" startLine="195" startPosition="0" endLine="199" endPosition="0">
       <varInfo nodeId="5646944109420331785" varName="pkg" />
       <varInfo nodeId="5646944109420331787" varName="sourceDir" />
     </scopeInfo>
-    <scopeInfo nodeId="7651879834197418272" fileName="DirParser.java" startLine="138" startPosition="28" endLine="143" endPosition="68" />
-    <scopeInfo nodeId="6122461715566550704" fileName="DirParser.java" startLine="187" startPosition="62" endLine="192" endPosition="5">
+    <scopeInfo nodeId="7651879834197418272" fileName="DirParser.java" startLine="137" startPosition="28" endLine="142" endPosition="68" />
+    <scopeInfo nodeId="6122461715566550704" fileName="DirParser.java" startLine="186" startPosition="62" endLine="191" endPosition="5">
       <varInfo nodeId="6122461715566550705" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="887121589775378210" fileName="DirParser.java" startLine="60" startPosition="39" endLine="66" endPosition="85">
       <varInfo nodeId="887121589775378399" varName="code" />
       <varInfo nodeId="887121589775378393" varName="oneFileRoots" />
     </scopeInfo>
-    <scopeInfo nodeId="7651879834197417112" fileName="DirParser.java" startLine="107" startPosition="24" endLine="113" endPosition="19" />
-    <scopeInfo nodeId="6122461715566550606" fileName="DirParser.java" startLine="187" startPosition="62" endLine="193" endPosition="16" />
-    <scopeInfo nodeId="7651879834197417236" fileName="DirParser.java" startLine="115" startPosition="26" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="5646944109420332276" fileName="DirParser.java" startLine="160" startPosition="34" endLine="167" endPosition="41" />
+    <scopeInfo nodeId="7651879834197417112" fileName="DirParser.java" startLine="106" startPosition="24" endLine="112" endPosition="19" />
+    <scopeInfo nodeId="6122461715566550606" fileName="DirParser.java" startLine="186" startPosition="62" endLine="192" endPosition="16" />
+    <scopeInfo nodeId="7651879834197417236" fileName="DirParser.java" startLine="114" startPosition="26" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="5646944109420332276" fileName="DirParser.java" startLine="159" startPosition="34" endLine="166" endPosition="41" />
     <scopeInfo nodeId="887121589775378207" fileName="DirParser.java" startLine="59" startPosition="0" endLine="67" endPosition="5">
       <varInfo nodeId="887121589775378208" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="1023591392840703609" fileName="DirParser.java" startLine="77" startPosition="53" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="5597927504164329812" fileName="DirParser.java" startLine="135" startPosition="27" endLine="144" endPosition="11">
+    <scopeInfo nodeId="1023591392840703609" fileName="DirParser.java" startLine="76" startPosition="53" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="5597927504164329812" fileName="DirParser.java" startLine="134" startPosition="27" endLine="143" endPosition="11">
       <varInfo nodeId="8154626362021538677" varName="mdl" />
     </scopeInfo>
-    <scopeInfo nodeId="6122461715566550603" fileName="DirParser.java" startLine="186" startPosition="0" endLine="195" endPosition="0">
+    <scopeInfo nodeId="6122461715566550603" fileName="DirParser.java" startLine="185" startPosition="0" endLine="194" endPosition="0">
       <varInfo nodeId="6122461715566550682" varName="packageName" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420332311" fileName="DirParser.java" startLine="173" startPosition="50" endLine="183" endPosition="34">
+    <scopeInfo nodeId="5646944109420332311" fileName="DirParser.java" startLine="172" startPosition="50" endLine="182" endPosition="34">
       <varInfo nodeId="8890409944291607327" varName="modelDescr" />
     </scopeInfo>
-    <scopeInfo nodeId="1023591392840703606" fileName="DirParser.java" startLine="77" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="5597927504164329809" fileName="DirParser.java" startLine="135" startPosition="0" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="5646944109420332308" fileName="DirParser.java" startLine="173" startPosition="0" endLine="185" endPosition="0">
+    <scopeInfo nodeId="1023591392840703606" fileName="DirParser.java" startLine="76" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="5597927504164329809" fileName="DirParser.java" startLine="134" startPosition="0" endLine="145" endPosition="0" />
+    <scopeInfo nodeId="5646944109420332308" fileName="DirParser.java" startLine="172" startPosition="0" endLine="184" endPosition="0">
       <varInfo nodeId="1023591392840705492" varName="packageName" />
     </scopeInfo>
-    <scopeInfo nodeId="7651879834197418051" fileName="DirParser.java" startLine="133" startPosition="66" endLine="146" endPosition="9" />
-    <scopeInfo nodeId="5646944109420332252" fileName="DirParser.java" startLine="157" startPosition="57" endLine="170" endPosition="5">
+    <scopeInfo nodeId="7651879834197418051" fileName="DirParser.java" startLine="132" startPosition="66" endLine="145" endPosition="9" />
+    <scopeInfo nodeId="5646944109420332252" fileName="DirParser.java" startLine="156" startPosition="57" endLine="169" endPosition="5">
       <varInfo nodeId="5646944109420332259" varName="modelDescriptor" />
       <varInfo nodeId="5646944109420332254" varName="sModelFqName" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420332247" fileName="DirParser.java" startLine="157" startPosition="0" endLine="172" endPosition="0">
+    <scopeInfo nodeId="5646944109420332247" fileName="DirParser.java" startLine="156" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="5646944109420332250" varName="fqName" />
     </scopeInfo>
-    <scopeInfo nodeId="887121589775377726" fileName="DirParser.java" startLine="53" startPosition="86" endLine="70" endPosition="18">
+    <scopeInfo nodeId="887121589775377726" fileName="DirParser.java" startLine="53" startPosition="86" endLine="69" endPosition="18">
       <varInfo nodeId="887121589775378359" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="887121589775377723" fileName="DirParser.java" startLine="53" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="887121589775377723" fileName="DirParser.java" startLine="53" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="887121589775377728" varName="dir" />
       <varInfo nodeId="5102728208724395583" varName="parser" />
     </scopeInfo>
-    <scopeInfo nodeId="2229106483906298268" fileName="DirParser.java" startLine="102" startPosition="52" endLine="127" endPosition="93">
+    <scopeInfo nodeId="2229106483906298268" fileName="DirParser.java" startLine="101" startPosition="52" endLine="126" endPosition="93">
       <varInfo nodeId="7651879834197417144" varName="p" />
       <varInfo nodeId="7651879834197417019" varName="parseRes" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420332166" fileName="DirParser.java" startLine="98" startPosition="39" endLine="128" endPosition="7" />
-    <scopeInfo nodeId="5646944109420332160" fileName="DirParser.java" startLine="97" startPosition="0" endLine="129" endPosition="5">
+    <scopeInfo nodeId="5646944109420332166" fileName="DirParser.java" startLine="97" startPosition="39" endLine="127" endPosition="7" />
+    <scopeInfo nodeId="5646944109420332160" fileName="DirParser.java" startLine="96" startPosition="0" endLine="128" endPosition="5">
       <varInfo nodeId="5646944109420332164" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420332155" fileName="DirParser.java" startLine="89" startPosition="74" endLine="149" endPosition="5">
+    <scopeInfo nodeId="5646944109420332155" fileName="DirParser.java" startLine="88" startPosition="74" endLine="148" endPosition="5">
       <varInfo nodeId="5597927504164329817" varName="finalPkg" />
       <varInfo nodeId="7651879834197341617" varName="pkg" />
       <varInfo nodeId="7651879834197417024" varName="roots" />
       <varInfo nodeId="7651879834197417106" varName="wasDefaultPkg" />
     </scopeInfo>
-    <scopeInfo nodeId="5646944109420332148" fileName="DirParser.java" startLine="89" startPosition="0" endLine="151" endPosition="0">
+    <scopeInfo nodeId="5646944109420332148" fileName="DirParser.java" startLine="88" startPosition="0" endLine="150" endPosition="0">
       <varInfo nodeId="5646944109420332151" varName="dir" />
     </scopeInfo>
-    <unitInfo nodeId="5597927504164329807" fileName="DirParser.java" startLine="134" startPosition="57" endLine="146" endPosition="7" unitName="jetbrains.mps.ide.java.newparser.DirParser$1" />
-    <unitInfo nodeId="887121589775377717" fileName="DirParser.java" startLine="32" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.ide.java.newparser.DirParser" />
+    <unitInfo nodeId="5597927504164329807" fileName="DirParser.java" startLine="133" startPosition="57" endLine="145" endPosition="7" unitName="jetbrains.mps.ide.java.newparser.DirParser$1" />
+    <unitInfo nodeId="887121589775377717" fileName="DirParser.java" startLine="32" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.ide.java.newparser.DirParser" />
   </root>
 </debugInfo>
 

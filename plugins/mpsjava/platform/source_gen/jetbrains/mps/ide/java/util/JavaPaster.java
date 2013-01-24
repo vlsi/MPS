@@ -82,7 +82,7 @@ public class JavaPaster {
     JavaParser parser = new JavaParser();
 
     try {
-      List<SNode> nodes = nodes = parser.parse(javaCode, SModelOperations.getModelName(model), featureKind, true).getNodes();
+      List<SNode> nodes = parser.parse(javaCode, SModelOperations.getModelName(model), featureKind, true).getNodes();
 
       if (ListSequence.fromList(nodes).isEmpty()) {
         JOptionPane.showMessageDialog(null, "nothing to paste as Java", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -122,6 +122,10 @@ public class JavaPaster {
           break;
         default:
       }
+
+      // trying to resolve names when nodes are already in a model 
+      JavaParser.tryResolveRoots(nodes);
+
     } catch (JavaParseException ex) {
       JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
     }

@@ -66,7 +66,6 @@ public class DirParser {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(oneFileRoots));
     }
 
-    // <node> 
     return result;
   }
 
@@ -81,7 +80,7 @@ public class DirParser {
     }
 
     for (SModel m : ListSequence.fromList(myAffectedModels)) {
-      myJavaParser.tryResolveRoots(SModelOperations.getRoots(m, null));
+      JavaParser.tryResolveRoots(SModelOperations.getRoots(m, null));
     }
 
   }

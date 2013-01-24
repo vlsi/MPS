@@ -237,28 +237,6 @@ public class JavaParser {
     return imp;
   }
 
-  public void tryResolveRoots(List<SNode> roots) {
-    for (SNode node : ListSequence.fromList(roots)) {
-      List<SNode> unknowns = SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", false, new String[]{});
-      for (SNode unk : ListSequence.fromList(unknowns)) {
-
-        final SNode unkNode = unk;
-        final _FunctionTypes._return_P0_E0<? extends SNode> subst = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), unk, "virtual_evaluateSubst_8136348407761606764", new Object[]{});
-        if (subst == null) {
-          continue;
-        }
-
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            SNode theRightNode = subst.invoke();
-            SNodeOperations.replaceWithAnother(unkNode, theRightNode);
-          }
-        });
-
-      }
-    }
-  }
-
   private String problemDescription(RecordedParsingInformation info) {
     if (info == null) {
       return null;
@@ -312,6 +290,28 @@ public class JavaParser {
 
     public String getErrorMsg() {
       return errorMsg;
+    }
+  }
+
+  public static void tryResolveRoots(List<SNode> roots) {
+    for (SNode node : ListSequence.fromList(roots)) {
+      List<SNode> unknowns = SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", false, new String[]{});
+      for (SNode unk : ListSequence.fromList(unknowns)) {
+
+        final SNode unkNode = unk;
+        final _FunctionTypes._return_P0_E0<? extends SNode> subst = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), unk, "virtual_evaluateSubst_8136348407761606764", new Object[]{});
+        if (subst == null) {
+          continue;
+        }
+
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            SNode theRightNode = subst.invoke();
+            SNodeOperations.replaceWithAnother(unkNode, theRightNode);
+          }
+        });
+
+      }
     }
   }
 }
