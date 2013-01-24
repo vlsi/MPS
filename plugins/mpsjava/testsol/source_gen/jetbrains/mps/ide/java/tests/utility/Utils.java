@@ -154,7 +154,7 @@ public class Utils {
     try {
       // FIXME  
       JavaParser parser = new JavaParser();
-      DirParser dirParser = new DirParser(ourModule, null, null);
+      DirParser dirParser = new DirParser(ourModule, null);
       SModel result = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", "")).getSModel();
       for (SNode r : ListSequence.fromList(SModelOperations.getRoots(result, null))) {
         SNodeOperations.detachNode(r);
