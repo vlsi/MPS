@@ -179,6 +179,26 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1305226844299720067">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1305226844299720095">
+            <property name="text" nameId="tpee.6329021646629104958" value="FIXME do it more carefully (State?)" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1305226844299715116">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1305226844299718335">
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1305226844299718965">
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1305226844299719980">
+                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="5757237013772394252" resolveInfo="myJavadocs" />
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1305226844299718517">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2606592023508650168" resolveInfo="base" />
+              </node>
+            </node>
+            <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1305226844299715115">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5757237013772394252" resolveInfo="myJavadocs" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2606592023508650168">
         <property name="name" nameId="tpck.1169194664001" value="base" />

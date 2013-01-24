@@ -84,6 +84,8 @@ public class ASTConverter {
 
   protected ASTConverter(ASTConverter base) {
     myOnlyStubs = base.myOnlyStubs;
+    // FIXME do it more carefully (State?) 
+    myJavadocs = base.myJavadocs;
   }
 
   public SNode convertRoot(ASTNode node) throws JavaParseException {
