@@ -264,7 +264,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8394433674396748113" resolveInfo="printer" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8394433674396749528">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ejnv.~StyledTextPrinter%dappend(java%dlang%dString)%cvoid" resolveInfo="append" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i5c6.6822392181927254012" resolveInfo="append" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8394433674396749532">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8394433674396749497" resolveInfo="text" />
               </node>

@@ -5,7 +5,7 @@ package jetbrains.mps.lang.editor.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class ForegroundNullColorStyleClassItem_Behavior {
   public static void init(SNode thisNode) {
