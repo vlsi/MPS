@@ -15,11 +15,15 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties;
 
+import com.intellij.icons.AllIcons.Actions;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.CommonShortcuts;
+import com.intellij.openapi.actionSystem.ShortcutSet;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.ui.ComboBoxTableRenderer;
+import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.PopupStep;
@@ -28,11 +32,8 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
 import com.intellij.ui.BooleanTableCellRenderer;
-import com.intellij.ui.ColoredTableCellRenderer;
 import com.intellij.ui.EnumComboBoxModel;
 import com.intellij.ui.IdeBorderFactory;
-import com.intellij.ui.SimpleColoredRenderer;
-import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.TabbedPaneWrapper;
 import com.intellij.ui.TableUtil;
 import com.intellij.ui.ToolbarDecorator;
@@ -42,14 +43,14 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.icons.MPSIcons.General;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyTableCellRender;
+import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.DevKitChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageChooser;
@@ -57,22 +58,18 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItemRole;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
-import jetbrains.mps.workbench.choose.models.ModelPresentation;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModelReference;
 
-import javax.swing.BorderFactory;
 import javax.swing.DefaultCellEditor;
 import javax.swing.Icon;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
+import javax.swing.SwingUtilities;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -84,9 +81,25 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
   private TabbedPaneWrapper myTabbedPaneWrapper = new TabbedPaneWrapper(this);
   private List<Tab> myTabs = new ArrayList<Tab>();
   protected final Project myProject;
+  private DialogWrapper myParentForCallBack = null;
 
   public MPSPropertiesConfigurable(Project project) {
     myProject = project;
+  }
+
+  public final void setParentForCallBack(DialogWrapper parentForCallBack) {
+    myParentForCallBack = parentForCallBack;
+  }
+
+  protected final void forceCancelCloseDialog() {
+    if(myParentForCallBack == null)
+      return;
+    SwingUtilities.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        myParentForCallBack.doCancelAction();
+      }
+    });
   }
 
   @Override
@@ -292,36 +305,32 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       tableDepend.setShowVerticalLines(false);
       tableDepend.setAutoCreateRowSorter(false);
       tableDepend.setAutoscrolls(true);
+      tableDepend.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
       myDependTableModel = getDependTableModel();
       tableDepend.setModel(myDependTableModel);
 
-      tableDepend.setDefaultRenderer(DependenciesTableItem.class, new DependencyTableCellRender(getScope()));
+      tableDepend.setDefaultRenderer(DependenciesTableItem.class, getTableCellRender());
       tableDepend.setDefaultRenderer(Boolean.class, new BooleanTableCellRenderer());
-
-//      JComboBox roleEditor = new JComboBox(new EnumComboBoxModel<DependenciesTableItemRole>(DependenciesTableItemRole.class));
-//      tableDepend.setDefaultEditor(DependenciesTableItemRole.class, new DefaultCellEditor(roleEditor));
-//      tableDepend.setDefaultRenderer(DependenciesTableItemRole.class, new ComboBoxTableRenderer<DependenciesTableItemRole>(DependenciesTableItemRole.values()) {
-//        @Override
-//        protected String getTextFor(@NotNull final DependenciesTableItemRole value) {
-//          return value.toString();
-//        }
-//      });
 
       tableDepend.getSelectionModel().setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
       TableColumn column = null;
       if(myDependTableModel.getExportColumnIndex() >= 0) {
         column = tableDepend.getTableHeader().getColumnModel().getColumn(myDependTableModel.getExportColumnIndex());
-        column.setPreferredWidth(5);
+        column.setMinWidth(20);
+        column.setPreferredWidth(50);
+        column.setMaxWidth(50);
       }
       if(myDependTableModel.getRoleColumnIndex() >= 0) {
         column = tableDepend.getTableHeader().getColumnModel().getColumn(myDependTableModel.getRoleColumnIndex());
-        column.setPreferredWidth(10);
+        column.setMinWidth(80);
+        column.setPreferredWidth(100);
+        column.setMaxWidth(120);
       }
       if(myDependTableModel.getItemColumnIndex() >= 0) {
         column = tableDepend.getTableHeader().getColumnModel().getColumn(myDependTableModel.getItemColumnIndex());
-        column.setPreferredWidth(300);
+        column.setPreferredWidth(200);
       }
 
 
@@ -377,8 +386,18 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       }).setRemoveAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
+          int first = tableDepend.getSelectionModel().getMinSelectionIndex();
+          if (!confirmRemove(myDependTableModel.getValueAt(first, myDependTableModel.getItemColumnIndex()))) {
+            return;
+          }
+          int last = tableDepend.getSelectionModel().getMaxSelectionIndex();
           TableUtil.removeSelectedItems(tableDepend);
-          myDependTableModel.fireTableDataChanged();
+          myDependTableModel.fireTableRowsDeleted(first, last);
+        }
+      }).addExtraAction(new FindAnActionButton(tableDepend) {
+        @Override
+        public void actionPerformed(AnActionEvent e) {
+          findUsages(myDependTableModel.getValueAt(tableDepend.getSelectionModel().getMinSelectionIndex(), myDependTableModel.getItemColumnIndex()));
         }
       });
       decorator.setPreferredSize(new Dimension(500, 300));
@@ -388,6 +407,19 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       dependenciesTab.add(table, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       setTabComponent(dependenciesTab);
+    }
+
+    protected TableCellRenderer getTableCellRender() {
+      return new DependencyTableCellRender(getScope());
+    }
+
+
+
+    protected boolean confirmRemove(final Object value) {
+      return true;
+    }
+
+    protected void findUsages(final Object value) {
     }
 
     @Override
@@ -424,11 +456,12 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       usedLangsTable.setShowVerticalLines(false);
       usedLangsTable.setAutoCreateRowSorter(false);
       usedLangsTable.setAutoscrolls(true);
+      usedLangsTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
       myUsedLangsTableModel = getUsedLangsTableModel();
       usedLangsTable.setModel(myUsedLangsTableModel);
 
-      usedLangsTable.setDefaultRenderer(ModuleReference.class, new ModuleTableCellRender());
+      usedLangsTable.setDefaultRenderer(ModuleReference.class, getTableCellRender());
 
       JComboBox roleEditor = new JComboBox(new EnumComboBoxModel<DependenciesTableItemRole>(DependenciesTableItemRole.class));
       usedLangsTable.setDefaultEditor(DependenciesTableItemRole.class, new DefaultCellEditor(roleEditor));
@@ -488,9 +521,15 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
         @Override
         public void run(AnActionButton anActionButton) {
           int first = usedLangsTable.getSelectionModel().getMinSelectionIndex();
+          if (!confirmRemove(myUsedLangsTableModel.getValueAt(first, UsedLangsTableModel.ITEM_COLUMN))) return;
           int last = usedLangsTable.getSelectionModel().getMaxSelectionIndex();
           TableUtil.removeSelectedItems(usedLangsTable);
           myUsedLangsTableModel.fireTableRowsDeleted(first, last);
+        }
+      }).addExtraAction(new FindAnActionButton(usedLangsTable) {
+        @Override
+        public void actionPerformed(AnActionEvent e) {
+          findUsages(myUsedLangsTableModel.getValueAt(usedLangsTable.getSelectionModel().getMinSelectionIndex(), UsedLangsTableModel.ITEM_COLUMN));
         }
       });
       decorator.setPreferredSize(new Dimension(500, 300));
@@ -500,6 +539,16 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       usedLangsTab.add(table, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       setTabComponent(usedLangsTab);
+    }
+
+    protected TableCellRenderer getTableCellRender() {
+      return new ModuleTableCellRender();
+    }
+
+    protected void findUsages(Object value) {}
+
+    protected boolean confirmRemove(Object value) {
+      return true;
     }
 
     @Override
@@ -536,79 +585,26 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     }
   }
 
+  public abstract class FindAnActionButton extends AnActionButton {
+    private final JBTable myTable;
+
+    public FindAnActionButton(JBTable table) {
+      myTable = table;
+      this.getTemplatePresentation().setEnabledAndVisible(true);
+      this.getTemplatePresentation().setIcon(Actions.Find);
+      this.getTemplatePresentation().setText("Find usages");
+    }
+
+    @Override
+    public boolean isEnabled() {
+      return !(myTable.getSelectionModel().isSelectionEmpty());
+    }
+
+    @Override
+    public ShortcutSet getShortcut() {
+      return CommonShortcuts.getFind();
+    }
+  }
+
   public static final JBInsets INSETS = new JBInsets(10,10,10,10);
-
-  protected class DependencyTableCellRender extends SimpleColoredRenderer implements TableCellRenderer {
-    private ModuleTableCellRender myModuleTableCellRender = new ModuleTableCellRender();
-    private ModelTableCellRender myModelTableCellRender;
-    public DependencyTableCellRender() {
-      myModelTableCellRender = new ModelTableCellRender(null);
-    }
-    public DependencyTableCellRender(IScope scope) {
-      myModelTableCellRender = new ModelTableCellRender(scope);
-    }
-    @Override
-    public Component getTableCellRendererComponent(JTable table, Object value,
-                                                         boolean isSelected, boolean hasFocus, int row, int col) {
-      ColoredTableCellRenderer render = null;
-      if(value instanceof ModuleReference) {
-        render = myModuleTableCellRender;
-      }
-      else if(value instanceof SModelReference) {
-        render = myModelTableCellRender;
-      }
-      return render.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, col);
-    }
-
-    protected void customizeCellRenderer(JTable table, Object value, boolean selected, boolean hasFocus, int row, int column) {
-      if(value instanceof ModuleReference) {
-        myModuleTableCellRender.customizeCellRenderer(table, value, selected, hasFocus, row, column);
-      }
-      else if(value instanceof SModelReference) {
-        myModelTableCellRender.customizeCellRenderer(table, value, selected, hasFocus, row, column);
-      }
-    }
-  }
-
-  protected class ModuleTableCellRender extends ColoredTableCellRenderer {
-    @Override
-    protected void customizeCellRenderer(JTable table, Object value, boolean selected, boolean hasFocus, int row, int column) {
-      setPaintFocusBorder(false);
-      setFocusBorderAroundIcon(true);
-      setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-      if (value != null) {
-        ModuleReference moduleReference = (ModuleReference) value;
-        setIcon(
-          IconManager.getIconFor(
-            MPSModuleRepository.getInstance().getModuleById(moduleReference.getModuleId())
-          )
-        );
-        append(moduleReference.getModuleName());
-      }
-    }
-  }
-
-  protected class ModelTableCellRender extends ColoredTableCellRenderer {
-    private IScope myScope;
-    public ModelTableCellRender(IScope scope) {
-      super();
-      myScope = scope;
-    }
-    @Override
-    protected void customizeCellRenderer(JTable table, Object value, boolean selected, boolean hasFocus, int row, int column) {
-      setPaintFocusBorder(false);
-      setFocusBorderAroundIcon(true);
-      setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-      if (value != null) {
-        SModelReference modelReference = (SModelReference) value;
-        ModelPresentation modelPresentation = new ModelPresentation((jetbrains.mps.smodel.SModelReference)modelReference);
-        setIcon(modelPresentation.doGetIcon());
-        if(StateUtil.isAvailable((jetbrains.mps.smodel.SModelReference)modelReference)
-          && StateUtil.isInScope(myScope, (jetbrains.mps.smodel.SModelReference) modelReference))
-          append(modelPresentation.doGetPresentableText());
-        else
-          append(modelPresentation.doGetPresentableText(), SimpleTextAttributes.ERROR_ATTRIBUTES);
-      }
-    }
-  }
 }
