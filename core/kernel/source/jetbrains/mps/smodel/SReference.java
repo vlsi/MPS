@@ -51,10 +51,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return myRole;
   }
 
-  public void setRole(String newRole) {
-    myRole = InternUtil.intern(newRole);
-  }
-
   public SNode getSourceNode() {
     return mySourceNode;
   }
@@ -83,11 +79,20 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     myResolveInfo = InternUtil.intern(info);
   }
 
-//-------------------------
+  public void setRole(String newRole) {
+    myRole = InternUtil.intern(newRole);
+  }
 
+  //-------------------------
 
   @Nullable
   public abstract SModelReference getTargetSModelReference();
+
+  @Nullable
+  public SNodeId getTargetNodeId() {
+    SNode targetNode = getTargetNode();
+    return targetNode == null ? null : targetNode.getNodeId();
+  }
 
   @Deprecated
   /**
@@ -95,12 +100,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
    * @Deprecated in 3.0
    */
   public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
-
-  @Nullable
-  public SNodeId getTargetNodeId() {
-    SNode targetNode = getTargetNode();
-    return targetNode == null ? null : targetNode.getNodeId();
-  }
 
   @Deprecated
   /**
@@ -119,6 +118,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
    * @Deprecated in 3.0
    */
   public abstract boolean isExternal();
+
+  //-------- factory methods -----------
 
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.getModel() != null && targetNode.getModel() != null) {
@@ -146,9 +147,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return ref;
   }
 
-  //
-  // error logging
-  //
+  //-------- error logging -----------
+
   private static boolean ourLoggingOff = false;
   private static final Set<SReference> ourErrorReportedRefs = new WeakSet<SReference>();
 
