@@ -36,4 +36,6 @@ public interface SReference {
   SNode getTargetNode();
 
   SModel getTargetModel();
+
+  SNodeReference toNodePointer();
 }

@@ -63,7 +63,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
     }
 
     // proceed without resolving (at least for StaticReferences) 
-    return new jetbrains.mps.smodel.SNodePointer(ref.getTargetSModelReference(), ref.getTargetNodeId());
+    return ref.toNodePointer();
   }
 
   @Override
