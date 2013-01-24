@@ -160,6 +160,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
         setNodeIdentifier(getNodeIdentifier() + " (runtime)");
       }
       if (isCyclic) {
+        setNodeIdentifier(getNodeIdentifier() + " - has cycles!");
         setCyclic();
       }
     }
@@ -173,6 +174,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
     public ULangDependencyNode(IModule module, boolean isBootstrap, IOperationContext context) {
       super(module, context);
       if (isBootstrap) {
+        setNodeIdentifier(getNodeIdentifier() + " - bootstrap dependency!");
         setCyclic();
       }
     }

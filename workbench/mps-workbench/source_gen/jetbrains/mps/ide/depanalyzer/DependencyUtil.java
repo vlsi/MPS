@@ -123,6 +123,13 @@ public class DependencyUtil {
           if (descr instanceof LanguageDescriptor) {
             addDeps(result, (as_he47wm_a0a1a0a4a0a7d0a(descr, LanguageDescriptor.class)).getExtendedLanguages(), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.ExtendsLanguage);
           }
+          if (descr instanceof GeneratorDescriptor) {
+            GeneratorDescriptor gen = (GeneratorDescriptor) descr;
+            // generator languages are now also dependencies 
+            addDeps(result, gen.getDepGenerators(), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.DependsOnGenerator);
+            ListSequence.fromList(result).addElement(new DependencyUtil.Link((as_he47wm_a0a0a0a0d0f0a0h3a0(module, Generator.class)).getSourceLanguage(), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.GeneratorLanguage));
+          }
+
         }
         break;
 
@@ -290,6 +297,13 @@ public class DependencyUtil {
   }
 
   private static <T> T as_he47wm_a0a1a0a4a0a7d0a(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_he47wm_a0a0a0a0d0f0a0h3a0(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
