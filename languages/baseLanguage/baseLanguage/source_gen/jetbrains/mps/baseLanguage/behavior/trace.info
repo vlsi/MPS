@@ -6919,7 +6919,7 @@
       <varInfo nodeId="1219275073969" varName="module" />
       <varInfo nodeId="1213877410687" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="8871623299328377757" fileName="DotExpression_Behavior.java" startLine="32" startPosition="94" endLine="37" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior$1" />
+    <unitInfo nodeId="8871623299328377757" fileName="DotExpression_Behavior.java" startLine="32" startPosition="90" endLine="37" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior$1" />
     <unitInfo nodeId="1213877410687" fileName="DotExpression_Behavior.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1213877417754">
@@ -13010,7 +13010,7 @@
     </scopeInfo>
     <unitInfo nodeId="7405920559687241335" fileName="IClassifierType_Behavior.java" startLine="48" startPosition="68" endLine="52" endPosition="9" unitName="jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior$2" />
     <unitInfo nodeId="6145907390641297316" fileName="IClassifierType_Behavior.java" startLine="58" startPosition="115" endLine="62" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior$2" />
-    <unitInfo nodeId="6160576293971549068" fileName="IClassifierType_Behavior.java" startLine="44" startPosition="96" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior$1" />
+    <unitInfo nodeId="6160576293971549068" fileName="IClassifierType_Behavior.java" startLine="44" startPosition="92" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior$1" />
     <unitInfo nodeId="7405920559687237510" fileName="IClassifierType_Behavior.java" startLine="24" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/7405920559687241221">

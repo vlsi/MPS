@@ -2087,37 +2087,42 @@
     <unitInfo nodeId="4743451173534380018" fileName="ClassifierResolveUtils.java" startLine="37" startPosition="0" endLine="630" endPosition="0" unitName="jetbrains.mps.baseLanguage.scopes.ClassifierResolveUtils" />
   </root>
   <root nodeRef="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)/4748674287775003937">
-    <nodeInfo nodeId="1955553662774393310" fileName="RepositoryStateCacheUtils.java" startLine="15" startPosition="116" endLine="16" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1955553662774393398" fileName="RepositoryStateCacheUtils.java" startLine="17" startPosition="24" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1955553662774393448" fileName="RepositoryStateCacheUtils.java" startLine="19" startPosition="5" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4748674287775009350" fileName="RepositoryStateCacheUtils.java" startLine="20" startPosition="0" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4748674287775009359" fileName="RepositoryStateCacheUtils.java" startLine="22" startPosition="20" endLine="23" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5001418453917897773" fileName="RepositoryStateCacheUtils.java" startLine="26" startPosition="26" endLine="27" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4748674287775009383" fileName="RepositoryStateCacheUtils.java" startLine="29" startPosition="7" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1955553662774450046" fileName="RepositoryStateCacheUtils.java" startLine="30" startPosition="30" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4748674287775003939" fileName="RepositoryStateCacheUtils.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RepositoryStateCacheUtils#()V" />
-    <nodeInfo nodeId="1955553662774393367" fileName="RepositoryStateCacheUtils.java" startLine="16" startPosition="86" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4748674287775009357" fileName="RepositoryStateCacheUtils.java" startLine="21" startPosition="25" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5001418453917897767" fileName="RepositoryStateCacheUtils.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()null" />
-    <nodeInfo nodeId="4748674287775009365" fileName="RepositoryStateCacheUtils.java" startLine="24" startPosition="5" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4748674287775012009" fileName="RepositoryStateCacheUtils.java" startLine="15" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFromCache#(Ljava/lang/Class;nullLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />
-    <scopeInfo nodeId="4748674287775003942" fileName="RepositoryStateCacheUtils.java" startLine="12" startPosition="39" endLine="12" endPosition="39" />
-    <scopeInfo nodeId="1955553662774393368" fileName="RepositoryStateCacheUtils.java" startLine="17" startPosition="24" endLine="18" endPosition="30" />
-    <scopeInfo nodeId="4748674287775009358" fileName="RepositoryStateCacheUtils.java" startLine="22" startPosition="20" endLine="23" endPosition="15" />
-    <scopeInfo nodeId="5001418453917897770" fileName="RepositoryStateCacheUtils.java" startLine="26" startPosition="26" endLine="27" endPosition="32" />
-    <scopeInfo nodeId="4748674287775003939" fileName="RepositoryStateCacheUtils.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="5001418453917897767" fileName="RepositoryStateCacheUtils.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="4748674287775012012" fileName="RepositoryStateCacheUtils.java" startLine="15" startPosition="116" endLine="31" endPosition="13">
-      <varInfo nodeId="1955553662774393311" varName="cache" />
-      <varInfo nodeId="4748674287775009351" varName="v" />
-    </scopeInfo>
-    <scopeInfo nodeId="4748674287775012009" fileName="RepositoryStateCacheUtils.java" startLine="15" startPosition="0" endLine="33" endPosition="0">
+    <nodeInfo nodeId="679347842099530036" fileName="RepositoryStateCacheUtils.java" startLine="12" startPosition="125" endLine="13" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="679347842099530052" fileName="RepositoryStateCacheUtils.java" startLine="14" startPosition="24" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="679347842099530055" fileName="RepositoryStateCacheUtils.java" startLine="16" startPosition="5" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="679347842099530056" fileName="RepositoryStateCacheUtils.java" startLine="17" startPosition="0" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="679347842099530068" fileName="RepositoryStateCacheUtils.java" startLine="19" startPosition="20" endLine="20" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="679347842099530083" fileName="RepositoryStateCacheUtils.java" startLine="23" startPosition="26" endLine="24" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="679347842099530086" fileName="RepositoryStateCacheUtils.java" startLine="26" startPosition="7" endLine="27" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="679347842099530092" fileName="RepositoryStateCacheUtils.java" startLine="27" startPosition="30" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="679347842100083459" fileName="RepositoryStateCacheUtils.java" startLine="33" startPosition="116" endLine="34" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="679347842099530047" fileName="RepositoryStateCacheUtils.java" startLine="13" startPosition="94" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="679347842099530063" fileName="RepositoryStateCacheUtils.java" startLine="18" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="679347842099530079" fileName="RepositoryStateCacheUtils.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()null" />
+    <nodeInfo nodeId="4748674287775012009" fileName="RepositoryStateCacheUtils.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFromCache#(Ljava/lang/Class;nullLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />
+    <nodeInfo nodeId="679347842099530070" fileName="RepositoryStateCacheUtils.java" startLine="21" startPosition="5" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="679347842099530032" fileName="RepositoryStateCacheUtils.java" startLine="12" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFromCache#(Ljava/lang/String;nullLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />
+    <scopeInfo nodeId="679347842099530051" fileName="RepositoryStateCacheUtils.java" startLine="14" startPosition="24" endLine="15" endPosition="30" />
+    <scopeInfo nodeId="679347842099530067" fileName="RepositoryStateCacheUtils.java" startLine="19" startPosition="20" endLine="20" endPosition="15" />
+    <scopeInfo nodeId="679347842099530082" fileName="RepositoryStateCacheUtils.java" startLine="23" startPosition="26" endLine="24" endPosition="32" />
+    <scopeInfo nodeId="4748674287775012012" fileName="RepositoryStateCacheUtils.java" startLine="33" startPosition="116" endLine="34" endPosition="55" />
+    <scopeInfo nodeId="679347842099530079" fileName="RepositoryStateCacheUtils.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="4748674287775012009" fileName="RepositoryStateCacheUtils.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="4748674287775012017" varName="clazz" />
       <varInfo nodeId="4748674287775012023" varName="creator" />
       <varInfo nodeId="4748674287775012019" varName="key" />
     </scopeInfo>
-    <unitInfo nodeId="5001418453917897765" fileName="RepositoryStateCacheUtils.java" startLine="25" startPosition="66" endLine="29" endPosition="5" unitName="jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils$1" />
-    <unitInfo nodeId="4748674287775003937" fileName="RepositoryStateCacheUtils.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils" />
+    <scopeInfo nodeId="679347842099530035" fileName="RepositoryStateCacheUtils.java" startLine="12" startPosition="125" endLine="28" endPosition="13">
+      <varInfo nodeId="679347842099530037" varName="cache" />
+      <varInfo nodeId="679347842099530057" varName="v" />
+    </scopeInfo>
+    <scopeInfo nodeId="679347842099530032" fileName="RepositoryStateCacheUtils.java" startLine="12" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="679347842099530100" varName="creator" />
+      <varInfo nodeId="679347842099530096" varName="key" />
+      <varInfo nodeId="679347842099530094" varName="repositoryKey" />
+    </scopeInfo>
+    <unitInfo nodeId="679347842099530076" fileName="RepositoryStateCacheUtils.java" startLine="22" startPosition="66" endLine="26" endPosition="5" unitName="jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils$1" />
+    <unitInfo nodeId="4748674287775003937" fileName="RepositoryStateCacheUtils.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.scopes.RepositoryStateCacheUtils" />
   </root>
   <root nodeRef="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)/4897271867538783584">
     <nodeInfo nodeId="4897271867538783944" fileName="MethodsScope.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="typeBindings" />

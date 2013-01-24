@@ -9,11 +9,8 @@ import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.util.Computable;
 
 public class RepositoryStateCacheUtils {
-  private RepositoryStateCacheUtils() {
-  }
-
-  public static <K, V> V getFromCache(Class clazz, K key, final _FunctionTypes._return_P0_E0<? extends V> creator) {
-    ConcurrentMap<K, V> cache = ModelAccess.instance().getRepositoryStateCache(clazz);
+  public static <K, V> V getFromCache(String repositoryKey, K key, final _FunctionTypes._return_P0_E0<? extends V> creator) {
+    ConcurrentMap<K, V> cache = ModelAccess.instance().getRepositoryStateCache(repositoryKey);
     if (cache == null) {
       return creator.invoke();
     }
@@ -29,5 +26,11 @@ public class RepositoryStateCacheUtils {
     });
     cache.putIfAbsent(key, v);
     return v;
+  }
+
+
+
+  public static <K, V> V getFromCache(Class clazz, K key, final _FunctionTypes._return_P0_E0<? extends V> creator) {
+    return getFromCache(clazz.getName(), key, creator);
   }
 }

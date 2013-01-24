@@ -189,5 +189,5 @@ public interface ModelCommandExecutor extends org.jetbrains.mps.openapi.module.M
   <T> T tryWriteInCommand(Computable<T> r, Project p);
 
   @Nullable
-  public <K, V> ConcurrentMap<K, V> getRepositoryStateCache(Class<?> clazz);
+  public <K, V> ConcurrentMap<K, V> getRepositoryStateCache(String repositoryKey);
 }

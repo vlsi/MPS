@@ -29,7 +29,7 @@ public class DotExpression_Behavior {
   }
 
   public static SNode call_getOperandType_8871623299328377715(final SNode thisNode) {
-    return RepositoryStateCacheUtils.getFromCache(DotExpression_Behavior.class, thisNode, new _FunctionTypes._return_P0_E0<SNode>() {
+    return RepositoryStateCacheUtils.getFromCache("DotExpression_Behavior", thisNode, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
         // long calculation 
         return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "operand", true));
