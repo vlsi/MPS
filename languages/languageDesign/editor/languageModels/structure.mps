@@ -17,17 +17,15 @@
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" />
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
-  <import index="mceb" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.style(MPS.Editor/jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
   <import index="9a8" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="srng" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" version="-1" />
-  <import index="ejnv" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" version="-1" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tpcb" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1071666914219">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editor.png" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptEditorDeclaration" />
@@ -114,8 +112,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1078938745671">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editorComponent.png" />
       <property name="name" nameId="tpck.1169194664001" value="EditorComponentDeclaration" />
@@ -143,8 +141,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1166049232041" resolveInfo="AbstractComponent" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1081293058843">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/keyMap.png" />
       <property name="name" nameId="tpck.1169194664001" value="CellKeyMapDeclaration" />
@@ -304,8 +302,8 @@
       <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1138197631095" resolveInfo="none" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139535219966">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/actionMap.png" />
       <property name="name" nameId="tpck.1169194664001" value="CellActionMapDeclaration" />
@@ -613,8 +611,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1166040637528">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/menuComponent.png" />
       <property name="name" nameId="tpck.1169194664001" value="CellMenuComponent" />
@@ -794,8 +792,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389658414" resolveInfo="CellModel_Property" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186402211651">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editorStylesheet.png" />
       <property name="name" nameId="tpck.1169194664001" value="StyleSheet" />
@@ -1079,8 +1077,8 @@
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1216308599511">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="false" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="PositionStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
@@ -1400,8 +1398,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7667276221847612622">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/parametersInformation.png" />
       <property name="name" nameId="tpck.1169194664001" value="ParametersInformationQuery" />
@@ -2993,12 +2991,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1219418625346" resolveInfo="IStyleContainer" />
     </node>
   </root>
-  <root id="1186402475462">
-    <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.AggregationConceptLinkDeclaration" typeId="tpce.1105741535888" id="1215701938122">
-      <property name="name" nameId="tpck.1169194664001" value="attributeConstant" />
-      <link role="targetType" roleId="tpce.1105736621938" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    </node>
-  </root>
+  <root id="1186402475462" />
   <root id="1186403694788">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1186403803051">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -3020,41 +3013,10 @@
       <property name="name" nameId="tpck.1169194664001" value="style" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1101211480448" resolveInfo="_FontStyle_Enum" />
     </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1221051468077">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1221051476610">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dFONT_STYLE" resolveInfo="FONT_STYLE" />
-      </node>
-    </node>
   </root>
-  <root id="1186404549998">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215703469851">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215703469852">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dTEXT_COLOR" resolveInfo="TEXT_COLOR" />
-      </node>
-    </node>
-  </root>
-  <root id="1186404574412">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215703443814">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215703448660">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dBACKGROUND_COLOR" resolveInfo="BACKGROUND_COLOR" />
-      </node>
-    </node>
-  </root>
-  <root id="1186413799158">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215703461771">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215703461772">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dBRACKETS_COLOR" resolveInfo="BRACKETS_COLOR" />
-      </node>
-    </node>
-  </root>
+  <root id="1186404549998" />
+  <root id="1186404574412" />
+  <root id="1186413799158" />
   <root id="1186414536763">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1223387335081">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -3066,33 +3028,9 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
   </root>
-  <root id="1186414928363">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215702083875">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215702083876">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dSELECTABLE" resolveInfo="SELECTABLE" />
-      </node>
-    </node>
-  </root>
-  <root id="1186414949600">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215702053365">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215702053366">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dAUTO_DELETABLE" resolveInfo="AUTO_DELETABLE" />
-      </node>
-    </node>
-  </root>
-  <root id="1186414976055">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215702014501">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215702044051">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dDRAW_BORDER" resolveInfo="DRAW_BORDER" />
-      </node>
-    </node>
-  </root>
+  <root id="1186414928363" />
+  <root id="1186414949600" />
+  <root id="1186414976055" />
   <root id="1186414999511">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1214316229833">
       <property name="name" nameId="tpck.1169194664001" value="underlined" />
@@ -3116,24 +3054,8 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
   </root>
-  <root id="1186414860679">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215702059789">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215702059790">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dEDITABLE" resolveInfo="EDITABLE" />
-      </node>
-    </node>
-  </root>
-  <root id="1187258617779">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215703479915">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215703479916">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dNULL_TEXT_COLOR" resolveInfo="NULL_TEXT_COLOR" />
-      </node>
-    </node>
-  </root>
+  <root id="1186414860679" />
+  <root id="1187258617779" />
   <root id="1197893505573">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1197893505574">
       <property name="internalValue" nameId="tpce.1083923523171" value="NONE" />
@@ -3247,24 +3169,8 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1140813780565" resolveInfo="RightTransformAnchorTag" />
     </node>
   </root>
-  <root id="1214406454886">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215703515607">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215703515608">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dTEXT_BACKGROUND_COLOR" resolveInfo="TEXT_BACKGROUND_COLOR" />
-      </node>
-    </node>
-  </root>
-  <root id="1214406466686">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215703491746">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215703491747">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dSELECTED_TEXT_BACKGROUND_COLOR" resolveInfo="SELECTED_TEXT_BACKGROUND_COLOR" />
-      </node>
-    </node>
-  </root>
+  <root id="1214406454886" />
+  <root id="1214406466686" />
   <root id="1214472762472">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1214472762473">
       <property name="name" nameId="tpck.1169194664001" value="position" />
@@ -3277,42 +3183,10 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1239805001815" resolveInfo="_FloatOrInteger_String" />
     </node>
   </root>
-  <root id="1215007883204">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1226491327426">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1226491332601">
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dPADDING_LEFT" resolveInfo="PADDING_LEFT" />
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-      </node>
-    </node>
-  </root>
-  <root id="1215007897487">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1226491349683">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1226491353889">
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dPADDING_RIGHT" resolveInfo="PADDING_RIGHT" />
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-      </node>
-    </node>
-  </root>
-  <root id="1215085112640">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215702064900">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215702064901">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dFIRST_POSITION_ALLOWED" resolveInfo="FIRST_POSITION_ALLOWED" />
-      </node>
-    </node>
-  </root>
-  <root id="1215085197271">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1215702077186">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1215702077187">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dLAST_POSITION_ALLOWED" resolveInfo="LAST_POSITION_ALLOWED" />
-      </node>
-    </node>
-  </root>
+  <root id="1215007883204" />
+  <root id="1215007897487" />
+  <root id="1215085112640" />
+  <root id="1215085197271" />
   <root id="1216308376568">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1216308507057">
       <property name="externalValue" nameId="tpce.1083923523172" value="right" />
@@ -3376,15 +3250,7 @@
     </node>
   </root>
   <root id="1216672142186" />
-  <root id="1219226236603">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1219226236604">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1219226236605">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dDRAW_BRACKETS" resolveInfo="DRAW_BRACKETS" />
-      </node>
-    </node>
-  </root>
+  <root id="1219226236603" />
   <root id="1219418625346">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1219418656006">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -3419,15 +3285,7 @@
       <node role="target" roleId="tpce.1105736901241" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1221062816176" />
     </node>
   </root>
-  <root id="1223386653097">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1223388842734">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1223388868719">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dSTRIKE_OUT" resolveInfo="STRIKE_OUT" />
-      </node>
-    </node>
-  </root>
+  <root id="1223386653097" />
   <root id="1223387125302">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1223387210120">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
@@ -3460,24 +3318,8 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1225898583838" resolveInfo="ReadOnlyModelAccessor" />
     </node>
   </root>
-  <root id="1226339751946">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1226491363829">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1226491369520">
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dPADDING_TOP" resolveInfo="PADDING_TOP" />
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-      </node>
-    </node>
-  </root>
-  <root id="1226339813308">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1226491309950">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1226491315063">
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dPADDING_BOTTOM" resolveInfo="PADDING_BOTTOM" />
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-      </node>
-    </node>
-  </root>
+  <root id="1226339751946" />
+  <root id="1226339813308" />
   <root id="1226339938453">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1226504838901">
       <property name="name" nameId="tpck.1169194664001" value="measure" />
@@ -3512,50 +3354,11 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1219418625346" resolveInfo="IStyleContainer" />
     </node>
   </root>
-  <root id="1233758997495">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1233759108034">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1233759122712">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dPUNCTUATION_LEFT" resolveInfo="PUNCTUATION_LEFT" />
-      </node>
-    </node>
-  </root>
-  <root id="1233759184865">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1233759264978">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1233759270401">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dPUNCTUATION_RIGHT" resolveInfo="PUNCTUATION_RIGHT" />
-      </node>
-    </node>
-  </root>
-  <root id="1233823429331">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1233823521393">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1233823532331">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dHORIZONTAL_GAP" resolveInfo="HORIZONTAL_GAP" />
-      </node>
-    </node>
-  </root>
-  <root id="1235728439575">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1235728439576">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1235728439577">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dBASE_LINE_CELL" resolveInfo="BASE_LINE_CELL" />
-      </node>
-    </node>
-  </root>
+  <root id="1233758997495" />
+  <root id="1233759184865" />
+  <root id="1233823429331" />
+  <root id="1235728439575" />
   <root id="1235999440492">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1235999557292">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1235999566301">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dHORIZONTAL_ALIGN" resolveInfo="HORIZONTAL_ALIGN" />
-      </node>
-    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1235999920262">
       <property name="name" nameId="tpck.1169194664001" value="align" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1235999709834" resolveInfo="AlignEnum" />
@@ -3590,13 +3393,6 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1236443640684" resolveInfo="QueryFunction_String" />
     </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1236266496796">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1236266567702">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dMATCHING_LABEL" resolveInfo="MATCHING_LABEL" />
-      </node>
-    </node>
   </root>
   <root id="1236263696991">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1236263780519">
@@ -3611,53 +3407,13 @@
     </node>
   </root>
   <root id="1237303669825" />
-  <root id="1237307900041">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1237308006695">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1237308006696">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dINDENT_LAYOUT_INDENT" resolveInfo="INDENT_LAYOUT_INDENT" />
-      </node>
-    </node>
-  </root>
-  <root id="1237308012275">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1237308012276">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1237308012277">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dINDENT_LAYOUT_NEW_LINE" resolveInfo="INDENT_LAYOUT_NEW_LINE" />
-      </node>
-    </node>
-  </root>
-  <root id="1237375020029">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1237374854247">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1237374854248">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dINDENT_LAYOUT_CHILDREN_NEWLINE" resolveInfo="INDENT_LAYOUT_CHILDREN_NEWLINE" />
-      </node>
-    </node>
-  </root>
-  <root id="1237385578942">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1237385578943">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1237385578944">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dINDENT_LAYOUT_ON_NEW_LINE" resolveInfo="INDENT_LAYOUT_ON_NEW_LINE" />
-      </node>
-    </node>
-  </root>
+  <root id="1237307900041" />
+  <root id="1237308012275" />
+  <root id="1237375020029" />
+  <root id="1237385578942" />
   <root id="1239805001815" />
   <root id="1239814640496" />
-  <root id="1240253180846">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1240251450434">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1240251450435">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dINDENT_LAYOUT_NO_WRAP" resolveInfo="INDENT_LAYOUT_NO_WRAP" />
-      </node>
-    </node>
-  </root>
+  <root id="1240253180846" />
   <root id="625126330682908270" />
   <root id="7667276221847570194">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8863456892852949148">
@@ -3770,13 +3526,6 @@
       <property name="name" nameId="tpck.1169194664001" value="baseline" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="7620205565664606377" resolveInfo="DefaultBaseLineEnum" />
     </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="7620205565664606478">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4098449021143562584">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dDEFAULT_BASE_LINE" resolveInfo="DEFAULT_BASE_LINE" />
-      </node>
-    </node>
   </root>
   <root id="7620205565664606377">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7620205565664606378">
@@ -3882,24 +3631,8 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
   </root>
-  <root id="7667708318090877006">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="7667708318090877008">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7667708318090877009">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dINDENT_LAYOUT_WRAP_ANCHOR" resolveInfo="INDENT_LAYOUT_WRAP_ANCHOR" />
-      </node>
-    </node>
-  </root>
-  <root id="7667708318090725848">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="7667708318090725850">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7667708318090725851">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ejnv.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ejnv.~StyleAttributes%dINDENT_LAYOUT_INDENT_ANCHOR" resolveInfo="INDENT_LAYOUT_INDENT_ANCHOR" />
-      </node>
-    </node>
-  </root>
+  <root id="7667708318090877006" />
+  <root id="7667708318090725848" />
   <root id="1402906326895675325" />
   <root id="1402906326896143883" />
   <root id="1402906326896143909" />

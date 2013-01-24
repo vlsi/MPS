@@ -185,7 +185,7 @@
   <unitInfo fileName="SetBoldOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SetBoldOperation_BehaviorDescriptor" />
   <unitInfo fileName="SideTransformAnchorTagStyleClassItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SideTransformAnchorTagStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="StrikeOutStyleSheet_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StrikeOutStyleSheet_BehaviorDescriptor" />
-  <unitInfo fileName="StyleClassItem_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleClassItem_BehaviorDescriptor" />
+  <unitInfo fileName="StyleClassItem_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="StyleSheetClassReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleSheetClassReference_BehaviorDescriptor" />
   <unitInfo fileName="StyleSheetClass_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleSheetClass_BehaviorDescriptor" />
   <unitInfo fileName="StyleSheet_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleSheet_BehaviorDescriptor" />
@@ -1410,72 +1410,53 @@
     <unitInfo nodeId="1213877538771" fileName="CellMenuComponentFeature_Property_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuComponentFeature_Property_Behavior" />
   </root>
   <root nodeId="1214304712000" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
-    <nodeInfo nodeId="1214304858196" fileName="StyleClassItem_Behavior.java" startLine="17" startPosition="95" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215703576145" fileName="StyleClassItem_Behavior.java" startLine="21" startPosition="78" endLine="22" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8921588707432272812" fileName="StyleClassItem_Behavior.java" startLine="25" startPosition="94" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="30" startPosition="92" endLine="31" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="35" startPosition="75" endLine="36" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="40" startPosition="91" endLine="41" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="45" startPosition="125" endLine="46" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="50" startPosition="108" endLine="51" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="55" startPosition="124" endLine="56" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isApplicableTo_1214304723440#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getStyleConstant_1215703564594#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getStyleAttribute_2554389230519612632#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/style/StyleAttribute;" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isApplicableTo_1214304723440#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStyleConstant_1215703564594#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStyleAttribute_2554389230519612632#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/style/StyleAttribute;" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isApplicableTo_1214304723440#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getStyleConstant_1215703564594#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getStyleAttribute_2554389230519612632#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljetbrains/mps/openapi/editor/style/StyleAttribute;" />
-    <scopeInfo nodeId="1214304712002" fileName="StyleClassItem_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="1214304723442" fileName="StyleClassItem_Behavior.java" startLine="17" startPosition="95" endLine="18" endPosition="16" />
-    <scopeInfo nodeId="1215703564596" fileName="StyleClassItem_Behavior.java" startLine="21" startPosition="78" endLine="22" endPosition="137" />
-    <scopeInfo nodeId="2554389230519612795" fileName="StyleClassItem_Behavior.java" startLine="25" startPosition="94" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="30" startPosition="92" endLine="31" endPosition="133" />
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="35" startPosition="75" endLine="36" endPosition="151" />
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="40" startPosition="91" endLine="41" endPosition="141" />
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="45" startPosition="125" endLine="46" endPosition="278" />
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="50" startPosition="108" endLine="51" endPosition="283" />
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="55" startPosition="124" endLine="56" endPosition="273" />
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="1214304858196" fileName="StyleClassItem_Behavior.java" startLine="15" startPosition="95" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8921588707432272812" fileName="StyleClassItem_Behavior.java" startLine="19" startPosition="94" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="24" startPosition="92" endLine="25" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="29" startPosition="91" endLine="30" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="34" startPosition="125" endLine="35" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="39" startPosition="124" endLine="40" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isApplicableTo_1214304723440#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getStyleAttribute_2554389230519612632#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/style/StyleAttribute;" />
+    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isApplicableTo_1214304723440#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStyleAttribute_2554389230519612632#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/style/StyleAttribute;" />
+    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isApplicableTo_1214304723440#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getStyleAttribute_2554389230519612632#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljetbrains/mps/openapi/editor/style/StyleAttribute;" />
+    <scopeInfo nodeId="1214304712002" fileName="StyleClassItem_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="1214304723442" fileName="StyleClassItem_Behavior.java" startLine="15" startPosition="95" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="2554389230519612795" fileName="StyleClassItem_Behavior.java" startLine="19" startPosition="94" endLine="20" endPosition="16" />
+    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="24" startPosition="92" endLine="25" endPosition="133" />
+    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="29" startPosition="91" endLine="30" endPosition="141" />
+    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="34" startPosition="125" endLine="35" endPosition="278" />
+    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="39" startPosition="124" endLine="40" endPosition="273" />
+    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="1214304712000" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1214304733226" varName="cellModel" />
       <varInfo nodeId="1214304712000" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1214304712000" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="1214304712000" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1214304733226" varName="cellModel" />
       <varInfo nodeId="1214304712000" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1214304712000" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="1214304712000" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1214304712000" varName="callerConceptFqName" />
       <varInfo nodeId="1214304733226" varName="cellModel" />
       <varInfo nodeId="1214304712000" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1214304712000" varName="callerConceptFqName" />
       <varInfo nodeId="1214304712000" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="1214304712000" varName="callerConceptFqName" />
-      <varInfo nodeId="1214304712000" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="13" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior" />
+    <unitInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior" />
   </root>
   <root nodeId="1214405736963" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="1214405746870" fileName="ForegroundColorStyleClassItem_Behavior.java" startLine="14" startPosition="95" endLine="15" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
