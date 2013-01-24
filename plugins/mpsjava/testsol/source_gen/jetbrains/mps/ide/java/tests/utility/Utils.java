@@ -164,7 +164,8 @@ public class Utils {
       for (SNode n : ListSequence.fromList(nodes)) {
         SModelOperations.addRootNode(result, n);
       }
-      parser.tryResolveRoots(nodes);
+      JavaParser.tryResolveRoots(nodes);
+      JavaParser.tryResolveDynamicRefs(nodes);
 
       Map<SNode, SNode> referentMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
       buildModelNodeMap(result, expected, referentMap);
