@@ -47,6 +47,7 @@
   <import index="as9o" modelUID="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
   <import index="88zw" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" version="-1" />
+  <import index="jrbx" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="tp1h" modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
@@ -63,8 +64,8 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6812098398776640299">
       <property name="name" nameId="tpck.1169194664001" value="ChangeMethodSignature" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="ChangeMethodSignature" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6812098398776640439">
       <property name="name" nameId="tpck.1169194664001" value="ChangeMethodSignatureDialog" />
@@ -79,8 +80,8 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6930463558351181264">
       <property name="name" nameId="tpck.1169194664001" value="NewModelFromSource" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Models from Java Sources" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Models from Java Sources" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6930463558351181815">
       <property name="name" nameId="tpck.1169194664001" value="ModelNewActions" />
@@ -2258,6 +2259,17 @@
                           <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1023591392840732986" />
                           <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1023591392840733010">
                             <link role="member" roleId="tp4f.1205756909548" targetNodeId="6930463558351181321" resolveInfo="module" />
+                          </node>
+                        </node>
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7736088078907757589">
+                          <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7736088078907864802">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jrbx.~MPSProject%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject)" resolveInfo="MPSProject" />
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7736088078907866504">
+                              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="7736088078907872356">
+                                <link role="member" roleId="tp4f.1205756909548" targetNodeId="6930463558351181317" resolveInfo="project" />
+                              </node>
+                              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7736088078907864833" />
+                            </node>
                           </node>
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1023591392840732978">

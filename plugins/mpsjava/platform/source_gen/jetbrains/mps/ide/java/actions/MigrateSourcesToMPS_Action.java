@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.java.newparser.DirParser;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.io.File;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
@@ -82,7 +83,7 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
         return;
       }
 
-      DirParser dirParser = new DirParser(((IModule) MapSequence.fromMap(_params).get("module")));
+      DirParser dirParser = new DirParser(((IModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
       for (String path : CollectionSequence.fromCollection(moduleDescr.getSourcePaths())) {
         dirParser.addDirectory(new File(path));
       }

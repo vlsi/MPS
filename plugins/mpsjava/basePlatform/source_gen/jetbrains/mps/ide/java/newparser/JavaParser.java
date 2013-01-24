@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 
@@ -326,11 +327,18 @@ public class JavaParser {
 
     while (DequeSequence.fromDeque(stack).isNotEmpty()) {
       SNode node = DequeSequence.fromDeque(stack).popElement();
+      SModel ourModel = node.getModel();
       DequeSequence.fromDeque(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
 
       Iterable<SReference> refs = node.getReferences();
       for (SReference ref : Sequence.fromIterable(refs)) {
         if (!(ref instanceof DynamicReference)) {
+          continue;
+        }
+        if (ref.getRole().equals("baseMethodDeclaration")) {
+          continue;
+        }
+        if (ref.getRole().equals("fieldDeclaration")) {
           continue;
         }
 
@@ -339,6 +347,11 @@ public class JavaParser {
           continue;
         }
         node.setReferenceTarget(ref.getRole(), target);
+
+        SModel targetModel = target.getModel();
+        if (targetModel != null) {
+          ourModel.addModelImport(targetModel.getSModelReference(), true);
+        }
       }
     }
   }

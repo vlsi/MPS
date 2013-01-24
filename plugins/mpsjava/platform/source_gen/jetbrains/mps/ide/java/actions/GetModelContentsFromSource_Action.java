@@ -119,7 +119,7 @@ public class GetModelContentsFromSource_Action extends BaseAction {
       }
       IFile result = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
       if (result != null) {
-        DirParser dirParser = new DirParser(module, new File(result.getPath()));
+        DirParser dirParser = new DirParser(module, null, new File(result.getPath()));
         try {
           dirParser.parseDirs();
         } catch (JavaParseException e) {

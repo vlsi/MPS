@@ -974,11 +974,29 @@
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="887121589775378541">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="887121589775378543">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rkxj.887121589775377719" resolveInfo="DirParser" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rkxj.5230611918664057302" resolveInfo="DirParser" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1552508500544136655">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="887121589775378602" resolveInfo="ourModule" />
                     </node>
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5616839344933927139" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1305226844299329623">
+                      <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1305226844299373646">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jo3e.2546981710035458906" resolveInfo="FileMPSProject" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1305226844299383473">
+                          <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1305226844299383474">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1305226844299385400">
+                              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1305226844299385582">
+                                <property name="value" nameId="tpee.1070475926801" value="/MPS.mpr" />
+                              </node>
+                              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1305226844299383983">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~PathManager%dgetHomePath()%cjava%dlang%dString" resolveInfo="getHomePath" />
+                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~PathManager" resolveInfo="PathManager" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1065,7 +1083,7 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1172665404458589315">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1172665404458589889">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rkxj.9025524024257344848" resolveInfo="tryResolveRoots" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rkxj.9025524024257344848" resolveInfo="tryResolveUnknowns" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="rkxj.3493766494546492073" resolveInfo="JavaParser" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1172665404458748971">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="887121589775378572" resolveInfo="nodes" />

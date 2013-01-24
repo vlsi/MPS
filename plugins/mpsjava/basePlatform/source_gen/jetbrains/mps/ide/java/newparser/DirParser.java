@@ -13,12 +13,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.io.File;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Project;
 import java.util.Set;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelFqName;
@@ -36,17 +37,19 @@ public class DirParser {
   private List<SModel> myAffectedModels = ListSequence.fromList(new ArrayList<SModel>());
   private List<File> mySourceDirs;
   private IModule myModule;
+  private Project myProject;
   private String myPrefix = null;
   private Map<String, SModel> myPackageFQNamesToModels = new HashMap<String, SModel>();
   private Set<String> myModelsToCreate = new HashSet<String>();
   private JavaParser myJavaParser = new JavaParser();
 
-  public DirParser(IModule mod) {
-    myModule = mod;
+  public DirParser(IModule module, Project project) {
+    myModule = module;
+    myProject = project;
   }
 
-  public DirParser(IModule mod, File sourceDir) {
-    myModule = mod;
+  public DirParser(IModule module, Project project, File sourceDir) {
+    this(module, project);
     mySourceDirs = ListSequence.fromListAndArray(new ArrayList<File>(), sourceDir);
   }
 
@@ -79,11 +82,15 @@ public class DirParser {
       addSourceFromDirectory(sourceDir);
     }
 
-    for (SModel m : ListSequence.fromList(myAffectedModels)) {
-      Iterable<SNode> roots = SModelOperations.getRoots(m, null);
-      JavaParser.tryResolveUnknowns(roots);
-      JavaParser.tryResolveDynamicRefs(roots);
-    }
+    ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+      public void run() {
+        for (SModel m : ListSequence.fromList(myAffectedModels)) {
+          Iterable<SNode> roots = SModelOperations.getRoots(m, null);
+          JavaParser.tryResolveUnknowns(roots);
+          JavaParser.tryResolveDynamicRefs(roots);
+        }
+      }
+    }, myProject);
 
   }
 
