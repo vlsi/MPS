@@ -23,5 +23,13 @@ do
      -e 's/SNodePointer\.deserialize(/jetbrains\.mps\.smodel\.SNodePointer\.deserialize(/g' \
      -e 's/new SNodePointer(/new jetbrains\.mps\.smodel\.SNodePointer(/g' \
      -e 's/\([^\.a-zA-Z]\)SNodePointer/\1SNodeReference/g' \
+\
+     -e 's/import jetbrains\.mps\.smodel\.SReference;/import org\.jetbrains\.mps\.openapi\.model\.SReference;/g' \
+     -e 's/import jetbrains\.mps\.smodel\.\*;/import org\.jetbrains\.mps\.openapi\.model\.SReference;import jetbrains\.mps\.smodel\.\*;/g' \
+     -e 's/package jetbrains\.mps\.smodel;/package jetbrains\.mps\.smodel;import org\.jetbrains\.mps\.openapi\.model\.SReference;/g' \
+     -e 's/SReference\.enableLogging(/jetbrains\.mps\.smodel\.SReference\.enableLogging(/g' \
+     -e 's/SReference\.disableLogging(/jetbrains\.mps\.smodel\.SReference\.disableLogging(/g' \
+     -e 's/SReference\.create(/jetbrains\.mps\.smodel\.SReference\.create(/g' \
+     -e 's/\([^\.]\)SReference\.ProblemDescription/\1jetbrains\.mps\.smodel\.SReference\.ProblemDescription/g' \
     $fl
 done
