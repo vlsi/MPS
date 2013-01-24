@@ -32,6 +32,11 @@ import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import jetbrains.mps.internal.collections.runtime.DequeSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.DynamicReference;
 
 public class JavaParser {
   private static Logger LOG = Logger.getLogger(JavaParser.class);
@@ -311,6 +316,29 @@ public class JavaParser {
           }
         });
 
+      }
+    }
+  }
+
+  public static void tryResolveDynamicRefs(Iterable<SNode> nodes) {
+    Deque<SNode> stack = DequeSequence.fromDeque(new LinkedList<SNode>());
+    DequeSequence.fromDeque(stack).addSequence(Sequence.fromIterable(nodes));
+
+    while (DequeSequence.fromDeque(stack).isNotEmpty()) {
+      SNode node = DequeSequence.fromDeque(stack).popElement();
+      DequeSequence.fromDeque(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
+
+      Iterable<SReference> refs = node.getReferences();
+      for (SReference ref : Sequence.fromIterable(refs)) {
+        if (!(ref instanceof DynamicReference)) {
+          continue;
+        }
+
+        SNode target = ref.getTargetNode();
+        if (target == null) {
+          continue;
+        }
+        node.setReferenceTarget(ref.getRole(), target);
       }
     }
   }

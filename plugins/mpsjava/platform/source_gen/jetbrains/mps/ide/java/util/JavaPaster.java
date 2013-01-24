@@ -125,6 +125,7 @@ public class JavaPaster {
 
       // trying to resolve names when nodes are already in a model 
       JavaParser.tryResolveRoots(nodes);
+      JavaParser.tryResolveDynamicRefs(nodes);
 
     } catch (JavaParseException ex) {
       JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
