@@ -49,7 +49,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
         if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro"), SLinkOperations.getRole(ref))) != null)) {
           continue;
         }
-        if (ref.getTargetNodeSilently() == null) {
+        if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
           addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.SEVERITY_ERROR, "unresolved reference", new IModelCheckerFix() {
             public boolean doFix() {
               return ResolverComponent.getInstance().resolve(ref, operationContext);

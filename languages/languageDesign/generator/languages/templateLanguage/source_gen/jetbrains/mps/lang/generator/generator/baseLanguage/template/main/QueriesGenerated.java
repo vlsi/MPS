@@ -274,7 +274,7 @@ public class QueriesGenerated {
     if (ref == null) {
       return "";
     }
-    SNode target = ref.getTargetNodeSilently();
+    SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
     if (target != null && SNodeOperations.isInstanceOf(target, "jetbrains.mps.lang.core.structure.INamedConcept")) {
       return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
     }
@@ -3599,7 +3599,7 @@ public class QueriesGenerated {
       if (AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro"), reference.getRole())) != null) {
         continue;
       }
-      SNode targetNode = reference.getTargetNodeSilently();
+      SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
       if (targetNode == null) {
         _context.showErrorMessage(_context.getNode(), "cannot resolve reference in template model; role: " + reference.getRole());
         continue;

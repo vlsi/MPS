@@ -45,7 +45,7 @@ public class TaskLibrariesHelper {
     for (SNode lib : libs) {
       for (SNode n : SNodeOperations.getDescendants(lib, null, true)) {
         for (SReference ref : SNodeOperations.getReferences(n)) {
-          SNode targetNode = ref.getTargetNodeSilently();
+          SNode targetNode = SNodeOperations.getTargetNodeSilently(ref);
           if (targetNode == null) {
             genContext.showErrorMessage(n, "cannot import library `" + SPropertyOperations.getString(lib, "name") + "': unresolved reference");
           } else if (!(libsSet.contains(targetNode.getContainingRoot()))) {
@@ -64,7 +64,7 @@ public class TaskLibrariesHelper {
     ListSequence.fromList(SLinkOperations.getTargets(project, "imports", true)).clear();
     for (SNode n : SNodeOperations.getDescendants(project, null, true)) {
       for (SReference ref : n.getReferences()) {
-        SNode targetNode = ref.getTargetNodeSilently();
+        SNode targetNode = SNodeOperations.getTargetNodeSilently(ref);
         if (map.containsKey(targetNode)) {
           SNodeAccessUtil.setReferenceTarget(n, ref.getRole(), map.get(targetNode));
         } else {
@@ -93,7 +93,7 @@ public class TaskLibrariesHelper {
     if (!(emptyTasks.isEmpty())) {
       for (SNode n : SNodeOperations.getDescendants(project, null, true)) {
         for (SReference ref : n.getReferences()) {
-          SNode targetNode = ref.getTargetNodeSilently();
+          SNode targetNode = SNodeOperations.getTargetNodeSilently(ref);
           emptyTasks.remove(targetNode);
         }
         if (emptyTasks.isEmpty()) {

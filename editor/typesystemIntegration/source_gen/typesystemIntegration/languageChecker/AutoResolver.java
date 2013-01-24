@@ -84,7 +84,7 @@ public class AutoResolver extends EditorCheckerAdapter {
       Set<SReference> result = SetSequence.fromSet(new LinkedHashSet<SReference>());
       for (SNode node : jetbrains.mps.util.SNodeOperations.getDescendants(cellNode, null, true)) {
         for (SReference ref : SNodeOperations.getReferences(node)) {
-          if (ref.getTargetNodeSilently() == null) {
+          if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
             SetSequence.fromSet(result).addElement(ref);
           }
         }

@@ -59,7 +59,7 @@ public class EditorResolver implements IResolver {
       return result;
     }
     IModule module = check_jllgm1_a0c0c(SNodeOperations.getModel(sourceNode).getModelDescriptor());
-    SNode target = reference.getTargetNodeSilently();
+    SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
     if (target != null && module != null) {
       Scope scope = ModelConstraints.getScope(reference);
       result = scope.getReferenceText(sourceNode, target);

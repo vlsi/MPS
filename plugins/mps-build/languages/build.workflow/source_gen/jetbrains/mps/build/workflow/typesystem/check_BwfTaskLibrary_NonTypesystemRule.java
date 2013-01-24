@@ -32,7 +32,7 @@ public class check_BwfTaskLibrary_NonTypesystemRule extends AbstractNonTypesyste
     TaskLibrariesHelper.closure(libsSet);
     for (SNode n : SNodeOperations.getDescendants(lib, null, true)) {
       for (SReference ref : SNodeOperations.getReferences(n)) {
-        SNode targetNode = ref.getTargetNodeSilently();
+        SNode targetNode = SNodeOperations.getTargetNodeSilently(ref);
         if (targetNode != null && !(libsSet.contains(targetNode.getContainingRoot()))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();

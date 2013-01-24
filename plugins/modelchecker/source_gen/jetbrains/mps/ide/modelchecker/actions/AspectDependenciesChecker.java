@@ -66,7 +66,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro"), SLinkOperations.getRole(ref))) != null)) {
           continue;
         }
-        SNode targetNode = ref.getTargetNodeSilently();
+        SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
         if (targetNode == null) {
           addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.SEVERITY_ERROR, "unresolved reference", new IModelCheckerFix() {
             public boolean doFix() {

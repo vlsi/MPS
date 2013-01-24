@@ -65,7 +65,7 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
             if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro"), SLinkOperations.getRole(ref))) != null)) {
               continue;
             }
-            SNode target = ref.getTargetNodeSilently();
+            SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
             if (target == null) {
               continue;
             }

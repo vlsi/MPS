@@ -234,7 +234,7 @@ public abstract class BaseLanguageTextGen {
         return MultiTuple.<String,String>from(packageName, shortName);
       }
     } else {
-      SNode targetNode = reference.getTargetNodeSilently();
+      SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
       if (targetNode == null) {
         textGen.foundError("Target node is null for reference to classifier with role " + SLinkOperations.getRole(classifierRef) + "; resolve info " + SLinkOperations.getResolveInfo(classifierRef) + "; " + jetbrains.mps.util.SNodeOperations.getDebugText(classifierRef.getSourceNode()));
         return null;

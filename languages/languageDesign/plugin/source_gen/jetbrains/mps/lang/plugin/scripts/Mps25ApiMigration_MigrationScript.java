@@ -1116,7 +1116,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).any(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            return ReferenceUtil.isReferenceToModel(it, "jetbrains.mps.baseLanguage.plugin") && it.getTargetNodeSilently() == null;
+            return ReferenceUtil.isReferenceToModel(it, "jetbrains.mps.baseLanguage.plugin") && jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(it) == null;
           }
         });
       }
@@ -1163,7 +1163,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
         }
         SNode operation = SNodeOperations.cast(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
         SReference reference = SNodeOperations.getReference(operation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration"));
-        if (reference.getTargetNodeSilently() != null) {
+        if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
           return false;
         }
         return ReferenceUtil.isReferenceToModel(reference, "jetbrains.mps.baseLanguage.plugin") && "getNode".equals(reference.getResolveInfo());

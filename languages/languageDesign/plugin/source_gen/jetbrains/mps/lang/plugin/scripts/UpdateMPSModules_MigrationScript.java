@@ -30,7 +30,7 @@ public class UpdateMPSModules_MigrationScript extends BaseMigrationScript {
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            return it.getTargetNodeSilently() == null;
+            return jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(it) == null;
           }
         }).isNotEmpty();
       }

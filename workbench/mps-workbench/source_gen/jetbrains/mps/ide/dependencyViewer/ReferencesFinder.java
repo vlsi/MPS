@@ -37,7 +37,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
       monitor.start("computing references' targets", ListSequence.fromList(nodes).count());
       for (SNode node : nodes) {
         for (SReference ref : SNodeOperations.getReferences(((SNode) node))) {
-          SNode target = ref.getTargetNodeSilently();
+          SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
           if (target == null || scope.contains(target)) {
             continue;
           }
@@ -85,7 +85,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             for (SReference ref : SNodeOperations.getReferences(((SNode) node))) {
-              SNode targetNode = ref.getTargetNodeSilently();
+              SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
               if (targetNode == null || !(targetScope.contains(targetNode)) || sourceScope.contains(targetNode)) {
                 continue;
               }
