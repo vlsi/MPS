@@ -160,10 +160,7 @@ public class NewModelFromSource_Action extends BaseAction {
         }
         IFile resultFile = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
         if (resultFile != null) {
-          // <node> 
-          // <node> 
-
-          final DirParser dirParser = new DirParser(((IModule) MapSequence.fromMap(_params).get("module")), sModel, new File(resultFile.getPath()));
+          final DirParser dirParser = new DirParser(((IModule) MapSequence.fromMap(_params).get("module")), new File(resultFile.getPath()));
           // we cannot take write action inside try, because it's implemented through 
           // ... Runnable() { void run() } 
           // Also I don't want to show error dialog while in write action 

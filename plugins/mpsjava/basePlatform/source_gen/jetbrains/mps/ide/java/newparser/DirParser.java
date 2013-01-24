@@ -36,15 +36,17 @@ public class DirParser {
   private List<SModel> myAffectedModels = ListSequence.fromList(new ArrayList<SModel>());
   private List<File> mySourceDirs;
   private IModule myModule;
-  private SModel myBaseModelToAddSource;
   private String myPrefix = null;
   private Map<String, SModel> myPackageFQNamesToModels = new HashMap<String, SModel>();
   private Set<String> myModelsToCreate = new HashSet<String>();
   private JavaParser myJavaParser = new JavaParser();
 
-  public DirParser(IModule mod, SModel baseModel, File sourceDir) {
+  public DirParser(IModule mod) {
     myModule = mod;
-    myBaseModelToAddSource = baseModel;
+  }
+
+  public DirParser(IModule mod, File sourceDir) {
+    myModule = mod;
     mySourceDirs = ListSequence.fromListAndArray(new ArrayList<File>(), sourceDir);
   }
 
@@ -56,25 +58,29 @@ public class DirParser {
     }
 
     for (File file : dir.listFiles()) {
-      if (!(file.isDirectory()) && file.getName().endsWith(".java")) {
-        String code = FileUtil.read(file);
-        List<SNode> oneFileRoots = parser.parse(code, "", FeatureKind.CLASS, true).getNodes();
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(oneFileRoots));
+      if (file.isDirectory() || !(file.getName().endsWith(".java"))) {
+        continue;
       }
+      String code = FileUtil.read(file);
+      List<SNode> oneFileRoots = parser.parse(code, "", FeatureKind.CLASS, true).getNodes();
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(oneFileRoots));
     }
+
     // <node> 
     return result;
   }
 
+  public void addDirectory(File dir) {
+    ListSequence.fromList(mySourceDirs).addElement(dir);
+  }
+
   public void parseDirs() throws JavaParseException {
-    // <node> 
     for (File sourceDir : ListSequence.fromList(mySourceDirs)) {
       myPrefix = null;
       addSourceFromDirectory(sourceDir);
     }
 
     for (SModel m : ListSequence.fromList(myAffectedModels)) {
-      System.out.println("DEBUG:  model " + SModelOperations.getModelName(m));
       myJavaParser.tryResolveRoots(SModelOperations.getRoots(m, null));
     }
 

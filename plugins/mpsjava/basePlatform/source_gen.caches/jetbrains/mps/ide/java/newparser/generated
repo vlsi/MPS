@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3srx5aynrqgbl7qr2movw8680uddtfv">
+<dependencies version="2" modelHash="-8nysv4yx7efqlkdkt22r9tn55rx7k9r">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -137,7 +137,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TypeNameResolver.java" />
   </source>
-  <source id="887121589775377717" name="DirParser" hash="5h2gfmsgnzp4pvs7pkowjw9wwlx97rt">
+  <source id="887121589775377717" name="DirParser" hash="ehq2ybhr2sgzfhmuad8d9wq99ethecu">
     <dep root="3493766494546492073" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
