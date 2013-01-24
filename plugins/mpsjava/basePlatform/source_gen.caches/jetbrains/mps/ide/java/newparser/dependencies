@@ -94,6 +94,7 @@
   <dependency className="jetbrains.mps.ide.java.newparser.DirParser" file="DirParser.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />

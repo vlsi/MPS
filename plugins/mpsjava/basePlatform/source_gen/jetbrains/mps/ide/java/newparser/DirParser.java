@@ -80,7 +80,9 @@ public class DirParser {
     }
 
     for (SModel m : ListSequence.fromList(myAffectedModels)) {
-      JavaParser.tryResolveRoots(SModelOperations.getRoots(m, null));
+      Iterable<SNode> roots = SModelOperations.getRoots(m, null);
+      JavaParser.tryResolveRoots(roots);
+      JavaParser.tryResolveDynamicRefs(roots);
     }
 
   }

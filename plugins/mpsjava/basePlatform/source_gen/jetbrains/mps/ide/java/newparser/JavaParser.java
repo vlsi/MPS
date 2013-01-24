@@ -298,8 +298,8 @@ public class JavaParser {
     }
   }
 
-  public static void tryResolveRoots(List<SNode> roots) {
-    for (SNode node : ListSequence.fromList(roots)) {
+  public static void tryResolveRoots(Iterable<SNode> roots) {
+    for (SNode node : Sequence.fromIterable(roots)) {
       List<SNode> unknowns = SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", false, new String[]{});
       for (SNode unk : ListSequence.fromList(unknowns)) {
 
