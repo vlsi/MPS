@@ -60,7 +60,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
 
       public boolean isApplicableInstanceNode(SNode node) {
         SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"));
-        if (reference == null || reference.getTargetNodeSilently() != null) {
+        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
           return false;
         }
         SNodeId targetNodeId = reference.getTargetNodeId();
@@ -101,7 +101,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
 
       public boolean isApplicableInstanceNode(SNode node) {
         SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
-        if (reference == null || reference.getTargetNodeSilently() != null) {
+        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
           return false;
         }
         SNodeId targetNodeId = reference.getTargetNodeId();
@@ -375,7 +375,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
 
       public boolean isApplicableInstanceNode(SNode node) {
         SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier"));
-        if (reference == null || reference.getTargetNodeSilently() != null) {
+        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
           return false;
         }
         SNodeId targetNodeId = reference.getTargetNodeId();
@@ -411,7 +411,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
 
       public boolean isApplicableInstanceNode(SNode node) {
         SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"));
-        if (reference == null || reference.getTargetNodeSilently() != null) {
+        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
           return false;
         }
         SNodeId targetNodeId = reference.getTargetNodeId();
@@ -452,7 +452,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
 
       public boolean isApplicableInstanceNode(SNode node) {
         SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
-        if (reference == null || reference.getTargetNodeSilently() != null) {
+        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
           return false;
         }
         SNodeId targetNodeId = reference.getTargetNodeId();
@@ -520,7 +520,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
 
       public boolean isApplicableInstanceNode(SNode node) {
         SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
-        if (reference == null || reference.getTargetNodeSilently() != null) {
+        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
           return false;
         }
 

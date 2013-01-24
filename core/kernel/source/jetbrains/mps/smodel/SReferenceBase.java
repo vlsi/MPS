@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
@@ -89,7 +91,7 @@ abstract class SReferenceBase extends SReference {
   }
 
   public void makeDirect() {
-    myImmatureTargetNode = getTargetNodeSilently();
+    myImmatureTargetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(this);
     if (myImmatureTargetNode != null) {
       ImmatureReferences.getInstance().add(this);
     }

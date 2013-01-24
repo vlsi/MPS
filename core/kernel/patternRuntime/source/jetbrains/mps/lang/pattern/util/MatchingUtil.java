@@ -113,7 +113,7 @@ public class MatchingUtil {
   public static int hash(SNode node) {
     int result = node.getConcept().getId().hashCode();
     for (SReference reference : node.getReferences()) {
-      SNode targetNode = reference.getTargetNodeSilently();
+      SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
       if (targetNode != null) {
         result = 31 * result + reference.getRole().hashCode();
         result = 31 * result + targetNode.hashCode();

@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -169,7 +171,7 @@ public final class CopyUtil {
 
       for (SReference ref : inputNode.getReferences()) {
         boolean cloneRefs = forceCloneRefs || MPSCore.getInstance().isMergeDriverMode();
-        SNode inputTargetNode = cloneRefs ? null : ref.getTargetNodeSilently();
+        SNode inputTargetNode = cloneRefs ? null : jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
         if (inputTargetNode == null) { //broken reference or need to clone
           if (ref instanceof StaticReference) {
             StaticReference statRef = (StaticReference) ref;
