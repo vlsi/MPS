@@ -54,6 +54,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FindRootableConceptsWithoutIcons_Action());
     addAction(new FindSpecificNodeUsages_Action());
     addAction(new Find_Action());
+    addAction(new ForcedSaveAll_Action());
     addAction(new GoByCurrentReferenceToIDEA_Action());
     addAction(new GoToModel_Action());
     addAction(new GoToModule_Action());
