@@ -43,7 +43,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.LinkedHashMap" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.JDOMUtil" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
