@@ -194,7 +194,7 @@ public class MPSModulesPartitioner {
     }
 
     public Set<SNode> getConflicting() {
-      return modules;
+      return conflicting;
     }
 
     public boolean isConflicting(SNode mod) {

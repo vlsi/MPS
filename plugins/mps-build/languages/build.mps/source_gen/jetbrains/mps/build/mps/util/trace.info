@@ -806,7 +806,7 @@
     <nodeInfo nodeId="8845345751178198211" fileName="MPSModulesPartitioner.java" startLine="187" startPosition="20" endLine="188" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5970181360960156112" fileName="MPSModulesPartitioner.java" startLine="188" startPosition="69" endLine="189" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8845345751178285127" fileName="MPSModulesPartitioner.java" startLine="192" startPosition="36" endLine="193" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5970181360960288069" fileName="MPSModulesPartitioner.java" startLine="196" startPosition="40" endLine="197" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5970181360960288069" fileName="MPSModulesPartitioner.java" startLine="196" startPosition="40" endLine="197" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5970181360960156216" fileName="MPSModulesPartitioner.java" startLine="200" startPosition="45" endLine="201" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7391870795497041695" fileName="MPSModulesPartitioner.java" startLine="204" startPosition="34" endLine="205" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5970181360960156171" fileName="MPSModulesPartitioner.java" startLine="209" startPosition="17" endLine="210" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -879,7 +879,7 @@
     <scopeInfo nodeId="7391870795496919169" fileName="MPSModulesPartitioner.java" startLine="170" startPosition="41" endLine="171" endPosition="66" />
     <scopeInfo nodeId="7391870795496918685" fileName="MPSModulesPartitioner.java" startLine="175" startPosition="29" endLine="176" endPosition="66" />
     <scopeInfo nodeId="8845345751178285126" fileName="MPSModulesPartitioner.java" startLine="192" startPosition="36" endLine="193" endPosition="21" />
-    <scopeInfo nodeId="5970181360960288068" fileName="MPSModulesPartitioner.java" startLine="196" startPosition="40" endLine="197" endPosition="21" />
+    <scopeInfo nodeId="5970181360960288068" fileName="MPSModulesPartitioner.java" startLine="196" startPosition="40" endLine="197" endPosition="25" />
     <scopeInfo nodeId="5970181360960156204" fileName="MPSModulesPartitioner.java" startLine="200" startPosition="45" endLine="201" endPosition="60" />
     <scopeInfo nodeId="8845345751178285138" fileName="MPSModulesPartitioner.java" startLine="204" startPosition="34" endLine="205" endPosition="59" />
     <scopeInfo nodeId="7391870795497041738" fileName="MPSModulesPartitioner.java" startLine="209" startPosition="17" endLine="210" endPosition="60" />
