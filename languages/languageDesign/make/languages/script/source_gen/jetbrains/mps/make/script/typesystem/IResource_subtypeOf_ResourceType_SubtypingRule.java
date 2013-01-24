@@ -4,24 +4,30 @@ package jetbrains.mps.make.script.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class IResource_subtypeOf_ResourceType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  /*package*/ GeneratedMatchingPattern myMatchingPattern;
-
   public IResource_subtypeOf_ResourceType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode iRes, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_f565s9_a0a2();
+  public SNode getSubOrSuperType(SNode ct, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(ct, "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_f565s9_a0a0a0b(), "classifier", false)})) {
+      SNode rt = SConceptOperations.createNewNode("jetbrains.mps.make.script.structure.ResourceType", null);
+      SLinkOperations.setTarget(rt, "classifierType", SNodeOperations.copyNode(ct), true);
+      return rt;
+    }
+    return null;
   }
 
   public String getApplicableConceptFQName() {
@@ -30,58 +36,19 @@ public class IResource_subtypeOf_ResourceType_SubtypingRule extends SubtypingRul
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      GeneratedMatchingPattern pattern = new IResource_subtypeOf_ResourceType_SubtypingRule.Pattern_f565s9_a0a0a0a4();
-      this.myMatchingPattern = pattern;
-      boolean b = pattern.match(argument);
-      return new IsApplicableStatus(b, pattern);
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
     }
   }
 
   public boolean isWeak() {
-    return true;
+    return false;
   }
 
-  public static class Pattern_f565s9_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_f565s9_a0a0a0a4() {
-    }
-
-    public boolean match(SNode nodeToMatch) {
-      {
-        SNode nodeToMatch_IResource_subtypeOf_ResourceType_ajr7u7_a0a;
-        nodeToMatch_IResource_subtypeOf_ResourceType_ajr7u7_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_IResource_subtypeOf_ResourceType_ajr7u7_a0a.getConcept().getConceptId()))) {
-          return false;
-        }
-        {
-          SNodePointer pointer = SNODE_POINTER_f565s9_a0a0a0a0b0c0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IResource_subtypeOf_ResourceType_ajr7u7_a0a.getReferenceTarget("classifier")))) {
-            return false;
-          }
-        }
-      }
-      return true;
-    }
-
-    public boolean hasAntiquotations() {
-      return false;
-    }
-
-    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-    }
-
-    public Object getFieldValue(String fieldName) {
-      return null;
-    }
-
-    public void performActions(Object o) {
-    }
-  }
-
-  private static SNode _quotation_createNode_f565s9_a0a2() {
+  private static SNode _quotation_createNode_f565s9_a0a0a0b() {
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.ResourceType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)"), SNodeId.fromString("6168415856807657256")));
     return quotedNode_1;
   }
-
-  private static SNodePointer SNODE_POINTER_f565s9_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256");
 }

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
@@ -19,6 +20,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_DoneWorkStatement_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_InputResourcesParameter_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -42,12 +47,16 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new ResourceType_subtypeOf_IResource_SubtypingRule();
+      SubtypingRule_Runtime subtypingRule = new resource_supertypes_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
       ComparisonRule_Runtime comparisonRule = new ResourceType_comparableWith_IResource_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
+    }
+    {
+      InequationReplacementRule_Runtime eliminationRule = new resource_subtypeOf_resource_InequationReplacementRule();
+      this.myInequationReplacementRules.add(eliminationRule);
     }
   }
 }

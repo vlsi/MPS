@@ -26,6 +26,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.constraints.AdvanceWorkStatement_Constraints" />
     <classNode dependClassName="jetbrains.mps.make.script.constraints.FinishWorkStatement_Constraints" />
     <classNode dependClassName="jetbrains.mps.make.script.constraints.RelayQueryExpression_Constraints" />
+    <classNode dependClassName="jetbrains.mps.make.script.constraints.ResourceType_Constraints" />
     <classNode dependClassName="jetbrains.mps.make.script.constraints.ResultStatement_Constraints" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
@@ -60,6 +61,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.script.constraints.ResourceType_Constraints" file="ResourceType_Constraints.java">
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.constraints.ResultStatement_Constraints" file="ResultStatement_Constraints.java">

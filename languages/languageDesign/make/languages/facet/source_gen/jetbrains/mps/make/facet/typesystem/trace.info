@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.make.facet.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.make.facet.typesystem.TypesystemDescriptor" />
   <root nodeId="1919086248986829223" modelId="r:e67eab7b-bc9a-4900-b958-c99ccf24a565(jetbrains.mps.make.facet.typesystem)">
     <nodeInfo nodeId="1919086248986829231" fileName="typeof_FacetReferenceExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1919086248986829231" fileName="typeof_FacetReferenceExpression_InferenceRule.java" startLine="23" startPosition="45" endLine="24" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -172,6 +172,78 @@
       <varInfo nodeId="3344436107830227913" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="3344436107830227913" fileName="typeof_ForeignParametersExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.make.facet.typesystem.typeof_ForeignParametersExpression_InferenceRule" />
+  </root>
+  <root nodeId="4902420589280075077" modelId="r:e67eab7b-bc9a-4900-b958-c99ccf24a565(jetbrains.mps.make.facet.typesystem)">
+    <nodeInfo nodeId="4902420589280088721" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589280088721" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589280088721" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="26" startPosition="9" endLine="27" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589280088721" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="27" startPosition="180" endLine="28" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="34" startPosition="46" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="39" startPosition="5" endLine="40" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="40" startPosition="126" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="45" startPosition="30" endLine="46" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="4902420589280088721" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="25" startPosition="236" endLine="29" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="38" startPosition="68" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="4902420589280088721" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="22" startPosition="136" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589280075267" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="21" startPosition="116" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="18" startPosition="83" endLine="18" endPosition="83" />
+    <scopeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="34" startPosition="46" endLine="35" endPosition="71" />
+    <scopeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="45" startPosition="30" endLine="46" endPosition="17" />
+    <scopeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="4902420589280088721" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="26" startPosition="9" endLine="28" endPosition="71">
+      <varInfo nodeId="4902420589280088721" varName="intentionProvider" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="39" startPosition="5" endLine="41" endPosition="45">
+      <varInfo nodeId="4902420589280075077" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="38" startPosition="68" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="4902420589280088721" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="29" endPosition="9">
+      <varInfo nodeId="4902420589280088721" varName="_reporter_2309309498" />
+      <varInfo nodeId="4902420589280088721" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="38" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4902420589280075077" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589280075269" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="22" startPosition="136" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="4902420589280075078" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="21" startPosition="116" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="4902420589280075077" varName="rct" />
+      <varInfo nodeId="4902420589280075077" varName="status" />
+      <varInfo nodeId="4902420589280075077" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="4902420589280075077" fileName="ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.make.facet.typesystem.ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule" />
+  </root>
+  <root nodeId="4902420589280089134" modelId="r:e67eab7b-bc9a-4900-b958-c99ccf24a565(jetbrains.mps.make.facet.typesystem)">
+    <nodeInfo nodeId="4902420589280089435" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="14" startPosition="44" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589280117221" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="19" startPosition="236" endLine="20" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589280127417" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="20" startPosition="159" endLine="21" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589280101433" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="21" startPosition="119" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589280089134" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResourceClassifierType_replaceWith_ClassifierType_QuickFix#()V" />
+    <nodeInfo nodeId="4902420589280089134" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4902420589280093784" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="18" startPosition="35" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4902420589280089134" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="4902420589280089134" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="11" startPosition="71" endLine="11" endPosition="71" />
+    <scopeInfo nodeId="4902420589280089218" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="14" startPosition="44" endLine="15" endPosition="41" />
+    <scopeInfo nodeId="4902420589280089134" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="4902420589280089134" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="4902420589280089134" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589280093786" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="19" startPosition="236" endLine="22" endPosition="72">
+      <varInfo nodeId="4902420589280127418" varName="replmnt" />
+      <varInfo nodeId="4902420589280117222" varName="resource" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589280089136" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="18" startPosition="35" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="4902420589280089134" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="4902420589280089134" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="4902420589280089134" fileName="ResourceClassifierType_replaceWith_ClassifierType_QuickFix.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.make.facet.typesystem.ResourceClassifierType_replaceWith_ClassifierType_QuickFix" />
   </root>
   <root nodeId="7320828025189375176" modelId="r:e67eab7b-bc9a-4900-b958-c99ccf24a565(jetbrains.mps.make.facet.typesystem)">
     <nodeInfo nodeId="7320828025189375208" fileName="typeof_LocalParametersExpression_InferenceRule.java" startLine="21" startPosition="116" endLine="22" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
