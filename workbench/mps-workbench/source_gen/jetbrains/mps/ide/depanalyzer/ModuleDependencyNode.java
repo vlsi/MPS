@@ -123,10 +123,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
           return it.getModuleFqName();
         }
       }, true)) {
-        Iterable<IModule> langModules = new GlobalModuleDependenciesManager(l).getModules((tree.isShowRuntime() ?
-          GlobalModuleDependenciesManager.Deptype.EXECUTE :
-          GlobalModuleDependenciesManager.Deptype.VISIBLE
-        ));
+        Iterable<IModule> langModules = new GlobalModuleDependenciesManager(l).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
         boolean isBootstrapDep = Sequence.fromIterable(langModules).intersect(ListSequence.fromList(myModules)).isNotEmpty();
         hasBootstrapDep |= isBootstrapDep;
         usedlanguages.add(new ModuleDependencyNode.ULangDependencyNode(l, isBootstrapDep, getOperationContext()));
