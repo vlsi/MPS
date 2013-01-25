@@ -27,6 +27,7 @@ import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.HashSet;
 import jetbrains.mps.build.ant.util.SetLibraryContributor;
 import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.build.ant.generation.GenerateChunksTask;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.build.ant.util.PathManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -103,7 +104,7 @@ public class ChunksGeneratorWorker extends GeneratorWorker {
     mpsWorker.workFromMain();
   }
 
-  private static class MyEnvironment extends Environment {
+  private class MyEnvironment extends Environment {
     @Override
     protected void loadLibraries() {
       if (myLibraryContibutor == null) {
@@ -129,7 +130,7 @@ public class ChunksGeneratorWorker extends GeneratorWorker {
     }
 
     private UrlClassLoader createClassloader() {
-      String pluginsPath = System.getProperty("plugin.path");
+      String pluginsPath = myWhatToDo.getProperty(GenerateChunksTask.PLUGIN_PATHS);
       Set<File> pluginsClasspath = SetSequence.fromSet(new LinkedHashSet<File>());
       if (pluginsPath != null) {
         for (String plugin : pluginsPath.split(File.pathSeparator)) {

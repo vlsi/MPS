@@ -19,7 +19,7 @@
     <unitInfo nodeId="4061567211001166715" fileName="buildDates.xml" startLine="1" startPosition="0" endLine="344" endPosition="10" unitName="jetbrains.mps.ide.build.buildDates" />
   </root>
   <root nodeId="4197214709894135186" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="4197214709894135186" fileName="buildObsolete.xml" startLine="1" startPosition="0" endLine="870" endPosition="10" unitName="jetbrains.mps.ide.build.buildObsolete" />
+    <unitInfo nodeId="4197214709894135186" fileName="buildObsolete.xml" startLine="1" startPosition="0" endLine="869" endPosition="10" unitName="jetbrains.mps.ide.build.buildObsolete" />
   </root>
   <root nodeId="4301118715654192646" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="4301118715654192646" fileName="buildMPS.xml" startLine="1" startPosition="0" endLine="191" endPosition="10" unitName="jetbrains.mps.ide.build.buildMPS" />

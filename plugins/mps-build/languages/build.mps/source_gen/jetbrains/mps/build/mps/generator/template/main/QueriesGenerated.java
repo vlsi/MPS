@@ -23,11 +23,10 @@ import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.build.mps.util.MPSModulesPartitioner;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.build.mps.util.MPSModulesClosure;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -45,6 +44,8 @@ import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.build.util.LocalSourcePathArtifact;
 import jetbrains.mps.build.mps.util.RequiredPlugins;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_185021013914732022(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -412,9 +413,8 @@ public class QueriesGenerated {
     return _context.getTemplateValue();
   }
 
-  public static Object propertyMacro_GetPropertyValue_8301447434615581267(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String pathSeparator = "${path.separator}";
-    return _context.getTemplateValue() + IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(((String[]) _context.getVariable("var:requiredPlugins")))), pathSeparator);
+  public static Object propertyMacro_GetPropertyValue_978600701690073083(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "path");
   }
 
   public static Object propertyMacro_GetPropertyValue_5970181360960745173(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1043,6 +1043,14 @@ public class QueriesGenerated {
     return Sequence.<SNode>singleton(_context.getNode());
   }
 
+  public static Iterable sourceNodesQuery_978600701690054686(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return Sequence.fromIterable(Sequence.fromArray(((String[]) _context.getVariable("var:requiredPlugins")))).select(new ISelector<String, SNode>() {
+      public SNode select(String it) {
+        return createGeneratorInternal_String_x583g4_a0a0a0a0wf(it);
+      }
+    });
+  }
+
   public static Iterable sourceNodesQuery_5970181360960745073(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     final SNode project = _context.getNode();
     if (project == null) {
@@ -1378,6 +1386,12 @@ public class QueriesGenerated {
       }
     }
     return partitioner;
+  }
+
+  private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0wf(Object p0) {
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, GlobalScope.getInstance(), false);
+    n1.setProperty("path", (String) p0);
+    return n1;
   }
 
   private static boolean eq_x583g4_a0a0a0a0a0a0a3a51(Object a, Object b) {

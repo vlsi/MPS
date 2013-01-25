@@ -19,6 +19,7 @@ public class GenerateChunksTask extends MpsLoadTask {
 
   public static final String STRICT_MODE = "STRICT_MODE";
   public static final String PARALLEL_MODE = "PARALLEL_MODE";
+  public static final String PLUGIN_PATHS = "plugin.path";
 
   public GenerateChunksTask() {
   }
@@ -52,6 +53,16 @@ public class GenerateChunksTask extends MpsLoadTask {
 
   protected boolean getParallelMode() {
     return Boolean.parseBoolean(myWhatToDo.getProperty(PARALLEL_MODE));
+  }
+
+  public void addConfiguredPlugin(Plugin plugin) {
+    String property = myWhatToDo.getProperty(PLUGIN_PATHS);
+    if ((property == null || property.length() == 0)) {
+      property = plugin.getPath().getAbsolutePath();
+    } else {
+      property += File.pathSeparator + plugin.getPath().getAbsolutePath();
+    }
+    myWhatToDo.putProperty(PLUGIN_PATHS, property);
   }
 
   @Override

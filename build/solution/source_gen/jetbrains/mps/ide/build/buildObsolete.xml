@@ -739,9 +739,8 @@
   <target name="generate" depends="fetchDependencies, declare-mps-tasks">
     <echo message="generating" />
     <mps.generate.chunks parallelMode="true" fork="true">
-      <jvmargs>
-        <arg value="-Dplugin.path=${artifacts.buildBuild}/plugins/mps-build${path.separator}${artifacts.buildDeprecatedBuildlanguage}/plugins/mps-obsolete" />
-      </jvmargs>
+      <plugin path="${artifacts.buildBuild}/plugins/mps-build" />
+      <plugin path="${artifacts.buildDeprecatedBuildlanguage}/plugins/mps-obsolete" />
       <library file="${artifacts.buildBuild}/plugins/mps-build/languages/build/jetbrains.mps.bash.jar" />
       <library file="${artifacts.buildBuild}/plugins/mps-build/languages/build/jetbrains.mps.build.startup.jar" />
       <library file="${artifacts.buildCoreEx}/plugins/mps-core/languages/xml/jetbrains.mps.core.xml.jar" />
