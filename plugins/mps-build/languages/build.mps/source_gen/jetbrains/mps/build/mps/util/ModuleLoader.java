@@ -51,6 +51,9 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFileUtils;
 
 public class ModuleLoader {
+  private static final String CORE_LANGUAGE_UID = "ceab5195-25ea-4f22-9b92-103b95ca8c0c";
+  private static final String DESCRIPTOR_LANGUAGE_UID = "f4ad079d-bc71-4ffb-9600-9328705cf998";
+
   private final TemplateQueryContext genContext;
   private final SNode myModule;
   private SNode myOriginalModule;
@@ -420,9 +423,13 @@ public class ModuleLoader {
   private void loadLanguageDeps(boolean checkOnly) {
     LanguageDescriptor descriptor = ((LanguageDescriptor) myModuleDescriptor);
     boolean importsCore = false;
+    boolean importsDescriptor = false;
     for (ModuleReference lang : descriptor.getExtendedLanguages()) {
-      if (!(importsCore) && "ceab5195-25ea-4f22-9b92-103b95ca8c0c".equals(lang.getModuleId())) {
+      if (!(importsCore) && CORE_LANGUAGE_UID.equals(lang.getModuleId().toString())) {
         importsCore = true;
+      }
+      if (!(importsDescriptor) && DESCRIPTOR_LANGUAGE_UID.equals(lang.getModuleId().toString())) {
+        importsDescriptor = true;
       }
       final SNode resolved = SNodeOperations.as(visible.resolve(lang.getModuleFqName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
@@ -440,11 +447,21 @@ public class ModuleLoader {
       }
     }
     if (!(importsCore) && !(checkOnly)) {
-      SNode resolved = SNodeOperations.as(visible.resolve("jetbrains.mps.lang.core", "ceab5195-25ea-4f22-9b92-103b95ca8c0c"), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+      SNode resolved = SNodeOperations.as(visible.resolve("jetbrains.mps.lang.core", CORE_LANGUAGE_UID), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
         report("cannot find jetbrains.mps.lang.core language in dependencies for " + SPropertyOperations.getString(myModule, "name"), myModule);
       } else {
         SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", null);
+        SLinkOperations.setTarget(ul, "language", resolved, false);
+        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).addElement(ul);
+      }
+    }
+    if (!(importsDescriptor) && !(checkOnly)) {
+      SNode resolved = SNodeOperations.as(visible.resolve("jetbrains.mps.lang.descriptor", DESCRIPTOR_LANGUAGE_UID), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+      if (resolved == null) {
+        report("cannot find jetbrains.mps.lang.descriptor language in dependencies for " + SPropertyOperations.getString(myModule, "name"), myModule);
+      } else {
+        SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", null);
         SLinkOperations.setTarget(ul, "language", resolved, false);
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).addElement(ul);
       }

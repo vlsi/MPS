@@ -40,7 +40,6 @@ public class BuildMPSPlugin_Behavior {
     VisibleModules visibleModules = new VisibleModules(project, artifacts.getGenContext());
     visibleModules.collect();
     BuildMPSPlugin_Behavior.call_findModule_3643570831019325688(thisNode, visibleModules, "jetbrains.mps.ant", "77c9a130-703f-4530-bf21-6580757768d0", artifacts, builder, helper);
-    BuildMPSPlugin_Behavior.call_findModule_3643570831019325688(thisNode, visibleModules, "jetbrains.mps.lang.descriptor", "f4ad079d-bc71-4ffb-9600-9328705cf998", artifacts, builder, helper);
 
     SNode originalProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(project, artifacts.getGenContext()), "jetbrains.mps.build.structure.BuildProject");
     SNode mpsCoreModule = SNodeOperations.as(ScopeProvider_Behavior.call_getScope_7722139651431880752(originalProject, SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaModule"), "parts", 0).resolve(originalProject, "mps-core"), "jetbrains.mps.build.structure.BuildSource_JavaModule");
