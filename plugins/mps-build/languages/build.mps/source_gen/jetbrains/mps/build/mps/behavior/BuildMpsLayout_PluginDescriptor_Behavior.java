@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
+import jetbrains.mps.build.util.UnpackHelper;
 
 public class BuildMpsLayout_PluginDescriptor_Behavior {
   public static void init(SNode thisNode) {
@@ -31,5 +32,21 @@ public class BuildMpsLayout_PluginDescriptor_Behavior {
       }
     }
     return BuildLayout_PathElement_Behavior.callSuper_location_7117056644539862594(thisNode, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor", helper, artifactId);
+  }
+
+  public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Container")) {
+      sb.append("/");
+    }
+    sb.append(BuildMpsLayout_PluginDescriptor_Behavior.pluginXml_978600701690250198());
+  }
+
+  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    String parentLocation = helper.contentLocations().get(helper.parent(thisNode));
+    helper.locations().put(thisNode, parentLocation + "/" + BuildMpsLayout_PluginDescriptor_Behavior.pluginXml_978600701690250198());
+  }
+
+  public static String pluginXml_978600701690250198() {
+    return "plugin.xml";
   }
 }

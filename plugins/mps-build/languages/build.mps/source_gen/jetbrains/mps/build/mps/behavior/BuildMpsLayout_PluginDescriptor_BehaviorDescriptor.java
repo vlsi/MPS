@@ -5,9 +5,14 @@ package jetbrains.mps.build.mps.behavior;
 import jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.DependenciesHelper;
+import jetbrains.mps.build.util.UnpackHelper;
 
 public class BuildMpsLayout_PluginDescriptor_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor {
   public BuildMpsLayout_PluginDescriptor_BehaviorDescriptor() {
+  }
+
+  public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
+    BuildMpsLayout_PluginDescriptor_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
   }
 
   public boolean virtual_exports_6547494638219603457(SNode thisNode, Object artifactId) {
@@ -16,6 +21,10 @@ public class BuildMpsLayout_PluginDescriptor_BehaviorDescriptor extends BuildLay
 
   public String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
     return BuildMpsLayout_PluginDescriptor_Behavior.virtual_location_7117056644539862594(thisNode, helper, artifactId);
+  }
+
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildMpsLayout_PluginDescriptor_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   @Override
