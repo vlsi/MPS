@@ -154,7 +154,7 @@ public class Utils {
     try {
       // FIXME  
       JavaParser parser = new JavaParser();
-      DirParser dirParser = new DirParser(ourModule, null, null);
+      DirParser dirParser = new DirParser(ourModule, new FileMPSProject(new File(PathManager.getHomePath() + "/MPS.mpr")));
       SModel result = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", "")).getSModel();
       for (SNode r : ListSequence.fromList(SModelOperations.getRoots(result, null))) {
         SNodeOperations.detachNode(r);
@@ -164,7 +164,8 @@ public class Utils {
       for (SNode n : ListSequence.fromList(nodes)) {
         SModelOperations.addRootNode(result, n);
       }
-      parser.tryResolveRoots(nodes);
+      JavaParser.tryResolveUnknowns(nodes);
+      JavaParser.tryResolveDynamicRefs(nodes);
 
       Map<SNode, SNode> referentMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
       buildModelNodeMap(result, expected, referentMap);
