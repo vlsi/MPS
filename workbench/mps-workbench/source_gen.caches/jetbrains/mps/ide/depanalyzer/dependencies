@@ -176,6 +176,7 @@
     <classNode dependClassName="jetbrains.mps.ide.moduleDependencies.icons.Icons" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="jetbrains.mps.ide.ui.TextMPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.treeMessages.TreeMessage" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
