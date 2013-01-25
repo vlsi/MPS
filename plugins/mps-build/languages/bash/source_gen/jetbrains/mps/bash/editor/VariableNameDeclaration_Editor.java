@@ -10,8 +10,8 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.CaretPosition;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.CaretPosition;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
@@ -29,7 +29,7 @@ public class VariableNameDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
     BashLanguageStyle_StyleSheet.applyVariable(style, editorCell);
-    style.set(StyleAttributes.DEFAULT_CARET_POSITON, CaretPosition.LAST);
+    style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.LAST);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

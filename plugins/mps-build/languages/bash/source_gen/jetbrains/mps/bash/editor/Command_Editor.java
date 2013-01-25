@@ -9,8 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.CaretPosition;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.CaretPosition;
 
 public class Command_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -22,7 +22,7 @@ public class Command_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_5th3tc_a");
     Style style = new StyleImpl();
     BashLanguageStyle_StyleSheet.applyNullStyle(style, editorCell);
-    style.set(StyleAttributes.DEFAULT_CARET_POSITON, CaretPosition.FIRST);
+    style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.FIRST);
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
