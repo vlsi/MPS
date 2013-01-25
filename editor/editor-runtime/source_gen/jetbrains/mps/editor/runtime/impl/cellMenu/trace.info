@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3368017140643570595" modelId="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)">
+  <root nodeRef="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)/3368017140643570595">
     <nodeInfo nodeId="3368017140643570598" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="3368017140643570605" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySourceNode" />
     <nodeInfo nodeId="3368017140643570608" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLinkDeclaration" />
@@ -54,7 +54,7 @@
     </scopeInfo>
     <unitInfo nodeId="3368017140643570595" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="23" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellMenu.DefaultReferenceSubstituteInfoActionsFactory" />
   </root>
-  <root nodeId="4391314372875337327" modelId="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)">
+  <root nodeRef="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)/4391314372875337327">
     <nodeInfo nodeId="4391314372875405367" fileName="EnumPropertySubstituteInfo.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="4391314372875405371" fileName="EnumPropertySubstituteInfo.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPropertyDeclaration" />
     <nodeInfo nodeId="4391314372875405365" fileName="EnumPropertySubstituteInfo.java" startLine="21" startPosition="105" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

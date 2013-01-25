@@ -20,13 +20,14 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
-public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodePointer> {
+public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeReference> {
   public BaseNodePointerModel(Project project) {
     this(project, "node");
   }
@@ -41,11 +42,11 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodePoint
     return presentation.getModelName() + "." + presentation.getPresentableText();
   }
 
-  public String doGetObjectName(final SNodePointer nodePointer) {
+  public String doGetObjectName(final SNodeReference nodePointer) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        SNode node = nodePointer.getNode();
+        SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
         String name = node.getName();
         if (name == null) {
           return node.toString();
@@ -55,7 +56,7 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodePoint
     });
   }
 
-  public NavigationItem doGetNavigationItem(SNodePointer node) {
+  public NavigationItem doGetNavigationItem(SNodeReference node) {
     return new BaseNodePointerItem(node) {
       private Project myProject = getProject();
 

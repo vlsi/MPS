@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1199467210284" modelId="r:00000000-0000-4000-0000-011c895905b8(sample1)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905b8(sample1)/1199467210284">
     <nodeInfo nodeId="1199467299272" fileName="TestLabel.java" startLine="15" startPosition="38" endLine="16" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1199470845196" fileName="TestLabel.java" startLine="17" startPosition="23" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1199467319328" fileName="TestLabel.java" startLine="16" startPosition="39" endLine="19" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -24,7 +24,7 @@
     </scopeInfo>
     <unitInfo nodeId="1199467210284" fileName="TestLabel.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="sample1.TestLabel" />
   </root>
-  <root nodeId="1199640036833" modelId="r:00000000-0000-4000-0000-011c895905b8(sample1)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905b8(sample1)/1199640036833">
     <nodeInfo nodeId="1201092112339" fileName="TestClosure.java" startLine="139" startPosition="27" endLine="139" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201198409716" fileName="TestClosure.java" startLine="142" startPosition="28" endLine="142" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1201198434700" fileName="TestClosure.java" startLine="145" startPosition="28" endLine="145" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

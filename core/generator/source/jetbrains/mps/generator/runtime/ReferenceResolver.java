@@ -17,7 +17,7 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Evgeny Gryaznov, 11/4/10
@@ -26,7 +26,7 @@ public interface ReferenceResolver {
 
   Object resolve(SNode outputNode, TemplateContext context);
 
-  SNodePointer getTemplateNode();
+  SNodeReference getTemplateNode();
 
   String getDefaultResolveInfo();
 }

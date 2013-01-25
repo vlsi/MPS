@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class SubstituteNodeBuilderVariableReference_Constraints extends BaseConstraintsDescriptor {
@@ -49,7 +50,7 @@ public class SubstituteNodeBuilderVariableReference_Constraints extends BaseCons
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_vdmjo3_a0a1a0a0a1a0b0a1a1;
           }
         };

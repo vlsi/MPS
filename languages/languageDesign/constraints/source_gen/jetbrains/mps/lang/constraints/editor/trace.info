@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1147468872959" modelId="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)/1147468872959">
     <nodeInfo nodeId="1147468872959" fileName="NodePropertyConstraint_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1149010775553" fileName="NodePropertyConstraint_Editor.java" startLine="32" startPosition="33" endLine="33" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1149010775553" fileName="NodePropertyConstraint_Editor.java" startLine="36" startPosition="69" endLine="37" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -433,7 +433,7 @@
     <unitInfo nodeId="1149010775553" fileName="NodePropertyConstraint_Editor.java" startLine="31" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodePropertyConstraint_Editor$_Inline_vrfi3w_a2a" />
     <unitInfo nodeId="1147468872959" fileName="NodePropertyConstraint_Editor.java" startLine="26" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodePropertyConstraint_Editor" />
   </root>
-  <root nodeId="1148687645603" modelId="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)/1148687645603">
     <nodeInfo nodeId="1148687645603" fileName="NodeReferentConstraint_Editor.java" startLine="31" startPosition="79" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1148929692478" fileName="NodeReferentConstraint_Editor.java" startLine="36" startPosition="33" endLine="37" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1148929692478" fileName="NodeReferentConstraint_Editor.java" startLine="40" startPosition="69" endLine="41" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1092,7 +1092,7 @@
     <unitInfo nodeId="1148929692478" fileName="NodeReferentConstraint_Editor.java" startLine="35" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodeReferentConstraint_Editor$_Inline_y1wtxd_a2a" />
     <unitInfo nodeId="1148687645603" fileName="NodeReferentConstraint_Editor.java" startLine="30" startPosition="0" endLine="430" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodeReferentConstraint_Editor" />
   </root>
-  <root nodeId="1159289810183" modelId="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)/1159289810183">
     <nodeInfo nodeId="1159289810183" fileName="NodeDefaultSearchScope_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1159289834189" fileName="NodeDefaultSearchScope_Editor.java" startLine="26" startPosition="89" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1159289834189" fileName="NodeDefaultSearchScope_Editor.java" startLine="27" startPosition="96" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1340,7 +1340,7 @@
     </scopeInfo>
     <unitInfo nodeId="1159289810183" fileName="NodeDefaultSearchScope_Editor.java" startLine="21" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodeDefaultSearchScope_Editor" />
   </root>
-  <root nodeId="1213094054781" modelId="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)/1213094054781">
     <nodeInfo nodeId="1213094054781" fileName="ConceptConstraints_Editor.java" startLine="37" startPosition="79" endLine="38" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213094094191" fileName="ConceptConstraints_Editor.java" startLine="42" startPosition="33" endLine="43" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1213094094191" fileName="ConceptConstraints_Editor.java" startLine="46" startPosition="69" endLine="47" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2804,7 +2804,7 @@
     <unitInfo nodeId="2118147876589610197" fileName="ConceptConstraints_Editor.java" startLine="157" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor$referentListHandler_g00aa7_q3a" />
     <unitInfo nodeId="1213094054781" fileName="ConceptConstraints_Editor.java" startLine="36" startPosition="0" endLine="920" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor" />
   </root>
-  <root nodeId="2487047136346128092" modelId="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)/2487047136346128092">
     <nodeInfo nodeId="2487047136346128092" fileName="ConstraintFunction_ReferentSearchScope_AbstractBase_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2487047136346128092" fileName="ConstraintFunction_ReferentSearchScope_AbstractBase_Editor.java" startLine="26" startPosition="82" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2487047136346128095" fileName="ConstraintFunction_ReferentSearchScope_AbstractBase_Editor.java" startLine="30" startPosition="89" endLine="31" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3723,7 +3723,7 @@
     </scopeInfo>
     <unitInfo nodeId="2487047136346128092" fileName="ConstraintFunction_ReferentSearchScope_AbstractBase_Editor.java" startLine="21" startPosition="0" endLine="540" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConstraintFunction_ReferentSearchScope_AbstractBase_Editor" />
   </root>
-  <root nodeId="8401916545537438644" modelId="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)/8401916545537438644">
     <nodeInfo nodeId="8401916545537438644" fileName="InheritedNodeScopeFactory_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8401916545537438652" fileName="InheritedNodeScopeFactory_Editor.java" startLine="28" startPosition="33" endLine="29" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8401916545537438652" fileName="InheritedNodeScopeFactory_Editor.java" startLine="32" startPosition="69" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

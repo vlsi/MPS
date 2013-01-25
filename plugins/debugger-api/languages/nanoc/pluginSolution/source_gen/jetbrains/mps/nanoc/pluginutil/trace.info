@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8247677264794236929" modelId="r:6d35499a-6bbf-4603-99de-254d0c8b91cb(jetbrains.mps.nanoc.pluginutil)">
+  <root nodeRef="r:6d35499a-6bbf-4603-99de-254d0c8b91cb(jetbrains.mps.nanoc.pluginutil)/8247677264794236929">
     <nodeInfo nodeId="8247677264794236932" fileName="ExecutableParametersEditor.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileName" />
     <nodeInfo nodeId="8247677264794236935" fileName="ExecutableParametersEditor.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTextField" />
     <nodeInfo nodeId="8247677264794236954" fileName="ExecutableParametersEditor.java" startLine="20" startPosition="52" endLine="21" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -44,7 +44,7 @@
     <unitInfo nodeId="8247677264794236947" fileName="ExecutableParametersEditor.java" startLine="19" startPosition="45" endLine="30" endPosition="3" unitName="jetbrains.mps.nanoc.pluginutil.ExecutableParametersEditor$1" />
     <unitInfo nodeId="8247677264794236929" fileName="ExecutableParametersEditor.java" startLine="16" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.nanoc.pluginutil.ExecutableParametersEditor" />
   </root>
-  <root nodeId="8247677264794237122" modelId="r:6d35499a-6bbf-4603-99de-254d0c8b91cb(jetbrains.mps.nanoc.pluginutil)">
+  <root nodeRef="r:6d35499a-6bbf-4603-99de-254d0c8b91cb(jetbrains.mps.nanoc.pluginutil)/8247677264794237122">
     <nodeInfo nodeId="8247677264794237136" fileName="NanocConfigRunPreparationUtil.java" startLine="24" startPosition="88" endLine="25" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8247677264794237144" fileName="NanocConfigRunPreparationUtil.java" startLine="25" startPosition="122" endLine="26" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8247677264794237153" fileName="NanocConfigRunPreparationUtil.java" startLine="26" startPosition="60" endLine="27" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -132,7 +132,7 @@
     <unitInfo nodeId="8247677264794237178" fileName="NanocConfigRunPreparationUtil.java" startLine="30" startPosition="45" endLine="34" endPosition="5" unitName="jetbrains.mps.nanoc.pluginutil.NanocConfigRunPreparationUtil$1" />
     <unitInfo nodeId="8247677264794237122" fileName="NanocConfigRunPreparationUtil.java" startLine="20" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.nanoc.pluginutil.NanocConfigRunPreparationUtil" />
   </root>
-  <root nodeId="8247677264794237383" modelId="r:6d35499a-6bbf-4603-99de-254d0c8b91cb(jetbrains.mps.nanoc.pluginutil)">
+  <root nodeRef="r:6d35499a-6bbf-4603-99de-254d0c8b91cb(jetbrains.mps.nanoc.pluginutil)/8247677264794237383">
     <nodeInfo nodeId="8247677264794237386" fileName="ProgramsLocationEditor.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGDBLocationFileName" />
     <nodeInfo nodeId="8247677264794237389" fileName="ProgramsLocationEditor.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGCCLocationFileName" />
     <nodeInfo nodeId="8247677264794237392" fileName="ProgramsLocationEditor.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTextFieldGDB" />

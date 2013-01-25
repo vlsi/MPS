@@ -18,6 +18,7 @@ import java.util.List;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptProperty_Constraints extends BaseConstraintsDescriptor {
@@ -51,7 +52,7 @@ public class ConceptProperty_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_c4t1u2_a0a1a0a0a1a0b0a1a1;
           }
         };

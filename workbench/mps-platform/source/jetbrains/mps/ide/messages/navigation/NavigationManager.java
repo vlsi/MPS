@@ -24,7 +24,7 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,7 +44,7 @@ public class NavigationManager {
     myHandlers.put(NodeWithContext.class, new NodeWithContextNavigationHandler());
     myHandlers.put(FileWithPosition.class, new FileWithPositionNavigationHandler());
     myHandlers.put(FileWithLogicalPosition.class, new FileWithLogicalPositionNavigationHandler());
-    myHandlers.put(SNodePointer.class, new NodePointerNavigationHandler());
+    myHandlers.put(SNodeReference.class, new NodePointerNavigationHandler());
     myHandlers.put(ModuleReference.class, new ModuleReferenceNavigationHandler());
   }
 

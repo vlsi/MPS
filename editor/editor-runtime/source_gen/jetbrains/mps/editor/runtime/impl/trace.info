@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1182113674817158574" modelId="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)">
+  <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1182113674817158574">
     <nodeInfo nodeId="1182113674817443094" fileName="CellUtil.java" startLine="20" startPosition="76" endLine="21" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1182113674817443208" fileName="CellUtil.java" startLine="22" startPosition="308" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817443376" fileName="CellUtil.java" startLine="28" startPosition="121" endLine="29" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -53,7 +53,7 @@
     <unitInfo nodeId="5031719587736625268" fileName="CellUtil.java" startLine="35" startPosition="312" endLine="39" endPosition="5" unitName="jetbrains.mps.editor.runtime.impl.CellUtil$1" />
     <unitInfo nodeId="1182113674817158574" fileName="CellUtil.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.CellUtil" />
   </root>
-  <root nodeId="1182113674817458489" modelId="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)">
+  <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1182113674817458489">
     <nodeInfo nodeId="1182113674817458500" fileName="LayoutConstraints.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1182113674817458504" fileName="LayoutConstraints.java" startLine="16" startPosition="34" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817458515" fileName="LayoutConstraints.java" startLine="20" startPosition="27" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -67,7 +67,7 @@
     <scopeInfo nodeId="1182113674817458510" fileName="LayoutConstraints.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
     <unitInfo nodeId="1182113674817458489" fileName="LayoutConstraints.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.LayoutConstraints" />
   </root>
-  <root nodeId="1182113674817469564" modelId="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)">
+  <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1182113674817469564">
     <nodeInfo nodeId="1182113674817469596" fileName="LanguagesKeymapManager.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1182113674817469611" fileName="LanguagesKeymapManager.java" startLine="36" startPosition="26" endLine="37" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817473378" fileName="LanguagesKeymapManager.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguagesToKeyMaps" />
@@ -203,7 +203,7 @@
     <unitInfo nodeId="1182113674817469567" fileName="LanguagesKeymapManager.java" startLine="125" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager$MyModuleRepositoryListener" />
     <unitInfo nodeId="1182113674817469564" fileName="LanguagesKeymapManager.java" startLine="33" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager" />
   </root>
-  <root nodeId="1482016848005717282" modelId="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)">
+  <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1482016848005717282">
     <nodeInfo nodeId="1482016848005719050" fileName="DataTransferUtil.java" startLine="12" startPosition="62" endLine="13" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1482016848005717284" fileName="DataTransferUtil.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DataTransferUtil#()V" />
     <nodeInfo nodeId="1482016848005719042" fileName="DataTransferUtil.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAbstract#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -215,7 +215,7 @@
     </scopeInfo>
     <unitInfo nodeId="1482016848005717282" fileName="DataTransferUtil.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.DataTransferUtil" />
   </root>
-  <root nodeId="444720911773080383" modelId="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)">
+  <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/444720911773080383">
     <nodeInfo nodeId="5031719587736552250" fileName="NodeSubstituteActionsComparator.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContainingRoot" />
     <nodeInfo nodeId="5031719587736552261" fileName="NodeSubstituteActionsComparator.java" startLine="14" startPosition="64" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5031719587736519862" fileName="NodeSubstituteActionsComparator.java" startLine="18" startPosition="84" endLine="19" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -284,7 +284,7 @@
     </scopeInfo>
     <unitInfo nodeId="444720911773080383" fileName="NodeSubstituteActionsComparator.java" startLine="11" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator" />
   </root>
-  <root nodeId="6001307866941531763" modelId="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)">
+  <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/6001307866941531763">
     <nodeInfo nodeId="6001307866941538929" fileName="EditorsFinderManager.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6001307866941557306" fileName="EditorsFinderManager.java" startLine="52" startPosition="26" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941538919" fileName="EditorsFinderManager.java" startLine="56" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassLoaderManager" />

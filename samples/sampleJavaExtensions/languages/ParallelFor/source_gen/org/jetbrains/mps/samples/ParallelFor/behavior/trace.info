@@ -6,7 +6,7 @@
   <unitInfo fileName="ParallelLoopVariable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelLoopVariable_BehaviorDescriptor" />
   <unitInfo fileName="ThreadPool_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadPool_BehaviorDescriptor" />
   <unitInfo fileName="ThreadSafe_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe_BehaviorDescriptor" />
-  <root nodeId="1262430001741646801" modelId="r:66b9b377-244a-48b9-abf9-631a9c4ec34c(org.jetbrains.mps.samples.ParallelFor.behavior)">
+  <root nodeRef="r:66b9b377-244a-48b9-abf9-631a9c4ec34c(org.jetbrains.mps.samples.ParallelFor.behavior)/1262430001741646801">
     <nodeInfo nodeId="1262430001741646800" fileName="NonThreadSafeClass_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914722278" fileName="NonThreadSafeClass_Behavior.java" startLine="20" startPosition="93" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914722293" fileName="NonThreadSafeClass_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -30,7 +30,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.NonThreadSafeClass_Behavior" />
   </root>
-  <root nodeId="1262430001741647380" modelId="r:66b9b377-244a-48b9-abf9-631a9c4ec34c(org.jetbrains.mps.samples.ParallelFor.behavior)">
+  <root nodeRef="r:66b9b377-244a-48b9-abf9-631a9c4ec34c(org.jetbrains.mps.samples.ParallelFor.behavior)/1262430001741647380">
     <nodeInfo nodeId="1262430001741647379" fileName="ThreadSafe_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914720392" fileName="ThreadSafe_Behavior.java" startLine="20" startPosition="93" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914720407" fileName="ThreadSafe_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -58,7 +58,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe_Behavior" />
   </root>
-  <root nodeId="4120418308311043819" modelId="r:66b9b377-244a-48b9-abf9-631a9c4ec34c(org.jetbrains.mps.samples.ParallelFor.behavior)">
+  <root nodeRef="r:66b9b377-244a-48b9-abf9-631a9c4ec34c(org.jetbrains.mps.samples.ParallelFor.behavior)/4120418308311043819">
     <nodeInfo nodeId="2832018561209150769" fileName="ParallelFor_Behavior.java" startLine="25" startPosition="105" endLine="26" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2832018561209150778" fileName="ParallelFor_Behavior.java" startLine="27" startPosition="68" endLine="28" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7497677991177984042" fileName="ParallelFor_Behavior.java" startLine="29" startPosition="7" endLine="30" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

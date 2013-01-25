@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
@@ -189,5 +189,5 @@ public interface ModelCommandExecutor extends org.jetbrains.mps.openapi.module.M
   <T> T tryWriteInCommand(Computable<T> r, Project p);
 
   @Nullable
-  public <K, V> ConcurrentMap<K, V> getRepositoryStateCache(Class<?> clazz);
+  public <K, V> ConcurrentMap<K, V> getRepositoryStateCache(String repositoryKey);
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1240068519431" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/1240068519431">
     <nodeInfo nodeId="1240068519431" fileName="ShowJavaUtilReferences_MigrationScript.java" startLine="12" startPosition="85" endLine="13" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1240068547760" fileName="ShowJavaUtilReferences_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240068547760" fileName="ShowJavaUtilReferences_MigrationScript.java" startLine="19" startPosition="41" endLine="20" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -51,7 +51,7 @@
     <unitInfo nodeId="1240068547760" fileName="ShowJavaUtilReferences_MigrationScript.java" startLine="14" startPosition="28" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.ShowJavaUtilReferences_MigrationScript$1" />
     <unitInfo nodeId="1240068519431" fileName="ShowJavaUtilReferences_MigrationScript.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.ShowJavaUtilReferences_MigrationScript" />
   </root>
-  <root nodeId="1408799705057550234" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/1408799705057550234">
     <nodeInfo nodeId="7159297221554170070" fileName="VariableUnifyingMigration.java" startLine="26" startPosition="108" endLine="27" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7159297221554170081" fileName="VariableUnifyingMigration.java" startLine="27" startPosition="123" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6405155471901941735" fileName="VariableUnifyingMigration.java" startLine="28" startPosition="0" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -169,7 +169,7 @@
     <unitInfo nodeId="6405155471901975982" fileName="VariableUnifyingMigration.java" startLine="37" startPosition="15" endLine="63" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.VariableUnifyingMigration$1" />
     <unitInfo nodeId="1408799705057550234" fileName="VariableUnifyingMigration.java" startLine="22" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.VariableUnifyingMigration" />
   </root>
-  <root nodeId="1466384023878141384" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/1466384023878141384">
     <nodeInfo nodeId="1466384023878141384" fileName="MigrateLocalInstanceFieldReference_MigrationScript.java" startLine="11" startPosition="97" endLine="12" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1466384023878141385" fileName="MigrateLocalInstanceFieldReference_MigrationScript.java" startLine="13" startPosition="302" endLine="14" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1466384023878141384" fileName="MigrateLocalInstanceFieldReference_MigrationScript.java" startLine="12" startPosition="70" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -186,7 +186,7 @@
     </scopeInfo>
     <unitInfo nodeId="1466384023878141384" fileName="MigrateLocalInstanceFieldReference_MigrationScript.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.MigrateLocalInstanceFieldReference_MigrationScript" />
   </root>
-  <root nodeId="15576470009741251" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/15576470009741251">
     <nodeInfo nodeId="15576470009741251" fileName="MigrateParameterReference_MigrationScript.java" startLine="11" startPosition="88" endLine="12" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7159297221554170088" fileName="MigrateParameterReference_MigrationScript.java" startLine="13" startPosition="297" endLine="14" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="15576470009741251" fileName="MigrateParameterReference_MigrationScript.java" startLine="12" startPosition="61" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -203,7 +203,7 @@
     </scopeInfo>
     <unitInfo nodeId="15576470009741251" fileName="MigrateParameterReference_MigrationScript.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.MigrateParameterReference_MigrationScript" />
   </root>
-  <root nodeId="1704189004094297789" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/1704189004094297789">
     <nodeInfo nodeId="1704189004094297789" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="14" startPosition="89" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1704189004094297802" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="17" startPosition="31" endLine="18" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1704189004094297802" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="21" startPosition="41" endLine="22" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -317,7 +317,7 @@
     <unitInfo nodeId="3299924278393485145" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="72" startPosition="28" endLine="99" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript$3" />
     <unitInfo nodeId="1704189004094297789" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="13" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.RemoveThisWhereAppropriate_MigrationScript" />
   </root>
-  <root nodeId="2242608743097729323" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/2242608743097729323">
     <nodeInfo nodeId="2242608743097729323" fileName="MigrateLocalVariableReference_MigrationScript.java" startLine="11" startPosition="92" endLine="12" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2242608743097729324" fileName="MigrateLocalVariableReference_MigrationScript.java" startLine="13" startPosition="305" endLine="14" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2242608743097729323" fileName="MigrateLocalVariableReference_MigrationScript.java" startLine="12" startPosition="65" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -334,7 +334,7 @@
     </scopeInfo>
     <unitInfo nodeId="2242608743097729323" fileName="MigrateLocalVariableReference_MigrationScript.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.MigrateLocalVariableReference_MigrationScript" />
   </root>
-  <root nodeId="2379275658802276133" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/2379275658802276133">
     <nodeInfo nodeId="842610415962518323" fileName="Migrations.java" startLine="31" startPosition="91" endLine="32" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="842610415962518334" fileName="Migrations.java" startLine="32" startPosition="121" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6405155471901991929" fileName="Migrations.java" startLine="33" startPosition="0" endLine="34" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1489,7 +1489,7 @@
     <unitInfo nodeId="7047854634821496238" fileName="Migrations.java" startLine="105" startPosition="15" endLine="172" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.Migrations$3" />
     <unitInfo nodeId="2379275658802276133" fileName="Migrations.java" startLine="27" startPosition="0" endLine="693" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.Migrations" />
   </root>
-  <root nodeId="2379275658802316547" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/2379275658802316547">
     <nodeInfo nodeId="2379275658802316547" fileName="MigrateLocalStaticMethodCall_MigrationScript.java" startLine="11" startPosition="91" endLine="12" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6405155471902063153" fileName="MigrateLocalStaticMethodCall_MigrationScript.java" startLine="13" startPosition="303" endLine="14" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2379275658802316547" fileName="MigrateLocalStaticMethodCall_MigrationScript.java" startLine="12" startPosition="62" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1506,7 +1506,7 @@
     </scopeInfo>
     <unitInfo nodeId="2379275658802316547" fileName="MigrateLocalStaticMethodCall_MigrationScript.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.MigrateLocalStaticMethodCall_MigrationScript" />
   </root>
-  <root nodeId="4581730695772514123" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/4581730695772514123">
     <nodeInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="20" startPosition="87" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4900012836837561039" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="23" startPosition="31" endLine="24" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4900012836837561039" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="27" startPosition="41" endLine="28" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1687,7 +1687,7 @@
     <unitInfo nodeId="4900012836837561168" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="72" startPosition="28" endLine="121" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript$2" />
     <unitInfo nodeId="4581730695772514123" fileName="BaseLanguageEnhancements_MigrationScript.java" startLine="19" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageEnhancements_MigrationScript" />
   </root>
-  <root nodeId="4683244688930795258" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/4683244688930795258">
     <nodeInfo nodeId="4683244688930959260" fileName="NonMigratableUsagesFinder.java" startLine="26" startPosition="80" endLine="27" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4683244688930979499" fileName="NonMigratableUsagesFinder.java" startLine="27" startPosition="190" endLine="28" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4683244688930978017" fileName="NonMigratableUsagesFinder.java" startLine="28" startPosition="71" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -1944,7 +1944,7 @@
     <unitInfo nodeId="7303989191347669108" fileName="NonMigratableUsagesFinder.java" startLine="135" startPosition="233" endLine="139" endPosition="9" unitName="jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder$2" />
     <unitInfo nodeId="4683244688930795258" fileName="NonMigratableUsagesFinder.java" startLine="22" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder" />
   </root>
-  <root nodeId="4898876889067052780" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/4898876889067052780">
     <nodeInfo nodeId="4898876889067052780" fileName="MigrateClassifierMembersNodes_MigrationScript.java" startLine="17" startPosition="92" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4898876889067061097" fileName="MigrateClassifierMembersNodes_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4898876889067061097" fileName="MigrateClassifierMembersNodes_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2004,7 +2004,7 @@
     <unitInfo nodeId="4898876889067061097" fileName="MigrateClassifierMembersNodes_MigrationScript.java" startLine="19" startPosition="28" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.MigrateClassifierMembersNodes_MigrationScript$1" />
     <unitInfo nodeId="4898876889067052780" fileName="MigrateClassifierMembersNodes_MigrationScript.java" startLine="16" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.MigrateClassifierMembersNodes_MigrationScript" />
   </root>
-  <root nodeId="5207457905969341016" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/5207457905969341016">
     <nodeInfo nodeId="5207457905969341016" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="17" startPosition="99" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2147,7 +2147,7 @@
     <unitInfo nodeId="5207457905969539560" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="19" startPosition="28" endLine="55" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.MigrateClassifierMembersSModelUsages_MigrationScript$1" />
     <unitInfo nodeId="5207457905969341016" fileName="MigrateClassifierMembersSModelUsages_MigrationScript.java" startLine="16" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.MigrateClassifierMembersSModelUsages_MigrationScript" />
   </root>
-  <root nodeId="5207457905969555060" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/5207457905969555060">
     <nodeInfo nodeId="5207457905969568125" fileName="MembersMigrationUtil.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OLD_LINK_TO_NEW_BEHAVIOR_METHOD" />
     <nodeInfo nodeId="5207457905969880698" fileName="MembersMigrationUtil.java" startLine="28" startPosition="76" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5207457905969881293" fileName="MembersMigrationUtil.java" startLine="29" startPosition="56" endLine="30" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2237,7 +2237,7 @@
     <unitInfo nodeId="5207457905970339534" fileName="MembersMigrationUtil.java" startLine="62" startPosition="17" endLine="66" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.MembersMigrationUtil$5" />
     <unitInfo nodeId="5207457905969555060" fileName="MembersMigrationUtil.java" startLine="22" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.MembersMigrationUtil" />
   </root>
-  <root nodeId="6405155471901991966" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/6405155471901991966">
     <nodeInfo nodeId="6405155471901991966" fileName="MigrateLocalInstanceMethodCall_MigrationScript.java" startLine="11" startPosition="93" endLine="12" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6405155471901991967" fileName="MigrateLocalInstanceMethodCall_MigrationScript.java" startLine="13" startPosition="307" endLine="14" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405155471901991966" fileName="MigrateLocalInstanceMethodCall_MigrationScript.java" startLine="12" startPosition="64" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2254,7 +2254,7 @@
     </scopeInfo>
     <unitInfo nodeId="6405155471901991966" fileName="MigrateLocalInstanceMethodCall_MigrationScript.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.MigrateLocalInstanceMethodCall_MigrationScript" />
   </root>
-  <root nodeId="6405155471902063090" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/6405155471902063090">
     <nodeInfo nodeId="6405155471902063113" fileName="LocalMethodCallsMigration.java" startLine="26" startPosition="114" endLine="27" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6405155471902063120" fileName="LocalMethodCallsMigration.java" startLine="27" startPosition="123" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8602774279581213937" fileName="LocalMethodCallsMigration.java" startLine="28" startPosition="0" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2396,7 +2396,7 @@
     <unitInfo nodeId="6405155471901976022" fileName="LocalMethodCallsMigration.java" startLine="37" startPosition="15" endLine="77" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.LocalMethodCallsMigration$1" />
     <unitInfo nodeId="6405155471902063090" fileName="LocalMethodCallsMigration.java" startLine="22" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.LocalMethodCallsMigration" />
   </root>
-  <root nodeId="7159297221554223394" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/7159297221554223394">
     <nodeInfo nodeId="7159297221554223394" fileName="MigrateLocalStaticFieldReference_MigrationScript.java" startLine="11" startPosition="95" endLine="12" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7159297221554223395" fileName="MigrateLocalStaticFieldReference_MigrationScript.java" startLine="13" startPosition="306" endLine="14" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7159297221554223394" fileName="MigrateLocalStaticFieldReference_MigrationScript.java" startLine="12" startPosition="68" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2413,7 +2413,7 @@
     </scopeInfo>
     <unitInfo nodeId="7159297221554223394" fileName="MigrateLocalStaticFieldReference_MigrationScript.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.MigrateLocalStaticFieldReference_MigrationScript" />
   </root>
-  <root nodeId="842610415962474204" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/842610415962474204">
     <nodeInfo nodeId="842610415962474211" fileName="SModelMethodMigration.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sourceConcept" />
     <nodeInfo nodeId="842610415962474217" fileName="SModelMethodMigration.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="smodelFunctionConcept" />
     <nodeInfo nodeId="842610415962474226" fileName="SModelMethodMigration.java" startLine="16" startPosition="85" endLine="17" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -2441,7 +2441,7 @@
     <unitInfo nodeId="842610415962474267" fileName="SModelMethodMigration.java" startLine="23" startPosition="190" endLine="27" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.SModelMethodMigration$1" />
     <unitInfo nodeId="842610415962474204" fileName="SModelMethodMigration.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.SModelMethodMigration" />
   </root>
-  <root nodeId="842610415962474325" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/842610415962474325">
     <nodeInfo nodeId="2379275658802276164" fileName="MigrationConfig.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sourceConcept" />
     <nodeInfo nodeId="2379275658802276169" fileName="MigrationConfig.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targetConcept" />
     <nodeInfo nodeId="2379275658802276183" fileName="MigrationConfig.java" startLine="13" startPosition="68" endLine="14" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2488,7 +2488,7 @@
     </scopeInfo>
     <unitInfo nodeId="842610415962474325" fileName="MigrationConfig.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.MigrationConfig" />
   </root>
-  <root nodeId="842610415962474381" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/842610415962474381">
     <nodeInfo nodeId="842610415962474431" fileName="SimpleMigration.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="applicableConcept" />
     <nodeInfo nodeId="842610415962474390" fileName="SimpleMigration.java" startLine="12" startPosition="51" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="842610415962474437" fileName="SimpleMigration.java" startLine="13" startPosition="16" endLine="14" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2511,7 +2511,7 @@
     <scopeInfo nodeId="842610415962474403" fileName="SimpleMigration.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
     <unitInfo nodeId="842610415962474381" fileName="SimpleMigration.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.SimpleMigration" />
   </root>
-  <root nodeId="8602774279580416019" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/8602774279580416019">
     <nodeInfo nodeId="8602774279580416028" fileName="SpecialMigrations.java" startLine="24" startPosition="142" endLine="25" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7159297221554220087" fileName="SpecialMigrations.java" startLine="27" startPosition="39" endLine="28" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8602774279581224684" fileName="SpecialMigrations.java" startLine="30" startPosition="7" endLine="31" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2605,7 +2605,7 @@
     <unitInfo nodeId="7159297221554216078" fileName="SpecialMigrations.java" startLine="38" startPosition="53" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.SpecialMigrations$2" />
     <unitInfo nodeId="8602774279580416019" fileName="SpecialMigrations.java" startLine="20" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.SpecialMigrations" />
   </root>
-  <root nodeId="8647043020514320142" modelId="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/8647043020514320142">
     <nodeInfo nodeId="8647043020514320142" fileName="ConvertAnnotationInstances_MigrationScript.java" startLine="13" startPosition="89" endLine="14" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6042967188263920372" fileName="ConvertAnnotationInstances_MigrationScript.java" startLine="16" startPosition="31" endLine="17" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6042967188263920372" fileName="ConvertAnnotationInstances_MigrationScript.java" startLine="20" startPosition="41" endLine="21" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

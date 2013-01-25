@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
@@ -25,5 +26,5 @@ import org.jetbrains.mps.openapi.module.SRepository;
 public interface SNodeReference {
   SNode resolve(SRepository repo);
 
-  SModelReference getModelReference();
+  jetbrains.mps.smodel.SModelReference getModelReference();
 }

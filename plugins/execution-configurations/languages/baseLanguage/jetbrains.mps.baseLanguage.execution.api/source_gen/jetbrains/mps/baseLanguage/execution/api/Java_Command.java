@@ -15,8 +15,9 @@ import jetbrains.mps.execution.api.commands.ListCommandPart;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
 import java.io.FileNotFoundException;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.api.IDebugger;
@@ -159,8 +160,8 @@ public class Java_Command {
     }
   }
 
-  public ProcessHandler createProcess(final SNodePointer nodePointer) throws ExecutionException {
-    IModule module = check_yvpt_a0a0a3(check_yvpt_a0a0a0d(nodePointer));
+  public ProcessHandler createProcess(final SNodeReference nodePointer) throws ExecutionException {
+    IModule module = check_yvpt_a0a0a3(check_yvpt_a0a0a0d(((SNodePointer) nodePointer)));
     if (module == null) {
       final Wrappers._T<String> text = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -173,7 +174,7 @@ public class Java_Command {
     return new Java_Command().setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setClassPath_ListString(Java_Command.getClasspath(module, true)).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(Java_Command.getClassName(nodePointer));
   }
 
-  public ProcessHandler createProcess(JavaRunParameters runParameters, SNodePointer nodePointer) throws ExecutionException {
+  public ProcessHandler createProcess(JavaRunParameters runParameters, SNodeReference nodePointer) throws ExecutionException {
     return new Java_Command().setJrePath_String(check_yvpt_a0a0a0e(runParameters)).setProgramParameter_String(check_yvpt_a2a0a0e(runParameters)).setVirtualMachineParameter_String(check_yvpt_a3a0a0e(runParameters)).setWorkingDirectory_File((check_yvpt_a0a4a0a0e(runParameters) == null ?
       null :
       new File(check_yvpt_a0a0e0a0a4(runParameters))
@@ -217,11 +218,11 @@ public class Java_Command {
     return className.value;
   }
 
-  private static String getClassName(final SNodePointer node) {
+  private static String getClassName(final SNodeReference node) {
     final Wrappers._T<String> className = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        className.value = Java_Command.getClassName(node.getNode());
+        className.value = Java_Command.getClassName(((SNodePointer) node).getNode());
       }
     });
     return className.value;

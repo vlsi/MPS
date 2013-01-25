@@ -17,8 +17,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -84,7 +85,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode classConcept = GenerateEqualsAndHashCode_Action.this.getClassConcept(_params);
-      SNodePointer[] fields;
+      SNodeReference[] fields;
       fields = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
         public SNodePointer select(SNode it) {
           return new SNodePointer(it);
@@ -99,7 +100,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
         return;
       }
 
-      SNodePointer[] selectedFields = Sequence.fromIterable(((Iterable<SNodePointer>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodePointer.class);
+      SNodeReference[] selectedFields = Sequence.fromIterable(((Iterable<SNodeReference>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodeReference.class);
       final SNode thisExp = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
       final SNode equalsDeclaration = _quotation_createNode_x9xljz_a0m0a(thisExp, thisExp, classConcept, classConcept);
       SNode thatDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true);
@@ -109,8 +110,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
       SNode fieldRefLocal = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SNode fieldRefOperation = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
 
-      for (SNodePointer fieldPtr : selectedFields) {
-        SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+      for (SNodeReference fieldPtr : selectedFields) {
+        SNode field = SNodeOperations.cast(((SNodePointer) fieldPtr).getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
 
         SLinkOperations.setTarget(fieldRefLocal, "variableDeclaration", field, false);
         SLinkOperations.setTarget(fieldRefOperation, "fieldDeclaration", field, false);
@@ -151,8 +152,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
         ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(tempDeclaration);
       }
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(resultDeclaration);
-      for (SNodePointer fieldPtr : selectedFields) {
-        final SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+      for (SNodeReference fieldPtr : selectedFields) {
+        final SNode field = SNodeOperations.cast(((SNodePointer) fieldPtr).getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         SLinkOperations.setTarget(fieldRefLocal, "variableDeclaration", field, false);
         SNode calcStatement;
         SNode mulExpression = _quotation_createNode_x9xljz_a0d0ib0a(resultReference);

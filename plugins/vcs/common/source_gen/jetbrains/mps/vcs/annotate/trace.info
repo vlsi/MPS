@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="_Adapters.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.vcs.annotate._Adapters$_return_P0_E0_to_Runnable_adapter" />
   <unitInfo fileName="_Adapters.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.vcs.annotate._Adapters" />
-  <root nodeId="2610202811736147129" modelId="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)">
+  <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/2610202811736147129">
     <nodeInfo nodeId="2610202811736147130" fileName="ShowAdditionalInfoAction.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAnnotationColumn" />
     <nodeInfo nodeId="2610202811736147138" fileName="ShowAdditionalInfoAction.java" startLine="12" startPosition="70" endLine="13" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1567533269522942299" fileName="ShowAdditionalInfoAction.java" startLine="23" startPosition="74" endLine="24" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -26,7 +26,7 @@
     </scopeInfo>
     <unitInfo nodeId="2610202811736147129" fileName="ShowAdditionalInfoAction.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.vcs.annotate.ShowAdditionalInfoAction" />
   </root>
-  <root nodeId="2735498088651740382" modelId="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)">
+  <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/2735498088651740382">
     <nodeInfo nodeId="2735498088651833552" fileName="HighlightRevisionSubcolumn.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRevisionRange" />
     <nodeInfo nodeId="2735498088651749758" fileName="HighlightRevisionSubcolumn.java" startLine="9" startPosition="104" endLine="10" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2735498088651833560" fileName="HighlightRevisionSubcolumn.java" startLine="10" startPosition="34" endLine="11" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -48,7 +48,7 @@
     </scopeInfo>
     <unitInfo nodeId="2735498088651740382" fileName="HighlightRevisionSubcolumn.java" startLine="6" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.vcs.annotate.HighlightRevisionSubcolumn" />
   </root>
-  <root nodeId="309173295241373953" modelId="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)">
+  <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/309173295241373953">
     <nodeInfo nodeId="8595271971828756900" fileName="AnnotationColumn.java" startLine="393" startPosition="27" endLine="393" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8595271971828756903" fileName="AnnotationColumn.java" startLine="396" startPosition="27" endLine="396" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="984655430730269535" fileName="AnnotationColumn.java" startLine="107" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ANNOTATION_COLOR" />
@@ -1006,7 +1006,7 @@
     <unitInfo nodeId="5841940560826277241" fileName="AnnotationColumn.java" startLine="641" startPosition="0" endLine="758" endPosition="0" unitName="jetbrains.mps.vcs.annotate.AnnotationColumn$ShowDiffFromAnnotationAction" />
     <unitInfo nodeId="309173295241373953" fileName="AnnotationColumn.java" startLine="106" startPosition="0" endLine="822" endPosition="0" unitName="jetbrains.mps.vcs.annotate.AnnotationColumn" />
   </root>
-  <root nodeId="391337651435524407" modelId="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)">
+  <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/391337651435524407">
     <nodeInfo nodeId="4527744427438226013" fileName="AnnotationAspectSubcolumn.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAnnotationColumn" />
     <nodeInfo nodeId="391337651435533964" fileName="AnnotationAspectSubcolumn.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAnnotationAspect" />
     <nodeInfo nodeId="391337651435638604" fileName="AnnotationAspectSubcolumn.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWidth" />
@@ -1098,7 +1098,7 @@
     <unitInfo nodeId="391337651435638674" fileName="AnnotationAspectSubcolumn.java" startLine="37" startPosition="63" endLine="41" endPosition="5" unitName="jetbrains.mps.vcs.annotate.AnnotationAspectSubcolumn$1" />
     <unitInfo nodeId="391337651435524407" fileName="AnnotationAspectSubcolumn.java" startLine="11" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.vcs.annotate.AnnotationAspectSubcolumn" />
   </root>
-  <root nodeId="4433480198085290549" modelId="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)">
+  <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/4433480198085290549">
     <nodeInfo nodeId="4433480198085380310" fileName="ViewActionGroup.java" startLine="11" startPosition="109" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4433480198085380313" fileName="ViewActionGroup.java" startLine="12" startPosition="18" endLine="13" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4433480198085381985" fileName="ViewActionGroup.java" startLine="14" startPosition="83" endLine="15" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1140,7 +1140,7 @@
     <unitInfo nodeId="4433480198085380347" fileName="ViewActionGroup.java" startLine="22" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.vcs.annotate.ViewActionGroup$ShowHideSubcolumnAction" />
     <unitInfo nodeId="4433480198085290549" fileName="ViewActionGroup.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.vcs.annotate.ViewActionGroup" />
   </root>
-  <root nodeId="6566909625908996008" modelId="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)">
+  <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/6566909625908996008">
     <nodeInfo nodeId="6566909625909004533" fileName="CommitNumberSubcolumn.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileAnnotation" />
     <nodeInfo nodeId="6566909625909004491" fileName="CommitNumberSubcolumn.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRevisionsToNumbers" />
     <nodeInfo nodeId="6566909625909004479" fileName="CommitNumberSubcolumn.java" startLine="24" startPosition="98" endLine="25" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1230,7 +1230,7 @@
     <unitInfo nodeId="5838713064222208528" fileName="CommitNumberSubcolumn.java" startLine="50" startPosition="70" endLine="54" endPosition="5" unitName="jetbrains.mps.vcs.annotate.CommitNumberSubcolumn$3" />
     <unitInfo nodeId="6566909625908996008" fileName="CommitNumberSubcolumn.java" startLine="20" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.vcs.annotate.CommitNumberSubcolumn" />
   </root>
-  <root nodeId="736151805632466469" modelId="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)">
+  <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/736151805632466469">
     <nodeInfo nodeId="736151805632466483" fileName="ViewAction.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORTEN_NAMES" />
     <nodeInfo nodeId="736151805632466530" fileName="ViewAction.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COLORS" />
     <nodeInfo nodeId="736151805632466587" fileName="ViewAction.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="KEYS_TO_TITLES" />
@@ -1267,7 +1267,7 @@
     </scopeInfo>
     <unitInfo nodeId="736151805632466469" fileName="ViewAction.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.vcs.annotate.ViewAction" />
   </root>
-  <root nodeId="7744421503924576834" modelId="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)">
+  <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/7744421503924576834">
     <nodeInfo nodeId="7744421503924577133" fileName="VcsRevisionRange.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myColumn" />
     <nodeInfo nodeId="7744421503924771287" fileName="VcsRevisionRange.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileAnnotation" />
     <nodeInfo nodeId="7744421503924676822" fileName="VcsRevisionRange.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBeforeAction" />
@@ -1392,7 +1392,7 @@
     <unitInfo nodeId="7744421503924585247" fileName="VcsRevisionRange.java" startLine="66" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.vcs.annotate.VcsRevisionRange$HiglightAction" />
     <unitInfo nodeId="7744421503924576834" fileName="VcsRevisionRange.java" startLine="19" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.vcs.annotate.VcsRevisionRange" />
   </root>
-  <root nodeId="8955628568092674522" modelId="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)">
+  <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/8955628568092674522">
     <nodeInfo nodeId="700892246829337629" fileName="AnnotationHelper.java" startLine="43" startPosition="47" endLine="44" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="700892246829337633" fileName="AnnotationHelper.java" startLine="46" startPosition="5" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="700892246829417980" fileName="AnnotationHelper.java" startLine="50" startPosition="99" endLine="51" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1542,7 +1542,7 @@
     <unitInfo nodeId="700892246829418144" fileName="AnnotationHelper.java" startLine="89" startPosition="43" endLine="121" endPosition="5" unitName="jetbrains.mps.vcs.annotate.AnnotationHelper$2" />
     <unitInfo nodeId="8955628568092674522" fileName="AnnotationHelper.java" startLine="36" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.vcs.annotate.AnnotationHelper" />
   </root>
-  <root nodeId="8955628568092675853" modelId="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)">
+  <root nodeRef="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotate)/8955628568092675853">
     <nodeInfo nodeId="8955628568092676103" fileName="EditorUtils.java" startLine="67" startPosition="27" endLine="67" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8955628568092676107" fileName="EditorUtils.java" startLine="70" startPosition="27" endLine="70" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8955628568092676100" fileName="EditorUtils.java" startLine="77" startPosition="28" endLine="77" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

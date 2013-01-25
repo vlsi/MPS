@@ -4,13 +4,13 @@ package jetbrains.mps.debug.api.evaluation;
 
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 
 public interface IEvaluationProvider {
   public void showEvaluationDialog(IOperationContext context);
-  public void showEvaluationDialog(IOperationContext context, List<SNodePointer> selectedNodes);
+  public void showEvaluationDialog(IOperationContext context, List<SNodeReference> selectedNodes);
   @Nullable
   public JComponent createWatchesPanel();
   public boolean canEvaluate();

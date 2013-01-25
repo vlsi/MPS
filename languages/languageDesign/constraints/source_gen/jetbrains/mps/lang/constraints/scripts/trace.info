@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6243486444683604044" modelId="r:06347ba9-55db-4390-a23e-cfba36a9507f(jetbrains.mps.lang.constraints.scripts)">
+  <root nodeRef="r:06347ba9-55db-4390-a23e-cfba36a9507f(jetbrains.mps.lang.constraints.scripts)/6243486444683604044">
     <nodeInfo nodeId="6243486444683604044" fileName="ShowGetNameUsages_MigrationScript.java" startLine="13" startPosition="80" endLine="14" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6243486444683604045" fileName="ShowGetNameUsages_MigrationScript.java" startLine="16" startPosition="31" endLine="17" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6243486444683604045" fileName="ShowGetNameUsages_MigrationScript.java" startLine="20" startPosition="41" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

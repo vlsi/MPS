@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3325264799421258462" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/3325264799421258462">
     <nodeInfo nodeId="3325264799421258462" fileName="InstructionParameter_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3325264799421258464" fileName="InstructionParameter_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3325264799421258464" fileName="InstructionParameter_Editor.java" startLine="22" startPosition="96" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -84,7 +84,7 @@
     </scopeInfo>
     <unitInfo nodeId="3325264799421258462" fileName="InstructionParameter_Editor.java" startLine="16" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.InstructionParameter_Editor" />
   </root>
-  <root nodeId="4217760266503579997" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/4217760266503579997">
     <nodeInfo nodeId="4217760266503579997" fileName="EmitInstruction_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4217760266503579999" fileName="EmitInstruction_Editor.java" startLine="26" startPosition="89" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4217760266503579999" fileName="EmitInstruction_Editor.java" startLine="27" startPosition="96" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -241,7 +241,7 @@
     </scopeInfo>
     <unitInfo nodeId="4217760266503579997" fileName="EmitInstruction_Editor.java" startLine="21" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.EmitInstruction_Editor" />
   </root>
-  <root nodeId="4217760266503638750" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/4217760266503638750">
     <nodeInfo nodeId="4217760266503638750" fileName="InstructionReference_Editor.java" startLine="31" startPosition="79" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4217760266503638760" fileName="InstructionReference_Editor.java" startLine="36" startPosition="33" endLine="37" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4217760266503638760" fileName="InstructionReference_Editor.java" startLine="40" startPosition="69" endLine="41" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -475,7 +475,7 @@
     <unitInfo nodeId="4217760266503638755" fileName="InstructionReference_Editor.java" startLine="71" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.InstructionReference_Editor$argumentListHandler_o0r2rr_c0" />
     <unitInfo nodeId="4217760266503638750" fileName="InstructionReference_Editor.java" startLine="30" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.InstructionReference_Editor" />
   </root>
-  <root nodeId="430844094082188805" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/430844094082188805">
     <nodeInfo nodeId="430844094082188805" fileName="Rule_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4130591939054429253" fileName="Rule_Editor.java" startLine="31" startPosition="33" endLine="32" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4130591939054429253" fileName="Rule_Editor.java" startLine="35" startPosition="69" endLine="36" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -756,7 +756,7 @@
     <unitInfo nodeId="4130591939054429253" fileName="Rule_Editor.java" startLine="30" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.Rule_Editor$_Inline_z0m96w_a3a" />
     <unitInfo nodeId="430844094082188805" fileName="Rule_Editor.java" startLine="25" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.Rule_Editor" />
   </root>
-  <root nodeId="4413230749907686730" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/4413230749907686730">
     <nodeInfo nodeId="4413230749907686730" fileName="PatternCondition_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4413230749907686732" fileName="PatternCondition_Editor.java" startLine="20" startPosition="89" endLine="21" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4413230749907686732" fileName="PatternCondition_Editor.java" startLine="21" startPosition="96" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -808,7 +808,7 @@
     </scopeInfo>
     <unitInfo nodeId="4413230749907686730" fileName="PatternCondition_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.PatternCondition_Editor" />
   </root>
-  <root nodeId="4746038179140586941" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/4746038179140586941">
     <nodeInfo nodeId="4746038179140586941" fileName="Analyzer_Editor.java" startLine="33" startPosition="79" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4746038179140588741" fileName="Analyzer_Editor.java" startLine="38" startPosition="33" endLine="39" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4746038179140588741" fileName="Analyzer_Editor.java" startLine="42" startPosition="69" endLine="43" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1466,7 +1466,7 @@
     <unitInfo nodeId="3325264799421088058" fileName="Analyzer_Editor.java" startLine="97" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.Analyzer_Editor$instructionListHandler_590xoz_r0" />
     <unitInfo nodeId="4746038179140586941" fileName="Analyzer_Editor.java" startLine="32" startPosition="0" endLine="428" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.Analyzer_Editor" />
   </root>
-  <root nodeId="4943044633101738905" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/4943044633101738905">
     <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="35" startPosition="79" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4943044633101738919" fileName="ConceptCondition_Editor.java" startLine="43" startPosition="129" endLine="44" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4943044633101738925" fileName="ConceptCondition_Editor.java" startLine="45" startPosition="172" endLine="46" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1682,7 +1682,7 @@
     <unitInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="55" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.ConceptCondition_Editor$_Inline_hrb2do_a2a" />
     <unitInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="34" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.ConceptCondition_Editor" />
   </root>
-  <root nodeId="4943044633102057746" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/4943044633102057746">
     <nodeInfo nodeId="4943044633102057746" fileName="ApplicableNodeReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4943044633102057752" fileName="ApplicableNodeReference_Editor.java" startLine="23" startPosition="32" endLine="24" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4943044633102057752" fileName="ApplicableNodeReference_Editor.java" startLine="27" startPosition="69" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1783,7 +1783,7 @@
     <unitInfo nodeId="4943044633102057752" fileName="ApplicableNodeReference_Editor.java" startLine="22" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.ApplicableNodeReference_Editor$_Inline_13d8h_a0a" />
     <unitInfo nodeId="4943044633102057746" fileName="ApplicableNodeReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.ApplicableNodeReference_Editor" />
   </root>
-  <root nodeId="752944717341640114" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/752944717341640114">
     <nodeInfo nodeId="752944717341640114" fileName="RuleReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="752944717341640117" fileName="RuleReference_Editor.java" startLine="23" startPosition="33" endLine="24" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="752944717341640117" fileName="RuleReference_Editor.java" startLine="27" startPosition="69" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1884,7 +1884,7 @@
     <unitInfo nodeId="752944717341640117" fileName="RuleReference_Editor.java" startLine="22" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.RuleReference_Editor$_Inline_b21fry_a0a" />
     <unitInfo nodeId="752944717341640114" fileName="RuleReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.RuleReference_Editor" />
   </root>
-  <root nodeId="7857205188090882492" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/7857205188090882492">
     <nodeInfo nodeId="7857205188090882492" fileName="AnalyzerRunnerAnalyzeOperation_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7857205188090947123" fileName="AnalyzerRunnerAnalyzeOperation_Editor.java" startLine="17" startPosition="89" endLine="18" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7857205188090947123" fileName="AnalyzerRunnerAnalyzeOperation_Editor.java" startLine="18" startPosition="96" endLine="19" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1950,7 +1950,7 @@
     </scopeInfo>
     <unitInfo nodeId="7857205188090882492" fileName="AnalyzerRunnerAnalyzeOperation_Editor.java" startLine="12" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.AnalyzerRunnerAnalyzeOperation_Editor" />
   </root>
-  <root nodeId="7985661997283714148" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/7985661997283714148">
     <nodeInfo nodeId="7985661997283714148" fileName="IsOperation_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7985661997283714156" fileName="IsOperation_Editor.java" startLine="25" startPosition="33" endLine="26" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7985661997283714156" fileName="IsOperation_Editor.java" startLine="29" startPosition="69" endLine="30" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2097,7 +2097,7 @@
     <unitInfo nodeId="7985661997283714156" fileName="IsOperation_Editor.java" startLine="24" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.IsOperation_Editor$_Inline_5ag8rr_a2a" />
     <unitInfo nodeId="7985661997283714148" fileName="IsOperation_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.IsOperation_Editor" />
   </root>
-  <root nodeId="8424563347437866621" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/8424563347437866621">
     <nodeInfo nodeId="8424563347437866621" fileName="InsertPosition_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8424563347437866623" fileName="InsertPosition_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8424563347437866623" fileName="InsertPosition_Editor.java" startLine="17" startPosition="86" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2119,7 +2119,7 @@
     </scopeInfo>
     <unitInfo nodeId="8424563347437866621" fileName="InsertPosition_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.InsertPosition_Editor" />
   </root>
-  <root nodeId="9177062368042220432" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/9177062368042220432">
     <nodeInfo nodeId="9177062368042220432" fileName="AnalysisDirection_Editor.java" startLine="14" startPosition="79" endLine="15" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9177062368042220434" fileName="AnalysisDirection_Editor.java" startLine="18" startPosition="88" endLine="19" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9177062368042220434" fileName="AnalysisDirection_Editor.java" startLine="19" startPosition="96" endLine="20" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2155,7 +2155,7 @@
     </scopeInfo>
     <unitInfo nodeId="9177062368042220432" fileName="AnalysisDirection_Editor.java" startLine="13" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.AnalysisDirection_Editor" />
   </root>
-  <root nodeId="9177062368042313042" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/9177062368042313042">
     <nodeInfo nodeId="9177062368042313042" fileName="Instruction_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3325264799421088072" fileName="Instruction_Editor.java" startLine="34" startPosition="100" endLine="35" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3325264799421088072" fileName="Instruction_Editor.java" startLine="38" startPosition="66" endLine="39" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2337,7 +2337,7 @@
     <unitInfo nodeId="3325264799421088072" fileName="Instruction_Editor.java" startLine="33" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.Instruction_Editor$parameterListHandler_tof27_c0" />
     <unitInfo nodeId="9177062368042313042" fileName="Instruction_Editor.java" startLine="28" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.Instruction_Editor" />
   </root>
-  <root nodeId="95073643532950040" modelId="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)">
+  <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/95073643532950040">
     <nodeInfo nodeId="95073643532950040" fileName="AnalyzerRunnerCreator_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="95073643532950048" fileName="AnalyzerRunnerCreator_Editor.java" startLine="28" startPosition="33" endLine="29" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="95073643532950048" fileName="AnalyzerRunnerCreator_Editor.java" startLine="32" startPosition="69" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

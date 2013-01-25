@@ -7,7 +7,7 @@
   <unitInfo fileName="Postcondition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.behavior.Postcondition_BehaviorDescriptor" />
   <unitInfo fileName="Precondition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.behavior.Precondition_BehaviorDescriptor" />
   <unitInfo fileName="ResultExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.behavior.ResultExpression_BehaviorDescriptor" />
-  <root nodeId="1262430001741704730" modelId="r:99104ac0-f848-404d-b7cf-d79e1a30554c(jetbrains.mps.baseLanguage.contracts.behavior)">
+  <root nodeRef="r:99104ac0-f848-404d-b7cf-d79e1a30554c(jetbrains.mps.baseLanguage.contracts.behavior)/1262430001741704730">
     <nodeInfo nodeId="1262430001741704729" fileName="MethodConditions_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914722101" fileName="MethodConditions_Behavior.java" startLine="20" startPosition="93" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914722116" fileName="MethodConditions_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -31,7 +31,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741704730" fileName="MethodConditions_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.behavior.MethodConditions_Behavior" />
   </root>
-  <root nodeId="2511103526757020846" modelId="r:99104ac0-f848-404d-b7cf-d79e1a30554c(jetbrains.mps.baseLanguage.contracts.behavior)">
+  <root nodeRef="r:99104ac0-f848-404d-b7cf-d79e1a30554c(jetbrains.mps.baseLanguage.contracts.behavior)/2511103526757020846">
     <nodeInfo nodeId="2511103526757020846" fileName="Condition_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="2511103526757020848" fileName="Condition_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="2511103526757020846" fileName="Condition_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="82q7wzcisufb7f0ze3onk24ikm87usl">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-89hxj0ypb1mymp88cm6uftvxxpq6hll" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-czkeaawxav2uxfhwhouknmgxwcerk0t" />
   <common hash="-425jwgibamm9bvppsc1rofmrlskjnk2" />
   <source id="1560298786499489453" name="EditableStringDescriptor" hash="-975ipeh6l5cvbzioytapvli60hgl52y">
     <file name="EditableStringDescriptor.java" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="7316415153790561334" modelId="r:3275c448-5bfc-4d48-bc81-3a9535817eb1(jetbrains.mps.ide.script.plugin)">
+  <root nodeRef="r:3275c448-5bfc-4d48-bc81-3a9535817eb1(jetbrains.mps.ide.script.plugin)/7316415153790561334">
     <nodeInfo nodeId="7316415153790561785" fileName="AbstractMigrationScriptHelper.java" startLine="31" startPosition="97" endLine="32" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7316415153790561807" fileName="AbstractMigrationScriptHelper.java" startLine="35" startPosition="125" endLine="36" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7316415153790561820" fileName="AbstractMigrationScriptHelper.java" startLine="38" startPosition="45" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -165,7 +165,7 @@
     <unitInfo nodeId="7316415153790561716" fileName="AbstractMigrationScriptHelper.java" startLine="77" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper$MigrationScope" />
     <unitInfo nodeId="7316415153790561334" fileName="AbstractMigrationScriptHelper.java" startLine="27" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper" />
   </root>
-  <root nodeId="7316415153790561545" modelId="r:3275c448-5bfc-4d48-bc81-3a9535817eb1(jetbrains.mps.ide.script.plugin)">
+  <root nodeRef="r:3275c448-5bfc-4d48-bc81-3a9535817eb1(jetbrains.mps.ide.script.plugin)/7316415153790561545">
     <nodeInfo nodeId="7316415153790561548" fileName="RunMigrationScriptAction.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScript" />
     <nodeInfo nodeId="7316415153790561551" fileName="RunMigrationScriptAction.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myApplyToSelection" />
     <nodeInfo nodeId="7316415153790561554" fileName="RunMigrationScriptAction.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
@@ -227,7 +227,7 @@
     </scopeInfo>
     <unitInfo nodeId="7316415153790561545" fileName="RunMigrationScriptAction.java" startLine="20" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.RunMigrationScriptAction" />
   </root>
-  <root nodeId="7316415153790565440" modelId="r:3275c448-5bfc-4d48-bc81-3a9535817eb1(jetbrains.mps.ide.script.plugin)">
+  <root nodeRef="r:3275c448-5bfc-4d48-bc81-3a9535817eb1(jetbrains.mps.ide.script.plugin)/7316415153790565440">
     <nodeInfo nodeId="7316415153790565442" fileName="ScriptsActionGroupHelper.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourSelectedScripts" />
     <nodeInfo nodeId="7316415153790565458" fileName="ScriptsActionGroupHelper.java" startLine="33" startPosition="50" endLine="34" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5299416737275104571" fileName="ScriptsActionGroupHelper.java" startLine="39" startPosition="46" endLine="40" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -534,7 +534,7 @@
     <unitInfo nodeId="7316415153790565472" fileName="ScriptsActionGroupHelper.java" startLine="38" startPosition="34" endLine="62" endPosition="5" unitName="jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper$1" />
     <unitInfo nodeId="7316415153790565440" fileName="ScriptsActionGroupHelper.java" startLine="27" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper" />
   </root>
-  <root nodeId="7316415153790566285" modelId="r:3275c448-5bfc-4d48-bc81-3a9535817eb1(jetbrains.mps.ide.script.plugin)">
+  <root nodeRef="r:3275c448-5bfc-4d48-bc81-3a9535817eb1(jetbrains.mps.ide.script.plugin)/7316415153790566285">
     <nodeInfo nodeId="7316415153790566472" fileName="RunMigrationScriptsDialog.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScripts" />
     <nodeInfo nodeId="7316415153790566476" fileName="RunMigrationScriptsDialog.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedScriptIds" />
     <nodeInfo nodeId="7316415153790566480" fileName="RunMigrationScriptsDialog.java" startLine="50" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTable" />

@@ -31,10 +31,10 @@
     <classNode dependClassName="jetbrains.mps.refactoring.StructureModification" />
     <classNode dependClassName="jetbrains.mps.refactoring.StructureModificationLog" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v7.WriteHelper" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
   </dependency>
 </dependenciesRoot>
 

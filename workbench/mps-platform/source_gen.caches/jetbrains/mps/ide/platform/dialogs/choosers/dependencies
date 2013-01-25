@@ -144,6 +144,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.MpsPopupFactory" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel" file="NodeTreeModel.java">
@@ -171,6 +172,7 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="com.intellij.ide.structureView.StructureViewTreeElement" />
     <classNode extendsClassName="com.intellij.ide.util.treeView.smartTree.TreeModel" />
     <classNode extendsClassName="jetbrains.mps.workbench.choose.nodes.NodePresentation" />

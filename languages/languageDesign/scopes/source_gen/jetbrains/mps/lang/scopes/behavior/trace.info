@@ -5,7 +5,7 @@
   <unitInfo fileName="CompositeWithParentScopeExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.CompositeWithParentScopeExpression_BehaviorDescriptor" />
   <unitInfo fileName="ParentScope_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.ParentScope_BehaviorDescriptor" />
   <unitInfo fileName="UniformScopeProvider_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.UniformScopeProvider_BehaviorDescriptor" />
-  <root nodeId="2995585510566823813" modelId="r:82bd480c-456f-4470-ab12-9f4f3dd67824(jetbrains.mps.lang.scopes.behavior)">
+  <root nodeRef="r:82bd480c-456f-4470-ab12-9f4f3dd67824(jetbrains.mps.lang.scopes.behavior)/2995585510566823813">
     <nodeInfo nodeId="2995585510566833899" fileName="UniformScopeProvider_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2995585510566833907" fileName="UniformScopeProvider_Behavior.java" startLine="20" startPosition="112" endLine="21" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="25" startPosition="115" endLine="26" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

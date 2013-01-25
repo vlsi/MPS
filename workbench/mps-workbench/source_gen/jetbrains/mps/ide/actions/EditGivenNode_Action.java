@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -12,14 +12,15 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.logging.Logger;
 
 public class EditGivenNode_Action extends BaseAction {
   private static final Icon ICON = null;
-  private SNodePointer targetNode;
+  private SNodeReference targetNode;
   private String text;
 
-  public EditGivenNode_Action(SNodePointer targetNode_par, String text_par) {
+  public EditGivenNode_Action(SNodeReference targetNode_par, String text_par) {
     super("<no caption>", "", ICON);
     this.targetNode = targetNode_par;
     this.text = text_par;
@@ -58,7 +59,7 @@ public class EditGivenNode_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), EditGivenNode_Action.this.targetNode.getNode(), true, true);
+      NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNodePointer) EditGivenNode_Action.this.targetNode).getNode(), true, true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "EditGivenNode", t);
     }
@@ -69,15 +70,15 @@ public class EditGivenNode_Action extends BaseAction {
     StringBuilder res = new StringBuilder();
     res.append(super.getActionId());
     res.append("#");
-    res.append(targetNode_State((SNodePointer) this.targetNode));
+    res.append(targetNode_State((SNodeReference) this.targetNode));
     res.append("!");
     res.append(text_State((String) this.text));
     res.append("!");
     return res.toString();
   }
 
-  public static String targetNode_State(SNodePointer object) {
-    return object.toString();
+  public static String targetNode_State(SNodeReference object) {
+    return ((SNodePointer) object).toString();
   }
 
   public static String text_State(String object) {

@@ -18,14 +18,14 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.FlattenIterable;
 
 import java.util.*;
 
 public class TemplateSwitchGraph {
 
-  private Map<SNodePointer, Node> mySwitchToNode = new HashMap<SNodePointer, Node>();
+  private Map<SNodeReference, Node> mySwitchToNode = new HashMap<SNodeReference, Node>();
 
   public TemplateSwitchGraph(Collection<TemplateModel> templateModels) {
     for (TemplateModel templateModel : templateModels) {
@@ -35,7 +35,7 @@ public class TemplateSwitchGraph {
     }
 
     for (Node node : mySwitchToNode.values()) {
-      SNodePointer modifiesSwitchPtr = node.mySwitch.getModifiesSwitch();
+      SNodeReference modifiesSwitchPtr = node.mySwitch.getModifiesSwitch();
       if (modifiesSwitchPtr != null) {
         Node modifiedSwitch = mySwitchToNode.get(modifiesSwitchPtr);
         if (modifiedSwitch != null) {
@@ -67,7 +67,7 @@ public class TemplateSwitchGraph {
     }
   }
 
-  public FastRuleFinder getRuleFinder(SNodePointer baseSwitch) {
+  public FastRuleFinder getRuleFinder(SNodeReference baseSwitch) {
     Node bottom = mySwitchToNode.get(baseSwitch);
     while (bottom.myModified != null) {
       bottom = bottom.myModified;
@@ -75,7 +75,7 @@ public class TemplateSwitchGraph {
     return bottom.finder;
   }
 
-  public TemplateSwitchMapping getSwitch(SNodePointer switch_) {
+  public TemplateSwitchMapping getSwitch(SNodeReference switch_) {
     Node node = mySwitchToNode.get(switch_);
     return node != null ? node.mySwitch : null;
   }

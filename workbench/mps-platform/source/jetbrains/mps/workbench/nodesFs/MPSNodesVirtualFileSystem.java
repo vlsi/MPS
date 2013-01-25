@@ -21,7 +21,8 @@ import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.ide.MPSCoreComponents;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
@@ -51,19 +52,19 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   private SModelCommandListener myCommandListener = new MyCommandListener();
   private SModelListener myModelListener = new MyModelListener();
   private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryListener();
-  private Map<SNodePointer, MPSNodeVirtualFile> myVirtualFiles = new ConcurrentHashMap<SNodePointer, MPSNodeVirtualFile>();
+  private Map<SNodeReference, MPSNodeVirtualFile> myVirtualFiles = new ConcurrentHashMap<SNodeReference, MPSNodeVirtualFile>();
   private boolean myDisposed = false;
 
   public MPSNodeVirtualFile getFileFor(@NotNull final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
       public MPSNodeVirtualFile compute() {
-        SNodePointer nodePointer = new SNodePointer(node);
+        SNodeReference nodePointer = new jetbrains.mps.smodel.SNodePointer(node);
         return getFileFor(nodePointer);
       }
     });
   }
 
-  public MPSNodeVirtualFile getFileFor(@NotNull final SNodePointer nodePointer) {
+  public MPSNodeVirtualFile getFileFor(@NotNull final SNodeReference nodePointer) {
     if (myVirtualFiles.containsKey(nodePointer)) return myVirtualFiles.get(nodePointer);
 
     MPSNodeVirtualFile vf = new MPSNodeVirtualFile(nodePointer);
@@ -132,7 +133,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     return null;
   }
 
-  public boolean hasVirtualFileFor(SNodePointer nodePointer) {
+  public boolean hasVirtualFileFor(SNodeReference nodePointer) {
     return myVirtualFiles.containsKey(nodePointer);
   }
 
@@ -163,7 +164,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   private void updateModificationStamp(SNode rootNode) {
     if (rootNode.getModel() == null) return;
-    MPSNodeVirtualFile vf = myVirtualFiles.get(new SNodePointer(rootNode.getContainingRoot()));
+    MPSNodeVirtualFile vf = myVirtualFiles.get(new jetbrains.mps.smodel.SNodePointer(rootNode.getContainingRoot()));
     if (vf != null) {
       vf.setModificationStamp(LocalTimeCounter.currentTime());
       vf.setTimeStamp(System.currentTimeMillis());
@@ -200,7 +201,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       if (!event.isRemoved()) return;
 
       SNode root = event.getRoot();
-      SNodePointer rootNodePointer = new SNodePointer(event.getModel().getSModelReference(), root.getNodeId());
+      SNodeReference rootNodePointer = new jetbrains.mps.smodel.SNodePointer(event.getModel().getSModelReference(), root.getNodeId());
       MPSNodeVirtualFile vf = myVirtualFiles.get(rootNodePointer);
       if (vf != null) {
         myDeletedFiles.add(vf);
@@ -210,7 +211,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     public void visitPropertyEvent(final SModelPropertyEvent event) {
       if (jetbrains.mps.util.SNodeOperations.isDisposed(event.getNode())) return;
 
-      MPSNodeVirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getModel().getSModelReference(), event.getNode().getNodeId()));
+      MPSNodeVirtualFile vf = myVirtualFiles.get(new jetbrains.mps.smodel.SNodePointer(event.getModel().getSModelReference(), event.getNode().getNodeId()));
       if (!(event.getNode().getModel() != null && event.getNode().getModel().isRoot(event.getNode())) || vf == null)
         return;
       String newName = event.getNode().getPresentation();
@@ -226,7 +227,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
       Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
       for (SNode root : modelDescriptor.getSModel().roots()) {
-        SNodePointer pointer = new SNodePointer(root);
+        SNodeReference pointer = new jetbrains.mps.smodel.SNodePointer(root);
         MPSNodeVirtualFile vf = myVirtualFiles.get(pointer);
         if (vf == null) continue;
         deletedFiles.add(vf);
@@ -254,11 +255,11 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
       Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
       Collection<Pair<MPSNodeVirtualFile, String>> renamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
-      for (Iterator<Entry<SNodePointer, MPSNodeVirtualFile>> it = myVirtualFiles.entrySet().iterator(); it.hasNext(); ) {
-        Entry<SNodePointer, MPSNodeVirtualFile> entry = it.next();
-        if (entry.getKey().getModel() != sm) continue;
+      for (Iterator<Entry<SNodeReference, MPSNodeVirtualFile>> it = myVirtualFiles.entrySet().iterator(); it.hasNext(); ) {
+        Entry<SNodeReference, MPSNodeVirtualFile> entry = it.next();
+        if (!entry.getKey().getModelReference().equals(sm.getSModelReference())) continue;
 
-        SNode node = entry.getKey().getNode();
+        SNode node = entry.getKey().resolve(MPSModuleRepository.getInstance());
         MPSNodeVirtualFile file = entry.getValue();
         if (node == null) {
           deletedFiles.add(file);

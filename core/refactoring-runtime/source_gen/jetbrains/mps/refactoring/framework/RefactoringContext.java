@@ -472,7 +472,7 @@ public class RefactoringContext {
       if (data.type == StructureModification.RenameNode.RenameType.CONCEPT) {
         continue;
       }
-      SNode oldNode = data.oldID.getNode();
+      SNode oldNode = ((SNodePointer) data.oldID).getNode();
       if (oldNode == null || oldNode.getParent() == null) {
         continue;
       }

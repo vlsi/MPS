@@ -6,7 +6,7 @@
   <unitInfo fileName="TypesystemDescriptor.java" startLine="143" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_d" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="177" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_e" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="12" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor" />
-  <root nodeId="1187359576319" modelId="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)/1187359576319">
     <nodeInfo nodeId="1187360077368" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1187360077368" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="20" startPosition="66" endLine="21" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1187360077368" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="21" startPosition="203" endLine="22" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -57,7 +57,7 @@
     </scopeInfo>
     <unitInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyGetAmountMethodCall_InferenceRule" />
   </root>
-  <root nodeId="1187360305150" modelId="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)/1187360305150">
     <nodeInfo nodeId="1187360333778" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1187360333778" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="20" startPosition="68" endLine="21" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1187360333778" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="21" startPosition="203" endLine="22" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -108,7 +108,7 @@
     </scopeInfo>
     <unitInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyGetCurrencyMethodCall_InferenceRule" />
   </root>
-  <root nodeId="1187618173694" modelId="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)/1187618173694">
     <nodeInfo nodeId="1187618239848" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1187618239848" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="20" startPosition="63" endLine="21" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1187618239848" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="21" startPosition="203" endLine="22" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -159,7 +159,7 @@
     </scopeInfo>
     <unitInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyIsZeroMethodCall_InferenceRule" />
   </root>
-  <root nodeId="1187621915208" modelId="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)/1187621915208">
     <nodeInfo nodeId="1187621962983" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1187621962983" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="20" startPosition="54" endLine="21" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1187621962983" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="21" startPosition="203" endLine="22" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -210,7 +210,7 @@
     </scopeInfo>
     <unitInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyCreator_InferenceRule" />
   </root>
-  <root nodeId="1187622269431" modelId="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)/1187622269431">
     <nodeInfo nodeId="1187622287642" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1187622287642" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="20" startPosition="54" endLine="21" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1187622287642" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="21" startPosition="203" endLine="22" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -261,7 +261,7 @@
     </scopeInfo>
     <unitInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyLiteral_InferenceRule" />
   </root>
-  <root nodeId="1239364210617" modelId="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)/1239364210617">
     <nodeInfo nodeId="1239364296940" fileName="TypesystemDescriptor.java" startLine="52" startPosition="99" endLine="53" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239364229833" fileName="TypesystemDescriptor.java" startLine="56" startPosition="64" endLine="57" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239364229833" fileName="TypesystemDescriptor.java" startLine="57" startPosition="32" endLine="58" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

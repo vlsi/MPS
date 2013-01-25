@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="7471276865246050739" modelId="r:cbe3dd49-192d-45e3-bd8c-0270ee43ad95(jetbrains.mps.build.sandbox.manifest)">
+  <root nodeRef="r:cbe3dd49-192d-45e3-bd8c-0270ee43ad95(jetbrains.mps.build.sandbox.manifest)/7471276865246050739">
     <unitInfo nodeId="7471276865246050739" fileName="testmanifest.xml" startLine="1" startPosition="0" endLine="47" endPosition="10" unitName="jetbrains.mps.build.sandbox.manifest.testmanifest" />
   </root>
 </debugInfo>

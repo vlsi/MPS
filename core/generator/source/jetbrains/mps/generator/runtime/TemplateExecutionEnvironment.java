@@ -23,7 +23,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
@@ -47,15 +47,15 @@ public interface TemplateExecutionEnvironment {
 
   TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule);
 
-  Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String templateNodeId, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
+  Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodeReference templateNode, String templateNodeId, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
-  SNode insertNode(SNode node, SNodePointer templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
+  SNode insertNode(SNode node, SNodeReference templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
-  Collection<SNode> trySwitch(SNodePointer _switch, String mappingName, TemplateContext context) throws GenerationException;
+  Collection<SNode> trySwitch(SNodeReference _switch, String mappingName, TemplateContext context) throws GenerationException;
 
-  Collection<SNode> applyTemplate(@NotNull SNodePointer templateDeclaration, @NotNull SNodePointer templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException;
+  Collection<SNode> applyTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException;
 
-  Collection<SNode> weaveTemplate(@NotNull SNodePointer templateDeclaration, @NotNull SNodePointer templateNode, @NotNull TemplateContext context, @NotNull SNode outputContextNode, Object... arguments) throws GenerationException;
+  Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, @NotNull SNode outputContextNode, Object... arguments) throws GenerationException;
 
   void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
 
@@ -63,9 +63,9 @@ public interface TemplateExecutionEnvironment {
 
   void registerLabel(SNode inputNode, Iterable<SNode> outputNodes, String mappingLabel);
 
-  void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodePointer sourceNode, int parentIndex, String resolveInfo, TemplateContext context);
+  void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodeReference sourceNode, int parentIndex, String resolveInfo, TemplateContext context);
 
-  void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodePointer sourceNode, String templateNodeId, String resolveInfo, TemplateContext context);
+  void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodeReference sourceNode, String templateNodeId, String resolveInfo, TemplateContext context);
 
   void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context);
 
@@ -76,5 +76,5 @@ public interface TemplateExecutionEnvironment {
 
   void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context);
 
-  void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodePointer templateNode, SNode inputNode);
+  void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodeReference templateNode, SNode inputNode);
 }

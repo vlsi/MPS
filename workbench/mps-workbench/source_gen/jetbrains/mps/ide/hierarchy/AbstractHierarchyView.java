@@ -13,11 +13,12 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.pom.Navigatable;
 import javax.swing.tree.DefaultMutableTreeNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.usageView.UsageViewBundle;
@@ -70,8 +71,8 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
         }
         final HierarchyTreeNode treeNode = (HierarchyTreeNode) node;
 
-        SNodePointer ptr = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-          public SNodePointer compute() {
+        SNodeReference ptr = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
+          public SNodeReference compute() {
             SNode node = treeNode.getNode();
             if (node == null || SNodeOperations.isDisposed(node)) {
               return null;

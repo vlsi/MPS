@@ -26,7 +26,7 @@ import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
@@ -49,8 +49,8 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
   }
 
   @Override
-  public SNodePointer getRuleNode() {
-    return new SNodePointer(ruleNode);
+  public SNodeReference getRuleNode() {
+    return new jetbrains.mps.smodel.SNodePointer(ruleNode);
   }
 
   @Override
@@ -71,7 +71,7 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
       return null;
     }
 
-    SNodePointer ruleNodeId = new SNodePointer(ruleNode);
+    SNodeReference ruleNodeId = new jetbrains.mps.smodel.SNodePointer(ruleNode);
     environment.getTracer().pushRule(ruleNodeId);
     try {
       return apply(context.getInput(), pattern, environment.getEnvironment(context.getInput(), this));

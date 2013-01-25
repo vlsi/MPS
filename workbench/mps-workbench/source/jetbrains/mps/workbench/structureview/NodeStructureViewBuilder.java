@@ -18,7 +18,7 @@ package jetbrains.mps.workbench.structureview;
 import com.intellij.ide.structureView.*;
 import com.intellij.ide.util.treeView.smartTree.*;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.workbench.structureview.adds.AspectGrouper;
 import jetbrains.mps.workbench.structureview.adds.AspectNodeSorter;
 import jetbrains.mps.workbench.structureview.adds.AspectSorter;
@@ -29,9 +29,9 @@ import org.jetbrains.annotations.Nullable;
 
 public class NodeStructureViewBuilder extends TreeBasedStructureViewBuilder {
   private Project myProject;
-  private SNodePointer myNode;
+  private SNodeReference myNode;
 
-  public NodeStructureViewBuilder(Project project, SNodePointer node) {
+  public NodeStructureViewBuilder(Project project, SNodeReference node) {
     myProject = project;
     myNode = node;
   }

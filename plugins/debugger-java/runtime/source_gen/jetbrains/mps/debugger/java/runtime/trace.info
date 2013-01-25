@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4352118152439837554" modelId="r:171d7488-7735-44dd-8049-f905d8fca4b0(jetbrains.mps.debugger.java.runtime)">
+  <root nodeRef="r:171d7488-7735-44dd-8049-f905d8fca4b0(jetbrains.mps.debugger.java.runtime)/4352118152439837554">
     <nodeInfo nodeId="4352118152439837558" fileName="JavaDebugger.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJavaBreakpointsProvider" />
     <nodeInfo nodeId="4352118152439837571" fileName="JavaDebugger.java" startLine="25" startPosition="99" endLine="26" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4352118152439837582" fileName="JavaDebugger.java" startLine="31" startPosition="90" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -41,7 +41,7 @@
     <scopeInfo nodeId="4352118152439837632" fileName="JavaDebugger.java" startLine="56" startPosition="0" endLine="64" endPosition="0" />
     <unitInfo nodeId="4352118152439837554" fileName="JavaDebugger.java" startLine="22" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.JavaDebugger" />
   </root>
-  <root nodeId="7048882195103614171" modelId="r:171d7488-7735-44dd-8049-f905d8fca4b0(jetbrains.mps.debugger.java.runtime)">
+  <root nodeRef="r:171d7488-7735-44dd-8049-f905d8fca4b0(jetbrains.mps.debugger.java.runtime)/7048882195103614171">
     <nodeInfo nodeId="7576820355142760411" fileName="JavaNodePositionProvider.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProvider" />
     <nodeInfo nodeId="7576820355142760415" fileName="JavaNodePositionProvider.java" startLine="20" startPosition="62" endLine="21" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7048882195103614187" fileName="JavaNodePositionProvider.java" startLine="26" startPosition="88" endLine="27" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

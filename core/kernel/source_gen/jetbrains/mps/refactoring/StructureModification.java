@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class StructureModification {
@@ -90,11 +90,11 @@ public class StructureModification {
   }
 
   public static class MoveNode implements StructureModification.Entry {
-    public SNodePointer oldID;
-    public SNodePointer newID;
+    public SNodeReference oldID;
+    public SNodeReference newID;
     public String resolveInfo;
 
-    public MoveNode(SNodePointer id, SNodePointer to) {
+    public MoveNode(SNodeReference id, SNodeReference to) {
       oldID = id;
       newID = to;
     }
@@ -109,12 +109,12 @@ public class StructureModification {
   }
 
   public static class RenameNode implements StructureModification.Entry {
-    public SNodePointer oldID;
+    public SNodeReference oldID;
     public StructureModification.RenameNode.RenameType type;
     public String oldValue;
     public String newValue;
 
-    public RenameNode(SNodePointer id, StructureModification.RenameNode.RenameType type, String newValue, String oldValue) {
+    public RenameNode(SNodeReference id, StructureModification.RenameNode.RenameType type, String newValue, String oldValue) {
       oldID = id;
       this.type = type;
       this.oldValue = oldValue;

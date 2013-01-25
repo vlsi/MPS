@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8974276187400029900" modelId="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)">
+  <root nodeRef="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)/8974276187400029900">
     <nodeInfo nodeId="8974276187400029900" fileName="IconResource_Editor.java" startLine="33" startPosition="79" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400029900" fileName="IconResource_Editor.java" startLine="37" startPosition="82" endLine="38" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6976585500156879192" fileName="IconResource_Editor.java" startLine="41" startPosition="91" endLine="42" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -363,7 +363,7 @@
     <unitInfo nodeId="8974276187400029921" fileName="IconResource_Editor.java" startLine="139" startPosition="75" endLine="143" endPosition="5" unitName="jetbrains.mps.lang.resources.editor.IconResource_Editor$1" />
     <unitInfo nodeId="8974276187400029900" fileName="IconResource_Editor.java" startLine="32" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.lang.resources.editor.IconResource_Editor" />
   </root>
-  <root nodeId="8974276187400029952" modelId="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)">
+  <root nodeRef="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)/8974276187400029952">
     <nodeInfo nodeId="8974276187400029952" fileName="IconResourceExpression_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400029953" fileName="IconResourceExpression_Editor.java" startLine="21" startPosition="88" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8974276187400029953" fileName="IconResourceExpression_Editor.java" startLine="22" startPosition="96" endLine="23" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -460,7 +460,7 @@
     </scopeInfo>
     <unitInfo nodeId="8974276187400029952" fileName="IconResourceExpression_Editor.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.resources.editor.IconResourceExpression_Editor" />
   </root>
-  <root nodeId="8974276187400029959" modelId="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)">
+  <root nodeRef="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)/8974276187400029959">
     <nodeInfo nodeId="8974276187400029959" fileName="IconResourceBundle_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400029964" fileName="IconResourceBundle_Editor.java" startLine="34" startPosition="97" endLine="35" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8974276187400029964" fileName="IconResourceBundle_Editor.java" startLine="38" startPosition="66" endLine="39" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -650,7 +650,7 @@
     <unitInfo nodeId="8974276187400029964" fileName="IconResourceBundle_Editor.java" startLine="33" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.resources.editor.IconResourceBundle_Editor$iconsListHandler_e2moj5_d0" />
     <unitInfo nodeId="8974276187400029959" fileName="IconResourceBundle_Editor.java" startLine="28" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.lang.resources.editor.IconResourceBundle_Editor" />
   </root>
-  <root nodeId="8974276187400029971" modelId="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)">
+  <root nodeRef="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)/8974276187400029971">
     <nodeInfo nodeId="8974276187400029971" fileName="IconResourceDeclaration_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400029972" fileName="IconResourceDeclaration_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8974276187400029972" fileName="IconResourceDeclaration_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -753,7 +753,7 @@
     </scopeInfo>
     <unitInfo nodeId="8974276187400029971" fileName="IconResourceDeclaration_Editor.java" startLine="20" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.resources.editor.IconResourceDeclaration_Editor" />
   </root>
-  <root nodeId="8974276187400029977" modelId="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)">
+  <root nodeRef="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)/8974276187400029977">
     <nodeInfo nodeId="8974276187400029977" fileName="IconResourceReference_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400029984" fileName="IconResourceReference_Editor.java" startLine="30" startPosition="33" endLine="31" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8974276187400029984" fileName="IconResourceReference_Editor.java" startLine="34" startPosition="69" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

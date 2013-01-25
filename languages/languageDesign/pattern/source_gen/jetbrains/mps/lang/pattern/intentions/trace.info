@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.IntentionsDescriptor" />
-  <root nodeId="3514655265371682052" modelId="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)/3514655265371682052">
     <nodeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="23" startPosition="30" endLine="24" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="27" startPosition="35" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -89,7 +89,7 @@
     <unitInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="73" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreatePatternVariable_Intention$IntentionImplementation" />
     <unitInfo nodeId="3514655265371682052" fileName="CreatePatternVariable_Intention.java" startLine="17" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreatePatternVariable_Intention" />
   </root>
-  <root nodeId="3514655265371724198" modelId="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)/3514655265371724198">
     <nodeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="29" startPosition="30" endLine="30" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="33" startPosition="35" endLine="34" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -187,7 +187,7 @@
     <unitInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="80" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreatePropertyPatternVariable_Intention$IntentionImplementation" />
     <unitInfo nodeId="3514655265371724198" fileName="CreatePropertyPatternVariable_Intention.java" startLine="23" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreatePropertyPatternVariable_Intention" />
   </root>
-  <root nodeId="3514655265371785881" modelId="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)/3514655265371785881">
     <nodeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -289,7 +289,7 @@
     <unitInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="79" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateListPattern_Intention$IntentionImplementation" />
     <unitInfo nodeId="3514655265371785881" fileName="CreateListPattern_Intention.java" startLine="22" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateListPattern_Intention" />
   </root>
-  <root nodeId="3514655265371789444" modelId="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)/3514655265371789444">
     <nodeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -380,7 +380,7 @@
     <unitInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="76" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateWildcardPattern_Intention$IntentionImplementation" />
     <unitInfo nodeId="3514655265371789444" fileName="CreateWildcardPattern_Intention.java" startLine="20" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateWildcardPattern_Intention" />
   </root>
-  <root nodeId="3514655265371789469" modelId="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)/3514655265371789469">
     <nodeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -471,7 +471,7 @@
     <unitInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="76" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateAsPattern_Intention$IntentionImplementation" />
     <unitInfo nodeId="3514655265371789469" fileName="CreateAsPattern_Intention.java" startLine="20" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateAsPattern_Intention" />
   </root>
-  <root nodeId="4413230749907735528" modelId="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)/4413230749907735528">
     <nodeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -563,7 +563,7 @@
     <unitInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="78" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateActionAsPattern_Intention$IntentionImplementation" />
     <unitInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="22" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateActionAsPattern_Intention" />
   </root>
-  <root nodeId="8263735385373627208" modelId="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)/8263735385373627208">
     <nodeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8263735385373627208" fileName="CreateOrPattern_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

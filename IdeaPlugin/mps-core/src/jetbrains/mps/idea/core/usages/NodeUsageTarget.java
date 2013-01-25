@@ -23,16 +23,18 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.usages.UsageTarget;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import org.jetbrains.annotations.NotNull;
 
 public class NodeUsageTarget extends NodeNavigatable implements UsageTarget {
 
-  public NodeUsageTarget(@NotNull SNodePointer node, @NotNull Project project) {
+  public NodeUsageTarget(@NotNull SNodeReference node, @NotNull Project project) {
     super(node, project);
   }
 
@@ -61,7 +63,7 @@ public class NodeUsageTarget extends NodeNavigatable implements UsageTarget {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        SNode node = myNode.getNode();
+        SNode node = myNode.resolve(MPSModuleRepository.getInstance());
         return node != null && !(node.getModel() == null);
       }
     });
@@ -77,7 +79,7 @@ public class NodeUsageTarget extends NodeNavigatable implements UsageTarget {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myItemPresentation = new NodePointerPresentation(myNode);
+        myItemPresentation = new NodePointerPresentation(((SNodePointer) myNode));
         myTextPresentation = myItemPresentation.getPresentableText();
       }
     });

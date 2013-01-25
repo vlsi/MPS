@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="830211401282058525" modelId="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)">
+  <root nodeRef="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)/830211401282058525">
     <nodeInfo nodeId="830211401282058525" fileName="MoveNodes_Action.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="830211401282058525" fileName="MoveNodes_Action.java" startLine="32" startPosition="29" endLine="33" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="830211401282058525" fileName="MoveNodes_Action.java" startLine="33" startPosition="34" endLine="34" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -138,7 +138,7 @@
     <unitInfo nodeId="130937874511030181" fileName="MoveNodes_Action.java" startLine="101" startPosition="46" endLine="118" endPosition="7" unitName="jetbrains.mps.ide.platform.actions.core.MoveNodes_Action$3" />
     <unitInfo nodeId="830211401282058525" fileName="MoveNodes_Action.java" startLine="29" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.ide.platform.actions.core.MoveNodes_Action" />
   </root>
-  <root nodeId="8784230320738943353" modelId="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)">
+  <root nodeRef="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)/8784230320738943353">
     <nodeInfo nodeId="8784230320738943353" fileName="Rename_Action.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="8784230320738943353" fileName="Rename_Action.java" startLine="31" startPosition="26" endLine="32" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8784230320738943353" fileName="Rename_Action.java" startLine="32" startPosition="30" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -265,7 +265,7 @@
     <unitInfo nodeId="8139782154295720684" fileName="Rename_Action.java" startLine="104" startPosition="46" endLine="112" endPosition="7" unitName="jetbrains.mps.ide.platform.actions.core.Rename_Action$2" />
     <unitInfo nodeId="8784230320738943353" fileName="Rename_Action.java" startLine="28" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.ide.platform.actions.core.Rename_Action" />
   </root>
-  <root nodeId="8784230320738948497" modelId="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)">
+  <root nodeRef="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)/8784230320738948497">
     <nodeInfo nodeId="8784230320738948502" fileName="RenameUtil.java" startLine="20" startPosition="50" endLine="21" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8784230320738948504" fileName="RenameUtil.java" startLine="21" startPosition="77" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8784230320738948506" fileName="RenameUtil.java" startLine="22" startPosition="76" endLine="23" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

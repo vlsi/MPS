@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1240470842553525975" modelId="r:a76f2576-36ee-41c5-a8e6-bb2264ed2331(jetbrains.mps.baseLanguage.execution.api.ui)">
+  <root nodeRef="r:a76f2576-36ee-41c5-a8e6-bb2264ed2331(jetbrains.mps.baseLanguage.execution.api.ui)/1240470842553525975">
     <nodeInfo nodeId="1240470842553525975" fileName="JavaConfigOptions.java" startLine="61" startPosition="31" endLine="61" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1240470842553525975" fileName="JavaConfigOptions.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThis" />
     <nodeInfo nodeId="1240470842553525975" fileName="JavaConfigOptions.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent_jy82jx_b0" />
@@ -342,7 +342,7 @@
     <unitInfo nodeId="1240470842553525975" fileName="JavaConfigOptions.java" startLine="41" startPosition="32" endLine="47" endPosition="3" unitName="jetbrains.mps.baseLanguage.execution.api.ui.JavaConfigOptions$1" />
     <unitInfo nodeId="1240470842553525975" fileName="JavaConfigOptions.java" startLine="25" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.baseLanguage.execution.api.ui.JavaConfigOptions" />
   </root>
-  <root nodeId="1240470842553526078" modelId="r:a76f2576-36ee-41c5-a8e6-bb2264ed2331(jetbrains.mps.baseLanguage.execution.api.ui)">
+  <root nodeRef="r:a76f2576-36ee-41c5-a8e6-bb2264ed2331(jetbrains.mps.baseLanguage.execution.api.ui)/1240470842553526078">
     <nodeInfo nodeId="1240470842553526194" fileName="JavaConfigOptions.java" startLine="275" startPosition="30" endLine="276" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240470842553526198" fileName="JavaConfigOptions.java" startLine="277" startPosition="5" endLine="278" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240470842553526206" fileName="JavaConfigOptions.java" startLine="278" startPosition="65" endLine="279" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

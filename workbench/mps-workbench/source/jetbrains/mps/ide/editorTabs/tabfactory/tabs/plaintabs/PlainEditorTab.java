@@ -16,18 +16,18 @@
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.plaintabs;
 
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 class PlainEditorTab {
-  private SNodePointer myNode;
+  private SNodeReference myNode;
   private RelationDescriptor myTab;
 
-  PlainEditorTab(SNodePointer node, RelationDescriptor tab) {
+  PlainEditorTab(SNodeReference node, RelationDescriptor tab) {
     myNode = node;
     myTab = tab;
   }
 
-  public SNodePointer getNode() {
+  public SNodeReference getNode() {
     return myNode;
   }
 

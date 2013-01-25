@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1007939372524169703" modelId="r:13ec431d-483d-451c-a648-ffefde4fef51(jetbrains.mps.internal.make.runtime.backports)">
+  <root nodeRef="r:13ec431d-483d-451c-a648-ffefde4fef51(jetbrains.mps.internal.make.runtime.backports)/1007939372524169703">
     <nodeInfo nodeId="1007939372524175484" fileName="JobProgressMonitorAdapter.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WORK_AMOUNT" />
     <nodeInfo nodeId="1007939372524169742" fileName="JobProgressMonitorAdapter.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJobMonitor" />
     <nodeInfo nodeId="1007939372524175445" fileName="JobProgressMonitorAdapter.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
@@ -131,7 +131,7 @@
     <unitInfo nodeId="6946682729051139412" fileName="JobProgressMonitorAdapter.java" startLine="96" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter$SubProgressMonitor" />
     <unitInfo nodeId="1007939372524169703" fileName="JobProgressMonitorAdapter.java" startLine="9" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.backports.JobProgressMonitorAdapter" />
   </root>
-  <root nodeId="5589305777382258419" modelId="r:13ec431d-483d-451c-a648-ffefde4fef51(jetbrains.mps.internal.make.runtime.backports)">
+  <root nodeRef="r:13ec431d-483d-451c-a648-ffefde4fef51(jetbrains.mps.internal.make.runtime.backports)/5589305777382258419">
     <nodeInfo nodeId="3449801126986532461" fileName="ProgressMonitorProgressStrategy.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOTAL" />
     <nodeInfo nodeId="7480932071789567941" fileName="ProgressMonitorProgressStrategy.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MAXWORK" />
     <nodeInfo nodeId="8848530710797786532" fileName="ProgressMonitorProgressStrategy.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="monitorWorkStack" />

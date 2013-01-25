@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1203684597238" modelId="r:00000000-0000-4000-0000-011c895904a9(jetbrains.mps.ide.devkit.newLanguageDialog)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895904a9(jetbrains.mps.ide.devkit.newLanguageDialog)/1203684597238">
     <nodeInfo nodeId="1203684597238" fileName="NewLanguageDialog.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContentPane" />
     <nodeInfo nodeId="1203684597238" fileName="NewLanguageDialog.java" startLine="21" startPosition="41" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1203684597238" fileName="NewLanguageDialog.java" startLine="22" startPosition="16" endLine="23" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -353,7 +353,7 @@
     <unitInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="48" startPosition="32" endLine="54" endPosition="3" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane$1" />
     <unitInfo nodeId="1203684597238" fileName="NewLanguageDialogContentPane.java" startLine="34" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialogContentPane" />
   </root>
-  <root nodeId="1203685087824" modelId="r:00000000-0000-4000-0000-011c895904a9(jetbrains.mps.ide.devkit.newLanguageDialog)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895904a9(jetbrains.mps.ide.devkit.newLanguageDialog)/1203685087824">
     <nodeInfo nodeId="1203686051499" fileName="NewLanguageDialogContentPane.java" startLine="66" startPosition="31" endLine="67" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1203686057306" fileName="NewLanguageDialogContentPane.java" startLine="67" startPosition="36" endLine="68" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237027856122" fileName="NewLanguageDialogContentPane.java" startLine="68" startPosition="31" endLine="69" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

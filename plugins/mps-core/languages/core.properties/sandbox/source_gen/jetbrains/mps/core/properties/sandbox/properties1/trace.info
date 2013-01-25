@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6896005762093430084" modelId="r:d9e408f7-ca77-4f9c-b8d9-b09240ec26bc(jetbrains.mps.core.properties.sandbox.properties1)">
+  <root nodeRef="r:d9e408f7-ca77-4f9c-b8d9-b09240ec26bc(jetbrains.mps.core.properties.sandbox.properties1)/6896005762093430084">
     <unitInfo nodeId="6896005762093430084" fileName="build1.properties" startLine="1" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.core.properties.sandbox.properties1.build1" />
   </root>
 </debugInfo>

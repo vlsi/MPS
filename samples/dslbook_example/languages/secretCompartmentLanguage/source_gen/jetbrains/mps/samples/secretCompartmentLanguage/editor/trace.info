@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1197149586039" modelId="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)/1197149586039">
     <nodeInfo nodeId="1197149586039" fileName="StateMachine_Editor.java" startLine="30" startPosition="79" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197239442209" fileName="StateMachine_Editor.java" startLine="35" startPosition="34" endLine="36" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1197239442209" fileName="StateMachine_Editor.java" startLine="39" startPosition="69" endLine="40" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -444,7 +444,7 @@
     <unitInfo nodeId="1197223128173" fileName="StateMachine_Editor.java" startLine="103" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_Editor$stateListHandler_qpt50r_h0" />
     <unitInfo nodeId="1197149586039" fileName="StateMachine_Editor.java" startLine="29" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachine_Editor" />
   </root>
-  <root nodeId="1197169421748" modelId="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)/1197169421748">
     <nodeInfo nodeId="1197169421748" fileName="Event_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197169424516" fileName="Event_Editor.java" startLine="20" startPosition="89" endLine="21" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197169424516" fileName="Event_Editor.java" startLine="21" startPosition="99" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -529,7 +529,7 @@
     </scopeInfo>
     <unitInfo nodeId="1197169421748" fileName="Event_Editor.java" startLine="15" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.Event_Editor" />
   </root>
-  <root nodeId="1197170596685" modelId="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)/1197170596685">
     <nodeInfo nodeId="1197170596685" fileName="State_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197240509135" fileName="State_Editor.java" startLine="33" startPosition="103" endLine="34" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1197240509135" fileName="State_Editor.java" startLine="37" startPosition="66" endLine="38" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -741,7 +741,7 @@
     <unitInfo nodeId="1197240509135" fileName="State_Editor.java" startLine="32" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.State_Editor$transitionListHandler_sjqidp_b1a" />
     <unitInfo nodeId="1197170596685" fileName="State_Editor.java" startLine="27" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.State_Editor" />
   </root>
-  <root nodeId="1197240201006" modelId="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)/1197240201006">
     <nodeInfo nodeId="1197240201006" fileName="Transition_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197240213354" fileName="Transition_Editor.java" startLine="24" startPosition="32" endLine="25" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1197240213354" fileName="Transition_Editor.java" startLine="28" startPosition="69" endLine="29" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -937,7 +937,7 @@
     <unitInfo nodeId="1197240235674" fileName="Transition_Editor.java" startLine="56" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.Transition_Editor$_Inline_jj4qz_a2a" />
     <unitInfo nodeId="1197240201006" fileName="Transition_Editor.java" startLine="18" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.Transition_Editor" />
   </root>
-  <root nodeId="1197246925130" modelId="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)/1197246925130">
     <nodeInfo nodeId="1197246925130" fileName="StateMachineTest_Editor.java" startLine="30" startPosition="79" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197247831195" fileName="StateMachineTest_Editor.java" startLine="35" startPosition="34" endLine="36" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1197247831195" fileName="StateMachineTest_Editor.java" startLine="39" startPosition="69" endLine="40" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1160,7 +1160,7 @@
     <unitInfo nodeId="1197252973061" fileName="StateMachineTest_Editor.java" startLine="67" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_Editor$testMethodListHandler_hhanjm_c0" />
     <unitInfo nodeId="1197246925130" fileName="StateMachineTest_Editor.java" startLine="29" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTest_Editor" />
   </root>
-  <root nodeId="1197252730365" modelId="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)/1197252730365">
     <nodeInfo nodeId="1197252730365" fileName="StateMachineTestMethod_Editor.java" startLine="30" startPosition="79" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197255262343" fileName="StateMachineTestMethod_Editor.java" startLine="35" startPosition="36" endLine="36" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1197255262343" fileName="StateMachineTestMethod_Editor.java" startLine="39" startPosition="69" endLine="40" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1488,7 +1488,7 @@
     <unitInfo nodeId="1197255836498" fileName="StateMachineTestMethod_Editor.java" startLine="67" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_Editor$handleEventListHandler_ttjdsx_a1b0" />
     <unitInfo nodeId="1197252730365" fileName="StateMachineTestMethod_Editor.java" startLine="29" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.editor.StateMachineTestMethod_Editor" />
   </root>
-  <root nodeId="1197255791393" modelId="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)/1197255791393">
     <nodeInfo nodeId="1197255791393" fileName="HandleEvent_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197255802947" fileName="HandleEvent_Editor.java" startLine="24" startPosition="33" endLine="25" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1197255802947" fileName="HandleEvent_Editor.java" startLine="28" startPosition="69" endLine="29" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

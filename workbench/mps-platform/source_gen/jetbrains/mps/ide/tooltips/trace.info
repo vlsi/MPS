@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1657638272963062314" modelId="r:2170b42c-b000-4bd7-a2c2-c5cf5fe74d08(jetbrains.mps.ide.tooltips)">
+  <root nodeRef="r:2170b42c-b000-4bd7-a2c2-c5cf5fe74d08(jetbrains.mps.ide.tooltips)/1657638272963062314">
     <nodeInfo nodeId="1657638272963062322" fileName="ToolTipData.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
     <nodeInfo nodeId="1975624945529243613" fileName="ToolTipData.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1657638272963062326" fileName="ToolTipData.java" startLine="14" startPosition="40" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -38,7 +38,7 @@
     <scopeInfo nodeId="1975624945529320792" fileName="ToolTipData.java" startLine="26" startPosition="0" endLine="39" endPosition="0" />
     <unitInfo nodeId="1657638272963062314" fileName="ToolTipData.java" startLine="10" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ide.tooltips.ToolTipData" />
   </root>
-  <root nodeId="1657638272963439183" modelId="r:2170b42c-b000-4bd7-a2c2-c5cf5fe74d08(jetbrains.mps.ide.tooltips)">
+  <root nodeRef="r:2170b42c-b000-4bd7-a2c2-c5cf5fe74d08(jetbrains.mps.ide.tooltips)/1657638272963439183">
     <nodeInfo nodeId="7530108077312637991" fileName="MPSToolTipManager.java" startLine="25" startPosition="43" endLine="26" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1142165476403803448" fileName="MPSToolTipManager.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRightAlignedMouseListener" />
     <nodeInfo nodeId="3100043705483489792" fileName="MPSToolTipManager.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToolTip" />
@@ -246,14 +246,14 @@
     <unitInfo nodeId="6281853519869761381" fileName="MPSToolTipManager.java" startLine="140" startPosition="23" endLine="150" endPosition="5" unitName="jetbrains.mps.ide.tooltips.MPSToolTipManager$3" />
     <unitInfo nodeId="1657638272963439183" fileName="MPSToolTipManager.java" startLine="22" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.ide.tooltips.MPSToolTipManager" />
   </root>
-  <root nodeId="3564103493663133593" modelId="r:2170b42c-b000-4bd7-a2c2-c5cf5fe74d08(jetbrains.mps.ide.tooltips)">
+  <root nodeRef="r:2170b42c-b000-4bd7-a2c2-c5cf5fe74d08(jetbrains.mps.ide.tooltips)/3564103493663133593">
     <nodeInfo nodeId="3564103493663133595" fileName="TooltipComponent.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMPSTooltipText#(Ljava/awt/event/MouseEvent;)Ljava/lang/String;" />
     <scopeInfo nodeId="3564103493663133595" fileName="TooltipComponent.java" startLine="8" startPosition="0" endLine="9" endPosition="0">
       <varInfo nodeId="3564103493663142587" varName="mouseEvent" />
     </scopeInfo>
     <unitInfo nodeId="3564103493663133593" fileName="TooltipComponent.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ide.tooltips.TooltipComponent" />
   </root>
-  <root nodeId="5522183980949036968" modelId="r:2170b42c-b000-4bd7-a2c2-c5cf5fe74d08(jetbrains.mps.ide.tooltips)">
+  <root nodeRef="r:2170b42c-b000-4bd7-a2c2-c5cf5fe74d08(jetbrains.mps.ide.tooltips)/5522183980949036968">
     <nodeInfo nodeId="5522183980949036991" fileName="ToolTip.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BACKGROUND_COLOR" />
     <nodeInfo nodeId="3574086217692683255" fileName="ToolTip.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="X_OFFSET" />
     <nodeInfo nodeId="3574086217692683259" fileName="ToolTip.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="Y_OFFSET" />

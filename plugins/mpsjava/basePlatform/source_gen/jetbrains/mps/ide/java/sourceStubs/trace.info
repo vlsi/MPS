@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1066556226426762525" modelId="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)" />
-  <root nodeId="4423331261408184030" modelId="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)">
+  <root nodeRef="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)/1066556226426762525" />
+  <root nodeRef="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)/4423331261408184030">
     <nodeInfo nodeId="6581343381392205869" fileName="JavaSourceStubModelRoot.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="8896124412452368425" fileName="JavaSourceStubModelRoot.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDataSources" />
     <nodeInfo nodeId="2892149804166228278" fileName="JavaSourceStubModelRoot.java" startLine="39" startPosition="20" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -184,7 +184,7 @@
     <unitInfo nodeId="1829879859706948425" fileName="JavaSourceStubModelRoot.java" startLine="126" startPosition="72" endLine="130" endPosition="5" unitName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot$2" />
     <unitInfo nodeId="4423331261408184030" fileName="JavaSourceStubModelRoot.java" startLine="25" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot" />
   </root>
-  <root nodeId="4423331261408224789" modelId="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)">
+  <root nodeRef="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)/4423331261408224789">
     <nodeInfo nodeId="6581343381391540145" fileName="JavaSourceStubModelDescriptor.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6954894869197912899" fileName="JavaSourceStubModelDescriptor.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelRef" />
     <nodeInfo nodeId="6954894869194098463" fileName="JavaSourceStubModelDescriptor.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
@@ -399,7 +399,7 @@
     <unitInfo nodeId="336459899666477339" fileName="JavaSourceStubModelDescriptor.java" startLine="153" startPosition="51" endLine="157" endPosition="9" unitName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelDescriptor$3" />
     <unitInfo nodeId="4423331261408224789" fileName="JavaSourceStubModelDescriptor.java" startLine="36" startPosition="0" endLine="216" endPosition="0" unitName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelDescriptor" />
   </root>
-  <root nodeId="4423331261408331046" modelId="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)">
+  <root nodeRef="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)/4423331261408331046">
     <nodeInfo nodeId="4423331261408336601" fileName="MPSJavaSrcDataSource.java" startLine="13" startPosition="72" endLine="14" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4423331261408337730" fileName="MPSJavaSrcDataSource.java" startLine="20" startPosition="44" endLine="21" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4423331261408331284" fileName="MPSJavaSrcDataSource.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSJavaSrcDataSource#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/persistence/ModelRoot;)V" />
@@ -415,7 +415,7 @@
     </scopeInfo>
     <unitInfo nodeId="4423331261408331046" fileName="MPSJavaSrcDataSource.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.java.sourceStubs.MPSJavaSrcDataSource" />
   </root>
-  <root nodeId="5592980646743658996" modelId="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)">
+  <root nodeRef="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)/5592980646743658996">
     <nodeInfo nodeId="8482273916972676443" fileName="JavaSourceStubModelRootFactory.java" startLine="13" startPosition="29" endLine="14" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5592980646743658998" fileName="JavaSourceStubModelRootFactory.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaSourceStubModelRootFactory#()V" />
     <nodeInfo nodeId="8482273916972675752" fileName="JavaSourceStubModelRootFactory.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create#()Lorg/jetbrains/mps/openapi/persistence/ModelRoot;" />
@@ -425,6 +425,6 @@
     <scopeInfo nodeId="8482273916972675752" fileName="JavaSourceStubModelRootFactory.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <unitInfo nodeId="5592980646743658996" fileName="JavaSourceStubModelRootFactory.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRootFactory" />
   </root>
-  <root nodeId="5592980646743690876" modelId="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)" />
+  <root nodeRef="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)/5592980646743690876" />
 </debugInfo>
 

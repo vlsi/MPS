@@ -18,7 +18,7 @@ package jetbrains.mps.openapi.editor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -29,7 +29,7 @@ import java.util.List;
 public interface EditorComponent {
   SNode getEditedNode();
 
-  SNodePointer getEditedNodePointer();
+  SNodeReference getEditedNodePointer();
 
   SNode getSelectedNode();
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1145576838780" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1145576838780">
     <nodeInfo nodeId="1145576838787" fileName="SemanticDowncast.java" startLine="11" startPosition="56" endLine="12" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145576838795" fileName="SemanticDowncast.java" startLine="12" startPosition="69" endLine="13" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145576838807" fileName="SemanticDowncast.java" startLine="16" startPosition="56" endLine="17" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -37,7 +37,7 @@
     </scopeInfo>
     <unitInfo nodeId="1145576838780" fileName="SemanticDowncast.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="smodelLanguage.samples.SemanticDowncast" />
   </root>
-  <root nodeId="1145576981486" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1145576981486">
     <nodeInfo nodeId="1145577459789" fileName="Child_Referent_Parent.java" startLine="13" startPosition="54" endLine="14" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145577543854" fileName="Child_Referent_Parent.java" startLine="14" startPosition="80" endLine="15" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1145577492784" fileName="Child_Referent_Parent.java" startLine="15" startPosition="42" endLine="16" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -179,7 +179,7 @@
     </scopeInfo>
     <unitInfo nodeId="1145576981486" fileName="Child_Referent_Parent.java" startLine="12" startPosition="0" endLine="90" endPosition="0" unitName="smodelLanguage.samples.Child_Referent_Parent" />
   </root>
-  <root nodeId="1145579089043" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1145579089043">
     <nodeInfo nodeId="1145579487693" fileName="TypeCast.java" startLine="11" startPosition="53" endLine="12" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145579514621" fileName="TypeCast.java" startLine="12" startPosition="36" endLine="13" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145579716249" fileName="TypeCast.java" startLine="13" startPosition="90" endLine="14" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -246,7 +246,7 @@
     </scopeInfo>
     <unitInfo nodeId="1145579089043" fileName="TypeCast.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="smodelLanguage.samples.TypeCast" />
   </root>
-  <root nodeId="1145580307798" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1145580307798">
     <nodeInfo nodeId="1180478737036" fileName="Children.java" startLine="17" startPosition="55" endLine="18" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1145581051477" fileName="Children.java" startLine="18" startPosition="123" endLine="19" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145581102186" fileName="Children.java" startLine="19" startPosition="109" endLine="20" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -339,7 +339,7 @@
     <unitInfo nodeId="1227876804727" fileName="Children.java" startLine="48" startPosition="186" endLine="52" endPosition="5" unitName="smodelLanguage.samples.Children$1" />
     <unitInfo nodeId="1145580307798" fileName="Children.java" startLine="16" startPosition="0" endLine="68" endPosition="0" unitName="smodelLanguage.samples.Children" />
   </root>
-  <root nodeId="1145583629132" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1145583629132">
     <nodeInfo nodeId="1145583711846" fileName="Siblings.java" startLine="10" startPosition="44" endLine="11" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145583734518" fileName="Siblings.java" startLine="11" startPosition="60" endLine="12" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145583822374" fileName="Siblings.java" startLine="12" startPosition="132" endLine="13" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -373,7 +373,7 @@
     </scopeInfo>
     <unitInfo nodeId="1145583629132" fileName="Siblings.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="smodelLanguage.samples.Siblings" />
   </root>
-  <root nodeId="1145914896888" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1145914896888">
     <nodeInfo nodeId="1145915104368" fileName="Conditions.java" startLine="10" startPosition="43" endLine="11" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145915120826" fileName="Conditions.java" startLine="11" startPosition="103" endLine="12" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145915715784" fileName="Conditions.java" startLine="15" startPosition="58" endLine="16" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -404,7 +404,7 @@
     </scopeInfo>
     <unitInfo nodeId="1145914896888" fileName="Conditions.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="smodelLanguage.samples.Conditions" />
   </root>
-  <root nodeId="1146073464944" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1146073464944">
     <nodeInfo nodeId="1146073487582" fileName="ConceptProperties.java" startLine="11" startPosition="49" endLine="12" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1146073487590" fileName="ConceptProperties.java" startLine="12" startPosition="122" endLine="13" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1146073487596" fileName="ConceptProperties.java" startLine="13" startPosition="110" endLine="14" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -444,7 +444,7 @@
     </scopeInfo>
     <unitInfo nodeId="1146073464944" fileName="ConceptProperties.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="smodelLanguage.samples.ConceptProperties" />
   </root>
-  <root nodeId="1146073640825" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1146073640825">
     <nodeInfo nodeId="1146073804864" fileName="Properties.java" startLine="9" startPosition="43" endLine="10" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1146073845876" fileName="Properties.java" startLine="10" startPosition="75" endLine="11" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1146073864305" fileName="Properties.java" startLine="11" startPosition="63" endLine="12" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -591,7 +591,7 @@
     </scopeInfo>
     <unitInfo nodeId="1146073640825" fileName="Properties.java" startLine="8" startPosition="0" endLine="100" endPosition="0" unitName="smodelLanguage.samples.Properties" />
   </root>
-  <root nodeId="1146260811624" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1146260811624">
     <nodeInfo nodeId="1166649349905" fileName="NewNode.java" startLine="15" startPosition="38" endLine="16" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1166649175865" fileName="NewNode.java" startLine="16" startPosition="122" endLine="17" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1166649357812" fileName="NewNode.java" startLine="17" startPosition="115" endLine="18" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -632,7 +632,7 @@
     </scopeInfo>
     <unitInfo nodeId="1146260811624" fileName="NewNode.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="smodelLanguage.samples.NewNode" />
   </root>
-  <root nodeId="1169584463554" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1169584463554">
     <nodeInfo nodeId="1169584573812" fileName="ListOfNodes.java" startLine="14" startPosition="43" endLine="15" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1169585438286" fileName="ListOfNodes.java" startLine="18" startPosition="31" endLine="19" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227876796840" fileName="ListOfNodes.java" startLine="21" startPosition="39" endLine="22" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -660,7 +660,7 @@
     <unitInfo nodeId="1227876796836" fileName="ListOfNodes.java" startLine="20" startPosition="111" endLine="24" endPosition="5" unitName="smodelLanguage.samples.ListOfNodes$1" />
     <unitInfo nodeId="1169584463554" fileName="ListOfNodes.java" startLine="13" startPosition="0" endLine="27" endPosition="0" unitName="smodelLanguage.samples.ListOfNodes" />
   </root>
-  <root nodeId="1171313827134" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1171313827134">
     <nodeInfo nodeId="1212009674217" fileName="Model.java" startLine="17" startPosition="45" endLine="18" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1171315595156" fileName="Model.java" startLine="21" startPosition="40" endLine="22" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1171315620434" fileName="Model.java" startLine="22" startPosition="117" endLine="23" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -739,7 +739,7 @@
     <unitInfo nodeId="1227876795715" fileName="Model.java" startLine="51" startPosition="148" endLine="55" endPosition="5" unitName="smodelLanguage.samples.Model$2" />
     <unitInfo nodeId="1171313827134" fileName="Model.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="smodelLanguage.samples.Model" />
   </root>
-  <root nodeId="1173133339986" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1173133339986">
     <nodeInfo nodeId="1173133388684" fileName="ConceptRef.java" startLine="16" startPosition="41" endLine="17" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1173133418440" fileName="ConceptRef.java" startLine="17" startPosition="115" endLine="18" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206734902872" fileName="ConceptRef.java" startLine="20" startPosition="5" endLine="21" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -860,7 +860,7 @@
     <scopeInfo nodeId="1180543684770" fileName="ConceptRef.java" startLine="42" startPosition="0" endLine="62" endPosition="0" />
     <unitInfo nodeId="1173133339986" fileName="ConceptRef.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="smodelLanguage.samples.ConceptRef" />
   </root>
-  <root nodeId="1206559673195" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1206559673195">
     <nodeInfo nodeId="1206561988994" fileName="Attributes.java" startLine="14" startPosition="51" endLine="15" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206563162228" fileName="Attributes.java" startLine="15" startPosition="203" endLine="16" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206563216217" fileName="Attributes.java" startLine="19" startPosition="55" endLine="20" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -928,7 +928,7 @@
     </scopeInfo>
     <unitInfo nodeId="1206559673195" fileName="Attributes.java" startLine="13" startPosition="0" endLine="50" endPosition="0" unitName="smodelLanguage.samples.Attributes" />
   </root>
-  <root nodeId="1219355636115" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1219355636115">
     <nodeInfo nodeId="1219355842612" fileName="NodeRef.java" startLine="13" startPosition="28" endLine="14" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1219355848322" fileName="NodeRef.java" startLine="14" startPosition="190" endLine="15" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1219355954167" fileName="NodeRef.java" startLine="15" startPosition="113" endLine="16" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -943,7 +943,7 @@
     <scopeInfo nodeId="1219355713021" fileName="NodeRef.java" startLine="13" startPosition="0" endLine="19" endPosition="0" />
     <unitInfo nodeId="1219355636115" fileName="NodeRef.java" startLine="12" startPosition="0" endLine="20" endPosition="0" unitName="smodelLanguage.samples.NodeRef" />
   </root>
-  <root nodeId="1221164914075" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1221164914075">
     <nodeInfo nodeId="1221169280491" fileName="SearchScope.java" startLine="12" startPosition="83" endLine="13" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1221169127143" fileName="SearchScope.java" startLine="13" startPosition="114" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221171408330" fileName="SearchScope.java" startLine="17" startPosition="98" endLine="18" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -967,7 +967,7 @@
     </scopeInfo>
     <unitInfo nodeId="1221164914075" fileName="SearchScope.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="smodelLanguage.samples.SearchScope" />
   </root>
-  <root nodeId="1226362060907" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1226362060907">
     <nodeInfo nodeId="1226362136275" fileName="LinkRef.java" startLine="10" startPosition="23" endLine="11" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226362204661" fileName="LinkRef.java" startLine="11" startPosition="120" endLine="12" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226362100988" fileName="LinkRef.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test1#()V" />
@@ -978,7 +978,7 @@
     <scopeInfo nodeId="1226362100988" fileName="LinkRef.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
     <unitInfo nodeId="1226362060907" fileName="LinkRef.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="smodelLanguage.samples.LinkRef" />
   </root>
-  <root nodeId="1241018402608" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1241018402608">
     <nodeInfo nodeId="1241018645359" fileName="StructureLanguageEnums.java" startLine="11" startPosition="202" endLine="12" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1241018693382" fileName="StructureLanguageEnums.java" startLine="12" startPosition="64" endLine="13" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1241018719427" fileName="StructureLanguageEnums.java" startLine="13" startPosition="62" endLine="14" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

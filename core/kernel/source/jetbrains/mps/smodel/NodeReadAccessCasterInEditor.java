@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.util.Computable;
 
@@ -194,7 +194,7 @@ public class NodeReadAccessCasterInEditor {
 
     public void fireReferenceTargetReadAccessed(SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
       if (myEventsBlocked || myListenersStack.isEmpty()) return;
-      myListenersStack.peek().addRefTargetToDependOn(new SNodePointer(targetModelReference, targetNodeId));
+      myListenersStack.peek().addRefTargetToDependOn(new jetbrains.mps.smodel.SNodePointer(targetModelReference, targetNodeId));
     }
   }
 }

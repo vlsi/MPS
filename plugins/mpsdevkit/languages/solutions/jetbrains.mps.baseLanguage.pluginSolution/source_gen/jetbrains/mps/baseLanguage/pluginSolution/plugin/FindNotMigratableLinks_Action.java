@@ -10,7 +10,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.List;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
@@ -19,6 +19,7 @@ import java.util.Arrays;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.actions.InternalActionsUtils;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
@@ -59,7 +60,7 @@ public class FindNotMigratableLinks_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final List<SNodePointer> usages = ListSequence.fromList(new ArrayList<SNodePointer>());
+      final List<SNodeReference> usages = ListSequence.fromList(new ArrayList<SNodeReference>());
 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

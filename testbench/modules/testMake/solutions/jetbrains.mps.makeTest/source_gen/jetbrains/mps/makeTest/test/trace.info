@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1957199320903967681" modelId="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)">
+  <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/1957199320903967681">
     <nodeInfo nodeId="1957199320903967682" fileName="ChangeModel.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="1957199320903967690" fileName="ChangeModel.java" startLine="17" startPosition="36" endLine="18" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8788437410276520176" fileName="ChangeModel.java" startLine="18" startPosition="65" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -21,7 +21,7 @@
     </scopeInfo>
     <unitInfo nodeId="1957199320903967681" fileName="ChangeModel.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.makeTest.test.ChangeModel" />
   </root>
-  <root nodeId="1957199320903967715" modelId="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)">
+  <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/1957199320903967715">
     <nodeInfo nodeId="1957199320903967738" fileName="CheckDependencies_Test.java" startLine="22" startPosition="40" endLine="23" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1957199320903967741" fileName="CheckDependencies_Test.java" startLine="23" startPosition="28" endLine="24" endPosition="385" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1957199320903967732" fileName="CheckDependencies_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="change#(Ljetbrains/mps/smodel/SModel;)V" />
@@ -36,7 +36,7 @@
     <unitInfo nodeId="1957199320903967730" fileName="CheckDependencies_Test.java" startLine="20" startPosition="60" endLine="26" endPosition="5" unitName="jetbrains.mps.makeTest.test.CheckDependencies_Test$1" />
     <unitInfo nodeId="1957199320903967715" fileName="CheckDependencies_Test.java" startLine="16" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.makeTest.test.CheckDependencies_Test" />
   </root>
-  <root nodeId="1957199320903967759" modelId="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)">
+  <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/1957199320903967759">
     <nodeInfo nodeId="1957199320903968387" fileName="MakeAssert.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MESSAGE_COMPILATION_FAILED" />
     <nodeInfo nodeId="1957199320903968391" fileName="MakeAssert.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MESSAGE_DEPENDENCY_NOT_CHECKED" />
     <nodeInfo nodeId="1957199320903968395" fileName="MakeAssert.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROJECT_FILE" />
@@ -165,7 +165,7 @@
     <unitInfo nodeId="1957199320903967966" fileName="MakeAssert.java" startLine="57" startPosition="45" endLine="76" endPosition="5" unitName="jetbrains.mps.makeTest.test.MakeAssert$1" />
     <unitInfo nodeId="1957199320903967759" fileName="MakeAssert.java" startLine="25" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.makeTest.test.MakeAssert" />
   </root>
-  <root nodeId="1957199320903968411" modelId="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)">
+  <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/1957199320903968411">
     <nodeInfo nodeId="1957199320903968434" fileName="NotMake_Test.java" startLine="23" startPosition="40" endLine="24" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1957199320903968437" fileName="NotMake_Test.java" startLine="24" startPosition="28" endLine="25" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1957199320903968468" fileName="NotMake_Test.java" startLine="34" startPosition="40" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -228,7 +228,7 @@
     <unitInfo nodeId="1957199320903968490" fileName="NotMake_Test.java" startLine="43" startPosition="57" endLine="55" endPosition="5" unitName="jetbrains.mps.makeTest.test.NotMake_Test$3" />
     <unitInfo nodeId="1957199320903968411" fileName="NotMake_Test.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.makeTest.test.NotMake_Test" />
   </root>
-  <root nodeId="7196776143116381095" modelId="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)">
+  <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/7196776143116381095">
     <nodeInfo nodeId="7196776143116382452" fileName="ChangeModelProcessor.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEST_RESOURCES_PATH" />
     <nodeInfo nodeId="7196776143116384959" fileName="ChangeModelProcessor.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STEP_TYPE_CHANGE" />
     <nodeInfo nodeId="7196776143116384963" fileName="ChangeModelProcessor.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STEP_TYPE_REVERT" />

@@ -35,12 +35,12 @@ import java.util.Set;
 
 public class Generators {
   // gensources.iml constants
-  private static final String MODULE_ROOT_MANAGER = "NewModuleRootManager";
-  private static final String CONTENT = "content";
-  private static final String URL = "url";
-  private static final String PATH_START_MODULE = "file://$MODULE_DIR$/../../";
-  private static final String SOURCE_FOLDER = "sourceFolder";
-  private static final String EXCLUDE_FOLDER = "excludeFolder";
+  public static final String MODULE_ROOT_MANAGER = "NewModuleRootManager";
+  public static final String CONTENT = "content";
+  public static final String URL = "url";
+  public static final String PATH_START_MODULE = "file://$MODULE_DIR$/../../";
+  public static final String SOURCE_FOLDER = "sourceFolder";
+  public static final String EXCLUDE_FOLDER = "excludeFolder";
 
   // compiler.xml constants
   private static final String PATH_START_PROJECT = "file://$PROJECT_DIR$/";
@@ -104,22 +104,20 @@ public class Generators {
       // generate lists of source gen and classes gen folders and add as source and excluded to content root
       List<String> sourceGenFolders = new ArrayList<String>();
       List<String> classesGenFolders = new ArrayList<String>();
-      for (Entry<String, Collection<String>> module : Utils.collectMPSCompiledModulesInfo(dir).entrySet()) {
+      MultiMap<String, String> mpsCompiledInfo = Utils.collectMPSCompiledModulesInfo(dir);
+      for (Entry<String, Collection<String>> module : mpsCompiledInfo.entrySet()) {
         for (String sourcePath : module.getValue()) {
           String sourceCanonical = new File(sourcePath).getCanonicalPath();
           if (!sourcesIncluded.contains(sourceCanonical)) {
-            //todo dirty hack until Julia fixes packaging
-            if (!sourceCanonical.endsWith("languages/languageDesign/smodel/tests_gen")) {
-              assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getKey() + "\ngenerates into\n" + sourcePath;
-              if (new File(sourcePath).exists()) {
-                String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(sourcePath);
-                sourceGenFolders.add(sFolder);
-              }
+            assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getKey() + "\ngenerates into\n" + sourcePath;
+            if (new File(sourcePath).exists()) {
+              String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(sourcePath);
+              sourceGenFolders.add(sFolder);
             }
           }
         }
       }
-      for (String modulePath : Utils.collectMPSCompiledModulesInfo(dir).keySet()) {
+      for (String modulePath : mpsCompiledInfo.keySet()) {
         String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(modulePath) + "/" + AbstractModule.CLASSES_GEN;
         classesGenFolders.add(cgFolder);
       }
@@ -183,13 +181,9 @@ public class Generators {
       for (Entry<String, Collection<String>> module : Utils.collectMPSCompiledModulesInfo(dir).entrySet()) {
         for (String sourcePath : module.getValue()) {
           String sourceCanonical = new File(sourcePath).getCanonicalPath();
-          //todo dirty hack until Julia fixes packaging
-          if (!sourceCanonical.endsWith("languages/languageDesign/smodel/tests_gen")) {
-            assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getKey() + "\ngenerates into\n" + sourcePath;
-            if (new File(sourcePath).exists()) {
-              sourceGen.add(sourcePath);
-            }
-
+          assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getKey() + "\ngenerates into\n" + sourcePath;
+          if (new File(sourcePath).exists()) {
+            sourceGen.add(sourcePath);
           }
         }
         classesGen.add(module.getKey() + "/" + AbstractModule.CLASSES_GEN);
@@ -208,7 +202,7 @@ public class Generators {
 
       // find existing
       for (String newRoot : newRoots) {
-        if (sGen.startsWith(newRoot)) {
+        if (sGen.equals(newRoot) ||sGen.startsWith(newRoot + "/")) {
           root = newRoot;
         }
       }
@@ -240,7 +234,7 @@ public class Generators {
     for (String cGen : classesGen) {
       String root = null;
       for (String newRoot : newRoots) {
-        if (cGen.startsWith(newRoot)) {
+        if (cGen.equals(newRoot) || cGen.startsWith(newRoot + "/")) {
           root = newRoot;
         }
       }

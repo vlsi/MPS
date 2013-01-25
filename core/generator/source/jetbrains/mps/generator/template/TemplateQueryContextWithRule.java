@@ -15,15 +15,16 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Evgeny Gryaznov, 11/15/10
  */
 public class TemplateQueryContextWithRule extends TemplateQueryContext {
   private final SNode myRule;
-  private final SNodePointer myRulePointer;
+  private final SNodeReference myRulePointer;
 
   public TemplateQueryContextWithRule(SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     super(inputNode, null, null, generator);
@@ -31,7 +32,7 @@ public class TemplateQueryContextWithRule extends TemplateQueryContext {
     myRulePointer = null;
   }
 
-  public TemplateQueryContextWithRule(SNode inputNode, SNodePointer ruleNode, ITemplateGenerator generator) {
+  public TemplateQueryContextWithRule(SNode inputNode, SNodeReference ruleNode, ITemplateGenerator generator) {
     super(inputNode, null, null, generator);
     myRule = null;
     myRulePointer = ruleNode;
@@ -39,7 +40,7 @@ public class TemplateQueryContextWithRule extends TemplateQueryContext {
 
   public SNode getRuleNodeForLogging() {
     return myRule != null ? myRule :
-      myRulePointer != null ? myRulePointer.getNode() : null;
+      myRulePointer != null ? myRulePointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 
 }

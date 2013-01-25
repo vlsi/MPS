@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
@@ -74,7 +74,7 @@ public class BaseReferenceScopeProvider implements ReferenceScopeProvider {
   }
 
   @Override
-  public SNodePointer getSearchScopeValidatorNode() {
+  public SNodeReference getSearchScopeValidatorNode() {
     return null;
   }
 }

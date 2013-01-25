@@ -8,7 +8,7 @@
   <unitInfo fileName="PathHolder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.dependency.behavior.PathHolder_BehaviorDescriptor" />
   <unitInfo fileName="ProjectDescriptionReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.dependency.behavior.ProjectDescriptionReference_BehaviorDescriptor" />
   <unitInfo fileName="ProjectDescription_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.dependency.behavior.ProjectDescription_BehaviorDescriptor" />
-  <root nodeId="1218717217275" modelId="r:00000000-0000-4000-0000-011c895904cb(jetbrains.mps.build.dependency.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895904cb(jetbrains.mps.build.dependency.behavior)/1218717217275">
     <nodeInfo nodeId="1218717217275" fileName="ProjectDescription_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1218717217277" fileName="ProjectDescription_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1218717217275" fileName="ProjectDescription_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">

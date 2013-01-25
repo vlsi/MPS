@@ -15,11 +15,12 @@ import com.intellij.ui.components.JBList;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import javax.swing.border.TitledBorder;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -86,11 +87,11 @@ public class ListPanel extends JPanel {
     this.myListComponent = new JBList(this.myListModel);
     AnAction add = new ListAddAction(this.myListComponent) {
       protected int doAdd(AnActionEvent p0) {
-        List<SNodePointer> nodesList = getCandidates();
+        List<SNodeReference> nodesList = getCandidates();
 
         NodeChooserDialog chooserDialog = new NodeChooserDialog(myProject, nodesList);
         chooserDialog.show();
-        final SNodePointer resultNode = chooserDialog.getResult();
+        final SNodeReference resultNode = chooserDialog.getResult();
 
         if (resultNode == null) {
           return -1;
@@ -98,7 +99,7 @@ public class ListPanel extends JPanel {
         final Wrappers._T<ITestNodeWrapper> wrapper = new Wrappers._T<ITestNodeWrapper>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            wrapper.value = TestNodeWrapperFactory.tryToWrap(resultNode.getNode());
+            wrapper.value = TestNodeWrapperFactory.tryToWrap(((SNodePointer) resultNode).getNode());
           }
         });
         if (wrapper.value == null) {
@@ -154,7 +155,7 @@ public class ListPanel extends JPanel {
     this.myListComponent.updateUI();
   }
 
-  private List<SNodePointer> getCandidates() {
+  private List<SNodeReference> getCandidates() {
     boolean needsUpdate;
     synchronized (myLock) {
       needsUpdate = this.myCandidates == null;
@@ -213,8 +214,8 @@ public class ListPanel extends JPanel {
 
     synchronized (myLock) {
       ListSequence.fromList(this.myCandidates).removeSequence(ListSequence.fromList(this.myValues));
-      return ListSequence.fromList(this.myCandidates).select(new ISelector<ITestNodeWrapper, SNodePointer>() {
-        public SNodePointer select(ITestNodeWrapper it) {
+      return ListSequence.fromList(this.myCandidates).select(new ISelector<ITestNodeWrapper, SNodeReference>() {
+        public SNodeReference select(ITestNodeWrapper it) {
           return it.getNodePointer();
         }
       }).toListSequence();

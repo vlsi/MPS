@@ -12,7 +12,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNode
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
 
@@ -30,7 +30,7 @@ public class UsagesTreeFeatureExtractor implements TreeNodeFeatureExtractor {
           return new ModelFeature(mr);
         }
       } else if (nodeData instanceof NodeNodeData) {
-        SNodePointer np = ((NodeNodeData) nodeData).getNodePointer();
+        SNodeReference np = ((NodeNodeData) nodeData).getNodePointer();
         if (np != null) {
           return new NodeFeature(np);
         }

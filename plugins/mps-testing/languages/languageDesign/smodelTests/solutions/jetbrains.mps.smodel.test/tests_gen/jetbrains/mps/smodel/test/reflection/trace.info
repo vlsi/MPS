@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2906110183022090591" modelId="r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)">
+  <root nodeRef="r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)/2906110183022090591">
     <nodeInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="19" startPosition="45" endLine="20" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="20" startPosition="121" endLine="21" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="25" startPosition="57" endLine="26" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -96,7 +96,7 @@
     <unitInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="48" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test$TestBody" />
     <unitInfo nodeId="2906110183022090591" fileName="SNodeGetReferenceOperation_Test.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test" />
   </root>
-  <root nodeId="2906110183022219806" modelId="r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)">
+  <root nodeRef="r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)/2906110183022219806">
     <nodeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="24" startPosition="44" endLine="25" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="25" startPosition="121" endLine="26" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="30" startPosition="46" endLine="31" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -369,7 +369,7 @@
     <unitInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="77" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody" />
     <unitInfo nodeId="2906110183022219806" fileName="SNodeGetReferencesOperation_Test.java" startLine="21" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test" />
   </root>
-  <root nodeId="3386205146662078802" modelId="r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)">
+  <root nodeRef="r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)/3386205146662078802">
     <nodeInfo nodeId="3386205146662078820" fileName="TestUtilities.java" startLine="9" startPosition="71" endLine="10" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2906110183022290220" fileName="TestUtilities.java" startLine="12" startPosition="62" endLine="13" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2906110183022290213" fileName="TestUtilities.java" startLine="11" startPosition="36" endLine="14" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -387,7 +387,7 @@
     </scopeInfo>
     <unitInfo nodeId="3386205146662078802" fileName="TestUtilities.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.smodel.test.reflection.TestUtilities" />
   </root>
-  <root nodeId="8758390115028789531" modelId="r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)">
+  <root nodeRef="r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)/8758390115028789531">
     <nodeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="24" startPosition="60" endLine="25" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="25" startPosition="121" endLine="26" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8758390115028789531" fileName="SNodeGetChildrenOperation_Test.java" startLine="30" startPosition="81" endLine="31" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

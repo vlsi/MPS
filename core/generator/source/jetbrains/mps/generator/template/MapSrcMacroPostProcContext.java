@@ -17,7 +17,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 public class MapSrcMacroPostProcContext extends TemplateQueryContextWithMacro {
@@ -28,7 +28,7 @@ public class MapSrcMacroPostProcContext extends TemplateQueryContextWithMacro {
     myOutputNode = outputNode;
   }
 
-  public MapSrcMacroPostProcContext(SNode node, @NotNull SNodePointer macroNode, SNode outputNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
+  public MapSrcMacroPostProcContext(SNode node, @NotNull SNodeReference macroNode, SNode outputNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myOutputNode = outputNode;
   }

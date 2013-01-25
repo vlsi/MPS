@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
 
 public interface CheckingNodeContext {
-  void setBreakingNode(@Nullable SNodePointer node);
+  void setBreakingNode(@Nullable SNodeReference node);
 
   @Nullable
-  SNodePointer getBreakingNode();
+  SNodeReference getBreakingNode();
 }

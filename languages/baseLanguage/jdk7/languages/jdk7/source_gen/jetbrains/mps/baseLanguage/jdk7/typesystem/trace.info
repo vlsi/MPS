@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.typesystem.TypesystemDescriptor" />
-  <root nodeId="400642802550421647" modelId="r:ed059f83-fdac-4e67-8269-91684666291c(jetbrains.mps.baseLanguage.jdk7.typesystem)">
+  <root nodeRef="r:ed059f83-fdac-4e67-8269-91684666291c(jetbrains.mps.baseLanguage.jdk7.typesystem)/400642802550421647">
     <nodeInfo nodeId="400642802550421749" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="25" startPosition="128" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="364584182801826612" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="26" startPosition="30" endLine="27" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="400642802550421757" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="30" startPosition="9" endLine="31" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -66,7 +66,7 @@
     </scopeInfo>
     <unitInfo nodeId="400642802550421647" fileName="check_StringSwitchCase_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.jdk7.typesystem.check_StringSwitchCase_NonTypesystemRule" />
   </root>
-  <root nodeId="400642802550421653" modelId="r:ed059f83-fdac-4e67-8269-91684666291c(jetbrains.mps.baseLanguage.jdk7.typesystem)">
+  <root nodeRef="r:ed059f83-fdac-4e67-8269-91684666291c(jetbrains.mps.baseLanguage.jdk7.typesystem)/400642802550421653">
     <nodeInfo nodeId="400642802550421655" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="23" startPosition="128" endLine="24" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="400642802550421663" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="25" startPosition="22" endLine="26" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="400642802550421669" fileName="check_StringSwitchStatement_NonTypesystemRule.java" startLine="28" startPosition="132" endLine="29" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1172667103846" modelId="r:00000000-0000-4000-0000-011c895903c3(jetbrains.mps.baseLanguage.collections.unittest.skip_take_test)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903c3(jetbrains.mps.baseLanguage.collections.unittest.skip_take_test)/1172667103846">
     <nodeInfo nodeId="1224596674740" fileName="SkipTakePage_Test.java" startLine="46" startPosition="27" endLine="46" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224596674745" fileName="SkipTakePage_Test.java" startLine="49" startPosition="27" endLine="49" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224596674863" fileName="SkipTakePage_Test.java" startLine="107" startPosition="27" endLine="107" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

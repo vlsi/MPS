@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6531435794299649916" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299649916">
     <nodeInfo nodeId="6531435794299649918" fileName="NamedObject.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="6531435794299649932" fileName="NamedObject.java" startLine="12" startPosition="35" endLine="13" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6531435794299649940" fileName="NamedObject.java" startLine="16" startPosition="24" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -38,7 +38,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299649916" fileName="NamedObject.java" startLine="6" startPosition="0" endLine="36" endPosition="0" unitName="mf.NamedObject" />
   </root>
-  <root nodeId="6531435794299649979" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299649979">
     <nodeInfo nodeId="6531435794299649981" fileName="Registry.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourSoleInstance" />
     <nodeInfo nodeId="6531435794299649986" fileName="Registry.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEntryPoints" />
     <nodeInfo nodeId="6531435794299650017" fileName="Registry.java" startLine="15" startPosition="69" endLine="16" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -97,7 +97,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299649979" fileName="Registry.java" startLine="8" startPosition="0" endLine="46" endPosition="0" unitName="mf.Registry" />
   </root>
-  <root nodeId="6531435794299650151" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299650151">
     <nodeInfo nodeId="6531435794299650154" fileName="Money.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAmount" />
     <nodeInfo nodeId="6531435794299650157" fileName="Money.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrency" />
     <nodeInfo nodeId="6531435794299650168" fileName="Money.java" startLine="11" startPosition="50" endLine="12" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -265,7 +265,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299650151" fileName="Money.java" startLine="7" startPosition="0" endLine="130" endPosition="0" unitName="mf.Money" />
   </root>
-  <root nodeId="6531435794299650588" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299650588">
     <nodeInfo nodeId="6531435794299650597" fileName="DoubleRangeTester.java" startLine="9" startPosition="40" endLine="10" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6531435794299650603" fileName="DoubleRangeTester.java" startLine="13" startPosition="27" endLine="14" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6531435794299650611" fileName="DoubleRangeTester.java" startLine="14" startPosition="51" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -367,7 +367,7 @@
     <scopeInfo nodeId="6531435794299650808" fileName="DoubleRangeTester.java" startLine="55" startPosition="0" endLine="75" endPosition="0" />
     <unitInfo nodeId="6531435794299650588" fileName="DoubleRangeTester.java" startLine="8" startPosition="0" endLine="87" endPosition="0" unitName="mf.DoubleRangeTester" />
   </root>
-  <root nodeId="6531435794299651063" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299651063">
     <nodeInfo nodeId="6531435794299651073" fileName="MfTester.java" startLine="12" startPosition="35" endLine="13" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6531435794299651078" fileName="MfTester.java" startLine="13" startPosition="39" endLine="14" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6531435794299651085" fileName="MfTester.java" startLine="14" startPosition="54" endLine="15" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -393,7 +393,7 @@
     <scopeInfo nodeId="6531435794299651069" fileName="MfTester.java" startLine="12" startPosition="0" endLine="23" endPosition="0" />
     <unitInfo nodeId="6531435794299651063" fileName="MfTester.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="mf.MfTester" />
   </root>
-  <root nodeId="6531435794299651469" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299651469">
     <nodeInfo nodeId="6531435794299651478" fileName="SingleTemporalCollectionTester.java" startLine="8" startPosition="54" endLine="9" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6531435794299651484" fileName="SingleTemporalCollectionTester.java" startLine="12" startPosition="34" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6531435794299651493" fileName="SingleTemporalCollectionTester.java" startLine="16" startPosition="26" endLine="17" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -419,7 +419,7 @@
     <scopeInfo nodeId="6531435794299651489" fileName="SingleTemporalCollectionTester.java" startLine="16" startPosition="0" endLine="26" endPosition="0" />
     <unitInfo nodeId="6531435794299651469" fileName="SingleTemporalCollectionTester.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="mf.SingleTemporalCollectionTester" />
   </root>
-  <root nodeId="6531435794299651581" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299651581">
     <nodeInfo nodeId="6531435794299651584" fileName="Unit.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="KWH" />
     <nodeInfo nodeId="6531435794299651596" fileName="Unit.java" startLine="9" startPosition="28" endLine="10" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6531435794299651604" fileName="Unit.java" startLine="13" startPosition="41" endLine="14" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -452,7 +452,7 @@
     <scopeInfo nodeId="6531435794299651631" fileName="Unit.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <unitInfo nodeId="6531435794299651581" fileName="Unit.java" startLine="6" startPosition="0" endLine="30" endPosition="0" unitName="mf.Unit" />
   </root>
-  <root nodeId="6531435794299651641" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299651641">
     <nodeInfo nodeId="6531435794299651644" fileName="SingleTemporalCollection.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContents" />
     <nodeInfo nodeId="6531435794299651649" fileName="SingleTemporalCollection.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMilestoneCache" />
     <nodeInfo nodeId="6531435794299651667" fileName="SingleTemporalCollection.java" startLine="19" startPosition="35" endLine="20" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -528,7 +528,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299651641" fileName="SingleTemporalCollection.java" startLine="11" startPosition="0" endLine="68" endPosition="0" unitName="mf.SingleTemporalCollection" />
   </root>
-  <root nodeId="6531435794299651807" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299651807">
     <nodeInfo nodeId="6531435794299651810" fileName="MoneyTester.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myD15" />
     <nodeInfo nodeId="6531435794299651813" fileName="MoneyTester.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myD2_51" />
     <nodeInfo nodeId="6531435794299651816" fileName="MoneyTester.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myM2_51" />
@@ -676,7 +676,7 @@
     <scopeInfo nodeId="6531435794299651995" fileName="MoneyTester.java" startLine="58" startPosition="0" endLine="69" endPosition="0" />
     <unitInfo nodeId="6531435794299651807" fileName="MoneyTester.java" startLine="9" startPosition="0" endLine="124" endPosition="0" unitName="mf.MoneyTester" />
   </root>
-  <root nodeId="6531435794299652233" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299652233">
     <nodeInfo nodeId="6531435794299652242" fileName="MfDate.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myToday" />
     <nodeInfo nodeId="6531435794299652245" fileName="MfDate.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PAST" />
     <nodeInfo nodeId="6531435794299652255" fileName="MfDate.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FUTURE" />
@@ -846,7 +846,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299652233" fileName="MfDate.java" startLine="11" startPosition="0" endLine="143" endPosition="0" unitName="mf.MfDate" />
   </root>
-  <root nodeId="6531435794299652623" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299652623">
     <nodeInfo nodeId="6531435794299652626" fileName="Currency.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="USD" />
     <nodeInfo nodeId="6531435794299652634" fileName="Currency.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEM" />
     <nodeInfo nodeId="6531435794299652642" fileName="Currency.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GBP" />
@@ -896,7 +896,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299652623" fileName="Currency.java" startLine="8" startPosition="0" endLine="43" endPosition="0" unitName="mf.Currency" />
   </root>
-  <root nodeId="6531435794299652799" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299652799">
     <nodeInfo nodeId="6531435794299652802" fileName="TemporalCollectionTester.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySubject" />
     <nodeInfo nodeId="6531435794299652811" fileName="TemporalCollectionTester.java" startLine="12" startPosition="48" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6531435794299652833" fileName="TemporalCollectionTester.java" startLine="16" startPosition="23" endLine="17" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -971,7 +971,7 @@
     <scopeInfo nodeId="6531435794299652995" fileName="TemporalCollectionTester.java" startLine="56" startPosition="0" endLine="65" endPosition="0" />
     <unitInfo nodeId="6531435794299652799" fileName="TemporalCollectionTester.java" startLine="9" startPosition="0" endLine="71" endPosition="0" unitName="mf.TemporalCollectionTester" />
   </root>
-  <root nodeId="6531435794299653063" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299653063">
     <nodeInfo nodeId="6531435794299653066" fileName="MfDateTester.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJan1" />
     <nodeInfo nodeId="6531435794299653069" fileName="MfDateTester.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJan1a" />
     <nodeInfo nodeId="6531435794299653072" fileName="MfDateTester.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJan1b" />
@@ -1054,7 +1054,7 @@
     <scopeInfo nodeId="6531435794299653120" fileName="MfDateTester.java" startLine="29" startPosition="0" endLine="44" endPosition="0" />
     <unitInfo nodeId="6531435794299653063" fileName="MfDateTester.java" startLine="12" startPosition="0" endLine="88" endPosition="0" unitName="mf.MfDateTester" />
   </root>
-  <root nodeId="6531435794299653360" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299653360">
     <nodeInfo nodeId="6531435794299653362" fileName="TemporalCollection.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#(Lmf/MfDate;)Ljava/lang/Object;" />
     <nodeInfo nodeId="6531435794299653368" fileName="TemporalCollection.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="put#(Lmf/MfDate;Ljava/lang/Object;)V" />
     <nodeInfo nodeId="6531435794299653376" fileName="TemporalCollection.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#(III)Ljava/lang/Object;" />
@@ -1078,7 +1078,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299653360" fileName="TemporalCollection.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="mf.TemporalCollection" />
   </root>
-  <root nodeId="6531435794299653895" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299653895">
     <nodeInfo nodeId="6531435794299653904" fileName="DateRange.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY" />
     <nodeInfo nodeId="6531435794299653898" fileName="DateRange.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStart" />
     <nodeInfo nodeId="6531435794299653901" fileName="DateRange.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEnd" />
@@ -1238,7 +1238,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299653895" fileName="DateRange.java" startLine="8" startPosition="0" endLine="126" endPosition="0" unitName="mf.DateRange" />
   </root>
-  <root nodeId="6531435794299654340" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299654340">
     <nodeInfo nodeId="6531435794299654343" fileName="DateRangeTester.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDec15" />
     <nodeInfo nodeId="6531435794299654350" fileName="DateRangeTester.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJan2" />
     <nodeInfo nodeId="6531435794299654357" fileName="DateRangeTester.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJan10" />
@@ -1384,7 +1384,7 @@
     <scopeInfo nodeId="6531435794299654891" fileName="DateRangeTester.java" startLine="122" startPosition="0" endLine="133" endPosition="0" />
     <unitInfo nodeId="6531435794299654340" fileName="DateRangeTester.java" startLine="10" startPosition="0" endLine="143" endPosition="0" unitName="mf.DateRangeTester" />
   </root>
-  <root nodeId="6531435794299655420" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299655420">
     <nodeInfo nodeId="6531435794299655423" fileName="BitemporalCollection.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContents" />
     <nodeInfo nodeId="6531435794299655432" fileName="BitemporalCollection.java" startLine="9" startPosition="33" endLine="10" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6531435794299655445" fileName="BitemporalCollection.java" startLine="13" startPosition="34" endLine="14" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1441,7 +1441,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299655420" fileName="BitemporalCollection.java" startLine="6" startPosition="0" endLine="46" endPosition="0" unitName="mf.BitemporalCollection" />
   </root>
-  <root nodeId="6531435794299655590" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299655590">
     <nodeInfo nodeId="6531435794299655592" fileName="Quantity.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAmount" />
     <nodeInfo nodeId="6531435794299655595" fileName="Quantity.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUnit" />
     <nodeInfo nodeId="6531435794299655610" fileName="Quantity.java" startLine="13" startPosition="45" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1611,7 +1611,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299655590" fileName="Quantity.java" startLine="6" startPosition="0" endLine="142" endPosition="0" unitName="mf.Quantity" />
   </root>
-  <root nodeId="6531435794299655950" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299655950">
     <nodeInfo nodeId="6531435794299655953" fileName="QuantityTester.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCm" />
     <nodeInfo nodeId="6531435794299655959" fileName="QuantityTester.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCm100" />
     <nodeInfo nodeId="6531435794299655966" fileName="QuantityTester.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCm150" />
@@ -1646,7 +1646,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299655950" fileName="QuantityTester.java" startLine="10" startPosition="0" endLine="40" endPosition="0" unitName="mf.QuantityTester" />
   </root>
-  <root nodeId="6531435794299656047" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299656047">
     <nodeInfo nodeId="6531435794299656050" fileName="BitemporalCollectionTester.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySubject" />
     <nodeInfo nodeId="6531435794299656053" fileName="BitemporalCollectionTester.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFranklin" />
     <nodeInfo nodeId="6531435794299656057" fileName="BitemporalCollectionTester.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWorcester" />
@@ -1701,7 +1701,7 @@
     <scopeInfo nodeId="6531435794299656219" fileName="BitemporalCollectionTester.java" startLine="41" startPosition="0" endLine="52" endPosition="0" />
     <unitInfo nodeId="6531435794299656047" fileName="BitemporalCollectionTester.java" startLine="10" startPosition="0" endLine="57" endPosition="0" unitName="mf.BitemporalCollectionTester" />
   </root>
-  <root nodeId="6531435794299656340" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299656340">
     <nodeInfo nodeId="6531435794299656342" fileName="DoubleRange.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStart" />
     <nodeInfo nodeId="6531435794299656345" fileName="DoubleRange.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEnd" />
     <nodeInfo nodeId="6531435794299656348" fileName="DoubleRange.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStartIncluded" />
@@ -1788,7 +1788,7 @@
     </scopeInfo>
     <unitInfo nodeId="6531435794299656340" fileName="DoubleRange.java" startLine="6" startPosition="0" endLine="74" endPosition="0" unitName="mf.DoubleRange" />
   </root>
-  <root nodeId="6531435794299656560" modelId="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)">
+  <root nodeRef="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)/6531435794299656560">
     <nodeInfo nodeId="6531435794299656569" fileName="BitemporalCollectionSuperclassTester.java" startLine="7" startPosition="60" endLine="8" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6531435794299656575" fileName="BitemporalCollectionSuperclassTester.java" startLine="11" startPosition="34" endLine="12" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6531435794299656563" fileName="BitemporalCollectionSuperclassTester.java" startLine="7" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BitemporalCollectionSuperclassTester#(Ljava/lang/String;)V" />

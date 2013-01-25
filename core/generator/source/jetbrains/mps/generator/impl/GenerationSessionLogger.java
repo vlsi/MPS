@@ -24,7 +24,7 @@ import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -181,7 +181,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
           message.setHintObject(context);
         }
       } else if (node.getModel() != null && node.getModel() != null && !node.getModel().isTransient()) {
-        message.setHintObject(new SNodePointer(node));
+        message.setHintObject(new jetbrains.mps.smodel.SNodePointer(node));
       }
     }
     return message;

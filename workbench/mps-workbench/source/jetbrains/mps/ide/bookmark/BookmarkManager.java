@@ -29,14 +29,12 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
 import java.awt.Color;
@@ -65,9 +63,9 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
 
   private List<BookmarkListener> myBookmarkListeners = new ArrayList<BookmarkListener>();
 
-  private SNodePointer[] myBookmarks = new SNodePointer[10];
+  private SNodeReference[] myBookmarks = new SNodeReference[10];
 
-  private List<SNodePointer> myUnnumberedBookmarks = new ArrayList<SNodePointer>();
+  private List<SNodeReference> myUnnumberedBookmarks = new ArrayList<SNodeReference>();
 
   private Project myProject;
   private Highlighter myHighlighter;
@@ -104,17 +102,17 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     if (root == null) return Collections.emptyList();
     List<Pair<SNode, Integer>> result = new ArrayList<Pair<SNode, Integer>>();
     for (int i = 0; i <= 9; i++) {
-      SNodePointer nodePointer = myBookmarks[i];
+      SNodeReference nodePointer = myBookmarks[i];
       if (nodePointer != null) {
-        SNode node = nodePointer.getNode();
+        SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
         if (node != null && node.getContainingRoot() == root) {
           result.add(new Pair<SNode, Integer>(node, i));
         }
       }
     }
-    for (SNodePointer nodePointer : myUnnumberedBookmarks) {
+    for (SNodeReference nodePointer : myUnnumberedBookmarks) {
       if (nodePointer != null) {
-        SNode node = nodePointer.getNode();
+        SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
         if (node != null && node.getContainingRoot() == root) {
           result.add(new Pair<SNode, Integer>(node, -1));
         }
@@ -128,10 +126,10 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       LOG.error("node to bookmark is null");
       return;
     }
-    SNodePointer newBookmark = new SNodePointer(node);
+    SNodeReference newBookmark = new jetbrains.mps.smodel.SNodePointer(node);
     boolean bookmarkRemoved = false;
     for (int i = 0; i < 10; i++) {
-      if (myBookmarks[i] != null && myBookmarks[i].getNode() == node) {
+      if (myBookmarks[i] != null && myBookmarks[i].resolve(MPSModuleRepository.getInstance()) == node) {
         myBookmarks[i] = null;
         bookmarkRemoved = true;
         fireBookmarkRemoved(i, node);
@@ -140,11 +138,11 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     if (myUnnumberedBookmarks.contains(newBookmark)) {
       myUnnumberedBookmarks.remove(newBookmark);
       bookmarkRemoved = true;
-      fireBookmarkRemoved(-1, newBookmark.getNode());
+      fireBookmarkRemoved(-1, newBookmark.resolve(MPSModuleRepository.getInstance()));
     }
     if (!bookmarkRemoved) {
       myUnnumberedBookmarks.add(newBookmark);
-      fireBookmarkAdded(-1, newBookmark.getNode());
+      fireBookmarkAdded(-1, newBookmark.resolve(MPSModuleRepository.getInstance()));
     }
   }
 
@@ -158,11 +156,11 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       return;
     }
 
-    SNodePointer newBookmark = new SNodePointer(node);
+    SNodeReference newBookmark = new jetbrains.mps.smodel.SNodePointer(node);
 
     for (int i = 0; i < 10; i++) {
-      SNodePointer bookmark = myBookmarks[i];
-      if (i != number && bookmark != null && bookmark.getNode() == node) {
+      SNodeReference bookmark = myBookmarks[i];
+      if (i != number && bookmark != null && bookmark.resolve(MPSModuleRepository.getInstance()) == node) {
         return;
       }
     }
@@ -170,11 +168,11 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       return;
     }
 
-    SNodePointer oldBookmark = myBookmarks[number];
+    SNodeReference oldBookmark = myBookmarks[number];
     SNode oldNode = null;
     myBookmarks[number] = null;
     if (oldBookmark != null) {
-      oldNode = oldBookmark.getNode();
+      oldNode = oldBookmark.resolve(MPSModuleRepository.getInstance());
       fireBookmarkRemoved(number, oldNode);
     }
     if (!node.equals(oldNode)) {
@@ -185,49 +183,49 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
 
   public void clearBookmarks() {
     for (int i = 0; i < myBookmarks.length; i++) {
-      SNodePointer pointer = myBookmarks[i];
+      SNodeReference pointer = myBookmarks[i];
       if (pointer != null) {
         myBookmarks[i] = null;
-        fireBookmarkRemoved(i, pointer.getNode());
+        fireBookmarkRemoved(i, pointer.resolve(MPSModuleRepository.getInstance()));
       }
     }
-    ArrayList<SNodePointer> nodePointers = new ArrayList<SNodePointer>(myUnnumberedBookmarks);
+    ArrayList<SNodeReference> nodePointers = new ArrayList<SNodeReference>(myUnnumberedBookmarks);
     myUnnumberedBookmarks.clear();
-    for (SNodePointer pointer : nodePointers) {
+    for (SNodeReference pointer : nodePointers) {
       if (pointer != null) {
-        fireBookmarkRemoved(-1, pointer.getNode());
+        fireBookmarkRemoved(-1, pointer.resolve(MPSModuleRepository.getInstance()));
       }
     }
   }
 
   public void removeBookmark(int i) {
     if (i > 9) return;
-    SNodePointer pointer = myBookmarks[i];
+    SNodeReference pointer = myBookmarks[i];
     if (pointer != null) {
       myBookmarks[i] = null;
-      fireBookmarkRemoved(i, pointer.getNode());
+      fireBookmarkRemoved(i, pointer.resolve(MPSModuleRepository.getInstance()));
     }
   }
 
-  public void removeUnnumberedBookmark(SNodePointer nodePointer) {
+  public void removeUnnumberedBookmark(SNodeReference nodePointer) {
     if (myUnnumberedBookmarks.contains(nodePointer)) {
       myUnnumberedBookmarks.remove(nodePointer);
-      fireBookmarkRemoved(-1, nodePointer.getNode());
+      fireBookmarkRemoved(-1, nodePointer.resolve(MPSModuleRepository.getInstance()));
     }
   }
 
-  public List<SNodePointer> getAllBookmarks() {
-    List<SNodePointer> nodePointers = getAllNumberedBookmarks();
+  public List<SNodeReference> getAllBookmarks() {
+    List<SNodeReference> nodePointers = getAllNumberedBookmarks();
     nodePointers.addAll(getAllUnnumberedBookmarks());
     return nodePointers;
   }
 
-  public List<SNodePointer> getAllNumberedBookmarks() {
+  public List<SNodeReference> getAllNumberedBookmarks() {
     return Arrays.asList(myBookmarks);
   }
 
-  public List<SNodePointer> getAllUnnumberedBookmarks() {
-    return new ArrayList<SNodePointer>(myUnnumberedBookmarks);
+  public List<SNodeReference> getAllUnnumberedBookmarks() {
+    return new ArrayList<SNodeReference>(myUnnumberedBookmarks);
   }
 
   public static Icon getIcon(int bookmarkNumber) {
@@ -237,15 +235,15 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     return new MnemonicIcon(Character.forDigit(bookmarkNumber, 10));
   }
 
-  public SNodePointer getBookmark(int number) {
+  public SNodeReference getBookmark(int number) {
     return myBookmarks[number];
   }
 
   public void navigateToBookmark(int number) {
     if (number < 0 || number > 9) return;
-    SNodePointer pointer = myBookmarks[number];
+    SNodeReference pointer = myBookmarks[number];
     if (pointer == null) return;
-    SNode targetNode = pointer.getNode();
+    SNode targetNode = pointer.resolve(MPSModuleRepository.getInstance());
     if (targetNode != null) {
       NavigationSupport.getInstance().openNode(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), targetNode, true, true);
     }
@@ -278,7 +276,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
   public MyState getState() {
     MyState state = new MyState();
     for (int i = 0; i < myBookmarks.length; i++) {
-      SNodePointer pointer = myBookmarks[i];
+      SNodeReference pointer = myBookmarks[i];
       if (pointer != null) {
         state.myBookmarkInfos[i] = new BookmarkInfo(pointer, i);
       } else {
@@ -287,7 +285,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     }
     state.myUnnumberedBookmarkInfos = new BookmarkInfo[myUnnumberedBookmarks.size()];
     for (int i = 0; i < myUnnumberedBookmarks.size(); i++) {
-      SNodePointer pointer = myUnnumberedBookmarks.get(i);
+      SNodeReference pointer = myUnnumberedBookmarks.get(i);
       if (pointer != null) {
         state.myUnnumberedBookmarkInfos[i] = new BookmarkInfo(pointer, -1);
       } else {
@@ -302,7 +300,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       BookmarkInfo bookmarkInfo = state.myBookmarkInfos[i];
       if (!bookmarkInfo.myIsNull) {
         assert i == bookmarkInfo.myNumber;
-        myBookmarks[i] = ((SNodePointer) bookmarkInfo.myNodeRef);
+        myBookmarks[i] = ((SNodeReference) bookmarkInfo.myNodeRef);
       } else {
         myBookmarks[i] = null;
       }
@@ -327,7 +325,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
   }
 
   public static class BookmarkInfo {
-    private SNodePointer myNodeRef;
+    private SNodeReference myNodeRef;
     public int myNumber;
     public boolean myIsNull = true;
 
@@ -335,7 +333,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       myIsNull = true;
     }
 
-    public BookmarkInfo(SNodePointer nodeRef, int number) {
+    public BookmarkInfo(SNodeReference nodeRef, int number) {
       myNodeRef = nodeRef;
       myNumber = number;
       myIsNull = false;
@@ -345,14 +343,14 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     @SuppressWarnings("UnusedDeclaration")
     public String getNodeRef() {
       if (myNodeRef==null) return "";
-      return SNodePointer.serialize(myNodeRef);
+      return jetbrains.mps.smodel.SNodePointer.serialize(myNodeRef);
     }
 
     //for serialization/deserialization
     @SuppressWarnings("UnusedDeclaration")
     public void setNodeRef(String nodeRef) {
       if (nodeRef.equals("")) return;
-      myNodeRef = SNodePointer.deserialize(nodeRef);
+      myNodeRef = jetbrains.mps.smodel.SNodePointer.deserialize(nodeRef);
     }
   }
 

@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -74,7 +76,7 @@ public final class StaticReference extends SReferenceBase {
       return null;
     }
 
-    SModel targetModel = getTargetModel();
+    SModel targetModel = getTargetSModel();
     if (targetModel == null) return null;
 
     if (targetModel.isDisposed()) {
@@ -117,7 +119,7 @@ public final class StaticReference extends SReferenceBase {
     return targetNode;
   }
 
-  public SModel getTargetModel() {
+  public SModel getTargetSModel() {
     SModel current = getSourceNode().getModel();
     if (!isExternal()) return current;
 

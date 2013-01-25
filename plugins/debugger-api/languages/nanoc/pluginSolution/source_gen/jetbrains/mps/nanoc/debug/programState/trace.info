@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3990508698139424671" modelId="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)">
+  <root nodeRef="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)/3990508698139424671">
     <nodeInfo nodeId="3990508698139429515" fileName="DefaultThread.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STACK" />
     <nodeInfo nodeId="3990508698139429519" fileName="DefaultThread.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FRAME" />
     <nodeInfo nodeId="3990508698139429523" fileName="DefaultThread.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFrames" />
@@ -101,7 +101,7 @@
     <unitInfo nodeId="3990508698139429493" fileName="DefaultThread.java" startLine="77" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread$MyRequestor2" />
     <unitInfo nodeId="3990508698139424671" fileName="DefaultThread.java" startLine="18" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.DefaultThread" />
   </root>
-  <root nodeId="3990508698139427312" modelId="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)">
+  <root nodeRef="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)/3990508698139427312">
     <nodeInfo nodeId="3990508698139427315" fileName="GDBLocation.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="3990508698139427320" fileName="GDBLocation.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLineNumber" />
     <nodeInfo nodeId="3990508698139427323" fileName="GDBLocation.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRoutine" />
@@ -151,7 +151,7 @@
     </scopeInfo>
     <unitInfo nodeId="3990508698139427312" fileName="GDBLocation.java" startLine="10" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.GDBLocation" />
   </root>
-  <root nodeId="3990508698139428770" modelId="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)">
+  <root nodeRef="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)/3990508698139428770">
     <nodeInfo nodeId="3990508698139428773" fileName="SimpleVarWatchable.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARIABLES_CATEGORY" />
     <nodeInfo nodeId="3990508698139428779" fileName="SimpleVarWatchable.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVarName" />
     <nodeInfo nodeId="3990508698139428782" fileName="SimpleVarWatchable.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
@@ -185,7 +185,7 @@
     </scopeInfo>
     <unitInfo nodeId="3990508698139428770" fileName="SimpleVarWatchable.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.SimpleVarWatchable" />
   </root>
-  <root nodeId="3990508698139428964" modelId="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)">
+  <root nodeRef="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)/3990508698139428964">
     <nodeInfo nodeId="3990508698139428967" fileName="SimpleValue.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="3990508698139428976" fileName="SimpleValue.java" startLine="14" startPosition="36" endLine="15" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139428984" fileName="SimpleValue.java" startLine="18" startPosition="40" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -211,7 +211,7 @@
     <scopeInfo nodeId="3990508698139429004" fileName="SimpleValue.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
     <unitInfo nodeId="3990508698139428964" fileName="SimpleValue.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.SimpleValue" />
   </root>
-  <root nodeId="3990508698139429870" modelId="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)">
+  <root nodeRef="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)/3990508698139429870">
     <nodeInfo nodeId="3990508698139429873" fileName="GDBStackFrame.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FUNCTION" />
     <nodeInfo nodeId="3990508698139429877" fileName="GDBStackFrame.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FILE" />
     <nodeInfo nodeId="3990508698139429881" fileName="GDBStackFrame.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LINE" />

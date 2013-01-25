@@ -16,7 +16,6 @@ import java.util.Set;
 import java.util.Hashtable;
 import org.apache.tools.ant.util.JavaEnvUtils;
 import java.util.HashSet;
-import jetbrains.mps.tool.builder.AntBootstrap;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.apache.tools.ant.taskdefs.Execute;
@@ -28,7 +27,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.io.FileInputStream;
 import java.util.LinkedHashSet;
-import jetbrains.mps.tool.builder.MpsWorker;
 import java.io.InputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -178,8 +176,8 @@ public abstract class MpsLoadTask extends Task {
       }
       commandLine.add("-classpath");
       commandLine.add(sb.toString());
-      commandLine.add(AntBootstrap.class.getCanonicalName());
-      commandLine.add(getWorkerClass().getCanonicalName());
+      commandLine.add("jetbrains.mps.tool.builder.AntBootstrap");
+      commandLine.add(getWorkerClass());
       dumpPropertiesToWhatToDo();
       try {
         commandLine.add(myWhatToDo.dumpToTmpFile().getAbsolutePath());
@@ -217,7 +215,7 @@ public abstract class MpsLoadTask extends Task {
         Class<?> whatToGenerateClass = classLoader.loadClass(Script.class.getCanonicalName());
         Object whatToGenerate = whatToGenerateClass.newInstance();
         myWhatToDo.cloneTo(whatToGenerate);
-        Class<?> generatorClass = classLoader.loadClass(getWorkerClass().getCanonicalName());
+        Class<?> generatorClass = classLoader.loadClass(getWorkerClass());
         Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
         Object generator = constructor.newInstance(whatToGenerate, this);
         Method method = generatorClass.getMethod("work");
@@ -326,7 +324,7 @@ public abstract class MpsLoadTask extends Task {
     return path.startsWith(prefix) && (path.length() == prefix.length() || prefix.endsWith(File.separator) || path.charAt(prefix.length()) == File.separatorChar);
   }
 
-  protected abstract Class<? extends MpsWorker> getWorkerClass();
+  protected abstract String getWorkerClass();
 
   private void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
     if (dir.getName().equals("classes") || dir.getName().equals("classes_gen") || dir.getName().equals("apiclasses")) {

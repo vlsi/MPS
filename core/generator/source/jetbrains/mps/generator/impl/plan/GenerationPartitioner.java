@@ -24,7 +24,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
@@ -196,7 +196,7 @@ public class GenerationPartitioner {
           if (nodeID.equals("*")) {
             return refModel.getConfigurations();
           } else {
-            SNodePointer node = new SNodePointer(reference, jetbrains.mps.smodel.SNodeId.fromString(nodeID));
+            SNodeReference node = new jetbrains.mps.smodel.SNodePointer(reference, jetbrains.mps.smodel.SNodeId.fromString(nodeID));
             for (TemplateMappingConfiguration m : refModel.getConfigurations()) {
               if (node != null && node.equals(m.getMappingNode())) {
                 return Collections.singletonList(m);

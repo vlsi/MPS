@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.constraints.ConstraintsAspectDescriptor" />
-  <root nodeId="43370322128276340" modelId="r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)">
+  <root nodeRef="r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)/43370322128276340">
     <nodeInfo nodeId="43370322128276340" fileName="GetHighLevelValuePresentation_ConceptFunction_Constraints.java" startLine="14" startPosition="70" endLine="15" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="43370322128276340" fileName="GetHighLevelValuePresentation_ConceptFunction_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="43370322128276340" fileName="GetHighLevelValuePresentation_ConceptFunction_Constraints.java" startLine="24" startPosition="200" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -42,7 +42,7 @@
     </scopeInfo>
     <unitInfo nodeId="43370322128276340" fileName="GetHighLevelValuePresentation_ConceptFunction_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.constraints.GetHighLevelValuePresentation_ConceptFunction_Constraints" />
   </root>
-  <root nodeId="43370322128276352" modelId="r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)">
+  <root nodeRef="r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)/43370322128276352">
     <nodeInfo nodeId="43370322128276352" fileName="CanWrapHighLevelValue_ConceptFunction_Constraints.java" startLine="14" startPosition="62" endLine="15" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="43370322128276352" fileName="CanWrapHighLevelValue_ConceptFunction_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="43370322128276352" fileName="CanWrapHighLevelValue_ConceptFunction_Constraints.java" startLine="24" startPosition="200" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -83,7 +83,7 @@
     </scopeInfo>
     <unitInfo nodeId="43370322128276352" fileName="CanWrapHighLevelValue_ConceptFunction_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.constraints.CanWrapHighLevelValue_ConceptFunction_Constraints" />
   </root>
-  <root nodeId="43370322128276360" modelId="r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)">
+  <root nodeRef="r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)/43370322128276360">
     <nodeInfo nodeId="43370322128276360" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Constraints.java" startLine="14" startPosition="68" endLine="15" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="43370322128276360" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="43370322128276360" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Constraints.java" startLine="24" startPosition="200" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -124,51 +124,51 @@
     </scopeInfo>
     <unitInfo nodeId="43370322128276360" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.constraints.GetHighLevelWatchablesBlock_ConceptFunction_Constraints" />
   </root>
-  <root nodeId="43370322128310819" modelId="r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)">
-    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="24" startPosition="50" endLine="25" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="29" startPosition="83" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128311168" fileName="HighLevelWatchableCreator_Constraints.java" startLine="42" startPosition="142" endLine="43" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="43370322128311176" fileName="HighLevelWatchableCreator_Constraints.java" startLine="44" startPosition="165" endLine="45" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="43370322128311188" fileName="HighLevelWatchableCreator_Constraints.java" startLine="46" startPosition="13" endLine="47" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="51" startPosition="61" endLine="52" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="56" startPosition="7" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="60" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_fcwqku_a0a1a0a0a1a0b0a1a1" />
-    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HighLevelWatchableCreator_Constraints#()V" />
-    <nodeInfo nodeId="43370322128311174" fileName="HighLevelWatchableCreator_Constraints.java" startLine="43" startPosition="56" endLine="46" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="41" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="39" startPosition="56" endLine="54" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="37" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="30" startPosition="75" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="28" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="24" startPosition="50" endLine="25" endPosition="91" />
-    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" />
-    <scopeInfo nodeId="43370322128311175" fileName="HighLevelWatchableCreator_Constraints.java" startLine="44" startPosition="165" endLine="45" endPosition="137" />
-    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="51" startPosition="61" endLine="52" endPosition="58" />
-    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="43370322128311174" fileName="HighLevelWatchableCreator_Constraints.java" startLine="43" startPosition="56" endLine="46" endPosition="13">
+  <root nodeRef="r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)/43370322128310819">
+    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="25" startPosition="50" endLine="26" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="30" startPosition="83" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="34" startPosition="44" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="43370322128311168" fileName="HighLevelWatchableCreator_Constraints.java" startLine="43" startPosition="142" endLine="44" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="43370322128311176" fileName="HighLevelWatchableCreator_Constraints.java" startLine="45" startPosition="165" endLine="46" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="43370322128311188" fileName="HighLevelWatchableCreator_Constraints.java" startLine="47" startPosition="13" endLine="48" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="52" startPosition="63" endLine="53" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="57" startPosition="7" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_fcwqku_a0a1a0a0a1a0b0a1a1" />
+    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HighLevelWatchableCreator_Constraints#()V" />
+    <nodeInfo nodeId="43370322128311174" fileName="HighLevelWatchableCreator_Constraints.java" startLine="44" startPosition="56" endLine="47" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="42" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="40" startPosition="56" endLine="55" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="38" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="31" startPosition="75" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="29" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="25" startPosition="50" endLine="26" endPosition="91" />
+    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="34" startPosition="44" endLine="35" endPosition="20" />
+    <scopeInfo nodeId="43370322128311175" fileName="HighLevelWatchableCreator_Constraints.java" startLine="45" startPosition="165" endLine="46" endPosition="137" />
+    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="52" startPosition="63" endLine="53" endPosition="58" />
+    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="43370322128311174" fileName="HighLevelWatchableCreator_Constraints.java" startLine="44" startPosition="56" endLine="47" endPosition="13">
       <varInfo nodeId="43370322128311183" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="43370322128311165" fileName="HighLevelWatchableCreator_Constraints.java" startLine="42" startPosition="142" endLine="47" endPosition="26">
+    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="43370322128311165" fileName="HighLevelWatchableCreator_Constraints.java" startLine="43" startPosition="142" endLine="48" endPosition="26">
       <varInfo nodeId="43370322128311169" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="41" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="43370322128310819" varName="_context" />
       <varInfo nodeId="43370322128310819" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="39" startPosition="56" endLine="54" endPosition="10" />
-    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="37" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="29" startPosition="83" endLine="57" endPosition="22">
+    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="40" startPosition="56" endLine="55" endPosition="10" />
+    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="38" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="30" startPosition="83" endLine="58" endPosition="22">
       <varInfo nodeId="43370322128310819" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="28" startPosition="0" endLine="59" endPosition="0" />
-    <unitInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="40" startPosition="19" endLine="54" endPosition="9" unitName="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints$2" />
-    <unitInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="31" startPosition="36" endLine="56" endPosition="5" unitName="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints$1" />
-    <unitInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="23" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints" />
+    <scopeInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="29" startPosition="0" endLine="60" endPosition="0" />
+    <unitInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="41" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints$2" />
+    <unitInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="32" startPosition="36" endLine="57" endPosition="5" unitName="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints$1" />
+    <unitInfo nodeId="43370322128310819" fileName="HighLevelWatchableCreator_Constraints.java" startLine="24" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.constraints.HighLevelWatchableCreator_Constraints" />
   </root>
 </debugInfo>
 

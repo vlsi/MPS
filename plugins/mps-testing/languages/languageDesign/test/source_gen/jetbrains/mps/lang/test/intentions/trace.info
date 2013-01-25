@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.IntentionsDescriptor" />
-  <root nodeId="1210673906861" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/1210673906861">
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -93,7 +93,7 @@
     <unitInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="77" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention$IntentionImplementation" />
     <unitInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention" />
   </root>
-  <root nodeId="1215508253864" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/1215508253864">
     <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -185,7 +185,7 @@
     <unitInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="77" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddPropertiesMark_Intention$IntentionImplementation" />
     <unitInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddPropertiesMark_Intention" />
   </root>
-  <root nodeId="1215604006108" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/1215604006108">
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -277,7 +277,7 @@
     <unitInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="77" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddOperationsMark_Intention$IntentionImplementation" />
     <unitInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddOperationsMark_Intention" />
   </root>
-  <root nodeId="1225963656881" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/1225963656881">
     <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="35" startPosition="30" endLine="36" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="39" startPosition="35" endLine="40" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -414,7 +414,7 @@
     <unitInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="85" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddCellAnnotation_Intention$IntentionImplementation" />
     <unitInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="29" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddCellAnnotation_Intention" />
   </root>
-  <root nodeId="1230224371548" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/1230224371548">
     <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -505,7 +505,7 @@
     <unitInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="77" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddMockAnnotation_Intention$IntentionImplementation" />
     <unitInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddMockAnnotation_Intention" />
   </root>
-  <root nodeId="3100207102208970627" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/3100207102208970627">
     <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="30" startPosition="30" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="34" startPosition="35" endLine="35" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -619,7 +619,7 @@
     <unitInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="81" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddScopeTestAnnotation_Intention$IntentionImplementation" />
     <unitInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="24" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddScopeTestAnnotation_Intention" />
   </root>
-  <root nodeId="3100207102209325314" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/3100207102209325314">
     <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -719,7 +719,7 @@
     <unitInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="78" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddScopeExpectedNodes_Intention$IntentionImplementation" />
     <unitInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="22" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddScopeExpectedNodes_Intention" />
   </root>
-  <root nodeId="6017652711700380617" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)/6017652711700380617">
     <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3715568794894753648" modelId="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)">
+  <root nodeRef="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)/3715568794894753648">
     <nodeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="18" startPosition="73" endLine="19" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="19" startPosition="155" endLine="20" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -24,7 +24,7 @@
     <unitInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_paramConflict_Test$TestBody" />
     <unitInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_paramConflict_Test" />
   </root>
-  <root nodeId="3715568794894764093" modelId="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)">
+  <root nodeRef="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)/3715568794894764093">
     <nodeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="18" startPosition="69" endLine="19" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="19" startPosition="155" endLine="20" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -48,7 +48,7 @@
     <unitInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_superMeth_Test$TestBody" />
     <unitInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_superMeth_Test" />
   </root>
-  <root nodeId="5934496548013480005" modelId="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)">
+  <root nodeRef="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)/5934496548013480005">
     <nodeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="18" startPosition="60" endLine="19" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="19" startPosition="155" endLine="20" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

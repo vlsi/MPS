@@ -6,7 +6,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Mapper;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -24,14 +25,14 @@ public class MPSPsiElement<T> extends FakePsiElement {
 
   public MPSPsiElement(SNode node) {
     LOG.assertCanRead();
-    myItem = new SNodePointer(node);
+    myItem = new jetbrains.mps.smodel.SNodePointer(node);
   }
 
   public MPSPsiElement(List<SNode> nodes) {
     LOG.assertCanRead();
-    myItem = map(nodes, new Mapper<SNode, SNodePointer>() {
-      public SNodePointer value(SNode key) {
-        return new SNodePointer(key);
+    myItem = map(nodes, new Mapper<SNode, SNodeReference>() {
+      public SNodeReference value(SNode key) {
+        return new jetbrains.mps.smodel.SNodePointer(key);
       }
     });
   }
@@ -56,12 +57,12 @@ public class MPSPsiElement<T> extends FakePsiElement {
   }
 
   public Object getMPSItem() {
-    if (myItem instanceof SNodePointer) {
-      return ((SNodePointer) myItem).getNode();
+    if (myItem instanceof SNodeReference) {
+      return ((SNodeReference) myItem).resolve(MPSModuleRepository.getInstance());
     } else if (myItem instanceof List) {
-      return map((List<SNodePointer>) myItem, new Mapper<SNodePointer, SNode>() {
-        public SNode value(SNodePointer key) {
-          return key.getNode();
+      return map((List<SNodeReference>) myItem, new Mapper<SNodeReference, SNode>() {
+        public SNode value(SNodeReference key) {
+          return key.resolve(MPSModuleRepository.getInstance());
         }
       });
     } else if (myItem instanceof SModelReference) {
@@ -83,13 +84,13 @@ public class MPSPsiElement<T> extends FakePsiElement {
   }
 
   public PsiElement getParent() {
-    if (!((myItem instanceof SNodePointer))) {
+    if (!((myItem instanceof SNodeReference))) {
       return null;
     }
     return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
       public PsiElement compute() {
-        SNodePointer pointer = (SNodePointer) myItem;
-        SNode node = pointer.getNode();
+        SNodeReference pointer = (SNodeReference) myItem;
+        SNode node = pointer.resolve(MPSModuleRepository.getInstance());
         if (node == null) {
           return null;
         }
@@ -97,7 +98,7 @@ public class MPSPsiElement<T> extends FakePsiElement {
         if (parent == null) {
           return null;
         }
-        return new MPSPsiElement(new SNodePointer(parent));
+        return new MPSPsiElement(new jetbrains.mps.smodel.SNodePointer(parent));
       }
     });
   }
@@ -127,7 +128,7 @@ public class MPSPsiElement<T> extends FakePsiElement {
     if (MPSPsiElement.isListOf(o, SNode.class)) {
       return new MPSPsiElement(((List<SNode>) o));
     }
-    if (o instanceof SNodePointer) {
+    if (o instanceof SNodeReference) {
       return new MPSPsiElement(o);
     }
     if (o instanceof SModelReference) {
@@ -136,8 +137,8 @@ public class MPSPsiElement<T> extends FakePsiElement {
     if (o instanceof ModuleReference) {
       return new MPSPsiElement(o);
     }
-    if (MPSPsiElement.isListOf(o, SNodePointer.class)) {
-      return new MPSPsiElement(((List<SNodePointer>) o));
+    if (MPSPsiElement.isListOf(o, SNodeReference.class)) {
+      return new MPSPsiElement(((List<SNodeReference>) o));
     }
     throw new IllegalArgumentException(o.getClass().getName());
   }

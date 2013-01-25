@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.ide.devkit.generator;
 
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.ArrayWrapper;
 
@@ -58,11 +59,11 @@ public class TracerNode {
   private static TracerNode[] EMPTY_ARRAY = new TracerNode[0];
 
   private Kind myKind;
-  private SNodePointer myNodePointer;
+  private SNodeReference myNodePointer;
   private TracerNode myParent;
   private TracerNode[] myChildren = EMPTY_ARRAY;
 
-  public TracerNode(Kind kind, SNodePointer nodePointer) {
+  public TracerNode(Kind kind, SNodeReference nodePointer) {
     myKind = kind;
     myNodePointer = nodePointer;
   }
@@ -71,7 +72,7 @@ public class TracerNode {
     return myKind;
   }
 
-  public SNodePointer getNodePointer() {
+  public SNodeReference getNodePointer() {
     return myNodePointer;
   }
 
@@ -114,12 +115,12 @@ public class TracerNode {
     return _children();
   }
 
-  public boolean isThis(Kind kind, SNodePointer nodePointer) {
+  public boolean isThis(Kind kind, SNodeReference nodePointer) {
     return myKind == kind && myNodePointer.equals(nodePointer);
   }
 
   /*package*/ TracerNode find(SNode node) {
-    if (myNodePointer.getNode() == node) return this;
+    if (myNodePointer.resolve(MPSModuleRepository.getInstance()) == node) return this;
     if (getDepth() > 1000) return null;
     for (TracerNode child : myChildren) {
       TracerNode tracerNode = child.find(node);
@@ -131,7 +132,7 @@ public class TracerNode {
   }
 
 
-  /*package*/ TracerNode find(Kind kind, SNodePointer node) {
+  /*package*/ TracerNode find(Kind kind, SNodeReference node) {
     if (isThis(kind, node)) return this;
     if (getDepth() > 1000) return null;
     for (TracerNode child : myChildren) {
@@ -143,7 +144,7 @@ public class TracerNode {
     return null;
   }
 
-  /*package*/ void findAllTopmost(Kind kind, SNodePointer node, List<TracerNode> result) {
+  /*package*/ void findAllTopmost(Kind kind, SNodeReference node, List<TracerNode> result) {
     if (isThis(kind, node)) {
       result.add(this);
       return;

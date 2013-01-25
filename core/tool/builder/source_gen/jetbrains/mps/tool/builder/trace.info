@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2546981710035458892" modelId="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)">
+  <root nodeRef="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)/2546981710035458892">
     <nodeInfo nodeId="2546981710035458895" fileName="FileMPSProject.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2546981710035458900" fileName="FileMPSProject.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myErrors" />
     <nodeInfo nodeId="2546981710035458903" fileName="FileMPSProject.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDescriptor" />
@@ -289,7 +289,7 @@
     <unitInfo nodeId="2546981710035459206" fileName="FileMPSProject.java" startLine="148" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.tool.builder.FileMPSProject$ProjectDescriptor" />
     <unitInfo nodeId="2546981710035458892" fileName="FileMPSProject.java" startLine="41" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.tool.builder.FileMPSProject" />
   </root>
-  <root nodeId="2546981710035481844" modelId="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)">
+  <root nodeRef="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)/2546981710035481844">
     <nodeInfo nodeId="2546981710035481857" fileName="AntBootstrap.java" startLine="15" startPosition="42" endLine="16" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2546981710035481859" fileName="AntBootstrap.java" startLine="16" startPosition="104" endLine="17" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2546981710035481863" fileName="AntBootstrap.java" startLine="17" startPosition="52" endLine="18" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -323,7 +323,7 @@
     </scopeInfo>
     <unitInfo nodeId="2546981710035481844" fileName="AntBootstrap.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.tool.builder.AntBootstrap" />
   </root>
-  <root nodeId="878521226300773719" modelId="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)">
+  <root nodeRef="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)/878521226300773719">
     <nodeInfo nodeId="878521226300773721" fileName="MpsWorker.java" startLine="51" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="878521226300773726" fileName="MpsWorker.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myErrors" />
     <nodeInfo nodeId="878521226300773733" fileName="MpsWorker.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWarnings" />
@@ -919,7 +919,7 @@
     <unitInfo nodeId="878521226300774793" fileName="MpsWorker.java" startLine="364" startPosition="0" endLine="396" endPosition="0" unitName="jetbrains.mps.tool.builder.MpsWorker$MyMessageHandlerAppender" />
     <unitInfo nodeId="878521226300773719" fileName="MpsWorker.java" startLine="50" startPosition="0" endLine="470" endPosition="0" unitName="jetbrains.mps.tool.builder.MpsWorker" />
   </root>
-  <root nodeId="878521226300893955" modelId="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)">
+  <root nodeRef="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)/878521226300893955">
     <nodeInfo nodeId="878521226300893957" fileName="Environment.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMacro" />
     <nodeInfo nodeId="878521226300893962" fileName="Environment.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLoadBootstrapLibraries" />
     <nodeInfo nodeId="878521226300893965" fileName="Environment.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLibraries" />

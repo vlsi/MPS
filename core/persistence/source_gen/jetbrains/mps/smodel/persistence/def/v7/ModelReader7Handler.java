@@ -20,8 +20,9 @@ import jetbrains.mps.util.xml.BreakParseSAXException;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.logging.Logger;
 
 public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
@@ -517,13 +518,13 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("link".equals(tagName)) {
         String[] child = (String[]) value;
-        Pair<Boolean, SNodePointer> pptr = fieldhelper.readLink_internal(child[1]);
-        SNodePointer ptr = pptr.o2;
+        Pair<Boolean, SNodeReference> pptr = fieldhelper.readLink_internal(child[1]);
+        SNodeReference ptr = pptr.o2;
         if (ptr == null || ptr.getModelReference() == null) {
           LOG.error("couldn't create reference '" + child[0] + "' from " + child[1]);
           return;
         }
-        StaticReference ref = new StaticReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);
+        StaticReference ref = new StaticReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), ((SNodePointer) ptr).getNodeId(), child[2]);
         fieldlinkMap.addTargetLocation(ptr, ref);
 
         result.setReference(ref.getRole(), ref);

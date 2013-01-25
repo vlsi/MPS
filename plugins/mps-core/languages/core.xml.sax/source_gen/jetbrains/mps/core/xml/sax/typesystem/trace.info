@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.core.xml.sax.typesystem.TypesystemDescriptor" />
-  <root nodeId="2264311582634140434" modelId="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)">
+  <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/2264311582634140434">
     <nodeInfo nodeId="2264311582634140436" fileName="typeof_XMLSAXHandler_resultObject_InferenceRule.java" startLine="19" startPosition="117" endLine="20" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634140448" fileName="typeof_XMLSAXHandler_resultObject_InferenceRule.java" startLine="22" startPosition="7" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634140448" fileName="typeof_XMLSAXHandler_resultObject_InferenceRule.java" startLine="23" startPosition="48" endLine="24" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -61,7 +61,7 @@
     </scopeInfo>
     <unitInfo nodeId="2264311582634140434" fileName="typeof_XMLSAXHandler_resultObject_InferenceRule.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXHandler_resultObject_InferenceRule" />
   </root>
-  <root nodeId="2264311582634140487" modelId="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)">
+  <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/2264311582634140487">
     <nodeInfo nodeId="2264311582634140489" fileName="typeof_XMLSAXChildHandler_childObject_InferenceRule.java" startLine="23" startPosition="117" endLine="24" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634140497" fileName="typeof_XMLSAXChildHandler_childObject_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634140497" fileName="typeof_XMLSAXChildHandler_childObject_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -116,7 +116,7 @@
     </scopeInfo>
     <unitInfo nodeId="2264311582634140487" fileName="typeof_XMLSAXChildHandler_childObject_InferenceRule.java" startLine="19" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXChildHandler_childObject_InferenceRule" />
   </root>
-  <root nodeId="2264311582634140528" modelId="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)">
+  <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/2264311582634140528">
     <nodeInfo nodeId="2264311582634140530" fileName="typeof_XMLSAXAttributeReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634140530" fileName="typeof_XMLSAXAttributeReference_InferenceRule.java" startLine="20" startPosition="66" endLine="21" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634140530" fileName="typeof_XMLSAXAttributeReference_InferenceRule.java" startLine="21" startPosition="203" endLine="22" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -167,7 +167,7 @@
     </scopeInfo>
     <unitInfo nodeId="2264311582634140528" fileName="typeof_XMLSAXAttributeReference_InferenceRule.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXAttributeReference_InferenceRule" />
   </root>
-  <root nodeId="2264311582634140538" modelId="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)">
+  <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/2264311582634140538">
     <nodeInfo nodeId="2264311582634140540" fileName="typeof_XMLSAXFieldReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634140540" fileName="typeof_XMLSAXFieldReference_InferenceRule.java" startLine="20" startPosition="62" endLine="21" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634140540" fileName="typeof_XMLSAXFieldReference_InferenceRule.java" startLine="21" startPosition="203" endLine="22" endPosition="354" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -207,7 +207,7 @@
     </scopeInfo>
     <unitInfo nodeId="2264311582634140538" fileName="typeof_XMLSAXFieldReference_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXFieldReference_InferenceRule" />
   </root>
-  <root nodeId="2264311582634140551" modelId="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)">
+  <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/2264311582634140551">
     <nodeInfo nodeId="2264311582634140553" fileName="typeof_XMLSAXLocatorExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634140553" fileName="typeof_XMLSAXLocatorExpression_InferenceRule.java" startLine="23" startPosition="59" endLine="24" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634140553" fileName="typeof_XMLSAXLocatorExpression_InferenceRule.java" startLine="24" startPosition="203" endLine="25" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -259,7 +259,7 @@
     </scopeInfo>
     <unitInfo nodeId="2264311582634140551" fileName="typeof_XMLSAXLocatorExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.core.xml.sax.typesystem.typeof_XMLSAXLocatorExpression_InferenceRule" />
   </root>
-  <root nodeId="2264311582634140561" modelId="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)">
+  <root nodeRef="r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)/2264311582634140561">
     <nodeInfo nodeId="2264311582634140565" fileName="typeof_XMLSAXBreakStatement_InferenceRule.java" startLine="21" startPosition="7" endLine="22" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634140565" fileName="typeof_XMLSAXBreakStatement_InferenceRule.java" startLine="22" startPosition="91" endLine="23" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634140565" fileName="typeof_XMLSAXBreakStatement_InferenceRule.java" startLine="23" startPosition="205" endLine="24" endPosition="451" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

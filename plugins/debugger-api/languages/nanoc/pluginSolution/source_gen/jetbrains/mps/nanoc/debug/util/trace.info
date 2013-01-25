@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3990508698139430162" modelId="r:0dbb9842-16d1-47eb-b47e-c6a3a4e3742f(jetbrains.mps.nanoc.debug.util)">
+  <root nodeRef="r:0dbb9842-16d1-47eb-b47e-c6a3a4e3742f(jetbrains.mps.nanoc.debug.util)/3990508698139430162">
     <nodeInfo nodeId="3990508698139430174" fileName="ProcessUtil.java" startLine="11" startPosition="48" endLine="12" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3990508698139430184" fileName="ProcessUtil.java" startLine="13" startPosition="20" endLine="14" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139430190" fileName="ProcessUtil.java" startLine="15" startPosition="5" endLine="16" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

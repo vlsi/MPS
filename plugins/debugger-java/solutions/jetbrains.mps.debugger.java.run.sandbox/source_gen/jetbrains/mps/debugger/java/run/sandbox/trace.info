@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1331672133304136819" modelId="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)">
+  <root nodeRef="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)/1331672133304136819">
     <nodeInfo nodeId="1331672133304136839" fileName="TestTextSource.java" startLine="11" startPosition="42" endLine="12" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1331672133304136821" fileName="TestTextSource.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestTextSource#()V" />
     <nodeInfo nodeId="1331672133304136825" fileName="TestTextSource.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
@@ -12,7 +12,7 @@
     </scopeInfo>
     <unitInfo nodeId="1331672133304136819" fileName="TestTextSource.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.TestTextSource" />
   </root>
-  <root nodeId="1876713722539579910" modelId="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)">
+  <root nodeRef="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)/1876713722539579910">
     <nodeInfo nodeId="6814978825597953741" fileName="SeveralThreads.java" startLine="15" startPosition="25" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3921561759367115246" fileName="SeveralThreads.java" startLine="16" startPosition="18" endLine="17" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="668438249864250912" fileName="SeveralThreads.java" startLine="17" startPosition="14" endLine="18" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -80,7 +80,7 @@
     <unitInfo nodeId="6814978825597950761" fileName="SeveralThreads.java" startLine="14" startPosition="19" endLine="40" endPosition="5" unitName="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads$1" />
     <unitInfo nodeId="1876713722539579910" fileName="SeveralThreads.java" startLine="9" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads" />
   </root>
-  <root nodeId="236633587817012660" modelId="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)">
+  <root nodeRef="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)/236633587817012660">
     <nodeInfo nodeId="236633587817012671" fileName="BaseClass.java" startLine="10" startPosition="31" endLine="11" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="236633587817012662" fileName="BaseClass.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseClass#()V" />
     <nodeInfo nodeId="236633587817012666" fileName="BaseClass.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getZero#(I)I" />
@@ -92,7 +92,7 @@
     </scopeInfo>
     <unitInfo nodeId="236633587817012660" fileName="BaseClass.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.BaseClass" />
   </root>
-  <root nodeId="3337698516783078479" modelId="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)">
+  <root nodeRef="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)/3337698516783078479">
     <nodeInfo nodeId="3337698516783078485" fileName="DebugObjects.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myStaticField" />
     <nodeInfo nodeId="3337698516783078495" fileName="DebugObjects.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNonStaticField" />
     <nodeInfo nodeId="3337698516783078491" fileName="DebugObjects.java" startLine="12" startPosition="25" endLine="13" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -138,7 +138,7 @@
     <unitInfo nodeId="3139492450371519437" fileName="DebugObjects.java" startLine="34" startPosition="8" endLine="41" endPosition="5" unitName="jetbrains.mps.debugger.java.run.sandbox.DebugObjects$1" />
     <unitInfo nodeId="3337698516783078479" fileName="DebugObjects.java" startLine="8" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.DebugObjects" />
   </root>
-  <root nodeId="4060685206781456017" modelId="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)">
+  <root nodeRef="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)/4060685206781456017">
     <nodeInfo nodeId="7474628078187305917" fileName="DerivedClass.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myStaticField" />
     <nodeInfo nodeId="7474628078187305911" fileName="DerivedClass.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNonStaticField" />
     <nodeInfo nodeId="5661655420496807172" fileName="DerivedClass.java" startLine="13" startPosition="31" endLine="14" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -169,7 +169,7 @@
     </scopeInfo>
     <unitInfo nodeId="4060685206781456017" fileName="DerivedClass.java" startLine="6" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.DerivedClass" />
   </root>
-  <root nodeId="4495133539197110684" modelId="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)">
+  <root nodeRef="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)/4495133539197110684">
     <nodeInfo nodeId="6084657294691509231" fileName="DebugCollections.java" startLine="24" startPosition="42" endLine="25" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3337698516783057945" fileName="DebugCollections.java" startLine="25" startPosition="21" endLine="26" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1549837254988521221" fileName="DebugCollections.java" startLine="26" startPosition="14" endLine="27" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -266,7 +266,7 @@
     <scopeInfo nodeId="4370401284816024235" fileName="DebugCollections.java" startLine="78" startPosition="0" endLine="90" endPosition="0" />
     <unitInfo nodeId="4495133539197110684" fileName="DebugCollections.java" startLine="20" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.DebugCollections" />
   </root>
-  <root nodeId="4712912993948278068" modelId="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)">
+  <root nodeRef="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)/4712912993948278068">
     <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="9" startPosition="17" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="13" startPosition="39" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4712912993948278068" fileName="Data.java" startLine="17" startPosition="35" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -306,7 +306,7 @@
     </scopeInfo>
     <unitInfo nodeId="4712912993948278068" fileName="Data.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.Data" />
   </root>
-  <root nodeId="7020394447413472663" modelId="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)">
+  <root nodeRef="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)/7020394447413472663">
     <nodeInfo nodeId="7020394447413472676" fileName="UncaughtException.java" startLine="13" startPosition="42" endLine="14" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="7020394447413472665" fileName="UncaughtException.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UncaughtException#()V" />
     <nodeInfo nodeId="7020394447413472669" fileName="UncaughtException.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
@@ -318,7 +318,7 @@
     </scopeInfo>
     <unitInfo nodeId="7020394447413472663" fileName="UncaughtException.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.UncaughtException" />
   </root>
-  <root nodeId="7328148232284234498" modelId="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)">
+  <root nodeRef="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debugger.java.run.sandbox)/7328148232284234498">
     <nodeInfo nodeId="6632904793135337339" fileName="InnerClassTest.java" startLine="7" startPosition="27" endLine="8" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6632904793135337344" fileName="InnerClassTest.java" startLine="11" startPosition="42" endLine="12" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7328148232284235452" fileName="InnerClassTest.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myField" />

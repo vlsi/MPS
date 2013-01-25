@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1058143989625049785" modelId="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)">
+  <root nodeRef="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)/1058143989625049785">
     <nodeInfo nodeId="5348020929391604898" fileName="PersonEditor_Configuration.java" startLine="23" startPosition="48" endLine="24" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="5348020929391604904" fileName="PersonEditor_Configuration.java" startLine="26" startPosition="49" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="1058143989625049785" fileName="PersonEditor_Configuration.java" startLine="32" startPosition="76" endLine="33" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -169,7 +169,7 @@
     <unitInfo nodeId="1058143989625049785" fileName="PersonEditor_Configuration_Editor.java" startLine="45" startPosition="14" endLine="49" endPosition="5" unitName="jetbrains.mps.execution.sandbox.sandbox.PersonEditor_Configuration_Editor$1" />
     <unitInfo nodeId="1058143989625049785" fileName="PersonEditor_Configuration_Editor.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.execution.sandbox.sandbox.PersonEditor_Configuration_Editor" />
   </root>
-  <root nodeId="1058143989625184529" modelId="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)">
+  <root nodeRef="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)/1058143989625184529">
     <nodeInfo nodeId="1058143989625204761" fileName="TemplateConfigurationTest.java" startLine="17" startPosition="38" endLine="18" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6981317760235639050" fileName="TemplateConfigurationTest.java" startLine="18" startPosition="85" endLine="19" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1058143989625234308" fileName="TemplateConfigurationTest.java" startLine="19" startPosition="91" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -252,7 +252,7 @@
     <unitInfo nodeId="3131153648913143972" fileName="TemplateConfigurationTest.java" startLine="50" startPosition="37" endLine="57" endPosition="5" unitName="jetbrains.mps.execution.sandbox.sandbox.TemplateConfigurationTest$4" />
     <unitInfo nodeId="1058143989625184529" fileName="TemplateConfigurationTest.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.execution.sandbox.sandbox.TemplateConfigurationTest" />
   </root>
-  <root nodeId="3347833162492308078" modelId="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)">
+  <root nodeRef="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)/3347833162492308078">
     <nodeInfo nodeId="3347833162492308078" fileName="SomeInvalid.java" startLine="10" startPosition="42" endLine="11" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3347833162492308078" fileName="SomeInvalid.java" startLine="11" startPosition="50" endLine="12" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3347833162492308078" fileName="SomeInvalid.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SomeInvalid#()V" />
@@ -265,7 +265,7 @@
     </scopeInfo>
     <unitInfo nodeId="3347833162492308078" fileName="SomeInvalid.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.sandbox.sandbox.SomeInvalid" />
   </root>
-  <root nodeId="3347833162492309204" modelId="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)">
+  <root nodeRef="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)/3347833162492309204">
     <nodeInfo nodeId="3347833162492309204" fileName="SomeValid.java" startLine="10" startPosition="42" endLine="11" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3347833162492309204" fileName="SomeValid.java" startLine="11" startPosition="50" endLine="12" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3347833162492309204" fileName="SomeValid.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SomeValid#()V" />
@@ -278,7 +278,7 @@
     </scopeInfo>
     <unitInfo nodeId="3347833162492309204" fileName="SomeValid.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.sandbox.sandbox.SomeValid" />
   </root>
-  <root nodeId="5502823699574524006" modelId="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)">
+  <root nodeRef="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)/5502823699574524006">
     <nodeInfo nodeId="2372421611506004579" fileName="SettingsEditorPanelTest.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySettingsPanel" />
     <nodeInfo nodeId="5502823699574524012" fileName="SettingsEditorPanelTest.java" startLine="19" startPosition="36" endLine="20" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2372421611506012899" fileName="SettingsEditorPanelTest.java" startLine="20" startPosition="95" endLine="21" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -359,7 +359,7 @@
     <unitInfo nodeId="5502823699574524056" fileName="SettingsEditorPanelTest.java" startLine="64" startPosition="35" endLine="70" endPosition="5" unitName="jetbrains.mps.execution.sandbox.sandbox.SettingsEditorPanelTest$5" />
     <unitInfo nodeId="5502823699574524006" fileName="SettingsEditorPanelTest.java" startLine="16" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.execution.sandbox.sandbox.SettingsEditorPanelTest" />
   </root>
-  <root nodeId="8669494666333691544" modelId="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)">
+  <root nodeRef="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)/8669494666333691544">
     <nodeInfo nodeId="1928697827310642825" fileName="SettingsEditorDialogTest.java" startLine="11" startPosition="25" endLine="12" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1928697827310642831" fileName="SettingsEditorDialogTest.java" startLine="12" startPosition="83" endLine="13" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1928697827310642838" fileName="SettingsEditorDialogTest.java" startLine="13" startPosition="77" endLine="14" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -380,7 +380,7 @@
     <unitInfo nodeId="8669494666333691563" fileName="SettingsEditorDialogTest.java" startLine="10" startPosition="35" endLine="18" endPosition="5" unitName="jetbrains.mps.execution.sandbox.sandbox.SettingsEditorDialogTest$1" />
     <unitInfo nodeId="8669494666333691544" fileName="SettingsEditorDialogTest.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.execution.sandbox.sandbox.SettingsEditorDialogTest" />
   </root>
-  <root nodeId="8851756219471015171" modelId="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)">
+  <root nodeRef="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.execution.sandbox.sandbox)/8851756219471015171">
     <nodeInfo nodeId="3552883229438201580" fileName="Main.java" startLine="11" startPosition="42" endLine="12" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3552883229438210280" fileName="Main.java" startLine="12" startPosition="80" endLine="13" endPosition="610" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3552883229438210311" fileName="Main.java" startLine="13" startPosition="610" endLine="14" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

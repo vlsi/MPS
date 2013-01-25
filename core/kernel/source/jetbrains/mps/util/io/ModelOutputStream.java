@@ -21,10 +21,11 @@ import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodeId.Regular;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.BufferedOutputStream;
@@ -173,13 +174,13 @@ public class ModelOutputStream extends DataOutputStream {
     }
   }
 
-  public void writeNodePointer(SNodePointer ptr) throws IOException {
+  public void writeNodePointer(SNodeReference ptr) throws IOException {
     if (ptr == null) {
       writeByte(0x70);
     } else {
       writeByte(0x44);
       writeModelReference(ptr.getModelReference());
-      writeNodeId(ptr.getNodeId());
+      writeNodeId(((SNodePointer) ptr).getNodeId());
     }
   }
 }

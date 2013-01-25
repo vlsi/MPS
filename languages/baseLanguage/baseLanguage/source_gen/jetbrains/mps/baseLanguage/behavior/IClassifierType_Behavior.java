@@ -41,7 +41,7 @@ public class IClassifierType_Behavior {
         // in pure language i don't need this things =(. Main problem here is: classifier.getThisType() != classifier.getThisType() 
       }
     }
-    return RepositoryStateCacheUtils.getFromCache(IClassifierType_Behavior.class, cacheKey, new _FunctionTypes._return_P0_E0<ISequence<SNode>>() {
+    return RepositoryStateCacheUtils.getFromCache("IClassifierType_Behavior", cacheKey, new _FunctionTypes._return_P0_E0<ISequence<SNode>>() {
       public ISequence<SNode> invoke() {
         MembersPopulatingContext scope = new MembersPopulatingContext();
         IClassifierType_Behavior.call_populateMembers_7405920559687241253(thisNode, scope, thisNode);

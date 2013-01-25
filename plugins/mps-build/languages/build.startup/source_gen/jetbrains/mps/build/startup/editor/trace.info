@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3885435385580582161" modelId="r:557b6444-752b-478f-a018-f0abe80a35cd(jetbrains.mps.build.startup.editor)">
+  <root nodeRef="r:557b6444-752b-478f-a018-f0abe80a35cd(jetbrains.mps.build.startup.editor)/3885435385580582161">
     <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3885435385580582698" fileName="MpsStartupScript_Editor.java" startLine="34" startPosition="106" endLine="35" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3885435385580582698" fileName="MpsStartupScript_Editor.java" startLine="38" startPosition="66" endLine="39" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -476,7 +476,7 @@
     <unitInfo nodeId="3885435385580627558" fileName="MpsStartupScript_Editor.java" startLine="69" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.build.startup.editor.MpsStartupScript_Editor$vmOptionsListHandler_gszs7u_b9a" />
     <unitInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="28" startPosition="0" endLine="300" endPosition="0" unitName="jetbrains.mps.build.startup.editor.MpsStartupScript_Editor" />
   </root>
-  <root nodeId="3885435385580582741" modelId="r:557b6444-752b-478f-a018-f0abe80a35cd(jetbrains.mps.build.startup.editor)">
+  <root nodeRef="r:557b6444-752b-478f-a018-f0abe80a35cd(jetbrains.mps.build.startup.editor)/3885435385580582741">
     <nodeInfo nodeId="3885435385580582741" fileName="SimpleVmOptions_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3885435385580582741" fileName="SimpleVmOptions_Editor.java" startLine="23" startPosition="82" endLine="24" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4962066449779480168" fileName="SimpleVmOptions_Editor.java" startLine="27" startPosition="89" endLine="28" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -619,7 +619,7 @@
     </scopeInfo>
     <unitInfo nodeId="3885435385580582741" fileName="SimpleVmOptions_Editor.java" startLine="18" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.build.startup.editor.SimpleVmOptions_Editor" />
   </root>
-  <root nodeId="3885435385580627434" modelId="r:557b6444-752b-478f-a018-f0abe80a35cd(jetbrains.mps.build.startup.editor)">
+  <root nodeRef="r:557b6444-752b-478f-a018-f0abe80a35cd(jetbrains.mps.build.startup.editor)/3885435385580627434">
     <nodeInfo nodeId="3885435385580627434" fileName="ClassPathItem_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3885435385580627436" fileName="ClassPathItem_Editor.java" startLine="19" startPosition="87" endLine="20" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3885435385580627436" fileName="ClassPathItem_Editor.java" startLine="20" startPosition="82" endLine="21" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

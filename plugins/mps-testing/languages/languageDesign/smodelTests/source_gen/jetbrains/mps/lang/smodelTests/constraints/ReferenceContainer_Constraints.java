@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
@@ -51,7 +52,7 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_5tia2e_a0a3a0a0a1a0b0a1a1;
           }
         };
@@ -83,7 +84,7 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_5tia2e_a0a3a0a0a1a0b0a2a1;
           }
         };
@@ -115,7 +116,7 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_5tia2e_a0a3a0a0a1a0b0a3a1;
           }
         };

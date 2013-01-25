@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3813896760028776285" modelId="r:3cc5456c-635e-439f-8644-d304dd1294b9(jetbrains.mps.baseLanguage.doubleDispatch.generator.util)">
+  <root nodeRef="r:3cc5456c-635e-439f-8644-d304dd1294b9(jetbrains.mps.baseLanguage.doubleDispatch.generator.util)/3813896760028776285">
     <nodeInfo nodeId="6855443792548949705" fileName="DispatchGenUtil.java" startLine="30" startPosition="74" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6855443792548949706" fileName="DispatchGenUtil.java" startLine="31" startPosition="0" endLine="32" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3813896760028126246" fileName="DispatchGenUtil.java" startLine="32" startPosition="23" endLine="33" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

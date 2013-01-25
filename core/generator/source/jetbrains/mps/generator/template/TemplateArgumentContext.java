@@ -16,8 +16,9 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -25,15 +26,15 @@ import org.jetbrains.annotations.NotNull;
  */
 public class TemplateArgumentContext extends TemplateQueryContext {
 
-  private final SNodePointer myTemplateNode;
+  private final SNodeReference myTemplateNode;
 
-  public TemplateArgumentContext(SNode inputNode, @NotNull SNodePointer templateNode, TemplateContext context, ITemplateGenerator generator) {
+  public TemplateArgumentContext(SNode inputNode, @NotNull SNodeReference templateNode, TemplateContext context, ITemplateGenerator generator) {
     super(inputNode, null, context, generator);
     myTemplateNode = templateNode;
   }
 
   @Override
   public SNode getTemplateNode() {
-    return myTemplateNode.getNode();
+    return myTemplateNode.resolve(MPSModuleRepository.getInstance());
   }
 }

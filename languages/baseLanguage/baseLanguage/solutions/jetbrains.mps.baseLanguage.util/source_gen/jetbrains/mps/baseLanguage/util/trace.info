@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1650638035896359074" modelId="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)">
+  <root nodeRef="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)/1650638035896359074">
     <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFieldPrefix" />
     <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="21" startPosition="34" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="25" startPosition="44" endLine="26" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -109,7 +109,7 @@
     <scopeInfo nodeId="5036277047286161914" fileName="CodeStyleSettings.java" startLine="11" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="1650638035896359074" fileName="CodeStyleSettings.java" startLine="7" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.CodeStyleSettings" />
   </root>
-  <root nodeId="3155342362529678200" modelId="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)">
+  <root nodeRef="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)/3155342362529678200">
     <nodeInfo nodeId="3155342362529769218" fileName="DefaultConstructorUtils.java" startLine="18" startPosition="125" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3155342362529769362" fileName="DefaultConstructorUtils.java" startLine="21" startPosition="248" endLine="22" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3155342362529769452" fileName="DefaultConstructorUtils.java" startLine="24" startPosition="202" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -158,7 +158,7 @@
     <unitInfo nodeId="3155342362529769794" fileName="DefaultConstructorUtils.java" startLine="32" startPosition="272" endLine="36" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.DefaultConstructorUtils$1" />
     <unitInfo nodeId="3155342362529678200" fileName="DefaultConstructorUtils.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.DefaultConstructorUtils" />
   </root>
-  <root nodeId="644116965567343729" modelId="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)">
+  <root nodeRef="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)/644116965567343729">
     <nodeInfo nodeId="920705696368452801" fileName="CodeStyleSettingsRegistry.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myProjectToSettingsMap" />
     <nodeInfo nodeId="1650638035896359059" fileName="CodeStyleSettingsRegistry.java" startLine="16" startPosition="64" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="920705696368452814" fileName="CodeStyleSettingsRegistry.java" startLine="20" startPosition="84" endLine="21" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -184,7 +184,7 @@
     </scopeInfo>
     <unitInfo nodeId="644116965567343729" fileName="CodeStyleSettingsRegistry.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry" />
   </root>
-  <root nodeId="8432634623182691821" modelId="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)">
+  <root nodeRef="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)/8432634623182691821">
     <nodeInfo nodeId="8432634623182692263" fileName="OverridingMethodsFinder.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOverridingToOverridenMethodsMap" />
     <nodeInfo nodeId="8432634623182692283" fileName="OverridingMethodsFinder.java" startLine="30" startPosition="51" endLine="31" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="8432634623182692298" fileName="OverridingMethodsFinder.java" startLine="34" startPosition="76" endLine="35" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

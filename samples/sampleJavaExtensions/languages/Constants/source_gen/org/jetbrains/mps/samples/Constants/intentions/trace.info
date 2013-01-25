@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.intentions.IntentionsDescriptor" />
-  <root nodeId="3986994675334573650" modelId="r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)">
+  <root nodeRef="r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)/3986994675334573650">
     <nodeInfo nodeId="3986994675334573650" fileName="InlineConstant_Intention.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="3986994675334573650" fileName="InlineConstant_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3986994675334573650" fileName="InlineConstant_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -82,7 +82,7 @@
     <unitInfo nodeId="3986994675334573650" fileName="InlineConstant_Intention.java" startLine="67" startPosition="0" endLine="84" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.intentions.InlineConstant_Intention$IntentionImplementation" />
     <unitInfo nodeId="3986994675334573650" fileName="InlineConstant_Intention.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.intentions.InlineConstant_Intention" />
   </root>
-  <root nodeId="3986994675334573802" modelId="r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)">
+  <root nodeRef="r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)/3986994675334573802">
     <nodeInfo nodeId="3986994675334573802" fileName="SafeRemoveConstant_Intention.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="3986994675334573802" fileName="SafeRemoveConstant_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3986994675334573802" fileName="SafeRemoveConstant_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -178,7 +178,7 @@
     <unitInfo nodeId="3986994675334573802" fileName="SafeRemoveConstant_Intention.java" startLine="71" startPosition="0" endLine="97" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention$IntentionImplementation" />
     <unitInfo nodeId="3986994675334573802" fileName="SafeRemoveConstant_Intention.java" startLine="22" startPosition="0" endLine="98" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention" />
   </root>
-  <root nodeId="3986994675334574125" modelId="r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)">
+  <root nodeRef="r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)/3986994675334574125">
     <nodeInfo nodeId="3986994675334574125" fileName="IntroduceConstant_Intention.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="3986994675334574125" fileName="IntroduceConstant_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3986994675334574125" fileName="IntroduceConstant_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

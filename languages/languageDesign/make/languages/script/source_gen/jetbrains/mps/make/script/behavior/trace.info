@@ -26,7 +26,7 @@
   <unitInfo fileName="ResourceType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ResourceType_BehaviorDescriptor" />
   <unitInfo fileName="ResultStatement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ResultStatement_BehaviorDescriptor" />
   <unitInfo fileName="Text_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.behavior.Text_BehaviorDescriptor" />
-  <root nodeId="1977954644795510055" modelId="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)">
+  <root nodeRef="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)/1977954644795510055">
     <nodeInfo nodeId="1977954644795510066" fileName="RelayQueryExpression_Behavior.java" startLine="14" startPosition="82" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1977954644795510055" fileName="RelayQueryExpression_Behavior.java" startLine="19" startPosition="85" endLine="20" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1977954644795510055" fileName="RelayQueryExpression_Behavior.java" startLine="24" startPosition="118" endLine="25" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -53,7 +53,7 @@
     </scopeInfo>
     <unitInfo nodeId="1977954644795510055" fileName="RelayQueryExpression_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.make.script.behavior.RelayQueryExpression_Behavior" />
   </root>
-  <root nodeId="2974008768272238694" modelId="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)">
+  <root nodeRef="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)/2974008768272238694">
     <nodeInfo nodeId="2974008768272238705" fileName="ResultStatement_Behavior.java" startLine="14" startPosition="86" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2974008768272238694" fileName="ResultStatement_Behavior.java" startLine="19" startPosition="89" endLine="20" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2974008768272238694" fileName="ResultStatement_Behavior.java" startLine="24" startPosition="122" endLine="25" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -80,7 +80,7 @@
     </scopeInfo>
     <unitInfo nodeId="2974008768272238694" fileName="ResultStatement_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ResultStatement_Behavior" />
   </root>
-  <root nodeId="3044950653914721099" modelId="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)">
+  <root nodeRef="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)/3044950653914721099">
     <nodeInfo nodeId="3044950653914721073" fileName="JobDefinition_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914721088" fileName="JobDefinition_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914721093" fileName="JobDefinition_Behavior.java" startLine="18" startPosition="172" endLine="19" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -99,7 +99,7 @@
     </scopeInfo>
     <unitInfo nodeId="3044950653914721099" fileName="JobDefinition_Behavior.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.script.behavior.JobDefinition_Behavior" />
   </root>
-  <root nodeId="4125795553994047765" modelId="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)">
+  <root nodeRef="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)/4125795553994047765">
     <nodeInfo nodeId="4125795553994049033" fileName="OptionType_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4125795553994047765" fileName="OptionType_Behavior.java" startLine="20" startPosition="80" endLine="21" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4125795553994047765" fileName="OptionType_Behavior.java" startLine="25" startPosition="113" endLine="26" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -126,7 +126,7 @@
     </scopeInfo>
     <unitInfo nodeId="4125795553994047765" fileName="OptionType_Behavior.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.make.script.behavior.OptionType_Behavior" />
   </root>
-  <root nodeId="8486446835277382810" modelId="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)">
+  <root nodeRef="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)/8486446835277382810">
     <nodeInfo nodeId="8486446835277382823" fileName="QueryDefinition_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8486446835277382810" fileName="QueryDefinition_Behavior.java" startLine="21" startPosition="80" endLine="22" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8486446835277382810" fileName="QueryDefinition_Behavior.java" startLine="26" startPosition="113" endLine="27" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -153,7 +153,7 @@
     </scopeInfo>
     <unitInfo nodeId="8486446835277382810" fileName="QueryDefinition_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.script.behavior.QueryDefinition_Behavior" />
   </root>
-  <root nodeId="8853708281362145849" modelId="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)">
+  <root nodeRef="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)/8853708281362145849">
     <nodeInfo nodeId="3681941909241118315" fileName="ExpectedOption_Behavior.java" startLine="13" startPosition="43" endLine="14" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8853708281362147139" fileName="ExpectedOption_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8853708281362145849" fileName="ExpectedOption_Behavior.java" startLine="22" startPosition="80" endLine="23" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

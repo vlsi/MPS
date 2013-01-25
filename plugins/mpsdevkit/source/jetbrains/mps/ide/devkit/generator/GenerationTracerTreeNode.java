@@ -28,9 +28,10 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import java.util.Map;
@@ -46,7 +47,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     myProject = project;
     myTracerNode = tracerNode;
 
-    SNodePointer nodePointer = myTracerNode.getNodePointer();
+    SNodeReference nodePointer = myTracerNode.getNodePointer();
     if (nodePointer != null) {
       setNodeIdentifier("" + nodePointer.hashCode());
     } else {
@@ -63,7 +64,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
 
   protected void doUpdatePresentation() {
     Kind kind = myTracerNode.getKind();
-    SNodePointer nodePointer = myTracerNode.getNodePointer();
+    SNodeReference nodePointer = myTracerNode.getNodePointer();
     if (nodePointer != null) {
       if (kind == Kind.APPROXIMATE_OUTPUT || kind == Kind.APPROXIMATE_INPUT) {
         setText("[approximate location] " + nodePointer.toString());
@@ -101,7 +102,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     final GenerationTracer tracer = (GenerationTracer) myProject.getComponent(IGenerationTracer.class);
 
     final TracerNode tracerNode = this.getTracerNode();
-    final boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().getNode() != null;
+    final boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance()) != null;
 
     DefaultActionGroup group = new DefaultActionGroup();
     // is traceback shown?
@@ -110,7 +111,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     if (rootTracerNode != null && rootTracerNode.getKind() == Kind.OUTPUT) {
       group.add(new BaseAction("Show Trace") {
         protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-          tracer.showTraceInputData(tracerNode.getNodePointer().getNode());
+          tracer.showTraceInputData(tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance()));
         }
 
         protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
@@ -122,7 +123,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
 
     group.add(new BaseAction("Show Prev Step Traceback") {
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        tracer.showTracebackData(tracerNode.getNodePointer().getNode());
+        tracer.showTracebackData(tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance()));
       }
 
       protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
@@ -139,7 +140,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     DefaultActionGroup group = new DefaultActionGroup();
 
     final TracerNode tracerNode = this.getTracerNode();
-    final boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().getNode() != null;
+    final boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance()) != null;
 
     // is trace (forward) shown?
     GenerationTracerTreeNode rootNode = (GenerationTracerTreeNode) getRoot();
@@ -147,7 +148,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     if (rootTracerNode != null && (rootTracerNode.getKind() == Kind.INPUT || rootTracerNode.getKind() == Kind.RULE)) {
       group.add(new BaseAction("Show Traceback") {
         protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-          tracer.showTracebackData(tracerNode.getNodePointer().getNode());
+          tracer.showTracebackData(tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance()));
         }
 
         protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
@@ -159,7 +160,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
 
     group.add(new BaseAction("Show Next Step Trace") {
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        tracer.showTraceInputData(tracerNode.getNodePointer().getNode());
+        tracer.showTraceInputData(tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance()));
       }
 
       protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
@@ -176,7 +177,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        SNode nodeToOpen = myTracerNode.getNodePointer().getNode();
+        SNode nodeToOpen = myTracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance());
         if (nodeToOpen == null) return;
 
         IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
@@ -189,9 +190,9 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        SNodePointer nodePointer = myTracerNode.getNodePointer();
+        SNodeReference nodePointer = myTracerNode.getNodePointer();
         if (nodePointer == null) return;
-        SNode node = nodePointer.getNode();
+        SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
         if (node == null) {
           LOG.info("clicked node was deleted");
           return;

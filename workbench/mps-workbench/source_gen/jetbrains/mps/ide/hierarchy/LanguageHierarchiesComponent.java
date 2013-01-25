@@ -49,7 +49,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import java.awt.Font;
 import jetbrains.mps.nodeEditor.EditorSettings;
@@ -57,6 +57,7 @@ import java.awt.event.MouseListener;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -353,7 +354,7 @@ outer:
   }
 
   public static class ConceptContainer {
-    private SNodePointer myNodePointer;
+    private SNodeReference myNodePointer;
     private int myX;
     private int myY;
     private int myWidth;
@@ -414,7 +415,7 @@ outer:
     }
 
     public SNode getNode() {
-      return SNodeOperations.cast(myNodePointer.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+      return SNodeOperations.cast(((SNodePointer) myNodePointer).getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
     }
 
     public void paint(Graphics graphics) {

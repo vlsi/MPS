@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="226334238991954936" modelId="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)">
+  <root nodeRef="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)/226334238991954936">
     <nodeInfo nodeId="226334238991992649" fileName="CppDebugger.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpointsProvider" />
     <nodeInfo nodeId="226334238991992661" fileName="CppDebugger.java" startLine="17" startPosition="98" endLine="18" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="226334238991992645" fileName="CppDebugger.java" startLine="22" startPosition="58" endLine="23" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -21,7 +21,7 @@
     </scopeInfo>
     <unitInfo nodeId="226334238991954936" fileName="CppDebugger.java" startLine="14" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppDebugger" />
   </root>
-  <root nodeId="2692169166603127766" modelId="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)">
+  <root nodeRef="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)/2692169166603127766">
     <nodeInfo nodeId="2692169166603199734" fileName="GdbDebuggerSettings.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySourceDir" />
     <nodeInfo nodeId="2692169166603199738" fileName="GdbDebuggerSettings.java" startLine="11" startPosition="48" endLine="12" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2692169166603174978" fileName="GdbDebuggerSettings.java" startLine="15" startPosition="28" endLine="16" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -45,7 +45,7 @@
     </scopeInfo>
     <unitInfo nodeId="2692169166603127766" fileName="GdbDebuggerSettings.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.nanoc.debug.GdbDebuggerSettings" />
   </root>
-  <root nodeId="3990508698139426393" modelId="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)">
+  <root nodeRef="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)/3990508698139426393">
     <nodeInfo nodeId="3990508698139426409" fileName="CppGDBCreator.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugSession" />
     <nodeInfo nodeId="7125917778320084498" fileName="CppGDBCreator.java" startLine="26" startPosition="49" endLine="27" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7125917778320084503" fileName="CppGDBCreator.java" startLine="31" startPosition="146" endLine="32" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -116,7 +116,7 @@
     <unitInfo nodeId="3990508698139426589" fileName="CppGDBCreator.java" startLine="41" startPosition="62" endLine="51" endPosition="5" unitName="jetbrains.mps.nanoc.debug.CppGDBCreator$1" />
     <unitInfo nodeId="3990508698139426393" fileName="CppGDBCreator.java" startLine="20" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppGDBCreator" />
   </root>
-  <root nodeId="3990508698139427192" modelId="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)">
+  <root nodeRef="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)/3990508698139427192">
     <nodeInfo nodeId="3990508698139427194" fileName="ProgramsLocationUtil.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourGdbLocation" />
     <nodeInfo nodeId="3990508698139427197" fileName="ProgramsLocationUtil.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourGccLocation" />
     <nodeInfo nodeId="3990508698139427210" fileName="ProgramsLocationUtil.java" startLine="13" startPosition="57" endLine="14" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -144,7 +144,7 @@
     <scopeInfo nodeId="3990508698139427230" fileName="ProgramsLocationUtil.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
     <unitInfo nodeId="3990508698139427192" fileName="ProgramsLocationUtil.java" startLine="6" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.nanoc.debug.ProgramsLocationUtil" />
   </root>
-  <root nodeId="3990508698139427473" modelId="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)">
+  <root nodeRef="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)/3990508698139427473">
     <nodeInfo nodeId="3990508698139427487" fileName="GDBCommands.java" startLine="12" startPosition="79" endLine="13" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3990508698139427493" fileName="GDBCommands.java" startLine="13" startPosition="41" endLine="14" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3990508698139427499" fileName="GDBCommands.java" startLine="14" startPosition="43" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -173,7 +173,7 @@
     </scopeInfo>
     <unitInfo nodeId="3990508698139427473" fileName="GDBCommands.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.nanoc.debug.GDBCommands" />
   </root>
-  <root nodeId="3990508698139428411" modelId="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)">
+  <root nodeRef="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)/3990508698139428411">
     <nodeInfo nodeId="3990508698139428421" fileName="CppDebugSession.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventsHandler" />
     <nodeInfo nodeId="3990508698139428424" fileName="CppDebugSession.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRequestManager" />
     <nodeInfo nodeId="3990508698139428427" fileName="CppDebugSession.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySourceGen" />
@@ -347,7 +347,7 @@
     <unitInfo nodeId="3990508698139428596" fileName="CppDebugSession.java" startLine="87" startPosition="41" endLine="104" endPosition="5" unitName="jetbrains.mps.nanoc.debug.CppDebugSession$4" />
     <unitInfo nodeId="3990508698139428411" fileName="CppDebugSession.java" startLine="25" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppDebugSession" />
   </root>
-  <root nodeId="3990508698139429713" modelId="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)">
+  <root nodeRef="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)/3990508698139429713">
     <nodeInfo nodeId="3990508698139429716" fileName="CppUiStateImpl.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThread" />
     <nodeInfo nodeId="7664399755427829736" fileName="CppUiStateImpl.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFrame" />
     <nodeInfo nodeId="7664399755427870525" fileName="CppUiStateImpl.java" startLine="19" startPosition="60" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
@@ -417,7 +417,7 @@
     </scopeInfo>
     <unitInfo nodeId="3990508698139429713" fileName="CppUiStateImpl.java" startLine="15" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppUiStateImpl" />
   </root>
-  <root nodeId="3990508698139430350" modelId="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)">
+  <root nodeRef="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)/3990508698139430350">
     <nodeInfo nodeId="3990508698139430359" fileName="CppUiState.java" startLine="9" startPosition="54" endLine="10" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3990508698139430353" fileName="CppUiState.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CppUiState#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
     <scopeInfo nodeId="3990508698139430358" fileName="CppUiState.java" startLine="9" startPosition="54" endLine="10" endPosition="19" />
@@ -426,7 +426,7 @@
     </scopeInfo>
     <unitInfo nodeId="3990508698139430350" fileName="CppUiState.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppUiState" />
   </root>
-  <root nodeId="4781887771024752102" modelId="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)">
+  <root nodeRef="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)/4781887771024752102">
     <nodeInfo nodeId="4781887771024752103" fileName="GdbProcessListener.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReadyForInput" />
     <nodeInfo nodeId="3495025700496035277" fileName="GdbProcessListener.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProcess" />
     <nodeInfo nodeId="3495025700496036071" fileName="GdbProcessListener.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
@@ -501,7 +501,7 @@
     <unitInfo nodeId="4781887771024752193" fileName="GdbProcessListener.java" startLine="43" startPosition="65" endLine="54" endPosition="9" unitName="jetbrains.mps.nanoc.debug.GdbProcessListener$1" />
     <unitInfo nodeId="4781887771024752102" fileName="GdbProcessListener.java" startLine="22" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.nanoc.debug.GdbProcessListener" />
   </root>
-  <root nodeId="7125917778320166850" modelId="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)">
+  <root nodeRef="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)/7125917778320166850">
     <nodeInfo nodeId="7125917778320166866" fileName="ProcessUtil.java" startLine="14" startPosition="9" endLine="15" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7125917778320166874" fileName="ProcessUtil.java" startLine="15" startPosition="96" endLine="16" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7125917778320166879" fileName="ProcessUtil.java" startLine="16" startPosition="38" endLine="17" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -19,6 +19,7 @@ import com.intellij.ide.util.treeView.smartTree.ActionPresentation;
 import com.intellij.ide.util.treeView.smartTree.ActionPresentationData;
 import com.intellij.ide.util.treeView.smartTree.Sorter;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
@@ -70,8 +71,8 @@ public class AspectNodeSorter implements Sorter {
 
       return ModelAccess.instance().runReadAction(new Computable<Integer>() {
         public Integer compute() {
-          SNode n1 = ate1.getValue().getNode();
-          SNode n2 = ate2.getValue().getNode();
+          SNode n1 = ate1.getValue().resolve(MPSModuleRepository.getInstance());
+          SNode n2 = ate2.getValue().resolve(MPSModuleRepository.getInstance());
 
           if (n1 == null || n2 == null) return 0;
 

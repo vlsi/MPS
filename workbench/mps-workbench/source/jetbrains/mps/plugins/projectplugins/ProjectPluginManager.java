@@ -42,9 +42,10 @@ import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -270,7 +271,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
             }
             for (BaseProjectPlugin p : plugins) {
               for (RelationDescriptor tab : p.getTabDescriptors()) {
-                SNode node = editor.getNodeEditor().getCurrentlyEditedNode().getNode();
+                SNode node = editor.getNodeEditor().getCurrentlyEditedNode().resolve(MPSModuleRepository.getInstance());
                 if (tab.getBaseNode(node) != null) {
                   editor.recreateEditor();
                   continue editors;
@@ -313,7 +314,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         }
       }
 
-      return new TabbedEditor(new SNodePointer(node), tabs, context);
+      return new TabbedEditor(new jetbrains.mps.smodel.SNodePointer(node), tabs, context);
     }
   }
 }

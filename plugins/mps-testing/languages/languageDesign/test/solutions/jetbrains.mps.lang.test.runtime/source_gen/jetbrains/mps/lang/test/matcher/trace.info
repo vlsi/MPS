@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8984393347190225578" modelId="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)">
+  <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190225578">
     <nodeInfo nodeId="8984393347190225580" fileName="DifferanceItem.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DifferanceItem#()V" />
     <scopeInfo nodeId="8984393347190225583" fileName="DifferanceItem.java" startLine="7" startPosition="27" endLine="7" endPosition="27" />
     <scopeInfo nodeId="8984393347190225580" fileName="DifferanceItem.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <unitInfo nodeId="8984393347190225578" fileName="DifferanceItem.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.DifferanceItem" />
   </root>
-  <root nodeId="8984393347190225584" modelId="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)">
+  <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190225584">
     <nodeInfo nodeId="8984393347190225587" fileName="NodeDifference.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="8984393347190225590" fileName="NodeDifference.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDifference" />
     <nodeInfo nodeId="8984393347190225606" fileName="NodeDifference.java" startLine="12" startPosition="66" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -73,7 +73,7 @@
     </scopeInfo>
     <unitInfo nodeId="8984393347190225584" fileName="NodeDifference.java" startLine="8" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.NodeDifference" />
   </root>
-  <root nodeId="8984393347190227556" modelId="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)">
+  <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190227556">
     <nodeInfo nodeId="8984393347190227570" fileName="NodesMatcher.java" startLine="19" startPosition="61" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8984393347190227577" fileName="NodesMatcher.java" startLine="20" startPosition="52" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190227582" fileName="NodesMatcher.java" startLine="21" startPosition="17" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -316,7 +316,7 @@
     </scopeInfo>
     <unitInfo nodeId="8984393347190227556" fileName="NodesMatcher.java" startLine="15" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
   </root>
-  <root nodeId="8984393347190228267" modelId="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)">
+  <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190228267">
     <nodeInfo nodeId="8984393347190228270" fileName="PropertyDifferense.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperty" />
     <nodeInfo nodeId="8984393347190228279" fileName="PropertyDifferense.java" startLine="9" startPosition="46" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190228291" fileName="PropertyDifferense.java" startLine="13" startPosition="53" endLine="14" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -352,7 +352,7 @@
     </scopeInfo>
     <unitInfo nodeId="8984393347190228267" fileName="PropertyDifferense.java" startLine="6" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.PropertyDifferense" />
   </root>
-  <root nodeId="8984393347190228335" modelId="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)">
+  <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190228335">
     <nodeInfo nodeId="8984393347190228338" fileName="ReferenceDifferense.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRole" />
     <nodeInfo nodeId="8984393347190228341" fileName="ReferenceDifferense.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInternal" />
     <nodeInfo nodeId="8984393347190228352" fileName="ReferenceDifferense.java" startLine="10" startPosition="61" endLine="11" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -389,7 +389,7 @@
     </scopeInfo>
     <unitInfo nodeId="8984393347190228335" fileName="ReferenceDifferense.java" startLine="6" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.ReferenceDifferense" />
   </root>
-  <root nodeId="8984393347190228418" modelId="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)">
+  <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190228418">
     <nodeInfo nodeId="8984393347190228421" fileName="ConceptDifference.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConcept1" />
     <nodeInfo nodeId="8984393347190228424" fileName="ConceptDifference.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConcept2" />
     <nodeInfo nodeId="8984393347190228435" fileName="ConceptDifference.java" startLine="10" startPosition="62" endLine="11" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -421,7 +421,7 @@
     </scopeInfo>
     <unitInfo nodeId="8984393347190228418" fileName="ConceptDifference.java" startLine="6" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.ConceptDifference" />
   </root>
-  <root nodeId="8984393347190228497" modelId="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)">
+  <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190228497">
     <nodeInfo nodeId="8984393347190228500" fileName="ChildrenCountDifference.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRole" />
     <nodeInfo nodeId="8984393347190228503" fileName="ChildrenCountDifference.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCount1" />
     <nodeInfo nodeId="8984393347190228506" fileName="ChildrenCountDifference.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCount2" />

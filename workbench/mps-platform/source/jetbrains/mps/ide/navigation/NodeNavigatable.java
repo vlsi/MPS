@@ -20,9 +20,10 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -32,16 +33,16 @@ public class NodeNavigatable extends BaseNavigatable {
   private static final Logger LOG = Logger.getLogger(NodeNavigatable.class);
 
   @NotNull
-  private SNodePointer nodePointer;
+  private SNodeReference nodePointer;
 
-  public NodeNavigatable(@NotNull Project project, @NotNull SNodePointer nodePointer) {
+  public NodeNavigatable(@NotNull Project project, @NotNull SNodeReference nodePointer) {
     super(project);
     this.nodePointer = nodePointer;
   }
 
   @Override
   public void doNavigate(final boolean focus) {
-    SNode node = nodePointer.getNode();
+    SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
     if (node == null) {
       LOG.info("clicked node was deleted");
       return;
@@ -57,7 +58,7 @@ public class NodeNavigatable extends BaseNavigatable {
     NavigationSupport.getInstance().openNode(context, node, focus, !(node.getModel() != null && node.getModel().isRoot(node)));
   }
 
-  public SNodePointer getNodePointer() {
+  public SNodeReference getNodePointer() {
     return nodePointer;
   }
 }

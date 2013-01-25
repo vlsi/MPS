@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="27" startPosition="51" endLine="66" endPosition="7" unitName="org.jetbrains.mps.samples.Money.actions.QueriesGenerated$1" />
   <unitInfo fileName="QueriesGenerated.java" startLine="22" startPosition="0" endLine="71" endPosition="0" unitName="org.jetbrains.mps.samples.Money.actions.QueriesGenerated" />
-  <root nodeId="3607579524910547544" modelId="r:a4988a37-dce9-4e83-b399-b6b2ea80640c(org.jetbrains.mps.samples.Money.actions)">
+  <root nodeRef="r:a4988a37-dce9-4e83-b399-b6b2ea80640c(org.jetbrains.mps.samples.Money.actions)/3607579524910547544">
     <nodeInfo nodeId="3607579524910560816" fileName="QueriesGenerated.java" startLine="30" startPosition="56" endLine="31" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3607579524910567684" fileName="QueriesGenerated.java" startLine="35" startPosition="45" endLine="36" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3607579524910547645" fileName="QueriesGenerated.java" startLine="39" startPosition="29" endLine="40" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

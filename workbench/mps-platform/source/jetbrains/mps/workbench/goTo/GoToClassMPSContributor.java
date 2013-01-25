@@ -19,7 +19,7 @@ package jetbrains.mps.workbench.goTo;
 import com.intellij.navigation.GotoClassContributor;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
@@ -39,8 +39,8 @@ public class GoToClassMPSContributor implements GotoClassContributor {
 
   private BaseNodePointerModel createModel(final Project project) {
     return new BaseNodePointerModel(project, "root") {
-      public SNodePointer[] find(IScope scope) {
-        final List<SNodePointer> nodes = new ArrayList<SNodePointer>();
+      public SNodeReference[] find(IScope scope) {
+        final List<SNodeReference> nodes = new ArrayList<SNodeReference>();
         Iterable<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
 
         Condition<SNode> cond = new Condition<SNode>() {
@@ -55,10 +55,10 @@ public class GoToClassMPSContributor implements GotoClassContributor {
 
           Iterable<SNode> iter = new ConditionalIterable<SNode>(modelDescriptor.getSModel().roots(), cond);
           for (SNode node : iter){
-            nodes.add(new SNodePointer(node));
+            nodes.add(new jetbrains.mps.smodel.SNodePointer(node));
           }
         }
-        return nodes.toArray(new SNodePointer[nodes.size()]);
+        return nodes.toArray(new SNodeReference[nodes.size()]);
       }
 
       public boolean willOpenEditor() {

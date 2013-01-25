@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1880762541167901329" modelId="r:e1d5070f-d69f-450c-87c6-b8c61ca08d04(jetbrains.mps.ui.sandbox.swing)">
+  <root nodeRef="r:e1d5070f-d69f-450c-87c6-b8c61ca08d04(jetbrains.mps.ui.sandbox.swing)/1880762541167901329">
     <nodeInfo nodeId="1880762541167901346" fileName="SwingDemo.java" startLine="14" startPosition="28" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1880762541167901352" fileName="SwingDemo.java" startLine="15" startPosition="38" endLine="16" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1880762541167901357" fileName="SwingDemo.java" startLine="16" startPosition="54" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

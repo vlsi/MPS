@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.interpreted.TemplateCreateRootRuleInterprete
 import jetbrains.mps.generator.impl.interpreted.TemplateRootMappingRuleInterpreted;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.JavaNameUtil;
@@ -197,7 +198,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     try {
-      tracer.push(taskName("trying to apply rule", rule.getRuleNode().getNode()), true);
+      tracer.push(taskName("trying to apply rule", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
       return wrapped.tryToApply(rule, environment, context);
     } finally {
       tracer.pop();
@@ -207,7 +208,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     try {
-      tracer.push(taskName("check condition", rule.getRuleNode().getNode()), true);
+      tracer.push(taskName("check condition", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
       return wrapped.isApplicable(rule, environment, context);
     } finally {
       tracer.pop();
@@ -220,7 +221,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
       return wrapped.applyRule(rule, environment, context);
     }
     try {
-      tracer.push(taskName("root mapping rule", rule.getRuleNode().getNode()), true);
+      tracer.push(taskName("root mapping rule", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
       return wrapped.applyRule(rule, environment,context);
     } finally {
       tracer.pop();
@@ -233,7 +234,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
       return wrapped.applyRule(rule, environment);
     }
     try {
-      tracer.push(taskName("create root rule", rule.getRuleNode().getNode()), true);
+      tracer.push(taskName("create root rule", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
       return wrapped.applyRule(rule, environment);
     } finally {
       tracer.pop();
@@ -243,7 +244,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) {
     try {
-      tracer.push(taskName("context for weaving", rule.getRuleNode().getNode()), true);
+      tracer.push(taskName("context for weaving", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
       return wrapped.getContextNode(rule, environment, context);
     } finally {
       tracer.pop();
@@ -253,7 +254,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public void executeScript(TemplateMappingScript mappingScript, SModel model) {
     try {
-      tracer.push(taskName("mapping script", mappingScript.getScriptNode().getNode()), true);
+      tracer.push(taskName("mapping script", mappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance())), true);
       wrapped.executeScript(mappingScript, model);
     } finally {
       tracer.pop();

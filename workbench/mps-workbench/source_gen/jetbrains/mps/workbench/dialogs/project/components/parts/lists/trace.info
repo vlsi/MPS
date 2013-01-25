@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1560298786499489584" modelId="r:36b80a55-07fd-42e9-a27f-9930079d9718(jetbrains.mps.workbench.dialogs.project.components.parts.lists)">
+  <root nodeRef="r:36b80a55-07fd-42e9-a27f-9930079d9718(jetbrains.mps.workbench.dialogs.project.components.parts.lists)/1560298786499489584">
     <nodeInfo nodeId="1560298786499489588" fileName="SortedList.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComparator" />
     <nodeInfo nodeId="1560298786499489592" fileName="SortedList.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myList" />
     <nodeInfo nodeId="1560298786499489605" fileName="SortedList.java" startLine="14" startPosition="64" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -123,7 +123,7 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499489584" fileName="SortedList.java" startLine="10" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedList" />
   </root>
-  <root nodeId="1560298786499493498" modelId="r:36b80a55-07fd-42e9-a27f-9930079d9718(jetbrains.mps.workbench.dialogs.project.components.parts.lists)">
+  <root nodeRef="r:36b80a55-07fd-42e9-a27f-9930079d9718(jetbrains.mps.workbench.dialogs.project.components.parts.lists)/1560298786499493498">
     <nodeInfo nodeId="1560298786499493769" fileName="ListsFactory.java" startLine="24" startPosition="64" endLine="25" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499493785" fileName="ListsFactory.java" startLine="26" startPosition="36" endLine="27" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499493787" fileName="ListsFactory.java" startLine="28" startPosition="7" endLine="29" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

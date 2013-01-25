@@ -26,7 +26,7 @@ import jetbrains.mps.ide.projectPane.ProjectPaneDnDListener;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.ProjectPaneTreeHighlighter;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -138,12 +138,12 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
       final AbstractProjectViewPane currentPane = projectView.getCurrentProjectViewPane();
       if (!(currentPane instanceof BaseLogicalViewProjectPane)) return;
 
-      final List<Pair<SNodePointer, String>> result = new ArrayList<Pair<SNodePointer, String>>();
+      final List<Pair<SNodeReference, String>> result = new ArrayList<Pair<SNodeReference, String>>();
 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           for (SNode node : myProjectPane.getSelectedSNodes()) {
-            result.add(new Pair(new SNodePointer(node), ""));
+            result.add(new Pair(new jetbrains.mps.smodel.SNodePointer(node), ""));
           }
           SModelDescriptor contextDescriptor = myProjectPane.getContextModel();
           if (contextDescriptor != null) {
@@ -166,7 +166,7 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
                   basePack.append(".");
                 }
                 basePack.append(secondPart);
-                result.add(new Pair(new SNodePointer(node), basePack.toString()));
+                result.add(new Pair(new jetbrains.mps.smodel.SNodePointer(node), basePack.toString()));
               }
             }
           }

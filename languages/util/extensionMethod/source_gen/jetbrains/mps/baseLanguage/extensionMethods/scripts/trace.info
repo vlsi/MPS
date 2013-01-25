@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="7517860079983491720" modelId="r:6f595bf3-27c5-4410-a8f0-094e3ff4d9f0(jetbrains.mps.baseLanguage.extensionMethods.scripts)">
+  <root nodeRef="r:6f595bf3-27c5-4410-a8f0-094e3ff4d9f0(jetbrains.mps.baseLanguage.extensionMethods.scripts)/7517860079983491720">
     <nodeInfo nodeId="7517860079983491720" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="19" startPosition="96" endLine="20" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7517860079983491853" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="22" startPosition="31" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7517860079983491853" fileName="ConvertExtensionMethodCallToLocal_MigrationScript.java" startLine="26" startPosition="41" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

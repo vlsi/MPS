@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.settings;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -23,8 +24,8 @@ public enum JUnitRunTypes2 {
       }
       if (configuration.getTestMethods() != null) {
         for (String method : ListSequence.fromList(configuration.getTestMethods())) {
-          SNodePointer pointer = TestUtils.stringToPointer(method);
-          if (pointer == null || pointer.getNode() == null || TestNodeWrapperFactory.tryToWrap(pointer.getNode()) == null) {
+          SNodeReference pointer = TestUtils.stringToPointer(method);
+          if (pointer == null || ((SNodePointer) pointer).getNode() == null || TestNodeWrapperFactory.tryToWrap(((SNodePointer) pointer).getNode()) == null) {
             return "Could not find test method for id " + method + ".";
           }
         }
@@ -43,8 +44,8 @@ public enum JUnitRunTypes2 {
       }
       if (configuration.getTestCases() != null) {
         for (String testCase : ListSequence.fromList(configuration.getTestCases())) {
-          SNodePointer pointer = TestUtils.stringToPointer(testCase);
-          if (pointer == null || pointer.getNode() == null || TestNodeWrapperFactory.tryToWrap(pointer.getNode()) == null) {
+          SNodeReference pointer = TestUtils.stringToPointer(testCase);
+          if (pointer == null || ((SNodePointer) pointer).getNode() == null || TestNodeWrapperFactory.tryToWrap(((SNodePointer) pointer).getNode()) == null) {
             return "Could not find test case for id " + testCase + ".";
           }
         }

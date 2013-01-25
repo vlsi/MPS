@@ -10,9 +10,10 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ActionConstructionParameterDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ActionConstructionParameterDeclaration_Constraints() {
@@ -37,7 +38,7 @@ public class ActionConstructionParameterDeclaration_Constraints extends BaseCons
       }
 
       @Override
-      public SNodePointer getSearchScopeValidatorNode() {
+      public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_846svb_a0a1a0a0a2;
       }
     };

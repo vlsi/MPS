@@ -29,6 +29,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
   </dependency>
   <dependency className="jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager" file="BreakpointProvidersManager.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />

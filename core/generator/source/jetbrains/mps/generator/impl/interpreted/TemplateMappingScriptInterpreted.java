@@ -22,7 +22,7 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.QueryMethodGenerated;
 
 /**
@@ -37,8 +37,8 @@ public class TemplateMappingScriptInterpreted implements TemplateMappingScript {
   }
 
   @Override
-  public SNodePointer getScriptNode() {
-    return new SNodePointer(scriptNode);
+  public SNodeReference getScriptNode() {
+    return new jetbrains.mps.smodel.SNodePointer(scriptNode);
   }
 
   @Override

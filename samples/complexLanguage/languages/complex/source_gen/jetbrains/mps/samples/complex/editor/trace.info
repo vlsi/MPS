@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1196264073663" modelId="r:00000000-0000-4000-0000-011c89590423(jetbrains.mps.samples.complex.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590423(jetbrains.mps.samples.complex.editor)/1196264073663">
     <nodeInfo nodeId="1196264073663" fileName="SingleComplexExpression_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196420729292" fileName="SingleComplexExpression_Editor.java" startLine="28" startPosition="89" endLine="29" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196420729292" fileName="SingleComplexExpression_Editor.java" startLine="29" startPosition="96" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -109,7 +109,7 @@
     </scopeInfo>
     <unitInfo nodeId="1196264073663" fileName="SingleComplexExpression_Editor.java" startLine="23" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.samples.complex.editor.SingleComplexExpression_Editor" />
   </root>
-  <root nodeId="1196422134243" modelId="r:00000000-0000-4000-0000-011c89590423(jetbrains.mps.samples.complex.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590423(jetbrains.mps.samples.complex.editor)/1196422134243">
     <nodeInfo nodeId="1196422134243" fileName="DegreeComplexExpression_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196422138808" fileName="DegreeComplexExpression_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196422138808" fileName="DegreeComplexExpression_Editor.java" startLine="22" startPosition="96" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -237,7 +237,7 @@
     </scopeInfo>
     <unitInfo nodeId="1196422134243" fileName="DegreeComplexExpression_Editor.java" startLine="16" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.samples.complex.editor.DegreeComplexExpression_Editor" />
   </root>
-  <root nodeId="1196434294865" modelId="r:00000000-0000-4000-0000-011c89590423(jetbrains.mps.samples.complex.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590423(jetbrains.mps.samples.complex.editor)/1196434294865">
     <nodeInfo nodeId="1196434294865" fileName="ImaginaryUnit_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196434300883" fileName="ImaginaryUnit_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196434300883" fileName="ImaginaryUnit_Editor.java" startLine="17" startPosition="87" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

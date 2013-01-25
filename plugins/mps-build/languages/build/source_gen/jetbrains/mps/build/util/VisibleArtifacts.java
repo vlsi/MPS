@@ -243,7 +243,7 @@ public class VisibleArtifacts {
   }
 
   public static <K, V> V getFromCache(Class clazz, K key, _FunctionTypes._return_P0_E0<? extends V> creator) {
-    ConcurrentMap<K, V> cache = ModelAccess.instance().getRepositoryStateCache(clazz);
+    ConcurrentMap<K, V> cache = ModelAccess.instance().getRepositoryStateCache(clazz.getName());
     if (cache == null) {
       return creator.invoke();
     }

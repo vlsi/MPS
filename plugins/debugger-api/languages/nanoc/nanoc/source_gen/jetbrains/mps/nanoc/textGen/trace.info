@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6585869519574796033" modelId="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)">
+  <root nodeRef="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)/6585869519574796033">
     <nodeInfo nodeId="6585869519574796033" fileName="File_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4211204866430805103" fileName="File_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4211204866430805103" fileName="File_TextGen.java" startLine="19" startPosition="32" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -49,7 +49,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574796033" fileName="File_TextGen.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.File_TextGen" />
   </root>
-  <root nodeId="6585869519574798154" modelId="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)">
+  <root nodeRef="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)/6585869519574798154">
     <nodeInfo nodeId="6585869519574798168" fileName="CBody_TextGen.java" startLine="12" startPosition="81" endLine="13" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574798168" fileName="CBody_TextGen.java" startLine="12" startPosition="81" endLine="13" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574798168" fileName="CBody_TextGen.java" startLine="13" startPosition="112" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -68,7 +68,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574798154" fileName="CBody_TextGen.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CBody_TextGen" />
   </root>
-  <root nodeId="6585869519574798175" modelId="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)">
+  <root nodeRef="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)/6585869519574798175">
     <nodeInfo nodeId="6585869519574798175" fileName="CExpressionStatement_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574798178" fileName="CExpressionStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574798178" fileName="CExpressionStatement_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -102,7 +102,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574798175" fileName="CExpressionStatement_TextGen.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CExpressionStatement_TextGen" />
   </root>
-  <root nodeId="6585869519574798190" modelId="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)">
+  <root nodeRef="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)/6585869519574798190">
     <nodeInfo nodeId="6585869519574798190" fileName="VarDeclStatement_TextGen.java" startLine="17" startPosition="44" endLine="18" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574798193" fileName="VarDeclStatement_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574798193" fileName="VarDeclStatement_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -152,7 +152,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574798190" fileName="VarDeclStatement_TextGen.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.VarDeclStatement_TextGen" />
   </root>
-  <root nodeId="6585869519574798216" modelId="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)">
+  <root nodeRef="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)/6585869519574798216">
     <nodeInfo nodeId="6585869519574798219" fileName="VarDecl_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574798219" fileName="VarDecl_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574798246" fileName="VarDecl_TextGen.java" startLine="14" startPosition="73" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -171,7 +171,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574798216" fileName="VarDecl_TextGen.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.VarDecl_TextGen" />
   </root>
-  <root nodeId="6585869519574798258" modelId="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)">
+  <root nodeRef="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)/6585869519574798258">
     <nodeInfo nodeId="6585869519574798258" fileName="CWhile_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574798261" fileName="CWhile_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574798261" fileName="CWhile_TextGen.java" startLine="19" startPosition="27" endLine="20" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -219,7 +219,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574798258" fileName="CWhile_TextGen.java" startLine="14" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CWhile_TextGen" />
   </root>
-  <root nodeId="6585869519574800564" modelId="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)">
+  <root nodeRef="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)/6585869519574800564">
     <nodeInfo nodeId="6585869519574800567" fileName="CType_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574800567" fileName="CType_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574800564" fileName="CType_TextGen.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -230,7 +230,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574800564" fileName="CType_TextGen.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CType_TextGen" />
   </root>
-  <root nodeId="6585869519574800577" modelId="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)">
+  <root nodeRef="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)/6585869519574800577">
     <nodeInfo nodeId="6585869519574800580" fileName="CBinaryOp_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574800580" fileName="CBinaryOp_TextGen.java" startLine="13" startPosition="42" endLine="14" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574800580" fileName="CBinaryOp_TextGen.java" startLine="14" startPosition="146" endLine="15" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -249,7 +249,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574800577" fileName="CBinaryOp_TextGen.java" startLine="12" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CBinaryOp_TextGen" />
   </root>
-  <root nodeId="6585869519574802727" modelId="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)">
+  <root nodeRef="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)/6585869519574802727">
     <nodeInfo nodeId="6585869519574802730" fileName="IntConst_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574802730" fileName="IntConst_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574802727" fileName="IntConst_TextGen.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -260,7 +260,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574802727" fileName="IntConst_TextGen.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.IntConst_TextGen" />
   </root>
-  <root nodeId="6585869519574802740" modelId="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)">
+  <root nodeRef="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)/6585869519574802740">
     <nodeInfo nodeId="6585869519574802740" fileName="CFor_TextGen.java" startLine="16" startPosition="44" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574802743" fileName="CFor_TextGen.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574802743" fileName="CFor_TextGen.java" startLine="19" startPosition="25" endLine="20" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -316,7 +316,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574802740" fileName="CFor_TextGen.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CFor_TextGen" />
   </root>
-  <root nodeId="6585869519574807368" modelId="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)">
+  <root nodeRef="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)/6585869519574807368">
     <nodeInfo nodeId="6585869519574807371" fileName="VarRef_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574807371" fileName="VarRef_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574807368" fileName="VarRef_TextGen.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -327,7 +327,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574807368" fileName="VarRef_TextGen.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.VarRef_TextGen" />
   </root>
-  <root nodeId="6585869519574807386" modelId="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)">
+  <root nodeRef="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)/6585869519574807386">
     <nodeInfo nodeId="6585869519574807389" fileName="CAssignmentExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574807389" fileName="CAssignmentExpression_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574807389" fileName="CAssignmentExpression_TextGen.java" startLine="12" startPosition="150" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -344,7 +344,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574807386" fileName="CAssignmentExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CAssignmentExpression_TextGen" />
   </root>
-  <root nodeId="6585869519574807410" modelId="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)">
+  <root nodeRef="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)/6585869519574807410">
     <nodeInfo nodeId="6585869519574807413" fileName="CParenthesis_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574807413" fileName="CParenthesis_TextGen.java" startLine="12" startPosition="21" endLine="13" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574807413" fileName="CParenthesis_TextGen.java" startLine="12" startPosition="21" endLine="13" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -359,7 +359,7 @@
     </scopeInfo>
     <unitInfo nodeId="6585869519574807410" fileName="CParenthesis_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CParenthesis_TextGen" />
   </root>
-  <root nodeId="6585869519574809901" modelId="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)">
+  <root nodeRef="r:dae703c2-5cac-4ee0-9930-8fbd57949b0c(jetbrains.mps.nanoc.textGen)/6585869519574809901">
     <nodeInfo nodeId="6585869519574809901" fileName="CStatement_TextGen.java" startLine="14" startPosition="44" endLine="15" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6585869519574809904" fileName="CStatement_TextGen.java" startLine="16" startPosition="5" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6585869519574809904" fileName="CStatement_TextGen.java" startLine="16" startPosition="5" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

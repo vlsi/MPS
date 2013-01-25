@@ -26,7 +26,9 @@
     <orderEntry type="library" name="Idea-extensions" level="project" />
     <orderEntry type="module" module-name="actions-runtime" scope="PROVIDED" />
     <orderEntry type="module" module-name="analyzers" scope="PROVIDED" />
-    <orderEntry type="module" module-name="ant" scope="PROVIDED" />
+    <orderEntry type="module" module-name="ant-mps" scope="PROVIDED" />
+    <orderEntry type="module" module-name="mps-ant" scope="PROVIDED" />
+    <orderEntry type="module" module-name="ant-mps-common" scope="PROVIDED" />
     <orderEntry type="module" module-name="baseLanguage-search" scope="PROVIDED" />
     <orderEntry type="module" module-name="baseLanguage-util" scope="PROVIDED" />
     <orderEntry type="module" module-name="build-deprecated" scope="PROVIDED" />

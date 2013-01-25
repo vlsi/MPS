@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Regular;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -92,7 +92,7 @@ public final class SNodeDescriptor implements NodeDescriptor {
     SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelId);
     if (md == null) return null;
     SModelReference ref = md.getSModelReference();
-    return new SNodePointer(ref, myId);
+    return new jetbrains.mps.smodel.SNodePointer(ref, myId);
   }
 
   public void save(DataOutput out) throws IOException {

@@ -17,7 +17,7 @@ package jetbrains.mps.ide.editorTabs;
 
 import com.intellij.openapi.extensions.ExtensionPointName;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -30,5 +30,5 @@ public interface TabColorProvider {
   Color getNodeColor(@NotNull SNode node);
 
   @Nullable
-  Color getAspectColor(Iterable<SNodePointer> aspectNodes);
+  Color getAspectColor(Iterable<SNodeReference> aspectNodes);
 }

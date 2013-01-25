@@ -25,7 +25,7 @@ import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -45,7 +45,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   private SModelDescriptor myModelDescriptor;
   private IOperationContext myOperationContext;
   private EditorCell myContextCell;
-  private List<Pair<SNode,SNodePointer>> myModelModifications = null;
+  private List<Pair<SNode,SNodeReference>> myModelModifications = null;
   private IPerformanceTracer myPerformanceTracer = null;
 
   private ReferencedNodeContext myCurrentRefNodeContext;
@@ -116,7 +116,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     myModelModifications = EditorManager.convert(modelEvents);
   }
 
-  private EditorCell createNodeCell(List<Pair<SNode,SNodePointer>> modifications) {
+  private EditorCell createNodeCell(List<Pair<SNode,SNodeReference>> modifications) {
     return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, modifications, myCurrentRefNodeContext);
   }
 

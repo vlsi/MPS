@@ -19,7 +19,7 @@ import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,33 +29,33 @@ import java.util.List;
  * Evgeny Gryaznov, Feb 17, 2010
  */
 public interface IGenerationTracer {
-  void pushInputNode(SNodePointer node);
+  void pushInputNode(SNodeReference node);
 
-  void closeInputNode(SNodePointer node);
+  void closeInputNode(SNodeReference node);
 
-  void popInputNode(SNodePointer node);
+  void popInputNode(SNodeReference node);
 
-  void pushOutputNode(SNodePointer node);
+  void pushOutputNode(SNodeReference node);
 
   void pushOutputNodeToReplaceLater(SNode node);
 
   void replaceOutputNode(SNode node, SNode newOutputNode);
 
-  void pushTemplateNode(SNodePointer node);
+  void pushTemplateNode(SNodeReference node);
 
-  void closeTemplateNode(SNodePointer node);
+  void closeTemplateNode(SNodeReference node);
 
-  void pushRule(SNodePointer node);
+  void pushRule(SNodeReference node);
 
-  void closeRule(SNodePointer node);
+  void closeRule(SNodeReference node);
 
-  void pushRuleConsequence(SNodePointer node);
+  void pushRuleConsequence(SNodeReference node);
 
-  void pushSwitch(SNodePointer node);
+  void pushSwitch(SNodeReference node);
 
-  void pushMacro(SNodePointer node);
+  void pushMacro(SNodeReference node);
 
-  void closeMacro(SNodePointer node);
+  void closeMacro(SNodeReference node);
 
   void pushCopyOperation();
 

@@ -16,13 +16,14 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 public class SourceSubstituteMacroNodesContext extends TemplateQueryContextWithMacro {
   private final SNode myRule;
-  private final SNodePointer myRulePointer;
+  private final SNodeReference myRulePointer;
 
   /**
    * actually this parameter is passed not only to 'sourceNodesQuery' in macros but also to similar queries in rules
@@ -33,7 +34,7 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContextWithM
     myRulePointer = null;
   }
 
-  public SourceSubstituteMacroNodesContext(SNode node, SNodePointer ruleNode, SNodePointer macroNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
+  public SourceSubstituteMacroNodesContext(SNode node, SNodeReference ruleNode, SNodeReference macroNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myRule = null;
     myRulePointer = ruleNode;
@@ -41,6 +42,6 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContextWithM
 
   public SNode getRuleNodeForLogging() {
     return myRule != null ? myRule :
-      myRulePointer != null ? myRulePointer.getNode() : null;
+      myRulePointer != null ? myRulePointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 }

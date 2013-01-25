@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;
+
+import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -22,7 +24,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -110,10 +111,10 @@ public class DynamicReference extends SReferenceBase {
     if (myOrigin != null) {
       List<ProblemDescription> result = new ArrayList<ProblemDescription>(2);
       if (myOrigin.getInputNode() != null) {
-        result.add(new ProblemDescription(myOrigin.getInputNode(), " -- was input: " + myOrigin.getInputNode().getDebugText()));
+        result.add(new ProblemDescription(myOrigin.getInputNode(), " -- was input: " + myOrigin.getInputNode().toString()));
       }
       if (myOrigin.getTemplate() != null) {
-        result.add(new ProblemDescription(myOrigin.getTemplate(), " -- was template: " + myOrigin.getTemplate().getDebugText()));
+        result.add(new ProblemDescription(myOrigin.getTemplate(), " -- was template: " + myOrigin.getTemplate().toString()));
       }
       if (result.size() > 0) {
         error(message, result.toArray(new ProblemDescription[result.size()]));
@@ -151,19 +152,19 @@ public class DynamicReference extends SReferenceBase {
   }
 
   public static class DynamicReferenceOrigin {
-    private final SNodePointer template;
-    private final SNodePointer inputNode;
+    private final SNodeReference template;
+    private final SNodeReference inputNode;
 
-    public DynamicReferenceOrigin(SNodePointer template, SNodePointer inputNode) {
+    public DynamicReferenceOrigin(SNodeReference template, SNodeReference inputNode) {
       this.template = template;
       this.inputNode = inputNode;
     }
 
-    public SNodePointer getTemplate() {
+    public SNodeReference getTemplate() {
       return template;
     }
 
-    public SNodePointer getInputNode() {
+    public SNodeReference getInputNode() {
       return inputNode;
     }
   }

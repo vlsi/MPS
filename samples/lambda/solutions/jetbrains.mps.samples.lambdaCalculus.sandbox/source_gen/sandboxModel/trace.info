@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2167053794906818090" modelId="r:19bf018c-b5e7-418d-8415-b23921421325(sandboxModel)">
+  <root nodeRef="r:19bf018c-b5e7-418d-8415-b23921421325(sandboxModel)/2167053794906818090">
     <nodeInfo nodeId="2167053794906818090" fileName="sim.java" startLine="13" startPosition="42" endLine="14" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2167053794906818090" fileName="sim.java" startLine="17" startPosition="31" endLine="18" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOuterVars" />
@@ -54,7 +54,7 @@
     <unitInfo nodeId="2167053794906818092" fileName="sim.java" startLine="21" startPosition="0" endLine="48" endPosition="0" unitName="sandboxModel.sim$Function_2167053794906818092" />
     <unitInfo nodeId="2167053794906818090" fileName="sim.java" startLine="9" startPosition="0" endLine="53" endPosition="0" unitName="sandboxModel.sim" />
   </root>
-  <root nodeId="5277476162361142416" modelId="r:19bf018c-b5e7-418d-8415-b23921421325(sandboxModel)">
+  <root nodeRef="r:19bf018c-b5e7-418d-8415-b23921421325(sandboxModel)/5277476162361142416">
     <nodeInfo nodeId="5277476162361142416" fileName="test2.java" startLine="10" startPosition="42" endLine="11" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5277476162361142416" fileName="test2.java" startLine="14" startPosition="31" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5277476162361142445" fileName="test2.java" startLine="18" startPosition="68" endLine="19" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -76,7 +76,7 @@
     </scopeInfo>
     <unitInfo nodeId="5277476162361142416" fileName="test2.java" startLine="6" startPosition="0" endLine="22" endPosition="0" unitName="sandboxModel.test2" />
   </root>
-  <root nodeId="816130369292750457" modelId="r:19bf018c-b5e7-418d-8415-b23921421325(sandboxModel)">
+  <root nodeRef="r:19bf018c-b5e7-418d-8415-b23921421325(sandboxModel)/816130369292750457">
     <nodeInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="10" startPosition="42" endLine="11" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="14" startPosition="31" endLine="15" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="816130369292750664" fileName="sumsq.java" startLine="18" startPosition="78" endLine="19" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -124,7 +124,7 @@
     </scopeInfo>
     <unitInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="6" startPosition="0" endLine="34" endPosition="0" unitName="sandboxModel.sumsq" />
   </root>
-  <root nodeId="816130369292806252" modelId="r:19bf018c-b5e7-418d-8415-b23921421325(sandboxModel)">
+  <root nodeRef="r:19bf018c-b5e7-418d-8415-b23921421325(sandboxModel)/816130369292806252">
     <nodeInfo nodeId="816130369292806252" fileName="letlet.java" startLine="10" startPosition="42" endLine="11" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="816130369292806252" fileName="letlet.java" startLine="14" startPosition="31" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="816130369292806253" fileName="letlet.java" startLine="18" startPosition="59" endLine="19" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

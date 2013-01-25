@@ -20,7 +20,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -151,7 +151,7 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   private Message prepare(MessageKind kind, String text, SNode node) {
     Message message = new Message(kind, text);
     if (node != null && node.getModel() != null && node.getModel() != null && !node.getModel().isTransient()) {
-      message.setHintObject(new SNodePointer(node));
+      message.setHintObject(new jetbrains.mps.smodel.SNodePointer(node));
     }
     return message;
   }

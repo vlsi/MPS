@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4983682755224323286" modelId="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)">
+  <root nodeRef="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)/4983682755224323286">
     <nodeInfo nodeId="2172278393548617889" fileName="StubDialog.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STUB_DIALOG" />
     <nodeInfo nodeId="2172278393548617945" fileName="StubDialog.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="shell" />
     <nodeInfo nodeId="4983682755224323302" fileName="StubDialog.java" startLine="15" startPosition="46" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -39,7 +39,7 @@
     <scopeInfo nodeId="4983682755224323293" fileName="StubDialog.java" startLine="27" startPosition="0" endLine="37" endPosition="0" />
     <unitInfo nodeId="4983682755224323286" fileName="StubDialog.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ui.swt.runtime.widgets.StubDialog" />
   </root>
-  <root nodeId="9003987136928267844" modelId="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)">
+  <root nodeRef="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)/9003987136928267844">
     <nodeInfo nodeId="9003987136928267854" fileName="ControlIterator.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="children" />
     <nodeInfo nodeId="9003987136928267858" fileName="ControlIterator.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="idx" />
     <nodeInfo nodeId="9003987136928268042" fileName="ControlIterator.java" startLine="14" startPosition="43" endLine="15" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -88,7 +88,7 @@
     <scopeInfo nodeId="9003987136928267969" fileName="ControlIterator.java" startLine="42" startPosition="0" endLine="50" endPosition="0" />
     <unitInfo nodeId="9003987136928267844" fileName="ControlIterator.java" startLine="10" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.ui.swt.runtime.widgets.ControlIterator" />
   </root>
-  <root nodeId="9201869079511503267" modelId="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)">
+  <root nodeRef="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)/9201869079511503267">
     <nodeInfo nodeId="9201869079511517301" fileName="ExpandController.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="items_trans" />
     <nodeInfo nodeId="9201869079511517307" fileName="ExpandController.java" startLine="22" startPosition="52" endLine="23" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9201869079511508387" fileName="ExpandController.java" startLine="24" startPosition="53" endLine="25" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

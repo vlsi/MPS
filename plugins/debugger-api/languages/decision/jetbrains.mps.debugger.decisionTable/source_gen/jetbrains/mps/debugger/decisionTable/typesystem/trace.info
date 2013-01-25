@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.typesystem.TypesystemDescriptor" />
-  <root nodeId="5202024118203927912" modelId="r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)">
+  <root nodeRef="r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)/5202024118203927912">
     <nodeInfo nodeId="5202024118203927982" fileName="typeof_XVariableReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5202024118203927982" fileName="typeof_XVariableReference_InferenceRule.java" startLine="20" startPosition="43" endLine="21" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5202024118203927982" fileName="typeof_XVariableReference_InferenceRule.java" startLine="21" startPosition="213" endLine="22" endPosition="314" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -52,7 +52,7 @@
     </scopeInfo>
     <unitInfo nodeId="5202024118203927912" fileName="typeof_XVariableReference_InferenceRule.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.typesystem.typeof_XVariableReference_InferenceRule" />
   </root>
-  <root nodeId="5202024118203927947" modelId="r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)">
+  <root nodeRef="r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)/5202024118203927947">
     <nodeInfo nodeId="5202024118203927974" fileName="typeof_YVariableReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5202024118203927974" fileName="typeof_YVariableReference_InferenceRule.java" startLine="20" startPosition="43" endLine="21" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5202024118203927974" fileName="typeof_YVariableReference_InferenceRule.java" startLine="21" startPosition="213" endLine="22" endPosition="314" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -103,7 +103,7 @@
     </scopeInfo>
     <unitInfo nodeId="5202024118203927947" fileName="typeof_YVariableReference_InferenceRule.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.typesystem.typeof_YVariableReference_InferenceRule" />
   </root>
-  <root nodeId="5202024118203995664" modelId="r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)">
+  <root nodeRef="r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)/5202024118203995664">
     <nodeInfo nodeId="5202024118203995691" fileName="typeof_DecideOperation_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5202024118203995691" fileName="typeof_DecideOperation_InferenceRule.java" startLine="22" startPosition="48" endLine="23" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5202024118203995691" fileName="typeof_DecideOperation_InferenceRule.java" startLine="23" startPosition="213" endLine="24" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -211,7 +211,7 @@
     </scopeInfo>
     <unitInfo nodeId="5202024118203995664" fileName="typeof_DecideOperation_InferenceRule.java" startLine="16" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.typesystem.typeof_DecideOperation_InferenceRule" />
   </root>
-  <root nodeId="6409088484822290063" modelId="r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)">
+  <root nodeRef="r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)/6409088484822290063">
     <nodeInfo nodeId="6409088484822290066" fileName="DecisionTableIsIDecisionTable_SubtypingRule.java" startLine="20" startPosition="115" endLine="21" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6409088484822290063" fileName="DecisionTableIsIDecisionTable_SubtypingRule.java" startLine="24" startPosition="46" endLine="25" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6409088484822290063" fileName="DecisionTableIsIDecisionTable_SubtypingRule.java" startLine="29" startPosition="5" endLine="30" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -256,7 +256,7 @@
     <scopeInfo nodeId="6409088484822290068" fileName="DecisionTableIsIDecisionTable_SubtypingRule.java" startLine="39" startPosition="0" endLine="45" endPosition="0" />
     <unitInfo nodeId="6409088484822290063" fileName="DecisionTableIsIDecisionTable_SubtypingRule.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.debugger.decisionTable.typesystem.DecisionTableIsIDecisionTable_SubtypingRule" />
   </root>
-  <root nodeId="6409088484822290072" modelId="r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)">
+  <root nodeRef="r:fe1ce518-bbce-495d-bf96-771053a6aafd(jetbrains.mps.debugger.decisionTable.typesystem)/6409088484822290072">
     <nodeInfo nodeId="6409088484822290096" fileName="typeof_DecisionTable_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6409088484822290096" fileName="typeof_DecisionTable_InferenceRule.java" startLine="22" startPosition="47" endLine="23" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6409088484822290096" fileName="typeof_DecisionTable_InferenceRule.java" startLine="23" startPosition="213" endLine="24" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

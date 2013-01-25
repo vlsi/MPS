@@ -16,8 +16,9 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Evgeny Gryaznov, 11/15/10
@@ -25,7 +26,7 @@ import jetbrains.mps.smodel.SNodePointer;
 public class TemplateQueryContextWithMacro extends TemplateQueryContext {
 
   private final SNode myMacro;
-  private final SNodePointer myMacroPointer;
+  private final SNodeReference myMacroPointer;
 
   public TemplateQueryContextWithMacro(SNode inputNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
     super(inputNode, null, context, generator);
@@ -33,7 +34,7 @@ public class TemplateQueryContextWithMacro extends TemplateQueryContext {
     myMacroPointer = null;
   }
 
-  public TemplateQueryContextWithMacro(SNode inputNode, SNodePointer macroNode, TemplateContext context, ITemplateGenerator generator) {
+  public TemplateQueryContextWithMacro(SNode inputNode, SNodeReference macroNode, TemplateContext context, ITemplateGenerator generator) {
     super(inputNode, null, context, generator);
     myMacro = null;
     myMacroPointer = macroNode;
@@ -48,6 +49,6 @@ public class TemplateQueryContextWithMacro extends TemplateQueryContext {
   @Override
   public SNode getTemplateNodeForLogging() {
     return myMacro != null ? myMacro :
-      myMacroPointer != null ? myMacroPointer.getNode() : null;
+      myMacroPointer != null ? myMacroPointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 }

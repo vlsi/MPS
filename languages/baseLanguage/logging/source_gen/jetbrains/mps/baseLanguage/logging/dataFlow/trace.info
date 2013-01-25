@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.dataFlow.DFABuilders" />
-  <root nodeId="5058855501989739747" modelId="r:fb7c79f5-02eb-4c97-b60a-34f78483b2cb(jetbrains.mps.baseLanguage.logging.dataFlow)">
+  <root nodeRef="r:fb7c79f5-02eb-4c97-b60a-34f78483b2cb(jetbrains.mps.baseLanguage.logging.dataFlow)/5058855501989739747">
     <nodeInfo nodeId="5058855501989770195" fileName="LogStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5058855501989770227" fileName="LogStatement_DataFlow.java" startLine="17" startPosition="83" endLine="18" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5058855501989739747" fileName="LogStatement_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LogStatement_DataFlow#()V" />
@@ -17,7 +17,7 @@
     </scopeInfo>
     <unitInfo nodeId="5058855501989739747" fileName="LogStatement_DataFlow.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.dataFlow.LogStatement_DataFlow" />
   </root>
-  <root nodeId="8259962354560896642" modelId="r:fb7c79f5-02eb-4c97-b60a-34f78483b2cb(jetbrains.mps.baseLanguage.logging.dataFlow)">
+  <root nodeRef="r:fb7c79f5-02eb-4c97-b60a-34f78483b2cb(jetbrains.mps.baseLanguage.logging.dataFlow)/8259962354560896642">
     <nodeInfo nodeId="8259962354560896660" fileName="PrintStatement_DataFlow.java" startLine="17" startPosition="128" endLine="18" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8259962354560896642" fileName="PrintStatement_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PrintStatement_DataFlow#()V" />
     <nodeInfo nodeId="8259962354560896645" fileName="PrintStatement_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />

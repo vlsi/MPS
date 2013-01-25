@@ -25,7 +25,7 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -74,7 +74,7 @@ public abstract class BaseNodeEditor implements Editor {
     return myContext;
   }
 
-  public SNodePointer getCurrentlyEditedNode() {
+  public SNodeReference getCurrentlyEditedNode() {
     return myEditorComponent == null ? null : myEditorComponent.getEditedNodePointer();
   }
 

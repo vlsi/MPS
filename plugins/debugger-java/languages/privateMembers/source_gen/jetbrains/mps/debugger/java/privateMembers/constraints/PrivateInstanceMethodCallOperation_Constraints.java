@@ -20,6 +20,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class PrivateInstanceMethodCallOperation_Constraints extends BaseConstraintsDescriptor {
@@ -59,7 +60,7 @@ public class PrivateInstanceMethodCallOperation_Constraints extends BaseConstrai
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_8iqmcz_a0a1a0a0a1a0b0a1a1;
           }
         };

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3201642974933960738" modelId="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)">
+  <root nodeRef="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)/3201642974933960738">
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="26" startPosition="48" endLine="27" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3201642974934182607" fileName="StandardDialogs.java" startLine="27" startPosition="103" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="28" startPosition="63" endLine="29" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -568,7 +568,7 @@
     <unitInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="229" startPosition="15" endLine="315" endPosition="5" unitName="jetbrains.mps.ide.properties.StandardDialogs$4" />
     <unitInfo nodeId="3201642974933960738" fileName="StandardDialogs.java" startLine="18" startPosition="0" endLine="392" endPosition="0" unitName="jetbrains.mps.ide.properties.StandardDialogs" />
   </root>
-  <root nodeId="4060390951635972879" modelId="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)">
+  <root nodeRef="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)/4060390951635972879">
     <nodeInfo nodeId="7355563316698763848" fileName="StandardComponents.java" startLine="101" startPosition="38" endLine="102" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7355563316698763848" fileName="StandardComponents.java" startLine="102" startPosition="93" endLine="103" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7355563316698763848" fileName="StandardComponents.java" startLine="103" startPosition="59" endLine="104" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1328,7 +1328,7 @@
     <unitInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="223" startPosition="15" endLine="284" endPosition="5" unitName="jetbrains.mps.ide.properties.StandardComponents$8" />
     <unitInfo nodeId="4060390951635972879" fileName="StandardComponents.java" startLine="93" startPosition="0" endLine="579" endPosition="0" unitName="jetbrains.mps.ide.properties.StandardComponents" />
   </root>
-  <root nodeId="5923576889075039038" modelId="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)">
+  <root nodeRef="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)/5923576889075039038">
     <nodeInfo nodeId="5923576889075039041" fileName="DevKitPropertiesDialog.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDevKit" />
     <nodeInfo nodeId="5923576889075039044" fileName="DevKitPropertiesDialog.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperties" />
     <nodeInfo nodeId="5923576889075039053" fileName="DevKitPropertiesDialog.java" startLine="14" startPosition="89" endLine="15" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1362,7 +1362,7 @@
     <unitInfo nodeId="5923576889075039155" fileName="DevKitPropertiesDialog.java" startLine="29" startPosition="55" endLine="35" endPosition="5" unitName="jetbrains.mps.ide.properties.DevKitPropertiesDialog$1" />
     <unitInfo nodeId="5923576889075039038" fileName="DevKitPropertiesDialog.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.properties.DevKitPropertiesDialog" />
   </root>
-  <root nodeId="5923576889075041653" modelId="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)">
+  <root nodeRef="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)/5923576889075041653">
     <nodeInfo nodeId="5923576889075041656" fileName="GeneratorPropertiesDialog.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerator" />
     <nodeInfo nodeId="5923576889075041659" fileName="GeneratorPropertiesDialog.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperties" />
     <nodeInfo nodeId="5923576889075041668" fileName="GeneratorPropertiesDialog.java" startLine="20" startPosition="85" endLine="21" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1428,7 +1428,7 @@
     <unitInfo nodeId="5923576889075041784" fileName="GeneratorPropertiesDialog.java" startLine="58" startPosition="55" endLine="64" endPosition="5" unitName="jetbrains.mps.ide.properties.GeneratorPropertiesDialog$1" />
     <unitInfo nodeId="5923576889075041653" fileName="GeneratorPropertiesDialog.java" startLine="16" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ide.properties.GeneratorPropertiesDialog" />
   </root>
-  <root nodeId="5923576889075041819" modelId="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)">
+  <root nodeRef="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)/5923576889075041819">
     <nodeInfo nodeId="5923576889075041822" fileName="LanguagePropertiesDialog.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguage" />
     <nodeInfo nodeId="5923576889075041825" fileName="LanguagePropertiesDialog.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperties" />
     <nodeInfo nodeId="5923576889075041844" fileName="LanguagePropertiesDialog.java" startLine="24" startPosition="101" endLine="25" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1482,7 +1482,7 @@
     <unitInfo nodeId="5923576889075041952" fileName="LanguagePropertiesDialog.java" startLine="39" startPosition="55" endLine="46" endPosition="5" unitName="jetbrains.mps.ide.properties.LanguagePropertiesDialog$2" />
     <unitInfo nodeId="5923576889075041819" fileName="LanguagePropertiesDialog.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ide.properties.LanguagePropertiesDialog" />
   </root>
-  <root nodeId="5923576889075042074" modelId="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)">
+  <root nodeRef="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)/5923576889075042074">
     <nodeInfo nodeId="5923576889075042130" fileName="ModelPropertiesDialog.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPresenter" />
     <nodeInfo nodeId="5923576889075042133" fileName="ModelPropertiesDialog.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="5923576889075042142" fileName="ModelPropertiesDialog.java" startLine="50" startPosition="97" endLine="51" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1691,7 +1691,7 @@
     <unitInfo nodeId="5923576889075042077" fileName="ModelPropertiesDialog.java" startLine="162" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog$MyDataContext" />
     <unitInfo nodeId="5923576889075042074" fileName="ModelPropertiesDialog.java" startLine="46" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.ide.properties.ModelPropertiesDialog" />
   </root>
-  <root nodeId="5923576889075042681" modelId="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)">
+  <root nodeRef="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)/5923576889075042681">
     <nodeInfo nodeId="5923576889075042684" fileName="SolutionPropertiesDialog.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySolution" />
     <nodeInfo nodeId="5923576889075042687" fileName="SolutionPropertiesDialog.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperties" />
     <nodeInfo nodeId="5923576889075042706" fileName="SolutionPropertiesDialog.java" startLine="27" startPosition="95" endLine="28" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1760,7 +1760,7 @@
     <unitInfo nodeId="5923576889075042819" fileName="SolutionPropertiesDialog.java" startLine="57" startPosition="55" endLine="64" endPosition="5" unitName="jetbrains.mps.ide.properties.SolutionPropertiesDialog$3" />
     <unitInfo nodeId="5923576889075042681" fileName="SolutionPropertiesDialog.java" startLine="19" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.properties.SolutionPropertiesDialog" />
   </root>
-  <root nodeId="5923576889075043551" modelId="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)">
+  <root nodeRef="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)/5923576889075043551">
     <nodeInfo nodeId="4695659465122402345" fileName="DevkitProperties.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAMESPACE" />
     <nodeInfo nodeId="4695659465122323823" fileName="DevkitProperties.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNamespace" />
     <nodeInfo nodeId="5923576889075043561" fileName="DevkitProperties.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExportedLanguages" />
@@ -1840,7 +1840,7 @@
     </scopeInfo>
     <unitInfo nodeId="5923576889075043551" fileName="DevkitProperties.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.properties.DevkitProperties" />
   </root>
-  <root nodeId="5923576889075043786" modelId="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)">
+  <root nodeRef="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)/5923576889075043786">
     <nodeInfo nodeId="106298403293410440" fileName="GeneratorProperties.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GENERATE_TEMPLATES" />
     <nodeInfo nodeId="5923576889075043789" fileName="GeneratorProperties.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDepGenerators" />
     <nodeInfo nodeId="5923576889075043793" fileName="GeneratorProperties.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPriorityRules" />
@@ -1908,7 +1908,7 @@
     </scopeInfo>
     <unitInfo nodeId="5923576889075043786" fileName="GeneratorProperties.java" startLine="12" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ide.properties.GeneratorProperties" />
   </root>
-  <root nodeId="5923576889075043939" modelId="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)">
+  <root nodeRef="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)/5923576889075043939">
     <nodeInfo nodeId="5923576889075043942" fileName="LanguageProperties.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OUTPUT_PATH" />
     <nodeInfo nodeId="5923576889075043946" fileName="LanguageProperties.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GENERATE_ADAPTERS" />
     <nodeInfo nodeId="5923576889075043950" fileName="LanguageProperties.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenPath" />
@@ -1976,7 +1976,7 @@
     </scopeInfo>
     <unitInfo nodeId="5923576889075043939" fileName="LanguageProperties.java" startLine="12" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.properties.LanguageProperties" />
   </root>
-  <root nodeId="5923576889075044370" modelId="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)">
+  <root nodeRef="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)/5923576889075044370">
     <nodeInfo nodeId="5923576889075044377" fileName="SolutionProperties.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OUTPUT_PATH" />
     <nodeInfo nodeId="8189062720279883963" fileName="SolutionProperties.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMPILE_IN_MPS" />
     <nodeInfo nodeId="1371785386182250275" fileName="SolutionProperties.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="KIND" />
@@ -2044,7 +2044,7 @@
     </scopeInfo>
     <unitInfo nodeId="5923576889075044370" fileName="SolutionProperties.java" startLine="9" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.properties.SolutionProperties" />
   </root>
-  <root nodeId="5923576889075044542" modelId="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)">
+  <root nodeRef="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)/5923576889075044542">
     <nodeInfo nodeId="5923576889075044544" fileName="ModuleProperties.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAMESPACE" />
     <nodeInfo nodeId="5923576889075044556" fileName="ModuleProperties.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="USED_LANGUAGES" />
     <nodeInfo nodeId="5923576889075044560" fileName="ModuleProperties.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="USED_DEVKITS" />
@@ -2186,7 +2186,7 @@
     </scopeInfo>
     <unitInfo nodeId="5923576889075044542" fileName="ModuleProperties.java" startLine="12" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.ide.properties.ModuleProperties" />
   </root>
-  <root nodeId="6206760327435594108" modelId="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)">
+  <root nodeRef="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)/6206760327435594108">
     <nodeInfo nodeId="6206760327435594185" fileName="LibraryProperties.java" startLine="13" startPosition="53" endLine="14" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="6206760327435594189" fileName="LibraryProperties.java" startLine="14" startPosition="51" endLine="15" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6206760327435594217" fileName="LibraryProperties.java" startLine="19" startPosition="51" endLine="20" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />

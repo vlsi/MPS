@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3995997045458428838" modelId="r:e9efebb1-6ff9-4935-9cf2-1e8d7c0eed5f(jetbrains.mps.ide.ui.dialogs.properties.descriptors)">
+  <root nodeRef="r:e9efebb1-6ff9-4935-9cf2-1e8d7c0eed5f(jetbrains.mps.ide.ui.dialogs.properties.descriptors)/3995997045458428838">
     <nodeInfo nodeId="3995997045458428840" fileName="ColumnDescriptor.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="3995997045458428843" fileName="ColumnDescriptor.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHeader" />
     <nodeInfo nodeId="3995997045458428846" fileName="ColumnDescriptor.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWidth" />
@@ -32,7 +32,7 @@
     </scopeInfo>
     <unitInfo nodeId="3995997045458428838" fileName="ColumnDescriptor.java" startLine="8" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.descriptors.ColumnDescriptor" />
   </root>
-  <root nodeId="3995997045458428896" modelId="r:e9efebb1-6ff9-4935-9cf2-1e8d7c0eed5f(jetbrains.mps.ide.ui.dialogs.properties.descriptors)">
+  <root nodeRef="r:e9efebb1-6ff9-4935-9cf2-1e8d7c0eed5f(jetbrains.mps.ide.ui.dialogs.properties.descriptors)/3995997045458428896">
     <nodeInfo nodeId="3995997045458428908" fileName="VoidColumnDescriptor.java" startLine="9" startPosition="70" endLine="10" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3995997045458428916" fileName="VoidColumnDescriptor.java" startLine="13" startPosition="45" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3995997045458428922" fileName="VoidColumnDescriptor.java" startLine="17" startPosition="41" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -51,7 +51,7 @@
     <scopeInfo nodeId="3995997045458428918" fileName="VoidColumnDescriptor.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
     <unitInfo nodeId="3995997045458428896" fileName="VoidColumnDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.descriptors.VoidColumnDescriptor" />
   </root>
-  <root nodeId="3995997045458428924" modelId="r:e9efebb1-6ff9-4935-9cf2-1e8d7c0eed5f(jetbrains.mps.ide.ui.dialogs.properties.descriptors)">
+  <root nodeRef="r:e9efebb1-6ff9-4935-9cf2-1e8d7c0eed5f(jetbrains.mps.ide.ui.dialogs.properties.descriptors)/3995997045458428924">
     <nodeInfo nodeId="3995997045458428936" fileName="RuleTypeDescriptor.java" startLine="11" startPosition="68" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3995997045458428944" fileName="RuleTypeDescriptor.java" startLine="15" startPosition="41" endLine="16" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3995997045458428951" fileName="RuleTypeDescriptor.java" startLine="19" startPosition="45" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -70,7 +70,7 @@
     <scopeInfo nodeId="3995997045458428947" fileName="RuleTypeDescriptor.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
     <unitInfo nodeId="3995997045458428924" fileName="RuleTypeDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.descriptors.RuleTypeDescriptor" />
   </root>
-  <root nodeId="3995997045458428954" modelId="r:e9efebb1-6ff9-4935-9cf2-1e8d7c0eed5f(jetbrains.mps.ide.ui.dialogs.properties.descriptors)">
+  <root nodeRef="r:e9efebb1-6ff9-4935-9cf2-1e8d7c0eed5f(jetbrains.mps.ide.ui.dialogs.properties.descriptors)/3995997045458428954">
     <nodeInfo nodeId="3995997045458428957" fileName="PriorityRuleDescriptor.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerator" />
     <nodeInfo nodeId="3995997045458428960" fileName="PriorityRuleDescriptor.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDepGenerators" />
     <nodeInfo nodeId="3995997045458428964" fileName="PriorityRuleDescriptor.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeft" />

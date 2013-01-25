@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6854028447099469542" modelId="r:37430733-2638-4133-abe7-4a24de3dd376(jetbrains.mps.ypath.design)">
+  <root nodeRef="r:37430733-2638-4133-abe7-4a24de3dd376(jetbrains.mps.ypath.design)/6854028447099469542">
     <nodeInfo nodeId="6854028447099469856" fileName="IGenericParameterizedFeatureDesign.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getterExpression#(Lorg/jetbrains/mps/openapi/model/SNode;nullLjetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6854028447099469866" fileName="IGenericParameterizedFeatureDesign.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSingleTargetCardinality#(null)Z" />
     <nodeInfo nodeId="6854028447099469874" fileName="IGenericParameterizedFeatureDesign.java" startLine="16" startPosition="89" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -31,7 +31,7 @@
     <unitInfo nodeId="6854028447099469543" fileName="IGenericParameterizedFeatureDesign.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ypath.design.IGenericParameterizedFeatureDesign$Stub" />
     <unitInfo nodeId="6854028447099469542" fileName="IGenericParameterizedFeatureDesign.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ypath.design.IGenericParameterizedFeatureDesign" />
   </root>
-  <root nodeId="6854028447099469544" modelId="r:37430733-2638-4133-abe7-4a24de3dd376(jetbrains.mps.ypath.design)">
+  <root nodeRef="r:37430733-2638-4133-abe7-4a24de3dd376(jetbrains.mps.ypath.design)/6854028447099469544">
     <nodeInfo nodeId="6854028447099469720" fileName="IWritableGenericParameterizedFeatureDesign.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceStatement#(Lorg/jetbrains/mps/openapi/model/SNode;nullLorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6854028447099469734" fileName="IWritableGenericParameterizedFeatureDesign.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeStatement#(Lorg/jetbrains/mps/openapi/model/SNode;nullLorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6854028447099469746" fileName="IWritableGenericParameterizedFeatureDesign.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertStatement#(Lorg/jetbrains/mps/openapi/model/SNode;nullLorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -90,7 +90,7 @@
     <unitInfo nodeId="6854028447099469673" fileName="IWritableGenericParameterizedFeatureDesign.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ypath.design.IWritableGenericParameterizedFeatureDesign$Stub" />
     <unitInfo nodeId="6854028447099469544" fileName="IWritableGenericParameterizedFeatureDesign.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.ypath.design.IWritableGenericParameterizedFeatureDesign" />
   </root>
-  <root nodeId="6854028447099469545" modelId="r:37430733-2638-4133-abe7-4a24de3dd376(jetbrains.mps.ypath.design)">
+  <root nodeRef="r:37430733-2638-4133-abe7-4a24de3dd376(jetbrains.mps.ypath.design)/6854028447099469545">
     <nodeInfo nodeId="6854028447099469798" fileName="IParameterizedFeatureDesign.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameters#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="6854028447099469805" fileName="IParameterizedFeatureDesign.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargetType#(nullLorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6854028447099469813" fileName="IParameterizedFeatureDesign.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameterToString#(null)Ljava/lang/String;" />
@@ -129,7 +129,7 @@
     <unitInfo nodeId="6854028447099469546" fileName="IParameterizedFeatureDesign.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ypath.design.IParameterizedFeatureDesign$Stub" />
     <unitInfo nodeId="6854028447099469545" fileName="IParameterizedFeatureDesign.java" startLine="7" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ypath.design.IParameterizedFeatureDesign" />
   </root>
-  <root nodeId="6854028447099469547" modelId="r:37430733-2638-4133-abe7-4a24de3dd376(jetbrains.mps.ypath.design)">
+  <root nodeRef="r:37430733-2638-4133-abe7-4a24de3dd376(jetbrains.mps.ypath.design)/6854028447099469547">
     <nodeInfo nodeId="6854028447099469588" fileName="IWritableGenericFeatureDesign.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceStatement#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6854028447099469600" fileName="IWritableGenericFeatureDesign.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeStatement#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6854028447099469610" fileName="IWritableGenericFeatureDesign.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertStatement#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -182,7 +182,7 @@
     <unitInfo nodeId="6854028447099469550" fileName="IWritableGenericFeatureDesign.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ypath.design.IWritableGenericFeatureDesign$Stub" />
     <unitInfo nodeId="6854028447099469547" fileName="IWritableGenericFeatureDesign.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.ypath.design.IWritableGenericFeatureDesign" />
   </root>
-  <root nodeId="6854028447099469632" modelId="r:37430733-2638-4133-abe7-4a24de3dd376(jetbrains.mps.ypath.design)">
+  <root nodeRef="r:37430733-2638-4133-abe7-4a24de3dd376(jetbrains.mps.ypath.design)/6854028447099469632">
     <nodeInfo nodeId="6854028447099469648" fileName="IGenericFeatureDesign.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getterExpression#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6854028447099469658" fileName="IGenericFeatureDesign.java" startLine="15" startPosition="80" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6854028447099469638" fileName="IGenericFeatureDesign.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Stub#()V" />
@@ -201,7 +201,7 @@
     <unitInfo nodeId="6854028447099469635" fileName="IGenericFeatureDesign.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ypath.design.IGenericFeatureDesign$Stub" />
     <unitInfo nodeId="6854028447099469632" fileName="IGenericFeatureDesign.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ypath.design.IGenericFeatureDesign" />
   </root>
-  <root nodeId="6854028447099469660" modelId="r:37430733-2638-4133-abe7-4a24de3dd376(jetbrains.mps.ypath.design)">
+  <root nodeRef="r:37430733-2638-4133-abe7-4a24de3dd376(jetbrains.mps.ypath.design)/6854028447099469660">
     <nodeInfo nodeId="6854028447099469665" fileName="IFeatureDesign.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Stub#()V" />
     <scopeInfo nodeId="6854028447099469668" fileName="IFeatureDesign.java" startLine="8" startPosition="19" endLine="8" endPosition="19" />
     <scopeInfo nodeId="6854028447099469665" fileName="IFeatureDesign.java" startLine="8" startPosition="0" endLine="10" endPosition="0" />

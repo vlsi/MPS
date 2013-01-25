@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.execution.demo.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="SomeConcept_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.execution.demo.behavior.SomeConcept_BehaviorDescriptor" />
-  <root nodeId="8398535532016756708" modelId="r:07978ce6-64b4-421f-b466-c3c0460eccb2(jetbrains.mps.execution.demo.behavior)">
+  <root nodeRef="r:07978ce6-64b4-421f-b466-c3c0460eccb2(jetbrains.mps.execution.demo.behavior)/8398535532016756708">
     <nodeInfo nodeId="8398535532016761775" fileName="SomeConcept_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8398535532016756708" fileName="SomeConcept_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="8398535532016756708" fileName="SomeConcept_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isNodeRunnable_4666195181811081448#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />

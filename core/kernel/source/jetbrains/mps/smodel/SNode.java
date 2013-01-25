@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -495,8 +495,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return null;
   }
 
-  public SNodePointer getReference() {
-    return new SNodePointer(this);
+  public SNodeReference getReference() {
+    return new jetbrains.mps.smodel.SNodePointer(this);
   }
 
   public SConcept getConcept() {

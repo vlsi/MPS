@@ -26,7 +26,7 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -56,8 +56,8 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
   }
 
   @Override
-  public SNodePointer getRuleNode() {
-    return new SNodePointer(ruleNode);
+  public SNodeReference getRuleNode() {
+    return new jetbrains.mps.smodel.SNodePointer(ruleNode);
   }
 
   @Override
@@ -76,7 +76,7 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
       return null;
     }
 
-    SNodePointer ruleNodeId = new SNodePointer(ruleNode);
+    SNodeReference ruleNodeId = new jetbrains.mps.smodel.SNodePointer(ruleNode);
     environment.getTracer().pushRule(ruleNodeId);
     try {
       if (environment.getGenerator().isIncremental()) {

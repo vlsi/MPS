@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Evgeny Gryaznov, 11/8/10
@@ -27,5 +27,5 @@ public interface NodeMapper {
 
   String getConceptFqName();
 
-  SNodePointer getTemplateNode();
+  SNodeReference getTemplateNode();
 }

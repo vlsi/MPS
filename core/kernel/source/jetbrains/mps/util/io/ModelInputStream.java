@@ -17,7 +17,7 @@ package jetbrains.mps.util.io;
 
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodeId.Regular;
 
@@ -159,12 +159,12 @@ public class ModelInputStream extends DataInputStream {
     throw new IOException("no id");
   }
 
-  public SNodePointer readNodePointer() throws IOException {
+  public SNodeReference readNodePointer() throws IOException {
     int b = readByte();
     if (b == 0x70) {
       return null;
     } else {
-      return new SNodePointer(readModelReference(), readNodeId());
+      return new jetbrains.mps.smodel.SNodePointer(readModelReference(), readNodeId());
     }
   }
 }

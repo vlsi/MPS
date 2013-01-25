@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1521318412423194894" modelId="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)">
+  <root nodeRef="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)/1521318412423194894">
     <nodeInfo nodeId="1521318412423194895" fileName="IPropertiesPersistence.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
     <nodeInfo nodeId="1521318412423194901" fileName="IPropertiesPersistence.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="storeValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
     <scopeInfo nodeId="1521318412423194895" fileName="IPropertiesPersistence.java" startLine="9" startPosition="0" endLine="10" endPosition="0">
@@ -13,12 +13,12 @@
     </scopeInfo>
     <unitInfo nodeId="1521318412423194894" fileName="IPropertiesPersistence.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </root>
-  <root nodeId="2958721966247231626" modelId="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)">
+  <root nodeRef="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)/2958721966247231626">
     <nodeInfo nodeId="2958721966247250933" fileName="IResourceWithProperties.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProperties#()Ljetbrains/mps/make/resources/IPropertiesIO;" />
     <scopeInfo nodeId="2958721966247250933" fileName="IResourceWithProperties.java" startLine="7" startPosition="0" endLine="8" endPosition="0" />
     <unitInfo nodeId="2958721966247231626" fileName="IResourceWithProperties.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.make.resources.IResourceWithProperties" />
   </root>
-  <root nodeId="2958721966247231768" modelId="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)">
+  <root nodeRef="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)/2958721966247231768">
     <nodeInfo nodeId="2958721966247231776" fileName="IPropertiesIO.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKey#()Ljava/lang/Object;" />
     <nodeInfo nodeId="2958721966247231629" fileName="IPropertiesIO.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readProperties#()Ljava/util/Map;" />
     <nodeInfo nodeId="2958721966247250902" fileName="IPropertiesIO.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeProperties#(Ljava/util/Map;)V" />
@@ -29,7 +29,7 @@
     </scopeInfo>
     <unitInfo nodeId="2958721966247231768" fileName="IPropertiesIO.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.make.resources.IPropertiesIO" />
   </root>
-  <root nodeId="3353120829256410483" modelId="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)">
+  <root nodeRef="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)/3353120829256410483">
     <nodeInfo nodeId="3353120829256410485" fileName="IPropertiesAccessor.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="forResource#(Ljetbrains/mps/make/resources/IResource;)Ljetbrains/mps/make/script/IPropertiesPool;" />
     <nodeInfo nodeId="2191561637326275449" fileName="IPropertiesAccessor.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="global#()Ljetbrains/mps/make/script/IPropertiesPool;" />
     <scopeInfo nodeId="3353120829256410485" fileName="IPropertiesAccessor.java" startLine="8" startPosition="0" endLine="9" endPosition="0">
@@ -38,7 +38,7 @@
     <scopeInfo nodeId="2191561637326275449" fileName="IPropertiesAccessor.java" startLine="9" startPosition="0" endLine="10" endPosition="0" />
     <unitInfo nodeId="3353120829256410483" fileName="IPropertiesAccessor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.resources.IPropertiesAccessor" />
   </root>
-  <root nodeId="6168415856807657256" modelId="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)">
+  <root nodeRef="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)/6168415856807657256">
     <nodeInfo nodeId="2958721966247250947" fileName="IResource.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="describe#()Ljava/lang/String;" />
     <scopeInfo nodeId="2958721966247250947" fileName="IResource.java" startLine="7" startPosition="0" endLine="8" endPosition="0" />
     <unitInfo nodeId="6168415856807657256" fileName="IResource.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.make.resources.IResource" />

@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.persistence;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SReference;
 
 /**
@@ -39,13 +39,13 @@ public class RoleIdsComponent {
     return ourHandler != null;
   }
 
-  public static void conceptRead(SNode node, SNodePointer conceptPointer) {
+  public static void conceptRead(SNode node, SNodeReference conceptPointer) {
     if (ourHandler != null) {
       ourHandler.conceptRead(node.getConcept().getId(), conceptPointer);
     }
   }
 
-  public static void nodeRoleRead(SNode node, SNodePointer linkPointer) {
+  public static void nodeRoleRead(SNode node, SNodeReference linkPointer) {
     if (ourHandler != null) {
       if (node.getParent() != null) {
         ourHandler.nodeRoleRead(node.getParent().getConcept().getId(), node.getRoleInParent(), linkPointer);
@@ -53,13 +53,13 @@ public class RoleIdsComponent {
     }
   }
 
-  public static void referenceRoleRead(SReference reference, SNodePointer linkPointer) {
+  public static void referenceRoleRead(SReference reference, SNodeReference linkPointer) {
     if (ourHandler != null) {
       ourHandler.referenceRoleRead(reference.getSourceNode().getConcept().getId(), reference.getRole(), linkPointer);
     }
   }
 
-  public static void propertyNameRead(SNode containingNode, String propertyName, SNodePointer propertyPointer) {
+  public static void propertyNameRead(SNode containingNode, String propertyName, SNodeReference propertyPointer) {
     if (ourHandler != null) {
       ourHandler.propertyNameRead(containingNode.getConcept().getId(), propertyName, propertyPointer);
     }
@@ -71,7 +71,7 @@ public class RoleIdsComponent {
     }
   }
 
-  public static SNodePointer getConceptPointer(SNode node) {
+  public static SNodeReference getConceptPointer(SNode node) {
     if (ourHandler != null) {
       return ourHandler.getConceptPointer(node.getConcept().getId());
     } else {
@@ -79,7 +79,7 @@ public class RoleIdsComponent {
     }
   }
 
-  public static SNodePointer getNodeRolePointer(SNode node) {
+  public static SNodeReference getNodeRolePointer(SNode node) {
     if (ourHandler != null) {
       String linkRole = node.getRoleInParent();
       if (linkRole == null) {
@@ -93,7 +93,7 @@ public class RoleIdsComponent {
     }
   }
 
-  public static SNodePointer getReferenceRolePointer(SReference reference) {
+  public static SNodeReference getReferenceRolePointer(SReference reference) {
     if (ourHandler != null) {
       String conceptFqName = reference.getSourceNode().getConcept().getId();
       return ourHandler.getReferenceRolePointer(conceptFqName, reference.getRole());
@@ -102,7 +102,7 @@ public class RoleIdsComponent {
     }
   }
 
-  public static SNodePointer getPropertyNamePointer(SNode containingNode, String propertyName) {
+  public static SNodeReference getPropertyNamePointer(SNode containingNode, String propertyName) {
     if (ourHandler != null) {
       String conceptFqName = containingNode.getConcept().getId();
       return ourHandler.getPropertyNamePointer(conceptFqName, propertyName);
@@ -120,16 +120,16 @@ public class RoleIdsComponent {
   }
 
   public interface RoleIdsHandler {
-    void conceptRead(String conceptFqName, SNodePointer conceptPointer);
-    void nodeRoleRead(String conceptFqName, String linkRole, SNodePointer linkPointer);
-    void referenceRoleRead(String conceptFqName, String referenceLinkRole, SNodePointer linkPointer);
-    void propertyNameRead(String conceptFqName, String propertyName, SNodePointer linkPointer);
+    void conceptRead(String conceptFqName, SNodeReference conceptPointer);
+    void nodeRoleRead(String conceptFqName, String linkRole, SNodeReference linkPointer);
+    void referenceRoleRead(String conceptFqName, String referenceLinkRole, SNodeReference linkPointer);
+    void propertyNameRead(String conceptFqName, String propertyName, SNodeReference linkPointer);
     void modelVersionRead(SModelReference modelReference, int version);
 
-    SNodePointer getConceptPointer(String conceptFqName);
-    SNodePointer getNodeRolePointer(String conceptFqName, String linkRole);
-    SNodePointer getReferenceRolePointer(String conceptFqName, String referenceLinkRole);
-    SNodePointer getPropertyNamePointer(String conceptFqName, String propertyName);
+    SNodeReference getConceptPointer(String conceptFqName);
+    SNodeReference getNodeRolePointer(String conceptFqName, String linkRole);
+    SNodeReference getReferenceRolePointer(String conceptFqName, String referenceLinkRole);
+    SNodeReference getPropertyNamePointer(String conceptFqName, String propertyName);
     int getModelVersion(SModelReference modelReference);
   }
 }

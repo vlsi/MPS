@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8150353254540154656" modelId="r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)">
+  <root nodeRef="r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)/8150353254540154656">
     <nodeInfo nodeId="8150353254540154656" fileName="SNodeReadAccess_Test.java" startLine="36" startPosition="53" endLine="37" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8150353254540154656" fileName="SNodeReadAccess_Test.java" startLine="37" startPosition="121" endLine="38" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8150353254540154656" fileName="SNodeReadAccess_Test.java" startLine="42" startPosition="48" endLine="43" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -582,7 +582,7 @@
     <unitInfo nodeId="8150353254540154656" fileName="SNodeReadAccess_Test.java" startLine="143" startPosition="0" endLine="522" endPosition="0" unitName="jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody" />
     <unitInfo nodeId="8150353254540154656" fileName="SNodeReadAccess_Test.java" startLine="33" startPosition="0" endLine="523" endPosition="0" unitName="jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test" />
   </root>
-  <root nodeId="8150353254540241886" modelId="r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)">
+  <root nodeRef="r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest)/8150353254540241886">
     <nodeInfo nodeId="3434429991663274682" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourStatistics" />
     <nodeInfo nodeId="8150353254540241907" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySNode" />
     <nodeInfo nodeId="8150353254540243129" fileName="StatCountNodeReadAccessInEditorListener.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReadCounter" />

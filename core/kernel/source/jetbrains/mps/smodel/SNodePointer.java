@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -44,11 +44,14 @@ public class SNodePointer implements SNodeReference {
   @Override
   public org.jetbrains.mps.openapi.model.SNode resolve(SRepository repo) {
     if (myNodeId == null) return null;
-    SModelDescriptor model = getModel();
-    if (model != null) {
-      SNode node = model.getSModel().getNodeById(myNodeId);
-      if (node != null) {
-        return node;
+
+    if (myModelReference != null) {
+      SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(myModelReference);
+      if (model != null) {
+        SNode node = model.getSModel().getNodeById(myNodeId);
+        if (node != null) {
+          return node;
+        }
       }
     }
 
@@ -90,19 +93,20 @@ public class SNodePointer implements SNodeReference {
     return sum;
   }
 
-  public static String serialize(SNodePointer p) {
-    SModelReference ref = p.myModelReference;
-    SNodeId id = p.myNodeId;
+  public static String serialize(SNodeReference p) {
+    SNodePointer np = (SNodePointer) p;
+    SModelReference ref = np.myModelReference;
+    SNodeId id = np.myNodeId;
 
     assert ref != null && id != null;
 
     return ref.toString() + "/" + id.toString();
   }
 
-  public static SNodePointer deserialize(String from) {
+  public static SNodeReference deserialize(String from) {
     String[] split = from.split("/");
     assert split.length == 2;
-    return new SNodePointer(split[0], split[1]);
+    return new jetbrains.mps.smodel.SNodePointer(split[0], split[1]);
   }
 
   //-----------------deprecated----------------------

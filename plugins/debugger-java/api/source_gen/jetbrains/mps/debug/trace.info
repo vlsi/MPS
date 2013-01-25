@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="251277163127780701" modelId="r:00f87323-e6a8-42b3-9a91-892d878daf8f(jetbrains.mps.debug)">
+  <root nodeRef="r:00f87323-e6a8-42b3-9a91-892d878daf8f(jetbrains.mps.debug)/251277163127780701">
     <nodeInfo nodeId="251277163127780704" fileName="BaseRunProfileState.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUserData" />
     <nodeInfo nodeId="251277163127780728" fileName="BaseRunProfileState.java" startLine="31" startPosition="61" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="251277163127780742" fileName="BaseRunProfileState.java" startLine="36" startPosition="40" endLine="37" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -49,7 +49,7 @@
     <unitInfo nodeId="251277163127780790" fileName="BaseRunProfileState.java" startLine="57" startPosition="15" endLine="67" endPosition="5" unitName="jetbrains.mps.debug.BaseRunProfileState$1" />
     <unitInfo nodeId="251277163127780701" fileName="BaseRunProfileState.java" startLine="22" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.debug.BaseRunProfileState" />
   </root>
-  <root nodeId="3432969378036017734" modelId="r:00f87323-e6a8-42b3-9a91-892d878daf8f(jetbrains.mps.debug)">
+  <root nodeRef="r:00f87323-e6a8-42b3-9a91-892d878daf8f(jetbrains.mps.debug)/3432969378036017734">
     <nodeInfo nodeId="3432969378036017736" fileName="DebuggerKeys.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONNECTION_SETTINGS" />
     <nodeInfo nodeId="3432969378036017743" fileName="DebuggerKeys.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebuggerKeys#()V" />
     <scopeInfo nodeId="3432969378036017746" fileName="DebuggerKeys.java" startLine="14" startPosition="25" endLine="14" endPosition="25" />

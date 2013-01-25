@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1347577327951770664" modelId="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)">
+  <root nodeRef="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)/1347577327951770664">
     <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="17" startPosition="19" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="21" startPosition="39" endLine="22" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="25" startPosition="52" endLine="26" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -66,7 +66,7 @@
     <unitInfo nodeId="1347577327951770664" fileName="Rename.java" startLine="16" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.Rename" />
     <unitInfo nodeId="1347577327951770668" fileName="Rename_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.Rename_Target" />
   </root>
-  <root nodeId="7012097027058633272" modelId="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)">
+  <root nodeRef="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)/7012097027058633272">
     <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="31" startPosition="22" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="32" startPosition="41" endLine="33" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7012097027058633272" fileName="MoveNodes.java" startLine="33" startPosition="39" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

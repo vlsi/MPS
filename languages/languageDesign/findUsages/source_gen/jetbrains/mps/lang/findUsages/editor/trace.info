@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1197044909166" modelId="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)/1197044909166">
     <nodeInfo nodeId="1197044909166" fileName="FinderDeclaration_Editor.java" startLine="30" startPosition="79" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1218984549475" fileName="FinderDeclaration_Editor.java" startLine="35" startPosition="35" endLine="36" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1218984549475" fileName="FinderDeclaration_Editor.java" startLine="39" startPosition="69" endLine="40" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -707,7 +707,7 @@
     <unitInfo nodeId="1218984549475" fileName="FinderDeclaration_Editor.java" startLine="34" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_Editor$_Inline_m33ofg_a3a0a" />
     <unitInfo nodeId="1197044909166" fileName="FinderDeclaration_Editor.java" startLine="29" startPosition="0" endLine="451" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_Editor" />
   </root>
-  <root nodeId="1200242474757" modelId="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)/1200242474757">
     <nodeInfo nodeId="1200242474757" fileName="ResultStatement_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200242485056" fileName="ResultStatement_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200242485056" fileName="ResultStatement_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -797,7 +797,7 @@
     </scopeInfo>
     <unitInfo nodeId="1200242474757" fileName="ResultStatement_Editor.java" startLine="20" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.ResultStatement_Editor" />
   </root>
-  <root nodeId="1200242594265" modelId="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)/1200242594265">
     <nodeInfo nodeId="1200242594265" fileName="NodeStatement_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200242597610" fileName="NodeStatement_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200242597610" fileName="NodeStatement_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -887,7 +887,7 @@
     </scopeInfo>
     <unitInfo nodeId="1200242594265" fileName="NodeStatement_Editor.java" startLine="20" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.NodeStatement_Editor" />
   </root>
-  <root nodeId="1206197950998" modelId="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)/1206197950998">
     <nodeInfo nodeId="1206197950998" fileName="ExecuteFinderExpression_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1206198306911" fileName="ExecuteFinderExpression_Editor.java" startLine="29" startPosition="33" endLine="30" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1206198306911" fileName="ExecuteFinderExpression_Editor.java" startLine="33" startPosition="69" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1126,7 +1126,7 @@
     <unitInfo nodeId="1206198306911" fileName="ExecuteFinderExpression_Editor.java" startLine="28" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.ExecuteFinderExpression_Editor$_Inline_ydcqpo_a1a" />
     <unitInfo nodeId="1206197950998" fileName="ExecuteFinderExpression_Editor.java" startLine="23" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.ExecuteFinderExpression_Editor" />
   </root>
-  <root nodeId="1207141875089" modelId="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)/1207141875089">
     <nodeInfo nodeId="1207141875089" fileName="CheckCancelledStatusStatement_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1207141899185" fileName="CheckCancelledStatusStatement_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1207141899185" fileName="CheckCancelledStatusStatement_Editor.java" startLine="17" startPosition="109" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1148,7 +1148,7 @@
     </scopeInfo>
     <unitInfo nodeId="1207141875089" fileName="CheckCancelledStatusStatement_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.CheckCancelledStatusStatement_Editor" />
   </root>
-  <root nodeId="2005690715325995362" modelId="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)/2005690715325995362">
     <nodeInfo nodeId="2005690715325995362" fileName="FinderReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2005690715325995413" fileName="FinderReference_Editor.java" startLine="23" startPosition="33" endLine="24" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2005690715325995413" fileName="FinderReference_Editor.java" startLine="27" startPosition="69" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1249,7 +1249,7 @@
     <unitInfo nodeId="2005690715325995413" fileName="FinderReference_Editor.java" startLine="22" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.FinderReference_Editor$_Inline_ng67cj_a0a" />
     <unitInfo nodeId="2005690715325995362" fileName="FinderReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.FinderReference_Editor" />
   </root>
-  <root nodeId="6366407517031508179" modelId="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)/6366407517031508179">
     <nodeInfo nodeId="6366407517031508179" fileName="MakeResultProvider_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6366407517031508187" fileName="MakeResultProvider_Editor.java" startLine="33" startPosition="98" endLine="34" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6366407517031508187" fileName="MakeResultProvider_Editor.java" startLine="37" startPosition="66" endLine="38" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1414,7 +1414,7 @@
     <unitInfo nodeId="6366407517031508187" fileName="MakeResultProvider_Editor.java" startLine="32" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.MakeResultProvider_Editor$finderListHandler_7d63hk_c0" />
     <unitInfo nodeId="6366407517031508179" fileName="MakeResultProvider_Editor.java" startLine="27" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.findUsages.editor.MakeResultProvider_Editor" />
   </root>
-  <root nodeId="8150507060913092854" modelId="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)/8150507060913092854">
     <nodeInfo nodeId="8150507060913092854" fileName="ExecuteFindersGetSearchResults_Editor.java" startLine="30" startPosition="79" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6366407517031970667" fileName="ExecuteFindersGetSearchResults_Editor.java" startLine="35" startPosition="98" endLine="36" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6366407517031970667" fileName="ExecuteFindersGetSearchResults_Editor.java" startLine="39" startPosition="66" endLine="40" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

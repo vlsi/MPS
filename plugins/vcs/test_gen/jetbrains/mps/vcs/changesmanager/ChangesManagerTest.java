@@ -71,6 +71,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ModelChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.command.undo.UndoManager;
@@ -494,7 +495,7 @@ public class ChangesManagerTest {
     Map<String, FileStatus> statusesBefore = new HashMap<String, FileStatus>(myExpectedFileStatuses);
     String stringBefore = getChangeSetString(diff.getChangeSet());
 
-    final List<SNodePointer> affectedNodePointers = ListSequence.fromList(new ArrayList<SNodePointer>());
+    final List<SNodeReference> affectedNodePointers = ListSequence.fromList(new ArrayList<SNodeReference>());
     for (final _FunctionTypes._return_P0_E0<? extends SNode> t : ListSequence.fromList(tasks)) {
       runCommandAndWait(new Runnable() {
         public void run() {
@@ -517,8 +518,8 @@ public class ChangesManagerTest {
     checkRootStatuses();
   }
 
-  private void undoAndCheck(CurrentDifference diff, List<SNodePointer> affectedNodePointers, boolean checkAfterEachUndo) {
-    for (final SNodePointer np : ListSequence.fromList(affectedNodePointers).reversedList()) {
+  private void undoAndCheck(CurrentDifference diff, List<SNodeReference> affectedNodePointers, boolean checkAfterEachUndo) {
+    for (final SNodeReference np : ListSequence.fromList(affectedNodePointers).reversedList()) {
       try {
         SwingUtilities.invokeAndWait(new Runnable() {
           public void run() {
@@ -750,7 +751,7 @@ public class ChangesManagerTest {
     String stringBeforeAll = getChangeSetString(myUiDiff.getChangeSet());
     final SModel model = myUiDiff.getModelDescriptor().getSModel();
 
-    List<SNodePointer> affectedNodePointers = ListSequence.fromList(new ArrayList<SNodePointer>());
+    List<SNodeReference> affectedNodePointers = ListSequence.fromList(new ArrayList<SNodeReference>());
 
     while (true) {
       List<ModelChange> changesBefore = ListSequence.fromListWithValues(new ArrayList<ModelChange>(), myUiDiff.getChangeSet().getModelChanges());
@@ -789,9 +790,9 @@ public class ChangesManagerTest {
     String stringBeforeAll = getChangeSetString(myUiDiff.getChangeSet());
     final SModel model = myUiDiff.getModelDescriptor().getSModel();
 
-    List<SNodePointer> affectedRootPointers = ListSequence.fromList(check_4gxggu_a0a0a5a65(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, SNodePointer>() {
-      public SNodePointer select(ModelChange ch) {
-        return new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), ch.getRootId());
+    List<SNodeReference> affectedRootPointers = ListSequence.fromList(check_4gxggu_a0a0a5a65(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, SNodeReference>() {
+      public SNodeReference select(ModelChange ch) {
+        return ((SNodeReference) new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), ch.getRootId()));
       }
     }).distinct().toListSequence();
     final List<ModelChange> oppositeChanges = ListSequence.fromList(check_4gxggu_a0a0g0ec(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, ModelChange>() {

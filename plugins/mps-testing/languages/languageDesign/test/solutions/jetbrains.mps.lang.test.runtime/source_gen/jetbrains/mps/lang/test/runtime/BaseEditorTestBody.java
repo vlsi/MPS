@@ -12,6 +12,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -98,7 +99,7 @@ public class BaseEditorTestBody extends BaseTestBody {
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {
           try {
-            SNode editedNode = BaseEditorTestBody.this.myEditor.getCurrentlyEditedNode().getNode();
+            SNode editedNode = ((SNodePointer) BaseEditorTestBody.this.myEditor.getCurrentlyEditedNode()).getNode();
             Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
             Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), editedNode), ListSequence.fromListAndArray(new ArrayList<SNode>(), BaseEditorTestBody.this.myResult), (Map) map));
             if (BaseEditorTestBody.this.myFinish != null) {

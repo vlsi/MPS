@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4844813484172611392" modelId="r:745da36c-6731-41a7-aad3-c0bff6ba51dd(jetbrains.mps.lang.checkedName.editor)">
+  <root nodeRef="r:745da36c-6731-41a7-aad3-c0bff6ba51dd(jetbrains.mps.lang.checkedName.editor)/4844813484172611392">
     <nodeInfo nodeId="4844813484172611392" fileName="PropertyRefExpression_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4844813484172611402" fileName="PropertyRefExpression_Editor.java" startLine="33" startPosition="33" endLine="34" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4844813484172611402" fileName="PropertyRefExpression_Editor.java" startLine="37" startPosition="69" endLine="38" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -219,7 +219,7 @@
     <unitInfo nodeId="4844813484172611402" fileName="PropertyRefExpression_Editor.java" startLine="32" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.checkedName.editor.PropertyRefExpression_Editor$_Inline_hd00ff_a4a" />
     <unitInfo nodeId="4844813484172611392" fileName="PropertyRefExpression_Editor.java" startLine="27" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.lang.checkedName.editor.PropertyRefExpression_Editor" />
   </root>
-  <root nodeId="4844813484172611408" modelId="r:745da36c-6731-41a7-aad3-c0bff6ba51dd(jetbrains.mps.lang.checkedName.editor)">
+  <root nodeRef="r:745da36c-6731-41a7-aad3-c0bff6ba51dd(jetbrains.mps.lang.checkedName.editor)/4844813484172611408">
     <nodeInfo nodeId="4844813484172611408" fileName="PropertyRefType_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4844813484172611409" fileName="PropertyRefType_Editor.java" startLine="16" startPosition="86" endLine="17" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4844813484172611409" fileName="PropertyRefType_Editor.java" startLine="17" startPosition="93" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

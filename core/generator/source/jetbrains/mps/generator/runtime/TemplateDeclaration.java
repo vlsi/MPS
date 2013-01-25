@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
@@ -26,7 +26,7 @@ import java.util.Collection;
  */
 public interface TemplateDeclaration {
 
-  SNodePointer getTemplateNode();
+  SNodeReference getTemplateNode();
 
   Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment,
                           @NotNull TemplateContext context) throws GenerationException;

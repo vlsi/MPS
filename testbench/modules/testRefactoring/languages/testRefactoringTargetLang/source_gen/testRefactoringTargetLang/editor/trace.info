@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1198682124391" modelId="r:00000000-0000-4000-0000-011c8a4661d2(testRefactoringTargetLang.editor)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c8a4661d2(testRefactoringTargetLang.editor)/1198682124391">
     <nodeInfo nodeId="1198682124391" fileName="AnsotherGoodConcept_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198682124392" fileName="AnsotherGoodConcept_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198682124392" fileName="AnsotherGoodConcept_Editor.java" startLine="17" startPosition="93" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

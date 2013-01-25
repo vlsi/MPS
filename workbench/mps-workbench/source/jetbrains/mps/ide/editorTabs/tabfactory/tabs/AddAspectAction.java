@@ -23,7 +23,7 @@ import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 
@@ -34,11 +34,11 @@ import java.util.Set;
 public abstract class AddAspectAction extends AnAction {
   public static final Icon ADD_ICON = General.Add;
 
-  private SNodePointer myBaseNode;
+  private SNodeReference myBaseNode;
   private Set<RelationDescriptor> myPossibleTabs;
   private NodeChangeCallback myCallback;
 
-  public AddAspectAction(SNodePointer baseNode, Set<RelationDescriptor> possibleTabs, NodeChangeCallback callback) {
+  public AddAspectAction(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, NodeChangeCallback callback) {
     super("Add Aspect", "", ADD_ICON);
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;

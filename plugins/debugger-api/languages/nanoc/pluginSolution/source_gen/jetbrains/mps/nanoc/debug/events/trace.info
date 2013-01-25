@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3990508698139423539" modelId="r:cd25c6e5-97ce-4a26-8b73-c9bb310649a3(jetbrains.mps.nanoc.debug.events)">
+  <root nodeRef="r:cd25c6e5-97ce-4a26-8b73-c9bb310649a3(jetbrains.mps.nanoc.debug.events)/3990508698139423539">
     <nodeInfo nodeId="3990508698139425376" fileName="GDBEventsAdapter.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBEventsAdapter#()V" />
     <nodeInfo nodeId="3990508698139425380" fileName="GDBEventsAdapter.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/nanoc/debug/answer/AsyncAnswer;Lcom/intellij/execution/process/ProcessHandler;)V" />
     <nodeInfo nodeId="3990508698139425389" fileName="GDBEventsAdapter.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processTerminated#(Lcom/intellij/execution/process/ProcessHandler;)V" />
@@ -29,7 +29,7 @@
     </scopeInfo>
     <unitInfo nodeId="3990508698139423539" fileName="GDBEventsAdapter.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.nanoc.debug.events.GDBEventsAdapter" />
   </root>
-  <root nodeId="3990508698139426857" modelId="r:cd25c6e5-97ce-4a26-8b73-c9bb310649a3(jetbrains.mps.nanoc.debug.events)">
+  <root nodeRef="r:cd25c6e5-97ce-4a26-8b73-c9bb310649a3(jetbrains.mps.nanoc.debug.events)/3990508698139426857">
     <nodeInfo nodeId="3990508698139426859" fileName="GDBEventsListener.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/nanoc/debug/answer/AsyncAnswer;Lcom/intellij/execution/process/ProcessHandler;)V" />
     <nodeInfo nodeId="3990508698139426867" fileName="GDBEventsListener.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processTerminated#(Lcom/intellij/execution/process/ProcessHandler;)V" />
     <nodeInfo nodeId="3990508698139426873" fileName="GDBEventsListener.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resultReceived#(Ljetbrains/mps/nanoc/debug/answer/ResultAnswer;Ljava/util/List;Lcom/intellij/execution/process/ProcessHandler;)V" />
@@ -51,7 +51,7 @@
     </scopeInfo>
     <unitInfo nodeId="3990508698139426857" fileName="GDBEventsListener.java" startLine="11" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.nanoc.debug.events.GDBEventsListener" />
   </root>
-  <root nodeId="3990508698139429160" modelId="r:cd25c6e5-97ce-4a26-8b73-c9bb310649a3(jetbrains.mps.nanoc.debug.events)">
+  <root nodeRef="r:cd25c6e5-97ce-4a26-8b73-c9bb310649a3(jetbrains.mps.nanoc.debug.events)/3990508698139429160">
     <nodeInfo nodeId="3990508698139429172" fileName="GDBEventsHandler.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REASON" />
     <nodeInfo nodeId="3990508698139429176" fileName="GDBEventsHandler.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REASON_BP_HIT" />
     <nodeInfo nodeId="3990508698139429180" fileName="GDBEventsHandler.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REASON_EXITED_NORMALLY" />

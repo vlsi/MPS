@@ -19,16 +19,16 @@ import com.intellij.openapi.editor.Document;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
 import java.util.Collections;
 import java.util.List;
 
 public class EmptyTabsComponent implements TabsComponent {
-  private SNodePointer myNode;
+  private SNodeReference myNode;
 
-  public EmptyTabsComponent(SNodePointer node) {
+  public EmptyTabsComponent(SNodeReference node) {
     myNode = node;
   }
 
@@ -40,7 +40,7 @@ public class EmptyTabsComponent implements TabsComponent {
 
   }
 
-  public List<SNodePointer> getAllEditedNodes() {
+  public List<SNodeReference> getAllEditedNodes() {
     return Collections.singletonList(myNode);
   }
 
@@ -48,7 +48,7 @@ public class EmptyTabsComponent implements TabsComponent {
     return Collections.singletonList(MPSUndoUtil.getDoc(myNode));
   }
 
-  public void setLastNode(SNodePointer sNodePointer) {
+  public void setLastNode(SNodeReference sNodePointer) {
 
   }
 

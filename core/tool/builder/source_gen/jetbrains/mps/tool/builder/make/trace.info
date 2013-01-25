@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1169333190355797179" modelId="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)">
+  <root nodeRef="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)/1169333190355797179">
     <nodeInfo nodeId="5577082881903854861" fileName="ReducedMakeFacetConfiguration.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rebuild" />
     <nodeInfo nodeId="5577082881903410030" fileName="ReducedMakeFacetConfiguration.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cmon" />
     <nodeInfo nodeId="5577082881903410790" fileName="ReducedMakeFacetConfiguration.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="jmon" />
@@ -122,7 +122,7 @@
     <unitInfo nodeId="8092479555022511202" fileName="ReducedMakeFacetConfiguration.java" startLine="77" startPosition="15" endLine="119" endPosition="5" unitName="jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration$1" />
     <unitInfo nodeId="1169333190355797179" fileName="ReducedMakeFacetConfiguration.java" startLine="29" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration" />
   </root>
-  <root nodeId="2546981710034407607" modelId="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)">
+  <root nodeRef="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)/2546981710034407607">
     <nodeInfo nodeId="2546981710034407621" fileName="ConsoleMessageFormat.java" startLine="13" startPosition="73" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2546981710034407631" fileName="ConsoleMessageFormat.java" startLine="18" startPosition="61" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2546981710034407638" fileName="ConsoleMessageFormat.java" startLine="23" startPosition="37" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -176,7 +176,7 @@
     </scopeInfo>
     <unitInfo nodeId="2546981710034407607" fileName="ConsoleMessageFormat.java" startLine="8" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.tool.builder.make.ConsoleMessageFormat" />
   </root>
-  <root nodeId="878521226300902860" modelId="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)">
+  <root nodeRef="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)/878521226300902860">
     <nodeInfo nodeId="878521226300902871" fileName="MakeWorker.java" startLine="25" startPosition="66" endLine="26" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="878521226300902886" fileName="MakeWorker.java" startLine="29" startPosition="91" endLine="30" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="878521226300902898" fileName="MakeWorker.java" startLine="34" startPosition="78" endLine="35" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -306,7 +306,7 @@
     <unitInfo nodeId="878521226300903028" fileName="MakeWorker.java" startLine="65" startPosition="75" endLine="79" endPosition="5" unitName="jetbrains.mps.tool.builder.make.MakeWorker$3" />
     <unitInfo nodeId="878521226300902860" fileName="MakeWorker.java" startLine="24" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.tool.builder.make.MakeWorker" />
   </root>
-  <root nodeId="878521226301293123" modelId="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)">
+  <root nodeRef="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)/878521226301293123">
     <nodeInfo nodeId="878521226301293127" fileName="BuildMakeService.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="878521226301293153" fileName="BuildMakeService.java" startLine="47" startPosition="173" endLine="48" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="878521226301293175" fileName="BuildMakeService.java" startLine="51" startPosition="139" endLine="52" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -662,7 +662,7 @@
     <unitInfo nodeId="878521226301293643" fileName="BuildMakeService.java" startLine="182" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.tool.builder.make.BuildMakeService$DelegatingScriptController" />
     <unitInfo nodeId="878521226301293123" fileName="BuildMakeService.java" startLine="41" startPosition="0" endLine="311" endPosition="0" unitName="jetbrains.mps.tool.builder.make.BuildMakeService" />
   </root>
-  <root nodeId="878521226301293996" modelId="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)">
+  <root nodeRef="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)/878521226301293996">
     <nodeInfo nodeId="878521226301293999" fileName="GeneratorWorker.java" startLine="54" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageHandler" />
     <nodeInfo nodeId="878521226301294004" fileName="GeneratorWorker.java" startLine="55" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestFailed" />
     <nodeInfo nodeId="878521226301294014" fileName="GeneratorWorker.java" startLine="57" startPosition="43" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1071,7 +1071,7 @@
     <unitInfo nodeId="878521226301294808" fileName="GeneratorWorker.java" startLine="301" startPosition="0" endLine="365" endPosition="0" unitName="jetbrains.mps.tool.builder.make.GeneratorWorker$Graph" />
     <unitInfo nodeId="878521226301293996" fileName="GeneratorWorker.java" startLine="53" startPosition="0" endLine="366" endPosition="0" unitName="jetbrains.mps.tool.builder.make.GeneratorWorker" />
   </root>
-  <root nodeId="878521226301295021" modelId="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)">
+  <root nodeRef="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)/878521226301295021">
     <nodeInfo nodeId="878521226301295024" fileName="ReducedGenerationWorker.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOutputPaths" />
     <nodeInfo nodeId="878521226301295027" fileName="ReducedGenerationWorker.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignRootPaths" />
     <nodeInfo nodeId="878521226301295030" fileName="ReducedGenerationWorker.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOutputRedirects" />
@@ -1288,7 +1288,7 @@
     <unitInfo nodeId="878521226301296149" fileName="ReducedGenerationWorker.java" startLine="170" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.tool.builder.make.ReducedGenerationWorker$MyForeignRootPaths" />
     <unitInfo nodeId="878521226301295021" fileName="ReducedGenerationWorker.java" startLine="41" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.tool.builder.make.ReducedGenerationWorker" />
   </root>
-  <root nodeId="878521226301296209" modelId="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)">
+  <root nodeRef="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)/878521226301296209">
     <nodeInfo nodeId="878521226301296212" fileName="TestGenerationWorker.java" startLine="77" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageHandler" />
     <nodeInfo nodeId="878521226301296217" fileName="TestGenerationWorker.java" startLine="78" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestFailed" />
     <nodeInfo nodeId="878521226301296221" fileName="TestGenerationWorker.java" startLine="79" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBuildServerMessageFormat" />

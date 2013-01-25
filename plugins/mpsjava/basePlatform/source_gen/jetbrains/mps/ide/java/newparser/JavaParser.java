@@ -26,10 +26,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import jetbrains.mps.internal.collections.runtime.DequeSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.DynamicReference;
 
 public class JavaParser {
   private static Logger LOG = Logger.getLogger(JavaParser.class);
@@ -79,11 +87,11 @@ public class JavaParser {
         ASTNode[] astTypes = compRes.types;
 
         if (astTypes != null && astTypes.length > 0) {
-          typeResolver.addImports(extractImports(compRes));
-
           List<SNode> roots = new ArrayList<SNode>();
           for (ASTNode astNode : astTypes) {
-            ListSequence.fromList(roots).addElement(converter.convertRoot(astNode));
+            SNode root = converter.convertRoot(astNode);
+            annotateWithmports(compRes, root);
+            ListSequence.fromList(roots).addElement(root);
           }
           resultNodes = roots;
         }
@@ -203,63 +211,36 @@ public class JavaParser {
     }
   }
 
-  public List<TypeNameResolver.Import> extractImports(CompilationUnitDeclaration compResult) {
-    List<TypeNameResolver.Import> imps = ListSequence.fromList(new ArrayList<TypeNameResolver.Import>());
+  public void annotateWithmports(CompilationUnitDeclaration compResult, SNode clas) {
+    // <node> 
+    AttributeOperations.createAndSetAttrbiute(clas, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), "jetbrains.mps.baseLanguage.structure.JavaImports");
     if (compResult.imports != null) {
       for (ImportReference imprt : compResult.imports) {
-        imps.add(makeImport(imprt));
+        // <node> 
+        ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(clas, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))), "entries", true)).addElement(makeImport(imprt));
       }
     }
-    return imps;
+    // <node> 
   }
 
-  private TypeNameResolver.Import makeImport(ImportReference impRef) {
+  private SNode makeImport(ImportReference impRef) {
+    SNode imp = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImport", null);
+
     boolean onDemand = (impRef.bits & ASTNode.OnDemand) != 0;
     boolean isStatic = impRef.isStatic();
 
+    SPropertyOperations.set(imp, "onDemand", "" + (onDemand));
+
     char[][] toks = impRef.getImportName();
     StringBuffer sb = new StringBuffer();
-    int until = (onDemand ?
-      toks.length :
-      toks.length - 1
-    );
-    for (int i = 0; i < until; i++) {
-      char[] tok = toks[i];
-      if (i > 0) {
-        sb.append('.');
-      }
-      sb.append(tok);
+    for (int i = 0; i < toks.length; i++) {
+      String tok = new String(toks[i]);
+      SNode token = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringToken", null);
+      SPropertyOperations.set(token, "value", tok);
+      ListSequence.fromList(SLinkOperations.getTargets(imp, "token", true)).addElement(token);
     }
 
-    String pkg = sb.toString();
-    String clas = (onDemand ?
-      null :
-      new String(toks[toks.length - 1])
-    );
-
-    return new TypeNameResolver.Import(pkg, clas, isStatic);
-  }
-
-  public void tryResolveRoots(List<SNode> roots) {
-    for (SNode node : ListSequence.fromList(roots)) {
-      List<SNode> unknowns = SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", false, new String[]{});
-      for (SNode unk : ListSequence.fromList(unknowns)) {
-
-        final SNode unkNode = unk;
-        final _FunctionTypes._return_P0_E0<? extends SNode> subst = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), unk, "virtual_evaluateSubst_8136348407761606764", new Object[]{});
-        if (subst == null) {
-          continue;
-        }
-
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            SNode theRightNode = subst.invoke();
-            SNodeOperations.replaceWithAnother(unkNode, theRightNode);
-          }
-        });
-
-      }
-    }
+    return imp;
   }
 
   private String problemDescription(RecordedParsingInformation info) {
@@ -315,6 +296,63 @@ public class JavaParser {
 
     public String getErrorMsg() {
       return errorMsg;
+    }
+  }
+
+  public static void tryResolveUnknowns(Iterable<SNode> roots) {
+    for (SNode node : Sequence.fromIterable(roots)) {
+      List<SNode> unknowns = SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", false, new String[]{});
+      for (SNode unk : ListSequence.fromList(unknowns)) {
+
+        final SNode unkNode = unk;
+        final _FunctionTypes._return_P0_E0<? extends SNode> subst = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), unk, "virtual_evaluateSubst_8136348407761606764", new Object[]{});
+        if (subst == null) {
+          continue;
+        }
+
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            SNode theRightNode = subst.invoke();
+            SNodeOperations.replaceWithAnother(unkNode, theRightNode);
+          }
+        });
+
+      }
+    }
+  }
+
+  public static void tryResolveDynamicRefs(Iterable<SNode> nodes) {
+    Deque<SNode> stack = DequeSequence.fromDeque(new LinkedList<SNode>());
+    DequeSequence.fromDeque(stack).addSequence(Sequence.fromIterable(nodes));
+
+    while (DequeSequence.fromDeque(stack).isNotEmpty()) {
+      SNode node = DequeSequence.fromDeque(stack).popElement();
+      SModel ourModel = node.getModel();
+      DequeSequence.fromDeque(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
+
+      Iterable<SReference> refs = node.getReferences();
+      for (SReference ref : Sequence.fromIterable(refs)) {
+        if (!(ref instanceof DynamicReference)) {
+          continue;
+        }
+        if (ref.getRole().equals("baseMethodDeclaration")) {
+          continue;
+        }
+        if (ref.getRole().equals("fieldDeclaration")) {
+          continue;
+        }
+
+        SNode target = ref.getTargetNode();
+        if (target == null) {
+          continue;
+        }
+        node.setReferenceTarget(ref.getRole(), target);
+
+        SModel targetModel = target.getModel();
+        if (targetModel != null) {
+          ourModel.addModelImport(targetModel.getSModelReference(), true);
+        }
+      }
     }
   }
 }

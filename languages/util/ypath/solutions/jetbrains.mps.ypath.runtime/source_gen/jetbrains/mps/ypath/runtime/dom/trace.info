@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2295870045929265758" modelId="r:178539f5-f15e-4107-9c7a-f77b70742876(jetbrains.mps.ypath.runtime.dom)">
+  <root nodeRef="r:178539f5-f15e-4107-9c7a-f77b70742876(jetbrains.mps.ypath.runtime.dom)/2295870045929265758">
     <nodeInfo nodeId="2295870045929265781" fileName="NodeListIterableAdapter.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nodeList" />
     <nodeInfo nodeId="2295870045929265790" fileName="NodeListIterableAdapter.java" startLine="13" startPosition="53" endLine="14" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929265801" fileName="NodeListIterableAdapter.java" startLine="17" startPosition="36" endLine="18" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -34,7 +34,7 @@
     <unitInfo nodeId="2295870045929265762" fileName="NodeListIterableAdapter.java" startLine="21" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ypath.runtime.dom.NodeListIterableAdapter$NodeListIterator" />
     <unitInfo nodeId="2295870045929265758" fileName="NodeListIterableAdapter.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ypath.runtime.dom.NodeListIterableAdapter" />
   </root>
-  <root nodeId="2295870045929266190" modelId="r:178539f5-f15e-4107-9c7a-f77b70742876(jetbrains.mps.ypath.runtime.dom)">
+  <root nodeRef="r:178539f5-f15e-4107-9c7a-f77b70742876(jetbrains.mps.ypath.runtime.dom)/2295870045929266190">
     <nodeInfo nodeId="2295870045929266195" fileName="ChainedIterable.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="iterables" />
     <nodeInfo nodeId="2295870045929266208" fileName="ChainedIterable.java" startLine="13" startPosition="52" endLine="14" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929266220" fileName="ChainedIterable.java" startLine="17" startPosition="33" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -57,7 +57,7 @@
     <scopeInfo nodeId="2295870045929266215" fileName="ChainedIterable.java" startLine="17" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="2295870045929266190" fileName="ChainedIterable.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ypath.runtime.dom.ChainedIterable" />
   </root>
-  <root nodeId="2295870045929267550" modelId="r:178539f5-f15e-4107-9c7a-f77b70742876(jetbrains.mps.ypath.runtime.dom)">
+  <root nodeRef="r:178539f5-f15e-4107-9c7a-f77b70742876(jetbrains.mps.ypath.runtime.dom)/2295870045929267550">
     <nodeInfo nodeId="2295870045929267555" fileName="ChainedIterator.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="iterators" />
     <nodeInfo nodeId="2295870045929267560" fileName="ChainedIterator.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="index" />
     <nodeInfo nodeId="2295870045929267572" fileName="ChainedIterator.java" startLine="14" startPosition="52" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -101,7 +101,7 @@
     <scopeInfo nodeId="2295870045929267629" fileName="ChainedIterator.java" startLine="34" startPosition="0" endLine="42" endPosition="0" />
     <unitInfo nodeId="2295870045929267550" fileName="ChainedIterator.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.ypath.runtime.dom.ChainedIterator" />
   </root>
-  <root nodeId="2295870045929268207" modelId="r:178539f5-f15e-4107-9c7a-f77b70742876(jetbrains.mps.ypath.runtime.dom)">
+  <root nodeRef="r:178539f5-f15e-4107-9c7a-f77b70742876(jetbrains.mps.ypath.runtime.dom)/2295870045929268207">
     <nodeInfo nodeId="2295870045929268230" fileName="NamedNodeMapIterableAdapter.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nodeMap" />
     <nodeInfo nodeId="2295870045929268239" fileName="NamedNodeMapIterableAdapter.java" startLine="13" startPosition="56" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2295870045929268250" fileName="NamedNodeMapIterableAdapter.java" startLine="17" startPosition="36" endLine="18" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

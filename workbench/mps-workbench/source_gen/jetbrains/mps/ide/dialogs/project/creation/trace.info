@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1613125646032871391" modelId="r:478bf62d-84fb-4fba-aeda-183fb2769e64(jetbrains.mps.ide.dialogs.project.creation)">
+  <root nodeRef="r:478bf62d-84fb-4fba-aeda-183fb2769e64(jetbrains.mps.ide.dialogs.project.creation)/1613125646032871391">
     <nodeInfo nodeId="1613125646032871419" fileName="NewModelDialog.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
     <nodeInfo nodeId="1613125646032871422" fileName="NewModelDialog.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />
     <nodeInfo nodeId="1613125646032871425" fileName="NewModelDialog.java" startLine="54" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContentPane" />
@@ -289,7 +289,7 @@
     <unitInfo nodeId="7959849052033900567" fileName="NewModelDialog.java" startLine="171" startPosition="48" endLine="187" endPosition="7" unitName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog$6" />
     <unitInfo nodeId="1613125646032871391" fileName="NewModelDialog.java" startLine="51" startPosition="0" endLine="284" endPosition="0" unitName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog" />
   </root>
-  <root nodeId="1613125646032872003" modelId="r:478bf62d-84fb-4fba-aeda-183fb2769e64(jetbrains.mps.ide.dialogs.project.creation)">
+  <root nodeRef="r:478bf62d-84fb-4fba-aeda-183fb2769e64(jetbrains.mps.ide.dialogs.project.creation)/1613125646032872003">
     <nodeInfo nodeId="1613125646032872685" fileName="NewGeneratorDialog.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContenetPane" />
     <nodeInfo nodeId="1613125646032872688" fileName="NewGeneratorDialog.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTemplateModelsDir" />
     <nodeInfo nodeId="1613125646032872691" fileName="NewGeneratorDialog.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGeneratorName" />

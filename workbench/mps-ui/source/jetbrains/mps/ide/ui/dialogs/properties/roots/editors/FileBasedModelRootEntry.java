@@ -17,10 +17,8 @@ package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
 import com.intellij.icons.AllIcons.Modules;
 import com.intellij.openapi.util.SystemInfo;
-import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.ui.Gray;
 import com.intellij.ui.HoverHyperlinkLabel;
-import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.components.JBPanel;
 import com.intellij.ui.roots.FilePathClipper;
 import com.intellij.ui.roots.IconActionComponent;
@@ -58,6 +56,7 @@ import java.io.File;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
 
 public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryExt {
 
@@ -167,7 +166,7 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
   }
 
   private JComponent createKindFileComponent(final String file, Color foreground) {
-    String pathPresentation = file.replace(myFileBasedModelRoot.getContentRoot(),"").replaceFirst(File.separator,"");
+    String pathPresentation = file.replace(myFileBasedModelRoot.getContentRoot(),"").replaceFirst(Matcher.quoteReplacement(File.separator),"");
     if(pathPresentation.equals("")) pathPresentation = "./";
 
     JLabel label2Return = new JLabel(pathPresentation);

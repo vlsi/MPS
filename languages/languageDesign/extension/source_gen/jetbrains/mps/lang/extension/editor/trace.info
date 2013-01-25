@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3175313036448569274" modelId="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)">
+  <root nodeRef="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)/3175313036448569274">
     <nodeInfo nodeId="3175313036448569274" fileName="ExtensionPointType_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3175313036448569286" fileName="ExtensionPointType_Editor.java" startLine="30" startPosition="33" endLine="31" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3175313036448569286" fileName="ExtensionPointType_Editor.java" startLine="34" startPosition="69" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -164,7 +164,7 @@
     <unitInfo nodeId="3175313036448569286" fileName="ExtensionPointType_Editor.java" startLine="29" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.extension.editor.ExtensionPointType_Editor$_Inline_i3f4o0_a2a" />
     <unitInfo nodeId="3175313036448569274" fileName="ExtensionPointType_Editor.java" startLine="24" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.extension.editor.ExtensionPointType_Editor" />
   </root>
-  <root nodeId="3175313036448577248" modelId="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)">
+  <root nodeRef="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)/3175313036448577248">
     <nodeInfo nodeId="3175313036448577248" fileName="GetExtensionObjectsOperation_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3175313036448577250" fileName="GetExtensionObjectsOperation_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3175313036448577250" fileName="GetExtensionObjectsOperation_Editor.java" startLine="22" startPosition="99" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -204,7 +204,7 @@
     </scopeInfo>
     <unitInfo nodeId="3175313036448577248" fileName="GetExtensionObjectsOperation_Editor.java" startLine="16" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.extension.editor.GetExtensionObjectsOperation_Editor" />
   </root>
-  <root nodeId="3729007189729192408" modelId="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)">
+  <root nodeRef="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)/3729007189729192408">
     <nodeInfo nodeId="3729007189729192408" fileName="ExtensionPointDeclaration_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3729007189729192409" fileName="ExtensionPointDeclaration_Editor.java" startLine="26" startPosition="89" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3729007189729192409" fileName="ExtensionPointDeclaration_Editor.java" startLine="27" startPosition="96" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -347,7 +347,7 @@
     </scopeInfo>
     <unitInfo nodeId="3729007189729192408" fileName="ExtensionPointDeclaration_Editor.java" startLine="21" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.extension.editor.ExtensionPointDeclaration_Editor" />
   </root>
-  <root nodeId="3729007189729192413" modelId="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)">
+  <root nodeRef="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)/3729007189729192413">
     <nodeInfo nodeId="3729007189729192413" fileName="ExtensionDeclaration_Editor.java" startLine="35" startPosition="79" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3729007189729192417" fileName="ExtensionDeclaration_Editor.java" startLine="40" startPosition="34" endLine="41" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3729007189729192417" fileName="ExtensionDeclaration_Editor.java" startLine="44" startPosition="69" endLine="45" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -825,7 +825,7 @@
     <unitInfo nodeId="7036359038356115168" fileName="ExtensionDeclaration_Editor.java" startLine="72" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.extension.editor.ExtensionDeclaration_Editor$fieldDeclarationListHandler_i2dquw_c0" />
     <unitInfo nodeId="3729007189729192413" fileName="ExtensionDeclaration_Editor.java" startLine="34" startPosition="0" endLine="309" endPosition="0" unitName="jetbrains.mps.lang.extension.editor.ExtensionDeclaration_Editor" />
   </root>
-  <root nodeId="6626851894249711938" modelId="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)">
+  <root nodeRef="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)/6626851894249711938">
     <nodeInfo nodeId="6626851894249711938" fileName="ExtensionPointExpression_Editor.java" startLine="31" startPosition="79" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6626851894249711938" fileName="ExtensionPointExpression_Editor.java" startLine="35" startPosition="82" endLine="36" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6626851894249712472" fileName="ExtensionPointExpression_Editor.java" startLine="40" startPosition="33" endLine="41" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1105,7 +1105,7 @@
     <unitInfo nodeId="6626851894249712472" fileName="ExtensionPointExpression_Editor.java" startLine="39" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.extension.editor.ExtensionPointExpression_Editor$_Inline_hr8njl_a2a" />
     <unitInfo nodeId="6626851894249711938" fileName="ExtensionPointExpression_Editor.java" startLine="30" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.lang.extension.editor.ExtensionPointExpression_Editor" />
   </root>
-  <root nodeId="7036359038356115104" modelId="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)">
+  <root nodeRef="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)/7036359038356115104">
     <nodeInfo nodeId="7036359038356115104" fileName="ExtensionFieldDeclaration_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7036359038356115106" fileName="ExtensionFieldDeclaration_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7036359038356115106" fileName="ExtensionFieldDeclaration_Editor.java" startLine="25" startPosition="96" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1193,7 +1193,7 @@
     </scopeInfo>
     <unitInfo nodeId="7036359038356115104" fileName="ExtensionFieldDeclaration_Editor.java" startLine="19" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.extension.editor.ExtensionFieldDeclaration_Editor" />
   </root>
-  <root nodeId="7036359038356115113" modelId="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)">
+  <root nodeRef="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)/7036359038356115113">
     <nodeInfo nodeId="7036359038356115113" fileName="ExtensionFieldReference_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7036359038356115119" fileName="ExtensionFieldReference_Editor.java" startLine="26" startPosition="33" endLine="27" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7036359038356115119" fileName="ExtensionFieldReference_Editor.java" startLine="30" startPosition="69" endLine="31" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -22,9 +22,10 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.editor.NodeStructureViewProvider;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -35,23 +36,23 @@ public class NodeStructureViewProviderImpl implements ApplicationComponent, Node
   public NodeStructureViewProviderImpl() {
   }
 
-  public StructureViewBuilder create(Project project, SNodePointer np) {
+  public StructureViewBuilder create(Project project, SNodeReference np) {
     ModelAccess.assertLegalRead();
 
     List<RelationDescriptor> tabs = project.getComponent(ProjectPluginManager.class).getTabDescriptors();
-    SNode node = np.getNode();
+    SNode node = np.resolve(MPSModuleRepository.getInstance());
 
     for (RelationDescriptor tab : tabs) {
       SNode baseNode = tab.getBaseNode(node);
       if (baseNode != null && baseNode.getName() != null) {
-        return new NodeStructureViewBuilder(project, new SNodePointer(baseNode));
+        return new NodeStructureViewBuilder(project, new jetbrains.mps.smodel.SNodePointer(baseNode));
       }
     }
 
     for (RelationDescriptor tab : tabs) {
       List<SNode> nodes = tab.getNodes(node);
       if (!nodes.isEmpty()) {
-        return new NodeStructureViewBuilder(project, new SNodePointer(node));
+        return new NodeStructureViewBuilder(project, new jetbrains.mps.smodel.SNodePointer(node));
       }
     }
 
@@ -60,7 +61,7 @@ public class NodeStructureViewProviderImpl implements ApplicationComponent, Node
 
   @Override
   public StructureViewBuilder getStructureViewBuilder(@NotNull MPSNodeVirtualFile file, @NotNull Project project) {
-    SNodePointer nodePointer = file.getSNodePointer();
+    SNodeReference nodePointer = file.getSNodePointer();
     return create(project, nodePointer);
   }
 

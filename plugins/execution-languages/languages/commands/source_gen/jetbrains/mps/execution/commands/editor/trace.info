@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1594211126127664034" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/1594211126127664034">
     <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="17" startPosition="95" endLine="18" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="24" startPosition="56" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -57,7 +57,7 @@
     <unitInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="21" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.RedirectOutputExpression$RedirectOutputExpression_DELETE" />
     <unitInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.RedirectOutputExpression" />
   </root>
-  <root nodeId="1616228152992023916" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/1616228152992023916">
     <nodeInfo nodeId="1616228152992023916" fileName="CommandPartLengthOperation_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2886182022232399979" fileName="CommandPartLengthOperation_Editor.java" startLine="17" startPosition="88" endLine="18" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2886182022232399979" fileName="CommandPartLengthOperation_Editor.java" startLine="18" startPosition="67" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -79,7 +79,7 @@
     </scopeInfo>
     <unitInfo nodeId="1616228152992023916" fileName="CommandPartLengthOperation_Editor.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandPartLengthOperation_Editor" />
   </root>
-  <root nodeId="2343546112398330904" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/2343546112398330904">
     <nodeInfo nodeId="2343546112398330904" fileName="NewProcessBuilderExpression_Editor.java" startLine="31" startPosition="79" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2343546112398330904" fileName="NewProcessBuilderExpression_Editor.java" startLine="35" startPosition="82" endLine="36" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2343546112398330907" fileName="NewProcessBuilderExpression_Editor.java" startLine="40" startPosition="103" endLine="41" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -335,7 +335,7 @@
     <unitInfo nodeId="2343546112398330907" fileName="NewProcessBuilderExpression_Editor.java" startLine="39" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.NewProcessBuilderExpression_Editor$commandPartListHandler_u94itw_a0" />
     <unitInfo nodeId="2343546112398330904" fileName="NewProcessBuilderExpression_Editor.java" startLine="30" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.NewProcessBuilderExpression_Editor" />
   </root>
-  <root nodeId="2459753140357918806" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/2459753140357918806">
     <nodeInfo nodeId="2459753140357918806" fileName="StartAndWaitOperation_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2459753140357929010" fileName="StartAndWaitOperation_Editor.java" startLine="27" startPosition="89" endLine="28" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2459753140357929010" fileName="StartAndWaitOperation_Editor.java" startLine="28" startPosition="99" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -444,7 +444,7 @@
     </scopeInfo>
     <unitInfo nodeId="2459753140357918806" fileName="StartAndWaitOperation_Editor.java" startLine="22" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.StartAndWaitOperation_Editor" />
   </root>
-  <root nodeId="612376536074296997" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/612376536074296997">
     <nodeInfo nodeId="612376536074296997" fileName="CommandProcessType_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="612376536074297009" fileName="CommandProcessType_Editor.java" startLine="30" startPosition="33" endLine="31" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="612376536074297009" fileName="CommandProcessType_Editor.java" startLine="34" startPosition="69" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -602,7 +602,7 @@
     <unitInfo nodeId="612376536074297009" fileName="CommandProcessType_Editor.java" startLine="29" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandProcessType_Editor$_Inline_9m9s9z_a2a" />
     <unitInfo nodeId="612376536074296997" fileName="CommandProcessType_Editor.java" startLine="24" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandProcessType_Editor" />
   </root>
-  <root nodeId="6129022259108579247" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/6129022259108579247">
     <nodeInfo nodeId="6129022259108579247" fileName="ExecuteCommandPart_Editor.java" startLine="30" startPosition="79" endLine="31" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6129022259108579276" fileName="ExecuteCommandPart_Editor.java" startLine="35" startPosition="112" endLine="36" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6129022259108579276" fileName="ExecuteCommandPart_Editor.java" startLine="39" startPosition="66" endLine="40" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -837,7 +837,7 @@
     <unitInfo nodeId="6129022259108579276" fileName="ExecuteCommandPart_Editor.java" startLine="34" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.ExecuteCommandPart_Editor$parameterDeclarationListHandler_6c2ht_c0a" />
     <unitInfo nodeId="6129022259108579247" fileName="ExecuteCommandPart_Editor.java" startLine="29" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.ExecuteCommandPart_Editor" />
   </root>
-  <root nodeId="6868250101935613847" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/6868250101935613847">
     <nodeInfo nodeId="6868250101935613847" fileName="ListCommandPart_Editor.java" startLine="34" startPosition="79" endLine="35" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6868250101935613847" fileName="ListCommandPart_Editor.java" startLine="38" startPosition="82" endLine="39" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2168104298250249107" fileName="ListCommandPart_Editor.java" startLine="43" startPosition="97" endLine="44" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1407,7 +1407,7 @@
     <unitInfo nodeId="2168104298250249107" fileName="ListCommandPart_Editor.java" startLine="42" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.ListCommandPart_Editor$itemsListHandler_fty1bq_c0" />
     <unitInfo nodeId="6868250101935613847" fileName="ListCommandPart_Editor.java" startLine="33" startPosition="0" endLine="363" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.ListCommandPart_Editor" />
   </root>
-  <root nodeId="8234001627573935234" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/8234001627573935234">
     <nodeInfo nodeId="8234001627573935234" fileName="CommandPartToListOperation_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2886182022232400385" fileName="CommandPartToListOperation_Editor.java" startLine="17" startPosition="88" endLine="18" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2886182022232400385" fileName="CommandPartToListOperation_Editor.java" startLine="18" startPosition="67" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1429,7 +1429,7 @@
     </scopeInfo>
     <unitInfo nodeId="8234001627573935234" fileName="CommandPartToListOperation_Editor.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandPartToListOperation_Editor" />
   </root>
-  <root nodeId="8234001627574071410" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/8234001627574071410">
     <nodeInfo nodeId="8234001627574071410" fileName="PropertyCommandPart_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8234001627574071412" fileName="PropertyCommandPart_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8234001627574071412" fileName="PropertyCommandPart_Editor.java" startLine="26" startPosition="96" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1553,7 +1553,7 @@
     </scopeInfo>
     <unitInfo nodeId="8234001627574071410" fileName="PropertyCommandPart_Editor.java" startLine="20" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.PropertyCommandPart_Editor" />
   </root>
-  <root nodeId="8478830098674460023" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/8478830098674460023">
     <nodeInfo nodeId="8478830098674460023" fileName="DebuggerSettingsCommandParameterDeclaration_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2886182022232400027" fileName="DebuggerSettingsCommandParameterDeclaration_Editor.java" startLine="20" startPosition="88" endLine="21" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2886182022232400027" fileName="DebuggerSettingsCommandParameterDeclaration_Editor.java" startLine="21" startPosition="67" endLine="22" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1579,7 +1579,7 @@
     </scopeInfo>
     <unitInfo nodeId="8478830098674460023" fileName="DebuggerSettingsCommandParameterDeclaration_Editor.java" startLine="15" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.DebuggerSettingsCommandParameterDeclaration_Editor" />
   </root>
-  <root nodeId="856705193941281818" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/856705193941281818">
     <nodeInfo nodeId="856705193941281818" fileName="CommandType_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941281823" fileName="CommandType_Editor.java" startLine="30" startPosition="33" endLine="31" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="856705193941281823" fileName="CommandType_Editor.java" startLine="34" startPosition="69" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1737,7 +1737,7 @@
     <unitInfo nodeId="856705193941281823" fileName="CommandType_Editor.java" startLine="29" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandType_Editor$_Inline_2uesqr_a2a" />
     <unitInfo nodeId="856705193941281818" fileName="CommandType_Editor.java" startLine="24" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandType_Editor" />
   </root>
-  <root nodeId="856705193941281827" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/856705193941281827">
     <nodeInfo nodeId="856705193941281827" fileName="CommandReferenceExpression_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941281829" fileName="CommandReferenceExpression_Editor.java" startLine="23" startPosition="33" endLine="24" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="856705193941281829" fileName="CommandReferenceExpression_Editor.java" startLine="27" startPosition="69" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1838,7 +1838,7 @@
     <unitInfo nodeId="856705193941281829" fileName="CommandReferenceExpression_Editor.java" startLine="22" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandReferenceExpression_Editor$_Inline_nbi4wa_a0a" />
     <unitInfo nodeId="856705193941281827" fileName="CommandReferenceExpression_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandReferenceExpression_Editor" />
   </root>
-  <root nodeId="856705193941281831" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/856705193941281831">
     <nodeInfo nodeId="856705193941281831" fileName="CommandParameterReference_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941281833" fileName="CommandParameterReference_Editor.java" startLine="26" startPosition="33" endLine="27" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="856705193941281833" fileName="CommandParameterReference_Editor.java" startLine="30" startPosition="69" endLine="31" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1943,7 +1943,7 @@
     <unitInfo nodeId="856705193941281833" fileName="CommandParameterReference_Editor.java" startLine="25" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandParameterReference_Editor$_Inline_ri978v_a0a" />
     <unitInfo nodeId="856705193941281831" fileName="CommandParameterReference_Editor.java" startLine="20" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandParameterReference_Editor" />
   </root>
-  <root nodeId="856705193941281841" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/856705193941281841">
     <nodeInfo nodeId="856705193941281841" fileName="ExplicitCommandParameterDeclaration_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941281841" fileName="ExplicitCommandParameterDeclaration_Editor.java" startLine="32" startPosition="82" endLine="33" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941281842" fileName="ExplicitCommandParameterDeclaration_Editor.java" startLine="36" startPosition="89" endLine="37" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2186,7 +2186,7 @@
     </scopeInfo>
     <unitInfo nodeId="856705193941281841" fileName="ExplicitCommandParameterDeclaration_Editor.java" startLine="27" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.ExplicitCommandParameterDeclaration_Editor" />
   </root>
-  <root nodeId="856705193941281871" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/856705193941281871">
     <nodeInfo nodeId="856705193941281871" fileName="CommandParameterAssignment_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941281874" fileName="CommandParameterAssignment_Editor.java" startLine="29" startPosition="33" endLine="30" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="856705193941281874" fileName="CommandParameterAssignment_Editor.java" startLine="33" startPosition="69" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2337,7 +2337,7 @@
     <unitInfo nodeId="856705193941281874" fileName="CommandParameterAssignment_Editor.java" startLine="28" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandParameterAssignment_Editor$_Inline_bofzf4_a0a" />
     <unitInfo nodeId="856705193941281871" fileName="CommandParameterAssignment_Editor.java" startLine="23" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandParameterAssignment_Editor" />
   </root>
-  <root nodeId="856705193941281880" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/856705193941281880">
     <nodeInfo nodeId="856705193941281880" fileName="CommandDeclaration_Editor.java" startLine="32" startPosition="79" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941281880" fileName="CommandDeclaration_Editor.java" startLine="36" startPosition="82" endLine="37" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6129022259108579270" fileName="CommandDeclaration_Editor.java" startLine="41" startPosition="104" endLine="42" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -2823,7 +2823,7 @@
     <unitInfo nodeId="856705193941281917" fileName="CommandDeclaration_Editor.java" startLine="76" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandDeclaration_Editor$methodListHandler_y485ry_b5a" />
     <unitInfo nodeId="856705193941281880" fileName="CommandDeclaration_Editor.java" startLine="31" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandDeclaration_Editor" />
   </root>
-  <root nodeId="856705193941281920" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/856705193941281920">
     <nodeInfo nodeId="856705193941281920" fileName="CommandDebuggerOperation_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2886182022232400227" fileName="CommandDebuggerOperation_Editor.java" startLine="20" startPosition="88" endLine="21" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2886182022232400227" fileName="CommandDebuggerOperation_Editor.java" startLine="21" startPosition="67" endLine="22" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2849,7 +2849,7 @@
     </scopeInfo>
     <unitInfo nodeId="856705193941281920" fileName="CommandDebuggerOperation_Editor.java" startLine="15" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandDebuggerOperation_Editor" />
   </root>
-  <root nodeId="856705193941281922" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/856705193941281922">
     <nodeInfo nodeId="856705193941281922" fileName="CommandBuilderExpression_Editor.java" startLine="30" startPosition="79" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6129022259108621549" fileName="CommandBuilderExpression_Editor.java" startLine="35" startPosition="33" endLine="36" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6129022259108621549" fileName="CommandBuilderExpression_Editor.java" startLine="39" startPosition="69" endLine="40" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3063,7 +3063,7 @@
     <unitInfo nodeId="856705193941281928" fileName="CommandBuilderExpression_Editor.java" startLine="67" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandBuilderExpression_Editor$argumentListHandler_lo57cy_c0" />
     <unitInfo nodeId="856705193941281922" fileName="CommandBuilderExpression_Editor.java" startLine="29" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.CommandBuilderExpression_Editor" />
   </root>
-  <root nodeId="856705193941281932" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/856705193941281932">
     <nodeInfo nodeId="856705193941281932" fileName="ReportErrorStatement_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941281933" fileName="ReportErrorStatement_Editor.java" startLine="28" startPosition="89" endLine="29" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="856705193941281933" fileName="ReportErrorStatement_Editor.java" startLine="29" startPosition="99" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3214,7 +3214,7 @@
     </scopeInfo>
     <unitInfo nodeId="856705193941281932" fileName="ReportErrorStatement_Editor.java" startLine="23" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.ReportErrorStatement_Editor" />
   </root>
-  <root nodeId="856705193941281977" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/856705193941281977">
     <nodeInfo nodeId="856705193941281977" fileName="RedirectOutputExpression_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941281978" fileName="RedirectOutputExpression_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="856705193941281978" fileName="RedirectOutputExpression_Editor.java" startLine="22" startPosition="96" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3313,7 +3313,7 @@
     </scopeInfo>
     <unitInfo nodeId="856705193941281977" fileName="RedirectOutputExpression_Editor.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.RedirectOutputExpression_Editor" />
   </root>
-  <root nodeId="889694274152179964" modelId="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
+  <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/889694274152179964">
     <nodeInfo nodeId="889694274152179964" fileName="KeyValueCommandPart_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="889694274152179964" fileName="KeyValueCommandPart_Editor.java" startLine="30" startPosition="82" endLine="31" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="889694274152179966" fileName="KeyValueCommandPart_Editor.java" startLine="34" startPosition="89" endLine="35" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

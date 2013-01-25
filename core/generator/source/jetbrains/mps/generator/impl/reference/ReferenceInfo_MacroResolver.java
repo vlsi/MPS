@@ -18,8 +18,9 @@ package jetbrains.mps.generator.impl.reference;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Evgeny Gryaznov, 11/18/10
@@ -40,9 +41,9 @@ public class ReferenceInfo_MacroResolver extends ReferenceInfo_Macro{
 
   @Override
   protected SNode getMacroNode() {
-    SNodePointer macro = myResolver.getTemplateNode();
+    SNodeReference macro = myResolver.getTemplateNode();
     if(macro != null) {
-      return macro.getNode();
+      return macro.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }

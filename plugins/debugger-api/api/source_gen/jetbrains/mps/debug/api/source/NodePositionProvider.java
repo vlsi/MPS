@@ -5,12 +5,13 @@ package jetbrains.mps.debug.api.source;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.NullLocation;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 
@@ -23,7 +24,7 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
     if (location == null || location instanceof NullLocation) {
       return null;
     }
-    SNodePointer node = getSNodePointer(location);
+    SNodeReference node = getSNodePointer(location);
     if (node != null) {
       return new NodeSourcePosition(node);
     }
@@ -32,7 +33,7 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
 
   @Nullable
   public NodeSourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
-    SNodePointer node = getSNodePointer(unitName, fileName, lineNumber);
+    SNodeReference node = getSNodePointer(unitName, fileName, lineNumber);
     if (node != null) {
       return new NodeSourcePosition(node);
     }
@@ -40,7 +41,7 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
   }
 
   @Nullable
-  public SNodePointer getSNodePointer(@Nullable ILocation location) {
+  public SNodeReference getSNodePointer(@Nullable ILocation location) {
     if (location == null || location instanceof NullLocation) {
       return null;
     }
@@ -48,9 +49,9 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
   }
 
   @Nullable
-  public SNodePointer getSNodePointer(@NonNls final String unitName, @NonNls final String fileName, final int position) {
-    return ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-      public SNodePointer compute() {
+  public SNodeReference getSNodePointer(@NonNls final String unitName, @NonNls final String fileName, final int position) {
+    return ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
+      public SNodeReference compute() {
         SNode node = getNode(unitName, fileName, position);
         if (node == null) {
           return null;

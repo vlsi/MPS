@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="7651593722933722504" modelId="r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test)">
+  <root nodeRef="r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test)/7651593722933722504">
     <nodeInfo nodeId="7651593722933722504" fileName="TableColumnsDefaultWrapping_Test.java" startLine="18" startPosition="67" endLine="19" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7651593722933722504" fileName="TableColumnsDefaultWrapping_Test.java" startLine="19" startPosition="130" endLine="20" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7651593722933722504" fileName="TableColumnsDefaultWrapping_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

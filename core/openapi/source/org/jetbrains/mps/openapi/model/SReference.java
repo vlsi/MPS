@@ -35,8 +35,7 @@ public interface SReference {
 
   SNode getTargetNode();
 
-// TODO conflict with StaticReference.getTargetModel
-//  SModel getTargetModel();
+  SModel getTargetModel();
 
   /**
    * Retrieves the textual representation of the reference.

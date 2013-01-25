@@ -9,7 +9,7 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import org.jdom.Element;
 import jetbrains.mps.logging.Logger;
 import java.util.Map;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Set;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import java.util.HashMap;
@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.ListIterator;
@@ -33,7 +34,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private static final Logger LOG = Logger.getLogger(BreakpointManagerComponent.class);
   private static final String BREAKPOINTS_LIST_ELEMENT = "breakpointsList";
   private static final BreakpointManagerComponent.DummyIO DUMMY_IO = new BreakpointManagerComponent.DummyIO();
-  private final Map<SNodePointer, Set<ILocationBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodePointer, Set<ILocationBreakpoint>>();
+  private final Map<SNodeReference, Set<ILocationBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodeReference, Set<ILocationBreakpoint>>();
   private boolean myBreakpointsForRootInitialized = false;
   private final Set<IBreakpoint> myBreakpoints = new HashSet<IBreakpoint>();
   private final List<Element> myUnreadBreakpoints = new ArrayList<Element>();
@@ -91,7 +92,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private void addLocationBreakpoint(ILocationBreakpoint breakpoint) {
     SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
-      SNodePointer rootPointer = new SNodePointer(node.getContainingRoot());
+      SNodeReference rootPointer = new SNodePointer(node.getContainingRoot());
       Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
       if (breakpointsForRoot == null) {
         breakpointsForRoot = new HashSet<ILocationBreakpoint>();
@@ -99,7 +100,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       }
       //  check the following assumption: one breakpoint for one node 
       for (ILocationBreakpoint breakpointForRoot : breakpointsForRoot) {
-        if (breakpointForRoot.getLocation().getNodePointer().equals(breakpoint.getLocation().getNodePointer())) {
+        if (((SNodePointer) breakpointForRoot.getLocation().getNodePointer()).equals(breakpoint.getLocation().getNodePointer())) {
           LOG.error("Trying to add a second breakpoint for node", breakpointForRoot.getLocation().getSNode());
           break;
         }
@@ -128,7 +129,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
       SNode root = node.getContainingRoot();
-      SNodePointer rootPointer = new SNodePointer(root);
+      SNodeReference rootPointer = new SNodePointer(root);
       Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
       if (breakpointsForRoot != null) {
         breakpointsForRoot.remove(breakpoint);
@@ -263,7 +264,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   }
 
-  public Set<ILocationBreakpoint> getBreakpoints(final SNodePointer rootPointer) {
+  public Set<ILocationBreakpoint> getBreakpoints(final SNodeReference rootPointer) {
     return ModelAccess.instance().runReadAction(new Computable<Set<ILocationBreakpoint>>() {
       public Set<ILocationBreakpoint> compute() {
         synchronized (myBreakpoints) {

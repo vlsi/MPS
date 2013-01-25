@@ -9,6 +9,7 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
@@ -59,7 +60,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     return this.myModel;
   }
 
-  public SNodePointer getMappingNode() {
+  public SNodeReference getMappingNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209603916390");
   }
 
@@ -111,7 +112,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3r;
     }
 
@@ -170,7 +171,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.transformation.test.outputLang.structure.OutputNode";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3s;
     }
 
@@ -214,7 +215,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
             return "i";
           }
 
-          public SNodePointer getTemplateNode() {
+          public SNodeReference getTemplateNode() {
             return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1473665232107455263");
           }
         }, tnode3, "variableDeclaration", context2);
@@ -241,7 +242,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3t;
     }
 
@@ -300,7 +301,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3u;
     }
 
@@ -345,7 +346,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3v;
     }
 
@@ -516,7 +517,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public PatternRule0() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return patternRule_417xrn_a0a1w;
     }
 
@@ -555,7 +556,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public PatternRule1() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return patternRule_417xrn_a0a1x;
     }
 
@@ -675,7 +676,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public PatternRule2() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return patternRule_417xrn_a0a1y;
     }
 
@@ -750,7 +751,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public PatternRule3() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return patternRule_417xrn_a0a1z;
     }
 
@@ -789,7 +790,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public PatternRule4() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return patternRule_417xrn_a0a1ab;
     }
 
@@ -914,7 +915,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public PatternRule5() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return patternRule_417xrn_a0a1bb;
     }
 
@@ -953,7 +954,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public PatternRule6() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return patternRule_417xrn_a0a1cb;
     }
 
@@ -1014,7 +1015,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
               Collection<SNode> tlist4 = null;
               try {
                 environment.getTracer().pushMacro(callMacro_417xrn_a0a0a1a4a1a3a2a5cb);
-                final SNodePointer templateNode4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883030947");
+                final SNodeReference templateNode4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883030947");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode4);
                   tlist4 = new Templateprocess42(((SNode) pattern.getFieldValue("patternVar_ref"))).apply(environment, context);
@@ -1051,7 +1052,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public PatternRule7() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return patternRule_417xrn_a0a1db;
     }
 
@@ -1115,7 +1116,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public RootMappingRule0() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return rootMappingRule_417xrn_a0a1eb;
     }
 
@@ -1146,7 +1147,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public WeavingRule0() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return weavingRule_417xrn_a0a1fb;
     }
 

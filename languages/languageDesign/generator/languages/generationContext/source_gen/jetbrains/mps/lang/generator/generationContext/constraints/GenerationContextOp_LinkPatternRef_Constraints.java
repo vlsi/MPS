@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class GenerationContextOp_LinkPatternRef_Constraints extends BaseConstraintsDescriptor {
@@ -49,7 +50,7 @@ public class GenerationContextOp_LinkPatternRef_Constraints extends BaseConstrai
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_ij7vb1_a0a1a0a0a1a0b0a1a1;
           }
         };

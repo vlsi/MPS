@@ -17,7 +17,7 @@ package jetbrains.mps.ide.editorTabs.tabfactory;
 
 import com.intellij.openapi.editor.Document;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
@@ -26,14 +26,14 @@ import java.util.List;
 public interface TabsComponent {
   void dispose();
 
-  List<SNodePointer> getAllEditedNodes();
+  List<SNodeReference> getAllEditedNodes();
 
   List<Document> getAllEditedDocuments();
 
   @Nullable
   RelationDescriptor getCurrentTabAspect();
 
-  void setLastNode(SNodePointer sNodePointer);
+  void setLastNode(SNodeReference sNodePointer);
 
   JComponent getComponent();
 

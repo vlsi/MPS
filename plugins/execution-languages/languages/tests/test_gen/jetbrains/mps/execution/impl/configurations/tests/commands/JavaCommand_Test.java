@@ -7,7 +7,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessEvent;
@@ -39,7 +40,7 @@ public class JavaCommand_Test extends BaseTransformationTest4 {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startJavaByNode() throws Exception {
-      final Wrappers._T<SNodePointer> pointer = new Wrappers._T<SNodePointer>();
+      final Wrappers._T<SNodeReference> pointer = new Wrappers._T<SNodeReference>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           SModel model = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox", "tests")).getSModel();

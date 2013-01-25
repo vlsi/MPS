@@ -10,8 +10,9 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import java.util.UUID;
@@ -43,11 +44,11 @@ public class TemplateModelImpl implements TemplateModel {
     return switches;
   }
 
-  public TemplateDeclaration loadTemplate(SNodePointer template, Object... arguments) {
+  public TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments) {
     if (!(modelRef_wo91o7_a0a5.equals(template.getModelReference()))) {
       return null;
     }
-    SNodeId id = template.getNodeId();
+    SNodeId id = ((SNodePointer) template).getNodeId();
     if (id instanceof jetbrains.mps.smodel.SNodeId.Regular) {
       long idValue = ((jetbrains.mps.smodel.SNodeId.Regular) id).getId();
       if (idValue == 1196351886726L) {

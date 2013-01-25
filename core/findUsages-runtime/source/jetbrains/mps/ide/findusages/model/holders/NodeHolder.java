@@ -19,26 +19,27 @@ import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
 public class NodeHolder implements IHolder<SNode> {
   private static final String NODE = "node";
 
-  private SNodePointer myNodePointer = new SNodePointer((SNode) null);
+  private SNodeReference myNodePointer = new jetbrains.mps.smodel.SNodePointer((SNode) null);
 
   public NodeHolder(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
   public NodeHolder(SNode node) {
-    myNodePointer = new SNodePointer(node);
+    myNodePointer = new jetbrains.mps.smodel.SNodePointer(node);
   }
 
   public SNode getObject() {
-    return myNodePointer.getNode();
+    return myNodePointer.resolve(MPSModuleRepository.getInstance());
   }
 
   @NotNull
@@ -57,16 +58,16 @@ public class NodeHolder implements IHolder<SNode> {
     if (node == null) {
       throw new CantLoadSomethingException("node is null");
     }
-    myNodePointer = new SNodePointer(node);
+    myNodePointer = new jetbrains.mps.smodel.SNodePointer(node);
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {
-    if (myNodePointer.getNode() == null) {
+    if (myNodePointer.resolve(MPSModuleRepository.getInstance()) == null) {
       throw new CantSaveSomethingException("node is null");
     }
 
     Element nodeXML = new Element(NODE);
-    nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.getNode()));
+    nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.resolve(MPSModuleRepository.getInstance())));
     element.addContent(nodeXML);
   }
 }

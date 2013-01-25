@@ -7,7 +7,7 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.nanoc.debug.requests.BreakpointRequestor;
 import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.nanoc.debug.CppDebugSession;
 import jetbrains.mps.nanoc.debug.requests.GDBRequestManager;
@@ -30,7 +30,7 @@ public class GDBBreakpoint extends AbstractBreakpoint implements IBreakpoint, IL
   private int myInternalGDBNumber = -1;
   private final BreakpointLocation myLocation;
 
-  public GDBBreakpoint(SNodePointer nodePointer, Project project) {
+  public GDBBreakpoint(SNodeReference nodePointer, Project project) {
     super(project);
     myLocation = new BreakpointLocation(nodePointer);
   }

@@ -21,6 +21,7 @@ do
      -e 's/package jetbrains\.mps\.smodel;/package jetbrains\.mps\.smodel;import org\.jetbrains\.mps\.openapi\.model\.SNodeReference;/g' \
      -e 's/SNodePointer\.serialize(/jetbrains\.mps\.smodel\.SNodePointer\.serialize(/g' \
      -e 's/SNodePointer\.deserialize(/jetbrains\.mps\.smodel\.SNodePointer\.deserialize(/g' \
-$    -e 's/\([^\.]\)SNodePointer/\1SNodeReference/g' \
-    fl
+     -e 's/new SNodePointer(/new jetbrains\.mps\.smodel\.SNodePointer(/g' \
+     -e 's/\([^\.a-zA-Z]\)SNodePointer/\1SNodeReference/g' \
+    $fl
 done

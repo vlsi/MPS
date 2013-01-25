@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debugger.java.api.state.JavaUiState;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
@@ -85,11 +85,11 @@ public class EvaluationProvider implements IEvaluationProvider {
 
   @Override
   public void showEvaluationDialog(IOperationContext context) {
-    showEvaluationDialog(context, ListSequence.fromList(new ArrayList<SNodePointer>()));
+    showEvaluationDialog(context, ListSequence.fromList(new ArrayList<SNodeReference>()));
   }
 
   @Override
-  public void showEvaluationDialog(final IOperationContext context, final List<SNodePointer> selectedNodes) {
+  public void showEvaluationDialog(final IOperationContext context, final List<SNodeReference> selectedNodes) {
     final JavaUiState state = myDebugSession.getUiState();
     myDebugSession.getEventsProcessor().scheduleEvaluation(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -181,11 +181,11 @@ public class EvaluationProvider implements IEvaluationProvider {
       }
       module = myAuxModule;
     }
-    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, module, isShowContext, ListSequence.fromList(new ArrayList<SNodePointer>()));
+    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, module, isShowContext, ListSequence.fromList(new ArrayList<SNodeReference>()));
   }
 
   @Nullable
-  private AbstractEvaluationModel createLowLevelEvaluationModel(boolean isShowContext, List<SNodePointer> selectedNodes) {
+  private AbstractEvaluationModel createLowLevelEvaluationModel(boolean isShowContext, List<SNodeReference> selectedNodes) {
     EvaluationAuxModule module = null;
     synchronized (this) {
       if (myAuxModule == null) {

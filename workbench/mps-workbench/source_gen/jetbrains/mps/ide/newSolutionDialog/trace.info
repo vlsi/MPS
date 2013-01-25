@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5890305283801268194" modelId="r:00000000-0000-4000-0000-011c895904ab(jetbrains.mps.ide.newSolutionDialog)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895904ab(jetbrains.mps.ide.newSolutionDialog)/5890305283801268194">
     <nodeInfo nodeId="6526493364578751225" fileName="NewModuleUtil.java" startLine="42" startPosition="25" endLine="43" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5049856602248782968" fileName="NewModuleUtil.java" startLine="43" startPosition="71" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8720557803585317712" fileName="NewModuleUtil.java" startLine="50" startPosition="93" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -220,7 +220,7 @@
     <unitInfo nodeId="6526493364578755942" fileName="NewModuleUtil.java" startLine="41" startPosition="55" endLine="46" endPosition="5" unitName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil$1" />
     <unitInfo nodeId="5890305283801268194" fileName="NewModuleUtil.java" startLine="36" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" />
   </root>
-  <root nodeId="7619659760484896415" modelId="r:00000000-0000-4000-0000-011c895904ab(jetbrains.mps.ide.newSolutionDialog)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895904ab(jetbrains.mps.ide.newSolutionDialog)/7619659760484896415">
     <nodeInfo nodeId="7619659760484896415" fileName="NewSolutionDialog.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContentPane" />
     <nodeInfo nodeId="7619659760484896415" fileName="NewSolutionDialog.java" startLine="21" startPosition="41" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7619659760484896415" fileName="NewSolutionDialog.java" startLine="22" startPosition="16" endLine="23" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -551,7 +551,7 @@
     <unitInfo nodeId="7619659760484896415" fileName="NewSolutionDialogContentPane.java" startLine="36" startPosition="32" endLine="42" endPosition="3" unitName="jetbrains.mps.ide.newSolutionDialog.NewSolutionDialogContentPane$1" />
     <unitInfo nodeId="7619659760484896415" fileName="NewSolutionDialogContentPane.java" startLine="24" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.ide.newSolutionDialog.NewSolutionDialogContentPane" />
   </root>
-  <root nodeId="7619659760484896449" modelId="r:00000000-0000-4000-0000-011c895904ab(jetbrains.mps.ide.newSolutionDialog)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895904ab(jetbrains.mps.ide.newSolutionDialog)/7619659760484896449">
     <nodeInfo nodeId="7619659760484896574" fileName="NewSolutionDialogContentPane.java" startLine="52" startPosition="31" endLine="53" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7619659760484896580" fileName="NewSolutionDialogContentPane.java" startLine="53" startPosition="31" endLine="54" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7619659760484896586" fileName="NewSolutionDialogContentPane.java" startLine="54" startPosition="42" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

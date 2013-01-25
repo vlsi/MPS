@@ -22,9 +22,10 @@ import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
@@ -37,7 +38,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class CreateGroupsBuilder {
-  public static List<DefaultActionGroup> getCreateGroups(SNodePointer baseNode, Collection<RelationDescriptor> possibleTabs, @Nullable RelationDescriptor currentAspect, NodeChangeCallback callback) {
+  public static List<DefaultActionGroup> getCreateGroups(SNodeReference baseNode, Collection<RelationDescriptor> possibleTabs, @Nullable RelationDescriptor currentAspect, NodeChangeCallback callback) {
     List<DefaultActionGroup> groups = new ArrayList<DefaultActionGroup>();
 
     List<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(possibleTabs);
@@ -49,7 +50,7 @@ public class CreateGroupsBuilder {
     }
 
     for (final RelationDescriptor d : tabs) {
-      List<SNode> nodes = d.getNodes(baseNode.getNode());
+      List<SNode> nodes = d.getNodes(baseNode.resolve(MPSModuleRepository.getInstance()));
       if (!nodes.isEmpty() && d.isSingle()) continue;
 
       DefaultActionGroup group = getCreateGroup(baseNode, callback, d);
@@ -64,8 +65,8 @@ public class CreateGroupsBuilder {
     return groups;
   }
 
-  public static DefaultActionGroup getCreateGroup(SNodePointer baseNode, NodeChangeCallback callback, RelationDescriptor d) {
-    List<SNode> concepts = d.getConcepts(baseNode.getNode());
+  public static DefaultActionGroup getCreateGroup(SNodeReference baseNode, NodeChangeCallback callback, RelationDescriptor d) {
+    List<SNode> concepts = d.getConcepts(baseNode.resolve(MPSModuleRepository.getInstance()));
     if (concepts.isEmpty()) return new DefaultActionGroup();
 
     DefaultActionGroup group = new DefaultActionGroup(d.getTitle(), true);
@@ -87,10 +88,10 @@ public class CreateGroupsBuilder {
   private static class CreateAction extends AnAction {
     private final SNode myConcept;
     private final RelationDescriptor myDescriptor;
-    private SNodePointer myBaseNode;
+    private SNodeReference myBaseNode;
     private NodeChangeCallback myCallback;
 
-    public CreateAction(SNode concept, RelationDescriptor descriptor, SNodePointer baseNode, NodeChangeCallback callback) {
+    public CreateAction(SNode concept, RelationDescriptor descriptor, SNodeReference baseNode, NodeChangeCallback callback) {
       super(getConceptAlias(concept).replaceAll("_", "__"), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
       myConcept = concept;
       myDescriptor = descriptor;
@@ -103,13 +104,13 @@ public class CreateGroupsBuilder {
 
       final Runnable r1 = new Runnable() {
         public void run() {
-          created[0] = myDescriptor.createNode(myBaseNode.getNode(), myConcept);
+          created[0] = myDescriptor.createNode(myBaseNode.resolve(MPSModuleRepository.getInstance()), myConcept);
         }
       };
 
       final Runnable r2 = new Runnable() {
         public void run() {
-          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.getNode(), jetbrains.mps.smodel.SNode.PACK);
+          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.resolve(MPSModuleRepository.getInstance()), jetbrains.mps.smodel.SNode.PACK);
           SNodeAccessUtil.setProperty(created[0], jetbrains.mps.smodel.SNode.PACK, mainPack);
           myCallback.changeNode(created[0]);
         }

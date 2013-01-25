@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.core.intentions.IntentionsDescriptor" />
-  <root nodeId="1209383918929" modelId="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)/1209383918929">
     <nodeInfo nodeId="1209383918929" fileName="AddMissingLanguageImport_Intention.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1209383918929" fileName="AddMissingLanguageImport_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1209383918929" fileName="AddMissingLanguageImport_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -95,7 +95,7 @@
     <unitInfo nodeId="1209383918929" fileName="AddMissingLanguageImport_Intention.java" startLine="74" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.core.intentions.AddMissingLanguageImport_Intention$IntentionImplementation" />
     <unitInfo nodeId="1209383918929" fileName="AddMissingLanguageImport_Intention.java" startLine="18" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.core.intentions.AddMissingLanguageImport_Intention" />
   </root>
-  <root nodeId="4075196924244322258" modelId="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)/4075196924244322258">
     <nodeInfo nodeId="4075196924244322258" fileName="SetExportAnnotation_Intention.java" startLine="31" startPosition="30" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4075196924244322258" fileName="SetExportAnnotation_Intention.java" startLine="35" startPosition="35" endLine="36" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4075196924244322258" fileName="SetExportAnnotation_Intention.java" startLine="39" startPosition="41" endLine="40" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -216,7 +216,7 @@
     <unitInfo nodeId="4075196924244322258" fileName="SetExportAnnotation_Intention.java" startLine="94" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.core.intentions.SetExportAnnotation_Intention$IntentionImplementation" />
     <unitInfo nodeId="4075196924244322258" fileName="SetExportAnnotation_Intention.java" startLine="27" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.core.intentions.SetExportAnnotation_Intention" />
   </root>
-  <root nodeId="4222318806802430725" modelId="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)/4222318806802430725">
     <nodeInfo nodeId="4222318806802430725" fileName="SuppressErrors_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="4222318806802430725" fileName="SuppressErrors_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4222318806802430725" fileName="SuppressErrors_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

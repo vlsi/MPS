@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.typesystem.TypesystemDescriptor" />
-  <root nodeId="1842653058274902924" modelId="r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)">
+  <root nodeRef="r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)/1842653058274902924">
     <nodeInfo nodeId="1842653058274918903" fileName="WatchableListIsAListOrWatchables_SubtypingRule.java" startLine="20" startPosition="127" endLine="21" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1842653058274902924" fileName="WatchableListIsAListOrWatchables_SubtypingRule.java" startLine="24" startPosition="46" endLine="25" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1842653058274902924" fileName="WatchableListIsAListOrWatchables_SubtypingRule.java" startLine="29" startPosition="5" endLine="30" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -53,7 +53,7 @@
     <scopeInfo nodeId="6113252630645067449" fileName="WatchableListIsAListOrWatchables_SubtypingRule.java" startLine="39" startPosition="0" endLine="48" endPosition="0" />
     <unitInfo nodeId="1842653058274902924" fileName="WatchableListIsAListOrWatchables_SubtypingRule.java" startLine="16" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.typesystem.WatchableListIsAListOrWatchables_SubtypingRule" />
   </root>
-  <root nodeId="1842653058275008950" modelId="r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)">
+  <root nodeRef="r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)/1842653058275008950">
     <nodeInfo nodeId="1842653058275008953" fileName="WatchableListIsAList_SubtypingRule.java" startLine="20" startPosition="127" endLine="21" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1842653058275008950" fileName="WatchableListIsAList_SubtypingRule.java" startLine="24" startPosition="46" endLine="25" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1842653058275008950" fileName="WatchableListIsAList_SubtypingRule.java" startLine="29" startPosition="5" endLine="30" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -105,7 +105,7 @@
     <scopeInfo nodeId="1842653058275008955" fileName="WatchableListIsAList_SubtypingRule.java" startLine="39" startPosition="0" endLine="48" endPosition="0" />
     <unitInfo nodeId="1842653058275008950" fileName="WatchableListIsAList_SubtypingRule.java" startLine="16" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.typesystem.WatchableListIsAList_SubtypingRule" />
   </root>
-  <root nodeId="1842653058275013459" modelId="r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)">
+  <root nodeRef="r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)/1842653058275013459">
     <nodeInfo nodeId="1842653058275013466" fileName="typeof_WatchablesListCreator_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1842653058275013466" fileName="typeof_WatchablesListCreator_InferenceRule.java" startLine="20" startPosition="63" endLine="21" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1842653058275013466" fileName="typeof_WatchablesListCreator_InferenceRule.java" startLine="21" startPosition="218" endLine="22" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -156,7 +156,7 @@
     </scopeInfo>
     <unitInfo nodeId="1842653058275013459" fileName="typeof_WatchablesListCreator_InferenceRule.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.typesystem.typeof_WatchablesListCreator_InferenceRule" />
   </root>
-  <root nodeId="43370322128290635" modelId="r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)">
+  <root nodeRef="r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)/43370322128290635">
     <nodeInfo nodeId="43370322128303929" fileName="typeof_HighLevelWatchableCreator_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="43370322128303929" fileName="typeof_HighLevelWatchableCreator_InferenceRule.java" startLine="20" startPosition="67" endLine="21" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="43370322128303929" fileName="typeof_HighLevelWatchableCreator_InferenceRule.java" startLine="21" startPosition="216" endLine="22" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -207,7 +207,7 @@
     </scopeInfo>
     <unitInfo nodeId="43370322128290635" fileName="typeof_HighLevelWatchableCreator_InferenceRule.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.typesystem.typeof_HighLevelWatchableCreator_InferenceRule" />
   </root>
-  <root nodeId="43370322128303938" modelId="r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)">
+  <root nodeRef="r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)/43370322128303938">
     <nodeInfo nodeId="43370322128303945" fileName="typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="43370322128303945" fileName="typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule.java" startLine="21" startPosition="81" endLine="22" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="43370322128303945" fileName="typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule.java" startLine="22" startPosition="216" endLine="23" endPosition="436" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

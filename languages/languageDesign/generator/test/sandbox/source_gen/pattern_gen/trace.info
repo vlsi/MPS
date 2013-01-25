@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4146564171992399879" modelId="r:6e61c12a-3c0f-4223-98e2-5c8cbc39e9af(pattern_gen)">
+  <root nodeRef="r:6e61c12a-3c0f-4223-98e2-5c8cbc39e9af(pattern_gen)/4146564171992399879">
     <nodeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="56" startPosition="7" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="64" startPosition="7" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4146564171992399881" fileName="RootCustom.java" startLine="72" startPosition="7" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

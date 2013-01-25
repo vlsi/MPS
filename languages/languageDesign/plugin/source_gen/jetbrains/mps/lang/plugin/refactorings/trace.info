@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6237653430913268254" modelId="r:1f77f547-8d39-49b3-a638-0476f0430bcb(jetbrains.mps.lang.plugin.refactorings)">
+  <root nodeRef="r:1f77f547-8d39-49b3-a638-0476f0430bcb(jetbrains.mps.lang.plugin.refactorings)/6237653430913268254">
     <nodeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="21" startPosition="39" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="25" startPosition="52" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6237653430913421403" fileName="SortKeymapMembers.java" startLine="29" startPosition="69" endLine="30" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

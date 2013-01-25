@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2492830749282026718" modelId="r:a1e6d46a-5cab-40b1-8baa-74b09e2c51bc(jetbrains.mps.asTest)">
+  <root nodeRef="r:a1e6d46a-5cab-40b1-8baa-74b09e2c51bc(jetbrains.mps.asTest)/2492830749282026718">
     <nodeInfo nodeId="2492830749282026729" fileName="AsTest_Test.java" startLine="9" startPosition="42" endLine="10" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2492830749282026735" fileName="AsTest_Test.java" startLine="10" startPosition="28" endLine="11" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2492830749282026744" fileName="AsTest_Test.java" startLine="11" startPosition="15" endLine="12" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

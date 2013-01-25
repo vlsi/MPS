@@ -16,12 +16,12 @@
 package jetbrains.mps.ide.java.testMaterial4;
 
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Cyril.Konopko, 04.12.2009
  */
-public class OrdinaryClassWithInnerClasses extends SNodePointer {
+public class OrdinaryClassWithInnerClasses extends SNodeReference {
   protected int myProtected;
 
   public OrdinaryClassWithInnerClasses(SNode node) {

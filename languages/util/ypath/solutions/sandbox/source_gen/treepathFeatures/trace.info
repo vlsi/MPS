@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1183980545104" modelId="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)/1183980545104">
     <nodeInfo nodeId="1227876789955" fileName="TryFeatures.java" startLine="177" startPosition="29" endLine="177" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="17" startPosition="24" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="18" startPosition="63" endLine="19" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -286,7 +286,7 @@
     <unitInfo nodeId="1184068102100" fileName="TryFeatures.java" startLine="132" startPosition="0" endLine="204" endPosition="0" unitName="treepathFeatures.TryFeatures$Feature_attributes" />
     <unitInfo nodeId="1183980545104" fileName="TryFeatures.java" startLine="16" startPosition="0" endLine="255" endPosition="0" unitName="treepathFeatures.TryFeatures" />
   </root>
-  <root nodeId="1184148497590" modelId="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)/1184148497590">
     <nodeInfo nodeId="1184148604080" fileName="FeaturesDemo.java" startLine="14" startPosition="42" endLine="15" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1184148621872" fileName="FeaturesDemo.java" startLine="16" startPosition="9" endLine="17" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1184148621878" fileName="FeaturesDemo.java" startLine="17" startPosition="66" endLine="18" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -316,7 +316,7 @@
     <unitInfo nodeId="7120113277826389000" fileName="FeaturesDemo.java" startLine="19" startPosition="317" endLine="23" endPosition="7" unitName="treepathFeatures.FeaturesDemo$1" />
     <unitInfo nodeId="1184148497590" fileName="FeaturesDemo.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="treepathFeatures.FeaturesDemo" />
   </root>
-  <root nodeId="1184685688047" modelId="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)/1184685688047">
     <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="17" startPosition="35" endLine="18" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="21" startPosition="63" endLine="22" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184685688047" fileName="SNODE.java" startLine="25" startPosition="62" endLine="26" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -579,7 +579,7 @@
     <unitInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="54" startPosition="0" endLine="89" endPosition="0" unitName="treepathFeatures.SNODE_Design$Design_Feature_link" />
     <unitInfo nodeId="1184685688047" fileName="SNODE_Design.java" startLine="17" startPosition="0" endLine="90" endPosition="0" unitName="treepathFeatures.SNODE_Design" />
   </root>
-  <root nodeId="1184773002627" modelId="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)/1184773002627">
     <nodeInfo nodeId="1227876791921" fileName="SnodeDemo.java" startLine="41" startPosition="27" endLine="41" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1227876793511" fileName="SnodeDemo.java" startLine="83" startPosition="27" endLine="83" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1227876793517" fileName="SnodeDemo.java" startLine="86" startPosition="27" endLine="86" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1204,7 +1204,7 @@
     <unitInfo nodeId="1199715272074" fileName="SnodeDemo.java" startLine="265" startPosition="145" endLine="338" endPosition="5" unitName="treepathFeatures.SnodeDemo$7" />
     <unitInfo nodeId="1184773002627" fileName="SnodeDemo.java" startLine="19" startPosition="0" endLine="575" endPosition="0" unitName="treepathFeatures.SnodeDemo" />
   </root>
-  <root nodeId="1191934136657" modelId="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)/1191934136657">
     <nodeInfo nodeId="1227876802914" fileName="SNODE_GEN_Design.java" startLine="24" startPosition="41" endLine="25" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1192878414174" fileName="SNODE_GEN_Design.java" startLine="30" startPosition="61" endLine="31" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1192878414179" fileName="SNODE_GEN_Design.java" startLine="31" startPosition="23" endLine="32" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1452,7 +1452,7 @@
     <unitInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="67" startPosition="0" endLine="112" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design$Design_Feature_link" />
     <unitInfo nodeId="1191934136657" fileName="SNODE_GEN_Design.java" startLine="20" startPosition="0" endLine="162" endPosition="0" unitName="treepathFeatures.SNODE_GEN_Design" />
   </root>
-  <root nodeId="1240329957161" modelId="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905bb(treepathFeatures)/1240329957161">
     <nodeInfo nodeId="1240330043367" fileName="SnodeGenUtil.java" startLine="9" startPosition="63" endLine="10" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240330084130" fileName="SnodeGenUtil.java" startLine="10" startPosition="187" endLine="11" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240329969386" fileName="SnodeGenUtil.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="singleCardinality#(Ljava/lang/String;)Z" />

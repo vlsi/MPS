@@ -33,7 +33,7 @@
   <unitInfo fileName="NodeParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.NodeParameter_BehaviorDescriptor" />
   <unitInfo fileName="Position_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.Position_BehaviorDescriptor" />
   <unitInfo fileName="RelativePosition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.RelativePosition_BehaviorDescriptor" />
-  <root nodeId="1213877268329" modelId="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877268329">
     <nodeInfo nodeId="1213877268329" fileName="EmitStatement_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1213877268331" fileName="EmitStatement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1213877268329" fileName="EmitStatement_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
@@ -41,7 +41,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877268329" fileName="EmitStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitStatement_Behavior" />
   </root>
-  <root nodeId="1213877408160" modelId="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877408160">
     <nodeInfo nodeId="1213877408163" fileName="BuilderBlock_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914725245" fileName="BuilderBlock_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914725260" fileName="BuilderBlock_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -66,7 +66,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877408160" fileName="BuilderBlock_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock_Behavior" />
   </root>
-  <root nodeId="1213877418697" modelId="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877418697">
     <nodeInfo nodeId="1213877418697" fileName="NodeParameter_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1213877418699" fileName="NodeParameter_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1213877418697" fileName="NodeParameter_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
@@ -74,7 +74,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877418697" fileName="NodeParameter_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.NodeParameter_Behavior" />
   </root>
-  <root nodeId="1213877439994" modelId="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877439994">
     <nodeInfo nodeId="8952337903384725416" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="15" startPosition="82" endLine="16" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6261424444345978720" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="19" startPosition="100" endLine="20" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="24" startPosition="79" endLine="25" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -123,7 +123,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_Behavior" />
   </root>
-  <root nodeId="1213877480940" modelId="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877480940">
     <nodeInfo nodeId="1213877480940" fileName="LabelPosition_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1213877480942" fileName="LabelPosition_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1213877480940" fileName="LabelPosition_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
@@ -131,7 +131,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877480940" fileName="LabelPosition_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.LabelPosition_Behavior" />
   </root>
-  <root nodeId="1823319949748055875" modelId="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1823319949748055875">
     <nodeInfo nodeId="1823319949748055885" fileName="InstructionType_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1823319949748055875" fileName="InstructionType_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1823319949748055875" fileName="InstructionType_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />

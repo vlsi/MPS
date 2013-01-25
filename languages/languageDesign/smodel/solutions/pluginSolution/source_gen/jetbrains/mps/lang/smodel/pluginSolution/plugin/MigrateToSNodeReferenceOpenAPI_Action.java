@@ -18,7 +18,7 @@ public class MigrateToSNodeReferenceOpenAPI_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public MigrateToSNodeReferenceOpenAPI_Action() {
-    super("Migrate to node id OpenAPI", "", ICON);
+    super("Migrate to node reference OpenAPI", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -54,7 +54,7 @@ public class MigrateToSNodeReferenceOpenAPI_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new ApiMigrationHelper(((MPSProject) MapSequence.fromMap(_params).get("project")), ((Project) MapSequence.fromMap(_params).get("iproject")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope()).migrateSNodeId();
+      new ApiMigrationHelper(((MPSProject) MapSequence.fromMap(_params).get("project")), ((Project) MapSequence.fromMap(_params).get("iproject")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope()).migrateSNodeReference();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MigrateToSNodeReferenceOpenAPI", t);
     }

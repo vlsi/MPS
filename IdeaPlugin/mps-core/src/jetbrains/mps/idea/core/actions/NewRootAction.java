@@ -38,7 +38,7 @@ import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -55,7 +55,7 @@ public class NewRootAction extends AnAction {
   private EditableSModelDescriptor myModelDescriptor;
   private Project myProject;
   private IOperationContext myOperationContext;
-  private Map<String, SNodePointer> myConceptFqNameToNodePointerMap = new LinkedHashMap<String, SNodePointer>();
+  private Map<String, SNodeReference> myConceptFqNameToNodePointerMap = new LinkedHashMap<String, SNodeReference>();
 
   public NewRootAction() {
     super(MPSBundle.message("new.root.action"), null, IdeIcons.DEFAULT_ROOT_ICON);
@@ -66,11 +66,11 @@ public class NewRootAction extends AnAction {
     final CreateFromTemplateDialog dialog = new CreateFromTemplateDialog(myProject) {
       @Override
       protected void doOKAction() {
-        final SNodePointer conceptPointer = myConceptFqNameToNodePointerMap.get(getKindCombo().getSelectedName());
+        final SNodeReference conceptPointer = myConceptFqNameToNodePointerMap.get(getKindCombo().getSelectedName());
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           @Override
           public void run() {
-            SNode concept = conceptPointer.getNode();
+            SNode concept = conceptPointer.resolve(MPSModuleRepository.getInstance());
             SModel model = myModelDescriptor.getSModel();
             SNode newNode = NodeFactoryManager.createNode(concept, null, null, model, myOperationContext.getScope());
             ((jetbrains.mps.smodel.SNode) newNode).setName(getNameField().getText());
@@ -85,9 +85,9 @@ public class NewRootAction extends AnAction {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        for (Map.Entry<String, SNodePointer> entry : myConceptFqNameToNodePointerMap.entrySet()) {
+        for (Map.Entry<String, SNodeReference> entry : myConceptFqNameToNodePointerMap.entrySet()) {
           String conceptFqName = entry.getKey();
-          SNode concept = entry.getValue().getNode();
+          SNode concept = entry.getValue().resolve(MPSModuleRepository.getInstance());
           dialog.getKindCombo().addItem(NodePresentationUtil.matchingText(concept), IconManager.getIconForConceptFQName(conceptFqName), conceptFqName);
         }
       }
@@ -156,7 +156,7 @@ public class NewRootAction extends AnAction {
                   for (SNode concept : language.getConceptDeclarations()) {
                     String conceptFqName = NameUtil.nodeFQName(concept);
                     if (ModelConstraints.canBeRoot(conceptFqName, model, null)) {
-                      myConceptFqNameToNodePointerMap.put(conceptFqName, new SNodePointer(concept));
+                      myConceptFqNameToNodePointerMap.put(conceptFqName, new jetbrains.mps.smodel.SNodePointer(concept));
                     }
                   }
                 }

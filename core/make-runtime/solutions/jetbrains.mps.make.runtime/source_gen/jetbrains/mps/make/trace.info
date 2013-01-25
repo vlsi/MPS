@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2082624981609760242" modelId="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)">
+  <root nodeRef="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)/2082624981609760242">
     <nodeInfo nodeId="8695426379435237628" fileName="IMakeService.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openNewSession#(Ljetbrains/mps/make/MakeSession;)Z" />
     <nodeInfo nodeId="3180200298862810275" fileName="IMakeService.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="closeSession#(Ljetbrains/mps/make/MakeSession;)V" />
     <nodeInfo nodeId="8695426379435237656" fileName="IMakeService.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSessionActive#()Z" />
@@ -73,7 +73,7 @@
     <unitInfo nodeId="8695426379435177650" fileName="IMakeService.java" startLine="24" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.make.IMakeService$INSTANCE" />
     <unitInfo nodeId="2082624981609760242" fileName="IMakeService.java" startLine="13" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.make.IMakeService" />
   </root>
-  <root nodeId="2958721966247272985" modelId="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)">
+  <root nodeRef="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)/2958721966247272985">
     <nodeInfo nodeId="2958721966247272990" fileName="IHName.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parentName#()null" />
     <nodeInfo nodeId="922321631991217137" fileName="IHName.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="name#()Ljava/lang/String;" />
     <nodeInfo nodeId="922321631991212069" fileName="IHName.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fqName#()Ljava/lang/String;" />
@@ -82,7 +82,7 @@
     <scopeInfo nodeId="922321631991212069" fileName="IHName.java" startLine="9" startPosition="0" endLine="10" endPosition="0" />
     <unitInfo nodeId="2958721966247272985" fileName="IHName.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.IHName" />
   </root>
-  <root nodeId="8464977774479999203" modelId="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)">
+  <root nodeRef="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)/8464977774479999203">
     <nodeInfo nodeId="8464977774480012337" fileName="MakeNotification.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="kind" />
     <nodeInfo nodeId="8464977774480011644" fileName="MakeNotification.java" startLine="10" startPosition="76" endLine="11" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8464977774480012340" fileName="MakeNotification.java" startLine="11" startPosition="18" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -106,7 +106,7 @@
     <unitInfo nodeId="8464977774480012301" fileName="MakeNotification.java" startLine="24" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.MakeNotification$Kind" />
     <unitInfo nodeId="8464977774479999203" fileName="MakeNotification.java" startLine="7" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.MakeNotification" />
   </root>
-  <root nodeId="8464977774480012290" modelId="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)">
+  <root nodeRef="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)/8464977774480012290">
     <nodeInfo nodeId="8464977774480012292" fileName="IMakeNotificationListener.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleNotification#(Ljetbrains/mps/make/MakeNotification;)V" />
     <nodeInfo nodeId="8464977774480012363" fileName="IMakeNotificationListener.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scriptAboutToStart#(Ljetbrains/mps/make/MakeNotification;)V" />
     <nodeInfo nodeId="8464977774480012370" fileName="IMakeNotificationListener.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scriptFinished#(Ljetbrains/mps/make/MakeNotification;)V" />
@@ -172,7 +172,7 @@
     <unitInfo nodeId="8464977774480012312" fileName="IMakeNotificationListener.java" startLine="13" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.make.IMakeNotificationListener$Stub" />
     <unitInfo nodeId="8464977774480012290" fileName="IMakeNotificationListener.java" startLine="6" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.make.IMakeNotificationListener" />
   </root>
-  <root nodeId="8695426379435232461" modelId="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)">
+  <root nodeRef="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)/8695426379435232461">
     <nodeInfo nodeId="8695426379435237583" fileName="MakeSession.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" />
     <nodeInfo nodeId="8695426379435237592" fileName="MakeSession.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="messageHandler" />
     <nodeInfo nodeId="8695426379435237601" fileName="MakeSession.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cleanMake" />

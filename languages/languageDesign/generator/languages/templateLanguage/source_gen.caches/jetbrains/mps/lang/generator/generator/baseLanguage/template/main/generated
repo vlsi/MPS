@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="shh5ad9lxd1u6xwhcyoqvvtzusv8er">
+<dependencies version="2" modelHash="-2x4q16fvfq4y9a1cnddq3cvz1lmgoxv">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -18,7 +18,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="9s7tn7r6i6ppg130pq11m1usnjxibg4" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-70etqnpzu2kbei39q2pbbkqppl49jrv" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-4ex94fx90rq4l6b2oxfnriam6gi83iz" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-89hxj0ypb1mymp88cm6uftvxxpq6hll" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-czkeaawxav2uxfhwhouknmgxwcerk0t" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="iak6qkoqvisy1gghydx23iwnxiu2qf" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)" hash="12307axn7i1khjal67bycby4adgozku" />
@@ -230,46 +230,46 @@
   <source id="6304885153124990546" name="reduce_TemplateFragment" hash="-2ojsjgsnv0ct5vyhz0j4q7tduhumrlv">
     <dep root="1167163238171" />
   </source>
-  <source id="6304885153124996632" name="reduce_TemplateDeclaration" hash="-bqndqvrpfd2prh262mlt03cnan67t03">
+  <source id="6304885153124996632" name="reduce_TemplateDeclaration" hash="-58v19d0nbinf0on75qf2cpszl2gf5fg">
     <dep root="1167163238171" />
   </source>
-  <source id="5301578252490218394" name="reduce_LoopMacro" hash="b56x7029fnpoix4pqrbwpu0uifpbawf">
+  <source id="5301578252490218394" name="reduce_LoopMacro" hash="-9fmk83id1vlcrc65r5d4ybcp5n8nvs1">
     <dep root="1167163238171" />
   </source>
-  <source id="8285036680620207023" name="reduce_TemplateNode" hash="-13bwz8t2p7uclqp4rtk6dwaqdd920sm">
+  <source id="8285036680620207023" name="reduce_TemplateNode" hash="2wn23ihzuhmw3hxlh3kek716y6uwmru">
     <dep root="1167163238171" />
   </source>
-  <source id="8285036680620300245" name="reduce_IncludeMacro" hash="agu7e0dkw0i06rpa2yuht819dbu4108">
+  <source id="8285036680620300245" name="reduce_IncludeMacro" hash="8xtkca52we475q8rv9ztufivbyd6kpu">
     <dep root="1167163238171" />
   </source>
   <source id="8285036680620300247" name="reduce_Macro" hash="4avkcse2e4umhk12jph5z2xxgsk9c6a">
     <dep root="1167163238171" />
   </source>
-  <source id="747214206848642841" name="reduce_CopySrc" hash="-235twxotpc6y598zcqr6azk9tdenj30">
+  <source id="747214206848642841" name="reduce_CopySrc" hash="-c153u8g5lm9yvlmn7mvgtc0zu40gva">
     <dep root="1167163238171" />
   </source>
-  <source id="747214206848656631" name="map_Template" hash="-5qbt99nj0ncjqcz4loifnxtq9jn2c31">
+  <source id="747214206848656631" name="map_Template" hash="7pdxia8k1w1f7escpcfeo6wg2vw8o7f">
     <dep root="1167163238171" />
   </source>
-  <source id="4429320018138031253" name="map_MappingConfiguration" hash="d8c62l1ggh90cqqe9229mvb03mzn749">
+  <source id="4429320018138031253" name="map_MappingConfiguration" hash="-3q0culms4k6djdd1llkx3ra5v6432xt">
     <dep root="1167163238171" />
   </source>
-  <source id="344761564571002658" name="reduce_CopyList" hash="-45piojtya6xxucqrv4q71iyzaiv9owl">
+  <source id="344761564571002658" name="reduce_CopyList" hash="bursdw9rlojkwprvgempgknmi5zp6kp">
     <dep root="1167163238171" />
   </source>
-  <source id="344761564571002674" name="reduce_If" hash="cxgfbw17leh45tomoeteywu0mtjrkv5">
+  <source id="344761564571002674" name="reduce_If" hash="opkk8pau0sd5qttbh8w0rh2dravz0w">
     <dep root="1167163238171" />
   </source>
-  <source id="344761564571002687" name="reduce_MapSrc" hash="-5ewc1cbt6yl37h55ip5gpm6zlvqc6cg">
+  <source id="344761564571002687" name="reduce_MapSrc" hash="-6cklhwrbxpfqlmtmibfbkjr2rtz3xxl">
     <dep root="1167163238171" />
   </source>
-  <source id="344761564571002698" name="reduce_Call" hash="-dja56z0qrl1d4gmeamyhjs8pnk5pen3">
+  <source id="344761564571002698" name="reduce_Call" hash="-7y9em4faolydiyiis0saxtw207jciyg">
     <dep root="1167163238171" />
   </source>
-  <source id="344761564571002709" name="reduce_MapSrcL" hash="7hmgvs8zah1qv8ttdsbmf8shxdn8to8">
+  <source id="344761564571002709" name="reduce_MapSrcL" hash="5gjh4y2mqu8ewwwblnkkf0llmj7mm5e">
     <dep root="1167163238171" />
   </source>
-  <source id="344761564571002720" name="reduce_Switch" hash="-dd0muhmlo6fye2pgsxxxcqn76bry8nt">
+  <source id="344761564571002720" name="reduce_Switch" hash="-cqjh9r01ombmnl08fi3alr5cp696vca">
     <dep root="1167163238171" />
   </source>
   <source id="3038523907450732753" name="reduce_SubNodeListExpression" hash="6zzdvebd5qljrql1i3i0atr5oz1fl6o">
@@ -278,7 +278,7 @@
   <source id="8961331321403206046" name="reduce_Context" hash="5zr676xtkmkhiavxrw42btf2e3ju7rt">
     <dep root="1167163238171" />
   </source>
-  <source id="2895393989835677675" name="reduce_Consequence" hash="-eeu7ji478pxmfhvn543wybcponxk828">
+  <source id="2895393989835677675" name="reduce_Consequence" hash="rh5hbkp5zarxlyvc65a51tmmkf5zdn">
     <dep root="1167163238171" />
   </source>
   <source id="2895393989835680694" name="reduce_AbandonInputConsequence" hash="-61jt6navuol059a9s2snjza90tqv3dl">
@@ -299,49 +299,49 @@
   <source id="2226924809855869474" name="reduce_TemplateDeclarationReferenceConsequence" hash="a1q8o36ocs1brlejr213xwzqxqmaewh">
     <dep root="1167163238171" />
   </source>
-  <source id="2226924809855869476" name="reduce_WeaveEachRuleConsequence" hash="-ba7xg4f1zriazo8rzcq2zmux1zg4ftk">
+  <source id="2226924809855869476" name="reduce_WeaveEachRuleConsequence" hash="3nq7ursstxiniiwgm67u8pqvfbjywme">
     <dep root="1167163238171" />
   </source>
-  <source id="1147906725605225569" name="reduce_ReductionRule" hash="-3jzaxz4fexpoybipi5y822j6tramjeo">
+  <source id="1147906725605225569" name="reduce_ReductionRule" hash="-8k6jrlxwhacku2w0r5u6r70sz18x7ui">
     <dep root="1167163238171" />
   </source>
-  <source id="5412006700504152615" name="reduce_TemplateArgumentQueryExpression" hash="7tsmxpny1kruxrjpp7cfbu7lgf30mv9">
+  <source id="5412006700504152615" name="reduce_TemplateArgumentQueryExpression" hash="8o7ramz3hq2k3szxcurd45paribk5kd">
     <dep root="1167163238171" />
   </source>
   <source id="5412006700504157831" name="reduce_Argument" hash="5c6e944mamj0g5lq0lkafl6b68619lq">
     <dep root="1167163238171" />
   </source>
-  <source id="5412006700504199285" name="reduce_RootMappingRule" hash="-a2wkqonbhxtnz2tactaw9wdc4npin45">
+  <source id="5412006700504199285" name="reduce_RootMappingRule" hash="6bnd8bo5uwzdfi83z5zhfewyl5aq57x">
     <dep root="1167163238171" />
   </source>
-  <source id="1940510396026561969" name="map_TemplateSwitch" hash="ccm8qf65t1g3nfcwxwtgj00uksw8hmz">
+  <source id="1940510396026561969" name="map_TemplateSwitch" hash="-1b70gfxcvqvfp4p4w83ytcq6hr4humz">
     <dep root="1167163238171" />
   </source>
   <source id="8626372016104475434" name="reduce_TemplateNodeExpression" hash="-83fa5lm2o0o9xuy52di3cdsgdb9biui">
     <dep root="1167163238171" />
   </source>
-  <source id="2321430363679347640" name="reduce_MapSrc_helper" hash="-bja5is8c1kxv16z3xnojo8jq8w9ucp4">
+  <source id="2321430363679347640" name="reduce_MapSrc_helper" hash="-aoye91bvl06l7rnppg3zb0fd4q0w7eo">
     <dep root="1167163238171" />
   </source>
-  <source id="9071348379728451047" name="reduce_toSNodePointer" hash="d9no19kbyy40j26ok9c5wm9gc6zeonl">
+  <source id="9071348379728451047" name="reduce_toSNodePointer" hash="-9rtqzlrukelv61lbhw7vrannua0ubbl">
     <dep root="1167163238171" />
   </source>
   <source id="5659786285834775960" name="reduce_TemplateArgumentParameterExpr" hash="-14blsjc63dno9eg09qynkamuk4hfzii">
     <dep root="1167163238171" />
   </source>
-  <source id="330395710727988205" name="reduce_CreateRootRule" hash="7capq0muxptdxcwdff11dtkojiufcjg">
+  <source id="330395710727988205" name="reduce_CreateRootRule" hash="-6gydz1bm88eke9a8fwskqjd7utf1icy">
     <dep root="1167163238171" />
   </source>
-  <source id="330395710727988537" name="reduce_DropRootRule" hash="auf5ugj17mdbtwgemaaku1mtb5vb7nw">
+  <source id="330395710727988537" name="reduce_DropRootRule" hash="-565h3tk8ldl3xg8g9t5mttuiiw5joa7">
     <dep root="1167163238171" />
   </source>
-  <source id="330395710727988576" name="reduce_WeavingRule" hash="-7rb3sskz69umbtr4707m9jp2udm1oos">
+  <source id="330395710727988576" name="reduce_WeavingRule" hash="9kvqw5hnrejq6vntwjb05gz0m1h66yu">
     <dep root="1167163238171" />
   </source>
-  <source id="330395710727988683" name="reduce_PatternRule" hash="-9jg8qyiiapn32zi025bb9mrmep8dt8i">
+  <source id="330395710727988683" name="reduce_PatternRule" hash="-6wnbcioxvqt3fb3eclsadk312afimt5">
     <dep root="1167163238171" />
   </source>
-  <source id="3076445114127780885" name="TemplateModelImpl" hash="-5c3ap7q1m6fs7jsfx6mfv5s0m17ian9">
+  <source id="3076445114127780885" name="TemplateModelImpl" hash="anp0ui5armxn39oxoen1bqmexum7tfa">
     <dep root="1167163238171" />
   </source>
   <source id="8371596541809191595" name="reduce_TemplateArgumentPatternRef" hash="cww0hxp808mkmel35liaczejo5caeom">
@@ -350,22 +350,22 @@
   <source id="9191117361655148442" name="reduce_WeaveConsequence" hash="-8n3wl9v3weks3uskul6lofq91qj9dgb">
     <dep root="1167163238171" />
   </source>
-  <source id="9191117361655150306" name="reduce_TemplateDeclarationRefInWeavingConsequence" hash="c8r9sgfblr4vb9kw879r0uxgrcap4qk">
+  <source id="9191117361655150306" name="reduce_TemplateDeclarationRefInWeavingConsequence" hash="almzbmq1q7ochgujs842szqs4xw63mv">
     <dep root="1167163238171" />
   </source>
   <source id="7664108699562496427" name="reduce_fragmentParts" hash="4wejgfgtv72rq8l96msatsekl4xp9ig">
     <dep root="1167163238171" />
   </source>
-  <source id="1368513600865827826" name="reduce_TemplateWeave" hash="4z0ocmy0dpvimxbz48gefpoqugjf5hq">
+  <source id="1368513600865827826" name="reduce_TemplateWeave" hash="3ioijx1dyt4jbkkd1lrq923ev6uw54i">
     <dep root="1167163238171" />
   </source>
-  <source id="5577795813925668050" name="reduce_TemplateInvocation" hash="-576cnkdki4jz4shlbdzlexzzwja5lpm">
+  <source id="5577795813925668050" name="reduce_TemplateInvocation" hash="-bfn66rqu6b3jw7z8ijpkli19lxciguh">
     <dep root="1167163238171" />
   </source>
-  <source id="965589097447676803" name="reduce_TemplateInvocationWeave" hash="-9vwdb0qzz8tr71agfr6vpnmx2k8f0oq">
+  <source id="965589097447676803" name="reduce_TemplateInvocationWeave" hash="avf5gwgfl4vev5kyjem3zvg593wgjkc">
     <dep root="1167163238171" />
   </source>
-  <source id="9196441569928383154" name="map_TemplateMappingScript" hash="e8h7qwwgs9fanlx8mr38oskuy12l1sf">
+  <source id="9196441569928383154" name="map_TemplateMappingScript" hash="tjixzrvoo3q9jscnkz47hk4yzuh3z8">
     <dep root="1167163238171" />
   </source>
   <source id="6389702176794110831" name="extract_Nodes" hash="-de8aboiiz9qjujwcjbxh46f1duhzezf">
@@ -374,7 +374,7 @@
   <source id="6389702176794336629" name="reduce_Extracted" hash="ejl1mfhqsvujo484mlvgy2w5eem36rn">
     <dep root="1167163238171" />
   </source>
-  <source id="2760176984813718844" name="reduce_NodeMacro" hash="4gcfhdgwf8sbz7x2vbbrmhp7gjmdc04">
+  <source id="2760176984813718844" name="reduce_NodeMacro" hash="do3279c0ur00grkwcdkbqdcoc9u8xe">
     <dep root="1167163238171" />
   </source>
   <source id="7830515785164762760" name="insert_MappingConfiguration_Condition" hash="-3fzrwymqpejesyrvsl6y40llne20gki">
@@ -383,19 +383,19 @@
   <source id="787641416589771627" name="insert_InsertMacro_CreateNodeQuery" hash="-c8aex7hrzf2n0wdwkpi9wrnlvkbyrh0">
     <dep root="1167163238171" />
   </source>
-  <source id="787641416589878668" name="reduce_InsertMacro" hash="e26vpd0735zkk9khehp9unzrzyxgxx4">
+  <source id="787641416589878668" name="reduce_InsertMacro" hash="evdoi3d2m4j96mf5cemari7kvuvfeu8">
     <dep root="1167163238171" />
   </source>
-  <source id="3462145372628093810" name="reduce_Weave" hash="-czsvlvc327xbc2ueihfkubu8wn0eaee">
+  <source id="3462145372628093810" name="reduce_Weave" hash="-44qa9wpivc05v1ciy58diaas9fhe6jq">
     <dep root="1167163238171" />
   </source>
   <source id="5015072279636896906" name="insert_VarMacro_Value" hash="5zlcd4fe3c13jsxc7fp2qmtzbf6lpa4">
     <dep root="1167163238171" />
   </source>
-  <source id="5015072279636784093" name="reduce_VarMacro" hash="-4kofyz9ivs6bfq0rlzwqhdo2albr21k">
+  <source id="5015072279636784093" name="reduce_VarMacro" hash="dmp0hyb45mi1m616zye59i5b67h46sq">
     <dep root="1167163238171" />
   </source>
-  <source id="5433312185282565618" name="reduce_TraceMacro" hash="-8yyeaowxfzvvqjtgop5yei6kmlwr0t2">
+  <source id="5433312185282565618" name="reduce_TraceMacro" hash="-a3hg623v6ny8xohmf80ankb2wg7hfzg">
     <dep root="1167163238171" />
   </source>
 </dependencies>

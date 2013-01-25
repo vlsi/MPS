@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3432969378036013783" modelId="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)">
+  <root nodeRef="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)/3432969378036013783">
     <nodeInfo nodeId="3432969378036016385" fileName="DebugConnectionSettings.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUseSockets" />
     <nodeInfo nodeId="3432969378036016389" fileName="DebugConnectionSettings.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHostName" />
     <nodeInfo nodeId="3432969378036016392" fileName="DebugConnectionSettings.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPort" />
@@ -138,7 +138,7 @@
     </scopeInfo>
     <unitInfo nodeId="3432969378036013783" fileName="DebugConnectionSettings.java" startLine="8" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.debugger.java.api.settings.DebugConnectionSettings" />
   </root>
-  <root nodeId="3432969378036013784" modelId="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)">
+  <root nodeRef="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)/3432969378036013784">
     <nodeInfo nodeId="3432969378036013787" fileName="RemoteConnectionSettings.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuspend" />
     <nodeInfo nodeId="3432969378036013799" fileName="RemoteConnectionSettings.java" startLine="9" startPosition="62" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3432969378036013806" fileName="RemoteConnectionSettings.java" startLine="13" startPosition="37" endLine="14" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -182,7 +182,7 @@
     <scopeInfo nodeId="2596130676084594130" fileName="RemoteConnectionSettings.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
     <unitInfo nodeId="3432969378036013784" fileName="RemoteConnectionSettings.java" startLine="6" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.debugger.java.api.settings.RemoteConnectionSettings" />
   </root>
-  <root nodeId="3432969378036017435" modelId="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)">
+  <root nodeRef="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)/3432969378036017435">
     <nodeInfo nodeId="3432969378036017444" fileName="LocalConnectionSettings.java" startLine="9" startPosition="54" endLine="10" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3432969378036017452" fileName="LocalConnectionSettings.java" startLine="11" startPosition="21" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3432969378036017462" fileName="LocalConnectionSettings.java" startLine="13" startPosition="11" endLine="14" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
