@@ -54,7 +54,7 @@
         <component>
           <implementation-class>jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager</implementation-class>
         </component>
-    
+
     <component>
       <implementation-class>jetbrains.mps.idea.core.library.MpsModuleLibraryKindContainer</implementation-class>
     </component>
@@ -90,6 +90,9 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.idea.core.psi.PsiChangesWatcher</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.psi.impl.MPSPsiProvider</implementation-class>
     </component>
   </project-components>
 
