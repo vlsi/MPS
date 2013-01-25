@@ -62,13 +62,14 @@ public class BuildMpsLayout_Plugin_Behavior {
       SNode node = (SNode) artifactId;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule")) {
         SNode module = SNodeOperations.cast(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
-        if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "plugin", false), "content", true)).any(new IWhereFilter<SNode>() {
+        SNode container = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "plugin", false), "content", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return BuildMps_IdeaPluginContent_Behavior.call_exports_6547494638219603457(it, artifactId);
           }
-        })) {
+        });
+        if ((container != null)) {
           // todo: seems to be rather messy 
-          SNode group = BuildMpsLayout_Plugin_Behavior.call_findGroup_8301447434616448040(thisNode, module);
+          SNode group = SNodeOperations.as(container, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup");
           if ((group != null) && BuildMps_IdeaPluginGroup_Behavior.call_isCustomPackaging_8301447434616552323(group, module)) {
             return null;
           }

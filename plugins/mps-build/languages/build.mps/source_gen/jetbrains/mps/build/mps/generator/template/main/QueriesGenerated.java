@@ -1066,10 +1066,10 @@ public class QueriesGenerated {
     }, true).select(new ISelector<SNode, String>() {
       public String select(SNode module) {
         SNode mpsModule = SNodeOperations.as(DependenciesHelper.getOriginalNode(module, _context), "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
-        SNode layoutNode = helper.artifacts().get((SNodeOperations.isInstanceOf(mpsModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit") ?
-          SLinkOperations.getTarget(SNodeOperations.cast(mpsModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "path", true) :
-          mpsModule
-        ));
+        SNode layoutNode = helper.artifacts().get(mpsModule);
+        if (layoutNode == null && SNodeOperations.isInstanceOf(mpsModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
+          layoutNode = helper.artifacts().get(SLinkOperations.getTarget(SNodeOperations.cast(mpsModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "path", true));
+        }
         if (layoutNode == null) {
           _context.showErrorMessage(_context.getNode(), "mps module " + SPropertyOperations.getString(module, "name") + " was not found in the layout of `" + SPropertyOperations.getString(project, "name") + "'");
           return null;
