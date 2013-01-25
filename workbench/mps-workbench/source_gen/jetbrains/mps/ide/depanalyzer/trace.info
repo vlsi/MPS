@@ -10,152 +10,159 @@
     <nodeInfo nodeId="209150240168832360" fileName="DependencyTree.java" startLine="41" startPosition="42" endLine="42" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6165815584335544632" fileName="DependencyTree.java" startLine="45" startPosition="31" endLine="46" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4584053716645516219" fileName="DependencyTree.java" startLine="49" startPosition="49" endLine="50" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="406377762343928407" fileName="DependencyTree.java" startLine="53" startPosition="37" endLine="54" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6830499346919779349" fileName="DependencyTree.java" startLine="57" startPosition="34" endLine="58" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6830499346919779324" fileName="DependencyTree.java" startLine="61" startPosition="51" endLine="62" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6830499346919779366" fileName="DependencyTree.java" startLine="65" startPosition="39" endLine="66" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6830499346919779336" fileName="DependencyTree.java" startLine="69" startPosition="61" endLine="70" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7537828092111960084" fileName="DependencyTree.java" startLine="73" startPosition="40" endLine="74" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7537828092111960073" fileName="DependencyTree.java" startLine="77" startPosition="63" endLine="78" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8401817752074459635" fileName="DependencyTree.java" startLine="81" startPosition="34" endLine="82" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8401817752074459562" fileName="DependencyTree.java" startLine="85" startPosition="35" endLine="86" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4584053716645516238" fileName="DependencyTree.java" startLine="87" startPosition="74" endLine="88" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8401817752074462142" fileName="DependencyTree.java" startLine="91" startPosition="85" endLine="92" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8401817752074462159" fileName="DependencyTree.java" startLine="95" startPosition="74" endLine="96" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8401817752074459612" fileName="DependencyTree.java" startLine="99" startPosition="74" endLine="100" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1583804046736510746" fileName="DependencyTree.java" startLine="102" startPosition="8" endLine="103" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1583804046736513624" fileName="DependencyTree.java" startLine="103" startPosition="74" endLine="104" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="607341550221350906" fileName="DependencyTree.java" startLine="104" startPosition="17" endLine="105" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3937129192385011568" fileName="DependencyTree.java" startLine="109" startPosition="62" endLine="110" endPosition="517" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3937129192385011575" fileName="DependencyTree.java" startLine="110" startPosition="517" endLine="111" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3937129192385011541" fileName="DependencyTree.java" startLine="115" startPosition="44" endLine="116" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1942098792227679026" fileName="DependencyTree.java" startLine="117" startPosition="61" endLine="118" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3937129192385011519" fileName="DependencyTree.java" startLine="120" startPosition="61" endLine="121" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="530921175557516488" fileName="DependencyTree.java" startLine="123" startPosition="56" endLine="124" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3937129192385011483" fileName="DependencyTree.java" startLine="124" startPosition="60" endLine="125" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4691887782450489122" fileName="DependencyTree.java" startLine="126" startPosition="103" endLine="127" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="530921175557780663" fileName="DependencyTree.java" startLine="128" startPosition="7" endLine="129" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="972552857839233957" fileName="DependencyTree.java" startLine="130" startPosition="5" endLine="131" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="530921175557514516" fileName="DependencyTree.java" startLine="135" startPosition="36" endLine="136" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="530921175557514516" fileName="DependencyTree.java" startLine="137" startPosition="5" endLine="138" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="530921175557516499" fileName="DependencyTree.java" startLine="142" startPosition="36" endLine="143" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="530921175557516499" fileName="DependencyTree.java" startLine="144" startPosition="5" endLine="145" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7278349750637963121" fileName="DependencyTree.java" startLine="50" startPosition="24" endLine="51" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7278349750637962486" fileName="DependencyTree.java" startLine="52" startPosition="23" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7278349750637962489" fileName="DependencyTree.java" startLine="53" startPosition="20" endLine="54" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="406377762343928407" fileName="DependencyTree.java" startLine="58" startPosition="37" endLine="59" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6830499346919779349" fileName="DependencyTree.java" startLine="62" startPosition="34" endLine="63" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6830499346919779324" fileName="DependencyTree.java" startLine="66" startPosition="51" endLine="67" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6830499346919779366" fileName="DependencyTree.java" startLine="70" startPosition="39" endLine="71" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6830499346919779336" fileName="DependencyTree.java" startLine="74" startPosition="61" endLine="75" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7537828092111960084" fileName="DependencyTree.java" startLine="78" startPosition="40" endLine="79" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7537828092111960073" fileName="DependencyTree.java" startLine="82" startPosition="63" endLine="83" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8401817752074459635" fileName="DependencyTree.java" startLine="86" startPosition="34" endLine="87" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401817752074459562" fileName="DependencyTree.java" startLine="90" startPosition="35" endLine="91" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4584053716645516238" fileName="DependencyTree.java" startLine="92" startPosition="74" endLine="93" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401817752074462142" fileName="DependencyTree.java" startLine="96" startPosition="85" endLine="97" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401817752074462159" fileName="DependencyTree.java" startLine="100" startPosition="74" endLine="101" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401817752074459612" fileName="DependencyTree.java" startLine="104" startPosition="74" endLine="105" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1583804046736510746" fileName="DependencyTree.java" startLine="107" startPosition="8" endLine="108" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1583804046736513624" fileName="DependencyTree.java" startLine="108" startPosition="74" endLine="109" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="607341550221350906" fileName="DependencyTree.java" startLine="109" startPosition="17" endLine="110" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3937129192385011568" fileName="DependencyTree.java" startLine="114" startPosition="62" endLine="115" endPosition="517" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3937129192385011575" fileName="DependencyTree.java" startLine="115" startPosition="517" endLine="116" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3937129192385011541" fileName="DependencyTree.java" startLine="120" startPosition="44" endLine="121" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1942098792227679026" fileName="DependencyTree.java" startLine="122" startPosition="61" endLine="123" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3937129192385011519" fileName="DependencyTree.java" startLine="125" startPosition="61" endLine="126" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="530921175557516488" fileName="DependencyTree.java" startLine="128" startPosition="56" endLine="129" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3937129192385011483" fileName="DependencyTree.java" startLine="129" startPosition="60" endLine="130" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4691887782450489122" fileName="DependencyTree.java" startLine="131" startPosition="103" endLine="132" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="530921175557780663" fileName="DependencyTree.java" startLine="133" startPosition="7" endLine="134" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="972552857839233957" fileName="DependencyTree.java" startLine="135" startPosition="5" endLine="136" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="530921175557514516" fileName="DependencyTree.java" startLine="140" startPosition="36" endLine="141" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="530921175557514516" fileName="DependencyTree.java" startLine="142" startPosition="5" endLine="143" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="530921175557516499" fileName="DependencyTree.java" startLine="147" startPosition="36" endLine="148" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="530921175557516499" fileName="DependencyTree.java" startLine="149" startPosition="5" endLine="150" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="209150240168832352" fileName="DependencyTree.java" startLine="40" startPosition="0" endLine="43" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DependencyTree#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="4584053716645516229" fileName="DependencyTree.java" startLine="86" startPosition="42" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1942098792227679015" fileName="DependencyTree.java" startLine="116" startPosition="99" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3937129192385011511" fileName="DependencyTree.java" startLine="119" startPosition="5" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4691887782450489102" fileName="DependencyTree.java" startLine="125" startPosition="49" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="530921175557514516" fileName="DependencyTree.java" startLine="134" startPosition="97" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="530921175557516499" fileName="DependencyTree.java" startLine="141" startPosition="93" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4584053716645516229" fileName="DependencyTree.java" startLine="91" startPosition="42" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1942098792227679015" fileName="DependencyTree.java" startLine="121" startPosition="99" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3937129192385011511" fileName="DependencyTree.java" startLine="124" startPosition="5" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4691887782450489102" fileName="DependencyTree.java" startLine="130" startPosition="49" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="530921175557514516" fileName="DependencyTree.java" startLine="139" startPosition="97" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="530921175557516499" fileName="DependencyTree.java" startLine="146" startPosition="93" endLine="149" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6165815584335534710" fileName="DependencyTree.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProject#()Lcom/intellij/openapi/project/Project;" />
-    <nodeInfo nodeId="4584053716645516205" fileName="DependencyTree.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModules#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="406377762343928400" fileName="DependencyTree.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModules#()Ljava/util/List;" />
-    <nodeInfo nodeId="6830499346919779344" fileName="DependencyTree.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowRuntime#()Z" />
-    <nodeInfo nodeId="6830499346919779318" fileName="DependencyTree.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShowRuntime#(Z)V" />
-    <nodeInfo nodeId="6830499346919779361" fileName="DependencyTree.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowUsedLanguage#()Z" />
-    <nodeInfo nodeId="6830499346919779330" fileName="DependencyTree.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShowUsedLanguage#(Z)V" />
-    <nodeInfo nodeId="7537828092111960079" fileName="DependencyTree.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isHideSourceModules#()Z" />
-    <nodeInfo nodeId="7537828092111960067" fileName="DependencyTree.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setHideSourceModules#(Z)V" />
-    <nodeInfo nodeId="8401817752074459628" fileName="DependencyTree.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLoops#()Ljava/util/Set;" />
-    <nodeInfo nodeId="8401817752074462140" fileName="DependencyTree.java" startLine="90" startPosition="159" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8401817752074462155" fileName="DependencyTree.java" startLine="94" startPosition="74" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
-    <nodeInfo nodeId="8401817752074459608" fileName="DependencyTree.java" startLine="98" startPosition="81" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="3937129192385011544" fileName="DependencyTree.java" startLine="148" startPosition="67" endLine="152" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3131436097929922755" fileName="DependencyTree.java" startLine="107" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createPopupMenu#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljavax/swing/JPopupMenu;" />
-    <nodeInfo nodeId="530921175557514516" fileName="DependencyTree.java" startLine="133" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_he3vmc_a0a2a21#(Ljetbrains/mps/ide/depanalyzer/ModuleDependencyNode;)Ljetbrains/mps/smodel/IOperationContext;" />
-    <nodeInfo nodeId="530921175557516499" fileName="DependencyTree.java" startLine="140" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_he3vmc_a0a0d0m#(Ljetbrains/mps/ide/depanalyzer/ModuleDependencyNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="3937129192385011544" fileName="DependencyTree.java" startLine="147" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_he3vmc_a0a0a21#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="3937129192385011550" fileName="DependencyTree.java" startLine="122" startPosition="5" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8401817752074459559" fileName="DependencyTree.java" startLine="89" startPosition="5" endLine="102" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3937129192385011381" fileName="DependencyTree.java" startLine="113" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="3131436097929922694" fileName="DependencyTree.java" startLine="84" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuild#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
+    <nodeInfo nodeId="7278349750637963127" fileName="DependencyTree.java" startLine="51" startPosition="37" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="406377762343928400" fileName="DependencyTree.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModules#()Ljava/util/List;" />
+    <nodeInfo nodeId="6830499346919779344" fileName="DependencyTree.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowRuntime#()Z" />
+    <nodeInfo nodeId="6830499346919779318" fileName="DependencyTree.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShowRuntime#(Z)V" />
+    <nodeInfo nodeId="6830499346919779361" fileName="DependencyTree.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowUsedLanguage#()Z" />
+    <nodeInfo nodeId="6830499346919779330" fileName="DependencyTree.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShowUsedLanguage#(Z)V" />
+    <nodeInfo nodeId="7537828092111960079" fileName="DependencyTree.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isHideSourceModules#()Z" />
+    <nodeInfo nodeId="7537828092111960067" fileName="DependencyTree.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setHideSourceModules#(Z)V" />
+    <nodeInfo nodeId="8401817752074459628" fileName="DependencyTree.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLoops#()Ljava/util/Set;" />
+    <nodeInfo nodeId="8401817752074462140" fileName="DependencyTree.java" startLine="95" startPosition="159" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8401817752074462155" fileName="DependencyTree.java" startLine="99" startPosition="74" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
+    <nodeInfo nodeId="8401817752074459608" fileName="DependencyTree.java" startLine="103" startPosition="81" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="3937129192385011544" fileName="DependencyTree.java" startLine="153" startPosition="67" endLine="157" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3131436097929922755" fileName="DependencyTree.java" startLine="112" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createPopupMenu#(Ljetbrains/mps/ide/ui/MPSTreeNode;)Ljavax/swing/JPopupMenu;" />
+    <nodeInfo nodeId="530921175557514516" fileName="DependencyTree.java" startLine="138" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_he3vmc_a0a2a21#(Ljetbrains/mps/ide/depanalyzer/ModuleDependencyNode;)Ljetbrains/mps/smodel/IOperationContext;" />
+    <nodeInfo nodeId="530921175557516499" fileName="DependencyTree.java" startLine="145" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_he3vmc_a0a0d0m#(Ljetbrains/mps/ide/depanalyzer/ModuleDependencyNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="3937129192385011544" fileName="DependencyTree.java" startLine="152" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_he3vmc_a0a0a21#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="3937129192385011550" fileName="DependencyTree.java" startLine="127" startPosition="5" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4584053716645516205" fileName="DependencyTree.java" startLine="48" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModules#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="8401817752074459559" fileName="DependencyTree.java" startLine="94" startPosition="5" endLine="107" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3937129192385011381" fileName="DependencyTree.java" startLine="118" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="3131436097929922694" fileName="DependencyTree.java" startLine="89" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuild#()Ljetbrains/mps/ide/ui/MPSTreeNode;" />
     <scopeInfo nodeId="209150240168832359" fileName="DependencyTree.java" startLine="41" startPosition="42" endLine="42" endPosition="24" />
     <scopeInfo nodeId="6165815584335534713" fileName="DependencyTree.java" startLine="45" startPosition="31" endLine="46" endPosition="21" />
-    <scopeInfo nodeId="4584053716645516208" fileName="DependencyTree.java" startLine="49" startPosition="49" endLine="50" endPosition="24" />
-    <scopeInfo nodeId="406377762343928403" fileName="DependencyTree.java" startLine="53" startPosition="37" endLine="54" endPosition="21" />
-    <scopeInfo nodeId="6830499346919779347" fileName="DependencyTree.java" startLine="57" startPosition="34" endLine="58" endPosition="25" />
-    <scopeInfo nodeId="6830499346919779321" fileName="DependencyTree.java" startLine="61" startPosition="51" endLine="62" endPosition="32" />
-    <scopeInfo nodeId="6830499346919779364" fileName="DependencyTree.java" startLine="65" startPosition="39" endLine="66" endPosition="30" />
-    <scopeInfo nodeId="6830499346919779333" fileName="DependencyTree.java" startLine="69" startPosition="61" endLine="70" endPosition="42" />
-    <scopeInfo nodeId="7537828092111960082" fileName="DependencyTree.java" startLine="73" startPosition="40" endLine="74" endPosition="31" />
-    <scopeInfo nodeId="7537828092111960070" fileName="DependencyTree.java" startLine="77" startPosition="63" endLine="78" endPosition="44" />
-    <scopeInfo nodeId="8401817752074459631" fileName="DependencyTree.java" startLine="81" startPosition="34" endLine="82" endPosition="20" />
-    <scopeInfo nodeId="4584053716645516230" fileName="DependencyTree.java" startLine="87" startPosition="74" endLine="88" endPosition="53" />
-    <scopeInfo nodeId="8401817752074462141" fileName="DependencyTree.java" startLine="91" startPosition="85" endLine="92" endPosition="85" />
-    <scopeInfo nodeId="8401817752074462156" fileName="DependencyTree.java" startLine="95" startPosition="74" endLine="96" endPosition="39" />
-    <scopeInfo nodeId="8401817752074459609" fileName="DependencyTree.java" startLine="99" startPosition="74" endLine="100" endPosition="24" />
-    <scopeInfo nodeId="1942098792227679016" fileName="DependencyTree.java" startLine="117" startPosition="61" endLine="118" endPosition="21" />
-    <scopeInfo nodeId="3937129192385011518" fileName="DependencyTree.java" startLine="120" startPosition="61" endLine="121" endPosition="43" />
-    <scopeInfo nodeId="4691887782450489103" fileName="DependencyTree.java" startLine="126" startPosition="103" endLine="127" endPosition="20" />
-    <scopeInfo nodeId="530921175557514516" fileName="DependencyTree.java" startLine="135" startPosition="36" endLine="136" endPosition="53" />
-    <scopeInfo nodeId="530921175557516499" fileName="DependencyTree.java" startLine="142" startPosition="36" endLine="143" endPosition="44" />
-    <scopeInfo nodeId="3131436097929922760" fileName="DependencyTree.java" startLine="109" startPosition="62" endLine="111" endPosition="105">
+    <scopeInfo nodeId="406377762343928403" fileName="DependencyTree.java" startLine="58" startPosition="37" endLine="59" endPosition="21" />
+    <scopeInfo nodeId="6830499346919779347" fileName="DependencyTree.java" startLine="62" startPosition="34" endLine="63" endPosition="25" />
+    <scopeInfo nodeId="6830499346919779321" fileName="DependencyTree.java" startLine="66" startPosition="51" endLine="67" endPosition="32" />
+    <scopeInfo nodeId="6830499346919779364" fileName="DependencyTree.java" startLine="70" startPosition="39" endLine="71" endPosition="30" />
+    <scopeInfo nodeId="6830499346919779333" fileName="DependencyTree.java" startLine="74" startPosition="61" endLine="75" endPosition="42" />
+    <scopeInfo nodeId="7537828092111960082" fileName="DependencyTree.java" startLine="78" startPosition="40" endLine="79" endPosition="31" />
+    <scopeInfo nodeId="7537828092111960070" fileName="DependencyTree.java" startLine="82" startPosition="63" endLine="83" endPosition="44" />
+    <scopeInfo nodeId="8401817752074459631" fileName="DependencyTree.java" startLine="86" startPosition="34" endLine="87" endPosition="20" />
+    <scopeInfo nodeId="4584053716645516230" fileName="DependencyTree.java" startLine="92" startPosition="74" endLine="93" endPosition="53" />
+    <scopeInfo nodeId="8401817752074462141" fileName="DependencyTree.java" startLine="96" startPosition="85" endLine="97" endPosition="85" />
+    <scopeInfo nodeId="8401817752074462156" fileName="DependencyTree.java" startLine="100" startPosition="74" endLine="101" endPosition="39" />
+    <scopeInfo nodeId="8401817752074459609" fileName="DependencyTree.java" startLine="104" startPosition="74" endLine="105" endPosition="24" />
+    <scopeInfo nodeId="1942098792227679016" fileName="DependencyTree.java" startLine="122" startPosition="61" endLine="123" endPosition="21" />
+    <scopeInfo nodeId="3937129192385011518" fileName="DependencyTree.java" startLine="125" startPosition="61" endLine="126" endPosition="43" />
+    <scopeInfo nodeId="4691887782450489103" fileName="DependencyTree.java" startLine="131" startPosition="103" endLine="132" endPosition="20" />
+    <scopeInfo nodeId="530921175557514516" fileName="DependencyTree.java" startLine="140" startPosition="36" endLine="141" endPosition="53" />
+    <scopeInfo nodeId="530921175557516499" fileName="DependencyTree.java" startLine="147" startPosition="36" endLine="148" endPosition="44" />
+    <scopeInfo nodeId="7278349750637963128" fileName="DependencyTree.java" startLine="52" startPosition="23" endLine="54" endPosition="32" />
+    <scopeInfo nodeId="3131436097929922760" fileName="DependencyTree.java" startLine="114" startPosition="62" endLine="116" endPosition="105">
       <varInfo nodeId="3937129192385011569" varName="group" />
     </scopeInfo>
     <scopeInfo nodeId="209150240168832352" fileName="DependencyTree.java" startLine="40" startPosition="0" endLine="43" endPosition="3">
       <varInfo nodeId="209150240168832355" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="6165815584335534710" fileName="DependencyTree.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="4584053716645516205" fileName="DependencyTree.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="4584053716645516209" varName="modules" />
-    </scopeInfo>
-    <scopeInfo nodeId="406377762343928400" fileName="DependencyTree.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="6830499346919779344" fileName="DependencyTree.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="6830499346919779318" fileName="DependencyTree.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="406377762343928400" fileName="DependencyTree.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="6830499346919779344" fileName="DependencyTree.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="6830499346919779318" fileName="DependencyTree.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="6830499346919779322" varName="showRuntime" />
     </scopeInfo>
-    <scopeInfo nodeId="6830499346919779361" fileName="DependencyTree.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="6830499346919779330" fileName="DependencyTree.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="6830499346919779361" fileName="DependencyTree.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="6830499346919779330" fileName="DependencyTree.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="6830499346919779334" varName="showUsedLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="7537828092111960079" fileName="DependencyTree.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="7537828092111960067" fileName="DependencyTree.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="7537828092111960079" fileName="DependencyTree.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="7537828092111960067" fileName="DependencyTree.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="7537828092111960071" varName="hideSourceModules" />
     </scopeInfo>
-    <scopeInfo nodeId="8401817752074459628" fileName="DependencyTree.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="8401817752074462140" fileName="DependencyTree.java" startLine="90" startPosition="159" endLine="94" endPosition="0">
+    <scopeInfo nodeId="8401817752074459628" fileName="DependencyTree.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="8401817752074462140" fileName="DependencyTree.java" startLine="95" startPosition="159" endLine="99" endPosition="0">
       <varInfo nodeId="8401817752074462140" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="8401817752074462155" fileName="DependencyTree.java" startLine="94" startPosition="74" endLine="98" endPosition="0">
+    <scopeInfo nodeId="8401817752074462155" fileName="DependencyTree.java" startLine="99" startPosition="74" endLine="103" endPosition="0">
       <varInfo nodeId="8401817752074462155" varName="dep" />
     </scopeInfo>
-    <scopeInfo nodeId="8401817752074459608" fileName="DependencyTree.java" startLine="98" startPosition="81" endLine="102" endPosition="0">
+    <scopeInfo nodeId="8401817752074459608" fileName="DependencyTree.java" startLine="103" startPosition="81" endLine="107" endPosition="0">
       <varInfo nodeId="8401817752074459608" varName="dep" />
     </scopeInfo>
-    <scopeInfo nodeId="530921175557514516" fileName="DependencyTree.java" startLine="134" startPosition="97" endLine="138" endPosition="16" />
-    <scopeInfo nodeId="530921175557516499" fileName="DependencyTree.java" startLine="141" startPosition="93" endLine="145" endPosition="16" />
-    <scopeInfo nodeId="3937129192385011544" fileName="DependencyTree.java" startLine="148" startPosition="67" endLine="152" endPosition="6" />
-    <scopeInfo nodeId="3131436097929922755" fileName="DependencyTree.java" startLine="107" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="530921175557514516" fileName="DependencyTree.java" startLine="139" startPosition="97" endLine="143" endPosition="16" />
+    <scopeInfo nodeId="530921175557516499" fileName="DependencyTree.java" startLine="146" startPosition="93" endLine="150" endPosition="16" />
+    <scopeInfo nodeId="3937129192385011544" fileName="DependencyTree.java" startLine="153" startPosition="67" endLine="157" endPosition="6" />
+    <scopeInfo nodeId="4584053716645516208" fileName="DependencyTree.java" startLine="49" startPosition="49" endLine="55" endPosition="5">
+      <varInfo nodeId="7278349750637963122" varName="root" />
+    </scopeInfo>
+    <scopeInfo nodeId="3131436097929922755" fileName="DependencyTree.java" startLine="112" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="3131436097929922758" varName="treeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3937129192385011557" fileName="DependencyTree.java" startLine="123" startPosition="56" endLine="129" endPosition="52">
+    <scopeInfo nodeId="3937129192385011557" fileName="DependencyTree.java" startLine="128" startPosition="56" endLine="134" endPosition="52">
       <varInfo nodeId="530921175557516489" varName="modules" />
       <varInfo nodeId="3937129192385011484" varName="selection" />
     </scopeInfo>
-    <scopeInfo nodeId="530921175557514516" fileName="DependencyTree.java" startLine="133" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="530921175557514516" fileName="DependencyTree.java" startLine="138" startPosition="0" endLine="145" endPosition="0">
       <varInfo nodeId="530921175557514516" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="530921175557516499" fileName="DependencyTree.java" startLine="140" startPosition="0" endLine="147" endPosition="0">
+    <scopeInfo nodeId="530921175557516499" fileName="DependencyTree.java" startLine="145" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="530921175557516499" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="3937129192385011544" fileName="DependencyTree.java" startLine="147" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="3937129192385011544" fileName="DependencyTree.java" startLine="152" startPosition="0" endLine="159" endPosition="0">
       <varInfo nodeId="3937129192385011544" varName="o" />
       <varInfo nodeId="3937129192385011544" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="3937129192385011388" fileName="DependencyTree.java" startLine="115" startPosition="44" endLine="131" endPosition="16">
+    <scopeInfo nodeId="4584053716645516205" fileName="DependencyTree.java" startLine="48" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="4584053716645516209" varName="modules" />
+    </scopeInfo>
+    <scopeInfo nodeId="3937129192385011388" fileName="DependencyTree.java" startLine="120" startPosition="44" endLine="136" endPosition="16">
       <varInfo nodeId="3937129192385011542" varName="current" />
     </scopeInfo>
-    <scopeInfo nodeId="3131436097929922697" fileName="DependencyTree.java" startLine="85" startPosition="35" endLine="105" endPosition="16">
+    <scopeInfo nodeId="3131436097929922697" fileName="DependencyTree.java" startLine="90" startPosition="35" endLine="110" endPosition="16">
       <varInfo nodeId="1583804046736510747" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="3937129192385011381" fileName="DependencyTree.java" startLine="113" startPosition="0" endLine="133" endPosition="0">
+    <scopeInfo nodeId="3937129192385011381" fileName="DependencyTree.java" startLine="118" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="3937129192385011384" varName="id" />
     </scopeInfo>
-    <scopeInfo nodeId="3131436097929922694" fileName="DependencyTree.java" startLine="84" startPosition="0" endLine="107" endPosition="0" />
-    <unitInfo nodeId="8401817752074462140" fileName="DependencyTree.java" startLine="90" startPosition="93" endLine="94" endPosition="5" unitName="jetbrains.mps.ide.depanalyzer.DependencyTree$1" />
-    <unitInfo nodeId="8401817752074462155" fileName="DependencyTree.java" startLine="94" startPosition="17" endLine="98" endPosition="5" unitName="jetbrains.mps.ide.depanalyzer.DependencyTree$2" />
-    <unitInfo nodeId="8401817752074459608" fileName="DependencyTree.java" startLine="98" startPosition="18" endLine="102" endPosition="5" unitName="jetbrains.mps.ide.depanalyzer.DependencyTree$3" />
-    <unitInfo nodeId="3131436097929922645" fileName="DependencyTree.java" startLine="33" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.ide.depanalyzer.DependencyTree" />
+    <scopeInfo nodeId="3131436097929922694" fileName="DependencyTree.java" startLine="89" startPosition="0" endLine="112" endPosition="0" />
+    <unitInfo nodeId="8401817752074462140" fileName="DependencyTree.java" startLine="95" startPosition="93" endLine="99" endPosition="5" unitName="jetbrains.mps.ide.depanalyzer.DependencyTree$1" />
+    <unitInfo nodeId="8401817752074462155" fileName="DependencyTree.java" startLine="99" startPosition="17" endLine="103" endPosition="5" unitName="jetbrains.mps.ide.depanalyzer.DependencyTree$2" />
+    <unitInfo nodeId="8401817752074459608" fileName="DependencyTree.java" startLine="103" startPosition="18" endLine="107" endPosition="5" unitName="jetbrains.mps.ide.depanalyzer.DependencyTree$3" />
+    <unitInfo nodeId="3131436097929922645" fileName="DependencyTree.java" startLine="33" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.ide.depanalyzer.DependencyTree" />
   </root>
   <root nodeId="3131436097929923142" modelId="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)">
     <nodeInfo nodeId="7732415541001061654" fileName="DependencyTreeNode.java" startLine="12" startPosition="53" endLine="13" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLink" />
