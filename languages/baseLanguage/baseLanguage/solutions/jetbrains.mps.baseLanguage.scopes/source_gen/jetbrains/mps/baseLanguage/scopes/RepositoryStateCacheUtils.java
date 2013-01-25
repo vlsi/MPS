@@ -28,8 +28,6 @@ public class RepositoryStateCacheUtils {
     return v;
   }
 
-
-
   public static <K, V> V getFromCache(Class clazz, K key, final _FunctionTypes._return_P0_E0<? extends V> creator) {
     return getFromCache(clazz.getName(), key, creator);
   }
