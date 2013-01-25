@@ -50,7 +50,6 @@ public class ChunksGeneratorWorker extends GeneratorWorker {
 
   @Override
   public void work() {
-    // todo setup correct environment in the first place 
     ChunksGeneratorWorker.MyEnvironment environment = new ChunksGeneratorWorker.MyEnvironment();
     Map<String, File> libraries = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
     for (String jar : ListSequence.fromList(myWhatToDo.getLibraryJars())) {
