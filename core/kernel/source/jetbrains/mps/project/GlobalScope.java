@@ -16,10 +16,17 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.components.CoreComponent;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -57,43 +64,13 @@ public class GlobalScope extends BaseScope implements CoreComponent {
     return "global scope";
   }
 
-  public Language getLanguage(SModuleReference moduleReference) {
-    return ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
+  @Override
+  public Iterable<SModule> getModules() {
+    return myMPSModuleRepository.getModules();
   }
 
-  public DevKit getDevKit(ModuleReference ref) {
-    return ModuleRepositoryFacade.getInstance().getModule(ref, DevKit.class);
-  }
-
-  public Collection<Language> getVisibleLanguages() {
-    return ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
-  }
-
-  public Collection<DevKit> getVisibleDevkits() {
-    return ModuleRepositoryFacade.getInstance().getAllModules(DevKit.class);
-  }
-
-  public Collection<Solution> getVisibleSolutions() {
-    return ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
-  }
-
-  public Iterable<IModule> getVisibleModules() {
-    return Collections.unmodifiableSet(myMPSModuleRepository.getAllModules());
-  }
-
-  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-    return myModelRepository.getModelDescriptor(modelReference);
-  }
-
-  public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
-    return myModelRepository.getModelDescriptor(fqName);
-  }
-
-  public List<SModelDescriptor> getModelDescriptors(String modelName) {
-    return myModelRepository.getModelDescriptorsByModelName(modelName);
-  }
-
-  public List<SModelDescriptor> getModelDescriptors() {
-    return myModelRepository.getModelDescriptors();
+  @Override
+  public Iterable<SModel> getModels() {
+    return new ArrayList<SModel>(myModelRepository.getModelDescriptors());
   }
 }

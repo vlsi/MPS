@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
 
@@ -38,96 +38,30 @@ public abstract class DefaultScope extends BaseScope {
   private Set<DevKit> myUsedDevkits;
 
   @Override
-  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-    if (modelReference == null) return null;
-
-    SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelReference);
-    if (model == null) {
-      return null;
-    }
-
+  public Iterable<SModule> getModules() {
+    Set<SModule> result = new HashSet<SModule>();
     synchronized (LOCK) {
       initialize();
-
-      if (myVisibleModules.contains(model.getModule())) return model;
-
-      for (Language l : myUsedLanguages) {
-        if (l.getAccessoryModels().contains(model)) return model;
-      }
-    }
-
-    return null;
-  }
-
-  @Override
-  public Language getLanguage(SModuleReference moduleReference) {
-    Language l = ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
-    if (l == null) return null;
-
-    synchronized (LOCK) {
-      initialize();
-      if (!myUsedLanguages.contains(l)) return null;
-      return l;
-    }
-  }
-
-  @Override
-  public DevKit getDevKit(ModuleReference ref) {
-    DevKit d = ModuleRepositoryFacade.getInstance().getModule(ref, DevKit.class);
-    if (d == null) return null;
-
-    synchronized (LOCK) {
-      initialize();
-      if (!myUsedDevkits.contains(d)) return null;
-      return d;
-    }
-  }
-
-  //todo replace with iterable
-  @Override
-  public List<SModelDescriptor> getModelDescriptors() {
-    ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    synchronized (LOCK) {
-      initialize();
-      for (SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors()) {
-        IModule module = d.getModule();
-        if (myVisibleModules.contains(module)) {
-          result.add(d);
-        }
-      }
-
-      for (Language l : myUsedLanguages) {
-        for (SModelDescriptor accessory : l.getAccessoryModels()) {
-          result.add(accessory);
-        }
-      }
+      result.addAll(myVisibleModules);
+      result.addAll(myUsedLanguages);
+      result.addAll(myUsedDevkits);
     }
     return result;
   }
 
-  public Iterable<Language> getVisibleLanguages() {
+  @Override
+  public Iterable<SModel> getModels() {
+    List<SModel> result = new ArrayList<SModel>();
     synchronized (LOCK) {
       initialize();
-      return Collections.unmodifiableSet(myUsedLanguages);
+      for (IModule module : myVisibleModules) {
+        result.addAll(module.getOwnModelDescriptors());
+      }
+      for (IModule module : myUsedLanguages) {
+        result.addAll(module.getOwnModelDescriptors());
+      }
     }
-  }
-
-  public Iterable<DevKit> getVisibleDevkits() {
-    synchronized (LOCK) {
-      initialize();
-      return Collections.unmodifiableSet(myUsedDevkits);
-    }
-  }
-
-  public Iterable<IModule> getVisibleModules() {
-    synchronized (LOCK) {
-      initialize();
-      return Collections.unmodifiableSet(myVisibleModules);
-    }
-  }
-
-  protected Collection<Language> getInitialUsedLanguages() {
-    return CollectionUtil.filter(Language.class, getInitialModules());
+    return result;
   }
 
   public void invalidateCaches() {
@@ -162,7 +96,7 @@ public abstract class DefaultScope extends BaseScope {
 
   private void fillInLanguages() {
     myUsedLanguages = new HashSet<Language>();
-    myUsedLanguages.addAll(getInitialUsedLanguages());
+    myUsedLanguages.addAll(CollectionUtil.filter(Language.class, getInitialModules()));
     for (DevKit dk : myUsedDevkits) {
       myUsedLanguages.addAll(dk.getAllExportedLanguages());
     }

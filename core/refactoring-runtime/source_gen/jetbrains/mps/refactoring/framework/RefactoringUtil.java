@@ -69,7 +69,7 @@ public class RefactoringUtil {
 
   public static List<IRefactoring> getAllRefactorings() {
     List<IRefactoring> allRefactorings = new ArrayList<IRefactoring>();
-    Collection<Language> languages = GlobalScope.getInstance().getVisibleLanguages();
+    Iterable<Language> languages = GlobalScope.getInstance().getVisibleLanguages();
     for (Language language : languages) {
       allRefactorings.addAll(RefactoringUtil.getRefactorings(language));
     }

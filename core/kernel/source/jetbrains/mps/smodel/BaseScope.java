@@ -15,30 +15,126 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class BaseScope implements IScope {
   @Override
-  public Iterable<SModule> getModules() {
-    return (Iterable) getVisibleModules();
-  }
+  public abstract Iterable<SModule> getModules();
 
   @Override
   public Iterable<SModel> getModels() {
-    return (Iterable) getModelDescriptors();
+    List<SModel> models = new ArrayList<SModel>();
+    for (SModule module : getModules()) {
+      for (SModel model : module.getModels()) {
+        models.add(model);
+      }
+    }
+    return models;
   }
 
   @Override
   public SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
-    return getModelDescriptor((SModelReference) reference);  //To change body of implemented methods use File | Settings | File Templates.
+    // todo: maybe something like module resolve
+    for (SModel model : getModels()) {
+      if (model.getModelReference().equals(reference)) {
+        return model;
+      }
+    }
+    return null;
   }
 
   @Override
   public SModule resolve(SModuleReference reference) {
-    // TODO (implement)
+    // todo: review this code!
+    // todo: extract if outside from for statement?
+    for (SModule module : getModules()) {
+      if (reference.getModuleId() != null) {
+        if (reference.getModuleId().equals(module.getModuleId())) {
+          return module;
+        }
+      } else {
+        if (module.getModuleName().equals(reference.getModuleName())) {
+          return module;
+        }
+      }
+    }
     return null;
+  }
+
+  @Override
+  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
+    // move to IScopeUtils
+    SModel model = resolve(modelReference);
+    if (model != null && !(model instanceof SModelDescriptor)) {
+      throw new IllegalStateException();
+    }
+    return (SModelDescriptor) model;
+  }
+
+  @Override
+  public Language getLanguage(SModuleReference moduleReference) {
+    // move to IScopeUtils
+    SModule module = resolve(moduleReference);
+    if (module != null && !(module instanceof Language)) {
+      throw new IllegalStateException();
+    }
+    return (Language) module;
+  }
+
+  @Override
+  public DevKit getDevKit(ModuleReference ref) {
+    // move to IScopeUtils
+    SModule module = resolve(ref);
+    if (module != null && !(module instanceof DevKit)) {
+      throw new IllegalStateException();
+    }
+    return (DevKit) module;
+  }
+
+  @Override
+  public Iterable<SModelDescriptor> getModelDescriptors() {
+    // move to IScopeUtils
+    for (SModel model : getModels()) {
+      if (!(model instanceof SModelDescriptor)) {
+        throw new IllegalStateException();
+      }
+    }
+    return (Iterable) getModels();
+  }
+
+  private <T extends SModule> Iterable<T> getModules(Class<T> cls) {
+    // move to IScopeUtils
+    List<T> result = new ArrayList<T>();
+    for (SModule module : getModules()) {
+      if (cls.isInstance(module)) result.add((T) module);
+    }
+    return result;
+  }
+
+  @Override
+  public Iterable<Language> getVisibleLanguages() {
+    // move to IScopeUtils
+    return getModules(Language.class);
+  }
+
+  @Override
+  public Iterable<DevKit> getVisibleDevkits() {
+    // move to IScopeUtils
+    return getModules(DevKit.class);
+  }
+
+  @Override
+  public Iterable<IModule> getVisibleModules() {
+    // move to IScopeUtils
+    return getModules(IModule.class);
   }
 
   // deprecated stuff

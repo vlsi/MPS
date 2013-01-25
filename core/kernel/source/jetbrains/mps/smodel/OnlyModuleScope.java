@@ -13,15 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.List;
-import java.util.Set;
+import java.util.ArrayList;
 
 public class OnlyModuleScope extends BaseScope {
   private IModule myModule;
@@ -30,34 +28,13 @@ public class OnlyModuleScope extends BaseScope {
     myModule = module;
   }
 
-  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-    for (SModelDescriptor model : myModule.getOwnModelDescriptors()) {
-      if (modelReference.equals(model.getSModelReference())) return model;
-    }
-    return null;
+  @Override
+  public Iterable<SModule> getModules() {
+    return null; // todo: maybe @NotNull ? maybe singleton list?
   }
 
-  public List<SModelDescriptor> getModelDescriptors() {
-    return myModule.getOwnModelDescriptors();
-  }
-
-  public Language getLanguage(SModuleReference moduleReference) {
-    return null;
-  }
-
-  public DevKit getDevKit(ModuleReference ref) {
-    return null;
-  }
-
-  public List<Language> getVisibleLanguages() {
-    return null;
-  }
-
-  public List<DevKit> getVisibleDevkits() {
-    return null;
-  }
-
-  public Set<IModule> getVisibleModules() {
-    return null;
+  @Override
+  public Iterable<SModel> getModels() {
+    return new ArrayList<SModel>(myModule.getOwnModelDescriptors());
   }
 }

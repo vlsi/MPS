@@ -22,12 +22,13 @@ import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -139,7 +140,7 @@ public class LibraryInitializer implements CoreComponent {
 
   //----------bootstrap modules
 
-  public <M extends IModule> Set<M> getBootstrapModules(Class<M> cls) {
+  public <M extends SModule> Set<M> getBootstrapModules(Class<M> cls) {
     ModelAccess.assertLegalRead();
 
     Set<String> bootstrapPaths = new HashSet<String>();
@@ -167,7 +168,7 @@ public class LibraryInitializer implements CoreComponent {
     return result;
   }
 
-  public <M extends IModule> void addGenerators(Class<M> cls, Collection<M> result) {
+  public <M extends SModule> void addGenerators(Class<M> cls, Collection<M> result) {
     for (M m : new ArrayList<M>(result)) {
       if (m instanceof Language) {
         if (cls == null || cls.isAssignableFrom(Generator.class)) {

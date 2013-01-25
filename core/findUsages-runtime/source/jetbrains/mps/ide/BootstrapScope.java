@@ -23,6 +23,8 @@ import jetbrains.mps.smodel.BaseScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.*;
@@ -44,81 +46,8 @@ public class BootstrapScope extends BaseScope {
     return "bootstrap scope";
   }
 
-  public <T extends IModule> List<T> getModules(Class<T> cls) {
-    return new ArrayList<T>(LibraryInitializer.getInstance().getBootstrapModules(cls));
+  @Override
+  public Iterable<SModule> getModules() {
+    return new ArrayList<SModule>(LibraryInitializer.getInstance().getBootstrapModules(SModule.class));
   }
-
-  public List<Language> getVisibleLanguages() {
-    return getModules(Language.class);
-  }
-
-  public List<DevKit> getVisibleDevkits() {
-    return getModules(DevKit.class);
-  }
-
-  public Iterable<IModule> getVisibleModules() {
-    return Collections.unmodifiableList(getModules(null));
-  }
-
-  public Language getLanguage(SModuleReference moduleReference) {
-    for (Language l : getModules(Language.class)) {
-      if (moduleReference.getModuleId() != null) {
-        if (l.getModuleReference().getModuleId().equals(moduleReference.getModuleId())) {
-          return l;
-        }
-      } else {
-        if (l.getModuleFqName().equals(moduleReference.getModuleName())) {
-          return l;
-        }
-      }
-    }
-    return null;
-  }
-
-  public DevKit getDevKit(ModuleReference moduleReference) {
-    for (DevKit d : getModules(DevKit.class)) {
-      if (moduleReference.getModuleId() != null) {
-        if (d.getModuleReference().getModuleId().equals(moduleReference.getModuleId())) {
-          return d;
-        }
-      } else {
-        if (d.getModuleFqName().equals(moduleReference.getModuleFqName())) {
-          return d;
-        }
-      }
-    }
-    return null;
-  }
-
-  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-    for (IModule module : getVisibleModules()) {
-      for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {
-        if (modelDescriptor.getSModelReference().equals(modelReference)) {
-          return modelDescriptor;
-        }
-      }
-    }
-    return null;
-  }
-
-  public List<SModelDescriptor> getModelDescriptors(String modelName) {
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-    for (IModule module : getVisibleModules()) {
-      for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {
-        if (modelDescriptor.getLongName().equals(modelName)) {
-          models.add(modelDescriptor);
-        }
-      }
-    }
-    return models;
-  }
-
-  public List<SModelDescriptor> getModelDescriptors() {
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-    for (IModule module : getVisibleModules()) {
-      models.addAll(module.getOwnModelDescriptors());
-    }
-    return models;
-  }
-
 }

@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.workbench.choose.base;
 
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.BaseScope;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -33,56 +32,17 @@ public class ModulesOnlyScope extends BaseScope {
     myModules = new HashSet<IModule>(modules);
   }
 
-  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-    SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelReference);
-    if (md == null) return null;
-    if (myModules.contains(md.getModule())) return md;
-    return null;
+  @Override
+  public Iterable<SModule> getModules() {
+    return (Iterable) myModules;
   }
 
-  public Language getLanguage(SModuleReference moduleReference) {
-    Language lang = ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
-    if (lang == null) return null;
-    if (myModules.contains(lang)) return lang;
-    return null;
-  }
-
-  public DevKit getDevKit(ModuleReference ref) {
-    DevKit dk = ModuleRepositoryFacade.getInstance().getModule(ref, DevKit.class);
-    if (dk == null) return null;
-    if (myModules.contains(dk)) return dk;
-    return null;
-  }
-
-  public Iterable<SModelDescriptor> getModelDescriptors() {
-    ArrayList<SModelDescriptor> res = new ArrayList<SModelDescriptor>();
+  @Override
+  public Iterable<SModel> getModels() {
+    ArrayList<SModel> res = new ArrayList<SModel>();
     for (IModule module : myModules) {
       res.addAll(module.getOwnModelDescriptors());
     }
     return res;
-  }
-
-  public Iterable<Language> getVisibleLanguages() {
-    ArrayList<Language> res = new ArrayList<Language>();
-    for (IModule module : myModules) {
-      if (module instanceof Language) {
-        res.add((Language) module);
-      }
-    }
-    return res;
-  }
-
-  public Iterable<DevKit> getVisibleDevkits() {
-    ArrayList<DevKit> res = new ArrayList<DevKit>();
-    for (IModule module : myModules) {
-      if (module instanceof DevKit) {
-        res.add((DevKit) module);
-      }
-    }
-    return res;
-  }
-
-  public Iterable<IModule> getVisibleModules() {
-    return myModules;
   }
 }
