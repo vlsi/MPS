@@ -22,6 +22,7 @@ public class GenerateChunksTask extends MpsLoadTask {
   public static final String PLUGIN_PATHS = "plugin.path";
 
   public GenerateChunksTask() {
+    setUsePropertiesAsMacro(true);
   }
 
   protected Class<? extends MpsWorker> getWorkerClass() {
