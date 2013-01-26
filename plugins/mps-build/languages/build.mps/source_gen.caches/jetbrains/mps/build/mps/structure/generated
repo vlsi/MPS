@@ -53,6 +53,7 @@
     <dep root="7753544965996489992" />
     <dep root="7832771629084799699" />
     <dep root="868032131020265945" />
+    <dep root="978600701690054692" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

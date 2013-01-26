@@ -46,7 +46,7 @@
   <dep model="r:6e2bf134-8b14-4a22-a511-dbed551042c1(jetbrains.mps.build.reduced.plugin)" hash="-e2yveecn3b6xkvgbjd4xby74l0o0l83" />
   <dep model="r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)" hash="-9uu3nosgf3jbrvm27c5idrwy5dm48se" />
   <dep model="r:72b5a3b6-ca0e-4104-ae9d-5cccdd8a010c(jetbrains.mps.build.gentest.plugin)" hash="-51ocos459zcn4lknujqy4fxhoxqi66s" />
-  <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" hash="c7kclksyq1wosfesdjjsg1bf669abbm" />
+  <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" hash="3bturvt8m6z3zx50x05m2k7bnt6yjud" />
   <dep model="r:7cb72aee-d3e2-47e9-9964-3abda6a73a9a(jetbrains.mps.make.service)" hash="-dqrtq79y7yuguwk1dalh5ctnppjfakv" />
   <dep model="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.build.ant.util)" hash="-bvb8jfxzat9ff0eieote5qf5h22zg5" />
   <dep model="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)" hash="-czihbmkx3i77vj1y7yacjy10g3i18u5" />
