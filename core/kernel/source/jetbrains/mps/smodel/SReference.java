@@ -15,15 +15,17 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
-
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Set;
 
@@ -64,7 +66,16 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   public SNodeReference toNodePointer() {
-    return new SNodePointer(getTargetSModelReference(),getTargetNodeId());
+    return new SNodePointer(getTargetSModelReference(), getTargetNodeId());
+  }
+
+  @Nullable
+  public abstract SModelReference getTargetSModelReference();
+
+  @Nullable
+  public SNodeId getTargetNodeId() {
+    SNode targetNode = getTargetNode();
+    return targetNode == null ? null : targetNode.getNodeId();
   }
 
   public void makeDirect() {
@@ -88,15 +99,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   //-------------------------
-
-  @Nullable
-  public abstract SModelReference getTargetSModelReference();
-
-  @Nullable
-  public SNodeId getTargetNodeId() {
-    SNode targetNode = getTargetNode();
-    return targetNode == null ? null : targetNode.getNodeId();
-  }
 
   @Deprecated
   /**
@@ -192,7 +194,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     }
 
     SModel model = node.getModel();
-    if (model == null){
+    if (model == null) {
       return null;
     }
     if (!model.isTransient()) {
