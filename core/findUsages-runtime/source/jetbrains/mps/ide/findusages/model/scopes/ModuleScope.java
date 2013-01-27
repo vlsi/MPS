@@ -36,16 +36,28 @@ public class ModuleScope extends FindUsagesScope {
     addModule(module);
   }
 
+  public ModuleScope(@NotNull String moduleName) {
+    // use this method carefully!
+    this(resolveModule(moduleName));
+  }
+
   public ModuleScope(Element element, Project project) throws CantLoadSomethingException {
     this(resolveModule(element));
   }
 
   private static SModule resolveModule(Element element) throws CantLoadSomethingException {
-    String moduleUid = element.getAttribute(MODULE_ID).getValue();
-    SModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleUid);
+    try {
+      return resolveModule(element.getAttribute(MODULE_ID).getValue());
+    } catch (IllegalArgumentException e) {
+      throw new CantLoadSomethingException(e);
+    }
+  }
+
+  private static SModule resolveModule(String moduleName) {
+    SModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleName);
     if (module == null) {
-      LOG.warning("module scope not found for module  " + moduleUid);
-      throw new CantLoadSomethingException("module scope not found for module " + moduleUid);
+      LOG.warning("module scope not found for module  " + moduleName);
+      throw new IllegalArgumentException("module scope not found for module " + moduleName);
     } else {
       return module;
     }

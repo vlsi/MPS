@@ -16,27 +16,20 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.ide.findusages.model.scopes.BootstrapScope;
+import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
+import jetbrains.mps.ide.findusages.model.scopes.GlobalScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModuleScope;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleScope;
-
-import java.util.List;
 
 public class ScopeOptions extends BaseOptions {
-  private static final Logger LOG = Logger.getLogger(ScopeOptions.class);
-
   private static final String SCOPE_TYPE = "scope_type";
   private static final String MODEL = "model";
   private static final String MODULE = "module";
@@ -65,13 +58,13 @@ public class ScopeOptions extends BaseOptions {
     return new ScopeOptions(myScopeType, myModel, myModule);
   }
 
-  public void setScopeType(@NotNull ScopeType scopeType) {
-    myScopeType = scopeType;
-  }
-
   @NotNull
   public ScopeType getScopeType() {
     return myScopeType;
+  }
+
+  public void setScopeType(@NotNull ScopeType scopeType) {
+    myScopeType = scopeType;
   }
 
   public String getModel() {
@@ -90,58 +83,26 @@ public class ScopeOptions extends BaseOptions {
     myModule = module;
   }
 
-  public SModuleScope getScope(IOperationContext operationContext, SModelDescriptor descriptor) {
-    return myScopeType.getSearchScope(operationContext.getProject(), resolveModule(operationContext), resolveModel(descriptor));
-  }
-
-  private SModel resolveModel(SModel currentModel) {
-    if (myModel == null || myModel.isEmpty()) {
-      return null;
+  public FindUsagesScope getScope(IOperationContext operationContext, SModelDescriptor descriptor) {
+    switch (myScopeType) {
+      case GLOBAL:
+        return new GlobalScope();
+      case PROJECT:
+        return new ProjectScope(operationContext.getProject());
+      case BOOTSTRAP:
+        return new BootstrapScope();
+      case MODULE:
+        return new ModuleScope(myModule);
+      case MODEL:
+        return new ModelsScope(myModel);
+      default:
+        throw new IllegalArgumentException("Illegal scope type: " + myScopeType);
     }
-
-    List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptorsByModelName(myModel);
-    if (models.isEmpty()) {
-      myModel = currentModel.getModelName();
-      models = SModelRepository.getInstance().getModelDescriptorsByModelName(myModel);
-      LOG.error("Model is not found for " + myModel + ". Using current model.");
-    }
-    // todo: if size > 1?
-    return models.get(0);
-  }
-
-  private SModule resolveModule(IOperationContext context) {
-    if (myModule == null || myModule.isEmpty()) {
-      return null;
-    }
-
-    SModule module = getModuleByNamespace(myModule);
-    if (module == null) {
-      LOG.error("Module is not found for " + myModule + ". Using current module.");
-      module = context.getModule();
-      myModule = module.getModuleName();
-    }
-
-    return module;
-  }
-
-  private IModule getModuleByNamespace(String namespace) {
-    MPSModuleRepository repo = MPSModuleRepository.getInstance();
-
-    IModule result = repo.getModule(new ModuleReference(namespace));
-    if (result != null) return result;
-
-    for (IModule module : repo.getAllModules()) {
-      String moduleNamespace = module.getModuleFqName();
-      if (moduleNamespace == null) continue;
-      if (moduleNamespace.equals(namespace)) return module;
-    }
-
-    return null;
   }
 
   @NotNull
   public SearchQuery getResult(SNode node, IOperationContext context, SModelDescriptor modelDescriptor) {
-    return new SearchQuery(node, (IScope) getScope(context, modelDescriptor));
+    return new SearchQuery(node, getScope(context, modelDescriptor));
   }
 
   public void write(Element element, Project project) {
@@ -157,5 +118,9 @@ public class ScopeOptions extends BaseOptions {
     myScopeType = ScopeType.valueOf(scopeTypeXML.getAttributeValue(SCOPE_TYPE));
     myModule = scopeTypeXML.getAttributeValue(MODULE);
     myModel = scopeTypeXML.getAttributeValue(MODEL);
+  }
+
+  public enum ScopeType {
+    GLOBAL, PROJECT, BOOTSTRAP, MODULE, MODEL;
   }
 }

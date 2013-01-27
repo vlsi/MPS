@@ -8,7 +8,7 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeType;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions.ScopeType;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;

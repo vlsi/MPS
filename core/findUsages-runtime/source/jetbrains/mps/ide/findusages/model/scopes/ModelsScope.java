@@ -25,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ModelsScope extends FindUsagesScope {
@@ -42,6 +43,11 @@ public class ModelsScope extends FindUsagesScope {
     }
   }
 
+  public ModelsScope(@NotNull String modelName) {
+    // use this method carefully!
+    this(Collections.singleton(resolveModel(modelName)));
+  }
+
   public ModelsScope(Element element, Project project) throws CantLoadSomethingException {
     this(resolveModels(element));
   }
@@ -49,18 +55,21 @@ public class ModelsScope extends FindUsagesScope {
   private static List<SModel> resolveModels(Element element) throws CantLoadSomethingException {
     List<SModel> result = new ArrayList<SModel>();
     for (Element modelXml : (List<Element>) element.getChildren(MODEL_TAG)) {
-      result.add(resolveModel(modelXml));
+      try {
+        result.add(resolveModel(modelXml.getAttribute(MODEL_ID).getValue()));
+      } catch (IllegalArgumentException e) {
+        throw new CantLoadSomethingException(e);
+      }
     }
     return result;
   }
 
-  private static SModel resolveModel(Element element) throws CantLoadSomethingException {
-    String modelName = element.getAttribute(MODEL_ID).getValue();
+  private static SModel resolveModel(String modelName) {
     // todo: !
     SModel model = SModelRepository.getInstance().getModelDescriptorsByModelName(modelName).iterator().next();
     if (model == null) {
       LOG.warning("model scope not found for model " + modelName);
-      throw new CantLoadSomethingException("model scope not found for model " + modelName);
+      throw new IllegalArgumentException("model scope not found for model " + modelName);
     } else {
       return model;
     }
