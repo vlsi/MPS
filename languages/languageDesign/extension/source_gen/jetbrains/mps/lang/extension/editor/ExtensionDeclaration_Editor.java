@@ -20,11 +20,12 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.Padding;
+import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -165,12 +166,11 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_i2dquw_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Extension of");
     editorCell.setCellId("Constant_i2dquw_a0a");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_LEFT, new Padding(0.5, Measure.SPACES));
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.5, Measure.SPACES));
-    }
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    style.set(StyleAttributes.PADDING_LEFT, new Padding(0.5, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.5, Measure.SPACES));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -178,7 +178,9 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_i2dquw_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "on activate");
     editorCell.setCellId("Constant_i2dquw_a4a");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -186,7 +188,9 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_i2dquw_a6a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "on deactivate");
     editorCell.setCellId("Constant_i2dquw_a6a");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -194,7 +198,9 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_i2dquw_a8a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extension object");
     editorCell.setCellId("Constant_i2dquw_a8a");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -203,11 +209,10 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new ExtensionDeclaration_Editor.fieldDeclarationListHandler_i2dquw_c0(node, "fieldDeclaration", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_fieldDeclaration");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

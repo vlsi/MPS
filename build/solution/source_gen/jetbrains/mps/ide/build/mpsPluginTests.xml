@@ -124,6 +124,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-common.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-plugin.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-backend.jar" />
@@ -165,6 +166,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-common.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-plugin.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-backend.jar" />

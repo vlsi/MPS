@@ -16,14 +16,25 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.ui.LightColors;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.nodeEditor.cells.CellInfo;
+import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
@@ -33,12 +44,32 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.awt.event.KeyEvent;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
 
 public class EditorManager {
+  static {
+    // Just loading StyleAttributes class here to ensure all style attributes were initialized properly.
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        new jetbrains.mps.nodeEditor.style.StyleAttributes();
+      }
+    });
+  }
+
   private static final Logger LOG = Logger.getLogger(EditorManager.class);
 
   public static final String BIG_CELL_CONTEXT = "big-cell-context";
@@ -131,8 +162,8 @@ public class EditorManager {
 
   private static void fillContextToCellMapForChildren(EditorCell cell, Map<ReferencedNodeContext, EditorCell> map) {
     if (cell instanceof EditorCell_Collection) {
-      for (EditorCell childCell : ((EditorCell_Collection) cell)) {
-        fillContextToCellMap(childCell, map);
+      for (jetbrains.mps.openapi.editor.cells.EditorCell childCell : ((EditorCell_Collection) cell)) {
+        fillContextToCellMap((EditorCell) childCell, map);
       }
     }
   }
@@ -445,7 +476,7 @@ public class EditorManager {
     Object anchorId = node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID);
     EditorCell anchorCell = anchorId == null ? null : nodeCell.findChild(CellFinders.byId(node, anchorId.toString()), true);
     if (anchorCell != null && anchorCell != nodeCell) {
-      EditorCell_Collection cellCollection = anchorCell.getParent();
+      jetbrains.mps.openapi.editor.cells.EditorCell_Collection cellCollection = anchorCell.getParent();
       int index;
       if (side == CellSide.RIGHT) {
         index = cellCollection.indexOf(anchorCell) + 1;
@@ -453,7 +484,7 @@ public class EditorManager {
         index = cellCollection.indexOf(anchorCell);
       }
 
-      cellCollection.addCellAt(index, sideTransformHintCell, false);
+      cellCollection.addEditorCellAt(index, sideTransformHintCell, false);
       resultCell = nodeCell;
       sideTransformHintCell.setAnchor(anchorCell);
     } else {
@@ -464,7 +495,7 @@ public class EditorManager {
       if (side == CellSide.RIGHT) {
         rowWrapper.addEditorCell(sideTransformHintCell);
       } else {
-        rowWrapper.addCellAt(0, sideTransformHintCell, false);
+        rowWrapper.addEditorCellAt(0, sideTransformHintCell, false);
       }
       resultCell = rowWrapper;
       sideTransformHintCell.setAnchor(nodeCell);

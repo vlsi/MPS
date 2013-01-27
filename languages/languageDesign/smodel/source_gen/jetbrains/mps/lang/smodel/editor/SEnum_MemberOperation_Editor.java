@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -43,7 +45,9 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_externalValue");
-      BaseLanguageStyle_StyleSheet.getStaticField(editorCell).apply(editorCell);
+      Style style = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.applyStaticField(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -68,7 +72,9 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ogdk6t_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_ogdk6t_a0");
-    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -76,7 +82,9 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ogdk6t_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_ogdk6t_c0");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }

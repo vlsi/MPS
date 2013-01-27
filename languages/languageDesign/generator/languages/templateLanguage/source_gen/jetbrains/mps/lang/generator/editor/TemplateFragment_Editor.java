@@ -9,8 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -51,10 +52,9 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
-      }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -88,10 +88,9 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
-      }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -107,10 +106,9 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_73o0fl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_73o0fl_a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_73o0fl_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_73o0fl_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_73o0fl_c0(editorContext, node));
@@ -120,10 +118,9 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_73o0fl_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_73o0fl_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_73o0fl_a2a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_73o0fl_b2a(editorContext, node));
@@ -133,10 +130,9 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_73o0fl_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_73o0fl_a2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_73o0fl_a0c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_73o0fl_b0c0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_73o0fl_c0c0(editorContext, node));
@@ -146,10 +142,9 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_73o0fl_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_73o0fl_b2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_73o0fl_a1c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_73o0fl_b1c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_73o0fl_c1c0(editorContext, node));
@@ -171,12 +166,11 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_73o0fl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "template fragment");
     editorCell.setCellId("Constant_73o0fl_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -184,10 +178,9 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_73o0fl_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_73o0fl_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -202,10 +195,9 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_73o0fl_b0c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_73o0fl_b0c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -213,10 +205,9 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_73o0fl_a1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "fragment context");
     editorCell.setCellId("Constant_73o0fl_a1c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -224,10 +215,9 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_73o0fl_b1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_73o0fl_b1c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -235,12 +225,11 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_73o0fl_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<TF");
     editorCell.setCellId("Constant_73o0fl_a0_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
-      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
+    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
+    editorCell.getStyle().putAll(style);
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -249,12 +238,11 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_73o0fl_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "TF>");
     editorCell.setCellId("Constant_73o0fl_d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
-      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
+    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
+    editorCell.getStyle().putAll(style);
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -264,11 +252,10 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BRACKETS, true);
-      style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.pink);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BRACKETS, true);
+    style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.pink);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 

@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class CheckDataFlowOperation_Editor extends DefaultNodeEditor {
@@ -17,7 +19,9 @@ public class CheckDataFlowOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_olvqde_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check dataflow");
     editorCell.setCellId("Constant_olvqde_a");
-    BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

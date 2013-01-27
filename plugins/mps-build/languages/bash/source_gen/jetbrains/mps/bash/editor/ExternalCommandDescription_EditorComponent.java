@@ -8,8 +8,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -49,11 +50,10 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
   private EditorCell createConstant_3xyrme_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
     editorCell.setCellId("Constant_3xyrme_a0");
-    BashLanguageStyle_StyleSheet.getExternalCommandDescription(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
+    Style style = new StyleImpl();
+    BashLanguageStyle_StyleSheet.applyExternalCommandDescription(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -66,7 +66,9 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_description");
-    BashLanguageStyle_StyleSheet.getExternalCommandDescription(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BashLanguageStyle_StyleSheet.applyExternalCommandDescription(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

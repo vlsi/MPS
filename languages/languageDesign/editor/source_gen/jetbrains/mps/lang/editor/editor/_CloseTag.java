@@ -12,9 +12,9 @@ import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import java.awt.Color;
 
 public class _CloseTag extends AbstractCellProvider {
@@ -51,22 +51,17 @@ public class _CloseTag extends AbstractCellProvider {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setCellId("ReadOnlyModelAccessor_abi8e8_a");
-    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return _CloseTag._StyleParameter_QueryFunction_abi8e8_a0a((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.EDITABLE, false);
-    }
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyBordered(style, editorCell);
+    style.set(StyleAttributes.BACKGROUND_COLOR, _CloseTag._StyleParameter_QueryFunction_abi8e8_a0a((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    style.set(StyleAttributes.EDITABLE, false);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 

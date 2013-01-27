@@ -20,7 +20,6 @@
     <action id="jetbrains.mps.ide.java.actions.GenerateSetters_Action" class="jetbrains.mps.ide.java.actions.GenerateSetters_Action"></action>
     <action id="jetbrains.mps.ide.java.actions.GenerateToString_Action" class="jetbrains.mps.ide.java.actions.GenerateToString_Action"></action>
     <action id="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action" class="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action"></action>
-    <action id="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action" class="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action"></action>
     <action id="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action" class="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action">
       <keyboard-shortcut first-keystroke="ctrl alt B" keymap="$default" />
     </action>
@@ -79,7 +78,6 @@
       <keyboard-shortcut first-keystroke="ctrl shift SLASH" keymap="$default" />
     </action>
     <group id="jetbrains.mps.ide.java.actions.SolutionActionsEx_ActionGroup">
-      <reference ref="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action" />
     </group>
     <group id="jetbrains.mps.ide.java.actions.RefactoringAdditions_ActionGroup">

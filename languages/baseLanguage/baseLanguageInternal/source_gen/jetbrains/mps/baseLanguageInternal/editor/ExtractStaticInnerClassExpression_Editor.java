@@ -7,12 +7,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.editor.runtime.style.Padding;
+import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -43,10 +44,9 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_azestd_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_azestd_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_azestd_a2a(editorContext, node));
     return editorCell;
   }
@@ -62,10 +62,9 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_azestd_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_azestd_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_azestd_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_azestd_b0a(editorContext, node));
     return editorCell;
@@ -74,10 +73,9 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_azestd_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_azestd_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_azestd_a1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_azestd_b1a(editorContext, node));
     return editorCell;
@@ -86,7 +84,9 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
   private EditorCell createConstant_azestd_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extract");
     editorCell.setCellId("Constant_azestd_a0");
-    StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    StyleSheet_StyleSheet.applyInternalName(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -94,7 +94,9 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
   private EditorCell createConstant_azestd_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_azestd_b0");
-    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -102,11 +104,10 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
   private EditorCell createConstant_azestd_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=>");
     editorCell.setCellId("Constant_azestd_d0");
-    StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_LEFT, new Padding(1, Measure.SPACES));
-    }
+    Style style = new StyleImpl();
+    StyleSheet_StyleSheet.applyInternalName(style, editorCell);
+    style.set(StyleAttributes.PADDING_LEFT, new Padding(1, Measure.SPACES));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -114,7 +115,9 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
   private EditorCell createConstant_azestd_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_azestd_f0");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

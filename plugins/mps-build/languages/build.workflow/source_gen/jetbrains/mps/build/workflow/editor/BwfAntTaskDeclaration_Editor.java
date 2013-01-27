@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 
 public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
@@ -69,7 +71,9 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_fxg4hy_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ant taskdef");
     editorCell.setCellId("Constant_fxg4hy_a0");
-    workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -77,7 +81,9 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_fxg4hy_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class");
     editorCell.setCellId("Constant_fxg4hy_c0");
-    workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -85,7 +91,9 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_fxg4hy_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_fxg4hy_e0");
-    workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

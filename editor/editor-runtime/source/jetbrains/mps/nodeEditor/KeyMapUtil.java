@@ -92,7 +92,7 @@ public class KeyMapUtil {
         keyMapsAndCells.add(new Pair<EditorCellKeyMap, EditorCell>(keymap, keymapOwnerCell));
         addedKeymaps.add(keymap.getClass());
       }
-      keymapOwnerCell = keymapOwnerCell.getParent();
+      keymapOwnerCell = (EditorCell) keymapOwnerCell.getParent();
     }
     SNode node = editorContext.getNodeEditorComponent().getEditedNode();
     if (node != null) {
@@ -232,7 +232,7 @@ public class KeyMapUtil {
       if (actionCell == keymapOwnerCell) {
         return null;
       }
-      actionCell = actionCell.getParent();
+      actionCell = (EditorCell) actionCell.getParent();
     }
     return null;
   }

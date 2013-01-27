@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.editor.runtime.StyledTextPrinter;
+import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 
 public class BaseMethodParameterInformationQueryUtil {
   public BaseMethodParameterInformationQueryUtil() {

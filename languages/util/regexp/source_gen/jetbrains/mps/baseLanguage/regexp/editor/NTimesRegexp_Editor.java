@@ -8,9 +8,10 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -46,7 +47,9 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yzyesl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_yzyesl_a0");
-    RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    RegexpStylesheet_StyleSheet.applyLeftRegexpBrace(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -54,7 +57,9 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yzyesl_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_yzyesl_c0");
-    RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    RegexpStylesheet_StyleSheet.applyRightRegexpBrace(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -62,13 +67,12 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yzyesl_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_yzyesl_d0");
-    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    editorCell.getStyle().putAll(style);
     UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -77,12 +81,11 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yzyesl_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_yzyesl_f0");
-    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }

@@ -12,7 +12,7 @@ import java.awt.Color;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.errors.messageTargets.MessageTargetEnum;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Rectangle;
@@ -26,6 +26,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
@@ -35,7 +36,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -146,14 +147,14 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     // This is a workaround for case when any change message is going to be painted over 
     // "conflicted" red frame. In this case, we repaint conflicted red frame again 
     EditorCell_Collection parent = cell.getParent();
-    if (parent != null && parent.getChildCount() == 1) {
-      EditorMessage messageToRepaint = ListSequence.fromList(((List<EditorMessage>) parent.getMessages())).findFirst(new IWhereFilter<EditorMessage>() {
+    if (parent != null && parent.getCellsCount() == 1) {
+      EditorMessage messageToRepaint = ListSequence.fromList(((List<EditorMessage>) APICellAdapter.getMessages(parent))).findFirst(new IWhereFilter<EditorMessage>() {
         public boolean accept(EditorMessage m) {
           return m instanceof ChangeEditorMessage && ((ChangeEditorMessage) m).isConflicted();
         }
       });
       if (messageToRepaint != null) {
-        messageToRepaint.paint(graphics, cell.getEditor(), parent);
+        messageToRepaint.paint(graphics, cell.getEditor(), (EditorCell) parent);
       }
     }
   }
@@ -165,11 +166,11 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
         EditorCell_Collection collectionCell = (EditorCell_Collection) cell;
 
         if (hasChildrenWithDifferentNode(cell)) {
-          int cellIndex = getChildCellIndex(collectionCell, index);
+          jetbrains.mps.openapi.editor.cells.EditorCell childCell = getChildCell(collectionCell, index);
           if (isVertical(collectionCell)) {
-            drawHorizontalLine(graphics, collectionCell, cellIndex);
+            drawHorizontalLine(graphics, collectionCell, childCell);
           } else {
-            drawVerticalLineWithArrows(graphics, collectionCell, cellIndex);
+            drawVerticalLineWithArrows(graphics, collectionCell, childCell);
           }
         } else {
           cell.paintSelection(graphics, getColor(), false);
@@ -178,25 +179,25 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     }
   }
 
-  private void drawHorizontalLine(Graphics graphics, EditorCell_Collection collectionCell, int cellIndex) {
+  private void drawHorizontalLine(Graphics graphics, EditorCell_Collection collectionCell, jetbrains.mps.openapi.editor.cells.EditorCell childCell) {
     int y;
-    if (-1 < cellIndex && cellIndex < collectionCell.getChildCount()) {
-      y = collectionCell.getChildAt(cellIndex).getY();
+    if (childCell != null) {
+      y = childCell.getY();
     } else {
-      y = collectionCell.getChildAt(collectionCell.getChildCount() - 1).getBottom();
+      y = collectionCell.lastCell().getBottom();
     }
     graphics.setColor(getColor());
     graphics.drawLine(collectionCell.getX(), y, collectionCell.getRight(), y);
   }
 
-  private void drawVerticalLineWithArrows(Graphics graphics, EditorCell_Collection collectionCell, int cellIndex) {
+  private void drawVerticalLineWithArrows(Graphics graphics, EditorCell_Collection collectionCell, jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     int x;
     jetbrains.mps.openapi.editor.cells.EditorCell childCell;
-    if (-1 < cellIndex && cellIndex < collectionCell.getChildCount()) {
-      childCell = collectionCell.getCellAt(cellIndex);
-      x = childCell.getX();
+    if (cell != null) {
+      childCell = cell;
+      x = cell.getX();
     } else {
-      childCell = collectionCell.getCellAt(collectionCell.getChildCount() - 1);
+      childCell = collectionCell.lastCell();
       x = childCell.getRight();
     }
     int y1 = childCell.getY();
@@ -217,11 +218,11 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   }
 
   private Rectangle getFirstPseudoLineBounds(EditorComponent editor) {
-    Iterable<EditorCell> leafCells = new _FunctionTypes._return_P1_E0<Iterable<EditorCell>, EditorCell>() {
-      public Iterable<EditorCell> invoke(final EditorCell cell) {
-        return new Iterable<EditorCell>() {
-          public Iterator<EditorCell> iterator() {
-            return new YieldingIterator<EditorCell>() {
+    Iterable<jetbrains.mps.openapi.editor.cells.EditorCell> leafCells = new _FunctionTypes._return_P1_E0<Iterable<jetbrains.mps.openapi.editor.cells.EditorCell>, jetbrains.mps.openapi.editor.cells.EditorCell>() {
+      public Iterable<jetbrains.mps.openapi.editor.cells.EditorCell> invoke(final jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+        return new Iterable<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+          public Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator() {
+            return new YieldingIterator<jetbrains.mps.openapi.editor.cells.EditorCell>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -289,10 +290,10 @@ __switch__:
                 return false;
               }
 
-              private EditorCell _4_child;
-              private Iterator<EditorCell> _4_child_it;
-              private EditorCell _7__yield_myu41h_a0a0a0a0a0a02;
-              private Iterator<EditorCell> _7__yield_myu41h_a0a0a0a0a0a02_it;
+              private jetbrains.mps.openapi.editor.cells.EditorCell _4_child;
+              private Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> _4_child_it;
+              private jetbrains.mps.openapi.editor.cells.EditorCell _7__yield_myu41h_a0a0a0a0a0a02;
+              private Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> _7__yield_myu41h_a0a0a0a0a0a02_it;
             };
           }
         };
@@ -303,11 +304,11 @@ __switch__:
       return new Rectangle();
     }
     final int firstCellY = Sequence.fromIterable(leafCells).first().getY();
-    return GeometryUtil.getBounds(Sequence.fromIterable(leafCells).where(new IWhereFilter<EditorCell>() {
-      public boolean accept(EditorCell it) {
+    return GeometryUtil.getBounds(Sequence.fromIterable(leafCells).where(new IWhereFilter<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+      public boolean accept(jetbrains.mps.openapi.editor.cells.EditorCell it) {
         return it.getY() == firstCellY;
       }
-    }).toGenericArray(EditorCell.class));
+    }).toGenericArray(jetbrains.mps.openapi.editor.cells.EditorCell.class));
   }
 
   public Bounds getBounds(EditorComponent editor) {
@@ -338,23 +339,22 @@ __switch__:
   }
 
   private Bounds getBoundsForChild(EditorCell_Collection cell, int index) {
-    int cellIndex = getChildCellIndex(cell, index);
-    int lastCellIndex = cell.getChildCount() - 1;
+    jetbrains.mps.openapi.editor.cells.EditorCell childCell = getChildCell(cell, index);
 
     int minY;
     int maxY;
-    if (cellIndex > lastCellIndex) {
-      jetbrains.mps.openapi.editor.cells.EditorCell childCell = cell.getChildAt(lastCellIndex);
+    if (childCell == null) {
+      jetbrains.mps.openapi.editor.cells.EditorCell lastCell = cell.lastCell();
       minY = (isVertical(cell) ?
-        childCell.getBottom() :
-        childCell.getY()
+        lastCell.getBottom() :
+        lastCell.getY()
       );
-      maxY = Math.max(childCell.getBottom(), minY + 1);
+      maxY = Math.max(lastCell.getBottom(), minY + 1);
     } else {
-      minY = cell.getChildAt(cellIndex).getY();
+      minY = childCell.getY();
       maxY = (isVertical(cell) ?
         minY + 1 :
-        cell.getCellAt(cellIndex).getBottom()
+        childCell.getBottom()
       );
     }
     return new Bounds(minY, maxY);
@@ -381,8 +381,8 @@ __switch__:
   private static boolean hasChildrenWithDifferentNode(EditorCell cell) {
     if (cell instanceof EditorCell_Collection) {
       final EditorCell_Collection collectionCell = (EditorCell_Collection) cell;
-      return Sequence.fromIterable(((Iterable<EditorCell>) collectionCell)).any(new IWhereFilter<EditorCell>() {
-        public boolean accept(EditorCell child) {
+      return Sequence.fromIterable(((Iterable<jetbrains.mps.openapi.editor.cells.EditorCell>) collectionCell)).any(new IWhereFilter<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+        public boolean accept(jetbrains.mps.openapi.editor.cells.EditorCell child) {
           return child.getSNode() != collectionCell.getSNode();
         }
       });
@@ -391,28 +391,29 @@ __switch__:
     }
   }
 
-  private static boolean isVertical(EditorCell cell) {
+  private static boolean isVertical(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     return cell instanceof EditorCell_Collection && (((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Vertical || cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE));
   }
 
-  private static int getChildCellIndex(@NotNull EditorCell_Collection collectionCell, int nodeIndex) {
+  private static jetbrains.mps.openapi.editor.cells.EditorCell getChildCell(@NotNull EditorCell_Collection collectionCell, int nodeIndex) {
     if (nodeIndex == -1) {
-      return -1;
+      return null;
     }
     int currentNodeIndex = -1;
-    for (int i = 0; i < collectionCell.getChildCount(); i++) {
-      if (collectionCell.getChildAt(i).getSNode() != collectionCell.getSNode()) {
+    for (jetbrains.mps.openapi.editor.cells.EditorCell childCell : collectionCell) {
+      if (childCell.getSNode() != collectionCell.getSNode()) {
         currentNodeIndex++;
       }
       if (currentNodeIndex == nodeIndex) {
-        return i;
+        return childCell;
       }
     }
+
     if (currentNodeIndex == nodeIndex - 1) {
-      return collectionCell.getChildCount();
+      return null;
     }
-    LOG.warning("Could not find child cell index for deleted child: currentNodeIndex=" + currentNodeIndex + ", total cells=" + collectionCell.getChildCount() + ", requested nodeIndex=" + nodeIndex);
-    return -1;
+    LOG.warning("Could not find child cell index for deleted child: currentNodeIndex=" + currentNodeIndex + ", total cells=" + collectionCell.getCellsCount() + ", requested nodeIndex=" + nodeIndex);
+    return null;
   }
 
   public static interface ConflictChecker {

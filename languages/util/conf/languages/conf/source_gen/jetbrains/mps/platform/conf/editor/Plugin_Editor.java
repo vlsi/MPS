@@ -15,8 +15,9 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -138,10 +139,9 @@ public class Plugin_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o3c6bg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_o3c6bg_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_o3c6bg_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o3c6bg_b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o3c6bg_c1a(editorContext, node));
@@ -161,10 +161,9 @@ public class Plugin_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o3c6bg_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_o3c6bg_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_o3c6bg_a2a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_o3c6bg_b2a(editorContext, node));
     return editorCell;
@@ -173,10 +172,9 @@ public class Plugin_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o3c6bg_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_o3c6bg_b2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_o3c6bg_a1c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_o3c6bg_b1c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_o3c6bg_c1c0(editorContext, node));
@@ -264,10 +262,9 @@ public class Plugin_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new Plugin_Editor.detailsListHandler_o3c6bg_d1c0(node, "details", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_details");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -276,10 +273,9 @@ public class Plugin_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new Plugin_Editor.dependsListHandler_o3c6bg_e1c0(node, "depends", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_depends");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

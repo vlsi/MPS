@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 
 public class LabelPosition_Editor extends DefaultNodeEditor {
@@ -64,7 +66,9 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_xi88on_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after");
     editorCell.setCellId("Constant_xi88on_a0");
-    DataFlow_StyleSheet.getPosition(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    DataFlow_StyleSheet.applyPosition(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

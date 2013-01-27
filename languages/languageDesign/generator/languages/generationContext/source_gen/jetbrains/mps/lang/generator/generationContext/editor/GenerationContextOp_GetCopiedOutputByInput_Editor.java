@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -32,7 +34,9 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
   private EditorCell createConstant_h58zhi_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get copied output for");
     editorCell.setCellId("Constant_h58zhi_a0");
-    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyGenContext_operation(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -40,7 +44,9 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
   private EditorCell createConstant_h58zhi_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_h58zhi_b0");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -48,7 +54,9 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
   private EditorCell createConstant_h58zhi_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_h58zhi_d0");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

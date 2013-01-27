@@ -20,9 +20,10 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -109,8 +110,10 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
-      editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
-      editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      editorCell.getStyle().putAll(style);
       return editorCell;
     }
   }
@@ -118,10 +121,9 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_drsbu8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_drsbu8_a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PARAMETERS_INFORMATION, new CreateRefcontextHint());
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, new CreateRefcontextHint());
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_drsbu8_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_drsbu8_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_drsbu8_c0(editorContext, node));
@@ -139,14 +141,18 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_drsbu8_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
   private EditorCell createConstant_drsbu8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_drsbu8_b0");
-    Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Collections_Style_StyleSheet.applyLeftAngleBracket(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -154,7 +160,9 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_drsbu8_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_drsbu8_d0");
-    Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Collections_Style_StyleSheet.applyRightAngleBracket(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -162,7 +170,9 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_drsbu8_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_drsbu8_e0");
-    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -177,10 +187,9 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_drsbu8_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_drsbu8_i0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -188,7 +197,9 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_drsbu8_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_drsbu8_k0");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -225,7 +236,9 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    BaseLanguageStyle_StyleSheet.getParameter(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyParameter(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -243,7 +256,9 @@ public class CreateRefactoringContext_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no project>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    BaseLanguageStyle_StyleSheet.getParameter(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyParameter(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

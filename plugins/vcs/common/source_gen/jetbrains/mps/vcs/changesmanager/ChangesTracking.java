@@ -327,7 +327,7 @@ public class ChangesTracking {
   private static Iterable<SNodeId> getNodeIdsForNodeGroupChange(@NotNull NodeGroupChange ngc, @Nullable Tuples._2<SNodeId, List<SNodeId>> lastParentAndNewChildrenIds) {
     List<SNodeId> childrenIds;
     if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a72(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
-      List<? extends SNode> children = IterableUtil.asList(ngc.getChangeSet().getNewModel().getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole()));
+      List<? extends SNode> children = IterableUtil.asList(ngc.getChangeSet().getNewModel().getNode(ngc.getParentNodeId()).getChildren(ngc.getRole()));
       childrenIds = ListSequence.fromList(children).select(new ISelector<SNode, SNodeId>() {
         public SNodeId select(SNode n) {
           return n.getNodeId();

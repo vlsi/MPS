@@ -213,8 +213,6 @@ public class ClassifierResolveUtils {
     });
   }
 
-
-
   public static SNode resolve(@NotNull String refText, @NotNull SNode contextNode, IScope moduleScope) {
     // The algororithm: 
     // - split refText into tokens A.B.C (separated by dot) 
@@ -227,7 +225,11 @@ public class ClassifierResolveUtils {
     //   if yes, use it 
     //   if no, only then traverse all appropriate models 
 
-    org.jetbrains.mps.openapi.model.SModel contextNodeModel = contextNode.getModel().getModelDescriptor();
+    SModel oldModel = contextNode.getModel();
+    org.jetbrains.mps.openapi.model.SModel contextNodeModel = (oldModel == null ?
+      null :
+      oldModel.getModelDescriptor()
+    );
 
     StringTokenizer tokenizer = new StringTokenizer(refText, ".");
     if (!(tokenizer.hasMoreTokens())) {
@@ -351,7 +353,7 @@ public class ClassifierResolveUtils {
     // try to resolve as fq name in current model 
     Iterable<SNode> result;
 
-    result = resolveClassifierByFqName(check_8z6r2b_a0a05a31(SNodeOperations.getModel(contextNode)), refText);
+    result = resolveClassifierByFqName(check_8z6r2b_a0a15a21(SNodeOperations.getModel(contextNode)), refText);
     if (Sequence.fromIterable(result).isNotEmpty()) {
       return ((int) Sequence.fromIterable(result).count() == 1 ?
         Sequence.fromIterable(result).first() :
@@ -360,7 +362,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current scope 
-    Iterable<IModule> visibleModules = check_8z6r2b_a0a45a31(check_8z6r2b_a0a0cc0n(check_8z6r2b_a0a0a45a31(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    Iterable<IModule> visibleModules = check_8z6r2b_a0a55a21(check_8z6r2b_a0a0dc0m(check_8z6r2b_a0a0a55a21(SNodeOperations.getModel(contextNode)))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModelDescriptor>() {
       public Iterable<SModelDescriptor> translate(IModule it) {
         return it.getOwnModelDescriptors();
@@ -578,28 +580,28 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a05a31(SModel checkedDotOperand) {
+  private static SModelDescriptor check_8z6r2b_a0a15a21(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static IScope check_8z6r2b_a0a45a31(IModule checkedDotOperand) {
+  private static IScope check_8z6r2b_a0a55a21(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a0cc0n(SModelDescriptor checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a0dc0m(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a0a45a31(SModel checkedDotOperand) {
+  private static SModelDescriptor check_8z6r2b_a0a0a55a21(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

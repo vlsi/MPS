@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -64,7 +64,7 @@ public class ChildrenCollectionFinder {
             if (isMultipleCollectionCell(curr)) {
               return curr;
             }
-            curr = curr.getParent();
+            curr = (EditorCell) curr.getParent();
           }
           if (curr != null && curr.getSNode() == anchorNode && isMultipleCollectionCell(curr)) {
             return curr;

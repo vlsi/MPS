@@ -13,6 +13,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   }
 
   public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertToFQNameSpecification_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ConvertToClassifierFQNameSpecification_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new ConvertToMethodFQNameSpecification_Intention());
   }
 }

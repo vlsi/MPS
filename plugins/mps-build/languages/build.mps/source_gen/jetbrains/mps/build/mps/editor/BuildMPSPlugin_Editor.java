@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet;
 
 public class BuildMPSPlugin_Editor extends DefaultNodeEditor {
@@ -25,7 +27,9 @@ public class BuildMPSPlugin_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_q8whwb_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mps");
     editorCell.setCellId("Constant_q8whwb_a0");
-    buildStyles_StyleSheet.getPlugin(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    buildStyles_StyleSheet.applyPlugin(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

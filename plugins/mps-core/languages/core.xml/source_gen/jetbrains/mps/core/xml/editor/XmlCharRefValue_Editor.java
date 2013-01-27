@@ -8,13 +8,13 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlCharRefValue_Editor extends DefaultNodeEditor {
@@ -22,88 +22,48 @@ public class XmlCharRefValue_Editor extends DefaultNodeEditor {
     return this.createCollection_urzn0w_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_urzn0w_a0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = XmlCharRefValue_Editor.renderingCondition_urzn0w_a0a(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_urzn0w_a0a(editorContext, node);
-    } else {
-      editorCell = this.createConstant_urzn0w_a0a_0(editorContext, node);
-    }
-    return editorCell;
-  }
-
-  private EditorCell createAlternation_urzn0w_c0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = XmlCharRefValue_Editor.renderingCondition_urzn0w_a2a(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_urzn0w_a2a(editorContext, node);
-    } else {
-      editorCell = this.createConstant_urzn0w_a2a_0(editorContext, node);
-    }
-    return editorCell;
-  }
-
   private EditorCell createCollection_urzn0w_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_urzn0w_a");
-    editorCell.addEditorCell(this.createAlternation_urzn0w_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_urzn0w_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_urzn0w_b0(editorContext, node));
-    editorCell.addEditorCell(this.createAlternation_urzn0w_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_urzn0w_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_urzn0w_a0a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_urzn0w_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&#");
-    editorCell.setCellId("Constant_urzn0w_a0a");
-    XmlSS_StyleSheet.getXmlAttrCharRefValue(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
+    editorCell.setCellId("Constant_urzn0w_a0");
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlAttrCharRefValue(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, XmlCharRefValue_Editor._StyleParameter_QueryFunction_urzn0w_a1a0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_urzn0w_a0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&#");
-    editorCell.setCellId("Constant_urzn0w_a0a_0");
-    XmlSS_StyleSheet.getXmlAttrCharRefValue(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_urzn0w_a2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_urzn0w_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_urzn0w_a2a");
-    XmlSS_StyleSheet.getXmlAttrCharRefValue(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_urzn0w_a2a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_urzn0w_a2a_0");
-    XmlSS_StyleSheet.getXmlAttrCharRefValue(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
+    editorCell.setCellId("Constant_urzn0w_c0");
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlAttrCharRefValue(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlCharRefValue_Editor._StyleParameter_QueryFunction_urzn0w_a1c0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -116,7 +76,9 @@ public class XmlCharRefValue_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_charCode");
-    XmlSS_StyleSheet.getXmlAttrCharRefValue(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlAttrCharRefValue(style, editorCell);
+    editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -129,13 +91,11 @@ public class XmlCharRefValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_urzn0w_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    // see MPS-15260 
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_3080189811177340436", new Object[]{});
+  private static boolean _StyleParameter_QueryFunction_urzn0w_a1a0(SNode node, EditorContext editorContext) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_3080189811177340436", new Object[]{}));
   }
 
-  private static boolean renderingCondition_urzn0w_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    // see MPS-15260 
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_3080189811177340441", new Object[]{});
+  private static boolean _StyleParameter_QueryFunction_urzn0w_a1c0(SNode node, EditorContext editorContext) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_3080189811177340441", new Object[]{}));
   }
 }

@@ -14,8 +14,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
@@ -112,12 +113,11 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_kqvvq_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<!");
     editorCell.setCellId("Constant_kqvvq_a0a");
-    XmlSS_StyleSheet.getXmlTagPunctuation(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.MATCHING_LABEL, "openTag");
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlTagPunctuation(style, editorCell);
+    style.set(StyleAttributes.MATCHING_LABEL, "openTag");
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -125,13 +125,12 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_kqvvq_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<!");
     editorCell.setCellId("Constant_kqvvq_a0a_0");
-    XmlSS_StyleSheet.getXmlTagPunctuation(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.MATCHING_LABEL, "openTag");
-    }
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlTagPunctuation(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.MATCHING_LABEL, "openTag");
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -139,7 +138,9 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_kqvvq_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "DOCTYPE");
     editorCell.setCellId("Constant_kqvvq_a1a");
-    XmlSS_StyleSheet.getXmlTagName(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlTagName(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -147,12 +148,11 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_kqvvq_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_kqvvq_a2a");
-    XmlSS_StyleSheet.getXmlTagPunctuation(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.MATCHING_LABEL, "openTag");
-    }
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlTagPunctuation(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.MATCHING_LABEL, "openTag");
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -160,13 +160,12 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_kqvvq_a2a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_kqvvq_a2a_0");
-    XmlSS_StyleSheet.getXmlTagPunctuation(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.MATCHING_LABEL, "openTag");
-    }
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlTagPunctuation(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.MATCHING_LABEL, "openTag");
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -195,7 +194,9 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_doctypeName");
-    XmlSS_StyleSheet.getXmlAttributeValue(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlAttributeValue(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

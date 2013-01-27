@@ -84,6 +84,8 @@ public class ASTConverter {
 
   protected ASTConverter(ASTConverter base) {
     myOnlyStubs = base.myOnlyStubs;
+    // FIXME do it more carefully (State?) 
+    myJavadocs = base.myJavadocs;
   }
 
   public SNode convertRoot(ASTNode node) throws JavaParseException {
@@ -181,10 +183,10 @@ public class ASTConverter {
       SNode claz = cls;
       if (SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         // we're either class or enum 
-        SLinkOperations.setTarget(claz, "superclass", SNodeOperations.cast(convertTypeReference(x.superclass), "jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+        SLinkOperations.setTarget(claz, "superclass", SNodeOperations.cast(childConverter.convertTypeReference(x.superclass), "jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
         if (x.superInterfaces != null) {
           for (TypeReference i : x.superInterfaces) {
-            ListSequence.fromList(SLinkOperations.getTargets(claz, "implementedInterface", true)).addElement(SNodeOperations.cast(convertTypeReference(i), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+            ListSequence.fromList(SLinkOperations.getTargets(claz, "implementedInterface", true)).addElement(SNodeOperations.cast(childConverter.convertTypeReference(i), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
           }
         }
         SPropertyOperations.set(claz, "abstractClass", "" + (flagSet(x.modifiers, ClassFileConstants.AccAbstract)));
@@ -198,7 +200,7 @@ public class ASTConverter {
         // <node> 
         if (x.superInterfaces != null) {
           for (TypeReference i : x.superInterfaces) {
-            ListSequence.fromList(SLinkOperations.getTargets(iface, "extendedInterface", true)).addElement(SNodeOperations.cast(convertTypeReference(i), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+            ListSequence.fromList(SLinkOperations.getTargets(iface, "extendedInterface", true)).addElement(SNodeOperations.cast(childConverter.convertTypeReference(i), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
           }
         }
       }
@@ -308,6 +310,9 @@ public class ASTConverter {
 
       SPropertyOperations.set(fDecl, "name", new String(f.name));
       SLinkOperations.setTarget(fDecl, "type", convertTypeReference(f.type), true);
+      if (!(myOnlyStubs) && f.initialization != null) {
+        SLinkOperations.setTarget(fDecl, "initializer", convertExpression(f.initialization), true);
+      }
 
       SLinkOperations.setTarget(SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", convertVisibility(f.modifiers), true);
       SPropertyOperations.set(fDecl, "isFinal", "" + (flagSet(f.modifiers, ClassFileConstants.AccFinal)));

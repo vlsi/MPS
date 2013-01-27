@@ -16,8 +16,9 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -106,11 +107,10 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      }
+      Style style = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.applyMethodName(style, editorCell);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -126,10 +126,9 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_a4wjjz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a4wjjz_a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefCell_a4wjjz_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_a4wjjz_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_a4wjjz_c0(editorContext, node));
@@ -140,11 +139,10 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_a4wjjz_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a4wjjz_d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefCell_a4wjjz_a3a(editorContext, node));
     editorCell.addEditorCell(this.createComponent_a4wjjz_b3a(editorContext, node));
     return editorCell;
@@ -153,31 +151,28 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_a4wjjz_c0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new IMethodCall_typeArguments(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
   private EditorCell createComponent_a4wjjz_b3a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new IMethodCall_actualArguments(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
   private EditorCell createConstant_a4wjjz_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_a4wjjz_b0");
-    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
-    }
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyDot(style, editorCell);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -208,10 +203,9 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline_a4wjjz_a0d0());
     editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticMethodCall_Editor.StaticMethodCall_customReplace_cellMenu_a0a3a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

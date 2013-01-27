@@ -7,8 +7,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -57,11 +58,10 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b0d5i6_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_b0d5i6_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_b0d5i6_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_b0d5i6_b1a(editorContext, node));
     return editorCell;
@@ -78,10 +78,9 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b0d5i6_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_b0d5i6_a0_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_b0d5i6_a0a_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_b0d5i6_b0a(editorContext, node));
     return editorCell;
@@ -90,10 +89,9 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b0d5i6_b0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_b0d5i6_b0_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_b0d5i6_a1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_b0d5i6_b1a(editorContext, node));
     return editorCell;
@@ -102,7 +100,9 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_b0d5i6_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root");
     editorCell.setCellId("Constant_b0d5i6_a0a");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -110,7 +110,9 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_b0d5i6_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abstract");
     editorCell.setCellId("Constant_b0d5i6_b0a");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -118,7 +120,9 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_b0d5i6_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
     editorCell.setCellId("Constant_b0d5i6_c0a");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -126,7 +130,9 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_b0d5i6_e0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_b0d5i6_e0a");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -134,10 +140,9 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_b0d5i6_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_b0d5i6_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -145,7 +150,9 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_b0d5i6_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root");
     editorCell.setCellId("Constant_b0d5i6_a0a_0");
-    MPSLite_Style_StyleSheet.getMPSLiteOption(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    MPSLite_Style_StyleSheet.applyMPSLiteOption(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -153,7 +160,9 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_b0d5i6_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abstract");
     editorCell.setCellId("Constant_b0d5i6_a1a");
-    MPSLite_Style_StyleSheet.getMPSLiteOption(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    MPSLite_Style_StyleSheet.applyMPSLiteOption(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

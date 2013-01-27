@@ -7,9 +7,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -23,7 +24,9 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_h2teu2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_h2teu2_a");
-    Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_h2teu2_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_h2teu2_b0(editorContext, node));
     return editorCell;
@@ -32,11 +35,10 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_h2teu2_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_h2teu2_a0");
-    Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, true);
-    }
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyBordered(style, editorCell);
+    style.set(StyleAttributes.SELECTABLE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -21,11 +21,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
+import jetbrains.mps.openapi.editor.cells.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.logging.Logger;
 
@@ -86,16 +86,16 @@ public class DeleteLine_Action extends BaseAction {
           if (nextCollection.getCellLayout() instanceof CellLayout_Vertical) {
             return;
           }
-          for (EditorCell childCell : Sequence.fromIterable(nextCollection)) {
+          for (jetbrains.mps.openapi.editor.cells.EditorCell childCell : Sequence.fromIterable(nextCollection)) {
             if (childCell instanceof EditorCell_Collection) {
               QueueSequence.fromQueue(collections).addLastElement((EditorCell_Collection) childCell);
             }
           }
         }
       }
-      EditorCell current = ((EditorCell) MapSequence.fromMap(_params).get("currentCell"));
+      jetbrains.mps.openapi.editor.cells.EditorCell current = ((EditorCell) MapSequence.fromMap(_params).get("currentCell"));
       List<SNode> nodesToDelete = new ArrayList<SNode>();
-      EditorCell cellToSelect = null;
+      jetbrains.mps.openapi.editor.cells.EditorCell cellToSelect = null;
       while (true) {
         if (current.getParent() == null) {
           break;
@@ -104,25 +104,28 @@ public class DeleteLine_Action extends BaseAction {
         if (layout instanceof CellLayout_Indent) {
           SNode currentNode = current.getSNode();
           if (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.Statement") || (SNodeOperations.getAncestor(currentNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false) == null)) {
-            EditorCell root = current.getRootParent();
-            EditorCell[] siblings = current.getParent().getCells();
-            for (int i = Arrays.asList(siblings).indexOf(current); i <= siblings.length - 1; i++) {
-              EditorCell sibling = siblings[i];
-              ListSequence.fromList(nodesToDelete).addElement(sibling.getSNode());
-              if (CellLayout_Indent.isNewLineAfter(root, sibling)) {
-                cellToSelect = sibling.getNextLeaf(CellConditions.SELECTABLE);
-                break;
+            jetbrains.mps.openapi.editor.cells.EditorCell root = current.getRootParent();
+            boolean currentCellPassed = false;
+            for (jetbrains.mps.openapi.editor.cells.EditorCell sibling : current.getParent()) {
+              if (currentCellPassed) {
+                ListSequence.fromList(nodesToDelete).addElement(sibling.getSNode());
+                if (CellLayout_Indent.isNewLineAfter(root, sibling)) {
+                  cellToSelect = APICellAdapter.getNextLeaf(sibling, CellConditions.SELECTABLE);
+                  break;
+                }
+              } else if (sibling == current) {
+                currentCellPassed = true;
               }
             }
             if (cellToSelect == null) {
-              cellToSelect = current.getNextLeaf(CellConditions.SELECTABLE);
+              cellToSelect = APICellAdapter.getNextLeaf(current, CellConditions.SELECTABLE);
             }
             break;
           }
         } else if (layout instanceof CellLayout_Vertical) {
-          if (current.isBigCell()) {
+          if (APICellAdapter.isBigCell(current)) {
             ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
-            cellToSelect = current.getNextLeaf(CellConditions.SELECTABLE);
+            cellToSelect = APICellAdapter.getNextLeaf(current, CellConditions.SELECTABLE);
             break;
           }
         }

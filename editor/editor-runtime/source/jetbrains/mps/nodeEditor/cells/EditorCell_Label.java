@@ -18,21 +18,23 @@ package jetbrains.mps.nodeEditor.cells;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.util.LocalTimeCounter;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.editor.runtime.style.Padding;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.CellSide;
+import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
 import jetbrains.mps.nodeEditor.selection.MultipleSelection;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
@@ -40,8 +42,12 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.lang.ref.WeakReference;
@@ -87,14 +93,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   public boolean isLastPositionInBigCell() {
     return getContainingBigCell().getLastLeaf() == this && isLastCaretPosition() && !getTextLine().hasNonTrivialSelection();
-  }
-
-  public CaretPosition getDefaultCaretPosition() {
-    return getStyle().get(StyleAttributes.DEFAULT_CARET_POSITON);
-  }
-
-  public void setDefaultCaretPosition(CaretPosition defaultCaretPosition) {
-    getStyle().set(StyleAttributes.DEFAULT_CARET_POSITON, defaultCaretPosition);
   }
 
   public boolean canPasteText() {
@@ -150,14 +148,14 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public boolean isFirstPositionAllowed() {
-    if (getStyle().getCurrent(StyleAttributes.FIRST_POSITION_ALLOWED) != null) {
+    if (getStyle().isSpecified(StyleAttributes.FIRST_POSITION_ALLOWED)) {
       return getStyle().get(StyleAttributes.FIRST_POSITION_ALLOWED);
     }
     return !getStyle().get(StyleAttributes.PUNCTUATION_LEFT);
   }
 
   public boolean isLastPositionAllowed() {
-    if (getStyle().getCurrent(StyleAttributes.LAST_POSITION_ALLOWED) != null) {
+    if (getStyle().isSpecified(StyleAttributes.LAST_POSITION_ALLOWED)) {
       return getStyle().get(StyleAttributes.LAST_POSITION_ALLOWED);
     }
     return !getStyle().get(StyleAttributes.PUNCTUATION_RIGHT);

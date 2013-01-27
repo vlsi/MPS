@@ -8,16 +8,15 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -26,6 +25,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CreateEquationStatement_Editor extends DefaultNodeEditor {
@@ -71,10 +71,9 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mi4qyq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mi4qyq_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_mi4qyq_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mi4qyq_b0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_mi4qyq_c0a(editorContext, node));
@@ -87,10 +86,9 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mi4qyq_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mi4qyq_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_mi4qyq_a1a(editorContext, node));
     editorCell.addEditorCell(this.createComponent_mi4qyq_b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_mi4qyq_c1a(editorContext, node));
@@ -125,31 +123,25 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_mi4qyq_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AbstractEquationInspector(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
   private EditorCell createConstant_mi4qyq_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
     editorCell.setCellId("Constant_mi4qyq_a0a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0a0a((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0a0a((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -157,22 +149,17 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_mi4qyq_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_mi4qyq_b0a");
-    BaseLanguageStyle_StyleSheet.getParenthesis(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0b0a((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyParenthesis(style, editorCell);
+    style.set(StyleAttributes.TEXT_COLOR, CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0b0a((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -180,22 +167,17 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_mi4qyq_f0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_mi4qyq_f0a");
-    BaseLanguageStyle_StyleSheet.getParenthesis(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0f0a((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyParenthesis(style, editorCell);
+    style.set(StyleAttributes.TEXT_COLOR, CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0f0a((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -203,7 +185,9 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_mi4qyq_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_mi4qyq_c0");
-    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applySemicolon(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -211,11 +195,10 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_mi4qyq_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_mi4qyq_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -223,10 +206,9 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_mi4qyq_c0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "advanced:");
     editorCell.setCellId("Constant_mi4qyq_c0_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -313,10 +295,9 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_direction");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

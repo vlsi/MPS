@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.nodeEditor.cellLayout;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.TableComponent;
-import jetbrains.mps.nodeEditor.style.DefaultBaseLine;
+import jetbrains.mps.editor.runtime.style.DefaultBaseLine;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.TableComponent;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 /**
  * Sergey.Sinchuk, Oct 30, 2009
@@ -46,12 +47,12 @@ public class CellLayout_Table extends AbstractCellLayout {
   private EditorCell_Collection findCollection(EditorCell cell, TableComponent tc) {
     if (cell instanceof EditorCell_Collection) {
       EditorCell_Collection col = (EditorCell_Collection) cell;
-      CellLayout l = col.getCellLayout();
+      jetbrains.mps.openapi.editor.cells.CellLayout l = col.getCellLayout();
       if (l instanceof CellLayout_Table) {
         TableComponent comp = col.getStyle().get(StyleAttributes.TABLE_COMPONENT);
         if (comp == tc) return col;
       }
-      for (EditorCell c : col.getCells()) {
+      for (EditorCell c : col) {
         EditorCell_Collection result = findCollection(c, tc);
         if (result != null) return result;
       }
@@ -225,13 +226,13 @@ public class CellLayout_Table extends AbstractCellLayout {
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {
-      result = result.appendToTheBottom(editorCell.renderText());
+      result = result.appendToTheBottom(APICellAdapter.renderText(editorCell));
     }
     return result;
   }
 
   public int getAscent(EditorCell_Collection editorCells) {
-    for (EditorCell cell : editorCells.getCells()) {
+    for (EditorCell cell : editorCells) {
       if (cell.getStyle().get(StyleAttributes.BASE_LINE_CELL)) {
         return cell.getY() - editorCells.getY() + cell.getAscent();
       }
@@ -240,7 +241,7 @@ public class CellLayout_Table extends AbstractCellLayout {
     DefaultBaseLine bL = editorCells.getStyle().get(StyleAttributes.DEFAULT_BASE_LINE);
 
     int result = 0;
-    for (EditorCell cell : editorCells.getCells()) {
+    for (EditorCell cell : editorCells) {
       result = cell.getAscent();
       if (result > 0) {
         break;

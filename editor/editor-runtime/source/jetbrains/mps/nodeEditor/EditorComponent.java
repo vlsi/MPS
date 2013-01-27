@@ -44,6 +44,7 @@ import com.intellij.ui.components.JBScrollBar;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -68,6 +69,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_SideTransform;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
@@ -90,7 +92,6 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -120,6 +121,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
@@ -132,6 +134,9 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -599,7 +604,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (rootCell instanceof EditorCell_Collection) {
             EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
             EditorCell toSelect;
-            if (focusPolicyCell == null || (focusPolicyCell == rootCell && !focusPolicyCell.hasFocusPolicy())) {
+            if (focusPolicyCell == null || (focusPolicyCell == rootCell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
               toSelect = rootCell.findChild(CellFinders.or(CellFinders.FIRST_EDITABLE, CellFinders.FIRST_SELECTABLE_LEAF));
             } else {
               toSelect = focusPolicyCell;
@@ -775,8 +780,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return;
     }
     new CellNavigator(this) {
-      boolean isSuitableCell(EditorCell cell) {
-        if (cell.hasErrorMessages()) {
+      boolean isSuitableCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+        if (APICellAdapter.hasErrorMessages(cell)) {
           return true;
         }
         return false;
@@ -790,7 +795,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return;
     }
     new CellNavigator(this) {
-      boolean isSuitableCell(EditorCell cell) {
+      boolean isSuitableCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
         for (EditorMessage m : getHighlightManager().getMessagesFor(cell.getSNode())) {
           if (m.getOwner() == getHighlightMessagesOwner()) {
             return true;
@@ -821,7 +826,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return null;
         }
 
-        EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
+        jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
         if (cell == null) {
           return null;
         }
@@ -838,7 +843,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return null;
         }
 
-        EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
+        jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
         if (cell == null) {
           return null;
         }
@@ -858,7 +863,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (getOperationContext() == null || getOperationContext().getProject() == null) return;
         if (isProjectDisposed()) return;
 
-        EditorCell selection = getSelectedCell();
+        jetbrains.mps.openapi.editor.cells.EditorCell selection = getSelectedCell();
         String info = "";
         if (selection != null) {
           List<HighlighterMessage> messages = getHighlighterMessagesFor(selection);
@@ -897,7 +902,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return null;
   }
 
-  private String getMessagesTextFor(EditorCell cell) {
+  private String getMessagesTextFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     List<HighlighterMessage> messages = getHighlighterMessagesFor(cell);
     if (messages.isEmpty()) {
       return null;
@@ -912,13 +917,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return result.toString();
   }
 
-  private List<HighlighterMessage> getHighlighterMessagesFor(EditorCell cell) {
-    EditorCell parent = cell;
+  private List<HighlighterMessage> getHighlighterMessagesFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    jetbrains.mps.openapi.editor.cells.EditorCell parent = cell;
     while (parent != null) {
       if (cell.getBottom() < parent.getBottom() && parent.getSNode() != cell.getSNode()) {
         return Collections.emptyList();
       }
-      List<HighlighterMessage> messages = parent.getMessages(HighlighterMessage.class);
+      List<HighlighterMessage> messages = APICellAdapter.getMessages(parent, HighlighterMessage.class);
       if (!messages.isEmpty()) {
         return messages;
       }
@@ -929,19 +934,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   // TODO: remove this method and use getHighlighterMessagesFor(EditorCell cell) instead
-  private HighlighterMessage getHighlighterMessageFor(EditorCell cell) {
+  private HighlighterMessage getHighlighterMessageFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     List<HighlighterMessage> highlighterMessages = getHighlighterMessagesFor(cell);
     return highlighterMessages.isEmpty() ? null : highlighterMessages.get(0);
   }
 
-  public IErrorReporter getErrorReporterFor(EditorCell cell) {
+  public IErrorReporter getErrorReporterFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     HighlighterMessage message = getHighlighterMessageFor(cell);
     if (message == null) return null;
     return message.getErrorReporter();
   }
 
   public void showMessageTooltip() {
-    EditorCell cell = getSelectedCell();
+    jetbrains.mps.openapi.editor.cells.EditorCell cell = getSelectedCell();
     if (cell == null) {
       return;
     }
@@ -1136,14 +1141,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myOperationContext = operationContext;
   }
 
-  private EditorCell_Component findCellForComponent(Component component, EditorCell root) {
+  private EditorCell_Component findCellForComponent(Component component, jetbrains.mps.openapi.editor.cells.EditorCell root) {
     if (root instanceof EditorCell_Component && ((EditorCell_Component) root).getComponent() == component) {
       return (EditorCell_Component) root;
     }
 
     if (root instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) root;
-      for (EditorCell cell : collection) {
+      for (jetbrains.mps.openapi.editor.cells.EditorCell cell : collection) {
         EditorCell_Component result = findCellForComponent(component, cell);
         if (result != null) return result;
       }
@@ -1710,18 +1715,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public EditorCell findNodeCellWithRole(SNode node, String role) {
     EditorCell rootCell = findNodeCell(node);
     if (rootCell == null) return null;
-    return findNodeCellWithRole(rootCell, role, node);
+    return (EditorCell) findNodeCellWithRole(rootCell, role, node);
   }
 
-  private EditorCell findNodeCellWithRole(EditorCell rootCell, String role, SNode node) {
+  private jetbrains.mps.openapi.editor.cells.EditorCell findNodeCellWithRole(jetbrains.mps.openapi.editor.cells.EditorCell rootCell, String role, SNode node) {
     if (role == null) return null;
-    if (role.equals(rootCell.getCellRole()) && node == rootCell.getSNode()) {
+    if (role.equals(APICellAdapter.getCellRole(rootCell)) && node == rootCell.getSNode()) {
       return rootCell;
     }
     if (rootCell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) rootCell;
-      for (EditorCell child : collection) {
-        EditorCell result = findNodeCellWithRole(child, role, node);
+      for (jetbrains.mps.openapi.editor.cells.EditorCell child : collection) {
+        jetbrains.mps.openapi.editor.cells.EditorCell result = findNodeCellWithRole(child, role, node);
         if (result != null) return result;
       }
     }
@@ -1735,10 +1740,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return null;
     }
 
-    return findCellWithIdWithingBigCell(bigCell, id, node);
+    return (EditorCell) findCellWithIdWithingBigCell(bigCell, id, node);
   }
 
-  private EditorCell findCellWithIdWithingBigCell(EditorCell root, String id, SNode node) {
+  private jetbrains.mps.openapi.editor.cells.EditorCell findCellWithIdWithingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell root, String id, SNode node) {
     if (id == null) {
       return null;
     }
@@ -1747,11 +1752,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return root;
     }
 
-    if (root instanceof EditorCell_Collection) {
-      for (EditorCell child : ((EditorCell_Collection) root)) {
+    if (root instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
+      for (jetbrains.mps.openapi.editor.cells.EditorCell child : ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) root)) {
         SNode childNode = child.getSNode();
         if (childNode == node || (childNode != null && AttributeOperations.isAttribute(childNode) && childNode.getParent() == node)) {
-          EditorCell result = findCellWithIdWithingBigCell(child, id, node);
+          jetbrains.mps.openapi.editor.cells.EditorCell result = findCellWithIdWithingBigCell(child, id, node);
           if (result != null) {
             return result;
           }
@@ -1850,8 +1855,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  public EditorCell findCellWeak(int x, int y) {
-    EditorCell cell = myRootCell.findLeaf(x, y);
+  public jetbrains.mps.openapi.editor.cells.EditorCell findCellWeak(int x, int y) {
+    jetbrains.mps.openapi.editor.cells.EditorCell cell = myRootCell.findLeaf(x, y);
     if (cell == null) {
       cell = myRootCell.findCellWeak(x, y);
     }
@@ -1890,7 +1895,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void showCellError() {
-    final EditorCell selectedCell = getSelectedCell();
+    final jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
     if (selectedCell != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -2663,7 +2668,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public EditorCell changeSelectionWRTFocusPolicy(@NotNull EditorCell cell) {
     EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
     EditorCell toSelect;
-    if (focusPolicyCell == null || (focusPolicyCell == cell && !focusPolicyCell.hasFocusPolicy())) {
+    if (focusPolicyCell == null || (focusPolicyCell == cell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
       toSelect = cell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE));
       if (toSelect == null) {
         toSelect = cell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
@@ -2676,11 +2681,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     if (toSelect instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) toSelect;
-      if (label.getDefaultCaretPosition() != null) {
-        if (label.getDefaultCaretPosition() == CaretPosition.FIRST) {
+      jetbrains.mps.editor.runtime.style.CaretPosition defaultCaretPosition = label.getStyle().get(StyleAttributes.DEFAULT_CARET_POSITION);
+      if (defaultCaretPosition != null) {
+        if (defaultCaretPosition == jetbrains.mps.editor.runtime.style.CaretPosition.FIRST) {
           label.home();
         }
-        if (label.getDefaultCaretPosition() == CaretPosition.LAST) {
+        if (defaultCaretPosition == jetbrains.mps.editor.runtime.style.CaretPosition.LAST) {
           label.end();
         }
       } else if (!toSelect.isErrorState()) {
@@ -3039,14 +3045,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           }
         }
 
-        private boolean isErrorWithinBigCell(EditorCell cell) {
+        private boolean isErrorWithinBigCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
           if (cell.isErrorState()) return true;
 
-          if (cell instanceof EditorCell_Collection) {
-            EditorCell_Collection collection = (EditorCell_Collection) cell;
+          if (cell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
+            jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = (jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell;
 
-            for (EditorCell child : collection) {
-              if (child.isBigCell()) continue;
+            for (jetbrains.mps.openapi.editor.cells.EditorCell child : collection) {
+              if (APICellAdapter.isBigCell(child)) continue;
               if (isErrorWithinBigCell(child)) return true;
             }
           }
@@ -3057,16 +3063,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private void synchronizeWithModelWithinBigCell(EditorCell cell) {
-    if (cell instanceof EditorCell_Collection) {
-      EditorCell_Collection collection = (EditorCell_Collection) cell;
-      for (EditorCell child : collection) {
+  private void synchronizeWithModelWithinBigCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    if (cell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
+      jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = (jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell;
+      for (jetbrains.mps.openapi.editor.cells.EditorCell child : collection) {
         if (child.getSNode() == cell.getSNode()) {
           synchronizeWithModelWithinBigCell(child);
         }
       }
     } else {
-      cell.synchronizeViewWithModel();
+      APICellAdapter.synchronizeViewWithModel(cell);
     }
   }
 
@@ -3087,13 +3093,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }, project);
   }
 
-  private void doCommitAll(EditorCell current) {
+  private void doCommitAll(jetbrains.mps.openapi.editor.cells.EditorCell current) {
     if (current instanceof EditorCell_Property) {
       ((EditorCell_Property) current).commit();
     }
-    if (current instanceof EditorCell_Collection) {
-      EditorCell_Collection collection = (EditorCell_Collection) current;
-      for (EditorCell cell : collection) {
+    if (current instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
+      jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = (jetbrains.mps.openapi.editor.cells.EditorCell_Collection) current;
+      for (jetbrains.mps.openapi.editor.cells.EditorCell cell : collection) {
         doCommitAll(cell);
       }
     }
@@ -3245,21 +3251,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             myLastReferenceCell = null;
             return;
           }
-          final EditorCell editorCell = myRootCell.findLeaf(e.getX(), e.getY());
+          final jetbrains.mps.openapi.editor.cells.EditorCell editorCell = myRootCell.findLeaf(e.getX(), e.getY());
           if (editorCell == null) {
             myLastReferenceCell = null;
             return;
           }
           SNode snodeWRTReference = ModelAccess.instance().runReadAction(new Computable<SNode>() {
             public SNode compute() {
-              return isInvalid() ? null : editorCell.getSNodeWRTReference();
+              return isInvalid() ? null : APICellAdapter.getSNodeWRTReference(editorCell);
             }
           });
           if (editorCell.getSNode() == snodeWRTReference) {
             myLastReferenceCell = null;
             return;
           }
-          myLastReferenceCell = editorCell;
+          myLastReferenceCell = (EditorCell) editorCell;
 
           setControlOver();
         }

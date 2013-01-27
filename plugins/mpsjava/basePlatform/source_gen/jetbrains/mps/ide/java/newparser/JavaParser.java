@@ -32,6 +32,12 @@ import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import jetbrains.mps.internal.collections.runtime.DequeSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.DynamicReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 public class JavaParser {
   private static Logger LOG = Logger.getLogger(JavaParser.class);
@@ -237,28 +243,6 @@ public class JavaParser {
     return imp;
   }
 
-  public void tryResolveRoots(List<SNode> roots) {
-    for (SNode node : ListSequence.fromList(roots)) {
-      List<SNode> unknowns = SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", false, new String[]{});
-      for (SNode unk : ListSequence.fromList(unknowns)) {
-
-        final SNode unkNode = unk;
-        final _FunctionTypes._return_P0_E0<? extends SNode> subst = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), unk, "virtual_evaluateSubst_8136348407761606764", new Object[]{});
-        if (subst == null) {
-          continue;
-        }
-
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            SNode theRightNode = subst.invoke();
-            SNodeOperations.replaceWithAnother(unkNode, theRightNode);
-          }
-        });
-
-      }
-    }
-  }
-
   private String problemDescription(RecordedParsingInformation info) {
     if (info == null) {
       return null;
@@ -312,6 +296,63 @@ public class JavaParser {
 
     public String getErrorMsg() {
       return errorMsg;
+    }
+  }
+
+  public static void tryResolveUnknowns(Iterable<SNode> roots) {
+    for (SNode node : Sequence.fromIterable(roots)) {
+      List<SNode> unknowns = SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", false, new String[]{});
+      for (SNode unk : ListSequence.fromList(unknowns)) {
+
+        final SNode unkNode = unk;
+        final _FunctionTypes._return_P0_E0<? extends SNode> subst = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), unk, "virtual_evaluateSubst_8136348407761606764", new Object[]{});
+        if (subst == null) {
+          continue;
+        }
+
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            SNode theRightNode = subst.invoke();
+            SNodeOperations.replaceWithAnother(unkNode, theRightNode);
+          }
+        });
+
+      }
+    }
+  }
+
+  public static void tryResolveDynamicRefs(Iterable<SNode> nodes) {
+    Deque<SNode> stack = DequeSequence.fromDeque(new LinkedList<SNode>());
+    DequeSequence.fromDeque(stack).addSequence(Sequence.fromIterable(nodes));
+
+    while (DequeSequence.fromDeque(stack).isNotEmpty()) {
+      SNode node = DequeSequence.fromDeque(stack).popElement();
+      SModel ourModel = node.getModel();
+      DequeSequence.fromDeque(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
+
+      Iterable<SReference> refs = node.getReferences();
+      for (SReference ref : Sequence.fromIterable(refs)) {
+        if (!(ref instanceof DynamicReference)) {
+          continue;
+        }
+        if (ref.getRole().equals("baseMethodDeclaration")) {
+          continue;
+        }
+        if (ref.getRole().equals("fieldDeclaration")) {
+          continue;
+        }
+
+        SNode target = ref.getTargetNode();
+        if (target == null) {
+          continue;
+        }
+        node.setReferenceTarget(ref.getRole(), target);
+
+        SModel targetModel = target.getModel();
+        if (targetModel != null) {
+          ourModel.addModelImport(targetModel.getSModelReference(), true);
+        }
+      }
     }
   }
 }

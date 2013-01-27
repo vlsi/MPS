@@ -17,6 +17,7 @@ package jetbrains.mps.openapi.editor.cells;
 
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.style.Style;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -62,6 +63,11 @@ public interface EditorCell {
 
   int getBottomInset();
 
+  // TODO: same as inset?
+  void setLeftGap(int gap);
+
+  void setRightGap(int gap);
+
   void moveTo(int x, int y);
 
   void setSelected(boolean isSelected);
@@ -100,6 +106,10 @@ public interface EditorCell {
 
   EditorContext getContext();
 
+  EditorCell_Collection getParent();
+
+  EditorCell getRootParent();
+
   EditorCell findLeaf(int x, int y);
 
   boolean isSingleNodeCell();
@@ -111,4 +121,6 @@ public interface EditorCell {
   Object getUserObject(Object key);
 
   EditorComponent getEditorComponent();
+
+  Style getStyle();
 }

@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 
 public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEditor {
@@ -64,7 +66,9 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
   private EditorCell createConstant_3dlbxb_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get output");
     editorCell.setCellId("Constant_3dlbxb_a0");
-    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyGenContext_operation(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -76,7 +80,9 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new GenerationContextOp_GetOutputByLabel_Editor._Inline_3dlbxb_a1a());
     editorCell = provider.createEditorCell(editorContext);
-    jetbrains.mps.lang.generator.editor.Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    jetbrains.mps.lang.generator.editor.Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

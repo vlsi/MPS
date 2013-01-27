@@ -15,8 +15,9 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 
@@ -73,11 +74,10 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ghsvq8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/*");
     editorCell.setCellId("Constant_ghsvq8_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     CommentedStatementsBlock_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -86,10 +86,9 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ghsvq8_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "*/");
     editorCell.setCellId("Constant_ghsvq8_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    editorCell.getStyle().putAll(style);
     CommentedStatementsBlock_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -99,11 +98,10 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new CommentedStatementsBlock_Editor.statementListHandler_ghsvq8_b0(node, "statement", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_statement");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.lightGray);
-      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

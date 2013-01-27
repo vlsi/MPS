@@ -239,6 +239,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -274,6 +275,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -338,6 +340,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -373,6 +376,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />

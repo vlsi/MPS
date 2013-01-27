@@ -13,11 +13,12 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.FocusPolicy;
@@ -69,7 +70,9 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
+      Style style = new StyleImpl();
+      Styles_StyleSheet.applyMappingLabelReference(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -93,10 +96,9 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_iwpawc_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_iwpawc_a_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_iwpawc_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_iwpawc_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_iwpawc_c0(editorContext, node));
@@ -106,10 +108,9 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_iwpawc_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_iwpawc_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_iwpawc_a2a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_iwpawc_b2a(editorContext, node));
@@ -120,10 +121,9 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_iwpawc_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_iwpawc_a2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_iwpawc_a0c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_iwpawc_b0c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_iwpawc_c0c0(editorContext, node));
@@ -133,10 +133,9 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_iwpawc_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_iwpawc_b2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_iwpawc_a1c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_iwpawc_b1c0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_iwpawc_c1c0(editorContext, node));
@@ -146,10 +145,9 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_iwpawc_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_iwpawc_c2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_iwpawc_a2c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_iwpawc_b2c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_iwpawc_c2c0(editorContext, node));
@@ -165,11 +163,10 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_iwpawc_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$INSERT$");
     editorCell.setCellId("Constant_iwpawc_a0");
-    Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyMacroStart(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
@@ -182,12 +179,11 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_iwpawc_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "insert node macro");
     editorCell.setCellId("Constant_iwpawc_a0_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -195,10 +191,9 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_iwpawc_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_iwpawc_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -213,10 +208,9 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_iwpawc_b0c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_iwpawc_b0c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -231,10 +225,9 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_iwpawc_b1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_iwpawc_b1c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -242,10 +235,9 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_iwpawc_a2c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output node");
     editorCell.setCellId("Constant_iwpawc_a2c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -253,10 +245,9 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_iwpawc_b2c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_iwpawc_b2c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

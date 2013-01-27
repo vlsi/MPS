@@ -16,6 +16,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -50,7 +52,9 @@ public class CombiningConditionalExpression_Editor extends DefaultNodeEditor {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setCellId("ReadOnlyModelAccessor_pg3t11_b0");
-    BashLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BashLanguageStyle_StyleSheet.applyOperator(style, editorCell);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 

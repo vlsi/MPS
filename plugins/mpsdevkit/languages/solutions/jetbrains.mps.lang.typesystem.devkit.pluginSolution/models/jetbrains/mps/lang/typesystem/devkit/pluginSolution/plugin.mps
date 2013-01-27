@@ -37,22 +37,22 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5181507218630412169">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ShowRulesWhichAffectNodeType" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Rules Which Affect Node's Type" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Show Rules Which Affect Node's Type" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5181507218630412221">
       <property name="description" nameId="tp4k.1213273179528" value="Show type inferred using check only inequations, too" />
       <property name="name" nameId="tpck.1169194664001" value="ShowInferredNodeType" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Inferred Type" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Show Inferred Type" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5181507218630412277">
       <property name="description" nameId="tp4k.1213273179528" value="Show type expected in this context" />
       <property name="name" nameId="tpck.1169194664001" value="ShowExpectedType" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Expected Type" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Show Expected Type" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5181507218630412336">
       <property name="name" nameId="tpck.1169194664001" value="InternalTypeSystemActions" />
@@ -61,20 +61,20 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5181507218630412340">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="GoToTypeErrorRule_InGroup" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Go to Rule Which Caused Error" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Go to Rule Which Caused Error" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5181507218630412410">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="GoToTypeErrorRule" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Go to Rule Which Caused Error" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Go to Rule Which Caused Error" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5181507218630412486">
       <property name="isInvisibleWhenDisabled" nameId="tp4k.1217005992861" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="GoToTypeErrorGroup" />
-      <property name="caption" nameId="tp4k.1204991940915" value="Go to Rule Which Caused Error" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1204991940915" value="Go to Rule Which Caused Error" />
       <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
     </node>
     <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="5487985028841909059">
@@ -661,7 +661,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5181507218630412420">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorComponent%dgetErrorReporterFor(jetbrains%dmps%dnodeEditor%dcells%dEditorCell)%cjetbrains%dmps%derrors%dIErrorReporter" resolveInfo="getErrorReporterFor" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorComponent%dgetErrorReporterFor(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell)%cjetbrains%dmps%derrors%dIErrorReporter" resolveInfo="getErrorReporterFor" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5181507218630412421">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5181507218630412422">
                     <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="5181507218630412423" />
@@ -734,7 +734,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5181507218630412450">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorComponent%dgetErrorReporterFor(jetbrains%dmps%dnodeEditor%dcells%dEditorCell)%cjetbrains%dmps%derrors%dIErrorReporter" resolveInfo="getErrorReporterFor" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorComponent%dgetErrorReporterFor(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell)%cjetbrains%dmps%derrors%dIErrorReporter" resolveInfo="getErrorReporterFor" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5181507218630412451">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5181507218630412452">
                     <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="5181507218630412453" />
@@ -925,7 +925,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5181507218630412512" resolveInfo="editorComponent" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5181507218630412536">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorComponent%dgetErrorReporterFor(jetbrains%dmps%dnodeEditor%dcells%dEditorCell)%cjetbrains%dmps%derrors%dIErrorReporter" resolveInfo="getErrorReporterFor" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorComponent%dgetErrorReporterFor(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell)%cjetbrains%dmps%derrors%dIErrorReporter" resolveInfo="getErrorReporterFor" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5181507218630412537">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5181507218630412538">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5181507218630412512" resolveInfo="editorComponent" />

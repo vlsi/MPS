@@ -15,6 +15,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 
 public class OptionalPart_Editor extends DefaultNodeEditor {
@@ -70,7 +72,9 @@ public class OptionalPart_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_gmvlcs_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_gmvlcs_a0");
-    MPSLite_Style_StyleSheet.getMPSLiteOptionalPart(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    MPSLite_Style_StyleSheet.applyMPSLiteOptionalPart(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -78,7 +82,9 @@ public class OptionalPart_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_gmvlcs_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")?");
     editorCell.setCellId("Constant_gmvlcs_c0");
-    MPSLite_Style_StyleSheet.getMPSLiteOptionalPart(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    MPSLite_Style_StyleSheet.applyMPSLiteOptionalPart(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -12,8 +12,9 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -26,8 +27,8 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.editor.runtime.style.Padding;
+import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
@@ -81,10 +82,9 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ecw4ny_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ecw4ny_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_ecw4ny_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ecw4ny_b1a(editorContext, node));
     if (renderingCondition_ecw4ny_a2b0(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -96,10 +96,9 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ecw4ny_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ecw4ny_a1a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_ecw4ny_a0b0(editorContext, node));
     if (renderingCondition_ecw4ny_a1a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_ecw4ny_b0b0(editorContext, node));
@@ -117,10 +116,9 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ecw4ny_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ecw4ny_b1a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_ecw4ny_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ecw4ny_b1b0(editorContext, node));
     return editorCell;
@@ -129,12 +127,11 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ecw4ny_b0b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ecw4ny_b0b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.MATCHING_LABEL, "brace");
-      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.MATCHING_LABEL, "brace");
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -142,12 +139,11 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ecw4ny_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ecw4ny_c1a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.MATCHING_LABEL, "brace");
-      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.MATCHING_LABEL, "brace");
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -189,10 +185,9 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new ParameterizedShortcutChange_Editor._Inline_ecw4ny_a0a());
     editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

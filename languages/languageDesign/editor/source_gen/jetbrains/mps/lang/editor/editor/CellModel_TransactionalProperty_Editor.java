@@ -9,8 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -18,10 +19,9 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
+import java.awt.Color;
 
 public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -53,10 +53,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.DRAW_BORDER, true);
-      }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.DRAW_BORDER, true);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -90,10 +89,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.DRAW_BORDER, true);
-      }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.DRAW_BORDER, true);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -109,7 +107,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hop3er_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hop3er_a");
-    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyBorderedCollection(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_hop3er_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_hop3er_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_hop3er_c0(editorContext, node));
@@ -119,10 +119,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hop3er_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_hop3er_a_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_hop3er_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_hop3er_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_hop3er_c0(editorContext, node));
@@ -133,10 +132,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hop3er_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_hop3er_d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BORDER, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_hop3er_a3a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_hop3er_b3a(editorContext, node));
@@ -148,11 +146,10 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hop3er_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hop3er_a3a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.DRAW_BORDER, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_hop3er_a0d0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_hop3er_b0d0(editorContext, node));
     return editorCell;
@@ -161,11 +158,10 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hop3er_b3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hop3er_b3a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_hop3er_a1d0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_hop3er_b1d0(editorContext, node));
     return editorCell;
@@ -174,10 +170,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hop3er_c3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hop3er_c3a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_hop3er_a2d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_hop3er_b2d0(editorContext, node));
     return editorCell;
@@ -186,10 +181,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hop3er_d3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hop3er_d3a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_hop3er_a3d0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_hop3er_b3d0(editorContext, node));
     return editorCell;
@@ -198,20 +192,18 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_hop3er_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _OpenTag(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BORDER, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
   private EditorCell createComponent_hop3er_c0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _CloseTag(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BORDER, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
@@ -224,11 +216,10 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_hop3er_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_hop3er_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -236,7 +227,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_hop3er_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Transactional property cell:");
     editorCell.setCellId("Constant_hop3er_c0");
-    Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyHeader(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -244,7 +237,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_hop3er_a0d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property");
     editorCell.setCellId("Constant_hop3er_a0d0");
-    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyProperty(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -252,7 +247,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_hop3er_a1d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "run in command");
     editorCell.setCellId("Constant_hop3er_a1d0");
-    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyProperty(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -260,7 +257,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_hop3er_a2d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "handler:");
     editorCell.setCellId("Constant_hop3er_a2d0");
-    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyProperty(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -268,7 +267,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_hop3er_a3d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "allow empty");
     editorCell.setCellId("Constant_hop3er_a3d0");
-    Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyProperty(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -280,87 +281,58 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new CellModel_TransactionalProperty_Editor._Inline_hop3er_a1a());
     editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BORDER, true);
-      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a1b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a2b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a3b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator<Color>() {
-        public Color calculate(EditorCell cell) {
-          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a4b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator<Integer>() {
-        public Integer calculate(EditorCell cell) {
-          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a5b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
-        public Boolean calculate(EditorCell cell) {
-          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a6b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator<Boolean>() {
-        public Boolean calculate(EditorCell cell) {
-          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a7b0((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getContext()
-          ));
-        }
-      });
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a1b0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    style.set(StyleAttributes.TEXT_COLOR, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a2b0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a3b0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a4b0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    style.set(StyleAttributes.FONT_STYLE, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a5b0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    style.set(StyleAttributes.UNDERLINED, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a6b0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    style.set(StyleAttributes.STRIKE_OUT, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a7b0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -379,10 +351,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new CellModel_TransactionalProperty_Editor._Inline_hop3er_a1a3a());
     editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BORDER, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -436,10 +407,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_allowEmptyText");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BORDER, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

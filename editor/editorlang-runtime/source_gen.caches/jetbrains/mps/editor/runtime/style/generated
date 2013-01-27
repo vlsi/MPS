@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="2m3l4ojt5syyxjwh965i48n7ho4531a">
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-d2qk0fl7yd9ryw37y806ruul4u9uogv" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="3d2lxr8unjxvzzi6xlbsruq2a8tb63l" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-6ms6uh6xw6ogel83ocxgvncpzgdfldf" />
+  <common hash="1bep4ugmtvbfcbdtb2v5k0x2cel9py8" />
+  <source id="6822392181927252916" name="StyledTextPrinter" hash="-c0wnx03bfmmypayucu1ejewperrjs0w">
+    <file name="StyledTextPrinter.java" />
+  </source>
+  <source id="6822392181928383378" name="SideTransformTagUtils" hash="1e33uhug39hpto656q0puxu29jttggz">
+    <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <file name="SideTransformTagUtils.java" />
+  </source>
+  <source id="6822392181928409958" name="ParametersInformation" hash="4u83hmds1wfns6y91lvpeq0xgir5gfr">
+    <file name="ParametersInformation.java" />
+  </source>
+</dependencies>
+

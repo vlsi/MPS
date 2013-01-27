@@ -15,8 +15,9 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.FocusPolicy;
@@ -78,19 +79,20 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
-      editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
-      editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      editorCell.getStyle().putAll(style);
       return editorCell;
     }
 
     private EditorCell createConstant_1dey68_a2a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1dey68_a2a");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.EDITABLE, true);
-        style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-      }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.EDITABLE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+      editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -99,10 +101,9 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1dey68_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1dey68_a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PARAMETERS_INFORMATION, new CompactInvokeFunctionExpression_parameters());
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, new CompactInvokeFunctionExpression_parameters());
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_1dey68_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1dey68_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_1dey68_c0(editorContext, node));
@@ -113,7 +114,9 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_1dey68_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_1dey68_b0");
-    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    editorCell.getStyle().putAll(style);
     CompactInvokeFunctionExpression_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -122,7 +125,9 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_1dey68_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_1dey68_d0");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
     if (renderingCondition_1dey68_a3a(node, editorContext, editorContext.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }

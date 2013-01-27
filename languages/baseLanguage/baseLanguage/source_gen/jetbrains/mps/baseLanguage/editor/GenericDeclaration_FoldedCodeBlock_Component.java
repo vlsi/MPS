@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 
 public class GenericDeclaration_FoldedCodeBlock_Component extends AbstractCellProvider {
   public GenericDeclaration_FoldedCodeBlock_Component(SNode node) {
@@ -30,7 +32,9 @@ public class GenericDeclaration_FoldedCodeBlock_Component extends AbstractCellPr
   private EditorCell createConstant_2ccpf5_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{...}");
     editorCell.setCellId("Constant_2ccpf5_a");
-    BaseLanguageStyle_StyleSheet.getFoldedCell(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyFoldedCell(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

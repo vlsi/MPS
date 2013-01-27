@@ -8,10 +8,11 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.Padding;
+import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
@@ -27,12 +28,11 @@ public class SimpleString_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    PackagingStyles_StyleSheet.getString(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.2, Measure.SPACES));
-    }
+    Style style = new StyleImpl();
+    PackagingStyles_StyleSheet.applyString(style, editorCell);
+    style.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.2, Measure.SPACES));
+    editorCell.getStyle().putAll(style);
     CompositeString_RT.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
