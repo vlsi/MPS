@@ -66,7 +66,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
             } else if (SNodeOperations.getReference(pastedNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept")) != null) {
               SReference reference = SNodeOperations.getReference(pastedNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept"));
               SLinkOperations.setTarget(pastedNode, "classConcept", null, false);
-              reference.setRole(null);
+              ((jetbrains.mps.smodel.SReference) reference).setRole(null);
             }
             break;
           }

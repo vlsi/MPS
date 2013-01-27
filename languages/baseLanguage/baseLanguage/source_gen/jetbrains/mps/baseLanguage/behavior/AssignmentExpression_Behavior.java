@@ -52,7 +52,7 @@ public class AssignmentExpression_Behavior {
     SNode ref = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference");
     String name = (varName == null ?
       ((SLinkOperations.getTarget(ref, "variableDeclaration", false) == null) ?
-        SNodeOperations.getReference(ref, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration")).getResolveInfo() :
+        ((jetbrains.mps.smodel.SReference) SNodeOperations.getReference(ref, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"))).getResolveInfo() :
         SPropertyOperations.getString(SLinkOperations.getTarget(ref, "variableDeclaration", false), "name")
       ) :
       varName

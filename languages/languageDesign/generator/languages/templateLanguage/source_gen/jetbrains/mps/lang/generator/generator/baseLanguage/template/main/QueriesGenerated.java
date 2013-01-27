@@ -278,7 +278,7 @@ public class QueriesGenerated {
     if (target != null && SNodeOperations.isInstanceOf(target, "jetbrains.mps.lang.core.structure.INamedConcept")) {
       return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
     }
-    String resolveInfo = ref.getResolveInfo();
+    String resolveInfo = ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
     if (resolveInfo != null) {
       return resolveInfo;
     }
@@ -3632,7 +3632,7 @@ public class QueriesGenerated {
           resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode);
         }
         if (resolveInfo == null) {
-          resolveInfo = reference.getResolveInfo();
+          resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
         }
         if (resolveInfo == null) {
           resolveInfo = "";

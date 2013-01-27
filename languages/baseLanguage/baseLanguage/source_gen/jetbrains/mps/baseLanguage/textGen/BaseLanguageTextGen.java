@@ -208,7 +208,7 @@ public abstract class BaseLanguageTextGen {
     String shortName = "";
     String packageName = "";
     if (reference instanceof DynamicReference) {
-      shortName = reference.getResolveInfo();
+      shortName = ((jetbrains.mps.smodel.SReference)reference).getResolveInfo();
       // hack, todo: remove! 
       if (shortName.startsWith("[")) {
         return MultiTuple.<String,String>from(shortName.substring(1, shortName.lastIndexOf("]")).trim(), shortName.substring(shortName.lastIndexOf("]") + 1).trim());

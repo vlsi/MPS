@@ -120,8 +120,8 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
       public StringBuffer combine(StringBuffer sb, SReference ref) {
         sb = sb.append(ref.getRole()).append("\n      model ref: ").append(ref.getTargetSModelReference().toString());
         sb = sb.append("\n         nodeId: ").append(ref.getTargetNodeId());
-        sb = (ref.getResolveInfo() != null ?
-          sb.append("\n    resolveInfo: \"").append(ref.getResolveInfo()).append("\"\n") :
+        sb = (((jetbrains.mps.smodel.SReference) ref).getResolveInfo() != null ?
+          sb.append("\n    resolveInfo: \"").append(((jetbrains.mps.smodel.SReference)ref).getResolveInfo()).append("\"\n") :
           sb.append("\n no resolveInfo\n")
         );
         return sb;
