@@ -15,27 +15,11 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-public class ModelsOnlyScope extends BaseScope {
-  private List<SModelDescriptor> myModelDescriptors;
-
+@Deprecated
+public class ModelsOnlyScope extends ModelsScope {
   public ModelsOnlyScope(SModelDescriptor... modelDescriptors) {
-    myModelDescriptors = Arrays.asList(modelDescriptors);
-  }
-
-  @Override
-  public Iterable<SModule> getModules() {
-    return null; // todo: ?
-  }
-
-  @Override
-  public Iterable<SModel> getModels() {
-    return new ArrayList<SModel>(myModelDescriptors);
+    super(modelDescriptors);
   }
 }

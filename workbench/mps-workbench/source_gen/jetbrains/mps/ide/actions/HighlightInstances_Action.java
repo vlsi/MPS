@@ -19,7 +19,7 @@ import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
-import jetbrains.mps.smodel.ModelsOnlyScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.logging.Logger;
@@ -81,7 +81,7 @@ public class HighlightInstances_Action extends BaseAction {
       EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
 
       SConcept concept = SConceptRepository.getInstance().getConcept(((SNode) MapSequence.fromMap(_params).get("node")).getConcept().getConceptId());
-      Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, new ModelsOnlyScope(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
+      Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, new ModelsScope(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
       for (SNode ref : SetSequence.fromSet(usages)) {
         if (ref.getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
           highlightManager.mark(((SNode) ref), HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);

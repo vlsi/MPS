@@ -20,7 +20,7 @@ import jetbrains.mps.project.GlobalScopeMinusTransient;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.ModelsOnlyScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 
 public class LanguageConceptsUsagesFinder implements IFinder {
   public LanguageConceptsUsagesFinder() {
@@ -57,7 +57,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
       for (SearchResult<SModel> sModelSearchResult : modelResults.getSearchResults()) {
         models.add(sModelSearchResult.getObject().getModelDescriptor());
       }
-      IScope scope = new ModelsOnlyScope(models.toArray(new SModelDescriptor[models.size()]));
+      IScope scope = new ModelsScope(models.toArray(new SModelDescriptor[models.size()]));
       SearchResults<SNode> results = new SearchResults();
       for (SNode node : roots) {
         if (monitor != null && monitor.isCanceled()) {
