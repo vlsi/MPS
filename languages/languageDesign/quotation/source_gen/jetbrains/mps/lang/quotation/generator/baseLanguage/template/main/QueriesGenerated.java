@@ -476,7 +476,7 @@ public class QueriesGenerated {
         continue;
       }
       SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      referenceNode.setProperty("targetModel", ((SReference) ref).getTargetSModelReference().update().toString());
+      referenceNode.setProperty("targetModel", ((jetbrains.mps.smodel.SReference) ref).getTargetSModelReference().update().toString());
       referenceNode.setProperty("role", ref.getRole());
       if (targetNode != null) {
         referenceNode.setProperty("targetNodeId", targetNode.getNodeId().toString());

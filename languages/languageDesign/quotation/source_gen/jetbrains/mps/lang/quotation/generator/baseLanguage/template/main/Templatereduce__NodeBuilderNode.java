@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -78,8 +78,8 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a5a3a1a3a4a1a2);
                   environment.nodeCopied(context3, tnode6, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676781343");
-                  tnode6.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode6, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModelUtil_new.instantiateConceptDeclaration(java.lang.String,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope,boolean):jetbrains.mps.smodel.SNode")));
-                  tnode6.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", tnode6, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModelUtil_new")));
+                  tnode6.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode6, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModelUtil_new.instantiateConceptDeclaration(java.lang.String,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope,boolean):jetbrains.mps.smodel.SNode")));
+                  tnode6.setReference("classConcept", SReference.create("classConcept", tnode6, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModelUtil_new")));
 
                   {
                     final SNode tnode7 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -112,7 +112,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a3a1a1a1a6a1a5a3a1a3a4a1a2);
                               environment.nodeCopied(context3, tnode10, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676782065");
-                              tnode10.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode10, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel")));
+                              tnode10.setReference("classifier", SReference.create("classifier", tnode10, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel")));
 
                             } finally {
                               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode10));
@@ -183,8 +183,8 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a7a1a5a3a1a3a4a1a2);
                       environment.nodeCopied(context3, tnode14, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676781362");
-                      tnode14.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode14, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)"), SNodeId.fromString("~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope")));
-                      tnode14.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", tnode14, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)"), SNodeId.fromString("~GlobalScope")));
+                      tnode14.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode14, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)"), SNodeId.fromString("~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope")));
+                      tnode14.setReference("classConcept", SReference.create("classConcept", tnode14, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)"), SNodeId.fromString("~GlobalScope")));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode14));
@@ -318,7 +318,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a3a3a2a2a1a3a1a3a1a3);
                             environment.nodeCopied(context19, tnode24, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676785696");
-                            tnode24.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode24, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setProperty(java.lang.String,java.lang.String):void")));
+                            tnode24.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode24, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setProperty(java.lang.String,java.lang.String):void")));
 
                             {
                               final SNode tnode25 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -451,7 +451,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a3a3a2a2a1a4a1a3a1a3);
                             environment.nodeCopied(context29, tnode34, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676786576");
-                            tnode34.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode34, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setProperty(java.lang.String,java.lang.String):void")));
+                            tnode34.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode34, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setProperty(java.lang.String,java.lang.String):void")));
 
                             {
                               final SNode tnode35 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -628,7 +628,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a3a3a2a2a1a5a1a3a1a3);
                             environment.nodeCopied(context40, tnode45, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676786259");
-                            tnode45.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode45, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setProperty(java.lang.String,java.lang.String):void")));
+                            tnode45.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode45, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setProperty(java.lang.String,java.lang.String):void")));
 
                             {
                               final SNode tnode46 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -792,7 +792,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a3a3a2a2a1a6a1a3a1a3);
                             environment.nodeCopied(context52, tnode57, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676786413");
-                            tnode57.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode57, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setProperty(java.lang.String,java.lang.String):void")));
+                            tnode57.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode57, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setProperty(java.lang.String,java.lang.String):void")));
 
                             {
                               final SNode tnode58 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -956,7 +956,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a3a3a2a2a1a7a1a3a1a3);
                             environment.nodeCopied(context64, tnode69, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676782481");
-                            tnode69.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode69, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setReference(java.lang.String,org.jetbrains.mps.openapi.model.SReference):void")));
+                            tnode69.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode69, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setReference(java.lang.String,org.jetbrains.mps.openapi.model.SReference):void")));
 
                             {
                               final SNode tnode70 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -979,8 +979,8 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a5a1a4a1a3a3a2a2a1a7a1a3a1a3);
                                 environment.nodeCopied(context64, tnode71, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676782482");
-                                tnode71.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", tnode71, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SReference")));
-                                tnode71.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode71, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~jetbrains.mps.smodel.SReference.create(java.lang.String,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.smodel.SModelReference,org.jetbrains.mps.openapi.model.SNodeId):jetbrains.mps.smodel.SReference")));
+                                tnode71.setReference("classConcept", SReference.create("classConcept", tnode71, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SReference")));
+                                tnode71.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode71, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SReference.create(java.lang.String,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.smodel.SModelReference,org.jetbrains.mps.openapi.model.SNodeId):jetbrains.mps.smodel.SReference")));
 
                                 {
                                   final SNode tnode72 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -1019,8 +1019,8 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   try {
                                     environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a7a1a5a1a4a1a3a3a2a2a1a7a1a3a1a3);
                                     environment.nodeCopied(context64, tnode74, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676782493");
-                                    tnode74.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode74, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModelReference.fromString(java.lang.String):jetbrains.mps.smodel.SModelReference")));
-                                    tnode74.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", tnode74, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModelReference")));
+                                    tnode74.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode74, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModelReference.fromString(java.lang.String):jetbrains.mps.smodel.SModelReference")));
+                                    tnode74.setReference("classConcept", SReference.create("classConcept", tnode74, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModelReference")));
 
                                     {
                                       final SNode tnode75 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -1052,8 +1052,8 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   try {
                                     environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a8a1a5a1a4a1a3a3a2a2a1a7a1a3a1a3);
                                     environment.nodeCopied(context64, tnode76, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676782503");
-                                    tnode76.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode76, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNodeId.fromString(java.lang.String):jetbrains.mps.smodel.SNodeId")));
-                                    tnode76.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", tnode76, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNodeId")));
+                                    tnode76.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode76, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNodeId.fromString(java.lang.String):jetbrains.mps.smodel.SNodeId")));
+                                    tnode76.setReference("classConcept", SReference.create("classConcept", tnode76, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNodeId")));
 
                                     {
                                       final SNode tnode77 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -1190,7 +1190,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a3a3a2a2a1a8a1a3a1a3);
                             environment.nodeCopied(context79, tnode84, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676786873");
-                            tnode84.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode84, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+                            tnode84.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode84, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
 
                             {
                               final SNode tnode85 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -1367,7 +1367,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a3a3a2a2a1a9a1a3a1a3);
                             environment.nodeCopied(context90, tnode95, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676787524");
-                            tnode95.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode95, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+                            tnode95.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode95, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
 
                             {
                               final SNode tnode96 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -1556,7 +1556,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   try {
                                     environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a3a1a3a1a3a3a2a2a1a01a1a3a1a3);
                                     environment.nodeCopied(context101, tnode108, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676788779");
-                                    tnode108.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode108, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+                                    tnode108.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode108, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
 
                                     {
                                       final SNode tnode109 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -1844,7 +1844,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   try {
                                     environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a3a3a2a2a4a3a2a2a1a11a1a3a1a3);
                                     environment.nodeCopied(context120, tnode125, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676789800");
-                                    tnode125.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode125, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+                                    tnode125.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode125, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
 
                                     {
                                       final SNode tnode126 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -2051,7 +2051,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a3a3a2a2a1a31a1a3a1a3);
                             environment.nodeCopied(context133, tnode138, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676789042");
-                            tnode138.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode138, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+                            tnode138.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode138, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
 
                             {
                               final SNode tnode139 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -2229,7 +2229,7 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   try {
                                     environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a4a1a3a3a2a2a4a3a2a2a1a41a1a3a1a3);
                                     environment.nodeCopied(context144, tnode149, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676789394");
-                                    tnode149.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode149, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+                                    tnode149.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode149, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
 
                                     {
                                       final SNode tnode150 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
