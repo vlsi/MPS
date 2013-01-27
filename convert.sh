@@ -31,5 +31,15 @@ do
      -e 's/SReference\.disableLogging(/jetbrains\.mps\.smodel\.SReference\.disableLogging(/g' \
      -e 's/SReference\.create(/jetbrains\.mps\.smodel\.SReference\.create(/g' \
      -e 's/\([^\.]\)SReference\.ProblemDescription/\1jetbrains\.mps\.smodel\.SReference\.ProblemDescription/g' \
+\
+     -e 's/import jetbrains\.mps\.smodel\.SModelId;/import org\.jetbrains\.mps\.openapi\.model\.SModelId;/g' \
+     -e 's/import jetbrains\.mps\.smodel\.\*;/import org\.jetbrains\.mps\.openapi\.model\.SModelId;import jetbrains\.mps\.smodel\.\*;/g' \
+     -e 's/package jetbrains\.mps\.smodel;/package jetbrains\.mps\.smodel;import org\.jetbrains\.mps\.openapi\.model\.SModelId;/g' \
+     -e 's/\([^\.]\)SModelId\.RegularSModelId/\1jetbrains\.mps\.smodel\.SModelId\.RegularSModelId/g' \
+     -e 's/\([^\.]\)SModelId\.ForeignSModelId/\1jetbrains\.mps\.smodel\.SModeld\.ForeignSModelId/g' \
+     -e 's/SModelId\.fromString(/jetbrains\.mps\.smodel\.SModelId\.fromString(/g' \
+     -e 's/SModelId\.foreign(/jetbrains\.mps\.smodel\.SModelId\.foreign(/g' \
+     -e 's/SModelId\.regular(/jetbrains\.mps\.smodel\.SModelId\.regular(/g' \
+     -e 's/SModelId\.generate(/jetbrains\.mps\.smodel\.SModelId\.generate(/g' \
     $fl
 done
