@@ -31,6 +31,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public abstract class FindUsagesScope extends BaseScope implements SModuleScope, IExternalizeable {
+  private static final String SCOPE_CLASS_ATTR = "scope_class";
+  private static final String SCOPE_TAG = "scope";
+
   private Set<SModule> myModules = new HashSet<SModule>();
   private Set<SModel> myModels = new HashSet<SModel>();
 
@@ -74,5 +77,22 @@ public abstract class FindUsagesScope extends BaseScope implements SModuleScope,
   @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     // do nothing by default
+  }
+
+  public static FindUsagesScope load(Element element, Project project) throws CantLoadSomethingException {
+    Element scopeXml = element.getChild(SCOPE_TAG);
+    String scopeClass = scopeXml.getAttributeValue(SCOPE_CLASS_ATTR);
+    try {
+      return (FindUsagesScope) Class.forName(scopeClass).getConstructor(Element.class, Project.class).newInstance(scopeXml, project);
+    } catch (Exception e) {
+      throw new CantLoadSomethingException(e);
+    }
+  }
+
+  public static void save(FindUsagesScope scope, Element element, Project project) throws CantSaveSomethingException {
+    Element scopeXml = new Element(SCOPE_TAG);
+    scopeXml.setAttribute(SCOPE_CLASS_ATTR, scope.getClass().getName());
+    scope.write(scopeXml, project);
+    element.addContent(scopeXml);
   }
 }
