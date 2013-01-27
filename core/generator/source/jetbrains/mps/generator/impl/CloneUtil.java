@@ -18,8 +18,13 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.StaticReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class CloneUtil {
@@ -63,7 +68,8 @@ public class CloneUtil {
       TracingUtil.putInputNode(outputNode, inputNode);
     }
     for (SReference reference : inputNode.getReferences()) {
-      SModelReference targetModelReference = reference.isExternal() ? reference.getTargetSModelReference() : outputModel.getSModelReference();
+      boolean ext = inputNode.getModel() == null || !inputNode.getModel().getSModelReference().equals(reference.getTargetSModelReference());
+      SModelReference targetModelReference = ext ? reference.getTargetSModelReference() : outputModel.getSModelReference();
       if (reference instanceof StaticReference) {
         if (targetModelReference == null) {
           LOG.warning("broken reference '" + reference.getRole() + "' in " + SNodeUtil.getDebugText(inputNode), inputNode);
