@@ -11,7 +11,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.GenerationTracerUtil;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.Collection;
@@ -58,7 +58,7 @@ public class Templatereduce__CheckCancelledStatusStatement implements TemplateDe
             try {
               environment.getTracer().pushTemplateNode(templateNode_iimgyi_a0a0a1a4a1a3a1a2);
               environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142363739");
-              tnode4.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor.isCanceled():boolean")));
+              tnode4.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor.isCanceled():boolean")));
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode4));

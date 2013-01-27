@@ -14,7 +14,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
@@ -59,7 +59,7 @@ public class TemplateGenerator implements TemplateDeclaration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a5a1a2);
           environment.nodeCopied(context, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571646252");
-          tnode3.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateModule")));
+          tnode3.setReference("classifier", SReference.create("classifier", tnode3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateModule")));
 
         } finally {
           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));
@@ -97,7 +97,7 @@ public class TemplateGenerator implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a5a1a6a1a2);
               environment.nodeCopied(context, tnode6, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/7633657384060768606");
-              tnode6.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode6, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)"), SNodeId.fromString("~ModuleReference")));
+              tnode6.setReference("classifier", SReference.create("classifier", tnode6, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)"), SNodeId.fromString("~ModuleReference")));
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode6));
@@ -113,8 +113,8 @@ public class TemplateGenerator implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a6a1a6a1a2);
               environment.nodeCopied(context, tnode7, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/7633657384060768607");
-              tnode7.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", tnode7, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)"), SNodeId.fromString("~ModuleReference")));
-              tnode7.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode7, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)"), SNodeId.fromString("~ModuleReference.fromString(java.lang.String):jetbrains.mps.project.structure.modules.ModuleReference")));
+              tnode7.setReference("classConcept", SReference.create("classConcept", tnode7, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)"), SNodeId.fromString("~ModuleReference")));
+              tnode7.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode7, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)"), SNodeId.fromString("~ModuleReference.fromString(java.lang.String):jetbrains.mps.project.structure.modules.ModuleReference")));
 
               {
                 final SNode tnode8 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -229,14 +229,14 @@ public class TemplateGenerator implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a6a1a1a1a8a1a2);
                   environment.nodeCopied(context, tnode15, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710807078");
-                  tnode15.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode15, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
+                  tnode15.setReference("classifier", SReference.create("classifier", tnode15, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
 
                   {
                     final SNode tnode16 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a4a1a6a1a1a1a8a1a2);
                       environment.nodeCopied(context, tnode16, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710807080");
-                      tnode16.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode16, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateMappingPriorityRule")));
+                      tnode16.setReference("classifier", SReference.create("classifier", tnode16, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateMappingPriorityRule")));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode16));
@@ -303,14 +303,14 @@ public class TemplateGenerator implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a6a1a1a1a9a1a2);
                   environment.nodeCopied(context, tnode21, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/6655394244919403410");
-                  tnode21.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode21, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
+                  tnode21.setReference("classifier", SReference.create("classifier", tnode21, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
 
                   {
                     final SNode tnode22 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a4a1a6a1a1a1a9a1a2);
                       environment.nodeCopied(context, tnode22, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/6655394244919403414");
-                      tnode22.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode22, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateModel")));
+                      tnode22.setReference("classifier", SReference.create("classifier", tnode22, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateModel")));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode22));
@@ -377,14 +377,14 @@ public class TemplateGenerator implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a6a1a1a1a01a1a2);
                   environment.nodeCopied(context, tnode27, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475313843");
-                  tnode27.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode27, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
+                  tnode27.setReference("classifier", SReference.create("classifier", tnode27, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
 
                   {
                     final SNode tnode28 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a4a1a6a1a1a1a01a1a2);
                       environment.nodeCopied(context, tnode28, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475346538");
-                      tnode28.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode28, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+                      tnode28.setReference("classifier", SReference.create("classifier", tnode28, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode28));
@@ -446,14 +446,14 @@ public class TemplateGenerator implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a5a1a11a1a2);
               environment.nodeCopied(context, tnode32, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475431728");
-              tnode32.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode32, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
+              tnode32.setReference("classifier", SReference.create("classifier", tnode32, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
 
               {
                 final SNode tnode33 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a4a1a5a1a11a1a2);
                   environment.nodeCopied(context, tnode33, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475431746");
-                  tnode33.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode33, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+                  tnode33.setReference("classifier", SReference.create("classifier", tnode33, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode33));
@@ -653,8 +653,8 @@ public class TemplateGenerator implements TemplateDeclaration {
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a4a1a3a1a1a1a4a1a5a1a21a1a2);
                               environment.nodeCopied(context, tnode48, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839741");
-                              tnode48.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode48, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil.asCollection(java.lang.Object...):java.util.Collection")));
-                              tnode48.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", tnode48, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil")));
+                              tnode48.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode48, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil.asCollection(java.lang.Object...):java.util.Collection")));
+                              tnode48.setReference("classConcept", SReference.create("classConcept", tnode48, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil")));
 
                               {
                                 final List<SNode> tlist49 = new ArrayList();
@@ -766,8 +766,8 @@ public class TemplateGenerator implements TemplateDeclaration {
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a4a1a3a1a1a1a5a1a5a1a21a1a2);
                               environment.nodeCopied(context, tnode57, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/6655394244919403446");
-                              tnode57.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode57, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil.asCollection(java.lang.Object...):java.util.Collection")));
-                              tnode57.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", tnode57, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil")));
+                              tnode57.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode57, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil.asCollection(java.lang.Object...):java.util.Collection")));
+                              tnode57.setReference("classConcept", SReference.create("classConcept", tnode57, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil")));
 
                               {
                                 final List<SNode> tlist58 = new ArrayList();
@@ -795,7 +795,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                                           try {
                                             environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a4a3a2a2a1a5a1a4a1a3a1a1a1a5a1a5a1a21a1a2);
                                             environment.nodeCopied(context58, tnode60, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/6655394244919455790");
-                                            tnode60.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode60, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateModel")));
+                                            tnode60.setReference("classifier", SReference.create("classifier", tnode60, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateModel")));
 
                                           } finally {
                                             environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode60));
@@ -847,7 +847,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a6a1a4a1a3a1a1a1a5a1a5a1a21a1a2);
                                   environment.nodeCopied(context, tnode63, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5494415397519742449");
-                                  tnode63.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode63, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateModel")));
+                                  tnode63.setReference("classifier", SReference.create("classifier", tnode63, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateModel")));
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode63));
@@ -928,8 +928,8 @@ public class TemplateGenerator implements TemplateDeclaration {
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a4a1a3a1a1a1a6a1a5a1a21a1a2);
                               environment.nodeCopied(context, tnode69, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475344440");
-                              tnode69.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode69, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil.asCollection(java.lang.Object...):java.util.Collection")));
-                              tnode69.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", tnode69, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil")));
+                              tnode69.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode69, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil.asCollection(java.lang.Object...):java.util.Collection")));
+                              tnode69.setReference("classConcept", SReference.create("classConcept", tnode69, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil")));
 
                               {
                                 final List<SNode> tlist70 = new ArrayList();
@@ -978,7 +978,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a6a1a4a1a3a1a1a1a6a1a5a1a21a1a2);
                                   environment.nodeCopied(context, tnode73, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475346550");
-                                  tnode73.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode73, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+                                  tnode73.setReference("classifier", SReference.create("classifier", tnode73, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode73));
@@ -1055,8 +1055,8 @@ public class TemplateGenerator implements TemplateDeclaration {
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a4a1a3a1a7a1a5a1a21a1a2);
                           environment.nodeCopied(context, tnode78, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475431803");
-                          tnode78.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode78, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil.asCollection(java.lang.Object...):java.util.Collection")));
-                          tnode78.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", tnode78, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil")));
+                          tnode78.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode78, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil.asCollection(java.lang.Object...):java.util.Collection")));
+                          tnode78.setReference("classConcept", SReference.create("classConcept", tnode78, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil")));
 
                           {
                             final List<SNode> tlist79 = new ArrayList();
@@ -1105,7 +1105,7 @@ public class TemplateGenerator implements TemplateDeclaration {
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a6a1a4a1a3a1a7a1a5a1a21a1a2);
                               environment.nodeCopied(context, tnode82, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475432625");
-                              tnode82.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode82, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+                              tnode82.setReference("classifier", SReference.create("classifier", tnode82, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
 
                             } finally {
                               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode82));
@@ -1318,14 +1318,14 @@ public class TemplateGenerator implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a8a1a41a1a2);
               environment.nodeCopied(context, tnode93, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571646513");
-              tnode93.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode93, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
+              tnode93.setReference("classifier", SReference.create("classifier", tnode93, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
 
               {
                 final SNode tnode94 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a4a1a8a1a41a1a2);
                   environment.nodeCopied(context, tnode94, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571646514");
-                  tnode94.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode94, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateModel")));
+                  tnode94.setReference("classifier", SReference.create("classifier", tnode94, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateModel")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode94));
@@ -1452,14 +1452,14 @@ public class TemplateGenerator implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a8a1a51a1a2);
               environment.nodeCopied(context, tnode103, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571646518");
-              tnode103.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode103, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
+              tnode103.setReference("classifier", SReference.create("classifier", tnode103, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
 
               {
                 final SNode tnode104 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a4a1a8a1a51a1a2);
                   environment.nodeCopied(context, tnode104, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710807074");
-                  tnode104.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode104, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateMappingPriorityRule")));
+                  tnode104.setReference("classifier", SReference.create("classifier", tnode104, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateMappingPriorityRule")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode104));
@@ -1586,7 +1586,7 @@ public class TemplateGenerator implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a8a1a61a1a2);
               environment.nodeCopied(context, tnode113, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571646523");
-              tnode113.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode113, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)"), SNodeId.fromString("~ModuleReference")));
+              tnode113.setReference("classifier", SReference.create("classifier", tnode113, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)"), SNodeId.fromString("~ModuleReference")));
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode113));
@@ -1682,14 +1682,14 @@ public class TemplateGenerator implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a8a1a71a1a2);
               environment.nodeCopied(context, tnode119, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475280638");
-              tnode119.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode119, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
+              tnode119.setReference("classifier", SReference.create("classifier", tnode119, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
 
               {
                 final SNode tnode120 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a4a1a8a1a71a1a2);
                   environment.nodeCopied(context, tnode120, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475280639");
-                  tnode120.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode120, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+                  tnode120.setReference("classifier", SReference.create("classifier", tnode120, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode120));
@@ -1794,7 +1794,7 @@ public class TemplateGenerator implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a8a1a81a1a2);
               environment.nodeCopied(context, tnode126, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/8847459826362570447");
-              tnode126.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode126, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)"), SNodeId.fromString("~LanguageRuntime")));
+              tnode126.setReference("classifier", SReference.create("classifier", tnode126, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)"), SNodeId.fromString("~LanguageRuntime")));
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode126));
@@ -1890,14 +1890,14 @@ public class TemplateGenerator implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a8a1a91a1a2);
               environment.nodeCopied(context, tnode132, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475280643");
-              tnode132.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode132, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
+              tnode132.setReference("classifier", SReference.create("classifier", tnode132, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Collection")));
 
               {
                 final SNode tnode133 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_g5r92k_a0a0a1a4a1a8a1a91a1a2);
                   environment.nodeCopied(context, tnode133, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475346537");
-                  tnode133.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode133, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+                  tnode133.setReference("classifier", SReference.create("classifier", tnode133, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode133));

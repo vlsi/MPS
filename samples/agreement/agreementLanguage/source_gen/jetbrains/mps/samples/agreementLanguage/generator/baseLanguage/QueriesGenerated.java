@@ -23,7 +23,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -370,48 +370,48 @@ __switch__:
   private static SNode _quotation_createNode_x583g4_a0a0c0fb() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655543")));
-    quotedNode_1.setReference("variableDeclaration", jetbrains.mps.smodel.SReference.create("variableDeclaration", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655558")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655543")));
+    quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655558")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0d0fb() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655543")));
-    quotedNode_1.setReference("variableDeclaration", jetbrains.mps.smodel.SReference.create("variableDeclaration", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655546")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655543")));
+    quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655546")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0e0fb() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655543")));
-    quotedNode_1.setReference("variableDeclaration", jetbrains.mps.smodel.SReference.create("variableDeclaration", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655552")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655543")));
+    quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655552")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0c0gb() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("enumClass", jetbrains.mps.smodel.SReference.create("enumClass", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654331")));
-    quotedNode_1.setReference("enumConstantDeclaration", jetbrains.mps.smodel.SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654333")));
+    quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654331")));
+    quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654333")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0d0gb() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("enumClass", jetbrains.mps.smodel.SReference.create("enumClass", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654331")));
-    quotedNode_1.setReference("enumConstantDeclaration", jetbrains.mps.smodel.SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654334")));
+    quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654331")));
+    quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654334")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0e0gb() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("enumClass", jetbrains.mps.smodel.SReference.create("enumClass", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654331")));
-    quotedNode_1.setReference("enumConstantDeclaration", jetbrains.mps.smodel.SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654335")));
+    quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654331")));
+    quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654335")));
     return quotedNode_1;
   }
 }

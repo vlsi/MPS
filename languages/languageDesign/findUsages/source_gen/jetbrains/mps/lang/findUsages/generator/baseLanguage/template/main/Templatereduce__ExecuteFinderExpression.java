@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -34,8 +34,8 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
     try {
       environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c8959035c/5140158946217876025");
-      tnode1.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", tnode1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), SNodeId.fromString("~FindUtils")));
-      tnode1.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), SNodeId.fromString("~FindUtils.executeFinder(java.lang.String,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.smodel.IScope,jetbrains.mps.progress.ProgressMonitor):java.util.List")));
+      tnode1.setReference("classConcept", SReference.create("classConcept", tnode1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), SNodeId.fromString("~FindUtils")));
+      tnode1.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)"), SNodeId.fromString("~FindUtils.executeFinder(java.lang.String,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.smodel.IScope,jetbrains.mps.progress.ProgressMonitor):java.util.List")));
 
       {
         final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -135,7 +135,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a4a1a1a1a8a1a2);
                   environment.nodeCopied(context, tnode12, "tpl/r:00000000-0000-4000-0000-011c8959035c/7810572934689511365");
-                  tnode12.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode12, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor.subTask(int):jetbrains.mps.progress.ProgressMonitor")));
+                  tnode12.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode12, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor.subTask(int):jetbrains.mps.progress.ProgressMonitor")));
 
                   {
                     final SNode tnode13 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
@@ -179,7 +179,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a3a2a0b0b0i0b0c);
                   environment.nodeCopied(context, tnode15, "tpl/r:00000000-0000-4000-0000-011c8959035c/7810572934689511381");
-                  tnode15.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", tnode15, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~EmptyProgressMonitor.<init>()")));
+                  tnode15.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode15, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~EmptyProgressMonitor.<init>()")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode15));
