@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.model;
 
-import jetbrains.mps.ide.findusages.scopes.BootstrapScope;
+import jetbrains.mps.ide.findusages.model.scopes.BootstrapScope;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
@@ -166,7 +166,7 @@ public class SearchQuery implements IExternalizeable {
       myScope = new ModelsOnlyScope(models.toArray(new SModelDescriptor[models.size()]));
     }
     if (scopeType.equals(SCOPE_TYPE_BOOTSTRAP)) {
-      myScope = BootstrapScope.getInstance();
+      myScope = new BootstrapScope();
     }
 
     Element holderXML = element.getChild(HOLDER);

@@ -13,33 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages.scopes;
+package jetbrains.mps.ide.findusages.model.scopes;
 
-import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.smodel.BaseScope;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jdom.Element;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.*;
-
-public class BootstrapScope extends BaseScope {
-  private static BootstrapScope myInstance;
-
-  public static BootstrapScope getInstance() {
-    if (myInstance == null) {
-      myInstance = new BootstrapScope();
+public class GlobalScope extends FindUsagesScope {
+  public GlobalScope() {
+    for (SModule module : MPSModuleRepository.getInstance().getModules()) {
+      if (!(module.getModuleName().contains("@transient"))) {
+        addModule(module);
+      }
     }
-    return myInstance;
   }
 
-  private BootstrapScope() {
+  public GlobalScope(Element element, Project project) throws CantLoadSomethingException {
+    // nothing saved
+    this();
   }
 
   public String toString() {
-    return "bootstrap scope";
-  }
-
-  @Override
-  public Iterable<SModule> getModules() {
-    return new ArrayList<SModule>(LibraryInitializer.getInstance().getBootstrapModules(SModule.class));
+    return "global scope";
   }
 }
