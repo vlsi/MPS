@@ -39,7 +39,7 @@ public class ScopeResolver implements IResolver {
           return false;
         }
         SNode result = null;
-        String resolveInfo = reference.getResolveInfo();
+        String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
         if (resolveInfo != null) {
           result = refScope.resolve(sourceNode, resolveInfo);
           if (result == null) {

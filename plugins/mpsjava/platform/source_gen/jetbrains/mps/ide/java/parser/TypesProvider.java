@@ -147,7 +147,7 @@ public class TypesProvider {
       if (binding instanceof SourceTypeBinding) {
         SNode classifierType = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ClassifierType");
         SLinkOperations.setTarget(classifierType, "classifier", SNodeOperations.cast(myReferentsCreator.myBindingMap.get(binding), "jetbrains.mps.baseLanguage.structure.Classifier"), false);
-        SNodeOperations.getReference(classifierType, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")).setResolveInfo(new String(binding.sourceName()));
+        ((jetbrains.mps.smodel.SReference) SNodeOperations.getReference(classifierType, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier"))).setResolveInfo(new String(binding.sourceName()));
         return classifierType;
       }
       if (binding instanceof MissingTypeBinding || binding instanceof ProblemReferenceBinding) {

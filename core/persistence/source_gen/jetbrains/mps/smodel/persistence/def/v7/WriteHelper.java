@@ -183,7 +183,7 @@ public class WriteHelper {
         }
       }
     }
-    return ref.getResolveInfo();
+    return ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
   }
 
   public static String encode(String s) {

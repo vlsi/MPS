@@ -392,7 +392,7 @@ public class RefactoringContext {
               if (delete) {
                 node.setReference(reference.getRole(), null);
               } else {
-                reference.setRole(newRole);
+                ((jetbrains.mps.smodel.SReference) reference).setRole(newRole);
               }
             }
           }

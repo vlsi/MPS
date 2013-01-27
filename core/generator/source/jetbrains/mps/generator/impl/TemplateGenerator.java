@@ -570,14 +570,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               outputNode,
               targetModelReference,
               inputReference.getTargetNodeId(),
-              ((jetbrains.mps.smodel.SReference)inputReference).getResolveInfo());
+              ((StaticReference) inputReference).getResolveInfo());
             outputNode.setReference(reference.getRole(), reference);
           } else if (inputReference instanceof DynamicReference) {
             DynamicReference outputReference = new DynamicReference(
               inputReference.getRole(),
               outputNode,
               targetModelReference,
-              ((jetbrains.mps.smodel.SReference)inputReference).getResolveInfo());
+              ((DynamicReference) inputReference).getResolveInfo());
             outputReference.setOrigin(((DynamicReference) inputReference).getOrigin());
             outputNode.setReference(outputReference.getRole(), outputReference);
           } else {

@@ -56,7 +56,7 @@ public class SNodeCompare {
       if (neq_acety0_a0e0f0c(aRef.getTargetSModelReference(), bRef.getTargetSModelReference())) {
         return false;
       }
-      if (neq_acety0_a0f0f0c(aRef.getResolveInfo(), bRef.getResolveInfo())) {
+      if (neq_acety0_a0f0f0c(((jetbrains.mps.smodel.SReference) aRef).getResolveInfo(), ((jetbrains.mps.smodel.SReference) bRef).getResolveInfo())) {
         return false;
       }
       if (aRef instanceof DynamicReference || bRef instanceof DynamicReference) {

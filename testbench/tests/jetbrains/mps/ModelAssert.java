@@ -251,7 +251,7 @@ public class ModelAssert {
     assertNotNull(errorString, actualReference);
 
 //    assertIdEqualsOrBothNull(errorString, expectedReference.getTargetNode(), actualReference.getTargetNode());
-    assertEquals(errorString, expectedReference.getResolveInfo(), actualReference.getResolveInfo());
+    assertEquals(errorString, ((jetbrains.mps.smodel.SReference) expectedReference).getResolveInfo(), ((jetbrains.mps.smodel.SReference) actualReference).getResolveInfo());
     assertEquals(errorString, expectedReference.getRole(), actualReference.getRole());
     assertEquals(errorString, expectedReference.getTargetNodeId(), actualReference.getTargetNodeId());
   }

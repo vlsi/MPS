@@ -173,7 +173,7 @@ public class ModelLinkMap {
     });
     res |= setProp(myRefRoleMap, ptr, new _FunctionTypes._void_P1_E0<SReference>() {
       public void invoke(SReference ref) {
-        ref.setRole(role);
+        ((jetbrains.mps.smodel.SReference) ref).setRole(role);
       }
     });
     return res;

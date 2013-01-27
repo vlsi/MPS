@@ -361,14 +361,14 @@ public class ChangeSetBuilder {
 
   private static String check_nbyrtw_a0a8a9(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getResolveInfo();
+      return ((jetbrains.mps.smodel.SReference) checkedDotOperand).getResolveInfo();
     }
     return null;
   }
 
   private static String check_nbyrtw_a0a8a9_0(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getResolveInfo();
+      return ((jetbrains.mps.smodel.SReference) checkedDotOperand).getResolveInfo();
     }
     return null;
   }
@@ -382,7 +382,7 @@ public class ChangeSetBuilder {
 
   private static String check_nbyrtw_f0a0a1a0i0j(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getResolveInfo();
+      return ((jetbrains.mps.smodel.SReference) checkedDotOperand).getResolveInfo();
     }
     return null;
   }

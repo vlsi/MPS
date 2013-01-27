@@ -153,8 +153,8 @@ public class CopyPasteUtil {
         if (oldTargetNode != null) {
           newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getNodeId());
         } else
-        if (sourceReference.getResolveInfo() != null) {
-          newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, sourceReference.getResolveInfo());
+        if (((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() != null) {
+          newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo());
         } else {
           continue;
         }
@@ -177,7 +177,7 @@ public class CopyPasteUtil {
           newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
         } else {
           String resolveInfo = (oldTargetNode == null ?
-            sourceReference.getResolveInfo() :
+            ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() :
             oldTargetNode.getName()
           );
           if (resolveInfo != null) {

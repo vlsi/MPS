@@ -125,14 +125,14 @@ public class StubRefUtil {
   public static void replaceRefs(SNode oldNode, SNode newNode) {
     for (SReference newRef : Sequence.fromIterable(newNode.getReferences())) {
       oldNode.setReference(newRef.getRole(), null);
-      oldNode.setReference(new StaticReference(newRef.getRole(), oldNode, newRef.getTargetSModelReference(), newRef.getTargetNodeId(), newRef.getResolveInfo()).getRole(), new StaticReference(newRef.getRole(), oldNode, newRef.getTargetSModelReference(), newRef.getTargetNodeId(), newRef.getResolveInfo()));
+      oldNode.setReference(new StaticReference(newRef.getRole(), oldNode, newRef.getTargetSModelReference(), newRef.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) newRef).getResolveInfo()).getRole(), new StaticReference(newRef.getRole(), oldNode, newRef.getTargetSModelReference(), newRef.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) newRef).getResolveInfo()));
     }
     StubRefUtil.addRequiredImports(oldNode.getModel(), newNode);
   }
 
   public static void replaceReference(SNode oldNode, SReference reference) {
     oldNode.setReference(reference.getRole(), null);
-    oldNode.setReference(new StaticReference(reference.getRole(), oldNode, reference.getTargetSModelReference(), reference.getTargetNodeId(), reference.getResolveInfo()).getRole(), new StaticReference(reference.getRole(), oldNode, reference.getTargetSModelReference(), reference.getTargetNodeId(), reference.getResolveInfo()));
+    oldNode.setReference(new StaticReference(reference.getRole(), oldNode, reference.getTargetSModelReference(), reference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) reference).getResolveInfo()).getRole(), new StaticReference(reference.getRole(), oldNode, reference.getTargetSModelReference(), reference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) reference).getResolveInfo()));
     StubRefUtil.addRequiredImports(oldNode.getModel(), reference.getSourceNode());
   }
 

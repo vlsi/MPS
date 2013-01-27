@@ -79,7 +79,7 @@ public class CloneUtil {
             outputNode,
             targetModelReference,
             ((StaticReference) reference).getTargetNodeId(),
-            reference.getResolveInfo());
+            ((StaticReference) reference).getResolveInfo());
           outputNode.setReference(outputReference.getRole(), outputReference);
         }
       } else if (reference instanceof DynamicReference) {
@@ -87,7 +87,7 @@ public class CloneUtil {
           reference.getRole(),
           outputNode,
           targetModelReference,
-          reference.getResolveInfo());
+          ((DynamicReference) reference).getResolveInfo());
         outputReference.setOrigin(((DynamicReference) reference).getOrigin());
         outputNode.setReference(outputReference.getRole(), outputReference);
       } else {

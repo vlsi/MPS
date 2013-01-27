@@ -978,7 +978,7 @@ public class JavaConverterTreeBuilder {
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
       SNode parameterReference = SModelOperations.createNewNode(myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.VariableReference");
       SLinkOperations.setTarget(parameterReference, "variableDeclaration", SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), false);
-      SNodeOperations.getReference(parameterReference, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration")).setResolveInfo(SPropertyOperations.getString(variable, "name"));
+      ((jetbrains.mps.smodel.SReference) SNodeOperations.getReference(parameterReference, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"))).setResolveInfo(SPropertyOperations.getString(variable, "name"));
       result = parameterReference;
     } else {
       throw new JavaConverterException("Unknown VariableDeclaration subclass.");

@@ -95,7 +95,7 @@ public class NodesWriter {
       }
       os.writeString(reference.getRole());
       os.writeModelReference(targetModelReference != null && targetModelReference.equals(myModelReference) ? LOCAL : targetModelReference);
-      os.writeString(reference.getResolveInfo());
+      os.writeString(((jetbrains.mps.smodel.SReference) reference).getResolveInfo());
     }
   }
 

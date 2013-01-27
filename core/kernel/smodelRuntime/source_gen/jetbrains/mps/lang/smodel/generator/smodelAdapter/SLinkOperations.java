@@ -181,6 +181,6 @@ public class SLinkOperations {
     if (reference == null) {
       return null;
     }
-    return reference.getResolveInfo();
+    return ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
   }
 }

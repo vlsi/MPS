@@ -191,7 +191,7 @@ public class ReferencePersister4 implements IReferencePersister {
     //stack overflow was here!!
     targetNodeId = VersionUtil.formVersionedString(targetModelInfo + targetNodeId, VersionUtil.getReferenceToNodeVersion(node, reference.getTargetSModelReference()));
     linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
-    String resolveInfo = reference.getResolveInfo();
+    String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
     if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
   }
 

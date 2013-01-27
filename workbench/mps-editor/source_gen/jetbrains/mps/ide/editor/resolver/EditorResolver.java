@@ -54,7 +54,7 @@ public class EditorResolver implements IResolver {
   }
 
   private String getResolveInfo(SReference reference, SNode sourceNode) {
-    String result = reference.getResolveInfo();
+    String result = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
     if (result != null) {
       return result;
     }

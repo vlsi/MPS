@@ -70,7 +70,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   private String myRoleInParent;
-  private SReference[] myReferences = SReference.EMPTY_ARRAY;
+  private SReference[] myReferences = jetbrains.mps.smodel.SReference.EMPTY_ARRAY;
 
   private String[] myProperties = null;
 
@@ -671,7 +671,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     if (!myModel.isUpdateMode()) {
       for (SReference ref : myReferences) {
-        ref.makeDirect();
+        ((jetbrains.mps.smodel.SReference) ref).makeDirect();
       }
     }
 
@@ -696,7 +696,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     myModel = model;
 
     for (SReference ref : myReferences) {
-      ref.makeIndirect();
+      ((jetbrains.mps.smodel.SReference) ref).makeIndirect();
     }
 
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {

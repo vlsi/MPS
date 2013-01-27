@@ -875,7 +875,7 @@ public class SModel {
         SModelReference newRef = oldReference.update();
         if (newRef.differs(oldReference)) {
           changed = true;
-          reference.setTargetSModelReference(newRef);
+          ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newRef);
         }
       }
     }
@@ -936,7 +936,7 @@ public class SModel {
       SNode node = (SNode) n;
       for (SReference reference : node.getReferences()) {
         if (oldReference.equals(reference.getTargetSModelReference())) {
-          reference.setTargetSModelReference(newModelReference);
+          ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newModelReference);
         }
       }
     }
