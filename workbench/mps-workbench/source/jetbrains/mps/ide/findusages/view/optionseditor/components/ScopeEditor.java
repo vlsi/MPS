@@ -17,6 +17,7 @@ package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeType;
 import jetbrains.mps.ide.ui.DefaultCompletionTextField;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -171,16 +172,16 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     myModuleField.setText(defaultOptions.getModule());
     myModelField.setText(defaultOptions.getModel());
 
-    String scopeType = defaultOptions.getScopeType();
-    if (scopeType.equals(ScopeOptions.GLOBAL_SCOPE)) {
+    ScopeType scopeType = defaultOptions.getScopeType();
+    if (scopeType == ScopeType.GLOBAL) {
       setCurrentRadioButton(myGlobalScopeButton);
-    } else if (scopeType.equals(ScopeOptions.PROJECT_SCOPE)) {
+    } else if (scopeType == ScopeType.PROJECT) {
       setCurrentRadioButton(myProjectScopeButton);
-    } else if (scopeType.equals(ScopeOptions.MODULE_SCOPE)) {
+    } else if (scopeType == ScopeType.MODULE) {
       setCurrentRadioButton(myModuleScopeButton);
-    } else if (scopeType.equals(ScopeOptions.MODEL_SCOPE)) {
+    } else if (scopeType == ScopeType.MODEL) {
       setCurrentRadioButton(myModelScopeButton);
-    } else if (scopeType.equals(ScopeOptions.BOOTSTRAP_SCOPE)) {
+    } else if (scopeType == ScopeType.BOOTSTRAP) {
       if (myBootstrapScopeButton != null) {
         setCurrentRadioButton(myBootstrapScopeButton);
       } else {
@@ -203,17 +204,17 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     }
 
     ButtonModel selectedModel = myButtonGroup.getSelection();
-    String scopeType;
+    ScopeType scopeType;
     if (selectedModel == myGlobalScopeButton.getModel()) {
-      scopeType = ScopeOptions.GLOBAL_SCOPE;
+      scopeType = ScopeType.GLOBAL;
     } else if (selectedModel == myProjectScopeButton.getModel()) {
-      scopeType = ScopeOptions.PROJECT_SCOPE;
+      scopeType = ScopeType.PROJECT;
     } else if (selectedModel == myModuleScopeButton.getModel()) {
-      scopeType = ScopeOptions.MODULE_SCOPE;
+      scopeType = ScopeType.MODULE;
     } else if (selectedModel == myModelScopeButton.getModel()) {
-      scopeType = ScopeOptions.MODEL_SCOPE;
+      scopeType = ScopeType.MODEL;
     } else if (selectedModel == myBootstrapScopeButton.getModel()) {
-      scopeType = ScopeOptions.BOOTSTRAP_SCOPE;
+      scopeType = ScopeType.BOOTSTRAP;
     } else {
       throw new IllegalArgumentException();
     }
