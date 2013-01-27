@@ -14,7 +14,6 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Collection;
 import jetbrains.mps.smodel.Language;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -23,6 +22,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.lang.reflect.Constructor;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -69,8 +69,7 @@ public class RefactoringUtil {
 
   public static List<IRefactoring> getAllRefactorings() {
     List<IRefactoring> allRefactorings = new ArrayList<IRefactoring>();
-    Iterable<Language> languages = GlobalScope.getInstance().getVisibleLanguages();
-    for (Language language : languages) {
+    for (Language language : GlobalScope.getInstance().getVisibleLanguages()) {
       allRefactorings.addAll(RefactoringUtil.getRefactorings(language));
     }
     return allRefactorings;

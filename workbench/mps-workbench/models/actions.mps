@@ -167,6 +167,7 @@
   <import index="c4ym" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.icons(jetbrains.mps.icons@java_stub)" version="-1" />
   <import index="xick" modelUID="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)" version="-1" />
   <import index="ubyd" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model.scopes(MPS.Core/jetbrains.mps.ide.findusages.model.scopes@java_stub)" version="-1" />
+  <import index="rl1i" modelUID="r:8a82b7a4-1180-4262-8f18-8c96a5d3ac16(jetbrains.mps.ide.hierarchy)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -3418,7 +3419,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1216119756068">
             <property name="name" nameId="tpck.1169194664001" value="tool" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1216119756069">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e056.~BaseLanguageHierarchyViewTool" resolveInfo="BaseLanguageHierarchyViewTool" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rl1i.5797068448049411442" resolveInfo="BaseLanguageHierarchyViewTool" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1216119809280">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1216119803714">
@@ -3429,8 +3430,8 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216119817939">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~IOperationContext%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolveInfo="getComponent" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="1216119822487">
-                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="e056.~BaseLanguageHierarchyViewTool" resolveInfo="BaseLanguageHierarchyViewTool" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="5491034601527391026">
+                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="rl1i.5797068448049411442" resolveInfo="BaseLanguageHierarchyViewTool" />
                 </node>
               </node>
             </node>
@@ -3442,7 +3443,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1216119756068" resolveInfo="tool" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216119840936">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e056.~AbstractHierarchyView%dshowItemInHierarchy(org%djetbrains%dmps%dopenapi%dmodel%dSNode,jetbrains%dmps%dsmodel%dIOperationContext)%cvoid" resolveInfo="showItemInHierarchy" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rl1i.5797068448049411196" resolveInfo="showItemInHierarchy" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1216119875793">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1216119707537" resolveInfo="classNode" />
               </node>
