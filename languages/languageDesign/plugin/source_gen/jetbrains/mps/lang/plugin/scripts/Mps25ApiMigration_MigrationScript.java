@@ -1059,7 +1059,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ReferenceUtil.isReferenceToModel(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), "jetbrains.mps.baseLanguage.plugin") && (int) ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() == 3 && "NodeNavigationItem".equals(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")).getResolveInfo());
+        return ReferenceUtil.isReferenceToModel(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), "jetbrains.mps.baseLanguage.plugin") && (int) ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() == 3 && "NodeNavigationItem".equals(((jetbrains.mps.smodel.SReference) SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"))).getResolveInfo());
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -1084,11 +1084,11 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return ReferenceUtil.isReferenceToModel(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), "jetbrains.mps.baseLanguage.plugin") && "NodeNavigationItem".equals(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")).getResolveInfo());
+        return ReferenceUtil.isReferenceToModel(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), "jetbrains.mps.baseLanguage.plugin") && "NodeNavigationItem".equals(((jetbrains.mps.smodel.SReference) SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier"))).getResolveInfo());
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        String resolveInfo = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")).getResolveInfo();
+        String resolveInfo = ((jetbrains.mps.smodel.SReference) SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier"))).getResolveInfo();
         if ("NodeNavigationItem".equals(resolveInfo)) {
           SNodeOperations.replaceWithAnother(node, _quotation_createNode_d0rs9v_a0a0a1a0pb());
         } else if ("AbstractLeftEditorHighlighterMessage".equals(resolveInfo)) {
@@ -1166,7 +1166,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
           return false;
         }
-        return ReferenceUtil.isReferenceToModel(reference, "jetbrains.mps.baseLanguage.plugin") && "getNode".equals(reference.getResolveInfo());
+        return ReferenceUtil.isReferenceToModel(reference, "jetbrains.mps.baseLanguage.plugin") && "getNode".equals(((jetbrains.mps.smodel.SReference) reference).getResolveInfo());
       }
 
       public void doUpdateInstanceNode(SNode node) {

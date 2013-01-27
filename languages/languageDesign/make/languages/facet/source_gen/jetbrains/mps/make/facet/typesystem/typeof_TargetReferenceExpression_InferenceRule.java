@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -44,7 +44,7 @@ public class typeof_TargetReferenceExpression_InferenceRule extends AbstractInfe
   private static SNode _quotation_createNode_kzmuql_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)"), SNodeId.fromString("6168415856807657135")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:71895ceb-c89d-4545-aa38-89d1cd891f17(jetbrains.mps.make.facet)"), SNodeId.fromString("6168415856807657135")));
     return quotedNode_1;
   }
 }

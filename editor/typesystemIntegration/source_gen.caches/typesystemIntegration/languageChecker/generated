@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2mo0qai4w4fc8b27qrw3gh7zvyo77b0">
+<dependencies version="2" modelHash="7htcv5z0q93y9l8toqarzmwmupybaug">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.checking(MPS.Editor/jetbrains.mps.nodeEditor.checking@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
@@ -19,7 +19,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="3d2lxr8unjxvzzi6xlbsruq2a8tb63l" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="d5cnpujtqu721m7jpcehnnksdbi4kbf" />
-  <dep model="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)" hash="-2unmxssu6vowgz28z680xav01nwlfu3" />
+  <dep model="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)" hash="9igqzkh00ria3lg4i4x8pdln2t7dgwx" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-dtcjnjk6lww15wxj6oyv44k28fu5g1d" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
   <common hash="-cbykphrkvntv630fx7khvguosoh5apk" />
@@ -47,7 +47,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="LanguageEditorChecker.java" />
   </source>
-  <source id="5031859272495377247" name="AutoResolver" hash="-2uhxrpgdt7vpm4y4ftwnvbleo5gqlqu">
+  <source id="5031859272495377247" name="AutoResolver" hash="-dnabmnxrep1g6vz5dkq8j3xm6ez5x1z">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />

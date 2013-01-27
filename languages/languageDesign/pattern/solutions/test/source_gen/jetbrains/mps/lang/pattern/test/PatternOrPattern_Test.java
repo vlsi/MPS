@@ -18,7 +18,7 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -293,7 +293,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
       quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
       quotedNode_3.addChild("rightExpression", quotedNode_5);
       quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, GlobalScope.getInstance(), false);
-      quotedNode_6.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~BufferedOutputStream")));
+      quotedNode_6.setReference("classifier", SReference.create("classifier", quotedNode_6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~BufferedOutputStream")));
       quotedNode_3.addChild("leftExpression", quotedNode_6);
       quotedNode_1.addChild("condition", quotedNode_3);
       return quotedNode_1;
@@ -302,7 +302,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
     private static SNode _quotation_createNode_qttyfe_a6a2c() {
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, GlobalScope.getInstance(), false);
-      quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~BufferedOutputStream")));
+      quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~BufferedOutputStream")));
       return quotedNode_1;
     }
   }

@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -65,14 +65,14 @@ public class typeof_Quotation_InferenceRule extends AbstractInferenceRule_Runtim
   private static SNode _quotation_createNode_wzo52i_a0c0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_wzo52i_a0d0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeId")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeId")));
     return quotedNode_1;
   }
 }

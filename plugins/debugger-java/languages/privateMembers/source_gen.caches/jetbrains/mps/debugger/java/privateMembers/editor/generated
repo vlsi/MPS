@@ -11,14 +11,14 @@
   <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="3mf053xiuwvywhs2jxujn7gqmyvn0vx" />
   <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="-8ci4pq3ithulpx7v0605s3c62dm0b6m" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-70etqnpzu2kbei39q2pbbkqppl49jrv" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" hash="d52hckzpik73n3055ir4na54eafn4g6" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-czkeaawxav2uxfhwhouknmgxwcerk0t" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" hash="2d7z5xpi3now7zff2vl3lxk1fkaenhh" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="iak6qkoqvisy1gghydx23iwnxiu2qf" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="3d2lxr8unjxvzzi6xlbsruq2a8tb63l" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-6ms6uh6xw6ogel83ocxgvncpzgdfldf" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-d0ztk04yjcpn12oqicw9ztee8ofwbaz" />
   <dep model="r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)" hash="-6xg7mwoxyle3jvctyl2kn6p0beu0a5h" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-aurdhr4pnjsfnuy33i926r0e5rlfi6u" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-511sbwaja1m07hjvf6lzjypr0xf43pc" />
   <dep model="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" hash="4u44p62391pnlr710its8vozann3lo3" />
   <common hash="-93syzhz2e0rjp2b6qy8l8oirgsr5k3y" />
   <source id="5619723216767159054" name="PrivateStaticFieldReference_Editor" hash="-1k3fev5v444ucv4vbn4pg98po19jwjr">

@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -32,7 +32,7 @@ public class GFGetterFun_Behavior {
   private static SNode _quotation_createNode_kkk3v2_a0a0() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("concept", jetbrains.mps.smodel.SReference.create("concept", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), SNodeId.fromString("1068431790191")));
+    quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), SNodeId.fromString("1068431790191")));
     return quotedNode_1;
   }
 }

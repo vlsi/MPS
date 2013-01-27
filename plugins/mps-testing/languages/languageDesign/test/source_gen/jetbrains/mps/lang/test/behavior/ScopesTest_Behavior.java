@@ -24,7 +24,7 @@ public class ScopesTest_Behavior {
     }
     for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(SNodeOperations.getParent(thisNode)))) {
       if (SLinkOperations.getTargetNode(reference) == SLinkOperations.getTarget(thisNode, "checkingReference", false)) {
-        return (SReference) reference;
+        return (jetbrains.mps.smodel.SReference) reference;
       }
     }
     return null;

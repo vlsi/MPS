@@ -7198,11 +7198,11 @@
     <nodeInfo nodeId="3010989094832023640" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="35" startPosition="27" endLine="36" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3010989094832023800" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="39" startPosition="60" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3010989094832023800" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="40" startPosition="30" endLine="41" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3010989094832023800" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="41" startPosition="165" endLine="42" endPosition="268" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3010989094832023800" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="42" startPosition="268" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3010989094832023800" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="41" startPosition="165" endLine="42" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3010989094832023800" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="42" startPosition="293" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3010989094832023640" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="supertypesOf_SReferenceType_SubtypingRule#()V" />
-    <nodeInfo nodeId="3010989094832023800" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="268" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3010989094832023800" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="268" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3010989094832023800" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3010989094832023800" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3010989094832023640" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="3010989094832023640" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="3010989094832023640" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
@@ -7217,7 +7217,7 @@
     <scopeInfo nodeId="3010989094832023640" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="29" startPosition="5" endLine="31" endPosition="45">
       <varInfo nodeId="3010989094832023640" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="3010989094832023800" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="268" />
+    <scopeInfo nodeId="3010989094832023800" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="293" />
     <scopeInfo nodeId="3010989094832023640" fileName="supertypesOf_SReferenceType_SubtypingRule.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="3010989094832023640" varName="referenceType" />
       <varInfo nodeId="3010989094832023640" varName="status" />

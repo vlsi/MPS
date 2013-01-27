@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -29,7 +29,7 @@ public class Variant_CustomApplicationPlugin extends BaseCustomApplicationPlugin
   private static SNode _quotation_createNode_fq17w2_a0a0a1a0a0a0a0a() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("plugin", jetbrains.mps.smodel.SReference.create("plugin", quotedNode_1, SModelReference.fromString("r:a7b2ce5c-fa36-4a0c-9c5e-de5ded669046(jetbrains.mps.ui.swt.pluginSolution.plugin)"), SNodeId.fromString("5487985028841950086")));
+    quotedNode_1.setReference("plugin", SReference.create("plugin", quotedNode_1, SModelReference.fromString("r:a7b2ce5c-fa36-4a0c-9c5e-de5ded669046(jetbrains.mps.ui.swt.pluginSolution.plugin)"), SNodeId.fromString("5487985028841950086")));
     return quotedNode_1;
   }
 }

@@ -85,7 +85,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.junit.BeforeClass;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import com.intellij.openapi.util.registry.Registry;
 import jetbrains.mps.TestMain;
 import org.junit.AfterClass;
@@ -969,7 +969,7 @@ public class ChangesManagerTest {
 
   @BeforeClass
   public static void setUp() {
-    jetbrains.mps.smodel.SReference.disableLogging();
+    SReference.disableLogging();
     Registry.get("vcs.showConsole").setValue(false);
 
     ourProject = TestMain.startTestOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, "jetbrains.mps.vcs", "Git4Idea", "jetbrains.mps.ide.make");

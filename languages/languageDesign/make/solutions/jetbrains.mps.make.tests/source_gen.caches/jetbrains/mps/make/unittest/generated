@@ -13,8 +13,8 @@
   <dep model="r:00000000-0000-4000-0000-011c89590281(jetbrains.mps.lang.core.actions)" hash="-2kn8sh86nkqnnrc4jwtcexdmqbn06nl" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="9s7tn7r6i6ppg130pq11m1usnjxibg4" />
-  <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" hash="auapvpgpvf7iascg3vm37370wkaq1m9" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-czkeaawxav2uxfhwhouknmgxwcerk0t" />
+  <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" hash="8qqh1ho6pdu75g5x5qeogsgeihf3upe" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
   <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="-ctxvs1rpiiexlq8dltxstwmrdnqkuz7" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="akhdydbhjjog28feg67o2k0h0fepfz2" />

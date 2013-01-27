@@ -101,10 +101,10 @@
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dependencyViewer.ReferencesView" file="ReferencesView.java">

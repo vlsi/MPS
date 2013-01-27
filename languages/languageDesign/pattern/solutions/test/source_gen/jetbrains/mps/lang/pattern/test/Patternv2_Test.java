@@ -19,7 +19,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -207,11 +207,11 @@ public class Patternv2_Test extends BaseTransformationTest4 {
       quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);
       quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
       quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
-      quotedNode_14.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_14, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System")));
-      quotedNode_14.setReference("variableDeclaration", jetbrains.mps.smodel.SReference.create("variableDeclaration", quotedNode_14, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System.out")));
+      quotedNode_14.setReference("classifier", SReference.create("classifier", quotedNode_14, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System")));
+      quotedNode_14.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_14, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System.out")));
       quotedNode_13.addChild("operand", quotedNode_14);
       quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-      quotedNode_15.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_15, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
+      quotedNode_15.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_15, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
       quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
       SNodeAccessUtil.setProperty(quotedNode_16, "value", " ");
       quotedNode_15.addChild("actualArgument", quotedNode_16);
@@ -246,11 +246,11 @@ public class Patternv2_Test extends BaseTransformationTest4 {
       quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);
       quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
       quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
-      quotedNode_5.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_5, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System")));
-      quotedNode_5.setReference("variableDeclaration", jetbrains.mps.smodel.SReference.create("variableDeclaration", quotedNode_5, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System.out")));
+      quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System")));
+      quotedNode_5.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_5, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System.out")));
       quotedNode_4.addChild("operand", quotedNode_5);
       quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-      quotedNode_6.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
+      quotedNode_6.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
       quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
       SNodeAccessUtil.setProperty(quotedNode_7, "value", " ");
       quotedNode_6.addChild("actualArgument", quotedNode_7);

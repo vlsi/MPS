@@ -14,7 +14,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -91,7 +91,7 @@ public class AttributeAccess_Behavior {
   private static SNode _quotation_createNode_q663c8_a0b0e() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("concept", jetbrains.mps.smodel.SReference.create("concept", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1133920641626")));
+    quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1133920641626")));
     return quotedNode_1;
   }
 }

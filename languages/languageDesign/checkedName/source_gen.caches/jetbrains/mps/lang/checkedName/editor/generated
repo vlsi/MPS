@@ -9,8 +9,8 @@
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="dtdhcf26fj1e2nxiirvasba878r92s1" />
   <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="4dy5hjpo03slu3lzpwzxgnw4i7bk278" />
   <dep model="r:00000000-0000-4000-0000-011c895902bb(jetbrains.mps.lang.sharedConcepts.editor)" hash="-7av7zo24zube2mtnybkqwbfkvfksg6d" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" hash="d52hckzpik73n3055ir4na54eafn4g6" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-czkeaawxav2uxfhwhouknmgxwcerk0t" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" hash="2d7z5xpi3now7zff2vl3lxk1fkaenhh" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
   <dep model="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" hash="60b6ox1q136tykeqjkfgdkqt4lyz2i8" />
   <common hash="-dpoz8r9ehz46b3uouml7x5jpdoypsck" />

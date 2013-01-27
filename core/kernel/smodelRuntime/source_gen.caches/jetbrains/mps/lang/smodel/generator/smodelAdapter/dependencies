@@ -132,6 +132,7 @@
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" file="SModelOperations.java">
     <classNode dependClassName="java.lang.Deprecated" />
@@ -194,7 +195,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraints" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ISearchScope" />
@@ -205,6 +205,7 @@
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" file="SPropertyOperations.java">
     <classNode dependClassName="java.lang.Boolean" />

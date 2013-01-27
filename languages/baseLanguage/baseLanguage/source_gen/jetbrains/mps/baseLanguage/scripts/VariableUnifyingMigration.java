@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -73,7 +73,7 @@ public class VariableUnifyingMigration {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setReference("link", jetbrains.mps.smodel.SReference.create("link", quotedNode_6, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), SNodeId.fromString("1068581517664")));
+    quotedNode_6.setReference("link", SReference.create("link", quotedNode_6, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), SNodeId.fromString("1068581517664")));
     quotedNode_4.addChild("operation", quotedNode_6);
     quotedNode_7 = (SNode) parameter_1;
     if (quotedNode_7 != null) {

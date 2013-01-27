@@ -840,7 +840,7 @@ public class ASTConverter {
       // <node> 
       if (SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType").getReference("classifier") instanceof DynamicReference) {
         DynamicReference dynRef = (DynamicReference) SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType").getReference("classifier");
-        return dynRef.getResolveInfo();
+        return ((jetbrains.mps.smodel.SReference) dynRef).getResolveInfo();
       } else {
         return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "name");
       }

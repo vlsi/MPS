@@ -5,7 +5,7 @@
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom(MPS.Core/org.jdom@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.components(MPS.Platform/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.view.optionseditor.options(MPS.Workbench/jetbrains.mps.ide.findusages.view.optionseditor.options@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-czkeaawxav2uxfhwhouknmgxwcerk0t" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-1y364c3x08ezyxfrbl16vh2nde1fe7q" />
   <common hash="-96nmvt791wulvhnvtuzlpynp288zvlp" />
   <source id="28859145781927653" name="DefaultOptionsContainer" hash="-2c0eeehdiaq897mm2ev17wk00llva87">

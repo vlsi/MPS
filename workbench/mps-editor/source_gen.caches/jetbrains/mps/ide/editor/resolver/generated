@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4kbm7cxk59h59m5gw5fu9t8uv6vqthu">
+<dependencies version="2" modelHash="-et4qn8bm7z6xutjk0u5wopm8zob0no4">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellMenu(MPS.Editor/jetbrains.mps.nodeEditor.cellMenu@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
@@ -24,12 +24,12 @@
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-dtcjnjk6lww15wxj6oyv44k28fu5g1d" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
-  <common hash="8is5doviwewh3k04g7hm0juq94fn6vy" />
+  <common hash="8b9oass3qo68zvxpd0db2drswmblqoy" />
   <source id="1802459475176570754" name="EditorResolverComponent" hash="-k3xjnl0v1hz3p5tm556jw9ffzd4kd3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="EditorResolverComponent.java" />
   </source>
-  <source id="1802459475176571473" name="EditorResolver" hash="eo8mnq5la2z2vefvolwso78yp7xksv0">
+  <source id="1802459475176571473" name="EditorResolver" hash="a02t7a8unt2yicpqmdqzpi94vb23kfk">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellMenu(MPS.Editor/jetbrains.mps.nodeEditor.cellMenu@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />

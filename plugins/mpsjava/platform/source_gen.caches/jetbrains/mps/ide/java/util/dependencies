@@ -88,7 +88,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraints" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeContextManager" />
@@ -96,6 +95,7 @@
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
 </dependenciesRoot>
 

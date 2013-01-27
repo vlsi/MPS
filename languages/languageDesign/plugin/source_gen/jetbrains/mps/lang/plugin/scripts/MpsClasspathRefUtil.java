@@ -50,10 +50,10 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
         if (modelRef.equals(oldModelRef)) {
           break;
         }
-        ref.setTargetSModelReference(modelRef);
+        ((jetbrains.mps.smodel.SReference) ref).setTargetSModelReference(modelRef);
         // check reference - sometimes same package can be in several modules 
         if ((SLinkOperations.getTargetNode(ref) == null)) {
-          ref.setTargetSModelReference(oldModelRef);
+          ((jetbrains.mps.smodel.SReference) ref).setTargetSModelReference(oldModelRef);
           continue;
         }
         model.addModelImport(modelRef, false);

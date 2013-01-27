@@ -79,6 +79,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.newparser.CommentHelper" file="CommentHelper.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -333,6 +334,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
 </dependenciesRoot>
 

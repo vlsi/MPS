@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -43,7 +43,7 @@ public class map_extends_java_util_Map_SubtypingRule extends SubtypingRule_Runti
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Map")));
+    quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Map")));
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("parameter", HUtil.copyIfNecessary(quotedNode_4));

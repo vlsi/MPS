@@ -94,6 +94,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
 </dependenciesRoot>
 

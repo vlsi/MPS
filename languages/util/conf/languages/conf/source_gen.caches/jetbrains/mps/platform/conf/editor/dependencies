@@ -112,6 +112,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
   </dependency>
   <dependency className="jetbrains.mps.platform.conf.editor.BeanExtensionAttribute_Editor" file="BeanExtensionAttribute_Editor.java">

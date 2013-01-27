@@ -13,7 +13,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -62,7 +62,7 @@ public class any_type_supertypeof_wildcard_type_InequationReplacementRule extend
   private static SNode _quotation_createNode_fu2yto_a1a0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("descriptor", jetbrains.mps.smodel.SReference.create("descriptor", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
+    quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
     return quotedNode_1;
   }
 }

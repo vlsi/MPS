@@ -58,6 +58,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ChangeSetImpl" file="ChangeSetImpl.java">

@@ -141,7 +141,7 @@ public class SetReferenceChange extends NodeChange {
       targetModel = null;
     }
 
-    return new SetReferenceChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(), getRole(), targetModel, check_mgdhcs_e0a6a41(ref), check_mgdhcs_f0a6a41(ref));
+    return new SetReferenceChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(), getRole(), targetModel, check_mgdhcs_e0a6a41(ref), check_mgdhcs_f0a6a41(((jetbrains.mps.smodel.SReference) ref)));
   }
 
   private static SReference check_mgdhcs_a0i0f(jetbrains.mps.smodel.SNode checkedDotOperand, String myRole, SetReferenceChange checkedDotThisExpression) {
@@ -179,9 +179,9 @@ public class SetReferenceChange extends NodeChange {
     return null;
   }
 
-  private static String check_mgdhcs_f0a6a41(SReference checkedDotOperand) {
+  private static String check_mgdhcs_f0a6a41(jetbrains.mps.smodel.SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return ((jetbrains.mps.smodel.SReference) checkedDotOperand).getResolveInfo();
+      return checkedDotOperand.getResolveInfo();
     }
     return null;
   }

@@ -4,12 +4,12 @@
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
   <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="-8ci4pq3ithulpx7v0605s3c62dm0b6m" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-70etqnpzu2kbei39q2pbbkqppl49jrv" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-czkeaawxav2uxfhwhouknmgxwcerk0t" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="iak6qkoqvisy1gghydx23iwnxiu2qf" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-6ms6uh6xw6ogel83ocxgvncpzgdfldf" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-d0ztk04yjcpn12oqicw9ztee8ofwbaz" />
   <dep model="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" hash="-8ytuyctcmu2mkxg3flzbwv6f694owy5" />
   <dep model="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)" hash="97cuvtlif0a90wi494y0ijyo1miury0" />
-  <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" hash="-bw9pv1drcm1wyidlqi4l4pq9ihkom0v" />
+  <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" hash="xyqrauh7y51c8vcg52fugzauieuylb" />
   <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="7sazjoiy4x6mzzpf9k8hew0e7dv1ygz" />
   <dep model="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" hash="9h280o7ryznefiaylirszrrxphvazs2" />
   <common hash="1v5wpdf91cijeqmn2t28itfe7ywi1tf" dependsOnNodes="true">

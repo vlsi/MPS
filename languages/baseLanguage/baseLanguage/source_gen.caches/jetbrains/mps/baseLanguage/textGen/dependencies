@@ -209,6 +209,7 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.BitwiseAndExpression_TextGen" file="BitwiseAndExpression_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
@@ -90,7 +90,7 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
   private static SNode _quotation_createNode_6gcjzy_a0a1a2() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("conceptDeclaraton", jetbrains.mps.smodel.SReference.create("conceptDeclaraton", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1133920641626")));
+    quotedNode_1.setReference("conceptDeclaraton", SReference.create("conceptDeclaraton", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1133920641626")));
     return quotedNode_1;
   }
 

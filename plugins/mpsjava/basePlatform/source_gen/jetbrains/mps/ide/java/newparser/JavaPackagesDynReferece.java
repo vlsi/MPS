@@ -36,7 +36,7 @@ public class JavaPackagesDynReferece extends DynamicReference {
     }
   }
 
-  protected SNode getTargetNode_internal() {
+  protected SNode getTargetNode_internal(boolean silently) {
     String name = getResolveInfo();
 
     Map<String, SModel> suitableModels = MapSequence.fromMap(new HashMap<String, SModel>());

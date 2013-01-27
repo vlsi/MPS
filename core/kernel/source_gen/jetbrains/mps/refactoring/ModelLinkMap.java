@@ -51,10 +51,10 @@ public class ModelLinkMap {
       }
       for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
         addRoleLocation(ptr(SLinkOperations.findLinkDeclaration(ref)), ref);
-        if ((SReference) ref instanceof StaticReference) {
-          addTargetLocation(ptr(SLinkOperations.getTargetNode(ref)), (StaticReference) (SReference) ref);
+        if (ref instanceof StaticReference) {
+          addTargetLocation(ptr(SLinkOperations.getTargetNode(ref)), (StaticReference) ref);
         } else {
-          addDynamicReference(ref.getTargetSModelReference(), (DynamicReference) (SReference) ref);
+          addDynamicReference(ref.getTargetSModelReference(), (DynamicReference) ref);
         }
       }
     }

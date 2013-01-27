@@ -116,7 +116,7 @@ public class SNodeOperations {
   public static List<SReference> getReferences(SNode n) {
     List<SReference> res = new LinkedList<SReference>();
     for (SReference ref : Sequence.fromIterable(n.getReferences())) {
-      res.add(((SReference) ref));
+      res.add(((jetbrains.mps.smodel.SReference) ref));
     }
     return res;
   }
@@ -284,7 +284,7 @@ public class SNodeOperations {
     }
   }
 
-  public static SNode getTargetNodeSilently(org.jetbrains.mps.openapi.model.SReference ref) {
+  public static SNode getTargetNodeSilently(SReference ref) {
     try {
       jetbrains.mps.smodel.SReference.disableLogging();
       return ref.getTargetNode();

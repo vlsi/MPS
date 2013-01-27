@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -96,11 +96,11 @@ public class OnePassApiTransformations {
     SNode quotedNode_4 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getReferent(java.lang.String):jetbrains.mps.smodel.SNode")));
+    quotedNode_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getReferent(java.lang.String):jetbrains.mps.smodel.SNode")));
     quotedNode_1.addChild("operation", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.<init>(jetbrains.mps.smodel.SModel,java.lang.String)")));
+    quotedNode_4.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.<init>(jetbrains.mps.smodel.SModel,java.lang.String)")));
     quotedNode_3.addChild("creator", quotedNode_4);
     quotedNode_1.addChild("operand", quotedNode_3);
     return quotedNode_1;
@@ -121,7 +121,7 @@ public class OnePassApiTransformations {
       quotedNode_3.addChild("operand", HUtil.copyIfNecessary(quotedNode_4));
     }
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_5, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.getReferenceTarget(java.lang.String):org.jetbrains.mps.openapi.model.SNode")));
+    quotedNode_5.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_5, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.getReferenceTarget(java.lang.String):org.jetbrains.mps.openapi.model.SNode")));
     quotedNode_7 = (SNode) parameter_2;
     if (quotedNode_7 != null) {
       quotedNode_5.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_7));
@@ -139,11 +139,11 @@ public class OnePassApiTransformations {
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.<init>(jetbrains.mps.smodel.SModel,java.lang.String)")));
+    quotedNode_4.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.<init>(jetbrains.mps.smodel.SModel,java.lang.String)")));
     quotedNode_2.addChild("creator", quotedNode_4);
     quotedNode_1.addChild("operand", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getProperty(java.lang.String):java.lang.String")));
+    quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getProperty(java.lang.String):java.lang.String")));
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.addChild("actualArgument", quotedNode_5);
     quotedNode_1.addChild("operation", quotedNode_3);
@@ -155,8 +155,8 @@ public class OnePassApiTransformations {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
-    quotedNode_3.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.getProperty(org.jetbrains.mps.openapi.model.SNode,java.lang.String):java.lang.String")));
+    quotedNode_3.setReference("classConcept", SReference.create("classConcept", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
+    quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.getProperty(org.jetbrains.mps.openapi.model.SNode,java.lang.String):java.lang.String")));
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_4));
@@ -178,11 +178,11 @@ public class OnePassApiTransformations {
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.<init>(jetbrains.mps.smodel.SModel,java.lang.String)")));
+    quotedNode_4.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.<init>(jetbrains.mps.smodel.SModel,java.lang.String)")));
     quotedNode_2.addChild("creator", quotedNode_4);
     quotedNode_1.addChild("operand", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.setProperty(java.lang.String,java.lang.String):void")));
+    quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.setProperty(java.lang.String,java.lang.String):void")));
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.addChild("actualArgument", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
@@ -196,8 +196,8 @@ public class OnePassApiTransformations {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
-    quotedNode_3.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.setProperty(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String):void")));
+    quotedNode_3.setReference("classConcept", SReference.create("classConcept", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
+    quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.setProperty(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String):void")));
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_4));
@@ -220,11 +220,11 @@ public class OnePassApiTransformations {
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.<init>(jetbrains.mps.smodel.SModel,java.lang.String)")));
+    quotedNode_4.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.<init>(jetbrains.mps.smodel.SModel,java.lang.String)")));
     quotedNode_2.addChild("creator", quotedNode_4);
     quotedNode_1.addChild("operand", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.hasProperty(java.lang.String):boolean")));
+    quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.hasProperty(java.lang.String):boolean")));
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.addChild("actualArgument", quotedNode_5);
     quotedNode_1.addChild("operation", quotedNode_3);
@@ -236,8 +236,8 @@ public class OnePassApiTransformations {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
-    quotedNode_3.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.hasProperty(org.jetbrains.mps.openapi.model.SNode,java.lang.String):boolean")));
+    quotedNode_3.setReference("classConcept", SReference.create("classConcept", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
+    quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.hasProperty(org.jetbrains.mps.openapi.model.SNode,java.lang.String):boolean")));
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_4));
@@ -257,11 +257,11 @@ public class OnePassApiTransformations {
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.<init>(jetbrains.mps.smodel.SModel,java.lang.String)")));
+    quotedNode_4.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.<init>(jetbrains.mps.smodel.SModel,java.lang.String)")));
     quotedNode_2.addChild("creator", quotedNode_4);
     quotedNode_1.addChild("operand", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+    quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
     quotedNode_1.addChild("operation", quotedNode_3);
     return quotedNode_1;
   }
@@ -271,8 +271,8 @@ public class OnePassApiTransformations {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("classConcept", jetbrains.mps.smodel.SReference.create("classConcept", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
-    quotedNode_3.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.setReferenceTarget(org.jetbrains.mps.openapi.model.SNode,java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+    quotedNode_3.setReference("classConcept", SReference.create("classConcept", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
+    quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.setReferenceTarget(org.jetbrains.mps.openapi.model.SNode,java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_4));
