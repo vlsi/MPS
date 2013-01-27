@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.event.SModelEventVisitor;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.Project;

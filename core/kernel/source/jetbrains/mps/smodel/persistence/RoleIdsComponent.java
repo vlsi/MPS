@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 /**
  * @author Evgeny Gerashchenko

@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -286,10 +286,10 @@ public class SNodeOperations {
 
   public static SNode getTargetNodeSilently(org.jetbrains.mps.openapi.model.SReference ref) {
     try {
-      SReference.disableLogging();
+      jetbrains.mps.smodel.SReference.disableLogging();
       return ref.getTargetNode();
     } finally {
-      SReference.enableLogging();
+      jetbrains.mps.smodel.SReference.enableLogging();
     }
   }
 }

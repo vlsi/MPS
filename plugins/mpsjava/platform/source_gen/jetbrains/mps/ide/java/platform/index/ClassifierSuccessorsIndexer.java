@@ -22,7 +22,7 @@ import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import java.util.ArrayList;
 
 public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalSNodeId, List<GlobalSNodeId>> {

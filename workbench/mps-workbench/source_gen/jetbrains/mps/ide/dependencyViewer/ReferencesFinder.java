@@ -5,7 +5,7 @@ package jetbrains.mps.ide.dependencyViewer;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import java.util.HashMap;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;

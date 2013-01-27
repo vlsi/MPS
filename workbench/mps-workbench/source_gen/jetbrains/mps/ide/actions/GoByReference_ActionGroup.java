@@ -14,7 +14,7 @@ import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.extensions.PluginId;

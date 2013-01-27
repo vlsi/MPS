@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.javastub;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.Set;

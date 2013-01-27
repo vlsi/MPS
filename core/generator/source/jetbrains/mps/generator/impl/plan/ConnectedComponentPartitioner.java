@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.GraphUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;

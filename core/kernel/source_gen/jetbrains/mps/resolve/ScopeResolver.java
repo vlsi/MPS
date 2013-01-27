@@ -4,7 +4,7 @@ package jetbrains.mps.resolve;
 
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;

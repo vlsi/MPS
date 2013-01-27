@@ -16,7 +16,7 @@ import jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature;
 import jetbrains.mps.ide.ui.smodel.PropertyTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.PropertyFeature;
 import jetbrains.mps.ide.ui.smodel.ReferenceTreeNode;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.PropertiesFeature;
 import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;

@@ -20,7 +20,7 @@ import org.jdom.filter.AbstractFilter;
 import org.jdom.filter.ElementFilter;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 

@@ -24,7 +24,7 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.ScopeAdapter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 public class SNodeOperations {
   private static final Logger LOG = Logger.getLogger(SNodeOperations.class);

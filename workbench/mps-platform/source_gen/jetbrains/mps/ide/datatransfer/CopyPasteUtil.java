@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;

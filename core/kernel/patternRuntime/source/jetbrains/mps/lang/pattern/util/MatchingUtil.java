@@ -20,7 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;

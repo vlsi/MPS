@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.DynamicReference;
