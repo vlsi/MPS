@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SLink;
 
@@ -36,6 +37,16 @@ public interface SReference {
   SNode getTargetNode();
 
   SModel getTargetModel();
+
+  //null if the reference is not by-id. Still can use getTargetModel in this case
+  //todo remove as many usages as possible . Symantics not clear
+  @Nullable
+  SModelReference getTargetSModelReference();
+
+  //null if the reference is not by-id. Still can use getTargetNode in this case
+  //todo remove as many usages as possible . Symantics not clear
+  @Nullable
+  SNodeId getTargetNodeId();
 
   SNodeReference toNodePointer();
 }
