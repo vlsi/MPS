@@ -33,9 +33,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SearchQuery implements IExternalizeable {
-  private static final String SCOPE = "scope";
-  private static final String SCOPE_CLASS = "scope_class";
-
   private static final String HOLDER = "holder";
   private static final String HOLDER_CLASS = "holder_class";
 
