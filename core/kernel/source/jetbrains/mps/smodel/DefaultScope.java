@@ -24,7 +24,11 @@ import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public abstract class DefaultScope extends BaseScope {
 
@@ -57,11 +61,16 @@ public abstract class DefaultScope extends BaseScope {
       for (IModule module : myVisibleModules) {
         result.addAll(module.getOwnModelDescriptors());
       }
-      for (IModule module : myUsedLanguages) {
-        result.addAll(module.getOwnModelDescriptors());
+      for (Language language : myUsedLanguages) {
+//        result.addAll(language.getOwnModelDescriptors()); // todo: ?
+        result.addAll(language.getAccessoryModels());
       }
     }
     return result;
+  }
+
+  protected Collection<Language> getInitialUsedLanguages() {
+    return CollectionUtil.filter(Language.class, getInitialModules());
   }
 
   public void invalidateCaches() {
@@ -96,7 +105,7 @@ public abstract class DefaultScope extends BaseScope {
 
   private void fillInLanguages() {
     myUsedLanguages = new HashSet<Language>();
-    myUsedLanguages.addAll(CollectionUtil.filter(Language.class, getInitialModules()));
+    myUsedLanguages.addAll(getInitialUsedLanguages());
     for (DevKit dk : myUsedDevkits) {
       myUsedLanguages.addAll(dk.getAllExportedLanguages());
     }
