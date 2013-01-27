@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.model;
 
-import jetbrains.mps.ide.BootstrapScope;
+import jetbrains.mps.ide.findusages.scopes.BootstrapScope;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
@@ -24,7 +24,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.AbstractModule.ModuleScope;
 import jetbrains.mps.project.Project.ProjectScope;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 

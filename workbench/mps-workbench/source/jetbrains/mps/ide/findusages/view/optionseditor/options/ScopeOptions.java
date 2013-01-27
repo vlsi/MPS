@@ -15,14 +15,15 @@
  */
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
-import jetbrains.mps.ide.BootstrapScope;
+import jetbrains.mps.ide.findusages.scopes.BootstrapScope;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
