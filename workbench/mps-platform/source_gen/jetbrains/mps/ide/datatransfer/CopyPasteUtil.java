@@ -148,10 +148,10 @@ public class CopyPasteUtil {
       SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
       SReference newReference;
       if (newTargetNode != null) {
-        newReference = SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
+        newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
       } else {
         if (oldTargetNode != null) {
-          newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getNodeId());
+          newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getNodeId());
         } else
         if (sourceReference.getResolveInfo() != null) {
           newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, sourceReference.getResolveInfo());
@@ -171,10 +171,10 @@ public class CopyPasteUtil {
       SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
       SReference newReference;
       if (newTargetNode != null) {
-        newReference = SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
+        newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
       } else {
         if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(newSourceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall") && oldTargetNode != null) {
-          newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
+          newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
         } else {
           String resolveInfo = (oldTargetNode == null ?
             sourceReference.getResolveInfo() :
@@ -189,7 +189,7 @@ public class CopyPasteUtil {
             referencesRequireResolve.add(newReference);
           } else
           if (oldTargetNode != null) {
-            newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
+            newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
           } else {
             continue;
           }

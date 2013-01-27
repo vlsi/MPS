@@ -294,7 +294,7 @@ public class ReferentsCreator {
             // copy classifier reference 
             // <node> 
             SReference classifierRef = SNodeOperations.getReference(superClass, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier"));
-            SReference newRef = SReference.create("classifier", anonymousClass, classifierRef.getTargetSModelReference(), classifierRef.getTargetNodeId(), new String(superClassBinding.sourceName));
+            SReference newRef = jetbrains.mps.smodel.SReference.create("classifier", anonymousClass, classifierRef.getTargetSModelReference(), classifierRef.getTargetNodeId(), new String(superClassBinding.sourceName));
             anonymousClass.setReference(newRef.getRole(), newRef);
             for (SNode t : SLinkOperations.getTargets(superClass, "parameter", true)) {
               ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).addElement(SNodeOperations.copyNode(t));

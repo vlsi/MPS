@@ -48,7 +48,7 @@ public class supertypesOf_SEnumMemberType_SubtypingRule extends SubtypingRule_Ru
   private static SNode _quotation_createNode_qj2lih_a0a1a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)"), SNodeId.fromString("1083171877298")));
+    quotedNode_1.setReference("concept", jetbrains.mps.smodel.SReference.create("concept", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)"), SNodeId.fromString("1083171877298")));
     return quotedNode_1;
   }
 

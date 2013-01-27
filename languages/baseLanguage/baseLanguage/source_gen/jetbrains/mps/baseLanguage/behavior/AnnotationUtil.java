@@ -56,64 +56,64 @@ public class AnnotationUtil {
   private static SNode _quotation_createNode_3nvpiw_a0a0a0e() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.TYPE")));
-    quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
+    quotedNode_1.setReference("enumConstantDeclaration", jetbrains.mps.smodel.SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.TYPE")));
+    quotedNode_1.setReference("enumClass", jetbrains.mps.smodel.SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_3nvpiw_a0a0b0e() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.FIELD")));
-    quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
+    quotedNode_1.setReference("enumConstantDeclaration", jetbrains.mps.smodel.SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.FIELD")));
+    quotedNode_1.setReference("enumClass", jetbrains.mps.smodel.SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_3nvpiw_a0a0c0e() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.METHOD")));
-    quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
+    quotedNode_1.setReference("enumConstantDeclaration", jetbrains.mps.smodel.SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.METHOD")));
+    quotedNode_1.setReference("enumClass", jetbrains.mps.smodel.SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_3nvpiw_a0a0d0e() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.PARAMETER")));
-    quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
+    quotedNode_1.setReference("enumConstantDeclaration", jetbrains.mps.smodel.SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.PARAMETER")));
+    quotedNode_1.setReference("enumClass", jetbrains.mps.smodel.SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_3nvpiw_a0a0e0e() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.CONSTRUCTOR")));
-    quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
+    quotedNode_1.setReference("enumConstantDeclaration", jetbrains.mps.smodel.SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.CONSTRUCTOR")));
+    quotedNode_1.setReference("enumClass", jetbrains.mps.smodel.SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_3nvpiw_a0a0f0e() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.LOCAL_VARIABLE")));
-    quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
+    quotedNode_1.setReference("enumConstantDeclaration", jetbrains.mps.smodel.SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.LOCAL_VARIABLE")));
+    quotedNode_1.setReference("enumClass", jetbrains.mps.smodel.SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_3nvpiw_a0a0g0e() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.ANNOTATION_TYPE")));
-    quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
+    quotedNode_1.setReference("enumConstantDeclaration", jetbrains.mps.smodel.SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.ANNOTATION_TYPE")));
+    quotedNode_1.setReference("enumClass", jetbrains.mps.smodel.SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_3nvpiw_a0a0h0e() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.PACKAGE")));
-    quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
+    quotedNode_1.setReference("enumConstantDeclaration", jetbrains.mps.smodel.SReference.create("enumConstantDeclaration", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType.PACKAGE")));
+    quotedNode_1.setReference("enumClass", jetbrains.mps.smodel.SReference.create("enumClass", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), SNodeId.fromString("~ElementType")));
     return quotedNode_1;
   }
 }

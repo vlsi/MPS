@@ -964,7 +964,7 @@ public class ClassifierUpdater {
   private static SNode _quotation_createNode_ol94f8_a0a0n0z(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", (SModel) parameter_1, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, SModelReference.fromString("r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)"), jetbrains.mps.smodel.SNodeId.fromString("7241381882860002170")));
+    quotedNode_2.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_2, SModelReference.fromString("r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)"), jetbrains.mps.smodel.SNodeId.fromString("7241381882860002170")));
     return quotedNode_2;
   }
 

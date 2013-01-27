@@ -66,7 +66,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
     SNode quotedNode_5 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, SModelReference.fromString("r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)"), SNodeId.fromString("4642948870877889221")));
+    quotedNode_3.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_3, SModelReference.fromString("r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)"), SNodeId.fromString("4642948870877889221")));
     quotedNode_2.addChild("argument", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);

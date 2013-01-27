@@ -93,7 +93,7 @@ public class ClosureLiteralAdapterBuilder {
   private static SNode _quotation_createNode_wzrebk_a0a0a5() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)"), SNodeId.fromString("8649343297855554552")));
+    quotedNode_1.setReference("annotation", jetbrains.mps.smodel.SReference.create("annotation", quotedNode_1, SModelReference.fromString("r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)"), SNodeId.fromString("8649343297855554552")));
     return quotedNode_1;
   }
 }

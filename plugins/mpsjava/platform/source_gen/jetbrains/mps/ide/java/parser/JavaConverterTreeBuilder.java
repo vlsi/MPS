@@ -681,7 +681,7 @@ public class JavaConverterTreeBuilder {
         SNode enumConstantReference = SModelOperations.createNewNode(myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.EnumConstantReference");
         role = "enumConstantDeclaration";
         sourceNode = enumConstantReference;
-        enumConstantReference.setReference(SReference.create("enumClass", sourceNode, classifierPointer, new String(fieldBinding.name)).getRole(), SReference.create("enumClass", sourceNode, classifierPointer, new String(fieldBinding.name)));
+        enumConstantReference.setReference(jetbrains.mps.smodel.SReference.create("enumClass", sourceNode, classifierPointer, new String(fieldBinding.name)).getRole(), jetbrains.mps.smodel.SReference.create("enumClass", sourceNode, classifierPointer, new String(fieldBinding.name)));
         result = enumConstantReference;
       } else
       if (myCurrentClass == myTypesProvider.getRaw(declaredClassBinding)) {
@@ -693,7 +693,7 @@ public class JavaConverterTreeBuilder {
         SNode sfr = SModelOperations.createNewNode(myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.StaticFieldReference");
         sourceNode = sfr;
         role = "variableDeclaration";
-        sfr.setReference(SReference.create("classifier", sourceNode, classifierPointer, new String(fieldBinding.name)).getRole(), SReference.create("classifier", sourceNode, classifierPointer, new String(fieldBinding.name)));
+        sfr.setReference(jetbrains.mps.smodel.SReference.create("classifier", sourceNode, classifierPointer, new String(fieldBinding.name)).getRole(), jetbrains.mps.smodel.SReference.create("classifier", sourceNode, classifierPointer, new String(fieldBinding.name)));
         result = sfr;
       }
     } else {
@@ -972,7 +972,7 @@ public class JavaConverterTreeBuilder {
     SNode result;
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
       SNode reference = SModelOperations.createNewNode(myCurrentModel, null, "jetbrains.mps.baseLanguage.structure.VariableReference");
-      reference.setReference(SReference.create("variableDeclaration", reference, variable, SPropertyOperations.getString(variable, "name")).getRole(), SReference.create("variableDeclaration", reference, variable, SPropertyOperations.getString(variable, "name")));
+      reference.setReference(jetbrains.mps.smodel.SReference.create("variableDeclaration", reference, variable, SPropertyOperations.getString(variable, "name")).getRole(), jetbrains.mps.smodel.SReference.create("variableDeclaration", reference, variable, SPropertyOperations.getString(variable, "name")));
       result = reference;
     } else
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {

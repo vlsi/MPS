@@ -30,14 +30,14 @@ public class SReferenceCreator implements SReferenceHandler {
     if (pack.equals(model.getLongName())) {
       SNode nodeInSameModel = model.getNodeById(targetNodeId);
       if (nodeInSameModel != null) {
-        return SReference.create(role, source, model.getSModelReference(), targetNodeId, resolveInfo);
+        return jetbrains.mps.smodel.SReference.create(role, source, model.getSModelReference(), targetNodeId, resolveInfo);
       }
     }
 
     Set<SModelReference> models = getModelReferencesFor(pack, rootPresentation);
 
     if (SetSequence.fromSet(models).isEmpty()) {
-      return SReference.create(role, source, null, targetNodeId, resolveInfo);
+      return jetbrains.mps.smodel.SReference.create(role, source, null, targetNodeId, resolveInfo);
     }
 
     if (SetSequence.fromSet(models).count() > 1) {
@@ -50,7 +50,7 @@ public class SReferenceCreator implements SReferenceHandler {
     ModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(SetSequence.fromSet(models).first()).getModule().getModuleReference();
     SModelReference ref = StubHelper.uidForPackageInStubs(new SModelFqName(pack, model.getStereotype()), moduleRef, false);
     model.addModelImport(SetSequence.fromSet(models).first(), false);
-    return SReference.create(role, source, ref, targetNodeId, resolveInfo);
+    return jetbrains.mps.smodel.SReference.create(role, source, ref, targetNodeId, resolveInfo);
   }
 
   private Set<SModelReference> getModelReferencesFor(String pack, String rootPresentation) {

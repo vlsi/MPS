@@ -62,14 +62,14 @@ public class BeanUtil {
   private static SNode _quotation_createNode_bgndvd_a0a0a0() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.util.xmlb.annotations(MPS.Platform/com.intellij.util.xmlb.annotations@java_stub)"), SNodeId.fromString("~Attribute")));
+    quotedNode_1.setReference("annotation", jetbrains.mps.smodel.SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.util.xmlb.annotations(MPS.Platform/com.intellij.util.xmlb.annotations@java_stub)"), SNodeId.fromString("~Attribute")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_bgndvd_a0a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.util.xmlb.annotations(MPS.Platform/com.intellij.util.xmlb.annotations@java_stub)"), SNodeId.fromString("~Attribute")));
+    quotedNode_1.setReference("annotation", jetbrains.mps.smodel.SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.util.xmlb.annotations(MPS.Platform/com.intellij.util.xmlb.annotations@java_stub)"), SNodeId.fromString("~Attribute")));
     return quotedNode_1;
   }
 }

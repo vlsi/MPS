@@ -44,7 +44,7 @@ public class typeof_ParentScope_InferenceRule extends AbstractInferenceRule_Runt
   private static SNode _quotation_createNode_h1b51l_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)"), SNodeId.fromString("3734116213129862372")));
+    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)"), SNodeId.fromString("3734116213129862372")));
     return quotedNode_1;
   }
 }

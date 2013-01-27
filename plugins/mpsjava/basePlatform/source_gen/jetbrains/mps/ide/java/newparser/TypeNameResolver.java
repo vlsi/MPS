@@ -183,7 +183,7 @@ public class TypeNameResolver {
       if (javaLangNode != null) {
         // <node> 
         // <node> 
-        return SReference.create(role, source, javaLangNode);
+        return jetbrains.mps.smodel.SReference.create(role, source, javaLangNode);
       }
 
       // using short name, as it must be accessible 

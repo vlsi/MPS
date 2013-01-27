@@ -154,7 +154,7 @@ public class GWTModuleReader {
           return SPropertyOperations.getString(gwtmod, "name").equals(shortName(fqName));
         }
       });
-      src.setReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trg).getRole(), SReference.create(SPropertyOperations.getString(link, "role"), src, trg));
+      src.setReference(jetbrains.mps.smodel.SReference.create(SPropertyOperations.getString(link, "role"), src, trg).getRole(), jetbrains.mps.smodel.SReference.create(SPropertyOperations.getString(link, "role"), src, trg));
     } else {
       // <node> 
       // <node> 
@@ -165,7 +165,7 @@ public class GWTModuleReader {
   private void addClassifierReference(SNode link, SNode src, String fqClassName) {
     SModelReference trgsmref = this.javastubResolver.stubModelReference(namespace(fqClassName));
     SNodeOperations.getModel(src).addModelImport(trgsmref, false);
-    src.setReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createId(fqClassName)).getRole(), SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createId(fqClassName)));
+    src.setReference(jetbrains.mps.smodel.SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createId(fqClassName)).getRole(), jetbrains.mps.smodel.SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createId(fqClassName)));
   }
 
   private static String namespace(String fqName) {

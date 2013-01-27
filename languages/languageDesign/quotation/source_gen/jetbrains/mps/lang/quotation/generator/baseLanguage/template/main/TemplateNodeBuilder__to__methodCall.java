@@ -80,7 +80,7 @@ public class TemplateNodeBuilder__to__methodCall implements TemplateDeclarationW
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_7ucwoc_a0a0a1a4a3a2a2a4a1a4a1a3a1a2);
                           environment.nodeCopied(context4, tnode6, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709261");
-                          tnode6.setReference("classifier", SReference.create("classifier", tnode6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+                          tnode6.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", tnode6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
 
                         } finally {
                           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode6));

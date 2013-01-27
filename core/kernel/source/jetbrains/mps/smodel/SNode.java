@@ -321,7 +321,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       removeReferenceInternal(reference);
     }
 
-    addReferenceInternal(SReference.create(role, this, ((SNode) target)));
+    addReferenceInternal(jetbrains.mps.smodel.SReference.create(role, this, ((SNode) target)));
   }
 
   public SNode getReferenceTarget(String role) {
