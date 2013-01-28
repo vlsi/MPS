@@ -73,7 +73,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   @Override
   public SModel create(String modelName, StreamDataSource dataSource) {
     if (!(dataSource instanceof FileDataSource)) return null;
-    SModelReference ref = new SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.jetbrains.mps.smodel.SModelId.generate());
+    SModelReference ref = new SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate());
     return new DefaultSModelDescriptor((FileDataSource) dataSource, ref, new SModelHeader());
   }
 
