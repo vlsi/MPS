@@ -108,7 +108,18 @@ public class ModuleDependenciesView extends JPanel {
         }
       }
       for (List<IModule> key : SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(usedlanguages).keySet()))) {
-        myRightTree.addDependency(key, MapSequence.fromMap(dependencies).get(key), MapSequence.fromMap(usedlanguages).get(key));
+        myRightTree.addDependency(key, MapSequence.fromMap(dependencies).get(key), MapSequence.fromMap(usedlanguages).get(key), myLeftTree.isShowRuntime());
+      }
+
+      // add bootstrap dependencies for single selection if necessary 
+      if (paths.length == 1 && paths[0].getLastPathComponent() instanceof ModuleDependencyNode.ULangDependencyNode) {
+        ModuleDependencyNode.ULangDependencyNode node = (ModuleDependencyNode.ULangDependencyNode) paths[0].getLastPathComponent();
+        if (node.isCyclic()) {
+          List<IModule> from = check_jxc64t_a0a0b0g0d0b(node.getFromNode());
+          if (from != null) {
+            myRightTree.addDependency(node.getModules(), from, null, true);
+          }
+        }
       }
     }
     myRightTree.rebuildNow();
@@ -117,7 +128,6 @@ public class ModuleDependenciesView extends JPanel {
 
   private void setShowRuntime(boolean b) {
     myLeftTree.setShowRuntime(b);
-    myRightTree.setShowRuntime(b);
     resetAll();
   }
 
@@ -177,14 +187,16 @@ public class ModuleDependenciesView extends JPanel {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         // should we set "show runtime" option first? 
-        tree.expandPath(new TreePath(node.getPath()));
+        TreePath srcPath = new TreePath(node.getPath());
+        tree.expandPath(srcPath);
         for (MPSTreeNode child : Sequence.fromIterable(node)) {
-          ModuleDependencyNode n = as_jxc64t_a0a0a2a0a0a0a4a8(child, ModuleDependencyNode.class);
+          ModuleDependencyNode n = as_jxc64t_a0a0a3a0a0a0a4a8(child, ModuleDependencyNode.class);
           if (n == null) {
             continue;
           }
           if (ListSequence.fromList(parent.getModules()).contains(ListSequence.fromList(n.getModules()).first())) {
-            tree.selectNode(n);
+            // <node> 
+            tree.setSelectionPaths(new TreePath[]{srcPath, new TreePath(n.getPath())});
             break;
           }
         }
@@ -199,6 +211,13 @@ public class ModuleDependenciesView extends JPanel {
     return null;
   }
 
+  private static List<IModule> check_jxc64t_a0a0b0g0d0b(ModuleDependencyNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModules();
+    }
+    return null;
+  }
+
   private static <T> T as_jxc64t_a0a0a1a0a0a0a6a7(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
@@ -206,7 +225,7 @@ public class ModuleDependenciesView extends JPanel {
     );
   }
 
-  private static <T> T as_jxc64t_a0a0a2a0a0a0a4a8(Object o, Class<T> type) {
+  private static <T> T as_jxc64t_a0a0a3a0a0a0a4a8(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
