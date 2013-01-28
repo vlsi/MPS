@@ -30,8 +30,6 @@ import java.util.List;
 public class PathManager {
   private static final Logger LOG = Logger.getLogger(PathManager.class);
 
-  private static final String PROPERTY_HOME_PATH = "mps.home.path";
-
   private static final String FILE = "file";
   private static final String JAR = "jar";
   private static final String JAR_DELIMITER = "!";
@@ -55,14 +53,7 @@ public class PathManager {
       return ourHomePath;
     }
 
-    if (System.getProperty(PROPERTY_HOME_PATH) != null) {
-      ourHomePath = getAbsolutePath(System.getProperty(PROPERTY_HOME_PATH));
-      return ourHomePath;
-    }
-
-    final Class aClass = PathManager.class;
-
-    String rootPath = getContainingJar(aClass);
+    String rootPath = getContainingJar(PathManager.class);
 
     //todo this line should be removed
     if (rootPath == null) return new File(".").getAbsolutePath(); //we need this for build server
