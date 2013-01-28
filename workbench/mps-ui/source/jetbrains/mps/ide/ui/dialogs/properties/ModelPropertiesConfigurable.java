@@ -242,37 +242,31 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       if(value instanceof ModuleReference) {
         final ModuleReference moduleReference = (ModuleReference)value;
         if( !myModelProperties.getUsedLanguageRemoveCondition().met(moduleReference) ) {
-          int result = Messages.showYesNoCancelDialog(
-            ProjectHelper.toIdeaProject(myProject),
-            "<html>This language is used by model.<br>Do you really what to delete it?<br><font color=\"red\"><b>Model state will become inconsistent</b></font></html>",
-            "Delete used language", "&View usages", "&Delete anyway", "Ca&ncel", Messages.getQuestionIcon());
-          switch (result) {
-            case Messages.YES:
+          ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
+            ProjectHelper.toIdeaProject(myProject), "Delete used language",
+            "This language is used by model. Do you really what to delete it?", "Model state will become inconsistent") {
+            @Override
+            public void doViewAction() {
               findUsages(value);
-              return false;
-            case Messages.NO:
-              return true;
-            case Messages.CANCEL:
-              return false;
-          }
+            }
+          };
+          viewUsagesDeleteDialog.show();
+          return viewUsagesDeleteDialog.isOK();
         }
       }
       else if(value instanceof SModelReference) {
         final SModelReference modelReference = (SModelReference)value;
         if( !myModelProperties.getImportedModelsRemoveCondition().met((jetbrains.mps.smodel.SModelReference)modelReference) ) {
-          int result = Messages.showYesNoCancelDialog(
-            ProjectHelper.toIdeaProject(myProject),
-            "<html>This model is used in model.<br>Do you really what to delete it?<br><font color=\"red\"><b>Model state will become inconsistent</b></font></html>",
-            "Delete imported model", "&View usages", "&Delete anyway", "Ca&ncel", Messages.getQuestionIcon());
-          switch (result) {
-            case Messages.YES:
+          ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
+            ProjectHelper.toIdeaProject(myProject), "Delete imported model",
+            "This model is used in model. Do you really what to delete it?", "Model state will become inconsistent") {
+            @Override
+            public void doViewAction() {
               findUsages(value);
-              return false;
-            case Messages.NO:
-              return true;
-            case Messages.CANCEL:
-              return false;
-          }
+            }
+          };
+          viewUsagesDeleteDialog.show();
+          return viewUsagesDeleteDialog.isOK();
         }
       }
 
@@ -315,22 +309,19 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     @Override
-    protected boolean confirmRemove(Object value) {
+    protected boolean confirmRemove(final Object value) {
       final ModuleReference moduleReference = (ModuleReference)value;
       if( !myModelProperties.getUsedLanguageRemoveCondition().met(moduleReference) ) {
-        int result = Messages.showYesNoCancelDialog(
-          ProjectHelper.toIdeaProject(myProject),
-          "<html>This language is used by model.<br>Do you really what to delete it?<br><font color=\"red\"><b>Model state will become inconsistent</b></font></html>",
-          "Delete used language", "&View usages", "&Delete anyway", "Ca&ncel", Messages.getQuestionIcon());
-        switch (result) {
-          case Messages.YES:
+        ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
+          ProjectHelper.toIdeaProject(myProject), "Delete used language",
+          "This language is used by model. Do you really what to delete it?", "Model state will become inconsistent") {
+          @Override
+          public void doViewAction() {
             findUsages(value);
-            return false;
-          case Messages.NO:
-            return true;
-          case Messages.CANCEL:
-            return false;
-        }
+          }
+        };
+        viewUsagesDeleteDialog.show();
+        return viewUsagesDeleteDialog.isOK();
       }
 
       return super.confirmRemove(value);
