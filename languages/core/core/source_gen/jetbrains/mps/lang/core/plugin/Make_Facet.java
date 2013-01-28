@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.IDeltaResource;
+import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
@@ -69,7 +69,7 @@ public class Make_Facet extends IFacet.Stub {
   }
 
   public static class Target_reconcile implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IDeltaResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{DResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile");
 
@@ -78,8 +78,10 @@ public class Make_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_pm9z_a0a = null;
+          final Iterable<DResource> input = (Iterable<DResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               if (Boolean.TRUE.equals(pa.global().properties(Target_reconcile.this.getName(), Make_Facet.Target_reconcile.Parameters.class).skipReconcile())) {
@@ -91,9 +93,9 @@ public class Make_Facet extends IFacet.Stub {
                 FileSystem.getInstance().runWriteTransaction(new Runnable() {
                   public void run() {
                     final List<IFile> writtenFiles = ListSequence.fromList(new ArrayList<IFile>());
-                    DeltaReconciler reconciler = new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
-                      public Iterable<IDelta> translate(IResource res) {
-                        return ((IDeltaResource) res).delta();
+                    DeltaReconciler reconciler = new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<DResource, IDelta>() {
+                      public Iterable<IDelta> translate(DResource res) {
+                        return res.delta();
                       }
                     }).where(new IWhereFilter<IDelta>() {
                       public boolean accept(IDelta d) {
@@ -108,9 +110,9 @@ public class Make_Facet extends IFacet.Stub {
                         return true;
                       }
                     });
-                    DeltaReconciler internalReconciler = new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
-                      public Iterable<IDelta> translate(IResource res) {
-                        return ((IDeltaResource) res).delta();
+                    DeltaReconciler internalReconciler = new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<DResource, IDelta>() {
+                      public Iterable<IDelta> translate(DResource res) {
+                        return res.delta();
                       }
                     }).where(new IWhereFilter<IDelta>() {
                       public boolean accept(IDelta d) {
@@ -233,8 +235,10 @@ public class Make_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_pm9z_a0b = null;
+          final Iterable<IResource> input = (Iterable<IResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
             default:

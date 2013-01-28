@@ -5,24 +5,24 @@
   <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.FacetManifest$1" />
   <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.FacetManifest" />
   <root nodeId="834312300517849416" modelId="r:f614deea-8cff-4e4a-82d2-ec479420b091(jetbrains.mps.build.custommps.plugin)">
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="43" startPosition="37" endLine="44" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="47" startPosition="38" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="51" startPosition="43" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="55" startPosition="43" endLine="56" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="59" startPosition="43" endLine="60" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="63" startPosition="32" endLine="64" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="67" startPosition="57" endLine="68" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="72" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
-    <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="73" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
-    <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="74" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="81" startPosition="170" endLine="82" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3776947097491409446" fileName="CopyBuildArtifacts_Facet.java" startLine="84" startPosition="19" endLine="85" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3776947097491409528" fileName="CopyBuildArtifacts_Facet.java" startLine="85" startPosition="60" endLine="86" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="834312300517875108" fileName="CopyBuildArtifacts_Facet.java" startLine="87" startPosition="19" endLine="88" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1670948443106462384" fileName="CopyBuildArtifacts_Facet.java" startLine="89" startPosition="50" endLine="90" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="834312300517864429" fileName="CopyBuildArtifacts_Facet.java" startLine="90" startPosition="56" endLine="91" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="42" startPosition="37" endLine="43" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="46" startPosition="38" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="50" startPosition="43" endLine="51" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="54" startPosition="43" endLine="55" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="58" startPosition="43" endLine="59" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="62" startPosition="32" endLine="63" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="66" startPosition="57" endLine="67" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="71" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
+    <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="72" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_OUTPUT" />
+    <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="73" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
+    <nodeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="81" startPosition="173" endLine="82" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="82" startPosition="56" endLine="83" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3776947097491409446" fileName="CopyBuildArtifacts_Facet.java" startLine="85" startPosition="19" endLine="86" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3776947097491409528" fileName="CopyBuildArtifacts_Facet.java" startLine="86" startPosition="60" endLine="87" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="834312300517875108" fileName="CopyBuildArtifacts_Facet.java" startLine="88" startPosition="19" endLine="89" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="834312300517864429" fileName="CopyBuildArtifacts_Facet.java" startLine="90" startPosition="69" endLine="91" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="834312300517945721" fileName="CopyBuildArtifacts_Facet.java" startLine="92" startPosition="37" endLine="93" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="834312300517864836" fileName="CopyBuildArtifacts_Facet.java" startLine="98" startPosition="159" endLine="99" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="834312300517875097" fileName="CopyBuildArtifacts_Facet.java" startLine="99" startPosition="57" endLine="100" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -32,7 +32,7 @@
     <nodeInfo nodeId="834312300517945679" fileName="CopyBuildArtifacts_Facet.java" startLine="108" startPosition="19" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6648795410103988217" fileName="CopyBuildArtifacts_Facet.java" startLine="115" startPosition="76" endLine="116" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="834312300517945680" fileName="CopyBuildArtifacts_Facet.java" startLine="122" startPosition="21" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1670948443106485514" fileName="CopyBuildArtifacts_Facet.java" startLine="123" startPosition="0" endLine="124" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1670948443106485514" fileName="CopyBuildArtifacts_Facet.java" startLine="123" startPosition="0" endLine="124" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3776947097491473528" fileName="CopyBuildArtifacts_Facet.java" startLine="126" startPosition="25" endLine="127" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="129" startPosition="20" endLine="130" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="136" startPosition="35" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -62,15 +62,15 @@
     <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="236" startPosition="9" endLine="237" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="237" startPosition="109" endLine="238" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="239" startPosition="129" endLine="240" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="76" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_copyFiles#()V" />
+    <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="75" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_copyFiles#()V" />
     <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="221" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetProperties#()V" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CopyBuildArtifacts_Facet#()V" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="targets#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optional#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="required#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
-    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertiesPersistence#()Ljetbrains/mps/make/resources/IPropertiesPersistence;" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CopyBuildArtifacts_Facet#()V" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="targets#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optional#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="required#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
+    <nodeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertiesPersistence#()Ljetbrains/mps/make/resources/IPropertiesPersistence;" />
     <nodeInfo nodeId="6648795410103988215" fileName="CopyBuildArtifacts_Facet.java" startLine="115" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)V" />
     <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="136" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
     <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
@@ -109,25 +109,25 @@
     <nodeInfo nodeId="1986840443401591195" fileName="CopyBuildArtifacts_Facet.java" startLine="109" startPosition="0" endLine="122" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="834312300517864814" fileName="CopyBuildArtifacts_Facet.java" startLine="93" startPosition="162" endLine="107" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="834312300517945700" fileName="CopyBuildArtifacts_Facet.java" startLine="91" startPosition="171" endLine="108" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1670948443106462379" fileName="CopyBuildArtifacts_Facet.java" startLine="88" startPosition="125" endLine="125" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3776947097491473521" fileName="CopyBuildArtifacts_Facet.java" startLine="86" startPosition="50" endLine="128" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="82" startPosition="56" endLine="131" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="81" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Ljetbrains/mps/progress/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="79" startPosition="29" endLine="133" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="79" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
-    <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="76" startPosition="31" endLine="76" endPosition="31" />
+    <nodeInfo nodeId="4902420589297677986" fileName="CopyBuildArtifacts_Facet.java" startLine="89" startPosition="125" endLine="125" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3776947097491473521" fileName="CopyBuildArtifacts_Facet.java" startLine="87" startPosition="50" endLine="128" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="83" startPosition="86" endLine="131" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="80" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Ljetbrains/mps/progress/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
+    <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="78" startPosition="29" endLine="133" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="78" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
+    <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="75" startPosition="31" endLine="75" endPosition="31" />
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="221" startPosition="31" endLine="221" endPosition="31" />
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="243" startPosition="0" endLine="243" endPosition="37">
       <varInfo nodeId="834312300517849416" varName="re" />
     </scopeInfo>
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="243" startPosition="37" endLine="243" endPosition="37" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="43" startPosition="37" endLine="44" endPosition="95" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="47" startPosition="38" endLine="48" endPosition="19" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="51" startPosition="43" endLine="52" endPosition="16" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="55" startPosition="43" endLine="56" endPosition="154" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="59" startPosition="43" endLine="60" endPosition="16" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="63" startPosition="32" endLine="64" endPosition="21" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="67" startPosition="57" endLine="68" endPosition="59" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="42" startPosition="37" endLine="43" endPosition="95" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="46" startPosition="38" endLine="47" endPosition="19" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="50" startPosition="43" endLine="51" endPosition="16" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="54" startPosition="43" endLine="55" endPosition="154" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="58" startPosition="43" endLine="59" endPosition="16" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="62" startPosition="32" endLine="63" endPosition="21" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="66" startPosition="57" endLine="67" endPosition="59" />
     <scopeInfo nodeId="6648795410103988216" fileName="CopyBuildArtifacts_Facet.java" startLine="115" startPosition="76" endLine="116" endPosition="77" />
     <scopeInfo nodeId="3776947097491473524" fileName="CopyBuildArtifacts_Facet.java" startLine="126" startPosition="25" endLine="127" endPosition="39" />
     <scopeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="129" startPosition="20" endLine="130" endPosition="61" />
@@ -151,18 +151,18 @@
     <scopeInfo nodeId="834312300517864417" fileName="CopyBuildArtifacts_Facet.java" startLine="209" startPosition="35" endLine="210" endPosition="26" />
     <scopeInfo nodeId="834312300517864417" fileName="CopyBuildArtifacts_Facet.java" startLine="214" startPosition="102" endLine="215" endPosition="89" />
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="239" startPosition="129" endLine="240" endPosition="152" />
-    <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="76" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="75" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="221" startPosition="0" endLine="223" endPosition="0" />
     <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="227" startPosition="45" endLine="229" endPosition="152">
       <varInfo nodeId="834312300517849416" varName="props" />
     </scopeInfo>
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="67" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="6648795410103988215" fileName="CopyBuildArtifacts_Facet.java" startLine="115" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="6648795410103988215" varName="ftc" />
     </scopeInfo>
@@ -233,37 +233,37 @@
     <scopeInfo nodeId="834312300517945701" fileName="CopyBuildArtifacts_Facet.java" startLine="92" startPosition="37" endLine="107" endPosition="21">
       <varInfo nodeId="834312300517945722" varName="destDir" />
     </scopeInfo>
-    <scopeInfo nodeId="1670948443106462380" fileName="CopyBuildArtifacts_Facet.java" startLine="89" startPosition="50" endLine="124" endPosition="152">
+    <scopeInfo nodeId="4902420589297677992" fileName="CopyBuildArtifacts_Facet.java" startLine="90" startPosition="69" endLine="124" endPosition="148">
       <varInfo nodeId="834312300517864430" varName="dest" />
-      <varInfo nodeId="1670948443106462385" varName="tres" />
     </scopeInfo>
-    <scopeInfo nodeId="1670948443106462379" fileName="CopyBuildArtifacts_Facet.java" startLine="88" startPosition="125" endLine="125" endPosition="17">
-      <varInfo nodeId="1670948443106462381" varName="resource" />
+    <scopeInfo nodeId="4902420589297677986" fileName="CopyBuildArtifacts_Facet.java" startLine="89" startPosition="125" endLine="125" endPosition="17">
+      <varInfo nodeId="4902420589297677988" varName="tres" />
     </scopeInfo>
-    <scopeInfo nodeId="3776947097491473522" fileName="CopyBuildArtifacts_Facet.java" startLine="87" startPosition="19" endLine="125" endPosition="17">
+    <scopeInfo nodeId="3776947097491473522" fileName="CopyBuildArtifacts_Facet.java" startLine="88" startPosition="19" endLine="125" endPosition="17">
       <varInfo nodeId="834312300517875109" varName="toCopy" />
     </scopeInfo>
-    <scopeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="84" startPosition="19" endLine="128" endPosition="15" />
-    <scopeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="81" startPosition="170" endLine="131" endPosition="11">
+    <scopeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="85" startPosition="19" endLine="128" endPosition="15" />
+    <scopeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="81" startPosition="173" endLine="131" endPosition="11">
       <varInfo nodeId="1670948443106462371" varName="_output_srsvb8_a0a" />
-    </scopeInfo>
-    <scopeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="81" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="1670948443106462371" varName="input" />
+    </scopeInfo>
+    <scopeInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="80" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="1670948443106462371" varName="monitor" />
       <varInfo nodeId="1670948443106462371" varName="pa" />
       <varInfo nodeId="1670948443106462371" varName="progressMonitor" />
+      <varInfo nodeId="1670948443106462371" varName="rawInput" />
     </scopeInfo>
-    <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="79" startPosition="29" endLine="133" endPosition="8" />
-    <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="79" startPosition="0" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="78" startPosition="29" endLine="133" endPosition="8" />
+    <scopeInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="78" startPosition="0" endLine="135" endPosition="0" />
     <unitInfo nodeId="6648795410103988215" fileName="CopyBuildArtifacts_Facet.java" startLine="114" startPosition="69" endLine="118" endPosition="27" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$4" />
     <unitInfo nodeId="3736430118459669525" fileName="CopyBuildArtifacts_Facet.java" startLine="112" startPosition="62" endLine="120" endPosition="23" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$3" />
     <unitInfo nodeId="1670948443106485492" fileName="CopyBuildArtifacts_Facet.java" startLine="95" startPosition="69" endLine="106" endPosition="23" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$2" />
     <unitInfo nodeId="1986840443401665513" fileName="CopyBuildArtifacts_Facet.java" startLine="110" startPosition="55" endLine="122" endPosition="19" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$2" />
     <unitInfo nodeId="834312300517864417" fileName="CopyBuildArtifacts_Facet.java" startLine="196" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$Target_copyFiles$Parameters" />
     <unitInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="220" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$TargetProperties" />
-    <unitInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="80" startPosition="17" endLine="133" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$1" />
-    <unitInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="71" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$Target_copyFiles" />
-    <unitInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="39" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet" />
+    <unitInfo nodeId="1670948443106462371" fileName="CopyBuildArtifacts_Facet.java" startLine="79" startPosition="17" endLine="133" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$1" />
+    <unitInfo nodeId="1670948443106462369" fileName="CopyBuildArtifacts_Facet.java" startLine="70" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet$Target_copyFiles" />
+    <unitInfo nodeId="834312300517849416" fileName="CopyBuildArtifacts_Facet.java" startLine="38" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet" />
   </root>
 </debugInfo>
 

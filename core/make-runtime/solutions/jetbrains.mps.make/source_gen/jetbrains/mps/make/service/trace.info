@@ -6,11 +6,11 @@
     <nodeInfo nodeId="4671800353872688731" fileName="AbstractMakeService.java" startLine="41" startPosition="146" endLine="42" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4671800353872688728" fileName="AbstractMakeService.java" startLine="42" startPosition="43" endLine="43" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4671800353872688711" fileName="AbstractMakeService.java" startLine="43" startPosition="41" endLine="44" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4671800353872688535" fileName="AbstractMakeService.java" startLine="47" startPosition="192" endLine="48" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4671800353872688541" fileName="AbstractMakeService.java" startLine="48" startPosition="134" endLine="49" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4671800353872688535" fileName="AbstractMakeService.java" startLine="47" startPosition="192" endLine="48" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4671800353872688541" fileName="AbstractMakeService.java" startLine="48" startPosition="154" endLine="49" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4671800353872688549" fileName="AbstractMakeService.java" startLine="51" startPosition="27" endLine="52" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4671800353872688564" fileName="AbstractMakeService.java" startLine="54" startPosition="50" endLine="55" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4671800353872688579" fileName="AbstractMakeService.java" startLine="59" startPosition="68" endLine="60" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671800353872688564" fileName="AbstractMakeService.java" startLine="54" startPosition="50" endLine="55" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671800353872688579" fileName="AbstractMakeService.java" startLine="59" startPosition="78" endLine="60" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4671800353872688588" fileName="AbstractMakeService.java" startLine="64" startPosition="9" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4671800353872688599" fileName="AbstractMakeService.java" startLine="67" startPosition="61" endLine="68" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4671800353872688610" fileName="AbstractMakeService.java" startLine="70" startPosition="42" endLine="71" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -21,7 +21,7 @@
     <nodeInfo nodeId="4671800353872688670" fileName="AbstractMakeService.java" startLine="86" startPosition="51" endLine="87" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4671800353872688682" fileName="AbstractMakeService.java" startLine="91" startPosition="52" endLine="92" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4671800353872688687" fileName="AbstractMakeService.java" startLine="95" startPosition="9" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4671800353872688688" fileName="AbstractMakeService.java" startLine="96" startPosition="0" endLine="97" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4671800353872688688" fileName="AbstractMakeService.java" startLine="96" startPosition="0" endLine="97" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7260781342054441601" fileName="AbstractMakeService.java" startLine="100" startPosition="61" endLine="101" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4671800353872688476" fileName="AbstractMakeService.java" startLine="105" startPosition="160" endLine="106" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4671800353872688408" fileName="AbstractMakeService.java" startLine="106" startPosition="41" endLine="107" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -53,8 +53,8 @@
     <nodeInfo nodeId="4671800353872688522" fileName="AbstractMakeService.java" startLine="47" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processRawInput#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;Ljetbrains/mps/progress/ProgressMonitor;)Ljava/util/concurrent/Future;" />
     <scopeInfo nodeId="2298333944697014857" fileName="AbstractMakeService.java" startLine="28" startPosition="32" endLine="28" endPosition="32" />
     <scopeInfo nodeId="2298333944697025527" fileName="AbstractMakeService.java" startLine="37" startPosition="40" endLine="37" endPosition="40" />
-    <scopeInfo nodeId="4671800353872688563" fileName="AbstractMakeService.java" startLine="54" startPosition="50" endLine="55" endPosition="35" />
-    <scopeInfo nodeId="4671800353872688578" fileName="AbstractMakeService.java" startLine="59" startPosition="68" endLine="60" endPosition="51" />
+    <scopeInfo nodeId="4671800353872688563" fileName="AbstractMakeService.java" startLine="54" startPosition="50" endLine="55" endPosition="23" />
+    <scopeInfo nodeId="4671800353872688578" fileName="AbstractMakeService.java" startLine="59" startPosition="78" endLine="60" endPosition="51" />
     <scopeInfo nodeId="4671800353872688639" fileName="AbstractMakeService.java" startLine="74" startPosition="55" endLine="75" endPosition="39" />
     <scopeInfo nodeId="4671800353872688669" fileName="AbstractMakeService.java" startLine="86" startPosition="51" endLine="87" endPosition="33" />
     <scopeInfo nodeId="4671800353872688681" fileName="AbstractMakeService.java" startLine="91" startPosition="52" endLine="92" endPosition="33" />
@@ -123,7 +123,7 @@
     <scopeInfo nodeId="4671800353872688597" fileName="AbstractMakeService.java" startLine="67" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="4671800353872688597" varName="langs" />
     </scopeInfo>
-    <scopeInfo nodeId="4671800353872688534" fileName="AbstractMakeService.java" startLine="47" startPosition="192" endLine="97" endPosition="80">
+    <scopeInfo nodeId="4671800353872688534" fileName="AbstractMakeService.java" startLine="47" startPosition="192" endLine="97" endPosition="122">
       <varInfo nodeId="4671800353872688536" varName="clInput" />
       <varInfo nodeId="4671800353872688590" varName="scriptBuilders" />
       <varInfo nodeId="4671800353872688660" varName="scripts" />
@@ -181,9 +181,9 @@
     <nodeInfo nodeId="2298333944697013907" fileName="CoreMakeTask.java" startLine="91" startPosition="11" endLine="92" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2298333944697013915" fileName="CoreMakeTask.java" startLine="92" startPosition="52" endLine="93" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="2298333944697013920" fileName="CoreMakeTask.java" startLine="94" startPosition="9" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2849088437822283795" fileName="CoreMakeTask.java" startLine="98" startPosition="47" endLine="99" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2849088437822283795" fileName="CoreMakeTask.java" startLine="98" startPosition="47" endLine="99" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2849088437822281881" fileName="CoreMakeTask.java" startLine="102" startPosition="9" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2298333944697013932" fileName="CoreMakeTask.java" startLine="105" startPosition="45" endLine="106" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2298333944697013932" fileName="CoreMakeTask.java" startLine="105" startPosition="45" endLine="106" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2298333944697013955" fileName="CoreMakeTask.java" startLine="108" startPosition="18" endLine="109" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3395808176665477326" fileName="CoreMakeTask.java" startLine="110" startPosition="55" endLine="111" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3395808176665295031" fileName="CoreMakeTask.java" startLine="111" startPosition="158" endLine="112" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -281,8 +281,8 @@
     <scopeInfo nodeId="7800382253417727303" fileName="CoreMakeTask.java" startLine="62" startPosition="37" endLine="63" endPosition="46" />
     <scopeInfo nodeId="2298333944697013800" fileName="CoreMakeTask.java" startLine="73" startPosition="22" endLine="74" endPosition="13" />
     <scopeInfo nodeId="6432261798271888676" fileName="CoreMakeTask.java" startLine="89" startPosition="55" endLine="90" endPosition="41" />
-    <scopeInfo nodeId="2849088437822283794" fileName="CoreMakeTask.java" startLine="98" startPosition="47" endLine="99" endPosition="48" />
-    <scopeInfo nodeId="2298333944697013931" fileName="CoreMakeTask.java" startLine="105" startPosition="45" endLine="106" endPosition="46" />
+    <scopeInfo nodeId="2849088437822283794" fileName="CoreMakeTask.java" startLine="98" startPosition="47" endLine="99" endPosition="36" />
+    <scopeInfo nodeId="2298333944697013931" fileName="CoreMakeTask.java" startLine="105" startPosition="45" endLine="106" endPosition="34" />
     <scopeInfo nodeId="2298333944697013968" fileName="CoreMakeTask.java" startLine="120" startPosition="69" endLine="121" endPosition="16" />
     <scopeInfo nodeId="3167138766133148918" fileName="CoreMakeTask.java" startLine="127" startPosition="46" endLine="128" endPosition="24" />
     <scopeInfo nodeId="1278023359872337198" fileName="CoreMakeTask.java" startLine="135" startPosition="61" endLine="136" endPosition="28" />

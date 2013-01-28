@@ -7,6 +7,7 @@ import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 
+@Deprecated
 public interface IFResource extends IResource {
   public String packageName();
   public Map<String, Object> contents();

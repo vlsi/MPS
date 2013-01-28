@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.ITResource;
+import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
@@ -20,7 +20,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -31,11 +30,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.make.script.IConfig;
-import jetbrains.mps.smodel.resources.IGResource;
+import jetbrains.mps.smodel.resources.GResource;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.Map;
-import jetbrains.mps.smodel.resources.GResource;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
@@ -78,7 +76,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
   }
 
   public static class Target_copyFiles implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.build.CopyGeneratedScripts.copyFiles");
 
@@ -87,23 +85,24 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_ixa0pj_a0a = null;
+          final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               progressMonitor.start("Copying resources", 2);
               progressMonitor.step("Build language ANT files");
               try {
-                for (IResource resource : input) {
+                for (TResource tres : Sequence.fromIterable(input)) {
                   final List<Tuples._2<IFile, IFile>> toCopy = ListSequence.fromList(new ArrayList<Tuples._2<IFile, IFile>>());
 
-                  final TResource tres = (TResource) resource;
-
+                  final TResource ftres = tres;
                   new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
                     @Override
                     public boolean acceptWritten(IFile file) {
                       if (!(Sequence.fromIterable(Sequence.fromArray(new String[]{"dependencies", "generated", "trace.info"})).contains(file.getName()))) {
-                        String destPath = MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(new ITarget.Name("jetbrains.mps.build.CopyGeneratedScripts.collectScriptDirectories"), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).get(tres.modelDescriptor().getSModelReference())).get(file.getName());
+                        String destPath = MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(new ITarget.Name("jetbrains.mps.build.CopyGeneratedScripts.collectScriptDirectories"), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).get(ftres.modelDescriptor().getSModelReference())).get(file.getName());
                         if ((destPath != null && destPath.length() > 0)) {
                           IFile destFile = FileSystem.getInstance().getFileByPath(destPath);
                           ListSequence.fromList(toCopy).addElement(MultiTuple.<IFile,IFile>from(file, destFile));
@@ -127,7 +126,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                       });
                     }
                   });
-                  _output_ixa0pj_a0a = Sequence.fromIterable(_output_ixa0pj_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+                  _output_ixa0pj_a0a = Sequence.fromIterable(_output_ixa0pj_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
                 }
               } finally {
                 progressMonitor.done();
@@ -198,7 +197,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
   }
 
   public static class Target_collectScriptDirectories implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IGResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{GResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.build.CopyGeneratedScripts.collectScriptDirectories");
 
@@ -207,13 +206,14 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_ixa0pj_a0b = null;
+          final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               pa.global().properties(Target_collectScriptDirectories.this.getName(), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination(MapSequence.fromMap(new HashMap<SModelReference, Map<String, String>>()));
-              for (IResource resource : Sequence.fromIterable(input)) {
-                final GResource gres = (GResource) resource;
+              for (final GResource gres : Sequence.fromIterable(input)) {
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
                     MapSequence.fromMap(pa.global().properties(Target_collectScriptDirectories.this.getName(), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).put(gres.model().getSModelReference(), MapSequence.fromMap(new HashMap<String, String>()));
@@ -252,7 +252,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                 // some kind of annotation, like @ResourceFile(buildScript=buildscript) ???? 
                 // yep 
 
-                _output_ixa0pj_a0b = Sequence.fromIterable(_output_ixa0pj_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+                _output_ixa0pj_a0b = Sequence.fromIterable(_output_ixa0pj_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(gres)));
               }
             default:
               return new IResult.SUCCESS(_output_ixa0pj_a0b);

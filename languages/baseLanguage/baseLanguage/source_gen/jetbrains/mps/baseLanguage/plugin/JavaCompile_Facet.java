@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.ITResource;
+import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
@@ -20,7 +20,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.MPSCompilationResult;
@@ -36,10 +35,9 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler;
 import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters.Variables;
-import jetbrains.mps.smodel.resources.IFResource;
+import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.compiler.JavaCompiler;
 import java.util.Set;
-import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -89,7 +87,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
   }
 
   public static class Target_compile implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile");
 
@@ -98,8 +96,10 @@ public class JavaCompile_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_wf1ya0_a0a = null;
+          final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               if (Boolean.TRUE.equals(pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).skipCompilation())) {
@@ -107,9 +107,9 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.SUCCESS(_output_wf1ya0_a0a);
               }
               pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(false);
-              final Iterable<IModule> toCompile = Sequence.fromIterable(input).select(new ISelector<IResource, IModule>() {
-                public IModule select(IResource it) {
-                  return ((TResource) it).module();
+              final Iterable<IModule> toCompile = Sequence.fromIterable(input).select(new ISelector<TResource, IModule>() {
+                public IModule select(TResource it) {
+                  return it.module();
                 }
               }).where(new IWhereFilter<IModule>() {
                 public boolean accept(IModule it) {
@@ -144,8 +144,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_wf1ya0_a0a);
               }
 
-              for (IResource resource : Sequence.fromIterable(input)) {
-                TResource tres = (TResource) resource;
+              for (TResource tres : Sequence.fromIterable(input)) {
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
@@ -254,7 +253,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
   }
 
   public static class Target_auxCompile implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.auxCompile");
 
@@ -263,8 +262,10 @@ public class JavaCompile_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_wf1ya0_a0b = null;
+          final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               if (Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).skipCompilation())) {
@@ -274,22 +275,16 @@ public class JavaCompile_Facet extends IFacet.Stub {
               if (pa.global().properties(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).skipAuxCompile() != null && pa.global().properties(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).skipAuxCompile()) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0b);
               }
-
-              // collect modules to compile 
-              Iterable<TResource> toCompile = Sequence.fromIterable(input).select(new ISelector<IResource, TResource>() {
-                public TResource select(IResource it) {
-                  return (TResource) (((IResource) it));
-                }
-              });
-
-              if (Sequence.fromIterable(toCompile).any(new IWhereFilter<TResource>() {
+              if (Sequence.fromIterable(input).any(new IWhereFilter<TResource>() {
                 public boolean accept(TResource it) {
                   return it.module() == null;
                 }
               })) {
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
               }
-              toCompile = Sequence.fromIterable(toCompile).where(new IWhereFilter<TResource>() {
+
+              // collect modules to compile 
+              Iterable<TResource> toCompile = Sequence.fromIterable(input).where(new IWhereFilter<TResource>() {
                 public boolean accept(TResource it) {
                   return !(it.module().isCompileInMPS());
                 }
@@ -431,7 +426,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
   }
 
   public static class Target_compileToMemory implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IFResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{FResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory");
 
@@ -440,14 +435,15 @@ public class JavaCompile_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_wf1ya0_a0c = null;
+          final Iterable<FResource> input = (Iterable<FResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               final JavaCompiler jc = new JavaCompiler();
               final Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
-              for (IResource r : Sequence.fromIterable(input)) {
-                FResource fres = ((FResource) r);
+              for (FResource fres : Sequence.fromIterable(input)) {
                 MapSequence.fromMap(fres.contents()).visitAll(new IVisitor<IMapping<String, Object>>() {
                   public void visit(IMapping<String, Object> m) {
                     jc.addSourceFile("", m.key(), m.value());

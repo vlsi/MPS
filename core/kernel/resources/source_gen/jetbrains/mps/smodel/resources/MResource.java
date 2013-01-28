@@ -5,13 +5,12 @@ package jetbrains.mps.smodel.resources;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.resources.IResourceWithProperties;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.make.resources.IPropertiesIO;
 
-public class MResource extends MultiTuple._2<IModule, Iterable<SModelDescriptor>> implements IResource, IMResource, IResourceWithProperties {
+public class MResource extends MultiTuple._2<IModule, Iterable<SModelDescriptor>> implements IMResource, IResourceWithProperties {
   public MResource() {
     super();
   }
