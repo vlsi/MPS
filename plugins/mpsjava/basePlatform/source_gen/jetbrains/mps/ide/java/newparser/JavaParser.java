@@ -335,6 +335,7 @@ public class JavaParser {
         if (!(ref instanceof DynamicReference)) {
           continue;
         }
+        // FIXME temp hack around typesystem looping when resolving certain dyn.references 
         if (ref.getRole().equals("baseMethodDeclaration")) {
           continue;
         }

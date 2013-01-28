@@ -836,8 +836,6 @@ public class ASTConverter {
 
   public String getTypeName(SNode type) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-      // <node> 
-      // <node> 
       return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")), "conceptAlias");
     } else if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       // <node> 

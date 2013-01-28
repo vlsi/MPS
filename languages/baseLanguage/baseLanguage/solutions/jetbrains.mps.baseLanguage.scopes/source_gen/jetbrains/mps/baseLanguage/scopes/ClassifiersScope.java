@@ -11,10 +11,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ClassifiersScope extends FilteringScope {
   private IScope myModuleScope;
+  private boolean myInlcudeAncestors;
 
-  public ClassifiersScope(SModel model, IScope scope, String conceptFqName) {
-    super(new ModelPlusImportedScope(model, false, scope, conceptFqName));
-    myModuleScope = scope;
+  public ClassifiersScope(SModel model, String conceptFqName, boolean includeAncestors) {
+    super(new ModelPlusImportedScope(model, false, model.getModelDescriptor().getModule().getScope(), conceptFqName));
+    myModuleScope = model.getModelDescriptor().getModule().getScope();
+    myInlcudeAncestors = includeAncestors;
+  }
+
+  public ClassifiersScope(SModel model, String conceptFqName) {
+    this(model, conceptFqName, false);
   }
 
   @Override
@@ -29,7 +35,9 @@ public class ClassifiersScope extends FilteringScope {
       return ClassifierResolveUtils.resolveSpecialSyntax(refText, contextNode);
     }
     // end of hack 
-    return ClassifierResolveUtils.resolve(refText, contextNode, myModuleScope);
+    // TODO Must be done through ScopeProvider 
+    SNode contextClass = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+    return ClassifierResolveUtils.resolve(refText, contextClass, myModuleScope, myInlcudeAncestors);
     // <node> 
   }
 }
