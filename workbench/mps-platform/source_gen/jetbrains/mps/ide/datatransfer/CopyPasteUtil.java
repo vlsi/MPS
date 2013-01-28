@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SModelId;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelOperations;
 import com.intellij.ide.CopyPasteManagerEx;
 import java.awt.datatransfer.StringSelection;
@@ -202,7 +202,7 @@ public class CopyPasteUtil {
   private static SModel copyModelProperties(SModel model) {
     SModelReference modelReference = model.getSModelReference();
     SModelFqName fqName = new SModelFqName(modelReference.getLongName(), SModelStereotype.INTERNAL_COPY);
-    SModel newModel = new SModel(new SModelReference(fqName, jetbrains.mps.smodel.SModelId.generate()));
+    SModel newModel = new SModel(new SModelReference(fqName, SModelId.generate()));
     for (ModuleReference language : model.importedLanguages()) {
       newModel.addLanguage(language);
     }

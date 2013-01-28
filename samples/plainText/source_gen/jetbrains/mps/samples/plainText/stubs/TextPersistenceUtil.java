@@ -5,13 +5,13 @@ package jetbrains.mps.samples.plainText.stubs;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelFqName;
-import org.jetbrains.mps.openapi.model.SModelId;
+import jetbrains.mps.smodel.SModelId;
 
 public class TextPersistenceUtil {
   public TextPersistenceUtil() {
   }
 
   public static SModelReference refByModule(SModuleReference module) {
-    return new SModelReference(new SModelFqName("text", "text"), jetbrains.mps.smodel.SModelId.foreign(module.getModuleId().toString() + ":text"));
+    return new SModelReference(new SModelFqName("text", "text"), SModelId.foreign(module.getModuleId().toString() + ":text"));
   }
 }

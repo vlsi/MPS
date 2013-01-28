@@ -19,7 +19,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.CopyUtil;
-import org.jetbrains.mps.openapi.model.SModelId;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.IOperationContext;
@@ -116,8 +116,8 @@ public class DiffTemporaryModule extends AbstractModule {
 
   public static void resetSModelId(SModel model) {
     SModelReference modelRef = model.getSModelReference();
-    assert modelRef.getSModelId() instanceof jetbrains.mps.smodel.SModelId.ForeignSModelId;
-    CopyUtil.changeModelReference(model, new SModelReference(modelRef.getSModelFqName(), getOriginalSModelId((jetbrains.mps.smodel.SModelId.ForeignSModelId) modelRef.getSModelId())));
+    assert modelRef.getSModelId() instanceof SModelId.ForeignSModelId;
+    CopyUtil.changeModelReference(model, new SModelReference(modelRef.getSModelFqName(), getOriginalSModelId((SModelId.ForeignSModelId) modelRef.getSModelId())));
   }
 
   public static void registerModel(SModel model, MPSModuleOwner owner) {
@@ -144,13 +144,13 @@ public class DiffTemporaryModule extends AbstractModule {
     }
   }
 
-  public static SModelId genMergeSModelId(SModelId modelId, String version) {
-    return jetbrains.mps.smodel.SModelId.foreign("merge_" + version + "#" + modelId.toString());
+  public static org.jetbrains.mps.openapi.model.SModelId genMergeSModelId(org.jetbrains.mps.openapi.model.SModelId modelId, String version) {
+    return SModelId.foreign("merge_" + version + "#" + modelId.toString());
   }
 
-  public static SModelId getOriginalSModelId(jetbrains.mps.smodel.SModelId.ForeignSModelId modelId) {
+  public static org.jetbrains.mps.openapi.model.SModelId getOriginalSModelId(SModelId.ForeignSModelId modelId) {
     String id = modelId.getId();
-    return jetbrains.mps.smodel.SModelId.fromString(id.substring(id.indexOf("#") + 1));
+    return SModelId.fromString(id.substring(id.indexOf("#") + 1));
   }
 
   private class DiffModuleScope extends AbstractModule.ModuleScope {

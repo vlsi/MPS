@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelFqName;
-import org.jetbrains.mps.openapi.model.SModelId;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 
 public class AuxilaryRuntimeModel {
@@ -29,7 +29,7 @@ public class AuxilaryRuntimeModel {
 
   private static class AuxModelDescriptor extends BaseSpecialModelDescriptor {
     public AuxModelDescriptor() {
-      super(new SModelReference(new SModelFqName("$AuxModel$", ""), jetbrains.mps.smodel.SModelId.generate()));
+      super(new SModelReference(new SModelFqName("$AuxModel$", ""), SModelId.generate()));
     }
 
     protected SModel createModel() {
