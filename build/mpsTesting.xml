@@ -670,6 +670,9 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jetbrains.mps.baseLanguage.unitTest.libs.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/devkits/jetbrains.mps.devkit.language-design.devkit" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.access.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
@@ -717,7 +720,7 @@
         <module file="${mps_home}/plugins/mps-testing/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime/jetbrains.mps.xmlUnitTest.runtime.msd" />
       </chunk>
       <chunk bootstrap="true">
-        <module file="${mps_home}/plugins/mps-testing/languages/languageDesign/test/jetbrains.mps.lang.test.mpl" bootstrap="true" />
+        <module file="${mps_home}/plugins/mps-testing/languages/languageDesign/test/jetbrains.mps.lang.test.mpl" />
         <module file="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/jetbrains.mps.lang.test.runtime.msd" bootstrap="true" />
       </chunk>
       <chunk>

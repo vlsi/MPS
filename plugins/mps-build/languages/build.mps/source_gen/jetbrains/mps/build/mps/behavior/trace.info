@@ -331,15 +331,14 @@
     <nodeInfo nodeId="1957532277556971051" fileName="BuildMps_Module_Behavior.java" startLine="141" startPosition="28" endLine="142" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5970181360961823927" fileName="BuildMps_Module_Behavior.java" startLine="145" startPosition="5" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5970181360961823929" fileName="BuildMps_Module_Behavior.java" startLine="146" startPosition="0" endLine="147" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5970181360961823933" fileName="BuildMps_Module_Behavior.java" startLine="147" startPosition="42" endLine="148" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5970181360961823990" fileName="BuildMps_Module_Behavior.java" startLine="149" startPosition="97" endLine="150" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5970181360961823995" fileName="BuildMps_Module_Behavior.java" startLine="151" startPosition="96" endLine="152" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5970181360961824005" fileName="BuildMps_Module_Behavior.java" startLine="153" startPosition="31" endLine="154" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2569834391839855118" fileName="BuildMps_Module_Behavior.java" startLine="157" startPosition="5" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7880069565647276448" fileName="BuildMps_Module_Behavior.java" startLine="159" startPosition="21" endLine="160" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="165" startPosition="79" endLine="166" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="170" startPosition="112" endLine="171" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5680938682773942850" fileName="BuildMps_Module_Behavior.java" startLine="174" startPosition="65" endLine="175" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5970181360961823933" fileName="BuildMps_Module_Behavior.java" startLine="147" startPosition="42" endLine="148" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5970181360961823990" fileName="BuildMps_Module_Behavior.java" startLine="149" startPosition="71" endLine="150" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5970181360961824005" fileName="BuildMps_Module_Behavior.java" startLine="156" startPosition="31" endLine="157" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2569834391839855118" fileName="BuildMps_Module_Behavior.java" startLine="160" startPosition="5" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7880069565647276448" fileName="BuildMps_Module_Behavior.java" startLine="162" startPosition="21" endLine="163" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="168" startPosition="79" endLine="169" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="173" startPosition="112" endLine="174" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5680938682773942850" fileName="BuildMps_Module_Behavior.java" startLine="177" startPosition="65" endLine="178" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5680938682773942737" fileName="BuildMps_Module_Behavior.java" startLine="68" startPosition="18" endLine="70" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5680938682773942776" fileName="BuildMps_Module_Behavior.java" startLine="95" startPosition="18" endLine="97" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -351,28 +350,29 @@
     <nodeInfo nodeId="6859736767834855067" fileName="BuildMps_Module_Behavior.java" startLine="84" startPosition="77" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6859736767834900828" fileName="BuildMps_Module_Behavior.java" startLine="100" startPosition="16" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2569834391839855320" fileName="BuildMps_Module_Behavior.java" startLine="134" startPosition="14" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5970181360961824003" fileName="BuildMps_Module_Behavior.java" startLine="152" startPosition="115" endLine="155" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7880069565647313752" fileName="BuildMps_Module_Behavior.java" startLine="158" startPosition="0" endLine="161" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5680938682773942850" fileName="BuildMps_Module_Behavior.java" startLine="174" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_va39l0_a0a0c0i0c#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="5970181360961824003" fileName="BuildMps_Module_Behavior.java" startLine="155" startPosition="62" endLine="158" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7880069565647313752" fileName="BuildMps_Module_Behavior.java" startLine="161" startPosition="0" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5680938682773942850" fileName="BuildMps_Module_Behavior.java" startLine="177" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_va39l0_a0a0c0i0c#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="7880069565647313897" fileName="BuildMps_Module_Behavior.java" startLine="40" startPosition="115" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="202934866058963173" fileName="BuildMps_Module_Behavior.java" startLine="48" startPosition="39" endLine="52" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6859736767835001130" fileName="BuildMps_Module_Behavior.java" startLine="121" startPosition="230" endLine="125" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2569834391839855133" fileName="BuildMps_Module_Behavior.java" startLine="139" startPosition="122" endLine="143" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="164" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isCompilable_7454762407073969360#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="169" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isCompilable_7454762407073969360#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="5970181360961823995" fileName="BuildMps_Module_Behavior.java" startLine="151" startPosition="96" endLine="155" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="167" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isCompilable_7454762407073969360#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="172" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isCompilable_7454762407073969360#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="5680938682773942729" fileName="BuildMps_Module_Behavior.java" startLine="65" startPosition="41" endLine="70" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5680938682773942764" fileName="BuildMps_Module_Behavior.java" startLine="92" startPosition="41" endLine="97" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5680938682773942796" fileName="BuildMps_Module_Behavior.java" startLine="113" startPosition="29" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="202934866058963171" fileName="BuildMps_Module_Behavior.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="202934866058963149" fileName="BuildMps_Module_Behavior.java" startLine="73" startPosition="14" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="202934866058962959" fileName="BuildMps_Module_Behavior.java" startLine="100" startPosition="14" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5970181360961823993" fileName="BuildMps_Module_Behavior.java" startLine="150" startPosition="21" endLine="156" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2569834391839855234" fileName="BuildMps_Module_Behavior.java" startLine="38" startPosition="21" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6859736767835000693" fileName="BuildMps_Module_Behavior.java" startLine="119" startPosition="26" endLine="126" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="202934866058962824" fileName="BuildMps_Module_Behavior.java" startLine="64" startPosition="207" endLine="72" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5680938682773942762" fileName="BuildMps_Module_Behavior.java" startLine="91" startPosition="214" endLine="99" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5970181360961823984" fileName="BuildMps_Module_Behavior.java" startLine="148" startPosition="143" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5970181360961823993" fileName="BuildMps_Module_Behavior.java" startLine="150" startPosition="21" endLine="159" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6853883513540472623" fileName="BuildMps_Module_Behavior.java" startLine="134" startPosition="12" endLine="144" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5970181360961823984" fileName="BuildMps_Module_Behavior.java" startLine="148" startPosition="158" endLine="160" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6853883513540472515" fileName="BuildMps_Module_Behavior.java" startLine="131" startPosition="71" endLine="144" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6859736767834900859" fileName="BuildMps_Module_Behavior.java" startLine="112" startPosition="107" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2569834391839855120" fileName="BuildMps_Module_Behavior.java" startLine="130" startPosition="83" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -383,7 +383,7 @@
     <nodeInfo nodeId="6859736767834900791" fileName="BuildMps_Module_Behavior.java" startLine="82" startPosition="0" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="202934866058962807" fileName="BuildMps_Module_Behavior.java" startLine="46" startPosition="0" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2569834391839847771" fileName="BuildMps_Module_Behavior.java" startLine="36" startPosition="54" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="32" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_fetchDependencies_5908258303322131137#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;Ljetbrains/mps/build/util/RequiredDependenciesBuilder;)V" />
+    <nodeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="32" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_fetchDependencies_5908258303322131137#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;Ljetbrains/mps/build/util/RequiredDependenciesBuilder;)V" />
     <scopeInfo nodeId="2569834391839790365" fileName="BuildMps_Module_Behavior.java" startLine="25" startPosition="43" endLine="25" endPosition="43" />
     <scopeInfo nodeId="7454762407073969363" fileName="BuildMps_Module_Behavior.java" startLine="28" startPosition="82" endLine="29" endPosition="77" />
     <scopeInfo nodeId="202934866058963188" fileName="BuildMps_Module_Behavior.java" startLine="55" startPosition="41" endLine="56" endPosition="116" />
@@ -399,11 +399,11 @@
     <scopeInfo nodeId="5680938682773942903" fileName="BuildMps_Module_Behavior.java" startLine="116" startPosition="16" endLine="117" endPosition="32" />
     <scopeInfo nodeId="6853883513540472516" fileName="BuildMps_Module_Behavior.java" startLine="132" startPosition="42" endLine="133" endPosition="71" />
     <scopeInfo nodeId="2569834391839855321" fileName="BuildMps_Module_Behavior.java" startLine="135" startPosition="99" endLine="136" endPosition="19" />
-    <scopeInfo nodeId="5970181360961824004" fileName="BuildMps_Module_Behavior.java" startLine="153" startPosition="31" endLine="154" endPosition="35" />
-    <scopeInfo nodeId="7880069565647313753" fileName="BuildMps_Module_Behavior.java" startLine="159" startPosition="21" endLine="160" endPosition="37" />
-    <scopeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="165" startPosition="79" endLine="166" endPosition="128" />
-    <scopeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="170" startPosition="112" endLine="171" endPosition="259" />
-    <scopeInfo nodeId="5680938682773942850" fileName="BuildMps_Module_Behavior.java" startLine="174" startPosition="65" endLine="175" endPosition="43" />
+    <scopeInfo nodeId="5970181360961824004" fileName="BuildMps_Module_Behavior.java" startLine="156" startPosition="31" endLine="157" endPosition="35" />
+    <scopeInfo nodeId="7880069565647313753" fileName="BuildMps_Module_Behavior.java" startLine="162" startPosition="21" endLine="163" endPosition="37" />
+    <scopeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="168" startPosition="79" endLine="169" endPosition="128" />
+    <scopeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="173" startPosition="112" endLine="174" endPosition="259" />
+    <scopeInfo nodeId="5680938682773942850" fileName="BuildMps_Module_Behavior.java" startLine="177" startPosition="65" endLine="178" endPosition="43" />
     <scopeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="25" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="2569834391839790363" varName="thisNode" />
     </scopeInfo>
@@ -419,15 +419,14 @@
     <scopeInfo nodeId="202934866058963197" fileName="BuildMps_Module_Behavior.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="202934866058963197" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5680938682773942850" fileName="BuildMps_Module_Behavior.java" startLine="174" startPosition="0" endLine="177" endPosition="0">
+    <scopeInfo nodeId="5680938682773942850" fileName="BuildMps_Module_Behavior.java" startLine="177" startPosition="0" endLine="180" endPosition="0">
       <varInfo nodeId="5680938682773942850" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="202934866058963172" fileName="BuildMps_Module_Behavior.java" startLine="48" startPosition="39" endLine="52" endPosition="12" />
-    <scopeInfo nodeId="5970181360961823994" fileName="BuildMps_Module_Behavior.java" startLine="151" startPosition="96" endLine="155" endPosition="9" />
-    <scopeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="164" startPosition="0" endLine="168" endPosition="0">
+    <scopeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="167" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="2569834391839790363" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="169" startPosition="0" endLine="173" endPosition="0">
+    <scopeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="172" startPosition="0" endLine="176" endPosition="0">
       <varInfo nodeId="2569834391839790363" varName="callerConceptFqName" />
       <varInfo nodeId="2569834391839790363" varName="thisNode" />
     </scopeInfo>
@@ -442,9 +441,7 @@
     </scopeInfo>
     <scopeInfo nodeId="202934866058962825" fileName="BuildMps_Module_Behavior.java" startLine="65" startPosition="41" endLine="71" endPosition="30" />
     <scopeInfo nodeId="5680938682773942763" fileName="BuildMps_Module_Behavior.java" startLine="92" startPosition="41" endLine="98" endPosition="30" />
-    <scopeInfo nodeId="5970181360961823989" fileName="BuildMps_Module_Behavior.java" startLine="149" startPosition="97" endLine="156" endPosition="7">
-      <varInfo nodeId="5970181360961823991" varName="artifact" />
-    </scopeInfo>
+    <scopeInfo nodeId="5970181360961823994" fileName="BuildMps_Module_Behavior.java" startLine="151" startPosition="96" endLine="158" endPosition="9" />
     <scopeInfo nodeId="202934866058963091" fileName="BuildMps_Module_Behavior.java" startLine="63" startPosition="79" endLine="72" endPosition="11">
       <varInfo nodeId="5680938682773942691" varName="dependencyTarget" />
     </scopeInfo>
@@ -454,7 +451,10 @@
     <scopeInfo nodeId="6853883513540472624" fileName="BuildMps_Module_Behavior.java" startLine="134" startPosition="14" endLine="143" endPosition="9">
       <varInfo nodeId="2569834391839855126" varName="artifact" />
     </scopeInfo>
-    <scopeInfo nodeId="5970181360961823984" fileName="BuildMps_Module_Behavior.java" startLine="148" startPosition="143" endLine="157" endPosition="5">
+    <scopeInfo nodeId="5970181360961823989" fileName="BuildMps_Module_Behavior.java" startLine="149" startPosition="71" endLine="159" endPosition="7">
+      <varInfo nodeId="5970181360961823991" varName="artifact" />
+    </scopeInfo>
+    <scopeInfo nodeId="5970181360961823984" fileName="BuildMps_Module_Behavior.java" startLine="148" startPosition="158" endLine="160" endPosition="5">
       <varInfo nodeId="5970181360961823985" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="6859736767834900860" fileName="BuildMps_Module_Behavior.java" startLine="113" startPosition="29" endLine="126" endPosition="9" />
@@ -489,14 +489,14 @@
     <scopeInfo nodeId="2569834391839847771" fileName="BuildMps_Module_Behavior.java" startLine="36" startPosition="54" endLine="81" endPosition="5">
       <varInfo nodeId="2569834391839847772" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="5908258303322131575" fileName="BuildMps_Module_Behavior.java" startLine="32" startPosition="149" endLine="161" endPosition="5">
+    <scopeInfo nodeId="5908258303322131575" fileName="BuildMps_Module_Behavior.java" startLine="32" startPosition="149" endLine="164" endPosition="5">
       <varInfo nodeId="7525356604723806998" varName="closure" />
       <varInfo nodeId="5970181360961823934" varName="genClosure" />
       <varInfo nodeId="1957532277556971092" varName="needsFetch" />
       <varInfo nodeId="4421917191016427353" varName="requiredJars" />
       <varInfo nodeId="6853883513540472585" varName="requiredJava" />
     </scopeInfo>
-    <scopeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="32" startPosition="0" endLine="163" endPosition="0">
+    <scopeInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="32" startPosition="0" endLine="166" endPosition="0">
       <varInfo nodeId="5908258303322131576" varName="artifacts" />
       <varInfo nodeId="5908258303322131578" varName="builder" />
       <varInfo nodeId="2569834391839790363" varName="thisNode" />
@@ -504,7 +504,7 @@
     <unitInfo nodeId="202934866058963187" fileName="BuildMps_Module_Behavior.java" startLine="54" startPosition="19" endLine="58" endPosition="7" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior$2" />
     <unitInfo nodeId="202934866058963197" fileName="BuildMps_Module_Behavior.java" startLine="58" startPosition="20" endLine="62" endPosition="7" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior$3" />
     <unitInfo nodeId="202934866058963171" fileName="BuildMps_Module_Behavior.java" startLine="47" startPosition="109" endLine="54" endPosition="7" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior$1" />
-    <unitInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="24" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior" />
+    <unitInfo nodeId="2569834391839790363" fileName="BuildMps_Module_Behavior.java" startLine="24" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior" />
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/5970181360961361219">
     <nodeInfo nodeId="5970181360961361231" fileName="BuildMpsLayout_FolderWithSources_Behavior.java" startLine="12" startPosition="96" endLine="13" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -731,6 +731,48 @@
       <varInfo nodeId="6592112598314896727" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="6592112598314896727" fileName="BuildMps_IdeaPlugin_Behavior.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPlugin_Behavior" />
+  </root>
+  <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/7391870795496918760">
+    <nodeInfo nodeId="7391870795496918866" fileName="BuildMps_DevKit_Behavior.java" startLine="18" startPosition="39" endLine="19" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7391870795496918906" fileName="BuildMps_DevKit_Behavior.java" startLine="22" startPosition="37" endLine="23" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7391870795496919045" fileName="BuildMps_DevKit_Behavior.java" startLine="26" startPosition="39" endLine="27" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7391870795496919055" fileName="BuildMps_DevKit_Behavior.java" startLine="30" startPosition="37" endLine="31" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7391870795496918760" fileName="BuildMps_DevKit_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7391870795496918864" fileName="BuildMps_DevKit_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7391870795496918902" fileName="BuildMps_DevKit_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7391870795496919043" fileName="BuildMps_DevKit_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7391870795496919053" fileName="BuildMps_DevKit_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7391870795496918770" fileName="BuildMps_DevKit_Behavior.java" startLine="16" startPosition="93" endLine="33" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7391870795496918760" fileName="BuildMps_DevKit_Behavior.java" startLine="16" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getExportedModules_7391870795496918763#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="7391870795496918762" fileName="BuildMps_DevKit_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="7391870795496918865" fileName="BuildMps_DevKit_Behavior.java" startLine="18" startPosition="39" endLine="19" endPosition="115" />
+    <scopeInfo nodeId="7391870795496918903" fileName="BuildMps_DevKit_Behavior.java" startLine="22" startPosition="37" endLine="23" endPosition="153" />
+    <scopeInfo nodeId="7391870795496919044" fileName="BuildMps_DevKit_Behavior.java" startLine="26" startPosition="39" endLine="27" endPosition="115" />
+    <scopeInfo nodeId="7391870795496919054" fileName="BuildMps_DevKit_Behavior.java" startLine="30" startPosition="37" endLine="31" endPosition="153" />
+    <scopeInfo nodeId="7391870795496918760" fileName="BuildMps_DevKit_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="7391870795496918760" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7391870795496918864" fileName="BuildMps_DevKit_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="7391870795496918864" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7391870795496918902" fileName="BuildMps_DevKit_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="7391870795496918902" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7391870795496919043" fileName="BuildMps_DevKit_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="7391870795496919043" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7391870795496919053" fileName="BuildMps_DevKit_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="7391870795496919053" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7391870795496918766" fileName="BuildMps_DevKit_Behavior.java" startLine="16" startPosition="93" endLine="33" endPosition="8" />
+    <scopeInfo nodeId="7391870795496918760" fileName="BuildMps_DevKit_Behavior.java" startLine="16" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="7391870795496918760" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="7391870795496918864" fileName="BuildMps_DevKit_Behavior.java" startLine="17" startPosition="98" endLine="21" endPosition="5" unitName="jetbrains.mps.build.mps.behavior.BuildMps_DevKit_Behavior$1" />
+    <unitInfo nodeId="7391870795496918902" fileName="BuildMps_DevKit_Behavior.java" startLine="21" startPosition="18" endLine="25" endPosition="5" unitName="jetbrains.mps.build.mps.behavior.BuildMps_DevKit_Behavior$2" />
+    <unitInfo nodeId="7391870795496919043" fileName="BuildMps_DevKit_Behavior.java" startLine="25" startPosition="101" endLine="29" endPosition="5" unitName="jetbrains.mps.build.mps.behavior.BuildMps_DevKit_Behavior$3" />
+    <unitInfo nodeId="7391870795496919053" fileName="BuildMps_DevKit_Behavior.java" startLine="29" startPosition="18" endLine="33" endPosition="5" unitName="jetbrains.mps.build.mps.behavior.BuildMps_DevKit_Behavior$4" />
+    <unitInfo nodeId="7391870795496918760" fileName="BuildMps_DevKit_Behavior.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_DevKit_Behavior" />
   </root>
   <root nodeRef="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)/8369506495128693727">
     <nodeInfo nodeId="8369506495128725743" fileName="BuildMps_AbstractModule_Behavior.java" startLine="15" startPosition="79" endLine="16" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
