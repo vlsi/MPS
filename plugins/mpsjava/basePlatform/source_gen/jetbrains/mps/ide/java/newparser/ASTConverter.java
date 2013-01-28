@@ -7,7 +7,6 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import org.jetbrains.annotations.NotNull;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -39,6 +38,7 @@ import org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.MemberValuePair;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.DynamicReference;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.eclipse.jdt.internal.compiler.ast.Argument;
 import org.eclipse.jdt.internal.compiler.ast.Expression;
@@ -78,7 +78,7 @@ public class ASTConverter {
   private boolean myOnlyStubs = false;
   private Map<Integer, SNode> myJavadocs = MapSequence.fromMap(new HashMap<Integer, SNode>());
 
-  public ASTConverter(@NotNull TypeNameResolver typeResolver, boolean onlyStubs) {
+  public ASTConverter(boolean onlyStubs) {
     myOnlyStubs = onlyStubs;
   }
 
