@@ -183,7 +183,6 @@ public class CommonPaths {
     addIfExists(result, "/lib/mps-tuples.jar");
     addIfExists(result, "/lib/log4j.jar");
     addIfExists(result, "/lib/trove4j.jar");
-    addIfExists(result, "/lib/commons-lang-2.4.jar");
     addIfExists(result, "/lib/jdom.jar");
     addIfExists(result, "/lib/ecj-4.2.jar");
     addIfExists(result, "/lib/guava-12.0.jar");
