@@ -103,10 +103,6 @@ import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -137,6 +133,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -3182,7 +3179,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           assertModelNotDisposed();
           if (myNode.getModel().getSModelReference().equals(descriptor.getSModelReference())) {
             clearModelDisposedTrace();
-            SNodeId oldId = myNode.getSNodeId();
+            SNodeId oldId = myNode.getNodeId();
             myNode = descriptor.getSModel().getNodeById(oldId);
             needToRebuild = true;
           }
