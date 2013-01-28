@@ -51,8 +51,16 @@ public class ClassifierScopes {
     return new ClassifiersScope(model, "jetbrains.mps.baseLanguage.structure.Classifier", includeAncestors);
   }
 
+  public static Scope getReachableClassifiersScope(@NotNull SModel model, boolean includeAncestors, IScope scope) {
+    return new ClassifiersScope(model, "jetbrains.mps.baseLanguage.structure.Classifier", includeAncestors, scope);
+  }
+
   public static Scope getVisibleClassifiersScope(@NotNull final SNode contextNode, boolean includeAncestors) {
     return filterVisibleClassifiersScope(contextNode, getReachableClassifiersScope(SNodeOperations.getModel(contextNode), includeAncestors));
+  }
+
+  public static Scope getVisibleClassifiersScope(@NotNull final SNode contextNode, boolean includeAncestors, IScope scope) {
+    return filterVisibleClassifiersScope(contextNode, getReachableClassifiersScope(SNodeOperations.getModel(contextNode), includeAncestors, scope));
   }
 
   public static Scope getVisibleClassifiersWithDefaultConstructors(@NotNull final SNode contextNode, @NotNull IScope scope) {

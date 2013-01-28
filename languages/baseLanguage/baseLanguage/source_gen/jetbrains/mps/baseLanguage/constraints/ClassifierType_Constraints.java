@@ -14,9 +14,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ClassifierType_Constraints extends BaseConstraintsDescriptor {
@@ -45,11 +44,10 @@ public class ClassifierType_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"));
-              return (scope == null ?
-                new EmptyScope() :
-                scope
-              );
+              // TEMP doing it not through ScopeProvider for now 
+              boolean resolvingSuperClass = SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass") || SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface") || SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface");
+
+              return ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), !(resolvingSuperClass), operationContext.getScope());
             }
           }
         };
@@ -58,5 +56,5 @@ public class ClassifierType_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  private static SNodePointer breakingNode_1zr1bt_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "5597228709659795764");
+  private static SNodePointer breakingNode_1zr1bt_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "4726082558189027283");
 }
