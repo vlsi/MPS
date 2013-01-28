@@ -122,15 +122,6 @@ public class PathManager {
     return new String[]{getHomePath(), getIdeaPath()};
   }
 
-  public static String getBootstrapPath() {
-    // TODO temp fix
-    String mpsJar = getHomePath() + File.separator + "lib" + File.separatorChar + "mps.jar";
-    if (new File(mpsJar).exists()) {
-      return mpsJar + MODULES_PREFIX;
-    }
-    return getHomePath() + File.separator + "core";
-  }
-
   public static Collection<String> getBootstrapPaths() {
     List<String> paths;
     File lib = new File(getHomePath() + File.separator + "lib");
