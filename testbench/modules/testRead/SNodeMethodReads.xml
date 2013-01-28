@@ -270,7 +270,7 @@
    <int>0</int>
   </void>
   <void method="put">
-   <string>public jetbrains.mps.smodel.SReference[] jetbrains.mps.smodel.SNode.getReferencesArray()</string>
+   <string>public org.jetbrains.mps.openapi.model.SReference[] jetbrains.mps.smodel.SNode.getReferencesArray()</string>
    <int>0</int>
   </void>
   <void method="put">
