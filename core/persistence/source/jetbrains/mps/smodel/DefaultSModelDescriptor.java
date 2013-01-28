@@ -242,7 +242,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     }
   }
 
-  public void replaceModel(final DefaultSModel newModel, final ModelLoadingState state) {
+  void replaceModel(final DefaultSModel newModel, final ModelLoadingState state) {
     ModelAccess.assertLegalWrite();
 
     if (newModel == getCurrentModelInternal()) return;

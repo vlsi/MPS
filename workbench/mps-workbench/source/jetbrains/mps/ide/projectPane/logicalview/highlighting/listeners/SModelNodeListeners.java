@@ -35,6 +35,9 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.smodel.SModelRepositoryListener;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -47,6 +50,7 @@ import java.util.Set;
 
 public class SModelNodeListeners implements NodeListeners {
   private SimpleModelListener mySimpleModelListener;
+  private SModelRepositoryListener myModelRepositoryListener;
   private MyGenerationStatusListener myStatusListener;
   private SModelEventsListener myEventsListener;
   private MySNodeTreeUpdater myTreeUpdater;
@@ -63,6 +67,14 @@ public class SModelNodeListeners implements NodeListeners {
     myModel = modelNode.getSModelDescriptor();
 
     mySimpleModelListener = new MySimpleModelListener(modelNode);
+    myModelRepositoryListener = new SModelRepositoryAdapter() {
+      @Override
+      public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+        if (replacedModels.contains(myModel)) {
+          visitNode(modelNode);
+        }
+      }
+    };
     myStatusListener = new MyGenerationStatusListener();
     if (myModel instanceof EditableSModelDescriptor) {
       myTreeUpdater = new MySNodeTreeUpdater(modelNode.getOperationContext().getProject(), modelNode);
@@ -73,6 +85,8 @@ public class SModelNodeListeners implements NodeListeners {
 
   public void startListening() {
     visitNode(myTreeNode);
+
+    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
 
     SModelEventsDispatcher.getInstance().registerListener(myEventsListener);
     myModel.addModelListener(mySimpleModelListener);
@@ -89,6 +103,8 @@ public class SModelNodeListeners implements NodeListeners {
 
     myModel.removeModelListener(mySimpleModelListener);
     SModelEventsDispatcher.getInstance().unregisterListener(myEventsListener);
+
+    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
   }
 
   private void visitNode(SModelTreeNode modelNode) {
@@ -124,11 +140,6 @@ public class SModelNodeListeners implements NodeListeners {
     }
 
     public void modelSaved(SModelDescriptor sm) {
-      visitNode(myModelNode);
-    }
-
-    @Override
-    public void modelReplaced(SModelDescriptor sm) {
       visitNode(myModelNode);
     }
 

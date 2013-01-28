@@ -26,18 +26,11 @@ public abstract class SimpleModelListener extends SModelAdapter {
     myTreeNode = treeNode;
   }
 
-  protected void updateNodePresentation(final boolean reloadSubTree, final boolean updateAncesotrs) {
+  protected void updateNodePresentation(final boolean reloadSubTree, final boolean updateAncestors) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        if (!isValid()) return;
-
-        myTreeNode.renewPresentation();
-        if (reloadSubTree) {
-          myTreeNode.updateSubTree();
-        }
-
-        if (updateAncesotrs) {
-          myTreeNode.updateAncestorsPresentationInTree();
+        if (isValid()) {
+          myTreeNode.updatePresentation(reloadSubTree, updateAncestors);
         }
       }
     });
@@ -49,10 +42,6 @@ public abstract class SimpleModelListener extends SModelAdapter {
 
   public void modelLoadingStateChanged(SModelDescriptor sm, ModelLoadingState oldState, ModelLoadingState newState) {
     updateNodePresentation(false, false);
-  }
-
-  public void modelReplaced(SModelDescriptor sm) {
-    updateNodePresentation(true, true);
   }
 
   public boolean isValid() {
