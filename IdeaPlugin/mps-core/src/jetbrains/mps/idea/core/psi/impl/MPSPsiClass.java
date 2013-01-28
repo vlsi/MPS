@@ -19,24 +19,63 @@ package jetbrains.mps.idea.core.psi.impl;
 import com.intellij.openapi.util.Pair;
 import com.intellij.psi.*;
 import com.intellij.psi.javadoc.PsiDocComment;
+import com.intellij.util.ArrayUtil;
 import com.intellij.util.IncorrectOperationException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /**
  * evgeny, 1/25/13
  */
-public class MPSPsiClass extends MPSPsiNode implements PsiClass {
+public class MPSPsiClass extends MPSPsiClassifier implements PsiClass {
 
   public MPSPsiClass(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
   }
 
+  @Nullable
+  @Override
+  public PsiClass getSuperClass() {
+    final MPSPsiClassifierType superclass = getChildOfType("superclass", MPSPsiClassifierType.class);
+    if (superclass == null) return null;
+
+    return superclass.getTargetClass();
+  }
+
+  @Override
+  public PsiClass[] getInterfaces() {
+    final MPSPsiClassifierType[] implementedInterfaces = getChildrenOfType("implementedInterface", MPSPsiClassifierType.class);
+    if (implementedInterfaces == null || implementedInterfaces.length == 0) return PsiClass.EMPTY_ARRAY;
+
+    List<PsiClass> result = new ArrayList<PsiClass>(implementedInterfaces.length);
+    for (MPSPsiClassifierType ct : implementedInterfaces) {
+      final PsiClass targetClass = ct.getTargetClass();
+      if (targetClass != null) {
+        result.add(targetClass);
+      }
+    }
+
+    return ArrayUtil.toObjectArray(result, PsiClass.class);
+  }
+
+
+  @NotNull
+  @Override
+  public PsiClass[] getSupers() {
+    List<PsiClass> result = new ArrayList<PsiClass>();
+    final PsiClass superClass = getSuperClass();
+    if (superClass != null) {
+      result.add(superClass);
+    }
+    result.addAll(Arrays.asList(getInterfaces()));
+    return ArrayUtil.toObjectArray(result, PsiClass.class);
+  }
+
+  /* not implemented */
 
   @Override
   public boolean hasTypeParameters() {
@@ -53,27 +92,6 @@ public class MPSPsiClass extends MPSPsiNode implements PsiClass {
   @Override
   public PsiTypeParameter[] getTypeParameters() {
     return new PsiTypeParameter[0];
-  }
-
-  @Nullable
-  @Override
-  public String getQualifiedName() {
-    return getContainingModel().getQualifiedName() + "." + getName();
-  }
-
-  @Override
-  public boolean isInterface() {
-    return false;
-  }
-
-  @Override
-  public boolean isAnnotationType() {
-    return false;
-  }
-
-  @Override
-  public boolean isEnum() {
-    return false;
   }
 
   @Nullable
@@ -98,23 +116,6 @@ public class MPSPsiClass extends MPSPsiNode implements PsiClass {
   @Override
   public PsiClassType[] getImplementsListTypes() {
     return new PsiClassType[0];
-  }
-
-  @Nullable
-  @Override
-  public PsiClass getSuperClass() {
-    return null;
-  }
-
-  @Override
-  public PsiClass[] getInterfaces() {
-    return new PsiClass[0];
-  }
-
-  @NotNull
-  @Override
-  public PsiClass[] getSupers() {
-    return new PsiClass[0];
   }
 
   @NotNull
@@ -198,7 +199,8 @@ public class MPSPsiClass extends MPSPsiNode implements PsiClass {
   @NotNull
   @Override
   public List<Pair<PsiMethod, PsiSubstitutor>> findMethodsAndTheirSubstitutorsByName(@NonNls String name, boolean checkBases) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    // TODO
+    return new ArrayList<Pair<PsiMethod, PsiSubstitutor>>();
   }
 
   @NotNull
@@ -255,7 +257,8 @@ public class MPSPsiClass extends MPSPsiNode implements PsiClass {
   @NotNull
   @Override
   public Collection<HierarchicalMethodSignature> getVisibleSignatures() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    // TODO
+    return Collections.emptyList();
   }
 
   @Override
@@ -267,11 +270,6 @@ public class MPSPsiClass extends MPSPsiNode implements PsiClass {
   @Override
   public PsiDocComment getDocComment() {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  @Override
-  public boolean isDeprecated() {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Nullable

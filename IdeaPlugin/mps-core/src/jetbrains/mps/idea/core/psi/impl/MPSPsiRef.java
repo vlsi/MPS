@@ -16,10 +16,14 @@
 
 package jetbrains.mps.idea.core.psi.impl;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiReference;
 import com.intellij.util.IncorrectOperationException;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -46,8 +50,25 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     this.referenceText = referenceText;
   }
 
-  public String getRole() {
+  public String getContainingRole() {
     return role;
+  }
+
+  public MPSPsiNode resolve() {
+    // Note: we expect that PSI clients do take read lock to resolve references
+    ApplicationManager.getApplication().assertReadAccessAllowed();
+
+    return ModelAccess.instance().runReadAction(new Computable<MPSPsiNode>() {
+      @Override
+      public MPSPsiNode compute() {
+        if (model != null && nodeId != null) {
+          return MPSPsiProvider.getInstance(getProject()).getPsi(new SNodePointer((jetbrains.mps.smodel.SModelReference) model, nodeId));
+        } else {
+          // TODO dynamic ref
+          return null;
+        }
+      }
+    });
   }
 
   public SModelReference getModelReference() {

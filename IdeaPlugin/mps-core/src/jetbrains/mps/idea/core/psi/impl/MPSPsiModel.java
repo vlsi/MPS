@@ -16,10 +16,20 @@
 
 package jetbrains.mps.idea.core.psi.impl;
 
-import com.intellij.psi.PsiManager;
+import com.intellij.lang.FileASTNode;
+import com.intellij.openapi.fileTypes.FileType;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.*;
+import com.intellij.psi.search.PsiElementProcessor;
+import com.intellij.testFramework.LightVirtualFile;
+import com.intellij.util.IncorrectOperationException;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.StaticReference;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -31,18 +41,24 @@ import java.util.Map;
 /**
  * evgeny, 1/25/13
  */
-public class MPSPsiModel extends MPSPsiNodeBase {
+public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
 
   private final SModelReference reference;
   private final Map<SNodeId, MPSPsiNode> nodes = new HashMap<SNodeId, MPSPsiNode>();
+  private final FileViewProvider myViewProvider;
 
   MPSPsiModel(SModelReference reference, PsiManager manager) {
     super(manager);
+    myViewProvider = new SingleRootFileViewProvider(manager, new LightVirtualFile(), false);
     this.reference = reference;
   }
 
   public String getQualifiedName() {
     return reference.getModelName();
+  }
+
+  public SModelReference getModelReference() {
+    return reference;
   }
 
   MPSPsiNode resolve(SNodeId nodeId) {
@@ -90,5 +106,83 @@ public class MPSPsiModel extends MPSPsiNodeBase {
   @Override
   public String toString() {
     return "Model:" + reference.toString();
+  }
+
+  /* PsiFile */
+
+  @Override
+  public void checkSetName(String name) throws IncorrectOperationException {
+    throw new IncorrectOperationException("Not implemented");
+  }
+
+  @Nullable
+  @Override
+  public VirtualFile getVirtualFile() {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public PsiDirectory getContainingDirectory() {
+    return null;
+  }
+
+  @Override
+  public boolean processChildren(PsiElementProcessor<PsiFileSystemItem> processor) {
+    return false;
+  }
+
+  @Override
+  public boolean isDirectory() {
+    return false;
+  }
+
+  @Nullable
+  @Override
+  public PsiDirectory getParent() {
+    return null;
+  }
+
+  @Override
+  public long getModificationStamp() {
+    return 0;
+  }
+
+  @NotNull
+  @Override
+  public PsiFile getOriginalFile() {
+    return this;
+  }
+
+  @NotNull
+  @Override
+  public FileType getFileType() {
+    return MPSFileTypeFactory.MODEL_FILE_TYPE;
+  }
+
+  @NotNull
+  @Override
+  public PsiFile[] getPsiRoots() {
+    return new PsiFile[]{this};
+  }
+
+  @NotNull
+  @Override
+  public FileViewProvider getViewProvider() {
+    return myViewProvider;
+  }
+
+  @Override
+  public FileASTNode getNode() {
+    return null;
+  }
+
+  @Override
+  public void subtreeChanged() {
+  }
+
+  @Override
+  public PsiElement setName(@NonNls @NotNull String name) throws IncorrectOperationException {
+    throw new IncorrectOperationException("Not implemented");
   }
 }

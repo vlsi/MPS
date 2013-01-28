@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiInvalidElementAccessException;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.impl.light.LightElement;
@@ -61,6 +62,11 @@ public abstract class MPSPsiNodeBase extends LightElement {
     }
 
     return (MPSPsiModel) parent;
+  }
+
+  @Override
+  public PsiFile getContainingFile() {
+    return getContainingModel();
   }
 
   @Override

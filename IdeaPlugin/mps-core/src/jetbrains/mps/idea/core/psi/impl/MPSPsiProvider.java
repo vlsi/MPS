@@ -22,13 +22,11 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiManager;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -69,6 +67,12 @@ public class MPSPsiProvider extends AbstractProjectComponent implements MPSPsiNo
         return new MPSPsiClass(id, concept, containingRole);
       }
     });
+    factories.put("jetbrains.mps.baseLanguage.structure.ClassifierType", new MPSPsiNodeFactory() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiClassifierType(id, concept, containingRole);
+      }
+    });
 
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myListener);
   }
@@ -77,7 +81,16 @@ public class MPSPsiProvider extends AbstractProjectComponent implements MPSPsiNo
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myListener);
   }
 
-  public PsiElement getPsi(SNode node) {
+  public MPSPsiNode getPsi(SNodeReference nodeRef) {
+    if (nodeRef == null) return null;
+
+    final SNode node = nodeRef.resolve(MPSModuleRepository.getInstance());
+    if (node == null) return null;
+
+    return getPsi(node);
+  }
+
+  public MPSPsiNode getPsi(SNode node) {
     if (node == null) return null;
 
     final SModel containingModel = node.getContainingModel();
