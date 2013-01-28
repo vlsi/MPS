@@ -136,19 +136,6 @@ public class PathManager {
     return new File(file, "build.number").exists();
   }
 
-  private static String getAbsolutePath(String path) {
-    if (path.startsWith("~/") || path.startsWith("~\\")) {
-      path = System.getProperty("user.home") + path.substring(1);
-    }
-
-    File file = new File(path);
-    if (!file.exists()) return path;
-    file = file.getAbsoluteFile();
-    return file.getAbsolutePath();
-  }
-
-  //------------------
-
   /**
    * Attempts to detect classpath entry which contains given resource
    */
