@@ -36,8 +36,8 @@ import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.DynamicReference;
 
 public class JavaParser {
   private static Logger LOG = Logger.getLogger(JavaParser.class);

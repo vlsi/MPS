@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="dgvuzzef5ymsvwp8zumtjegw030cxr6">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+  <common hash="-cqp0vmoczj608qr5fab6zo03fx33j37" />
+  <source id="6740693110299850048" name="UrlClassLoader" hash="6q0dbb27ggdrqh1hk42bxloeipr6k6c">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="UrlClassLoader.java" />
+  </source>
+  <source id="6740693110299850542" name="ClassPath" hash="25by6uesfzw04mvu8f0zhv35oowrsdf">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ClassPath.java" />
+  </source>
+  <source id="6740693110299868256" name="Loader" hash="5s6g2zxo1rd7fr7r5f97yyt2o61hita">
+    <file name="Loader.java" />
+  </source>
+  <source id="6740693110299868293" name="ClasspathCache" hash="-4g8kk0u2z3wh5of9tbkzjiyotduywgr">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ClasspathCache.java" />
+  </source>
+  <source id="5198178184416561107" name="FileLoader" hash="-d21mv4susrcz82zqdqq77u3ecwxeq74">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="FileLoader.java" />
+  </source>
+  <source id="5198178184416572441" name="JarLoader" hash="-8ipyr9nccn6q29p6wkqpdrx5dw0vfxd">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="JarLoader.java" />
+  </source>
+  <source id="5198178184416573141" name="FileUtil" hash="-3tlbizi046twqn41u4f44uzdvgwkzp">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="FileUtil.java" />
+  </source>
+  <source id="5198178184416573167" name="URLUtil" hash="-9zh2mohqu092nlrxn76wvqswr3x79t3">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="URLUtil.java" />
+  </source>
+  <source id="5198178184416573444" name="Timed" hash="dqtndphyxjhqsrglawrm5zty6tgwj06">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="Timed.java" />
+  </source>
+  <source id="5198178184416574646" name="TimedComputable" hash="-2kxyvb7g56h3wgzbo2hdp9ys7k2fpx0">
+    <file name="TimedComputable.java" />
+  </source>
+  <source id="5198178184416574735" name="ConcurrencyUtil" hash="-85a8hgqdc4ejjdd45wkz9q7fgz12sf">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ConcurrencyUtil.java" />
+  </source>
+  <source id="1631042080099114865" name="StringUtil" hash="-1n0qbnb3s5kw59z7nq88umh8n6ooe32">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="StringUtil.java" />
+  </source>
+  <source id="8638838189258348895" name="PathUtil" hash="-dw48bih7j5pqna2mkb99bujf20agqvy">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="PathUtil.java" />
+  </source>
+  <source id="8638838189258387911" name="SystemInfo" hash="-213rfj1ghywifv39mf36u77gd2603as">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="SystemInfo.java" />
+  </source>
+  <source id="930311433800304163" name="JDOMUtil" hash="5mjo6fxdzylg61r3c2niuhpuomi4snz">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="JDOMUtil.java" />
+  </source>
+</dependencies>
+
