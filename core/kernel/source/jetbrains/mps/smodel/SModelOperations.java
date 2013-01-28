@@ -253,7 +253,7 @@ public class SModelOperations {
   public static Set<SModelReference> getUsedImportedModels(SModel sModel) {
     Set<SModelReference> result = new HashSet<SModelReference>();
     for (SNode node : sModel.nodes()) {
-      Iterable<SReference> references = node.getReferences();
+      Iterable<? extends SReference> references = node.getReferences();
       for (SReference reference : references) {
         SModelReference targetModel = reference.getTargetSModelReference();
         if (sModel.getSModelReference().equals(targetModel)) continue;

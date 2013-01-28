@@ -185,7 +185,7 @@ public interface SNode {
    * <p/>
    * The returned collection is immutable.
    */
-  public Iterable<SReference> getReferences();
+  public Iterable<? extends SReference> getReferences();
 
   // props
 

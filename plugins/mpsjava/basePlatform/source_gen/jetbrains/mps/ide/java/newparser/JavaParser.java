@@ -330,7 +330,7 @@ public class JavaParser {
       SModel ourModel = node.getModel();
       DequeSequence.fromDeque(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
 
-      Iterable<SReference> refs = node.getReferences();
+      Iterable<? extends SReference> refs = node.getReferences();
       for (SReference ref : Sequence.fromIterable(refs)) {
         if (!(ref instanceof DynamicReference)) {
           continue;
