@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4132059805486520986" modelId="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)">
+  <root nodeRef="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)/4132059805486520986">
     <nodeInfo nodeId="4132059805486520987" fileName="ModuleUsagesFinder.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="USED_BY" />
     <nodeInfo nodeId="4132059805486520991" fileName="ModuleUsagesFinder.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENT_MODULES" />
     <nodeInfo nodeId="4132059805486520995" fileName="ModuleUsagesFinder.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="RUNTIME_MODULES" />
@@ -142,7 +142,7 @@
     </scopeInfo>
     <unitInfo nodeId="4132059805486520986" fileName="ModuleUsagesFinder.java" startLine="26" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.ide.ui.finders.ModuleUsagesFinder" />
   </root>
-  <root nodeId="4132059805486521473" modelId="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)">
+  <root nodeRef="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)/4132059805486521473">
     <nodeInfo nodeId="4132059805486521488" fileName="ModelUsagesFinder.java" startLine="29" startPosition="73" endLine="30" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4132059805486521493" fileName="ModelUsagesFinder.java" startLine="30" startPosition="54" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4132059805486521499" fileName="ModelUsagesFinder.java" startLine="31" startPosition="45" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
@@ -270,7 +270,7 @@
     </scopeInfo>
     <unitInfo nodeId="4132059805486521473" fileName="ModelUsagesFinder.java" startLine="25" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.ide.ui.finders.ModelUsagesFinder" />
   </root>
-  <root nodeId="4132059805486521762" modelId="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)">
+  <root nodeRef="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)/4132059805486521762">
     <nodeInfo nodeId="4132059805486521765" fileName="LanguageUsagesFinder.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="USED_BY" />
     <nodeInfo nodeId="4132059805486521769" fileName="LanguageUsagesFinder.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENT_MODULES" />
     <nodeInfo nodeId="4132059805486521773" fileName="LanguageUsagesFinder.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXTENDING_LANGUAGES" />
