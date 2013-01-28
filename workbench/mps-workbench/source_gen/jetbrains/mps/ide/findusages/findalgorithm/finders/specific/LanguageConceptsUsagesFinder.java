@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.LinkedList;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
+import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.IScope;

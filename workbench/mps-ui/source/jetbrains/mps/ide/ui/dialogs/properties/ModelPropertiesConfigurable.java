@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.ui.dialogs.properties;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.components.JBCheckBox;
@@ -25,12 +24,10 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.LanguageUsagesFinder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ModelUsagesFinder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import jetbrains.mps.ide.findusages.view.IUsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyCellState;
@@ -38,6 +35,8 @@ import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyTableCellRender
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModelTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
+import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
+import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
@@ -66,7 +65,6 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import javax.swing.table.TableCellRenderer;
 import java.util.ArrayList;
 import java.util.List;
@@ -229,7 +227,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           }
         }
       });
-      UsagesViewTool usagesViewTool = ProjectHelper.toIdeaProject(myProject).getComponent(UsagesViewTool.class);
+      IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
       usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
       forceCancelCloseDialog();
     }
@@ -301,7 +299,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder());
         }
       });
-      UsagesViewTool usagesViewTool = ProjectHelper.toIdeaProject(myProject).getComponent(UsagesViewTool.class);
+      IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
       usagesViewTool.findUsages(provider[0], query[0], true, true, true, "");
       forceCancelCloseDialog();
     }

@@ -358,6 +358,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="com.intellij.icons.AllIcons" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.finders.LanguageUsagesFinder" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
