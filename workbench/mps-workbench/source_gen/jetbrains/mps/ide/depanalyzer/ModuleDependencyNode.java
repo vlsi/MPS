@@ -123,13 +123,13 @@ public class ModuleDependencyNode extends MPSTreeNode {
           return it.getModuleFqName();
         }
       }, true)) {
-        Iterable<IModule> langModules = new GlobalModuleDependenciesManager(l).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
+        Iterable<IModule> langModules = new GlobalModuleDependenciesManager(l).getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE);
         boolean isBootstrapDep = Sequence.fromIterable(langModules).intersect(ListSequence.fromList(myModules)).isNotEmpty();
         hasBootstrapDep |= isBootstrapDep;
         usedlanguages.add(new ModuleDependencyNode.ULangDependencyNode(l, isBootstrapDep, getOperationContext()));
       }
       if (hasBootstrapDep) {
-        usedlanguages.addTreeMessage(new TreeMessage(Color.RED, "bootstrap dependencies", null));
+        usedlanguages.addTreeMessage(BOOTSTRAP_DEPENDENCY);
       }
       add(usedlanguages);
     }
