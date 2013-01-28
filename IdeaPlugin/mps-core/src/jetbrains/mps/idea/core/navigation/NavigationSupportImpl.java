@@ -87,7 +87,7 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
     Project project = ProjectHelper.toIdeaProject(context.getProject());
     SModel targetModel = node.getModel();
 
-    if ("java_stub_zz".equals(targetModel.getStereotype())) {
+    if ("java_stub".equals(targetModel.getStereotype())) {
       // jumping to code that has been loaded through java stubs, either binary or source
 
       // FIXME replace hard-coded strings
