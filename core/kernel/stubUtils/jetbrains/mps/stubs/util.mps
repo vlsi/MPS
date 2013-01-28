@@ -2378,7 +2378,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="740251325273418923">
             <property name="name" nameId="tpck.1169194664001" value="modelId" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="740251325273418924">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelId" resolveInfo="SModelId" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ec5l.~SModelId" resolveInfo="SModelId" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="740251325273418925">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~SModelId" resolveInfo="SModelId" />
@@ -2679,7 +2679,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="740251325273418875">
             <property name="name" nameId="tpck.1169194664001" value="modelId" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="740251325273418876">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelId" resolveInfo="SModelId" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ec5l.~SModelId" resolveInfo="SModelId" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4040479201457822572">
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~SModelId" resolveInfo="SModelId" />
@@ -3369,8 +3369,8 @@
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4895370762350786853">
-      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="hasModel" />
+      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4895370762350786854">
         <property name="name" nameId="tpck.1169194664001" value="md" />

@@ -602,7 +602,7 @@
                   </node>
                 </node>
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8329059748880298282">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelId" resolveInfo="SModelId" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ec5l.~SModelId" resolveInfo="SModelId" />
                 </node>
               </node>
             </node>
@@ -2331,8 +2331,8 @@
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="4423331261408336743" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4423331261408337725">
-      <property name="name" nameId="tpck.1169194664001" value="isIncluded" />
       <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="isIncluded" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="4423331261408337726">
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
