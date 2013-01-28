@@ -55,9 +55,6 @@ public class PathManager {
 
     String rootPath = getContainingJar(PathManager.class);
 
-    //todo this line should be removed
-    if (rootPath == null) return new File(".").getAbsolutePath(); //we need this for build server
-
     File root = new File(rootPath);
     root = root.getAbsoluteFile();
 
