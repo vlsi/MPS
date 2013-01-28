@@ -209,6 +209,11 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected void findUsages(final Object value) {
+      if(myInPlugin) {
+        Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(", Messages.getInformationIcon());
+        return;
+      }
+
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
       final IScope scope = new ModelsOnlyScope(myModelDescriptor);
@@ -289,6 +294,11 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected void findUsages(final Object value) {
+      if(myInPlugin) {
+        Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(", Messages.getInformationIcon());
+        return;
+      }
+
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
       final IScope scope = new ModelsOnlyScope(myModelDescriptor);
