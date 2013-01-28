@@ -21,7 +21,7 @@ public abstract class AbstractNodeFeature extends Feature {
 
   @Override
   public boolean equals(Object object) {
-    return ((SNodePointer) myNodeRef).equals(((AbstractNodeFeature) object).myNodeRef);
+    return super.equals(object) && ((SNodePointer) myNodeRef).equals(((AbstractNodeFeature) object).myNodeRef);
   }
 
   protected final String getNodePointerString() {
