@@ -30,6 +30,7 @@ import com.intellij.psi.search.PsiElementProcessor;
 import com.intellij.testFramework.LightVirtualFile;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.NonNls;

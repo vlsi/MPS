@@ -1,6 +1,7 @@
-package jetbrains.mps.idea.core.psi.impl;
+package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.psi.PsiClass;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
 

@@ -18,9 +18,8 @@ package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiManager;
-import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -28,9 +27,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.*;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -41,7 +38,6 @@ public class MPSPsiProvider extends AbstractProjectComponent implements MPSPsiNo
 
   // TODO softReference..
   ConcurrentMap<SModelReference, MPSPsiModel> models = new ConcurrentHashMap<SModelReference, MPSPsiModel>();
-  Map<String, MPSPsiNodeFactory> factories = new HashMap<String, MPSPsiNodeFactory>();
 
   public static MPSPsiProvider getInstance(@NotNull Project project) {
     return project.getComponent(MPSPsiProvider.class);
@@ -61,19 +57,6 @@ public class MPSPsiProvider extends AbstractProjectComponent implements MPSPsiNo
   }
 
   public void initComponent() {
-    factories.put(BootstrapLanguages.concept_baseLanguage_ClassConcept, new MPSPsiNodeFactory() {
-      @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiClass(id, concept, containingRole);
-      }
-    });
-    factories.put("jetbrains.mps.baseLanguage.structure.ClassifierType", new MPSPsiNodeFactory() {
-      @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiClassifierType(id, concept, containingRole);
-      }
-    });
-
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myListener);
   }
 
@@ -119,9 +102,11 @@ public class MPSPsiProvider extends AbstractProjectComponent implements MPSPsiNo
 
   @Override
   public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-    final MPSPsiNodeFactory factory = factories.get(concept);
-    if (factory != null) {
-      return factory.create(id, concept, containingRole);
+    for (MPSPsiNodeFactory factory : MPSPsiNodeFactory.EP_NAME.getExtensions()) {
+      final MPSPsiNode psiNode = factory.create(id, concept, containingRole);
+      if (psiNode != null) {
+        return psiNode;
+      }
     }
     return new MPSPsiNode(id, concept, containingRole);
   }

@@ -14,14 +14,22 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.psi.impl;
+package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.psi.PsiClass;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
- * evgeny, 1/25/13
+ * evgeny, 1/28/13
  */
-public interface MPSPsiNodeFactory {
+public class MPSPsiClassifierType extends MPSPsiNode {
 
-  MPSPsiNode create(SNodeId id, String concept, String containingRole);
+  MPSPsiClassifierType(SNodeId id, String concept, String containingRole) {
+    super(id, concept, containingRole);
+  }
+
+  public PsiClass getTargetClass() {
+    return getReferenceTarget("classifier", PsiClass.class);
+  }
 }

@@ -98,6 +98,7 @@
 
   <extensionPoints>
     <extensionPoint qualifiedName="com.intellij.mps.modelRootContributor" beanClass="jetbrains.mps.idea.core.project.ModelRootContributorEP"/>
+    <extensionPoint qualifiedName="com.intellij.mps.psiFactory" interface="jetbrains.mps.idea.core.psi.MPSPsiNodeFactory"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">

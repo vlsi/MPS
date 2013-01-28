@@ -14,21 +14,18 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.psi.impl;
+package jetbrains.mps.idea.core.psi;
 
-import com.intellij.psi.PsiClass;
+import com.intellij.openapi.extensions.ExtensionPointName;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
- * evgeny, 1/28/13
+ * evgeny, 1/25/13
  */
-public class MPSPsiClassifierType extends MPSPsiNode {
+public interface MPSPsiNodeFactory {
 
-  MPSPsiClassifierType(SNodeId id, String concept, String containingRole) {
-    super(id, concept, containingRole);
-  }
+  public static final ExtensionPointName<MPSPsiNodeFactory> EP_NAME = ExtensionPointName.create("com.intellij.mps.psiFactory");
 
-  public PsiClass getTargetClass() {
-    return getReferenceTarget("classifier", PsiClass.class);
-  }
+  MPSPsiNode create(SNodeId id, String concept, String containingRole);
 }

@@ -42,7 +42,7 @@ public class MPSPsiNode extends MPSPsiNodeBase {
   private final String myContainingRole;
   private String myName;
 
-  MPSPsiNode(SNodeId id, String concept, String containingRole) {
+  public MPSPsiNode(SNodeId id, String concept, String containingRole) {
     myId = id;
     myConcept = concept;
     myContainingRole = containingRole;

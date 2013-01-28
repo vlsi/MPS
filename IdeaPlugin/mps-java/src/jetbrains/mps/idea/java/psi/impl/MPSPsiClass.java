@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.psi.impl;
+package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.openapi.util.Pair;
 import com.intellij.psi.*;
