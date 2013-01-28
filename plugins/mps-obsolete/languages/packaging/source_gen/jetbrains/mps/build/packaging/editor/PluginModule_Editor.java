@@ -14,6 +14,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
@@ -78,7 +80,9 @@ public class PluginModule_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_97a1w6_a1b0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content");
       editorCell.setCellId("Constant_97a1w6_a1b0");
-      PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
+      Style style = new StyleImpl();
+      PackagingStyles_StyleSheet.applyHint(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -126,7 +130,9 @@ public class PluginModule_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_97a1w6_a0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content");
       editorCell.setCellId("Constant_97a1w6_a0a");
-      PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
+      Style style = new StyleImpl();
+      PackagingStyles_StyleSheet.applyHint(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -171,7 +177,9 @@ public class PluginModule_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_97a1w6_a0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    PackagingStyles_StyleSheet.applyProjectComponent(style, editorCell);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
@@ -190,7 +198,9 @@ public class PluginModule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_97a1w6_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_97a1w6_b0a");
-    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    PackagingStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

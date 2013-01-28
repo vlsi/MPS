@@ -18,7 +18,7 @@ public class check_PullUpMethod_NonTypesystemRule extends AbstractNonTypesystemR
   }
 
   public void applyRule(final SNode pullUpMethod, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SLinkOperations.getTarget(pullUpMethod, "oldMethodDeclaration", false) == null && SLinkOperations.getTarget(pullUpMethod, "newMethodDeclaration", false) == null) {
+    if (SLinkOperations.getTarget(pullUpMethod, "newMethodDeclaration", false) == null && SLinkOperations.getTarget(pullUpMethod, "oldMethodSpecification", true) == null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(pullUpMethod, "Either old or new method should be specified", "r:00000000-0000-4000-0000-011c89590320(jetbrains.mps.lang.script.typesystem)", "7867202088808423945", null, errorTarget);

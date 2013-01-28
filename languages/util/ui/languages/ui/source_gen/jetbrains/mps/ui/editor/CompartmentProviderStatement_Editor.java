@@ -7,8 +7,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -25,7 +26,9 @@ public class CompartmentProviderStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bdyu74_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_bdyu74_a");
-    UI_StyleSheet.getContainerBox(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    UI_StyleSheet.applyContainerBox(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_bdyu74_a0(editorContext, node));
     return editorCell;
   }
@@ -33,7 +36,9 @@ public class CompartmentProviderStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bdyu74_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_bdyu74_a0");
-    UI_StyleSheet.getContainerMargins(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    UI_StyleSheet.applyContainerMargins(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_bdyu74_a0a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_bdyu74_b0a(editorContext, node));
     return editorCell;
@@ -42,10 +47,9 @@ public class CompartmentProviderStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bdyu74_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_bdyu74_a0a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_bdyu74_a0a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bdyu74_b0a0(editorContext, node));
     return editorCell;
@@ -54,10 +58,9 @@ public class CompartmentProviderStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bdyu74_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_bdyu74_b0a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_bdyu74_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bdyu74_b1a0(editorContext, node));
     return editorCell;

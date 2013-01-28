@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.script.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.script.constraints.ConstraintsAspectDescriptor" />
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)/338341484719580003">
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="30" startPosition="50" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="35" startPosition="83" endLine="36" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="39" startPosition="44" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="48" startPosition="63" endLine="49" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="338341484719584456" fileName="DirectMethodSpecification_Constraints.java" startLine="54" startPosition="13" endLine="55" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="338341484719584465" fileName="DirectMethodSpecification_Constraints.java" startLine="55" startPosition="164" endLine="56" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="338341484719584490" fileName="DirectMethodSpecification_Constraints.java" startLine="59" startPosition="51" endLine="60" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="338341484719584506" fileName="DirectMethodSpecification_Constraints.java" startLine="64" startPosition="73" endLine="65" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="338341484719584511" fileName="DirectMethodSpecification_Constraints.java" startLine="68" startPosition="15" endLine="69" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="74" startPosition="7" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="78" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_xwijc_a0a0a0a0a1a0b0a1a1" />
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DirectMethodSpecification_Constraints#()V" />
+    <nodeInfo nodeId="338341484719584488" fileName="DirectMethodSpecification_Constraints.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="338341484719584498" fileName="DirectMethodSpecification_Constraints.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="338341484719584477" fileName="DirectMethodSpecification_Constraints.java" startLine="57" startPosition="52" endLine="67" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="338341484719584472" fileName="DirectMethodSpecification_Constraints.java" startLine="56" startPosition="194" endLine="68" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="53" startPosition="122" endLine="70" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="52" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="45" startPosition="56" endLine="72" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="43" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="36" startPosition="75" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="34" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="30" startPosition="50" endLine="31" endPosition="75" />
+    <scopeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="39" startPosition="44" endLine="40" endPosition="20" />
+    <scopeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="48" startPosition="63" endLine="49" endPosition="57" />
+    <scopeInfo nodeId="338341484719584489" fileName="DirectMethodSpecification_Constraints.java" startLine="59" startPosition="51" endLine="60" endPosition="126" />
+    <scopeInfo nodeId="338341484719584505" fileName="DirectMethodSpecification_Constraints.java" startLine="64" startPosition="73" endLine="65" endPosition="44" />
+    <scopeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="338341484719584488" fileName="DirectMethodSpecification_Constraints.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="338341484719584488" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="338341484719584498" fileName="DirectMethodSpecification_Constraints.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="338341484719584500" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="338341484719584476" fileName="DirectMethodSpecification_Constraints.java" startLine="57" startPosition="52" endLine="67" endPosition="18" />
+    <scopeInfo nodeId="338341484719582771" fileName="DirectMethodSpecification_Constraints.java" startLine="54" startPosition="13" endLine="69" endPosition="38">
+      <varInfo nodeId="338341484719584457" varName="ancestor" />
+      <varInfo nodeId="338341484719584466" varName="classifierSpecification" />
+    </scopeInfo>
+    <scopeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="53" startPosition="122" endLine="70" endPosition="13" />
+    <scopeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="52" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="338341484719580003" varName="_context" />
+      <varInfo nodeId="338341484719580003" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="45" startPosition="56" endLine="72" endPosition="10" />
+    <scopeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="43" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="35" startPosition="83" endLine="75" endPosition="22">
+      <varInfo nodeId="338341484719580003" varName="references" />
+    </scopeInfo>
+    <scopeInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="34" startPosition="0" endLine="77" endPosition="0" />
+    <unitInfo nodeId="338341484719584488" fileName="DirectMethodSpecification_Constraints.java" startLine="58" startPosition="275" endLine="62" endPosition="17" unitName="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints$4" />
+    <unitInfo nodeId="338341484719584480" fileName="DirectMethodSpecification_Constraints.java" startLine="58" startPosition="27" endLine="67" endPosition="17" unitName="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints$3" />
+    <unitInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="46" startPosition="19" endLine="72" endPosition="9" unitName="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints$2" />
+    <unitInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="37" startPosition="44" endLine="74" endPosition="5" unitName="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints$1" />
+    <unitInfo nodeId="338341484719580003" fileName="DirectMethodSpecification_Constraints.java" startLine="29" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.script.constraints.DirectMethodSpecification_Constraints" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)/6970965131508596231">
     <nodeInfo nodeId="6970965131508596231" fileName="MigrationScriptPart_Constraints.java" startLine="8" startPosition="44" endLine="9" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6970965131508596231" fileName="MigrationScriptPart_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrationScriptPart_Constraints#()V" />
@@ -9,99 +70,68 @@
     <unitInfo nodeId="6970965131508596231" fileName="MigrationScriptPart_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.script.constraints.MigrationScriptPart_Constraints" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)/849077997121906173">
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="31" startPosition="37" endLine="32" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="36" startPosition="43" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="41" startPosition="200" endLine="42" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="42" startPosition="96" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="44" startPosition="51" endLine="45" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="46" startPosition="5" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="47" startPosition="0" endLine="48" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="52" startPosition="83" endLine="53" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="56" startPosition="44" endLine="57" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="65" startPosition="63" endLine="66" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2747663997857997998" fileName="PullUpMethod_Constraints.java" startLine="71" startPosition="13" endLine="72" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5434557751112692780" fileName="PullUpMethod_Constraints.java" startLine="72" startPosition="164" endLine="73" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5166971494090990947" fileName="PullUpMethod_Constraints.java" startLine="76" startPosition="51" endLine="77" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2747663997858037775" fileName="PullUpMethod_Constraints.java" startLine="81" startPosition="73" endLine="82" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5434557751112663092" fileName="PullUpMethod_Constraints.java" startLine="85" startPosition="15" endLine="86" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="94" startPosition="44" endLine="95" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="103" startPosition="63" endLine="104" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2747663997858037840" fileName="PullUpMethod_Constraints.java" startLine="109" startPosition="13" endLine="110" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5166971494091006132" fileName="PullUpMethod_Constraints.java" startLine="112" startPosition="49" endLine="113" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2747663997858037867" fileName="PullUpMethod_Constraints.java" startLine="117" startPosition="71" endLine="118" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="125" startPosition="7" endLine="126" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4242940223544978303" fileName="PullUpMethod_Constraints.java" startLine="129" startPosition="148" endLine="130" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="133" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="134" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_8xrh0c_a0a0a0a0a1a0b0a1a3" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="135" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_8xrh0c_a0a0a0a0a1a0b0a2a3" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PullUpMethod_Constraints#()V" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="43" startPosition="0" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5166971494090990942" fileName="PullUpMethod_Constraints.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="5166971494091006127" fileName="PullUpMethod_Constraints.java" startLine="112" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="129" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="2747663997858037727" fileName="PullUpMethod_Constraints.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="2747663997858037859" fileName="PullUpMethod_Constraints.java" startLine="116" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="40" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <nodeInfo nodeId="5434557751112647027" fileName="PullUpMethod_Constraints.java" startLine="74" startPosition="52" endLine="84" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2747663997858037849" fileName="PullUpMethod_Constraints.java" startLine="110" startPosition="164" endLine="120" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5434557751112634007" fileName="PullUpMethod_Constraints.java" startLine="73" startPosition="194" endLine="85" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="108" startPosition="122" endLine="121" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="107" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="70" startPosition="122" endLine="87" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="69" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="100" startPosition="56" endLine="123" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="62" startPosition="56" endLine="89" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="98" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="60" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="91" startPosition="7" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="53" startPosition="75" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="51" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="31" startPosition="37" endLine="32" endPosition="62" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="36" startPosition="43" endLine="37" endPosition="16" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="44" startPosition="51" endLine="45" endPosition="67" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="56" startPosition="44" endLine="57" endPosition="20" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="65" startPosition="63" endLine="66" endPosition="58" />
-    <scopeInfo nodeId="5166971494090990943" fileName="PullUpMethod_Constraints.java" startLine="76" startPosition="51" endLine="77" endPosition="126" />
-    <scopeInfo nodeId="2747663997858037734" fileName="PullUpMethod_Constraints.java" startLine="81" startPosition="73" endLine="82" endPosition="44" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="94" startPosition="44" endLine="95" endPosition="20" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="103" startPosition="63" endLine="104" endPosition="58" />
-    <scopeInfo nodeId="5166971494091006128" fileName="PullUpMethod_Constraints.java" startLine="112" startPosition="49" endLine="113" endPosition="124" />
-    <scopeInfo nodeId="2747663997858037866" fileName="PullUpMethod_Constraints.java" startLine="117" startPosition="71" endLine="118" endPosition="42" />
-    <scopeInfo nodeId="849077997121906177" fileName="PullUpMethod_Constraints.java" startLine="129" startPosition="148" endLine="130" endPosition="117" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="5166971494090990942" fileName="PullUpMethod_Constraints.java" startLine="76" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="5166971494090990942" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="5166971494091006127" fileName="PullUpMethod_Constraints.java" startLine="112" startPosition="0" endLine="115" endPosition="0">
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="35" startPosition="43" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="40" startPosition="200" endLine="41" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="41" startPosition="96" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="43" startPosition="51" endLine="44" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="45" startPosition="5" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="46" startPosition="0" endLine="47" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="51" startPosition="83" endLine="52" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="55" startPosition="44" endLine="56" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="64" startPosition="63" endLine="65" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2747663997858037840" fileName="PullUpMethod_Constraints.java" startLine="70" startPosition="13" endLine="71" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5166971494091006132" fileName="PullUpMethod_Constraints.java" startLine="73" startPosition="49" endLine="74" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2747663997858037867" fileName="PullUpMethod_Constraints.java" startLine="78" startPosition="71" endLine="79" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="86" startPosition="7" endLine="87" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4242940223544978303" fileName="PullUpMethod_Constraints.java" startLine="90" startPosition="148" endLine="91" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="94" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="95" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_8xrh0c_a0a0a0a0a1a0b0a1a3" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PullUpMethod_Constraints#()V" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="42" startPosition="0" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5166971494091006127" fileName="PullUpMethod_Constraints.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="2747663997858037859" fileName="PullUpMethod_Constraints.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="39" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <nodeInfo nodeId="2747663997858037849" fileName="PullUpMethod_Constraints.java" startLine="71" startPosition="164" endLine="81" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="69" startPosition="122" endLine="82" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="68" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="61" startPosition="56" endLine="84" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="59" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="52" startPosition="75" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="50" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="62" />
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="35" startPosition="43" endLine="36" endPosition="16" />
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="43" startPosition="51" endLine="44" endPosition="67" />
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="55" startPosition="44" endLine="56" endPosition="20" />
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="64" startPosition="63" endLine="65" endPosition="58" />
+    <scopeInfo nodeId="5166971494091006128" fileName="PullUpMethod_Constraints.java" startLine="73" startPosition="49" endLine="74" endPosition="124" />
+    <scopeInfo nodeId="2747663997858037866" fileName="PullUpMethod_Constraints.java" startLine="78" startPosition="71" endLine="79" endPosition="42" />
+    <scopeInfo nodeId="849077997121906177" fileName="PullUpMethod_Constraints.java" startLine="90" startPosition="148" endLine="91" endPosition="117" />
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="5166971494091006127" fileName="PullUpMethod_Constraints.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="5166971494091006127" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="129" startPosition="0" endLine="132" endPosition="0">
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="90" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="849077997121906173" varName="childConcept" />
       <varInfo nodeId="849077997121906173" varName="link" />
       <varInfo nodeId="849077997121906173" varName="node" />
       <varInfo nodeId="849077997121906173" varName="operationContext" />
       <varInfo nodeId="849077997121906173" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="2747663997858037727" fileName="PullUpMethod_Constraints.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="2747663997858037729" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="2747663997858037859" fileName="PullUpMethod_Constraints.java" startLine="116" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="2747663997858037859" fileName="PullUpMethod_Constraints.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="2747663997858037861" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="41" startPosition="200" endLine="48" endPosition="18">
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="40" startPosition="200" endLine="47" endPosition="18">
       <varInfo nodeId="849077997121906173" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="40" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="39" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="849077997121906173" varName="checkingNodeContext" />
       <varInfo nodeId="849077997121906173" varName="childConcept" />
       <varInfo nodeId="849077997121906173" varName="link" />
@@ -109,41 +139,25 @@
       <varInfo nodeId="849077997121906173" varName="operationContext" />
       <varInfo nodeId="849077997121906173" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5434557751112634009" fileName="PullUpMethod_Constraints.java" startLine="74" startPosition="52" endLine="84" endPosition="18" />
-    <scopeInfo nodeId="4242940223545087964" fileName="PullUpMethod_Constraints.java" startLine="109" startPosition="13" endLine="120" endPosition="16">
+    <scopeInfo nodeId="4242940223545087964" fileName="PullUpMethod_Constraints.java" startLine="70" startPosition="13" endLine="81" endPosition="16">
       <varInfo nodeId="2747663997858037841" varName="ancestor" />
     </scopeInfo>
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="108" startPosition="122" endLine="121" endPosition="13" />
-    <scopeInfo nodeId="4242940223545087961" fileName="PullUpMethod_Constraints.java" startLine="71" startPosition="13" endLine="86" endPosition="38">
-      <varInfo nodeId="2747663997857997999" varName="ancestor" />
-      <varInfo nodeId="5434557751112692783" varName="classifierSpecification" />
-    </scopeInfo>
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="107" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="69" startPosition="122" endLine="82" endPosition="13" />
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="68" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="849077997121906173" varName="_context" />
       <varInfo nodeId="849077997121906173" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="70" startPosition="122" endLine="87" endPosition="13" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="69" startPosition="0" endLine="89" endPosition="0">
-      <varInfo nodeId="849077997121906173" varName="_context" />
-      <varInfo nodeId="849077997121906173" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="100" startPosition="56" endLine="123" endPosition="10" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="62" startPosition="56" endLine="89" endPosition="10" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="98" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="60" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="52" startPosition="83" endLine="126" endPosition="22">
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="61" startPosition="56" endLine="84" endPosition="10" />
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="59" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="51" startPosition="83" endLine="87" endPosition="22">
       <varInfo nodeId="849077997121906173" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="51" startPosition="0" endLine="128" endPosition="0" />
-    <unitInfo nodeId="5166971494090990942" fileName="PullUpMethod_Constraints.java" startLine="75" startPosition="275" endLine="79" endPosition="17" unitName="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$4" />
-    <unitInfo nodeId="5166971494091006127" fileName="PullUpMethod_Constraints.java" startLine="111" startPosition="261" endLine="115" endPosition="15" unitName="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$5" />
-    <unitInfo nodeId="2747663997858037725" fileName="PullUpMethod_Constraints.java" startLine="75" startPosition="27" endLine="84" endPosition="17" unitName="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$3" />
-    <unitInfo nodeId="2747663997858037852" fileName="PullUpMethod_Constraints.java" startLine="111" startPosition="25" endLine="120" endPosition="15" unitName="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$4" />
-    <unitInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="101" startPosition="19" endLine="123" endPosition="9" unitName="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$3" />
-    <unitInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="63" startPosition="19" endLine="89" endPosition="9" unitName="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$2" />
-    <unitInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="92" startPosition="47" endLine="125" endPosition="5" unitName="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$2" />
-    <unitInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="54" startPosition="47" endLine="91" endPosition="5" unitName="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$1" />
-    <unitInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="30" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints" />
+    <scopeInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="50" startPosition="0" endLine="89" endPosition="0" />
+    <unitInfo nodeId="5166971494091006127" fileName="PullUpMethod_Constraints.java" startLine="72" startPosition="261" endLine="76" endPosition="15" unitName="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$4" />
+    <unitInfo nodeId="2747663997858037852" fileName="PullUpMethod_Constraints.java" startLine="72" startPosition="25" endLine="81" endPosition="15" unitName="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$3" />
+    <unitInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="62" startPosition="19" endLine="84" endPosition="9" unitName="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$2" />
+    <unitInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="53" startPosition="47" endLine="86" endPosition="5" unitName="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints$1" />
+    <unitInfo nodeId="849077997121906173" fileName="PullUpMethod_Constraints.java" startLine="29" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.script.constraints.PullUpMethod_Constraints" />
   </root>
 </debugInfo>
 

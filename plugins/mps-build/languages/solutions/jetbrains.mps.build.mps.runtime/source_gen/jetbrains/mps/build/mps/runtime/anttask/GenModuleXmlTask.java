@@ -4,7 +4,6 @@ package jetbrains.mps.build.mps.runtime.anttask;
 
 import jetbrains.mps.build.ant.MpsLoadTask;
 import org.apache.tools.ant.types.Path;
-import jetbrains.mps.tool.builder.MpsWorker;
 import java.util.Set;
 import java.io.File;
 import java.util.HashSet;
@@ -17,8 +16,9 @@ public class GenModuleXmlTask extends MpsLoadTask {
   public GenModuleXmlTask() {
   }
 
-  protected Class<? extends MpsWorker> getWorkerClass() {
-    return GenModuleXmlWorker.class;
+  @Override
+  protected String getWorkerClass() {
+    return "jetbrains.mps.build.mps.runtime.anttask.GenModuleXmlWorker";
   }
 
   public void addConfiguredGenModule(ModuleXml moduleXml) {

@@ -19,7 +19,7 @@ import jetbrains.mps.util.xml.BreakParseSAXException;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.logging.Logger;
 
 public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {

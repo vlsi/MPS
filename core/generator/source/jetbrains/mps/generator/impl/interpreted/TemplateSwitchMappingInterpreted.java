@@ -24,7 +24,7 @@ import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
@@ -63,7 +63,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
     }
 
     // proceed without resolving (at least for StaticReferences) 
-    return new jetbrains.mps.smodel.SNodePointer(ref.getTargetSModelReference(), ref.getTargetNodeId());
+    return ref.toNodePointer();
   }
 
   @Override

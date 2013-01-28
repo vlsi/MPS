@@ -21,6 +21,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.build.util.DescendantsScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.LinkedHashSet;
@@ -124,7 +126,7 @@ public class BuildProject_Behavior {
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildMacro")) {
-      return BuildProject_Behavior.call_getBuildMacroScope_3767587139141108514(thisNode, child);
+      return BuildProject_Behavior.call_getBuildMacroScope_3767587139141108514(thisNode, child, SetSequence.fromSet(new HashSet<SNode>()));
     }
 
     if (child != null) {
@@ -168,10 +170,14 @@ public class BuildProject_Behavior {
     }
   }
 
-  public static Scope call_getBuildMacroScope_3767587139141108514(SNode thisNode, final SNode child) {
+  public static Scope call_getBuildMacroScope_3767587139141108514(SNode thisNode, final SNode child, final Set<SNode> visited) {
+    if (SetSequence.fromSet(visited).contains(thisNode)) {
+      return new EmptyScope();
+    }
+    SetSequence.fromSet(visited).addElement(thisNode);
     Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "macros"));
     SNode containingProject = SNodeOperations.getAncestor(child, "jetbrains.mps.build.structure.BuildProject", false, false);
-    if (neq_save77_a0c0l(containingProject, thisNode)) {
+    if (neq_save77_a0e0l(containingProject, thisNode)) {
       // we are imported => give away only public macro 
       rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode node) {
@@ -194,7 +200,7 @@ public class BuildProject_Behavior {
         // we can only see what was strictly before us 
         rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
           public Boolean invoke(SNode visibleNode) {
-            return !(ListSequence.fromList(SNodeOperations.getNextSiblings(definedMacro.value, false)).contains(visibleNode)) && !(eq_save77_a0a0a0a0a1a0b0c0d0l(definedMacro.value, visibleNode));
+            return !(ListSequence.fromList(SNodeOperations.getNextSiblings(definedMacro.value, false)).contains(visibleNode)) && !(eq_save77_a0a0a0a0a1a0b0c0f0l(definedMacro.value, visibleNode));
           }
         });
       }
@@ -202,7 +208,20 @@ public class BuildProject_Behavior {
 
     List<Scope> scopes = ListSequence.fromList(new ArrayList<Scope>());
     ListSequence.fromList(scopes).addElement(rootScope);
-    ListSequence.fromList(scopes).addSequence(Sequence.fromIterable(ScopeUtil.imported(SLinkOperations.getTargets(thisNode, "dependencies", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), child)));
+    ListSequence.fromList(scopes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dependencies", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency");
+      }
+    }).select(new ISelector<SNode, Scope>() {
+      public Scope select(SNode it) {
+        return BuildProject_Behavior.call_getBuildMacroScope_3767587139141108514(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"), "script", false), child, visited);
+      }
+    }));
+    ListSequence.fromList(scopes).addSequence(Sequence.fromIterable(ScopeUtil.imported(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dependencies", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency"));
+      }
+    }), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), child)));
 
     return new CompositeScope(ListSequence.fromList(scopes).toGenericArray(Scope.class)) {
       @Override
@@ -224,14 +243,14 @@ public class BuildProject_Behavior {
     return str == null || str.length() == 0;
   }
 
-  private static boolean neq_save77_a0c0l(Object a, Object b) {
+  private static boolean neq_save77_a0e0l(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_save77_a0a0a0a0a1a0b0c0d0l(Object a, Object b) {
+  private static boolean eq_save77_a0a0a0a0a1a0b0c0f0l(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

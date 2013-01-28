@@ -8,13 +8,13 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlCDATA_Editor extends DefaultNodeEditor {
@@ -22,81 +22,45 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
     return this.createCollection_ei20sr_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_ei20sr_a0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = XmlCDATA_Editor.renderingCondition_ei20sr_a0a(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_ei20sr_a0a(editorContext, node);
-    } else {
-      editorCell = this.createConstant_ei20sr_a0a_0(editorContext, node);
-    }
-    return editorCell;
-  }
-
-  private EditorCell createAlternation_ei20sr_c0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = XmlCDATA_Editor.renderingCondition_ei20sr_a2a(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_ei20sr_a2a(editorContext, node);
-    } else {
-      editorCell = this.createConstant_ei20sr_a2a_0(editorContext, node);
-    }
-    return editorCell;
-  }
-
   private EditorCell createCollection_ei20sr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ei20sr_a");
-    editorCell.addEditorCell(this.createAlternation_ei20sr_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ei20sr_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ei20sr_b0(editorContext, node));
-    editorCell.addEditorCell(this.createAlternation_ei20sr_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ei20sr_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_ei20sr_a0a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ei20sr_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<![CDATA[");
-    editorCell.setCellId("Constant_ei20sr_a0a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
+    editorCell.setCellId("Constant_ei20sr_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, XmlCDATA_Editor._StyleParameter_QueryFunction_ei20sr_a1a0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_ei20sr_a0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<![CDATA[");
-    editorCell.setCellId("Constant_ei20sr_a0a_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_ei20sr_a2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ei20sr_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]]>");
-    editorCell.setCellId("Constant_ei20sr_a2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_ei20sr_a2a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]]>");
-    editorCell.setCellId("Constant_ei20sr_a2a_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
+    editorCell.setCellId("Constant_ei20sr_c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlCDATA_Editor._StyleParameter_QueryFunction_ei20sr_a1c0((editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ), (editorCell == null ?
+      null :
+      editorCell.getContext()
+    )));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -119,13 +83,11 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ei20sr_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    // see MPS-15260 
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
+  private static boolean _StyleParameter_QueryFunction_ei20sr_a1a0(SNode node, EditorContext editorContext) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{}));
   }
 
-  private static boolean renderingCondition_ei20sr_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    // see MPS-15260 
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
+  private static boolean _StyleParameter_QueryFunction_ei20sr_a1c0(SNode node, EditorContext editorContext) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{}));
   }
 }

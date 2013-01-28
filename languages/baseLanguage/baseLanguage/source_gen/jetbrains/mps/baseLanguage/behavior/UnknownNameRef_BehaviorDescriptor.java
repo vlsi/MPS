@@ -6,7 +6,7 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public abstract class UnknownNameRef_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IYetUnresolved_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
+public abstract class UnknownNameRef_BehaviorDescriptor extends Expression_BehaviorDescriptor implements Tokens_BehaviorDescriptor, IYetUnresolved_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public UnknownNameRef_BehaviorDescriptor() {
   }
 

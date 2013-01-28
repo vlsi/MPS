@@ -24,7 +24,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 public class ReferenceTreeNode extends TextTreeNode {
   private final SReference myRef;

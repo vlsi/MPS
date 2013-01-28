@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
@@ -92,7 +92,7 @@ public class KeyMapUtil {
         keyMapsAndCells.add(new Pair<EditorCellKeyMap, EditorCell>(keymap, keymapOwnerCell));
         addedKeymaps.add(keymap.getClass());
       }
-      keymapOwnerCell = keymapOwnerCell.getParent();
+      keymapOwnerCell = (EditorCell) keymapOwnerCell.getParent();
     }
     SNode node = editorContext.getNodeEditorComponent().getEditedNode();
     if (node != null) {
@@ -232,7 +232,7 @@ public class KeyMapUtil {
       if (actionCell == keymapOwnerCell) {
         return null;
       }
-      actionCell = actionCell.getParent();
+      actionCell = (EditorCell) actionCell.getParent();
     }
     return null;
   }

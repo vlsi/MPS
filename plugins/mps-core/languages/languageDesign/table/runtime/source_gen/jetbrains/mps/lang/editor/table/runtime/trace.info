@@ -216,7 +216,7 @@
     <nodeInfo nodeId="3216977149571368223" fileName="EditorCell_Table.java" startLine="116" startPosition="47" endLine="117" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="327003329629484044" fileName="EditorCell_Table.java" startLine="118" startPosition="11" endLine="119" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="327003329629484150" fileName="EditorCell_Table.java" startLine="119" startPosition="35" endLine="120" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4550201027691224134" fileName="EditorCell_Table.java" startLine="121" startPosition="84" endLine="122" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4550201027691224134" fileName="EditorCell_Table.java" startLine="121" startPosition="80" endLine="122" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7406306075318050272" fileName="EditorCell_Table.java" startLine="127" startPosition="11" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8514238689685500758" fileName="EditorCell_Table.java" startLine="128" startPosition="0" endLine="129" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9102817927790201355" fileName="EditorCell_Table.java" startLine="131" startPosition="7" endLine="132" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -229,13 +229,13 @@
     <nodeInfo nodeId="4700713079889332470" fileName="EditorCell_Table.java" startLine="149" startPosition="34" endLine="150" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2533261537000422919" fileName="EditorCell_Table.java" startLine="150" startPosition="79" endLine="151" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2533261537000422932" fileName="EditorCell_Table.java" startLine="151" startPosition="79" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2533261537000422978" fileName="EditorCell_Table.java" startLine="153" startPosition="83" endLine="154" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2533261537000422989" fileName="EditorCell_Table.java" startLine="154" startPosition="47" endLine="155" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2533261537000422978" fileName="EditorCell_Table.java" startLine="153" startPosition="118" endLine="154" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2533261537000422989" fileName="EditorCell_Table.java" startLine="154" startPosition="82" endLine="155" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="2533261537000422995" fileName="EditorCell_Table.java" startLine="155" startPosition="54" endLine="156" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2533261537000423047" fileName="EditorCell_Table.java" startLine="157" startPosition="38" endLine="158" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2533261537000423022" fileName="EditorCell_Table.java" startLine="158" startPosition="46" endLine="159" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2533261537000423082" fileName="EditorCell_Table.java" startLine="160" startPosition="7" endLine="161" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2533261537000423136" fileName="EditorCell_Table.java" startLine="162" startPosition="127" endLine="163" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2533261537000423136" fileName="EditorCell_Table.java" startLine="162" startPosition="162" endLine="163" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2533261537000423100" fileName="EditorCell_Table.java" startLine="164" startPosition="24" endLine="165" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2533261537000423098" fileName="EditorCell_Table.java" startLine="165" startPosition="34" endLine="166" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="2533261537000423129" fileName="EditorCell_Table.java" startLine="167" startPosition="9" endLine="168" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -255,9 +255,9 @@
     <nodeInfo nodeId="2390677225378626219" fileName="EditorCell_Table.java" startLine="196" startPosition="59" endLine="197" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="2390677225378626232" fileName="EditorCell_Table.java" startLine="197" startPosition="22" endLine="198" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="2390677225378645237" fileName="EditorCell_Table.java" startLine="198" startPosition="70" endLine="199" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2390677225378645198" fileName="EditorCell_Table.java" startLine="200" startPosition="83" endLine="201" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2390677225378645209" fileName="EditorCell_Table.java" startLine="201" startPosition="47" endLine="202" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="2390677225378645246" fileName="EditorCell_Table.java" startLine="202" startPosition="54" endLine="203" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2390677225378645198" fileName="EditorCell_Table.java" startLine="200" startPosition="118" endLine="201" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2390677225378645209" fileName="EditorCell_Table.java" startLine="201" startPosition="82" endLine="202" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2390677225378645246" fileName="EditorCell_Table.java" startLine="202" startPosition="54" endLine="203" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2390677225378645274" fileName="EditorCell_Table.java" startLine="204" startPosition="5" endLine="205" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2317844423961239061" fileName="EditorCell_Table.java" startLine="208" startPosition="62" endLine="209" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2317844423961239069" fileName="EditorCell_Table.java" startLine="209" startPosition="126" endLine="210" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -312,7 +312,7 @@
     <nodeInfo nodeId="4057456417884478684" fileName="EditorCell_Table.java" startLine="280" startPosition="0" endLine="283" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createTable#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/editor/table/runtime/TableModel;Ljava/lang/String;)Ljetbrains/mps/nodeEditor/cells/EditorCell_Collection;" />
     <nodeInfo nodeId="2524830101155323256" fileName="EditorCell_Table.java" startLine="122" startPosition="67" endLine="126" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2533261537000423010" fileName="EditorCell_Table.java" startLine="156" startPosition="67" endLine="160" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2533261537000423086" fileName="EditorCell_Table.java" startLine="163" startPosition="50" endLine="167" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2533261537000423086" fileName="EditorCell_Table.java" startLine="163" startPosition="85" endLine="167" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5710834253138172031" fileName="EditorCell_Table.java" startLine="234" startPosition="7" endLine="238" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9150287053027696872" fileName="EditorCell_Table.java" startLine="288" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectColumnAction#(ILjetbrains/mps/nodeEditor/EditorCellAction;)V" />
     <nodeInfo nodeId="9150287053027696937" fileName="EditorCell_Table.java" startLine="293" startPosition="48" endLine="297" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -399,7 +399,7 @@
       <varInfo nodeId="2533261537000423154" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="2390677225378645289" fileName="EditorCell_Table.java" startLine="192" startPosition="0" endLine="195" endPosition="0" />
-    <scopeInfo nodeId="2390677225378626358" fileName="EditorCell_Table.java" startLine="200" startPosition="83" endLine="203" endPosition="109">
+    <scopeInfo nodeId="2390677225378626358" fileName="EditorCell_Table.java" startLine="200" startPosition="118" endLine="203" endPosition="122">
       <varInfo nodeId="2390677225378645199" varName="nextRow" />
     </scopeInfo>
     <scopeInfo nodeId="2317844423961239086" fileName="EditorCell_Table.java" startLine="212" startPosition="0" endLine="215" endPosition="0">
@@ -436,7 +436,7 @@
     <scopeInfo nodeId="7541022036347910989" fileName="EditorCell_Table.java" startLine="62" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="7541022036347910992" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2524830101155322335" fileName="EditorCell_Table.java" startLine="121" startPosition="84" endLine="126" endPosition="15">
+    <scopeInfo nodeId="2524830101155322335" fileName="EditorCell_Table.java" startLine="121" startPosition="80" endLine="126" endPosition="15">
       <varInfo nodeId="4550201027691224135" varName="maxColumnWidth" />
     </scopeInfo>
     <scopeInfo nodeId="4992257971070065772" fileName="EditorCell_Table.java" startLine="137" startPosition="0" endLine="142" endPosition="0" />
@@ -493,7 +493,7 @@
     <scopeInfo nodeId="8514238689685497151" fileName="EditorCell_Table.java" startLine="208" startPosition="0" endLine="218" endPosition="0">
       <varInfo nodeId="2317844423961239052" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="2533261537000423057" fileName="EditorCell_Table.java" startLine="162" startPosition="127" endLine="173" endPosition="9">
+    <scopeInfo nodeId="2533261537000423057" fileName="EditorCell_Table.java" startLine="162" startPosition="162" endLine="173" endPosition="9">
       <varInfo nodeId="2533261537000423137" varName="nextCell" />
       <varInfo nodeId="2533261537000423130" varName="x" />
     </scopeInfo>
@@ -507,7 +507,7 @@
     <scopeInfo nodeId="5710834253138171997" fileName="EditorCell_Table.java" startLine="219" startPosition="100" endLine="239" endPosition="21">
       <varInfo nodeId="5710834253138172002" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2533261537000422955" fileName="EditorCell_Table.java" startLine="153" startPosition="83" endLine="175" endPosition="23">
+    <scopeInfo nodeId="2533261537000422955" fileName="EditorCell_Table.java" startLine="153" startPosition="118" endLine="175" endPosition="23">
       <varInfo nodeId="2533261537000423083" varName="index" />
       <varInfo nodeId="2533261537000422979" varName="nextRow" />
     </scopeInfo>

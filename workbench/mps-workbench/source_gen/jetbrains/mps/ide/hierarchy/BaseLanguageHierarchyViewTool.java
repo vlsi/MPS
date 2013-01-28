@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.GlobalScopeMinusTransient;

@@ -332,6 +332,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.parser.ReferentsCreator" file="ReferentsCreator.java">
     <classNode dependClassName="java.lang.Override" />
@@ -386,6 +387,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.lookup.TypeVariableBinding" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.problem.AbortCompilationUnit" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode extendsClassName="org.eclipse.jdt.internal.compiler.ASTVisitor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.parser.SourceWrapper" file="SourceWrapper.java">
@@ -459,6 +461,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
 </dependenciesRoot>
 

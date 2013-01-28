@@ -16,7 +16,7 @@
 package jetbrains.mps;
 
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import org.junit.Assert;
 
@@ -251,7 +251,7 @@ public class ModelAssert {
     assertNotNull(errorString, actualReference);
 
 //    assertIdEqualsOrBothNull(errorString, expectedReference.getTargetNode(), actualReference.getTargetNode());
-    assertEquals(errorString, expectedReference.getResolveInfo(), actualReference.getResolveInfo());
+    assertEquals(errorString, ((jetbrains.mps.smodel.SReference) expectedReference).getResolveInfo(), ((jetbrains.mps.smodel.SReference) actualReference).getResolveInfo());
     assertEquals(errorString, expectedReference.getRole(), actualReference.getRole());
     assertEquals(errorString, expectedReference.getTargetNodeId(), actualReference.getTargetNodeId());
   }

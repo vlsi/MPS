@@ -95,6 +95,9 @@
    <string>public abstract org.jetbrains.mps.openapi.model.SModel org.jetbrains.mps.openapi.model.SNode.getContainingModel()</string>
   </void>
   <void method="add">
+   <string>public abstract jetbrains.mps.smodel.SModel org.jetbrains.mps.openapi.model.SNode.getModel()</string>
+  </void>
+  <void method="add">
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReference(java.lang.String,org.jetbrains.mps.openapi.model.SReference)</string>
   </void>
  </object> 

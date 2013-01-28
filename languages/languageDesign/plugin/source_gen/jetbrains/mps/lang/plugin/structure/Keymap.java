@@ -8,6 +8,7 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum Keymap {
   Mac_OS_X("Mac OS X", "Mac OS X"),
+  Mac_OS_X_10_5_("Mac OS X 10.5+", "Mac OS X 10.5+"),
   XWin("XWin", "Default for XWin"),
   GNOME("GNOME", "Default for GNOME"),
   KDE("KDE", "Default for KDE"),
@@ -26,6 +27,7 @@ public enum Keymap {
   public static List<Keymap> getConstants() {
     List<Keymap> list = ListSequence.fromList(new LinkedList<Keymap>());
     ListSequence.fromList(list).addElement(Keymap.Mac_OS_X);
+    ListSequence.fromList(list).addElement(Keymap.Mac_OS_X_10_5_);
     ListSequence.fromList(list).addElement(Keymap.XWin);
     ListSequence.fromList(list).addElement(Keymap.GNOME);
     ListSequence.fromList(list).addElement(Keymap.KDE);
@@ -43,6 +45,9 @@ public enum Keymap {
     }
     if (value.equals(Keymap.Mac_OS_X.getValueAsString())) {
       return Keymap.Mac_OS_X;
+    }
+    if (value.equals(Keymap.Mac_OS_X_10_5_.getValueAsString())) {
+      return Keymap.Mac_OS_X_10_5_;
     }
     if (value.equals(Keymap.XWin.getValueAsString())) {
       return Keymap.XWin;

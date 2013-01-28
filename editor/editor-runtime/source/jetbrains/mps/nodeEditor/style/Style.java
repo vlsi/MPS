@@ -15,201 +15,43 @@
  */
 package jetbrains.mps.nodeEditor.style;
 
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.nodeEditor.CaretPosition;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.EqualUtil;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
-
-public class Style {
-  private static final Logger LOG = Logger.getLogger(Style.class);
-
-  private Style myParent;
-  private EditorCell myEditorCell;
-  private List<Style> myChildren = new ArrayList<Style>(0);
-
-  private Object[] myAttributeValues = new Object[StyleAttributes.getAttributesCount()];
-  private Object[] myCachedAttributeValues = new Object[StyleAttributes.getAttributesCount()];
-
-  private List<StyleListener> myStyleListeners = null;
-
+public class Style extends StyleImpl {
   public Style() {
-    this(null);
+    super();
   }
 
   public Style(EditorCell contextCell) {
-    myEditorCell = contextCell;
+    super(contextCell);
   }
 
-  public void apply(@NotNull EditorCell cell) {
-    cell.getStyle().putAll(this);
-  }
-
-  public void add(Style child) {
-    myChildren.add(child);
-    child.myParent = this;
-    child.updateCache(getNonDefaultValuedAttributes());
-  }
-
-  public void remove(Style child) {
-    myChildren.remove(child);
-    child.myParent = null;
-    child.updateCache(getNonDefaultValuedAttributes());
-  }
-
-  public <T> T get(StyleAttribute<T> attribute) {
-    final int index = attribute.getIndex();
-    if (StyleAttributes.isSimple(attribute)) {
-      if (myCachedAttributeValues[index] == null) {
-        T value;
-        if (myAttributeValues[index] instanceof AttributeCalculator) {
-          value = ModelAccess.instance().runReadAction(new Computable<T>() {
-            @Override
-            public T compute() {
-              return (T) ((AttributeCalculator) myAttributeValues[index]).calculate(myEditorCell);
-            }
-          });
-        } else {
-          value = (T) myAttributeValues[index];
-        }
-        myCachedAttributeValues[index] = attribute.combine(null, value);
-      }
-      return (T) myCachedAttributeValues[index];
-    }
-    T value = (T) myCachedAttributeValues[index];
-    if (value != null) {
-      return value;
-    } else {
-      return attribute.combine(null, null);
-    }
-  }
-
-  public <T> T getCurrent(StyleAttribute<T> attribute) {
-    return (T) myAttributeValues[attribute.getIndex()];
-  }
-
+  @Override
   public <T> void set(StyleAttribute<T> attribute, T value) {
-    myAttributeValues[attribute.getIndex()] = value;
-    Set<StyleAttribute> attributeSet = singletonSet(attribute);
-    if (StyleAttributes.isSimple(attribute)) {
-      myCachedAttributeValues[attribute.getIndex()] = null;
-      fireStyleChanged(new StyleChangeEvent(this, attributeSet));
-    } else {
-      updateCache(attributeSet);
+    if (StyleAttributes.DEFAULT_BASE_LINE == attribute) {
+      super.set(jetbrains.mps.editor.runtime.style.StyleAttributes.DEFAULT_BASE_LINE, jetbrains.mps.editor.runtime.style.DefaultBaseLine.valueOf(((DefaultBaseLine) value).name()));
+      return;
     }
-  }
-
-  public <T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator) {
-    myAttributeValues[attribute.getIndex()] = valueCalculator;
-    Set<StyleAttribute> attributeSet = singletonSet(attribute);
-    if (StyleAttributes.isSimple(attribute)) {
-      myCachedAttributeValues[attribute.getIndex()] = null;
-      fireStyleChanged(new StyleChangeEvent(this, attributeSet));
-    } else {
-      updateCache(attributeSet);
+    if (StyleAttributes.DEFAULT_CARET_POSITON == attribute) {
+      super.set(jetbrains.mps.editor.runtime.style.StyleAttributes.DEFAULT_CARET_POSITION, jetbrains.mps.editor.runtime.style.CaretPosition.valueOf(((CaretPosition) value).name()));
+      return;
     }
-  }
-
-  private Set<StyleAttribute> singletonSet(StyleAttribute sa) {
-    return Collections.singleton(sa);
-  }
-
-  private Set<StyleAttribute> getNonDefaultValuedAttributes() {
-    Set<StyleAttribute> result = new StyleAttributeSet();
-    for (StyleAttribute attribute : StyleAttributes.getNotSimpleAttributes()) {
-      if (myCachedAttributeValues[attribute.getIndex()] != null) {
-        result.add(attribute);
-      }
+    if (StyleAttributes.HORIZONTAL_ALIGN == attribute) {
+      super.set(jetbrains.mps.editor.runtime.style.StyleAttributes.HORIZONTAL_ALIGN, jetbrains.mps.editor.runtime.style.CellAlign.valueOf(((CellAlign) value).name()));
+      return;
     }
-    return result;
-  }
-
-  public void putAll(Style s) {
-    Set<StyleAttribute> addedSimple = new StyleAttributeSet();
-    Set<StyleAttribute> addedNotSimple = new StyleAttributeSet();
-    for (int i = 0; i < s.myAttributeValues.length; i++) {
-      Object value = s.myAttributeValues[i];
-      if (value != null) {
-        myAttributeValues[i] = value;
-        if (StyleAttributes.isSimple(StyleAttributes.getAttribute(i))) {
-          myCachedAttributeValues[i] = null;
-          addedSimple.add(StyleAttributes.getAttribute(i));
-        } else {
-          addedNotSimple.add(StyleAttributes.getAttribute(i));
-        }
-      }
+    if (StyleAttributes.SCRIPT_KIND == attribute) {
+      super.set(jetbrains.mps.editor.runtime.style.StyleAttributes.SCRIPT_KIND, jetbrains.mps.editor.runtime.style.ScriptKind.valueOf(((ScriptKind) value).name()));
+      return;
     }
-    updateCache(addedNotSimple);
-    fireStyleChanged(new StyleChangeEvent(this, addedSimple));
-  }
-
-  private Style getParentStyle() {
-    return myParent;
-  }
-
-  private void updateCache(Set<StyleAttribute> attributes) {
-    if (attributes.isEmpty()) {
+    if (StyleAttributes.TABLE_COMPONENT == attribute) {
+      super.set(jetbrains.mps.editor.runtime.style.StyleAttributes.TABLE_COMPONENT, jetbrains.mps.editor.runtime.style.TableComponent.valueOf(((TableComponent) value).name()));
       return;
     }
 
-    Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
-    for (StyleAttribute attribute : attributes) {
-      Object parentValue = getParentStyle() == null ? null : getParentStyle().get(attribute);
-      Object currentValue = myAttributeValues[attribute.getIndex()];
-      Object oldValue = myCachedAttributeValues[attribute.getIndex()];
-
-      if (parentValue != null || currentValue != null || oldValue != null) {
-        if (currentValue instanceof AttributeCalculator) {
-          currentValue = ((AttributeCalculator) currentValue).calculate(myEditorCell);
-        }
-
-        Object newValue = attribute.combine(parentValue, currentValue);
-
-        if (!EqualUtil.equals(newValue, oldValue)) {
-          changedAttributes.add(attribute);
-        }
-
-        myCachedAttributeValues[attribute.getIndex()] = newValue;
-      }
-    }
-
-    if (!changedAttributes.isEmpty()) {
-      for (Style style : myChildren) {
-        style.updateCache(changedAttributes);
-      }
-
-      fireStyleChanged(new StyleChangeEvent(this, changedAttributes));
-    }
-  }
-
-  private void fireStyleChanged(StyleChangeEvent e) {
-    if (myStyleListeners == null) return;
-
-    for (StyleListener l : myStyleListeners) {
-      try {
-        l.styleChanged(e);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  public void addListener(StyleListener l) {
-    if (myStyleListeners == null) {
-      myStyleListeners = new ArrayList<StyleListener>(1);
-    }
-    myStyleListeners.add(l);
-  }
-
-  public void removeListener(StyleListener l) {
-    if (myStyleListeners == null) return;
-    myStyleListeners.remove(l);
-    if (myStyleListeners.isEmpty()) myStyleListeners = null;
+    super.set(attribute, value);
   }
 }

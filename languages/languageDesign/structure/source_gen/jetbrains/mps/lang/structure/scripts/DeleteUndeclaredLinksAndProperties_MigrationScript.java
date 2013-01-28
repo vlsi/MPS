@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigrationScript {

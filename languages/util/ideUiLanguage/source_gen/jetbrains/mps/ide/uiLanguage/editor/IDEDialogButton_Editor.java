@@ -7,8 +7,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -24,10 +25,9 @@ public class IDEDialogButton_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5ofldg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5ofldg_a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BRACKETS, true);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BRACKETS, true);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_5ofldg_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5ofldg_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5ofldg_c0(editorContext, node));
@@ -38,10 +38,9 @@ public class IDEDialogButton_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5ofldg_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5ofldg_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5ofldg_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5ofldg_b0a(editorContext, node));
     return editorCell;
@@ -50,10 +49,9 @@ public class IDEDialogButton_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5ofldg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5ofldg_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5ofldg_a1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5ofldg_b1a(editorContext, node));
     return editorCell;
@@ -62,10 +60,9 @@ public class IDEDialogButton_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5ofldg_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5ofldg_d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_5ofldg_a3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5ofldg_b3a(editorContext, node));
     return editorCell;
@@ -88,10 +85,9 @@ public class IDEDialogButton_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_5ofldg_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5ofldg_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

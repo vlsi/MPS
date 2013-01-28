@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.PasteEnv;

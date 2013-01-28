@@ -74,7 +74,7 @@ public class QuickFixAdapter extends BaseIntention  {
     if (restoreCaretPosition) {
       editorContext.flushEvents();
       EditorCell rootCell = (EditorCell) editorContext.getEditorComponent().getRootCell();
-      EditorCell leaf = rootCell.findLeaf(caretX, caretY);
+      jetbrains.mps.openapi.editor.cells.EditorCell leaf = rootCell.findLeaf(caretX, caretY);
       if (leaf != null) {
         editorContext.getEditorComponent().changeSelection(leaf);
         leaf.setCaretX(caretX);

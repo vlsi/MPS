@@ -70,8 +70,6 @@
     <classNode dependClassName="jetbrains.mps.build.ant.Macro" />
     <classNode dependClassName="jetbrains.mps.build.ant.MyExecuteStreamHandler" />
     <classNode dependClassName="jetbrains.mps.build.ant.ProjectNested" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.AntBootstrap" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.MpsWorker" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />

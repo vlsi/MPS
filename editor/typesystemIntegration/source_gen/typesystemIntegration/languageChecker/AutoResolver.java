@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -79,19 +79,19 @@ public class AutoResolver extends EditorCheckerAdapter {
   }
 
   private Set<SReference> collectBadReferences(SNode cellNode) {
-    SReference.disableLogging();
+    jetbrains.mps.smodel.SReference.disableLogging();
     try {
       Set<SReference> result = SetSequence.fromSet(new LinkedHashSet<SReference>());
       for (SNode node : jetbrains.mps.util.SNodeOperations.getDescendants(cellNode, null, true)) {
         for (SReference ref : SNodeOperations.getReferences(node)) {
-          if (ref.getTargetNodeSilently() == null) {
+          if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
             SetSequence.fromSet(result).addElement(ref);
           }
         }
       }
       return result;
     } finally {
-      SReference.enableLogging();
+      jetbrains.mps.smodel.SReference.enableLogging();
     }
   }
 

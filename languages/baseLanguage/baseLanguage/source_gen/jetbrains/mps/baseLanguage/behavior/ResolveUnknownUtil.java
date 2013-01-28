@@ -12,17 +12,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.scopes.ClassifiersScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ResolveUnknownUtil {
   private static Logger LOG = Logger.getLogger(ResolveUnknownUtil.class);
@@ -154,71 +154,18 @@ public class ResolveUnknownUtil {
   }
 
   public static _FunctionTypes._return_P0_E0<? extends SNode> resolveDotCall(final SNode x) {
-    final Wrappers._T<SNode> operand = new Wrappers._T<SNode>(ResolveUnknownUtil.resolveTokens(x));
+    final SNode operand = ResolveUnknownUtil.resolveTokens(x);
 
-    final Wrappers._T<String> className = new Wrappers._T<String>(null);
+    final String className = null;
 
-    if ((operand.value == null)) {
-
-      // <node> 
-
-      // FIXME This code will be gone 
-      // While class resolving doesn't work properly, we'll take a guess 
-
-      int lastUpperCase = ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).indexOf(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).findLast(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return Character.isUpperCase(SPropertyOperations.getString(it, "value").charAt(0));
-        }
-      }));
-      Iterable<SNode> classNamePart = ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).take(lastUpperCase + 1);
-
-      int tokPos = lastUpperCase + 1;
-
-      if (Sequence.fromIterable(classNamePart).isNotEmpty()) {
-
-        StringBuilder sb = new StringBuilder();
-
-        for (SNode tok : Sequence.fromIterable(classNamePart)) {
-          sb.append(SPropertyOperations.getString(tok, "value"));
-          sb.append('.');
-        }
-        sb.deleteCharAt(sb.length() - 1);
-
-        className.value = sb.toString();
-
-        if (lastUpperCase < ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).count() - 1) {
-          // it's more than just a class name 
-          SNode fref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
-          fref.setReference(new DynamicReference("classifier", fref, null, className.value).getRole(), new DynamicReference("classifier", fref, null, className.value));
-          SReference fieldRef = new DynamicReference("staticFieldDeclaration", fref, null, SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).getElement(lastUpperCase + 1), "value"));
-          fref.setReference(fieldRef.getRole(), fieldRef);
-
-          tokPos++;
-          operand.value = fref;
-        }
-
-      } else {
-        operand.value = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
-        operand.value.setReference(new DynamicReference("variableDeclaration", operand.value, null, SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).first(), "value")).getRole(), new DynamicReference("variableDeclaration", operand.value, null, SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).first(), "value")));
-        tokPos = 1;
-      }
-
-      while (tokPos < ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).count()) {
-        SNode dotExpr = ResolveUnknownUtil.makeFieldDotExpression(SNodeOperations.cast(operand.value, "jetbrains.mps.baseLanguage.structure.Expression"), SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).getElement(tokPos), "value"));
-        operand.value = dotExpr;
-        tokPos++;
-      }
-
-      // END of hack 
-
+    if ((operand == null)) {
+      return null;
     }
 
-
-
-    if (operand.value == null || SNodeOperations.isInstanceOf(operand.value, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      final SNode target = ((operand.value == null) ?
+    if (SNodeOperations.isInstanceOf(operand, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      final SNode target = ((operand == null) ?
         null :
-        SNodeOperations.cast(operand.value, "jetbrains.mps.baseLanguage.structure.Classifier")
+        SNodeOperations.cast(operand, "jetbrains.mps.baseLanguage.structure.Classifier")
       );
 
       if ((target != null) && !(SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
@@ -231,7 +178,7 @@ public class ResolveUnknownUtil {
           if ((target != null)) {
             SLinkOperations.setTarget(call, "classConcept", SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
           } else {
-            call.setReference(new DynamicReference("classConcept", call, null, className.value).getRole(), new DynamicReference("classConcept", call, null, className.value));
+            call.setReference(new DynamicReference("classConcept", call, null, className).getRole(), new DynamicReference("classConcept", call, null, className));
           }
           SReference sref = new DynamicReference("baseMethodDeclaration", call, null, SPropertyOperations.getString(x, "callee"));
           call.setReference(sref.getRole(), sref);
@@ -240,13 +187,13 @@ public class ResolveUnknownUtil {
         }
       };
 
-    } else if (SNodeOperations.isInstanceOf(operand.value, "jetbrains.mps.baseLanguage.structure.Expression")) {
-      // operand is some other expression. it's supposed to an instance method call then 
+    } else if (SNodeOperations.isInstanceOf(operand, "jetbrains.mps.baseLanguage.structure.Expression")) {
+      // operand is some other expression. it's supposed to be an instance method call then 
 
       return new _FunctionTypes._return_P0_E0<SNode>() {
         public SNode invoke() {
           SNode dotExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-          SLinkOperations.setTarget(dotExpr, "operand", SNodeOperations.cast(operand.value, "jetbrains.mps.baseLanguage.structure.Expression"), true);
+          SLinkOperations.setTarget(dotExpr, "operand", SNodeOperations.cast(operand, "jetbrains.mps.baseLanguage.structure.Expression"), true);
 
           SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
           SLinkOperations.setTarget(dotExpr, "operation", call, true);
@@ -302,7 +249,7 @@ public class ResolveUnknownUtil {
         SNode statFieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
         SLinkOperations.setTarget(statFieldRef, "classifier", cls, false);
 
-        SReference fieldRef = new DynamicReference("staticFieldDeclaration", statFieldRef, null, SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).getElement(tokPos), "value"));
+        SReference fieldRef = new DynamicReference("variableDeclaration", statFieldRef, null, SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).getElement(tokPos), "value"));
         statFieldRef.setReference(fieldRef.getRole(), fieldRef);
 
         operand = statFieldRef;
@@ -375,7 +322,7 @@ public class ResolveUnknownUtil {
       k++;
     }
 
-    // TODO maybe should return a list of possible classifiers along with their token count 
+    // TODO maybe should return a list of possible s along with their token count 
     // so that the client can choose the right one itself 
 
     // try the longest name first, the shortest last 

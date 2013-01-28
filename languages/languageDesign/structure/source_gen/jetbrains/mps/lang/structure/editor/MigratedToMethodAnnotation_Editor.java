@@ -14,11 +14,12 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.editor.runtime.style.Padding;
+import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -80,10 +81,9 @@ public class MigratedToMethodAnnotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ykmn9g_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ykmn9g_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createAttributedNodeCell_ykmn9g_a1a(editorContext, node));
     return editorCell;
   }
@@ -91,11 +91,10 @@ public class MigratedToMethodAnnotation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ykmn9g_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Migrated to");
     editorCell.setCellId("Constant_ykmn9g_a0a");
-    structure_StyleSheet.getAnnotationNode(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
-    }
+    Style style = new StyleImpl();
+    structure_StyleSheet.applyAnnotationNode(style, editorCell);
+    style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
+    editorCell.getStyle().putAll(style);
     DeprecatedNodeAnnotation_ActionMap.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;

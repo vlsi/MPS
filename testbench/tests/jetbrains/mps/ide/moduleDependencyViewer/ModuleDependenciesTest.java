@@ -26,7 +26,7 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.WriteAction;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -80,14 +80,14 @@ public class ModuleDependenciesTest {
     return num;
   }
 
-  private void testDependency(DependencyPathTree testTree, IModule source, IModule target, int numPaths) {
-    assertEquals(numPaths, findPaths((DependencyTreeNode) testTree.testBuildTree(source, target, null), target));
+  private void testDependency(DependencyPathTree testTree, IModule source, IModule target, boolean showRumtime, int numPaths) {
+    assertEquals(numPaths, findPaths((DependencyTreeNode) testTree.testBuildTree(source, target, null, showRumtime), target));
     // check consistency with GlobalDependenciesManager:
-    assertEquals(numPaths != 0, new GlobalModuleDependenciesManager(source).getModules(testTree.isShowRuntime() ? Deptype.EXECUTE : Deptype.VISIBLE).contains(target));
+    assertEquals(numPaths != 0, new GlobalModuleDependenciesManager(source).getModules(showRumtime ? Deptype.EXECUTE : Deptype.VISIBLE).contains(target));
   }
 
-  private void testUsedLanguage(DependencyPathTree testTree, IModule source, Language target, int numPaths) {
-    assertEquals(numPaths, findPaths((DependencyTreeNode) testTree.testBuildTree(source, null, target), target));
+  private void testUsedLanguage(DependencyPathTree testTree, IModule source, Language target, boolean showRuntime, int numPaths) {
+    assertEquals(numPaths, findPaths((DependencyTreeNode) testTree.testBuildTree(source, null, target, showRuntime), target));
     assertEquals(numPaths != 0, new GlobalModuleDependenciesManager(source).getUsedLanguages().contains(target));
   }
 
@@ -113,15 +113,15 @@ public class ModuleDependenciesTest {
     solutions[4].addDependency(languages[0].getModuleReference(), false);
     languages[0].addExtendedLanguage(languages[1].getModuleReference());
 
-    testDependency(testTree, solutions[0], solutions[1], 1);    //simple
-    testDependency(testTree, solutions[0], solutions[2], 1);    //transitive
-    testDependency(testTree, solutions[0], solutions[3], 2);    //two paths
-    testDependency(testTree, solutions[4], languages[0], 1);    // simple dependency on language module
-    testDependency(testTree, languages[0], languages[1], 1);    // dependency on extended language
-    testDependency(testTree, solutions[4], languages[1], 1);    // re-export dependency on extended language
-    testDependency(testTree, solutions[0], solutions[4], 0);    //not reexport
-    testTree.setShowRuntime(true);
-    testDependency(testTree, solutions[0], solutions[4], 1);    //runtime dependency goes through even without re-export
+    testDependency(testTree, solutions[0], solutions[1], false, 1);    //simple
+    testDependency(testTree, solutions[0], solutions[2], false, 1);    //transitive
+    testDependency(testTree, solutions[0], solutions[3], false, 2);    //two paths
+    testDependency(testTree, solutions[4], languages[0], false, 1);    // simple dependency on language module
+    testDependency(testTree, languages[0], languages[1], false, 1);    // dependency on extended language
+    testDependency(testTree, solutions[4], languages[1], false, 1);    // re-export dependency on extended language
+    testDependency(testTree, solutions[0], solutions[4], false, 0);    //not reexport
+
+    testDependency(testTree, solutions[0], solutions[4], true, 1);    //runtime dependency goes through even without re-export
   }
 
   @Test
@@ -150,11 +150,11 @@ public class ModuleDependenciesTest {
                   |
                  l[2]---runtime-->s[3]
     */
-    testDependency(testTree, solutions[0], solutions[1], 0);       //runtime dependencies are off
-    testTree.setShowRuntime(true);
-    testDependency(testTree, solutions[0], solutions[1], 1);       //runtime dependencies are on
-    testDependency(testTree, solutions[0], solutions[2], 1);  //runtime dependencies can pass through extended language
-    testDependency(testTree, solutions[0], solutions[3], 0);  //runtime dependencies can not pass through used language
+    testDependency(testTree, solutions[0], solutions[1], false, 0);       //runtime dependencies are off
+
+    testDependency(testTree, solutions[0], solutions[1], true, 1);       //runtime dependencies are on
+    testDependency(testTree, solutions[0], solutions[2], true, 1);  //runtime dependencies can pass through extended language
+    testDependency(testTree, solutions[0], solutions[3], true, 0);  //runtime dependencies can not pass through used language
   }
 
   @Test
@@ -193,16 +193,16 @@ public class ModuleDependenciesTest {
      |          |            |
     s[6]        +-rt--s[7]   l[2]---runtime-->s[3]
     */
-    testDependency(testTree, solutions[0], solutions[1], 0);       //runtime dependencies are off
-    testTree.setShowRuntime(true);
-    testDependency(testTree, solutions[0], solutions[1], 1);       //runtime dependencies are on
-    testDependency(testTree, solutions[0], solutions[1], 1);  //runtime dependencies
-    testDependency(testTree, solutions[0], solutions[2], 1);  //runtime dependencies can pass through extended language
-    testDependency(testTree, solutions[0], solutions[3], 0);  //runtime dependencies can not pass through used language
-    testDependency(testTree, solutions[0], solutions[5], 1);  //runtime dependencies can pass through devkits
-    testDependency(testTree, solutions[0], solutions[6], 1);  //runtime dependencies can pass through devkits
-    testDependency(testTree, solutions[0], solutions[7], 1);  //runtime dependencies can pass through devkits and language
-    testDependency(testTree, solutions[0], languages[3], 0);  //devkit language is not dependency
+    testDependency(testTree, solutions[0], solutions[1], false, 0);       //runtime dependencies are off
+
+    testDependency(testTree, solutions[0], solutions[1], true, 1);       //runtime dependencies are on
+    testDependency(testTree, solutions[0], solutions[1], true, 1);  //runtime dependencies
+    testDependency(testTree, solutions[0], solutions[2], true, 1);  //runtime dependencies can pass through extended language
+    testDependency(testTree, solutions[0], solutions[3], true, 0);  //runtime dependencies can not pass through used language
+    testDependency(testTree, solutions[0], solutions[5], true, 1);  //runtime dependencies can pass through devkits
+    testDependency(testTree, solutions[0], solutions[6], true, 1);  //runtime dependencies can pass through devkits
+    testDependency(testTree, solutions[0], solutions[7], true, 1);  //runtime dependencies can pass through devkits and language
+    testDependency(testTree, solutions[0], languages[3], true, 0);  //devkit language is not dependency
   }
 
   @Test
@@ -230,13 +230,13 @@ public class ModuleDependenciesTest {
     languages[1].addUsedDevkit(devKit.getModuleReference());
     languages[5].addExtendedLanguage(languages[6].getModuleReference());
 
-    testUsedLanguage(testTree, languages[0], languages[1], 1);    //simple
-    testUsedLanguage(testTree, languages[0], languages[2], 0);    //language extends language
-    testUsedLanguage(testTree, languages[0], languages[3], 0);
-    testUsedLanguage(testTree, languages[1], languages[4], 1); //devKit
-    testUsedLanguage(testTree, languages[0], languages[4], 0); //extended lang + devKit
-    testUsedLanguage(testTree, languages[1], languages[5], 1); //extended DevKit
-    testUsedLanguage(testTree, languages[1], languages[6], 0); //extended DevKit+extended language
+    testUsedLanguage(testTree, languages[0], languages[1], false, 1);    //simple
+    testUsedLanguage(testTree, languages[0], languages[2], false, 0);    //language extends language
+    testUsedLanguage(testTree, languages[0], languages[3], false, 0);
+    testUsedLanguage(testTree, languages[1], languages[4], false, 1); //devKit
+    testUsedLanguage(testTree, languages[0], languages[4], false, 0); //extended lang + devKit
+    testUsedLanguage(testTree, languages[1], languages[5], false, 1); //extended DevKit
+    testUsedLanguage(testTree, languages[1], languages[6], false, 0); //extended DevKit+extended language
   }
 
   @Test
@@ -253,11 +253,11 @@ public class ModuleDependenciesTest {
     /*
     s[0]------>s[1]------->l[0]----extends---->l[1]
     */
-    testDependency(testTree, languages[0], languages[1], 1);  // extends is dependency
-    testDependency(testTree, solutions[1], languages[1], 1);  // extends is re-exported dependency
-    testDependency(testTree, solutions[0], languages[1], 0);  // extends is re-exported dependency, cannot go through nonexported dependency
-    testTree.setShowRuntime(true);
-    testDependency(testTree, solutions[0], languages[1], 1);  // runtime dependencies can go through other dependencies
+    testDependency(testTree, languages[0], languages[1], false, 1);  // extends is dependency
+    testDependency(testTree, solutions[1], languages[1], false, 1);  // extends is re-exported dependency
+    testDependency(testTree, solutions[0], languages[1], false, 0);  // extends is re-exported dependency, cannot go through nonexported dependency
+
+    testDependency(testTree, solutions[0], languages[1], true, 1);  // runtime dependencies can go through other dependencies
   }
 
   //----------------------------------------------

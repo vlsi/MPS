@@ -32,65 +32,13 @@ import java.util.List;
 import java.util.Set;
 
 public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cells.EditorCell {
-  static final EditorCell[] EMPTY_ARRAY = new EditorCell[0];
-
   // TODO: Pulled up to jetbrains.mps.openapi.editor.cells.EditorCell. Remove it.
-  void setX(int x);
+//  EditorCell_Collection getParent();
+  EditorCell getRootParent();
 
-  void setY(int y);
-
-  void setWidth(int width);
-
-  void setHeight(int height);
-
-  int getBaseline();
-  void setBaseline(int y);
-
-  int getAscent();
-  int getDescent();
-
-  int getEffectiveWidth();
-  int getLeftInset();
-  int getRightInset();
-  int getTopInset();
-  int getBottomInset();
-
-  void moveTo(int x, int y);
-
-  void setSelected(boolean isSelected);
-  boolean isSelected();
-
-  void setSelectable(boolean isSelected);
-  boolean isSelectable();
-
-  void setCellId(String cellId);
-  String getCellId();
-
-  void setRole(String role);
-  String getRole();
-
-  SNode getRefNode();
-  void setRefNode(SNode refNode);
-
-  boolean isErrorState();
-  void setErrorState(boolean isError);
-
-  void relayout();
-
-  void setCaretX(int x);
-  int getCaretX();
-
-  void home();
-  void end();
-
-  EditorCell findLeaf(int x, int y);
-
-  boolean isSingleNodeCell();
-
-  SNode getSNode();
-
-  void putUserObject(Object key, Object value);
-  Object getUserObject(Object key);
+  // TODO: same as inset?
+  void setLeftGap(int gap);
+  void setRightGap(int gap);
   // END of pull up
 
   void paint(Graphics g);
@@ -123,8 +71,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   EditorCell findCellWeak(int x, int y);
   EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition);
-
-  EditorCell_Collection getParent();
 
   void synchronizeViewWithModel();
 
@@ -184,7 +130,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   boolean isUnfoldedCollection();
   boolean canBePossiblyFolded();
 
-  EditorCell getRootParent();
   boolean isBigCell();
   boolean isFirstPositionInBigCell();
   boolean isLastPositionInBigCell();
@@ -201,9 +146,11 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   EditorCell getContainingBigCell();
   boolean isAncestorOf(EditorCell cell);
 
-  boolean hasFocusPolicy();
-  FocusPolicy getFocusPolicy();
-  // TODO: move to open API or modify editor generator to use styles for FocusPolicy
+  // TODO: modify editor generator to use styles for FocusPolicy
+  /**
+   * @deprecated remove after MPS 3.0
+   */
+  @Deprecated
   void setFocusPolicy(FocusPolicy fp);
 
   // TODO: move to open API
@@ -256,8 +203,4 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   EditorCell getUpper(Condition<EditorCell> condition, int baseX);
   EditorCell getLower(Condition<EditorCell> condition, int baseX);
-
-  // TODO: same as inset?
-  void setLeftGap(int gap);
-  void setRightGap(int gap);
 }

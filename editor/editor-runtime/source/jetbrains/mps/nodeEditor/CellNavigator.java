@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.util.IterableUtil;
 
 import java.util.Iterator;
@@ -67,7 +67,7 @@ abstract class CellNavigator {
     boolean backwards) {
 
     boolean currentMet = current == null;
-    Iterator<EditorCell> iterator = backwards ? parent.reverseCellIterator() : parent.iterator();
+    Iterator<EditorCell> iterator = backwards ? parent.reverseIterator() : parent.iterator();
     for (EditorCell cell : IterableUtil.asIterable(iterator)) {
       if (currentMet) {
         if (isSuitableCell(cell)) {

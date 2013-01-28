@@ -5,7 +5,7 @@ package jetbrains.mps.ide.editor.resolver;
 import jetbrains.mps.resolve.IResolver;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -54,12 +54,12 @@ public class EditorResolver implements IResolver {
   }
 
   private String getResolveInfo(SReference reference, SNode sourceNode) {
-    String result = reference.getResolveInfo();
+    String result = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
     if (result != null) {
       return result;
     }
     IModule module = check_jllgm1_a0c0c(SNodeOperations.getModel(sourceNode).getModelDescriptor());
-    SNode target = reference.getTargetNodeSilently();
+    SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
     if (target != null && module != null) {
       Scope scope = ModelConstraints.getScope(reference);
       result = scope.getReferenceText(sourceNode, target);

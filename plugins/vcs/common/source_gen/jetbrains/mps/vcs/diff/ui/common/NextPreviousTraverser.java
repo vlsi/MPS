@@ -219,7 +219,7 @@ public class NextPreviousTraverser {
   }
 
   private synchronized void goToY(int y) {
-    jetbrains.mps.nodeEditor.cells.EditorCell editorCell = myLastEditor.findCellWeak(1, y + 1);
+    EditorCell editorCell = myLastEditor.findCellWeak(1, y + 1);
     if (editorCell != null) {
       myLastEditor.changeSelection(editorCell);
     } else {

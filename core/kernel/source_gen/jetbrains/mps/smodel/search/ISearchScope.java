@@ -9,7 +9,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 @Deprecated

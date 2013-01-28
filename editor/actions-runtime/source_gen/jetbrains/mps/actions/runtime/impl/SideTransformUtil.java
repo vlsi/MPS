@@ -28,12 +28,11 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import java.util.Iterator;
-import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
@@ -105,8 +104,6 @@ public class SideTransformUtil {
       INodeSubstituteAction action = it.next();
       SNode concept = SNodeOperations.cast(action.getOutputConcept(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
       if (SetSequence.fromSet(conceptsToRemove).contains(concept)) {
-        it.remove();
-      } else if (!(ModelConstraints.canBeReplaced(node, BehaviorReflection.invokeVirtual(String.class, concept, "virtual_getFqName_1213877404258", new Object[]{})))) {
         it.remove();
       }
     }

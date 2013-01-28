@@ -50,7 +50,7 @@ public class DefaultCellInfo implements CellInfo {
 
     myCellId = cell.getCellId();
 
-    EditorCell_Collection parent = cell.getParent();
+    EditorCell_Collection parent = (EditorCell_Collection) cell.getParent();
     if (parent != null && myCellId == null) {
       myParentInfo = parent.getCellInfo();
       myIsInList = parent.hasCellListHandler();

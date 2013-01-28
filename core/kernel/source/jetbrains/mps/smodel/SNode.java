@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -70,7 +70,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   private String myRoleInParent;
-  private SReference[] myReferences = SReference.EMPTY_ARRAY;
+  private jetbrains.mps.smodel.SReference[] myReferences = jetbrains.mps.smodel.SReference.EMPTY_ARRAY;
 
   private String[] myProperties = null;
 
@@ -321,7 +321,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       removeReferenceInternal(reference);
     }
 
-    addReferenceInternal(SReference.create(role, this, ((SNode) target)));
+    addReferenceInternal(jetbrains.mps.smodel.SReference.create(role, this, ((SNode) target)));
   }
 
   public SNode getReferenceTarget(String role) {
@@ -576,7 +576,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return new ChildrenList(firstChild);
   }
 
-  public List<SReference> getReferences() {
+  public List<jetbrains.mps.smodel.SReference> getReferences() {
     ModelAccess.assertLegalRead(this);
     assertDisposed();
 
@@ -671,7 +671,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     if (!myModel.isUpdateMode()) {
       for (SReference ref : myReferences) {
-        ref.makeDirect();
+        ((jetbrains.mps.smodel.SReference) ref).makeDirect();
       }
     }
 
@@ -696,7 +696,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     myModel = model;
 
     for (SReference ref : myReferences) {
-      ref.makeIndirect();
+      ((jetbrains.mps.smodel.SReference) ref).makeIndirect();
     }
 
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
@@ -767,9 +767,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     ModelChange.assertLegalNodeChange(myModel, this);
 
     int oldLen = myReferences.length;
-    SReference[] newArray = new SReference[oldLen + 1];
+    jetbrains.mps.smodel.SReference[] newArray = new jetbrains.mps.smodel.SReference[oldLen + 1];
     System.arraycopy(myReferences, 0, newArray, 0, oldLen);
-    newArray[oldLen] = reference;
+    newArray[oldLen] = ((jetbrains.mps.smodel.SReference) reference);
     myReferences = newArray;
 
     SModel model = getModel();
@@ -798,7 +798,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       return;
     }
 
-    SReference[] newArray = new SReference[myReferences.length - 1];
+    jetbrains.mps.smodel.SReference[] newArray = new jetbrains.mps.smodel.SReference[myReferences.length - 1];
     System.arraycopy(myReferences, 0, newArray, 0, index);
     System.arraycopy(myReferences, index + 1, newArray, index, myReferences.length - index - 1);
     myReferences = newArray;

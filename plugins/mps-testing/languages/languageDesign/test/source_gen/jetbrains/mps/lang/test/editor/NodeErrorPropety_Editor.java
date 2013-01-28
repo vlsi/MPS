@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 
 public class NodeErrorPropety_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -16,7 +18,9 @@ public class NodeErrorPropety_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_zemi9x_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has error");
     editorCell.setCellId("Constant_zemi9x_a");
-    transformationTest_StyleSheet.getNodeProperty(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    transformationTest_StyleSheet.applyNodeProperty(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
