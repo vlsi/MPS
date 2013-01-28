@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
@@ -278,11 +278,15 @@ public class SModelRepository implements CoreComponent {
 
     synchronized (myReloadingDescriptorMap) {
 
-      if (myReloadingDescriptorMap.isEmpty()) {
+      boolean needToNotify = myReloadingDescriptorMap.isEmpty();
+      myReloadingDescriptorMap.putValue(modelDescriptor, oldSModel);
+
+      if (needToNotify) {
         notifyAfterReload();
       }
 
-      myReloadingDescriptorMap.putValue(modelDescriptor, oldSModel);
+
+
     }
 
   }
@@ -292,11 +296,10 @@ public class SModelRepository implements CoreComponent {
       @Override
       public void run() {
         synchronized (myReloadingDescriptorMap) {
-          if (myReloadingDescriptorMap.isEmpty()) {
-            return;
-          }
 
-          fireModelReplaced(myReloadingDescriptorMap.keySet());
+          assert !myReloadingDescriptorMap.isEmpty();
+
+          fireModelsReplaced(myReloadingDescriptorMap.keySet());
           disposeOldModels();
           myReloadingDescriptorMap.clear();
         }
@@ -397,7 +400,7 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  private void fireModelReplaced(Set<SModelDescriptor> modelDescriptors) {
+  private void fireModelsReplaced(Set<SModelDescriptor> modelDescriptors) {
     for (SModelRepositoryListener listener : listeners()) {
       try {
         listener.modelsReplaced(modelDescriptors);
