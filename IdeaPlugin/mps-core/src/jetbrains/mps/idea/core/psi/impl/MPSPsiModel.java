@@ -19,13 +19,18 @@ package jetbrains.mps.idea.core.psi.impl;
 import com.intellij.lang.FileASTNode;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.*;
+import com.intellij.psi.FileViewProvider;
+import com.intellij.psi.PsiDirectory;
+import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiFileSystemItem;
+import com.intellij.psi.PsiManager;
+import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.psi.search.PsiElementProcessor;
 import com.intellij.testFramework.LightVirtualFile;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -34,6 +39,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -88,7 +94,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
       if (ref instanceof StaticReference) {
         psiNode.addChild(null, new MPSPsiRef(ref.getRole(), ref.getTargetSModelReference(), ref.getTargetNodeId()));
       } else if (ref instanceof DynamicReference) {
-        psiNode.addChild(null, new MPSPsiRef(ref.getRole(), ref.getResolveInfo()));
+        psiNode.addChild(null, new MPSPsiRef(ref.getRole(), ((DynamicReference) ref).getResolveInfo()));
       }
     }
 
