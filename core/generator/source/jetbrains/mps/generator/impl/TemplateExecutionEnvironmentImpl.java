@@ -24,7 +24,7 @@ import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.annotations.NotNull;
 

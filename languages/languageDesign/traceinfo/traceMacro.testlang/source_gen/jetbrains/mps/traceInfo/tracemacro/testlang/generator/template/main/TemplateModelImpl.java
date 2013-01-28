@@ -14,7 +14,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelId;
+import org.jetbrains.mps.openapi.model.SModelId;
 import java.util.UUID;
 
 public class TemplateModelImpl implements TemplateModel {
@@ -56,5 +56,5 @@ public class TemplateModelImpl implements TemplateModel {
     return templateModule;
   }
 
-  private static SModelReference modelRef_wo91o7_a0a5 = new SModelReference(new SModelFqName("jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main", "generator"), SModelId.regular(new UUID(8500928576468566562L, -8422117648231305666L)));
+  private static SModelReference modelRef_wo91o7_a0a5 = new SModelReference(new SModelFqName("jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main", "generator"), jetbrains.mps.smodel.SModelId.regular(new UUID(8500928576468566562L, -8422117648231305666L)));
 }

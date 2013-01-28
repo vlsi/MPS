@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelId;
+import org.jetbrains.mps.openapi.model.SModelId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.StubModelsResolver;
@@ -73,7 +73,7 @@ public abstract class StubModelDescriptors {
 
   public SModelReference smodelRefWithId(String pkg) {
     SModelFqName fqname = new SModelFqName(module.getModuleName(), pkg, stubStereotype);
-    SModelId modelId = SModelId.foreign(stubStereotype, module.getModuleReference().getModuleId().toString(), pkg);
+    SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(stubStereotype, module.getModuleReference().getModuleId().toString(), pkg);
     return new SModelReference(fqname, modelId);
   }
 
@@ -101,7 +101,7 @@ public abstract class StubModelDescriptors {
       muid = moduleRef.getModuleId().toString();
     }
     SModelFqName fqname = new SModelFqName(mfq, pkg, stereo);
-    SModelId modelId = SModelId.foreign(stereo, muid, pkg);
+    SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(stereo, muid, pkg);
     return new SModelReference(fqname, modelId);
   }
 }

@@ -17,7 +17,7 @@ package jetbrains.mps.util.io;
 
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodeId.Regular;
 
@@ -139,9 +139,9 @@ public class ModelInputStream extends DataInputStream {
       return null;
     } else if (c == 0x28) {
       UUID uuid = new UUID(readLong(), readLong());
-      return SModelId.regular(uuid);
+      return jetbrains.mps.smodel.SModelId.regular(uuid);
     } else if (c == 0x27) {
-      return SModelId.foreign(readString());
+      return jetbrains.mps.smodel.SModelId.foreign(readString());
     } else {
       throw new IOException("unknown id");
     }

@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModelId;
+import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -28,7 +28,7 @@ public class MetadataUtil {
   }
 
   public static SModel createMetadataModel(SModel model) {
-    SModel metadataModel = new SModel(new SModelReference(new SModelFqName(SModelOperations.getModelName(model), "metadata"), SModelId.generate()));
+    SModel metadataModel = new SModel(new SModelReference(new SModelFqName(SModelOperations.getModelName(model), "metadata"), jetbrains.mps.smodel.SModelId.generate()));
     SModelOperations.addRootNode(metadataModel, createModelRoot(model));
     return metadataModel;
   }
@@ -138,7 +138,7 @@ public class MetadataUtil {
     }));
     Set<SModelReference> imports = SetSequence.fromSetWithValues(new LinkedHashSet<SModelReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "import", true)).select(new ISelector<SNode, SModelReference>() {
       public SModelReference select(SNode it) {
-        return new SModelReference(new SModelFqName(SPropertyOperations.getString(it, "qualifiedName"), SPropertyOperations.getString(it, "stereotype")), SModelId.fromString(SPropertyOperations.getString(it, "uuid")));
+        return new SModelReference(new SModelFqName(SPropertyOperations.getString(it, "qualifiedName"), SPropertyOperations.getString(it, "stereotype")), jetbrains.mps.smodel.SModelId.fromString(SPropertyOperations.getString(it, "uuid")));
       }
     }));
     SetSequence.fromSet(modelImports).subtract(SetSequence.fromSet(imports)).visitAll(new IVisitor<SModelReference>() {

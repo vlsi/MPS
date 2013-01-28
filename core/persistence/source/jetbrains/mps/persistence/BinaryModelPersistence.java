@@ -48,7 +48,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
   public SModel create(String modelName, StreamDataSource dataSource) {
     if (!(dataSource instanceof FileDataSource)) return null;
     FileDataSource source = (FileDataSource) dataSource;
-    SModelReference ref = new SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate());
+    SModelReference ref = new SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.jetbrains.mps.smodel.SModelId.generate());
     return new BinarySModelDescriptor(source, new BinaryModelHeader(ref));
   }
 

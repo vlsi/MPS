@@ -46,7 +46,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.TreeHighlighterExtension;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 

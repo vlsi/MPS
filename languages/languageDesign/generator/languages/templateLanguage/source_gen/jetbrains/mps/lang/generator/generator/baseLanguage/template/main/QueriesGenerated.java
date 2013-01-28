@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelId;
+import org.jetbrains.mps.openapi.model.SModelId;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.generator.behavior.VarMacro_Behavior;
@@ -742,11 +742,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_330583488647058978(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Long.toString(((SModelId.RegularSModelId) _context.getOriginalInputModel().getSModelId()).getId().getMostSignificantBits()) + "L";
+    return Long.toString(((jetbrains.mps.smodel.SModelId.RegularSModelId) _context.getOriginalInputModel().getSModelId()).getId().getMostSignificantBits()) + "L";
   }
 
   public static Object propertyMacro_GetPropertyValue_330583488647059004(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Long.toString(((SModelId.RegularSModelId) _context.getOriginalInputModel().getSModelId()).getId().getLeastSignificantBits()) + "L";
+    return Long.toString(((jetbrains.mps.smodel.SModelId.RegularSModelId) _context.getOriginalInputModel().getSModelId()).getId().getLeastSignificantBits()) + "L";
   }
 
   public static Object propertyMacro_GetPropertyValue_330583488647110434(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -2504,7 +2504,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_330583488647010333(final IOperationContext operationContext, final IfMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelId() instanceof SModelId.RegularSModelId;
+    return _context.getOriginalInputModel().getSModelId() instanceof jetbrains.mps.smodel.SModelId.RegularSModelId;
   }
 
   public static boolean ifMacro_Condition_5577795813925497600(final IOperationContext operationContext, final IfMacroContext _context) {
