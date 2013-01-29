@@ -202,7 +202,7 @@ public class Generators {
 
       // find existing
       for (String newRoot : newRoots) {
-        if (sGen.equals(newRoot) || sGen.startsWith(newRoot + "/")) {
+        if (sGen.equals(newRoot) || sGen.startsWith(newRoot + File.separator)) {
           root = newRoot;
         }
       }
