@@ -31,7 +31,7 @@ public class GeneratorsRunner {
   }
 
   public static void generateCompilerXmlFile() throws JDOMException, IOException {
-    Generators.updateCompilerExcludes(COMPILER_XML_FILE, Utils.files("languages", "samples", "core", "plugins"));
+    Generators.updateCompilerExcludes(COMPILER_XML_FILE, Utils.files("languages", "samples", "core", "plugins", "testbench"));
   }
 
   public static void main(String[] args) throws JDOMException, IOException {
