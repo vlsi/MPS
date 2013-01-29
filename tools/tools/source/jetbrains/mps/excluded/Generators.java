@@ -235,7 +235,7 @@ public class Generators {
     for (String cGen : classesGen) {
       String root = null;
       for (String newRoot : newRoots) {
-        if (cGen.equals(newRoot) || cGen.startsWith(newRoot + "/")) {
+        if (cGen.equals(newRoot) || cGen.startsWith(newRoot + File.separator)) {
           root = newRoot;
         }
       }
