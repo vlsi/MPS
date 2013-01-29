@@ -202,7 +202,7 @@ public class Generators {
 
       // find existing
       for (String newRoot : newRoots) {
-        if (sGen.equals(newRoot) ||sGen.startsWith(newRoot + "/")) {
+        if (sGen.equals(newRoot) || sGen.startsWith(newRoot + "/")) {
           root = newRoot;
         }
       }
@@ -224,6 +224,7 @@ public class Generators {
 
       String rootInImlFormat = PATH_START_MODULE + Utils.getRelativeProjectPath(root);
       Element contentRoot = Utils.getChildByAttribute(rootManager, CONTENT, URL, rootInImlFormat);
+      assert contentRoot != null : "Root: " + rootInImlFormat + "; source folder: " + sourceGen;
 
       Element sourceFolder = new Element(SOURCE_FOLDER);
       sourceFolder.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(sGen));
