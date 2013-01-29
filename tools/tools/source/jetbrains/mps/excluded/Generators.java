@@ -224,7 +224,7 @@ public class Generators {
 
       String rootInImlFormat = PATH_START_MODULE + Utils.getRelativeProjectPath(root);
       Element contentRoot = Utils.getChildByAttribute(rootManager, CONTENT, URL, rootInImlFormat);
-      assert contentRoot != null : "Root: " + rootInImlFormat + "; source folder: " + sourceGen;
+      assert contentRoot != null : "Root: " + rootInImlFormat + "; source folder: " + sGen;
 
       Element sourceFolder = new Element(SOURCE_FOLDER);
       sourceFolder.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(sGen));
