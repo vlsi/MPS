@@ -32,9 +32,9 @@ import org.apache.log4j.Level;
 public class Environment {
   private Map<String, String> myMacro;
   private boolean myLoadBootstrapLibraries;
-  private Map<String, File> myLibraries;
+  protected Map<String, File> myLibraries;
   private int myLogLevel;
-  private SetLibraryContributor myLibraryContibutor;
+  protected SetLibraryContributor myLibraryContibutor;
   private PathMacrosProvider myMacroProvider;
   private ILoggingHandler myMessageHandler;
 
@@ -132,6 +132,11 @@ public class Environment {
   }
 
   protected void configureMPS(boolean loadIdeaPlugins) {
+    setProperties(loadIdeaPlugins);
+    collectPluginPaths();
+  }
+
+  protected void setProperties(boolean loadIdeaPlugins) {
     String mpsInternal = System.getProperty("mps.internal");
     System.setProperty("idea.is.internal", (mpsInternal == null ?
       "false" :
@@ -142,6 +147,9 @@ public class Environment {
       System.setProperty("idea.load.plugins", "false");
     }
     System.setProperty("idea.platform.prefix", "Idea");
+  }
+
+  private void collectPluginPaths() {
     StringBuffer pluginPath = new StringBuffer();
     File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
     if (pluginDir.exists()) {

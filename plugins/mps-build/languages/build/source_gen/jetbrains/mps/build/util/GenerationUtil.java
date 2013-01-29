@@ -5,8 +5,9 @@ package jetbrains.mps.build.util;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.concurrent.ConcurrentHashMap;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class GenerationUtil {
   public static String SCRIPTS_TARGET_PROPERTY = GenerationUtil.class.getPackage().getName() + ".scripts.dir";
@@ -15,12 +16,26 @@ public class GenerationUtil {
   }
 
   public static <K, V> ConcurrentMap<K, V> getSessionMap(SNode project, TemplateQueryContext genContext, String prefix) {
-    String key = prefix + "/" + genContext.getOriginalInputModel().getLongName() + "/" + SPropertyOperations.getString(project, "name");
+    String key = GenerationUtil.getKey(prefix, genContext, project);
     ConcurrentMap<K, V> map = (ConcurrentMap<K, V>) genContext.getSessionObject(key);
     if (map == null) {
       map = new ConcurrentHashMap<K, V>();
       genContext.putSessionObject(key, map);
     }
     return map;
+  }
+
+  public static <K> ConcurrentHashSet<K> getSessionSet(SNode project, TemplateQueryContext genContext, String prefix) {
+    String key = GenerationUtil.getKey(prefix, genContext, project);
+    ConcurrentHashSet<K> set = (ConcurrentHashSet<K>) genContext.getSessionObject(key);
+    if (set == null) {
+      set = new ConcurrentHashSet<K>();
+      genContext.putSessionObject(key, set);
+    }
+    return set;
+  }
+
+  private static String getKey(String prefix, TemplateQueryContext genContext, SNode project) {
+    return prefix + "/" + genContext.getOriginalInputModel().getLongName() + "/" + SPropertyOperations.getString(project, "name");
   }
 }

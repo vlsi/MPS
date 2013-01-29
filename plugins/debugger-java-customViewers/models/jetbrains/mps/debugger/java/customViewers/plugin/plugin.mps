@@ -75,7 +75,7 @@
   </roots>
   <root id="5494815557703847191">
     <node role="dependency" roleId="tp4k.5864553086652219115" type="tp4k.IdeaPluginDependency" typeId="tp4k.5864553086652219116" id="6713139039265405449">
-      <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.debugger-java" />
+      <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.debugger.java" />
     </node>
   </root>
   <root id="2929731761237869234">

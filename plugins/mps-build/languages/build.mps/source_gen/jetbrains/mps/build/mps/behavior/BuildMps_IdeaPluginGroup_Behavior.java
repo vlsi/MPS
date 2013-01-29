@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class BuildMps_IdeaPluginGroup_Behavior {
   public static void init(SNode thisNode) {
@@ -19,5 +20,13 @@ public class BuildMps_IdeaPluginGroup_Behavior {
       }
     }
     return BuildMps_IdeaPluginContent_Behavior.callSuper_exports_6547494638219603457(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup", object);
+  }
+
+  public static boolean call_isCustomPackaging_8301447434616552323(SNode thisNode, SNode module) {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "customPackaging", true)).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "target", false);
+      }
+    }).contains(module);
   }
 }

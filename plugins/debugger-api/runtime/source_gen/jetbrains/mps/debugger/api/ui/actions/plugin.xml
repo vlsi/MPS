@@ -4,7 +4,7 @@
     "http://plugins.intellij.net/plugin.dtd"
 >
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
-  <id>jetbrains.mps.debugger-api</id>
+  <id>jetbrains.mps.debugger.api</id>
   <name>Debugger API for MPS</name>
   <description>Base debugging support for MPS</description>
   <version>2.5.3</version>

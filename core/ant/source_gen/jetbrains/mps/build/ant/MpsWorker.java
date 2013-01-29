@@ -33,6 +33,8 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -254,12 +256,15 @@ public abstract class MpsWorker {
         }
       });
     }
-    modules.addAll(tmpmodules);
-    for (IModule module : tmpmodules) {
+    for (IModule module : ListSequence.fromList(tmpmodules)) {
       info("Loaded module " + module);
       if (module.isPackaged()) {
         continue;
       }
+      if (module instanceof DevKit) {
+        continue;
+      }
+      modules.add(module);
       if (module instanceof Language) {
         Language language = (Language) module;
         for (Generator gen : language.getGenerators()) {

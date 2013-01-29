@@ -739,7 +739,8 @@
   <target name="generate" depends="fetchDependencies, declare-mps-tasks">
     <echo message="generating" />
     <mps.generate.chunks parallelMode="true" fork="true">
-      <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
+      <plugin path="${artifacts.buildBuild}/plugins/mps-build" />
+      <plugin path="${artifacts.buildDeprecatedBuildlanguage}/plugins/mps-obsolete" />
       <library file="${artifacts.buildBuild}/plugins/mps-build/languages/build/jetbrains.mps.bash.jar" />
       <library file="${artifacts.buildBuild}/plugins/mps-build/languages/build/jetbrains.mps.build.startup.jar" />
       <library file="${artifacts.buildCoreEx}/plugins/mps-core/languages/xml/jetbrains.mps.core.xml.jar" />
@@ -771,6 +772,7 @@
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
@@ -812,10 +814,10 @@
       <library file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
       <library file="${artifacts.buildCore}/mps-core/lib/mps-test.jar" />
       <library file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
-      <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/languages/jetbrains.mps.debugger.api.lang.jar" />
+      <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/languages/debugger-api/jetbrains.mps.debugger.api.lang.jar" />
       <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/lib/debugger-api.jar" />
-      <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-java/languages/jetbrains.mps.debugger.java.evaluation.jar" />
-      <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-java/languages/jetbrains.mps.debugger.java.privateMembers.jar" />
+      <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-java/languages/debugger-java/jetbrains.mps.debugger.java.evaluation.jar" />
+      <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-java/languages/debugger-java/jetbrains.mps.debugger.java.privateMembers.jar" />
       <library file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-java/lib/debugger-java.jar" />
       <library file="${artifacts.buildDeprecatedBuildlanguage}/plugins/mps-obsolete/languages/build/jetbrains.mps.build.generictasks.jar" />
       <library file="${artifacts.buildDeprecatedBuildlanguage}/plugins/mps-obsolete/languages/build/jetbrains.mps.build.property.jar" />

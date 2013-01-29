@@ -200,6 +200,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Aspect" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="kdzh.6503355885715333289" resolveInfo="BuildMpsAspect" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="978600701690061747">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="GeneratorInternal" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="kdzh.978600701690054692" resolveInfo="GeneratorInternal_String" />
+    </node>
   </roots>
   <root id="5253498789149412570">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6057319140845478665">
@@ -3043,6 +3047,14 @@
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
       </node>
+    </node>
+  </root>
+  <root id="978600701690061747">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="978600701690072950">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="978600701690072953">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="kdzh.978600701690054695" resolveInfo="path" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="978600701690072952" />
     </node>
   </root>
 </model>

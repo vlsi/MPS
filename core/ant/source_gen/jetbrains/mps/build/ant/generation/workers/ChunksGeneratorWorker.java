@@ -5,7 +5,6 @@ package jetbrains.mps.build.ant.generation.workers;
 import jetbrains.mps.build.ant.WhatToDo;
 import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.build.ant.MpsWorker;
-import jetbrains.mps.build.ant.Environment;
 import java.util.Map;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -21,6 +20,20 @@ import java.util.Collections;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.build.ant.Environment;
+import jetbrains.mps.build.ant.util.UrlClassLoader;
+import java.util.Set;
+import jetbrains.mps.library.contributor.LibraryContributor;
+import java.util.HashSet;
+import jetbrains.mps.build.ant.util.SetLibraryContributor;
+import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.build.ant.generation.GenerateChunksTask;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.build.ant.util.PathManager;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.net.URL;
+import java.net.MalformedURLException;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ChunksGeneratorWorker extends GeneratorWorker {
   public ChunksGeneratorWorker(WhatToDo whatToDo) {
@@ -37,8 +50,7 @@ public class ChunksGeneratorWorker extends GeneratorWorker {
 
   @Override
   public void work() {
-    // todo setup correct environment in the first place 
-    Environment environment = new Environment();
+    ChunksGeneratorWorker.MyEnvironment environment = new ChunksGeneratorWorker.MyEnvironment();
     Map<String, File> libraries = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
     for (String jar : ListSequence.fromList(myWhatToDo.getLibraryJars())) {
       MapSequence.fromMap(libraries).put(jar, new File(jar));
@@ -89,5 +101,60 @@ public class ChunksGeneratorWorker extends GeneratorWorker {
   public static void main(String[] args) {
     MpsWorker mpsWorker = new ChunksGeneratorWorker(WhatToDo.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     mpsWorker.workFromMain();
+  }
+
+  private class MyEnvironment extends Environment {
+    @Override
+    protected void loadLibraries() {
+      if (myLibraryContibutor == null) {
+        UrlClassLoader classloader = createClassloader();
+        Set<LibraryContributor.LibDescriptor> libraryPaths = new HashSet<LibraryContributor.LibDescriptor>();
+        for (String libName : myLibraries.keySet()) {
+          libraryPaths.add(new LibraryContributor.LibDescriptor(myLibraries.get(libName).getAbsolutePath(), classloader));
+
+        }
+        myLibraryContibutor = new SetLibraryContributor(libraryPaths);
+        LibraryInitializer.getInstance().addContributor(myLibraryContibutor);
+      }
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          LibraryInitializer.getInstance().update();
+        }
+      });
+    }
+
+    @Override
+    protected void configureMPS(boolean loadIdeaPlugins) {
+      setProperties(loadIdeaPlugins);
+    }
+
+    private UrlClassLoader createClassloader() {
+      String pluginsPath = myWhatToDo.getProperty(GenerateChunksTask.PLUGIN_PATHS);
+      Set<File> pluginsClasspath = SetSequence.fromSet(new LinkedHashSet<File>());
+      if (pluginsPath != null) {
+        for (String plugin : pluginsPath.split(File.pathSeparator)) {
+          File lib = new File(plugin + File.separator + "lib");
+          if (lib.exists() && lib.isDirectory()) {
+            SetSequence.fromSet(pluginsClasspath).addSequence(Sequence.fromIterable(Sequence.fromArray(lib.listFiles(PathManager.JARS))));
+          }
+        }
+      }
+      if ((pluginsPath == null || pluginsPath.length() == 0)) {
+        return null;
+      }
+      return new UrlClassLoader(SetSequence.fromSet(pluginsClasspath).select(new ISelector<File, URL>() {
+        public URL select(File it) {
+          try {
+            return it.toURI().toURL();
+          } catch (MalformedURLException e) {
+            return null;
+          }
+        }
+      }).where(new IWhereFilter<URL>() {
+        public boolean accept(URL it) {
+          return it != null;
+        }
+      }).toGenericArray(URL.class), LibraryInitializer.class.getClassLoader());
+    }
   }
 }
