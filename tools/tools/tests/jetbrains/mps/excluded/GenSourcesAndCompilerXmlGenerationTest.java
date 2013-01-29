@@ -74,11 +74,34 @@ public class GenSourcesAndCompilerXmlGenerationTest {
       for (String sourcePath : allSources) {
         if (cp.startsWith(sourcePath + File.separator)) continue outer;
       }
+
+      //test material
+      if (isUnder(cp, "/plugins/mps-obsolete/languages/generictasks/tests/")) continue ;
+      if (isUnder(cp, "/plugins/mpsjava/tests/")) continue ;
+      if (isUnder(cp, "/testbench/modules/testMake/solutions/jetbrains.mps.makeTest/")) continue ;
+      if (isUnder(cp, "/testbench/modules/testMake/solutions/jetbrains.mps.testModels/")) continue ;
+      if (isUnder(cp, "/testbench/modules/testRefactoring/languages/testRefactoring/")) continue ;
+      if (isUnder(cp, "/testbench/modules/testRefactoring/languages/testRefactoringTargetLang/")) continue ;
+
+      // these are files to be compiled with GWT compiler, they shouldn't be included in java projects
+      if (isUnder(cp, "/languages/baseLanguage/collections/runtime/source_gen.gwt/collections/gwt/jetbrains/mps/internal/collections/runtime/")) continue ;
+
+      // move to sample's mps project or delete
+      if (isUnder(cp, "/samples/agreement/frameworktest/test/")) continue ;
+
+      // this is a test for build labguage. Needs to be somehow distinguishable as test
+      if (isUnder(cp, "/plugins/mps-build/languages/solutions/jetbrains.mps.build.sandbox/samples/")) continue ;
+
       error = true;
       System.out.println("Java file " + cp + " is neither included in any MPS module, nor in any Idea source root");
     }
 
     Assert.assertFalse("failed, see log for details", error);
+  }
+
+  private boolean isUnder(String child, String parent) throws IOException {
+    String parentPath = new File(".").getCanonicalPath() + parent.replace("/", File.separator);
+    return child.startsWith(parentPath);
   }
 
   private void checkHasSameContent(String real, String exp) throws IOException, JDOMException {
