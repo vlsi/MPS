@@ -27,7 +27,7 @@ public class GeneratorsRunner {
 
   public static void generateGenSourcesIml() throws JDOMException, IOException {
     Generators.updateGenSourcesIml(GEN_SOURCES_IML, Utils.files("languages", "samples", "core"));
-    Generators.updateGenSourcesImlNoIntersections(GEN_SOURCES_IML, Utils.files("plugins"));
+    Generators.updateGenSourcesImlNoIntersections(GEN_SOURCES_IML, Utils.files("plugins", "testbench"));
   }
 
   public static void generateCompilerXmlFile() throws JDOMException, IOException {
