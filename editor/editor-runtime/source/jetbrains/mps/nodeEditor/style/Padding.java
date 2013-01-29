@@ -15,6 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.style;
 
+/**
+ * Use jetbrains.mps.editor.runtime.style.Padding instead.
+ * This class will be removed after MPS 3.0
+ */
+@Deprecated
 public class Padding extends jetbrains.mps.editor.runtime.style.Padding {
   public Padding(double value, final Measure type) {
     super(value, jetbrains.mps.editor.runtime.style.Measure.valueOf(type.name()));

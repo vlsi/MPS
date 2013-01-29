@@ -19,6 +19,11 @@ import jetbrains.mps.editor.runtime.style.SimpleStyleAttribute;
 import jetbrains.mps.nodeEditor.CaretPosition;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
+/**
+ * Use jetbrains.mps.editor.runtime.style.StyleAttributes instead.
+ * This class will be removed after MPS 3.0
+ * */
+@Deprecated
 public class StyleAttributes extends jetbrains.mps.editor.runtime.style.StyleAttributes {
   public static final StyleAttribute<DefaultBaseLine> DEFAULT_BASE_LINE = new SimpleStyleAttribute<DefaultBaseLine>("default-baseline", DefaultBaseLine.FIRST, false) {
   };

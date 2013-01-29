@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.style;
 
-
+/**
+ * Use jetbrains.mps.editor.runtime.style.CellAlign instead.
+ * This class will be removed after MPS 3.0
+ */
+@Deprecated
 public enum CellAlign {
   LEFT,
   RIGHT,
