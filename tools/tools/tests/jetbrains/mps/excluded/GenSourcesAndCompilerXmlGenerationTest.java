@@ -33,15 +33,6 @@ import java.util.List;
 import java.util.Set;
 
 public class GenSourcesAndCompilerXmlGenerationTest {
-//  This can be used if you want to see real diff when test fails and you don't know why
-//  @Test
-//  public void testGenSourcesImlObsolete() throws JDOMException, IOException {
-//    String previousGenSources = FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML);
-//    GeneratorsRunner.generateGenSourcesIml();
-//    Assert.assertEquals("Regenerate gensources.iml. Run GeneratorsRunner run configuration.", FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML), previousGenSources);
-//    // todo: cleanup?
-//  }
-
   @Test
   public void testGenSourcesIml() throws JDOMException, IOException {
     String previousGenSources = FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML);
@@ -76,21 +67,22 @@ public class GenSourcesAndCompilerXmlGenerationTest {
       }
 
       //test material
-      if (isUnder(cp, "/plugins/mps-obsolete/languages/generictasks/tests/")) continue ;
-      if (isUnder(cp, "/plugins/mpsjava/tests/")) continue ;
-      if (isUnder(cp, "/testbench/modules/testMake/solutions/jetbrains.mps.makeTest/")) continue ;
-      if (isUnder(cp, "/testbench/modules/testMake/solutions/jetbrains.mps.testModels/")) continue ;
-      if (isUnder(cp, "/testbench/modules/testRefactoring/languages/testRefactoring/")) continue ;
-      if (isUnder(cp, "/testbench/modules/testRefactoring/languages/testRefactoringTargetLang/")) continue ;
+      if (isUnder(cp, "/plugins/mps-obsolete/languages/generictasks/tests/")) continue;
+      if (isUnder(cp, "/plugins/mpsjava/tests/")) continue;
+      if (isUnder(cp, "/testbench/modules/testMake/solutions/jetbrains.mps.makeTest/")) continue;
+      if (isUnder(cp, "/testbench/modules/testMake/solutions/jetbrains.mps.testModels/")) continue;
+      if (isUnder(cp, "/testbench/modules/testRefactoring/languages/testRefactoring/")) continue;
+      if (isUnder(cp, "/testbench/modules/testRefactoring/languages/testRefactoringTargetLang/")) continue;
 
       // these are files to be compiled with GWT compiler, they shouldn't be included in java projects
-      if (isUnder(cp, "/languages/baseLanguage/collections/runtime/source_gen.gwt/collections/gwt/jetbrains/mps/internal/collections/runtime/")) continue ;
+      if (isUnder(cp, "/languages/baseLanguage/collections/runtime/source_gen.gwt/collections/gwt/jetbrains/mps/internal/collections/runtime/"))
+        continue;
 
       // move to sample's mps project or delete
-      if (isUnder(cp, "/samples/agreement/frameworktest/test/")) continue ;
+      if (isUnder(cp, "/samples/agreement/frameworktest/test/")) continue;
 
       // this is a test for build labguage. Needs to be somehow distinguishable as test
-      if (isUnder(cp, "/plugins/mps-build/languages/solutions/jetbrains.mps.build.sandbox/samples/")) continue ;
+      if (isUnder(cp, "/plugins/mps-build/languages/solutions/jetbrains.mps.build.sandbox/samples/")) continue;
 
       error = true;
       System.out.println("Java file " + cp + " is neither included in any MPS module, nor in any Idea source root");
@@ -125,16 +117,17 @@ public class GenSourcesAndCompilerXmlGenerationTest {
           continue outer;
         }
       }
-      Assert.fail("Run GeneratorsRunner run configuration. Url "+rRoot.getAttributeValue(Generators.URL)+" not expected");
+
+      showGensources("Run GeneratorsRunner run configuration. Url " + rRoot.getAttributeValue(Generators.URL) + " not expected");
     }
   }
 
-  private  void checkSamePathsUnder(Element rRoot, Element eRoot) {
-    checkHasSamePathsUnderTag(rRoot, eRoot, Generators.SOURCE_FOLDER) ;
+  private void checkSamePathsUnder(Element rRoot, Element eRoot) throws JDOMException, IOException {
+    checkHasSamePathsUnderTag(rRoot, eRoot, Generators.SOURCE_FOLDER);
     checkHasSamePathsUnderTag(rRoot, eRoot, Generators.EXCLUDE_FOLDER);
   }
 
-  private void checkHasSamePathsUnderTag(Element rRoot, Element eRoot, String tag) {
+  private void checkHasSamePathsUnderTag(Element rRoot, Element eRoot, String tag) throws JDOMException, IOException {
     List<Element> realPaths = (List<Element>) rRoot.getChildren(tag);
     List<Element> expPaths = (List<Element>) eRoot.getChildren(tag);
 
@@ -149,7 +142,7 @@ public class GenSourcesAndCompilerXmlGenerationTest {
           continue outer;
         }
       }
-      Assert.fail("Run GeneratorsRunner run configuration. Tag "+tag+": Url "+rRoot.getAttributeValue(Generators.URL)+" not expected");
+      showGensources("Run GeneratorsRunner run configuration. Tag " + tag + ": Url " + rRoot.getAttributeValue(Generators.URL) + " not expected");
     }
   }
 
@@ -158,4 +151,9 @@ public class GenSourcesAndCompilerXmlGenerationTest {
     return Utils.getComponentWithName(doc, Generators.MODULE_ROOT_MANAGER);
   }
 
+  private void showGensources(String diff) throws JDOMException, IOException {
+    String previousGenSources = FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML);
+    GeneratorsRunner.generateGenSourcesIml();
+    Assert.assertEquals(diff, FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML), previousGenSources);
+  }
 }
