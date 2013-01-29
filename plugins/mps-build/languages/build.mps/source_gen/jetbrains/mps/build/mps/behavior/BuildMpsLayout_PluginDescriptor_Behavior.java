@@ -17,6 +17,7 @@ public class BuildMpsLayout_PluginDescriptor_Behavior {
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object artifactId) {
     if (artifactId instanceof SNode) {
       SNode node = (SNode) artifactId;
+      // todo (in 3.0+) plugin should be exported by folder, not by xml 
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin")) {
         return SLinkOperations.getTarget(thisNode, "plugin", false) == node;
       }
