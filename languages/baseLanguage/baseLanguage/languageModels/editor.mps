@@ -18496,6 +18496,9 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="7625227064472446886" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7625227064472446893">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.4872723285943177972" resolveInfo="callee" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="2488603136488911527">
+          <property name="style" nameId="tpc2.1186403771423" value="ITALIC" />
+        </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="7625227064472446895">
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1173990860683" resolveInfo="IMethodCall_actualArguments" />
@@ -18663,6 +18666,9 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7625227064472553333">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.3304084122476721463" resolveInfo="className" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="2488603136488911431">
+          <property name="style" nameId="tpc2.1186403771423" value="ITALIC" />
+        </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="7625227064472553335">
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1173990860683" resolveInfo="IMethodCall_actualArguments" />
@@ -18673,6 +18679,9 @@
   <root id="7625227064471822219">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="4726082558179817008">
       <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="4726082558179801055" resolveInfo="TokensWithDots" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="2488603136488888968">
+        <property name="style" nameId="tpc2.1186403771423" value="ITALIC" />
+      </node>
     </node>
   </root>
   <root id="7812454656619266984">
@@ -18705,6 +18714,9 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7625227064472214613">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7625227064472214616">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.2621000434129552880" resolveInfo="callee" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="2488603136488896487">
+          <property name="style" nameId="tpc2.1186403771423" value="ITALIC" />
+        </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="7625227064472214618">
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1173990860683" resolveInfo="IMethodCall_actualArguments" />
