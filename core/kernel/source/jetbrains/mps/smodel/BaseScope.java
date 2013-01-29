@@ -42,10 +42,16 @@ public abstract class BaseScope implements IScope {
 
   @Override
   public SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
-    // todo: maybe something like module resolve
+    // todo: like module resolve!
     for (SModel model : getModels()) {
-      if (model.getModelReference().equals(reference)) {
-        return model;
+      if (reference.getModelId() != null) {
+        if (model.getModelReference().equals(reference)) {
+          return model;
+        }
+      } else {
+        if (model.getModelName().equals(reference.getModelName())) {
+          return model;
+        }
       }
     }
     return null;

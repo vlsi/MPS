@@ -62,7 +62,7 @@ public abstract class DefaultScope extends BaseScope {
         result.addAll(module.getOwnModelDescriptors());
       }
       for (Language language : myUsedLanguages) {
-//        result.addAll(language.getOwnModelDescriptors()); // todo: ?
+        result.addAll(language.getOwnModelDescriptors()); // todo: ?
         result.addAll(language.getAccessoryModels());
       }
     }
