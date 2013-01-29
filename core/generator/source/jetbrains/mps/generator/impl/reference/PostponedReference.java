@@ -18,16 +18,13 @@ package jetbrains.mps.generator.impl.reference;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateGenerator;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 /**
- * Igor Alshannikov
- * Nov 28, 2007
- * <p/>
  * These references are created in transient models.
  * They are always internal.
  */
@@ -44,6 +41,7 @@ public class PostponedReference extends SReference {
     myGenerator = generator;
   }
 
+  @Deprecated
   public boolean isExternal() {
     return false;
   }
@@ -60,11 +58,20 @@ public class PostponedReference extends SReference {
     return null;
   }
 
+  @Deprecated
+  /**
+   * Use method in SReferenceBase class, as when you change ref, you know what ref it is
+   * @Deprecated in 3.0
+   */
   public void setTargetSModelReference(@NotNull SModelReference modelReference) {
     throw new RuntimeException("not supported");
   }
 
-  protected SNode getTargetNode_internal(boolean silently) {
+  public org.jetbrains.mps.openapi.model.SModel getTargetModel() {
+    return SModelRepository.getInstance().getModelDescriptor(getTargetSModelReference());
+  }
+
+  protected SNode getTargetNode_internal() {
     SReference ref = getReplacementReference();
     if (ref == null) return null;
     return ref.getTargetNode();
@@ -105,7 +112,7 @@ public class PostponedReference extends SReference {
       SNode inputNode = myReferenceInfo.getInputNode();
       boolean validInputNode = inputNode != null && inputNode.getModel() != null;
       if (validInputNode || templateNode != null) {
-        dynamicReference.setOrigin(new DynamicReferenceOrigin(templateNode != null ? new SNodePointer(templateNode) : null, validInputNode ? new SNodePointer(inputNode) : null));
+        dynamicReference.setOrigin(new DynamicReferenceOrigin(templateNode != null ? new jetbrains.mps.smodel.SNodePointer(templateNode) : null, validInputNode ? new jetbrains.mps.smodel.SNodePointer(inputNode) : null));
       }
 
       myReplacementReference = dynamicReference;

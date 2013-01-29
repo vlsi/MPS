@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Typesystem_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.Typesystem_Language" />
-  <root nodeId="1193662402729" modelId="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1193662402729">
     <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -112,7 +112,7 @@
     <unitInfo nodeId="1193662402729" fileName="EquationDirection_Enum.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum" />
     <unitInfo nodeId="1193662402729" fileName="EquationDirection_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum_PropertySupport" />
   </root>
-  <root nodeId="1212056179025" modelId="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1212056179025">
     <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="18" startPosition="27" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="22" startPosition="36" endLine="23" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -230,7 +230,7 @@
     <unitInfo nodeId="1212056179025" fileName="InequationPriority.java" startLine="9" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority" />
     <unitInfo nodeId="1212056179025" fileName="InequationPriority_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority_PropertySupport" />
   </root>
-  <root nodeId="1212573620175" modelId="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1212573620175">
     <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="15" startPosition="27" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="19" startPosition="36" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -336,7 +336,7 @@
     <unitInfo nodeId="1212573620175" fileName="RestrictionKind.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RestrictionKind" />
     <unitInfo nodeId="1212573620175" fileName="RestrictionKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RestrictionKind_PropertySupport" />
   </root>
-  <root nodeId="7739208407757103780" modelId="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/7739208407757103780">
     <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7739208407757103780" fileName="InequalityProperty.java" startLine="20" startPosition="36" endLine="21" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

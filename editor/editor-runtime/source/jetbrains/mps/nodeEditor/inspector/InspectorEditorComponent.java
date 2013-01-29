@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
 
@@ -68,7 +68,7 @@ public class InspectorEditorComponent extends EditorComponent {
       public void run() {
         clearModelDisposedTrace();
         myNode = node;
-        myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
+        myNodePointer = myNode != null ? new jetbrains.mps.smodel.SNodePointer(myNode) : null;
         myRoot = myNode == null ? null : myNode.getContainingRoot();
         setReadOnly(node == null || node.getModel() == null || node.getModel().isDisposed() || node.getModel().isNotEditable());
         if (node == null) {

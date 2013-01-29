@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -48,7 +49,7 @@ public class MPSProjectViewNodeDeleteProvider implements DeleteProvider {
             public void run() {
                 Set<EditableSModelDescriptor> modelsToSave = new HashSet<EditableSModelDescriptor>();
                 for (MPSProjectViewNode myProjectViewNode : myProjectViewNodes) {
-                    SNode nodeToDelete = myProjectViewNode.getValue().getNode();
+                    SNode nodeToDelete = myProjectViewNode.getValue().resolve(MPSModuleRepository.getInstance());
                     if (nodeToDelete != null) {
                         SModelDescriptor modelDescriptor = nodeToDelete.getModel().getModelDescriptor();
                         if (modelDescriptor instanceof EditableSModelDescriptor) {

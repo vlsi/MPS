@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1560298786499493318" modelId="r:6132de52-2cd3-4096-82d5-65abfdbf1b20(jetbrains.mps.workbench.dialogs.project.components.parts.validators)">
+  <root nodeRef="r:6132de52-2cd3-4096-82d5-65abfdbf1b20(jetbrains.mps.workbench.dialogs.project.components.parts.validators)/1560298786499493318">
     <nodeInfo nodeId="1560298786499493320" fileName="Validator.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBrokenValue#(Ljava/lang/Object;)Z" />
     <scopeInfo nodeId="1560298786499493320" fileName="Validator.java" startLine="7" startPosition="0" endLine="8" endPosition="0">
       <varInfo nodeId="1560298786499493323" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="1560298786499493318" fileName="Validator.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.validators.Validator" />
   </root>
-  <root nodeId="1560298786499495258" modelId="r:6132de52-2cd3-4096-82d5-65abfdbf1b20(jetbrains.mps.workbench.dialogs.project.components.parts.validators)">
+  <root nodeRef="r:6132de52-2cd3-4096-82d5-65abfdbf1b20(jetbrains.mps.workbench.dialogs.project.components.parts.validators)/1560298786499495258">
     <nodeInfo nodeId="1560298786499495277" fileName="ModuleValidator.java" startLine="13" startPosition="48" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499495279" fileName="ModuleValidator.java" startLine="15" startPosition="5" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499495285" fileName="ModuleValidator.java" startLine="16" startPosition="62" endLine="17" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -25,7 +25,7 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499495258" fileName="ModuleValidator.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.validators.ModuleValidator" />
   </root>
-  <root nodeId="1560298786499498197" modelId="r:6132de52-2cd3-4096-82d5-65abfdbf1b20(jetbrains.mps.workbench.dialogs.project.components.parts.validators)">
+  <root nodeRef="r:6132de52-2cd3-4096-82d5-65abfdbf1b20(jetbrains.mps.workbench.dialogs.project.components.parts.validators)/1560298786499498197">
     <nodeInfo nodeId="1560298786499498200" fileName="ModelValidator.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModuleScope" />
     <nodeInfo nodeId="1560298786499498208" fileName="ModelValidator.java" startLine="13" startPosition="45" endLine="14" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499498227" fileName="ModelValidator.java" startLine="18" startPosition="48" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

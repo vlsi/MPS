@@ -16,8 +16,9 @@
 package jetbrains.mps.workbench.choose.nodes;
 
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
@@ -27,12 +28,12 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 
 public class NodePointerPresentation extends BasePresentation {
-  private final SNodePointer myNode;
+  private final SNodeReference myNode;
   private String myModelName = null;
   private String myPresentableText = null;
   private Icon myIcon = null;
 
-  public NodePointerPresentation(@Nullable SNodePointer node) {
+  public NodePointerPresentation(@Nullable SNodeReference node) {
     myNode = node;
   }
 
@@ -49,7 +50,7 @@ public class NodePointerPresentation extends BasePresentation {
     }
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
-        return myNode.getModel().getSModelReference().getSModelFqName().toString();
+        return myNode.getModelReference().getSModelFqName().toString();
       }
     });
   }
@@ -70,7 +71,7 @@ public class NodePointerPresentation extends BasePresentation {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        String text = NodePresentationUtil.matchingText(myNode.getNode());
+        String text = NodePresentationUtil.matchingText(myNode.resolve(MPSModuleRepository.getInstance()));
         return text != null ? text : "";
       }
     });
@@ -91,7 +92,7 @@ public class NodePointerPresentation extends BasePresentation {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
       @Override
       public Icon compute() {
-        return myNode != null ? IconManager.getIconFor(myNode.getNode()) : null;
+        return myNode != null ? IconManager.getIconFor(myNode.resolve(MPSModuleRepository.getInstance())) : null;
       }
     });
   }

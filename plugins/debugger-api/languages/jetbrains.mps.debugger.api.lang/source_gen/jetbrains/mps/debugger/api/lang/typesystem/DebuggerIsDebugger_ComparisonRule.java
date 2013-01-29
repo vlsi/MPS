@@ -9,8 +9,9 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class DebuggerIsDebugger_ComparisonRule extends ComparisonRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
@@ -62,7 +63,7 @@ public class DebuggerIsDebugger_ComparisonRule extends ComparisonRule_Runtime {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_wcp5kc_a0a0a0a0b0c0a0a0a0a0a0f;
+          SNodeReference pointer = SNODE_POINTER_wcp5kc_a0a0a0a0b0c0a0a0a0a0a0f;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_DebuggerIsDebugger_1iq6h2_a0a.getReferenceTarget("classifier")))) {
             return false;
           }

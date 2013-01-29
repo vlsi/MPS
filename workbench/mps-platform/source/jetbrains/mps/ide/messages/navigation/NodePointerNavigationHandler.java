@@ -20,17 +20,18 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-class NodePointerNavigationHandler implements INavigationHandler<SNodePointer> {
-  public boolean canNavigate(SNodePointer object) {
+class NodePointerNavigationHandler implements INavigationHandler<SNodeReference> {
+  public boolean canNavigate(SNodeReference object) {
     return isCorrectNode(object);
   }
 
-  public static boolean isCorrectNode(SNodePointer object) {
-    SNode realNode = object.getNode();
+  public static boolean isCorrectNode(SNodeReference object) {
+    SNode realNode = object.resolve(MPSModuleRepository.getInstance());
     if (realNode == null) return false;
 
     if (!(realNode.getModel() != null)) return false;
@@ -44,10 +45,10 @@ class NodePointerNavigationHandler implements INavigationHandler<SNodePointer> {
     return true;
   }
 
-  public void navigate(SNodePointer node, Project project, boolean focus, boolean select) {
-    IModule module = node.getNode().getModel().getModelDescriptor().getModule();
+  public void navigate(SNodeReference node, Project project, boolean focus, boolean select) {
+    IModule module = node.resolve(MPSModuleRepository.getInstance()).getModel().getModelDescriptor().getModule();
     ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(project));
 
-    NavigationSupport.getInstance().openNode(context, node.getNode(), focus, select);
+    NavigationSupport.getInstance().openNode(context, node.resolve(MPSModuleRepository.getInstance()), focus, select);
   }
 }

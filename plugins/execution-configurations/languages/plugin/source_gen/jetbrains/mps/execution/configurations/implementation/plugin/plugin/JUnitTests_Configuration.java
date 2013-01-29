@@ -15,7 +15,7 @@ import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.ClonableList;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes2;
 import java.util.List;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
@@ -127,7 +127,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     myState.myRunType = value;
   }
 
-  public List<SNodePointer> getTestsToMake() {
+  public List<SNodeReference> getTestsToMake() {
     return this.getJUnitSettings().getTestsToMake(ProjectHelper.toMPSProject(this.getProject()));
   }
 

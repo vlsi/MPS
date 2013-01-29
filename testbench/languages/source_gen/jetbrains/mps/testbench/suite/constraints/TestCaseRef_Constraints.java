@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ModelAndImportedModelsScope;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TestCaseRef_Constraints extends BaseConstraintsDescriptor {
@@ -46,7 +47,7 @@ public class TestCaseRef_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_d3a0zo_a0a1a0a0a1a0b0a1a1;
           }
         };

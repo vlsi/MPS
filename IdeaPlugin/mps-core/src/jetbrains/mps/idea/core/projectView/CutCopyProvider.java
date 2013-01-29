@@ -22,9 +22,10 @@ import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
@@ -36,11 +37,11 @@ import java.util.List;
  * Date: 5/3/12
  */
 public class CutCopyProvider implements CopyProvider, CutProvider {
-  private List<SNodePointer> mySelectedNodes;
+  private List<SNodeReference> mySelectedNodes;
   private Project myProject;
   private EditableSModelDescriptor myModelDescriptor;
 
-  public CutCopyProvider(List<SNodePointer> selectedNodes, @NotNull EditableSModelDescriptor modelDescriptor, @NotNull Project project) {
+  public CutCopyProvider(List<SNodeReference> selectedNodes, @NotNull EditableSModelDescriptor modelDescriptor, @NotNull Project project) {
     mySelectedNodes = selectedNodes;
     myProject = project;
     myModelDescriptor = modelDescriptor;
@@ -81,8 +82,8 @@ public class CutCopyProvider implements CopyProvider, CutProvider {
       @Override
       public void run() {
         List<SNode> nodes = new ArrayList<SNode>();
-        for (SNodePointer selectedNode : mySelectedNodes) {
-          SNode node = selectedNode.getNode();
+        for (SNodeReference selectedNode : mySelectedNodes) {
+          SNode node = selectedNode.resolve(MPSModuleRepository.getInstance());
           SNode theParent = null;
           if (node != null) {
             nodes.add(node);

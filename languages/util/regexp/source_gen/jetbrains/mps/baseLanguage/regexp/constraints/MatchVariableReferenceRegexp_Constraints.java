@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDescriptor {
@@ -67,7 +68,7 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_15u81x_a0a3a0a0a1a0b0a1a1;
           }
         };

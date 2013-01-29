@@ -6,7 +6,7 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 public class ShowJavaUtilReferences_MigrationScript extends BaseMigrationScript {
   public ShowJavaUtilReferences_MigrationScript(IOperationContext operationContext) {

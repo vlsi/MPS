@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4372437818008126015" modelId="r:bad6af7d-d747-4745-b880-b4165941d04f(jetbrains.mps.platform.conf.stubs)">
+  <root nodeRef="r:bad6af7d-d747-4745-b880-b4165941d04f(jetbrains.mps.platform.conf.stubs)/4372437818008126015">
     <nodeInfo nodeId="4372437818008126028" fileName="ConfPathItem.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SUFFIX" />
     <nodeInfo nodeId="4372437818008126144" fileName="ConfPathItem.java" startLine="16" startPosition="36" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4372437818008126042" fileName="ConfPathItem.java" startLine="22" startPosition="49" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -64,7 +64,7 @@
     </scopeInfo>
     <unitInfo nodeId="4372437818008126015" fileName="ConfPathItem.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfPathItem" />
   </root>
-  <root nodeId="4372437818008126147" modelId="r:bad6af7d-d747-4745-b880-b4165941d04f(jetbrains.mps.platform.conf.stubs)">
+  <root nodeRef="r:bad6af7d-d747-4745-b880-b4165941d04f(jetbrains.mps.platform.conf.stubs)/4372437818008126147">
     <nodeInfo nodeId="4372437818008126148" fileName="ConfReader.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="XI" />
     <nodeInfo nodeId="4372437818008126154" fileName="ConfReader.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IDEA_PLUGIN" />
     <nodeInfo nodeId="4372437818008126158" fileName="ConfReader.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMPONENT" />
@@ -765,7 +765,7 @@
     <unitInfo nodeId="4372437818008128437" fileName="ConfReader.java" startLine="517" startPosition="0" endLine="520" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfReader$Resolver" />
     <unitInfo nodeId="4372437818008126147" fileName="ConfReader.java" startLine="27" startPosition="0" endLine="521" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfReader" />
   </root>
-  <root nodeId="4372437818008128704" modelId="r:bad6af7d-d747-4745-b880-b4165941d04f(jetbrains.mps.platform.conf.stubs)">
+  <root nodeRef="r:bad6af7d-d747-4745-b880-b4165941d04f(jetbrains.mps.platform.conf.stubs)/4372437818008128704">
     <nodeInfo nodeId="4372437818008129016" fileName="ConfStubSource.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="roots" />
     <nodeInfo nodeId="4372437818008128712" fileName="ConfStubSource.java" startLine="43" startPosition="38" endLine="44" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4372437818008128720" fileName="ConfStubSource.java" startLine="44" startPosition="64" endLine="45" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -898,7 +898,7 @@
     <unitInfo nodeId="4372437818008129070" fileName="ConfStubSource.java" startLine="76" startPosition="43" endLine="81" endPosition="5" unitName="jetbrains.mps.platform.conf.stubs.ConfStubSource$1" />
     <unitInfo nodeId="4372437818008128704" fileName="ConfStubSource.java" startLine="40" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfStubSource" />
   </root>
-  <root nodeId="8382013213872090899" modelId="r:bad6af7d-d747-4745-b880-b4165941d04f(jetbrains.mps.platform.conf.stubs)">
+  <root nodeRef="r:bad6af7d-d747-4745-b880-b4165941d04f(jetbrains.mps.platform.conf.stubs)/8382013213872090899">
     <nodeInfo nodeId="8382013213872090910" fileName="ConfStubs.java" startLine="25" startPosition="75" endLine="26" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4372437818008125829" fileName="ConfStubs.java" startLine="29" startPosition="65" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2906282062545455191" fileName="ConfStubs.java" startLine="33" startPosition="43" endLine="34" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

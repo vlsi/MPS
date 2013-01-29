@@ -196,6 +196,7 @@ public class CommonPaths {
   private static void addEditorJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-editor.jar");
     addIfExists(result, "/lib/mps-editor-api.jar");
+    addIfExists(result, "/lib/mps-editor-runtime.jar");
   }
 
   private static void addRepackedIdeaJars(CompositeClassPathItem result) {
@@ -246,19 +247,16 @@ public class CommonPaths {
     }, ClassType.values());
   }
 
-  private static String libPath() {
-    return PathManager.getHomePath() + File.separator + "lib"
-      + File.separator;
-  }
-
   private static void addIfExists(CompositeClassPathItem item, String path) {
-    path = PathManager.getHomePath() + path.replace('/', File.separatorChar);
-    File file = new File(path);
-    if (!file.exists()) return;
-    try {
-      item.add(ClassPathFactory.getInstance().createFromPath(path, "Common paths"));
-    } catch (Throwable e) {
-      LOG.error(e);
+    for (String basePath: PathManager.getHomePaths()) {
+      String fullPath = basePath + path.replace('/', File.separatorChar);
+      if (!new File(fullPath).exists()) continue;
+      try {
+        item.add(ClassPathFactory.getInstance().createFromPath(fullPath, "Common paths"));
+        return;
+      } catch (Throwable e) {
+        LOG.error(e);
+      }
     }
   }
 

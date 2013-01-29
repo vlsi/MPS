@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1220369573364974002" modelId="r:2c183c14-b211-46f9-8490-d2cf1bef85ee(jetbrains.mps.gwt.client.inheritsTest)">
+  <root nodeRef="r:2c183c14-b211-46f9-8490-d2cf1bef85ee(jetbrains.mps.gwt.client.inheritsTest)/1220369573364974002">
     <nodeInfo nodeId="1220369573364974008" fileName="Foo.java" startLine="11" startPosition="16" endLine="12" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1358576955708465414" fileName="Foo.java" startLine="15" startPosition="43" endLine="16" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1220369573364974004" fileName="Foo.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Foo#()V" />
@@ -11,7 +11,7 @@
     <scopeInfo nodeId="1358576955708465405" fileName="Foo.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <unitInfo nodeId="1220369573364974002" fileName="Foo.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.gwt.client.inheritsTest.Foo" />
   </root>
-  <root nodeId="8175837806590068575" modelId="r:2c183c14-b211-46f9-8490-d2cf1bef85ee(jetbrains.mps.gwt.client.inheritsTest)">
+  <root nodeRef="r:2c183c14-b211-46f9-8490-d2cf1bef85ee(jetbrains.mps.gwt.client.inheritsTest)/8175837806590068575">
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="1" startPosition="0" endLine="1" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8175837806590068575" fileName="InheritsTest.gwt.xml" startLine="1" startPosition="10" endLine="1" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />

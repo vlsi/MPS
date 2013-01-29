@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.intentions.IntentionsDescriptor" />
-  <root nodeId="6302815655306137097" modelId="r:3070cbe8-0c27-49bc-b3e1-822ee20455cd(jetbrains.mps.baseLanguage.contracts.intentions)">
+  <root nodeRef="r:3070cbe8-0c27-49bc-b3e1-822ee20455cd(jetbrains.mps.baseLanguage.contracts.intentions)/6302815655306137097">
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -89,7 +89,7 @@
     <unitInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="78" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.intentions.RemoveConditions_Intention$IntentionImplementation" />
     <unitInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="22" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.intentions.RemoveConditions_Intention" />
   </root>
-  <root nodeId="6302815655306137102" modelId="r:3070cbe8-0c27-49bc-b3e1-822ee20455cd(jetbrains.mps.baseLanguage.contracts.intentions)">
+  <root nodeRef="r:3070cbe8-0c27-49bc-b3e1-822ee20455cd(jetbrains.mps.baseLanguage.contracts.intentions)/6302815655306137102">
     <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1168883727781" modelId="r:00000000-0000-4000-0000-011c895905b9(sample2)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905b9(sample2)/1168883727781">
     <nodeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="13" startPosition="33" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="17" startPosition="39" endLine="18" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168884007317" fileName="File_TreePath.java" startLine="22" startPosition="39" endLine="23" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -115,7 +115,7 @@
     <unitInfo nodeId="1175164134728" fileName="File_TreePath.java" startLine="69" startPosition="0" endLine="98" endPosition="0" unitName="sample2.File_TreePath$FILE_name_Property" />
     <unitInfo nodeId="1168883727781" fileName="File_TreePath.java" startLine="9" startPosition="0" endLine="99" endPosition="0" unitName="sample2.File_TreePath" />
   </root>
-  <root nodeId="1168894188335" modelId="r:00000000-0000-4000-0000-011c895905b9(sample2)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905b9(sample2)/1168894188335">
     <nodeInfo nodeId="1227876789870" fileName="FileDemo.java" startLine="52" startPosition="27" endLine="52" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1168894296986" fileName="FileDemo.java" startLine="16" startPosition="42" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1168983971103" fileName="FileDemo.java" startLine="18" startPosition="211" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

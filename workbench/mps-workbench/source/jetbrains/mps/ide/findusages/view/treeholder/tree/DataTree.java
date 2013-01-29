@@ -28,7 +28,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jdom.Element;
@@ -98,11 +98,11 @@ public class DataTree implements IExternalizeable, IChangeListener {
     return getResultsNode().getAllModels();
   }
 
-  public List<SNodePointer> getIncludedResultNodes() {
+  public List<SNodeReference> getIncludedResultNodes() {
     return getResultsNode().getIncludedResultNodes();
   }
 
-  public List<SNodePointer> getAllResultNodes() {
+  public List<SNodeReference> getAllResultNodes() {
     return getResultsNode().getAllResultNodes();
   }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="757342313568246027" modelId="r:3bdd1bf2-b80f-4e87-b351-0ad08e9e4dc5(jetbrains.mps.make.java)">
+  <root nodeRef="r:3bdd1bf2-b80f-4e87-b351-0ad08e9e4dc5(jetbrains.mps.make.java)/757342313568246027">
     <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
     <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="dependenciesRoothandler" />
     <nodeInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="dependencyhandler" />
@@ -298,7 +298,7 @@
     <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="160" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler$DependencyElementHandler" />
     <unitInfo nodeId="757342313568246027" fileName="BLDependenciesHandler.java" startLine="13" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.make.java.BLDependenciesHandler" />
   </root>
-  <root nodeId="757342313568265361" modelId="r:3bdd1bf2-b80f-4e87-b351-0ad08e9e4dc5(jetbrains.mps.make.java)">
+  <root nodeRef="r:3bdd1bf2-b80f-4e87-b351-0ad08e9e4dc5(jetbrains.mps.make.java)/757342313568265361">
     <nodeInfo nodeId="757342313568265492" fileName="ModelDependencies.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENCY" />
     <nodeInfo nodeId="757342313568265496" fileName="ModelDependencies.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENCIES_ROOT" />
     <nodeInfo nodeId="757342313568265501" fileName="ModelDependencies.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependencies" />
@@ -364,7 +364,7 @@
     <scopeInfo nodeId="757342313568265445" fileName="ModelDependencies.java" startLine="37" startPosition="0" endLine="48" endPosition="0" />
     <unitInfo nodeId="757342313568265361" fileName="ModelDependencies.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.make.java.ModelDependencies" />
   </root>
-  <root nodeId="757342313568265510" modelId="r:3bdd1bf2-b80f-4e87-b351-0ad08e9e4dc5(jetbrains.mps.make.java)">
+  <root nodeRef="r:3bdd1bf2-b80f-4e87-b351-0ad08e9e4dc5(jetbrains.mps.make.java)/757342313568265510">
     <nodeInfo nodeId="757342313568265719" fileName="RootDependencies.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLASS_NAME" />
     <nodeInfo nodeId="757342313568265723" fileName="RootDependencies.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FILE_NAME" />
     <nodeInfo nodeId="757342313568265727" fileName="RootDependencies.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPEND_CLASS" />

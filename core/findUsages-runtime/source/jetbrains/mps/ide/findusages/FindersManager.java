@@ -20,7 +20,8 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -40,7 +41,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
   }
 
   private Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();
-  private Map<GeneratedFinder, SNodePointer> myNodesByFinder = new HashMap<GeneratedFinder, SNodePointer>();
+  private Map<GeneratedFinder, SNodeReference> myNodesByFinder = new HashMap<GeneratedFinder, SNodeReference>();
   private boolean myLoaded = false;
 
   private LanguageRegistry myLanguageRegistry;
@@ -104,19 +105,18 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
 
   public SNode getNodeByFinder(ReloadableFinder finder) {
     checkLoaded();
-    return myNodesByFinder.get(finder.getFinder()).getNode();
+    return myNodesByFinder.get(finder.getFinder()).resolve(MPSModuleRepository.getInstance());
   }
 
   public SNode getNodeByFinder(GeneratedFinder finder) {
     checkLoaded();
-    return myNodesByFinder.get(finder).getNode();
+    return myNodesByFinder.get(finder).resolve(MPSModuleRepository.getInstance());
   }
 
   private ModuleReference getFinderModule(GeneratedFinder finder) {
-    SModelDescriptor finderModel = myNodesByFinder.get(finder).getModel();
+    SModelDescriptor finderModel = myNodesByFinder.get(finder).getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(myNodesByFinder.get(finder).getModelReference());
     Language finderLanguage = Language.getLanguageForLanguageAspect(finderModel);
-    ModuleReference moduleReference = finderLanguage.getModuleReference();
-    return moduleReference;
+    return finderLanguage.getModuleReference();
   }
 
   //-------------reloading stuff----------------
@@ -127,7 +127,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
     load();
   }
 
-  public void addFinder(GeneratedFinder finder, ModuleReference moduleRef, SNodePointer np) {
+  public void addFinder(GeneratedFinder finder, ModuleReference moduleRef, SNodeReference np) {
     String conceptName = finder.getConcept();
     Set<GeneratedFinder> finders = myFinders.get(conceptName);
     if (finders == null) {

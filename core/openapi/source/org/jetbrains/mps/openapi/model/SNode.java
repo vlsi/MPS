@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -59,7 +59,7 @@ public interface SNode {
    * Uniquely identifies the node in a repository. Never changes between subsequent read and write actions and behaves as a "weak reference" for a node
    * Represents the only correct way to pass or store nodes between read/write actions.
    */
-  SNodePointer getReference();
+  SNodeReference getReference();
 
   /**
    * The concept that this node represents. Concepts can be compared using the "==" operator. [not yet implemented]
@@ -169,7 +169,7 @@ public interface SNode {
    * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to help you resolve
    * the target node even when working with invalid code.
    */
-  jetbrains.mps.smodel.SReference getReference(String role);
+  SReference getReference(String role);
 
   /**
    * Sets a reference of the given role to a node that is resolved from the SReference.
@@ -185,7 +185,7 @@ public interface SNode {
    * <p/>
    * The returned collection is immutable.
    */
-  public Iterable<jetbrains.mps.smodel.SReference> getReferences();
+  public Iterable<? extends SReference> getReferences();
 
   // props
 

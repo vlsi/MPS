@@ -33,7 +33,8 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -140,7 +141,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
         for (SNode conceptDeclaration : lang.getConceptDeclarations()) {
           if (ModelConstraintsManager.canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
-            add(new NewRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
+            add(new NewRootNodeAction(new jetbrains.mps.smodel.SNodePointer(conceptDeclaration), modelDescriptor));
           }
         }
 
@@ -176,7 +177,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
       for (SNode conceptDeclaration : language.getConceptDeclarations()) {
         if (ModelConstraintsManager.getInstance().canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
-          langRootsGroup.add(new NewRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
+          langRootsGroup.add(new NewRootNodeAction(new jetbrains.mps.smodel.SNodePointer(conceptDeclaration), modelDescriptor));
         }
       }
       if (!plain) {
@@ -191,16 +192,16 @@ public class CreateRootNodeGroup extends BaseGroup {
     private Project myProject;
     private IScope myScope;
     public IOperationContext myContext;
-    private final SNodePointer myNodeConcept;
+    private final SNodeReference myNodeConcept;
     private final SModelDescriptor myModelDescriptor;
 
-    public NewRootNodeAction(final SNodePointer nodeConcept, SModelDescriptor modelDescriptor) {
-      super(NodePresentationUtil.matchingText(nodeConcept.getNode()));
+    public NewRootNodeAction(final SNodeReference nodeConcept, SModelDescriptor modelDescriptor) {
+      super(NodePresentationUtil.matchingText(nodeConcept.resolve(MPSModuleRepository.getInstance())));
       myNodeConcept = nodeConcept;
       myModelDescriptor = modelDescriptor;
       Icon icon = ModelAccess.instance().runReadAction(new Computable<Icon>() {
         public Icon compute() {
-          return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept.getNode()));
+          return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept.resolve(MPSModuleRepository.getInstance())));
         }
       });
       getTemplatePresentation().setIcon(icon);
@@ -221,7 +222,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          final SNode node = NodeFactoryManager.createNode(myNodeConcept.getNode(), null, null, myModelDescriptor.getSModel(), myScope);
+          final SNode node = NodeFactoryManager.createNode(myNodeConcept.resolve(MPSModuleRepository.getInstance()), null, null, myModelDescriptor.getSModel(), myScope);
           SNodeAccessUtil.setProperty(node, SModelTreeNode.PACK, myPackage);
           myModelDescriptor.getSModel().addRoot(node);
 
@@ -249,9 +250,9 @@ public class CreateRootNodeGroup extends BaseGroup {
       SelectInTarget target = selectedPane.createSelectInTarget();
       if (target == null) return false;
 
-      SNodePointer pointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-        public SNodePointer compute() {
-          return new SNodePointer(node);
+      SNodeReference pointer = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
+        public SNodeReference compute() {
+          return new jetbrains.mps.smodel.SNodePointer(node);
         }
       });
       MySelectInContext context = new MySelectInContext(pointer);
@@ -262,9 +263,9 @@ public class CreateRootNodeGroup extends BaseGroup {
     }
 
     private class MySelectInContext implements SelectInContext {
-      private final SNodePointer myNode;
+      private final SNodeReference myNode;
 
-      public MySelectInContext(SNodePointer node) {
+      public MySelectInContext(SNodeReference node) {
         myNode = node;
       }
 

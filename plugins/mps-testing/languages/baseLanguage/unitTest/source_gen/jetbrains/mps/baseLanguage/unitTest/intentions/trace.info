@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.intentions.IntentionsDescriptor" />
-  <root nodeId="2230548360390192818" modelId="r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)">
+  <root nodeRef="r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)/2230548360390192818">
     <nodeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="38" startPosition="30" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="42" startPosition="35" endLine="43" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -168,7 +168,7 @@
     <unitInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="88" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.intentions.convert_test_case_to_unittest_case_Intention$IntentionImplementation" />
     <unitInfo nodeId="2230548360390192818" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="32" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.intentions.convert_test_case_to_unittest_case_Intention" />
   </root>
-  <root nodeId="7080278351417190887" modelId="r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)">
+  <root nodeRef="r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)/7080278351417190887">
     <nodeInfo nodeId="7080278351417190887" fileName="AddRemoveMessage_Intention.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="7080278351417190887" fileName="AddRemoveMessage_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7080278351417190887" fileName="AddRemoveMessage_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -251,7 +251,7 @@
     <unitInfo nodeId="7080278351417190887" fileName="AddRemoveMessage_Intention.java" startLine="67" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.intentions.AddRemoveMessage_Intention$IntentionImplementation" />
     <unitInfo nodeId="7080278351417190887" fileName="AddRemoveMessage_Intention.java" startLine="18" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.intentions.AddRemoveMessage_Intention" />
   </root>
-  <root nodeId="7523560072226634120" modelId="r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)">
+  <root nodeRef="r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)/7523560072226634120">
     <nodeInfo nodeId="7523560072226634120" fileName="FlipAssertEquals_Intention.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="7523560072226634120" fileName="FlipAssertEquals_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7523560072226634120" fileName="FlipAssertEquals_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -335,7 +335,7 @@
     <unitInfo nodeId="7523560072226634120" fileName="FlipAssertEquals_Intention.java" startLine="67" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.intentions.FlipAssertEquals_Intention$IntentionImplementation" />
     <unitInfo nodeId="7523560072226634120" fileName="FlipAssertEquals_Intention.java" startLine="18" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.intentions.FlipAssertEquals_Intention" />
   </root>
-  <root nodeId="8797237962361678880" modelId="r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)">
+  <root nodeRef="r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)/8797237962361678880">
     <nodeInfo nodeId="8797237962361678880" fileName="FixPluginKindForMPSTestCase_Intention.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="8797237962361678880" fileName="FixPluginKindForMPSTestCase_Intention.java" startLine="23" startPosition="30" endLine="24" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8797237962361678880" fileName="FixPluginKindForMPSTestCase_Intention.java" startLine="27" startPosition="35" endLine="28" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

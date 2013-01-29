@@ -19,7 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.ModelLinkMap;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.InternUtil;
@@ -154,8 +154,8 @@ public class ModelReader7 implements IModelReader {
       String target = link.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
       String resolveInfo = link.getAttributeValue(ModelPersistence.RESOLVE_INFO);
       String role = myHelper.readRole(link.getAttributeValue(ModelPersistence.ROLE));
-      Pair<Boolean, SNodePointer> pptr = myHelper.readLink_internal(target);
-      SNodePointer ptr = pptr.o2;
+      Pair<Boolean, SNodeReference> pptr = myHelper.readLink_internal(target);
+      SNodeReference ptr = pptr.o2;
       if (ptr == null || ptr.getModelReference() == null) {
         LOG.error("couldn't create reference '" + role + "' : from " + target);
         continue;
@@ -166,7 +166,7 @@ public class ModelReader7 implements IModelReader {
 //        node.addReference(ref);
 //        myLinkMap.addRoleLocation(myHelper.readLinkId(link.getAttributeValue(ModelPersistence.ROLE_ID)), ref);
 //      } else {
-        StaticReference ref = new StaticReference(role, node, ptr.getModelReference(), ptr.getNodeId(), resolveInfo);
+        StaticReference ref = new StaticReference(role, node, ptr.getModelReference(), ((SNodePointer) ptr).getNodeId(), resolveInfo);
         myLinkMap.addTargetLocation(ptr, ref);
       node.setReference(ref.getRole(), ref);
       myLinkMap.addRoleLocation(myHelper.readLinkId(link.getAttributeValue(ModelPersistence.ROLE_ID)), ref);

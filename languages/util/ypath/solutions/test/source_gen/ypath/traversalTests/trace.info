@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1196720899932" modelId="r:00000000-0000-4000-0000-011c895905c0(ypath.traversalTests)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905c0(ypath.traversalTests)/1196720899932">
     <nodeInfo nodeId="1196720899999" fileName="TestFeatures_Test.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SIMPLE" />
     <nodeInfo nodeId="1196720899936" fileName="TestFeatures_Test.java" startLine="20" startPosition="58" endLine="21" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196720899942" fileName="TestFeatures_Test.java" startLine="21" startPosition="38" endLine="22" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -51,7 +51,7 @@
     <scopeInfo nodeId="1196720899934" fileName="TestFeatures_Test.java" startLine="20" startPosition="0" endLine="31" endPosition="0" />
     <unitInfo nodeId="1196720899932" fileName="TestFeatures_Test.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="ypath.traversalTests.TestFeatures_Test" />
   </root>
-  <root nodeId="1196720900058" modelId="r:00000000-0000-4000-0000-011c895905c0(ypath.traversalTests)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905c0(ypath.traversalTests)/1196720900058">
     <nodeInfo nodeId="1196720900086" fileName="GenericFeatures_Test.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INPUT" />
     <nodeInfo nodeId="1196720900062" fileName="GenericFeatures_Test.java" startLine="19" startPosition="47" endLine="20" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196720900068" fileName="GenericFeatures_Test.java" startLine="20" startPosition="37" endLine="21" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -93,7 +93,7 @@
     </scopeInfo>
     <unitInfo nodeId="1196720900058" fileName="GenericFeatures_Test.java" startLine="16" startPosition="0" endLine="41" endPosition="0" unitName="ypath.traversalTests.GenericFeatures_Test" />
   </root>
-  <root nodeId="1196720900145" modelId="r:00000000-0000-4000-0000-011c895905c0(ypath.traversalTests)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905c0(ypath.traversalTests)/1196720900145">
     <nodeInfo nodeId="1227876789359" fileName="DOMF.java" startLine="86" startPosition="29" endLine="86" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1227876789370" fileName="DOMF.java" startLine="93" startPosition="29" endLine="93" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1227876789453" fileName="DOMF.java" startLine="157" startPosition="29" endLine="157" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

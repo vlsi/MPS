@@ -43,7 +43,7 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -191,11 +191,11 @@ public abstract class UsagesView implements IExternalizeable {
     return myTreeComponent.getAllModels();
   }
 
-  public List<SNodePointer> getIncludedResultNodes() {
+  public List<SNodeReference> getIncludedResultNodes() {
     return myTreeComponent.getIncludedResultNodes();
   }
 
-  public List<SNodePointer> getAllResultNodes() {
+  public List<SNodeReference> getAllResultNodes() {
     return myTreeComponent.getAllResultNodes();
   }
 

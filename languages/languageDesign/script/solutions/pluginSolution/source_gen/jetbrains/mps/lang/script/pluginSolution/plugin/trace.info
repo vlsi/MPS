@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5487985028841902259" modelId="r:c7b90b26-5425-42a5-94ed-8a6e81cc7a2d(jetbrains.mps.lang.script.pluginSolution.plugin)">
+  <root nodeRef="r:c7b90b26-5425-42a5-94ed-8a6e81cc7a2d(jetbrains.mps.lang.script.pluginSolution.plugin)/5487985028841902259">
     <nodeInfo nodeId="5487985028841902259" fileName="ScriptsForSelection_ActionGroup.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841902259" fileName="ScriptsForSelection_ActionGroup.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="5487985028841902259" fileName="ScriptsForSelection_ActionGroup.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPlaces" />
@@ -76,7 +76,7 @@
     </scopeInfo>
     <unitInfo nodeId="5487985028841902259" fileName="ScriptsForSelection_ActionGroup.java" startLine="27" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsForSelection_ActionGroup" />
   </root>
-  <root nodeId="5487985028841902338" modelId="r:c7b90b26-5425-42a5-94ed-8a6e81cc7a2d(jetbrains.mps.lang.script.pluginSolution.plugin)">
+  <root nodeRef="r:c7b90b26-5425-42a5-94ed-8a6e81cc7a2d(jetbrains.mps.lang.script.pluginSolution.plugin)/5487985028841902338">
     <nodeInfo nodeId="5487985028841902339" fileName="ScriptsMenuBuilder.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="applyToSelection" />
     <nodeInfo nodeId="5487985028841902342" fileName="ScriptsMenuBuilder.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="allLanguages" />
     <nodeInfo nodeId="5487985028841902346" fileName="ScriptsMenuBuilder.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="allScripts" />
@@ -135,7 +135,7 @@
     <unitInfo nodeId="5487985028841902377" fileName="ScriptsMenuBuilder.java" startLine="23" startPosition="54" endLine="27" endPosition="5" unitName="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsMenuBuilder$1" />
     <unitInfo nodeId="5487985028841902338" fileName="ScriptsMenuBuilder.java" startLine="15" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsMenuBuilder" />
   </root>
-  <root nodeId="5487985028841902494" modelId="r:c7b90b26-5425-42a5-94ed-8a6e81cc7a2d(jetbrains.mps.lang.script.pluginSolution.plugin)">
+  <root nodeRef="r:c7b90b26-5425-42a5-94ed-8a6e81cc7a2d(jetbrains.mps.lang.script.pluginSolution.plugin)/5487985028841902494">
     <nodeInfo nodeId="5487985028841902494" fileName="ScriptsGlobally_ActionGroup.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841902494" fileName="ScriptsGlobally_ActionGroup.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
     <nodeInfo nodeId="5487985028841902494" fileName="ScriptsGlobally_ActionGroup.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPlaces" />
@@ -206,7 +206,7 @@
     </scopeInfo>
     <unitInfo nodeId="5487985028841902494" fileName="ScriptsGlobally_ActionGroup.java" startLine="22" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsGlobally_ActionGroup" />
   </root>
-  <root nodeId="5487985028841902566" modelId="r:c7b90b26-5425-42a5-94ed-8a6e81cc7a2d(jetbrains.mps.lang.script.pluginSolution.plugin)">
+  <root nodeRef="r:c7b90b26-5425-42a5-94ed-8a6e81cc7a2d(jetbrains.mps.lang.script.pluginSolution.plugin)/5487985028841902566">
     <nodeInfo nodeId="5487985028841902566" fileName="RunMigrationScripts_Action.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841902711" fileName="RunMigrationScripts_Action.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="scripts" />
     <nodeInfo nodeId="5487985028841902718" fileName="RunMigrationScripts_Action.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="selectionOnly" />
@@ -337,7 +337,7 @@
     </scopeInfo>
     <unitInfo nodeId="5487985028841902566" fileName="RunMigrationScripts_Action.java" startLine="27" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.lang.script.pluginSolution.plugin.RunMigrationScripts_Action" />
   </root>
-  <root nodeId="7162597690967660607" modelId="r:c7b90b26-5425-42a5-94ed-8a6e81cc7a2d(jetbrains.mps.lang.script.pluginSolution.plugin)">
+  <root nodeRef="r:c7b90b26-5425-42a5-94ed-8a6e81cc7a2d(jetbrains.mps.lang.script.pluginSolution.plugin)/7162597690967660607">
     <nodeInfo nodeId="7162597690967660607" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690967660607" fileName="PluginSolution_ApplicationPlugin.java" startLine="17" startPosition="27" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690967660607" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="30" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

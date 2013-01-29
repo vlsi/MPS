@@ -19,10 +19,11 @@ import jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavio
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
   public EditorExpression_Constraints() {
@@ -68,7 +69,7 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_lq9qwe_a0a1a0a0a1a0b0a1a3;
           }
         };

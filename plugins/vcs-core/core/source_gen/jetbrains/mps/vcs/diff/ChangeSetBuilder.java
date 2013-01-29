@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.DynamicReference;
@@ -114,11 +114,11 @@ public class ChangeSetBuilder {
     if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(newNode).getSModelReference().equals(newTargetModel)) {
       newTargetModel = null;
     }
-    if (eq_nbyrtw_a0a0i0j(oldTargetId, newTargetId) && eq_nbyrtw_a0a0i0j_0(oldTargetModel, newTargetModel) && eq_nbyrtw_a0a8a9(check_nbyrtw_a0a8a9(oldReference), check_nbyrtw_a0a8a9_0(newReference))) {
+    if (eq_nbyrtw_a0a0i0j(oldTargetId, newTargetId) && eq_nbyrtw_a0a0i0j_0(oldTargetModel, newTargetModel) && eq_nbyrtw_a0a8a9(check_nbyrtw_a0a8a9(((jetbrains.mps.smodel.SReference) oldReference)), check_nbyrtw_a0a8a9_0(((jetbrains.mps.smodel.SReference) newReference)))) {
       // same references 
     } else {
       SModelReference targetModel = check_nbyrtw_a0a0a8a9(newReference);
-      ListSequence.fromList(myNewChanges).addElement(new SetReferenceChange(myChangeSet, oldNode.getNodeId(), role, targetModel, newTargetId, check_nbyrtw_f0a0a1a0i0j(newReference)));
+      ListSequence.fromList(myNewChanges).addElement(new SetReferenceChange(myChangeSet, oldNode.getNodeId(), role, targetModel, newTargetId, check_nbyrtw_f0a0a1a0i0j(((jetbrains.mps.smodel.SReference) newReference))));
     }
   }
 
@@ -359,14 +359,14 @@ public class ChangeSetBuilder {
     return null;
   }
 
-  private static String check_nbyrtw_a0a8a9(SReference checkedDotOperand) {
+  private static String check_nbyrtw_a0a8a9(jetbrains.mps.smodel.SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
   }
 
-  private static String check_nbyrtw_a0a8a9_0(SReference checkedDotOperand) {
+  private static String check_nbyrtw_a0a8a9_0(jetbrains.mps.smodel.SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }
@@ -380,7 +380,7 @@ public class ChangeSetBuilder {
     return null;
   }
 
-  private static String check_nbyrtw_f0a0a1a0i0j(SReference checkedDotOperand) {
+  private static String check_nbyrtw_f0a0a1a0i0j(jetbrains.mps.smodel.SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }

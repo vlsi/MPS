@@ -6,12 +6,13 @@ import java.util.Collection;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.ThreadUtils;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
@@ -24,16 +25,16 @@ public abstract class MigrationScriptsController {
     myFinder = finder;
   }
 
-  public Collection<SearchResult<SNode>> computeAliveIncludedResults(final List<SNodePointer> includedResultNodes) {
+  public Collection<SearchResult<SNode>> computeAliveIncludedResults(final List<SNodeReference> includedResultNodes) {
     ThreadUtils.assertEDT();
     final List aliveIncludedResults = new ArrayList<SearchResult<SNode>>();
     final Set aliveIncludedNodes = new HashSet<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<SNodePointer> includedNodes = includedResultNodes;
-        for (SNodePointer includedNode : includedNodes) {
-          if (includedNode.getNode() != null) {
-            aliveIncludedNodes.add(includedNode.getNode());
+        List<SNodeReference> includedNodes = includedResultNodes;
+        for (SNodeReference includedNode : includedNodes) {
+          if (((SNodePointer) includedNode).getNode() != null) {
+            aliveIncludedNodes.add(((SNodePointer) includedNode).getNode());
           }
         }
         List<SearchResult<SNode>> aliveResults = myFinder.getLastSearchResults().getAliveResults();

@@ -87,6 +87,7 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.editor.util.DefaultNodeNavigationItemCellRenderer" />
     <classNode extendsClassName="jetbrains.mps.ide.editor.util.NodeListCellRenderer" />
   </dependency>

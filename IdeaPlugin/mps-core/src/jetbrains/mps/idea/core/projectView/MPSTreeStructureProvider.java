@@ -31,7 +31,7 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
@@ -133,7 +133,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
       return null;
     }
 
-    List<SNodePointer> selectedNodePointers = new ArrayList<SNodePointer>();
+    List<SNodeReference> selectedNodePointers = new ArrayList<SNodeReference>();
     Project project = null;
     EditableSModelDescriptor modelDescriptor = null;
     for (AbstractTreeNode treeNode : selected) {

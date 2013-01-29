@@ -4,7 +4,7 @@
   <unitInfo fileName="ConstantReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.behavior.ConstantReference_BehaviorDescriptor" />
   <unitInfo fileName="Constant_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.behavior.Constant_BehaviorDescriptor" />
   <unitInfo fileName="Constants_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.behavior.Constants_BehaviorDescriptor" />
-  <root nodeId="5956117492786858347" modelId="r:68c57825-9d65-4771-a04b-e7b3a3f2abfb(org.jetbrains.mps.samples.Constants.behavior)">
+  <root nodeRef="r:68c57825-9d65-4771-a04b-e7b3a3f2abfb(org.jetbrains.mps.samples.Constants.behavior)/5956117492786858347">
     <nodeInfo nodeId="5956117492787112065" fileName="Constants_Behavior.java" startLine="18" startPosition="108" endLine="19" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5956117492787427086" fileName="Constants_Behavior.java" startLine="22" startPosition="47" endLine="23" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5956117492786970725" fileName="Constants_Behavior.java" startLine="25" startPosition="8" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

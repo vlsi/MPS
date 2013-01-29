@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3364928926666865010" modelId="r:f39afe13-666a-48f2-9d7c-2f9366f78fe5(jetbrains.mps.typesystemEngine.checker)">
+  <root nodeRef="r:f39afe13-666a-48f2-9d7c-2f9366f78fe5(jetbrains.mps.typesystemEngine.checker)/3364928926666865010">
     <nodeInfo nodeId="3364928926666865036" fileName="TypesystemCheckerComponent.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckersComponent" />
     <nodeInfo nodeId="3364928926666865139" fileName="TypesystemCheckerComponent.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChecker" />
     <nodeInfo nodeId="3364928926666865040" fileName="TypesystemCheckerComponent.java" startLine="12" startPosition="66" endLine="13" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -20,7 +20,7 @@
     </scopeInfo>
     <unitInfo nodeId="3364928926666865010" fileName="TypesystemCheckerComponent.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.typesystemEngine.checker.TypesystemCheckerComponent" />
   </root>
-  <root nodeId="5231630840089786268" modelId="r:f39afe13-666a-48f2-9d7c-2f9366f78fe5(jetbrains.mps.typesystemEngine.checker)">
+  <root nodeRef="r:f39afe13-666a-48f2-9d7c-2f9366f78fe5(jetbrains.mps.typesystemEngine.checker)/5231630840089786268">
     <nodeInfo nodeId="5231630840089786288" fileName="TypesystemChecker.java" startLine="22" startPosition="31" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1436978233839335265" fileName="TypesystemChecker.java" startLine="26" startPosition="79" endLine="27" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5376460755542186298" fileName="TypesystemChecker.java" startLine="29" startPosition="64" endLine="30" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

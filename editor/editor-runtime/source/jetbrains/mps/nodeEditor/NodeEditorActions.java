@@ -17,9 +17,11 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.selection.*;
 import jetbrains.mps.nodeEditor.selection.SingularSelection.SideSelectDirection;
 import jetbrains.mps.openapi.editor.*;
+import jetbrains.mps.openapi.editor.cells.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 
@@ -131,7 +133,7 @@ public class NodeEditorActions {
       }
       EditorCell cell = selection.getSelectedCells().get(0);
       while (cell.getParent() != null) {
-        cell = cell.getParent();
+        cell = (EditorCell) cell.getParent();
       }
       if (cell instanceof  EditorCell_Collection) {
         return cell.findChild(myHome ? CellFinders.FIRST_SELECTABLE_LEAF : CellFinders.LAST_SELECTABLE_LEAF);
@@ -329,14 +331,14 @@ public class NodeEditorActions {
 
   private static void navigatePage(jetbrains.mps.openapi.editor.EditorContext context, boolean isDown) {
     EditorComponent editor = (EditorComponent) context.getEditorComponent();
-    EditorCell selection = editor.getSelectedCell();
+    jetbrains.mps.openapi.editor.cells.EditorCell selection = editor.getSelectedCell();
     Rectangle rect = editor.getVisibleRect();
     int height = (int) rect.getHeight();
     height = isDown ? height : -height;
     int caretX = selection.getCaretX();
     int y = selection.getY() + (selection.getHeight() / 2);
     int newY = y + height;
-    EditorCell target = editor.findCellWeak(caretX, newY);
+    jetbrains.mps.openapi.editor.cells.EditorCell target = editor.findCellWeak(caretX, newY);
     if (target == null) {
       target = isDown ? editor.myRootCell.findChild(CellFinders.LAST_SELECTABLE_LEAF) : editor.myRootCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
       editor.changeSelection(target);
@@ -386,9 +388,9 @@ public class NodeEditorActions {
         return null;
       }
 
-      EditorCell cell = selection.getSelectedCells().get(0);
+      jetbrains.mps.openapi.editor.cells.EditorCell cell = selection.getSelectedCells().get(0);
       if (cell instanceof EditorCell_Label && !((EditorCell_Label) cell).isEverythingSelected()) {
-        return cell;
+        return (EditorCell) cell;
       }
 
       if (cell.getParent() == null) {
@@ -398,13 +400,13 @@ public class NodeEditorActions {
       while (cell.getParent() != null && cell.getParent().isTransparentCollection()) {
         cell = cell.getParent();
       }
-      EditorCell_Collection parent = cell.getParent();
+      jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = cell.getParent();
       while (parent != null) {
         if (parent.isSelectable()) {
           while (parent.getParent() != null && parent.getParent().isTransparentCollection() && parent.getParent().isSelectable()) {
             parent = parent.getParent();
           }
-          return parent;
+          return (EditorCell) parent;
         }
         parent = parent.getParent();
       }
@@ -479,18 +481,18 @@ public class NodeEditorActions {
       return true;
     }
 
-    private EditorCell getCommonSelectableAncestor(EditorCell first, EditorCell... cells) {
-      EditorCell result = first;
+    private EditorCell getCommonSelectableAncestor(jetbrains.mps.openapi.editor.cells.EditorCell first, jetbrains.mps.openapi.editor.cells.EditorCell... cells) {
+      jetbrains.mps.openapi.editor.cells.EditorCell_Collection result = first instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection ? (jetbrains.mps.openapi.editor.cells.EditorCell_Collection) first : first.getParent();
       while (result != null) {
         if (result.isSelectable()) {
           boolean common = true;
-          for (EditorCell cell : cells) {
+          for (jetbrains.mps.openapi.editor.cells.EditorCell cell : cells) {
             if (!result.isAncestorOf(cell) && result != cell) {
               common = false;
               break;
             }
           }
-          if (common) return result;
+          if (common) return (EditorCell) result;
         }
 
         result = result.getParent();

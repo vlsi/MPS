@@ -18,6 +18,8 @@ package jetbrains.mps.nodeEditor.cells;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -31,18 +33,17 @@ import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -98,8 +99,8 @@ public abstract class EditorCell_Basic implements EditorCell {
   private EditorCellKeyMap myKeyMap;
   private String myCellId;
   private String myRole;
-  private SNodePointer myLinkDeclarationPointer;
-  private SNodePointer myRefNodePointer;
+  private SNodeReference myLinkDeclarationPointer;
+  private SNodeReference myRefNodePointer;
   private boolean myInTree;
   private boolean myIsReferenceCell = false;
   protected int myGapLeft;
@@ -243,7 +244,7 @@ public abstract class EditorCell_Basic implements EditorCell {
           return currentAction;
         }
       }
-      current = current.getParent();
+      current = (EditorCell) current.getParent();
     }
     EditorCellAction action = getEditor().getComponentAction(type);
     if (action != null && action.canExecute(getContext())) {
@@ -258,7 +259,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       if (current.getAction(type) != null && current.getLastLeaf() == this) {
         cellAction = current.getAction(type);
       }
-      current = current.getParent();
+      current = (EditorCell) current.getParent();
     }
     return cellAction;
   }
@@ -419,7 +420,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
         if (link != null) {
-          myLinkDeclarationPointer = new SNodePointer(link);
+          myLinkDeclarationPointer = new jetbrains.mps.smodel.SNodePointer(link);
           myIsReferenceCell = SNodeUtil.getLinkDeclaration_IsReference(link);
         } else {
           myLinkDeclarationPointer = null;
@@ -434,7 +435,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (role != null) {
       return ((jetbrains.mps.smodel.SNode) getSNode()).getLinkDeclaration(role);
     }
-    return myLinkDeclarationPointer != null ? myLinkDeclarationPointer.getNode() : null;
+    return myLinkDeclarationPointer != null ? myLinkDeclarationPointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 
   public boolean isReferenceCell() {
@@ -442,11 +443,11 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public SNode getRefNode() {
-    return myRefNodePointer != null ? myRefNodePointer.getNode() : null;
+    return myRefNodePointer != null ? myRefNodePointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 
   public void setRefNode(SNode refNode) {
-    myRefNodePointer = (refNode != null) ? new SNodePointer(refNode) : null;
+    myRefNodePointer = (refNode != null) ? new jetbrains.mps.smodel.SNodePointer(refNode) : null;
   }
 
   public void setSelected(boolean selected) {
@@ -811,7 +812,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     Object anchorId = node.getUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID);
     if (anchorId == null) {
       if (bigCell != null && bigCell.getParent() != null) {
-        for (EditorCell child : bigCell.getParent()) {
+        for (jetbrains.mps.openapi.editor.cells.EditorCell child : bigCell.getParent()) {
           if (child instanceof EditorCell_STHint) {
             return (EditorCell_Label) child;
           }
@@ -826,20 +827,14 @@ public abstract class EditorCell_Basic implements EditorCell {
 
       assert anchorCell.getParent() != null : "No cell parent for node " + node.getNodeId().toString() + " " + node.getModel();
 
-      int indexInParent = anchorCell.getParent().indexOf(anchorCell);
-
-      if (indexInParent + 1 < anchorCell.getParent().getChildCount()) {
-        EditorCell candidate = anchorCell.getParent().getChildAt(indexInParent + 1);
-        if (candidate instanceof EditorCell_STHint) {
-          return (EditorCell_Label) candidate;
-        }
+      jetbrains.mps.openapi.editor.cells.EditorCell nextSibling = APICellAdapter.getNextSibling(anchorCell);
+      if (nextSibling instanceof EditorCell_STHint) {
+        return (EditorCell_Label) nextSibling;
       }
 
-      if (indexInParent - 1 >= 0) {
-        EditorCell candidate = anchorCell.getParent().getChildAt(indexInParent - 1);
-        if (candidate instanceof EditorCell_STHint) {
-          return (EditorCell_Label) candidate;
-        }
+      jetbrains.mps.openapi.editor.cells.EditorCell prevSibling = APICellAdapter.getPrevSibling(anchorCell);
+      if (prevSibling instanceof EditorCell_STHint) {
+        return (EditorCell_Label) prevSibling;
       }
 
       return null;
@@ -931,9 +926,10 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public boolean isAncestorOf(EditorCell cell) {
-    while (cell != null) {
-      cell = cell.getParent();
-      if (cell == this) return true;
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = cell.getParent();
+    while (parent != null) {
+      if (parent == this) return true;
+      parent = parent.getParent();
     }
     return false;
   }
@@ -955,7 +951,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       }
 
       public EditorCell_Collection next() {
-        EditorCell_Collection parent = myCurrentCell.getParent();
+        EditorCell_Collection parent = (EditorCell_Collection) myCurrentCell.getParent();
         if (parent == null) throw new NoSuchElementException();
         myCurrentCell = parent;
         return parent;
@@ -1015,7 +1011,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     EditorCell prevCell = null;
     while (cell != null) {
       prevCell = cell;
-      cell = cell.getParent();
+      cell = (EditorCell) cell.getParent();
     }
     return prevCell;
   }
@@ -1071,16 +1067,8 @@ public abstract class EditorCell_Basic implements EditorCell {
     return getParent().getContainingBigCell();
   }
 
-  public boolean hasFocusPolicy() {
-    return getFocusPolicy() != FocusPolicy.NONE;
-  }
-
-  public FocusPolicy getFocusPolicy() {
-    return getStyle().get(StyleAttributes.FOCUS_POLICY);
-  }
-
-  public void setFocusPolicy(FocusPolicy fp) {
-    getStyle().set(StyleAttributes.FOCUS_POLICY, fp);
+  public void setFocusPolicy(jetbrains.mps.nodeEditor.FocusPolicy fp) {
+    getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.valueOf(fp.name()));
   }
 
   public boolean isAbove(EditorCell cell) {
@@ -1411,5 +1399,4 @@ public abstract class EditorCell_Basic implements EditorCell {
   public void unrequestLayout() {
     myIsNeedRelayout = false;
   }
-
 }

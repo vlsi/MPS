@@ -29,7 +29,8 @@ import jetbrains.mps.newTypesystem.context.component.NonTypeSystemComponent;
 import jetbrains.mps.newTypesystem.context.component.TypeSystemComponent;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -310,7 +311,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
           // but I skip all DynamicReferences
           continue;
         }
-        SNode targetNode = reference.getTargetNodeSilently();
+        SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
         if (targetNode != null) {
           markDependentNodesForInvalidation(targetNode, myNonTypeSystemComponent);
         }
@@ -321,7 +322,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
       markDependentNodesForInvalidation(event.getReference().getSourceNode(), getTypecheckingComponent());
       markDependentNodesForInvalidation(event.getReference().getSourceNode(), myNonTypeSystemComponent);
       if (!event.isAdded()) return;
-      markDependentNodesForInvalidation(event.getReference().getTargetNodeSilently(), myNonTypeSystemComponent);
+      markDependentNodesForInvalidation(jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(event.getReference()), myNonTypeSystemComponent);
     }
 
     public void visitPropertyEvent(SModelPropertyEvent event) {

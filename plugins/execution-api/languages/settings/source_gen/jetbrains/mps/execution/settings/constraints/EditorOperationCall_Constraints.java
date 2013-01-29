@@ -24,6 +24,7 @@ import jetbrains.mps.execution.settings.behavior.SettingsEditor_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class EditorOperationCall_Constraints extends BaseConstraintsDescriptor {
@@ -63,7 +64,7 @@ public class EditorOperationCall_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_ow8wt3_a0a1a0a0a1a0b0a1a1;
           }
         };

@@ -10,8 +10,8 @@
   <import index="tp33" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1177457067821">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/migrationScript.png" />
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript" />
@@ -108,6 +108,23 @@
       <property name="name" nameId="tpck.1169194664001" value="FQNameClassifierSpecification" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="api" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5434557751112081978" resolveInfo="AbstractClassifierSpecification" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4774682482449847011">
+      <property name="name" nameId="tpck.1169194664001" value="FQNameMethodSpecification" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="api" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="4774682482449869981" resolveInfo="AbstractMethodSpecification" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4774682482449869981">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="AbstractMethodSpecification" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="api" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2291767839159498115">
+      <property name="name" nameId="tpck.1169194664001" value="DirectMethodSpecification" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="api" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="4774682482449869981" resolveInfo="AbstractMethodSpecification" />
     </node>
   </roots>
   <root id="1177457067821">
@@ -233,11 +250,11 @@
     </node>
   </root>
   <root id="849077997121870276">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4242940223545038297">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="oldMethodDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4774682482449846913">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="oldMethodSpecification" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4774682482449869981" resolveInfo="AbstractMethodSpecification" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4242940223545038298">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
@@ -267,6 +284,21 @@
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8915466921781754528">
       <property name="name" nameId="tpck.1169194664001" value="snodeId" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+  </root>
+  <root id="4774682482449847011">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2291767839160466985">
+      <property name="name" nameId="tpck.1169194664001" value="snodeId" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+  </root>
+  <root id="4774682482449869981" />
+  <root id="2291767839159498115">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2291767839159499865">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="methodDeclaration" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
   </root>
 </model>

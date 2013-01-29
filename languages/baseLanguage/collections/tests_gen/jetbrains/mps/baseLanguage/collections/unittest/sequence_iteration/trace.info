@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1165449350640" modelId="r:00000000-0000-4000-0000-011c895903c1(jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903c1(jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration)/1165449350640">
     <nodeInfo nodeId="1224596675512" fileName="Sequence_iteration1.java" startLine="54" startPosition="27" endLine="54" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224596675281" fileName="Sequence_iteration1.java" startLine="116" startPosition="27" endLine="116" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224596675286" fileName="Sequence_iteration1.java" startLine="119" startPosition="27" endLine="119" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -335,7 +335,7 @@
     <unitInfo nodeId="1224596674578" fileName="Sequence_iteration1.java" startLine="225" startPosition="51" endLine="279" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1$4" />
     <unitInfo nodeId="1165449350640" fileName="Sequence_iteration1.java" startLine="13" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration.Sequence_iteration1" />
   </root>
-  <root nodeId="1165600539955" modelId="r:00000000-0000-4000-0000-011c895903c1(jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903c1(jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration)/1165600539955">
     <nodeInfo nodeId="1224596675063" fileName="Sequence_iteration2.java" startLine="53" startPosition="27" endLine="53" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7376433222636453769" fileName="Sequence_iteration2.java" startLine="16" startPosition="24" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1224596675062" fileName="Sequence_iteration2.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />

@@ -268,7 +268,7 @@
   <unitInfo fileName="WindowsDemo_Swing.java" startLine="190" startPosition="49" endLine="199" endPosition="5" unitName="jetbrains.mps.ui.sandbox.WindowsDemo_Swing$9" />
   <unitInfo fileName="WindowsDemo_Swing.java" startLine="214" startPosition="49" endLine="223" endPosition="5" unitName="jetbrains.mps.ui.sandbox.WindowsDemo_Swing$10" />
   <unitInfo fileName="WindowsDemo_Swing.java" startLine="27" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.ui.sandbox.WindowsDemo_Swing" />
-  <root nodeId="7046856741208199003" modelId="r:61c770cf-d088-4c1b-909e-3424021db8f2(jetbrains.mps.ui.sandbox)">
+  <root nodeRef="r:61c770cf-d088-4c1b-909e-3424021db8f2(jetbrains.mps.ui.sandbox)/7046856741208199003">
     <nodeInfo nodeId="7046856741208199004" fileName="BusinessObject.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="kino" />
     <nodeInfo nodeId="7046856741208199007" fileName="BusinessObject.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="vino" />
     <nodeInfo nodeId="7046856741208199010" fileName="BusinessObject.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="domino" />
@@ -322,7 +322,7 @@
     </scopeInfo>
     <unitInfo nodeId="7046856741208199003" fileName="BusinessObject.java" startLine="6" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.ui.sandbox.BusinessObject" />
   </root>
-  <root nodeId="7046856741208290890" modelId="r:61c770cf-d088-4c1b-909e-3424021db8f2(jetbrains.mps.ui.sandbox)">
+  <root nodeRef="r:61c770cf-d088-4c1b-909e-3424021db8f2(jetbrains.mps.ui.sandbox)/7046856741208290890">
     <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="1" startPosition="0" endLine="1" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="7046856741208290890" fileName="UIDemo.gwt.xml" startLine="1" startPosition="10" endLine="1" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />

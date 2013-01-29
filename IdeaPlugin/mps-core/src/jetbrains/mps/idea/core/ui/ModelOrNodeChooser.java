@@ -37,6 +37,7 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.projectView.MPSDataKeys;
 import jetbrains.mps.idea.core.projectView.MPSProjectViewNode;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -128,7 +129,7 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
   @Override
   public Object getSelectedObject() {
     if ((getSelectedNode() != null) && (getSelectedNode().getUserObject() instanceof MPSProjectViewNode)) {
-      return ((MPSProjectViewNode) (getSelectedNode().getUserObject())).getValue().getNode();
+      return ((MPSProjectViewNode) (getSelectedNode().getUserObject())).getValue().resolve(MPSModuleRepository.getInstance());
     } else {
       Set<IFile> models = MPSDataKeys.MODEL_FILES.getData(this);
       if (models != null && models.size() == 1) {

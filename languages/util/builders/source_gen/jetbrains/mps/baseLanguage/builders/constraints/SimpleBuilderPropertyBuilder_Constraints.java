@@ -20,6 +20,7 @@ import jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class SimpleBuilderPropertyBuilder_Constraints extends BaseConstraintsDescriptor {
@@ -59,7 +60,7 @@ public class SimpleBuilderPropertyBuilder_Constraints extends BaseConstraintsDes
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_60c3dm_a0a1a0a0a1a0b0a1a1;
           }
         };

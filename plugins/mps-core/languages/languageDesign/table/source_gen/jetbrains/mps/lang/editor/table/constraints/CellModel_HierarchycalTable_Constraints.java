@@ -18,8 +18,9 @@ import jetbrains.mps.lang.editor.table.behavior.CellModel_HierarchycalTable_Beha
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDescriptor {
   public CellModel_HierarchycalTable_Constraints() {
@@ -49,7 +50,7 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_6tiwsq_a0a1a0a0a1a0b0a1a1;
           }
         };
@@ -75,7 +76,7 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_6tiwsq_a0a1a0a0a1a0b0a2a1;
           }
         };
@@ -104,7 +105,7 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_6tiwsq_a0a1a0a0a1a0b0a3a1;
           }
         };

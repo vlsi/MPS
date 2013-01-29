@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1560298786499494350" modelId="r:54883260-1d2e-4108-8311-3a1f6d27f2b4(jetbrains.mps.workbench.dialogs.project.components.parts)">
+  <root nodeRef="r:54883260-1d2e-4108-8311-3a1f6d27f2b4(jetbrains.mps.workbench.dialogs.project.components.parts)/1560298786499494350">
     <nodeInfo nodeId="1560298786499494375" fileName="CopySupport.java" startLine="24" startPosition="63" endLine="25" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499494380" fileName="CopySupport.java" startLine="25" startPosition="44" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499494533" fileName="CopySupport.java" startLine="28" startPosition="50" endLine="29" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -86,6 +86,6 @@
     <unitInfo nodeId="1560298786499494352" fileName="CopySupport.java" startLine="45" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport$ModelReferenceTransferHandler" />
     <unitInfo nodeId="1560298786499494350" fileName="CopySupport.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport" />
   </root>
-  <root nodeId="4972790448884483620" modelId="r:54883260-1d2e-4108-8311-3a1f6d27f2b4(jetbrains.mps.workbench.dialogs.project.components.parts)" />
+  <root nodeRef="r:54883260-1d2e-4108-8311-3a1f6d27f2b4(jetbrains.mps.workbench.dialogs.project.components.parts)/4972790448884483620" />
 </debugInfo>
 

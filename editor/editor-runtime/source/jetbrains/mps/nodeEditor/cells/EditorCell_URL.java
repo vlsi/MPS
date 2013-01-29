@@ -20,7 +20,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Pair;
 
 import java.awt.Color;
@@ -53,7 +53,7 @@ public class EditorCell_URL extends EditorCell_Property {
     }
     EditorCell_URL result = new EditorCell_URL(editorContext, accessor, node);
     if (listener != null) {
-      for (Pair<SNodePointer, String> pair : listener.popCleanlyReadAccessedProperties()) {
+      for (Pair<SNodeReference, String> pair : listener.popCleanlyReadAccessedProperties()) {
         result.getEditor().addCellDependentOnNodeProperty(result, pair);
       }
     }

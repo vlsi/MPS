@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="173672751428921112" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
+  <root nodeRef="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)/173672751428921112">
     <nodeInfo nodeId="173672751428921666" fileName="GeneratedTextPreviewEditor.java" startLine="50" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="file" />
     <nodeInfo nodeId="173672751428921669" fileName="GeneratedTextPreviewEditor.java" startLine="51" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" />
     <nodeInfo nodeId="173672751428921672" fileName="GeneratedTextPreviewEditor.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="tabs" />
@@ -219,7 +219,7 @@
     <unitInfo nodeId="173672751428921113" fileName="GeneratedTextPreviewEditor.java" startLine="192" startPosition="0" endLine="231" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor$Panel" />
     <unitInfo nodeId="173672751428921112" fileName="GeneratedTextPreviewEditor.java" startLine="49" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor" />
   </root>
-  <root nodeId="173672751428921679" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
+  <root nodeRef="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)/173672751428921679">
     <nodeInfo nodeId="173672751428921691" fileName="GeneratedTextPreviewEditorProvider.java" startLine="22" startPosition="39" endLine="23" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="173672751428921699" fileName="GeneratedTextPreviewEditorProvider.java" startLine="28" startPosition="35" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="173672751428921741" fileName="GeneratedTextPreviewEditorProvider.java" startLine="38" startPosition="83" endLine="39" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -276,14 +276,14 @@
     <unitInfo nodeId="173672751428921731" fileName="GeneratedTextPreviewEditorProvider.java" startLine="37" startPosition="15" endLine="41" endPosition="5" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditorProvider$1" />
     <unitInfo nodeId="173672751428921679" fileName="GeneratedTextPreviewEditorProvider.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ide.make.GeneratedTextPreviewEditorProvider" />
   </root>
-  <root nodeId="173672751428921785" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
+  <root nodeRef="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)/173672751428921785">
     <nodeInfo nodeId="173672751428921786" fileName="Icons.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GENERATED" />
     <nodeInfo nodeId="173672751428921796" fileName="Icons.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Icons#()V" />
     <scopeInfo nodeId="173672751428921799" fileName="Icons.java" startLine="11" startPosition="19" endLine="11" endPosition="19" />
     <scopeInfo nodeId="173672751428921796" fileName="Icons.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
     <unitInfo nodeId="173672751428921785" fileName="Icons.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.ide.make.Icons" />
   </root>
-  <root nodeId="173672751428921800" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
+  <root nodeRef="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)/173672751428921800">
     <nodeInfo nodeId="173672751428922060" fileName="MakeTask.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLatch" />
     <nodeInfo nodeId="173672751428922066" fileName="MakeTask.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
     <nodeInfo nodeId="173672751428922074" fileName="MakeTask.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="coreTask" />
@@ -513,7 +513,7 @@
     <unitInfo nodeId="173672751428922191" fileName="MakeTask.java" startLine="156" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask$TaskState" />
     <unitInfo nodeId="173672751428921800" fileName="MakeTask.java" startLine="35" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask" />
   </root>
-  <root nodeId="173672751428922365" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
+  <root nodeRef="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)/173672751428922365">
     <nodeInfo nodeId="173672751428922366" fileName="TextPreviewFile.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FS" />
     <nodeInfo nodeId="1462058189369759413" fileName="TextPreviewFile.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMPLEX_CONTENT" />
     <nodeInfo nodeId="173672751428922904" fileName="TextPreviewFile.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="forkNames" />
@@ -821,7 +821,7 @@
     <unitInfo nodeId="173672751428922371" fileName="TextPreviewFile.java" startLine="128" startPosition="0" endLine="289" endPosition="0" unitName="jetbrains.mps.ide.make.TextPreviewFile$TextPreviewVirtualFileSystem" />
     <unitInfo nodeId="173672751428922365" fileName="TextPreviewFile.java" startLine="22" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.ide.make.TextPreviewFile" />
   </root>
-  <root nodeId="173672751428922919" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
+  <root nodeRef="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)/173672751428922919">
     <nodeInfo nodeId="173672751428922924" fileName="TextPreviewUtil.java" startLine="37" startPosition="116" endLine="38" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="173672751428922944" fileName="TextPreviewUtil.java" startLine="38" startPosition="303" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="173672751428922963" fileName="TextPreviewUtil.java" startLine="41" startPosition="64" endLine="42" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -888,7 +888,7 @@
     <unitInfo nodeId="173672751428922997" fileName="TextPreviewUtil.java" startLine="48" startPosition="66" endLine="69" endPosition="5" unitName="jetbrains.mps.ide.make.TextPreviewUtil$2" />
     <unitInfo nodeId="173672751428922919" fileName="TextPreviewUtil.java" startLine="33" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.make.TextPreviewUtil" />
   </root>
-  <root nodeId="173672751428923101" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
+  <root nodeRef="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)/173672751428923101">
     <nodeInfo nodeId="173672751428923186" fileName="UIFeedbackStrategy.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="handler" />
     <nodeInfo nodeId="173672751428923178" fileName="UIFeedbackStrategy.java" startLine="13" startPosition="54" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="173672751428923106" fileName="UIFeedbackStrategy.java" startLine="17" startPosition="45" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -924,7 +924,7 @@
     </scopeInfo>
     <unitInfo nodeId="173672751428923101" fileName="UIFeedbackStrategy.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.make.UIFeedbackStrategy" />
   </root>
-  <root nodeId="173672751428923189" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
+  <root nodeRef="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)/173672751428923189">
     <nodeInfo nodeId="173672751428923198" fileName="UIQueryRelayStrategy.java" startLine="21" startPosition="99" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="173672751428923217" fileName="UIQueryRelayStrategy.java" startLine="24" startPosition="33" endLine="25" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="173672751428923224" fileName="UIQueryRelayStrategy.java" startLine="27" startPosition="36" endLine="28" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -965,7 +965,7 @@
     <unitInfo nodeId="173672751428923239" fileName="UIQueryRelayStrategy.java" startLine="30" startPosition="41" endLine="34" endPosition="5" unitName="jetbrains.mps.ide.make.UIQueryRelayStrategy$2" />
     <unitInfo nodeId="173672751428923189" fileName="UIQueryRelayStrategy.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ide.make.UIQueryRelayStrategy" />
   </root>
-  <root nodeId="173672751428923285" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
+  <root nodeRef="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)/173672751428923285">
     <nodeInfo nodeId="173672751428923286" fileName="WorkbenchMakeService.java" startLine="65" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="173672751428923291" fileName="WorkbenchMakeService.java" startLine="66" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="173672751428924816" fileName="WorkbenchMakeService.java" startLine="67" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="currentSessionStickyMark" />

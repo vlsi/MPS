@@ -20,7 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -113,7 +113,7 @@ public class MatchingUtil {
   public static int hash(SNode node) {
     int result = node.getConcept().getId().hashCode();
     for (SReference reference : node.getReferences()) {
-      SNode targetNode = reference.getTargetNodeSilently();
+      SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
       if (targetNode != null) {
         result = 31 * result + reference.getRole().hashCode();
         result = 31 * result + targetNode.hashCode();

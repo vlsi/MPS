@@ -9,8 +9,9 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.logging.Logger;
 
 public class ReadHelper {
@@ -51,10 +52,10 @@ public class ReadHelper {
   }
 
   @NotNull
-  public Pair<Boolean, SNodePointer> readLink_internal(String src) {
+  public Pair<Boolean, SNodeReference> readLink_internal(String src) {
     // returns <true, xxx> - if src is Dynamic Reference 
     // [modelID.]nodeID[:version] | [modelID.]^[:version] 
-    Pair<Boolean, SNodePointer> result = new Pair<Boolean, SNodePointer>(false, null);
+    Pair<Boolean, SNodeReference> result = new Pair<Boolean, SNodeReference>(false, null);
     if (src == null) {
       return result;
     }
@@ -77,7 +78,7 @@ public class ReadHelper {
     return result;
   }
 
-  public SNodePointer readLinkId(String src) {
+  public SNodeReference readLinkId(String src) {
     // [modelID.]nodeID[:version] | [modelID.]^[:version] 
     return readLink_internal(src).o2;
   }

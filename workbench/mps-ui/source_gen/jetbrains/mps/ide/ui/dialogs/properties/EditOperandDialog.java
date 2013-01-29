@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -87,7 +88,7 @@ public class EditOperandDialog extends DialogWrapper {
       DefaultMutableTreeNode modelNode = new DefaultMutableTreeNode(modelData);
       genNode.add(modelNode);
       for (SNode mapping : SModelOperations.getRoots(((SModel) templateModel.getSModel()), "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
-        SNodePointer np = new SNodePointer(mapping);
+        SNodeReference np = new SNodePointer(mapping);
         MappingSelectTree.NodeRefNodeData nodeData = new MappingSelectTree.NodeRefNodeData(np);
         DefaultMutableTreeNode nodeNode = new DefaultMutableTreeNode(nodeData);
         modelNode.add(nodeNode);
@@ -185,12 +186,12 @@ public class EditOperandDialog extends DialogWrapper {
   }
 
   private void setNodeMappingRef(DefaultMutableTreeNode root, MappingConfig_SimpleRef operand) {
-    SNodePointer nodeRef = new SNodePointer(operand.getModelUID(), operand.getNodeID());
+    SNodeReference nodeRef = new SNodePointer(operand.getModelUID(), operand.getNodeID());
     Enumeration children = root.children();
     while (children.hasMoreElements()) {
       DefaultMutableTreeNode child = (DefaultMutableTreeNode) children.nextElement();
       MappingSelectTree.NodeRefNodeData childData = (MappingSelectTree.NodeRefNodeData) child.getUserObject();
-      if (childData.getObject().equals(nodeRef)) {
+      if (((SNodePointer) childData.getObject()).equals(nodeRef)) {
         childData.setSelected(true);
       }
     }
@@ -264,7 +265,7 @@ public class EditOperandDialog extends DialogWrapper {
     MappingSelectTree.NodeRefNodeData rootData = (MappingSelectTree.NodeRefNodeData) nRoot.getUserObject();
     MappingConfig_SimpleRef result = new MappingConfig_SimpleRef();
     result.setModelUID(rootData.getObject().getModelReference().toString());
-    result.setNodeID(rootData.getObject().getNode().getNodeId().toString());
+    result.setNodeID(((SNodePointer) rootData.getObject()).getNode().getNodeId().toString());
     return result;
   }
 

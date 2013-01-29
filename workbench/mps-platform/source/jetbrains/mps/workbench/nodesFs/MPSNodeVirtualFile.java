@@ -19,8 +19,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.ModelUtil;
 import org.jetbrains.annotations.NonNls;
@@ -35,15 +35,15 @@ public class MPSNodeVirtualFile extends VirtualFile {
   private static final byte[] CONTENTS = new byte[0];
   private static final Logger LOG = Logger.getLogger(MPSNodeVirtualFile.class);
 
-  private SNodePointer myNode;
+  private SNodeReference myNode;
   private String myPath;
   private String myName;
   private long myModificationStamp = LocalTimeCounter.currentTime();
   private long myTimeStamp = -1;
 
-  MPSNodeVirtualFile(@NotNull SNodePointer nodePointer) {
+  MPSNodeVirtualFile(@NotNull SNodeReference nodePointer) {
     myNode = nodePointer;
-    SModelDescriptor modelDescriptor = nodePointer.getModel();
+    SModelDescriptor modelDescriptor = nodePointer.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodePointer.getModelReference());
     if (modelDescriptor instanceof BaseSModelDescriptorWithSource) {
       myTimeStamp = ((BaseSModelDescriptorWithSource) modelDescriptor).getSourceTimestamp();
     }
@@ -53,9 +53,9 @@ public class MPSNodeVirtualFile extends VirtualFile {
   void updateFields() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SNode node = myNode.getNode();
+        SNode node = myNode.resolve(MPSModuleRepository.getInstance());
         if (node == null) {
-          LOG.error(new Throwable("Cannot find node for passed SNodePointer: " + myNode.toString()));
+          LOG.error(new Throwable("Cannot find node for passed SNodeReference: " + myNode.toString()));
           myName = "";
           myPath = myNode.getModelReference().getSModelFqName() + "/" + myName;
         } else {
@@ -67,10 +67,10 @@ public class MPSNodeVirtualFile extends VirtualFile {
   }
 
   public SNode getNode() {
-    return myNode.getNode();
+    return myNode.resolve(MPSModuleRepository.getInstance());
   }
 
-  public SNodePointer getSNodePointer() {
+  public SNodeReference getSNodePointer() {
     return myNode;
   }
 

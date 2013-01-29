@@ -8,7 +8,7 @@ import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.awt.Point;
 import java.util.List;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
@@ -33,6 +33,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -51,30 +52,30 @@ public class GoToHelper {
     return new RelativePoint(selectedCell.getEditor(), new Point(selectedCell.getX(), selectedCell.getY()));
   }
 
-  public static void showOverridingMethodsMenu(List<SNodePointer> nodes, RelativePoint point, Project project, String methodName) {
+  public static void showOverridingMethodsMenu(List<SNodeReference> nodes, RelativePoint point, Project project, String methodName) {
     String title = "Choose overriding method of " + methodName + "() to navigate to";
     GoToHelper.MethodCellRenderer renderer = new GoToHelper.MethodCellRenderer();
     GoToHelper.showMenu(point, project, title, nodes, renderer);
   }
 
-  public static void showOverridenMethodsMenu(List<SNodePointer> nodes, RelativePoint point, Project project, String methodName) {
+  public static void showOverridenMethodsMenu(List<SNodeReference> nodes, RelativePoint point, Project project, String methodName) {
     String title = "Choose super method of" + methodName + "()";
     GoToHelper.MethodCellRenderer renderer = new GoToHelper.MethodCellRenderer();
     GoToHelper.showMenu(point, project, title, nodes, renderer);
   }
 
-  public static void showInheritedClassesMenu(List<SNodePointer> nodes, RelativePoint point, Project project) {
+  public static void showInheritedClassesMenu(List<SNodeReference> nodes, RelativePoint point, Project project) {
     String title = "Choose inherited class to navigate to";
     GoToHelper.DefaultNodeNavigationItemCellRenderer renderer = new GoToHelper.DefaultNodeNavigationItemCellRenderer();
     GoToHelper.showMenu(point, project, title, nodes, renderer);
   }
 
-  private static void showMenu(RelativePoint point, Project project, String title, List<SNodePointer> nodes, NodeListCellRenderer renderer) {
+  private static void showMenu(RelativePoint point, Project project, String title, List<SNodeReference> nodes, NodeListCellRenderer renderer) {
     if (ListSequence.fromList(nodes).isEmpty()) {
       return;
     }
     List<NodeNavigatable> navigatables = new ArrayList<NodeNavigatable>();
-    for (SNodePointer node : nodes) {
+    for (SNodeReference node : nodes) {
       navigatables.add(new NodeNavigatable(project, node));
     }
     Collections.sort(navigatables, renderer.getComparator());
@@ -120,7 +121,7 @@ public class GoToHelper {
       }
     });
 
-    final Set<SNodePointer> nodes = SetSequence.fromSet(new HashSet<SNodePointer>());
+    final Set<SNodeReference> nodes = SetSequence.fromSet(new HashSet<SNodeReference>());
     ProgressManager.getInstance().run(new Task.Modal(project, "Searching...", true) {
       public void run(@NotNull final ProgressIndicator p) {
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -164,7 +165,7 @@ public class GoToHelper {
     }
 
     protected SNode getLabelNode(NodeNavigatable element) {
-      return element.getNodePointer().getNode();
+      return ((SNodePointer) element.getNodePointer()).getNode();
     }
 
     protected SNode getContainerNode(NodeNavigatable element) {
@@ -192,7 +193,7 @@ public class GoToHelper {
     }
 
     protected SNode getLabelNode(NodeNavigatable element) {
-      SNode node = element.getNodePointer().getNode();
+      SNode node = ((SNodePointer) element.getNodePointer()).getNode();
       if (node == null) {
         return null;
       }

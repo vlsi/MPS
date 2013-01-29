@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 public class WeavingMappingRuleContext extends TemplateQueryContextWithRule {
@@ -24,7 +24,7 @@ public class WeavingMappingRuleContext extends TemplateQueryContextWithRule {
     super(node, ruleNode, generator);
   }
 
-  public WeavingMappingRuleContext(SNode node, @NotNull SNodePointer ruleNode, @NotNull ITemplateGenerator generator) {
+  public WeavingMappingRuleContext(SNode node, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
     super(node, ruleNode, generator);
   }
 }

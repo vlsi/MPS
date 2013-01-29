@@ -13,18 +13,18 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class PullUpMethod_Constraints extends BaseConstraintsDescriptor {
   public PullUpMethod_Constraints() {
@@ -50,44 +50,6 @@ public class PullUpMethod_Constraints extends BaseConstraintsDescriptor {
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
-    references.put("oldMethodDeclaration", new BaseReferenceConstraintsDescriptor("oldMethodDeclaration", this) {
-      @Override
-      public boolean hasOwnScopeProvider() {
-        return true;
-      }
-
-      @Nullable
-      @Override
-      public ReferenceScopeProvider getScopeProvider() {
-        return new BaseScopeProvider() {
-          @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_8xrh0c_a0a0a0a0a1a0b0a1a3;
-          }
-
-          @Override
-          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            {
-              SNode ancestor = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", true, false);
-              SNode classifierSpecification = SNodeOperations.as(SLinkOperations.getTarget(ancestor, "oldClassifier", true), "jetbrains.mps.lang.script.structure.DirectClassifierSpecification");
-              if (classifierSpecification != null) {
-                return new SimpleScope(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(classifierSpecification, "classifier", false), "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode it) {
-                    return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-                  }
-                })) {
-                  @Nullable
-                  public String getReferenceText(@NotNull SNode target) {
-                    return target.getName();
-                  }
-                };
-              }
-              return new EmptyScope();
-            }
-          }
-        };
-      }
-    });
     references.put("newMethodDeclaration", new BaseReferenceConstraintsDescriptor("newMethodDeclaration", this) {
       @Override
       public boolean hasOwnScopeProvider() {
@@ -99,8 +61,8 @@ public class PullUpMethod_Constraints extends BaseConstraintsDescriptor {
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_8xrh0c_a0a0a0a0a1a0b0a2a3;
+          public SNodeReference getSearchScopeValidatorNode() {
+            return breakingNode_8xrh0c_a0a0a0a0a1a0b0a1a3;
           }
 
           @Override
@@ -130,6 +92,5 @@ public class PullUpMethod_Constraints extends BaseConstraintsDescriptor {
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)", "849077997121906176");
-  private static SNodePointer breakingNode_8xrh0c_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)", "4242940223545087960");
-  private static SNodePointer breakingNode_8xrh0c_a0a0a0a0a1a0b0a2a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)", "4242940223545087963");
+  private static SNodePointer breakingNode_8xrh0c_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)", "4242940223545087963");
 }

@@ -7,6 +7,7 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
@@ -47,7 +48,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     return this.myModel;
   }
 
-  public SNodePointer getMappingNode() {
+  public SNodeReference getMappingNode() {
     return new SNodePointer("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "7980748436587788164");
   }
 
@@ -99,7 +100,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3p;
     }
 
@@ -202,7 +203,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3q;
     }
 
@@ -237,7 +238,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
             return "";
           }
 
-          public SNodePointer getTemplateNode() {
+          public SNodeReference getTemplateNode() {
             return new SNodePointer("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "7980748436587793725");
           }
         }, tnode1, "variable", context);

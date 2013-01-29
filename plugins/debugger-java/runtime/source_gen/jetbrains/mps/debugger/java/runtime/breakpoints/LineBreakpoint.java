@@ -6,9 +6,10 @@ import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
 import jetbrains.mps.debugger.java.runtime.engine.RequestManager;
@@ -24,7 +25,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
   private static final Logger LOG = Logger.getLogger(LineBreakpoint.class);
   protected final BreakpointLocation myLocation;
 
-  public LineBreakpoint(@NotNull SNodePointer nodePointer, Project project) {
+  public LineBreakpoint(@NotNull SNodeReference nodePointer, Project project) {
     super(project);
     myLocation = new BreakpointLocation(nodePointer);
   }

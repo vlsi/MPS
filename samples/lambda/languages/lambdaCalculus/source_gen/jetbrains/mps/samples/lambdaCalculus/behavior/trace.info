@@ -29,7 +29,7 @@
   <unitInfo fileName="VariableOwner_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner_BehaviorDescriptor" />
   <unitInfo fileName="VariableReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.VariableReference_BehaviorDescriptor" />
   <unitInfo fileName="Variable_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.Variable_BehaviorDescriptor" />
-  <root nodeId="1308935328408190990" modelId="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)">
+  <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/1308935328408190990">
     <nodeInfo nodeId="1308935328408191011" fileName="LambdaExpression_Behavior.java" startLine="18" startPosition="443" endLine="19" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1308935328408191018" fileName="LambdaExpression_Behavior.java" startLine="19" startPosition="112" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="9154891455847236443" fileName="LambdaExpression_Behavior.java" startLine="21" startPosition="327" endLine="22" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -101,7 +101,7 @@
     </scopeInfo>
     <unitInfo nodeId="1308935328408190990" fileName="LambdaExpression_Behavior.java" startLine="13" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaExpression_Behavior" />
   </root>
-  <root nodeId="2985097847315904384" modelId="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)">
+  <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/2985097847315904384">
     <nodeInfo nodeId="2985097847315904393" fileName="FunctionType_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="345" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2985097847315904384" fileName="FunctionType_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="2985097847315904384" fileName="FunctionType_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -115,7 +115,7 @@
     </scopeInfo>
     <unitInfo nodeId="2985097847315904384" fileName="FunctionType_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.FunctionType_Behavior" />
   </root>
-  <root nodeId="3851847705188496529" modelId="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)">
+  <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/3851847705188496529">
     <nodeInfo nodeId="3851847705188496529" fileName="AbstractionVarRef_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="3851847705188496531" fileName="AbstractionVarRef_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="3851847705188496529" fileName="AbstractionVarRef_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
@@ -123,7 +123,7 @@
     </scopeInfo>
     <unitInfo nodeId="3851847705188496529" fileName="AbstractionVarRef_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.AbstractionVarRef_Behavior" />
   </root>
-  <root nodeId="5066394162984540351" modelId="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)">
+  <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/5066394162984540351">
     <nodeInfo nodeId="5066394162984540375" fileName="LambdaAbstraction_Behavior.java" startLine="19" startPosition="158" endLine="20" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5066394162984540391" fileName="LambdaAbstraction_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5066394162984559824" fileName="LambdaAbstraction_Behavior.java" startLine="25" startPosition="86" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -173,7 +173,7 @@
     </scopeInfo>
     <unitInfo nodeId="5066394162984540351" fileName="LambdaAbstraction_Behavior.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_Behavior" />
   </root>
-  <root nodeId="5066394162984555386" modelId="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)">
+  <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/5066394162984555386">
     <nodeInfo nodeId="5066394162984555456" fileName="LambdaApplication_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5066394162984555488" fileName="LambdaApplication_Behavior.java" startLine="17" startPosition="48" endLine="18" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5066394162984555522" fileName="LambdaApplication_Behavior.java" startLine="19" startPosition="162" endLine="20" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -219,7 +219,7 @@
     </scopeInfo>
     <unitInfo nodeId="5066394162984555386" fileName="LambdaApplication_Behavior.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaApplication_Behavior" />
   </root>
-  <root nodeId="5249919352014727814" modelId="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)">
+  <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/5249919352014727814">
     <nodeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="21" startPosition="116" endLine="22" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -240,7 +240,7 @@
     </scopeInfo>
     <unitInfo nodeId="5249919352014727814" fileName="VariableOwner_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner_Behavior" />
   </root>
-  <root nodeId="5400493247431796468" modelId="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)">
+  <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/5400493247431796468">
     <nodeInfo nodeId="8981808925914844611" fileName="LetExpression_Behavior.java" startLine="18" startPosition="86" endLine="19" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8981808925914844617" fileName="LetExpression_Behavior.java" startLine="19" startPosition="48" endLine="20" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8981808925914844624" fileName="LetExpression_Behavior.java" startLine="20" startPosition="100" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -271,7 +271,7 @@
     </scopeInfo>
     <unitInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.behavior.LetExpression_Behavior" />
   </root>
-  <root nodeId="926857988255581399" modelId="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)">
+  <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/926857988255581399">
     <nodeInfo nodeId="926857988255582853" fileName="LetRef_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="926857988255582862" fileName="LetRef_Behavior.java" startLine="17" startPosition="48" endLine="18" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="926857988255582897" fileName="LetRef_Behavior.java" startLine="19" startPosition="163" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

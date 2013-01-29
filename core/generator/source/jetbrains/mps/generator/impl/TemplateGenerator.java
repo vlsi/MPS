@@ -15,7 +15,12 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.GenerationTracerUtil;
+import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
@@ -27,19 +32,40 @@ import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithDependencyRecording;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
-import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
+import jetbrains.mps.generator.runtime.TemplateDropRootRule;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.progress.ProgressMonitor;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -71,9 +97,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final DependenciesBuilder myDependenciesBuilder;
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressMonitor progressMonitor,
-               IGeneratorLogger logger, RuleManager ruleManager,
-               SModel inputModel, SModel outputModel, GenerationOptions options,
-               DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {
+                           IGeneratorLogger logger, RuleManager ruleManager,
+                           SModel inputModel, SModel outputModel, GenerationOptions options,
+                           DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {
 
     super(operationContext, progressMonitor, logger, inputModel, outputModel, options.isShowBadChildWarning());
     myRuleManager = ruleManager;
@@ -196,14 +222,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (GenerationException e) {
       if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
       if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-      showErrorMessage(null, rule.getRuleNode().getNode(), "internal error: " + e.toString());
+      showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
     }
   }
 
   private void applyRootRule(TemplateRootMappingRule rule, List<SNode> rootsToCopy) throws GenerationFailureException, GenerationCanceledException {
     String applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
-      showErrorMessage(null, null, rule.getRuleNode().getNode(), "rule has no applicable concept defined");
+      showErrorMessage(null, null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "rule has no applicable concept defined");
       return;
     }
     boolean includeInheritors = rule.applyToInheritors();
@@ -234,7 +260,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         } catch (GenerationException e) {
           if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
           if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-          showErrorMessage(null, rule.getRuleNode().getNode(), "internal error: " + e.toString());
+          showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
         }
       }
     }
@@ -254,11 +280,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
     } catch (TemplateProcessingFailureException e) {
-      showErrorMessage(null, rule.getRuleNode().getNode(), "couldn't create root node");
+      showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "couldn't create root node");
     } catch (GenerationException e) {
       if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
       if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-      showErrorMessage(null, rule.getRuleNode().getNode(), "internal error: " + e.toString());
+      showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
     }
   }
 
@@ -289,11 +315,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         copyRootInputNode(inputNode, environment);
       }
     } catch (TemplateProcessingFailureException e) {
-      showErrorMessage(inputNode, rule.getRuleNode().getNode(), "couldn't create root node");
+      showErrorMessage(inputNode, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "couldn't create root node");
     } catch (GenerationException e) {
       if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
       if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-      showErrorMessage(inputNode, rule.getRuleNode().getNode(), "internal error: " + e.toString());
+      showErrorMessage(inputNode, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
     }
   }
 
@@ -330,7 +356,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private boolean isApplicableDropRootRule(SNode inputRootNode, TemplateDropRootRule rule, TemplateExecutionEnvironment environment) throws GenerationFailureException {
     String applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
-      showErrorMessage(null, null, rule.getRuleNode().getNode(), "rule has no applicable concept defined");
+      showErrorMessage(null, null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "rule has no applicable concept defined");
       return false;
     }
 
@@ -345,7 +371,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     } catch (GenerationException e) {
       if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-      showErrorMessage(null, rule.getRuleNode().getNode(), "internal error: " + e.toString());
+      showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
     }
 
     return false;
@@ -394,7 +420,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
    * returns null if no reductions found
    */
   @Nullable
-  Collection<SNode> tryToReduce(TemplateContext context, SNodePointer templateSwitch, String mappingName, @NotNull ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> tryToReduce(TemplateContext context, SNodeReference templateSwitch, String mappingName, @NotNull ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
     SNode inputNode = context.getInput();
     TemplateReductionRule reductionRule = null;
     checkGenerationCanceledFast();
@@ -438,7 +464,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
       if (ex.isLoggingNeeded() && reductionRule != null) {
-        SNode ruleNode = reductionRule.getRuleNode().getNode();
+        SNode ruleNode = reductionRule.getRuleNode().resolve(MPSModuleRepository.getInstance());
         String messageText = "-- dismissed reduction rule: " + (ruleNode != null ? org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(ruleNode) : "unknown");
         if (ex.isInfo()) {
           myLogger.info(ruleNode, messageText);
@@ -462,7 +488,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected void checkGenerationCanceledFast() throws GenerationCanceledException {
   }
 
-  Collection<SNode> copySrc(String mappingName, SNodePointer templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> copySrc(String mappingName, SNodeReference templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
     if (inputNode.getModel() != getInputModel() || inputNode.getModel() == null) {
 
       // adapt external node
@@ -493,7 +519,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (templateNodeId != null) {
         myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNodeId, copiedNode);
       } else if (templateNode != null) {
-        myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNode.getNode(), copiedNode);
+        myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNode.resolve(MPSModuleRepository.getInstance()), copiedNode);
       }
       myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, copiedNode);
       return Collections.singletonList(copiedNode);
@@ -522,44 +548,53 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     for (SReference inputReference : inputNode.getReferences()) {
-      if (inputNode.getModel() != null && (inputReference instanceof DynamicReference || inputReference.isExternal())) {
-        // dynamic & external references don't need validation => replace input model with output
-        SModelReference targetModelReference = inputReference.isExternal() ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
-        if (inputReference instanceof StaticReference) {
-          if (targetModelReference == null) {
-            myLogger.error(inputNode, "broken reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode) + " (target model is null)",
-              GeneratorUtil.describeIfExists(inputNode, "input node"));
-            continue;
-          }
-
-          SReference reference = new StaticReference(
-            inputReference.getRole(),
-            outputNode,
-            targetModelReference,
-            inputReference.getTargetNodeId(),
-            inputReference.getResolveInfo());
-          outputNode.setReference(reference.getRole(), reference);
-        } else if (inputReference instanceof DynamicReference) {
-          DynamicReference outputReference = new DynamicReference(
-            inputReference.getRole(),
-            outputNode,
-            targetModelReference,
-            inputReference.getResolveInfo());
-          outputReference.setOrigin(((DynamicReference) inputReference).getOrigin());
-          outputNode.setReference(outputReference.getRole(), outputReference);
-        } else {
-          myLogger.error(inputNode, "internal error: can't clone reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode),
-            new ProblemDescription(inputNode, " -- was reference class: " + inputReference.getClass().getName()));
+      if (inputNode.getModel() != null) {
+        boolean external = true;
+        if (inputReference instanceof PostponedReference){
+          external = false;
+        } else if (inputNode.getModel().getSModelReference().equals(inputReference.getTargetSModelReference())){
+          external = false;
         }
-        continue;
+        if (inputReference instanceof DynamicReference || external) {
+          // dynamic & external references don't need validation => replace input model with output
+          SModelReference targetModelReference = external ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
+          if (inputReference instanceof StaticReference) {
+            if (targetModelReference == null) {
+              myLogger.error(inputNode, "broken reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode) + " (target model is null)",
+                GeneratorUtil.describeIfExists(inputNode, "input node"));
+              continue;
+            }
+
+            SReference reference = new StaticReference(
+              inputReference.getRole(),
+              outputNode,
+              targetModelReference,
+              inputReference.getTargetNodeId(),
+              ((StaticReference) inputReference).getResolveInfo());
+            outputNode.setReference(reference.getRole(), reference);
+          } else if (inputReference instanceof DynamicReference) {
+            DynamicReference outputReference = new DynamicReference(
+              inputReference.getRole(),
+              outputNode,
+              targetModelReference,
+              ((DynamicReference) inputReference).getResolveInfo());
+            outputReference.setOrigin(((DynamicReference) inputReference).getOrigin());
+            outputNode.setReference(outputReference.getRole(), outputReference);
+          } else {
+            myLogger.error(inputNode, "internal error: can't clone reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode),
+              new ProblemDescription(inputNode, " -- was reference class: " + inputReference.getClass().getName()));
+          }
+          continue;
+        }
       }
 
-      SNode inputTargetNode = inputReference.getTargetNodeSilently();
+      SNode inputTargetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(inputReference);
       if (inputTargetNode == null) {
         myLogger.error(inputNode, "broken reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode),
           GeneratorUtil.describeIfExists(inputNode, "input node"));
         continue;
       }
+
       if (inputTargetNode.getModel() != null && inputTargetNode.getModel().equals(myInputModel) || myAdditionalInputNodes.containsKey(inputTargetNode)) {
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           inputReference.getRole(),
@@ -658,7 +693,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myRuleManager;
   }
 
-  public TemplateSwitchMapping getSwitch(SNodePointer switch_) {
+  public TemplateSwitchMapping getSwitch(SNodeReference switch_) {
     return myRuleManager.getSwitch(switch_);
   }
 
@@ -679,7 +714,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myChanged = true;
   }
 
-  private void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodePointer templateNode, boolean isCopied) {
+  private void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
     synchronized (this) {
       registerInModel(outputRoot, inputNode, templateNode);
       myNewToOldRoot.put(outputRoot, inputNode);
@@ -694,7 +729,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myDependenciesBuilder.rootReplaced(old, new_);
   }
 
-  protected void registerInModel(SNode outputRoot, SNode inputNode, SNodePointer templateNode) {
+  protected void registerInModel(SNode outputRoot, SNode inputNode, SNodeReference templateNode) {
     myOutputRoots.add(outputRoot);
   }
 

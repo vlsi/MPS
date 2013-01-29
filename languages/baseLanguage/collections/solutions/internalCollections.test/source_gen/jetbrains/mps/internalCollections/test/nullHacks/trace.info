@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1207738853400" modelId="r:00000000-0000-4000-0000-011c895903f0(jetbrains.mps.internalCollections.test.nullHacks)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903f0(jetbrains.mps.internalCollections.test.nullHacks)/1207738853400">
     <nodeInfo nodeId="1207738992858" fileName="NullSequence_Test.java" startLine="17" startPosition="37" endLine="18" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1207739036448" fileName="NullSequence_Test.java" startLine="18" startPosition="39" endLine="19" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1207739048219" fileName="NullSequence_Test.java" startLine="19" startPosition="33" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -107,7 +107,7 @@
     <unitInfo nodeId="1207741449244" fileName="NullSequence_Test.java" startLine="46" startPosition="76" endLine="50" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullSequence_Test$1" />
     <unitInfo nodeId="1207738853400" fileName="NullSequence_Test.java" startLine="15" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullSequence_Test" />
   </root>
-  <root nodeId="1207742095107" modelId="r:00000000-0000-4000-0000-011c895903f0(jetbrains.mps.internalCollections.test.nullHacks)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903f0(jetbrains.mps.internalCollections.test.nullHacks)/1207742095107">
     <nodeInfo nodeId="1207743956452" fileName="NullValues_Test.java" startLine="47" startPosition="29" endLine="47" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7556115255731757630" fileName="NullValues_Test.java" startLine="97" startPosition="29" endLine="97" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7556115255731760292" fileName="NullValues_Test.java" startLine="176" startPosition="29" endLine="176" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -361,7 +361,7 @@
     <unitInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="149" startPosition="74" endLine="189" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$7" />
     <unitInfo nodeId="1207742095107" fileName="NullValues_Test.java" startLine="19" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test" />
   </root>
-  <root nodeId="1207745701534" modelId="r:00000000-0000-4000-0000-011c895903f0(jetbrains.mps.internalCollections.test.nullHacks)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903f0(jetbrains.mps.internalCollections.test.nullHacks)/1207745701534">
     <nodeInfo nodeId="1207745717595" fileName="NullEmpty_Test.java" startLine="18" startPosition="35" endLine="19" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1207745752280" fileName="NullEmpty_Test.java" startLine="19" startPosition="91" endLine="20" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1207745758981" fileName="NullEmpty_Test.java" startLine="20" startPosition="65" endLine="21" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

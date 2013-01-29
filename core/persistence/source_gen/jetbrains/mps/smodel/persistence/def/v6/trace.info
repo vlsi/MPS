@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="651246788329803429" modelId="r:83748538-cbc9-4e2d-b0e1-e282b3d0c13d(jetbrains.mps.smodel.persistence.def.v6)">
+  <root nodeRef="r:83748538-cbc9-4e2d-b0e1-e282b3d0c13d(jetbrains.mps.smodel.persistence.def.v6)/651246788329803429">
     <nodeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
     <nodeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="modelhandler" />
     <nodeInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nodehandler" />
@@ -420,7 +420,7 @@
     <unitInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="142" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler$ModelElementHandler" />
     <unitInfo nodeId="651246788329803429" fileName="LineToContentMapReader6Handler.java" startLine="16" startPosition="0" endLine="359" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v6.LineToContentMapReader6Handler" />
   </root>
-  <root nodeId="7319439566871678351" modelId="r:83748538-cbc9-4e2d-b0e1-e282b3d0c13d(jetbrains.mps.smodel.persistence.def.v6)">
+  <root nodeRef="r:83748538-cbc9-4e2d-b0e1-e282b3d0c13d(jetbrains.mps.smodel.persistence.def.v6)/7319439566871678351">
     <nodeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
     <nodeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="modelhandler" />
     <nodeInfo nodeId="7319439566871678351" fileName="ModelReader6Handler.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="persistencehandler" />

@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -134,15 +134,15 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     return stuffToTest;
   }
 
-  public List<SNodePointer> getTestsToMake(final Project project) {
+  public List<SNodeReference> getTestsToMake(final Project project) {
     final List<ITestNodeWrapper>[] stuffToTest = (List<ITestNodeWrapper>[]) new List[1];
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         stuffToTest[0] = getTestsUnderProgress(project);
       }
     }, ModalityState.NON_MODAL);
-    return ListSequence.fromList(stuffToTest[0]).select(new ISelector<ITestNodeWrapper, SNodePointer>() {
-      public SNodePointer select(ITestNodeWrapper it) {
+    return ListSequence.fromList(stuffToTest[0]).select(new ISelector<ITestNodeWrapper, SNodeReference>() {
+      public SNodeReference select(ITestNodeWrapper it) {
         return it.getNodePointer();
       }
     }).toListSequence();

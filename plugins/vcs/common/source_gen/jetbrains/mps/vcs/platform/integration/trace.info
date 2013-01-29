@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5337823064584388635" modelId="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)">
+  <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/5337823064584388635">
     <nodeInfo nodeId="5337823064584388661" fileName="OptimizeImportsCheckinHandler.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5337823064584388666" fileName="OptimizeImportsCheckinHandler.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="5337823064584388669" fileName="OptimizeImportsCheckinHandler.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
@@ -108,7 +108,7 @@
     <unitInfo nodeId="5337823064584388712" fileName="OptimizeImportsCheckinHandler.java" startLine="51" startPosition="15" endLine="68" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$1" />
     <unitInfo nodeId="5337823064584388635" fileName="OptimizeImportsCheckinHandler.java" startLine="34" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler" />
   </root>
-  <root nodeId="6030177200825199020" modelId="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)">
+  <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6030177200825199020">
     <nodeInfo nodeId="6030177200825199033" fileName="ModelDiffTool.java" startLine="37" startPosition="47" endLine="38" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6030177200825199040" fileName="ModelDiffTool.java" startLine="38" startPosition="51" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6030177200825199043" fileName="ModelDiffTool.java" startLine="39" startPosition="26" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -204,7 +204,7 @@
     <unitInfo nodeId="6030177200825199126" fileName="ModelDiffTool.java" startLine="75" startPosition="56" endLine="79" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.ModelDiffTool$1" />
     <unitInfo nodeId="6030177200825199020" fileName="ModelDiffTool.java" startLine="33" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelDiffTool" />
   </root>
-  <root nodeId="6030177200825199214" modelId="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)">
+  <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6030177200825199214">
     <nodeInfo nodeId="6030177200825199333" fileName="ModelMergeTool.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6030177200825199348" fileName="ModelMergeTool.java" startLine="33" startPosition="47" endLine="34" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6030177200825199365" fileName="ModelMergeTool.java" startLine="35" startPosition="9" endLine="36" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -315,7 +315,7 @@
     <unitInfo nodeId="6030177200825199234" fileName="ModelMergeTool.java" startLine="81" startPosition="45" endLine="89" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool$2" />
     <unitInfo nodeId="6030177200825199214" fileName="ModelMergeTool.java" startLine="27" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelMergeTool" />
   </root>
-  <root nodeId="6030177200825199525" modelId="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)">
+  <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6030177200825199525">
     <nodeInfo nodeId="6030177200825199528" fileName="ToolsApplicationComponent.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDiffTool" />
     <nodeInfo nodeId="6030177200825199533" fileName="ToolsApplicationComponent.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelMergeTool" />
     <nodeInfo nodeId="6030177200825199538" fileName="ToolsApplicationComponent.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiffManager" />
@@ -341,7 +341,7 @@
     <scopeInfo nodeId="6030177200825199574" fileName="ToolsApplicationComponent.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <unitInfo nodeId="6030177200825199525" fileName="ToolsApplicationComponent.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ToolsApplicationComponent" />
   </root>
-  <root nodeId="6477249786997134461" modelId="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)">
+  <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6477249786997134461">
     <nodeInfo nodeId="5015601397717990845" fileName="PluginVCSManager.java" startLine="14" startPosition="31" endLine="15" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6477249786997137827" fileName="PluginVCSManager.java" startLine="20" startPosition="36" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6477249786997134463" fileName="PluginVCSManager.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginVCSManager#()V" />
@@ -358,7 +358,7 @@
     <scopeInfo nodeId="6477249786997137821" fileName="PluginVCSManager.java" startLine="18" startPosition="0" endLine="23" endPosition="0" />
     <unitInfo nodeId="6477249786997134461" fileName="PluginVCSManager.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.PluginVCSManager" />
   </root>
-  <root nodeId="7788464498752623152" modelId="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)">
+  <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/7788464498752623152">
     <nodeInfo nodeId="7788464498752623190" fileName="DiskMemoryConflictResolverImpl.java" startLine="32" startPosition="127" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7101751311172703895" fileName="DiskMemoryConflictResolverImpl.java" startLine="35" startPosition="25" endLine="36" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7101751311172704200" fileName="DiskMemoryConflictResolverImpl.java" startLine="37" startPosition="45" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -524,7 +524,7 @@
     <unitInfo nodeId="7788464498752623167" fileName="DiskMemoryConflictResolverImpl.java" startLine="34" startPosition="56" endLine="67" endPosition="5" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl$1" />
     <unitInfo nodeId="7788464498752623152" fileName="DiskMemoryConflictResolverImpl.java" startLine="28" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl" />
   </root>
-  <root nodeId="7788464498752650651" modelId="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)">
+  <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/7788464498752650651">
     <nodeInfo nodeId="7788464498752650700" fileName="ConflictingModelsWarnings.java" startLine="28" startPosition="92" endLine="29" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7788464498752650708" fileName="ConflictingModelsWarnings.java" startLine="29" startPosition="62" endLine="30" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7788464498752650714" fileName="ConflictingModelsWarnings.java" startLine="30" startPosition="87" endLine="31" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

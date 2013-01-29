@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3102837338444216503" modelId="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)">
+  <root nodeRef="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)/3102837338444216503">
     <nodeInfo nodeId="3102837338444216506" fileName="ObjectValueProxy.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReferenceType" />
     <nodeInfo nodeId="3102837338444216517" fileName="ObjectValueProxy.java" startLine="29" startPosition="46" endLine="30" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3102837338444216520" fileName="ObjectValueProxy.java" startLine="30" startPosition="13" endLine="31" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -116,7 +116,7 @@
     <unitInfo nodeId="3102837338444216756" fileName="ObjectValueProxy.java" startLine="86" startPosition="58" endLine="92" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ObjectValueProxy$1" />
     <unitInfo nodeId="3102837338444216503" fileName="ObjectValueProxy.java" startLine="26" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ObjectValueProxy" />
   </root>
-  <root nodeId="3102837338444216799" modelId="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)">
+  <root nodeRef="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)/3102837338444216799">
     <nodeInfo nodeId="3102837338444216810" fileName="NullValueProxy.java" startLine="17" startPosition="54" endLine="18" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="3102837338444216830" fileName="NullValueProxy.java" startLine="22" startPosition="118" endLine="23" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="3102837338444216854" fileName="NullValueProxy.java" startLine="27" startPosition="123" endLine="28" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
@@ -183,7 +183,7 @@
     </scopeInfo>
     <unitInfo nodeId="3102837338444216799" fileName="NullValueProxy.java" startLine="12" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.proxies.NullValueProxy" />
   </root>
-  <root nodeId="3102837338444216936" modelId="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)">
+  <root nodeRef="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)/3102837338444216936">
     <nodeInfo nodeId="3102837338444216948" fileName="ArrayValueProxy.java" startLine="26" startPosition="48" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3102837338444216955" fileName="ArrayValueProxy.java" startLine="31" startPosition="42" endLine="32" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3102837338444216966" fileName="ArrayValueProxy.java" startLine="36" startPosition="54" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
@@ -281,7 +281,7 @@
     <unitInfo nodeId="3102837338444217080" fileName="ArrayValueProxy.java" startLine="69" startPosition="58" endLine="75" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ArrayValueProxy$1" />
     <unitInfo nodeId="3102837338444216936" fileName="ArrayValueProxy.java" startLine="25" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ArrayValueProxy" />
   </root>
-  <root nodeId="3102837338444217168" modelId="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)">
+  <root nodeRef="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)/3102837338444217168">
     <nodeInfo nodeId="3102837338444217186" fileName="MirrorUtilImpl.java" startLine="37" startPosition="24" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3102837338444217315" fileName="MirrorUtilImpl.java" startLine="40" startPosition="35" endLine="41" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3102837338444217304" fileName="MirrorUtilImpl.java" startLine="43" startPosition="32" endLine="44" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

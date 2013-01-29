@@ -14,7 +14,7 @@
   <unitInfo fileName="ToEvaluateAnnotation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.ToEvaluateAnnotation_BehaviorDescriptor" />
   <unitInfo fileName="UnitNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.UnitNode_BehaviorDescriptor" />
   <unitInfo fileName="UnprocessedAnnotation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.UnprocessedAnnotation_BehaviorDescriptor" />
-  <root nodeId="1262430001741643006" modelId="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)">
+  <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/1262430001741643006">
     <nodeInfo nodeId="1262430001741643005" fileName="ToEvaluateAnnotation_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914722221" fileName="ToEvaluateAnnotation_Behavior.java" startLine="20" startPosition="93" endLine="21" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914722236" fileName="ToEvaluateAnnotation_Behavior.java" startLine="21" startPosition="260" endLine="22" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -38,7 +38,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741643006" fileName="ToEvaluateAnnotation_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.ToEvaluateAnnotation_Behavior" />
   </root>
-  <root nodeId="1262430001741646975" modelId="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)">
+  <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/1262430001741646975">
     <nodeInfo nodeId="1262430001741646974" fileName="DoNotTransformAnnotation_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914723684" fileName="DoNotTransformAnnotation_Behavior.java" startLine="20" startPosition="93" endLine="21" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914723699" fileName="DoNotTransformAnnotation_Behavior.java" startLine="21" startPosition="260" endLine="22" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -62,7 +62,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741646975" fileName="DoNotTransformAnnotation_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation_Behavior" />
   </root>
-  <root nodeId="1262430001741647095" modelId="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)">
+  <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/1262430001741647095">
     <nodeInfo nodeId="1262430001741647094" fileName="UnprocessedAnnotation_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914726419" fileName="UnprocessedAnnotation_Behavior.java" startLine="20" startPosition="93" endLine="21" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914726434" fileName="UnprocessedAnnotation_Behavior.java" startLine="21" startPosition="260" endLine="22" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -86,7 +86,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741647095" fileName="UnprocessedAnnotation_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.UnprocessedAnnotation_Behavior" />
   </root>
-  <root nodeId="4005274477404902656" modelId="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)">
+  <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/4005274477404902656">
     <nodeInfo nodeId="4005274477404903819" fileName="LowLevelVariable_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4005274477404902656" fileName="LowLevelVariable_Behavior.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="4005274477404902658" fileName="LowLevelVariable_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="67" />
@@ -95,7 +95,7 @@
     </scopeInfo>
     <unitInfo nodeId="4005274477404902656" fileName="LowLevelVariable_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariable_Behavior" />
   </root>
-  <root nodeId="4544608336420723235" modelId="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)">
+  <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/4544608336420723235">
     <nodeInfo nodeId="4544608336420723259" fileName="DebuggedType_Behavior.java" startLine="14" startPosition="149" endLine="15" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4544608336420723288" fileName="DebuggedType_Behavior.java" startLine="17" startPosition="148" endLine="18" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4544608336420723299" fileName="DebuggedType_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -124,7 +124,7 @@
     </scopeInfo>
     <unitInfo nodeId="4544608336420723235" fileName="DebuggedType_Behavior.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_Behavior" />
   </root>
-  <root nodeId="5211667636169798154" modelId="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)">
+  <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/5211667636169798154">
     <nodeInfo nodeId="5211667636169820149" fileName="EvaluatorConcept_Behavior.java" startLine="28" startPosition="91" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5211667636169820154" fileName="EvaluatorConcept_Behavior.java" startLine="32" startPosition="69" endLine="33" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5211667636169820168" fileName="EvaluatorConcept_Behavior.java" startLine="36" startPosition="80" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -289,7 +289,7 @@
     <unitInfo nodeId="5439191097839093342" fileName="EvaluatorConcept_Behavior.java" startLine="100" startPosition="379" endLine="107" endPosition="7" unitName="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorConcept_Behavior$1" />
     <unitInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="24" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorConcept_Behavior" />
   </root>
-  <root nodeId="6036237525966348398" modelId="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)">
+  <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/6036237525966348398">
     <nodeInfo nodeId="6036237525966348407" fileName="EvaluatorsSuperMethodCall_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6036237525966348398" fileName="EvaluatorsSuperMethodCall_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6036237525966348398" fileName="EvaluatorsSuperMethodCall_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getInstanceType_8008512149545154471#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -303,7 +303,7 @@
     </scopeInfo>
     <unitInfo nodeId="6036237525966348398" fileName="EvaluatorsSuperMethodCall_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsSuperMethodCall_Behavior" />
   </root>
-  <root nodeId="9172312269976647292" modelId="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)">
+  <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/9172312269976647292">
     <nodeInfo nodeId="9172312269976647292" fileName="IEvaluatorConcept_Behavior.java" startLine="15" startPosition="90" endLine="16" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9172312269976647292" fileName="IEvaluatorConcept_Behavior.java" startLine="20" startPosition="123" endLine="21" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9172312269976647292" fileName="IEvaluatorConcept_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

@@ -4,6 +4,7 @@ package jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.temp
 
 import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -23,7 +24,7 @@ public class Templateaaaaa implements TemplateDeclarationWeavingAware {
     this.myNnnn = nnnn;
   }
 
-  public SNodePointer getTemplateNode() {
+  public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "933643154466320524");
   }
 
@@ -69,7 +70,7 @@ public class Templateaaaaa implements TemplateDeclarationWeavingAware {
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     TemplateContext contextWithParams = context.subContext(getParametersAsMap());
     SNode tnodepart0 = applyPart0(environment, contextWithParams);
-    SNodePointer weaveTf0 = weaveTfConst_54ml0j_a0c0g;
+    SNodeReference weaveTf0 = weaveTfConst_54ml0j_a0c0g;
     environment.weaveNode(outputContextNode, "contentNode", tnodepart0, weaveTf0, contextWithParams.getInput());
     return TemplateUtil.singletonList(tnodepart0);
   }

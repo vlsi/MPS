@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1152305201679" modelId="r:00000000-0000-4000-0000-011c895903b5(jetbrains.mps.baseLanguage.collections.samples.fibonacci)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903b5(jetbrains.mps.baseLanguage.collections.samples.fibonacci)/1152305201679">
     <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="59" startPosition="27" endLine="59" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223519" fileName="FibonacciSequence.java" startLine="62" startPosition="27" endLine="62" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
@@ -104,7 +104,7 @@
     <unitInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="15" startPosition="36" endLine="96" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$1" />
     <unitInfo nodeId="1152305201679" fileName="FibonacciSequence.java" startLine="10" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence" />
   </root>
-  <root nodeId="1152305715106" modelId="r:00000000-0000-4000-0000-011c895903b5(jetbrains.mps.baseLanguage.collections.samples.fibonacci)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895903b5(jetbrains.mps.baseLanguage.collections.samples.fibonacci)/1152305715106">
     <nodeInfo nodeId="1152305767927" fileName="Main.java" startLine="8" startPosition="42" endLine="9" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1154035900116" fileName="Main.java" startLine="10" startPosition="65" endLine="11" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1154035872811" fileName="Main.java" startLine="9" startPosition="52" endLine="12" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />

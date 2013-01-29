@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.search.ISearchScope;
 
 public interface ReferenceScopeProvider {
@@ -36,5 +36,5 @@ public interface ReferenceScopeProvider {
    *
    * @return pointer to corresponding ConceptFunction node or null
    */
-  SNodePointer getSearchScopeValidatorNode();
+  SNodeReference getSearchScopeValidatorNode();
 }

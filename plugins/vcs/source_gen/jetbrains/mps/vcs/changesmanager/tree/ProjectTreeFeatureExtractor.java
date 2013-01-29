@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.smodel.ConceptTreeNode;
@@ -15,7 +16,7 @@ import jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature;
 import jetbrains.mps.ide.ui.smodel.PropertyTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.PropertyFeature;
 import jetbrains.mps.ide.ui.smodel.ReferenceTreeNode;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.PropertiesFeature;
 import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
@@ -37,7 +38,7 @@ public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {
     } else if (treeNode.getParent() instanceof MPSTreeNodeEx) {
       node = ((MPSTreeNodeEx) treeNode.getParent()).getSNode();
     }
-    SNodePointer nodePointer = null;
+    SNodeReference nodePointer = null;
     if (node != null) {
       if (node.getModel() == null) {
         return null;

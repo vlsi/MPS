@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2985097847315873733" modelId="r:46f53b30-44a8-4c39-ba0f-5abf40394bee(sandboxModel2)">
+  <root nodeRef="r:46f53b30-44a8-4c39-ba0f-5abf40394bee(sandboxModel2)/2985097847315873733">
     <nodeInfo nodeId="2985097847315873733" fileName="qwert.java" startLine="10" startPosition="42" endLine="11" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2985097847315873733" fileName="qwert.java" startLine="14" startPosition="31" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7255885626191294754" fileName="qwert.java" startLine="18" startPosition="68" endLine="19" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -22,7 +22,7 @@
     </scopeInfo>
     <unitInfo nodeId="2985097847315873733" fileName="qwert.java" startLine="6" startPosition="0" endLine="22" endPosition="0" unitName="sandboxModel2.qwert" />
   </root>
-  <root nodeId="816130369292799544" modelId="r:46f53b30-44a8-4c39-ba0f-5abf40394bee(sandboxModel2)">
+  <root nodeRef="r:46f53b30-44a8-4c39-ba0f-5abf40394bee(sandboxModel2)/816130369292799544">
     <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="13" startPosition="42" endLine="14" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="816130369292799544" fileName="first.java" startLine="17" startPosition="31" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="816130369292799568" fileName="first.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOuterVars" />

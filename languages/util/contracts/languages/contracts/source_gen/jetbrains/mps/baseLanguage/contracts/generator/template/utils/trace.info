@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1399727060253288560" modelId="r:d54f54a0-640e-4999-bafa-7df8112ed364(jetbrains.mps.baseLanguage.contracts.generator.template.utils)">
+  <root nodeRef="r:d54f54a0-640e-4999-bafa-7df8112ed364(jetbrains.mps.baseLanguage.contracts.generator.template.utils)/1399727060253288560">
     <nodeInfo nodeId="1399727060253425634" fileName="ContractsUtils.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IMPL_SUFFIX" />
     <nodeInfo nodeId="5817367434881415207" fileName="ContractsUtils.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="RES_PREFIX" />
     <nodeInfo nodeId="8892289062514559973" fileName="ContractsUtils.java" startLine="24" startPosition="79" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.changesmanager;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import java.util.Map;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -35,7 +36,7 @@ import jetbrains.mps.vcs.diff.ChangeSet;
 
 public class NodeFileStatusMapping extends AbstractProjectComponent {
   private final CurrentDifferenceRegistry myRegistry;
-  private final Map<SNodePointer, FileStatus> myFileStatusMap = MapSequence.fromMap(new HashMap<SNodePointer, FileStatus>());
+  private final Map<SNodeReference, FileStatus> myFileStatusMap = MapSequence.fromMap(new HashMap<SNodeReference, FileStatus>());
   private final CurrentDifferenceListener myGlobalListener = new NodeFileStatusMapping.MyGlobalListener();
 
   public NodeFileStatusMapping(Project project, CurrentDifferenceRegistry registry) {
@@ -53,12 +54,12 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     myRegistry.removeGlobalDifferenceListener(myGlobalListener);
   }
 
-  private void statusChanged(@NotNull final SNodePointer nodePointer) {
+  private void statusChanged(@NotNull final SNodeReference nodePointer) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         FileStatusManager fsm = FileStatusManager.getInstance(myProject);
         MPSNodesVirtualFileSystem nvfs = MPSNodesVirtualFileSystem.getInstance();
-        SNode currentNode = nodePointer.getNode();
+        SNode currentNode = ((SNodePointer) nodePointer).getNode();
         if (currentNode == null) {
           return;
         }
@@ -67,11 +68,11 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     });
   }
 
-  protected void statusChanged(FileStatusManager fsm, MPSNodesVirtualFileSystem nvfs, SNodePointer nodePointer) {
+  protected void statusChanged(FileStatusManager fsm, MPSNodesVirtualFileSystem nvfs, SNodeReference nodePointer) {
     fsm.fileStatusChanged(nvfs.getFileFor(nodePointer));
   }
 
-  private void updateNodeStatus(@NotNull final SNodePointer nodePointer) {
+  private void updateNodeStatus(@NotNull final SNodeReference nodePointer) {
     myRegistry.getCommandQueue().runTask(new Runnable() {
       public void run() {
         if (calcStatus(nodePointer)) {
@@ -81,7 +82,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     });
   }
 
-  private boolean calcStatus(@NotNull final SNodePointer root) {
+  private boolean calcStatus(@NotNull final SNodeReference root) {
     FileStatus status = ModelAccess.instance().runReadAction(new Computable<FileStatus>() {
       public FileStatus compute() {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
@@ -94,7 +95,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
           List<ModelChange> modelChanges = check_onkh7z_a0d0b0a0a0a0j(diff.getChangeSet());
           List<ModelChange> rootChanges = ListSequence.fromList(modelChanges).where(new IWhereFilter<ModelChange>() {
             public boolean accept(ModelChange ch) {
-              return root.getNodeId().equals(ch.getRootId());
+              return ((SNodePointer) root).getNodeId().equals(ch.getRootId());
             }
           }).toListSequence();
           if (ListSequence.fromList(rootChanges).count() != 0) {
@@ -126,7 +127,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
 
   @Nullable
   public FileStatus getStatus(@NotNull final SNode root) {
-    final Wrappers._T<SNodePointer> nodePointer = new Wrappers._T<SNodePointer>();
+    final Wrappers._T<SNodeReference> nodePointer = new Wrappers._T<SNodeReference>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         nodePointer.value = new SNodePointer(root);
@@ -153,22 +154,22 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
   }
 
   @Nullable
-  public FileStatus getStatus(@NotNull SNodePointer nodePointer) {
+  public FileStatus getStatus(@NotNull SNodeReference nodePointer) {
     synchronized (myFileStatusMap) {
       return MapSequence.fromMap(myFileStatusMap).get(nodePointer);
     }
   }
 
   private class MyGlobalListener extends CurrentDifferenceAdapter {
-    private List<SNodePointer> myAffectedRoots = ListSequence.fromList(new ArrayList<SNodePointer>());
+    private List<SNodeReference> myAffectedRoots = ListSequence.fromList(new ArrayList<SNodeReference>());
 
     private MyGlobalListener() {
     }
 
     @Override
     public void changeUpdateFinished() {
-      ListSequence.fromList(myAffectedRoots).visitAll(new IVisitor<SNodePointer>() {
-        public void visit(SNodePointer np) {
+      ListSequence.fromList(myAffectedRoots).visitAll(new IVisitor<SNodeReference>() {
+        public void visit(SNodeReference np) {
           updateNodeStatus(np);
         }
       });

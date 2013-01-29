@@ -22,9 +22,9 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.icons.Icons;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 import javax.swing.Icon;
 import javax.swing.JButton;
@@ -340,7 +340,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
       EditorCell cell = ((EditorMessage) msg).getCell(myEditorComponent);
       if (cell != null) {
         while (cell instanceof EditorCell_Collection) {
-          cell = cell.getLastChild();
+          cell = ((EditorCell_Collection) cell).lastCell();
         }
         if(cell != null) {
           height -= cell.getHeight();

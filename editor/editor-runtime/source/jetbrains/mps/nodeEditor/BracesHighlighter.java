@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
-import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
@@ -90,7 +89,7 @@ public class BracesHighlighter {
       if (editorCell.getStyle().get(StyleAttributes.MATCHING_LABEL) != null) {
         return new Pair(editorCell, editorCell.getStyle().get(StyleAttributes.MATCHING_LABEL));
       }
-      editorCell = editorCell.getParent();
+      editorCell = (EditorCell) editorCell.getParent();
     }
     return null;
   }

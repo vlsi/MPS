@@ -16,11 +16,22 @@
 package jetbrains.mps.nodeEditor.cells;
 
 
+import jetbrains.mps.editor.runtime.style.Measure;
+import jetbrains.mps.editor.runtime.style.Padding;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.style.*;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import jetbrains.mps.openapi.editor.style.StyleChangeEvent;
+import jetbrains.mps.openapi.editor.style.StyleListener;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Toolkit;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -105,7 +116,7 @@ public class TextLine {
   private boolean myInitialized;
 
   public TextLine(String text) {
-    this(text, new Style(), false);
+    this(text, new StyleImpl(), false);
   }
 
   public TextLine(String text, @NotNull Style style, boolean isNull) {

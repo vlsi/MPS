@@ -25,7 +25,7 @@ import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -45,7 +45,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   private SModelDescriptor myModelDescriptor;
   private IOperationContext myOperationContext;
   private EditorCell myContextCell;
-  private List<Pair<SNode,SNodePointer>> myModelModifications = null;
+  private List<Pair<SNode,SNodeReference>> myModelModifications = null;
   private IPerformanceTracer myPerformanceTracer = null;
 
   private ReferencedNodeContext myCurrentRefNodeContext;
@@ -116,7 +116,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     myModelModifications = EditorManager.convert(modelEvents);
   }
 
-  private EditorCell createNodeCell(List<Pair<SNode,SNodePointer>> modifications) {
+  private EditorCell createNodeCell(List<Pair<SNode,SNodeReference>> modifications) {
     return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, modifications, myCurrentRefNodeContext);
   }
 
@@ -286,7 +286,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     setCaretPosition(selectedCell, position);
   }
 
-  private int setCaretPosition(EditorCell editorCell, int position) {
+  private int setCaretPosition(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, int position) {
     int newPosition = position;
     if (editorCell instanceof EditorCell_Label) {
       EditorCell_Label editorCell_label = (EditorCell_Label) editorCell;
@@ -295,9 +295,9 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
         getNodeEditorComponent().changeSelection(editorCell);
         editorCell_label.setCaretPosition(position);
       }
-    } else if (editorCell instanceof EditorCell_Collection) {
-      EditorCell_Collection editorCell_iterable = (EditorCell_Collection) editorCell;
-      for (EditorCell subEditorCell : editorCell_iterable) {
+    } else if (editorCell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
+      jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell_iterable = (jetbrains.mps.openapi.editor.cells.EditorCell_Collection) editorCell;
+      for (jetbrains.mps.openapi.editor.cells.EditorCell subEditorCell : editorCell_iterable) {
         newPosition = setCaretPosition(subEditorCell, newPosition);
         if (newPosition < 0) {
           break;

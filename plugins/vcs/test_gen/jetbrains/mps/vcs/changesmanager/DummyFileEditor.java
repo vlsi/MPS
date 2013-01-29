@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.changesmanager;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.command.undo.DocumentReferenceProvider;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JComponent;
@@ -26,7 +26,7 @@ import com.intellij.ide.structureView.StructureViewBuilder;
 /*package*/ class DummyFileEditor implements FileEditor, DocumentReferenceProvider {
   private MPSNodeVirtualFile myFile;
 
-  /*package*/ DummyFileEditor(SNodePointer nodePointer) {
+  /*package*/ DummyFileEditor(SNodeReference nodePointer) {
     myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(nodePointer);
   }
 

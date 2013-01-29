@@ -25,8 +25,9 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.logging.Logger;
 
@@ -80,7 +81,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
           Set<SModelReference> dependencies = SetSequence.fromSet(new HashSet<SModelReference>());
           for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
             for (SReference ref : Sequence.fromIterable(node.getReferences())) {
-              SModelReference mref = check_rft9c_a0a0a0e0d0c0a(check_rft9c_a0a0a0a4a3a2a0(ref.getTargetNodeSilently()));
+              SModelReference mref = check_rft9c_a0a0a0e0d0c0a(check_rft9c_a0a0a0a4a3a2a0(SNodeOperations.getTargetNodeSilently(ref)));
               if (mref == null) {
                 continue;
               }

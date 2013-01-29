@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3990508698139426770" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
+  <root nodeRef="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)/3990508698139426770">
     <nodeInfo nodeId="3990508698139426773" fileName="StreamAnswer.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="3990508698139426784" fileName="StreamAnswer.java" startLine="9" startPosition="49" endLine="10" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3990508698139426786" fileName="StreamAnswer.java" startLine="10" startPosition="17" endLine="11" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -16,7 +16,7 @@
     </scopeInfo>
     <unitInfo nodeId="3990508698139426770" fileName="StreamAnswer.java" startLine="6" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.StreamAnswer" />
   </root>
-  <root nodeId="3990508698139427086" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
+  <root nodeRef="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)/3990508698139427086">
     <nodeInfo nodeId="3990508698139427089" fileName="RecordValue.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMap" />
     <nodeInfo nodeId="3990508698139427109" fileName="RecordValue.java" startLine="14" startPosition="64" endLine="15" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139427121" fileName="RecordValue.java" startLine="18" startPosition="57" endLine="19" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -70,13 +70,13 @@
     </scopeInfo>
     <unitInfo nodeId="3990508698139427086" fileName="RecordValue.java" startLine="8" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.RecordValue" />
   </root>
-  <root nodeId="3990508698139427186" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
+  <root nodeRef="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)/3990508698139427186">
     <nodeInfo nodeId="3990508698139427188" fileName="GDBValue.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GDBValue#()V" />
     <scopeInfo nodeId="3990508698139427191" fileName="GDBValue.java" startLine="7" startPosition="21" endLine="7" endPosition="21" />
     <scopeInfo nodeId="3990508698139427188" fileName="GDBValue.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
     <unitInfo nodeId="3990508698139427186" fileName="GDBValue.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.GDBValue" />
   </root>
-  <root nodeId="3990508698139427452" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
+  <root nodeRef="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)/3990508698139427452">
     <nodeInfo nodeId="3990508698139427454" fileName="GDBAnswer.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTokenChar" />
     <nodeInfo nodeId="3990508698139427463" fileName="GDBAnswer.java" startLine="9" startPosition="36" endLine="10" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139427471" fileName="GDBAnswer.java" startLine="13" startPosition="30" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -90,7 +90,7 @@
     <scopeInfo nodeId="3990508698139427467" fileName="GDBAnswer.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
     <unitInfo nodeId="3990508698139427452" fileName="GDBAnswer.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.GDBAnswer" />
   </root>
-  <root nodeId="3990508698139427548" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
+  <root nodeRef="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)/3990508698139427548">
     <nodeInfo nodeId="3990508698139427561" fileName="ResultAnswer.java" startLine="7" startPosition="80" endLine="8" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3990508698139427551" fileName="ResultAnswer.java" startLine="7" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResultAnswer#(CLjava/lang/String;Ljetbrains/mps/nanoc/debug/answer/RecordValue;)V" />
     <scopeInfo nodeId="3990508698139427560" fileName="ResultAnswer.java" startLine="7" startPosition="80" endLine="8" endPosition="43" />
@@ -101,7 +101,7 @@
     </scopeInfo>
     <unitInfo nodeId="3990508698139427548" fileName="ResultAnswer.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.ResultAnswer" />
   </root>
-  <root nodeId="3990508698139427565" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
+  <root nodeRef="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)/3990508698139427565">
     <nodeInfo nodeId="3990508698139427567" fileName="GDBAnswerProducer.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SAMPLE_STRING" />
     <nodeInfo nodeId="3990508698139427571" fileName="GDBAnswerProducer.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInput" />
     <nodeInfo nodeId="3990508698139427574" fileName="GDBAnswerProducer.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGDBAnswer" />
@@ -449,7 +449,7 @@
     <scopeInfo nodeId="3990508698139428092" fileName="GDBAnswerProducer.java" startLine="179" startPosition="0" endLine="229" endPosition="0" />
     <unitInfo nodeId="3990508698139427565" fileName="GDBAnswerProducer.java" startLine="7" startPosition="0" endLine="282" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.GDBAnswerProducer" />
   </root>
-  <root nodeId="3990508698139428838" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
+  <root nodeRef="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)/3990508698139428838">
     <nodeInfo nodeId="3990508698139428841" fileName="StructuralAnswer.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAnswerClass" />
     <nodeInfo nodeId="3990508698139428844" fileName="StructuralAnswer.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResults" />
     <nodeInfo nodeId="3990508698139428847" fileName="StructuralAnswer.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDigitalToken" />
@@ -483,7 +483,7 @@
     </scopeInfo>
     <unitInfo nodeId="3990508698139428838" fileName="StructuralAnswer.java" startLine="6" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.StructuralAnswer" />
   </root>
-  <root nodeId="3990508698139428898" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
+  <root nodeRef="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)/3990508698139428898">
     <nodeInfo nodeId="3990508698139428901" fileName="AsyncAnswer.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOKEN_EXEC" />
     <nodeInfo nodeId="3990508698139428905" fileName="AsyncAnswer.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOKEN_NOTIFY" />
     <nodeInfo nodeId="3990508698139428909" fileName="AsyncAnswer.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOKEN_STATUS" />
@@ -514,7 +514,7 @@
     <scopeInfo nodeId="3990508698139428955" fileName="AsyncAnswer.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
     <unitInfo nodeId="3990508698139428898" fileName="AsyncAnswer.java" startLine="6" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.AsyncAnswer" />
   </root>
-  <root nodeId="3990508698139429835" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
+  <root nodeRef="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)/3990508698139429835">
     <nodeInfo nodeId="3990508698139429838" fileName="ListValue.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValues" />
     <nodeInfo nodeId="3990508698139429855" fileName="ListValue.java" startLine="14" startPosition="35" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139429865" fileName="ListValue.java" startLine="18" startPosition="37" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -531,7 +531,7 @@
     <scopeInfo nodeId="3990508698139429860" fileName="ListValue.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
     <unitInfo nodeId="3990508698139429835" fileName="ListValue.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.ListValue" />
   </root>
-  <root nodeId="3990508698139430286" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
+  <root nodeRef="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)/3990508698139430286">
     <nodeInfo nodeId="3990508698139430289" fileName="ListMapValue.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myList" />
     <nodeInfo nodeId="3990508698139430312" fileName="ListMapValue.java" startLine="15" startPosition="55" endLine="16" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139430327" fileName="ListMapValue.java" startLine="19" startPosition="37" endLine="20" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -558,7 +558,7 @@
     <scopeInfo nodeId="3990508698139430322" fileName="ListMapValue.java" startLine="19" startPosition="0" endLine="26" endPosition="0" />
     <unitInfo nodeId="3990508698139430286" fileName="ListMapValue.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.nanoc.debug.answer.ListMapValue" />
   </root>
-  <root nodeId="3990508698139430361" modelId="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)">
+  <root nodeRef="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)/3990508698139430361">
     <nodeInfo nodeId="3990508698139430364" fileName="StringValue.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="3990508698139430373" fileName="StringValue.java" startLine="9" startPosition="34" endLine="10" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3990508698139430381" fileName="StringValue.java" startLine="13" startPosition="29" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

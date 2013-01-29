@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -22,9 +22,10 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +63,7 @@ public class DynamicReference extends SReferenceBase {
     return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(SLinkOperations.findLinkDeclaration(node.getConcept().getId(), role), "target", false), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
-  protected SNode getTargetNode_internal(boolean silently) {
+  protected SNode getTargetNode_internal() {
     // seems like getTargetNode() doesn't make sense if target node is detached
     assert mySourceNode.getModel() != null;
 
@@ -75,17 +76,13 @@ public class DynamicReference extends SReferenceBase {
     }
 
     if (getResolveInfo() == null) {
-      if (!silently) {
-        reportErrorWithOrigin("bad reference: no resolve info");
-      }
+      reportErrorWithOrigin("bad reference: no resolve info");
       return null;
     }
 
     Scope scope = ModelConstraints.getScope(this);
     if (scope instanceof ErrorScope) {
-      if (!silently) {
-        reportErrorWithOrigin("cannot obtain scope for reference `" + getRole() + "': " + ((ErrorScope) scope).getMessage());
-      }
+      reportErrorWithOrigin("cannot obtain scope for reference `" + getRole() + "': " + ((ErrorScope) scope).getMessage());
       return null;
 
     }
@@ -98,22 +95,20 @@ public class DynamicReference extends SReferenceBase {
     }
 
     if (targetNode == null) {
-      if (!silently) {
-        reportErrorWithOrigin("cannot resolve reference by string: '" + getResolveInfo() + "'");
-      }
+      reportErrorWithOrigin("cannot resolve reference by string: '" + getResolveInfo() + "'");
     }
 
     return targetNode;
   }
 
-  private final void reportErrorWithOrigin(String message) {
+  private void reportErrorWithOrigin(String message) {
     if (myOrigin != null) {
       List<ProblemDescription> result = new ArrayList<ProblemDescription>(2);
       if (myOrigin.getInputNode() != null) {
-        result.add(new ProblemDescription(myOrigin.getInputNode(), " -- was input: " + myOrigin.getInputNode().getDebugText()));
+        result.add(new ProblemDescription(myOrigin.getInputNode(), " -- was input: " + myOrigin.getInputNode().toString()));
       }
       if (myOrigin.getTemplate() != null) {
-        result.add(new ProblemDescription(myOrigin.getTemplate(), " -- was template: " + myOrigin.getTemplate().getDebugText()));
+        result.add(new ProblemDescription(myOrigin.getTemplate(), " -- was template: " + myOrigin.getTemplate().toString()));
       }
       if (result.size() > 0) {
         error(message, result.toArray(new ProblemDescription[result.size()]));
@@ -151,19 +146,19 @@ public class DynamicReference extends SReferenceBase {
   }
 
   public static class DynamicReferenceOrigin {
-    private final SNodePointer template;
-    private final SNodePointer inputNode;
+    private final SNodeReference template;
+    private final SNodeReference inputNode;
 
-    public DynamicReferenceOrigin(SNodePointer template, SNodePointer inputNode) {
+    public DynamicReferenceOrigin(SNodeReference template, SNodeReference inputNode) {
       this.template = template;
       this.inputNode = inputNode;
     }
 
-    public SNodePointer getTemplate() {
+    public SNodeReference getTemplate() {
       return template;
     }
 
-    public SNodePointer getInputNode() {
+    public SNodeReference getInputNode() {
       return inputNode;
     }
   }

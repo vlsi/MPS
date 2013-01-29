@@ -16,6 +16,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class CellModel_TransactionalProperty_Constraints extends BaseConstraintsDescriptor {
@@ -44,7 +45,7 @@ public class CellModel_TransactionalProperty_Constraints extends BaseConstraints
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_bnan1a_a0a1a0a0a1a0b0a1a1;
           }
         };

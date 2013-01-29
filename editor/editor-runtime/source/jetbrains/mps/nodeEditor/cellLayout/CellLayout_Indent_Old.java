@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.cellLayout;
 
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 /**
  * Author: Sergey Dmitriev
@@ -50,7 +49,6 @@ public class CellLayout_Indent_Old extends AbstractCellLayout {
 
 
   public static void _doLayout(EditorCell_Collection editorCells) {
-    EditorCell[] cells = editorCells.getCells();
     final int x = editorCells.getX();
     final int y = editorCells.getY();
     int currentLineWidth = 0;
@@ -59,7 +57,7 @@ public class CellLayout_Indent_Old extends AbstractCellLayout {
     int currentLineHeight = 0;
     String nextLineForChildren = editorCells.getStyle().get(StyleAttributes.POSITION_CHILDREN);
 
-    for (EditorCell editorCell : cells) {
+    for (EditorCell editorCell : editorCells) {
       String nextLine = editorCell.getStyle().get(StyleAttributes.POSITION);
       if(nextLine != null) {
         System.out.println("nextLine = "+nextLine);

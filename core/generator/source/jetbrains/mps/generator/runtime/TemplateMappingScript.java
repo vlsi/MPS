@@ -17,7 +17,7 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Evgeny Gryaznov, Nov 29, 2010
@@ -27,7 +27,7 @@ public interface TemplateMappingScript {
   public static final int PREPROCESS = 1;
   public static final int POSTPROCESS = 2;
 
-  SNodePointer getScriptNode();
+  SNodeReference getScriptNode();
 
   String getLongName();
 

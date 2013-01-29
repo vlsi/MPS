@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3715237098669772783" modelId="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)">
+  <root nodeRef="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)/3715237098669772783">
     <nodeInfo nodeId="3715237098669909854" fileName="TraceInfoTest.java" startLine="38" startPosition="32" endLine="39" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715237098669909819" fileName="TraceInfoTest.java" startLine="41" startPosition="11" endLine="42" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715237098669909873" fileName="TraceInfoTest.java" startLine="52" startPosition="32" endLine="53" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -198,7 +198,7 @@
     <unitInfo nodeId="2112637535491637463" fileName="TraceInfoTest.java" startLine="107" startPosition="19" endLine="129" endPosition="5" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$6" />
     <unitInfo nodeId="3715237098669772783" fileName="TraceInfoTest.java" startLine="29" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest" />
   </root>
-  <root nodeId="8529179251482782650" modelId="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)">
+  <root nodeRef="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)/8529179251482782650">
     <nodeInfo nodeId="8529179251482782695" fileName="TestClass.java" startLine="11" startPosition="31" endLine="12" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8529179251482782711" fileName="TestClass.java" startLine="17" startPosition="8" endLine="18" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8529179251482782716" fileName="TestClass.java" startLine="18" startPosition="37" endLine="19" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

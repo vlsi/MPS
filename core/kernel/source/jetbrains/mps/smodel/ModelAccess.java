@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Computable;
@@ -44,7 +44,7 @@ public abstract class ModelAccess implements ModelCommandExecutor, SModelAccess 
     }
   };
 
-  protected final ConcurrentHashMap<Class, ConcurrentMap<Object, Object>> myRepositoryStateCaches = new ConcurrentHashMap<Class, ConcurrentMap<Object, Object>>();
+  protected final ConcurrentHashMap<String, ConcurrentMap<Object, Object>> myRepositoryStateCaches = new ConcurrentHashMap<String, ConcurrentMap<Object, Object>>();
 
   protected ModelAccess() {
 
@@ -205,17 +205,17 @@ public abstract class ModelAccess implements ModelCommandExecutor, SModelAccess 
   @SuppressWarnings("unchecked")
   @Override
   @Nullable
-  public <K, V> ConcurrentMap<K, V> getRepositoryStateCache(Class<?> clazz) {
+  public <K, V> ConcurrentMap<K, V> getRepositoryStateCache(String repositoryKey) {
     assertLegalRead();
 //    if (canWrite()) {
 //      return null;
 //    }
-    ConcurrentMap<K, V> cache = (ConcurrentMap<K, V>) myRepositoryStateCaches.get(clazz);
+    ConcurrentMap<K, V> cache = (ConcurrentMap<K, V>) myRepositoryStateCaches.get(repositoryKey);
     if (cache != null) {
       return cache;
     }
     cache = new ConcurrentHashMap<K, V>();
-    ConcurrentHashMap<K, V> existingCache = (ConcurrentHashMap<K, V>) myRepositoryStateCaches.putIfAbsent(clazz, (ConcurrentMap<Object, Object>) cache);
+    ConcurrentHashMap<K, V> existingCache = (ConcurrentHashMap<K, V>) myRepositoryStateCaches.putIfAbsent(repositoryKey, (ConcurrentMap<Object, Object>) cache);
     return existingCache != null ? existingCache : cache;
   }
 

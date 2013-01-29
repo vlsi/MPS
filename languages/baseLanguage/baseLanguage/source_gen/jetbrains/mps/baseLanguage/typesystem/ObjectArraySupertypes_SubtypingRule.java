@@ -13,12 +13,13 @@ import java.util.Arrays;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
@@ -73,7 +74,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
                 return false;
               }
               {
-                SNodePointer pointer = SNODE_POINTER_gqfgxi_a0a0a0a0b0c0b0b0b0a0b0c0a0a0a0a0a0e;
+                SNodeReference pointer = SNODE_POINTER_gqfgxi_a0a0a0a0b0c0b0b0b0a0b0c0a0a0a0a0a0e;
                 if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0.getReferenceTarget("classifier")))) {
                   return false;
                 }

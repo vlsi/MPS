@@ -17,13 +17,14 @@ import jetbrains.mps.make.dependencies.graph.Graphs;
 import jetbrains.mps.util.GraphUtil;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.Set;
+import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import java.util.Set;
 import java.util.LinkedHashSet;
-import java.util.HashSet;
+import jetbrains.mps.build.mps.behavior.BuildMps_DevKit_Behavior;
 
 public class MPSModulesPartitioner {
   private final TemplateQueryContext genContext;
@@ -45,7 +46,7 @@ public class MPSModulesPartitioner {
 
   public void buildChunks() {
     Graph<MPSModulesPartitioner.Node> graph = new Graph<MPSModulesPartitioner.Node>();
-    Map<SNode, MPSModulesPartitioner.Node> map = new LinkedHashMap<SNode, MPSModulesPartitioner.Node>();
+    final Map<SNode, MPSModulesPartitioner.Node> map = new LinkedHashMap<SNode, MPSModulesPartitioner.Node>();
     for (SNode module : modules) {
       MPSModulesPartitioner.Node decorator = new MPSModulesPartitioner.Node(module);
       map.put(module, decorator);
@@ -74,13 +75,25 @@ public class MPSModulesPartitioner {
       }
       SetSequence.fromSet(ListSequence.fromList(chunks).getElement(pindex).getModules()).addElement(m);
       if (conflicting) {
-        ListSequence.fromList(chunks).getElement(pindex).setBootstrapFor(m);
+        ListSequence.fromList(chunks).getElement(pindex).setBootstrap(m, true);
+      }
+    }
+    for (MPSModulesPartitioner.Chunk c : chunks) {
+      Set<MPSModulesPartitioner.Node> chunkNodes = SetSequence.fromSetWithValues(new HashSet<MPSModulesPartitioner.Node>(), SetSequence.fromSet(c.getModules()).select(new ISelector<SNode, MPSModulesPartitioner.Node>() {
+        public MPSModulesPartitioner.Node select(SNode it) {
+          return map.get(it);
+        }
+      }));
+      for (SNode confl : ListSequence.fromListWithValues(new ArrayList<SNode>(), c.getConflicting())) {
+        if (SetSequence.fromSet(map.get(confl).metaDependencies).intersect(SetSequence.fromSet(chunkNodes)).isEmpty()) {
+          c.setBootstrap(confl, false);
+        }
       }
     }
   }
 
   public void buildExternalDependencies() {
-    this.external = Sequence.fromIterable(new MPSModulesClosure(genContext, modules).generationDependenciesClosure().runtimeClosure().getModulesIncludingLanguagesWithRuntime()).where(new IWhereFilter<SNode>() {
+    this.external = Sequence.fromIterable(new MPSModulesClosure(genContext, modules).trackDevkits().generationDependenciesClosure().runtimeClosure().getAllModules()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getContainingRoot(it) != SNodeOperations.getContainingRoot(MPSModulesPartitioner.this.project);
       }
@@ -106,11 +119,11 @@ public class MPSModulesPartitioner {
       }
     }).concat(ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_Module");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_Module");
+        return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
       }
     });
   }
@@ -132,19 +145,36 @@ public class MPSModulesPartitioner {
     }
 
     public void fill(Map<SNode, MPSModulesPartitioner.Node> map) {
-      MPSModulesClosure closure = new MPSModulesClosure(genContext, module).skipExternalModules().generationDependenciesClosure();
-      for (SNode q : Sequence.fromIterable(closure.getModulesIncludingLanguagesWithRuntime())) {
-        MPSModulesPartitioner.Node node = map.get(q);
-        if (node != null) {
-          SetSequence.fromSet(metaDependencies).addElement(node);
+      if (SNodeOperations.isInstanceOf(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
+        MPSModulesClosure closure = new MPSModulesClosure(genContext, SNodeOperations.cast(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")).skipExternalModules().generationDependenciesClosure();
+        for (SNode q : Sequence.fromIterable(closure.getAllModules())) {
+          MPSModulesPartitioner.Node node = map.get(q);
+          if (node != null) {
+            SetSequence.fromSet(metaDependencies).addElement(node);
+          }
         }
-      }
-      closure.reset();
-      closure.closure();
-      for (SNode q : Sequence.fromIterable(closure.getModulesIncludingLanguagesWithRuntime())) {
-        MPSModulesPartitioner.Node node = map.get(q);
-        if (node != null) {
-          SetSequence.fromSet(dependencyNodes).addElement(node);
+        closure.reset().trackDevkits().closure();
+        for (SNode q : Sequence.fromIterable(closure.getAllModules())) {
+          MPSModulesPartitioner.Node node = map.get(q);
+          if (node != null) {
+            SetSequence.fromSet(dependencyNodes).addElement(node);
+          }
+        }
+      } else if (SNodeOperations.isInstanceOf(module, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
+        SNode devkit = SNodeOperations.cast(module, "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
+        for (SNode q : Sequence.fromIterable(BuildMps_DevKit_Behavior.call_getExportedModules_7391870795496918763(devkit)).concat(ListSequence.fromList(SLinkOperations.getTargets(devkit, "extends", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (SLinkOperations.getTarget(it, "devkit", false) != null);
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(it, "devkit", false);
+          }
+        }))) {
+          MPSModulesPartitioner.Node node = map.get(q);
+          if (node != null) {
+            SetSequence.fromSet(dependencyNodes).addElement(node);
+          }
         }
       }
     }
@@ -153,12 +183,10 @@ public class MPSModulesPartitioner {
   public static class Chunk {
     private final Set<SNode> modules;
     private final Set<SNode> conflicting;
-    private boolean bootstrap;
 
     public Chunk() {
       this.modules = SetSequence.fromSet(new LinkedHashSet<SNode>());
       this.conflicting = SetSequence.fromSet(new HashSet<SNode>());
-      this.bootstrap = false;
     }
 
     public Set<SNode> getModules() {
@@ -166,7 +194,7 @@ public class MPSModulesPartitioner {
     }
 
     public Set<SNode> getConflicting() {
-      return modules;
+      return conflicting;
     }
 
     public boolean isConflicting(SNode mod) {
@@ -174,12 +202,15 @@ public class MPSModulesPartitioner {
     }
 
     public boolean isBootstrap() {
-      return bootstrap;
+      return SetSequence.fromSet(conflicting).isNotEmpty();
     }
 
-    public void setBootstrapFor(SNode module) {
-      bootstrap = true;
-      SetSequence.fromSet(conflicting).addElement(module);
+    public void setBootstrap(SNode module, boolean flag) {
+      if (flag) {
+        SetSequence.fromSet(conflicting).addElement(module);
+      } else {
+        SetSequence.fromSet(conflicting).removeElement(module);
+      }
     }
   }
 }

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;

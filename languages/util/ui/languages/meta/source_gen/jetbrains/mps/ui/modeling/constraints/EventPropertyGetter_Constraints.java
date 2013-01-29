@@ -21,6 +21,7 @@ import jetbrains.mps.ui.modeling.behavior.Event_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class EventPropertyGetter_Constraints extends BaseConstraintsDescriptor {
@@ -77,7 +78,7 @@ public class EventPropertyGetter_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_6aij14_a0a3a0a0a1a0b0a1a3;
           }
         };

@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -20,7 +21,7 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
   public TestCaseTreeNode(@NotNull IOperationContext operationContext, @NotNull ITestNodeWrapper testCase) {
     super(operationContext);
     myTestCase = testCase;
-    setNodeIdentifier(myTestCase.getNodePointer().toString());
+    setNodeIdentifier(((SNodePointer) myTestCase.getNodePointer()).toString());
     setText(SPropertyOperations.getString(SNodeOperations.cast(myTestCase.getNode(), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
     setAdditionalText(myTestCase.getNodePointer().getModelReference().getLongName());
   }

@@ -21,10 +21,10 @@ import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.SubtypingUtil;
-import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.State;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.misc.hash.HashSet;
 
 import java.util.HashMap;
@@ -200,7 +200,7 @@ public class InequalitySystem {
   private void replaceRefs(Set<SNode> nodes, Map<SNode, SNode> mapping) {
     for (SNode node : nodes) {
       for (SReference ref : node.getReferences()) {
-        SNode target = ref.getTargetNodeSilently();
+        SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
         SNode restored = mapping.get(target);
         if (restored != null) {
           node.setReference(ref.getRole(), new StaticReference(ref.getRole(), ref.getSourceNode(), restored));

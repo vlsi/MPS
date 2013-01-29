@@ -31,7 +31,8 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.progress.CancellationMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.util.Computable;
@@ -120,7 +121,7 @@ public class GenerationFacade {
     for (List<TemplateMappingConfiguration> configurations : mappingSets) {
       List<SNode> step = new ArrayList<SNode>(configurations.size());
       for (TemplateMappingConfiguration c : configurations) {
-        step.add(c.getMappingNode().getNode());
+        step.add(c.getMappingNode().resolve(MPSModuleRepository.getInstance()));
       }
       result.add(step);
     }

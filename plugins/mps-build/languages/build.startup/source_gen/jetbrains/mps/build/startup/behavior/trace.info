@@ -5,7 +5,7 @@
   <unitInfo fileName="MpsStartupScript_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.startup.behavior.MpsStartupScript_BehaviorDescriptor" />
   <unitInfo fileName="SimpleVmOptions_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.startup.behavior.SimpleVmOptions_BehaviorDescriptor" />
   <unitInfo fileName="VmOptions_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.startup.behavior.VmOptions_BehaviorDescriptor" />
-  <root nodeId="5842819808956701264" modelId="r:f9efd379-0776-49f3-ae79-8113b86e36ad(jetbrains.mps.build.startup.behavior)">
+  <root nodeRef="r:f9efd379-0776-49f3-ae79-8113b86e36ad(jetbrains.mps.build.startup.behavior)/5842819808956701264">
     <nodeInfo nodeId="5842819808956653680" fileName="MpsStartupScript_Behavior.java" startLine="21" startPosition="39" endLine="22" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5842819808956653690" fileName="MpsStartupScript_Behavior.java" startLine="25" startPosition="38" endLine="26" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5842819808956701296" fileName="MpsStartupScript_Behavior.java" startLine="29" startPosition="50" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -19,7 +19,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public abstract class BaseFindUsagesDescriptor {
   private ModuleReference myModuleRef;
@@ -33,7 +33,7 @@ public abstract class BaseFindUsagesDescriptor {
   public abstract void init();
 
   protected void add(GeneratedFinder finder, String nodeId) {
-    SNodePointer np = new SNodePointer(myModelRef, jetbrains.mps.smodel.SNodeId.fromString(nodeId));
+    SNodeReference np = new jetbrains.mps.smodel.SNodePointer(myModelRef, jetbrains.mps.smodel.SNodeId.fromString(nodeId));
     FindersManager.getInstance().addFinder(finder, myModuleRef, np);
   }
 }

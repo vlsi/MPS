@@ -20,6 +20,7 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class Node_GetReferentSearchScopeOperation_Constraints extends BaseConstraintsDescriptor {
@@ -53,7 +54,7 @@ public class Node_GetReferentSearchScopeOperation_Constraints extends BaseConstr
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_q5w6y3_a0a1a0a0a1a0b0a1a1;
           }
         };

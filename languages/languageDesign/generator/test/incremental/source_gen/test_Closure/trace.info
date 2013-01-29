@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="8250748122682152731" modelId="r:8996236a-10cc-4947-8fd2-f9b4ae2db88b(test_Closure)">
+  <root nodeRef="r:8996236a-10cc-4947-8fd2-f9b4ae2db88b(test_Closure)/8250748122682152731">
     <nodeInfo nodeId="8250748122682269369" fileName="User.java" startLine="14" startPosition="27" endLine="15" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8250748122682269201" fileName="User.java" startLine="18" startPosition="22" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8250748122682269351" fileName="User.java" startLine="19" startPosition="30" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -30,7 +30,7 @@
     <unitInfo nodeId="8250748122682269346" fileName="User.java" startLine="21" startPosition="49" endLine="25" endPosition="5" unitName="test_Closure.User$1" />
     <unitInfo nodeId="8250748122682152731" fileName="User.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="test_Closure.User" />
   </root>
-  <root nodeId="8250748122682163163" modelId="r:8996236a-10cc-4947-8fd2-f9b4ae2db88b(test_Closure)">
+  <root nodeRef="r:8996236a-10cc-4947-8fd2-f9b4ae2db88b(test_Closure)/8250748122682163163">
     <nodeInfo nodeId="8250748122682163172" fileName="Library.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="user" />
     <nodeInfo nodeId="8250748122682168329" fileName="Library.java" startLine="18" startPosition="110" endLine="19" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8250748122682168343" fileName="Library.java" startLine="19" startPosition="50" endLine="20" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -56,7 +56,7 @@
     <scopeInfo nodeId="8250748122682168215" fileName="Library.java" startLine="17" startPosition="0" endLine="23" endPosition="0" />
     <unitInfo nodeId="8250748122682163163" fileName="Library.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="test_Closure.Library" />
   </root>
-  <root nodeId="8250748122682269925" modelId="r:8996236a-10cc-4947-8fd2-f9b4ae2db88b(test_Closure)">
+  <root nodeRef="r:8996236a-10cc-4947-8fd2-f9b4ae2db88b(test_Closure)/8250748122682269925">
     <nodeInfo nodeId="8250748122682269935" fileName="Singleton.java" startLine="7" startPosition="22" endLine="8" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8250748122682269931" fileName="Singleton.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultMeth#()V" />
     <nodeInfo nodeId="8250748122682269927" fileName="Singleton.java" startLine="7" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Singleton#()V" />

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
@@ -23,6 +23,9 @@ import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Set;
 
@@ -46,6 +49,43 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     mySourceNode = sourceNode;
   }
 
+  public String getRole() {
+    return myRole;
+  }
+
+  public SNode getSourceNode() {
+    return mySourceNode;
+  }
+
+  public final SNode getTargetNode() {
+    return getTargetNode_internal();
+  }
+
+  public SLink getLink() {
+    return getSourceNode().getConcept().findLink(getRole());
+  }
+
+  public SNodeReference toNodePointer() {
+    return new SNodePointer(getTargetSModelReference(), getTargetNodeId());
+  }
+
+  @Nullable
+  public abstract SModelReference getTargetSModelReference();
+
+  @Nullable
+  public SNodeId getTargetNodeId() {
+    SNode targetNode = getTargetNode();
+    return targetNode == null ? null : targetNode.getNodeId();
+  }
+
+  public void makeDirect() {
+
+  }
+
+  public boolean makeIndirect() {
+    return false;
+  }
+
   public String getResolveInfo() {
     return myResolveInfo;
   }
@@ -54,47 +94,38 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     myResolveInfo = InternUtil.intern(info);
   }
 
-  public void makeDirect() {
-  }
-
-  public boolean makeIndirect() {
-    return false;
-  }
-
-  public String getRole() {
-    return myRole;
-  }
-
   public void setRole(String newRole) {
     myRole = InternUtil.intern(newRole);
   }
 
-  public SNode getSourceNode() {
-    return mySourceNode;
-  }
+  //-------------------------
 
-  public final SNode getTargetNode() {
-    return getTargetNode_internal(false);
-  }
-
-  public final SNode getTargetNodeSilently() {
-    return getTargetNode_internal(true);
-  }
-
-  @Nullable
-  public SNodeId getTargetNodeId() {
-    SNode targetNode = getTargetNode();
-    return targetNode == null ? null : targetNode.getNodeId();
-  }
-
-  protected abstract SNode getTargetNode_internal(boolean silently);
-
-  @Nullable
-  public abstract SModelReference getTargetSModelReference();
-
+  @Deprecated
+  /**
+   * Use method in SReferenceBase class, as when you change ref, you know what ref it is
+   * @Deprecated in 3.0
+   */
   public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public final SNode getTargetNodeSilently() {
+    return jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(this);
+  }
+
+  protected abstract SNode getTargetNode_internal();
+
+  @Deprecated
+  /**
+   * Not supposed to be used from outside. Replace with getTargetModelReference comparison
+   * @Deprecated in 3.0
+   */
   public abstract boolean isExternal();
+
+  //-------- factory methods -----------
 
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.getModel() != null && targetNode.getModel() != null) {
@@ -112,8 +143,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, resolveInfo);
   }
 
-  public static SReference create(String role, SNode sourceNode, SNodePointer pointer, String resolveInfo) {
-    return create(role, sourceNode, pointer.getModelReference(), pointer.getNodeId(), resolveInfo);
+  public static SReference create(String role, SNode sourceNode, SNodeReference pointer, String resolveInfo) {
+    return create(role, sourceNode, pointer.getModelReference(), ((SNodePointer) pointer).getNodeId(), resolveInfo);
   }
 
   public static SReference create(String role, SNode sourceNode, SNode targetNode, String resolveInfo) {
@@ -122,9 +153,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return ref;
   }
 
-  //
-  // error logging
-  //
+  //-------- error logging -----------
+
   private static boolean ourLoggingOff = false;
   private static final Set<SReference> ourErrorReportedRefs = new WeakSet<SReference>();
 
@@ -152,29 +182,29 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
       if (message != null) log.error(" -- " + message);
       if (problems != null) {
         for (ProblemDescription pd : problems) {
-          log.error(pd.getMessage(), validNode(pd.getNode().getNode()));
+          log.error(pd.getMessage(), validNode(pd.getNode().resolve(MPSModuleRepository.getInstance())));
         }
       }
     }
   }
 
-  protected static SNodePointer validNode(SNode node) {
+  protected static SNodeReference validNode(SNode node) {
     if (node == null) {
       return null;
     }
 
     SModel model = node.getModel();
-    if (model == null){
+    if (model == null) {
       return null;
     }
     if (!model.isTransient()) {
-      return new SNodePointer(node);
+      return new jetbrains.mps.smodel.SNodePointer(node);
     }
 
     IModule module = model.getModelDescriptor().getModule();
     if (module instanceof TransientModelsModule) {
       if (((TransientModelsModule) module).addModelToKeep(model, false)) {
-        return new SNodePointer(node);
+        return new jetbrains.mps.smodel.SNodePointer(node);
       }
     }
     return null;
@@ -182,39 +212,21 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
   public static class ProblemDescription {
 
-    private SNodePointer myNode;
+    private SNodeReference myNode;
     private String myMessage;
 
-    public ProblemDescription(@NotNull SNodePointer node, String message) {
+    public ProblemDescription(@NotNull SNodeReference node, String message) {
       myNode = node;
       myMessage = message;
     }
 
     @NotNull
-    public SNodePointer getNode() {
+    public SNodeReference getNode() {
       return myNode;
     }
 
     public String getMessage() {
       return myMessage;
     }
-  }
-
-  @Override
-  public SLink getLink() {
-    // TODO API (implement)
-    return null;
-  }
-
-  //  @Override
-  public SModel getTargetModel() {
-    // TODO API (implement)
-    return null;
-  }
-
-  @Override
-  public String getText() {
-    // TODO API (implement)
-    return null;
   }
 }

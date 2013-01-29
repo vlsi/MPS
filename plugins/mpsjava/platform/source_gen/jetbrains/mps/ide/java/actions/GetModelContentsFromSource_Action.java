@@ -20,9 +20,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import java.awt.Frame;
-import jetbrains.mps.ide.java.parser.JavaCompiler;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.java.newparser.DirParser;
+import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.logging.Logger;
 
 public class GetModelContentsFromSource_Action extends BaseAction {
@@ -87,6 +86,12 @@ public class GetModelContentsFromSource_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+
+
+      // FIXME this action was just switched from old JavaCompiler to new DirParser 
+      // Now it ignores model, and does exactly the same as new models from source 
+      // It should be either deleted or changed 
+
       IModule module = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule();
       TreeFileChooser treeFileChooser = new TreeFileChooser();
       treeFileChooser.setDirectoriesAreAlwaysVisible(true);
@@ -114,8 +119,13 @@ public class GetModelContentsFromSource_Action extends BaseAction {
       }
       IFile result = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
       if (result != null) {
-        JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), module, new File(result.getPath()), false, sModel, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject());
-        javaCompiler.compile();
+        DirParser dirParser = new DirParser(module, null, new File(result.getPath()));
+        try {
+          dirParser.parseDirs();
+        } catch (JavaParseException e) {
+          // TODO properly handle it 
+          throw new RuntimeException(e);
+        }
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GetModelContentsFromSource", t);

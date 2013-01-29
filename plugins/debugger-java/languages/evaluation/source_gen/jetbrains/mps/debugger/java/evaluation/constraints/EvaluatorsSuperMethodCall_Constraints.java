@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_Behavior;
 import jetbrains.mps.baseLanguage.search.SuperMethodCall_InstanceMethodScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class EvaluatorsSuperMethodCall_Constraints extends BaseConstraintsDescriptor {
@@ -64,7 +65,7 @@ public class EvaluatorsSuperMethodCall_Constraints extends BaseConstraintsDescri
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_cyzmhi_a0a1a0a0a1a0b0a1a3;
           }
         };

@@ -17,13 +17,14 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ForeachWithErasure_NonTypesystemRule() {
@@ -79,7 +80,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_aftnu9_a0a0a0a0b0c0a0a0a0a0c0b;
+          SNodeReference pointer = SNODE_POINTER_aftnu9_a0a0a0a0b0c0a0a0a0a0c0b;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getReferenceTarget("classifier")))) {
             return false;
           }

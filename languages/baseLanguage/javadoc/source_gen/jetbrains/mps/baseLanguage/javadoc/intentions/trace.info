@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.IntentionsDescriptor" />
-  <root nodeId="2068944020170372970" modelId="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)">
+  <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/2068944020170372970">
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="32" startPosition="30" endLine="33" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="36" startPosition="35" endLine="37" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -121,7 +121,7 @@
     <unitInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="82" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention$IntentionImplementation" />
     <unitInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="26" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention" />
   </root>
-  <root nodeId="2217234381367409810" modelId="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)">
+  <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/2217234381367409810">
     <nodeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -209,7 +209,7 @@
     <unitInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="75" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddSeeBlockTag_Intention$IntentionImplementation" />
     <unitInfo nodeId="2217234381367409810" fileName="AddSeeBlockTag_Intention.java" startLine="19" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddSeeBlockTag_Intention" />
   </root>
-  <root nodeId="3196018662491292781" modelId="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)">
+  <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/3196018662491292781">
     <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="32" startPosition="30" endLine="33" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="36" startPosition="35" endLine="37" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -360,7 +360,7 @@
     <unitInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="75" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention$IntentionImplementation" />
     <unitInfo nodeId="3196018662491292781" fileName="AddMethodDocComment_Intention.java" startLine="26" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention" />
   </root>
-  <root nodeId="4021391592916341753" modelId="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)">
+  <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/4021391592916341753">
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -443,7 +443,7 @@
     <unitInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="69" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddStaticFieldDocComment_Intention$IntentionImplementation" />
     <unitInfo nodeId="4021391592916341753" fileName="AddStaticFieldDocComment_Intention.java" startLine="20" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddStaticFieldDocComment_Intention" />
   </root>
-  <root nodeId="5858074156537083239" modelId="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)">
+  <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/5858074156537083239">
     <nodeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -531,7 +531,7 @@
     <unitInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="75" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddParameterBlockDocTag_Intention$IntentionImplementation" />
     <unitInfo nodeId="5858074156537083239" fileName="AddParameterBlockDocTag_Intention.java" startLine="19" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddParameterBlockDocTag_Intention" />
   </root>
-  <root nodeId="6612597108004799966" modelId="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)">
+  <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/6612597108004799966">
     <nodeInfo nodeId="6612597108004799966" fileName="FoldHTMLElement_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="6612597108004799966" fileName="FoldHTMLElement_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6612597108004799966" fileName="FoldHTMLElement_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -623,7 +623,7 @@
     <unitInfo nodeId="6612597108004799966" fileName="FoldHTMLElement_Intention.java" startLine="70" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.FoldHTMLElement_Intention$IntentionImplementation" />
     <unitInfo nodeId="6612597108004799966" fileName="FoldHTMLElement_Intention.java" startLine="21" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.FoldHTMLElement_Intention" />
   </root>
-  <root nodeId="6612597108006318457" modelId="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)">
+  <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/6612597108006318457">
     <nodeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -711,7 +711,7 @@
     <unitInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="75" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddThrowBlockDocTag_Intention$IntentionImplementation" />
     <unitInfo nodeId="6612597108006318457" fileName="AddThrowBlockDocTag_Intention.java" startLine="19" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddThrowBlockDocTag_Intention" />
   </root>
-  <root nodeId="6832197706140861451" modelId="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)">
+  <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/6832197706140861451">
     <nodeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -802,7 +802,7 @@
     <unitInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="76" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddReturnBlockTag_Intention$IntentionImplementation" />
     <unitInfo nodeId="6832197706140861451" fileName="AddReturnBlockTag_Intention.java" startLine="19" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddReturnBlockTag_Intention" />
   </root>
-  <root nodeId="6832197706140958200" modelId="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)">
+  <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/6832197706140958200">
     <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -885,7 +885,7 @@
     <unitInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="69" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention$IntentionImplementation" />
     <unitInfo nodeId="6832197706140958200" fileName="AddFieldDocComment_Intention.java" startLine="20" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention" />
   </root>
-  <root nodeId="8465538089690783660" modelId="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)">
+  <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/8465538089690783660">
     <nodeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -905,8 +905,8 @@
     <nodeInfo nodeId="8465538089690815805" fileName="AddAuthorBlockDocTag_Intention.java" startLine="87" startPosition="133" endLine="88" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2194993533736518305" fileName="AddAuthorBlockDocTag_Intention.java" startLine="88" startPosition="100" endLine="89" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4298862722976216168" fileName="AddAuthorBlockDocTag_Intention.java" startLine="89" startPosition="34" endLine="90" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4298862722976219604" fileName="AddAuthorBlockDocTag_Intention.java" startLine="90" startPosition="95" endLine="91" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4298862722976218904" fileName="AddAuthorBlockDocTag_Intention.java" startLine="93" startPosition="133" endLine="94" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4298862722976219604" fileName="AddAuthorBlockDocTag_Intention.java" startLine="90" startPosition="95" endLine="91" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4298862722976218904" fileName="AddAuthorBlockDocTag_Intention.java" startLine="93" startPosition="102" endLine="94" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4298862722976219609" fileName="AddAuthorBlockDocTag_Intention.java" startLine="95" startPosition="58" endLine="96" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4298862722976219620" fileName="AddAuthorBlockDocTag_Intention.java" startLine="96" startPosition="37" endLine="97" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="107" startPosition="48" endLine="108" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -930,7 +930,7 @@
     <nodeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="71" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
     <nodeInfo nodeId="4298862722976216187" fileName="AddAuthorBlockDocTag_Intention.java" startLine="92" startPosition="62" endLine="99" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4298862722976216178" fileName="AddAuthorBlockDocTag_Intention.java" startLine="91" startPosition="68" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4298862722976216178" fileName="AddAuthorBlockDocTag_Intention.java" startLine="91" startPosition="37" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="86" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="25" startPosition="43" endLine="25" endPosition="43" />
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="79" startPosition="38" endLine="79" endPosition="38" />
@@ -969,7 +969,7 @@
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="107" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="52" startPosition="84" endLine="56" endPosition="16" />
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="71" startPosition="99" endLine="75" endPosition="30" />
-    <scopeInfo nodeId="4298862722976216190" fileName="AddAuthorBlockDocTag_Intention.java" startLine="93" startPosition="133" endLine="98" endPosition="11">
+    <scopeInfo nodeId="4298862722976216190" fileName="AddAuthorBlockDocTag_Intention.java" startLine="93" startPosition="102" endLine="98" endPosition="11">
       <varInfo nodeId="4298862722976218905" varName="cellId" />
     </scopeInfo>
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="52" startPosition="0" endLine="58" endPosition="0">
@@ -996,7 +996,7 @@
     <unitInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="78" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddAuthorBlockDocTag_Intention$IntentionImplementation" />
     <unitInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="22" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddAuthorBlockDocTag_Intention" />
   </root>
-  <root nodeId="8465538089690815842" modelId="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)">
+  <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/8465538089690815842">
     <nodeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1084,7 +1084,7 @@
     <unitInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="75" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddSinceBlockDocTag_Intention$IntentionImplementation" />
     <unitInfo nodeId="8465538089690815842" fileName="AddSinceBlockDocTag_Intention.java" startLine="19" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.AddSinceBlockDocTag_Intention" />
   </root>
-  <root nodeId="8465538089690851630" modelId="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)">
+  <root nodeRef="r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)/8465538089690851630">
     <nodeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8465538089690851630" fileName="AddVersionBlockTagDoc_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

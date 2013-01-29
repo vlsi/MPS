@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="_Adapters.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.ant.execution._Adapters$_return_P0_E0_to_Runnable_adapter" />
   <unitInfo fileName="_Adapters.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ant.execution._Adapters" />
-  <root nodeId="352677614185351100" modelId="r:d3378a35-13da-49cb-8ad1-afbd30e88ad8(jetbrains.mps.ant.execution)">
+  <root nodeRef="r:d3378a35-13da-49cb-8ad1-afbd30e88ad8(jetbrains.mps.ant.execution)/352677614185351100">
     <nodeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="24" startPosition="76" endLine="25" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="30" startPosition="26" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="32" startPosition="5" endLine="33" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -161,7 +161,7 @@
     <unitInfo nodeId="352677614185351100" fileName="AntSettings_Configuration_Editor.java" startLine="54" startPosition="14" endLine="58" endPosition="5" unitName="jetbrains.mps.ant.execution.AntSettings_Configuration_Editor$1" />
     <unitInfo nodeId="352677614185351100" fileName="AntSettings_Configuration_Editor.java" startLine="17" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ant.execution.AntSettings_Configuration_Editor" />
   </root>
-  <root nodeId="352677614185351227" modelId="r:d3378a35-13da-49cb-8ad1-afbd30e88ad8(jetbrains.mps.ant.execution)">
+  <root nodeRef="r:d3378a35-13da-49cb-8ad1-afbd30e88ad8(jetbrains.mps.ant.execution)/352677614185351227">
     <nodeInfo nodeId="352677614185351522" fileName="ChildChoosePanel.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComboBoxModel" />
     <nodeInfo nodeId="352677614185351532" fileName="ChildChoosePanel.java" startLine="31" startPosition="41" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="352677614185351535" fileName="ChildChoosePanel.java" startLine="32" startPosition="31" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -302,7 +302,7 @@
     <unitInfo nodeId="352677614185351408" fileName="ChildChoosePanel.java" startLine="96" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.ant.execution.ChildChoosePanel$MyComboBoxModel" />
     <unitInfo nodeId="352677614185351227" fileName="ChildChoosePanel.java" startLine="24" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.ant.execution.ChildChoosePanel" />
   </root>
-  <root nodeId="352677614185351672" modelId="r:d3378a35-13da-49cb-8ad1-afbd30e88ad8(jetbrains.mps.ant.execution)">
+  <root nodeRef="r:d3378a35-13da-49cb-8ad1-afbd30e88ad8(jetbrains.mps.ant.execution)/352677614185351672">
     <nodeInfo nodeId="352677614185351672" fileName="Ant_Command.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTarget_NodeINamedConcept" />
     <nodeInfo nodeId="352677614185351672" fileName="Ant_Command.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAntLocation_String" />
     <nodeInfo nodeId="352677614185351672" fileName="Ant_Command.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOptions_String" />

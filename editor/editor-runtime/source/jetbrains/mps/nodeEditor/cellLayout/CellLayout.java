@@ -16,22 +16,27 @@
 package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import org.jetbrains.annotations.Nullable;
 
-import java.awt.*;
+import java.awt.Rectangle;
 import java.util.List;
 
-public interface CellLayout {
+public interface CellLayout extends jetbrains.mps.openapi.editor.cells.CellLayout {
 
   void doLayout(EditorCell_Collection editorCells);
 
   TextBuilder doLayoutText(Iterable<EditorCell> editorCells);
 
   int getAscent(EditorCell_Collection editorCells);
+
   int getDescent(EditorCell_Collection editorCell_collection);
 
   List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells);
 
   boolean canBeFolded();
+
+  @Nullable
+  List<? extends EditorCell> getSelectionCells(EditorCell_Collection editorCells);
 }

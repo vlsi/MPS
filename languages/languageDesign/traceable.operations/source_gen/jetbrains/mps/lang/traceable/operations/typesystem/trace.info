@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.typesystem.TypesystemDescriptor" />
-  <root nodeId="1381762044504275935" modelId="r:8456500c-6587-4a83-9f3b-ee95eb04cd7e(jetbrains.mps.lang.traceable.operations.typesystem)">
+  <root nodeRef="r:8456500c-6587-4a83-9f3b-ee95eb04cd7e(jetbrains.mps.lang.traceable.operations.typesystem)/1381762044504275935">
     <nodeInfo nodeId="1205967749950" fileName="typeof_Node_CopyWithTraceOperation_InferenceRule.java" startLine="20" startPosition="117" endLine="21" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206100005686" fileName="typeof_Node_CopyWithTraceOperation_InferenceRule.java" startLine="21" startPosition="100" endLine="22" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1205967749964" fileName="typeof_Node_CopyWithTraceOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -59,7 +59,7 @@
     </scopeInfo>
     <unitInfo nodeId="1381762044504275935" fileName="typeof_Node_CopyWithTraceOperation_InferenceRule.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.typesystem.typeof_Node_CopyWithTraceOperation_InferenceRule" />
   </root>
-  <root nodeId="2603522263179374361" modelId="r:8456500c-6587-4a83-9f3b-ee95eb04cd7e(jetbrains.mps.lang.traceable.operations.typesystem)">
+  <root nodeRef="r:8456500c-6587-4a83-9f3b-ee95eb04cd7e(jetbrains.mps.lang.traceable.operations.typesystem)/2603522263179374361">
     <nodeInfo nodeId="2603522263179374388" fileName="typeof_NList_CopyWithTraceOperation_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2603522263179374388" fileName="typeof_NList_CopyWithTraceOperation_InferenceRule.java" startLine="21" startPosition="51" endLine="22" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2603522263179374388" fileName="typeof_NList_CopyWithTraceOperation_InferenceRule.java" startLine="22" startPosition="216" endLine="23" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

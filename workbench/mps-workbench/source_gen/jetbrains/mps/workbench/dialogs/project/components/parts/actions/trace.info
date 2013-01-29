@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1560298786499490203" modelId="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)">
+  <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499490203">
     <nodeInfo nodeId="1560298786499490211" fileName="ListAddAction.java" startLine="8" startPosition="39" endLine="9" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499490206" fileName="ListAddAction.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListAddAction#(Ljavax/swing/JList;)V" />
     <scopeInfo nodeId="1560298786499490210" fileName="ListAddAction.java" startLine="8" startPosition="39" endLine="9" endPosition="36" />
@@ -9,7 +9,7 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499490203" fileName="ListAddAction.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction" />
   </root>
-  <root nodeId="1560298786499490464" modelId="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)">
+  <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499490464">
     <nodeInfo nodeId="1560298786499490467" fileName="BaseAddAction.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectionModel" />
     <nodeInfo nodeId="1560298786499490475" fileName="BaseAddAction.java" startLine="14" startPosition="53" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499490479" fileName="BaseAddAction.java" startLine="15" startPosition="46" endLine="16" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -59,7 +59,7 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499490464" fileName="BaseAddAction.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseAddAction" />
   </root>
-  <root nodeId="1560298786499493326" modelId="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)">
+  <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499493326">
     <nodeInfo nodeId="1560298786499493334" fileName="TableAddAction.java" startLine="8" startPosition="39" endLine="9" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499493329" fileName="TableAddAction.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TableAddAction#(Ljavax/swing/JTable;)V" />
     <scopeInfo nodeId="1560298786499493333" fileName="TableAddAction.java" startLine="8" startPosition="39" endLine="9" endPosition="37" />
@@ -68,7 +68,7 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499493326" fileName="TableAddAction.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.TableAddAction" />
   </root>
-  <root nodeId="1560298786499493338" modelId="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)">
+  <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499493338">
     <nodeInfo nodeId="1560298786499493341" fileName="ListRemoveAction.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myList" />
     <nodeInfo nodeId="1560298786499493349" fileName="ListRemoveAction.java" startLine="12" startPosition="39" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499493353" fileName="ListRemoveAction.java" startLine="13" startPosition="55" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -118,7 +118,7 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499493338" fileName="ListRemoveAction.java" startLine="9" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction" />
   </root>
-  <root nodeId="1560298786499494244" modelId="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)">
+  <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499494244">
     <nodeInfo nodeId="1560298786499494247" fileName="BaseValidatedAction.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValidator" />
     <nodeInfo nodeId="1560298786499494259" fileName="BaseValidatedAction.java" startLine="12" startPosition="77" endLine="13" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499494269" fileName="BaseValidatedAction.java" startLine="16" startPosition="54" endLine="17" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -149,7 +149,7 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499494244" fileName="BaseValidatedAction.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction" />
   </root>
-  <root nodeId="1560298786499495342" modelId="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)">
+  <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499495342">
     <nodeInfo nodeId="1560298786499495345" fileName="TableRemoveAction.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTable" />
     <nodeInfo nodeId="1560298786499495353" fileName="TableRemoveAction.java" startLine="12" startPosition="42" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499495357" fileName="TableRemoveAction.java" startLine="13" startPosition="55" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -199,7 +199,7 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499495342" fileName="TableRemoveAction.java" startLine="9" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.TableRemoveAction" />
   </root>
-  <root nodeId="1560298786499497503" modelId="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)">
+  <root nodeRef="r:6cbad25c-9f4e-4f70-98d6-02bf4ac8ec68(jetbrains.mps.workbench.dialogs.project.components.parts.actions)/1560298786499497503">
     <nodeInfo nodeId="1560298786499497506" fileName="ListEditAction.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myList" />
     <nodeInfo nodeId="1560298786499497514" fileName="ListEditAction.java" startLine="12" startPosition="37" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499497518" fileName="ListEditAction.java" startLine="13" startPosition="55" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

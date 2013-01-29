@@ -22,7 +22,7 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.ArrayList;
@@ -86,8 +86,8 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   }
 
   @Override
-  public SNodePointer getMappingNode() {
-    return new SNodePointer(myMappingConfiguration);
+  public SNodeReference getMappingNode() {
+    return new jetbrains.mps.smodel.SNodePointer(myMappingConfiguration);
   }
 
   @Override

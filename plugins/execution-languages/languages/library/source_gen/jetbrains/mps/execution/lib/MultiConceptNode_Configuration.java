@@ -14,8 +14,9 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -78,18 +79,18 @@ public class MultiConceptNode_Configuration implements IPersistentConfiguration,
 
   @Nullable
   public SNode getNode() {
-    final SNodePointer pointer = getNodePointer();
+    final SNodeReference pointer = getNodePointer();
     final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        return node.value = check_u1vs2g_a0a0a2a0(pointer);
+        return node.value = check_u1vs2g_a0a0a2a0(((SNodePointer) pointer));
       }
     }));
     return node.value;
   }
 
   @Nullable
-  public SNodePointer getNodePointer() {
+  public SNodeReference getNodePointer() {
     if (this.getModelId() == null || this.getNodeId() == null) {
       return null;
     }

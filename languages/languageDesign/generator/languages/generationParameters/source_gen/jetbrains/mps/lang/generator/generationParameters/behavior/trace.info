@@ -4,7 +4,7 @@
   <unitInfo fileName="DefaultGenerationParameterId_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGenerationParameterId_BehaviorDescriptor" />
   <unitInfo fileName="DefaultGeneratorParameterContainer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameterContainer_BehaviorDescriptor" />
   <unitInfo fileName="DefaultGeneratorParameter_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameter_BehaviorDescriptor" />
-  <root nodeId="8484425748929510084" modelId="r:fd22fe79-96d7-4028-99df-53ccd194ec8d(jetbrains.mps.lang.generator.generationParameters.behavior)">
+  <root nodeRef="r:fd22fe79-96d7-4028-99df-53ccd194ec8d(jetbrains.mps.lang.generator.generationParameters.behavior)/8484425748929510084">
     <nodeInfo nodeId="8484425748929510113" fileName="DefaultGeneratorParameter_Behavior.java" startLine="19" startPosition="6" endLine="20" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="24" startPosition="77" endLine="25" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="29" startPosition="110" endLine="30" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

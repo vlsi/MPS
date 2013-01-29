@@ -5,6 +5,7 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -22,11 +23,11 @@ public class SwitchbetterSwitch implements TemplateSwitchMapping {
     rules = TemplateUtil.<TemplateReductionRule>asIterable(new SwitchbetterSwitch.ReductionRule0());
   }
 
-  public SNodePointer getSwitchNode() {
+  public SNodeReference getSwitchNode() {
     return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066874");
   }
 
-  public SNodePointer getModifiesSwitch() {
+  public SNodeReference getModifiesSwitch() {
     return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366");
   }
 
@@ -34,13 +35,13 @@ public class SwitchbetterSwitch implements TemplateSwitchMapping {
     return rules;
   }
 
-  public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
+  public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
     environment.getTracer().pushRuleConsequence(conseq_duaj4c_a0a0a5);
     Collection<SNode> tlist1 = Collections.emptyList();
     return tlist1;
   }
 
-  public void processNull(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, TemplateContext context) {
+  public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
     environment.getGenerator().getLogger().info(context.getInput(), "Hmm, input is null");
   }
 
@@ -56,7 +57,7 @@ public class SwitchbetterSwitch implements TemplateSwitchMapping {
       return "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_duaj4c_a0a3h;
     }
 

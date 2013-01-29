@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.textGen;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
@@ -109,7 +109,7 @@ public abstract class SNodeTextGen {
     }
 
     if (reference instanceof DynamicReference) {
-      return reference.getResolveInfo();
+      return ((DynamicReference) reference).getResolveInfo();
     } else {
       SNode targetNode = reference.getTargetNode();
       if (targetNode == null) {
@@ -135,7 +135,7 @@ public abstract class SNodeTextGen {
     String shortName;
     String packageName = null;
     if (reference instanceof DynamicReference) {
-      shortName = reference.getResolveInfo();
+      shortName = ((DynamicReference) reference).getResolveInfo();
       if (shortName.startsWith("[")) {
         // todo: hack, remove with [] removing
         packageName = shortName.substring(1, shortName.lastIndexOf("]")).trim();

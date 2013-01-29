@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionPopupMenu;
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.extensions.Extensions;
@@ -30,15 +34,28 @@ import jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening.ModelListener;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.SwingConstants;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
@@ -51,7 +68,7 @@ import java.util.Set;
 public abstract class BaseTabsComponent implements TabsComponent {
   private final NodeChangeCallback myCallback;
   private CreateModeCallback myCreateModeCallback;
-  protected final SNodePointer myBaseNode;
+  protected final SNodeReference myBaseNode;
   protected final Set<RelationDescriptor> myPossibleTabs;
   protected final JComponent myEditor;
   protected final boolean myShowGrayed;
@@ -59,8 +76,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
   private IOperationContext myOperationContext;
 
   private List<Document> myEditedDocuments = new ArrayList<Document>();
-  private List<SNodePointer> myEditedNodes = new ArrayList<SNodePointer>();
-  private SNodePointer myLastNode = null;
+  private List<SNodeReference> myEditedNodes = new ArrayList<SNodeReference>();
+  private SNodeReference myLastNode = null;
 
   private ModelListener myTabRemovalListener = new MyTabRemovalListener();
 
@@ -68,7 +85,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
   private MySModelCommandListener myRootAdditionListener = new MySModelCommandListener();
   private MyFileStatusListener myFileStatusListener = new MyFileStatusListener();
 
-  protected BaseTabsComponent(SNodePointer baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback, IOperationContext operationContext) {
+  protected BaseTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback, IOperationContext operationContext) {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myEditor = editor;
@@ -105,7 +122,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
     return myComponent;
   }
 
-  public List<SNodePointer> getAllEditedNodes() {
+  public List<SNodeReference> getAllEditedNodes() {
     return myEditedNodes;
   }
 
@@ -113,11 +130,11 @@ public abstract class BaseTabsComponent implements TabsComponent {
     return myEditedDocuments;
   }
 
-  public void setLastNode(SNodePointer node) {
+  public void setLastNode(SNodeReference node) {
     myLastNode = node;
   }
 
-  public SNodePointer getLastNode() {
+  public SNodeReference getLastNode() {
     return myLastNode;
   }
 
@@ -126,8 +143,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
   }
 
   protected void onNodeChange(SNode node) {
-    SNodePointer oldNode = myLastNode;
-    setLastNode(new SNodePointer(node));
+    SNodeReference oldNode = myLastNode;
+    setLastNode(new jetbrains.mps.smodel.SNodePointer(node));
     if (oldNode == null && node != null) {
       if (myCreateModeCallback != null) {
         myCreateModeCallback.exitCreateMode();
@@ -145,12 +162,12 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   protected Map<RelationDescriptor, List<SNode>> updateDocumentsAndNodes() {
     List<Document> editedDocumentsNew = new ArrayList<Document>();
-    List<SNodePointer> editedNodesNew = new ArrayList<SNodePointer>();
+    List<SNodeReference> editedNodesNew = new ArrayList<SNodeReference>();
 
     Map<RelationDescriptor, List<SNode>> result = new THashMap<RelationDescriptor, List<SNode>>();
     getTabRemovalListener().clearAspects();
 
-    SNode baseNode = myBaseNode.getNode();
+    SNode baseNode = myBaseNode.resolve(MPSModuleRepository.getInstance());
     if (baseNode == null) return result;
 
     for (RelationDescriptor d : myPossibleTabs) {
@@ -164,7 +181,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
       result.put(d, nodes);
       for (SNode node : nodes) {
         getTabRemovalListener().aspectAdded(node.getContainingRoot());
-        SNodePointer nodePointer = new SNodePointer(node);
+        SNodeReference nodePointer = new jetbrains.mps.smodel.SNodePointer(node);
         editedNodesNew.add(nodePointer);
         editedDocumentsNew.add(MPSUndoUtil.getDoc(nodePointer));
       }
@@ -195,7 +212,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
   }
 
   private class MyTabRemovalListener extends ModelListener {
-    protected void onImportantRootRemoved(SNodePointer node) {
+    protected void onImportantRootRemoved(SNodeReference node) {
       if (isDisposedNode()) return;
       if (myBaseNode.equals(node)) return;
       if (!isTabUpdateNeeded(node)) return;
@@ -209,14 +226,18 @@ public abstract class BaseTabsComponent implements TabsComponent {
   }
 
   protected boolean isDisposedNode() {
-    return
-      myBaseNode.getNode() == null ||
-        myBaseNode.getModel() == null ||
-        myBaseNode.getModel().getModule() == null ||
-        ModuleRepositoryFacade.getInstance().getModule(myBaseNode.getModel().getModule().getModuleReference()) == null;
+    SNode node = myBaseNode.resolve(MPSModuleRepository.getInstance());
+    if (node == null) return true;
+    SModel model = node.getModel();
+    if (model == null) return true;
+    SModelDescriptor md = model.getModelDescriptor();
+    if (md == null) return true;
+    IModule module = md.getModule();
+    if (module == null) return true;
+    return ModuleRepositoryFacade.getInstance().getModule(module.getModuleReference()) == null;
   }
 
-  protected abstract boolean isTabUpdateNeeded(SNodePointer node);
+  protected abstract boolean isTabUpdateNeeded(SNodeReference node);
 
   protected abstract void updateTabColors();
 

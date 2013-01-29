@@ -79,13 +79,13 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     return editorCell;
   }
 
-  private void setSemanticNodeToCells(EditorCell rootCell, SNode semanticNode) {
+  private void setSemanticNodeToCells(jetbrains.mps.openapi.editor.cells.EditorCell rootCell, SNode semanticNode) {
     if (!(rootCell instanceof EditorCell_Basic) || semanticNode == null) {
       return;
     }
     ((EditorCell_Basic) rootCell).setSNode(semanticNode);
-    if (rootCell instanceof EditorCell_Collection) {
-      Iterator<EditorCell> children = ((EditorCell_Collection) rootCell).cells();
+    if (rootCell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
+      Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> children = ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) rootCell).iterator();
       while (children.hasNext()) {
         setSemanticNodeToCells(children.next(), semanticNode);
       }

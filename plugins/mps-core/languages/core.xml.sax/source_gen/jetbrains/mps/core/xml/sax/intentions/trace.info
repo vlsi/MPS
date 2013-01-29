@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.core.xml.sax.intentions.IntentionsDescriptor" />
-  <root nodeId="2264311582634140803" modelId="r:1f1edf97-bae4-47a7-9d76-afcb8231d0cf(jetbrains.mps.core.xml.sax.intentions)">
+  <root nodeRef="r:1f1edf97-bae4-47a7-9d76-afcb8231d0cf(jetbrains.mps.core.xml.sax.intentions)/2264311582634140803">
     <nodeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="23" startPosition="30" endLine="24" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="27" startPosition="35" endLine="28" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -79,7 +79,7 @@
     <unitInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="66" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.core.xml.sax.intentions.Switch_HasAttributes_Intention$IntentionImplementation" />
     <unitInfo nodeId="2264311582634140803" fileName="Switch_HasAttributes_Intention.java" startLine="17" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.core.xml.sax.intentions.Switch_HasAttributes_Intention" />
   </root>
-  <root nodeId="2264311582634140824" modelId="r:1f1edf97-bae4-47a7-9d76-afcb8231d0cf(jetbrains.mps.core.xml.sax.intentions)">
+  <root nodeRef="r:1f1edf97-bae4-47a7-9d76-afcb8231d0cf(jetbrains.mps.core.xml.sax.intentions)/2264311582634140824">
     <nodeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634140824" fileName="addHandler_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

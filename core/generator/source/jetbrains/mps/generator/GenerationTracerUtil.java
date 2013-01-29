@@ -17,17 +17,17 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class GenerationTracerUtil {
-  public static SNodePointer getSNodePointer(SNode node) {
+  public static SNodeReference getSNodePointer(SNode node) {
     return getSNodePointer(node.getModel(), node);
   }
 
-  public static SNodePointer getSNodePointer(SModel model, SNode node) {
+  public static SNodeReference getSNodePointer(SModel model, SNode node) {
     //this is a hack to somehow show input nodes created during generation (e.g. .type.copy)
     //actually, we should put another TracerNode here. showing the node is not from an input model at all
-    return new SNodePointer(model == null ? null : model.getSModelReference(), node.getNodeId());
+    return new jetbrains.mps.smodel.SNodePointer(model == null ? null : model.getSModelReference(), node.getNodeId());
   }
 
 }

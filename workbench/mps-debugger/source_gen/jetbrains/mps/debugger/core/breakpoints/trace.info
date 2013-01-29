@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2706316667685001040" modelId="r:e85e5755-b656-44cc-a19b-af0b99b30b13(jetbrains.mps.debugger.core.breakpoints)">
+  <root nodeRef="r:e85e5755-b656-44cc-a19b-af0b99b30b13(jetbrains.mps.debugger.core.breakpoints)/2706316667685001040">
     <nodeInfo nodeId="4474271214083123871" fileName="BreakpointsUiComponentEx.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileEditorManager" />
     <nodeInfo nodeId="2706316667685008642" fileName="BreakpointsUiComponentEx.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="4474271214083123874" fileName="BreakpointsUiComponentEx.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMouseListener" />
@@ -26,7 +26,7 @@
     <nodeInfo nodeId="4474271214083124448" fileName="BreakpointsUiComponentEx.java" startLine="84" startPosition="0" endLine="85" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214083124457" fileName="BreakpointsUiComponentEx.java" startLine="86" startPosition="26" endLine="87" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214083124493" fileName="BreakpointsUiComponentEx.java" startLine="89" startPosition="53" endLine="90" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="4474271214083124494" fileName="BreakpointsUiComponentEx.java" startLine="92" startPosition="7" endLine="93" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083124494" fileName="BreakpointsUiComponentEx.java" startLine="92" startPosition="7" endLine="93" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083124500" fileName="BreakpointsUiComponentEx.java" startLine="94" startPosition="5" endLine="95" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083125146" fileName="BreakpointsUiComponentEx.java" startLine="101" startPosition="45" endLine="102" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214083125156" fileName="BreakpointsUiComponentEx.java" startLine="103" startPosition="48" endLine="104" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -213,7 +213,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2228821930962906006" fileName="BreakpointsUiComponentEx.java" startLine="170" startPosition="0" endLine="176" endPosition="0" />
     <scopeInfo nodeId="2706316667685006349" fileName="BreakpointsUiComponentEx.java" startLine="46" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="4474271214083124456" fileName="BreakpointsUiComponentEx.java" startLine="86" startPosition="26" endLine="93" endPosition="30">
+    <scopeInfo nodeId="4474271214083124456" fileName="BreakpointsUiComponentEx.java" startLine="86" startPosition="26" endLine="93" endPosition="43">
       <varInfo nodeId="4474271214083124458" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083124821" fileName="BreakpointsUiComponentEx.java" startLine="195" startPosition="0" endLine="202" endPosition="0" />
@@ -275,7 +275,7 @@
     <unitInfo nodeId="4474271214083123747" fileName="BreakpointsUiComponentEx.java" startLine="179" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$MyLeftMarginMouseListener" />
     <unitInfo nodeId="2706316667685001040" fileName="BreakpointsUiComponentEx.java" startLine="28" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx" />
   </root>
-  <root nodeId="8589065642488591082" modelId="r:e85e5755-b656-44cc-a19b-af0b99b30b13(jetbrains.mps.debugger.core.breakpoints)">
+  <root nodeRef="r:e85e5755-b656-44cc-a19b-af0b99b30b13(jetbrains.mps.debugger.core.breakpoints)/8589065642488591082">
     <nodeInfo nodeId="8589065642488591109" fileName="BreakpointIconRenderrerEx.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
     <nodeInfo nodeId="8589065642488591115" fileName="BreakpointIconRenderrerEx.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpoint" />
     <nodeInfo nodeId="8589065642488591118" fileName="BreakpointIconRenderrerEx.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
@@ -287,7 +287,7 @@
     <nodeInfo nodeId="8589065642488591165" fileName="BreakpointIconRenderrerEx.java" startLine="36" startPosition="38" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8589065642488591171" fileName="BreakpointIconRenderrerEx.java" startLine="40" startPosition="34" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8589065642488591094" fileName="BreakpointIconRenderrerEx.java" startLine="45" startPosition="51" endLine="46" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8589065642488591100" fileName="BreakpointIconRenderrerEx.java" startLine="46" startPosition="73" endLine="47" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8589065642488591100" fileName="BreakpointIconRenderrerEx.java" startLine="46" startPosition="73" endLine="47" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8589065642488591107" fileName="BreakpointIconRenderrerEx.java" startLine="48" startPosition="5" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8589065642488591140" fileName="BreakpointIconRenderrerEx.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
     <nodeInfo nodeId="8589065642488591146" fileName="BreakpointIconRenderrerEx.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAnchorCell#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -303,7 +303,7 @@
     <scopeInfo nodeId="8589065642488591164" fileName="BreakpointIconRenderrerEx.java" startLine="36" startPosition="38" endLine="37" endPosition="16" />
     <scopeInfo nodeId="8589065642488591170" fileName="BreakpointIconRenderrerEx.java" startLine="40" startPosition="34" endLine="41" endPosition="16" />
     <scopeInfo nodeId="8589065642488591125" fileName="BreakpointIconRenderrerEx.java" startLine="19" startPosition="71" endLine="21" endPosition="28" />
-    <scopeInfo nodeId="8589065642488591093" fileName="BreakpointIconRenderrerEx.java" startLine="45" startPosition="51" endLine="47" endPosition="85">
+    <scopeInfo nodeId="8589065642488591093" fileName="BreakpointIconRenderrerEx.java" startLine="45" startPosition="51" endLine="47" endPosition="100">
       <varInfo nodeId="8589065642488591095" varName="collection" />
     </scopeInfo>
     <scopeInfo nodeId="8589065642488591140" fileName="BreakpointIconRenderrerEx.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
@@ -323,7 +323,7 @@
     </scopeInfo>
     <unitInfo nodeId="8589065642488591082" fileName="BreakpointIconRenderrerEx.java" startLine="14" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.debugger.core.breakpoints.BreakpointIconRenderrerEx" />
   </root>
-  <root nodeId="8589065642488591173" modelId="r:e85e5755-b656-44cc-a19b-af0b99b30b13(jetbrains.mps.debugger.core.breakpoints)">
+  <root nodeRef="r:e85e5755-b656-44cc-a19b-af0b99b30b13(jetbrains.mps.debugger.core.breakpoints)/8589065642488591173">
     <nodeInfo nodeId="8589065642488591225" fileName="BreakpointPainterEx.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CELL_BACKGROUND_COLOR" />
     <nodeInfo nodeId="8589065642488591234" fileName="BreakpointPainterEx.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRIPE_BACKGROUND_COLOR" />
     <nodeInfo nodeId="8589065642488591242" fileName="BreakpointPainterEx.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FRAME_COLOR" />

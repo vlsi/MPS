@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelId;
@@ -274,11 +274,11 @@ public class QueriesGenerated {
     if (ref == null) {
       return "";
     }
-    SNode target = ref.getTargetNodeSilently();
+    SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
     if (target != null && SNodeOperations.isInstanceOf(target, "jetbrains.mps.lang.core.structure.INamedConcept")) {
       return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
     }
-    String resolveInfo = ref.getResolveInfo();
+    String resolveInfo = ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
     if (resolveInfo != null) {
       return resolveInfo;
     }
@@ -3599,7 +3599,7 @@ public class QueriesGenerated {
       if (AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro"), reference.getRole())) != null) {
         continue;
       }
-      SNode targetNode = reference.getTargetNodeSilently();
+      SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
       if (targetNode == null) {
         _context.showErrorMessage(_context.getNode(), "cannot resolve reference in template model; role: " + reference.getRole());
         continue;
@@ -3632,7 +3632,7 @@ public class QueriesGenerated {
           resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode);
         }
         if (resolveInfo == null) {
-          resolveInfo = reference.getResolveInfo();
+          resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
         }
         if (resolveInfo == null) {
           resolveInfo = "";

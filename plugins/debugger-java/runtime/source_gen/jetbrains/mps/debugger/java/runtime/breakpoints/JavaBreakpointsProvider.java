@@ -14,7 +14,7 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpointPropertiesUi;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Element;
 import com.intellij.util.xmlb.XmlSerializer;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
 import javax.swing.Icon;
 import jetbrains.mps.debug.api.AbstractDebugSession;
@@ -127,7 +127,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
           if (!(fieldBreakpointInfo.isInitialized())) {
             return null;
           }
-          SNodePointer pointer = fieldBreakpointInfo.location();
+          SNodeReference pointer = fieldBreakpointInfo.location();
           FieldBreakpoint fieldBreakpoint = new FieldBreakpoint(pointer, project);
           fieldBreakpointInfo.initBreakpoint(fieldBreakpoint);
           return fieldBreakpoint;

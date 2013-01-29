@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -599,14 +599,14 @@ public class SModel {
   private static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
     for (SNode node : model.nodes()) {
       if (RoleIdsComponent.isEnabled()) {
-        SNodePointer ptrConcept = RoleIdsComponent.getConceptPointer(node);
+        SNodeReference ptrConcept = RoleIdsComponent.getConceptPointer(node);
         if (ptrConcept == null) {
           LOG.warning("concept not found for node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         } else {
           result.add(ptrConcept.getModelReference());
         }
         for (String propname : node.getPropertyNames()) {
-          SNodePointer ptrDecl = RoleIdsComponent.getPropertyNamePointer(node, propname);
+          SNodeReference ptrDecl = RoleIdsComponent.getPropertyNamePointer(node, propname);
           if (ptrDecl == null) {
             LOG.warning("undeclared property: '" + propname + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
@@ -617,7 +617,7 @@ public class SModel {
           if (ref.getTargetSModelReference() != null) {
             result.add(ref.getTargetSModelReference());
           }
-          SNodePointer ptrDecl = RoleIdsComponent.getReferenceRolePointer(ref);
+          SNodeReference ptrDecl = RoleIdsComponent.getReferenceRolePointer(ref);
           if (ptrDecl == null) {
             LOG.warning("undeclared link role: '" + ref.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
@@ -625,7 +625,7 @@ public class SModel {
           }
         }
         for (SNode child : node.getChildren()) {
-          SNodePointer ptrDecl = RoleIdsComponent.getNodeRolePointer(child);
+          SNodeReference ptrDecl = RoleIdsComponent.getNodeRolePointer(child);
           if (ptrDecl == null) {
             LOG.warning("undeclared child role: '" + child.getRoleInParent() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
@@ -875,7 +875,7 @@ public class SModel {
         SModelReference newRef = oldReference.update();
         if (newRef.differs(oldReference)) {
           changed = true;
-          reference.setTargetSModelReference(newRef);
+          ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newRef);
         }
       }
     }
@@ -936,7 +936,7 @@ public class SModel {
       SNode node = (SNode) n;
       for (SReference reference : node.getReferences()) {
         if (oldReference.equals(reference.getTargetSModelReference())) {
-          reference.setTargetSModelReference(newModelReference);
+          ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newModelReference);
         }
       }
     }

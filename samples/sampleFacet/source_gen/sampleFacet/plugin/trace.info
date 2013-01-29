@@ -4,7 +4,7 @@
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="sampleFacet.plugin.FacetAspectDescriptor" />
   <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="sampleFacet.plugin.FacetManifest$1" />
   <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="sampleFacet.plugin.FacetManifest" />
-  <root nodeId="5590401931537536727" modelId="r:2e067ce5-0c73-40e5-8ee8-70f504f9cb98(sampleFacet.plugin)">
+  <root nodeRef="r:2e067ce5-0c73-40e5-8ee8-70f504f9cb98(sampleFacet.plugin)/5590401931537536727">
     <nodeInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="39" startPosition="25" endLine="40" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

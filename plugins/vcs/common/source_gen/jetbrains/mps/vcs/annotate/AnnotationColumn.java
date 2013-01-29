@@ -227,7 +227,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
       MapSequence.fromMap(myChangesToLineContents).put(ch, new LineContent[]{new ReferenceLineContent(src.getAffectedNodeId(), src.getRole())});
     } else if (ch instanceof NodeGroupChange) {
       NodeGroupChange ngc = (NodeGroupChange) ch;
-      List<? extends SNode> newChildren = IterableUtil.asList(myModelDescriptor.getSModel().getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole()));
+      List<? extends SNode> newChildren = IterableUtil.asList(myModelDescriptor.getSModel().getNode(ngc.getParentNodeId()).getChildren(ngc.getRole()));
       MapSequence.fromMap(myChangesToLineContents).put(ch, ListSequence.fromList(newChildren).page(ngc.getResultBegin(), ngc.getResultEnd()).select(new ISelector<SNode, NodeLineContent>() {
         public NodeLineContent select(SNode n) {
           return new NodeLineContent(n.getNodeId());
@@ -416,13 +416,13 @@ __switch__:
     if (editor == null || editor.isDisposed() || editor.getGraphics() == null) {
       return;
     }
-    Iterable<EditorCell> nonTrivialCells = Sequence.fromIterable(EditorUtils.getCellDescendants(editor.getRootCell())).where(new IWhereFilter<EditorCell>() {
-      public boolean accept(EditorCell cell) {
+    Iterable<jetbrains.mps.openapi.editor.cells.EditorCell> nonTrivialCells = Sequence.fromIterable(EditorUtils.getCellDescendants(editor.getRootCell())).where(new IWhereFilter<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+      public boolean accept(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
         return cell.getWidth() * cell.getHeight() != 0;
       }
     });
-    Set<Integer> yCoordinatesSet = SetSequence.fromSetWithValues(new HashSet<Integer>(), Sequence.fromIterable(nonTrivialCells).select(new ISelector<EditorCell, Integer>() {
-      public Integer select(EditorCell cell) {
+    Set<Integer> yCoordinatesSet = SetSequence.fromSetWithValues(new HashSet<Integer>(), Sequence.fromIterable(nonTrivialCells).select(new ISelector<jetbrains.mps.openapi.editor.cells.EditorCell, Integer>() {
+      public Integer select(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
         return cell.getY();
       }
     }));

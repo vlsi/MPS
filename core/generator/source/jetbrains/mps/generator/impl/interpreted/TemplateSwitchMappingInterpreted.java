@@ -21,9 +21,10 @@ import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateProcessor;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
@@ -50,19 +51,19 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
   }
 
   @Override
-  public SNodePointer getSwitchNode() {
-    return new SNodePointer(mySwitch);
+  public SNodeReference getSwitchNode() {
+    return new jetbrains.mps.smodel.SNodePointer(mySwitch);
   }
 
   @Override
-  public SNodePointer getModifiesSwitch() {
+  public SNodeReference getModifiesSwitch() {
     SReference ref = mySwitch.getReference(RuleUtil.link_TemplateSwitch_modifiedSwitch);
     if (ref == null) {
       return null;
     }
 
     // proceed without resolving (at least for StaticReferences) 
-    return new SNodePointer(ref.getTargetSModelReference(), ref.getTargetNodeId());
+    return ref.toNodePointer();
   }
 
   @Override
@@ -71,10 +72,10 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
   }
 
   @Override
-  public Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingName, TemplateContext context) throws GenerationException {
+  public Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingName, TemplateContext context) throws GenerationException {
     SNode defaultConsequence = RuleUtil.getSwitchDefaultConsequence(mySwitch);
     if (defaultConsequence == null) {
-      SNodePointer modifies = getModifiesSwitch();
+      SNodeReference modifies = getModifiesSwitch();
       if (modifies == null) {
         return null;
       }
@@ -87,9 +88,9 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
 
     List<SNode> collection = new ArrayList<SNode>();
     try {
-      List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(defaultConsequence, context.getInput(), templateSwitch.getNode(), environment.getReductionContext(), environment.getGenerator());
+      List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(defaultConsequence, context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), environment.getReductionContext(), environment.getGenerator());
       if (nodeAndMappingNamePairs == null) {
-        environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.getNode(), defaultConsequence, "error processing $SWITCH$/default");
+        environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), defaultConsequence, "error processing $SWITCH$/default");
         return null;
       }
 
@@ -100,7 +101,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
           TemplateProcessor templateProcessor = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
           collection.addAll(templateProcessor.apply(innerMappingName, altTemplateNode, context));
         } catch (TemplateProcessingFailureException e) {
-          environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.getNode(), "error processing template fragment");
+          environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), "error processing template fragment");
         }
       }
     } catch (AbandonRuleInputException e) {
@@ -110,11 +111,11 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
   }
 
   @Override
-  public void processNull(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, TemplateContext context) {
+  public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
 
     SNode generatorMessage = RuleUtil.getSwitch_NullInputMessage(mySwitch);
     if (generatorMessage != null) {
-      GeneratorUtilEx.processGeneratorMessage(generatorMessage, context.getInput(), templateSwitch.getNode(), null, environment.getGenerator());
+      GeneratorUtilEx.processGeneratorMessage(generatorMessage, context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), null, environment.getGenerator());
     }
   }
 }

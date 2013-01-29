@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ui.modeling.intentions.IntentionsDescriptor" />
-  <root nodeId="6030013275786405059" modelId="r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)">
+  <root nodeRef="r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)/6030013275786405059">
     <nodeInfo nodeId="6030013275786405059" fileName="ChildAspectDefinition_makeOptional_Intention.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="6030013275786405059" fileName="ChildAspectDefinition_makeOptional_Intention.java" startLine="23" startPosition="30" endLine="24" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6030013275786405059" fileName="ChildAspectDefinition_makeOptional_Intention.java" startLine="27" startPosition="35" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -89,7 +89,7 @@
     <unitInfo nodeId="6030013275786405059" fileName="ChildAspectDefinition_makeOptional_Intention.java" startLine="73" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ui.modeling.intentions.ChildAspectDefinition_makeOptional_Intention$IntentionImplementation" />
     <unitInfo nodeId="6030013275786405059" fileName="ChildAspectDefinition_makeOptional_Intention.java" startLine="17" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.ui.modeling.intentions.ChildAspectDefinition_makeOptional_Intention" />
   </root>
-  <root nodeId="6247544121092588774" modelId="r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)">
+  <root nodeRef="r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)/6247544121092588774">
     <nodeInfo nodeId="6247544121092588774" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="6247544121092588774" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6247544121092588774" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

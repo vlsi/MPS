@@ -29,6 +29,8 @@
     <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.StructureModification" file="StructureModification.java">
     <classNode dependClassName="java.lang.Class" />
@@ -49,8 +51,8 @@
     <classNode dependClassName="jetbrains.mps.refactoring.ModelLinkMap" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.refactoring.Entry" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.StructureModificationLog" file="StructureModificationLog.java">

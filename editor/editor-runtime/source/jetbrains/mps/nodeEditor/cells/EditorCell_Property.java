@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
@@ -56,7 +56,7 @@ public class EditorCell_Property extends EditorCell_Label {
   }
 
   private static void addPropertyDependenciesToEditor(NodeReadAccessInEditorListener listener, EditorCell_Property result) {
-    for (Pair<SNodePointer, String> pair : listener.popCleanlyReadAccessedProperties()) {
+    for (Pair<SNodeReference, String> pair : listener.popCleanlyReadAccessedProperties()) {
       result.getEditor().addCellDependentOnNodeProperty(result, pair);
     }
   }

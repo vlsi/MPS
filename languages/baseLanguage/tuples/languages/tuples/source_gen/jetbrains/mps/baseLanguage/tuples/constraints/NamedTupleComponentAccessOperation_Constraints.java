@@ -25,6 +25,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class NamedTupleComponentAccessOperation_Constraints extends BaseConstraintsDescriptor {
@@ -90,7 +91,7 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_snq09y_a0a1a0a0a1a0b0a1a4;
           }
         };

@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="SharedConcepts_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.SharedConcepts_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.StructureAspectDescriptor" />
-  <root nodeId="1161807239261" modelId="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)/1161807239261">
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="15" startPosition="27" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="19" startPosition="36" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -108,7 +108,7 @@
     <unitInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultCustom" />
     <unitInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultCustom_PropertySupport" />
   </root>
-  <root nodeId="1165007009656" modelId="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)/1165007009656">
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -218,7 +218,7 @@
     <unitInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.NodePresentationOptions" />
     <unitInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.NodePresentationOptions_PropertySupport" />
   </root>
-  <root nodeId="1177964585679" modelId="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)/1177964585679">
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="15" startPosition="27" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="19" startPosition="36" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

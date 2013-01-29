@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3961775458390509937" modelId="r:2b3dd9e8-e205-47a3-b3cc-ff31af700b6b(jetbrains.mps.build.workflow.generator.util)">
+  <root nodeRef="r:2b3dd9e8-e205-47a3-b3cc-ff31af700b6b(jetbrains.mps.build.workflow.generator.util)/3961775458390509937">
     <nodeInfo nodeId="3961775458390509953" fileName="SubTaskOrderHelper.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="list" />
     <nodeInfo nodeId="3961775458390512293" fileName="SubTaskOrderHelper.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="map" />
     <nodeInfo nodeId="3961775458390512518" fileName="SubTaskOrderHelper.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
@@ -144,7 +144,7 @@
     <unitInfo nodeId="3961775458390510490" fileName="SubTaskOrderHelper.java" startLine="81" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper$SubTask" />
     <unitInfo nodeId="3961775458390509937" fileName="SubTaskOrderHelper.java" startLine="18" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper" />
   </root>
-  <root nodeId="4755209551904406840" modelId="r:2b3dd9e8-e205-47a3-b3cc-ff31af700b6b(jetbrains.mps.build.workflow.generator.util)">
+  <root nodeRef="r:2b3dd9e8-e205-47a3-b3cc-ff31af700b6b(jetbrains.mps.build.workflow.generator.util)/4755209551904406840">
     <nodeInfo nodeId="4755209551904406846" fileName="CycleHelper.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" />
     <nodeInfo nodeId="7385586609667523582" fileName="CycleHelper.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="map" />
     <nodeInfo nodeId="7385586609667636891" fileName="CycleHelper.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1222955054650" modelId="r:bb11553b-584d-4979-8f12-1e0a4261b307(jetbrains.mps.samples.theSimplestLanguage.sandbox.sandbox)">
+  <root nodeRef="r:bb11553b-584d-4979-8f12-1e0a4261b307(jetbrains.mps.samples.theSimplestLanguage.sandbox.sandbox)/1222955054650">
     <nodeInfo nodeId="1222955054650" fileName="Hello.java" startLine="10" startPosition="42" endLine="11" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1222955054650" fileName="Hello.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Hello#()V" />
     <nodeInfo nodeId="1222955054650" fileName="Hello.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />

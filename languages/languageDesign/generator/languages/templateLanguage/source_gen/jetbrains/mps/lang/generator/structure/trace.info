@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Generator_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.Generator_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.StructureAspectDescriptor" />
-  <root nodeId="1169670215797" modelId="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/1169670215797">
     <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -112,7 +112,7 @@
     <unitInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorMessageType" />
     <unitInfo nodeId="1169670215797" fileName="GeneratorMessageType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorMessageType_PropertySupport" />
   </root>
-  <root nodeId="1195595264961" modelId="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/1195595264961">
     <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="15" startPosition="27" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="19" startPosition="36" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

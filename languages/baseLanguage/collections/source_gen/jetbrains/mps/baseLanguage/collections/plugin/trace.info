@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ExtensionDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.ExtensionDescriptor" />
-  <root nodeId="5633688998557455304" modelId="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)">
+  <root nodeRef="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)/5633688998557455304">
     <nodeInfo nodeId="5633688998557455304" fileName="Extension_customContainers5633688998557455304_.java" startLine="18" startPosition="59" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5633688998557455310" fileName="Extension_customContainers5633688998557455304_.java" startLine="24" startPosition="35" endLine="25" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5633688998557455316" fileName="Extension_customContainers5633688998557455304_.java" startLine="25" startPosition="49" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -28,7 +28,7 @@
     <unitInfo nodeId="5633688998557455308" fileName="Extension_customContainers5633688998557455304_.java" startLine="23" startPosition="15" endLine="34" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.Extension_customContainers5633688998557455304_$1" />
     <unitInfo nodeId="5633688998557455304" fileName="Extension_customContainers5633688998557455304_.java" startLine="17" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.Extension_customContainers5633688998557455304_" />
   </root>
-  <root nodeId="5633688998557707567" modelId="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)">
+  <root nodeRef="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)/5633688998557707567">
     <nodeInfo nodeId="5633688998557707699" fileName="CollectionsLanguage.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="5633688998557707718" fileName="CollectionsLanguage.java" startLine="9" startPosition="33" endLine="10" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5633688998557707571" fileName="CollectionsLanguage.java" startLine="13" startPosition="65" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -44,7 +44,7 @@
     <scopeInfo nodeId="5633688998557707628" fileName="CollectionsLanguage.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
     <unitInfo nodeId="5633688998557707567" fileName="CollectionsLanguage.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsLanguage" />
   </root>
-  <root nodeId="5633688998557707726" modelId="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)">
+  <root nodeRef="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)/5633688998557707726">
     <nodeInfo nodeId="5633688998557707727" fileName="CustomContainersRegistry.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="5633688998557707731" fileName="CustomContainersRegistry.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="providers" />
     <nodeInfo nodeId="2674780608612815781" fileName="CustomContainersRegistry.java" startLine="27" startPosition="279" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

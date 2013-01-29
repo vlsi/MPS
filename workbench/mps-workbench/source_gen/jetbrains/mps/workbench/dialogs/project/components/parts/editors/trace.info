@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1560298786499489240" modelId="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)">
+  <root nodeRef="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)/1560298786499489240">
     <nodeInfo nodeId="1560298786499490391" fileName="BooleanEditor.java" startLine="12" startPosition="26" endLine="13" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499490409" fileName="BooleanEditor.java" startLine="16" startPosition="118" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499490425" fileName="BooleanEditor.java" startLine="20" startPosition="135" endLine="21" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -33,7 +33,7 @@
     </scopeInfo>
     <unitInfo nodeId="1560298786499489240" fileName="BooleanEditor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.BooleanEditor" />
   </root>
-  <root nodeId="1560298786499490028" modelId="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)">
+  <root nodeRef="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)/1560298786499490028">
     <nodeInfo nodeId="1560298786499490031" fileName="ModuleEditor.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTextField" />
     <nodeInfo nodeId="1560298786499490037" fileName="ModuleEditor.java" startLine="14" startPosition="25" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1560298786499490040" fileName="ModuleEditor.java" startLine="15" startPosition="28" endLine="16" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -58,8 +58,8 @@
     <scopeInfo nodeId="1560298786499490034" fileName="ModuleEditor.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
     <unitInfo nodeId="1560298786499490028" fileName="ModuleEditor.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ModuleEditor" />
   </root>
-  <root nodeId="1560298786499491170" modelId="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)" />
-  <root nodeId="1560298786499495476" modelId="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)" />
-  <root nodeId="1560298786499498080" modelId="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)" />
+  <root nodeRef="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)/1560298786499491170" />
+  <root nodeRef="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)/1560298786499495476" />
+  <root nodeRef="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)/1560298786499498080" />
 </debugInfo>
 

@@ -15,6 +15,7 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.logging.Logger;
@@ -73,10 +74,10 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
 
   @Nullable
   public SNode getNode() {
-    return check_h3hwcn_a0a0(getNodePointer());
+    return check_h3hwcn_a0a0(((SNodePointer) getNodePointer()));
   }
 
-  public SNodePointer getNodePointer() {
+  public SNodeReference getNodePointer() {
     if (this.getModelId() == null || this.getNodeId() == null) {
       return null;
     }

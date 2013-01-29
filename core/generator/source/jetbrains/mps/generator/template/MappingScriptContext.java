@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class MappingScriptContext extends TemplateQueryContext {
   private final SNode myScript;
-  private final SNodePointer myScriptPointer;
+  private final SNodeReference myScriptPointer;
   private SModel myModel;
 
   public MappingScriptContext(SModel model, SNode mappingScript, ITemplateGenerator generator) {
@@ -31,7 +32,7 @@ public class MappingScriptContext extends TemplateQueryContext {
     myModel = model;
   }
 
-  public MappingScriptContext(SModel model, SNodePointer mappingScript, ITemplateGenerator generator) {
+  public MappingScriptContext(SModel model, SNodeReference mappingScript, ITemplateGenerator generator) {
     super(null, null, null, generator);
     myScript = null;
     myScriptPointer = mappingScript;
@@ -59,6 +60,6 @@ public class MappingScriptContext extends TemplateQueryContext {
 
   public SNode getTemplateNodeForLogging() {
     return myScript != null ? myScript :
-      myScriptPointer != null ? myScriptPointer.getNode() : null;
+      myScriptPointer != null ? myScriptPointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 }

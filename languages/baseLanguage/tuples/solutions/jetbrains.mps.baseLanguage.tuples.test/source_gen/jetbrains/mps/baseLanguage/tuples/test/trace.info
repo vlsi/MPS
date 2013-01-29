@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1157155146536632949" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/1157155146536632949">
     <nodeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="9" startPosition="19" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="13" startPosition="55" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1157155146536632949" fileName="Record.java" startLine="17" startPosition="36" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -55,7 +55,7 @@
     </scopeInfo>
     <unitInfo nodeId="1157155146536632949" fileName="Record.java" startLine="8" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.Record" />
   </root>
-  <root nodeId="1238952260515" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/1238952260515">
     <nodeInfo nodeId="1238952304220" fileName="IndexedTuples_Test.java" startLine="23" startPosition="45" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238952312754" fileName="IndexedTuples_Test.java" startLine="24" startPosition="40" endLine="25" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238952432697" fileName="IndexedTuples_Test.java" startLine="25" startPosition="30" endLine="26" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -320,7 +320,7 @@
     <unitInfo nodeId="3340526992428338502" fileName="IndexedTuples_Test.java" startLine="155" startPosition="136" endLine="159" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test$4" />
     <unitInfo nodeId="1238952260515" fileName="IndexedTuples_Test.java" startLine="22" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test" />
   </root>
-  <root nodeId="1239714501613" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/1239714501613">
     <nodeInfo nodeId="1239720100329" fileName="NamedTuples_Test.java" startLine="233" startPosition="27" endLine="233" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6278501903477416711" fileName="NamedTuples_Test.java" startLine="23" startPosition="55" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6278501903477416709" fileName="NamedTuples_Test.java" startLine="25" startPosition="23" endLine="26" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -618,7 +618,7 @@
     <unitInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="210" startPosition="36" endLine="246" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$4" />
     <unitInfo nodeId="1239714501613" fileName="NamedTuples_Test.java" startLine="22" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test" />
   </root>
-  <root nodeId="1239715318677" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/1239715318677">
     <nodeInfo nodeId="1239715318677" fileName="Data.java" startLine="9" startPosition="17" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1239715318677" fileName="Data.java" startLine="13" startPosition="39" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1239715318677" fileName="Data.java" startLine="17" startPosition="35" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -658,7 +658,7 @@
     </scopeInfo>
     <unitInfo nodeId="1239715318677" fileName="Data.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.Data" />
   </root>
-  <root nodeId="1239977019775" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/1239977019775">
     <nodeInfo nodeId="1239977080197" fileName="GenericNamedTuples_Test.java" startLine="10" startPosition="44" endLine="11" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239977086790" fileName="GenericNamedTuples_Test.java" startLine="11" startPosition="70" endLine="12" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239977114203" fileName="GenericNamedTuples_Test.java" startLine="12" startPosition="46" endLine="13" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -695,7 +695,7 @@
     <scopeInfo nodeId="1239977136862" fileName="GenericNamedTuples_Test.java" startLine="19" startPosition="0" endLine="31" endPosition="0" />
     <unitInfo nodeId="1239977019775" fileName="GenericNamedTuples_Test.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.GenericNamedTuples_Test" />
   </root>
-  <root nodeId="1239977036413" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/1239977036413">
     <nodeInfo nodeId="1239977036413" fileName="Pair.java" startLine="9" startPosition="17" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1239977036413" fileName="Pair.java" startLine="13" startPosition="34" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1239977036413" fileName="Pair.java" startLine="17" startPosition="27" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -735,7 +735,7 @@
     </scopeInfo>
     <unitInfo nodeId="1239977036413" fileName="Pair.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.Pair" />
   </root>
-  <root nodeId="1240574537739" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/1240574537739">
     <nodeInfo nodeId="1240574537739" fileName="Bool.java" startLine="9" startPosition="17" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1240574537739" fileName="Bool.java" startLine="13" startPosition="31" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1240574537739" fileName="Bool.java" startLine="17" startPosition="40" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -764,7 +764,7 @@
     </scopeInfo>
     <unitInfo nodeId="1240574537739" fileName="Bool.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.Bool" />
   </root>
-  <root nodeId="1969253282019065659" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/1969253282019065659">
     <nodeInfo nodeId="1969253282019065693" fileName="NamedTupleInFunctionType.java" startLine="16" startPosition="119" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1969253282019090161" fileName="NamedTupleInFunctionType.java" startLine="20" startPosition="97" endLine="21" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1969253282019086191" fileName="NamedTupleInFunctionType.java" startLine="24" startPosition="91" endLine="25" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -854,7 +854,7 @@
     <unitInfo nodeId="1969253282019065677" fileName="NamedTupleInFunctionType.java" startLine="48" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.NamedTupleInFunctionType$TwoStrings" />
     <unitInfo nodeId="1969253282019065659" fileName="NamedTupleInFunctionType.java" startLine="12" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.NamedTupleInFunctionType" />
   </root>
-  <root nodeId="2682363017137682662" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/2682363017137682662">
     <nodeInfo nodeId="2682363017137682673" fileName="MPS14511_Test.java" startLine="10" startPosition="66" endLine="11" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2682363017137682692" fileName="MPS14511_Test.java" startLine="11" startPosition="51" endLine="12" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2682363017137682713" fileName="MPS14511_Test.java" startLine="13" startPosition="9" endLine="14" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -873,7 +873,7 @@
     <scopeInfo nodeId="2682363017137682669" fileName="MPS14511_Test.java" startLine="10" startPosition="0" endLine="20" endPosition="0" />
     <unitInfo nodeId="2682363017137682662" fileName="MPS14511_Test.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.MPS14511_Test" />
   </root>
-  <root nodeId="3142843783245432636" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/3142843783245432636">
     <nodeInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="13" startPosition="18" endLine="14" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="17" startPosition="41" endLine="18" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3142843783245432642" fileName="ExtendedNamedTuples.java" startLine="21" startPosition="39" endLine="22" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1046,7 +1046,7 @@
     <unitInfo nodeId="7367153454745440808" fileName="ExtendedNamedTuples.java" startLine="43" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples$Bar" />
     <unitInfo nodeId="3142843783245432636" fileName="ExtendedNamedTuples.java" startLine="8" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples" />
   </root>
-  <root nodeId="429408675341331209" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/429408675341331209">
     <nodeInfo nodeId="429408675341331220" fileName="Nulls.java" startLine="12" startPosition="51" endLine="13" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6944702357865114735" fileName="Nulls.java" startLine="16" startPosition="51" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6944702357865114767" fileName="Nulls.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Nulls#()V" />
@@ -1060,7 +1060,7 @@
     <scopeInfo nodeId="6944702357865114726" fileName="Nulls.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
     <unitInfo nodeId="429408675341331209" fileName="Nulls.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.Nulls" />
   </root>
-  <root nodeId="4483021482224672488" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/4483021482224672488">
     <nodeInfo nodeId="2912004279740772132" fileName="ExtendedNamedTuples_Test.java" startLine="12" startPosition="49" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6880792723344866594" fileName="ExtendedNamedTuples_Test.java" startLine="13" startPosition="34" endLine="14" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2912004279740772158" fileName="ExtendedNamedTuples_Test.java" startLine="14" startPosition="50" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1078,12 +1078,12 @@
     <scopeInfo nodeId="4483021482224672495" fileName="ExtendedNamedTuples_Test.java" startLine="12" startPosition="0" endLine="22" endPosition="0" />
     <unitInfo nodeId="4483021482224672488" fileName="ExtendedNamedTuples_Test.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples_Test" />
   </root>
-  <root nodeId="6562295948842314981" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/6562295948842314981">
     <nodeInfo nodeId="6562295948842314983" fileName="ISample.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSample#()Ljava/lang/String;" />
     <scopeInfo nodeId="6562295948842314983" fileName="ISample.java" startLine="7" startPosition="0" endLine="8" endPosition="0" />
     <unitInfo nodeId="6562295948842314981" fileName="ISample.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.ISample" />
   </root>
-  <root nodeId="6562295948842315074" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/6562295948842315074">
     <nodeInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="9" startPosition="19" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="13" startPosition="28" endLine="14" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="17" startPosition="35" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1120,7 +1120,7 @@
     </scopeInfo>
     <unitInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.Sample" />
   </root>
-  <root nodeId="7781156898616395636" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/7781156898616395636">
     <nodeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="9" startPosition="20" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="13" startPosition="40" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="17" startPosition="35" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1160,7 +1160,7 @@
     </scopeInfo>
     <unitInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.IntPair" />
   </root>
-  <root nodeId="7782532150063714697" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/7782532150063714697">
     <nodeInfo nodeId="7782532150063714717" fileName="MPS15234_Test.java" startLine="13" startPosition="64" endLine="14" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7782532150063714728" fileName="MPS15234_Test.java" startLine="14" startPosition="70" endLine="15" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7782532150063714752" fileName="MPS15234_Test.java" startLine="15" startPosition="67" endLine="16" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1173,7 +1173,7 @@
     <scopeInfo nodeId="7782532150063714705" fileName="MPS15234_Test.java" startLine="13" startPosition="0" endLine="19" endPosition="0" />
     <unitInfo nodeId="7782532150063714697" fileName="MPS15234_Test.java" startLine="12" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.MPS15234_Test" />
   </root>
-  <root nodeId="8209339320719679363" modelId="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)">
+  <root nodeRef="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)/8209339320719679363">
     <nodeInfo nodeId="8209339320719679369" fileName="MPS7408.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="jobs" />
     <nodeInfo nodeId="8209339320719682369" fileName="MPS7408.java" startLine="19" startPosition="30" endLine="20" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8209339320719961251" fileName="MPS7408.java" startLine="25" startPosition="30" endLine="26" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

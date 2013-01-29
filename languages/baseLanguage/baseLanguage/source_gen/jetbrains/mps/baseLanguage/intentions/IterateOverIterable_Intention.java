@@ -124,7 +124,7 @@ public class IterateOverIterable_Intention implements IntentionFactory {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a9;
+          SNodeReference pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a9;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -178,7 +178,7 @@ public class IterateOverIterable_Intention implements IntentionFactory {
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0a0a0a0c31;
+          SNodeReference pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0a0a0a0c31;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getReferenceTarget("classifier")))) {
             return false;
           }

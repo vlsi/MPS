@@ -24,7 +24,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.Collection;
@@ -46,8 +46,8 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
   }
 
   @Override
-  public SNodePointer getRuleNode() {
-    return new SNodePointer(ruleNode);
+  public SNodeReference getRuleNode() {
+    return new jetbrains.mps.smodel.SNodePointer(ruleNode);
   }
 
   @Override

@@ -8,7 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.CellSide;
@@ -98,14 +98,14 @@ public class EditorCell_Empty extends EditorCell_Basic {
   }
 
   private boolean isFirstPositionAllowed() {
-    if (this.getStyle().getCurrent(StyleAttributes.FIRST_POSITION_ALLOWED) != null) {
+    if (this.getStyle().isSpecified(StyleAttributes.FIRST_POSITION_ALLOWED)) {
       return this.getStyle().get(StyleAttributes.FIRST_POSITION_ALLOWED);
     }
     return !(this.getStyle().get(StyleAttributes.PUNCTUATION_LEFT));
   }
 
   private boolean isLastPositionAllowed() {
-    if (this.getStyle().getCurrent(StyleAttributes.LAST_POSITION_ALLOWED) != null) {
+    if (this.getStyle().isSpecified(StyleAttributes.LAST_POSITION_ALLOWED)) {
       return this.getStyle().get(StyleAttributes.LAST_POSITION_ALLOWED);
     }
     return !(this.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT));

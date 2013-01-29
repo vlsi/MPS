@@ -12,14 +12,23 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.awt.Point;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.editor.runtime.ParametersInformation;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.ParametersInformation;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import java.awt.Component;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.ToolTipData;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.mps.openapi.model.SNode;
+import javax.swing.JPanel;
+import java.awt.GridBagLayout;
+import jetbrains.mps.ide.tooltips.ToolTip;
+import javax.swing.border.EmptyBorder;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import javax.swing.JTextPane;
+import jetbrains.mps.nodeEditor.EditorSettings;
+import java.awt.Color;
+import java.awt.GridBagConstraints;
 import jetbrains.mps.logging.Logger;
 
 public class ShowParameters_Action extends BaseAction {
@@ -82,11 +91,11 @@ public class ShowParameters_Action extends BaseAction {
       while (currentCell != null) {
         ParametersInformation parametersInformation = currentCell.getStyle().get(StyleAttributes.PARAMETERS_INFORMATION);
         if (parametersInformation != null) {
-          Component componet = parametersInformation.getComponent(currentCell.getSNode(), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
-          MPSToolTipManager.getInstance().showToolTip(new ToolTipData(componet), ((EditorComponent) MapSequence.fromMap(_params).get("editor")), p);
+          Component component = ShowParameters_Action.this.createComponent(parametersInformation, currentCell.getSNode(), _params);
+          MPSToolTipManager.getInstance().showToolTip(new ToolTipData(component), ((EditorComponent) MapSequence.fromMap(_params).get("editor")), p);
           return;
         }
-        currentCell = currentCell.getParent();
+        currentCell = (EditorCell) currentCell.getParent();
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowParameters", t);
@@ -95,6 +104,38 @@ public class ShowParameters_Action extends BaseAction {
 
   /*package*/ SNode getCellNode(final Map<String, Object> _params) {
     return ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNode();
+  }
+
+  private <T> Component createComponent(ParametersInformation<T> parametersInformation, SNode node, final Map<String, Object> _params) {
+    JPanel panel = new JPanel(new GridBagLayout());
+    panel.setBackground(ToolTip.BACKGROUND_COLOR);
+    panel.setBorder(new EmptyBorder(0, 4, 0, 4));
+    Iterable<T> methods = parametersInformation.getMethods(node, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+    int lineNumber = 0;
+    for (T method : Sequence.fromIterable(methods)) {
+      StyledTextPrinterImpl printer = new StyledTextPrinterImpl();
+      parametersInformation.getStyledMethodPresentation(node, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), method, printer);
+      JTextPane textPane = new JTextPane(printer.getDocument());
+      textPane.setBorder(null);
+      textPane.setFont(EditorSettings.getInstance().getDefaultEditorFont());
+      textPane.setOpaque(true);
+      if (Sequence.fromIterable(methods).count() > 1 && parametersInformation.isMethodCurrent(node, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), method)) {
+        textPane.setBackground(new Color(0xe7, 0xfe, 0xea));
+      } else {
+        textPane.setBackground(ToolTip.BACKGROUND_COLOR);
+      }
+      GridBagConstraints constraints = new GridBagConstraints();
+      constraints.fill = GridBagConstraints.BOTH;
+      constraints.gridy = lineNumber++;
+      panel.add(textPane, constraints);
+      if (Sequence.fromIterable(methods).last() != method) {
+        constraints = new GridBagConstraints();
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.gridy = lineNumber++;
+        panel.add(new Line(), constraints);
+      }
+    }
+    return panel;
   }
 
   private static Logger LOG = Logger.getLogger(ShowParameters_Action.class);

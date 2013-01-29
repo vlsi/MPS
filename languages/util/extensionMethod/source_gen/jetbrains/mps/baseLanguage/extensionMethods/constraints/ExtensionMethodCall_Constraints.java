@@ -28,6 +28,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_Behavior;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
@@ -89,7 +90,7 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_1t8qmy_a0a1a0a0a1a0b0a1a1;
           }
         };

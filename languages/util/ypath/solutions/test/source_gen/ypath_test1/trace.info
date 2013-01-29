@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1178886476824" modelId="r:00000000-0000-4000-0000-011c895905bf(ypath_test1)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905bf(ypath_test1)/1178886476824">
     <nodeInfo nodeId="1179329286838" fileName="XMLTreeSimple_Test.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SINGLE_NODE" />
     <nodeInfo nodeId="1179400521623" fileName="XMLTreeSimple_Test.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SIMPLE_TREE" />
     <nodeInfo nodeId="1179329407627" fileName="XMLTreeSimple_Test.java" startLine="22" startPosition="46" endLine="23" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

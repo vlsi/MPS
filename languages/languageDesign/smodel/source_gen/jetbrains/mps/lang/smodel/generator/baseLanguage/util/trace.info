@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1168968323635" modelId="r:00000000-0000-4000-0000-011c89590302(jetbrains.mps.lang.smodel.generator.baseLanguage.util)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590302(jetbrains.mps.lang.smodel.generator.baseLanguage.util)/1168968323635">
     <nodeInfo nodeId="1239205751278" fileName="QueriesUtil.java" startLine="22" startPosition="84" endLine="23" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239205980406" fileName="QueriesUtil.java" startLine="23" startPosition="281" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239205993913" fileName="QueriesUtil.java" startLine="26" startPosition="70" endLine="27" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -222,7 +222,7 @@
     </scopeInfo>
     <unitInfo nodeId="1168968323635" fileName="QueriesUtil.java" startLine="21" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.baseLanguage.util.QueriesUtil" />
   </root>
-  <root nodeId="1239206083907" modelId="r:00000000-0000-4000-0000-011c89590302(jetbrains.mps.lang.smodel.generator.baseLanguage.util)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590302(jetbrains.mps.lang.smodel.generator.baseLanguage.util)/1239206083907">
     <nodeInfo nodeId="1239206335500" fileName="SModelLanguageUtil.java" startLine="14" startPosition="91" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239206371052" fileName="SModelLanguageUtil.java" startLine="17" startPosition="5" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239206311936" fileName="SModelLanguageUtil.java" startLine="13" startPosition="109" endLine="16" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -240,7 +240,7 @@
     </scopeInfo>
     <unitInfo nodeId="1239206083907" fileName="SModelLanguageUtil.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.baseLanguage.util.SModelLanguageUtil" />
   </root>
-  <root nodeId="1239466128594" modelId="r:00000000-0000-4000-0000-011c89590302(jetbrains.mps.lang.smodel.generator.baseLanguage.util)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590302(jetbrains.mps.lang.smodel.generator.baseLanguage.util)/1239466128594">
     <nodeInfo nodeId="1239466217116" fileName="DataTypeUtil.java" startLine="14" startPosition="60" endLine="15" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1239466228165" fileName="DataTypeUtil.java" startLine="16" startPosition="28" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239466280413" fileName="DataTypeUtil.java" startLine="18" startPosition="5" endLine="19" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -258,7 +258,7 @@
     </scopeInfo>
     <unitInfo nodeId="1239466128594" fileName="DataTypeUtil.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.baseLanguage.util.DataTypeUtil" />
   </root>
-  <root nodeId="2097240597884176496" modelId="r:00000000-0000-4000-0000-011c89590302(jetbrains.mps.lang.smodel.generator.baseLanguage.util)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590302(jetbrains.mps.lang.smodel.generator.baseLanguage.util)/2097240597884176496">
     <nodeInfo nodeId="2097240597884184552" fileName="ConceptMethodCallUtils.java" startLine="16" startPosition="72" endLine="17" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2097240597884185127" fileName="ConceptMethodCallUtils.java" startLine="17" startPosition="60" endLine="18" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8195359008724922976" fileName="ConceptMethodCallUtils.java" startLine="18" startPosition="67" endLine="19" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

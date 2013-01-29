@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="95dgcxorib89simn7ksg4ey9aiuv61a">
+<dependencies version="2" modelHash="41p31lvllslo8b8xt62tdt8wor0i2ng">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-89hxj0ypb1mymp88cm6uftvxxpq6hll" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
   <common hash="-98bomq0uilfcfzype7twm8ds2jl4ph5" />
   <source id="5487985028841941376" name="HLineCellProvider" hash="1oh86fcpyrzu8m8hhpmyzpfv8v1fod6">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="HLineCellProvider.java" />
   </source>
-  <source id="5487985028841941507" name="EditorCell_VerticalLine" hash="-5pymom4h6alq3pggji154l9i2lmsv2f">
+  <source id="5487985028841941507" name="EditorCell_VerticalLine" hash="-28ouzybr49tfe9i27wrlk06s686y3zr">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="EditorCell_VerticalLine.java" />

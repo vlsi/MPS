@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1310272842909633660" modelId="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)">
+  <root nodeRef="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)/1310272842909633660">
     <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="18" startPosition="47" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="19" startPosition="128" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -24,7 +24,7 @@
     <unitInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.matrix.test.CreateX_Test$TestBody" />
     <unitInfo nodeId="1310272842909633660" fileName="CreateX_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.matrix.test.CreateX_Test" />
   </root>
-  <root nodeId="1310272842909656084" modelId="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)">
+  <root nodeRef="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)/1310272842909656084">
     <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="18" startPosition="47" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="19" startPosition="128" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -48,7 +48,7 @@
     <unitInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.matrix.test.CreateY_Test$TestBody" />
     <unitInfo nodeId="1310272842909656084" fileName="CreateY_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.matrix.test.CreateY_Test" />
   </root>
-  <root nodeId="4379396156287837027" modelId="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)">
+  <root nodeRef="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)/4379396156287837027">
     <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="18" startPosition="46" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="19" startPosition="128" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -72,7 +72,7 @@
     <unitInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.matrix.test.Create_Test$TestBody" />
     <unitInfo nodeId="4379396156287837027" fileName="Create_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.table.matrix.test.Create_Test" />
   </root>
-  <root nodeId="8748948598094995664" modelId="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)">
+  <root nodeRef="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)/8748948598094995664">
     <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="18" startPosition="47" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="19" startPosition="128" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8748948598094995664" fileName="RemoveY_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

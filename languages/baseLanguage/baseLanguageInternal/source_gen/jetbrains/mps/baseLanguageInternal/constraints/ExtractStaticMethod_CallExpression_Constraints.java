@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_Behavior;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ExtractStaticMethod_CallExpression_Constraints extends BaseConstraintsDescriptor {
@@ -42,7 +43,7 @@ public class ExtractStaticMethod_CallExpression_Constraints extends BaseConstrai
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_v4p7j2_a0a1a0a0a1a0b0a1a1;
           }
         };

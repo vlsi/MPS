@@ -18,7 +18,7 @@ package jetbrains.mps.ide.project.listener;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 
 public class TestsModelCreationListener extends ModelCreationListener {
   public boolean isApplicable(IModule module, SModelDescriptor model) {

@@ -6,7 +6,7 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import java.util.List;
@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class OverrideConceptMethodsAction {
@@ -32,8 +33,8 @@ public class OverrideConceptMethodsAction {
   public void run() {
     final SNode contextClass = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false);
     final SNode contextMethod = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", true, false);
-    final SNodePointer[] methods = ModelAccess.instance().runReadAction(new Computable<SNodePointer[]>() {
-      public SNodePointer[] compute() {
+    final SNodeReference[] methods = ModelAccess.instance().runReadAction(new Computable<SNodeReference[]>() {
+      public SNodeReference[] compute() {
         List<SNode> methodsToOverride = (myIsOverride ?
           BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{}) :
           BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})
@@ -55,13 +56,13 @@ public class OverrideConceptMethodsAction {
     dialog.show();
 
     if (dialog.isOK()) {
-      final Iterable<SNodePointer> selectedElements = (Iterable<SNodePointer>) dialog.getSelectedElements();
+      final Iterable<SNodeReference> selectedElements = (Iterable<SNodeReference>) dialog.getSelectedElements();
 
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         public void run() {
-          List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodePointer, SNode>() {
-            public SNode select(SNodePointer it) {
-              return SNodeOperations.cast(it.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+          List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodeReference, SNode>() {
+            public SNode select(SNodeReference it) {
+              return SNodeOperations.cast(((SNodePointer) it).getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
             }
           }).toListSequence();
 

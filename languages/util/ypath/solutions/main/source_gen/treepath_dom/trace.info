@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1175083364493" modelId="r:00000000-0000-4000-0000-011c895905b5(treepath_dom)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905b5(treepath_dom)/1175083364493">
     <nodeInfo nodeId="1175083364493" fileName="DOM.java" startLine="18" startPosition="33" endLine="19" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1175083364493" fileName="DOM.java" startLine="22" startPosition="42" endLine="23" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1175083468532" fileName="DOM.java" startLine="27" startPosition="42" endLine="28" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -215,7 +215,7 @@
     <unitInfo nodeId="1175253134705" fileName="DOM.java" startLine="138" startPosition="0" endLine="167" endPosition="0" unitName="treepath_dom.DOM$ATTR_value_Property" />
     <unitInfo nodeId="1175083364493" fileName="DOM.java" startLine="14" startPosition="0" endLine="168" endPosition="0" unitName="treepath_dom.DOM" />
   </root>
-  <root nodeId="1184239525252" modelId="r:00000000-0000-4000-0000-011c895905b5(treepath_dom)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c895905b5(treepath_dom)/1184239525252">
     <nodeInfo nodeId="1227876790058" fileName="DOM2.java" startLine="220" startPosition="30" endLine="220" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="20" startPosition="17" endLine="21" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1184239525252" fileName="DOM2.java" startLine="21" startPosition="61" endLine="22" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

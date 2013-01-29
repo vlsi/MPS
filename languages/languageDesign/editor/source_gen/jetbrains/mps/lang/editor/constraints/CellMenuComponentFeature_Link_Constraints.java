@@ -16,6 +16,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class CellMenuComponentFeature_Link_Constraints extends BaseConstraintsDescriptor {
@@ -45,7 +46,7 @@ public class CellMenuComponentFeature_Link_Constraints extends BaseConstraintsDe
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_1eovyz_a0a1a0a0a1a0b0a1a1;
           }
         };

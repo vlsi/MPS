@@ -9,6 +9,7 @@ import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
@@ -55,7 +56,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     return this.myModel;
   }
 
-  public SNodePointer getMappingNode() {
+  public SNodeReference getMappingNode() {
     return new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "8780540425167303785");
   }
 
@@ -107,7 +108,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.lang.project.structure.MappingPriorityRule";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3r;
     }
 
@@ -354,7 +355,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.lang.project.structure.MappingConfigExternalRef";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3s;
     }
 
@@ -430,7 +431,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.lang.project.structure.MappingConfigNormalRef";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3t;
     }
 
@@ -508,7 +509,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3u;
     }
 
@@ -554,7 +555,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3v;
     }
 
@@ -600,7 +601,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return "jetbrains.mps.lang.project.structure.MappingConfigRefSet";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_417xrn_a0a3w;
     }
 
@@ -678,7 +679,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public RootMappingRule0() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return rootMappingRule_417xrn_a0a1x;
     }
 
@@ -708,7 +709,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public RootMappingRule1() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return rootMappingRule_417xrn_a0a1y;
     }
 
@@ -742,7 +743,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public CreateRootRule0() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return createRootRule_417xrn_a0a1z;
     }
 

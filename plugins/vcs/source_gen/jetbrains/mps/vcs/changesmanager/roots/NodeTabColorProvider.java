@@ -7,7 +7,7 @@ import jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -24,9 +24,9 @@ public class NodeTabColorProvider implements TabColorProvider {
   }
 
   @Nullable
-  public Color getAspectColor(Iterable<SNodePointer> nodePointers) {
-    final List<FileStatus> statuses = Sequence.fromIterable(nodePointers).select(new ISelector<SNodePointer, FileStatus>() {
-      public FileStatus select(SNodePointer np) {
+  public Color getAspectColor(Iterable<SNodeReference> nodePointers) {
+    final List<FileStatus> statuses = Sequence.fromIterable(nodePointers).select(new ISelector<SNodeReference, FileStatus>() {
+      public FileStatus select(SNodeReference np) {
         FileStatus s = myFileStatusMapping.getStatus(np);
         return (s != null ?
           s :

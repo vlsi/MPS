@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.TypesystemDescriptor" />
-  <root nodeId="1392391688313307201" modelId="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)">
+  <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/1392391688313307201">
     <nodeInfo nodeId="1392391688313307240" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="25" startPosition="119" endLine="26" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1392391688313364576" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="28" startPosition="39" endLine="29" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1392391688313364586" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="32" startPosition="37" endLine="33" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -100,7 +100,7 @@
     <unitInfo nodeId="1392391688313364610" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="46" startPosition="108" endLine="50" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.check_IdeaPlugin_Dependencies_NonTypesystemRule$3" />
     <unitInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.check_IdeaPlugin_Dependencies_NonTypesystemRule" />
   </root>
-  <root nodeId="1392391688313307204" modelId="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)">
+  <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/1392391688313307204">
     <nodeInfo nodeId="1392391688313307212" fileName="IdeaPluginDependenciesHelper.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="plugin" />
     <nodeInfo nodeId="1392391688313350425" fileName="IdeaPluginDependenciesHelper.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="visible" />
     <nodeInfo nodeId="1392391688313307215" fileName="IdeaPluginDependenciesHelper.java" startLine="23" startPosition="53" endLine="24" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -205,10 +205,10 @@
     <unitInfo nodeId="1392391688313364278" fileName="IdeaPluginDependenciesHelper.java" startLine="42" startPosition="18" endLine="46" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.IdeaPluginDependenciesHelper$2" />
     <unitInfo nodeId="1392391688313364407" fileName="IdeaPluginDependenciesHelper.java" startLine="47" startPosition="104" endLine="51" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.IdeaPluginDependenciesHelper$3" />
     <unitInfo nodeId="1392391688313364480" fileName="IdeaPluginDependenciesHelper.java" startLine="51" startPosition="21" endLine="55" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.IdeaPluginDependenciesHelper$4" />
-    <unitInfo nodeId="1392391688313350340" fileName="IdeaPluginDependenciesHelper.java" startLine="67" startPosition="123" endLine="71" endPosition="7" unitName="jetbrains.mps.build.mps.typesystem.IdeaPluginDependenciesHelper$5" />
+    <unitInfo nodeId="1392391688313350340" fileName="IdeaPluginDependenciesHelper.java" startLine="67" startPosition="97" endLine="71" endPosition="7" unitName="jetbrains.mps.build.mps.typesystem.IdeaPluginDependenciesHelper$5" />
     <unitInfo nodeId="1392391688313307204" fileName="IdeaPluginDependenciesHelper.java" startLine="19" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.IdeaPluginDependenciesHelper" />
   </root>
-  <root nodeId="2531699772406302326" modelId="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)">
+  <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/2531699772406302326">
     <nodeInfo nodeId="8757919848289156012" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="31" startPosition="222" endLine="32" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8757919848289156013" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="33" startPosition="5" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2531699772406302612" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="35" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -307,7 +307,7 @@
     <unitInfo nodeId="2531699772406302831" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="55" startPosition="10" endLine="63" endPosition="7" unitName="jetbrains.mps.build.mps.typesystem.check_ModulesImport_NonTypesystemRule$1" />
     <unitInfo nodeId="2531699772406302326" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.check_ModulesImport_NonTypesystemRule" />
   </root>
-  <root nodeId="2531699772406320928" modelId="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)">
+  <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/2531699772406320928">
     <nodeInfo nodeId="2531699772406320934" fileName="ReloadRequired_QuickFix.java" startLine="17" startPosition="44" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2531699772406320953" fileName="ReloadRequired_QuickFix.java" startLine="21" startPosition="35" endLine="22" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2531699772406321060" fileName="ReloadRequired_QuickFix.java" startLine="23" startPosition="25" endLine="24" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -354,7 +354,7 @@
     </scopeInfo>
     <unitInfo nodeId="2531699772406320928" fileName="ReloadRequired_QuickFix.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.ReloadRequired_QuickFix" />
   </root>
-  <root nodeId="4278635856200804509" modelId="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)">
+  <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/4278635856200804509">
     <nodeInfo nodeId="1258644073389052168" fileName="check_BuildMps_ModuleJarRuntime_NonTypesystemRule.java" startLine="21" startPosition="121" endLine="22" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1258644073389052213" fileName="check_BuildMps_ModuleJarRuntime_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1258644073389052213" fileName="check_BuildMps_ModuleJarRuntime_NonTypesystemRule.java" startLine="25" startPosition="60" endLine="26" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -398,7 +398,7 @@
     </scopeInfo>
     <unitInfo nodeId="4278635856200804509" fileName="check_BuildMps_ModuleJarRuntime_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.check_BuildMps_ModuleJarRuntime_NonTypesystemRule" />
   </root>
-  <root nodeId="4278635856200826398" modelId="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)">
+  <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/4278635856200826398">
     <nodeInfo nodeId="4278635856200826401" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="21" startPosition="121" endLine="22" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4278635856200826411" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4278635856200826411" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="25" startPosition="60" endLine="26" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

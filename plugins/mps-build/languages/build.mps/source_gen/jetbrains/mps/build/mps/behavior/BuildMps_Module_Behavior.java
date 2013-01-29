@@ -145,11 +145,14 @@ public class BuildMps_Module_Behavior {
     }
 
     // fetch generation time dependencies 
-    MPSModulesClosure genClosure = new MPSModulesClosure(artifacts.getGenContext(), thisNode).runtimeClosure().generationDependenciesClosure();
-    for (SNode m : Sequence.fromIterable(genClosure.getModulesIncludingLanguagesWithRuntime())) {
+    MPSModulesClosure genClosure = new MPSModulesClosure(artifacts.getGenContext(), thisNode).trackDevkits().runtimeClosure().generationDependenciesClosure();
+    for (SNode m : Sequence.fromIterable(genClosure.getAllModules())) {
       SNode artifact;
       if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(thisNode)) {
-        artifact = SNodeOperations.as(artifacts.findArtifact(m), "jetbrains.mps.build.structure.BuildLayout_Node");
+        artifact = SNodeOperations.as(artifacts.findArtifact((SNodeOperations.isInstanceOf(m, "jetbrains.mps.build.mps.structure.BuildMps_DevKit") ?
+          SLinkOperations.getTarget(SNodeOperations.cast(m, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "path", true) :
+          m
+        )), "jetbrains.mps.build.structure.BuildLayout_Node");
         if (artifact != null) {
           builder.add(artifact, m);
         }

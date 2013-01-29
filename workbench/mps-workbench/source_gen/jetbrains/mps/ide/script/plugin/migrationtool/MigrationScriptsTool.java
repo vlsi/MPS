@@ -4,7 +4,7 @@ package jetbrains.mps.ide.script.plugin.migrationtool;
 
 import jetbrains.mps.ide.findusages.view.TabbedUsagesTool;
 import java.util.List;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.smodel.SNodePointer;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -29,7 +30,7 @@ import com.intellij.ui.content.Content;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
 
 public class MigrationScriptsTool extends TabbedUsagesTool {
-  private List<SNodePointer> myScripts;
+  private List<SNodeReference> myScripts;
   private List<MigrationScriptsView> myViews = new ArrayList<MigrationScriptsView>();
 
   public MigrationScriptsTool(Project project) {
@@ -52,7 +53,7 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
     if (!(ThreadUtils.isEventDispatchThread())) {
       throw new IllegalStateException("Can't use this outside of EDT");
     }
-    myScripts = new ArrayList<SNodePointer>();
+    myScripts = new ArrayList<SNodeReference>();
     for (SNode scriptNode : scriptNodes) {
       myScripts.add(new SNodePointer(scriptNode));
     }

@@ -14,7 +14,7 @@ import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.extensions.PluginId;
@@ -48,7 +48,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
         return;
       }
 
-      Iterable<SReference> refs = node.getReferences();
+      Iterable<? extends SReference> refs = node.getReferences();
       if (!(refs.iterator().hasNext())) {
         GoByReference_ActionGroup.this.disable(event.getPresentation());
         return;
@@ -57,7 +57,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
       for (SReference ref : Sequence.fromIterable(refs)) {
         SNode targetNode = ref.getTargetNode();
         if (targetNode != null) {
-          String text = "[" + ref.getRole() + "] -> " + ref.getResolveInfo();
+          String text = "[" + ref.getRole() + "] -> " + ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
           GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(new SNodePointer(targetNode), text), PluginId.getId("jetbrains.mps.ide"), new SNodePointer(targetNode), text);
           continue;
         }
@@ -65,7 +65,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
         final SReference finalRef = ref;
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
-            String text = "Bad reference: [" + finalRef.getRole() + "] -> " + finalRef.getResolveInfo();
+            String text = "Bad reference: [" + finalRef.getRole() + "] -> " + ((jetbrains.mps.smodel.SReference) finalRef).getResolveInfo();
 
             ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
               public void run() {

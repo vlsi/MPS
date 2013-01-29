@@ -4,10 +4,11 @@ package jetbrains.mps.baseLanguage.unitTest.execution.settings;
 
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nls;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -45,7 +46,7 @@ public class TestUtils {
   }
 
   @Nullable
-  public static SNodePointer stringToPointer(@Nls String pointerString) {
+  public static SNodeReference stringToPointer(@Nls String pointerString) {
     if ((pointerString == null || pointerString.length() == 0)) {
       return null;
     }
@@ -55,11 +56,11 @@ public class TestUtils {
     return new SNodePointer(smodelId, id);
   }
 
-  public static String pointerToString(@NotNull final SNodePointer pointer) {
+  public static String pointerToString(@NotNull final SNodeReference pointer) {
     final Wrappers._T<String> value = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        value.value = pointer.getModel().getSModelReference().toString() + POINTER_SEPARATOR + pointer.getNode().getNodeId().toString();
+        value.value = ((SNodePointer) pointer).getModel().getSModelReference().toString() + POINTER_SEPARATOR + ((SNodePointer) pointer).getNode().getNodeId().toString();
       }
     });
     return value.value;
@@ -117,7 +118,7 @@ __switch__:
                       this.__CP__ = 2;
                       break;
                     case 4:
-                      this._6_node = check_6qi07j_a0a0a0a0a1a5(stringToPointer(_2_pointerString));
+                      this._6_node = check_6qi07j_a0a0a0a0a1a5(((SNodePointer) stringToPointer(_2_pointerString)));
                       this.__CP__ = 7;
                       break;
                     case 8:

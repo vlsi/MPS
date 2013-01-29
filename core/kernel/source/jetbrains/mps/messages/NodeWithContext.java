@@ -17,18 +17,18 @@ package jetbrains.mps.messages;
 
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class NodeWithContext {
-  private SNodePointer myNodePointer;
+  private SNodeReference myNodePointer;
   private IOperationContext myContext;
 
   public NodeWithContext(SNode node, IOperationContext context) {
-    myNodePointer = new SNodePointer(node);
+    myNodePointer = new jetbrains.mps.smodel.SNodePointer(node);
     myContext = context;
   }
 
-  public SNodePointer getNode() {
+  public SNodeReference getNode() {
     return myNodePointer;
   }
 

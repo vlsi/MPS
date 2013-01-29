@@ -9,6 +9,7 @@ import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
@@ -46,7 +47,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     return this.myModel;
   }
 
-  public SNodePointer getMappingNode() {
+  public SNodeReference getMappingNode() {
     return new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008486850");
   }
 
@@ -90,7 +91,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public RootMappingRule0() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return rootMappingRule_417xrn_a0a1r;
     }
 
@@ -121,7 +122,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public DropRootRule0() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return dropRule_417xrn_a0a1s;
     }
 
@@ -138,7 +139,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public WeavingRule0() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return weavingRule_417xrn_a0a1t;
     }
 
@@ -191,7 +192,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public WeavingRule1() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return weavingRule_417xrn_a0a1u;
     }
 
@@ -244,7 +245,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public WeavingRule2() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return weavingRule_417xrn_a0a1v;
     }
 
@@ -297,7 +298,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public WeavingRule3() {
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return weavingRule_417xrn_a0a1w;
     }
 

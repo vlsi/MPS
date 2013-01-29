@@ -19,6 +19,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class PersistentPropertyReferenceOperation_Constraints extends BaseConstraintsDescriptor {
@@ -50,7 +51,7 @@ public class PersistentPropertyReferenceOperation_Constraints extends BaseConstr
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_yui4e7_a0a1a0a0a1a0b0a1a1;
           }
         };

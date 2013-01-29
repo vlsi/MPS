@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 
@@ -53,10 +53,10 @@ public abstract class ModelListener {
     if (!myImportantNodes.containsKey(descriptor.getSModelReference())) {
       descriptor.addModelListener(myRootRemovedListener);
     }
-    myImportantNodes.add(new SNodePointer(node));
+    myImportantNodes.add(new jetbrains.mps.smodel.SNodePointer(node));
   }
 
-  protected abstract void onImportantRootRemoved(SNodePointer node);
+  protected abstract void onImportantRootRemoved(SNodeReference node);
 
   //------listeners------
 
@@ -64,7 +64,7 @@ public abstract class ModelListener {
     public void rootRemoved(SModelRootEvent event) {
       SNode root = event.getRoot();
       SModelReference modelRef = event.getModel().getSModelReference();
-      SNodePointer nodePointer = new SNodePointer(modelRef, root.getNodeId());
+      SNodeReference nodePointer = new jetbrains.mps.smodel.SNodePointer(modelRef, root.getNodeId());
 
       if (!myImportantNodes.get(modelRef).contains(nodePointer)) return;
 
@@ -78,7 +78,7 @@ public abstract class ModelListener {
       SModelReference ref = modelDescriptor.getSModelReference();
       if (!myImportantNodes.containsKey(ref)) return;
 
-      for (SNodePointer node : myImportantNodes.get(ref)) {
+      for (SNodeReference node : myImportantNodes.get(ref)) {
         onImportantRootRemoved(node);
       }
       myImportantNodes.remove(ref);

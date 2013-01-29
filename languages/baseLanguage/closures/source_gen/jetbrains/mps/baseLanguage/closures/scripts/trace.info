@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4836112446988543578" modelId="r:939d5640-1698-4117-b7a2-5ca8515138e7(jetbrains.mps.baseLanguage.closures.scripts)">
+  <root nodeRef="r:939d5640-1698-4117-b7a2-5ca8515138e7(jetbrains.mps.baseLanguage.closures.scripts)/4836112446988543578">
     <nodeInfo nodeId="4836112446988543578" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="13" startPosition="95" endLine="14" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="16" startPosition="31" endLine="17" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="20" startPosition="41" endLine="21" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -41,7 +41,7 @@
     <unitInfo nodeId="4836112446988543579" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="15" startPosition="28" endLine="39" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.scripts.RemoveWildcardsFromUnboundParams_MigrationScript$1" />
     <unitInfo nodeId="4836112446988543578" fileName="RemoveWildcardsFromUnboundParams_MigrationScript.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.scripts.RemoveWildcardsFromUnboundParams_MigrationScript" />
   </root>
-  <root nodeId="5571879668402512180" modelId="r:939d5640-1698-4117-b7a2-5ca8515138e7(jetbrains.mps.baseLanguage.closures.scripts)">
+  <root nodeRef="r:939d5640-1698-4117-b7a2-5ca8515138e7(jetbrains.mps.baseLanguage.closures.scripts)/5571879668402512180">
     <nodeInfo nodeId="5571879668402512180" fileName="UpdateClosuresRuntime_MigrationScript.java" startLine="30" startPosition="84" endLine="31" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5571879668402512181" fileName="UpdateClosuresRuntime_MigrationScript.java" startLine="33" startPosition="31" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5571879668402512181" fileName="UpdateClosuresRuntime_MigrationScript.java" startLine="37" startPosition="41" endLine="38" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

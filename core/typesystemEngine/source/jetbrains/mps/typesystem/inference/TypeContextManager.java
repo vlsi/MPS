@@ -28,6 +28,7 @@ import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelAdapter;
@@ -36,7 +37,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -62,8 +63,8 @@ public class TypeContextManager implements CoreComponent {
 
   private final Object myLock = new Object();
   private Set<SModelDescriptor> myListeningForModels = new THashSet<SModelDescriptor>();
-  private Map<SNodePointer, List<TypecheckingContextHolder>> myTypeCheckingContexts =
-    new THashMap<SNodePointer, List<TypecheckingContextHolder>>(); //todo cleanup on reload (temp solution)
+  private Map<SNodeReference, List<TypecheckingContextHolder>> myTypeCheckingContexts =
+    new THashMap<SNodeReference, List<TypecheckingContextHolder>>(); //todo cleanup on reload (temp solution)
 
   private TypeChecker myTypeChecker;
 
@@ -73,13 +74,13 @@ public class TypeContextManager implements CoreComponent {
     @Override
     public void beforeRootRemoved(SModelRootEvent event) {
       synchronized (myLock) {
-        removeContextForNode(new SNodePointer(event.getModel().getSModelReference(), event.getRoot().getNodeId()));
+        removeContextForNode(new jetbrains.mps.smodel.SNodePointer(event.getModel().getSModelReference(), event.getRoot().getNodeId()));
       }
     }
 
     public void beforeModelDisposed(SModel sm) {
       synchronized (myLock) {
-        for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
+        for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
           if (sm.getSModelReference().equals(nodePointer.getModelReference())) {
             removeContextForNode(nodePointer);
           }
@@ -90,9 +91,11 @@ public class TypeContextManager implements CoreComponent {
     public void modelReplaced(SModelDescriptor md) {
       SModelReference modelRef = md.getSModelReference();
       synchronized (myLock) {
-        for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
-          if (nodePointer == null || nodePointer.getNode() == null || nodePointer.getModel() == null ||
-            jetbrains.mps.util.SNodeOperations.isDisposed(nodePointer.getNode()) || modelRef.equals(nodePointer.getModelReference())) {
+        for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
+          if (nodePointer == null)continue;
+          SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
+          if (node == null || node.getModel() == null || node.getModel().getModelDescriptor()==null ||
+            jetbrains.mps.util.SNodeOperations.isDisposed(node) || modelRef.equals(nodePointer.getModelReference())) {
             removeContextForNode(nodePointer);
           }
         }
@@ -149,7 +152,7 @@ public class TypeContextManager implements CoreComponent {
       model.removeModelListener(myModelListener);
     }
     myListeningForModels.clear();
-    for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
+    for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
       removeContextForNode(nodePointer);
     }
     SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
@@ -278,7 +281,7 @@ public class TypeContextManager implements CoreComponent {
     if (node == null) return null;
     final SNode rootNode = node.getContainingRoot();
     synchronized (myLock) {
-      SNodePointer rootNodePointer = new SNodePointer(rootNode);
+      SNodeReference rootNodePointer = new jetbrains.mps.smodel.SNodePointer(rootNode);
 
       List<TypecheckingContextHolder> contextWithOwners = myTypeCheckingContexts.get(rootNodePointer);
       if (contextWithOwners == null && !createIfAbsent) return null;
@@ -348,7 +351,7 @@ public class TypeContextManager implements CoreComponent {
     final SNode rootNode = node.getContainingRoot();
     //if node is disposed, then context was removed by beforeModelDisposed/beforeRootDeleted listener
     synchronized (myLock) {
-      SNodePointer rootNodePointer = new SNodePointer(rootNode);
+      SNodeReference rootNodePointer = new jetbrains.mps.smodel.SNodePointer(rootNode);
       List<TypecheckingContextHolder> contextWithOwners = myTypeCheckingContexts.get(rootNodePointer);
       if (contextWithOwners != null) {
         for (ListIterator<TypecheckingContextHolder> it = contextWithOwners.listIterator(); it.hasNext(); ) {
@@ -377,7 +380,7 @@ public class TypeContextManager implements CoreComponent {
     }
   }
 
-  private void removeContextForNode(SNodePointer nodePointer) {
+  private void removeContextForNode(SNodeReference nodePointer) {
     synchronized (myLock) {
       List<TypecheckingContextHolder> contextWithOwners = myTypeCheckingContexts.remove(nodePointer);
       if (contextWithOwners != null) {

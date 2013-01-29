@@ -17,6 +17,7 @@ languages/baseLanguage/closures/runtime/classes
 languages/baseLanguage/tuples/runtime/classes
 :editor
 editor/editor-api/classes
+editor/editorlang-runtime/classes
 editor/editor-runtime/classes
 editor/actions-runtime/classes
 editor/intentions-runtime/classes

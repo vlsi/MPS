@@ -31,7 +31,7 @@
   <unitInfo fileName="TemplateParameterReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.TemplateParameterReference_BehaviorDescriptor" />
   <unitInfo fileName="TemplateParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.TemplateParameter_BehaviorDescriptor" />
   <unitInfo fileName="TemplatePersistentConfigurationType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.TemplatePersistentConfigurationType_BehaviorDescriptor" />
-  <root nodeId="1262430001741647398" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/1262430001741647398">
     <nodeInfo nodeId="1262430001741647396" fileName="PersistentPropertyReferenceOperation_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647398" fileName="PersistentPropertyReferenceOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741647398" fileName="PersistentPropertyReferenceOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741498364#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
@@ -45,7 +45,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741647398" fileName="PersistentPropertyReferenceOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.PersistentPropertyReferenceOperation_Behavior" />
   </root>
-  <root nodeId="1262430001741704585" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/1262430001741704585">
     <nodeInfo nodeId="1262430001741704583" fileName="CheckProperties_Function_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741704585" fileName="CheckProperties_Function_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741704585" fileName="CheckProperties_Function_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
@@ -59,7 +59,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741704585" fileName="CheckProperties_Function_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.CheckProperties_Function_Behavior" />
   </root>
-  <root nodeId="1262430001741717159" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/1262430001741717159">
     <nodeInfo nodeId="1262430001741717157" fileName="TemplateParameterReference_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741717159" fileName="TemplateParameterReference_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741717159" fileName="TemplateParameterReference_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
@@ -73,7 +73,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741717159" fileName="TemplateParameterReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.TemplateParameterReference_Behavior" />
   </root>
-  <root nodeId="1262430001741717491" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/1262430001741717491">
     <nodeInfo nodeId="1262430001741717489" fileName="EditorPropertyReference_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741717491" fileName="EditorPropertyReference_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741717491" fileName="EditorPropertyReference_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
@@ -87,7 +87,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741717491" fileName="EditorPropertyReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.EditorPropertyReference_Behavior" />
   </root>
-  <root nodeId="1262430001741718588" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/1262430001741718588">
     <nodeInfo nodeId="1262430001741718587" fileName="DeprecatedAnnotation_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914718651" fileName="DeprecatedAnnotation_Behavior.java" startLine="20" startPosition="93" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914718666" fileName="DeprecatedAnnotation_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -111,7 +111,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741718588" fileName="DeprecatedAnnotation_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.DeprecatedAnnotation_Behavior" />
   </root>
-  <root nodeId="2797684467151253534" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/2797684467151253534">
     <nodeInfo nodeId="2797684467151253546" fileName="ReportConfigurationErrorStatement_Behavior.java" startLine="20" startPosition="152" endLine="21" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2797684467151253553" fileName="ReportConfigurationErrorStatement_Behavior.java" startLine="21" startPosition="219" endLine="22" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2797684467151253561" fileName="ReportConfigurationErrorStatement_Behavior.java" startLine="25" startPosition="63" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -140,7 +140,7 @@
     <scopeInfo nodeId="2797684467151253561" fileName="ReportConfigurationErrorStatement_Behavior.java" startLine="25" startPosition="0" endLine="31" endPosition="0" />
     <unitInfo nodeId="2797684467151253534" fileName="ReportConfigurationErrorStatement_Behavior.java" startLine="16" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.ReportConfigurationErrorStatement_Behavior" />
   </root>
-  <root nodeId="3677530513558609526" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/3677530513558609526">
     <nodeInfo nodeId="3677530513558611754" fileName="EditorPropertyDeclaration_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3677530513558609526" fileName="EditorPropertyDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="3677530513558609526" fileName="EditorPropertyDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isInitializable_1213877517488#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -154,7 +154,7 @@
     </scopeInfo>
     <unitInfo nodeId="3677530513558609526" fileName="EditorPropertyDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.EditorPropertyDeclaration_Behavior" />
   </root>
-  <root nodeId="946964771156066370" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066370">
     <nodeInfo nodeId="946964771156066376" fileName="PersistentConfigurationType_Behavior.java" startLine="16" startPosition="97" endLine="17" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066370" fileName="PersistentConfigurationType_Behavior.java" startLine="21" startPosition="99" endLine="22" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066370" fileName="PersistentConfigurationType_Behavior.java" startLine="26" startPosition="132" endLine="27" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -184,7 +184,7 @@
     </scopeInfo>
     <unitInfo nodeId="946964771156066370" fileName="PersistentConfigurationType_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.PersistentConfigurationType_Behavior" />
   </root>
-  <root nodeId="946964771156066386" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066386">
     <nodeInfo nodeId="946964771156066476" fileName="PersistentConfiguration_Behavior.java" startLine="25" startPosition="77" endLine="26" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066483" fileName="PersistentConfiguration_Behavior.java" startLine="29" startPosition="87" endLine="30" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066495" fileName="PersistentConfiguration_Behavior.java" startLine="33" startPosition="82" endLine="34" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -342,7 +342,7 @@
     <unitInfo nodeId="2508378883219590419" fileName="PersistentConfiguration_Behavior.java" startLine="64" startPosition="58" endLine="68" endPosition="7" unitName="jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior$3" />
     <unitInfo nodeId="946964771156066386" fileName="PersistentConfiguration_Behavior.java" startLine="20" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior" />
   </root>
-  <root nodeId="946964771156066803" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066803">
     <nodeInfo nodeId="946964771156066807" fileName="CreateEditor_Function_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="203908296139519703" fileName="CreateEditor_Function_Behavior.java" startLine="19" startPosition="86" endLine="20" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741646613" fileName="CreateEditor_Function_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -394,7 +394,7 @@
     </scopeInfo>
     <unitInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.CreateEditor_Function_Behavior" />
   </root>
-  <root nodeId="946964771156066813" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066813">
     <nodeInfo nodeId="946964771156066817" fileName="Dispose_Function_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="203908296139519717" fileName="Dispose_Function_Behavior.java" startLine="19" startPosition="86" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741703080" fileName="Dispose_Function_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -446,7 +446,7 @@
     </scopeInfo>
     <unitInfo nodeId="946964771156066813" fileName="Dispose_Function_Behavior.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.Dispose_Function_Behavior" />
   </root>
-  <root nodeId="946964771156066823" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066823">
     <nodeInfo nodeId="946964771156066829" fileName="PersistentConfigurationTemplate_Behavior.java" startLine="17" startPosition="72" endLine="18" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066823" fileName="PersistentConfigurationTemplate_Behavior.java" startLine="22" startPosition="74" endLine="23" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066823" fileName="PersistentConfigurationTemplate_Behavior.java" startLine="27" startPosition="107" endLine="28" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -487,7 +487,7 @@
     </scopeInfo>
     <unitInfo nodeId="946964771156066823" fileName="PersistentConfigurationTemplate_Behavior.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.PersistentConfigurationTemplate_Behavior" />
   </root>
-  <root nodeId="946964771156066835" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066835">
     <nodeInfo nodeId="946964771156066864" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="20" startPosition="76" endLine="21" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066875" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="24" startPosition="80" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="946964771156066882" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="25" startPosition="148" endLine="26" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -601,7 +601,7 @@
     </scopeInfo>
     <unitInfo nodeId="946964771156066835" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_Behavior" />
   </root>
-  <root nodeId="946964771156066978" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066978">
     <nodeInfo nodeId="946964771156066984" fileName="ApplyTo_Function_Behavior.java" startLine="17" startPosition="80" endLine="18" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="203908296139519019" fileName="ApplyTo_Function_Behavior.java" startLine="21" startPosition="86" endLine="22" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718745" fileName="ApplyTo_Function_Behavior.java" startLine="25" startPosition="84" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -663,7 +663,7 @@
     </scopeInfo>
     <unitInfo nodeId="946964771156066978" fileName="ApplyTo_Function_Behavior.java" startLine="13" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.ApplyTo_Function_Behavior" />
   </root>
-  <root nodeId="946964771156066990" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066990">
     <nodeInfo nodeId="946964771156067011" fileName="EditorOperationDeclaration_Behavior.java" startLine="20" startPosition="39" endLine="21" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="27" startPosition="77" endLine="28" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="32" startPosition="83" endLine="33" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -711,7 +711,7 @@
     <unitInfo nodeId="946964771156067009" fileName="EditorOperationDeclaration_Behavior.java" startLine="19" startPosition="490" endLine="23" endPosition="5" unitName="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior$1" />
     <unitInfo nodeId="946964771156066990" fileName="EditorOperationDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior" />
   </root>
-  <root nodeId="946964771156067020" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156067020">
     <nodeInfo nodeId="946964771156067024" fileName="ResetFrom_Function_Behavior.java" startLine="17" startPosition="80" endLine="18" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="203908296139519723" fileName="ResetFrom_Function_Behavior.java" startLine="21" startPosition="86" endLine="22" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741643129" fileName="ResetFrom_Function_Behavior.java" startLine="25" startPosition="84" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -773,7 +773,7 @@
     </scopeInfo>
     <unitInfo nodeId="946964771156067020" fileName="ResetFrom_Function_Behavior.java" startLine="13" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.ResetFrom_Function_Behavior" />
   </root>
-  <root nodeId="946964771156067030" modelId="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
+  <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156067030">
     <nodeInfo nodeId="946964771156067035" fileName="SettingsEditor_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="946964771156067030" fileName="SettingsEditor_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="946964771156067030" fileName="SettingsEditor_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDeclaredOperations_946964771156067031#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />

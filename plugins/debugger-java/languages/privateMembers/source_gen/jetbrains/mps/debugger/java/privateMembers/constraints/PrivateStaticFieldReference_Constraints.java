@@ -16,6 +16,7 @@ import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class PrivateStaticFieldReference_Constraints extends BaseConstraintsDescriptor {
@@ -50,7 +51,7 @@ public class PrivateStaticFieldReference_Constraints extends BaseConstraintsDesc
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_em3o18_a0a1a0a0a1a0b0a1a1;
           }
         };

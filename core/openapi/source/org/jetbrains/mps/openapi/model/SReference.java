@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SLink;
 
@@ -35,12 +37,17 @@ public interface SReference {
 
   SNode getTargetNode();
 
-// TODO conflict with StaticReference.getTargetModel
-//  SModel getTargetModel();
+  SModel getTargetModel();
 
-  /**
-   * Retrieves the textual representation of the reference.
-   * The returned text identifies the target node, so that it can be resolved.
-   */
-  String getText();
+  //null if the reference is not by-id. Still can use getTargetModel in this case
+  //todo remove as many usages as possible . Symantics not clear
+  @Nullable
+  jetbrains.mps.smodel.SModelReference getTargetSModelReference();
+
+  //null if the reference is not by-id. Still can use getTargetNode in this case
+  //todo remove as many usages as possible . Symantics not clear
+  @Nullable
+  SNodeId getTargetNodeId();
+
+  SNodeReference toNodePointer();
 }

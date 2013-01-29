@@ -9,15 +9,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -48,32 +48,23 @@ public class VariableReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      BaseLanguageStyle_StyleSheet.getVariableName(editorCell).apply(editorCell);
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
-          public Color calculate(EditorCell cell) {
-            return VariableReference_Editor._Inline_ge17fi_a0a._StyleParameter_QueryFunction_ge17fi_a0a0a0((cell == null ?
-              null :
-              cell.getSNode()
-            ), (cell == null ?
-              null :
-              cell.getContext()
-            ));
-          }
-        });
-        style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator<Integer>() {
-          public Integer calculate(EditorCell cell) {
-            return VariableReference_Editor._Inline_ge17fi_a0a._StyleParameter_QueryFunction_ge17fi_a1a0a0((cell == null ?
-              null :
-              cell.getSNode()
-            ), (cell == null ?
-              null :
-              cell.getContext()
-            ));
-          }
-        });
-      }
+      Style style = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
+      style.set(StyleAttributes.TEXT_COLOR, VariableReference_Editor._Inline_ge17fi_a0a._StyleParameter_QueryFunction_ge17fi_a0a0a0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
+      style.set(StyleAttributes.FONT_STYLE, VariableReference_Editor._Inline_ge17fi_a0a._StyleParameter_QueryFunction_ge17fi_a1a0a0((editorCell == null ?
+        null :
+        editorCell.getSNode()
+      ), (editorCell == null ?
+        null :
+        editorCell.getContext()
+      )));
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

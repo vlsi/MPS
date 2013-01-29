@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3432969378036015275" modelId="r:42278aae-7cc0-4e00-9041-018f7301c362(jetbrains.mps.debugger.java.api.state.customViewers)">
+  <root nodeRef="r:42278aae-7cc0-4e00-9041-018f7301c362(jetbrains.mps.debugger.java.api.state.customViewers)/3432969378036015275">
     <nodeInfo nodeId="3432969378036017127" fileName="CustomViewersManager.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="3432969378036017132" fileName="CustomViewersManager.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFactories" />
     <nodeInfo nodeId="3432969378036017151" fileName="CustomViewersManager.java" startLine="28" startPosition="36" endLine="29" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

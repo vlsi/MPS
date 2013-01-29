@@ -26,7 +26,7 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.util.Computable;
@@ -67,15 +67,15 @@ public class GeneratedSourcePosition {
   }
 
   @Nullable
-  public SNodePointer getNodePointer() {
-    return ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+  public SNodeReference getNodePointer() {
+    return ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
       @Override
-      public SNodePointer compute() {
+      public SNodeReference compute() {
         SNode node = getNode();
         if (node == null) {
           return null;
         }
-        return new SNodePointer(node);
+        return new jetbrains.mps.smodel.SNodePointer(node);
       }
     });
   }

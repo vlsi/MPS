@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.ide.util.GroupedNodesChooser;
 import javax.swing.JCheckBox;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import com.intellij.ui.NonFocusableCheckBox;
@@ -20,13 +20,14 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
   private JCheckBox myRemoveAttributes;
   private JCheckBox myAddReturn;
   private BehaviorDialogsPersistentOptions_PreferencesComponent myOptions;
 
-  public OverrideConceptMethodsDialog(SNodePointer[] methods, Project project) {
+  public OverrideConceptMethodsDialog(SNodeReference[] methods, Project project) {
     super(methods, false, true, project);
   }
 
@@ -122,7 +123,7 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
     }, true);
   }
 
-  public static SNodePointer[] toNodePointers(Iterable<SNode> methods) {
+  public static SNodeReference[] toNodePointers(Iterable<SNode> methods) {
     return Sequence.fromIterable(methods).select(new ISelector<SNode, SNodePointer>() {
       public SNodePointer select(SNode it) {
         return new SNodePointer(it);

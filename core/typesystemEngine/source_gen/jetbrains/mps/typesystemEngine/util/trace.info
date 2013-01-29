@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1883223317720973623" modelId="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)">
+  <root nodeRef="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)/1883223317720973623">
     <nodeInfo nodeId="1883223317721339522" fileName="LatticeUtil.java" startLine="21" startPosition="5" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1883223317721339532" fileName="LatticeUtil.java" startLine="24" startPosition="84" endLine="25" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1883223317721339536" fileName="LatticeUtil.java" startLine="26" startPosition="11" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -247,7 +247,7 @@
     </scopeInfo>
     <unitInfo nodeId="1883223317720973623" fileName="LatticeUtil.java" startLine="16" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.typesystemEngine.util.LatticeUtil" />
   </root>
-  <root nodeId="6321644624958548836" modelId="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)">
+  <root nodeRef="r:36914d45-fd5c-434f-84d0-429a0b615f32(jetbrains.mps.typesystemEngine.util)/6321644624958548836">
     <nodeInfo nodeId="3635379492312128764" fileName="CoerceUtil.java" startLine="14" startPosition="32" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6321644624958548838" fileName="CoerceUtil.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CoerceUtil#()V" />
     <nodeInfo nodeId="3635379492312128739" fileName="CoerceUtil.java" startLine="13" startPosition="72" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />

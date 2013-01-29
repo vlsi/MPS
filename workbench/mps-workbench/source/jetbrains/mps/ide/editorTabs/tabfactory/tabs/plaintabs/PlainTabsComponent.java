@@ -32,9 +32,10 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.EqualUtil;
 
 import javax.swing.JComponent;
@@ -62,7 +63,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
   };
 
-  public PlainTabsComponent(SNodePointer baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback, IOperationContext operationContext) {
+  public PlainTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback, IOperationContext operationContext) {
     super(baseNode, possibleTabs, editor, callback, showGrayed, createModeCallback, operationContext);
 
     DataContext dataContext = DataManager.getInstance().getDataContext(myEditor);
@@ -99,10 +100,10 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
     int index = myJbTabs.getSelectedIndex();
     PlainEditorTab tab = myRealTabs.get(index);
-    SNodePointer np = tab.getNode();
+    SNodeReference np = tab.getNode();
     if (EqualUtil.equals(np, getLastNode())) return;
 
-    SNode node = np == null ? null : np.getNode();
+    SNode node = np == null ? null : np.resolve(MPSModuleRepository.getInstance());
 
     if (node != null) {
       myLastEmptyTab = null;
@@ -120,7 +121,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     return myRealTabs.get(myJbTabs.getSelectedIndex()).getTab();
   }
 
-  public void setLastNode(SNodePointer node) {
+  public void setLastNode(SNodeReference node) {
     if (myDisposed) return;
 
     //not to make infinite recursion when tab is clicked
@@ -141,9 +142,9 @@ public class PlainTabsComponent extends BaseTabsComponent {
     if (myDisposed) return;
 
     for (int i = 0; i < myRealTabs.size(); i++) {
-      SNodePointer nodePtr = myRealTabs.get(i).getNode();
+      SNodeReference nodePtr = myRealTabs.get(i).getNode();
       TabColorProvider colorProvider = getColorProvider();
-      SNode node = nodePtr != null ? nodePtr.getNode() : null;
+      SNode node = nodePtr != null ? nodePtr.resolve(MPSModuleRepository.getInstance()) : null;
       if (node != null && colorProvider != null) {
         Color color = colorProvider.getNodeColor(node);
         if (color != null) {
@@ -158,7 +159,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
   protected synchronized void updateTabs() {
     if (myDisposed) return;
 
-    SNodePointer selNode = null;
+    SNodeReference selNode = null;
     RelationDescriptor selRel = null;
 
     int selected = myJbTabs.getTabCount() > 0 ? myJbTabs.getSelectedIndex() : -1;
@@ -186,7 +187,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
         List<SNode> nodes = newContent.get(tab);
         if (nodes != null) {
           for (SNode node : nodes) {
-            myRealTabs.add(new PlainEditorTab(new SNodePointer(node), tab));
+            myRealTabs.add(new PlainEditorTab(new jetbrains.mps.smodel.SNodePointer(node), tab));
             myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), fill, "");
           }
         } else if (myShowGrayed) {
@@ -256,11 +257,11 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
   }
 
-  protected boolean isTabUpdateNeeded(SNodePointer node) {
+  protected boolean isTabUpdateNeeded(SNodeReference node) {
     return !myDisposed && isOwn(node);
   }
 
-  private synchronized boolean isOwn(SNodePointer node) {
+  private synchronized boolean isOwn(SNodeReference node) {
     if (myDisposed) return false;
 
     for (PlainEditorTab tab : myRealTabs) {

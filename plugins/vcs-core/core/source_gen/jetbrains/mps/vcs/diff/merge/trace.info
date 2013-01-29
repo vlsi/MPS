@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="4124845871897264455" modelId="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)">
+  <root nodeRef="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)/4124845871897264455">
     <nodeInfo nodeId="4124845871897265301" fileName="MergeConflictsBuilder.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBaseModel" />
     <nodeInfo nodeId="4124845871897265304" fileName="MergeConflictsBuilder.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMyModel" />
     <nodeInfo nodeId="4124845871897265307" fileName="MergeConflictsBuilder.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRepositoryModel" />
@@ -433,7 +433,7 @@
     <unitInfo nodeId="5505786199853855167" fileName="MergeConflictsBuilder.java" startLine="309" startPosition="79" endLine="313" endPosition="5" unitName="jetbrains.mps.vcs.diff.merge.MergeConflictsBuilder$10" />
     <unitInfo nodeId="4124845871897264455" fileName="MergeConflictsBuilder.java" startLine="40" startPosition="0" endLine="317" endPosition="0" unitName="jetbrains.mps.vcs.diff.merge.MergeConflictsBuilder" />
   </root>
-  <root nodeId="4124845871897265510" modelId="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)">
+  <root nodeRef="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)/4124845871897265510">
     <nodeInfo nodeId="4124845871897265832" fileName="MergeSession.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMineChangeSet" />
     <nodeInfo nodeId="4124845871897265835" fileName="MergeSession.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRepositoryChangeSet" />
     <nodeInfo nodeId="4124845871897265838" fileName="MergeSession.java" startLine="54" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConflictingChanges" />
@@ -1058,7 +1058,7 @@
     <unitInfo nodeId="4515621863031787883" fileName="MergeSession.java" startLine="340" startPosition="0" endLine="489" endPosition="0" unitName="jetbrains.mps.vcs.diff.merge.MergeSession$MyResultModelListener" />
     <unitInfo nodeId="4124845871897265510" fileName="MergeSession.java" startLine="51" startPosition="0" endLine="511" endPosition="0" unitName="jetbrains.mps.vcs.diff.merge.MergeSession" />
   </root>
-  <root nodeId="4124845871897266050" modelId="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)">
+  <root nodeRef="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)/4124845871897266050">
     <nodeInfo nodeId="4124845871897266051" fileName="MergeSessionState.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResultModel" />
     <nodeInfo nodeId="4124845871897266053" fileName="MergeSessionState.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResolvedChanges" />
     <nodeInfo nodeId="4124845871897266059" fileName="MergeSessionState.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIdReplacementCache" />

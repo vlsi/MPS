@@ -39,7 +39,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NotNull;
 
@@ -129,7 +129,7 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
     for (Breakpoint breakpoint : breakpoints) {
       if (breakpoint instanceof BreakpointWithHighlighter) {
         final BreakpointWithHighlighter locationBreakpoint = (BreakpointWithHighlighter) breakpoint;
-        if (new SNodePointer(BreakpointPainter.getNodeForBreakpoint(locationBreakpoint)).equals(new SNodePointer(node))) {
+        if (new jetbrains.mps.smodel.SNodePointer(BreakpointPainter.getNodeForBreakpoint(locationBreakpoint)).equals(new jetbrains.mps.smodel.SNodePointer(node))) {
           return locationBreakpoint;
         }
       }

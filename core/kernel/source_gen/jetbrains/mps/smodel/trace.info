@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1830259054206300940" modelId="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)">
+  <root nodeRef="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)/1830259054206300940">
     <nodeInfo nodeId="7381022956662462464" fileName="SConstraintsUtil.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept_ConceptConstraints" />
     <nodeInfo nodeId="1830259054206300953" fileName="SConstraintsUtil.java" startLine="14" startPosition="71" endLine="15" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1830259054206332557" fileName="SConstraintsUtil.java" startLine="18" startPosition="68" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -31,7 +31,7 @@
     </scopeInfo>
     <unitInfo nodeId="1830259054206300940" fileName="SConstraintsUtil.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.smodel.SConstraintsUtil" />
   </root>
-  <root nodeId="2274990519051114059" modelId="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)">
+  <root nodeRef="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)/2274990519051114059">
     <nodeInfo nodeId="780982041803949193" fileName="SNodeUtil.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept_IResolveInfo" />
     <nodeInfo nodeId="4116271674853115043" fileName="SNodeUtil.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept_INamedConcept" />
     <nodeInfo nodeId="780982041803949200" fileName="SNodeUtil.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept_BaseConcept" />
@@ -429,7 +429,7 @@
     <unitInfo nodeId="5178936997682694549" fileName="SNodeUtil.java" startLine="164" startPosition="98" endLine="168" endPosition="5" unitName="jetbrains.mps.smodel.SNodeUtil$2" />
     <unitInfo nodeId="2274990519051114059" fileName="SNodeUtil.java" startLine="17" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.smodel.SNodeUtil" />
   </root>
-  <root nodeId="5073169472575923460" modelId="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)">
+  <root nodeRef="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)/5073169472575923460">
     <nodeInfo nodeId="5073169472575947667" fileName="BootstrapLanguages.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ACTIONS" />
     <nodeInfo nodeId="5073169472575947675" fileName="BootstrapLanguages.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BEHAVIOR" />
     <nodeInfo nodeId="5073169472575947671" fileName="BootstrapLanguages.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONSTRAINTS" />

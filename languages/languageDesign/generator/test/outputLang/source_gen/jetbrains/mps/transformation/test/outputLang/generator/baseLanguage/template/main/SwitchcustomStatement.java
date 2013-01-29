@@ -5,6 +5,7 @@ package jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.temp
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -24,11 +25,11 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
     rules = TemplateUtil.<TemplateReductionRule>asIterable(new SwitchcustomStatement.ReductionRule0(), new SwitchcustomStatement.ReductionRule1());
   }
 
-  public SNodePointer getSwitchNode() {
+  public SNodeReference getSwitchNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088655");
   }
 
-  public SNodePointer getModifiesSwitch() {
+  public SNodeReference getModifiesSwitch() {
     return null;
   }
 
@@ -36,11 +37,11 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
     return rules;
   }
 
-  public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingLabel, final TemplateContext context) {
+  public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) {
     return null;
   }
 
-  public void processNull(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, TemplateContext context) {
+  public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }
 
   public class ReductionRule0 implements TemplateReductionRule {
@@ -55,7 +56,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
       return "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_68cped_a0a3h;
     }
 
@@ -102,7 +103,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
       return "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement";
     }
 
-    public SNodePointer getRuleNode() {
+    public SNodeReference getRuleNode() {
       return reductionRule_68cped_a0a3i;
     }
 

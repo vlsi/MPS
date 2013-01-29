@@ -67,10 +67,10 @@ public class CellFinders {
       if (cell instanceof EditorCell_Collection) {
         EditorCell_Collection collection = (EditorCell_Collection) cell;
         if (collection.isUnfoldedCollection()) {
-          Iterator<EditorCell> iterator = isFirstChild() ? collection.iterator() : collection.reverseCellIterator();
+          Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator = isFirstChild() ? collection.iterator() : collection.reverseIterator();
 
           while (iterator.hasNext()) {
-            EditorCell child = iterator.next();
+            EditorCell child = (EditorCell) iterator.next();
             if (getCellClass().isInstance(child) && isSuitable((C) child)) {
               return (C) child;
             }

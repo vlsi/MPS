@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5015601397718077769" modelId="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)">
+  <root nodeRef="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)/5015601397718077769">
     <nodeInfo nodeId="5015601397718077942" fileName="SourceRevision.java" startLine="16" startPosition="25" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5015601397718077923" fileName="SourceRevision.java" startLine="27" startPosition="59" endLine="28" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5015601397718077931" fileName="SourceRevision.java" startLine="32" startPosition="44" endLine="33" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -24,7 +24,7 @@
     <unitInfo nodeId="5015601397718077904" fileName="SourceRevision.java" startLine="14" startPosition="50" endLine="19" endPosition="3" unitName="jetbrains.mps.ide.vcs.SourceRevision$1" />
     <unitInfo nodeId="5015601397718077769" fileName="SourceRevision.java" startLine="7" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ide.vcs.SourceRevision" />
   </root>
-  <root nodeId="5015601397718560603" modelId="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)">
+  <root nodeRef="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)/5015601397718560603">
     <nodeInfo nodeId="5015601397718560606" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="5015601397718560615" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="17" startPosition="56" endLine="18" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5015601397718560617" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="18" startPosition="19" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

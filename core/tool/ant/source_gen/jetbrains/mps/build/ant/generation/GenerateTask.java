@@ -4,8 +4,6 @@ package jetbrains.mps.build.ant.generation;
 
 import jetbrains.mps.build.ant.MpsLoadTask;
 import jetbrains.mps.tool.common.ScriptProperties;
-import jetbrains.mps.tool.builder.MpsWorker;
-import jetbrains.mps.tool.builder.make.GeneratorWorker;
 
 public class GenerateTask extends MpsLoadTask {
   {
@@ -17,8 +15,9 @@ public class GenerateTask extends MpsLoadTask {
   public GenerateTask() {
   }
 
-  protected Class<? extends MpsWorker> getWorkerClass() {
-    return GeneratorWorker.class;
+  @Override
+  protected String getWorkerClass() {
+    return "jetbrains.mps.tool.builder.make.GeneratorWorker";
   }
 
   public void setCompile(boolean compile) {

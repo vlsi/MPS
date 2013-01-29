@@ -17,7 +17,7 @@ package jetbrains.mps.messages;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -110,7 +110,7 @@ public class Message implements IMessage {
   public void setHintObject(Object obj) {
     boolean error = true;
     if (obj instanceof SNode) {
-      myHintObject = new SNodePointer(((SNode) obj));
+      myHintObject = new jetbrains.mps.smodel.SNodePointer(((SNode) obj));
     } else if (obj instanceof SModel) {
       myHintObject = ((SModel) obj).getSModelReference();
     } else if (obj instanceof IModule) {

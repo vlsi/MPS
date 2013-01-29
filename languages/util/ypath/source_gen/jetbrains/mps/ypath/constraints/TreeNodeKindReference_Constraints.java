@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.smodel.search.EmptySearchScope;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TreeNodeKindReference_Constraints extends BaseConstraintsDescriptor {
@@ -48,7 +49,7 @@ public class TreeNodeKindReference_Constraints extends BaseConstraintsDescriptor
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_uciz5j_a0a1a0a0a1a0b0a1a1;
           }
         };

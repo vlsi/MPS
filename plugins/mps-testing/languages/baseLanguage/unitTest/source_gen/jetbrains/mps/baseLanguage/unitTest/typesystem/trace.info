@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.typesystem.TypesystemDescriptor" />
-  <root nodeId="7080278351417151336" modelId="r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)">
+  <root nodeRef="r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)/7080278351417151336">
     <nodeInfo nodeId="2032731141110265660" fileName="typeof_Message_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2032731141110265660" fileName="typeof_Message_InferenceRule.java" startLine="21" startPosition="93" endLine="22" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2032731141110265660" fileName="typeof_Message_InferenceRule.java" startLine="22" startPosition="212" endLine="23" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -52,7 +52,7 @@
     </scopeInfo>
     <unitInfo nodeId="7080278351417151336" fileName="typeof_Message_InferenceRule.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.typesystem.typeof_Message_InferenceRule" />
   </root>
-  <root nodeId="7211295963330363318" modelId="r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)">
+  <root nodeRef="r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)/7211295963330363318">
     <nodeInfo nodeId="7211295963330363318" fileName="check_BTestCase_NonTypesystemRule.java" startLine="19" startPosition="46" endLine="20" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7211295963330363318" fileName="check_BTestCase_NonTypesystemRule.java" startLine="24" startPosition="5" endLine="25" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7211295963330363318" fileName="check_BTestCase_NonTypesystemRule.java" startLine="25" startPosition="126" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -84,7 +84,7 @@
     </scopeInfo>
     <unitInfo nodeId="7211295963330363318" fileName="check_BTestCase_NonTypesystemRule.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.typesystem.check_BTestCase_NonTypesystemRule" />
   </root>
-  <root nodeId="8797237962358911312" modelId="r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)">
+  <root nodeRef="r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)/8797237962358911312">
     <nodeInfo nodeId="8797237962361641928" fileName="check_PluginKindShouldBeNotNoneForMPSTestCases_NonTypesystemRule.java" startLine="21" startPosition="7" endLine="22" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8797237962361641928" fileName="check_PluginKindShouldBeNotNoneForMPSTestCases_NonTypesystemRule.java" startLine="22" startPosition="60" endLine="23" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8797237962358911312" fileName="check_PluginKindShouldBeNotNoneForMPSTestCases_NonTypesystemRule.java" startLine="28" startPosition="46" endLine="29" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -125,7 +125,7 @@
     </scopeInfo>
     <unitInfo nodeId="8797237962358911312" fileName="check_PluginKindShouldBeNotNoneForMPSTestCases_NonTypesystemRule.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.typesystem.check_PluginKindShouldBeNotNoneForMPSTestCases_NonTypesystemRule" />
   </root>
-  <root nodeId="8797237962361650880" modelId="r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)">
+  <root nodeRef="r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)/8797237962361650880">
     <nodeInfo nodeId="8797237962361651658" fileName="CheckUtils.java" startLine="21" startPosition="71" endLine="22" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8797237962361653930" fileName="CheckUtils.java" startLine="23" startPosition="133" endLine="24" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8797237962361654516" fileName="CheckUtils.java" startLine="25" startPosition="12" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

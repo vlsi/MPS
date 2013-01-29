@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="121110127371512982" modelId="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)">
+  <root nodeRef="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)/121110127371512982">
     <nodeInfo nodeId="121110127371513854" fileName="FileStructurePopup.java" startLine="122" startPosition="55" endLine="123" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="121110127371513862" fileName="FileStructurePopup.java" startLine="123" startPosition="53" endLine="124" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="121110127371513864" fileName="FileStructurePopup.java" startLine="125" startPosition="7" endLine="126" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1066,7 +1066,7 @@
     <unitInfo nodeId="121110127371513137" fileName="FileStructurePopup.java" startLine="764" startPosition="0" endLine="909" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$MyTreeSpeedSearch" />
     <unitInfo nodeId="121110127371512982" fileName="FileStructurePopup.java" startLine="114" startPosition="0" endLine="962" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup" />
   </root>
-  <root nodeId="121110127371584518" modelId="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)">
+  <root nodeRef="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)/121110127371584518">
     <nodeInfo nodeId="121110127371584520" fileName="TreeStructureActionsOwner.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActions" />
     <nodeInfo nodeId="121110127371584527" fileName="TreeStructureActionsOwner.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="121110127371584535" fileName="TreeStructureActionsOwner.java" startLine="19" startPosition="67" endLine="20" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1119,234 +1119,234 @@
     </scopeInfo>
     <unitInfo nodeId="121110127371584518" fileName="TreeStructureActionsOwner.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.TreeStructureActionsOwner" />
   </root>
-  <root nodeId="397101727194120959" modelId="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)">
-    <nodeInfo nodeId="397101727194125937" fileName="NodeChooserDialog.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
-    <nodeInfo nodeId="397101727194120976" fileName="NodeChooserDialog.java" startLine="28" startPosition="81" endLine="29" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="397101727194120992" fileName="NodeChooserDialog.java" startLine="29" startPosition="25" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="884095344014615009" fileName="NodeChooserDialog.java" startLine="30" startPosition="28" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="397101727194123977" fileName="NodeChooserDialog.java" startLine="42" startPosition="57" endLine="43" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="397101727194124279" fileName="NodeChooserDialog.java" startLine="46" startPosition="48" endLine="47" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="397101727194124292" fileName="NodeChooserDialog.java" startLine="51" startPosition="49" endLine="52" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="397101727194123529" fileName="NodeChooserDialog.java" startLine="55" startPosition="39" endLine="56" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="397101727194125942" fileName="NodeChooserDialog.java" startLine="58" startPosition="6" endLine="59" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="397101727194137604" fileName="NodeChooserDialog.java" startLine="61" startPosition="49" endLine="62" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3499578665935265565" fileName="NodeChooserDialog.java" startLine="64" startPosition="60" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="397101727194120996" fileName="NodeChooserDialog.java" startLine="65" startPosition="0" endLine="66" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="884095344014786770" fileName="NodeChooserDialog.java" startLine="71" startPosition="44" endLine="72" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3475620386633472254" fileName="NodeChooserDialog.java" startLine="78" startPosition="44" endLine="79" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6451627261807357073" fileName="NodeChooserDialog.java" startLine="79" startPosition="67" endLine="80" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="397101727194137682" fileName="NodeChooserDialog.java" startLine="85" startPosition="54" endLine="86" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="397101727194137713" fileName="NodeChooserDialog.java" startLine="87" startPosition="5" endLine="88" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="884095344014661259" fileName="NodeChooserDialog.java" startLine="97" startPosition="54" endLine="98" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="884095344014661261" fileName="NodeChooserDialog.java" startLine="99" startPosition="5" endLine="100" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2476433916569952378" fileName="NodeChooserDialog.java" startLine="109" startPosition="52" endLine="110" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="397101727194124271" fileName="NodeChooserDialog.java" startLine="36" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigate#(Z)V" />
-    <nodeInfo nodeId="397101727194123518" fileName="NodeChooserDialog.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/smodel/IScope;)[Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="397101727194123525" fileName="NodeChooserDialog.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="willOpenEditor#()Z" />
-    <nodeInfo nodeId="397101727194137598" fileName="NodeChooserDialog.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="elementChosen#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="884095344014786762" fileName="NodeChooserDialog.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="397101727194137656" fileName="NodeChooserDialog.java" startLine="84" startPosition="32" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="884095344014661254" fileName="NodeChooserDialog.java" startLine="96" startPosition="35" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="397101727194123993" fileName="NodeChooserDialog.java" startLine="34" startPosition="68" endLine="38" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="397101727194123959" fileName="NodeChooserDialog.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Z)[Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="397101727194124287" fileName="NodeChooserDialog.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadInitialCheckBoxState#()Z" />
-    <nodeInfo nodeId="397101727194137728" fileName="NodeChooserDialog.java" startLine="88" startPosition="86" endLine="92" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="884095344014661269" fileName="NodeChooserDialog.java" startLine="100" startPosition="86" endLine="104" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="397101727194124507" fileName="NodeChooserDialog.java" startLine="59" startPosition="73" endLine="64" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="884095344014786713" fileName="NodeChooserDialog.java" startLine="69" startPosition="70" endLine="74" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="397101727194120966" fileName="NodeChooserDialog.java" startLine="77" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="2476433916569952370" fileName="NodeChooserDialog.java" startLine="107" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="397101727194123986" fileName="NodeChooserDialog.java" startLine="33" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGetNavigationItem#(Ljetbrains/mps/smodel/SNodePointer;)Lcom/intellij/navigation/NavigationItem;" />
-    <nodeInfo nodeId="884095344014786581" fileName="NodeChooserDialog.java" startLine="69" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)V" />
-    <nodeInfo nodeId="397101727194137651" fileName="NodeChooserDialog.java" startLine="83" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="884095344014661250" fileName="NodeChooserDialog.java" startLine="95" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="5389053887021176524" fileName="NodeChooserDialog.java" startLine="31" startPosition="0" endLine="58" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="397101727194120961" fileName="NodeChooserDialog.java" startLine="28" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/Iterable;)V" />
-    <scopeInfo nodeId="397101727194124276" fileName="NodeChooserDialog.java" startLine="36" startPosition="54" endLine="36" endPosition="54" />
-    <scopeInfo nodeId="397101727194123965" fileName="NodeChooserDialog.java" startLine="42" startPosition="57" endLine="43" endPosition="79" />
-    <scopeInfo nodeId="397101727194123524" fileName="NodeChooserDialog.java" startLine="46" startPosition="48" endLine="47" endPosition="68" />
-    <scopeInfo nodeId="397101727194124290" fileName="NodeChooserDialog.java" startLine="51" startPosition="49" endLine="52" endPosition="21" />
-    <scopeInfo nodeId="397101727194123528" fileName="NodeChooserDialog.java" startLine="55" startPosition="39" endLine="56" endPosition="21" />
-    <scopeInfo nodeId="397101727194137603" fileName="NodeChooserDialog.java" startLine="61" startPosition="49" endLine="62" endPosition="21" />
-    <scopeInfo nodeId="884095344014786763" fileName="NodeChooserDialog.java" startLine="71" startPosition="44" endLine="72" endPosition="36" />
-    <scopeInfo nodeId="397101727194137658" fileName="NodeChooserDialog.java" startLine="85" startPosition="54" endLine="86" endPosition="18" />
-    <scopeInfo nodeId="884095344014661258" fileName="NodeChooserDialog.java" startLine="97" startPosition="54" endLine="98" endPosition="18" />
-    <scopeInfo nodeId="2476433916569952374" fileName="NodeChooserDialog.java" startLine="109" startPosition="52" endLine="110" endPosition="52" />
-    <scopeInfo nodeId="397101727194124271" fileName="NodeChooserDialog.java" startLine="36" startPosition="0" endLine="38" endPosition="0">
+  <root nodeRef="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)/397101727194120959">
+    <nodeInfo nodeId="397101727194125937" fileName="NodeChooserDialog.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
+    <nodeInfo nodeId="397101727194120976" fileName="NodeChooserDialog.java" startLine="29" startPosition="83" endLine="30" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="397101727194120992" fileName="NodeChooserDialog.java" startLine="30" startPosition="25" endLine="31" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="884095344014615009" fileName="NodeChooserDialog.java" startLine="31" startPosition="28" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="397101727194123977" fileName="NodeChooserDialog.java" startLine="43" startPosition="59" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="397101727194124279" fileName="NodeChooserDialog.java" startLine="47" startPosition="50" endLine="48" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="397101727194124292" fileName="NodeChooserDialog.java" startLine="52" startPosition="49" endLine="53" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="397101727194123529" fileName="NodeChooserDialog.java" startLine="56" startPosition="39" endLine="57" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="397101727194125942" fileName="NodeChooserDialog.java" startLine="59" startPosition="6" endLine="60" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="397101727194137604" fileName="NodeChooserDialog.java" startLine="62" startPosition="49" endLine="63" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3499578665935265565" fileName="NodeChooserDialog.java" startLine="65" startPosition="60" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="397101727194120996" fileName="NodeChooserDialog.java" startLine="66" startPosition="0" endLine="67" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="884095344014786770" fileName="NodeChooserDialog.java" startLine="72" startPosition="46" endLine="73" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3475620386633472254" fileName="NodeChooserDialog.java" startLine="79" startPosition="44" endLine="80" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6451627261807357073" fileName="NodeChooserDialog.java" startLine="80" startPosition="67" endLine="81" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="397101727194137682" fileName="NodeChooserDialog.java" startLine="86" startPosition="54" endLine="87" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="397101727194137713" fileName="NodeChooserDialog.java" startLine="88" startPosition="5" endLine="89" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="884095344014661259" fileName="NodeChooserDialog.java" startLine="98" startPosition="54" endLine="99" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="884095344014661261" fileName="NodeChooserDialog.java" startLine="100" startPosition="5" endLine="101" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2476433916569952378" fileName="NodeChooserDialog.java" startLine="110" startPosition="52" endLine="111" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="397101727194124271" fileName="NodeChooserDialog.java" startLine="37" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigate#(Z)V" />
+    <nodeInfo nodeId="397101727194123518" fileName="NodeChooserDialog.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/smodel/IScope;)[Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="397101727194123525" fileName="NodeChooserDialog.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="willOpenEditor#()Z" />
+    <nodeInfo nodeId="397101727194137598" fileName="NodeChooserDialog.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="elementChosen#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="884095344014786762" fileName="NodeChooserDialog.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="397101727194137656" fileName="NodeChooserDialog.java" startLine="85" startPosition="32" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="884095344014661254" fileName="NodeChooserDialog.java" startLine="97" startPosition="37" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="397101727194123993" fileName="NodeChooserDialog.java" startLine="35" startPosition="70" endLine="39" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="397101727194123959" fileName="NodeChooserDialog.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Z)[Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="397101727194124287" fileName="NodeChooserDialog.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadInitialCheckBoxState#()Z" />
+    <nodeInfo nodeId="397101727194137728" fileName="NodeChooserDialog.java" startLine="89" startPosition="86" endLine="93" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="884095344014661269" fileName="NodeChooserDialog.java" startLine="101" startPosition="86" endLine="105" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="397101727194124507" fileName="NodeChooserDialog.java" startLine="60" startPosition="73" endLine="65" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="884095344014786713" fileName="NodeChooserDialog.java" startLine="70" startPosition="70" endLine="75" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="397101727194120966" fileName="NodeChooserDialog.java" startLine="78" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="2476433916569952370" fileName="NodeChooserDialog.java" startLine="108" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="397101727194123986" fileName="NodeChooserDialog.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGetNavigationItem#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Lcom/intellij/navigation/NavigationItem;" />
+    <nodeInfo nodeId="884095344014786581" fileName="NodeChooserDialog.java" startLine="70" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)V" />
+    <nodeInfo nodeId="397101727194137651" fileName="NodeChooserDialog.java" startLine="84" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="884095344014661250" fileName="NodeChooserDialog.java" startLine="96" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="5389053887021176524" fileName="NodeChooserDialog.java" startLine="32" startPosition="0" endLine="59" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="397101727194120961" fileName="NodeChooserDialog.java" startLine="29" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/Iterable;)V" />
+    <scopeInfo nodeId="397101727194124276" fileName="NodeChooserDialog.java" startLine="37" startPosition="54" endLine="37" endPosition="54" />
+    <scopeInfo nodeId="397101727194123965" fileName="NodeChooserDialog.java" startLine="43" startPosition="59" endLine="44" endPosition="81" />
+    <scopeInfo nodeId="397101727194123524" fileName="NodeChooserDialog.java" startLine="47" startPosition="50" endLine="48" endPosition="68" />
+    <scopeInfo nodeId="397101727194124290" fileName="NodeChooserDialog.java" startLine="52" startPosition="49" endLine="53" endPosition="21" />
+    <scopeInfo nodeId="397101727194123528" fileName="NodeChooserDialog.java" startLine="56" startPosition="39" endLine="57" endPosition="21" />
+    <scopeInfo nodeId="397101727194137603" fileName="NodeChooserDialog.java" startLine="62" startPosition="49" endLine="63" endPosition="21" />
+    <scopeInfo nodeId="884095344014786763" fileName="NodeChooserDialog.java" startLine="72" startPosition="46" endLine="73" endPosition="55" />
+    <scopeInfo nodeId="397101727194137658" fileName="NodeChooserDialog.java" startLine="86" startPosition="54" endLine="87" endPosition="18" />
+    <scopeInfo nodeId="884095344014661258" fileName="NodeChooserDialog.java" startLine="98" startPosition="54" endLine="99" endPosition="18" />
+    <scopeInfo nodeId="2476433916569952374" fileName="NodeChooserDialog.java" startLine="110" startPosition="52" endLine="111" endPosition="52" />
+    <scopeInfo nodeId="397101727194124271" fileName="NodeChooserDialog.java" startLine="37" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="397101727194124274" varName="requestFocus" />
     </scopeInfo>
-    <scopeInfo nodeId="397101727194120970" fileName="NodeChooserDialog.java" startLine="78" startPosition="44" endLine="80" endPosition="32" />
-    <scopeInfo nodeId="397101727194123518" fileName="NodeChooserDialog.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="397101727194120970" fileName="NodeChooserDialog.java" startLine="79" startPosition="44" endLine="81" endPosition="32" />
+    <scopeInfo nodeId="397101727194123518" fileName="NodeChooserDialog.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="397101727194123522" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="397101727194123525" fileName="NodeChooserDialog.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="397101727194137598" fileName="NodeChooserDialog.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="397101727194123525" fileName="NodeChooserDialog.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="397101727194137598" fileName="NodeChooserDialog.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="397101727194137601" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="884095344014786762" fileName="NodeChooserDialog.java" startLine="71" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="884095344014786762" fileName="NodeChooserDialog.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="884095344014786762" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="397101727194123991" fileName="NodeChooserDialog.java" startLine="34" startPosition="68" endLine="38" endPosition="10" />
-    <scopeInfo nodeId="397101727194123959" fileName="NodeChooserDialog.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="397101727194123991" fileName="NodeChooserDialog.java" startLine="35" startPosition="70" endLine="39" endPosition="10" />
+    <scopeInfo nodeId="397101727194123959" fileName="NodeChooserDialog.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="397101727194123963" varName="checkboxState" />
     </scopeInfo>
-    <scopeInfo nodeId="397101727194124287" fileName="NodeChooserDialog.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="884095344014786589" fileName="NodeChooserDialog.java" startLine="69" startPosition="70" endLine="74" endPosition="8" />
-    <scopeInfo nodeId="397101727194120966" fileName="NodeChooserDialog.java" startLine="77" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="2476433916569952370" fileName="NodeChooserDialog.java" startLine="107" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="397101727194123986" fileName="NodeChooserDialog.java" startLine="33" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="397101727194124287" fileName="NodeChooserDialog.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="884095344014786589" fileName="NodeChooserDialog.java" startLine="70" startPosition="70" endLine="75" endPosition="8" />
+    <scopeInfo nodeId="397101727194120966" fileName="NodeChooserDialog.java" startLine="78" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="2476433916569952370" fileName="NodeChooserDialog.java" startLine="108" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="397101727194123986" fileName="NodeChooserDialog.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="397101727194123989" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="884095344014786581" fileName="NodeChooserDialog.java" startLine="69" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="884095344014786581" fileName="NodeChooserDialog.java" startLine="70" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="884095344014786584" varName="nodes" />
       <varInfo nodeId="884095344014786582" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="397101727194137654" fileName="NodeChooserDialog.java" startLine="84" startPosition="32" endLine="92" endPosition="6">
+    <scopeInfo nodeId="397101727194137654" fileName="NodeChooserDialog.java" startLine="85" startPosition="32" endLine="93" endPosition="6">
       <varInfo nodeId="397101727194137714" varName="nodeItem" />
     </scopeInfo>
-    <scopeInfo nodeId="884095344014661253" fileName="NodeChooserDialog.java" startLine="96" startPosition="35" endLine="104" endPosition="6">
+    <scopeInfo nodeId="884095344014661253" fileName="NodeChooserDialog.java" startLine="97" startPosition="37" endLine="105" endPosition="6">
       <varInfo nodeId="884095344014661262" varName="nodeItem" />
     </scopeInfo>
-    <scopeInfo nodeId="397101727194137651" fileName="NodeChooserDialog.java" startLine="83" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="884095344014661250" fileName="NodeChooserDialog.java" startLine="95" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="397101727194120964" fileName="NodeChooserDialog.java" startLine="28" startPosition="81" endLine="66" endPosition="11">
+    <scopeInfo nodeId="397101727194137651" fileName="NodeChooserDialog.java" startLine="84" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="884095344014661250" fileName="NodeChooserDialog.java" startLine="96" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="397101727194120964" fileName="NodeChooserDialog.java" startLine="29" startPosition="83" endLine="67" endPosition="11">
       <varInfo nodeId="5389053887021176525" varName="goToNodeModel" />
     </scopeInfo>
-    <scopeInfo nodeId="397101727194120961" fileName="NodeChooserDialog.java" startLine="28" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="397101727194120961" fileName="NodeChooserDialog.java" startLine="29" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="397101727194120998" varName="nodes" />
       <varInfo nodeId="397101727194120973" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="397101727194124269" fileName="NodeChooserDialog.java" startLine="35" startPosition="19" endLine="38" endPosition="9" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$2" />
-    <unitInfo nodeId="397101727194137596" fileName="NodeChooserDialog.java" startLine="60" startPosition="25" endLine="64" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$2" />
-    <unitInfo nodeId="884095344014786762" fileName="NodeChooserDialog.java" startLine="70" startPosition="58" endLine="74" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$3" />
-    <unitInfo nodeId="397101727194123504" fileName="NodeChooserDialog.java" startLine="32" startPosition="45" endLine="58" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$1" />
-    <unitInfo nodeId="397101727194120959" fileName="NodeChooserDialog.java" startLine="25" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog" />
+    <unitInfo nodeId="397101727194124269" fileName="NodeChooserDialog.java" startLine="36" startPosition="19" endLine="39" endPosition="9" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$2" />
+    <unitInfo nodeId="397101727194137596" fileName="NodeChooserDialog.java" startLine="61" startPosition="25" endLine="65" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$2" />
+    <unitInfo nodeId="884095344014786762" fileName="NodeChooserDialog.java" startLine="71" startPosition="58" endLine="75" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$3" />
+    <unitInfo nodeId="397101727194123504" fileName="NodeChooserDialog.java" startLine="33" startPosition="45" endLine="59" endPosition="5" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$1" />
+    <unitInfo nodeId="397101727194120959" fileName="NodeChooserDialog.java" startLine="26" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog" />
   </root>
-  <root nodeId="890761188649854308" modelId="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)">
-    <nodeInfo nodeId="8178553721056070910" fileName="NodeTreeModel.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FAKE_ROOT" />
-    <nodeInfo nodeId="890761188649876466" fileName="NodeTreeModel.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootNodes#()[Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="890761188649876471" fileName="NodeTreeModel.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#(Ljetbrains/mps/smodel/SNodePointer;)[Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="890761188649869998" fileName="NodeTreeModel.java" startLine="40" startPosition="34" endLine="41" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="890761188649870000" fileName="NodeTreeModel.java" startLine="45" startPosition="32" endLine="46" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="890761188649870004" fileName="NodeTreeModel.java" startLine="50" startPosition="32" endLine="51" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="890761188649876476" fileName="NodeTreeModel.java" startLine="55" startPosition="45" endLine="56" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3443324735214105982" fileName="NodeTreeModel.java" startLine="60" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="3443324735214105986" fileName="NodeTreeModel.java" startLine="62" startPosition="47" endLine="63" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="890761188649900164" fileName="NodeTreeModel.java" startLine="70" startPosition="8" endLine="71" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="890761188649900197" fileName="NodeTreeModel.java" startLine="71" startPosition="72" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8178553721056071094" fileName="NodeTreeModel.java" startLine="73" startPosition="49" endLine="74" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="890761188649900202" fileName="NodeTreeModel.java" startLine="75" startPosition="7" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="890761188649900199" fileName="NodeTreeModel.java" startLine="76" startPosition="0" endLine="77" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3443324735214106036" fileName="NodeTreeModel.java" startLine="80" startPosition="30" endLine="81" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3443324735214114496" fileName="NodeTreeModel.java" startLine="86" startPosition="43" endLine="87" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3443324735214113832" fileName="NodeTreeModel.java" startLine="94" startPosition="50" endLine="95" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3443324735214113844" fileName="NodeTreeModel.java" startLine="96" startPosition="26" endLine="97" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3443324735214113856" fileName="NodeTreeModel.java" startLine="101" startPosition="31" endLine="102" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3443324735214113867" fileName="NodeTreeModel.java" startLine="103" startPosition="33" endLine="104" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3443324735214113868" fileName="NodeTreeModel.java" startLine="105" startPosition="15" endLine="106" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3443324735214113879" fileName="NodeTreeModel.java" startLine="107" startPosition="34" endLine="108" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3443324735214113880" fileName="NodeTreeModel.java" startLine="109" startPosition="15" endLine="110" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3443324735214113893" fileName="NodeTreeModel.java" startLine="111" startPosition="35" endLine="112" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3443324735214113894" fileName="NodeTreeModel.java" startLine="113" startPosition="15" endLine="114" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3443324735214106054" fileName="NodeTreeModel.java" startLine="121" startPosition="34" endLine="122" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3443324735214106060" fileName="NodeTreeModel.java" startLine="125" startPosition="42" endLine="126" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3443324735214114423" fileName="NodeTreeModel.java" startLine="131" startPosition="59" endLine="132" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3443324735214114488" fileName="NodeTreeModel.java" startLine="136" startPosition="41" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="890761188649854310" fileName="NodeTreeModel.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeTreeModel#()V" />
-    <nodeInfo nodeId="890761188649874966" fileName="NodeTreeModel.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeTreeElement#(Ljetbrains/mps/smodel/SNodePointer;)V" />
-    <nodeInfo nodeId="8178553721056071031" fileName="NodeTreeModel.java" startLine="72" startPosition="0" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="3443324735214106032" fileName="NodeTreeModel.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="3443324735214113176" fileName="NodeTreeModel.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Lcom/intellij/navigation/ItemPresentation;" />
-    <nodeInfo nodeId="3443324735214113839" fileName="NodeTreeModel.java" startLine="95" startPosition="75" endLine="98" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3443324735214113862" fileName="NodeTreeModel.java" startLine="102" startPosition="44" endLine="105" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3443324735214113874" fileName="NodeTreeModel.java" startLine="106" startPosition="45" endLine="109" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3443324735214113888" fileName="NodeTreeModel.java" startLine="110" startPosition="70" endLine="113" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3443324735214106050" fileName="NodeTreeModel.java" startLine="121" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canNavigate#()Z" />
-    <nodeInfo nodeId="3443324735214106056" fileName="NodeTreeModel.java" startLine="125" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canNavigateToSource#()Z" />
-    <nodeInfo nodeId="3443324735214114415" fileName="NodeTreeModel.java" startLine="131" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeTreeElementPresentation#(Ljetbrains/mps/smodel/SNodePointer;)V" />
-    <nodeInfo nodeId="890761188649865745" fileName="NodeTreeModel.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGroupers#()[Lcom/intellij/ide/util/treeView/smartTree/Grouper;" />
-    <nodeInfo nodeId="890761188649865751" fileName="NodeTreeModel.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSorters#()[Lcom/intellij/ide/util/treeView/smartTree/Sorter;" />
-    <nodeInfo nodeId="890761188649865757" fileName="NodeTreeModel.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFilters#()[Lcom/intellij/ide/util/treeView/smartTree/Filter;" />
-    <nodeInfo nodeId="890761188649876442" fileName="NodeTreeModel.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoot#()Lcom/intellij/ide/structureView/StructureViewTreeElement;" />
-    <nodeInfo nodeId="8178553721056070957" fileName="NodeTreeModel.java" startLine="66" startPosition="40" endLine="70" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3443324735214114480" fileName="NodeTreeModel.java" startLine="135" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGetLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3443324735214106064" fileName="NodeTreeModel.java" startLine="84" startPosition="47" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3443324735214106038" fileName="NodeTreeModel.java" startLine="84" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Lcom/intellij/navigation/ItemPresentation;" />
-    <nodeInfo nodeId="890761188649876405" fileName="NodeTreeModel.java" startLine="66" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()[Lcom/intellij/ide/util/treeView/smartTree/TreeElement;" />
-    <nodeInfo nodeId="3443324735214113852" fileName="NodeTreeModel.java" startLine="100" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3443324735214113845" fileName="NodeTreeModel.java" startLine="98" startPosition="11" endLine="116" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3443324735214113817" fileName="NodeTreeModel.java" startLine="94" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/actionSystem/DataContext;)V" />
-    <nodeInfo nodeId="3443324735214113800" fileName="NodeTreeModel.java" startLine="92" startPosition="37" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3443324735214106044" fileName="NodeTreeModel.java" startLine="92" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigate#(Z)V" />
-    <scopeInfo nodeId="890761188649854313" fileName="NodeTreeModel.java" startLine="32" startPosition="26" endLine="32" endPosition="26" />
-    <scopeInfo nodeId="890761188649876466" fileName="NodeTreeModel.java" startLine="35" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="890761188649876471" fileName="NodeTreeModel.java" startLine="37" startPosition="0" endLine="38" endPosition="0">
+  <root nodeRef="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)/890761188649854308">
+    <nodeInfo nodeId="8178553721056070910" fileName="NodeTreeModel.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FAKE_ROOT" />
+    <nodeInfo nodeId="890761188649876466" fileName="NodeTreeModel.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootNodes#()[Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="890761188649876471" fileName="NodeTreeModel.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)[Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="890761188649869998" fileName="NodeTreeModel.java" startLine="41" startPosition="34" endLine="42" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="890761188649870000" fileName="NodeTreeModel.java" startLine="46" startPosition="32" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="890761188649870004" fileName="NodeTreeModel.java" startLine="51" startPosition="32" endLine="52" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="890761188649876476" fileName="NodeTreeModel.java" startLine="56" startPosition="45" endLine="57" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3443324735214105982" fileName="NodeTreeModel.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="3443324735214105986" fileName="NodeTreeModel.java" startLine="63" startPosition="49" endLine="64" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="890761188649900164" fileName="NodeTreeModel.java" startLine="71" startPosition="8" endLine="72" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="890761188649900197" fileName="NodeTreeModel.java" startLine="72" startPosition="72" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8178553721056071094" fileName="NodeTreeModel.java" startLine="74" startPosition="49" endLine="75" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="890761188649900202" fileName="NodeTreeModel.java" startLine="76" startPosition="7" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="890761188649900199" fileName="NodeTreeModel.java" startLine="77" startPosition="0" endLine="78" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3443324735214106036" fileName="NodeTreeModel.java" startLine="81" startPosition="30" endLine="82" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3443324735214114496" fileName="NodeTreeModel.java" startLine="87" startPosition="43" endLine="88" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3443324735214113832" fileName="NodeTreeModel.java" startLine="95" startPosition="50" endLine="96" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3443324735214113844" fileName="NodeTreeModel.java" startLine="97" startPosition="26" endLine="98" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3443324735214113856" fileName="NodeTreeModel.java" startLine="102" startPosition="31" endLine="103" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3443324735214113867" fileName="NodeTreeModel.java" startLine="104" startPosition="33" endLine="105" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3443324735214113868" fileName="NodeTreeModel.java" startLine="106" startPosition="15" endLine="107" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3443324735214113879" fileName="NodeTreeModel.java" startLine="108" startPosition="34" endLine="109" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3443324735214113880" fileName="NodeTreeModel.java" startLine="110" startPosition="15" endLine="111" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3443324735214113893" fileName="NodeTreeModel.java" startLine="112" startPosition="35" endLine="113" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3443324735214113894" fileName="NodeTreeModel.java" startLine="114" startPosition="15" endLine="115" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3443324735214106054" fileName="NodeTreeModel.java" startLine="122" startPosition="34" endLine="123" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3443324735214106060" fileName="NodeTreeModel.java" startLine="126" startPosition="42" endLine="127" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3443324735214114423" fileName="NodeTreeModel.java" startLine="132" startPosition="61" endLine="133" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3443324735214114488" fileName="NodeTreeModel.java" startLine="137" startPosition="41" endLine="138" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="890761188649854310" fileName="NodeTreeModel.java" startLine="33" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeTreeModel#()V" />
+    <nodeInfo nodeId="890761188649874966" fileName="NodeTreeModel.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeTreeElement#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+    <nodeInfo nodeId="8178553721056071031" fileName="NodeTreeModel.java" startLine="73" startPosition="0" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="3443324735214106032" fileName="NodeTreeModel.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/Object;" />
+    <nodeInfo nodeId="3443324735214113176" fileName="NodeTreeModel.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Lcom/intellij/navigation/ItemPresentation;" />
+    <nodeInfo nodeId="3443324735214113839" fileName="NodeTreeModel.java" startLine="96" startPosition="75" endLine="99" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3443324735214113862" fileName="NodeTreeModel.java" startLine="103" startPosition="61" endLine="106" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3443324735214113874" fileName="NodeTreeModel.java" startLine="107" startPosition="45" endLine="110" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3443324735214113888" fileName="NodeTreeModel.java" startLine="111" startPosition="70" endLine="114" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3443324735214106050" fileName="NodeTreeModel.java" startLine="122" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canNavigate#()Z" />
+    <nodeInfo nodeId="3443324735214106056" fileName="NodeTreeModel.java" startLine="126" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canNavigateToSource#()Z" />
+    <nodeInfo nodeId="3443324735214114415" fileName="NodeTreeModel.java" startLine="132" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeTreeElementPresentation#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+    <nodeInfo nodeId="890761188649865745" fileName="NodeTreeModel.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGroupers#()[Lcom/intellij/ide/util/treeView/smartTree/Grouper;" />
+    <nodeInfo nodeId="890761188649865751" fileName="NodeTreeModel.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSorters#()[Lcom/intellij/ide/util/treeView/smartTree/Sorter;" />
+    <nodeInfo nodeId="890761188649865757" fileName="NodeTreeModel.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFilters#()[Lcom/intellij/ide/util/treeView/smartTree/Filter;" />
+    <nodeInfo nodeId="890761188649876442" fileName="NodeTreeModel.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoot#()Lcom/intellij/ide/structureView/StructureViewTreeElement;" />
+    <nodeInfo nodeId="8178553721056070957" fileName="NodeTreeModel.java" startLine="67" startPosition="40" endLine="71" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3443324735214114480" fileName="NodeTreeModel.java" startLine="136" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGetLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3443324735214106064" fileName="NodeTreeModel.java" startLine="85" startPosition="47" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3443324735214106038" fileName="NodeTreeModel.java" startLine="85" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Lcom/intellij/navigation/ItemPresentation;" />
+    <nodeInfo nodeId="890761188649876405" fileName="NodeTreeModel.java" startLine="67" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()[Lcom/intellij/ide/util/treeView/smartTree/TreeElement;" />
+    <nodeInfo nodeId="3443324735214113852" fileName="NodeTreeModel.java" startLine="101" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3443324735214113845" fileName="NodeTreeModel.java" startLine="99" startPosition="11" endLine="117" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3443324735214113817" fileName="NodeTreeModel.java" startLine="95" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/actionSystem/DataContext;)V" />
+    <nodeInfo nodeId="3443324735214113800" fileName="NodeTreeModel.java" startLine="93" startPosition="37" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3443324735214106044" fileName="NodeTreeModel.java" startLine="93" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigate#(Z)V" />
+    <scopeInfo nodeId="890761188649854313" fileName="NodeTreeModel.java" startLine="33" startPosition="26" endLine="33" endPosition="26" />
+    <scopeInfo nodeId="890761188649876466" fileName="NodeTreeModel.java" startLine="36" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="890761188649876471" fileName="NodeTreeModel.java" startLine="38" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="890761188649876487" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="890761188649865750" fileName="NodeTreeModel.java" startLine="40" startPosition="34" endLine="41" endPosition="31" />
-    <scopeInfo nodeId="890761188649865756" fileName="NodeTreeModel.java" startLine="45" startPosition="32" endLine="46" endPosition="30" />
-    <scopeInfo nodeId="890761188649865762" fileName="NodeTreeModel.java" startLine="50" startPosition="32" endLine="51" endPosition="30" />
-    <scopeInfo nodeId="890761188649876446" fileName="NodeTreeModel.java" startLine="55" startPosition="45" endLine="56" endPosition="70" />
-    <scopeInfo nodeId="890761188649874969" fileName="NodeTreeModel.java" startLine="62" startPosition="47" endLine="63" endPosition="25" />
-    <scopeInfo nodeId="8178553721056071032" fileName="NodeTreeModel.java" startLine="73" startPosition="49" endLine="74" endPosition="77" />
-    <scopeInfo nodeId="3443324735214106035" fileName="NodeTreeModel.java" startLine="80" startPosition="30" endLine="81" endPosition="20" />
-    <scopeInfo nodeId="3443324735214113179" fileName="NodeTreeModel.java" startLine="86" startPosition="43" endLine="87" endPosition="71" />
-    <scopeInfo nodeId="3443324735214113843" fileName="NodeTreeModel.java" startLine="96" startPosition="26" endLine="97" endPosition="19" />
-    <scopeInfo nodeId="3443324735214113866" fileName="NodeTreeModel.java" startLine="103" startPosition="33" endLine="104" endPosition="23" />
-    <scopeInfo nodeId="3443324735214113878" fileName="NodeTreeModel.java" startLine="107" startPosition="34" endLine="108" endPosition="23" />
-    <scopeInfo nodeId="3443324735214113892" fileName="NodeTreeModel.java" startLine="111" startPosition="35" endLine="112" endPosition="23" />
-    <scopeInfo nodeId="3443324735214106053" fileName="NodeTreeModel.java" startLine="121" startPosition="34" endLine="122" endPosition="18" />
-    <scopeInfo nodeId="3443324735214106059" fileName="NodeTreeModel.java" startLine="125" startPosition="42" endLine="126" endPosition="18" />
-    <scopeInfo nodeId="3443324735214114418" fileName="NodeTreeModel.java" startLine="131" startPosition="59" endLine="132" endPosition="28" />
-    <scopeInfo nodeId="3443324735214114483" fileName="NodeTreeModel.java" startLine="136" startPosition="41" endLine="137" endPosition="18" />
-    <scopeInfo nodeId="890761188649854310" fileName="NodeTreeModel.java" startLine="32" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="890761188649874966" fileName="NodeTreeModel.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="890761188649865750" fileName="NodeTreeModel.java" startLine="41" startPosition="34" endLine="42" endPosition="31" />
+    <scopeInfo nodeId="890761188649865756" fileName="NodeTreeModel.java" startLine="46" startPosition="32" endLine="47" endPosition="30" />
+    <scopeInfo nodeId="890761188649865762" fileName="NodeTreeModel.java" startLine="51" startPosition="32" endLine="52" endPosition="30" />
+    <scopeInfo nodeId="890761188649876446" fileName="NodeTreeModel.java" startLine="56" startPosition="45" endLine="57" endPosition="70" />
+    <scopeInfo nodeId="890761188649874969" fileName="NodeTreeModel.java" startLine="63" startPosition="49" endLine="64" endPosition="25" />
+    <scopeInfo nodeId="8178553721056071032" fileName="NodeTreeModel.java" startLine="74" startPosition="49" endLine="75" endPosition="77" />
+    <scopeInfo nodeId="3443324735214106035" fileName="NodeTreeModel.java" startLine="81" startPosition="30" endLine="82" endPosition="20" />
+    <scopeInfo nodeId="3443324735214113179" fileName="NodeTreeModel.java" startLine="87" startPosition="43" endLine="88" endPosition="71" />
+    <scopeInfo nodeId="3443324735214113843" fileName="NodeTreeModel.java" startLine="97" startPosition="26" endLine="98" endPosition="19" />
+    <scopeInfo nodeId="3443324735214113866" fileName="NodeTreeModel.java" startLine="104" startPosition="33" endLine="105" endPosition="23" />
+    <scopeInfo nodeId="3443324735214113878" fileName="NodeTreeModel.java" startLine="108" startPosition="34" endLine="109" endPosition="23" />
+    <scopeInfo nodeId="3443324735214113892" fileName="NodeTreeModel.java" startLine="112" startPosition="35" endLine="113" endPosition="23" />
+    <scopeInfo nodeId="3443324735214106053" fileName="NodeTreeModel.java" startLine="122" startPosition="34" endLine="123" endPosition="18" />
+    <scopeInfo nodeId="3443324735214106059" fileName="NodeTreeModel.java" startLine="126" startPosition="42" endLine="127" endPosition="18" />
+    <scopeInfo nodeId="3443324735214114418" fileName="NodeTreeModel.java" startLine="132" startPosition="61" endLine="133" endPosition="45" />
+    <scopeInfo nodeId="3443324735214114483" fileName="NodeTreeModel.java" startLine="137" startPosition="41" endLine="138" endPosition="18" />
+    <scopeInfo nodeId="890761188649854310" fileName="NodeTreeModel.java" startLine="33" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="890761188649874966" fileName="NodeTreeModel.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="890761188649875487" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8178553721056071031" fileName="NodeTreeModel.java" startLine="72" startPosition="0" endLine="75" endPosition="7">
+    <scopeInfo nodeId="8178553721056071031" fileName="NodeTreeModel.java" startLine="73" startPosition="0" endLine="76" endPosition="7">
       <varInfo nodeId="8178553721056071034" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="3443324735214106032" fileName="NodeTreeModel.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="3443324735214113176" fileName="NodeTreeModel.java" startLine="86" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="3443324735214106050" fileName="NodeTreeModel.java" startLine="121" startPosition="0" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="3443324735214106056" fileName="NodeTreeModel.java" startLine="125" startPosition="0" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="3443324735214114415" fileName="NodeTreeModel.java" startLine="131" startPosition="0" endLine="134" endPosition="0">
+    <scopeInfo nodeId="3443324735214106032" fileName="NodeTreeModel.java" startLine="81" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="3443324735214113176" fileName="NodeTreeModel.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="3443324735214106050" fileName="NodeTreeModel.java" startLine="122" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="3443324735214106056" fileName="NodeTreeModel.java" startLine="126" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="3443324735214114415" fileName="NodeTreeModel.java" startLine="132" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="3443324735214114453" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="890761188649865745" fileName="NodeTreeModel.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="890761188649865751" fileName="NodeTreeModel.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="890761188649865757" fileName="NodeTreeModel.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="890761188649876442" fileName="NodeTreeModel.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="3443324735214114480" fileName="NodeTreeModel.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="3443324735214106041" fileName="NodeTreeModel.java" startLine="84" startPosition="47" endLine="89" endPosition="9" />
-    <scopeInfo nodeId="3443324735214106038" fileName="NodeTreeModel.java" startLine="84" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="890761188649876409" fileName="NodeTreeModel.java" startLine="66" startPosition="40" endLine="77" endPosition="30">
+    <scopeInfo nodeId="890761188649865745" fileName="NodeTreeModel.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="890761188649865751" fileName="NodeTreeModel.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="890761188649865757" fileName="NodeTreeModel.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="890761188649876442" fileName="NodeTreeModel.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="3443324735214114480" fileName="NodeTreeModel.java" startLine="136" startPosition="0" endLine="140" endPosition="0" />
+    <scopeInfo nodeId="3443324735214106041" fileName="NodeTreeModel.java" startLine="85" startPosition="47" endLine="90" endPosition="9" />
+    <scopeInfo nodeId="3443324735214106038" fileName="NodeTreeModel.java" startLine="85" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="890761188649876409" fileName="NodeTreeModel.java" startLine="67" startPosition="40" endLine="78" endPosition="30">
       <varInfo nodeId="8178553721056070958" varName="children" />
       <varInfo nodeId="890761188649900165" varName="childrenElements" />
     </scopeInfo>
-    <scopeInfo nodeId="890761188649876405" fileName="NodeTreeModel.java" startLine="66" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="3443324735214113855" fileName="NodeTreeModel.java" startLine="101" startPosition="31" endLine="114" endPosition="131">
+    <scopeInfo nodeId="890761188649876405" fileName="NodeTreeModel.java" startLine="67" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="3443324735214113855" fileName="NodeTreeModel.java" startLine="102" startPosition="31" endLine="115" endPosition="131">
       <varInfo nodeId="3443324735214113869" varName="model" />
       <varInfo nodeId="3443324735214113881" varName="module" />
       <varInfo nodeId="3443324735214113857" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3443324735214113852" fileName="NodeTreeModel.java" startLine="100" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="3443324735214113822" fileName="NodeTreeModel.java" startLine="94" startPosition="50" endLine="116" endPosition="13">
+    <scopeInfo nodeId="3443324735214113852" fileName="NodeTreeModel.java" startLine="101" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="3443324735214113822" fileName="NodeTreeModel.java" startLine="95" startPosition="50" endLine="117" endPosition="13">
       <varInfo nodeId="3443324735214113833" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="3443324735214113817" fileName="NodeTreeModel.java" startLine="94" startPosition="0" endLine="118" endPosition="0">
+    <scopeInfo nodeId="3443324735214113817" fileName="NodeTreeModel.java" startLine="95" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="3443324735214113820" varName="dataContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3443324735214106049" fileName="NodeTreeModel.java" startLine="92" startPosition="37" endLine="118" endPosition="9" />
-    <scopeInfo nodeId="3443324735214106044" fileName="NodeTreeModel.java" startLine="92" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="3443324735214106049" fileName="NodeTreeModel.java" startLine="93" startPosition="37" endLine="119" endPosition="9" />
+    <scopeInfo nodeId="3443324735214106044" fileName="NodeTreeModel.java" startLine="93" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="3443324735214106047" varName="b" />
     </scopeInfo>
-    <unitInfo nodeId="3443324735214113174" fileName="NodeTreeModel.java" startLine="85" startPosition="54" endLine="89" endPosition="7" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$1" />
-    <unitInfo nodeId="3443324735214114413" fileName="NodeTreeModel.java" startLine="130" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$NodeTreeElementPresentation" />
-    <unitInfo nodeId="3443324735214113851" fileName="NodeTreeModel.java" startLine="99" startPosition="51" endLine="116" endPosition="11" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$3" />
-    <unitInfo nodeId="3443324735214113815" fileName="NodeTreeModel.java" startLine="93" startPosition="73" endLine="118" endPosition="7" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$2" />
-    <unitInfo nodeId="890761188649874964" fileName="NodeTreeModel.java" startLine="59" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$NodeTreeElement" />
-    <unitInfo nodeId="890761188649854308" fileName="NodeTreeModel.java" startLine="29" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel" />
+    <unitInfo nodeId="3443324735214113174" fileName="NodeTreeModel.java" startLine="86" startPosition="54" endLine="90" endPosition="7" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$1" />
+    <unitInfo nodeId="3443324735214114413" fileName="NodeTreeModel.java" startLine="131" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$NodeTreeElementPresentation" />
+    <unitInfo nodeId="3443324735214113851" fileName="NodeTreeModel.java" startLine="100" startPosition="51" endLine="117" endPosition="11" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$3" />
+    <unitInfo nodeId="3443324735214113815" fileName="NodeTreeModel.java" startLine="94" startPosition="73" endLine="119" endPosition="7" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$2" />
+    <unitInfo nodeId="890761188649874964" fileName="NodeTreeModel.java" startLine="60" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel$NodeTreeElement" />
+    <unitInfo nodeId="890761188649854308" fileName="NodeTreeModel.java" startLine="30" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel" />
   </root>
 </debugInfo>
 

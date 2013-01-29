@@ -20,7 +20,7 @@
   <unitInfo fileName="UnrestrictedFunctionType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedFunctionType_BehaviorDescriptor" />
   <unitInfo fileName="YieldAllStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.YieldAllStatement_BehaviorDescriptor" />
   <unitInfo fileName="YieldStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.YieldStatement_BehaviorDescriptor" />
-  <root nodeId="1196771128252883567" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1196771128252883567">
     <nodeInfo nodeId="1196771128252884578" fileName="InvokeExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196771128252883567" fileName="InvokeExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1196771128252883567" fileName="InvokeExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -34,7 +34,7 @@
     </scopeInfo>
     <unitInfo nodeId="1196771128252883567" fileName="InvokeExpression_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeExpression_Behavior" />
   </root>
-  <root nodeId="1213877338503" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1213877338503">
     <nodeInfo nodeId="1213877338506" fileName="ClosureLiteral_Behavior.java" startLine="28" startPosition="78" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877338511" fileName="ClosureLiteral_Behavior.java" startLine="29" startPosition="46" endLine="30" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877338517" fileName="ClosureLiteral_Behavior.java" startLine="31" startPosition="78" endLine="32" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -230,7 +230,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877338503" fileName="ClosureLiteral_Behavior.java" startLine="24" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_Behavior" />
   </root>
-  <root nodeId="1213877398363" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1213877398363">
     <nodeInfo nodeId="1213877398366" fileName="UnboundClosureParameterDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877398363" fileName="UnboundClosureParameterDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1213877398365" fileName="UnboundClosureParameterDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="104" />
@@ -239,7 +239,7 @@
     </scopeInfo>
     <unitInfo nodeId="1213877398363" fileName="UnboundClosureParameterDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.UnboundClosureParameterDeclaration_Behavior" />
   </root>
-  <root nodeId="1213877404868" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1213877404868">
     <nodeInfo nodeId="1213877404871" fileName="FunctionType_Behavior.java" startLine="32" startPosition="78" endLine="33" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877404876" fileName="FunctionType_Behavior.java" startLine="33" startPosition="44" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877404882" fileName="FunctionType_Behavior.java" startLine="35" startPosition="82" endLine="36" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -761,7 +761,7 @@
     <unitInfo nodeId="7854901761081666391" fileName="FunctionType_Behavior.java" startLine="191" startPosition="132" endLine="199" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior$3" />
     <unitInfo nodeId="1213877404868" fileName="FunctionType_Behavior.java" startLine="28" startPosition="0" endLine="368" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
   </root>
-  <root nodeId="1225799468871" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1225799468871">
     <nodeInfo nodeId="1225799494507" fileName="InvokeFunctionExpression_Behavior.java" startLine="11" startPosition="76" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225799468871" fileName="InvokeFunctionExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1225799468871" fileName="InvokeFunctionExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isDeprecated_1224609060727#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -775,7 +775,7 @@
     </scopeInfo>
     <unitInfo nodeId="1225799468871" fileName="InvokeFunctionExpression_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionExpression_Behavior" />
   </root>
-  <root nodeId="1229600742436" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1229600742436">
     <nodeInfo nodeId="1229600786292" fileName="ControlAbstractionContainer_Behavior.java" startLine="15" startPosition="78" endLine="16" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1229600788713" fileName="ControlAbstractionContainer_Behavior.java" startLine="16" startPosition="215" endLine="17" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1229600940405" fileName="ControlAbstractionContainer_Behavior.java" startLine="17" startPosition="136" endLine="18" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -799,7 +799,7 @@
     </scopeInfo>
     <unitInfo nodeId="1229600742436" fileName="ControlAbstractionContainer_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionContainer_Behavior" />
   </root>
-  <root nodeId="1229629866761" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1229629866761">
     <nodeInfo nodeId="1229629866761" fileName="ClosureControlStatement_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1229629866763" fileName="ClosureControlStatement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1229629866761" fileName="ClosureControlStatement_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
@@ -807,7 +807,7 @@
     </scopeInfo>
     <unitInfo nodeId="1229629866761" fileName="ClosureControlStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ClosureControlStatement_Behavior" />
   </root>
-  <root nodeId="1229630689134" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1229630689134">
     <nodeInfo nodeId="1229704225596" fileName="ControlMethodUtil.java" startLine="18" startPosition="52" endLine="19" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229704266234" fileName="ControlMethodUtil.java" startLine="23" startPosition="140" endLine="24" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7376433222636454153" fileName="ControlMethodUtil.java" startLine="24" startPosition="78" endLine="25" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -972,7 +972,7 @@
     <unitInfo nodeId="1229639120687" fileName="ControlMethodUtil.java" startLine="87" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlMethodUtil$Info" />
     <unitInfo nodeId="1229630689134" fileName="ControlMethodUtil.java" startLine="14" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlMethodUtil" />
   </root>
-  <root nodeId="1229716601301" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1229716601301">
     <nodeInfo nodeId="1229716696582" fileName="UnrestrictedFunctionType_Behavior.java" startLine="17" startPosition="78" endLine="18" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1229716696588" fileName="UnrestrictedFunctionType_Behavior.java" startLine="18" startPosition="44" endLine="19" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1229716696594" fileName="UnrestrictedFunctionType_Behavior.java" startLine="20" startPosition="82" endLine="21" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1062,7 +1062,7 @@
     </scopeInfo>
     <unitInfo nodeId="1229716601301" fileName="UnrestrictedFunctionType_Behavior.java" startLine="13" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedFunctionType_Behavior" />
   </root>
-  <root nodeId="1229718424142" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1229718424142">
     <nodeInfo nodeId="1232126761619" fileName="UnrestrictedClosureLiteral_Behavior.java" startLine="15" startPosition="170" endLine="16" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1232126761620" fileName="UnrestrictedClosureLiteral_Behavior.java" startLine="19" startPosition="138" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1232126761620" fileName="UnrestrictedClosureLiteral_Behavior.java" startLine="20" startPosition="30" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1145,7 +1145,7 @@
     </scopeInfo>
     <unitInfo nodeId="1229718424142" fileName="UnrestrictedClosureLiteral_Behavior.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedClosureLiteral_Behavior" />
   </root>
-  <root nodeId="1231426116476" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1231426116476">
     <nodeInfo nodeId="1231426287306" fileName="RuntimeUtils.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="RUNTIME_CLASSIFIERS" />
     <nodeInfo nodeId="3977399551044677418" fileName="RuntimeUtils.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STATIC_RUNTIME_CLASSIFIERS" />
     <nodeInfo nodeId="1231426192438" fileName="RuntimeUtils.java" startLine="29" startPosition="42" endLine="30" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1233,7 +1233,7 @@
     <unitInfo nodeId="3977399551044677866" fileName="RuntimeUtils.java" startLine="64" startPosition="62" endLine="71" endPosition="9" unitName="jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils$2" />
     <unitInfo nodeId="1231426116476" fileName="RuntimeUtils.java" startLine="22" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils" />
   </root>
-  <root nodeId="1237548240741" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1237548240741">
     <nodeInfo nodeId="1237548246261" fileName="YieldAllStatement_Behavior.java" startLine="11" startPosition="86" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237548240741" fileName="YieldAllStatement_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1237548240741" fileName="YieldAllStatement_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isGuardClauseStatement_1237547327995#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -1247,7 +1247,7 @@
     </scopeInfo>
     <unitInfo nodeId="1237548240741" fileName="YieldAllStatement_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.YieldAllStatement_Behavior" />
   </root>
-  <root nodeId="1237548257796" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1237548257796">
     <nodeInfo nodeId="1237548261819" fileName="YieldStatement_Behavior.java" startLine="11" startPosition="86" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237548257796" fileName="YieldStatement_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1237548257796" fileName="YieldStatement_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isGuardClauseStatement_1237547327995#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -1261,7 +1261,7 @@
     </scopeInfo>
     <unitInfo nodeId="1237548257796" fileName="YieldStatement_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.YieldStatement_Behavior" />
   </root>
-  <root nodeId="1251851371723365254" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1251851371723365254">
     <nodeInfo nodeId="1251851371723365254" fileName="ControlAbstractionDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1251851371723365256" fileName="ControlAbstractionDeclaration_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1251851371723365254" fileName="ControlAbstractionDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
@@ -1269,7 +1269,7 @@
     </scopeInfo>
     <unitInfo nodeId="1251851371723365254" fileName="ControlAbstractionDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionDeclaration_Behavior" />
   </root>
-  <root nodeId="1262430001741523513" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1262430001741523513">
     <nodeInfo nodeId="1262430001741523511" fileName="CompactInvokeFunctionExpression_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741523513" fileName="CompactInvokeFunctionExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741523513" fileName="CompactInvokeFunctionExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_legalAsStatement_1262430001741498032#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
@@ -1283,7 +1283,7 @@
     </scopeInfo>
     <unitInfo nodeId="1262430001741523513" fileName="CompactInvokeFunctionExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.CompactInvokeFunctionExpression_Behavior" />
   </root>
-  <root nodeId="2857237956452412448" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/2857237956452412448">
     <nodeInfo nodeId="2857237956452413113" fileName="FunctionMethodDeclaration_Behavior.java" startLine="22" startPosition="37" endLine="23" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2857237956452412610" fileName="FunctionMethodDeclaration_Behavior.java" startLine="25" startPosition="24" endLine="26" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3791592384025531867" fileName="FunctionMethodDeclaration_Behavior.java" startLine="29" startPosition="96" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1351,7 +1351,7 @@
     <unitInfo nodeId="2857237956452413111" fileName="FunctionMethodDeclaration_Behavior.java" startLine="21" startPosition="115" endLine="25" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior$1" />
     <unitInfo nodeId="2857237956452412448" fileName="FunctionMethodDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior" />
   </root>
-  <root nodeId="418758558327452978" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/418758558327452978">
     <nodeInfo nodeId="418758558327453309" fileName="InvokeFunctionOperation_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="418758558327453346" fileName="InvokeFunctionOperation_Behavior.java" startLine="18" startPosition="107" endLine="19" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="418758558327453354" fileName="InvokeFunctionOperation_Behavior.java" startLine="20" startPosition="5" endLine="21" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1371,7 +1371,7 @@
     </scopeInfo>
     <unitInfo nodeId="418758558327452978" fileName="InvokeFunctionOperation_Behavior.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionOperation_Behavior" />
   </root>
-  <root nodeId="5612111951671625667" modelId="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)">
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/5612111951671625667">
     <nodeInfo nodeId="5612111951671625672" fileName="AbstractFunctionType_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5612111951671625678" fileName="AbstractFunctionType_Behavior.java" startLine="14" startPosition="44" endLine="15" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5612111951671625684" fileName="AbstractFunctionType_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

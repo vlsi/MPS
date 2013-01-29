@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.typesystem.TypesystemDescriptor" />
-  <root nodeId="3472625699114285933" modelId="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)">
+  <root nodeRef="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)/3472625699114285933">
     <nodeInfo nodeId="6813690308469672910" fileName="typeof_LogStatement_InferenceRule.java" startLine="26" startPosition="7" endLine="27" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6813690308469672910" fileName="typeof_LogStatement_InferenceRule.java" startLine="27" startPosition="106" endLine="28" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6813690308469672910" fileName="typeof_LogStatement_InferenceRule.java" startLine="28" startPosition="213" endLine="29" endPosition="316" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

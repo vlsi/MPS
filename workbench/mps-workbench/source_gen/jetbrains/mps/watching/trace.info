@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3316697760692356691" modelId="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)">
+  <root nodeRef="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)/3316697760692356691">
     <nodeInfo nodeId="3316697760692356719" fileName="ModelFocusSynchronizer.java" startLine="38" startPosition="29" endLine="39" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3316697760692356734" fileName="ModelFocusSynchronizer.java" startLine="42" startPosition="55" endLine="43" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3316697760692356741" fileName="ModelFocusSynchronizer.java" startLine="43" startPosition="69" endLine="44" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -85,7 +85,7 @@
     <unitInfo nodeId="3316697760692356703" fileName="ModelFocusSynchronizer.java" startLine="32" startPosition="38" endLine="73" endPosition="5" unitName="jetbrains.mps.watching.ModelFocusSynchronizer$1" />
     <unitInfo nodeId="3316697760692356691" fileName="ModelFocusSynchronizer.java" startLine="30" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.watching.ModelFocusSynchronizer" />
   </root>
-  <root nodeId="4707157387247361035" modelId="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)">
+  <root nodeRef="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)/4707157387247361035">
     <nodeInfo nodeId="4707157387247361038" fileName="WatchedRoots.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLibraryManager" />
     <nodeInfo nodeId="4707157387247361041" fileName="WatchedRoots.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassLoaderManager" />
     <nodeInfo nodeId="4707157387247361044" fileName="WatchedRoots.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadHandler" />

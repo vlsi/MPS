@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 public class UpdateMPSModules_MigrationScript extends BaseMigrationScript {
   public UpdateMPSModules_MigrationScript(IOperationContext operationContext) {
@@ -30,7 +30,7 @@ public class UpdateMPSModules_MigrationScript extends BaseMigrationScript {
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            return it.getTargetNodeSilently() == null;
+            return jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(it) == null;
           }
         }).isNotEmpty();
       }

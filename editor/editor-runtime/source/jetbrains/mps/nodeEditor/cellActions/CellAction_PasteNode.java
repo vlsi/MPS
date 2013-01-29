@@ -33,11 +33,12 @@ import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.resolve.ResolverComponent;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.SwingUtilities;
@@ -93,7 +94,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     final PasteNodeData pasteNodeData = data;
 
     //this is used in case node is in repo to pass it into invokeLater
-    final SNodePointer selectedNodePointer = new SNodePointer(nodeSelected);
+    final SNodeReference selectedNodePointer = new jetbrains.mps.smodel.SNodePointer(nodeSelected);
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modeltoPaste, context.getOperationContext());
@@ -109,7 +110,7 @@ public class CellAction_PasteNode extends EditorCellAction {
             List<SNode> pasteNodes = pasteNodeData.getNodes();
 
             if (canPasteBefore(selectedCell, pasteNodes)) {
-              SNode selectedNode = inRepository ? selectedNodePointer.getNode() : nodeSelected;
+              SNode selectedNode = inRepository ? selectedNodePointer.resolve(MPSModuleRepository.getInstance()) : nodeSelected;
               if (jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode)) {
                 LOG.error("Selected node is disposed: node = " + selectedNode.toString()+" ; node pointer = ("+ selectedNodePointer.toString()+")");
                 return;
@@ -180,11 +181,11 @@ public class CellAction_PasteNode extends EditorCellAction {
     if (cell.isLastPositionInBigCell()) return cell;
 
     if (cell instanceof EditorCell_Label && cell.getRole() == null) {
-      EditorCell result = new ChildrenCollectionFinder(cell, true, false).find();
+      EditorCell result = (EditorCell) new ChildrenCollectionFinder(cell, true, false).find();
       if (result != null) {
         return result;
       }
-      result = new ChildrenCollectionFinder(cell, false, false).find();
+      result = (EditorCell) new ChildrenCollectionFinder(cell, false, false).find();
       if (result != null) {
         if (result instanceof EditorCell_Collection) {
           return result.getLastChild();

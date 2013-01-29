@@ -26,7 +26,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Condition;
 import org.jdom.Element;
 
@@ -109,8 +109,8 @@ public class DataNode implements IExternalizeable {
     return result;
   }
 
-  public List<SNodePointer> getIncludedResultNodes() {
-    List<SNodePointer> nodes = new ArrayList<SNodePointer>();
+  public List<SNodeReference> getIncludedResultNodes() {
+    List<SNodeReference> nodes = new ArrayList<SNodeReference>();
     if (myData instanceof NodeNodeData) {
       if (!myData.isInvalid() && !myData.isExcluded() && myData.isResultNode()) {
         nodes.add(((NodeNodeData) myData).getNodePointer());
@@ -122,16 +122,16 @@ public class DataNode implements IExternalizeable {
     return nodes;
   }
 
-  public List<SNodePointer> getAllResultNodes() {
+  public List<SNodeReference> getAllResultNodes() {
     List<DataNode> nodeNodes = getDescendantsWithCondition(new Condition<BaseNodeData>() {
       public boolean met(BaseNodeData nodeData) {
         return nodeData instanceof NodeNodeData && nodeData.isResultNode();
       }
     });
-    List<SNodePointer> result = new ArrayList<SNodePointer>();
+    List<SNodeReference> result = new ArrayList<SNodeReference>();
     for (DataNode node : nodeNodes) {
       SNode n = ((NodeNodeData) node.getData()).getNode();
-      if (n != null) result.add(new SNodePointer(n));
+      if (n != null) result.add(new jetbrains.mps.smodel.SNodePointer(n));
     }
     return result;
   }

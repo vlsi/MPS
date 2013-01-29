@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 
@@ -33,7 +33,7 @@ public interface TemplateModel {
 
   Collection<TemplateMappingConfiguration> getConfigurations();
 
-  TemplateDeclaration loadTemplate(SNodePointer template, Object... arguments);
+  TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments);
 
   TemplateModule getModule();
 }

@@ -35,7 +35,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.StaticReference;
@@ -392,7 +392,7 @@ public class RefactoringContext {
               if (delete) {
                 node.setReference(reference.getRole(), null);
               } else {
-                reference.setRole(newRole);
+                ((jetbrains.mps.smodel.SReference) reference).setRole(newRole);
               }
             }
           }
@@ -472,7 +472,7 @@ public class RefactoringContext {
       if (data.type == StructureModification.RenameNode.RenameType.CONCEPT) {
         continue;
       }
-      SNode oldNode = data.oldID.getNode();
+      SNode oldNode = ((SNodePointer) data.oldID).getNode();
       if (oldNode == null || oldNode.getParent() == null) {
         continue;
       }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2990235398086684968" modelId="r:04e320a0-32b8-420a-bb46-6bfe53d8f651(jetbrains.mps.lang.resources.scripts)">
+  <root nodeRef="r:04e320a0-32b8-420a-bb46-6bfe53d8f651(jetbrains.mps.lang.resources.scripts)/2990235398086684968">
     <nodeInfo nodeId="2990235398086684968" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="15" startPosition="83" endLine="16" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="18" startPosition="31" endLine="19" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="22" startPosition="41" endLine="23" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -48,7 +48,7 @@
     <unitInfo nodeId="2990235398086684972" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="17" startPosition="28" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.resources.scripts.ExtractIconsToPlugin_MigrationScript$1" />
     <unitInfo nodeId="2990235398086684968" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.resources.scripts.ExtractIconsToPlugin_MigrationScript" />
   </root>
-  <root nodeId="2990235398086687528" modelId="r:04e320a0-32b8-420a-bb46-6bfe53d8f651(jetbrains.mps.lang.resources.scripts)">
+  <root nodeRef="r:04e320a0-32b8-420a-bb46-6bfe53d8f651(jetbrains.mps.lang.resources.scripts)/2990235398086687528">
     <nodeInfo nodeId="2990235398086690118" fileName="ExtractIconsUtil.java" startLine="30" startPosition="57" endLine="31" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2990235398086690148" fileName="ExtractIconsUtil.java" startLine="32" startPosition="37" endLine="33" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2990235398086692144" fileName="ExtractIconsUtil.java" startLine="35" startPosition="9" endLine="36" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

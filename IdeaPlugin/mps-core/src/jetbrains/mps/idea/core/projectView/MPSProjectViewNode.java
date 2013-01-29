@@ -29,9 +29,11 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -45,7 +47,7 @@ import java.util.Collections;
 /**
  * evgeny, 11/9/11
  */
-public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements ValidateableNode {
+public class MPSProjectViewNode extends ProjectViewNode<SNodeReference> implements ValidateableNode {
   private Icon myIcon;
   private MPSNodeVirtualFile myVirtualFile;
 
@@ -58,18 +60,18 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
    * @param viewSettings the settings of the project view.
    */
   public MPSProjectViewNode(Project project, SNode node, ViewSettings viewSettings) {
-    super(project, new SNodePointer(node), viewSettings);
+    super(project, new jetbrains.mps.smodel.SNodePointer(node), viewSettings);
     myIcon = IconManager.getIconFor(node);
-    if (getValue().getNode() != null) {
+    if (getValue().resolve(MPSModuleRepository.getInstance()) != null) {
       // has valid virtual file
-      myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(getValue());
+      myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(((SNodePointer) getValue()));
     }
   }
 
   @Override
   public boolean contains(@NotNull VirtualFile file) {
     if (file instanceof MPSNodeVirtualFile) {
-      SNodePointer ptr = ((MPSNodeVirtualFile) file).getSNodePointer();
+      SNodeReference ptr = ((MPSNodeVirtualFile) file).getSNodePointer();
       return ptr.equals(getValue());
     }
     return false;
@@ -92,7 +94,7 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SNode node = getValue().getNode();
+        SNode node = getValue().resolve(MPSModuleRepository.getInstance());
         try {
           name[0] = node.getName();
         } catch (Exception ex) {
@@ -123,7 +125,7 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
   public void navigate(final boolean requestFocus) {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
-        SNode root = getValue().getNode();
+        SNode root = getValue().resolve(MPSModuleRepository.getInstance());
         if (root == null) return;
 
         ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
@@ -136,14 +138,14 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
   public boolean canNavigate() {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
-        return getValue().getNode() != null;
+        return getValue().resolve(MPSModuleRepository.getInstance()) != null;
       }
     });
   }
 
   @Override
   public boolean isValid() {
-    return getValue().getNode() != null;
+    return getValue().resolve(MPSModuleRepository.getInstance()) != null;
   }
 
   @Override
@@ -151,7 +153,7 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        return getValue().getNode().getName();
+        return getValue().resolve(MPSModuleRepository.getInstance()).getName();
       }
     });
   }

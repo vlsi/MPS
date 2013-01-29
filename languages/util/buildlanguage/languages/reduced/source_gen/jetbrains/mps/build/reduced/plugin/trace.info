@@ -4,7 +4,7 @@
   <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.FacetAspectDescriptor" />
   <unitInfo fileName="FacetManifest.java" startLine="25" startPosition="55" endLine="29" endPosition="5" unitName="jetbrains.mps.build.reduced.plugin.FacetManifest$1" />
   <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.FacetManifest" />
-  <root nodeId="10342590403667037" modelId="r:6e2bf134-8b14-4a22-a511-dbed551042c1(jetbrains.mps.build.reduced.plugin)">
+  <root nodeRef="r:6e2bf134-8b14-4a22-a511-dbed551042c1(jetbrains.mps.build.reduced.plugin)/10342590403667037">
     <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="37" startPosition="32" endLine="38" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -229,7 +229,7 @@
     <unitInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="65" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet$Target_collect" />
     <unitInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="33" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.build.reduced.plugin.CollectHashes_Facet" />
   </root>
-  <root nodeId="8795824097439267909" modelId="r:6e2bf134-8b14-4a22-a511-dbed551042c1(jetbrains.mps.build.reduced.plugin)">
+  <root nodeRef="r:6e2bf134-8b14-4a22-a511-dbed551042c1(jetbrains.mps.build.reduced.plugin)/8795824097439267909">
     <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
     <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="37" startPosition="30" endLine="38" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -18,8 +18,13 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.StaticReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class CloneUtil {
@@ -63,7 +68,8 @@ public class CloneUtil {
       TracingUtil.putInputNode(outputNode, inputNode);
     }
     for (SReference reference : inputNode.getReferences()) {
-      SModelReference targetModelReference = reference.isExternal() ? reference.getTargetSModelReference() : outputModel.getSModelReference();
+      boolean ext = inputNode.getModel() == null || !inputNode.getModel().getSModelReference().equals(reference.getTargetSModelReference());
+      SModelReference targetModelReference = ext ? reference.getTargetSModelReference() : outputModel.getSModelReference();
       if (reference instanceof StaticReference) {
         if (targetModelReference == null) {
           LOG.warning("broken reference '" + reference.getRole() + "' in " + SNodeUtil.getDebugText(inputNode), inputNode);
@@ -73,7 +79,7 @@ public class CloneUtil {
             outputNode,
             targetModelReference,
             ((StaticReference) reference).getTargetNodeId(),
-            reference.getResolveInfo());
+            ((StaticReference) reference).getResolveInfo());
           outputNode.setReference(outputReference.getRole(), outputReference);
         }
       } else if (reference instanceof DynamicReference) {
@@ -81,7 +87,7 @@ public class CloneUtil {
           reference.getRole(),
           outputNode,
           targetModelReference,
-          reference.getResolveInfo());
+          ((DynamicReference) reference).getResolveInfo());
         outputReference.setOrigin(((DynamicReference) reference).getOrigin());
         outputNode.setReference(outputReference.getRole(), outputReference);
       } else {

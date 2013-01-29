@@ -19,6 +19,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 class NodeWithContextNavigationHandler implements INavigationHandler<NodeWithContext> {
   public boolean canNavigate(NodeWithContext object) {
@@ -29,6 +30,6 @@ class NodeWithContextNavigationHandler implements INavigationHandler<NodeWithCon
   }
 
   public void navigate(NodeWithContext object, Project project, boolean focus, boolean select) {
-    NavigationSupport.getInstance().openNode(object.getContext(), object.getNode().getNode(), focus, select);
+    NavigationSupport.getInstance().openNode(object.getContext(), object.getNode().resolve(MPSModuleRepository.getInstance()), focus, select);
   }
 }

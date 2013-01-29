@@ -118,7 +118,7 @@ public class DiffEditorsGroup {
     }
   }
 
-  private static SNode check_s6qw4f_a0a0c0a1a5(EditorCell checkedDotOperand) {
+  private static SNode check_s6qw4f_a0a0c0a1a5(jetbrains.mps.openapi.editor.cells.EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNode();
     }

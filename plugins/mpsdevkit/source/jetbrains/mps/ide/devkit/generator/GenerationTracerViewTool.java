@@ -31,6 +31,7 @@ import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.tools.CloseAction;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.workbench.action.ActionUtils;
 
@@ -132,7 +133,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     for (GenerationTracerView tracerView : myTracerViews) {
       TracerNode tracerNode = tracerView.getRootTracerNode();
       if (tracerNode.getKind() == kind &&
-        tracerNode.getNodePointer().getNode() == node) {
+        tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance()) == node) {
         return index;
       }
       index++;

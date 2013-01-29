@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.ui.treeStructure.SimpleTree;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
 import java.awt.HeadlessException;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -34,6 +34,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
+import jetbrains.mps.smodel.SNodePointer;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.Dimension;
@@ -43,7 +44,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
   private IOperationContext myContext;
   private Set<SModelDescriptor> myVisibleModels;
   private SimpleTree myTree;
-  private SNodePointer mySelectedNode;
+  private SNodeReference mySelectedNode;
 
   public BaseChooseNodeDialog(Project project, IOperationContext context, SModelDescriptor contextModel, String title) throws HeadlessException {
     super(project, true);
@@ -87,7 +88,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
     return rootNode;
   }
 
-  public SNodePointer getResult() {
+  public SNodeReference getResult() {
     return mySelectedNode;
   }
 
@@ -130,7 +131,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
         Object selectedNode = event.getPath().getLastPathComponent();
         if (selectedNode instanceof ModelTreeNode) {
           ModelTreeNode treeNode = ((ModelTreeNode) selectedNode);
-          if (treeNode.getUserObject() instanceof SNodePointer) {
+          if (treeNode.getUserObject() instanceof SNodeReference) {
             mySelectedNode = ((SNodePointer) treeNode.getUserObject());
             getOKAction().setEnabled(true);
             return;

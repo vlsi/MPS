@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="5738701198683704599" modelId="r:54928e3f-958a-4bc2-abbc-5dd015b1b824(jetbrains.mps.build.sandbox.anttask)">
+  <root nodeRef="r:54928e3f-958a-4bc2-abbc-5dd015b1b824(jetbrains.mps.build.sandbox.anttask)/5738701198683704599">
     <unitInfo nodeId="5738701198683704599" fileName="genxmltest.xml" startLine="1" startPosition="0" endLine="69" endPosition="10" unitName="jetbrains.mps.build.sandbox.anttask.genxmltest" />
   </root>
 </debugInfo>

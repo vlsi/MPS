@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.search.ModelNodesSearchScope;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
@@ -67,7 +68,7 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_i503fz_a0a1a0a0a1a0b0a1a2;
           }
         };

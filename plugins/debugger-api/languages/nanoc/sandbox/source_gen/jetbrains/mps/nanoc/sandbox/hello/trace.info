@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="6585869519574685729" modelId="r:f755780e-e164-47f9-b12c-a8188bed3abe(jetbrains.mps.nanoc.sandbox.hello)">
+  <root nodeRef="r:f755780e-e164-47f9-b12c-a8188bed3abe(jetbrains.mps.nanoc.sandbox.hello)/6585869519574685729">
     <nodeInfo nodeId="5698737643333767057" fileName="Hello.c" startLine="2" startPosition="0" endLine="2" endPosition="10" conceptFqName="jetbrains.mps.nanoc.structure.VarDeclStatement" />
     <nodeInfo nodeId="1485470850545864044" fileName="Hello.c" startLine="4" startPosition="0" endLine="4" endPosition="10" conceptFqName="jetbrains.mps.nanoc.structure.CExpressionStatement" />
     <nodeInfo nodeId="3565731266278471126" fileName="Hello.c" startLine="5" startPosition="0" endLine="5" endPosition="10" conceptFqName="jetbrains.mps.nanoc.structure.CExpressionStatement" />

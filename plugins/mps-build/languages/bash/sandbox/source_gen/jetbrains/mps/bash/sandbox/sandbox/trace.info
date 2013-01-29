@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2362837471612273215" modelId="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)">
+  <root nodeRef="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)/2362837471612273215">
     <nodeInfo nodeId="2362837471612273215" fileName="hello_world.sh" startLine="1" startPosition="0" endLine="1" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="2362837471612273215" fileName="hello_world.sh" startLine="3" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="2362837471612273234" fileName="hello_world.sh" startLine="4" startPosition="0" endLine="4" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -27,7 +27,7 @@
     <nodeInfo nodeId="2362837471612273215" fileName="hello_world.sh" startLine="5" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <unitInfo nodeId="2362837471612273215" fileName="hello_world.sh" startLine="1" startPosition="0" endLine="6" endPosition="0" unitName="jetbrains.mps.bash.sandbox.sandbox.hello_world$sh" />
   </root>
-  <root nodeId="3835416431562293713" modelId="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)">
+  <root nodeRef="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)/3835416431562293713">
     <nodeInfo nodeId="3835416431562293713" fileName="example2.sh" startLine="1" startPosition="0" endLine="1" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431562293713" fileName="example2.sh" startLine="3" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431562293713" fileName="example2.sh" startLine="4" startPosition="0" endLine="4" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -428,7 +428,7 @@
     <nodeInfo nodeId="3835416431562293713" fileName="example2.sh" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <unitInfo nodeId="3835416431562293713" fileName="example2.sh" startLine="1" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.bash.sandbox.sandbox.example2$sh" />
   </root>
-  <root nodeId="3835416431562615951" modelId="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)">
+  <root nodeRef="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)/3835416431562615951">
     <nodeInfo nodeId="3835416431562615951" fileName="example3.sh" startLine="1" startPosition="0" endLine="1" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431562615951" fileName="example3.sh" startLine="3" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431562615965" fileName="example3.sh" startLine="4" startPosition="0" endLine="4" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -560,7 +560,7 @@
     <nodeInfo nodeId="3835416431562615951" fileName="example3.sh" startLine="4" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <unitInfo nodeId="3835416431562615951" fileName="example3.sh" startLine="1" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.bash.sandbox.sandbox.example3$sh" />
   </root>
-  <root nodeId="3835416431562846467" modelId="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)">
+  <root nodeRef="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)/3835416431562846467">
     <nodeInfo nodeId="3835416431562846467" fileName="test.sh" startLine="1" startPosition="0" endLine="1" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431562846467" fileName="test.sh" startLine="3" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431562846467" fileName="test.sh" startLine="1" startPosition="9" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
@@ -569,7 +569,7 @@
     <nodeInfo nodeId="3835416431562846467" fileName="test.sh" startLine="3" startPosition="0" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <unitInfo nodeId="3835416431562846467" fileName="test.sh" startLine="1" startPosition="0" endLine="4" endPosition="0" unitName="jetbrains.mps.bash.sandbox.sandbox.test$sh" />
   </root>
-  <root nodeId="3835416431564591990" modelId="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)">
+  <root nodeRef="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)/3835416431564591990">
     <nodeInfo nodeId="3835416431564591990" fileName="example4.sh" startLine="1" startPosition="0" endLine="1" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431564591990" fileName="example4.sh" startLine="3" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431564784051" fileName="example4.sh" startLine="4" startPosition="0" endLine="4" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -778,7 +778,7 @@
     <nodeInfo nodeId="3835416431564591990" fileName="example4.sh" startLine="6" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <unitInfo nodeId="3835416431564591990" fileName="example4.sh" startLine="1" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.bash.sandbox.sandbox.example4$sh" />
   </root>
-  <root nodeId="6382090206696966895" modelId="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)">
+  <root nodeRef="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)/6382090206696966895">
     <nodeInfo nodeId="6382090206696966895" fileName="mps_shellscript.sh" startLine="1" startPosition="0" endLine="1" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6382090206696966895" fileName="mps_shellscript.sh" startLine="3" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="9034131902193373347" fileName="mps_shellscript.sh" startLine="4" startPosition="0" endLine="4" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -1181,7 +1181,7 @@
     <nodeInfo nodeId="6382090206696966895" fileName="mps_shellscript.sh" startLine="7" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <unitInfo nodeId="6382090206696966895" fileName="mps_shellscript.sh" startLine="1" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.bash.sandbox.sandbox.mps_shellscript$sh" />
   </root>
-  <root nodeId="9034131902186148363" modelId="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)">
+  <root nodeRef="r:7900f4da-af76-4836-876d-85dad66193f8(jetbrains.mps.bash.sandbox.sandbox)/9034131902186148363">
     <nodeInfo nodeId="9034131902186148363" fileName="example1.sh" startLine="1" startPosition="0" endLine="1" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="9034131902186148363" fileName="example1.sh" startLine="3" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="2362837471611380666" fileName="example1.sh" startLine="4" startPosition="0" endLine="4" endPosition="6" conceptFqName="jetbrains.mps.gtext.structure.GText" />

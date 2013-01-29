@@ -12,6 +12,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -58,7 +60,9 @@ public class AppendUIObjectStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mtcoyd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_mtcoyd_a");
-    UI_StyleSheet.getUIObjectBox(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    UI_StyleSheet.applyUIObjectBox(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_mtcoyd_a0(editorContext, node));
     return editorCell;
   }
@@ -66,7 +70,9 @@ public class AppendUIObjectStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mtcoyd_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_mtcoyd_a0");
-    UI_StyleSheet.getUIObjectMargins(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    UI_StyleSheet.applyUIObjectMargins(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_mtcoyd_a0a(editorContext, node));
     return editorCell;
   }
@@ -107,7 +113,9 @@ public class AppendUIObjectStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new AppendUIObjectStatement_Editor._Inline_mtcoyd_a1a0a());
     editorCell = provider.createEditorCell(editorContext);
-    UI_StyleSheet.getUIObject(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    UI_StyleSheet.applyUIObject(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

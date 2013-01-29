@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class MatrixInitializerIndexReference_Constraints extends BaseConstraintsDescriptor {
@@ -77,7 +78,7 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_5upoaw_a0a1a0a0a1a0b0a1a1;
           }
         };

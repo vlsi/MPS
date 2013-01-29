@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -24,11 +24,18 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class SModelOperations {
   private static final Logger LOG = Logger.getLogger(SModelOperations.class);
@@ -75,19 +82,20 @@ public class SModelOperations {
       }
 
       for (SReference reference : node.getReferences()) {
-        if (reference.isExternal()) {
-          SModelReference targetModelReference = reference.getTargetSModelReference();
-          if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
-            if (respectModulesScopes && module != null) {
-              SModelDescriptor targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
-              IModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
-              if (targetModule != null && !declaredDependencies.contains(targetModule)) {
-                module.addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
-              }
+        boolean internal = model.getSModelReference().equals(reference.getTargetSModelReference());
+        if (internal) continue;
+
+        SModelReference targetModelReference = reference.getTargetSModelReference();
+        if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
+          if (respectModulesScopes && module != null) {
+            SModelDescriptor targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
+            IModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
+            if (targetModule != null && !declaredDependencies.contains(targetModule)) {
+              module.addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
             }
-            model.addModelImport(targetModelReference, firstVersion);
-            importedModels.add(targetModelReference);
           }
+          model.addModelImport(targetModelReference, firstVersion);
+          importedModels.add(targetModelReference);
         }
       }
     }
@@ -170,7 +178,7 @@ public class SModelOperations {
       for (SModelDescriptor am : language.getAccessoryModels()) {
         if (am != sourceModel) {
           SModelDescriptor scopeModelDescriptor = scope.getModelDescriptor(am.getSModelReference());
-          if (scopeModelDescriptor != null){
+          if (scopeModelDescriptor != null) {
             result.add(scopeModelDescriptor);
           }
         }
@@ -245,13 +253,13 @@ public class SModelOperations {
   public static Set<SModelReference> getUsedImportedModels(SModel sModel) {
     Set<SModelReference> result = new HashSet<SModelReference>();
     for (SNode node : sModel.nodes()) {
-      Iterable<SReference> references = node.getReferences();
+      Iterable<? extends SReference> references = node.getReferences();
       for (SReference reference : references) {
-        if (!reference.isExternal()) continue;
-        SModelReference targetModelReference = reference.getTargetSModelReference();
-        if (targetModelReference == null || result.contains(targetModelReference)) continue;
+        SModelReference targetModel = reference.getTargetSModelReference();
+        if (sModel.getSModelReference().equals(targetModel)) continue;
+        if (targetModel == null || result.contains(targetModel)) continue;
 
-        result.add(targetModelReference);
+        result.add(targetModel);
       }
     }
     return result;

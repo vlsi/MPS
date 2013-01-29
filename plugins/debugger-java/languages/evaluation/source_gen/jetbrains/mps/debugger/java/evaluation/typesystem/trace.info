@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.typesystem.TypesystemDescriptor" />
-  <root nodeId="4454641827113760511" modelId="r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)">
+  <root nodeRef="r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)/4454641827113760511">
     <nodeInfo nodeId="4454641827113761131" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4454641827113761131" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="20" startPosition="58" endLine="21" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4454641827113761131" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="21" startPosition="215" endLine="22" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -41,7 +41,7 @@
     </scopeInfo>
     <unitInfo nodeId="4454641827113760511" fileName="typeof_LowLevelVariable_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_LowLevelVariable_InferenceRule" />
   </root>
-  <root nodeId="4544608336420700080" modelId="r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)">
+  <root nodeRef="r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)/4544608336420700080">
     <nodeInfo nodeId="4544608336420700083" fileName="DebuggedtypeIsHighLevelType_SubtypingRule.java" startLine="17" startPosition="122" endLine="18" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4544608336420700080" fileName="DebuggedtypeIsHighLevelType_SubtypingRule.java" startLine="21" startPosition="46" endLine="22" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4544608336420700080" fileName="DebuggedtypeIsHighLevelType_SubtypingRule.java" startLine="26" startPosition="5" endLine="27" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -74,7 +74,7 @@
     </scopeInfo>
     <unitInfo nodeId="4544608336420700080" fileName="DebuggedtypeIsHighLevelType_SubtypingRule.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.typesystem.DebuggedtypeIsHighLevelType_SubtypingRule" />
   </root>
-  <root nodeId="4544608336420717491" modelId="r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)">
+  <root nodeRef="r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)/4544608336420717491">
     <nodeInfo nodeId="4544608336420717500" fileName="typeof_UnitNode_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4544608336420717500" fileName="typeof_UnitNode_InferenceRule.java" startLine="20" startPosition="50" endLine="21" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4544608336420717500" fileName="typeof_UnitNode_InferenceRule.java" startLine="21" startPosition="215" endLine="22" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -114,7 +114,7 @@
     </scopeInfo>
     <unitInfo nodeId="4544608336420717491" fileName="typeof_UnitNode_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_UnitNode_InferenceRule" />
   </root>
-  <root nodeId="6036237525966316003" modelId="r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)">
+  <root nodeRef="r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)/6036237525966316003">
     <nodeInfo nodeId="4544608336420724767" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4544608336420724767" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="21" startPosition="66" endLine="22" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4544608336420724767" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="22" startPosition="215" endLine="23" endPosition="587" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -154,7 +154,7 @@
     </scopeInfo>
     <unitInfo nodeId="6036237525966316003" fileName="typeof_EvaluatorsThisExpression_InferenceRule.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_EvaluatorsThisExpression_InferenceRule" />
   </root>
-  <root nodeId="7915630211773498575" modelId="r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)">
+  <root nodeRef="r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)/7915630211773498575">
     <nodeInfo nodeId="7915630211773500854" fileName="typeof_DownCastToLowLevel_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7915630211773498589" fileName="typeof_DownCastToLowLevel_InferenceRule.java" startLine="26" startPosition="11" endLine="27" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7915630211773498589" fileName="typeof_DownCastToLowLevel_InferenceRule.java" startLine="27" startPosition="159" endLine="28" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -214,7 +214,7 @@
     <unitInfo nodeId="7915630211773500854" fileName="typeof_DownCastToLowLevel_InferenceRule.java" startLine="24" startPosition="46" endLine="39" endPosition="7" unitName="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_DownCastToLowLevel_InferenceRule$1" />
     <unitInfo nodeId="7915630211773498575" fileName="typeof_DownCastToLowLevel_InferenceRule.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.typesystem.typeof_DownCastToLowLevel_InferenceRule" />
   </root>
-  <root nodeId="8054553590745290955" modelId="r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)">
+  <root nodeRef="r:1b2caefb-8c76-452e-a59a-bbd2c73d0b03(jetbrains.mps.debugger.java.evaluation.typesystem)/8054553590745290955">
     <nodeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="20" startPosition="67" endLine="21" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8054553590745291575" fileName="typeof_LowLevelVariableReference_InferenceRule.java" startLine="21" startPosition="215" endLine="22" endPosition="492" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -57,6 +57,7 @@
       <modulePath path="${project}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" folder="core" />
       <modulePath path="${project}/editor/actions-runtime/jetbrains.mps.actions.runtime.msd" folder="core.editor" />
       <modulePath path="${project}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="core.editor" />
+      <modulePath path="${project}/editor/editorlang-runtime/jetbrains.mps.editorlang.runtime.msd" folder="core.editor" />
       <modulePath path="${project}/editor/typesystemIntegration/typesystemIntegration.msd" folder="core.editor" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/jetbrains.mps.baseLanguage.mpl" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/sandbox/jetbrains.mps.baseLanguage.sandbox.msd" folder="baseLanguage" />
@@ -82,10 +83,8 @@
       <modulePath path="${project}/languages/baseLanguage/collections/runtime/collections.runtime.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/runtime/gwt/collections.runtime.gwt.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/collections/samples/jetbrains.mps.baseLanguage.collections.samples.msd" folder="baseLanguage.collections" />
-      <modulePath path="${project}/languages/baseLanguage/collections/solutions/collections/sandbox/collections_sandbox.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/collections/unittest/collections_unittest.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/collections_trove.test/collections_trove.test.msd" folder="baseLanguage.collections" />
-      <modulePath path="${project}/languages/baseLanguage/collections/solutions/internalCollections.sandbox/internalCollections.sandbox.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/internalCollections.test/internalCollections.test.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/constructors/jetbrains.mps.baseLanguage.constructors.mpl" folder="baseLanguage.constructors" />
       <modulePath path="${project}/languages/baseLanguage/constructors/solutions/jetbrains.mps.baseLanguage.constructors.sandbox/jetbrains.mps.baseLanguage.constructors.sandbox.msd" folder="baseLanguage.constructors" />
@@ -172,7 +171,6 @@
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.unittest/jetbrains.mps.lang.smodel.unittest.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/pluginSolution/jetbrains.mps.lang.smodel.pluginSolution.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/samples/jetbrains.mps.samples.smodelLanguage-samples.msd" folder="samples" />
-      <modulePath path="${project}/languages/languageDesign/smodel/solutions/sandbox/smodel.sandbox.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/typetest/smodelLanguage_typetest.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/structure/jetbrains.mps.lang.structure.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/structure/solutions/pluginSolution/jetbrains.mps.lang.structure.pluginSolution.msd" folder="core.language-design" />
@@ -189,7 +187,6 @@
       <modulePath path="${project}/languages/languageDesign/traceinfo/traceMacro.testlang/jetbrains.mps.traceInfo.tracemacro.testlang.mpl" folder="traceInfo" />
       <modulePath path="${project}/languages/languageDesign/typesystem/jetbrains.mps.lang.typesystem.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/languages/test/jetbrains.mps.bootstrap.helgins.test.mpl" folder="core.language-design" />
-      <modulePath path="${project}/languages/languageDesign/typesystem/solutions/jetbrains.mps.bootstrap.helgins.sandbox/jetbrains.mps.lang.typesystem.sandbox.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/solutions/pluginSolution/jetbrains.mps.lang.typesystem.pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/util/builders/jetbrains.mps.baseLanguage.builders.mpl" folder="baseLanguage.builders" />
       <modulePath path="${project}/languages/util/builders/sandbox/jetbrains.mps.baseLanguage.builders.sandbox.msd" folder="baseLanguage.builders" />

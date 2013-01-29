@@ -21,9 +21,10 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.ModelUtil;
 import org.jetbrains.annotations.NotNull;
@@ -31,11 +32,11 @@ import org.jetbrains.annotations.Nullable;
 
 //todo throw away when there's per-node persistence or include into MPSCore.xml when migrated to Idea ProjectView
 public class ProjectViewSelectInProvider implements ApplicationComponent {
-  public SelectInContext getContext(jetbrains.mps.project.Project p, final SNodePointer node) {
+  public SelectInContext getContext(jetbrains.mps.project.Project p, final SNodeReference node) {
     VirtualFile modelFile = ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
       public VirtualFile compute() {
         if (node == null) return null;
-        SNode n = node.getNode();
+        SNode n = node.resolve(MPSModuleRepository.getInstance());
         return n == null ? null : ModelUtil.getFileByModel(n.getModel());
       }
     });

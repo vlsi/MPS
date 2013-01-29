@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -29,7 +31,9 @@ public class ReturnBlockDocTag_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_eiwgw6_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@return");
     editorCell.setCellId("Constant_eiwgw6_a0");
-    DocumentationCommentStyleSheet_StyleSheet.getCommentTag(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    DocumentationCommentStyleSheet_StyleSheet.applyCommentTag(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -41,7 +45,9 @@ public class ReturnBlockDocTag_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_text");
-    DocumentationCommentStyleSheet_StyleSheet.getComment(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

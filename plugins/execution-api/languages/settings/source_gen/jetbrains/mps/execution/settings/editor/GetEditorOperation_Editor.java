@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet;
 
 public class GetEditorOperation_Editor extends DefaultNodeEditor {
@@ -18,7 +20,9 @@ public class GetEditorOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_3bslic_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    RunConfigurations_StyleSheet.getOperation(editorCell).apply(editorCell);
+    Style style = new StyleImpl();
+    RunConfigurations_StyleSheet.applyOperation(style, editorCell);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 }

@@ -11,15 +11,13 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import java.util.List;
-import java.io.File;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.ide.java.parser.JavaCompiler;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.java.util.StubResolver;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import java.io.File;
+import jetbrains.mps.ide.java.newparser.JavaParseException;
+import javax.swing.JOptionPane;
+import java.awt.Frame;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.logging.Logger;
@@ -59,6 +57,10 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
@@ -81,14 +83,17 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
         return;
       }
 
-      List<File> sourcePaths = ListSequence.fromList(new ArrayList<File>());
+      DirParser dirParser = new DirParser(((IModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
       for (String path : CollectionSequence.fromCollection(moduleDescr.getSourcePaths())) {
-        ListSequence.fromList(sourcePaths).addElement(new File(path));
+        dirParser.addDirectory(new File(path));
       }
-      JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), sourcePaths, false, ((MPSProject) MapSequence.fromMap(_params).get("project")).getProject());
-      javaCompiler.compile();
-      // re-resolve references to just imported models 
-      new StubResolver(javaCompiler.getAffectedModels()).resolveInProject(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      try {
+        dirParser.parseDirs();
+      } catch (JavaParseException e) {
+        // TODO think how to handle these 
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), e.getMessage(), "Error while importing java code", JOptionPane.ERROR_MESSAGE);
+        throw new RuntimeException(e);
+      }
 
       moduleDescr.getSourcePaths().clear();
 

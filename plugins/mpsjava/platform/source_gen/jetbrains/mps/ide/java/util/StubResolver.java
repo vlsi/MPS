@@ -12,7 +12,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.List;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;

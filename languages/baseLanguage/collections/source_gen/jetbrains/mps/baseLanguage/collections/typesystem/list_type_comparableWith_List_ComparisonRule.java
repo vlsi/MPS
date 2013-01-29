@@ -9,9 +9,10 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
@@ -65,7 +66,7 @@ public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_ovtchh_a0a0a0a0b0c0a0a0a0a0a0f;
+          SNodeReference pointer = SNODE_POINTER_ovtchh_a0a0a0a0b0c0a0a0a0a0a0f;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_list_type_comparableWith_List_ho857w_a0a.getReferenceTarget("classifier")))) {
             return false;
           }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="3813896760029572858" modelId="r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)">
+  <root nodeRef="r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)/3813896760029572858">
     <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="16" startPosition="69" endLine="17" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="17" startPosition="143" endLine="18" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3813896760029572858" fileName="TypeCheckingErros_Test.java" startLine="22" startPosition="69" endLine="23" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

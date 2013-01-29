@@ -15,14 +15,16 @@
  */
 package jetbrains.mps.nodeEditor.cellLayout;
 
+import jetbrains.mps.editor.runtime.style.DefaultBaseLine;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
-import jetbrains.mps.nodeEditor.style.DefaultBaseLine;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 import java.awt.Rectangle;
 import java.util.ArrayList;
@@ -34,18 +36,14 @@ import java.util.Stack;
 
 public class CellLayout_Indent extends AbstractCellLayout {
   static boolean isOnNewLine(EditorCell root, EditorCell cell) {
-    EditorCell current = cell;
-
-    while (current != root) {
-      if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) return true;
-
-      if (current.isFirstChild()) {
-        current = current.getParent();
-      } else {
+    for (EditorCell current = cell; current != root; current = current.getParent()) {
+      if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) {
+        return true;
+      }
+      if (current.getParent() == null || current.getParent().firstCell() != current) {
         return false;
       }
     }
-
     return false;
   }
 
@@ -68,26 +66,24 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   public static boolean isNewLineAfter(EditorCell root, EditorCell cell) {
-    EditorCell current = cell;
+    for (EditorCell current = cell; current != root; current = current.getParent()) {
+      if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
+        return true;
+      }
+      EditorCell_Collection parent = current.getParent();
 
-    while (current != root) {
-      if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) return true;
-
-      if (current.getParent() != null &&
-        current.getParent().getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) return true;
-
-      if (current.isLastChild()) {
-        current = current.getParent();
-      } else {
+      if (parent != null && parent.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) {
+        return true;
+      }
+      if (parent == null || parent.lastCell() != current) {
         return false;
       }
     }
-
     return false;
   }
 
   public int getAscent(EditorCell_Collection editorCells) {
-    for (EditorCell cell : editorCells.getCells()) {
+    for (EditorCell cell : editorCells) {
       if (cell.getStyle().get(StyleAttributes.BASE_LINE_CELL)) {
         return cell.getY() - editorCells.getY() + cell.getAscent();
       }
@@ -96,7 +92,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     DefaultBaseLine bL = editorCells.getStyle().get(StyleAttributes.DEFAULT_BASE_LINE);
 
     int result = 0;
-    for (EditorCell cell : editorCells.getCells()) {
+    for (EditorCell cell : editorCells) {
       result = cell.getAscent();
       if (result > 0) {
         break;
@@ -127,8 +123,8 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   private int getMaxWidth(EditorCell_Collection editorCells) {
-    if (editorCells.getStyle().getCurrent(StyleAttributes.MAX_WIDTH) != null) {
-      return editorCells.getX() + editorCells.getStyle().getCurrent(StyleAttributes.MAX_WIDTH);
+    if (editorCells.getStyle().isSpecified(StyleAttributes.MAX_WIDTH)) {
+      return editorCells.getX() + editorCells.getStyle().get(StyleAttributes.MAX_WIDTH);
     }
     return editorCells.getRootParent().getX() + EditorSettings.getInstance().getVerticalBoundWidth();
   }
@@ -164,7 +160,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
           }
         }
 
-        result = result.appendToTheRight(current.renderText(), PunctuationUtil.hasLeftGap(current));
+        result = result.appendToTheRight(APICellAdapter.renderText(current), PunctuationUtil.hasLeftGap(current));
 
         if (isNewLineAfter(rootCell, current)) {
           newLineAfter = true;
@@ -224,7 +220,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   private static boolean isIndentCollection(EditorCell_Collection collection) {
-    return collection.getCellLayout() instanceof CellLayout_Indent && collection.getChildCount() > 0;
+    return collection.getCellLayout() instanceof CellLayout_Indent && collection.getCellsCount() > 0;
   }
 
   private class CellLayouter {
@@ -352,7 +348,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     }
 
     private int getFirstChildLeftGap(EditorCell_Collection collection) {
-      EditorCell firstLeaf = collection.getFirstLeaf();
+      EditorCell firstLeaf = APICellAdapter.getFirstLeaf(collection);
       if (firstLeaf != null) {
         return PunctuationUtil.getLeftGap(firstLeaf);
       }
@@ -384,7 +380,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
       collection.setHeight(y1 - y0);
 
       //collection is implicitly laid out
-      collection.unrequestLayout();
+      ((EditorCell_Basic) collection).unrequestLayout();
 
       if (collection != myCell) {
         int ascent = getAscent(collection);
@@ -478,7 +474,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
       EditorCell result = cell;
 
       while (true) {
-        EditorCell prevLeaf = result.getPrevLeaf();
+        EditorCell prevLeaf = APICellAdapter.getPrevLeaf(result);
         // taking into account prevLeafs located inside collections with non-indent layouts:
         // in this case topmost collection itself will be included into myLineContent as a
         // child element 
@@ -504,7 +500,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
         if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_NO_WRAP)) {
           return true;
         }
-        if (current.getParent().getFirstChild() == current) {
+        if (current.getParent().firstCell() == current) {
           current = current.getParent();
         } else {
           return false;
@@ -525,7 +521,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     private EditorCell getFirstIndentLeaf(EditorCell_Collection collection) {
       if (!isIndentCollection(collection)) return collection;
 
-      EditorCell firstChild = collection.getFirstChild();
+      EditorCell firstChild = collection.firstCell();
       if (firstChild instanceof EditorCell_Collection) {
         return getFirstIndentLeaf((EditorCell_Collection) firstChild);
       }

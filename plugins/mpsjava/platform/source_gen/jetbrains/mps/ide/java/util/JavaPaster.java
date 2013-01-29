@@ -26,10 +26,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.ide.java.parser.JavaCompiler;
-import java.io.File;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.java.parser.ConversionFailedException;
 import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
 
@@ -83,12 +79,10 @@ public class JavaPaster {
 
   public void pasteJavaAsNode(SNode anchor, final SModel model, String javaCode, IOperationContext operationContext, FeatureKind featureKind, Project project) {
     IModule module = model.getModelDescriptor().getModule();
-    // <node> 
-    // new parser 
     JavaParser parser = new JavaParser();
 
     try {
-      List<SNode> nodes = nodes = parser.parse(javaCode, SModelOperations.getModelName(model), featureKind, true).getNodes();
+      List<SNode> nodes = parser.parse(javaCode, SModelOperations.getModelName(model), featureKind, true).getNodes();
 
       if (ListSequence.fromList(nodes).isEmpty()) {
         JOptionPane.showMessageDialog(null, "nothing to paste as Java", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -128,6 +122,11 @@ public class JavaPaster {
           break;
         default:
       }
+
+      // trying to resolve names when nodes are already in a model 
+      JavaParser.tryResolveUnknowns(nodes);
+      JavaParser.tryResolveDynamicRefs(nodes);
+
     } catch (JavaParseException ex) {
       JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
     }
@@ -170,8 +169,14 @@ public class JavaPaster {
   public static List<SNode> getStatementsFromJavaText(String javaCode, SModel model, IOperationContext context, Project project) {
     IModule module = model.getModelDescriptor().getModule();
     try {
-      return new JavaCompiler(context, module, (File) null, false, model, ProjectHelper.toIdeaProject(project)).compileIsolated(javaCode, FeatureKind.STATEMENTS);
-    } catch (ConversionFailedException e) {
+      JavaParser.JavaParseResult result = new JavaParser().parse(javaCode, SModelOperations.getModelName(model), FeatureKind.STATEMENTS, true);
+      String msg = result.getErrorMsg();
+      if (msg != null) {
+        LOG.error(msg);
+      }
+      return result.getNodes();
+    } catch (JavaParseException e) {
+      LOG.error("Exception happened while parsing java code: ", e);
     }
     return new ArrayList<SNode>();
   }

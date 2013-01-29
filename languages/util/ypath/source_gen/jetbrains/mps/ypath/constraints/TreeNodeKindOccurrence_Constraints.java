@@ -18,6 +18,7 @@ import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TreeNodeKindOccurrence_Constraints extends BaseConstraintsDescriptor {
@@ -50,7 +51,7 @@ public class TreeNodeKindOccurrence_Constraints extends BaseConstraintsDescripto
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
+          public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_8c9v72_a0a1a0a0a1a0b0a1a1;
           }
         };

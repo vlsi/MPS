@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-chwb1louh1hr4jodsr3a6cdb06uxl2j">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-89hxj0ypb1mymp88cm6uftvxxpq6hll" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
   <common hash="8ahj7rvru7oj7bseim2owqbjiloq5oi" />
   <source id="8235206972880844181" name="Replacer" hash="-5700wxaopu6q5px6nz65huhrqpdnkvd">
     <file name="Replacer.java" />

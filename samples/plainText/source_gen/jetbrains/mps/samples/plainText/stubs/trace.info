@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="681855071694401672" modelId="r:3da477d9-4726-426b-8f1b-53f7a44e08e9(jetbrains.mps.samples.plainText.stubs)">
+  <root nodeRef="r:3da477d9-4726-426b-8f1b-53f7a44e08e9(jetbrains.mps.samples.plainText.stubs)/681855071694401672">
     <nodeInfo nodeId="681855071694402685" fileName="PlainText.java" startLine="26" startPosition="75" endLine="27" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="681855071694402823" fileName="PlainText.java" startLine="27" startPosition="90" endLine="28" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="681855071694402675" fileName="PlainText.java" startLine="28" startPosition="164" endLine="29" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -49,7 +49,7 @@
     <unitInfo nodeId="6528405377109490008" fileName="PlainText.java" startLine="35" startPosition="51" endLine="39" endPosition="5" unitName="jetbrains.mps.samples.plainText.stubs.PlainText$1" />
     <unitInfo nodeId="681855071694401672" fileName="PlainText.java" startLine="21" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.samples.plainText.stubs.PlainText" />
   </root>
-  <root nodeId="681855071694416212" modelId="r:3da477d9-4726-426b-8f1b-53f7a44e08e9(jetbrains.mps.samples.plainText.stubs)">
+  <root nodeRef="r:3da477d9-4726-426b-8f1b-53f7a44e08e9(jetbrains.mps.samples.plainText.stubs)/681855071694416212">
     <nodeInfo nodeId="681855071694416444" fileName="TextModelDescriptor.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="9157262317017093502" fileName="TextModelDescriptor.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isChanged" />
     <nodeInfo nodeId="681855071694416433" fileName="TextModelDescriptor.java" startLine="27" startPosition="74" endLine="28" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -213,7 +213,7 @@
     <unitInfo nodeId="5858597204945421420" fileName="TextModelDescriptor.java" startLine="118" startPosition="40" endLine="129" endPosition="5" unitName="jetbrains.mps.samples.plainText.stubs.TextModelDescriptor$1" />
     <unitInfo nodeId="681855071694416212" fileName="TextModelDescriptor.java" startLine="23" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.samples.plainText.stubs.TextModelDescriptor" />
   </root>
-  <root nodeId="681855071694417235" modelId="r:3da477d9-4726-426b-8f1b-53f7a44e08e9(jetbrains.mps.samples.plainText.stubs)">
+  <root nodeRef="r:3da477d9-4726-426b-8f1b-53f7a44e08e9(jetbrains.mps.samples.plainText.stubs)/681855071694417235">
     <nodeInfo nodeId="681855071694743146" fileName="TextModelDataSource.java" startLine="10" startPosition="60" endLine="11" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5156576372285322748" fileName="TextModelDataSource.java" startLine="15" startPosition="44" endLine="16" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="681855071694417237" fileName="TextModelDataSource.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextModelDataSource#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/persistence/ModelRoot;)V" />
@@ -229,7 +229,7 @@
     </scopeInfo>
     <unitInfo nodeId="681855071694417235" fileName="TextModelDataSource.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.samples.plainText.stubs.TextModelDataSource" />
   </root>
-  <root nodeId="681855071694743498" modelId="r:3da477d9-4726-426b-8f1b-53f7a44e08e9(jetbrains.mps.samples.plainText.stubs)">
+  <root nodeRef="r:3da477d9-4726-426b-8f1b-53f7a44e08e9(jetbrains.mps.samples.plainText.stubs)/681855071694743498">
     <nodeInfo nodeId="6528405377109531132" fileName="TextPersistenceUtil.java" startLine="14" startPosition="70" endLine="15" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="681855071694743500" fileName="TextPersistenceUtil.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextPersistenceUtil#()V" />
     <nodeInfo nodeId="681855071694743514" fileName="TextPersistenceUtil.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="refByModule#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)Ljetbrains/mps/smodel/SModelReference;" />
