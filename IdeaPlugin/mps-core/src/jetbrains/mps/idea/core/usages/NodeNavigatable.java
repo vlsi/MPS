@@ -46,7 +46,7 @@ public abstract class NodeNavigatable implements Navigatable {
   public NodeNavigatable(@NotNull SNodeReference node, @NotNull Project project) {
     myNode = node;
     myProject = project;
-    myItemPresentation = new NodePointerPresentation(((SNodePointer) node));
+    myItemPresentation = new NodePointerPresentation(node);
     myTextPresentation = myItemPresentation.getPresentableText();
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override

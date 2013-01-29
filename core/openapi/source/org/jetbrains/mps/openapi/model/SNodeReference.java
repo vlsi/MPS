@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**

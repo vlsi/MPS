@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
@@ -23,6 +23,9 @@ import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Set;
 
@@ -55,37 +58,28 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   public final SNode getTargetNode() {
-    return getTargetNode_internal(false);
+    return getTargetNode_internal();
   }
 
-  @Override
   public SLink getLink() {
-    // TODO API (implement)
-    return null;
+    return getSourceNode().getConcept().findLink(getRole());
   }
 
-  @Override
-  public org.jetbrains.mps.openapi.model.SModel getTargetModel() {
-    // TODO API (implement)
-    return null;
+  public SNodeReference toNodePointer() {
+    return new SNodePointer(getTargetSModelReference(), getTargetNodeId());
   }
-
-  @Override
-  public String getText() {
-    // TODO API (implement)
-    return null;
-  }
-
-  protected abstract SNode getTargetNode_internal(boolean silently);
 
   @Nullable
   public abstract SModelReference getTargetSModelReference();
 
-  public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
-
-  public abstract boolean isExternal();
+  @Nullable
+  public SNodeId getTargetNodeId() {
+    SNode targetNode = getTargetNode();
+    return targetNode == null ? null : targetNode.getNodeId();
+  }
 
   public void makeDirect() {
+
   }
 
   public boolean makeIndirect() {
@@ -96,12 +90,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return myResolveInfo;
   }
 
-  @Nullable
-  public SNodeId getTargetNodeId() {
-    SNode targetNode = getTargetNode();
-    return targetNode == null ? null : targetNode.getNodeId();
-  }
-
   public void setResolveInfo(String info) {
     myResolveInfo = InternUtil.intern(info);
   }
@@ -110,9 +98,34 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     myRole = InternUtil.intern(newRole);
   }
 
+  //-------------------------
+
+  @Deprecated
+  /**
+   * Use method in SReferenceBase class, as when you change ref, you know what ref it is
+   * @Deprecated in 3.0
+   */
+  public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public final SNode getTargetNodeSilently() {
-    return getTargetNode_internal(true);
+    return jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(this);
   }
+
+  protected abstract SNode getTargetNode_internal();
+
+  @Deprecated
+  /**
+   * Not supposed to be used from outside. Replace with getTargetModelReference comparison
+   * @Deprecated in 3.0
+   */
+  public abstract boolean isExternal();
+
+  //-------- factory methods -----------
 
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.getModel() != null && targetNode.getModel() != null) {
@@ -140,9 +153,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return ref;
   }
 
-  //
-  // error logging
-  //
+  //-------- error logging -----------
+
   private static boolean ourLoggingOff = false;
   private static final Set<SReference> ourErrorReportedRefs = new WeakSet<SReference>();
 
@@ -182,7 +194,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     }
 
     SModel model = node.getModel();
-    if (model == null){
+    if (model == null) {
       return null;
     }
     if (!model.isTransient()) {

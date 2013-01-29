@@ -25,7 +25,7 @@ import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.MPSTypesystem;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;

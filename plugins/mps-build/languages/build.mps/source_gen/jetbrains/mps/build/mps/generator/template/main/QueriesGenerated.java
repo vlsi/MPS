@@ -1050,13 +1050,16 @@ public class QueriesGenerated {
       }
     }, true).select(new ISelector<SNode, String>() {
       public String select(SNode module) {
-        SNode artifact = SNodeOperations.as(DependenciesHelper.getOriginalNode(module, _context), "jetbrains.mps.build.mps.structure.BuildMps_Module");
-        SNode layoutNode = helper.artifacts().get(artifact);
+        SNode mpsModule = SNodeOperations.as(DependenciesHelper.getOriginalNode(module, _context), "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
+        SNode layoutNode = helper.artifacts().get((SNodeOperations.isInstanceOf(mpsModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit") ?
+          SLinkOperations.getTarget(SNodeOperations.cast(mpsModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "path", true) :
+          mpsModule
+        ));
         if (layoutNode == null) {
           _context.showErrorMessage(_context.getNode(), "mps module " + SPropertyOperations.getString(module, "name") + " was not found in the layout of `" + SPropertyOperations.getString(project, "name") + "'");
           return null;
         }
-        String val = BehaviorReflection.invokeVirtual(String.class, layoutNode, "virtual_location_7117056644539862594", new Object[]{helper, artifact});
+        String val = BehaviorReflection.invokeVirtual(String.class, layoutNode, "virtual_location_7117056644539862594", new Object[]{helper, mpsModule});
         if (val == null) {
           _context.showErrorMessage(_context.getNode(), "no location for module" + SPropertyOperations.getString(_context.getNode(), "name"));
           return null;
@@ -1106,6 +1109,14 @@ public class QueriesGenerated {
     }).translate(new ITranslator2<MPSModulesPartitioner.Chunk, SNode>() {
       public Iterable<SNode> translate(MPSModulesPartitioner.Chunk it) {
         return it.getModules();
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_Module");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_Module");
       }
     }).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
@@ -1322,15 +1333,27 @@ public class QueriesGenerated {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMpsAspect") && SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMpsAspect"), "bootstrap");
       }
     }))) {
-      SNode sample = SetSequence.fromSet(ListSequence.fromList(partitioner.getChunks()).where(new IWhereFilter<MPSModulesPartitioner.Chunk>() {
+      Iterable<SNode> samples = ListSequence.fromList(partitioner.getChunks()).where(new IWhereFilter<MPSModulesPartitioner.Chunk>() {
         public boolean accept(MPSModulesPartitioner.Chunk it) {
           return it.isBootstrap();
         }
-      }).first().getConflicting()).first();
-      if ((sample != null)) {
-        sample = SNodeOperations.as(DependenciesHelper.getOriginalNode(sample, _context), "jetbrains.mps.build.mps.structure.BuildMps_Module");
+      }).translate(new ITranslator2<MPSModulesPartitioner.Chunk, SNode>() {
+        public Iterable<SNode> translate(MPSModulesPartitioner.Chunk it) {
+          return it.getConflicting();
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.as(DependenciesHelper.getOriginalNode(it, _context), "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_Module");
+        }
+      });
+      _context.showErrorMessage(null, "cannot create `generate' task, there is a dependency cycle between a language and modules using it; add `mps settings' aspect with bootstrap = true to turn off the check");
+      for (SNode c : Sequence.fromIterable(samples)) {
+        _context.showErrorMessage(c, "(bootstrap cycle) " + SPropertyOperations.getString(c, "name") + "; right click on a module -> Analyze -> Analyze Module Dependencies");
       }
-      _context.showErrorMessage(sample, "cannot create `generate' task, there is a dependency cycle between a language and modules using it; add `mps settings' aspect with bootstrap = true to turn off the check");
     }
     return partitioner;
   }

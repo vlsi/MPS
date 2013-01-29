@@ -57,7 +57,7 @@ import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelImportEvent;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;

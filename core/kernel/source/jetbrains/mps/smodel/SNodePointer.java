@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -105,7 +105,7 @@ public class SNodePointer implements SNodeReference {
 
   public static SNodeReference deserialize(String from) {
     String[] split = from.split("/");
-    assert split.length == 2;
+    assert split.length == 2 : from;
     return new jetbrains.mps.smodel.SNodePointer(split[0], split[1]);
   }
 

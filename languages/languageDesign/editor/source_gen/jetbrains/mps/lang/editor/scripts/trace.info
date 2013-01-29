@@ -24,15 +24,15 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="81" startPosition="41" endLine="82" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="85" startPosition="59" endLine="86" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="89" startPosition="59" endLine="90" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="91" startPosition="77" endLine="92" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="91" startPosition="111" endLine="92" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="93" startPosition="9" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="95" startPosition="213" endLine="96" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="97" startPosition="9" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="98" startPosition="0" endLine="99" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="99" startPosition="59" endLine="100" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="103" startPosition="52" endLine="104" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="104" startPosition="193" endLine="105" endPosition="307" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="105" startPosition="307" endLine="106" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="104" startPosition="193" endLine="105" endPosition="343" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="105" startPosition="343" endLine="106" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="106" startPosition="56" endLine="107" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="107" startPosition="66" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="108" startPosition="0" endLine="109" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -42,15 +42,15 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="122" startPosition="41" endLine="123" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="126" startPosition="59" endLine="127" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="130" startPosition="59" endLine="131" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="132" startPosition="77" endLine="133" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="132" startPosition="111" endLine="133" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="134" startPosition="9" endLine="135" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="136" startPosition="35" endLine="137" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="138" startPosition="9" endLine="139" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="142" startPosition="52" endLine="143" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="143" startPosition="185" endLine="144" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="144" startPosition="59" endLine="145" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="145" startPosition="189" endLine="146" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="146" startPosition="167" endLine="147" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="145" startPosition="189" endLine="146" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="146" startPosition="203" endLine="147" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="147" startPosition="56" endLine="148" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="148" startPosition="66" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="149" startPosition="0" endLine="150" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -60,15 +60,15 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="163" startPosition="41" endLine="164" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="167" startPosition="59" endLine="168" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="171" startPosition="59" endLine="172" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="173" startPosition="77" endLine="174" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="173" startPosition="111" endLine="174" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="175" startPosition="9" endLine="176" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="177" startPosition="35" endLine="178" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="179" startPosition="9" endLine="180" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="183" startPosition="52" endLine="184" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="184" startPosition="183" endLine="185" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="185" startPosition="59" endLine="186" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="186" startPosition="189" endLine="187" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="187" startPosition="167" endLine="188" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="186" startPosition="189" endLine="187" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="187" startPosition="203" endLine="188" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="188" startPosition="56" endLine="189" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="189" startPosition="65" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="190" startPosition="0" endLine="191" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -174,15 +174,15 @@
     <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="434" startPosition="41" endLine="435" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="438" startPosition="59" endLine="439" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="442" startPosition="59" endLine="443" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="444" startPosition="77" endLine="445" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="444" startPosition="111" endLine="445" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="446" startPosition="9" endLine="447" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="448" startPosition="213" endLine="449" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="450" startPosition="9" endLine="451" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="451" startPosition="0" endLine="452" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="452" startPosition="59" endLine="453" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="456" startPosition="52" endLine="457" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="457" startPosition="193" endLine="458" endPosition="307" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="458" startPosition="307" endLine="459" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="457" startPosition="193" endLine="458" endPosition="343" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="458" startPosition="343" endLine="459" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="459" startPosition="56" endLine="460" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="460" startPosition="66" endLine="461" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="461" startPosition="0" endLine="462" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -194,15 +194,15 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="476" startPosition="41" endLine="477" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="480" startPosition="59" endLine="481" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="484" startPosition="59" endLine="485" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="486" startPosition="77" endLine="487" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="486" startPosition="111" endLine="487" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="488" startPosition="9" endLine="489" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="490" startPosition="225" endLine="491" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="492" startPosition="9" endLine="493" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="493" startPosition="0" endLine="494" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="494" startPosition="59" endLine="495" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="498" startPosition="52" endLine="499" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="499" startPosition="193" endLine="500" endPosition="319" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="500" startPosition="319" endLine="501" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="499" startPosition="193" endLine="500" endPosition="355" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="500" startPosition="355" endLine="501" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="501" startPosition="56" endLine="502" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="502" startPosition="66" endLine="503" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="503" startPosition="0" endLine="504" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -212,7 +212,7 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="517" startPosition="41" endLine="518" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="521" startPosition="59" endLine="522" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="525" startPosition="59" endLine="526" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="527" startPosition="291" endLine="528" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="527" startPosition="325" endLine="528" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="529" startPosition="9" endLine="530" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="531" startPosition="105" endLine="532" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="534" startPosition="105" endLine="535" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -337,7 +337,7 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="810" startPosition="41" endLine="811" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="814" startPosition="59" endLine="815" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="818" startPosition="59" endLine="819" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="820" startPosition="287" endLine="821" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="820" startPosition="321" endLine="821" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="822" startPosition="9" endLine="823" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="826" startPosition="52" endLine="827" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="827" startPosition="245" endLine="828" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -348,7 +348,7 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="842" startPosition="41" endLine="843" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="846" startPosition="59" endLine="847" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="850" startPosition="59" endLine="851" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="852" startPosition="287" endLine="853" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="852" startPosition="321" endLine="853" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="854" startPosition="9" endLine="855" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="858" startPosition="52" endLine="859" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="859" startPosition="245" endLine="860" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -359,15 +359,15 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="874" startPosition="41" endLine="875" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="878" startPosition="59" endLine="879" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="882" startPosition="59" endLine="883" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="884" startPosition="77" endLine="885" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="884" startPosition="111" endLine="885" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="886" startPosition="9" endLine="887" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="888" startPosition="221" endLine="889" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="890" startPosition="9" endLine="891" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="891" startPosition="0" endLine="892" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="892" startPosition="59" endLine="893" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="896" startPosition="52" endLine="897" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="897" startPosition="193" endLine="898" endPosition="319" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="898" startPosition="319" endLine="899" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="897" startPosition="193" endLine="898" endPosition="355" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="898" startPosition="355" endLine="899" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="899" startPosition="56" endLine="900" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="900" startPosition="66" endLine="901" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="901" startPosition="0" endLine="902" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -377,15 +377,15 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="915" startPosition="41" endLine="916" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="919" startPosition="59" endLine="920" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="923" startPosition="59" endLine="924" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="925" startPosition="77" endLine="926" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="925" startPosition="111" endLine="926" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="927" startPosition="9" endLine="928" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="929" startPosition="35" endLine="930" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="931" startPosition="9" endLine="932" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="935" startPosition="52" endLine="936" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="936" startPosition="185" endLine="937" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="937" startPosition="59" endLine="938" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="938" startPosition="193" endLine="939" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="939" startPosition="167" endLine="940" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="938" startPosition="193" endLine="939" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="939" startPosition="203" endLine="940" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="940" startPosition="56" endLine="941" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="941" startPosition="66" endLine="942" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="942" startPosition="0" endLine="943" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -395,15 +395,15 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="956" startPosition="41" endLine="957" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="960" startPosition="59" endLine="961" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="964" startPosition="59" endLine="965" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="966" startPosition="77" endLine="967" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="966" startPosition="111" endLine="967" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="968" startPosition="9" endLine="969" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="970" startPosition="35" endLine="971" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="972" startPosition="9" endLine="973" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="976" startPosition="52" endLine="977" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="977" startPosition="183" endLine="978" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="978" startPosition="59" endLine="979" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="979" startPosition="193" endLine="980" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="980" startPosition="167" endLine="981" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="979" startPosition="193" endLine="980" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="980" startPosition="203" endLine="981" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="981" startPosition="56" endLine="982" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="982" startPosition="65" endLine="983" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="983" startPosition="0" endLine="984" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -413,7 +413,7 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="997" startPosition="41" endLine="998" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1001" startPosition="59" endLine="1002" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1005" startPosition="59" endLine="1006" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1007" startPosition="77" endLine="1008" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1007" startPosition="111" endLine="1008" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1009" startPosition="9" endLine="1010" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1011" startPosition="221" endLine="1012" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1013" startPosition="9" endLine="1014" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -469,8 +469,8 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1160" startPosition="142" endLine="1161" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1162" startPosition="9" endLine="1163" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1166" startPosition="52" endLine="1167" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1167" startPosition="183" endLine="1168" endPosition="319" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1168" startPosition="319" endLine="1169" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1167" startPosition="183" endLine="1168" endPosition="355" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1168" startPosition="355" endLine="1169" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1169" startPosition="56" endLine="1170" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1170" startPosition="65" endLine="1171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1171" startPosition="0" endLine="1172" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -500,15 +500,15 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1242" startPosition="41" endLine="1243" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1246" startPosition="59" endLine="1247" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1250" startPosition="59" endLine="1251" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1252" startPosition="77" endLine="1253" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1252" startPosition="111" endLine="1253" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1254" startPosition="9" endLine="1255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1256" startPosition="225" endLine="1257" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1258" startPosition="9" endLine="1259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1259" startPosition="0" endLine="1260" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1260" startPosition="59" endLine="1261" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1264" startPosition="52" endLine="1265" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1265" startPosition="193" endLine="1266" endPosition="319" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1266" startPosition="319" endLine="1267" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1265" startPosition="193" endLine="1266" endPosition="355" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1266" startPosition="355" endLine="1267" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1267" startPosition="56" endLine="1268" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1268" startPosition="66" endLine="1269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1269" startPosition="0" endLine="1270" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -518,15 +518,15 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1283" startPosition="41" endLine="1284" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1287" startPosition="59" endLine="1288" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1291" startPosition="59" endLine="1292" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1293" startPosition="77" endLine="1294" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1293" startPosition="111" endLine="1294" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1295" startPosition="9" endLine="1296" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1297" startPosition="35" endLine="1298" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1299" startPosition="9" endLine="1300" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1303" startPosition="52" endLine="1304" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1304" startPosition="185" endLine="1305" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1305" startPosition="59" endLine="1306" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1306" startPosition="217" endLine="1307" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1307" startPosition="167" endLine="1308" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1306" startPosition="217" endLine="1307" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1307" startPosition="203" endLine="1308" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1308" startPosition="56" endLine="1309" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1309" startPosition="66" endLine="1310" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1310" startPosition="0" endLine="1311" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -536,15 +536,15 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1324" startPosition="41" endLine="1325" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1328" startPosition="59" endLine="1329" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1332" startPosition="59" endLine="1333" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1334" startPosition="77" endLine="1335" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1334" startPosition="111" endLine="1335" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1336" startPosition="9" endLine="1337" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1338" startPosition="35" endLine="1339" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1340" startPosition="9" endLine="1341" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1344" startPosition="52" endLine="1345" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1345" startPosition="183" endLine="1346" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1346" startPosition="59" endLine="1347" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1347" startPosition="217" endLine="1348" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1348" startPosition="167" endLine="1349" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1347" startPosition="217" endLine="1348" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1348" startPosition="203" endLine="1349" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1349" startPosition="56" endLine="1350" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1350" startPosition="65" endLine="1351" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1351" startPosition="0" endLine="1352" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -572,7 +572,7 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1422" startPosition="289" endLine="1423" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1425" startPosition="301" endLine="1426" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1427" startPosition="9" endLine="1428" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1429" startPosition="291" endLine="1430" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1429" startPosition="325" endLine="1430" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1431" startPosition="9" endLine="1432" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1433" startPosition="163" endLine="1434" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1436" startPosition="171" endLine="1437" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -628,7 +628,7 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1539" startPosition="41" endLine="1540" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1543" startPosition="59" endLine="1544" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1547" startPosition="59" endLine="1548" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1549" startPosition="77" endLine="1550" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1549" startPosition="111" endLine="1550" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1551" startPosition="9" endLine="1552" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1553" startPosition="225" endLine="1554" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1555" startPosition="9" endLine="1556" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -636,8 +636,8 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1558" startPosition="93" endLine="1559" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1560" startPosition="9" endLine="1561" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1564" startPosition="52" endLine="1565" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1565" startPosition="193" endLine="1566" endPosition="319" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1566" startPosition="319" endLine="1567" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1565" startPosition="193" endLine="1566" endPosition="355" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1566" startPosition="355" endLine="1567" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1567" startPosition="56" endLine="1568" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1568" startPosition="66" endLine="1569" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1569" startPosition="0" endLine="1570" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -647,7 +647,7 @@
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1583" startPosition="41" endLine="1584" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1587" startPosition="59" endLine="1588" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1591" startPosition="59" endLine="1592" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1593" startPosition="291" endLine="1594" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1593" startPosition="325" endLine="1594" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1595" startPosition="9" endLine="1596" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1597" startPosition="192" endLine="1598" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1600" startPosition="153" endLine="1601" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1116,19 +1116,19 @@
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="77" startPosition="31" endLine="78" endPosition="206" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="81" startPosition="41" endLine="82" endPosition="206" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="85" startPosition="59" endLine="86" endPosition="75" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="91" startPosition="77" endLine="92" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="91" startPosition="111" endLine="92" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="95" startPosition="213" endLine="96" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="113" startPosition="42" endLine="114" endPosition="21" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="118" startPosition="31" endLine="119" endPosition="149" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="122" startPosition="41" endLine="123" endPosition="149" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="126" startPosition="59" endLine="127" endPosition="67" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="132" startPosition="77" endLine="133" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="132" startPosition="111" endLine="133" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="136" startPosition="35" endLine="137" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="154" startPosition="42" endLine="155" endPosition="21" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="159" startPosition="31" endLine="160" endPosition="148" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="163" startPosition="41" endLine="164" endPosition="148" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="167" startPosition="59" endLine="168" endPosition="66" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="173" startPosition="77" endLine="174" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="173" startPosition="111" endLine="174" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="177" startPosition="35" endLine="178" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="195" startPosition="42" endLine="196" endPosition="21" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="200" startPosition="31" endLine="201" endPosition="123" />
@@ -1168,20 +1168,20 @@
     <scopeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="430" startPosition="31" endLine="431" endPosition="210" />
     <scopeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="434" startPosition="41" endLine="435" endPosition="210" />
     <scopeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="438" startPosition="59" endLine="439" endPosition="75" />
-    <scopeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="444" startPosition="77" endLine="445" endPosition="23" />
+    <scopeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="444" startPosition="111" endLine="445" endPosition="23" />
     <scopeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="448" startPosition="213" endLine="449" endPosition="23" />
     <scopeInfo nodeId="8543458906717841699" fileName="EditorContext_MigrationScript.java" startLine="466" startPosition="42" endLine="467" endPosition="21" />
     <scopeInfo nodeId="2783385774420420452" fileName="EditorContext_MigrationScript.java" startLine="469" startPosition="7" endLine="470" endPosition="18" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="472" startPosition="31" endLine="473" endPosition="212" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="476" startPosition="41" endLine="477" endPosition="212" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="480" startPosition="59" endLine="481" endPosition="75" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="486" startPosition="77" endLine="487" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="486" startPosition="111" endLine="487" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="490" startPosition="225" endLine="491" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="508" startPosition="42" endLine="509" endPosition="21" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="513" startPosition="31" endLine="514" endPosition="129" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="517" startPosition="41" endLine="518" endPosition="129" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="521" startPosition="59" endLine="522" endPosition="66" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="527" startPosition="291" endLine="528" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="527" startPosition="325" endLine="528" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="531" startPosition="105" endLine="532" endPosition="22" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="534" startPosition="105" endLine="535" endPosition="22" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="537" startPosition="109" endLine="538" endPosition="22" />
@@ -1224,35 +1224,35 @@
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="806" startPosition="31" endLine="807" endPosition="144" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="810" startPosition="41" endLine="811" endPosition="144" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="814" startPosition="59" endLine="815" endPosition="69" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="820" startPosition="287" endLine="821" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="820" startPosition="321" endLine="821" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="833" startPosition="42" endLine="834" endPosition="21" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="838" startPosition="31" endLine="839" endPosition="161" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="842" startPosition="41" endLine="843" endPosition="161" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="846" startPosition="59" endLine="847" endPosition="75" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="852" startPosition="287" endLine="853" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="852" startPosition="321" endLine="853" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="865" startPosition="42" endLine="866" endPosition="21" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="870" startPosition="31" endLine="871" endPosition="210" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="874" startPosition="41" endLine="875" endPosition="210" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="878" startPosition="59" endLine="879" endPosition="75" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="884" startPosition="77" endLine="885" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="884" startPosition="111" endLine="885" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="888" startPosition="221" endLine="889" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="906" startPosition="42" endLine="907" endPosition="21" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="911" startPosition="31" endLine="912" endPosition="153" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="915" startPosition="41" endLine="916" endPosition="153" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="919" startPosition="59" endLine="920" endPosition="67" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="925" startPosition="77" endLine="926" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="925" startPosition="111" endLine="926" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="929" startPosition="35" endLine="930" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="947" startPosition="42" endLine="948" endPosition="21" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="952" startPosition="31" endLine="953" endPosition="152" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="956" startPosition="41" endLine="957" endPosition="152" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="960" startPosition="59" endLine="961" endPosition="66" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="966" startPosition="77" endLine="967" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="966" startPosition="111" endLine="967" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="970" startPosition="35" endLine="971" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="988" startPosition="42" endLine="989" endPosition="21" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="993" startPosition="31" endLine="994" endPosition="142" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="997" startPosition="41" endLine="998" endPosition="142" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1001" startPosition="59" endLine="1002" endPosition="66" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1007" startPosition="77" endLine="1008" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1007" startPosition="111" endLine="1008" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1011" startPosition="221" endLine="1012" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1016" startPosition="101" endLine="1017" endPosition="22" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1019" startPosition="105" endLine="1020" endPosition="22" />
@@ -1318,19 +1318,19 @@
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1238" startPosition="31" endLine="1239" endPosition="234" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1242" startPosition="41" endLine="1243" endPosition="234" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1246" startPosition="59" endLine="1247" endPosition="75" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1252" startPosition="77" endLine="1253" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1252" startPosition="111" endLine="1253" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1256" startPosition="225" endLine="1257" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1274" startPosition="42" endLine="1275" endPosition="21" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1279" startPosition="31" endLine="1280" endPosition="177" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1283" startPosition="41" endLine="1284" endPosition="177" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1287" startPosition="59" endLine="1288" endPosition="67" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1293" startPosition="77" endLine="1294" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1293" startPosition="111" endLine="1294" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1297" startPosition="35" endLine="1298" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1315" startPosition="42" endLine="1316" endPosition="21" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1320" startPosition="31" endLine="1321" endPosition="176" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1324" startPosition="41" endLine="1325" endPosition="176" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1328" startPosition="59" endLine="1329" endPosition="66" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1334" startPosition="77" endLine="1335" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1334" startPosition="111" endLine="1335" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1338" startPosition="35" endLine="1339" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1356" startPosition="42" endLine="1357" endPosition="21" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1361" startPosition="31" endLine="1362" endPosition="151" />
@@ -1354,7 +1354,7 @@
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1419" startPosition="286" endLine="1420" endPosition="22" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1422" startPosition="289" endLine="1423" endPosition="22" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1425" startPosition="301" endLine="1426" endPosition="22" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1429" startPosition="291" endLine="1430" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1429" startPosition="325" endLine="1430" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1433" startPosition="163" endLine="1434" endPosition="22" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1436" startPosition="171" endLine="1437" endPosition="22" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1529" startPosition="42" endLine="1530" endPosition="21" />
@@ -1362,14 +1362,14 @@
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1535" startPosition="31" endLine="1536" endPosition="206" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1539" startPosition="41" endLine="1540" endPosition="206" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1543" startPosition="59" endLine="1544" endPosition="75" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1549" startPosition="77" endLine="1550" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1549" startPosition="111" endLine="1550" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1553" startPosition="225" endLine="1554" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1558" startPosition="93" endLine="1559" endPosition="22" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1574" startPosition="42" endLine="1575" endPosition="21" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1579" startPosition="31" endLine="1580" endPosition="123" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1583" startPosition="41" endLine="1584" endPosition="123" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1587" startPosition="59" endLine="1588" endPosition="66" />
-    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1593" startPosition="291" endLine="1594" endPosition="23" />
+    <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1593" startPosition="325" endLine="1594" endPosition="23" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1597" startPosition="192" endLine="1598" endPosition="22" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1600" startPosition="153" endLine="1601" endPosition="22" />
     <scopeInfo nodeId="113254018726283913" fileName="EditorContext_MigrationScript.java" startLine="1621" startPosition="42" endLine="1622" endPosition="21" />

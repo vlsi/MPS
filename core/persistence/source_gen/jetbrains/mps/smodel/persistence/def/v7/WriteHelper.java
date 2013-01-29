@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.MPSCore;
@@ -183,7 +183,7 @@ public class WriteHelper {
         }
       }
     }
-    return ref.getResolveInfo();
+    return ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
   }
 
   public static String encode(String s) {

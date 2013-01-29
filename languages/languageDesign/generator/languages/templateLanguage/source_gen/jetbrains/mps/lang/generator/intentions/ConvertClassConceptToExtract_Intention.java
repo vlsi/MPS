@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.HashMap;
 import java.util.List;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 

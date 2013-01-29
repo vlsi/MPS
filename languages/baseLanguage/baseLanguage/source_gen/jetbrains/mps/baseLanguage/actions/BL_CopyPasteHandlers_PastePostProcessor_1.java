@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
@@ -66,7 +66,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
             } else if (SNodeOperations.getReference(pastedNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept")) != null) {
               SReference reference = SNodeOperations.getReference(pastedNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept"));
               SLinkOperations.setTarget(pastedNode, "classConcept", null, false);
-              reference.setRole(null);
+              ((jetbrains.mps.smodel.SReference) reference).setRole(null);
             }
             break;
           }

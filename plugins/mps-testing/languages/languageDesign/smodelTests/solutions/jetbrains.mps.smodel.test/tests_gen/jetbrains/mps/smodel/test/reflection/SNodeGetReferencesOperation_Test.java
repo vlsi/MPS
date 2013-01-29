@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -216,7 +216,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest4 {
       Assert.assertEquals(initialSize, Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022432277"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).count());
       Iterable<SReference> brokenReferences = Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022432277"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).where(new IWhereFilter<SReference>() {
         public boolean accept(SReference it) {
-          return it.getTargetNodeSilently() == null;
+          return jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(it) == null;
         }
       });
       Assert.assertEquals(1, Sequence.fromIterable(brokenReferences).count());

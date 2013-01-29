@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.DynamicReference;
@@ -51,10 +51,10 @@ public class ModelLinkMap {
       }
       for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
         addRoleLocation(ptr(SLinkOperations.findLinkDeclaration(ref)), ref);
-        if ((SReference) ref instanceof StaticReference) {
-          addTargetLocation(ptr(SLinkOperations.getTargetNode(ref)), (StaticReference) (SReference) ref);
+        if (ref instanceof StaticReference) {
+          addTargetLocation(ptr(SLinkOperations.getTargetNode(ref)), (StaticReference) ref);
         } else {
-          addDynamicReference(ref.getTargetSModelReference(), (DynamicReference) (SReference) ref);
+          addDynamicReference(ref.getTargetSModelReference(), (DynamicReference) ref);
         }
       }
     }
@@ -173,7 +173,7 @@ public class ModelLinkMap {
     });
     res |= setProp(myRefRoleMap, ptr, new _FunctionTypes._void_P1_E0<SReference>() {
       public void invoke(SReference ref) {
-        ref.setRole(role);
+        ((jetbrains.mps.smodel.SReference) ref).setRole(role);
       }
     });
     return res;

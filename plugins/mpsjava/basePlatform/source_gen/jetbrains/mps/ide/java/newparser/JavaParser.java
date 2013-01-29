@@ -36,7 +36,7 @@ import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 
 public class JavaParser {
@@ -330,7 +330,7 @@ public class JavaParser {
       SModel ourModel = node.getModel();
       DequeSequence.fromDeque(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
 
-      Iterable<SReference> refs = node.getReferences();
+      Iterable<? extends SReference> refs = node.getReferences();
       for (SReference ref : Sequence.fromIterable(refs)) {
         if (!(ref instanceof DynamicReference)) {
           continue;

@@ -48,6 +48,11 @@ public class DependencyTree extends MPSTree implements DataProvider {
 
   public void setModules(List<IModule> modules) {
     myModules = modules;
+    MPSTreeNode root = getRootNode();
+    if (root != null) {
+      collapseAll();
+      selectNode(getRootNode());
+    }
   }
 
   public List<IModule> getModules() {

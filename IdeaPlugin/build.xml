@@ -70,7 +70,6 @@
            includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none"/>
       <src>
-        <path location="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>
         <path location="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>
         <path location="${base_dir}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen"/>
       </src>

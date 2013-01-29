@@ -16,6 +16,7 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.logging.Logger;
+import org.jdom.Document;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -40,6 +41,7 @@ public class PathManager {
 
   private static final String PROTOCOL_DELIMITER = ":";
   private static String ourHomePath;
+  private static String ourIdeaPath;
 
   private static final FilenameFilter MPS_JARS = new FilenameFilter() {
     @Override
@@ -60,7 +62,7 @@ public class PathManager {
 
     final Class aClass = PathManager.class;
 
-    String rootPath = getResourceRoot(aClass, "/" + aClass.getName().replace('.', '/') + ".class");
+    String rootPath = getContainingJar(aClass);
 
     //todo this line should be removed
     if (rootPath == null) return new File(".").getAbsolutePath(); //we need this for build server
@@ -77,6 +79,47 @@ public class PathManager {
       throw new IllegalStateException("cannot detect MPS location");
     }
     return ourHomePath;
+  }
+
+  private static String getContainingJar(Class aClass) {
+    return getResourceRoot(aClass, "/" + aClass.getName().replace('.', '/') + ".class");
+  }
+
+  public static String getIdeaPath() {
+    if (ourIdeaPath != null) {
+      return ourIdeaPath;
+    }
+
+    // {idea_home}/lib/jdom.jar
+    String rootPath = getContainingJar(Document.class);
+    if (rootPath == null) {
+      ourIdeaPath = getHomePath();
+      return ourIdeaPath;
+    }
+    File root = new File(rootPath);
+    root = root.getAbsoluteFile();
+
+    // {idea_home}/lib
+    root = root.getParentFile();
+    if (root != null) {
+      // {idea_home}
+      root = root.getParentFile();
+    }
+
+    if (root == null) {
+      ourIdeaPath = getHomePath();
+    } else {
+      ourIdeaPath = root.getAbsolutePath();
+    }
+
+    return ourIdeaPath;
+  }
+
+  public static String[] getHomePaths() {
+    if (getHomePath().equals(getIdeaPath())) {
+      return new String[]{getHomePath()};
+    }
+    return new String[]{getHomePath(), getIdeaPath()};
   }
 
   public static String getBootstrapPath() {

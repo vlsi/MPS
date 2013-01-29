@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -119,7 +119,7 @@ public class ModelWriter6 implements IModelWriter {
       linkElement.setAttribute(ModelPersistence.ROLE, myHelper.genRole(reference));
       //DocUtil.setNotNullAttribute(linkElement, ModelPersistence.ROLE_ID, myHelper.genRoleId(reference));
       linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, myHelper.genTarget(reference));
-      DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, reference.getResolveInfo());
+      DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, ((jetbrains.mps.smodel.SReference)reference).getResolveInfo());
       element.addContent(linkElement);
     }
 

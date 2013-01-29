@@ -71,7 +71,7 @@ import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
 import org.eclipse.jdt.internal.compiler.ast.SuperReference;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedThisReference;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 import org.eclipse.jdt.internal.compiler.ast.NameReference;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedAllocationExpression;
@@ -966,7 +966,7 @@ public class FullASTConverter extends ASTConverter {
       // <node> 
 
       SNode lmc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
-      org.jetbrains.mps.openapi.model.SReference ref = new DynamicReference("baseMethodDeclaration", lmc, null, methodName);
+      SReference ref = new DynamicReference("baseMethodDeclaration", lmc, null, methodName);
       lmc.setReference("baseMethodDeclaration", ref);
 
       result = lmc;
@@ -1014,7 +1014,7 @@ public class FullASTConverter extends ASTConverter {
 
       } else if (x.receiver instanceof SuperReference) {
         SNode smc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SuperMethodCall", null);
-        org.jetbrains.mps.openapi.model.SReference ref = new DynamicReference("baseMethodDeclaration", smc, null, methodName);
+        SReference ref = new DynamicReference("baseMethodDeclaration", smc, null, methodName);
         smc.setReference(ref.getRole(), ref);
 
         result = smc;
@@ -1029,7 +1029,7 @@ public class FullASTConverter extends ASTConverter {
         SNode instCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
         SLinkOperations.setTarget(dotExpr, "operation", instCall, true);
 
-        org.jetbrains.mps.openapi.model.SReference sref = new DynamicReference("baseMethodDeclaration", instCall, null, methodName);
+        SReference sref = new DynamicReference("baseMethodDeclaration", instCall, null, methodName);
         instCall.setReference(sref.getRole(), sref);
 
         result = dotExpr;
@@ -1132,7 +1132,7 @@ public class FullASTConverter extends ASTConverter {
   }
 
   public int addReference(SingleTypeReference typeRef, SNode source, String role) {
-    org.jetbrains.mps.openapi.model.SReference ref = new DynamicReference(role, source, null, new String(typeRef.token));
+    SReference ref = new DynamicReference(role, source, null, new String(typeRef.token));
     source.setReference(role, ref);
     return 1;
   }
@@ -1147,7 +1147,7 @@ public class FullASTConverter extends ASTConverter {
     }
     String qname = sb.toString();
 
-    org.jetbrains.mps.openapi.model.SReference ref = new DynamicReference(role, source, null, qname);
+    SReference ref = new DynamicReference(role, source, null, qname);
     source.setReference(role, ref);
     return 2;
   }
@@ -1195,7 +1195,7 @@ public class FullASTConverter extends ASTConverter {
   private SReference adjustClassReference(SNode clsType, SNode source, String role) {
     SReference sref = clsType.getReference("classifier");
     if (sref instanceof DynamicReference) {
-      return new DynamicReference(role, source, null, ((DynamicReference) sref).getResolveInfo());
+      return new DynamicReference(role, source, null, ((jetbrains.mps.smodel.SReference) ((DynamicReference) sref)).getResolveInfo());
     } else if (sref instanceof StaticReference) {
       return new StaticReference(role, source, ((StaticReference) sref).getTargetNode());
     } else {

@@ -2,9 +2,9 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.resolve.IResolver" file="IResolver.java">
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
   <dependency className="jetbrains.mps.resolve.ResolverComponent" file="ResolverComponent.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
@@ -18,9 +18,9 @@
     <classNode dependClassName="jetbrains.mps.resolve.IResolver" />
     <classNode dependClassName="jetbrains.mps.resolve.ScopeResolver" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
   <dependency className="jetbrains.mps.resolve.ScopeResolver" file="ScopeResolver.java">
@@ -44,6 +44,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode extendsClassName="jetbrains.mps.resolve.IResolver" />
   </dependency>
 </dependenciesRoot>

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.DynamicReference;
 import java.util.Map;
@@ -41,7 +41,7 @@ public class FixDynamicReferences_MigrationScript extends BaseMigrationScript {
 
       public void doUpdateInstanceNode(SNode node) {
         Map<String, SNode> roleToTarget = MapSequence.fromMap(new HashMap<String, SNode>());
-        for (SReference ref : Sequence.fromIterable((Iterable<SReference>) node.getReferences())) {
+        for (SReference ref : Sequence.fromIterable(node.getReferences())) {
           if (!(ref instanceof DynamicReference)) {
             continue;
           }
