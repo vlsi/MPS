@@ -209,6 +209,14 @@ public class JavaParser {
 
   public void annotateWithmports(CompilationUnitDeclaration compResult, SNode clas) {
     SNode imports = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImports", null);
+
+    // putting first: current package in terms of source code 
+    if (compResult.currentPackage != null) {
+      SNode currPkg = makeImport(compResult.currentPackage);
+      SPropertyOperations.set(currPkg, "onDemand", "" + (true));
+      ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).addElement(currPkg);
+    }
+
     if (compResult.imports != null) {
       for (ImportReference imprt : compResult.imports) {
         ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).addElement(makeImport(imprt));

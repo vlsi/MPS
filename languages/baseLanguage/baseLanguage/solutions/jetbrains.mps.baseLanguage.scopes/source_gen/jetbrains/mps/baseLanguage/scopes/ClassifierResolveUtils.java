@@ -276,6 +276,7 @@ public class ClassifierResolveUtils {
 
     SNode root = Sequence.fromIterable(getPathToRoot(contextNode)).last();
     SNode javaImports = AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")));
+
     if (javaImports == null) {
       models = moduleScope.getModels();
 
@@ -298,9 +299,6 @@ public class ClassifierResolveUtils {
 
       // putting on-demand imports into model list 
       List<org.jetbrains.mps.openapi.model.SModel> javaImportedModels = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
-      // Actually it must be wider than just this model. 
-      // It must be the current package, i.e. plus other models with the same name (?) 
-      ListSequence.fromList(javaImportedModels).addElement(SNodeOperations.getModel(contextNode).getModelDescriptor());
       ListSequence.fromList(javaImportedModels).addElement(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")).getSModel().getModelDescriptor());
       for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -323,7 +321,7 @@ public class ClassifierResolveUtils {
 
     // finally, let's go through all appropriate models and see if there is such a root 
 
-    // add contextNodeModel in the beginning of sequence 
+    // adding contextNodeModel in the beginning of sequence 
     models = Sequence.fromIterable(Sequence.<org.jetbrains.mps.openapi.model.SModel>singleton(contextNodeModel)).concat(Sequence.fromIterable(models));
 
     for (org.jetbrains.mps.openapi.model.SModel model : Sequence.fromIterable(models)) {
@@ -355,7 +353,7 @@ public class ClassifierResolveUtils {
     // try to resolve as fq name in current model 
     Iterable<SNode> result;
 
-    result = resolveClassifierByFqName(check_8z6r2b_a0a15a21(SNodeOperations.getModel(contextNode)), refText);
+    result = resolveClassifierByFqName(check_8z6r2b_a0a25a21(SNodeOperations.getModel(contextNode)), refText);
     if (Sequence.fromIterable(result).isNotEmpty()) {
       return ((int) Sequence.fromIterable(result).count() == 1 ?
         Sequence.fromIterable(result).first() :
@@ -364,7 +362,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current scope 
-    Iterable<IModule> visibleModules = check_8z6r2b_a0a55a21(check_8z6r2b_a0a0dc0m(check_8z6r2b_a0a0a55a21(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    Iterable<IModule> visibleModules = check_8z6r2b_a0a65a21(check_8z6r2b_a0a0ec0m(check_8z6r2b_a0a0a65a21(SNodeOperations.getModel(contextNode)))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModelDescriptor>() {
       public Iterable<SModelDescriptor> translate(IModule it) {
         return it.getOwnModelDescriptors();
@@ -477,21 +475,13 @@ public class ClassifierResolveUtils {
     for (int p = k - 1; p >= 0; p--) {
 
       String pkgName = refText.substring(0, dotPositions[p]);
-      // FIXME java.lang isn't resolved this way 
-      org.jetbrains.mps.openapi.model.SModel model = moduleScope.resolve(SModelReference.fromString(pkgName));
-      List<org.jetbrains.mps.openapi.model.SModel> models = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
+      Iterable<org.jetbrains.mps.openapi.model.SModel> models = getModelsByName(moduleScope, pkgName);
 
-      if (model != null) {
-        ListSequence.fromList(models).addElement(model);
-      } else {
-        // FIXME it's wrong: deprecated and ignores module scope 
-        ListSequence.fromList(models).addSequence(ListSequence.fromList(SModelRepository.getInstance().getModelDescriptorsByModelName(pkgName)));
-        if (models.isEmpty()) {
-          continue;
-        }
+      if (Sequence.fromIterable(models).isEmpty()) {
+        continue;
       }
 
-      for (org.jetbrains.mps.openapi.model.SModel m : ListSequence.fromList(models)) {
+      for (org.jetbrains.mps.openapi.model.SModel m : Sequence.fromIterable(models)) {
 
         // FIXME will be unnecessary when transient models live in a separate repository 
         if (!(m.equals(contextNodeModel)) && m instanceof SModelDescriptor && ((SModelDescriptor) m).isTransient()) {
@@ -523,6 +513,21 @@ public class ClassifierResolveUtils {
       }
     }
     return null;
+  }
+
+  public static Iterable<org.jetbrains.mps.openapi.model.SModel> getModelsByName(SModuleScope moduleScope, String name) {
+    List<org.jetbrains.mps.openapi.model.SModel> models = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
+
+    // THINK maybe we should put those models together, not use if-else 
+
+    org.jetbrains.mps.openapi.model.SModel model = moduleScope.resolve(SModelReference.fromString(name));
+    if (model != null) {
+      ListSequence.fromList(models).addElement(model);
+    } else {
+      // FIXME it's wrong: deprecated and ignores module scope 
+      ListSequence.fromList(models).addSequence(ListSequence.fromList(SModelRepository.getInstance().getModelDescriptorsByModelName(name)));
+    }
+    return models;
   }
 
   private static SModelDescriptor check_8z6r2b_a0a1a2(SModel checkedDotOperand) {
@@ -588,28 +593,28 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a15a21(SModel checkedDotOperand) {
+  private static SModelDescriptor check_8z6r2b_a0a25a21(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static IScope check_8z6r2b_a0a55a21(IModule checkedDotOperand) {
+  private static IScope check_8z6r2b_a0a65a21(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a0dc0m(SModelDescriptor checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a0ec0m(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a0a55a21(SModel checkedDotOperand) {
+  private static SModelDescriptor check_8z6r2b_a0a0a65a21(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
