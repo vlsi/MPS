@@ -11,6 +11,17 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
   public AnonymousClass_Constraints() {
@@ -45,4 +56,35 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
+
+  @Override
+  protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
+    Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
+    references.put("classifier", new BaseReferenceConstraintsDescriptor("classifier", this) {
+      @Override
+      public boolean hasOwnScopeProvider() {
+        return true;
+      }
+
+      @Nullable
+      @Override
+      public ReferenceScopeProvider getScopeProvider() {
+        return new BaseScopeProvider() {
+          @Override
+          public SNodeReference getSearchScopeValidatorNode() {
+            return breakingNode_vrtrpd_a0a0a0a0a1a0b0a1a2;
+          }
+
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            // false is essential here: not include parent hierarchy into the scope (will lead to infinite rescursion) 
+            return ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), false);
+          }
+        };
+      }
+    });
+    return references;
+  }
+
+  private static SNodePointer breakingNode_vrtrpd_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "4477882950024298123");
 }

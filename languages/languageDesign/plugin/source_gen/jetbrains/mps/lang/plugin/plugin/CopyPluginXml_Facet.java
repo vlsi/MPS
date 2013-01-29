@@ -11,14 +11,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.ITResource;
+import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.MacrosFactory;
@@ -68,7 +67,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
   }
 
   public static class Target_copyPluginXml implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.plugin.CopyPluginXml.copyPluginXml");
 
@@ -77,16 +76,16 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_ehksfb_a0a = null;
+          final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               progressMonitor.start("Copying resources", 2);
               progressMonitor.step("plugin.xml");
               try {
-                for (IResource resource : input) {
-                  TResource tres = (TResource) resource;
-
+                for (TResource tres : Sequence.fromIterable(input)) {
                   String dest = pa.forResource(tres).properties(Target_copyPluginXml.this.getName(), CopyPluginXml_Facet.Target_copyPluginXml.Parameters.class).pluginRoot();
 
                   if (dest != null) {
@@ -98,7 +97,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
                         new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
                           @Override
                           public boolean acceptWritten(IFile file) {
-                            if (eq_mk86fn_a0a0a0a0a0b0b0b0e0a0c0a1a0a0a0a4j(file.getName(), "plugin.xml")) {
+                            if (eq_mk86fn_a0a0a0a0a0b0b0b0c0a0c0a2a0a0a0a4j(file.getName(), "plugin.xml")) {
                               pluginXml[0] = file;
                               monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Copying " + file + " to " + metaInf + " directory.")));
                               return false;
@@ -125,7 +124,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
                     }
                   }
 
-                  _output_ehksfb_a0a = Sequence.fromIterable(_output_ehksfb_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+                  _output_ehksfb_a0a = Sequence.fromIterable(_output_ehksfb_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
                 }
               } finally {
                 progressMonitor.done();
@@ -220,7 +219,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
       }
     }
 
-    private static boolean eq_mk86fn_a0a0a0a0a0b0b0b0e0a0c0a1a0a0a0a4j(Object a, Object b) {
+    private static boolean eq_mk86fn_a0a0a0a0a0b0b0b0c0a0c0a2a0a0a0a4j(Object a, Object b) {
       return (a != null ?
         a.equals(b) :
         a == b

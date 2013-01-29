@@ -27,7 +27,7 @@ public class RetainedUtil {
   public RetainedUtil() {
   }
 
-  public static Map<IModule, Iterable<SModelDescriptor>> collectModelsToRetain(Iterable<IResource> input) {
+  public static Map<IModule, Iterable<SModelDescriptor>> collectModelsToRetain(Iterable<? extends IResource> input) {
     final Map<IModule, Iterable<SModelDescriptor>> retainedModels = MapSequence.fromMap(new HashMap<IModule, Iterable<SModelDescriptor>>());
     Iterable<SModelDescriptor> empty = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     for (IResource it : input) {

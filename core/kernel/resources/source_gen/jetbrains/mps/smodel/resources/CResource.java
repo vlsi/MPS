@@ -4,10 +4,9 @@ package jetbrains.mps.smodel.resources;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.compiler.IClassesData;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class CResource extends MultiTuple._1<IClassesData> implements IResource, ICResouce {
+public class CResource extends MultiTuple._1<IClassesData> implements ICResouce {
   public CResource() {
     super();
   }

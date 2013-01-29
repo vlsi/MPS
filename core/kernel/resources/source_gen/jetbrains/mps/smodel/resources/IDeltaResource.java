@@ -5,6 +5,7 @@ package jetbrains.mps.smodel.resources;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.delta.IDelta;
 
+@Deprecated
 public interface IDeltaResource extends IResource {
   public Iterable<IDelta> delta();
 }

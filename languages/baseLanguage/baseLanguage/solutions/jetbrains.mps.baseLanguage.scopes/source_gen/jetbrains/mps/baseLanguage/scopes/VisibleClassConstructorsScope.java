@@ -26,7 +26,7 @@ public class VisibleClassConstructorsScope extends Scope {
 
   public VisibleClassConstructorsScope(@NotNull SNode contextNode, IScope scope) {
     // todo: find not all classifiers, only class concept! 
-    classifiers = new FilteringScope(ClassifierScopes.getVisibleClassifiersScope(contextNode, scope)) {
+    classifiers = new FilteringScope(ClassifierScopes.getVisibleClassifiersScope(contextNode, true)) {
       @Override
       public boolean isExcluded(SNode node) {
         return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface") || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean((SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "abstractClass"));

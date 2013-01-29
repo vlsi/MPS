@@ -44,8 +44,8 @@
         </node>
       </node>
       <node role="input" roleId="vvvw.119022571401949664" type="vvvw.ResourceTypeDeclaration" typeId="vvvw.119022571401949652" id="119022571402188580">
-        <node role="resourceType" roleId="vvvw.119022571401949655" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="119022571402347808">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fn29.7544464876070881646" resolveInfo="ICResouce" />
+        <node role="resourceType" roleId="vvvw.119022571401949655" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="4893029853810207929">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fn29.695262645445911158" resolveInfo="CResource" />
         </node>
       </node>
     </node>

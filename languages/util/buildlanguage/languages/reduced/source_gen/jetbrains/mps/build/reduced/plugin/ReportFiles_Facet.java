@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.ITResource;
+import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
@@ -63,7 +63,7 @@ public class ReportFiles_Facet extends IFacet.Stub {
   }
 
   public static class Target_report implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.build.reduced.ReportFiles.report");
 
@@ -72,14 +72,15 @@ public class ReportFiles_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_bk4wqp_a0a = null;
+          final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               ModelAccess.instance().requireWrite(new Runnable() {
                 public void run() {
-                  for (Object resource : input) {
-                    ITResource itr = (ITResource) resource;
+                  for (TResource itr : Sequence.fromIterable(input)) {
                     final SModelDescriptor md = itr.modelDescriptor();
                     new DeltaReconciler(itr.delta()).visitAll(new FilesDelta.Visitor() {
                       @Override
