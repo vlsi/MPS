@@ -43,7 +43,7 @@ public class ClassifiersScope extends FilteringScope {
     // end of hack 
     // TODO Must be done through ScopeProvider 
     SNode contextClass = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
-    return ClassifierResolveUtils.resolve(refText, contextClass, myModuleScope, myInlcudeAncestors);
+    return ClassifierResolveUtils.resolve(refText, contextClass, myModuleScope, (ModelPlusImportedScope) wrapped, myInlcudeAncestors);
     // <node> 
   }
 

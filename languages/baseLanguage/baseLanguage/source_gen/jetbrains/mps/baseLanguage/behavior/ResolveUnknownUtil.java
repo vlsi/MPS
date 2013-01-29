@@ -292,8 +292,6 @@ public class ResolveUnknownUtil {
     if (Sequence.fromIterable(scope.getAvailableElements(name)).isNotEmpty()) {
       // it's a variable 
 
-      System.err.println("First token is a variable: " + name + " " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(Sequence.fromIterable(scope.getAvailableElements(name)).first()), "name"));
-
       SNode varRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SReference sref = new DynamicReference("variableDeclaration", varRef, null, name);
       varRef.setReference(sref.getRole(), sref);
