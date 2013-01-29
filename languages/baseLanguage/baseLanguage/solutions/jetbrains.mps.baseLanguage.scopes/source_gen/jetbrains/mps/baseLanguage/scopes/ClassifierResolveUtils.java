@@ -242,8 +242,10 @@ public class ClassifierResolveUtils {
 
     assert token != null;
 
-    if (token.equals(SPropertyOperations.getString(contextNode, "name"))) {
-      return construct(contextNode, tokenizer);
+    if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
+      if (token.equals(SPropertyOperations.getString(contextNode, "name"))) {
+        return construct(contextNode, tokenizer);
+      }
     }
     for (SNode nestedClas : Sequence.fromIterable(getImmediateNestedClassifiers(contextNode))) {
       if (token.equals(SPropertyOperations.getString(nestedClas, "name"))) {
@@ -252,6 +254,9 @@ public class ClassifierResolveUtils {
     }
 
     for (SNode enclosingClass : Sequence.fromIterable(getPathToRoot(contextNode))) {
+      if (SNodeOperations.isInstanceOf(enclosingClass, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        continue;
+      }
       if (token.equals(SPropertyOperations.getString(enclosingClass, "name"))) {
         return construct(enclosingClass, tokenizer);
       }
