@@ -80,6 +80,7 @@ public class TokensWithDots extends AbstractCellProvider {
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), tokenListHandler_ueckjp_a0.this.getSeparatorText(editorContext, node));
       editorCell.setSelectable(false);
+      BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
       editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
       editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
       return editorCell;

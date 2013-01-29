@@ -2067,8 +2067,8 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1075233539828">
-        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no return type&gt;" />
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="2" />
+        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no return type&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1068580123133" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1185275109560">
@@ -2298,8 +2298,8 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1075287750861">
-        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no type&gt;" />
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="1" />
+        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no type&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1068580123133" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="1185275167058">
@@ -10532,8 +10532,8 @@
   </root>
   <root id="1181823106174">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1181823199382">
-      <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
       <property name="attractsFocus" nameId="tpc2.1130859485024" value="2" />
+      <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
       <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215090010725" resolveInfo="VariableName" />
       <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="1181823199383">
@@ -18714,6 +18714,9 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_AttributedNodeCell" typeId="tpc2.1149850725784" id="4726082558181601798" />
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="4726082558179800979" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PaddingBottomStyleClassItem" typeId="tpc2.1226339813308" id="1708156507847561038">
+        <property name="value" nameId="tpc2.1215007802031" value="2" />
+      </node>
     </node>
   </root>
   <root id="4726082558179801002">
@@ -18744,6 +18747,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node role="separatorStyle" roleId="tpc2.1233141163694" type="tpc2.InlineStyleDeclaration" typeId="tpc2.1233148810477" id="1708156507845980405">
+          <link role="parentClass" roleId="tpc2.1233148881323" targetNodeId="1215096040201" resolveInfo="Dot" />
         </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="4726082558179801312" />

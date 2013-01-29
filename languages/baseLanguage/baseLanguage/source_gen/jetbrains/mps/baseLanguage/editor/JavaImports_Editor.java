@@ -14,6 +14,10 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
@@ -62,6 +66,10 @@ public class JavaImports_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1bs0fk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_1bs0fk_a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PADDING_BOTTOM, new Padding(2, Measure.SPACES));
+    }
     editorCell.addEditorCell(this.createRefNodeList_1bs0fk_a0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_1bs0fk_b0(editorContext, node));
     return editorCell;

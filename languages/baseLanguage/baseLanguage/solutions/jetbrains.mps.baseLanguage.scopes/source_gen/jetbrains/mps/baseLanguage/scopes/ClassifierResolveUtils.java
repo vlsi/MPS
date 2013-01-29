@@ -392,7 +392,7 @@ public class ClassifierResolveUtils {
 
   public static Iterable<SNode> getPathToRoot(SNode clas) {
     // TODO make more precise: take role into consideration 
-    return SNodeOperations.getAncestors(clas, "jetbrains.mps.baseLanguage.structure.Classifier", false);
+    return SNodeOperations.getAncestors(clas, "jetbrains.mps.baseLanguage.structure.Classifier", true);
   }
 
   public static Iterable<SNode> getAncestors(SNode clas) {
@@ -409,7 +409,6 @@ public class ClassifierResolveUtils {
         iter.add(SLinkOperations.getTarget(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false));
 
       } else if (SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        System.out.println("Searching in: " + SPropertyOperations.getString(claz, "name"));
         SNode supr = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "classifier", false);
         if ((supr != null)) {
           iter.add(supr);

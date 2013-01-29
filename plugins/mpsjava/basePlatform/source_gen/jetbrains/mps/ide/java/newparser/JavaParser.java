@@ -26,8 +26,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -142,7 +140,6 @@ public class JavaParser {
     // now insert comments 
     attachComments(source, converter, util.recordedParsingInformation);
 
-
     return new JavaParser.JavaParseResult(resultNodes, resultPackageName, problemDescription(util.recordedParsingInformation));
   }
 
@@ -211,14 +208,20 @@ public class JavaParser {
   }
 
   public void annotateWithmports(CompilationUnitDeclaration compResult, SNode clas) {
-    // <node> 
-    AttributeOperations.createAndSetAttrbiute(clas, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), "jetbrains.mps.baseLanguage.structure.JavaImports");
+    SNode imports = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImports", null);
     if (compResult.imports != null) {
       for (ImportReference imprt : compResult.imports) {
-        // <node> 
-        ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(clas, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))), "entries", true)).addElement(makeImport(imprt));
+        ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).addElement(makeImport(imprt));
       }
     }
+
+    // inserting it in the beginning 
+    clas.insertChild("smodelAttribute", imports, null);
+
+    // we want to insert imports section before any javadoc 
+    // because javadoc is data while imports section is meta-data for assisting class resolving 
+
+    // <node> 
     // <node> 
   }
 
