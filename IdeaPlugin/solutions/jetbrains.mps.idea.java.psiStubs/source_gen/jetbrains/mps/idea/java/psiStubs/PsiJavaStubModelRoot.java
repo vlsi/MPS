@@ -196,7 +196,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
 
 
     SModelFqName fqName = new SModelFqName(packageName, "java_stub");
-    jetbrains.mps.smodel.SModelId modelId = jetbrains.mps.smodel.jetbrains.mps.smodel.SModelId.foreign(fqName.getStereotype(), getModule().getModuleId().toString(), fqName.getLongName());
+    jetbrains.mps.smodel.SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(fqName.getStereotype(), getModule().getModuleId().toString(), fqName.getLongName());
 
     return new SModelReference(fqName, modelId);
   }
