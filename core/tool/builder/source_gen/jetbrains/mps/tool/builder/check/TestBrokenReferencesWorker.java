@@ -25,7 +25,7 @@ import jetbrains.mps.project.validation.ModelValidator;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.tool.common.TeamCityMessageFormat;
 

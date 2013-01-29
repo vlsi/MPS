@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-6rnedb2dmfaxkh4ar3t40eaqsbvd3eq">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-czkeaawxav2uxfhwhouknmgxwcerk0t" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
   <dep model="r:7c298fbd-556c-4780-a4a2-b80b0ff237fd(jetbrains.mps.debugger.decisionTable.structure)" hash="-5kdh8cztyjr1mcgykp72z7gcj1rv7qn" />
   <dep model="r:9b282e8f-bb05-49c2-ab77-4fde5e599284(jetbrains.mps.debugger.decisionTable.generator.template.main@generator)" hash="-8jrotydcp2z7nq7v5spgw2k1u0w8cs" />
   <common hash="8ryn8887tu6a63iwiow6lmsiliqvb5g" />

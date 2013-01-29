@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -56,7 +56,7 @@ public class SNodeCompare {
       if (neq_acety0_a0e0f0c(aRef.getTargetSModelReference(), bRef.getTargetSModelReference())) {
         return false;
       }
-      if (neq_acety0_a0f0f0c(aRef.getResolveInfo(), bRef.getResolveInfo())) {
+      if (neq_acety0_a0f0f0c(((jetbrains.mps.smodel.SReference) aRef).getResolveInfo(), ((jetbrains.mps.smodel.SReference) bRef).getResolveInfo())) {
         return false;
       }
       if (aRef instanceof DynamicReference || bRef instanceof DynamicReference) {

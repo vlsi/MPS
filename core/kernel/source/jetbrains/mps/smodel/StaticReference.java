@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
-
-import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 //final used by find usages
 public final class StaticReference extends SReferenceBase {
@@ -55,7 +55,7 @@ public final class StaticReference extends SReferenceBase {
     myTargetNodeId = nodeId;
   }
 
-  protected SNode getTargetNode_internal(boolean silently) {
+  protected SNode getTargetNode_internal() {
     SModelReference mr = getTargetSModelReference();
     if (mr != null) {
       NodeReadAccessCasterInEditor.fireReferenceTargetReadAccessed(getSourceNode(), mr, getTargetNodeId());
@@ -111,9 +111,7 @@ public final class StaticReference extends SReferenceBase {
     if (targetNode != null) return targetNode;
     targetNode = UnregisteredNodes.instance().get(targetModel.getSModelReference(), targetNodeId);
     if (targetNode == null) {
-      if (!silently) {
-        error("target model '" + targetModel.getSModelReference() + "' doesn't contain node with id=" + getTargetNodeId());
-      }
+      error("target model '" + targetModel.getSModelReference() + "' doesn't contain node with id=" + getTargetNodeId());
     }
 
     return targetNode;
@@ -121,18 +119,13 @@ public final class StaticReference extends SReferenceBase {
 
   public SModel getTargetSModel() {
     SModel current = getSourceNode().getModel();
-    if (!isExternal()) return current;
+    if (current != null && current.getSModelReference().equals(getTargetSModelReference())) return current;
 
     // external
     SModelReference targetModelReference = getTargetSModelReference();
     // 'unresolved' actually.
     // It can be tmp reference created while copy/pasting a node
     if (targetModelReference == null) return null;
-
-    // TODO
-//    if(current == null) {
-//      return null;
-//    }
 
     SModelDescriptor modelDescriptor = null;
     if (current != null && current.getModelDescriptor() != null) {

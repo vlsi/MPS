@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 @Deprecated
 public class SLinkOperations {
@@ -181,6 +181,6 @@ public class SLinkOperations {
     if (reference == null) {
       return null;
     }
-    return reference.getResolveInfo();
+    return ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
   }
 }

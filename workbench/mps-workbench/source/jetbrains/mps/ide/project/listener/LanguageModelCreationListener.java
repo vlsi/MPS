@@ -18,7 +18,7 @@ package jetbrains.mps.ide.project.listener;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.listener.ModelCreationListener;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 
 import java.util.Arrays;
 import java.util.List;

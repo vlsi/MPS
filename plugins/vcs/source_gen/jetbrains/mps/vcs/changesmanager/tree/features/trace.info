@@ -235,14 +235,14 @@
     <nodeInfo nodeId="6277750378633134080" fileName="AbstractNodeFeature.java" startLine="13" startPosition="70" endLine="14" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6277750378633134084" fileName="AbstractNodeFeature.java" startLine="14" startPosition="63" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8685889515298222528" fileName="AbstractNodeFeature.java" startLine="18" startPosition="42" endLine="19" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6277750378633134115" fileName="AbstractNodeFeature.java" startLine="23" startPosition="40" endLine="24" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6277750378633134115" fileName="AbstractNodeFeature.java" startLine="23" startPosition="40" endLine="24" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6277750378633140595" fileName="AbstractNodeFeature.java" startLine="27" startPosition="49" endLine="28" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6277750378633134093" fileName="AbstractNodeFeature.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodePointer#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
     <nodeInfo nodeId="6277750378633140572" fileName="AbstractNodeFeature.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodePointerString#()Ljava/lang/String;" />
     <nodeInfo nodeId="6277750378633134076" fileName="AbstractNodeFeature.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractNodeFeature#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
     <nodeInfo nodeId="6277750378633134102" fileName="AbstractNodeFeature.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
     <scopeInfo nodeId="6277750378633134096" fileName="AbstractNodeFeature.java" startLine="18" startPosition="42" endLine="19" endPosition="21" />
-    <scopeInfo nodeId="6277750378633134108" fileName="AbstractNodeFeature.java" startLine="23" startPosition="40" endLine="24" endPosition="87" />
+    <scopeInfo nodeId="6277750378633134108" fileName="AbstractNodeFeature.java" startLine="23" startPosition="40" endLine="24" endPosition="111" />
     <scopeInfo nodeId="6277750378633140575" fileName="AbstractNodeFeature.java" startLine="27" startPosition="49" endLine="28" endPosition="45" />
     <scopeInfo nodeId="6277750378633134079" fileName="AbstractNodeFeature.java" startLine="13" startPosition="70" endLine="15" endPosition="28" />
     <scopeInfo nodeId="6277750378633134093" fileName="AbstractNodeFeature.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />

@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -116,7 +116,7 @@ public class SNodeOperations {
   public static List<SReference> getReferences(SNode n) {
     List<SReference> res = new LinkedList<SReference>();
     for (SReference ref : Sequence.fromIterable(n.getReferences())) {
-      res.add(((SReference) ref));
+      res.add(((jetbrains.mps.smodel.SReference) ref));
     }
     return res;
   }
@@ -281,6 +281,15 @@ public class SNodeOperations {
 
     public Iterator<SNode> iterator() {
       return this;
+    }
+  }
+
+  public static SNode getTargetNodeSilently(SReference ref) {
+    try {
+      jetbrains.mps.smodel.SReference.disableLogging();
+      return ref.getTargetNode();
+    } finally {
+      jetbrains.mps.smodel.SReference.enableLogging();
     }
   }
 }

@@ -37,10 +37,9 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class DependencyPathTree extends MPSTree implements DataProvider {
-  private List<Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>>> myAllDependencies = ListSequence.fromList(new ArrayList<Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>>>());
+  private List<Tuples._4<Set<IModule>, Set<IModule>, Set<IModule>, Boolean>> myAllDependencies = ListSequence.fromList(new ArrayList<Tuples._4<Set<IModule>, Set<IModule>, Set<IModule>, Boolean>>());
   private Project myProject;
   private boolean myShowAllPaths;
-  private boolean myShowRuntime;
 
   public DependencyPathTree(Project project) {
     myProject = project;
@@ -49,14 +48,6 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
   public Project getProject() {
     return myProject;
-  }
-
-  public void setShowRuntime(boolean value) {
-    myShowRuntime = value;
-  }
-
-  public boolean isShowRuntime() {
-    return myShowRuntime;
   }
 
   public void setShowAllPaths(boolean value) {
@@ -71,11 +62,11 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     ListSequence.fromList(myAllDependencies).clear();
   }
 
-  public void addDependency(Iterable<IModule> from, Iterable<IModule> to, Iterable<IModule> usedLanguage) {
-    ListSequence.fromList(myAllDependencies).addElement(MultiTuple.<Set<IModule>,Set<IModule>,Set<IModule>>from(SetSequence.fromSetWithValues(new HashSet<IModule>(), from), SetSequence.fromSetWithValues(new HashSet<IModule>(), to), SetSequence.fromSetWithValues(new HashSet<IModule>(), usedLanguage)));
+  public void addDependency(Iterable<IModule> from, Iterable<IModule> to, Iterable<IModule> usedLanguage, boolean showRuntime) {
+    ListSequence.fromList(myAllDependencies).addElement(MultiTuple.<Set<IModule>,Set<IModule>,Set<IModule>,Boolean>from(SetSequence.fromSetWithValues(new HashSet<IModule>(), from), SetSequence.fromSetWithValues(new HashSet<IModule>(), to), SetSequence.fromSetWithValues(new HashSet<IModule>(), usedLanguage), showRuntime));
   }
 
-  private MPSTreeNode buildTree(IModule from, Set<IModule> dependency, Set<IModule> usedlanguage) {
+  private MPSTreeNode buildTree(IModule from, Set<IModule> dependency, Set<IModule> usedlanguage, boolean showRuntime) {
     Map<Tuples._2<IModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom> visited = MapSequence.fromMap(new HashMap<Tuples._2<IModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom>());
     Queue<DependencyPathTree.LinkFrom> unprocessed = QueueSequence.fromQueue(new LinkedList<DependencyPathTree.LinkFrom>());
 
@@ -99,8 +90,8 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
         }
       } else {
         MapSequence.fromMap(visited).put(MultiTuple.<IModule,DependencyUtil.Role>from(node.link.module, node.link.role), node);
-        DependencyUtil.dependencies(node.link.role, node.link.module, isShowRuntime());
-        for (DependencyUtil.Link link : ListSequence.fromList(DependencyUtil.dependencies(node.link.role, node.link.module, isShowRuntime()))) {
+        DependencyUtil.dependencies(node.link.role, node.link.module, showRuntime);
+        for (DependencyUtil.Link link : ListSequence.fromList(DependencyUtil.dependencies(node.link.role, node.link.module, showRuntime))) {
           DependencyPathTree.LinkFrom n = new DependencyPathTree.LinkFrom(link, node);
           QueueSequence.fromQueue(unprocessed).addLastElement(n);
         }
@@ -110,7 +101,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     return root.node;
   }
 
-  public MPSTreeNode testBuildTree(IModule from, IModule dependency, IModule used) {
+  public MPSTreeNode testBuildTree(IModule from, IModule dependency, IModule used, boolean showRuntime) {
     jetbrains.mps.util.misc.hash.HashSet<IModule> dependencies = new jetbrains.mps.util.misc.hash.HashSet<IModule>();
     if (dependency != null) {
       dependencies.add(dependency);
@@ -119,7 +110,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     if (used != null) {
       usedLanguages.add(used);
     }
-    return buildTree(from, dependencies, usedLanguages);
+    return buildTree(from, dependencies, usedLanguages, showRuntime);
   }
 
   protected MPSTreeNode rebuild() {
@@ -127,11 +118,11 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
       "No Dependencies Selected" :
       "Found Dependencies:"
     ), null);
-    for (Tuples._3<Set<IModule>, Set<IModule>, Set<IModule>> dep : ListSequence.fromList(myAllDependencies)) {
+    for (Tuples._4<Set<IModule>, Set<IModule>, Set<IModule>, Boolean> dep : ListSequence.fromList(myAllDependencies)) {
       for (IModule m : SetSequence.fromSet(dep._0())) {
-        MPSTreeNode node = buildTree(m, dep._1(), dep._2());
+        MPSTreeNode node = buildTree(m, dep._1(), dep._2(), (boolean) dep._3());
         if (node != null) {
-          result.add(buildTree(m, dep._1(), dep._2()));
+          result.add(node);
         }
       }
     }
@@ -148,15 +139,15 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
 
   @Nullable
   public Object getData(@NonNls String id) {
-    DependencyTreeNode current = as_9bg0dz_a0a0a61(getCurrentNode(), DependencyTreeNode.class);
+    DependencyTreeNode current = as_9bg0dz_a0a0a31(getCurrentNode(), DependencyTreeNode.class);
     if (id.equals(MPSDataKeys.LOGICAL_VIEW_NODE.getName())) {
       return current;
     }
     if (id.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
-      return check_9bg0dz_a0a2a61(current);
+      return check_9bg0dz_a0a2a31(current);
     }
     if (id.equals(MPSCommonDataKeys.MODULE.getName())) {
-      return check_9bg0dz_a0a3a61(current);
+      return check_9bg0dz_a0a3a31(current);
     }
     return null;
   }
@@ -207,21 +198,21 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     }
   }
 
-  private static IOperationContext check_9bg0dz_a0a2a61(DependencyTreeNode checkedDotOperand) {
+  private static IOperationContext check_9bg0dz_a0a2a31(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOperationContext();
     }
     return null;
   }
 
-  private static IModule check_9bg0dz_a0a3a61(DependencyTreeNode checkedDotOperand) {
+  private static IModule check_9bg0dz_a0a3a31(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static <T> T as_9bg0dz_a0a0a61(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a0a31(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -148,13 +148,13 @@ public class CopyPasteUtil {
       SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
       SReference newReference;
       if (newTargetNode != null) {
-        newReference = SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
+        newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
       } else {
         if (oldTargetNode != null) {
-          newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getNodeId());
+          newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getNodeId());
         } else
-        if (sourceReference.getResolveInfo() != null) {
-          newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, sourceReference.getResolveInfo());
+        if (((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() != null) {
+          newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo());
         } else {
           continue;
         }
@@ -171,13 +171,13 @@ public class CopyPasteUtil {
       SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
       SReference newReference;
       if (newTargetNode != null) {
-        newReference = SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
+        newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
       } else {
         if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(newSourceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall") && oldTargetNode != null) {
-          newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
+          newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
         } else {
           String resolveInfo = (oldTargetNode == null ?
-            sourceReference.getResolveInfo() :
+            ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() :
             oldTargetNode.getName()
           );
           if (resolveInfo != null) {
@@ -189,7 +189,7 @@ public class CopyPasteUtil {
             referencesRequireResolve.add(newReference);
           } else
           if (oldTargetNode != null) {
-            newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
+            newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
           } else {
             continue;
           }

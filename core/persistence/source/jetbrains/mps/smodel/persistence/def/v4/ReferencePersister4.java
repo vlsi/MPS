@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
@@ -159,7 +159,7 @@ public class ReferencePersister4 implements IReferencePersister {
     linkElement.setAttribute(ModelPersistence.ROLE, VersionUtil.formVersionedString(reference.getRole(), VersionUtil.getNodeLanguageVersion(node)));
 
     String targetModelInfo = "";
-    if (reference.isExternal()) {
+    if (!((reference instanceof StaticReference) &&(node.getModel().getSModelReference().equals(reference.getTargetSModelReference())))) {
       if (useUIDs) {
         targetModelInfo = reference.getTargetSModelReference().toString() + "#";
       } else {
@@ -191,7 +191,7 @@ public class ReferencePersister4 implements IReferencePersister {
     //stack overflow was here!!
     targetNodeId = VersionUtil.formVersionedString(targetModelInfo + targetNodeId, VersionUtil.getReferenceToNodeVersion(node, reference.getTargetSModelReference()));
     linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
-    String resolveInfo = reference.getResolveInfo();
+    String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
     if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
   }
 

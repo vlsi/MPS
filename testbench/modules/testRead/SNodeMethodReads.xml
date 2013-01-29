@@ -574,6 +574,10 @@
    <int>1</int>
   </void>
   <void method="put">
+   <string>public jetbrains.mps.smodel.SModel jetbrains.mps.smodel.SNode.getModel()</string>
+   <int>1</int>
+  </void>
+  <void method="put">
    <string>public java.lang.Iterable jetbrains.mps.smodel.SNode.getChildren()</string>
    <int>1</int>
   </void>

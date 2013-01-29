@@ -15,12 +15,17 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.GraphUtil;
 import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Uses linear algorithms.
@@ -54,7 +59,7 @@ public class ConnectedComponentPartitioner {
       SNode root = myRoots[index];
       Arrays.fill(dependsOn, 0);
       buildNodeDependencies(root, dependsOn, rootIndex);
-      for (SNode node : ((List<SNode>)(List) SNodeOperations.getDescendants(root, null))) {
+      for (SNode node : ((List<SNode>) (List) SNodeOperations.getDescendants(root, null))) {
         buildNodeDependencies(node, dependsOn, rootIndex);
       }
       dependsOn[index] = 0;
@@ -65,9 +70,9 @@ public class ConnectedComponentPartitioner {
 
   private void buildNodeDependencies(SNode node, int[] dependsOn, Map<SNode, Integer> rootIndex) {
     for (SReference ref : node.getReferences()) {
-      if (ref.isExternal()) {
-        continue;
-      }
+      SModel sm = node.getModel();
+      assert sm != null;
+      if (!sm.getSModelReference().equals(ref.getTargetSModelReference())) continue;
       SNode targetNode = ref.getTargetNode();
       if (targetNode != null) {
         Integer targetIndex = rootIndex.get(targetNode.getContainingRoot());
@@ -114,13 +119,13 @@ public class ConnectedComponentPartitioner {
 
       // calc dependencies
       int count = 0;
-      Arrays.fill(dependencies, (byte)0);
+      Arrays.fill(dependencies, (byte) 0);
       for (int e = 0; e < roots.length; e++) {
         int rootIndex = partitions[i][e];
-        for(int dependsOn : myDependencies[rootIndex]) {
+        for (int dependsOn : myDependencies[rootIndex]) {
           int componentIndex = rootToComponent[dependsOn];
           assert componentIndex >= 0;
-          if(componentIndex < i && dependencies[componentIndex] == 0) {
+          if (componentIndex < i && dependencies[componentIndex] == 0) {
             dependencies[componentIndex] = 1;
             count++;
           }
@@ -128,8 +133,8 @@ public class ConnectedComponentPartitioner {
       }
 
       Component[] dep = count > 0 ? new Component[count] : EMPTY_COMPONENTS;
-      for(int e = 0; count > 0 && e < i; e++) {
-        if(dependencies[e] == 1) {
+      for (int e = 0; count > 0 && e < i; e++) {
+        if (dependencies[e] == 1) {
           dep[--count] = result[e];
         }
       }

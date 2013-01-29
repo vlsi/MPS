@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -56,7 +56,7 @@ public class MethodCallChecker extends SpecificChecker {
         if (!("baseMethodDeclaration".equals(SLinkOperations.getRole(ref)))) {
           continue;
         }
-        if (ref.getTargetNodeSilently() == null) {
+        if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
           addIssue(results, node, "Unresolved reference to method declaration: " + SLinkOperations.getResolveInfo(ref), ModelChecker.SEVERITY_ERROR, "unresolved reference to method declaration", new IModelCheckerFix() {
             public boolean doFix() {
               MethodDeclarationsFixer fixer = new MethodDeclarationsFixer();

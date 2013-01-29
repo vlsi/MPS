@@ -25,9 +25,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 /**
- * Igor Alshannikov
- * Nov 28, 2007
- * <p/>
  * These references are created in transient models.
  * They are always internal.
  */
@@ -44,6 +41,7 @@ public class PostponedReference extends SReference {
     myGenerator = generator;
   }
 
+  @Deprecated
   public boolean isExternal() {
     return false;
   }
@@ -60,11 +58,20 @@ public class PostponedReference extends SReference {
     return null;
   }
 
+  @Deprecated
+  /**
+   * Use method in SReferenceBase class, as when you change ref, you know what ref it is
+   * @Deprecated in 3.0
+   */
   public void setTargetSModelReference(@NotNull SModelReference modelReference) {
     throw new RuntimeException("not supported");
   }
 
-  protected SNode getTargetNode_internal(boolean silently) {
+  public org.jetbrains.mps.openapi.model.SModel getTargetModel() {
+    return SModelRepository.getInstance().getModelDescriptor(getTargetSModelReference());
+  }
+
+  protected SNode getTargetNode_internal() {
     SReference ref = getReplacementReference();
     if (ref == null) return null;
     return ref.getTargetNode();

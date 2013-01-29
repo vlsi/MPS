@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Map;
@@ -183,7 +183,7 @@ public class TypeNameResolver {
       if (javaLangNode != null) {
         // <node> 
         // <node> 
-        return SReference.create(role, source, javaLangNode);
+        return jetbrains.mps.smodel.SReference.create(role, source, javaLangNode);
       }
 
       // using short name, as it must be accessible 

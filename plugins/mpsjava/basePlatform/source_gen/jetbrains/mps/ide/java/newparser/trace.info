@@ -397,7 +397,7 @@
     <nodeInfo nodeId="3493766494546491702" fileName="ASTConverter.java" startLine="843" startPosition="16" endLine="844" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3493766494546491704" fileName="ASTConverter.java" startLine="844" startPosition="72" endLine="845" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3493766494546491717" fileName="ASTConverter.java" startLine="846" startPosition="149" endLine="847" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3493766494546491728" fileName="ASTConverter.java" startLine="847" startPosition="162" endLine="848" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3493766494546491728" fileName="ASTConverter.java" startLine="847" startPosition="162" endLine="848" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3493766494546491742" fileName="ASTConverter.java" startLine="849" startPosition="14" endLine="850" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3493766494546491751" fileName="ASTConverter.java" startLine="852" startPosition="114" endLine="853" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3493766494546491766" fileName="ASTConverter.java" startLine="854" startPosition="12" endLine="855" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1073,7 +1073,7 @@
     <scopeInfo nodeId="3493766494546491615" fileName="ASTConverter.java" startLine="617" startPosition="57" endLine="619" endPosition="83" />
     <scopeInfo nodeId="3493766494546488013" fileName="ASTConverter.java" startLine="752" startPosition="28" endLine="754" endPosition="0" />
     <scopeInfo nodeId="3493766494546488062" fileName="ASTConverter.java" startLine="763" startPosition="14" endLine="765" endPosition="20" />
-    <scopeInfo nodeId="3493766494546491716" fileName="ASTConverter.java" startLine="846" startPosition="149" endLine="848" endPosition="39">
+    <scopeInfo nodeId="3493766494546491716" fileName="ASTConverter.java" startLine="846" startPosition="149" endLine="848" endPosition="75">
       <varInfo nodeId="3493766494546491718" varName="dynRef" />
     </scopeInfo>
     <scopeInfo nodeId="7529829387575406539" fileName="ASTConverter.java" startLine="863" startPosition="109" endLine="865" endPosition="146" />
@@ -2046,7 +2046,7 @@
     <nodeInfo nodeId="1172665404463012388" fileName="JavaParser.java" startLine="329" startPosition="63" endLine="330" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6956162774782380680" fileName="JavaParser.java" startLine="330" startPosition="40" endLine="331" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6956162774782858340" fileName="JavaParser.java" startLine="331" startPosition="107" endLine="332" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6956162774782465799" fileName="JavaParser.java" startLine="332" startPosition="0" endLine="333" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6956162774782465799" fileName="JavaParser.java" startLine="332" startPosition="0" endLine="333" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6956162774782797895" fileName="JavaParser.java" startLine="335" startPosition="49" endLine="336" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="229101595900307229" fileName="JavaParser.java" startLine="338" startPosition="60" endLine="339" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="3500060863298655706" fileName="JavaParser.java" startLine="341" startPosition="55" endLine="342" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
@@ -2108,7 +2108,7 @@
     <nodeInfo nodeId="3493766494546492356" fileName="JavaParser.java" startLine="226" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="makeImport#(Lorg/eclipse/jdt/internal/compiler/ast/ImportReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6072020170586257589" fileName="JavaParser.java" startLine="302" startPosition="64" endLine="321" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="9025524024257344848" fileName="JavaParser.java" startLine="302" startPosition="0" endLine="323" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryResolveUnknowns#(Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="6956162774782511139" fileName="JavaParser.java" startLine="333" startPosition="55" endLine="355" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6956162774782511139" fileName="JavaParser.java" startLine="333" startPosition="65" endLine="355" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6956162774781731270" fileName="JavaParser.java" startLine="327" startPosition="0" endLine="356" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="6956162774781586750" fileName="JavaParser.java" startLine="324" startPosition="0" endLine="358" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryResolveDynamicRefs#(Ljava/lang/Iterable;)V" />
     <nodeInfo nodeId="3671703302989070793" fileName="JavaParser.java" startLine="169" startPosition="13" endLine="211" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -2282,7 +2282,7 @@
     <scopeInfo nodeId="9025524024257344848" fileName="JavaParser.java" startLine="302" startPosition="0" endLine="323" endPosition="0">
       <varInfo nodeId="6072020170586257587" varName="roots" />
     </scopeInfo>
-    <scopeInfo nodeId="6956162774782511139" fileName="JavaParser.java" startLine="333" startPosition="55" endLine="355" endPosition="7">
+    <scopeInfo nodeId="6956162774782511139" fileName="JavaParser.java" startLine="333" startPosition="65" endLine="355" endPosition="7">
       <varInfo nodeId="6956162774782511141" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="6956162774781731274" fileName="JavaParser.java" startLine="328" startPosition="57" endLine="355" endPosition="7">
@@ -2429,7 +2429,7 @@
     <nodeInfo nodeId="3493766494546493674" fileName="TypeNameResolver.java" startLine="181" startPosition="0" endLine="182" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3493766494546493681" fileName="TypeNameResolver.java" startLine="183" startPosition="33" endLine="184" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3493766494546493689" fileName="TypeNameResolver.java" startLine="184" startPosition="18" endLine="185" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3493766494546493698" fileName="TypeNameResolver.java" startLine="185" startPosition="18" endLine="186" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3493766494546493698" fileName="TypeNameResolver.java" startLine="185" startPosition="18" endLine="186" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3493766494546493706" fileName="TypeNameResolver.java" startLine="187" startPosition="7" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2760315243038711297" fileName="TypeNameResolver.java" startLine="188" startPosition="0" endLine="189" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3493766494546493707" fileName="TypeNameResolver.java" startLine="189" startPosition="52" endLine="190" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2597,10 +2597,10 @@
     <nodeInfo nodeId="3493766494546493916" fileName="TypeNameResolver.java" startLine="32" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeNameResolver#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="3493766494546493739" fileName="TypeNameResolver.java" startLine="196" startPosition="10" endLine="214" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3493766494546493373" fileName="TypeNameResolver.java" startLine="100" startPosition="0" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3493766494546493801" fileName="TypeNameResolver.java" startLine="218" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveQualifiedClassName#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SReference;" />
+    <nodeInfo nodeId="3493766494546493801" fileName="TypeNameResolver.java" startLine="218" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveQualifiedClassName#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SReference;" />
     <nodeInfo nodeId="3493766494546493368" fileName="TypeNameResolver.java" startLine="99" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveShortTypeName#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="3493766494546493664" fileName="TypeNameResolver.java" startLine="175" startPosition="0" endLine="214" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3493766494546493550" fileName="TypeNameResolver.java" startLine="148" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveShortClassName#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SReference;" />
+    <nodeInfo nodeId="3493766494546493550" fileName="TypeNameResolver.java" startLine="148" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveShortClassName#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SReference;" />
     <scopeInfo nodeId="3493766494546493973" fileName="TypeNameResolver.java" startLine="45" startPosition="12" endLine="46" endPosition="80" />
     <scopeInfo nodeId="3493766494546493259" fileName="TypeNameResolver.java" startLine="50" startPosition="54" endLine="51" endPosition="23" />
     <scopeInfo nodeId="3493766494546493270" fileName="TypeNameResolver.java" startLine="54" startPosition="62" endLine="55" endPosition="78" />
@@ -2659,7 +2659,7 @@
       <varInfo nodeId="3493766494546493356" varName="typeVar" />
     </scopeInfo>
     <scopeInfo nodeId="3493766494546493358" fileName="TypeNameResolver.java" startLine="95" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="3493766494546493680" fileName="TypeNameResolver.java" startLine="183" startPosition="33" endLine="186" endPosition="61" />
+    <scopeInfo nodeId="3493766494546493680" fileName="TypeNameResolver.java" startLine="183" startPosition="33" endLine="186" endPosition="82" />
     <scopeInfo nodeId="3493766494546493772" fileName="TypeNameResolver.java" startLine="207" startPosition="76" endLine="210" endPosition="9" />
     <scopeInfo nodeId="3493766494546493895" fileName="TypeNameResolver.java" startLine="243" startPosition="96" endLine="246" endPosition="7" />
     <scopeInfo nodeId="3493766494546493018" fileName="TypeNameResolver.java" startLine="259" startPosition="71" endLine="262" endPosition="28" />
@@ -3306,8 +3306,8 @@
     <nodeInfo nodeId="5810966870865929558" fileName="FullASTConverter.java" startLine="965" startPosition="16" endLine="966" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2621000434129553237" fileName="FullASTConverter.java" startLine="966" startPosition="16" endLine="967" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5810966870865125589" fileName="FullASTConverter.java" startLine="967" startPosition="0" endLine="968" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5810966870865269824" fileName="FullASTConverter.java" startLine="968" startPosition="113" endLine="969" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5810966870865273421" fileName="FullASTConverter.java" startLine="969" startPosition="124" endLine="970" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5810966870865269824" fileName="FullASTConverter.java" startLine="968" startPosition="113" endLine="969" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5810966870865273421" fileName="FullASTConverter.java" startLine="969" startPosition="92" endLine="970" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5810966870865088963" fileName="FullASTConverter.java" startLine="970" startPosition="53" endLine="971" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4018023047319928531" fileName="FullASTConverter.java" startLine="971" startPosition="0" endLine="972" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4018023047319928574" fileName="FullASTConverter.java" startLine="972" startPosition="19" endLine="973" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3343,8 +3343,8 @@
     <nodeInfo nodeId="4018023047319928756" fileName="FullASTConverter.java" startLine="1012" startPosition="28" endLine="1013" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4018023047319928704" fileName="FullASTConverter.java" startLine="1013" startPosition="26" endLine="1014" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7099615211110658003" fileName="FullASTConverter.java" startLine="1015" startPosition="56" endLine="1016" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7099615211110726122" fileName="FullASTConverter.java" startLine="1016" startPosition="115" endLine="1017" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7099615211110724306" fileName="FullASTConverter.java" startLine="1017" startPosition="126" endLine="1018" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7099615211110726122" fileName="FullASTConverter.java" startLine="1016" startPosition="115" endLine="1017" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7099615211110724306" fileName="FullASTConverter.java" startLine="1017" startPosition="94" endLine="1018" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8094691147187940039" fileName="FullASTConverter.java" startLine="1018" startPosition="45" endLine="1019" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8094691147187983766" fileName="FullASTConverter.java" startLine="1019" startPosition="0" endLine="1020" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8094691147187984528" fileName="FullASTConverter.java" startLine="1020" startPosition="21" endLine="1021" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3357,8 +3357,8 @@
     <nodeInfo nodeId="7099615211109628986" fileName="FullASTConverter.java" startLine="1028" startPosition="0" endLine="1029" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7099615211109628992" fileName="FullASTConverter.java" startLine="1029" startPosition="132" endLine="1030" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7099615211109628998" fileName="FullASTConverter.java" startLine="1030" startPosition="72" endLine="1031" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7099615211109628999" fileName="FullASTConverter.java" startLine="1031" startPosition="0" endLine="1032" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7099615211109629008" fileName="FullASTConverter.java" startLine="1032" startPosition="132" endLine="1033" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7099615211109628999" fileName="FullASTConverter.java" startLine="1031" startPosition="0" endLine="1032" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7099615211109629008" fileName="FullASTConverter.java" startLine="1032" startPosition="100" endLine="1033" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7099615211109629017" fileName="FullASTConverter.java" startLine="1033" startPosition="52" endLine="1034" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7099615211109629018" fileName="FullASTConverter.java" startLine="1034" startPosition="0" endLine="1035" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7099615211109629022" fileName="FullASTConverter.java" startLine="1035" startPosition="25" endLine="1036" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3411,16 +3411,16 @@
     <nodeInfo nodeId="7465138971829788257" fileName="FullASTConverter.java" startLine="1127" startPosition="12" endLine="1128" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7465138971833648398" fileName="FullASTConverter.java" startLine="1128" startPosition="86" endLine="1129" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7465138971828495316" fileName="FullASTConverter.java" startLine="1130" startPosition="5" endLine="1131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7465138971829721547" fileName="FullASTConverter.java" startLine="1134" startPosition="83" endLine="1135" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7465138971829721556" fileName="FullASTConverter.java" startLine="1135" startPosition="121" endLine="1136" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7465138971829721547" fileName="FullASTConverter.java" startLine="1134" startPosition="83" endLine="1135" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7465138971829721556" fileName="FullASTConverter.java" startLine="1135" startPosition="89" endLine="1136" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7465138971833648544" fileName="FullASTConverter.java" startLine="1136" startPosition="35" endLine="1137" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7465138971830260175" fileName="FullASTConverter.java" startLine="1140" startPosition="86" endLine="1141" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7465138971830260184" fileName="FullASTConverter.java" startLine="1143" startPosition="18" endLine="1144" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7465138971830260192" fileName="FullASTConverter.java" startLine="1145" startPosition="7" endLine="1146" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7465138971830260215" fileName="FullASTConverter.java" startLine="1147" startPosition="5" endLine="1148" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7465138971830259902" fileName="FullASTConverter.java" startLine="1148" startPosition="33" endLine="1149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7465138971830250763" fileName="FullASTConverter.java" startLine="1149" startPosition="0" endLine="1150" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7465138971830250776" fileName="FullASTConverter.java" startLine="1150" startPosition="101" endLine="1151" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7465138971830250763" fileName="FullASTConverter.java" startLine="1149" startPosition="0" endLine="1150" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7465138971830250776" fileName="FullASTConverter.java" startLine="1150" startPosition="69" endLine="1151" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7465138971833648794" fileName="FullASTConverter.java" startLine="1151" startPosition="35" endLine="1152" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3493766494546491165" fileName="FullASTConverter.java" startLine="1157" startPosition="87" endLine="1158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3493766494546491166" fileName="FullASTConverter.java" startLine="1158" startPosition="0" endLine="1159" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3444,7 +3444,7 @@
     <nodeInfo nodeId="3493766494546491298" fileName="FullASTConverter.java" startLine="1186" startPosition="100" endLine="1187" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3493766494546491228" fileName="FullASTConverter.java" startLine="1188" startPosition="14" endLine="1189" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="3493766494546491524" fileName="FullASTConverter.java" startLine="1195" startPosition="85" endLine="1196" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3493766494546491534" fileName="FullASTConverter.java" startLine="1197" startPosition="43" endLine="1198" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3493766494546491534" fileName="FullASTConverter.java" startLine="1197" startPosition="43" endLine="1198" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3493766494546491554" fileName="FullASTConverter.java" startLine="1199" startPosition="49" endLine="1200" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3493766494546491567" fileName="FullASTConverter.java" startLine="1201" startPosition="12" endLine="1202" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="3493766494546491835" fileName="FullASTConverter.java" startLine="1206" startPosition="81" endLine="1207" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3672,7 +3672,7 @@
     <nodeInfo nodeId="3493766494546490944" fileName="FullASTConverter.java" startLine="853" startPosition="13" endLine="863" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="3493766494546491097" fileName="FullASTConverter.java" startLine="896" startPosition="0" endLine="906" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convertExpression#(Lorg/eclipse/jdt/internal/compiler/ast/ThisReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="3493766494546491106" fileName="FullASTConverter.java" startLine="907" startPosition="0" endLine="917" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convertExpression#(Lorg/eclipse/jdt/internal/compiler/ast/QualifiedThisReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3493766494546491520" fileName="FullASTConverter.java" startLine="1195" startPosition="0" endLine="1205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustClassReference#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SReference;" />
+    <nodeInfo nodeId="3493766494546491520" fileName="FullASTConverter.java" startLine="1195" startPosition="0" endLine="1205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustClassReference#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SReference;" />
     <nodeInfo nodeId="6548439442932984633" fileName="FullASTConverter.java" startLine="1248" startPosition="63" endLine="1258" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3493766494546488542" fileName="FullASTConverter.java" startLine="291" startPosition="0" endLine="302" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convertStatement#(Lorg/eclipse/jdt/internal/compiler/ast/Block;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="3493766494546490373" fileName="FullASTConverter.java" startLine="674" startPosition="0" endLine="685" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convertExpression#(Lorg/eclipse/jdt/internal/compiler/ast/Assignment;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -3845,7 +3845,7 @@
     <scopeInfo nodeId="3493766494546491174" fileName="FullASTConverter.java" startLine="1160" startPosition="106" endLine="1161" endPosition="96" />
     <scopeInfo nodeId="3493766494546491274" fileName="FullASTConverter.java" startLine="1182" startPosition="28" endLine="1183" endPosition="51" />
     <scopeInfo nodeId="3493766494546491227" fileName="FullASTConverter.java" startLine="1188" startPosition="14" endLine="1189" endPosition="81" />
-    <scopeInfo nodeId="3493766494546491533" fileName="FullASTConverter.java" startLine="1197" startPosition="43" endLine="1198" endPosition="98" />
+    <scopeInfo nodeId="3493766494546491533" fileName="FullASTConverter.java" startLine="1197" startPosition="43" endLine="1198" endPosition="134" />
     <scopeInfo nodeId="3493766494546491553" fileName="FullASTConverter.java" startLine="1199" startPosition="49" endLine="1200" endPosition="89" />
     <scopeInfo nodeId="3493766494546491566" fileName="FullASTConverter.java" startLine="1201" startPosition="12" endLine="1202" endPosition="92" />
     <scopeInfo nodeId="3493766494546491860" fileName="FullASTConverter.java" startLine="1215" startPosition="36" endLine="1216" endPosition="111" />

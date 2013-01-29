@@ -24,7 +24,7 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.ScopeAdapter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 public class SNodeOperations {
   private static final Logger LOG = Logger.getLogger(SNodeOperations.class);
@@ -672,7 +672,7 @@ public class SNodeOperations {
     if (node == null) {
       return new ArrayList<SReference>(0);
     }
-    return IterableUtil.asList(node.getReferences());
+    return ((List) IterableUtil.asList(node.getReferences()));
   }
 
   public static SReference getReference(SNode node, SNode linkDeclaration) {

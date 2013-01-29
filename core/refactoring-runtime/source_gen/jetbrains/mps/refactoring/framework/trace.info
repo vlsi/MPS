@@ -1006,7 +1006,7 @@
     <nodeInfo nodeId="4792031542972814761" fileName="RefactoringContext.java" startLine="385" startPosition="59" endLine="386" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4792031542972814769" fileName="RefactoringContext.java" startLine="387" startPosition="26" endLine="388" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4792031542972814800" fileName="RefactoringContext.java" startLine="392" startPosition="27" endLine="393" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4792031542972814794" fileName="RefactoringContext.java" startLine="394" startPosition="22" endLine="395" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4792031542972814794" fileName="RefactoringContext.java" startLine="394" startPosition="22" endLine="395" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4792031542972814831" fileName="RefactoringContext.java" startLine="400" startPosition="25" endLine="401" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4792031542972814816" fileName="RefactoringContext.java" startLine="402" startPosition="20" endLine="403" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4792031542972814823" fileName="RefactoringContext.java" startLine="403" startPosition="131" endLine="404" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1317,7 +1317,7 @@
     <scopeInfo nodeId="4792031542972814720" fileName="RefactoringContext.java" startLine="376" startPosition="38" endLine="377" endPosition="53" />
     <scopeInfo nodeId="4792031542972814768" fileName="RefactoringContext.java" startLine="387" startPosition="26" endLine="388" endPosition="57" />
     <scopeInfo nodeId="4792031542972814799" fileName="RefactoringContext.java" startLine="392" startPosition="27" endLine="393" endPosition="61" />
-    <scopeInfo nodeId="4792031542972814793" fileName="RefactoringContext.java" startLine="394" startPosition="22" endLine="395" endPosition="43" />
+    <scopeInfo nodeId="4792031542972814793" fileName="RefactoringContext.java" startLine="394" startPosition="22" endLine="395" endPosition="79" />
     <scopeInfo nodeId="4792031542972814830" fileName="RefactoringContext.java" startLine="400" startPosition="25" endLine="401" endPosition="37" />
     <scopeInfo nodeId="4792031542972814853" fileName="RefactoringContext.java" startLine="411" startPosition="26" endLine="412" endPosition="57" />
     <scopeInfo nodeId="4792031542972814895" fileName="RefactoringContext.java" startLine="417" startPosition="27" endLine="418" endPosition="31" />

@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -31,19 +31,25 @@ public class ClassCreator_Behavior {
 
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     SNode classConcept = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    if ((classConcept == null)) {
-      // special logic for java stubs 
-      SReference constructorDeclarationReference = SNodeOperations.getReference(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"));
-      if (constructorDeclarationReference != null) {
-        SModel targetModel = ((StaticReference) constructorDeclarationReference).getTargetSModel();
-        SNodeId targetId = constructorDeclarationReference.getTargetNodeId();
-        if (SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(targetModel.getStereotype()) && targetId != null) {
-          String constructorId = targetId.toString();
-          String classId = constructorId.substring(0, constructorId.indexOf("."));
-          classConcept = SNodeOperations.cast(targetModel.getNodeById(classId), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-        }
-      }
+    if ((classConcept != null)) {
+      return ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept);
     }
+
+    // special logic for java stubs 
+    SReference cRef = SNodeOperations.getReference(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"));
+    if (cRef == null) {
+      return ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept);
+    }
+
+    SModel targetModel = ((StaticReference) cRef).getTargetSModel();
+    SNodeId targetId = cRef.getTargetNodeId();
+    if (SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(targetModel.getStereotype()) && targetId != null) {
+      String constructorId = targetId.toString();
+      String classId = constructorId.substring(0, constructorId.indexOf("."));
+      classConcept = SNodeOperations.cast(targetModel.getNodeById(classId), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    }
+
+
     return ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept);
   }
 

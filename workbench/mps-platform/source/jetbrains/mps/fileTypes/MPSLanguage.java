@@ -19,14 +19,7 @@ package jetbrains.mps.fileTypes;
 import com.intellij.lang.Language;
 
 public class MPSLanguage extends Language {
-  private static MPSLanguage INSTANCE;
-
-  public static synchronized MPSLanguage getInstance() {
-    if (INSTANCE==null) {
-      INSTANCE = new MPSLanguage();
-    }
-    return INSTANCE;
-  }
+  public static final MPSLanguage INSTANCE = new MPSLanguage();
 
   private MPSLanguage() {
     super("MPS");
