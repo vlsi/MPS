@@ -6230,6 +6230,15 @@
         <property name="value" nameId="tpee.1070475926801" value="PARALLEL_MODE" />
       </node>
     </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="978600701690013405">
+      <property name="name" nameId="tpck.1169194664001" value="PLUGIN_PATHS" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="978600701690050856" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="978600701690013407" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="978600701690013408">
+        <property name="value" nameId="tpee.1070475926801" value="plugin.path" />
+      </node>
+    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="1365200781785229587" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1365200781785207595">
       <property name="name" nameId="tpck.1169194664001" value="INVOKE_TESTS" />

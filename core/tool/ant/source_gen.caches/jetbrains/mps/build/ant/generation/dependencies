@@ -16,6 +16,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.ant.LibraryDataType" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.Chunk" />
+    <classNode dependClassName="jetbrains.mps.build.ant.generation.Plugin" />
     <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsLoadTask" />
@@ -36,6 +37,10 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
+    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.generation.Plugin" file="Plugin.java">
+    <classNode dependClassName="java.io.File" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity" file="TestGenerationOnTeamcity.java">

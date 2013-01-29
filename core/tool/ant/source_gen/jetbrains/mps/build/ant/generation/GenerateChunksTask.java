@@ -17,6 +17,7 @@ public class GenerateChunksTask extends MpsLoadTask {
   }
 
   public GenerateChunksTask() {
+    setUsePropertiesAsMacro(true);
   }
 
   protected String getWorkerClass() {
@@ -49,6 +50,18 @@ public class GenerateChunksTask extends MpsLoadTask {
   protected boolean getParallelMode() {
     return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.PARALLEL_MODE));
   }
+
+  public void addConfiguredPlugin(Plugin plugin) {
+    String property = myWhatToDo.getProperty(ScriptProperties.PLUGIN_PATHS);
+    if ((property == null || property.length() == 0)) {
+      property = plugin.getPath().getAbsolutePath();
+    } else {
+      property += File.pathSeparator + plugin.getPath().getAbsolutePath();
+    }
+    myWhatToDo.putProperty(ScriptProperties.PLUGIN_PATHS, property);
+  }
+
+
 
   @Override
   protected void checkMpsHome() {
