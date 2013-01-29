@@ -687,6 +687,34 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/languages/xmlLiterals/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/solutions/jetbrains.mps.samples.xmlLiterals.sandbox/classes_gen" />
     </content>
+    <content url="file://$MODULE_DIR$/../../testbench/languages">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/languages/solutions/pluginSolution/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/languages/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/languages/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/languages/solutions/pluginSolution/classes_gen" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../testbench/modules/testActions">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testActions/tests_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testActions/classes_gen" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../testbench/modules/testAntTask">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testAntTask/scripts" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testAntTask/solutions/testAntTask/classes_gen" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../testbench/modules/testMake">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testMake/solutions/jetbrains.mps.makeTest/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testMake/solutions/jetbrains.mps.makeTest/classes_gen" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../testbench/modules/testRead">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRead/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRead/classes_gen" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoring/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoringTargetLang/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoring/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoringTargetLang/classes_gen" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="kernel" />

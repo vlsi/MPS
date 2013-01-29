@@ -27,11 +27,11 @@ public class GeneratorsRunner {
 
   public static void generateGenSourcesIml() throws JDOMException, IOException {
     Generators.updateGenSourcesIml(GEN_SOURCES_IML, Utils.files("languages", "samples", "core"));
-    Generators.updateGenSourcesImlNoIntersections(GEN_SOURCES_IML, Utils.files("plugins"));
+    Generators.updateGenSourcesImlNoIntersections(GEN_SOURCES_IML, Utils.files("plugins", "testbench"));
   }
 
   public static void generateCompilerXmlFile() throws JDOMException, IOException {
-    Generators.updateCompilerExcludes(COMPILER_XML_FILE, Utils.files("languages", "samples", "core", "plugins"));
+    Generators.updateCompilerExcludes(COMPILER_XML_FILE, Utils.files("languages", "samples", "core", "plugins", "testbench"));
   }
 
   public static void main(String[] args) throws JDOMException, IOException {
