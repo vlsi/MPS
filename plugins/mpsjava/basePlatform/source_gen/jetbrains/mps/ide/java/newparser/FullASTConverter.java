@@ -11,7 +11,6 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import org.jetbrains.annotations.NotNull;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
 import org.eclipse.jdt.internal.compiler.ast.AssertStatement;
 import org.eclipse.jdt.internal.compiler.ast.Block;
@@ -95,8 +94,8 @@ public class FullASTConverter extends ASTConverter {
   private Map<SNode, Integer> myPositions = MapSequence.fromMap(new HashMap<SNode, Integer>());
 
 
-  public FullASTConverter(CompilationUnitDeclaration cud, @NotNull TypeNameResolver typeResolver) {
-    super(typeResolver, false);
+  public FullASTConverter(CompilationUnitDeclaration cud) {
+    super(false);
   }
 
   private FullASTConverter(FullASTConverter base) {

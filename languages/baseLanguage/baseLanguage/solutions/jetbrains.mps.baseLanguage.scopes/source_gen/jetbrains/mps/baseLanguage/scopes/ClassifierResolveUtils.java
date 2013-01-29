@@ -213,7 +213,7 @@ public class ClassifierResolveUtils {
     });
   }
 
-  public static SNode resolve(@NotNull String refText, @NotNull SNode contextNode, IScope moduleScope) {
+  public static SNode resolve(@NotNull String refText, @NotNull SNode contextNode, IScope moduleScope, boolean includeAncestors) {
     // The algororithm: 
     // - split refText into tokens A.B.C (separated by dot) 
     // - look for the first token A among the following classifiers and models, in this order: 
@@ -259,13 +259,15 @@ public class ClassifierResolveUtils {
       }
     }
 
-    for (SNode ancestor : Sequence.fromIterable(getAncestors(contextNode))) {
-      if (token.equals(SPropertyOperations.getString(ancestor, "name"))) {
-        return construct(ancestor, tokenizer);
-      }
-      for (SNode nested : Sequence.fromIterable(getImmediateNestedClassifiers(ancestor))) {
-        if (token.equals(SPropertyOperations.getString(nested, "name"))) {
-          return construct(nested, tokenizer);
+    if (includeAncestors) {
+      for (SNode ancestor : Sequence.fromIterable(getAncestors(contextNode))) {
+        if (token.equals(SPropertyOperations.getString(ancestor, "name"))) {
+          return construct(ancestor, tokenizer);
+        }
+        for (SNode nested : Sequence.fromIterable(getImmediateNestedClassifiers(ancestor))) {
+          if (token.equals(SPropertyOperations.getString(nested, "name"))) {
+            return construct(nested, tokenizer);
+          }
         }
       }
     }
@@ -390,7 +392,7 @@ public class ClassifierResolveUtils {
 
   public static Iterable<SNode> getPathToRoot(SNode clas) {
     // TODO make more precise: take role into consideration 
-    return SNodeOperations.getAncestors(clas, "jetbrains.mps.baseLanguage.structure.Classifier", false);
+    return SNodeOperations.getAncestors(clas, "jetbrains.mps.baseLanguage.structure.Classifier", true);
   }
 
   public static Iterable<SNode> getAncestors(SNode clas) {
@@ -403,8 +405,14 @@ public class ClassifierResolveUtils {
 
       SNode claz = iter.next();
 
-      if (SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        iter.add(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "classifier", false));
+      if (SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        iter.add(SLinkOperations.getTarget(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false));
+
+      } else if (SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+        SNode supr = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "classifier", false);
+        if ((supr != null)) {
+          iter.add(supr);
+        }
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "implementedInterface", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "classifier", false) != null);
@@ -418,9 +426,8 @@ public class ClassifierResolveUtils {
             iter.add(it);
           }
         });
-      }
 
-      if (SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.Interface")) {
+      } else if (SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.Interface")) {
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, "classifier", false) != null);
@@ -435,6 +442,7 @@ public class ClassifierResolveUtils {
           }
         });
       }
+
     }
     // or just classes, doesn't really matter 
     return ListSequence.fromList(classes).skip(1);
