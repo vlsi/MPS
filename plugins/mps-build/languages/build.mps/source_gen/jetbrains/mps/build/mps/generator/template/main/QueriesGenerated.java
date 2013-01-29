@@ -1322,10 +1322,8 @@ public class QueriesGenerated {
   }
 
   public static Object insertMacro_varValue_8301447434615581218(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    RequiredPlugins plugins = new RequiredPlugins(_context, _context.getNode());
-    plugins.collectDependency();
     final DependenciesHelper helper = new DependenciesHelper(_context, _context.getNode());
-    return Sequence.fromIterable(plugins.getDependency()).select(new ISelector<SNode, String>() {
+    return Sequence.fromIterable(new RequiredPlugins(_context.getNode(), _context).getDependency()).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         SNode layoutNode = helper.artifacts().get(it);
         if ((layoutNode == null)) {
@@ -1343,7 +1341,11 @@ public class QueriesGenerated {
       public boolean accept(String it) {
         return (it != null && it.length() > 0);
       }
-    }).toGenericArray(String.class);
+    }).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true).toGenericArray(String.class);
   }
 
   public static Object insertMacro_varValue_5970181360960164993(final IOperationContext operationContext, final TemplateQueryContext _context) {

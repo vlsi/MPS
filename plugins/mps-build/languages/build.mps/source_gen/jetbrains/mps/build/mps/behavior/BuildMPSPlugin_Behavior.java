@@ -10,13 +10,15 @@ import jetbrains.mps.build.behavior.BuildPlugin_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
+import jetbrains.mps.build.mps.util.RequiredPlugins;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.mps.util.VisibleModules;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.scope.CompositeScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -34,8 +36,23 @@ public class BuildMPSPlugin_Behavior {
   }
 
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
+    final SNode project = artifacts.getProject();
 
-    SNode project = artifacts.getProject();
+    // fetch required plugins 
+    RequiredPlugins plugins = new RequiredPlugins(project, artifacts.getGenContext());
+    plugins.collectDependencies();
+    for (SNode plugin : Sequence.fromIterable(plugins.getDependency()).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.getContainingRoot(it) != project;
+      }
+    })) {
+      SNode pluginArtifact = SNodeOperations.as(artifacts.findArtifact(plugin), "jetbrains.mps.build.structure.BuildLayout_Node");
+      if (pluginArtifact != null) {
+        builder.add(pluginArtifact, plugin);
+      }
+    }
+
+    // fetch stuff for ant task classpath 
     DependenciesHelper helper = new DependenciesHelper(artifacts.getGenContext(), artifacts.getProject());
     VisibleModules visibleModules = new VisibleModules(project, artifacts.getGenContext());
     visibleModules.collect();
@@ -69,7 +86,6 @@ public class BuildMPSPlugin_Behavior {
         }
       }
     }
-
   }
 
   public static Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, final SNode kind) {

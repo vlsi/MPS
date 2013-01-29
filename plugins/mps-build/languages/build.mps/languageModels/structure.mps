@@ -865,9 +865,6 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6592112598314887003">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3ior.9184644532456897460" resolveInfo="BuildStringContainer" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8301447434616559009">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3ior.841011766566205091" resolveInfo="BuildExternalDependency" />
-    </node>
   </root>
   <root id="6592112598314499027">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6592112598314499066">

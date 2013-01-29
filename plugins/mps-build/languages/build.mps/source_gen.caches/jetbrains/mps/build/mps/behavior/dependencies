@@ -48,6 +48,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildPlugin_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.mps.util.RequiredPlugins" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.VisibleModules" />
     <classNode dependClassName="jetbrains.mps.build.util.DependenciesHelper" />
     <classNode dependClassName="jetbrains.mps.build.util.DescendantsScope" />
@@ -55,6 +56,7 @@
     <classNode dependClassName="jetbrains.mps.build.util.ScopeUtil" />
     <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
@@ -389,11 +391,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPlugin_Behavior" file="BuildMps_IdeaPlugin_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.build.mps.util.RequiredPlugins" />
-    <classNode dependClassName="jetbrains.mps.build.util.RequiredDependenciesBuilder" />
-    <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
@@ -401,13 +398,10 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildExternalDependency_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildProjectPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPlugin_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.util.RequiredDependenciesBuilder" />
-    <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

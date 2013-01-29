@@ -2688,71 +2688,80 @@
     <unitInfo nodeId="609978641554545960" fileName="ArtifactsRelativePathHelper.java" startLine="21" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.build.mps.util.ArtifactsRelativePathHelper" />
   </root>
   <root nodeId="8301447434615549803" modelId="r:38bad86e-d92c-4ea7-ad52-a111dc6c2457(jetbrains.mps.build.mps.util)">
-    <nodeInfo nodeId="8301447434615549848" fileName="RequiredPlugins.java" startLine="20" startPosition="30" endLine="21" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
-    <nodeInfo nodeId="8301447434615549943" fileName="RequiredPlugins.java" startLine="21" startPosition="47" endLine="22" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependency" />
-    <nodeInfo nodeId="8301447434615573479" fileName="RequiredPlugins.java" startLine="22" startPosition="39" endLine="23" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPlugins" />
-    <nodeInfo nodeId="8301447434616559070" fileName="RequiredPlugins.java" startLine="25" startPosition="74" endLine="26" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="8301447434616559046" fileName="RequiredPlugins.java" startLine="29" startPosition="91" endLine="30" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8301447434616559050" fileName="RequiredPlugins.java" startLine="30" startPosition="27" endLine="31" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8301447434615573830" fileName="RequiredPlugins.java" startLine="34" startPosition="35" endLine="35" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8301447434615573822" fileName="RequiredPlugins.java" startLine="36" startPosition="59" endLine="37" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8301447434615581101" fileName="RequiredPlugins.java" startLine="40" startPosition="37" endLine="41" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8301447434615581151" fileName="RequiredPlugins.java" startLine="44" startPosition="39" endLine="45" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8301447434615573636" fileName="RequiredPlugins.java" startLine="50" startPosition="70" endLine="51" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8301447434615573766" fileName="RequiredPlugins.java" startLine="53" startPosition="109" endLine="54" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8301447434615573477" fileName="RequiredPlugins.java" startLine="59" startPosition="42" endLine="60" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8301447434615549813" fileName="RequiredPlugins.java" startLine="24" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RequiredPlugins#(Ljetbrains/mps/generator/template/TemplateQueryContext;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8301447434615573817" fileName="RequiredPlugins.java" startLine="35" startPosition="73" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8301447434615573704" fileName="RequiredPlugins.java" startLine="52" startPosition="110" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8301447434616559038" fileName="RequiredPlugins.java" startLine="28" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RequiredPlugins#(Ljetbrains/mps/generator/template/TemplateQueryContext;Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="8301447434615581081" fileName="RequiredPlugins.java" startLine="39" startPosition="129" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8301447434615581147" fileName="RequiredPlugins.java" startLine="43" startPosition="40" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="8301447434615549933" fileName="RequiredPlugins.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDependency#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8301447434615573672" fileName="RequiredPlugins.java" startLine="51" startPosition="52" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8301447434615573841" fileName="RequiredPlugins.java" startLine="38" startPosition="5" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8301447434615573621" fileName="RequiredPlugins.java" startLine="49" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectDependencies#(Ljetbrains/mps/smodel/SNode;Ljava/util/Set;)V" />
-    <nodeInfo nodeId="8301447434615573584" fileName="RequiredPlugins.java" startLine="33" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectDependency#()V" />
-    <scopeInfo nodeId="8301447434615549816" fileName="RequiredPlugins.java" startLine="25" startPosition="74" endLine="26" endPosition="142" />
-    <scopeInfo nodeId="8301447434615573820" fileName="RequiredPlugins.java" startLine="36" startPosition="59" endLine="37" endPosition="43" />
-    <scopeInfo nodeId="8301447434615581082" fileName="RequiredPlugins.java" startLine="40" startPosition="37" endLine="41" endPosition="142" />
-    <scopeInfo nodeId="8301447434615581148" fileName="RequiredPlugins.java" startLine="44" startPosition="39" endLine="45" endPosition="28" />
-    <scopeInfo nodeId="8301447434615573706" fileName="RequiredPlugins.java" startLine="53" startPosition="109" endLine="54" endPosition="93" />
-    <scopeInfo nodeId="8301447434615549936" fileName="RequiredPlugins.java" startLine="59" startPosition="42" endLine="60" endPosition="24" />
-    <scopeInfo nodeId="8301447434616559045" fileName="RequiredPlugins.java" startLine="29" startPosition="91" endLine="31" endPosition="88" />
-    <scopeInfo nodeId="8301447434615549813" fileName="RequiredPlugins.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
+    <nodeInfo nodeId="5905179409467957754" fileName="RequiredPlugins.java" startLine="20" startPosition="30" endLine="21" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="KEY" />
+    <nodeInfo nodeId="8301447434615549848" fileName="RequiredPlugins.java" startLine="22" startPosition="0" endLine="23" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
+    <nodeInfo nodeId="8301447434615549943" fileName="RequiredPlugins.java" startLine="23" startPosition="47" endLine="24" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependency" />
+    <nodeInfo nodeId="5905179409467589075" fileName="RequiredPlugins.java" startLine="24" startPosition="54" endLine="25" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRoot" />
+    <nodeInfo nodeId="8301447434615573479" fileName="RequiredPlugins.java" startLine="25" startPosition="29" endLine="26" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPlugins" />
+    <nodeInfo nodeId="5905179409467589018" fileName="RequiredPlugins.java" startLine="28" startPosition="74" endLine="29" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5905179409467589045" fileName="RequiredPlugins.java" startLine="29" startPosition="27" endLine="30" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5905179409467589080" fileName="RequiredPlugins.java" startLine="30" startPosition="193" endLine="31" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5905179409467662078" fileName="RequiredPlugins.java" startLine="31" startPosition="21" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8301447434616559046" fileName="RequiredPlugins.java" startLine="35" startPosition="80" endLine="36" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8301447434616559050" fileName="RequiredPlugins.java" startLine="36" startPosition="27" endLine="37" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5905179409467589107" fileName="RequiredPlugins.java" startLine="37" startPosition="63" endLine="38" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5905179409467676886" fileName="RequiredPlugins.java" startLine="38" startPosition="62" endLine="39" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8301447434615573830" fileName="RequiredPlugins.java" startLine="42" startPosition="37" endLine="43" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8301447434615573822" fileName="RequiredPlugins.java" startLine="44" startPosition="59" endLine="45" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8301447434615581151" fileName="RequiredPlugins.java" startLine="48" startPosition="39" endLine="49" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8301447434615573636" fileName="RequiredPlugins.java" startLine="54" startPosition="70" endLine="55" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5905179409467943815" fileName="RequiredPlugins.java" startLine="56" startPosition="110" endLine="57" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5905179409467943888" fileName="RequiredPlugins.java" startLine="58" startPosition="74" endLine="59" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5905179409467943970" fileName="RequiredPlugins.java" startLine="60" startPosition="39" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8301447434615573766" fileName="RequiredPlugins.java" startLine="64" startPosition="71" endLine="65" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8301447434615573477" fileName="RequiredPlugins.java" startLine="70" startPosition="42" endLine="71" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8301447434615573817" fileName="RequiredPlugins.java" startLine="43" startPosition="73" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5905179409467943931" fileName="RequiredPlugins.java" startLine="59" startPosition="168" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8301447434615573704" fileName="RequiredPlugins.java" startLine="63" startPosition="7" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8301447434615581147" fileName="RequiredPlugins.java" startLine="47" startPosition="129" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8301447434615549933" fileName="RequiredPlugins.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDependency#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8301447434615573841" fileName="RequiredPlugins.java" startLine="46" startPosition="5" endLine="51" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8301447434615549813" fileName="RequiredPlugins.java" startLine="27" startPosition="0" endLine="33" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RequiredPlugins#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
+    <nodeInfo nodeId="8301447434616559038" fileName="RequiredPlugins.java" startLine="34" startPosition="0" endLine="40" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RequiredPlugins#(Ljetbrains/mps/generator/template/TemplateQueryContext;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5905179409467943824" fileName="RequiredPlugins.java" startLine="57" startPosition="86" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8301447434615573584" fileName="RequiredPlugins.java" startLine="41" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectDependencies#()V" />
+    <nodeInfo nodeId="8301447434615573672" fileName="RequiredPlugins.java" startLine="55" startPosition="52" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8301447434615573621" fileName="RequiredPlugins.java" startLine="53" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectDependencies#(Ljetbrains/mps/smodel/SNode;Ljava/util/Set;)V" />
+    <scopeInfo nodeId="8301447434615573820" fileName="RequiredPlugins.java" startLine="44" startPosition="59" endLine="45" endPosition="43" />
+    <scopeInfo nodeId="8301447434615581148" fileName="RequiredPlugins.java" startLine="48" startPosition="39" endLine="49" endPosition="28" />
+    <scopeInfo nodeId="5905179409467943932" fileName="RequiredPlugins.java" startLine="60" startPosition="39" endLine="61" endPosition="19" />
+    <scopeInfo nodeId="8301447434615573706" fileName="RequiredPlugins.java" startLine="64" startPosition="71" endLine="65" endPosition="55" />
+    <scopeInfo nodeId="8301447434615549936" fileName="RequiredPlugins.java" startLine="70" startPosition="42" endLine="71" endPosition="24" />
+    <scopeInfo nodeId="8301447434615573817" fileName="RequiredPlugins.java" startLine="43" startPosition="73" endLine="46" endPosition="5">
+      <varInfo nodeId="8301447434615573817" varName="plugin" />
+    </scopeInfo>
+    <scopeInfo nodeId="8301447434615549816" fileName="RequiredPlugins.java" startLine="28" startPosition="74" endLine="32" endPosition="81" />
+    <scopeInfo nodeId="8301447434616559045" fileName="RequiredPlugins.java" startLine="35" startPosition="80" endLine="39" endPosition="146" />
+    <scopeInfo nodeId="8301447434615581147" fileName="RequiredPlugins.java" startLine="47" startPosition="129" endLine="51" endPosition="0">
+      <varInfo nodeId="8301447434615581147" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="5905179409467943825" fileName="RequiredPlugins.java" startLine="58" startPosition="74" endLine="62" endPosition="9" />
+    <scopeInfo nodeId="8301447434615549933" fileName="RequiredPlugins.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="8301447434615549813" fileName="RequiredPlugins.java" startLine="27" startPosition="0" endLine="33" endPosition="3">
       <varInfo nodeId="8301447434615549817" varName="genContext" />
       <varInfo nodeId="8301447434615549821" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8301447434615573817" fileName="RequiredPlugins.java" startLine="35" startPosition="73" endLine="38" endPosition="5">
-      <varInfo nodeId="8301447434615573817" varName="plugin" />
-    </scopeInfo>
-    <scopeInfo nodeId="8301447434615573675" fileName="RequiredPlugins.java" startLine="52" startPosition="110" endLine="55" endPosition="7" />
-    <scopeInfo nodeId="8301447434616559038" fileName="RequiredPlugins.java" startLine="28" startPosition="0" endLine="32" endPosition="3">
+    <scopeInfo nodeId="8301447434616559038" fileName="RequiredPlugins.java" startLine="34" startPosition="0" endLine="40" endPosition="3">
       <varInfo nodeId="8301447434616559039" varName="genContext" />
-      <varInfo nodeId="8301447434616559041" varName="initialPlugins" />
+      <varInfo nodeId="8301447434616559041" varName="initialPlugin" />
     </scopeInfo>
-    <scopeInfo nodeId="8301447434615581081" fileName="RequiredPlugins.java" startLine="39" startPosition="129" endLine="43" endPosition="0">
-      <varInfo nodeId="8301447434615581081" varName="it" />
+    <scopeInfo nodeId="8301447434615573587" fileName="RequiredPlugins.java" startLine="42" startPosition="37" endLine="51" endPosition="25">
+      <varInfo nodeId="8301447434615573831" varName="visited" />
     </scopeInfo>
-    <scopeInfo nodeId="8301447434615581147" fileName="RequiredPlugins.java" startLine="43" startPosition="40" endLine="47" endPosition="0">
-      <varInfo nodeId="8301447434615581147" varName="it" />
+    <scopeInfo nodeId="8301447434615573675" fileName="RequiredPlugins.java" startLine="56" startPosition="110" endLine="66" endPosition="7">
+      <varInfo nodeId="5905179409467943816" varName="dependencyPlugin" />
     </scopeInfo>
-    <scopeInfo nodeId="8301447434615549933" fileName="RequiredPlugins.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="8301447434615573672" fileName="RequiredPlugins.java" startLine="51" startPosition="52" endLine="56" endPosition="5">
+    <scopeInfo nodeId="8301447434615573584" fileName="RequiredPlugins.java" startLine="41" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="8301447434615573672" fileName="RequiredPlugins.java" startLine="55" startPosition="52" endLine="67" endPosition="5">
       <varInfo nodeId="8301447434615573672" varName="dependency" />
     </scopeInfo>
-    <scopeInfo nodeId="8301447434615573624" fileName="RequiredPlugins.java" startLine="50" startPosition="70" endLine="56" endPosition="5" />
-    <scopeInfo nodeId="8301447434615573621" fileName="RequiredPlugins.java" startLine="49" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="8301447434615573624" fileName="RequiredPlugins.java" startLine="54" startPosition="70" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="8301447434615573621" fileName="RequiredPlugins.java" startLine="53" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="8301447434615573626" varName="plugin" />
       <varInfo nodeId="8301447434615573631" varName="visited" />
     </scopeInfo>
-    <scopeInfo nodeId="8301447434615573587" fileName="RequiredPlugins.java" startLine="34" startPosition="35" endLine="47" endPosition="7">
-      <varInfo nodeId="8301447434615573831" varName="visited" />
-    </scopeInfo>
-    <scopeInfo nodeId="8301447434615573584" fileName="RequiredPlugins.java" startLine="33" startPosition="0" endLine="49" endPosition="0" />
-    <unitInfo nodeId="8301447434615581081" fileName="RequiredPlugins.java" startLine="39" startPosition="102" endLine="43" endPosition="5" unitName="jetbrains.mps.build.mps.util.RequiredPlugins$1" />
-    <unitInfo nodeId="8301447434615581147" fileName="RequiredPlugins.java" startLine="43" startPosition="17" endLine="47" endPosition="5" unitName="jetbrains.mps.build.mps.util.RequiredPlugins$2" />
-    <unitInfo nodeId="8301447434615549803" fileName="RequiredPlugins.java" startLine="20" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.build.mps.util.RequiredPlugins" />
+    <unitInfo nodeId="8301447434615581147" fileName="RequiredPlugins.java" startLine="47" startPosition="106" endLine="51" endPosition="5" unitName="jetbrains.mps.build.mps.util.RequiredPlugins$1" />
+    <unitInfo nodeId="8301447434615549803" fileName="RequiredPlugins.java" startLine="20" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.build.mps.util.RequiredPlugins" />
   </root>
 </debugInfo>
 

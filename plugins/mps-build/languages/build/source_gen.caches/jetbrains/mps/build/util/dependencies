@@ -100,6 +100,7 @@
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.util.containers.ConcurrentHashSet" />
   </dependency>
   <dependency className="jetbrains.mps.build.util.JavaExportUtil" file="JavaExportUtil.java">
     <classNode dependClassName="java.lang.Boolean" />
