@@ -118,7 +118,11 @@ public class QueriesGenerated {
                     return _quotation_createNode_zhyrwg_a0a0a0a0a0a(cmp);
                   }
                 };
-                return _quotation_createNode_zhyrwg_a1a0a0a(ListSequence.fromList(SLinkOperations.getTargets((item), "component", true)).select(toRef).toListSequence(), (item));
+                return _quotation_createNode_zhyrwg_a1a0a0a(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132((item))).reversedList().translate(new ITranslator2<SNode, SNode>() {
+                  public Iterable<SNode> translate(SNode ntd) {
+                    return SLinkOperations.getTargets(ntd, "component", true);
+                  }
+                }).select(toRef).toListSequence(), (item));
               }
 
               public String getMatchingText(String pattern) {

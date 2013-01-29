@@ -14,8 +14,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="facet" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6418371274763029523">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/facetDeclaration.png" />
       <property name="name" nameId="tpck.1169194664001" value="FacetDeclaration" />

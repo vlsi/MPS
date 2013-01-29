@@ -68,8 +68,10 @@ public class Generator__Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_j0fmyu_a0a = null;
+          final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
               pa.global().properties(Target_Configure.this.getName(), Generator__Facet.Target_Configure.Variables.class).value("uninitialized");
@@ -170,8 +172,10 @@ public class Generator__Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_j0fmyu_a0b = null;
+          final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
               Assert.assertEquals("uninitialized", pa.global().properties(new ITarget.Name("Generator_.Configure"), Generator__Facet.Target_Configure.Variables.class).value());

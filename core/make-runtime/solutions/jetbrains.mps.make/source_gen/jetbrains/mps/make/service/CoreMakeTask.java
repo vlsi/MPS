@@ -96,14 +96,14 @@ public class CoreMakeTask {
         if (InternalFlag.isInternalMode()) {
           myMessageHandler.handle(new Message(MessageKind.INFORMATION, "Modules cluster " + (idx + 1) + "/" + clsize + " [" + IterableUtils.join(Sequence.fromIterable(cl).select(new ISelector<IResource, String>() {
             public String select(IResource r) {
-              return ((IResource) r).describe();
+              return (r).describe();
             }
           }), ", ") + "]"));
         }
 
         monitor.step((idx + 1) + "/" + clsize + " " + IterableUtils.join(Sequence.fromIterable(cl).select(new ISelector<IResource, String>() {
           public String select(IResource r) {
-            return ((IResource) r).describe();
+            return (r).describe();
           }
         }), ","));
         this.myResult = scr.execute(this.myController, cl, monitor.subTask(1));

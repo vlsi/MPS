@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.make.script.typesystem.IResource_subtypeOf_ResourceType_SubtypingRule" file="IResource_subtypeOf_ResourceType_SubtypingRule.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
@@ -30,11 +33,48 @@
     <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.make.script.typesystem.ResourceType_subtypeOf_IResource_SubtypingRule" file="ResourceType_subtypeOf_IResource_SubtypingRule.java">
+  <dependency className="jetbrains.mps.make.script.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
+    <classNode dependClassName="jetbrains.mps.make.script.typesystem.IResource_subtypeOf_ResourceType_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.make.script.typesystem.ResourceType_comparableWith_IResource_ComparisonRule" />
+    <classNode dependClassName="jetbrains.mps.make.script.typesystem.resource_subtypeOf_resource_InequationReplacementRule" />
+    <classNode dependClassName="jetbrains.mps.make.script.typesystem.resource_supertypes_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_AllWorkLeftExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_BeginWorkStatement_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_DoneWorkStatement_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_InputResourcesParameter_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_OptionExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_OutputResources_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_PropertiesAccessorParameter_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_RelayQueryExpression_InferenceRule" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.script.typesystem.resource_subtypeOf_resource_InequationReplacementRule" file="resource_subtypeOf_resource_InequationReplacementRule.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.script.typesystem.resource_supertypes_SubtypingRule" file="resource_supertypes_SubtypingRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
@@ -45,22 +85,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
-  </dependency>
-  <dependency className="jetbrains.mps.make.script.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
-    <classNode dependClassName="jetbrains.mps.make.script.typesystem.IResource_subtypeOf_ResourceType_SubtypingRule" />
-    <classNode dependClassName="jetbrains.mps.make.script.typesystem.ResourceType_comparableWith_IResource_ComparisonRule" />
-    <classNode dependClassName="jetbrains.mps.make.script.typesystem.ResourceType_subtypeOf_IResource_SubtypingRule" />
-    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_AllWorkLeftExpression_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_BeginWorkStatement_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_DoneWorkStatement_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_OptionExpression_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_OutputResources_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_PropertiesAccessorParameter_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.make.script.typesystem.typeof_RelayQueryExpression_InferenceRule" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.typesystem.typeof_AllWorkLeftExpression_InferenceRule" file="typeof_AllWorkLeftExpression_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
@@ -94,6 +118,29 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.script.typesystem.typeof_InputResourcesParameter_InferenceRule" file="typeof_InputResourcesParameter_InferenceRule.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
