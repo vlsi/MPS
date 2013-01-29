@@ -31,6 +31,7 @@ import com.intellij.openapi.util.DimensionService;
 import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -44,7 +45,6 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
@@ -110,6 +110,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
     return myPanel;
   }
 
+  @NotNull
   protected Action[] createActions() {
     return new Action[0];
   }

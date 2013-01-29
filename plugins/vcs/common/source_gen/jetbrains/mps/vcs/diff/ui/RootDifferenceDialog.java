@@ -41,6 +41,7 @@ import javax.swing.JComponent;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import com.intellij.openapi.util.Ref;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
@@ -195,6 +196,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     return null;
   }
 
+  @NotNull
   protected Action[] createActions() {
     return new Action[0];
   }
