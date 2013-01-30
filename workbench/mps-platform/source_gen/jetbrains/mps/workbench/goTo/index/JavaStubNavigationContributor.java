@@ -44,7 +44,7 @@ public class JavaStubNavigationContributor implements NodeNavigationContributor,
           if (dir.indexOf("!") != -1) {
             cp.add(ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName()));
           } else {
-            String name = ((SModelReference) model.getModelReference()).getLongName().replace('.', File.separatorChar);
+            String name = ((SModelReference) model.getReference()).getLongName().replace('.', File.separatorChar);
 
             // dirty hack for current problems with path separators 
             String dirCorrected = dir.replace('/', File.separatorChar);

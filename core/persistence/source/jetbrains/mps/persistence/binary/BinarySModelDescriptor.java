@@ -66,9 +66,9 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
   @NotNull
   private BinarySModel loadSModel() {
     try {
-      return BinaryPersistence.readModel(getModelReference(), getSource().getFile());
+      return BinaryPersistence.readModel(getReference(), getSource().getFile());
     } catch (ModelReadException e) {
-      return new InvalidBinarySModel(getModelReference(), e);
+      return new InvalidBinarySModel(getReference(), e);
     }
   }
 

@@ -311,7 +311,7 @@ public class TestConfigurationDialog extends DialogWrapper {
             public void run() {
               boolean inProject = false;
               for (SModel projectModel : myProject.getProjectModels()) {
-                if (model.equals(projectModel.getModelReference())) {
+                if (model.equals(projectModel.getReference())) {
                   inProject = true;
                   break;
                 }
@@ -338,7 +338,7 @@ public class TestConfigurationDialog extends DialogWrapper {
           List<SModelDescriptor> descrs = SModelRepository.getInstance().getModelDescriptors();
           SModelReference modelRef = CommonChoosers.showDialogModelChooser(ProjectHelper.toIdeaProject(myProject), Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
             public SModelReference select(SModel it) {
-              return (SModelReference) it.getModelReference();
+              return (SModelReference) it.getReference();
             }
           }).toListSequence(), ListSequence.fromList(descrs).select(new ISelector<SModelDescriptor, SModelReference>() {
             public SModelReference select(SModelDescriptor it) {

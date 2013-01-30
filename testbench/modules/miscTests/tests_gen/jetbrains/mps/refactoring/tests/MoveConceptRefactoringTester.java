@@ -38,7 +38,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
-        targetStructureModelReference[0] = (SModelReference) testRefactoringTargetLanguage.getStructureModelDescriptor().getModelReference();
+        targetStructureModelReference[0] = (SModelReference) testRefactoringTargetLanguage.getStructureModelDescriptor().getReference();
         SModel model = structureModelDescriptor.getSModel();
         SNode concept = SModelOperations.getRootByName(model, conceptName);
         refactoringContext.setSelectedProject(project);

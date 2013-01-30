@@ -41,7 +41,7 @@ public interface SModel {
   String getModelName();
 
   @NotNull
-  SModelReference getModelReference();
+  SModelReference getReference();
 
   ModelRoot getModelRoot();
 

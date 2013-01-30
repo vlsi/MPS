@@ -42,7 +42,7 @@ public class LocationRule implements GetDataRule {
     SNode node = (SNode) dataProvider.getData(MPSDataKeys.NODE.getName());
     if (node != null) return new MPSLocation(project, node);
     SModel model = (SModel) dataProvider.getData(MPSDataKeys.MODEL.getName());
-    if (model != null) return new MPSLocation(project, model.getModelReference());
+    if (model != null) return new MPSLocation(project, model.getReference());
     SModule module = (SModule) dataProvider.getData(MPSDataKeys.MODULE.getName());
     if (module != null) return new MPSLocation(project, module);
     jetbrains.mps.project.Project mpsProject = (jetbrains.mps.project.Project) dataProvider.getData(MPSDataKeys.MPS_PROJECT.getName());

@@ -89,7 +89,7 @@ public class FixMissingImportsInProject_Action extends BaseAction {
         // Using SModelReferences because SModelDescriptors can be re-created during MissingDependenciesFixer execution. 
         List<SModelReference> modelReferences = ListSequence.fromList(new LinkedList<SModelReference>());
         for (SModel model : Sequence.fromIterable(module.getModels())) {
-          ListSequence.fromList(modelReferences).addElement(model.getModelReference());
+          ListSequence.fromList(modelReferences).addElement(model.getReference());
         }
 
         for (SModelReference modelReference : ListSequence.fromList(modelReferences)) {

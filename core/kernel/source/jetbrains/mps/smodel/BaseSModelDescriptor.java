@@ -131,7 +131,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   @Override
   @NotNull
-  public SModelReference getModelReference() {
+  public SModelReference getReference() {
     return myModelReference;
   }
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -145,7 +145,7 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
   public void rename(SModelFqName newModelFqName, boolean changeFile) {
     ModelAccess.assertLegalWrite();
 
-    SModelFqName oldFqName = getModelReference().getSModelFqName();
+    SModelFqName oldFqName = getReference().getSModelFqName();
     SModel model = getSModel();
     fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
 
@@ -183,11 +183,11 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
 
   @Override
   public void dispose() {
-    UnregisteredNodes.instance().clear(getModelReference());
+    UnregisteredNodes.instance().clear(getReference());
     super.dispose();
   }
 
   public String toString() {
-    return getModelReference().toString() + " in " + getSource().getFile();
+    return getReference().toString() + " in " + getSource().getFile();
   }
 }

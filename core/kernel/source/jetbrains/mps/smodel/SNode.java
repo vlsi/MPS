@@ -38,7 +38,6 @@ import org.jetbrains.mps.migration.annotations.ShortTermMigration;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -1951,12 +1950,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     @Override
     public String getModelName() {
-      return getModelReference().getModelName();
+      return getReference().getModelName();
     }
 
     @NotNull
     @Override
-    public SModelReference getModelReference() {
+    public SModelReference getReference() {
       return myModel.getSModelReference();
     }
 

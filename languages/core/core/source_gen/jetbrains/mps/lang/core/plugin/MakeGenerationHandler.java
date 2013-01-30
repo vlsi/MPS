@@ -34,6 +34,6 @@ public class MakeGenerationHandler extends GenerationHandlerBase {
 
   @Override
   public boolean canHandle(SModel descriptor) {
-    return descriptor != null && (ProjectModels.isProjectModel(descriptor.getModelReference()) || SModelStereotype.isUserModel(descriptor));
+    return descriptor != null && (ProjectModels.isProjectModel(descriptor.getReference()) || SModelStereotype.isUserModel(descriptor));
   }
 }
