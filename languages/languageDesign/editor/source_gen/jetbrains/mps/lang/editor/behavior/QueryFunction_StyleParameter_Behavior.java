@@ -4,19 +4,54 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class QueryFunction_StyleParameter_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
-    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
+  public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
+    List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1161622981231"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1142886811589"));
-    return result;
+    if (QueryFunction_StyleParameter_Behavior.call_isSeparatorStyleQuery_7991857262598847349(thisNode)) {
+      ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "7991857262589831666"));
+      ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "7991857262589829730"));
+    }
+    return (List<SNode>) result;
+  }
+
+  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return _quotation_createNode_evejyl_a0a1();
+  }
+
+  public static boolean call_isSeparatorStyleQuery_7991857262598847349(SNode thisNode) {
+    return QueryFunction_StyleParameter_Behavior.call_getContainingCellModelRefNodeList_4310268853340642392(thisNode) != null;
+  }
+
+  public static SNode call_getContainingCellModelRefNodeList_4310268853340642392(SNode thisNode) {
+    SNode styleContainer = StyleClassItem_Behavior.call_getStyleContainer_7991857262599637608(QueryFunction_StyleParameter_Behavior.call_getStyleClassItem_7991857262599017464(thisNode));
+    if (styleContainer == null) {
+      return null;
+    }
+    return SNodeOperations.as(SNodeOperations.getParent(styleContainer), "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList");
+  }
+
+  public static SNode call_getStyleClassItem_7991857262599017464(SNode thisNode) {
+    return SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.StyleClassItem");
+  }
+
+  private static SNode _quotation_createNode_evejyl_a0a1() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    return quotedNode_1;
   }
 }
