@@ -24,7 +24,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;

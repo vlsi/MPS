@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.util.FileStubSource;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelId;
+import org.jetbrains.mps.openapi.model.SModelId;
 
 public class ProjectStubs extends ModelRootManagerBase {
   public ProjectStubs() {
@@ -51,7 +51,7 @@ public class ProjectStubs extends ModelRootManagerBase {
   /*package*/ SModelReference createModelReference(ModulesMiner.ModuleHandle module, SModule moduleWithModel, String stereotype) {
     String longName = module.getDescriptor().getModuleReference().getModuleFqName();
     SModelFqName fqname = new SModelFqName(moduleWithModel.getModuleName(), longName, stereotype);
-    SModelId modelId = SModelId.foreign(stereotype, moduleWithModel.getModuleReference().getModuleId().toString(), longName);
+    SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(stereotype, moduleWithModel.getModuleReference().getModuleId().toString(), longName);
     return new SModelReference(fqname, modelId);
   }
 }

@@ -17,6 +17,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.vfs.IFile;
@@ -51,5 +52,20 @@ public class StubSolution extends Solution {
 
   protected SolutionDescriptor loadDescriptor() {
     return getModuleDescriptor();
+  }
+
+  @Override
+  public boolean canLoad() {
+    return false;
+  }
+
+  @Override
+  public boolean canLoadFromSelf() {
+    return false;
+  }
+
+  @Override
+  public ModuleClassLoader getClassLoader() {
+    return null;
   }
 }

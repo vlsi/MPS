@@ -36,7 +36,7 @@ do
      -e 's/import jetbrains\.mps\.smodel\.\*;/import org\.jetbrains\.mps\.openapi\.model\.SModelId;import jetbrains\.mps\.smodel\.\*;/g' \
      -e 's/package jetbrains\.mps\.smodel;/package jetbrains\.mps\.smodel;import org\.jetbrains\.mps\.openapi\.model\.SModelId;/g' \
      -e 's/\([^\.]\)SModelId\.RegularSModelId/\1jetbrains\.mps\.smodel\.SModelId\.RegularSModelId/g' \
-     -e 's/\([^\.]\)SModelId\.ForeignSModelId/\1jetbrains\.mps\.smodel\.SModeld\.ForeignSModelId/g' \
+     -e 's/\([^\.]\)SModelId\.ForeignSModelId/\1jetbrains\.mps\.smodel\.SModelId\.ForeignSModelId/g' \
      -e 's/SModelId\.fromString(/jetbrains\.mps\.smodel\.SModelId\.fromString(/g' \
      -e 's/SModelId\.foreign(/jetbrains\.mps\.smodel\.SModelId\.foreign(/g' \
      -e 's/SModelId\.regular(/jetbrains\.mps\.smodel\.SModelId\.regular(/g' \

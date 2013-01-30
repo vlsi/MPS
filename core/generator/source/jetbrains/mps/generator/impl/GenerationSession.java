@@ -34,7 +34,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;

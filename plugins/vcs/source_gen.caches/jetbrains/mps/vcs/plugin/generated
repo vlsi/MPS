@@ -43,11 +43,11 @@
   <dep model="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" hash="-44uj21h63qb9uj97wp35p2eqslj9xk3" />
   <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="-5ttuahl4y6xmxr4d7idpme1zbdfeuv3" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="d5cnpujtqu721m7jpcehnnksdbi4kbf" />
-  <dep model="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)" hash="bbm6ri8at9c9p2946wm6wkkcy8dh70o" />
+  <dep model="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)" hash="cijld904dpdyi6wnhshefjce9pnpknb" />
   <dep model="r:351fe3d9-2ce5-4ea0-8afc-9b076259a949(jetbrains.mps.vcs.diff.ui.merge)" hash="-3rgtnjponbw6sw24qpd2bzs4n5fza6b" />
   <dep model="r:c29f530b-f74d-4627-9da2-61138cfa6722(jetbrains.mps.vcs.platform.actions)" hash="-dxdvuq7o2v1dfuqdrtupaxngxm82brs" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-dtcjnjk6lww15wxj6oyv44k28fu5g1d" />
-  <dep model="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)" hash="-9m63n03clcd2i85wettasve1sld1ryl" />
+  <dep model="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)" hash="5mdkrenp2v51rr4orl4cxrby2c4wjks" />
   <dep model="r:e4939376-be00-4167-9510-67715eca6425(jetbrains.mps.vcs.platform.util)" hash="b11da3l0omnftfblfygzg6xr0b00ek4" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" hash="-82qr5jcbkl4tjv8m296myanaocytv8k" />

@@ -16,7 +16,7 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.smodel.resources.IMResource;
+import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.IModule;
@@ -69,17 +69,17 @@ public class ReducedGenerationWorker extends GeneratorWorker {
       }
     };
 
-    final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
-    this.myOutputPaths = new ModuleOutputPaths(Sequence.fromIterable(resources).select(new ISelector<IMResource, IModule>() {
-      public IModule select(IMResource r) {
+    final Iterable<MResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
+    this.myOutputPaths = new ModuleOutputPaths(Sequence.fromIterable(resources).select(new ISelector<MResource, IModule>() {
+      public IModule select(MResource r) {
         return r.module();
       }
     }));
 
     final String outputRoot = myWhatToDo.getProperty("OUTPUT_ROOT_DIR");
     final String cachesOutputRoot = myWhatToDo.getProperty("CACHES_OUTPUT_ROOT_DIR");
-    final boolean useTransientOutput = Sequence.fromIterable(resources).any(new IWhereFilter<IMResource>() {
-      public boolean accept(IMResource r) {
+    final boolean useTransientOutput = Sequence.fromIterable(resources).any(new IWhereFilter<MResource>() {
+      public boolean accept(MResource r) {
         return r.module().getModuleDescriptor().isUseTransientOutput();
       }
     });
@@ -117,7 +117,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
   }
 
   @Override
-  protected Iterable<IMResource> collectResources(IOperationContext context, final MpsWorker.ObjectsToProcess go) {
+  protected Iterable<MResource> collectResources(IOperationContext context, final MpsWorker.ObjectsToProcess go) {
     final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -128,9 +128,9 @@ public class ReducedGenerationWorker extends GeneratorWorker {
       public boolean accept(SModel smd) {
         return GenerationFacade.canGenerate(smd);
       }
-    })).resources(false)).select(new ISelector<IResource, IMResource>() {
-      public IMResource select(IResource r) {
-        return (IMResource) r;
+    })).resources(false)).select(new ISelector<IResource, MResource>() {
+      public MResource select(IResource r) {
+        return (MResource) r;
       }
     });
   }

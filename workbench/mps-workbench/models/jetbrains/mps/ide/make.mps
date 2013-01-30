@@ -7588,7 +7588,7 @@
           <property name="name" nameId="tpck.1169194664001" value="inputRes" />
           <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="173672751428923304">
             <node role="elementType" roleId="tp2q.1151689745422" type="tpee.UpperBoundType" typeId="tpee.1171903916106" id="173672751428923305">
-              <node role="bound" roleId="tpee.1171903916107" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="173672751428923306">
+              <node role="bound" roleId="tpee.1171903916107" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4902420589292590766">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yo81.6168415856807657256" resolveInfo="IResource" />
               </node>
             </node>
@@ -8462,7 +8462,7 @@
           <property name="name" nameId="tpck.1169194664001" value="input" />
           <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="173672751428923667">
             <node role="elementType" roleId="tp2q.1151689745422" type="tpee.UpperBoundType" typeId="tpee.1171903916106" id="173672751428923668">
-              <node role="bound" roleId="tpee.1171903916107" type="vvvw.ResourceClassifierType" typeId="vvvw.119022571402207412" id="173672751428923669">
+              <node role="bound" roleId="tpee.1171903916107" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4902420589292578021">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yo81.6168415856807657256" resolveInfo="IResource" />
               </node>
             </node>

@@ -46,6 +46,10 @@ public class QueriesGenerated {
     return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false) != null);
   }
 
+  public static boolean nodeSubstituteActionsBuilder_Precondition_ResourceClassifierType_4902420589276882578(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return !(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration"));
+  }
+
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IPropertyExpression_2191561637326275635(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "resource", true) == null);
   }
@@ -287,6 +291,11 @@ __switch__:
         }
       }
     }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ResourceClassifierType_4902420589276875806(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     return result;
   }
 

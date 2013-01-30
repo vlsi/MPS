@@ -7,7 +7,6 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import org.jetbrains.annotations.NotNull;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -37,8 +36,9 @@ import org.eclipse.jdt.internal.compiler.ast.Annotation;
 import org.eclipse.jdt.internal.compiler.ast.SingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.MemberValuePair;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.DynamicReference;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.eclipse.jdt.internal.compiler.ast.Argument;
 import org.eclipse.jdt.internal.compiler.ast.Expression;
@@ -78,7 +78,7 @@ public class ASTConverter {
   private boolean myOnlyStubs = false;
   private Map<Integer, SNode> myJavadocs = MapSequence.fromMap(new HashMap<Integer, SNode>());
 
-  public ASTConverter(@NotNull TypeNameResolver typeResolver, boolean onlyStubs) {
+  public ASTConverter(boolean onlyStubs) {
     myOnlyStubs = onlyStubs;
   }
 
@@ -836,8 +836,6 @@ public class ASTConverter {
 
   public String getTypeName(SNode type) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-      // <node> 
-      // <node> 
       return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")), "conceptAlias");
     } else if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       // <node> 
@@ -845,7 +843,7 @@ public class ASTConverter {
       // <node> 
       if (SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType").getReference("classifier") instanceof DynamicReference) {
         DynamicReference dynRef = (DynamicReference) SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType").getReference("classifier");
-        return ((jetbrains.mps.smodel.SReference) dynRef).getResolveInfo();
+        return dynRef.getResolveInfo();
       } else {
         return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "name");
       }

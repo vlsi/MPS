@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="11" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/187226666892735701">
     <nodeInfo nodeId="187226666892740048" fileName="typeof_DoneWorkStatement_InferenceRule.java" startLine="21" startPosition="7" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="187226666892740048" fileName="typeof_DoneWorkStatement_InferenceRule.java" startLine="22" startPosition="90" endLine="23" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -309,49 +309,93 @@
     <unitInfo nodeId="2360002718792535571" fileName="ResourceType_comparableWith_IResource_ComparisonRule.java" startLine="16" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.ResourceType_comparableWith_IResource_ComparisonRule" />
   </root>
   <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/2360002718792583537">
-    <nodeInfo nodeId="2360002718792583542" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="23" startPosition="119" endLine="24" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="27" startPosition="46" endLine="28" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="32" startPosition="5" endLine="33" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="33" startPosition="126" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="38" startPosition="27" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2360002718792614838" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="42" startPosition="62" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2360002718792614838" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="43" startPosition="30" endLine="44" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2360002718792614838" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="44" startPosition="165" endLine="45" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2360002718792614838" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="45" startPosition="234" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResourceType_subtypeOf_IResource_SubtypingRule#()V" />
-    <nodeInfo nodeId="2360002718792614838" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="43" startPosition="30" endLine="45" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2360002718792614838" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="43" startPosition="30" endLine="45" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperTypes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljava/util/List;" />
-    <nodeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
-    <nodeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="2360002718792614838" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_9rsqz7_a0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="20" startPosition="59" endLine="20" endPosition="59" />
-    <scopeInfo nodeId="2360002718792583538" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="23" startPosition="119" endLine="24" endPosition="104" />
-    <scopeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="27" startPosition="46" endLine="28" endPosition="62" />
-    <scopeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="38" startPosition="27" endLine="39" endPosition="16" />
-    <scopeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="32" startPosition="5" endLine="34" endPosition="45">
+    <nodeInfo nodeId="3308693286243416459" fileName="resource_supertypes_SubtypingRule.java" startLine="25" startPosition="119" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589244399764" fileName="resource_supertypes_SubtypingRule.java" startLine="26" startPosition="75" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589244483136" fileName="resource_supertypes_SubtypingRule.java" startLine="28" startPosition="35" endLine="29" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589244646143" fileName="resource_supertypes_SubtypingRule.java" startLine="30" startPosition="12" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589244610940" fileName="resource_supertypes_SubtypingRule.java" startLine="33" startPosition="162" endLine="34" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2360002718792583542" fileName="resource_supertypes_SubtypingRule.java" startLine="35" startPosition="5" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="39" startPosition="46" endLine="40" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="44" startPosition="5" endLine="45" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="45" startPosition="126" endLine="46" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="50" startPosition="27" endLine="51" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="54" startPosition="65" endLine="55" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="55" startPosition="30" endLine="56" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="56" startPosition="30" endLine="57" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="57" startPosition="162" endLine="58" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="58" startPosition="165" endLine="59" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="59" startPosition="234" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="60" startPosition="58" endLine="61" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589244551072" fileName="resource_supertypes_SubtypingRule.java" startLine="64" startPosition="62" endLine="65" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589244551072" fileName="resource_supertypes_SubtypingRule.java" startLine="65" startPosition="30" endLine="66" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589244551072" fileName="resource_supertypes_SubtypingRule.java" startLine="66" startPosition="165" endLine="67" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589244551072" fileName="resource_supertypes_SubtypingRule.java" startLine="67" startPosition="234" endLine="68" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589244642801" fileName="resource_supertypes_SubtypingRule.java" startLine="71" startPosition="64" endLine="72" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589244642801" fileName="resource_supertypes_SubtypingRule.java" startLine="72" startPosition="30" endLine="73" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589244642801" fileName="resource_supertypes_SubtypingRule.java" startLine="72" startPosition="30" endLine="73" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589244642801" fileName="resource_supertypes_SubtypingRule.java" startLine="72" startPosition="30" endLine="73" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589244642801" fileName="resource_supertypes_SubtypingRule.java" startLine="73" startPosition="162" endLine="74" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="resource_supertypes_SubtypingRule#()V" />
+    <nodeInfo nodeId="4902420589244645107" fileName="resource_supertypes_SubtypingRule.java" startLine="30" startPosition="10" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589244551072" fileName="resource_supertypes_SubtypingRule.java" startLine="65" startPosition="30" endLine="67" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589244551072" fileName="resource_supertypes_SubtypingRule.java" startLine="65" startPosition="30" endLine="67" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589244539792" fileName="resource_supertypes_SubtypingRule.java" startLine="32" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="57" startPosition="162" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="57" startPosition="162" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="43" startPosition="68" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="56" startPosition="30" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="56" startPosition="30" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589244454803" fileName="resource_supertypes_SubtypingRule.java" startLine="27" startPosition="81" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4902420589244642801" fileName="resource_supertypes_SubtypingRule.java" startLine="71" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_os9pe9_a0a0a3a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="4902420589244551072" fileName="resource_supertypes_SubtypingRule.java" startLine="64" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_os9pe9_a0a3a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="54" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_os9pe9_a0a0a0c0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="25" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperTypes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljava/util/List;" />
+    <scopeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="22" startPosition="46" endLine="22" endPosition="46" />
+    <scopeInfo nodeId="4902420589244454805" fileName="resource_supertypes_SubtypingRule.java" startLine="28" startPosition="35" endLine="29" endPosition="93" />
+    <scopeInfo nodeId="4902420589244645108" fileName="resource_supertypes_SubtypingRule.java" startLine="30" startPosition="12" endLine="31" endPosition="93" />
+    <scopeInfo nodeId="4902420589244539794" fileName="resource_supertypes_SubtypingRule.java" startLine="33" startPosition="162" endLine="34" endPosition="92" />
+    <scopeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="39" startPosition="46" endLine="40" endPosition="62" />
+    <scopeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="50" startPosition="27" endLine="51" endPosition="17" />
+    <scopeInfo nodeId="4902420589244642801" fileName="resource_supertypes_SubtypingRule.java" startLine="72" startPosition="30" endLine="73" endPosition="162" />
+    <scopeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="44" startPosition="5" endLine="46" endPosition="45">
       <varInfo nodeId="2360002718792583537" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="2360002718792614838" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="43" startPosition="30" endLine="45" endPosition="234" />
-    <scopeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="4902420589244551072" fileName="resource_supertypes_SubtypingRule.java" startLine="65" startPosition="30" endLine="67" endPosition="234" />
+    <scopeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="57" startPosition="162" endLine="60" endPosition="58" />
+    <scopeInfo nodeId="4902420589244642801" fileName="resource_supertypes_SubtypingRule.java" startLine="71" startPosition="64" endLine="74" endPosition="24">
+      <varInfo nodeId="4902420589244642801" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="43" startPosition="68" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="56" startPosition="30" endLine="60" endPosition="58" />
+    <scopeInfo nodeId="4902420589244551072" fileName="resource_supertypes_SubtypingRule.java" startLine="64" startPosition="62" endLine="68" endPosition="24">
+      <varInfo nodeId="4902420589244551072" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589244642801" fileName="resource_supertypes_SubtypingRule.java" startLine="71" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="43" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="2360002718792583537" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589244551072" fileName="resource_supertypes_SubtypingRule.java" startLine="64" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="54" startPosition="65" endLine="61" endPosition="24">
+      <varInfo nodeId="4902420589244646146" varName="quotedNode_1" />
+      <varInfo nodeId="4902420589244646146" varName="quotedNode_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589244646146" fileName="resource_supertypes_SubtypingRule.java" startLine="54" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="2360002718792583538" fileName="resource_supertypes_SubtypingRule.java" startLine="25" startPosition="119" endLine="36" endPosition="22">
+      <varInfo nodeId="4902420589244399765" varName="classifierType" />
+      <varInfo nodeId="3308693286243416460" varName="supertypes" />
+    </scopeInfo>
+    <scopeInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="25" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="2360002718792583537" varName="rt" />
       <varInfo nodeId="2360002718792583537" varName="status" />
       <varInfo nodeId="2360002718792583537" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="2360002718792614838" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="42" startPosition="62" endLine="46" endPosition="24">
-      <varInfo nodeId="2360002718792614838" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="2360002718792583537" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="2360002718792614838" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="42" startPosition="0" endLine="48" endPosition="0" />
-    <unitInfo nodeId="2360002718792583537" fileName="ResourceType_subtypeOf_IResource_SubtypingRule.java" startLine="19" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.ResourceType_subtypeOf_IResource_SubtypingRule" />
+    <unitInfo nodeId="2360002718792583537" fileName="resource_supertypes_SubtypingRule.java" startLine="21" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.resource_supertypes_SubtypingRule" />
   </root>
   <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/2360002718792622204">
     <nodeInfo nodeId="2360002718792622216" fileName="typeof_OutputResources_InferenceRule.java" startLine="21" startPosition="7" endLine="22" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -478,6 +522,302 @@
     </scopeInfo>
     <unitInfo nodeId="3297237684108627666" fileName="typeof_AllWorkLeftExpression_InferenceRule.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_AllWorkLeftExpression_InferenceRule" />
   </root>
+  <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/3308693286243702024">
+    <nodeInfo nodeId="3308693286243766019" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="29" startPosition="118" endLine="30" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589004940453" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="31" startPosition="26" endLine="32" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="34" startPosition="41" endLine="35" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="38" startPosition="39" endLine="39" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589006046593" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="42" startPosition="115" endLine="43" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589005913653" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="44" startPosition="9" endLine="45" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589005913653" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="45" startPosition="51" endLine="46" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589005913653" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="46" startPosition="206" endLine="47" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420588995086093" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="50" startPosition="9" endLine="51" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420588995086093" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="51" startPosition="51" endLine="52" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420588995086093" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="52" startPosition="206" endLine="53" endPosition="291" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420588995625816" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="57" startPosition="7" endLine="58" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420588995625816" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="58" startPosition="49" endLine="59" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420588995625816" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="59" startPosition="204" endLine="60" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="65" startPosition="46" endLine="66" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="70" startPosition="5" endLine="71" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="71" startPosition="126" endLine="72" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="76" startPosition="30" endLine="77" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589006046595" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="80" startPosition="83" endLine="81" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589006046595" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="81" startPosition="30" endLine="82" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589006046595" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="82" startPosition="172" endLine="83" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589006046595" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="83" startPosition="88" endLine="84" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="87" startPosition="83" endLine="88" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="88" startPosition="30" endLine="89" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="89" startPosition="30" endLine="90" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="90" startPosition="30" endLine="91" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="91" startPosition="175" endLine="92" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="92" startPosition="162" endLine="93" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="94" startPosition="31" endLine="95" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="96" startPosition="5" endLine="97" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="97" startPosition="55" endLine="98" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="101" startPosition="84" endLine="102" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="102" startPosition="30" endLine="103" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="103" startPosition="30" endLine="104" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="104" startPosition="30" endLine="105" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="105" startPosition="175" endLine="106" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="106" startPosition="162" endLine="107" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="107" startPosition="165" endLine="108" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="108" startPosition="88" endLine="109" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="109" startPosition="58" endLine="110" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="110" startPosition="55" endLine="111" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="114" startPosition="64" endLine="115" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="115" startPosition="30" endLine="116" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="116" startPosition="30" endLine="117" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="117" startPosition="30" endLine="118" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="118" startPosition="175" endLine="119" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="119" startPosition="162" endLine="120" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="120" startPosition="165" endLine="121" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="121" startPosition="234" endLine="122" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="122" startPosition="58" endLine="123" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="123" startPosition="55" endLine="124" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_InputResourcesParameter_InferenceRule#()V" />
+    <nodeInfo nodeId="4902420589006046595" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="81" startPosition="30" endLine="83" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589006046595" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="81" startPosition="30" endLine="83" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="93" startPosition="39" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="106" startPosition="162" endLine="109" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="106" startPosition="162" endLine="109" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="119" startPosition="162" endLine="122" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="119" startPosition="162" endLine="122" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="69" startPosition="68" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="92" startPosition="162" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="92" startPosition="162" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589005913653" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="43" startPosition="64" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420588995086093" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="49" startPosition="14" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420588995625816" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="56" startPosition="12" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="105" startPosition="175" endLine="110" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="105" startPosition="175" endLine="110" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="118" startPosition="175" endLine="123" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="118" startPosition="175" endLine="123" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589005813413" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="49" startPosition="12" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420588995625118" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="56" startPosition="10" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="4902420589006046595" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="80" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3tga6z_a0a0c0b0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="91" startPosition="175" endLine="97" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="91" startPosition="175" endLine="97" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="104" startPosition="30" endLine="110" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="104" startPosition="30" endLine="110" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="117" startPosition="30" endLine="123" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="117" startPosition="30" endLine="123" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="90" startPosition="30" endLine="97" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="90" startPosition="30" endLine="97" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589005758339" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="32" startPosition="131" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="101" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3tga6z_a0a0a2a1a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="114" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3tga6z_a0a0a1a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="87" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3tga6z_a0b0c0b0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4902420589005778947" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="41" startPosition="17" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3308693286243766602" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="30" startPosition="123" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="29" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="26" startPosition="57" endLine="26" endPosition="57" />
+    <scopeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="34" startPosition="41" endLine="35" endPosition="78" />
+    <scopeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="38" startPosition="39" endLine="39" endPosition="68" />
+    <scopeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="65" startPosition="46" endLine="66" endPosition="73" />
+    <scopeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="76" startPosition="30" endLine="77" endPosition="16" />
+    <scopeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="94" startPosition="31" endLine="95" endPosition="83" />
+    <scopeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="70" startPosition="5" endLine="72" endPosition="45">
+      <varInfo nodeId="3308693286243702024" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589006046595" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="81" startPosition="30" endLine="83" endPosition="88" />
+    <scopeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="4902420589005758343" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="4902420589005758343" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589005913653" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="44" startPosition="9" endLine="47" endPosition="290">
+      <varInfo nodeId="4902420589005913653" varName="_info_12389875345" />
+      <varInfo nodeId="4902420589005913653" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420588995086093" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="50" startPosition="9" endLine="53" endPosition="291">
+      <varInfo nodeId="4902420588995086093" varName="_info_12389875345" />
+      <varInfo nodeId="4902420588995086093" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420588995625816" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="57" startPosition="7" endLine="60" endPosition="284">
+      <varInfo nodeId="4902420588995625816" varName="_info_12389875345" />
+      <varInfo nodeId="4902420588995625816" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="76" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="106" startPosition="162" endLine="109" endPosition="58" />
+    <scopeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="119" startPosition="162" endLine="122" endPosition="58" />
+    <scopeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="69" startPosition="68" endLine="73" endPosition="5" />
+    <scopeInfo nodeId="4902420589006046595" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="80" startPosition="83" endLine="84" endPosition="24">
+      <varInfo nodeId="4902420589006046595" varName="quotedNode_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="92" startPosition="162" endLine="96" endPosition="5" />
+    <scopeInfo nodeId="4902420589005813414" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="49" startPosition="14" endLine="54" endPosition="9" />
+    <scopeInfo nodeId="4902420588995625119" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="56" startPosition="12" endLine="61" endPosition="7" />
+    <scopeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="105" startPosition="175" endLine="110" endPosition="55" />
+    <scopeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="118" startPosition="175" endLine="123" endPosition="55" />
+    <scopeInfo nodeId="4902420589005778949" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="42" startPosition="115" endLine="48" endPosition="9">
+      <varInfo nodeId="4902420589006046594" varName="ntt" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="69" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="3308693286243702024" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589006046595" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="80" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="4902420589006046595" varName="parameter_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="91" startPosition="175" endLine="97" endPosition="55" />
+    <scopeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="104" startPosition="30" endLine="110" endPosition="55" />
+    <scopeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="117" startPosition="30" endLine="123" endPosition="55" />
+    <scopeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="90" startPosition="30" endLine="97" endPosition="55" />
+    <scopeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="101" startPosition="84" endLine="111" endPosition="24">
+      <varInfo nodeId="4902420588995086140" varName="quotedNode_2" />
+      <varInfo nodeId="4902420588995086140" varName="quotedNode_3" />
+      <varInfo nodeId="4902420588995086140" varName="quotedNode_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="114" startPosition="64" endLine="124" endPosition="24">
+      <varInfo nodeId="4902420588995625863" varName="quotedNode_1" />
+      <varInfo nodeId="4902420588995625863" varName="quotedNode_2" />
+      <varInfo nodeId="4902420588995625863" varName="quotedNode_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="87" startPosition="83" endLine="98" endPosition="24">
+      <varInfo nodeId="4902420589005913655" varName="quotedNode_2" />
+      <varInfo nodeId="4902420589005913655" varName="quotedNode_3" />
+      <varInfo nodeId="4902420589005913655" varName="quotedNode_4" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420588995086140" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="101" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="4902420588995086140" varName="parameter_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420588995625863" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="114" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="87" startPosition="0" endLine="100" endPosition="0">
+      <varInfo nodeId="4902420589005913655" varName="parameter_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308693286243766604" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="31" startPosition="26" endLine="55" endPosition="7">
+      <varInfo nodeId="4902420589005758340" varName="cls" />
+      <varInfo nodeId="4902420589004940454" varName="resourceType" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308693286243702025" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="29" startPosition="118" endLine="62" endPosition="5">
+      <varInfo nodeId="3308693286243766020" varName="tdecl" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="29" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="3308693286243702024" varName="inres" />
+      <varInfo nodeId="3308693286243702024" varName="status" />
+      <varInfo nodeId="3308693286243702024" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="33" startPosition="64" endLine="37" endPosition="7" unitName="jetbrains.mps.make.script.typesystem.typeof_InputResourcesParameter_InferenceRule$1" />
+    <unitInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="37" startPosition="20" endLine="41" endPosition="7" unitName="jetbrains.mps.make.script.typesystem.typeof_InputResourcesParameter_InferenceRule$2" />
+    <unitInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="25" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_InputResourcesParameter_InferenceRule" />
+  </root>
+  <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/4902420589011877927">
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="39" startPosition="35" endLine="39" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589014665084" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="23" startPosition="97" endLine="24" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589014704125" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="25" startPosition="25" endLine="26" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589014863321" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="27" startPosition="5" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589014919769" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="29" startPosition="26" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589011967323" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="31" startPosition="5" endLine="32" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="38" startPosition="207" endLine="39" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="39" startPosition="35" endLine="40" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="43" startPosition="27" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="48" startPosition="5" endLine="49" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="49" startPosition="129" endLine="50" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="55" startPosition="5" endLine="56" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="56" startPosition="131" endLine="57" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="61" startPosition="53" endLine="62" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="65" startPosition="55" endLine="66" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589292726205" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="69" startPosition="63" endLine="70" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589292726205" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="70" startPosition="30" endLine="71" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589292726205" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="71" startPosition="165" endLine="72" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589292726205" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="72" startPosition="234" endLine="73" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589292726979" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="76" startPosition="63" endLine="77" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589292726979" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="77" startPosition="30" endLine="78" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589292726979" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="78" startPosition="165" endLine="79" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4902420589292726979" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="79" startPosition="234" endLine="80" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="resource_subtypeOf_resource_InequationReplacementRule#()V" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="35" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)V" />
+    <nodeInfo nodeId="4902420589292726205" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="70" startPosition="30" endLine="72" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589292726205" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="70" startPosition="30" endLine="72" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589292726979" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="77" startPosition="30" endLine="79" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589292726979" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="77" startPosition="30" endLine="79" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589014685287" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="24" startPosition="78" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4902420589014882816" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="28" startPosition="81" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableSubtypeConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableSupertypeConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkInequation#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)Z" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="47" startPosition="71" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="54" startPosition="73" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="47" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSubtypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="54" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSupertypeAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="4902420589292726205" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_em7qpx_a0a0b0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4902420589292726979" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="76" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_em7qpx_a0a0d0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="23" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableCustom#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="20" startPosition="66" endLine="20" endPosition="66" />
+    <scopeInfo nodeId="4902420589011877929" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="35" startPosition="253" endLine="35" endPosition="253" />
+    <scopeInfo nodeId="4902420589011877929" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="39" startPosition="35" endLine="39" endPosition="35" />
+    <scopeInfo nodeId="4902420589014685289" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="25" startPosition="25" endLine="26" endPosition="54" />
+    <scopeInfo nodeId="4902420589014882818" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="29" startPosition="26" endLine="30" endPosition="55" />
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="43" startPosition="27" endLine="44" endPosition="16" />
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="61" startPosition="53" endLine="62" endPosition="62" />
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="65" startPosition="55" endLine="66" endPosition="62" />
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="35" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="4902420589011877927" varName="equationInfo" />
+      <varInfo nodeId="4902420589011877927" varName="inequalityIsLessThan" />
+      <varInfo nodeId="4902420589011877927" varName="inequalityIsWeak" />
+      <varInfo nodeId="4902420589011877927" varName="status" />
+      <varInfo nodeId="4902420589011877927" varName="subtype" />
+      <varInfo nodeId="4902420589011877927" varName="supertype" />
+      <varInfo nodeId="4902420589011877927" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="38" startPosition="207" endLine="40" endPosition="27">
+      <varInfo nodeId="4902420589011877927" varName="result_14532009" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="48" startPosition="5" endLine="50" endPosition="45">
+      <varInfo nodeId="4902420589011877927" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="55" startPosition="5" endLine="57" endPosition="45">
+      <varInfo nodeId="4902420589011877927" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589292726205" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="70" startPosition="30" endLine="72" endPosition="234" />
+    <scopeInfo nodeId="4902420589292726979" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="77" startPosition="30" endLine="79" endPosition="234" />
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="4902420589011877927" varName="equationInfo" />
+      <varInfo nodeId="4902420589011877927" varName="inequalityIsLessThan" />
+      <varInfo nodeId="4902420589011877927" varName="inequalityIsWeak" />
+      <varInfo nodeId="4902420589011877927" varName="status" />
+      <varInfo nodeId="4902420589011877927" varName="subtype" />
+      <varInfo nodeId="4902420589011877927" varName="supertype" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="47" startPosition="71" endLine="51" endPosition="5" />
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="54" startPosition="73" endLine="58" endPosition="5" />
+    <scopeInfo nodeId="4902420589292726205" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="69" startPosition="63" endLine="73" endPosition="24">
+      <varInfo nodeId="4902420589292726205" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589292726979" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="76" startPosition="63" endLine="80" endPosition="24">
+      <varInfo nodeId="4902420589292726979" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="47" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="4902420589011877927" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="54" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="4902420589011877927" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589292726205" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="69" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="4902420589292726979" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="76" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="4902420589011945887" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="23" startPosition="97" endLine="32" endPosition="93">
+      <varInfo nodeId="4902420589014665085" varName="leftCT" />
+      <varInfo nodeId="4902420589014863322" varName="rightCT" />
+    </scopeInfo>
+    <scopeInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="23" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="4902420589011877927" varName="status" />
+      <varInfo nodeId="4902420589011877927" varName="subtype" />
+      <varInfo nodeId="4902420589011877927" varName="supertype" />
+    </scopeInfo>
+    <unitInfo nodeId="4902420589011877927" fileName="resource_subtypeOf_resource_InequationReplacementRule.java" startLine="19" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.resource_subtypeOf_resource_InequationReplacementRule" />
+  </root>
   <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/505095865854557931">
     <nodeInfo nodeId="505095865854557938" fileName="typeof_OptionExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="505095865854557938" fileName="typeof_OptionExpression_InferenceRule.java" startLine="23" startPosition="44" endLine="24" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -533,105 +873,56 @@
     <unitInfo nodeId="505095865854557931" fileName="typeof_OptionExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_OptionExpression_InferenceRule" />
   </root>
   <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/6284324196595852592">
-    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMatchingPattern" />
-    <nodeInfo nodeId="6284324196595852604" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="24" startPosition="114" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="28" startPosition="46" endLine="29" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="33" startPosition="5" endLine="34" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="34" startPosition="118" endLine="35" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="35" startPosition="39" endLine="36" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="36" startPosition="42" endLine="37" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="41" startPosition="27" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="50" startPosition="7" endLine="51" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="51" startPosition="70" endLine="52" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="53" startPosition="163" endLine="54" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="56" startPosition="9" endLine="57" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="58" startPosition="152" endLine="59" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="62" startPosition="7" endLine="63" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="66" startPosition="40" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="73" startPosition="51" endLine="74" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6284324196595852606" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="81" startPosition="60" endLine="82" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6284324196595852606" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="82" startPosition="30" endLine="83" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6284324196595852606" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="82" startPosition="30" endLine="83" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6284324196595852606" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="82" startPosition="30" endLine="83" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6284324196595852606" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="83" startPosition="162" endLine="84" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="87" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SNODE_POINTER_f565s9_a0a0a0a0b0c0a0a0a0a0a0e" />
+    <nodeInfo nodeId="4902420589034913369" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="25" startPosition="255" endLine="26" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4902420589034967790" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="26" startPosition="108" endLine="27" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308693286243531111" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="27" startPosition="90" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6284324196595852604" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="29" startPosition="5" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="33" startPosition="46" endLine="34" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="38" startPosition="5" endLine="39" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="39" startPosition="126" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="44" startPosition="27" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308693286243525324" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="48" startPosition="63" endLine="49" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3308693286243525324" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="49" startPosition="30" endLine="50" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308693286243525324" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="50" startPosition="165" endLine="51" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308693286243525324" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="51" startPosition="234" endLine="52" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IResource_subtypeOf_ResourceType_SubtypingRule#()V" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="46" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_f565s9_a0a0a0a4#()V" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="70" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="77" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="52" startPosition="78" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="57" startPosition="80" endLine="60" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="6284324196595852606" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_f565s9_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="32" startPosition="68" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="55" startPosition="9" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="55" startPosition="9" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="55" startPosition="9" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="32" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="52" startPosition="78" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="49" startPosition="45" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="49" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3308693286243525324" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="49" startPosition="30" endLine="51" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3308693286243525324" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="49" startPosition="30" endLine="51" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3308693286243501058" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="24" startPosition="112" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="3308693286243525324" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_f565s9_a0a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="24" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="21" startPosition="59" endLine="21" endPosition="59" />
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="46" startPosition="38" endLine="46" endPosition="38" />
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="70" startPosition="71" endLine="70" endPosition="71" />
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="77" startPosition="42" endLine="77" endPosition="42" />
-    <scopeInfo nodeId="6284324196595852593" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="24" startPosition="114" endLine="25" endPosition="47" />
-    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="28" startPosition="46" endLine="29" endPosition="65" />
-    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="41" startPosition="27" endLine="42" endPosition="16" />
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="53" startPosition="163" endLine="54" endPosition="23" />
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="58" startPosition="152" endLine="59" endPosition="25" />
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="66" startPosition="40" endLine="67" endPosition="19" />
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="73" startPosition="51" endLine="74" endPosition="18" />
-    <scopeInfo nodeId="6284324196595852606" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="82" startPosition="30" endLine="83" endPosition="162" />
+    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="33" startPosition="46" endLine="34" endPosition="65" />
+    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="44" startPosition="27" endLine="45" endPosition="17" />
     <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="46" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="70" startPosition="0" endLine="72" endPosition="0">
-      <varInfo nodeId="6284324196595852596" varName="pattern" />
+    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="38" startPosition="5" endLine="40" endPosition="45">
+      <varInfo nodeId="6284324196595852592" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="77" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="6284324196595852596" varName="o" />
+    <scopeInfo nodeId="3308693286243525324" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="49" startPosition="30" endLine="51" endPosition="234" />
+    <scopeInfo nodeId="3308693286243501060" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="25" startPosition="255" endLine="28" endPosition="16">
+      <varInfo nodeId="4902420589034913370" varName="rt" />
     </scopeInfo>
-    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="6284324196595852592" varName="iRes" />
+    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="37" startPosition="68" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="3308693286243525324" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="48" startPosition="63" endLine="52" endPosition="24">
+      <varInfo nodeId="3308693286243525324" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="6284324196595852593" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="24" startPosition="112" endLine="30" endPosition="16" />
+    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="37" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="6284324196595852592" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308693286243525324" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="48" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="24" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="6284324196595852592" varName="ct" />
       <varInfo nodeId="6284324196595852592" varName="status" />
       <varInfo nodeId="6284324196595852592" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="6284324196595852596" varName="fieldName" />
-    </scopeInfo>
-    <scopeInfo nodeId="6284324196595852606" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="81" startPosition="60" endLine="84" endPosition="24">
-      <varInfo nodeId="6284324196595852606" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="33" startPosition="5" endLine="37" endPosition="48">
-      <varInfo nodeId="6284324196595852592" varName="b" />
-      <varInfo nodeId="6284324196595852592" varName="pattern" />
-    </scopeInfo>
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="56" startPosition="9" endLine="60" endPosition="11">
-      <varInfo nodeId="6284324196595852596" varName="pointer" />
-    </scopeInfo>
-    <scopeInfo nodeId="6284324196595852606" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="81" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="32" startPosition="68" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="55" startPosition="9" endLine="61" endPosition="9" />
-    <scopeInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="32" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="6284324196595852592" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="52" startPosition="78" endLine="61" endPosition="9" />
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="50" startPosition="7" endLine="61" endPosition="9">
-      <varInfo nodeId="6284324196595852596" varName="nodeToMatch_IResource_subtypeOf_ResourceType_ajr7u7_a0a" />
-    </scopeInfo>
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="49" startPosition="45" endLine="63" endPosition="18" />
-    <scopeInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="49" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="6284324196595852596" varName="nodeToMatch" />
-    </scopeInfo>
-    <unitInfo nodeId="6284324196595852596" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="45" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.IResource_subtypeOf_ResourceType_SubtypingRule$Pattern_f565s9_a0a0a0a4" />
-    <unitInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.IResource_subtypeOf_ResourceType_SubtypingRule" />
+    <unitInfo nodeId="6284324196595852592" fileName="IResource_subtypeOf_ResourceType_SubtypingRule.java" startLine="20" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.IResource_subtypeOf_ResourceType_SubtypingRule" />
   </root>
   <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/8170824575195246249">
     <nodeInfo nodeId="8170824575195246257" fileName="typeof_PropertiesAccessorParameter_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

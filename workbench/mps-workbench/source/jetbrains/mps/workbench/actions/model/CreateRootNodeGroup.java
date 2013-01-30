@@ -34,7 +34,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;

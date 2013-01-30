@@ -14,17 +14,19 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 2:
         return new RelayQueryExpression_Constraints();
-      case 3:
+      case 4:
         return new ResultStatement_Constraints();
       case 0:
         return new AdvanceWorkStatement_Constraints();
       case 1:
         return new FinishWorkStatement_Constraints();
+      case 3:
+        return new ResourceType_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.make.script.structure.AdvanceWorkStatement", "jetbrains.mps.make.script.structure.FinishWorkStatement", "jetbrains.mps.make.script.structure.RelayQueryExpression", "jetbrains.mps.make.script.structure.ResultStatement"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.make.script.structure.AdvanceWorkStatement", "jetbrains.mps.make.script.structure.FinishWorkStatement", "jetbrains.mps.make.script.structure.RelayQueryExpression", "jetbrains.mps.make.script.structure.ResourceType", "jetbrains.mps.make.script.structure.ResultStatement"};
 }

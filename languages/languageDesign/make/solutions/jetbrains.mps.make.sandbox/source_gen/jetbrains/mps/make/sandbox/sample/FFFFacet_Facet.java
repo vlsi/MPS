@@ -68,8 +68,10 @@ public class FFFFacet_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_chixuw_a0a = null;
+          final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
               pa.forResource(Sequence.fromIterable(input).first()).properties(Target_QQQ.this.getName(), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
@@ -173,8 +175,10 @@ public class FFFFacet_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_chixuw_a0b = null;
+          final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
               pa.global().properties(new ITarget.Name("FFFFacet.QQQ"), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
@@ -253,8 +257,10 @@ public class FFFFacet_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_chixuw_a0c = null;
+          final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
             default:

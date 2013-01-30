@@ -49,6 +49,7 @@ public class MPSPsiProvider extends AbstractProjectComponent implements MPSPsiNo
         // ...
       }
       // TODO PsiModificationTrackerImpl.incCounter/incOutOfCodeBlockModificationCounter (see JavaCodeBlockModificationListener)
+      // TODO notify ANY_PSI_CHANGE_TOPIC
     }
   };
 

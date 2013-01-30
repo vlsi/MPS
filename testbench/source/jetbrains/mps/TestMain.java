@@ -41,7 +41,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
 import junit.framework.TestCase;
 import junit.framework.TestFailure;

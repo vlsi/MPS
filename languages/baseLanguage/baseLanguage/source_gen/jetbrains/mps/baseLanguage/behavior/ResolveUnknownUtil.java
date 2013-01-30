@@ -13,14 +13,11 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.DynamicReference;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.scopes.ClassifiersScope;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -341,7 +338,7 @@ public class ResolveUnknownUtil {
   public static SNode findClass(SNode from, String className) {
     SNode res = null;
 
-    ClassifiersScope scope = new ClassifiersScope(SNodeOperations.getModel(from), new GlobalScope(MPSModuleRepository.getInstance(), SModelRepository.getInstance()), className);
+    ClassifiersScope scope = new ClassifiersScope(SNodeOperations.getModel(from), className);
 
     SNode claz = scope.resolve(from, className);
     if ((claz == null)) {
