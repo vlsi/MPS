@@ -118,15 +118,47 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
-    return roots();
+    fireModelNodesReadAccess();
+    return new Iterable<org.jetbrains.mps.openapi.model.SNode>() {
+      public Iterator<org.jetbrains.mps.openapi.model.SNode> iterator() {
+        return (Iterator) myRoots.iterator();
+      }
+    };
   }
 
   public void addRootNode(org.jetbrains.mps.openapi.model.SNode node) {
-    addRoot(node);
+    assert node instanceof SNode;
+    ModelChange.assertLegalNodeRegistration(this, node);
+    enforceFullLoad();
+    if (myRoots.contains(node)) return;
+    SModel model = node.getModel();
+    if (model != null && model != this && model.isRoot(node)) {
+      model.removeRoot(node);
+    } else {
+      org.jetbrains.mps.openapi.model.SNode parent = node.getParent();
+      if (parent != null) {
+        parent.removeChild(node);
+      }
+    }
+
+    SNode sn = (SNode) node;
+    myRoots.add(sn);
+    sn.registerInModel(this);
+    performUndoableAction(new AddRootUndoableAction(node));
+    fireRootAddedEvent(sn);
   }
 
   public void removeRootNode(org.jetbrains.mps.openapi.model.SNode node) {
-    removeRoot(node);
+    assert node instanceof SNode;
+    ModelChange.assertLegalNodeUnRegistration(this, node);
+    enforceFullLoad();
+    if (myRoots.contains(node)) {
+      myRoots.remove(node);
+      SNode sn = (SNode) node;
+      sn.unRegisterFromModel();
+      performUndoableAction(new RemoveRootUndoableAction(node));
+      fireRootRemovedEvent(sn);
+    }
   }
 
   @NotNull
@@ -243,52 +275,40 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     NodeReadEventsCaster.fireModelNodesReadAccess(this);
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public final Iterable<org.jetbrains.mps.openapi.model.SNode> roots() {
-    return new Iterable<org.jetbrains.mps.openapi.model.SNode>() {
-      public Iterator<org.jetbrains.mps.openapi.model.SNode> iterator() {
-        return rootsIterator();
-      }
-    };
+    return getRootNodes();
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public Iterator<org.jetbrains.mps.openapi.model.SNode> rootsIterator() {
-    fireModelNodesReadAccess();
-    return ((Iterator) myRoots.iterator());
+    return getRootNodes().iterator();
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public void addRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
-    assert node instanceof SNode;
-    ModelChange.assertLegalNodeRegistration(this, node);
-    enforceFullLoad();
-    if (myRoots.contains(node)) return;
-    SModel model = node.getModel();
-    if (model != null && model != this && model.isRoot(node)) {
-      model.removeRoot(node);
-    } else {
-      org.jetbrains.mps.openapi.model.SNode parent = node.getParent();
-      if (parent != null) {
-        parent.removeChild(node);
-      }
-    }
-
-    SNode sn = (SNode) node;
-    myRoots.add(sn);
-    sn.registerInModel(this);
-    performUndoableAction(new AddRootUndoableAction(node));
-    fireRootAddedEvent(sn);
+    addRootNode(node);
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public void removeRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
-    assert node instanceof SNode;
-    ModelChange.assertLegalNodeUnRegistration(this, node);
-    enforceFullLoad();
-    if (myRoots.contains(node)) {
-      myRoots.remove(node);
-      SNode sn = (SNode) node;
-      sn.unRegisterFromModel();
-      performUndoableAction(new RemoveRootUndoableAction(node));
-      fireRootRemovedEvent(sn);
-    }
+    removeRootNode(node);
   }
 
   public int rootsCount() {
