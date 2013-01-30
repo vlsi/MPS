@@ -13,8 +13,8 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.ModelsOnlyScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
 import jetbrains.mps.smodel.SModelRepository;
@@ -43,7 +43,7 @@ public class ModelUsagesFinder implements IFinder {
         }
         for (SNode node : modelDescriptor.getSModel().nodes()) {
           for (SReference reference : node.getReferences()) {
-            if (!(reference.isExternal())) {
+            if (!(((jetbrains.mps.smodel.SReference) reference).isExternal())) {
               continue;
             }
             SModelReference targetModelReference = reference.getTargetSModelReference();
@@ -69,7 +69,7 @@ public class ModelUsagesFinder implements IFinder {
         }
         for (SNode node : descriptor.getSModel().nodes()) {
           for (SReference reference : node.getReferences()) {
-            if (!(reference.isExternal())) {
+            if (!(((jetbrains.mps.smodel.SReference) reference).isExternal())) {
               continue;
             }
             SModelReference targetModelReference = reference.getTargetSModelReference();

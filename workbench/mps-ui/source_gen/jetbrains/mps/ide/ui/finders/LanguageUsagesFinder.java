@@ -22,7 +22,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.SNodeOperations;
 
 public class LanguageUsagesFinder implements IFinder {
