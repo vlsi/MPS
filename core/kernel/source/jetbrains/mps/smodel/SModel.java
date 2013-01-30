@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -22,18 +22,39 @@ import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelDevKitEvent;
+import jetbrains.mps.smodel.event.SModelImportEvent;
+import jetbrains.mps.smodel.event.SModelLanguageEvent;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
+import java.io.IOException;
 import java.security.SecureRandom;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class SModel {
+public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
@@ -66,6 +87,67 @@ public class SModel {
     myIdToNodeMap = map;
   }
 
+  public SModelId getModelId() {
+    return getSModelReference().getSModelId();
+  }
+
+  public String getModelName() {
+    return getReference().getModelName();
+  }
+
+  @NotNull
+  public org.jetbrains.mps.openapi.model.SModelReference getReference() {
+    return myReference;
+  }
+
+  public ModelRoot getModelRoot() {
+    return getModelDescriptor() == null ? null : getModelDescriptor().getModelRoot();
+  }
+
+  public void setModelRoot(ModelRoot mr) {
+    if (getModelDescriptor() != null) {
+      getModelDescriptor().setModelRoot(mr);
+    }
+  }
+
+  public SModule getModule() {
+    SModelDescriptor md = getModelDescriptor();
+    return md == null ? null : md.getModule();
+  }
+
+  public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
+    return roots();
+  }
+
+  public void addRootNode(org.jetbrains.mps.openapi.model.SNode node) {
+    addRoot(node);
+  }
+
+  public void removeRootNode(org.jetbrains.mps.openapi.model.SNode node) {
+    removeRoot(node);
+  }
+
+  @NotNull
+  public DataSource getSource() {
+    SModelDescriptor md = getModelDescriptor();
+    return md == null ? new NullDataSource() : md.getSource();
+  }
+
+  public boolean isLoaded() {
+    return false;  //todo
+  }
+
+  public void load() throws IOException {
+    //todo remove
+  }
+
+  public void save() throws IOException {
+    //todo
+  }
+
+  public void unload() {
+    //todo
+  }
 
   //--------------DEPRECATED-------------------
 
@@ -86,7 +168,7 @@ public class SModel {
   }
 
   public SModelId getSModelId() {
-    return getSModelReference().getSModelId();
+    return getModelId();
   }
 
   @Deprecated
