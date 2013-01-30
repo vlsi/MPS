@@ -66,6 +66,9 @@ public class SModel {
     myIdToNodeMap = map;
   }
 
+
+  //--------------DEPRECATED-------------------
+
   //---------common properties--------
 
   @NotNull
@@ -73,6 +76,11 @@ public class SModel {
     return myReference;
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public SModelFqName getSModelFqName() {
     return getSModelReference().getSModelFqName();
   }
@@ -81,11 +89,21 @@ public class SModel {
     return getSModelReference().getSModelId();
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   @NotNull
   public String getStereotype() {
     return myReference.getStereotype();
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   @NotNull
   public String getLongName() {
     return myReference.getLongName();
