@@ -21853,6 +21853,9 @@
               <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="5970299968953600477">
                 <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="5970299968953599902" resolveInfo="jetbrains.mps.lang.dataFlow.pluginSolution" />
               </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="5783338228394137339">
+                <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="5181507218630254482" resolveInfo="jetbrains.mps.lang.typesystem.devkit.pluginSolution" />
+              </node>
               <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="5548512857136991456">
                 <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="5548512857136991457">
                   <property name="text" nameId="3ior.4903714810883755350" value="languageDesign" />
@@ -21913,6 +21916,12 @@
       </node>
       <node role="content" roleId="kdzh.6592112598314499050" type="kdzh.BuildMps_IdeaPluginGroup" typeId="kdzh.6592112598314586625" id="5548512857136492235">
         <link role="group" roleId="kdzh.6592112598314586626" targetNodeId="5875180246329043751" resolveInfo="quickQuery" />
+      </node>
+      <node role="content" roleId="kdzh.6592112598314499050" type="kdzh.BuildMps_IdeaPluginGroup" typeId="kdzh.6592112598314586625" id="5783338228394137335">
+        <link role="group" roleId="kdzh.6592112598314586626" targetNodeId="5548512857136991453" resolveInfo="languageDesign-plugins" />
+      </node>
+      <node role="content" roleId="kdzh.6592112598314499050" type="kdzh.BuildMps_IdeaPluginGroup" typeId="kdzh.6592112598314586625" id="5783338228394137337">
+        <link role="group" roleId="kdzh.6592112598314586626" targetNodeId="5181507218630074513" resolveInfo="baseLanguage-plugin" />
       </node>
       <node role="dependencies" roleId="kdzh.6592112598314499028" type="kdzh.BuildMps_IdeaPluginDependency" typeId="kdzh.6592112598314499027" id="5548512857136492271">
         <link role="target" roleId="kdzh.6592112598314499066" targetNodeId="4973949960459588488" />
