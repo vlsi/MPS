@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.ide.properties.StandardDialogs;
 import jetbrains.mps.logging.Logger;
 
 public class ModelProperties_Action extends BaseAction {
@@ -76,6 +77,7 @@ public class ModelProperties_Action extends BaseAction {
     try {
       MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()), configurable, "#MPSPropertiesConfigurable");
+      configurable.setParentForCallBack(configurableEditor);
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           configurableEditor.show();
@@ -83,7 +85,9 @@ public class ModelProperties_Action extends BaseAction {
       });
 
 
-      // <node> 
+      /*
+        StandardDialogs.createModelPropertiesDialog(((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context"))).show();
+      */
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ModelProperties", t);
     }

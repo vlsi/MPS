@@ -184,7 +184,7 @@ public class MappingSelectTree extends Tree {
     }
 
     public String getText() {
-      return ((SNodePointer) getObject()).getNode().getName();
+      return getObject().resolve(MPSModuleRepository.getInstance()).getName();
     }
   }
 
