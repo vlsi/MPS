@@ -4,11 +4,17 @@
   <taskdef name="mps.test.generation" classname="jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity" />
   <taskdef name="mps.test.broken.references" classname="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesOnTeamcity" />
   <typedef name="model" classname="org.apache.tools.ant.types.FileSet" />
-  <typedef name="module" classname="org.apache.tools.ant.types.FileSet" />
   <typedef name="project" classname="jetbrains.mps.build.ant.ProjectNested" />
   <typedef name="library" classname="jetbrains.mps.build.ant.LibraryDataType" />
   <typedef name="jvmarg" classname="jetbrains.mps.build.ant.Arg" />
   <typedef name="jvmargs" classname="jetbrains.mps.build.ant.JvmArgs" />
   <typedef name="macro" classname="jetbrains.mps.build.ant.Macro" />
   <typedef name="perfomancereport" classname="jetbrains.mps.build.ant.generation.PerfomanceReport" />
+
+
+  <!--used only in generated build scripts-->
+  <taskdef name="mps.generate.chunks" classname="jetbrains.mps.build.ant.generation.GenerateChunksTask" />
+  <typedef name="chunk" classname="jetbrains.mps.build.ant.generation.Chunk" />
+  <typedef name="module" classname="jetbrains.mps.build.ant.generation.ModuleChunkPart" />
+  <typedef name="plugin" classname="jetbrains.mps.build.ant.generation.Plugin" />
 </antlib>
