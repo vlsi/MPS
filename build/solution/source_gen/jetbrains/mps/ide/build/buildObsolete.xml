@@ -738,7 +738,7 @@
   
   <target name="generate" depends="fetchDependencies, declare-mps-tasks">
     <echo message="generating" />
-    <mps.generate.chunks parallelMode="true" fork="true">
+    <generate parallelMode="true" fork="true">
       <plugin path="${artifacts.buildBuild}/plugins/mps-build" />
       <plugin path="${artifacts.buildDeprecatedBuildlanguage}/plugins/mps-obsolete" />
       <library file="${artifacts.buildBuild}/plugins/mps-build/languages/build/jetbrains.mps.bash.jar" />
@@ -854,7 +854,7 @@
       <chunk>
         <module file="${mps_home}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.buildlanguage.execution/execution.msd" />
       </chunk>
-    </mps.generate.chunks>
+    </generate>
   </target>
   
   <target name="cleanSources">

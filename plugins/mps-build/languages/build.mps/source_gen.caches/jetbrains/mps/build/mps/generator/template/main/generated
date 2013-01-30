@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3eejw05xu19j45t17yrbalq4ygqyvuv">
+<dependencies version="2" modelHash="-7u95ls4gw6wsbucb7c8yhb51crl0v5i">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.tuples.runtime(MPS.Core/jetbrains.mps.baseLanguage.tuples.runtime@java_stub)" />
@@ -107,7 +107,7 @@
   <source id="185021013914641136" name="map_BuildProject" hash="59gxz7n7ylypx66bngwf5zuzra4su4j">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="185021013914641150" name="weave_Tasks" hash="2u88jifnsnu6chy1vwkea7pt7i7sfja">
+  <source id="185021013914641150" name="weave_Tasks" hash="63gwvkqv3qrauyeah5bvr8i8sz5hz6n">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>
