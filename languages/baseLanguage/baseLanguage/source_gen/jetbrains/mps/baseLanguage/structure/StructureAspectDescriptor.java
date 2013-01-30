@@ -316,7 +316,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 150:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation", "jetbrains.mps.baseLanguage.structure.StringBooleanOperation", false, new String[]{"jetbrains.mps.baseLanguage.structure.StringBooleanOperation"}, new String[]{}, new String[]{});
       case 151:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.JavaImport", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.Tokens"}, new String[]{"onDemand"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.JavaImport", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.Tokens"}, new String[]{"onDemand", "static"}, new String[]{});
       case 152:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.JavaImports", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{});
       case 153:

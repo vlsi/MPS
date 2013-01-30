@@ -36,6 +36,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SModuleScope;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ClassifierResolveUtils {
   private ClassifierResolveUtils() {
@@ -479,8 +480,8 @@ public class ClassifierResolveUtils {
     int[] dotPositions = new int[20];
     int lastDot = -1;
     int k = 0;
-
     while ((lastDot = refText.indexOf(".", lastDot + 1)) > 0) {
+
       dotPositions[k] = lastDot;
       k++;
     }
@@ -543,6 +544,72 @@ public class ClassifierResolveUtils {
       ListSequence.fromList(models).addSequence(ListSequence.fromList(SModelRepository.getInstance().getModelDescriptorsByModelName(name)));
     }
     return models;
+  }
+
+  public static Iterable<SNode> staticImportedMethods(SNode imports) {
+    return staticImportedThings(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), imports);
+  }
+
+  public static Iterable<SNode> staticImportedFields(SNode imports) {
+    return staticImportedThings(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), imports);
+  }
+
+  /**
+   * methodsOrFields: true for methods. false for fields
+   */
+  public static Iterable<SNode> staticImportedThings(final SNode neededConcept, SNode imports) {
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    IScope moduleScope = SNodeOperations.getModel(imports).getModelDescriptor().getModule().getScope();
+    for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getBoolean(it, "static");
+      }
+    })) {
+
+      if (SPropertyOperations.getBoolean(imp, "onDemand")) {
+        String className = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
+        SNode containingClas = resolveFqName(className, moduleScope, null);
+        if ((containingClas == null)) {
+          continue;
+        }
+
+        Iterable<SNode> neededMembers = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), containingClas, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.getConceptDeclaration(it) == neededConcept;
+          }
+        });
+        ListSequence.fromList(result).addSequence(Sequence.fromIterable(neededMembers));
+
+      } else {
+
+        final String memberName = SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(imp, "token", true)).last(), "value");
+        String className = Tokens_Behavior.call_stringRep_6148840541591441572(imp, 1);
+
+        SNode containingClas = resolveFqName(className, moduleScope, null);
+        if ((containingClas == null)) {
+          continue;
+        }
+
+        // or findAll instead of findFirst ? 
+        SNode neededMember = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), containingClas, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.getConceptDeclaration(it) == neededConcept;
+          }
+        }).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return memberName.equals(it.getName());
+          }
+        });
+
+        if ((neededMember == null)) {
+          continue;
+        }
+
+        ListSequence.fromList(result).addElement(neededMember);
+
+      }
+    }
+    return result;
   }
 
   private static SModelDescriptor check_8z6r2b_a0a1a2(SModel checkedDotOperand) {

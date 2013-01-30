@@ -41,6 +41,7 @@
     <classNode extendsClassName="jetbrains.mps.scope.Scope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.ClassifierResolveUtils" file="ClassifierResolveUtils.java">
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -75,6 +76,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />

@@ -240,6 +240,7 @@ public class JavaParser {
     boolean isStatic = impRef.isStatic();
 
     SPropertyOperations.set(imp, "onDemand", "" + (onDemand));
+    SPropertyOperations.set(imp, "static", "" + (isStatic));
 
     char[][] toks = impRef.getImportName();
     StringBuffer sb = new StringBuffer();
