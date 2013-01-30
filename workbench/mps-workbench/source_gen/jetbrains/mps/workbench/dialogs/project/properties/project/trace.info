@@ -269,7 +269,7 @@
     <nodeInfo nodeId="3201642974933585831" fileName="TestConfigurationDialog.java" startLine="305" startPosition="11" endLine="306" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3201642974933585843" fileName="TestConfigurationDialog.java" startLine="307" startPosition="27" endLine="308" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3201642974933585858" fileName="TestConfigurationDialog.java" startLine="311" startPosition="31" endLine="312" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3201642974933585879" fileName="TestConfigurationDialog.java" startLine="314" startPosition="69" endLine="315" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933585879" fileName="TestConfigurationDialog.java" startLine="314" startPosition="64" endLine="315" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933585883" fileName="TestConfigurationDialog.java" startLine="315" startPosition="35" endLine="316" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="3201642974933585911" fileName="TestConfigurationDialog.java" startLine="319" startPosition="30" endLine="320" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933585901" fileName="TestConfigurationDialog.java" startLine="322" startPosition="85" endLine="323" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -279,7 +279,7 @@
     <nodeInfo nodeId="3201642974933585638" fileName="TestConfigurationDialog.java" startLine="332" startPosition="78" endLine="333" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933585917" fileName="TestConfigurationDialog.java" startLine="336" startPosition="46" endLine="337" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8715098193949534164" fileName="TestConfigurationDialog.java" startLine="337" startPosition="96" endLine="338" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8715098193949534422" fileName="TestConfigurationDialog.java" startLine="340" startPosition="54" endLine="341" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8715098193949534422" fileName="TestConfigurationDialog.java" startLine="340" startPosition="54" endLine="341" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8715098193949534444" fileName="TestConfigurationDialog.java" startLine="344" startPosition="64" endLine="345" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3201642974933585940" fileName="TestConfigurationDialog.java" startLine="348" startPosition="33" endLine="349" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3201642974933585949" fileName="TestConfigurationDialog.java" startLine="350" startPosition="11" endLine="351" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -407,7 +407,7 @@
     <scopeInfo nodeId="3201642974933585910" fileName="TestConfigurationDialog.java" startLine="319" startPosition="30" endLine="320" endPosition="47" />
     <scopeInfo nodeId="3201642974933585900" fileName="TestConfigurationDialog.java" startLine="322" startPosition="85" endLine="323" endPosition="58" />
     <scopeInfo nodeId="3201642974933585894" fileName="TestConfigurationDialog.java" startLine="324" startPosition="22" endLine="325" endPosition="45" />
-    <scopeInfo nodeId="8715098193949534419" fileName="TestConfigurationDialog.java" startLine="340" startPosition="54" endLine="341" endPosition="62" />
+    <scopeInfo nodeId="8715098193949534419" fileName="TestConfigurationDialog.java" startLine="340" startPosition="54" endLine="341" endPosition="57" />
     <scopeInfo nodeId="8715098193949534441" fileName="TestConfigurationDialog.java" startLine="344" startPosition="64" endLine="345" endPosition="45" />
     <scopeInfo nodeId="3201642974933585939" fileName="TestConfigurationDialog.java" startLine="348" startPosition="33" endLine="349" endPosition="22" />
     <scopeInfo nodeId="3201642974933585705" fileName="TestConfigurationDialog.java" startLine="378" startPosition="51" endLine="379" endPosition="72" />
@@ -425,7 +425,7 @@
     <scopeInfo nodeId="6278650300079665664" fileName="TestConfigurationDialog.java" startLine="214" startPosition="32" endLine="216" endPosition="27" />
     <scopeInfo nodeId="3201642974933584611" fileName="TestConfigurationDialog.java" startLine="220" startPosition="0" endLine="222" endPosition="0" />
     <scopeInfo nodeId="1918923653324395673" fileName="TestConfigurationDialog.java" startLine="245" startPosition="31" endLine="247" endPosition="139" />
-    <scopeInfo nodeId="3201642974933585878" fileName="TestConfigurationDialog.java" startLine="314" startPosition="69" endLine="316" endPosition="24" />
+    <scopeInfo nodeId="3201642974933585878" fileName="TestConfigurationDialog.java" startLine="314" startPosition="64" endLine="316" endPosition="24" />
     <scopeInfo nodeId="3201642974933585963" fileName="TestConfigurationDialog.java" startLine="352" startPosition="49" endLine="354" endPosition="44">
       <varInfo nodeId="1417797419759351615" varName="name" />
     </scopeInfo>

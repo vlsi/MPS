@@ -2516,7 +2516,7 @@
     <nodeInfo nodeId="2960702144698099341" fileName="FixMissingImportsInProject_Action.java" startLine="87" startPosition="9" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2960702144698100208" fileName="FixMissingImportsInProject_Action.java" startLine="88" startPosition="0" endLine="89" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2960702144698099332" fileName="FixMissingImportsInProject_Action.java" startLine="89" startPosition="121" endLine="90" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2960702144698100095" fileName="FixMissingImportsInProject_Action.java" startLine="91" startPosition="72" endLine="92" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2960702144698100095" fileName="FixMissingImportsInProject_Action.java" startLine="91" startPosition="72" endLine="92" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2960702144698100022" fileName="FixMissingImportsInProject_Action.java" startLine="93" startPosition="9" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2960702144698100165" fileName="FixMissingImportsInProject_Action.java" startLine="95" startPosition="87" endLine="96" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2960702144698100246" fileName="FixMissingImportsInProject_Action.java" startLine="97" startPosition="40" endLine="98" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
@@ -2554,7 +2554,7 @@
     <scopeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="89" />
     <scopeInfo nodeId="9164503229271487740" fileName="FixMissingImportsInProject_Action.java" startLine="77" startPosition="34" endLine="78" endPosition="19" />
     <scopeInfo nodeId="6750824904484694498" fileName="FixMissingImportsInProject_Action.java" startLine="83" startPosition="57" endLine="84" endPosition="45" />
-    <scopeInfo nodeId="2960702144698100054" fileName="FixMissingImportsInProject_Action.java" startLine="91" startPosition="72" endLine="92" endPosition="87" />
+    <scopeInfo nodeId="2960702144698100054" fileName="FixMissingImportsInProject_Action.java" startLine="91" startPosition="72" endLine="92" endPosition="82" />
     <scopeInfo nodeId="2960702144698100216" fileName="FixMissingImportsInProject_Action.java" startLine="97" startPosition="40" endLine="98" endPosition="21" />
     <scopeInfo nodeId="9164503229271486538" fileName="FixMissingImportsInProject_Action.java" startLine="100" startPosition="65" endLine="101" endPosition="21" />
     <scopeInfo nodeId="9164503229271486549" fileName="FixMissingImportsInProject_Action.java" startLine="103" startPosition="71" endLine="104" endPosition="21" />
