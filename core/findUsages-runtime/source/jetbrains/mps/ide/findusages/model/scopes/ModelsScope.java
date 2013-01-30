@@ -37,7 +37,7 @@ public class ModelsScope extends FindUsagesScope {
   @NotNull
   private final List<SModel> myModels = new ArrayList<SModel>();
 
-  public ModelsScope(@NotNull Iterable<SModel> models) {
+  public <T extends SModel> ModelsScope(@NotNull Iterable<T> models) {
     for (SModel model : models) {
       myModels.add(model);
       addModel(model);

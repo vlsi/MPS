@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.goTo.navigation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.FilteredGlobalScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.FilteredScope;
@@ -28,7 +29,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
-import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
 import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -50,7 +50,7 @@ public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
   public NodeDescriptor[] find(boolean checkboxState) {
     if (checkboxState) return find(new FilteredGlobalScope());
     MPSProject project = getProject().getComponent(MPSProject.class);
-    return find(new FilterStubsScope(new ModulesOnlyScope(project.getModulesWithGenerators())));
+    return find(new FilterStubsScope(new ModulesScope(project.getModulesWithGenerators())));
   }
 
   public NodeDescriptor[] find(final IScope scope) {

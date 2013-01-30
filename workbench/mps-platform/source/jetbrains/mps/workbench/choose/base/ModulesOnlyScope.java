@@ -15,34 +15,14 @@
  */
 package jetbrains.mps.workbench.choose.base;
 
+import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.BaseScope;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
-public class ModulesOnlyScope extends BaseScope {
-  private Set<IModule> myModules;
-
+@Deprecated
+public class ModulesOnlyScope extends ModulesScope {
   public ModulesOnlyScope(Collection<IModule> modules) {
-    myModules = new HashSet<IModule>(modules);
-  }
-
-  @Override
-  public Iterable<SModule> getModules() {
-    return (Iterable) myModules;
-  }
-
-  @Override
-  public Iterable<SModel> getModels() {
-    ArrayList<SModel> res = new ArrayList<SModel>();
-    for (IModule module : myModules) {
-      res.addAll(module.getOwnModelDescriptors());
-    }
-    return res;
+    super(modules);
   }
 }

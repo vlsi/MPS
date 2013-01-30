@@ -24,33 +24,44 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
-public class ModuleScope extends FindUsagesScope {
-  private static final Logger LOG = Logger.getLogger(ModuleScope.class);
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ModulesScope extends FindUsagesScope {
+  private static final Logger LOG = Logger.getLogger(ModulesScope.class);
   private static final String MODULE_ID = "module_id";
+  private static final String MODULE_TAG = "module";
 
   @NotNull
-  private final SModule myModule;
+  private final List<SModule> myModules = new ArrayList<SModule>();
 
-  public ModuleScope(@NotNull SModule module) {
-    myModule = module;
-    addModule(module);
-  }
-
-  public ModuleScope(@NotNull String moduleName) {
-    // use this method carefully!
-    this(resolveModule(moduleName));
-  }
-
-  public ModuleScope(Element element, Project project) throws CantLoadSomethingException {
-    this(resolveModule(element));
-  }
-
-  private static SModule resolveModule(Element element) throws CantLoadSomethingException {
-    try {
-      return resolveModule(element.getAttribute(MODULE_ID).getValue());
-    } catch (IllegalArgumentException e) {
-      throw new CantLoadSomethingException(e);
+  public <T extends SModule> ModulesScope(@NotNull Iterable<T> modules) {
+    for (SModule module : modules) {
+      myModules.add(module);
+      addModule(module);
     }
+  }
+
+  public ModulesScope(@NotNull String moduleName) {
+    // use this method carefully!
+    this(Collections.singleton(resolveModule(moduleName)));
+  }
+
+  public ModulesScope(Element element, Project project) throws CantLoadSomethingException {
+    this(resolveModules(element));
+  }
+
+  private static Iterable<SModule> resolveModules(Element element) throws CantLoadSomethingException {
+    List<SModule> result = new ArrayList<SModule>();
+    for (Element moduleXml : (List<Element>) element.getChildren(MODULE_TAG)) {
+      try {
+        result.add(resolveModule(moduleXml.getAttribute(MODULE_ID).getValue()));
+      } catch (IllegalArgumentException e) {
+        throw new CantLoadSomethingException(e);
+      }
+    }
+    return result;
   }
 
   private static SModule resolveModule(String moduleName) {
@@ -65,7 +76,11 @@ public class ModuleScope extends FindUsagesScope {
 
   @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
-    element.setAttribute(MODULE_ID, myModule.getModuleName());
+    for (SModule module : myModules) {
+      Element moduleXml = new Element(MODULE_TAG);
+      moduleXml.setAttribute(MODULE_ID, module.getModuleName());
+      element.addContent(moduleXml);
+    }
   }
 
   public String toString() {

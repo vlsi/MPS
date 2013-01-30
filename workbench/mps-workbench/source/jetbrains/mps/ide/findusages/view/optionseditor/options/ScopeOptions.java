@@ -20,7 +20,7 @@ import jetbrains.mps.ide.findusages.model.scopes.BootstrapScope;
 import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
 import jetbrains.mps.ide.findusages.model.scopes.GlobalScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
-import jetbrains.mps.ide.findusages.model.scopes.ModuleScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
@@ -92,7 +92,7 @@ public class ScopeOptions extends BaseOptions {
       case BOOTSTRAP:
         return new BootstrapScope();
       case MODULE:
-        return new ModuleScope(myModule);
+        return new ModulesScope(myModule);
       case MODEL:
         return new ModelsScope(myModel);
       default:
