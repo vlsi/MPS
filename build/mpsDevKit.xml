@@ -262,6 +262,34 @@
       <zipfileset file="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/jetbrains.mps.lang.dataFlow.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.typesystem.devkit.pluginSolution.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.typesystem.devkit.pluginSolution.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.typesystem.devkit.pluginSolution.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.lang.typesystem.devkit.pluginSolution" type="solution" uuid="64bcb807-f98e-4fa4-b07d-2b9f9d2f2ad3">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+          <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+          <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.lang.typesystem.devkit.pluginSolution-src.jar" descriptor="jetbrains.mps.lang.typesystem.devkit.pluginSolution.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/mps-devkit/languages/languageDesign/jetbrains.mps.lang.typesystem.devkit.pluginSolution.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem.devkit.pluginSolution" />
+      <fileset dir="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typesystem.devkit.pluginSolution.jar" />
+    </jar>
+    <jar destfile="${build.layout}/mps-devkit/languages/languageDesign/jetbrains.mps.lang.typesystem.devkit.pluginSolution-src.jar">
+      <fileset dir="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/source_gen" includes="**/*.java" />
+      <zipfileset file="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/jetbrains.mps.lang.typesystem.devkit.pluginSolution.msd" prefix="module" />
+      <zipfileset dir="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+    </jar>
     <mkdir dir="${build.layout}/mps-devkit/languages/quickQueryLanguage" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.quickQueryLanguage.jar/META-INF" />
