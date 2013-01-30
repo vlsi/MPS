@@ -41,23 +41,6 @@ public abstract class BaseScope implements IScope {
   }
 
   @Override
-  public SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
-    // todo: like module resolve!
-    for (SModel model : getModels()) {
-      if (reference.getModelId() != null) {
-        if (model.getModelReference().equals(reference)) {
-          return model;
-        }
-      } else {
-        if (model.getModelName().equals(reference.getModelName())) {
-          return model;
-        }
-      }
-    }
-    return null;
-  }
-
-  @Override
   public SModule resolve(SModuleReference reference) {
     // todo: review this code!
     // todo: extract if outside from for statement?
@@ -76,86 +59,81 @@ public abstract class BaseScope implements IScope {
   }
 
   @Override
-  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-    // move to IScopeUtils
-    SModel model = resolve(modelReference);
-    if (model != null && !(model instanceof SModelDescriptor)) {
-      throw new IllegalStateException();
-    }
-    return (SModelDescriptor) model;
-  }
-
-  @Override
-  public Language getLanguage(SModuleReference moduleReference) {
-    // move to IScopeUtils
-    SModule module = resolve(moduleReference);
-    if (module != null && !(module instanceof Language)) {
-      throw new IllegalStateException();
-    }
-    return (Language) module;
-  }
-
-  @Override
-  public DevKit getDevKit(ModuleReference ref) {
-    // move to IScopeUtils
-    SModule module = resolve(ref);
-    if (module != null && !(module instanceof DevKit)) {
-      throw new IllegalStateException();
-    }
-    return (DevKit) module;
-  }
-
-  @Override
-  public Iterable<SModelDescriptor> getModelDescriptors() {
-    // move to IScopeUtils
+  public SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
+    // todo: like module resolve!
     for (SModel model : getModels()) {
-      if (!(model instanceof SModelDescriptor)) {
-        throw new IllegalStateException();
+      if (reference.getModelId() != null) {
+        if (model.getModelReference().equals(reference)) {
+          return model;
+        }
+      } else {
+        if (model.getModelName().equals(reference.getModelName())) {
+          return model;
+        }
       }
     }
-    return (Iterable) getModels();
-  }
-
-  private <T extends SModule> Iterable<T> getModules(Class<T> cls) {
-    // move to IScopeUtils
-    List<T> result = new ArrayList<T>();
-    for (SModule module : getModules()) {
-      if (cls.isInstance(module)) result.add((T) module);
-    }
-    return result;
-  }
-
-  @Override
-  public Iterable<Language> getVisibleLanguages() {
-    // move to IScopeUtils
-    return getModules(Language.class);
-  }
-
-  @Override
-  public Iterable<DevKit> getVisibleDevkits() {
-    // move to IScopeUtils
-    return getModules(DevKit.class);
-  }
-
-  @Override
-  public Iterable<IModule> getVisibleModules() {
-    // move to IScopeUtils
-    return getModules(IModule.class);
+    return null;
   }
 
   // deprecated stuff
+  // remove after MPS 3.0
   @Deprecated
+  @Override
+  public Language getLanguage(SModuleReference moduleReference) {
+    return ScopeOperations.resolveModule(this, moduleReference, Language.class);
+  }
+
+  @Deprecated
+  @Override
+  public DevKit getDevKit(ModuleReference ref) {
+    return ScopeOperations.resolveModule(this, ref, DevKit.class);
+  }
+
+  @Deprecated
+  @Override
+  public final SModelDescriptor getModelDescriptor(SModelReference modelReference) {
+    return ScopeOperations.getModelDescriptor(this, modelReference);
+  }
+
+  @Deprecated
+  @Override
+  public final Iterable<SModelDescriptor> getModelDescriptors() {
+    return ScopeOperations.getModelDescriptors(this);
+  }
+
+  @Deprecated
+  @Override
+  public final Iterable<Language> getVisibleLanguages() {
+    return ScopeOperations.getModules(this, Language.class);
+  }
+
+  @Deprecated
+  @Override
+  public final Iterable<DevKit> getVisibleDevkits() {
+    return ScopeOperations.getModules(this, DevKit.class);
+  }
+
+  @Deprecated
+  @Override
+  public final Iterable<IModule> getVisibleModules() {
+    return ScopeOperations.getModules(this, IModule.class);
+  }
+
+  @Deprecated
+  @Override
+  public final SModelDescriptor getModelDescriptor(SModelFqName fqName) {
+    return ScopeOperations.getModelDescriptor(this, fqName);
+  }
+
+  @Deprecated
+  @Override
+  public final Language getLanguage(String fqName) {
+    return ScopeOperations.getLanguage(this, fqName);
+  }
+
+  @Deprecated
+  @Override
   public final Iterable<SModelDescriptor> getOwnModelDescriptors() {
     throw new IllegalStateException();
-  }
-
-  @Deprecated
-  public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
-    return IScopeUtils.getModelDescriptor(this, fqName);
-  }
-
-  @Deprecated
-  public final Language getLanguage(String fqName) {
-    return IScopeUtils.getLanguage(this, fqName);
   }
 }

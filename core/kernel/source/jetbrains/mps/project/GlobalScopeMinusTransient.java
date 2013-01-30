@@ -50,23 +50,23 @@ public class GlobalScopeMinusTransient extends GlobalScope {
     INSTANCE = null;
   }
 
-  public Iterable<IModule> getVisibleModules() {
-    return new ConditionalIterable<IModule>(MPSModuleRepository.getInstance().getAllModules(), new NonTransientModuleCondition());
-  }
+//  public Iterable<IModule> getVisibleModules() {
+//    return new ConditionalIterable<IModule>(MPSModuleRepository.getInstance().getAllModules(), new NonTransientModuleCondition());
+//  }
 
-  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-    if (modelIsTransient(modelDescriptor)) return null;
-    return modelDescriptor;
-  }
+//  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
+//    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+//    if (modelIsTransient(modelDescriptor)) return null;
+//    return modelDescriptor;
+//  }
 
   public List<SModelDescriptor> getModelDescriptors(String modelName) {
     return filterOutTransient(SModelRepository.getInstance().getModelDescriptorsByModelName(modelName));
   }
 
-  public List<SModelDescriptor> getModelDescriptors() {
-    return filterOutTransient(SModelRepository.getInstance().getModelDescriptors());
-  }
+//  public List<SModelDescriptor> getModelDescriptors() {
+//    return filterOutTransient(SModelRepository.getInstance().getModelDescriptors());
+//  }
 
   private List<SModelDescriptor> filterOutTransient(List<SModelDescriptor> models) {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();

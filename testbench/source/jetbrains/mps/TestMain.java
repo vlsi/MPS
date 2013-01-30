@@ -259,7 +259,7 @@ public class TestMain {
   }
 
   public static Language getLanguage(Project project, String languageName) {
-    return IScopeUtils.getLanguage(project.getScope(), languageName);
+    return ScopeOperations.getLanguage(project.getScope(), languageName);
   }
 
   public static void updateLanguageClasspath(Language l, String classpath) {

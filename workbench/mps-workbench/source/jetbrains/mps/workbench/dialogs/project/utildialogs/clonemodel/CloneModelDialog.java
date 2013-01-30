@@ -131,7 +131,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     int i;
     for (i = 1; ; i++) {
       SModelFqName name = new SModelFqName(result + i, stereotype);
-      SModelDescriptor model = IScopeUtils.getModelDescriptor(getOperationContext().getScope(), name);
+      SModelDescriptor model = ScopeOperations.getModelDescriptor(getOperationContext().getScope(), name);
       if (model == null) break;
     }
     return result + i;

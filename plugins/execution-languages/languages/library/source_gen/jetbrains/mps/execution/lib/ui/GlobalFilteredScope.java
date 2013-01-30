@@ -26,26 +26,26 @@ public class GlobalFilteredScope extends GlobalScope {
     super(moduleRepository, repository);
   }
 
-  public Set<IModule> getVisibleModules() {
-    Iterable<IModule> s = Sequence.fromClosure(new ISequenceClosure<IModule>() {
-      public Iterable<IModule> iterable() {
-        return myMPSModuleRepository.getAllModules();
-      }
-    });
-    return SetSequence.fromSetAndArray(new HashSet(), Sequence.fromIterable(s).where(new IWhereFilter<IModule>() {
-      public boolean accept(IModule it) {
-        return GlobalFilteredScope.this.acceptModule(it);
-      }
-    }));
-  }
+//  public Set<IModule> getVisibleModules() {
+//    Iterable<IModule> s = Sequence.fromClosure(new ISequenceClosure<IModule>() {
+//      public Iterable<IModule> iterable() {
+//        return myMPSModuleRepository.getAllModules();
+//      }
+//    });
+//    return SetSequence.fromSetAndArray(new HashSet(), Sequence.fromIterable(s).where(new IWhereFilter<IModule>() {
+//      public boolean accept(IModule it) {
+//        return GlobalFilteredScope.this.acceptModule(it);
+//      }
+//    }));
+//  }
 
-  public SModelDescriptor getModelDescriptor(SModelReference reference) {
-    SModelDescriptor descriptor = myModelRepository.getModelDescriptor(reference);
-    if (this.acceptModel(descriptor)) {
-      return descriptor;
-    }
-    return null;
-  }
+//  public SModelDescriptor getModelDescriptor(SModelReference reference) {
+//    SModelDescriptor descriptor = myModelRepository.getModelDescriptor(reference);
+//    if (this.acceptModel(descriptor)) {
+//      return descriptor;
+//    }
+//    return null;
+//  }
 
   public List<SModelDescriptor> getModelDescriptors(final String modelName) {
     return Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
@@ -59,17 +59,17 @@ public class GlobalFilteredScope extends GlobalScope {
     }).toListSequence();
   }
 
-  public List<SModelDescriptor> getModelDescriptors() {
-    return Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
-      public Iterable<SModelDescriptor> iterable() {
-        return myModelRepository.getModelDescriptors();
-      }
-    })).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor it) {
-        return GlobalFilteredScope.this.acceptModel(it);
-      }
-    }).toListSequence();
-  }
+//  public List<SModelDescriptor> getModelDescriptors() {
+//    return Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
+//      public Iterable<SModelDescriptor> iterable() {
+//        return myModelRepository.getModelDescriptors();
+//      }
+//    })).where(new IWhereFilter<SModelDescriptor>() {
+//      public boolean accept(SModelDescriptor it) {
+//        return GlobalFilteredScope.this.acceptModel(it);
+//      }
+//    }).toListSequence();
+//  }
 
   protected boolean acceptModel(SModelDescriptor descriptor) {
     if (SModelStereotype.isUserModel(descriptor) && !(SModelStereotype.isGeneratorModel(descriptor))) {
