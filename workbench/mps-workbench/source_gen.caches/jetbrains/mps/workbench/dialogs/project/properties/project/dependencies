@@ -18,30 +18,12 @@
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent" file="ProjectPropertiesComponent.java">
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
-    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" />
-    <classNode extendsClassName="javax.swing.JPanel" />
-  </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" file="ProjectPropertiesDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.AnActionButton" />
     <classNode dependClassName="com.intellij.ui.AnActionButtonRunnable" />
     <classNode dependClassName="com.intellij.ui.IdeBorderFactory" />
     <classNode dependClassName="com.intellij.ui.ToolbarDecorator" />
     <classNode dependClassName="com.intellij.ui.components.JBList" />
-    <classNode dependClassName="com.intellij.ui.components.JBPanel" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridLayout" />
@@ -49,12 +31,14 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.ListSelectionModel" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.Path" />
@@ -70,10 +54,19 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog" />
     <classNode dependClassName="org.jdesktop.beansbinding.AutoBinding" />
+    <classNode extendsClassName="com.intellij.ui.components.JBPanel" />
+    <classNode extendsClassName="javax.swing.AbstractListModel" />
+    <classNode extendsClassName="jetbrains.mps.ide.ui.dialogs.properties.Modifiable" />
+  </dependency>
+  <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" file="ProjectPropertiesDialog.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
-    <classNode extendsClassName="javax.swing.AbstractListModel" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage" file="ProjectPropertiesPrefsPage.java">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
