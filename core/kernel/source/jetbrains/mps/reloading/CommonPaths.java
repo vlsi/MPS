@@ -211,6 +211,7 @@ public class CommonPaths {
     addIfExists(result, "/lib/util.jar");
     addIfExists(result, "/lib/extensions.jar");
     addIfExists(result, "/lib/picocontainer.jar");
+    addIfExists(result, "/lib/forms_rt.jar");
   }
 
   private static void addUIJars(CompositeClassPathItem result) {

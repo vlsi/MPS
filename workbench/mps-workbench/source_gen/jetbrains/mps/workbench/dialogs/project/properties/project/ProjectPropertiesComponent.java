@@ -9,8 +9,7 @@ import jetbrains.mps.project.StandaloneMPSProject;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.extensions.Extensions;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
+import com.intellij.uiDesigner.core.GridConstraints;
 import javax.swing.JComponent;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer;
@@ -29,7 +28,7 @@ import javax.swing.JPanel;
 import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.TestConfigListCellRenderer;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-import java.awt.GridLayout;
+import com.intellij.uiDesigner.core.GridLayoutManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.ModelAccess;
@@ -63,9 +62,9 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
   private Object getGridConstraints(int row, boolean fill) {
     // TODO: resolve problem with com.intellij.uiDesigner.core.GridLayoutManager & com.intellij.uiDesigner.core.GridConstraints in stubs 
     if (fill) {
-      return new GridBagConstraints(0, row, 1, 1, 0, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 10, 10);
+      return new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null);
     }
-    return new GridBagConstraints(0, row, 1, 1, 0, 0, GridBagConstraints.SOUTHWEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
+    return new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
   }
 
   private JComponent createProjectModulesList() {
@@ -174,7 +173,7 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
       myExtraPanels.length
     ));
     int rowIndex = 0;
-    this.setLayout(new GridLayout(rowCount, 1));
+    this.setLayout(new GridLayoutManager(rowCount, 1));
     this.setAutoscrolls(false);
     this.add(createProjectModulesList(), getGridConstraints(rowIndex++, true));
     this.add(createTestConfigList(), getGridConstraints(rowIndex++, true));
