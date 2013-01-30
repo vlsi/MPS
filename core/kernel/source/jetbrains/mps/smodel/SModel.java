@@ -34,7 +34,6 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
-import jetbrains.mps.util.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -161,6 +160,17 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     }
   }
 
+  @Nullable
+  public org.jetbrains.mps.openapi.model.SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
+    checkNotDisposed();
+    if (myDisposed) return null;
+
+    org.jetbrains.mps.openapi.model.SNode node = myIdToNodeMap.get(nodeId);
+    if (node != null) return node;
+    enforceFullLoad();
+    return myIdToNodeMap.get(nodeId);
+  }
+
   @NotNull
   public DataSource getSource() {
     SModelDescriptor md = getModelDescriptor();
@@ -237,6 +247,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return this instanceof TransientSModel;
   }
 
+  //todo partially merge EditableSModelDescriptor into SModel, use descriptor's isReadOnly
   @Deprecated   //todo get rid of it
   public boolean isNotEditable() {
     assert !isDisposed();
@@ -245,18 +256,22 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return ((EditableSModelDescriptor) d).isReadOnly();
   }
 
+  //todo get rid of, try to cast, show an error if not casted
   public boolean isDisposed() {
     return myDisposed;
   }
 
+  //todo cast if can be
   public StackTraceElement[] getDisposedStacktrace() {
     return myDisposedStacktrace;
   }
 
+  //todo will migrate after SModelDescriptor is migrated
   public SModelDescriptor getModelDescriptor() {
     return myModelDescriptor;
   }
 
+  //todo cast
   public synchronized void setModelDescriptor(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
   }
@@ -311,6 +326,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     removeRootNode(node);
   }
 
+  //todo get rid of, replace by root counting
   public int rootsCount() {
     return myRoots.size();
   }
@@ -323,14 +339,18 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //---------nodes manipulation--------
 
+
+  //todo move NodesIterable to API, inline
   public final Iterable<SNode> nodes() {
     return new NodesIterable(this);
   }
 
+  //todo move NodesIterator to API, inline
   public Iterator<org.jetbrains.mps.openapi.model.SNode> nodesIterator() {
-    return new NodesIterator(rootsIterator());
+    return new NodesIterator(getRootNodes().iterator());
   }
 
+  //todo get rid of, replace by node counting
   public int registeredNodesCount() {
     enforceFullLoad();
     return myIdToNodeMap.size();
@@ -558,30 +578,14 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return new jetbrains.mps.smodel.SNodeId.Regular(id);
   }
 
-  @Nullable
-  public org.jetbrains.mps.openapi.model.SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
-    checkNotDisposed();
-    if (myDisposed) return null;
-
-    org.jetbrains.mps.openapi.model.SNode node = myIdToNodeMap.get(nodeId);
-    if (node != null) return node;
-    enforceFullLoad();
-    return myIdToNodeMap.get(nodeId);
-  }
-
-  /**
-   * use getNode(SNodeId)
-   */
   @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   @Nullable
   public SNode getNodeById(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
-    checkNotDisposed();
-    if (myDisposed) return null;
-
-    org.jetbrains.mps.openapi.model.SNode node = myIdToNodeMap.get(nodeId);
-    if (node instanceof SNode) return (SNode) node;
-    enforceFullLoad();
-    node = myIdToNodeMap.get(nodeId);
+    org.jetbrains.mps.openapi.model.SNode node = getNode(nodeId);
     return node instanceof SNode ? (SNode) node : null;
   }
 
@@ -1093,8 +1097,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //---------deprecated--------
 
-  //why? @Deprecated
-  //to use in old persistence
+  @Deprecated
   public void addModelImport(ImportElement importElement) {
     ModelChange.assertLegalChange(this);
 
@@ -1103,17 +1106,16 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   @Deprecated
-  //to use in old persistence
   public void setMaxImportIndex(int i) {
     myMaxImportIndex = i;
   }
 
   @Deprecated
-  //to use in old persistence
   public int getMaxImportIndex() {
     return myMaxImportIndex;
   }
 
+  @Deprecated
   @Nullable
   public SNode getNodeById(String idString) {
     SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(idString);
