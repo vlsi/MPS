@@ -292,4 +292,14 @@ public class SNodeOperations {
       jetbrains.mps.smodel.SReference.enableLogging();
     }
   }
+
+  public static String getModelStereotype(org.jetbrains.mps.openapi.model.SModel model) {
+    String name = model.getModelName();
+    return name.substring(name.indexOf("@") + 1);
+  }
+
+  public static String getModelLongName(org.jetbrains.mps.openapi.model.SModel model) {
+    String name = model.getModelName();
+    return name.substring(0, name.indexOf("@"));
+  }
 }

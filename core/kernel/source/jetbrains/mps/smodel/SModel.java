@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
@@ -33,6 +34,7 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
+import jetbrains.mps.util.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -133,10 +135,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return md == null ? new NullDataSource() : md.getSource();
   }
 
-  public boolean isLoaded() {
-    return false;  //todo
-  }
-
   public void save() throws IOException {
     //todo
   }
@@ -149,9 +147,23 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //---------common properties--------
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   @NotNull
   public SModelReference getSModelReference() {
-    return myReference;
+    return ((SModelReference) getReference());
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SModelId getSModelId() {
+    return getModelId();
   }
 
   @Deprecated
@@ -163,9 +175,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return getSModelReference().getSModelFqName();
   }
 
-  public SModelId getSModelId() {
-    return getModelId();
-  }
 
   @Deprecated
   /**
@@ -174,7 +183,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
    */
   @NotNull
   public String getStereotype() {
-    return myReference.getStereotype();
+    return jetbrains.mps.util.SNodeOperations.getModelStereotype(this);
   }
 
   @Deprecated
@@ -184,11 +193,16 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
    */
   @NotNull
   public String getLongName() {
-    return myReference.getLongName();
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(this);
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public boolean isTransient() {
-    return false;
+    return this instanceof TransientSModel;
   }
 
   @Deprecated   //todo get rid of it
