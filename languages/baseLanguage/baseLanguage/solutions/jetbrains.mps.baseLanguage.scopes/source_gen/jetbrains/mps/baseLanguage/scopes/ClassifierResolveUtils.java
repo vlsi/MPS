@@ -21,10 +21,13 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.scope.ModelPlusImportedScope;
 import java.util.StringTokenizer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
 import jetbrains.mps.smodel.SModelRepository;
@@ -213,7 +216,7 @@ public class ClassifierResolveUtils {
     });
   }
 
-  public static SNode resolve(@NotNull String refText, @NotNull SNode contextNode, IScope moduleScope, boolean includeAncestors) {
+  public static SNode resolve(@NotNull String refText, @NotNull SNode contextNode, IScope moduleScope, ModelPlusImportedScope modelsPlusImported, boolean includeAncestors) {
     // The algororithm: 
     // - split refText into tokens A.B.C (separated by dot) 
     // - look for the first token A among the following classifiers and models, in this order: 
@@ -239,8 +242,10 @@ public class ClassifierResolveUtils {
 
     assert token != null;
 
-    if (token.equals(SPropertyOperations.getString(contextNode, "name"))) {
-      return construct(contextNode, tokenizer);
+    if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
+      if (token.equals(SPropertyOperations.getString(contextNode, "name"))) {
+        return construct(contextNode, tokenizer);
+      }
     }
     for (SNode nestedClas : Sequence.fromIterable(getImmediateNestedClassifiers(contextNode))) {
       if (token.equals(SPropertyOperations.getString(nestedClas, "name"))) {
@@ -249,6 +254,9 @@ public class ClassifierResolveUtils {
     }
 
     for (SNode enclosingClass : Sequence.fromIterable(getPathToRoot(contextNode))) {
+      if (SNodeOperations.isInstanceOf(enclosingClass, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        continue;
+      }
       if (token.equals(SPropertyOperations.getString(enclosingClass, "name"))) {
         return construct(enclosingClass, tokenizer);
       }
@@ -278,7 +286,12 @@ public class ClassifierResolveUtils {
     SNode javaImports = AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")));
 
     if (javaImports == null) {
-      models = moduleScope.getModels();
+      // This is probably too wide 
+      // <node> 
+      Collection<SModelDescriptor> parentScopeModels = modelsPlusImported.getModels();
+      List<org.jetbrains.mps.openapi.model.SModel> ms = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
+      ListSequence.fromList(ms).addSequence(CollectionSequence.fromCollection(parentScopeModels));
+      models = ms;
 
     } else {
       // walk thru single-type importrs 
@@ -310,6 +323,8 @@ public class ClassifierResolveUtils {
         List<SModelDescriptor> ms = SModelRepository.getInstance().getModelDescriptorsByModelName(pkgName);
         ListSequence.fromList(javaImportedModels).addSequence(ListSequence.fromList(ms));
       }
+      // adding our MPS module scope after java imports as backup 
+      ListSequence.fromList(javaImportedModels).addSequence(CollectionSequence.fromCollection(modelsPlusImported.getModels()));
       models = javaImportedModels;
     }
 
