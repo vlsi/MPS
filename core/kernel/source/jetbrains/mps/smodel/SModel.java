@@ -137,10 +137,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return false;  //todo
   }
 
-  public void load() throws IOException {
-    //todo remove
-  }
-
   public void save() throws IOException {
     //todo
   }

@@ -2006,11 +2006,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     @Override
-    public void load() throws IOException {
-
-    }
-
-    @Override
     public void save() throws IOException {
 
     }

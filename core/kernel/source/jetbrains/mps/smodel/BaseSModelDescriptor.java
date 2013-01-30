@@ -290,11 +290,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   @Override
-  public void load() throws IOException {
-    // TODO implement
-  }
-
-  @Override
   public void save() throws IOException {
     // TODO implement
   }

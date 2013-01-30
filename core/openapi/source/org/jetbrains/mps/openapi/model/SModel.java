@@ -76,13 +76,6 @@ public interface SModel {
   boolean isLoaded();
 
   /**
-   * When owning a read action lock, this method will load the model from the storage.
-   * Does nothing if already loaded.
-   * The load() method is called automatically on a not-loaded model whenever elements from it are being resolved.
-   */
-  void load() throws IOException;
-
-  /**
    * When owning a write action lock, this method will save the model into the storage.
    */
   void save() throws IOException;
