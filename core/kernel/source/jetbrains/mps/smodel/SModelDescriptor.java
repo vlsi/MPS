@@ -50,6 +50,8 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   String getStereotype();
 
+  boolean isLoaded();
+
   //------
 
   boolean isRegistered();

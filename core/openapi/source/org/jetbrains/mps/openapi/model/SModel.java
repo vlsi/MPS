@@ -73,8 +73,6 @@ public interface SModel {
   @NotNull
   DataSource getSource();
 
-  boolean isLoaded();
-
   /**
    * When owning a write action lock, this method will save the model into the storage.
    */
