@@ -125,6 +125,10 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     };
   }
 
+  public boolean isRoot(@Nullable org.jetbrains.mps.openapi.model.SNode node) {
+    return myRoots.contains(node);
+  }
+
   public void addRootNode(org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
     ModelChange.assertLegalNodeRegistration(this, node);
@@ -958,6 +962,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   public void setVersion(int version) {
+
   }
 
   public void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
@@ -1056,9 +1061,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
 
-  public boolean isRoot(@Nullable org.jetbrains.mps.openapi.model.SNode node) {
-    return myRoots.contains(node);
-  }
 
   void changeModelReference(SModelReference newModelReference) {
     enforceFullLoad();

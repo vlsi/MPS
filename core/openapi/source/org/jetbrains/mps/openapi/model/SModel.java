@@ -19,7 +19,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.IOException;
 
@@ -57,6 +56,8 @@ public interface SModel {
    * todo VP: should be immutable collection? Currently it isn't.
    */
   Iterable<? extends SNode> getRootNodes();
+
+  boolean isRoot(SNode node);
 
   /**
    * Adds a node and its descendants (the whole tree) to a model. After the operation each node in the underlying subtree will have getModel() set to return "this model".
