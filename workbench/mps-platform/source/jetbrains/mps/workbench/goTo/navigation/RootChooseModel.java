@@ -20,25 +20,23 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.FilteredScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.BaseScope;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
+import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleScope;
 import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
   public RootNodeNameIndex myIndex;
@@ -100,31 +98,19 @@ public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
     return true;
   }
 
-  private static class FilterStubsScope extends BaseScope {
-    private final SModuleScope inner;
-
-    public FilterStubsScope(SModuleScope inner) {
-      this.inner = inner;
+  private static class FilterStubsScope extends FilteredScope {
+    public FilterStubsScope(SModuleScope scope) {
+      super(scope);
     }
 
     @Override
-    public Iterable<SModule> getModules() {
-      return inner.getModules();
+    protected boolean acceptModule(SModule module) {
+      return true;
     }
 
     @Override
-    public Iterable<SModel> getModels() {
-      List<SModel> result = new ArrayList<SModel>();
-      for (SModel descriptor : inner.getModels()) {
-        if (!isExcluded(descriptor)) {
-          result.add(descriptor);
-        }
-      }
-      return result;
-    }
-
-    private boolean isExcluded(SModel descriptor) {
-      return SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(descriptor));
+    protected boolean acceptModel(SModel model) {
+      return !SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model));
     }
   }
 }

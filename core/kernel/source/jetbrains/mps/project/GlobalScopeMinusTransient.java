@@ -16,83 +16,25 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.ConditionalIterable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.*;
-
-public class GlobalScopeMinusTransient extends GlobalScope {
-  private static GlobalScopeMinusTransient INSTANCE;
-
-  public GlobalScopeMinusTransient(MPSModuleRepository moduleRepository, SModelRepository repository) {
-    super(moduleRepository, repository);
+public class GlobalScopeMinusTransient extends FilteredScope {
+  public GlobalScopeMinusTransient() {
+    super(GlobalScope.getInstance());
   }
 
   public static GlobalScopeMinusTransient getInstance() {
-    return INSTANCE;
+    return new GlobalScopeMinusTransient();
   }
 
   @Override
-  public void init() {
-    if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
-    }
-
-    INSTANCE = this;
+  protected boolean acceptModule(SModule module) {
+    return module instanceof TransientModelsModule;
   }
 
   @Override
-  public void dispose() {
-    INSTANCE = null;
-  }
-
-//  public Iterable<IModule> getVisibleModules() {
-//    return new ConditionalIterable<IModule>(MPSModuleRepository.getInstance().getAllModules(), new NonTransientModuleCondition());
-//  }
-
-//  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-//    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-//    if (modelIsTransient(modelDescriptor)) return null;
-//    return modelDescriptor;
-//  }
-
-  public List<SModelDescriptor> getModelDescriptors(String modelName) {
-    return filterOutTransient(SModelRepository.getInstance().getModelDescriptorsByModelName(modelName));
-  }
-
-//  public List<SModelDescriptor> getModelDescriptors() {
-//    return filterOutTransient(SModelRepository.getInstance().getModelDescriptors());
-//  }
-
-  private List<SModelDescriptor> filterOutTransient(List<SModelDescriptor> models) {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-
-    for (SModelDescriptor model : models) {
-      if (!modelIsTransient(model)) {
-        result.add(model);
-      }
-    }
-
-    return result;
-  }
-
-  private boolean modelIsTransient(SModelDescriptor modelDescriptor) {
-    if (modelDescriptor != null) {
-      if (modelDescriptor.getModule() instanceof TransientModelsModule) {
-        return true;
-      }
-    }
-
-    return false;
-  }
-
-  private static class NonTransientModuleCondition implements Condition<IModule> {
-    public boolean met(IModule module) {
-      return !(module instanceof TransientModelsModule);
-    }
+  protected boolean acceptModel(SModel model) {
+    return acceptModule(model.getModule());
   }
 }

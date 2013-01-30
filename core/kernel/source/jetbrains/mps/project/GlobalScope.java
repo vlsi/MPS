@@ -15,22 +15,12 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.*;
 import jetbrains.mps.smodel.*;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.components.CoreComponent;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 
 public class GlobalScope extends BaseScope implements CoreComponent {
   private static GlobalScope INSTANCE;
@@ -74,4 +64,6 @@ public class GlobalScope extends BaseScope implements CoreComponent {
   public Iterable<SModel> getModels() {
     return new ArrayList<SModel>(myModelRepository.getModelDescriptors());
   }
+
+  // todo: implement resolve() methods
 }

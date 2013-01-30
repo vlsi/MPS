@@ -15,29 +15,23 @@
  */
 package jetbrains.mps;
 
+import jetbrains.mps.project.FilteredScope;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.BaseScope;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class FilteredGlobalScope extends BaseScope implements IScope {
-  private GlobalScope myScope = GlobalScope.getInstance();
-
+public class FilteredGlobalScope extends FilteredScope {
   public FilteredGlobalScope() {
+    super(GlobalScope.getInstance());
   }
 
   @Override
-  public Iterable<SModule> getModules() {
-    List<SModule> result = new ArrayList<SModule>();
-    for (SModule module : myScope.getModules()) {
-      if (VisibleModuleRegistry.getInstance().isVisible(module)) {
-        result.add(module);
-      }
-    }
-    return result;
+  protected boolean acceptModule(SModule module) {
+    return VisibleModuleRegistry.getInstance().isVisible(module);
+  }
+
+  @Override
+  protected boolean acceptModel(SModel model) {
+    return acceptModule(model.getModule());
   }
 }

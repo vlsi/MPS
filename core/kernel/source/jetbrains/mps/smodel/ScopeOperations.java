@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -38,6 +40,15 @@ public class ScopeOperations {
       throw new IllegalStateException();
     }
     return (T) module;
+  }
+
+  public static Iterable<org.jetbrains.mps.openapi.model.SModel> getModelsByName(SModuleScope scope, final String modelName) {
+    return Sequence.fromIterable(scope.getModels()).where(new ISelector<org.jetbrains.mps.openapi.model.SModel, Boolean>() {
+      @Override
+      public Boolean select(org.jetbrains.mps.openapi.model.SModel model) {
+        return modelName.equals(model.getModelName());
+      }
+    });
   }
 
   // deprecated stuff
