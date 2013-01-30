@@ -37,12 +37,25 @@ public class CommentHelper {
       ListSequence.fromList(result).addElement(Sequence.fromIterable(lines).first().substring(start.length()));
       lines = Sequence.fromIterable(lines).skip(1);
     }
+    if (Sequence.fromIterable(lines).isEmpty()) {
+      return result;
+    }
+    if ((end != null && end.length() > 0)) {
+      if (trim_rf742u_a0a0a6a2(Sequence.fromIterable(lines).last()).equals(end)) {
+        lines = Sequence.fromIterable(lines).take(Sequence.fromIterable(lines).count() - 1);
+      } else if (Sequence.fromIterable(lines).last().endsWith(end)) {
+        String last = Sequence.fromIterable(lines).last();
+        last = last.substring(0, last.length() - end.length());
+        lines = Sequence.fromIterable(lines).take(Sequence.fromIterable(lines).count() - 1).concat(Sequence.fromIterable(Sequence.<String>singleton(last)));
+      }
+    }
+
     // find common indent for nonempty lines 
     if (Sequence.fromIterable(lines).isNotEmpty()) {
       int mintrim = Sequence.fromIterable(lines).first().length();
       for (String line : Sequence.fromIterable(lines)) {
         if ((line != null && line.length() > 0)) {
-          mintrim = Math.min(mintrim, line.length() - StringUtils.stripStart(line, " \n\r\t").length());
+          mintrim = Math.min(mintrim, whitespaceOrStar(line));
         }
       }
       boolean trimok = mintrim > 0;
@@ -57,14 +70,6 @@ public class CommentHelper {
           line.substring(mintrim) :
           line
         ));
-      }
-    }
-    if ((end != null && end.length() > 0) && ListSequence.fromList(result).isNotEmpty()) {
-      if (trim_rf742u_a0a0a7a2(ListSequence.fromList(result).last()).equals(end)) {
-        ListSequence.fromList(result).removeLastElement();
-      } else if (ListSequence.fromList(result).last().endsWith(end)) {
-        String last = ListSequence.fromList(result).removeLastElement();
-        ListSequence.fromList(result).addElement(last.substring(0, last.length() - end.length()));
       }
     }
     return result;
@@ -84,6 +89,21 @@ public class CommentHelper {
 
 
 
+  private static int whitespaceOrStar(String s) {
+    char[] chars = s.toCharArray();
+    boolean wasStar = false;
+    int k = 0;
+    for (; k < chars.length; k++) {
+      char c = chars[k];
+      boolean stillWhitespace = Character.isWhitespace(c) || c == '*' && !(wasStar);
+      if (!(stillWhitespace)) {
+        return k;
+      }
+      wasStar = wasStar || c == '*';
+    }
+    return k;
+  }
+
   public static String trim_rf742u_a0a4a2(String str) {
     return (str == null ?
       null :
@@ -91,7 +111,7 @@ public class CommentHelper {
     );
   }
 
-  public static String trim_rf742u_a0a0a7a2(String str) {
+  public static String trim_rf742u_a0a0a6a2(String str) {
     return (str == null ?
       null :
       str.trim()
