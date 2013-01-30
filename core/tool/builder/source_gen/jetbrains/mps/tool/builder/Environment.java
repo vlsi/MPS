@@ -33,9 +33,9 @@ import jetbrains.mps.smodel.ModelAccess;
 public class Environment {
   private Map<String, String> myMacro;
   private boolean myLoadBootstrapLibraries;
-  private Map<String, File> myLibraries;
+  protected Map<String, File> myLibraries;
   private Level myLogLevel;
-  private SetLibraryContributor myLibraryContibutor;
+  protected SetLibraryContributor myLibraryContibutor;
   private PathMacrosProvider myMacroProvider;
   private ILoggingHandler myMessageHandler;
 
@@ -133,16 +133,11 @@ public class Environment {
   }
 
   protected void configureMPS(boolean loadIdeaPlugins) {
-    String mpsInternal = System.getProperty("mps.internal");
-    System.setProperty("idea.is.internal", (mpsInternal == null ?
-      "false" :
-      mpsInternal
-    ));
-    System.setProperty("idea.no.jre.check", "true");
-    if (!(loadIdeaPlugins)) {
-      System.setProperty("idea.load.plugins", "false");
-    }
-    System.setProperty("idea.platform.prefix", "Idea");
+    setProperties(loadIdeaPlugins);
+    collectPluginPaths();
+  }
+
+  private void collectPluginPaths() {
     StringBuffer pluginPath = new StringBuffer();
     File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
     if (pluginDir.exists()) {
@@ -154,5 +149,18 @@ public class Environment {
       }
       System.setProperty("plugin.path", pluginPath.toString());
     }
+  }
+
+  protected void setProperties(boolean loadIdeaPlugins) {
+    String mpsInternal = System.getProperty("mps.internal");
+    System.setProperty("idea.is.internal", (mpsInternal == null ?
+      "false" :
+      mpsInternal
+    ));
+    System.setProperty("idea.no.jre.check", "true");
+    if (!(loadIdeaPlugins)) {
+      System.setProperty("idea.load.plugins", "false");
+    }
+    System.setProperty("idea.platform.prefix", "Idea");
   }
 }

@@ -48,7 +48,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
         return;
       }
 
-      Iterable<SReference> refs = node.getReferences();
+      Iterable<? extends SReference> refs = node.getReferences();
       if (!(refs.iterator().hasNext())) {
         GoByReference_ActionGroup.this.disable(event.getPresentation());
         return;

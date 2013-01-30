@@ -54,7 +54,7 @@
         <component>
           <implementation-class>jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager</implementation-class>
         </component>
-    
+
     <component>
       <implementation-class>jetbrains.mps.idea.core.library.MpsModuleLibraryKindContainer</implementation-class>
     </component>
@@ -91,10 +91,14 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.psi.PsiChangesWatcher</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.psi.impl.MPSPsiProvider</implementation-class>
+    </component>
   </project-components>
 
   <extensionPoints>
     <extensionPoint qualifiedName="com.intellij.mps.modelRootContributor" beanClass="jetbrains.mps.idea.core.project.ModelRootContributorEP"/>
+    <extensionPoint qualifiedName="com.intellij.mps.psiFactory" interface="jetbrains.mps.idea.core.psi.MPSPsiNodeFactory"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">

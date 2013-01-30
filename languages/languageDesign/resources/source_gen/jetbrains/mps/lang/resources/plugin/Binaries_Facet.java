@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.IMResource;
+import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
@@ -23,7 +23,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.make.script.IFeedback;
@@ -80,7 +79,7 @@ public class Binaries_Facet extends IFacet.Stub {
   }
 
   public static class Target_copyBinaries implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{MResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.resources.Binaries.copyBinaries");
 
@@ -89,18 +88,20 @@ public class Binaries_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_8acy7z_a0a = null;
+          final Iterable<MResource> input = (Iterable<MResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               progressMonitor.start("Copying resources", 2);
               progressMonitor.step("Collecting");
               try {
                 final List<IDelta> deltaList = ListSequence.fromList(new ArrayList<IDelta>());
-                final Iterable<Tuples._2<IFile, IFile>> filesToCopy = Sequence.fromIterable(input).translate(new ITranslator2<IResource, Tuples._2<IFile, IFile>>() {
-                  public Iterable<Tuples._2<IFile, IFile>> translate(IResource res) {
-                    final IModule module = ((MResource) res).module();
-                    return Sequence.fromIterable(((MResource) res).models()).translate(new ITranslator2<SModelDescriptor, Tuples._2<IFile, IFile>>() {
+                final Iterable<Tuples._2<IFile, IFile>> filesToCopy = Sequence.fromIterable(input).translate(new ITranslator2<MResource, Tuples._2<IFile, IFile>>() {
+                  public Iterable<Tuples._2<IFile, IFile>> translate(MResource res) {
+                    final IModule module = res.module();
+                    Iterable<Tuples._2<IFile, IFile>> seq = Sequence.fromIterable(res.models()).translate(new ITranslator2<SModelDescriptor, Tuples._2<IFile, IFile>>() {
                       public Iterable<Tuples._2<IFile, IFile>> translate(SModelDescriptor smd) {
                         SModel model = smd.getSModel();
                         String output = module.getOutputFor(smd);
@@ -114,7 +115,7 @@ public class Binaries_Facet extends IFacet.Stub {
                           ListSequence.fromList(deltaList).addElement(fd);
                           return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.resources.structure.Resource")).where(new IWhereFilter<SNode>() {
                             public boolean accept(SNode it) {
-                              return isNotEmpty_rhbawb_a0a0a0a0a0a0a0e0a2a0a0a0a1a0a0a0a0b0c0a1a0a0a0a4j(SPropertyOperations.getString(it, "path"));
+                              return isNotEmpty_rhbawb_a0a0a0a0a0a0a0e0a2a0a0a0a0b0a0a0a0a1a2a0c0a0a0a0e9(SPropertyOperations.getString(it, "path"));
                             }
                           }).select(new ISelector<SNode, String>() {
                             public String select(SNode bin) {
@@ -147,6 +148,7 @@ public class Binaries_Facet extends IFacet.Stub {
                         }
                       }
                     });
+                    return seq;
                   }
                 });
                 _output_8acy7z_a0a = Sequence.fromIterable(_output_8acy7z_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(deltaList))));
@@ -234,7 +236,7 @@ public class Binaries_Facet extends IFacet.Stub {
       return 100;
     }
 
-    public static boolean isNotEmpty_rhbawb_a0a0a0a0a0a0a0e0a2a0a0a0a1a0a0a0a0b0c0a1a0a0a0a4j(String str) {
+    public static boolean isNotEmpty_rhbawb_a0a0a0a0a0a0a0e0a2a0a0a0a0b0a0a0a0a1a2a0c0a0a0a0e9(String str) {
       return str != null && str.length() > 0;
     }
   }

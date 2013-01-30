@@ -4,10 +4,9 @@ package jetbrains.mps.smodel.resources;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.make.delta.IDelta;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class DResource extends MultiTuple._1<Iterable<IDelta>> implements IResource, IDeltaResource {
+public class DResource extends MultiTuple._1<Iterable<IDelta>> implements IDeltaResource {
   public DResource() {
     super();
   }

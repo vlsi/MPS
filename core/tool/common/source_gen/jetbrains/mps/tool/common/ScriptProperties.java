@@ -8,6 +8,7 @@ public class ScriptProperties {
   public static final String COMPILE = "COMPILE";
   public static final String STRICT_MODE = "STRICT_MODE";
   public static final String PARALLEL_MODE = "PARALLEL_MODE";
+  public static final String PLUGIN_PATHS = "plugin.path";
 
   public static final String INVOKE_TESTS = "INVOKE_TESTS";
   public static final String SAVE_ON_DISK = "SAVE_ON_DISK";

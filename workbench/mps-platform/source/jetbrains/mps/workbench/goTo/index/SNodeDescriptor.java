@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.goTo.index;
 
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelId;
+import org.jetbrains.mps.openapi.model.SModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -88,7 +88,7 @@ public final class SNodeDescriptor implements NodeDescriptor {
 
   @Override
   public SNodeReference getNodeReference() {
-    SModelId modelId = SModelId.regular(new UUID(myMostSignificantBits, myLeastSignificantBits));
+    SModelId modelId = jetbrains.mps.smodel.SModelId.regular(new UUID(myMostSignificantBits, myLeastSignificantBits));
     SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelId);
     if (md == null) return null;
     SModelReference ref = md.getSModelReference();

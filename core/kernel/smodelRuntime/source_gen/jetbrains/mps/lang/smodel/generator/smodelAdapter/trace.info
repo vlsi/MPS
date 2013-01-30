@@ -1991,7 +1991,7 @@
     <nodeInfo nodeId="6599163591527295453" fileName="SNodeOperations.java" startLine="665" startPosition="28" endLine="666" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6599163591527295455" fileName="SNodeOperations.java" startLine="667" startPosition="5" endLine="668" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6599163591527295471" fileName="SNodeOperations.java" startLine="672" startPosition="23" endLine="673" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6599163591527295476" fileName="SNodeOperations.java" startLine="674" startPosition="5" endLine="675" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6599163591527295476" fileName="SNodeOperations.java" startLine="674" startPosition="5" endLine="675" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6599163591527295497" fileName="SNodeOperations.java" startLine="679" startPosition="50" endLine="680" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6599163591527295499" fileName="SNodeOperations.java" startLine="681" startPosition="5" endLine="682" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6599163591527295504" fileName="SNodeOperations.java" startLine="682" startPosition="76" endLine="683" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2361,7 +2361,7 @@
     </scopeInfo>
     <scopeInfo nodeId="6599163591527295096" fileName="SNodeOperations.java" startLine="556" startPosition="57" endLine="560" endPosition="6" />
     <scopeInfo nodeId="6599163591527295447" fileName="SNodeOperations.java" startLine="664" startPosition="63" endLine="668" endPosition="49" />
-    <scopeInfo nodeId="6599163591527295465" fileName="SNodeOperations.java" startLine="671" startPosition="60" endLine="675" endPosition="53" />
+    <scopeInfo nodeId="6599163591527295465" fileName="SNodeOperations.java" startLine="671" startPosition="60" endLine="675" endPosition="62" />
     <scopeInfo nodeId="6599163591527293206" fileName="SNodeOperations.java" startLine="50" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="6599163591527293213" varName="inclusion" />
       <varInfo nodeId="6599163591527293209" varName="node" />

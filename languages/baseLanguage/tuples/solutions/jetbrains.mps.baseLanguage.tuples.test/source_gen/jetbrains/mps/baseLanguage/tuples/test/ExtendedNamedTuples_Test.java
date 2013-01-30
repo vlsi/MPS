@@ -6,13 +6,17 @@ import junit.framework.TestCase;
 import jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples.Foo;
 import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples.Bar;
+import jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples.Qux;
 
 public class ExtendedNamedTuples_Test extends TestCase {
   public void test_subtyping() throws Exception {
     Foo foo = new Foo(123, "abc");
     Assert.assertEquals(new Foo(123, "abc"), foo);
-    Bar bar = new Bar(321, "CBA", "XYZ", 42);
+    Bar bar = new Bar(321, "CBA", "XYZ", 42.0);
     foo = bar;
     Assert.assertEquals(new Foo(321, "CBA"), foo);
+    Qux qux = new Qux(1, "asd", "xyz", 234.0, "value");
+    bar = qux;
+    Assert.assertEquals(new Bar(1, "asd", "xyz", 234.0), bar);
   }
 }

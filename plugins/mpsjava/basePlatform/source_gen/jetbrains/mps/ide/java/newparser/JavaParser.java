@@ -26,8 +26,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -62,10 +60,9 @@ public class JavaParser {
     Map<String, String> settings = new HashMap<String, String>();
     settings.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_6);
     settings.put(CompilerOptions.OPTION_DocCommentSupport, "enabled");
-    TypeNameResolver typeResolver = new TypeNameResolver(pkg);
     ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ?
-      new ASTConverter(typeResolver, stubsMode) :
-      new FullASTConverter(null, typeResolver)
+      new ASTConverter(stubsMode) :
+      new FullASTConverter(null)
     );
 
     List<SNode> resultNodes = new ArrayList<SNode>();
@@ -143,7 +140,6 @@ public class JavaParser {
     // now insert comments 
     attachComments(source, converter, util.recordedParsingInformation);
 
-
     return new JavaParser.JavaParseResult(resultNodes, resultPackageName, problemDescription(util.recordedParsingInformation));
   }
 
@@ -212,14 +208,28 @@ public class JavaParser {
   }
 
   public void annotateWithmports(CompilationUnitDeclaration compResult, SNode clas) {
-    // <node> 
-    AttributeOperations.createAndSetAttrbiute(clas, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), "jetbrains.mps.baseLanguage.structure.JavaImports");
+    SNode imports = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImports", null);
+
+    // putting first: current package in terms of source code 
+    if (compResult.currentPackage != null) {
+      SNode currPkg = makeImport(compResult.currentPackage);
+      SPropertyOperations.set(currPkg, "onDemand", "" + (true));
+      ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).addElement(currPkg);
+    }
+
     if (compResult.imports != null) {
       for (ImportReference imprt : compResult.imports) {
-        // <node> 
-        ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(clas, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))), "entries", true)).addElement(makeImport(imprt));
+        ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).addElement(makeImport(imprt));
       }
     }
+
+    // inserting it in the beginning 
+    clas.insertChild("smodelAttribute", imports, null);
+
+    // we want to insert imports section before any javadoc 
+    // because javadoc is data while imports section is meta-data for assisting class resolving 
+
+    // <node> 
     // <node> 
   }
 
@@ -330,11 +340,12 @@ public class JavaParser {
       SModel ourModel = node.getModel();
       DequeSequence.fromDeque(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
 
-      Iterable<SReference> refs = node.getReferences();
+      Iterable<? extends SReference> refs = node.getReferences();
       for (SReference ref : Sequence.fromIterable(refs)) {
         if (!(ref instanceof DynamicReference)) {
           continue;
         }
+        // FIXME temp hack around typesystem looping when resolving certain dyn.references 
         if (ref.getRole().equals("baseMethodDeclaration")) {
           continue;
         }

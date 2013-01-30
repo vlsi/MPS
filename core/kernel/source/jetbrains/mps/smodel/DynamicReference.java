@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -28,7 +28,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Igor Alshannikov
@@ -38,6 +40,15 @@ public class DynamicReference extends SReferenceBase {
   private static final Logger LOG = Logger.getLogger(DynamicReference.class);
 
   private DynamicReferenceOrigin myOrigin;
+
+  // this is for tracking loops in dynref resolving, typically arising from interaction
+  // between type system rules and scopes
+  private static final ThreadLocal<Set<DynamicReference>> currentlyResolved = new ThreadLocal<Set<DynamicReference>>(){
+    @Override
+    protected Set<DynamicReference> initialValue() {
+      return new HashSet<DynamicReference>();
+    }
+  };
 
   /*
    * create 'young' reference
@@ -67,38 +78,59 @@ public class DynamicReference extends SReferenceBase {
     // seems like getTargetNode() doesn't make sense if target node is detached
     assert mySourceNode.getModel() != null;
 
-    if (myImmatureTargetNode != null) {
-      synchronized (this) {
-        if (!makeIndirect()) {
-          return myImmatureTargetNode;
+    Set<DynamicReference> currentRefs = currentlyResolved.get();
+    if (currentRefs.contains(this)) {
+      // loop detected!
+      LOG.errorWithTrace("Loop detected in dynamic references (number of current dyn. refs: " + currentRefs.size() + ")");
+      return null;
+    }
+
+    currentRefs.add(this);
+    boolean recordedOurselves = false;
+    try {
+      currentlyResolved.set(currentRefs);
+      recordedOurselves = true;
+
+      if (myImmatureTargetNode != null) {
+        synchronized (this) {
+          if (!makeIndirect()) {
+            return myImmatureTargetNode;
+          }
         }
       }
+
+      if (getResolveInfo() == null) {
+        reportErrorWithOrigin("bad reference: no resolve info");
+        return null;
+      }
+
+      Scope scope = ModelConstraints.getScope(this);
+      if (scope instanceof ErrorScope) {
+        reportErrorWithOrigin("cannot obtain scope for reference `" + getRole() + "': " + ((ErrorScope) scope).getMessage());
+        return null;
+
+      }
+
+      SNode targetNode = null;
+      try {
+        targetNode = scope.resolve(getSourceNode(), getResolveInfo());
+      } catch (Throwable t) {
+        LOG.warning("Exception was thrown while dynamic reference resolving", t);
+      }
+
+      if (targetNode == null) {
+        reportErrorWithOrigin("cannot resolve reference by string: '" + getResolveInfo() + "'");
+      }
+
+      return targetNode;
+
+    } finally {
+      // cleaning up our loop checking stuff
+      if (recordedOurselves) {
+        currentRefs.remove(this);
+        currentlyResolved.set(currentRefs);
+      }
     }
-
-    if (getResolveInfo() == null) {
-      reportErrorWithOrigin("bad reference: no resolve info");
-      return null;
-    }
-
-    Scope scope = ModelConstraints.getScope(this);
-    if (scope instanceof ErrorScope) {
-      reportErrorWithOrigin("cannot obtain scope for reference `" + getRole() + "': " + ((ErrorScope) scope).getMessage());
-      return null;
-
-    }
-
-    SNode targetNode = null;
-    try {
-      targetNode = scope.resolve(getSourceNode(), getResolveInfo());
-    } catch (Throwable t) {
-      LOG.warning("Exception was thrown while dynamic reference resolving", t);
-    }
-
-    if (targetNode == null) {
-      reportErrorWithOrigin("cannot resolve reference by string: '" + getResolveInfo() + "'");
-    }
-
-    return targetNode;
   }
 
   private void reportErrorWithOrigin(String message) {

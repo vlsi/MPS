@@ -73,13 +73,13 @@
   <applicationService serviceInterface="com.intellij.codeInspection.ex.AppInspectionProfilesVisibleTreeState"
                       serviceImplementation="com.intellij.codeInspection.ex.AppInspectionProfilesVisibleTreeState"/>
   <projectService serviceInterface="com.intellij.codeInspection.ex.ProjectInspectionProfilesVisibleTreeState"
-                  serviceImplementation="com.intellij.codeInspection.ex.ProjectInspectionProfilesVisibleTreeState"/>
+                  serviceImplementation="com.intellij.codeInspection.ex.ProjectInspectionProfilesVisibleTreeState"/>-->
 
-  &lt;!&ndash; Editor &ndash;&gt;
-  <applicationConfigurable instance="com.intellij.application.options.editor.EditorOptions" id="editor" key="title.editor"
+  <!-- Editor -->
+  <applicationConfigurable instance="jetbrains.mps.nodeEditor.EditorSettingsConfigurable" id="editor" key="title.editor"
                            bundle="messages.ApplicationBundle" order="after appearance" childrenEPName="com.intellij.editorOptionsProvider"/>
 
-  <projectService serviceInterface="com.intellij.semantic.SemService" serviceImplementation="com.intellij.semantic.SemServiceImpl"/>
+  <!--<projectService serviceInterface="com.intellij.semantic.SemService" serviceImplementation="com.intellij.semantic.SemServiceImpl"/>
 
   &lt;!&ndash; Global Code Style &ndash;&gt;
   <projectConfigurable instance="com.intellij.application.options.CodeStyleSchemesConfigurable" order="after colors"/>-->
@@ -111,6 +111,21 @@
 
   <executor implementation="com.intellij.execution.executors.DefaultRunExecutor" order="first" id="run"/>
 
+  <!--<codeFoldingOptionsProvider instance="com.intellij.application.options.editor.BaseCodeFoldingOptionsProvider" order="first"/>
+  <editorOptionsProvider instance="com.intellij.application.options.editor.EditorSmartKeysConfigurable" id="editor.preferences.smartKeys"
+                         displayName="Smart Keys"/>
+  <editorOptionsProvider instance="com.intellij.application.options.editor.EditorAppearanceConfigurable" id="editor.preferences.appearance"
+                         key="tab.editor.settings.appearance" bundle="messages.ApplicationBundle"/>
+  <editorCustomization implementation="com.intellij.ui.SoftWrapsEditorCustomization"/>
+  <editorCustomization implementation="com.intellij.ui.HorizontalScrollBarEditorCustomization"/>
+  <editorCustomization implementation="com.intellij.ui.AdditionalPageAtBottomEditorCustomization"/>
+  <editorCustomization implementation="com.intellij.ui.OneLineEditorCustomization"/>
+  &lt;!&ndash; Colors & Fonts&ndash;&gt;
+  <editorOptionsProvider instance="com.intellij.application.options.colors.ColorAndFontOptions" id="reference.settingsdialog.IDE.editor.colors"/>-->
+  <editorOptionsProvider instance="com.intellij.application.options.editor.EditorTabsConfigurable" id="editor.preferences.tabs" displayName="Editor Tabs"/>
+  <!--<editorOptionsProvider instance="com.intellij.application.options.editor.CodeFoldingConfigurable" id="editor.preferences.folding" key="group.code.folding" bundle="messages.ApplicationBundle"/>
+  <editorOptionsProvider instance="com.intellij.application.options.CodeCompletionOptions" id="editor.preferences.completion" key="title.code.completion" bundle="messages.ApplicationBundle"/>
+  <editorOptionsProvider instance="com.intellij.application.options.editor.AutoImportOptionsConfigurable" id="editor.preferences.import" key="auto.import" bundle="messages.ApplicationBundle"/>-->
   <projectService serviceInterface="com.intellij.ide.structureView.StructureViewFactory"
                   serviceImplementation="com.intellij.ide.structureView.impl.StructureViewFactoryImpl"/>
   <projectService serviceInterface="com.intellij.execution.ui.RunnerLayoutUi$Factory"

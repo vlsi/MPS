@@ -33,6 +33,7 @@ import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.scope.FilteringByNameScope;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScopeAdapter;
@@ -388,6 +389,14 @@ public class Classifier_Behavior {
         } else {
           return Scopes.forMethods(kind, BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getMembers_2201875424515824604", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")}), ScopeUtils.lazyParentScope(thisNode, kind));
         }
+
+      }
+      if (SConceptOperations.isSubConceptOf(concept_i0bb, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+        if (SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass") || SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface") || SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
+          return ClassifierScopes.getVisibleClassifiersScope(child, false);
+        }
+        return ClassifierScopes.getVisibleClassifiersScope(child, true);
+
       }
       if (SConceptOperations.isSubConceptOf(concept_i0bb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
         {

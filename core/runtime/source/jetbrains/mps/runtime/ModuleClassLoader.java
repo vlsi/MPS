@@ -17,15 +17,26 @@ package jetbrains.mps.runtime;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class ModuleClassLoader extends ClassLoader {
+  private static final Logger LOG = Logger.getLogger(ModuleClassLoader.class);
+
   //this is for debug purposes (heap dumps)
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
@@ -110,6 +121,10 @@ public class ModuleClassLoader extends ClassLoader {
     for (IClassLoadingModule m : queue) {
       try {
         ModuleClassLoader classLoader = m.getClassLoader();
+        if (classLoader == null) {
+          LOG.warning("Null classloader for module with canLoad() = true; module name: " + ((SModule) m).getModuleName() + "; module class " + m.getClass());
+          continue;
+        }
         if (processedParentClassLoaders.contains(classLoader.getParent())) {
           continue;
         }

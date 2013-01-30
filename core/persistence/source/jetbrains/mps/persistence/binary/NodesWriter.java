@@ -16,7 +16,7 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
@@ -74,7 +74,7 @@ public class NodesWriter {
   }
 
   protected void writeReferences(SNode node, ModelOutputStream os) throws IOException {
-    Collection<SReference> refs = IterableUtil.asCollection(node.getReferences());
+    Collection<? extends SReference> refs = IterableUtil.asCollection(node.getReferences());
     os.writeInt(refs.size());
     for (SReference reference : refs) {
       SModelReference targetModelReference = reference.getTargetSModelReference();

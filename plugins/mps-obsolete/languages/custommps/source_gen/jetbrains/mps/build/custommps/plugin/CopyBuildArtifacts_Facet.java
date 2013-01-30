@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.ITResource;
+import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
@@ -20,7 +20,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
@@ -69,7 +68,7 @@ public class CopyBuildArtifacts_Facet extends IFacet.Stub {
   }
 
   public static class Target_copyFiles implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.build.custommps.CopyBuildArtifacts.copyFiles");
 
@@ -78,16 +77,17 @@ public class CopyBuildArtifacts_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_srsvb8_a0a = null;
+          final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               progressMonitor.start("Copying resources", 2);
               progressMonitor.step("ANT scripts");
               try {
                 final List<Tuples._2<IFile, IFile>> toCopy = ListSequence.fromList(new ArrayList<Tuples._2<IFile, IFile>>());
-                for (IResource resource : input) {
-                  TResource tres = (TResource) resource;
+                for (TResource tres : Sequence.fromIterable(input)) {
                   String dest = pa.forResource(tres).properties(Target_copyFiles.this.getName(), CopyBuildArtifacts_Facet.Target_copyFiles.Parameters.class).destination();
                   if (dest != null) {
                     final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModuleFile(tres.module().getDescriptorFile()).expandPath(dest));
@@ -121,7 +121,7 @@ public class CopyBuildArtifacts_Facet extends IFacet.Stub {
                     }
                   });
 
-                  _output_srsvb8_a0a = Sequence.fromIterable(_output_srsvb8_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+                  _output_srsvb8_a0a = Sequence.fromIterable(_output_srsvb8_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
                 }
               } finally {
                 progressMonitor.done();

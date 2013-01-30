@@ -202,7 +202,7 @@ public class Equations {
   }
 
   private void replaceReferences(SNode node, Set<SNode> variablesMet, boolean finalExpansion) {
-    List<SReference> references = IterableUtil.copyToList(node.getReferences());
+    List<? extends SReference> references = IterableUtil.copyToList(node.getReferences());
     for (SReference reference : references) {
       SNode oldNode = reference.getTargetNode();
       if (TypesUtil.isVariable(oldNode)) {

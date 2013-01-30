@@ -38,7 +38,6 @@
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.smodel.resources.ITResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.TResource" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
@@ -132,6 +131,7 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Process" />
     <classNode dependClassName="java.lang.ProcessBuilder" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -165,7 +165,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.GResource" />
-    <classNode dependClassName="jetbrains.mps.smodel.resources.IGResource" />
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestListener" />
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestOutputReader" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

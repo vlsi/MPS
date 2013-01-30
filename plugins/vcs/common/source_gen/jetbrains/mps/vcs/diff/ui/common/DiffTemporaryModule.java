@@ -144,11 +144,11 @@ public class DiffTemporaryModule extends AbstractModule {
     }
   }
 
-  public static SModelId genMergeSModelId(SModelId modelId, String version) {
+  public static org.jetbrains.mps.openapi.model.SModelId genMergeSModelId(org.jetbrains.mps.openapi.model.SModelId modelId, String version) {
     return SModelId.foreign("merge_" + version + "#" + modelId.toString());
   }
 
-  public static SModelId getOriginalSModelId(SModelId.ForeignSModelId modelId) {
+  public static org.jetbrains.mps.openapi.model.SModelId getOriginalSModelId(SModelId.ForeignSModelId modelId) {
     String id = modelId.getId();
     return SModelId.fromString(id.substring(id.indexOf("#") + 1));
   }

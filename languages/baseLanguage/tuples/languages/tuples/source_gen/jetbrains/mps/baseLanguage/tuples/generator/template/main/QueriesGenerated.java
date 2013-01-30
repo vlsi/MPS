@@ -555,11 +555,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_247710080512637694(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> ifcs = SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a0a901(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    int cmpSize = ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "extended", true), "classifier", false))).foldLeft(0, new ILeftCombinator<SNode, Integer>() {
-      public Integer combine(Integer s, SNode ntd) {
-        return s + ListSequence.fromList(SLinkOperations.getTargets(ntd, "component", true)).count();
-      }
-    });
+    int cmpSize = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "component", true)).count();
     for (SNode ifc : ifcs) {
       if (SPropertyOperations.getString(ifc, "nestedName").equals("MultiTuple._" + cmpSize)) {
         return ifc;
@@ -574,11 +570,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_247710080512639203(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> ifcs = SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a0a111(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    int cmpSize = ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "extended", true), "classifier", false))).foldLeft(0, new ILeftCombinator<SNode, Integer>() {
-      public Integer combine(Integer s, SNode ntd) {
-        return s + ListSequence.fromList(SLinkOperations.getTargets(ntd, "component", true)).count();
-      }
-    });
+    int cmpSize = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "component", true)).count();
     for (SNode cc : ifcs) {
       if (SPropertyOperations.getString(cc, "nestedName").equals("MultiTuple._" + cmpSize)) {
         return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(cc)).first();

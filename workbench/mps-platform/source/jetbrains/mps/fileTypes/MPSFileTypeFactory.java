@@ -23,8 +23,9 @@ import org.jetbrains.annotations.NotNull;
 
 public class MPSFileTypeFactory extends FileTypeFactory {
 
+  public static final FileType MODEL_FILE_TYPE = MPSFileType.INSTANCE;
+
   public static final FileType PROJECT_FILE_TYPE = new MPSProjectFileType("MPS Project", "MPS Project File Type", MPSExtentions.MPS_PROJECT, FileIcons.PROJECT_ICON);
-  public static final FileType MODEL_FILE_TYPE = new XMLFileType("Model", "MPS Model File Type", MPSExtentions.MODEL, FileIcons.MODEL_ICON);
   public static final FileType SOLUTION_FILE_TYPE = new XMLFileType("Solution", "MPS Solution File Type", MPSExtentions.SOLUTION, FileIcons.SOLUTION_ICON);
   public static final FileType LANGUAGE_FILE_TYPE = new XMLFileType("Language", "MPS Language File Type", MPSExtentions.LANGUAGE, FileIcons.PROJECT_LANGUAGE_ICON);
   public static final FileType DEVKIT_FILE_TYPE = new XMLFileType("Devkit", "MPS Devkit File Type", MPSExtentions.DEVKIT, FileIcons.DEVKIT_ICON);

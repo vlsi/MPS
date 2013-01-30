@@ -18,6 +18,7 @@ package jetbrains.mps.jps.make;
 
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.SystemProperties;
+import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import junit.framework.TestCase;
 import org.jetbrains.jps.builders.JpsBuildTestCase;
 
@@ -82,4 +83,10 @@ public class MpsJpsBuildTestCase extends JpsBuildTestCase {
     }
     return fullTargetPath;
   }
+
+
+  protected void assertGenerated(final String... paths) {
+    assertCompiled(MPSMakeConstants.BUILDER_ID, paths);
+  }
+
 }

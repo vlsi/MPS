@@ -111,7 +111,7 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
     if (thereAreJavaFiles) {
 
       SModelFqName fqName = new SModelFqName(pkg, "java_stub");
-      jetbrains.mps.smodel.SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(fqName.getStereotype(), getModule().getModuleId().toString(), fqName.getLongName());
+      SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(fqName.getStereotype(), getModule().getModuleId().toString(), fqName.getLongName());
 
       SModelReference modelRef = new SModelReference(fqName, modelId);
 

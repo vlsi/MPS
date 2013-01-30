@@ -150,6 +150,7 @@
   <dependency className="jetbrains.mps.lang.test.runtime.TransformationTestRunner" file="TransformationTestRunner.java">
     <classNode dependClassName="com.intellij.openapi.application.ex.ApplicationManagerEx" />
     <classNode dependClassName="com.intellij.util.PathUtil" />
+    <classNode dependClassName="java.awt.GraphicsEnvironment" />
     <classNode dependClassName="java.awt.Toolkit" />
     <classNode dependClassName="java.awt.datatransfer.StringSelection" />
     <classNode dependClassName="java.io.File" />

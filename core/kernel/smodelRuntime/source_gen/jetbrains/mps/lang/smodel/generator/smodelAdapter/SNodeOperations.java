@@ -672,7 +672,7 @@ public class SNodeOperations {
     if (node == null) {
       return new ArrayList<SReference>(0);
     }
-    return IterableUtil.asList(node.getReferences());
+    return ((List) IterableUtil.asList(node.getReferences()));
   }
 
   public static SReference getReference(SNode node, SNode linkDeclaration) {

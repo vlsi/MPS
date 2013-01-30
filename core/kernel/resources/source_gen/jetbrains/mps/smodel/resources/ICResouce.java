@@ -5,6 +5,7 @@ package jetbrains.mps.smodel.resources;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.compiler.IClassesData;
 
+@Deprecated
 public interface ICResouce extends IResource {
   public IClassesData classes();
 }
