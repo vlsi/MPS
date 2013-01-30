@@ -25,6 +25,7 @@
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>jetbrains.mps.testing</id>
         <name>MPS Testing</name>
+        <description>Languages unit-testing java code and MPS aspects such as editor and typesystem</description>
         <version>${mpsBootstrapCore.version}</version>
         <depends>jetbrains.mps.core</depends>
         
