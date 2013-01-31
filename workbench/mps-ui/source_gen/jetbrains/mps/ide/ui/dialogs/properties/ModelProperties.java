@@ -21,6 +21,7 @@ import java.util.HashSet;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.IModule;
@@ -168,7 +169,7 @@ public class ModelProperties {
       if (language == null) {
         continue;
       }
-      if (myModelDescriptor.getModule().getScope().getLanguage(language.getModuleReference()) == null) {
+      if (ScopeOperations.resolveModule(myModelDescriptor.getModule().getScope(), language.getModuleReference(), Language.class) == null) {
         myModelDescriptor.getModule().addUsedLanguage(language.getModuleReference());
       }
       myModelDescriptor.getSModel().addLanguage(language.getModuleReference());

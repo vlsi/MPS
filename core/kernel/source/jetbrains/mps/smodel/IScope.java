@@ -43,6 +43,7 @@ public interface IScope extends SearchScope {
    */
   DevKit getDevKit(ModuleReference ref);
 
+  @Deprecated
   /*
   Use ScopeOperations.getModelDescriptors(SearchScope), but getModels() better
    */
