@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.make.script.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.script.constraints.ConstraintsAspectDescriptor" />
   <root nodeRef="r:56325792-0540-48ec-8d52-897a8821cc64(jetbrains.mps.make.script.constraints)/1977954644795375516">
     <nodeInfo nodeId="1977954644795375516" fileName="RelayQueryExpression_Constraints.java" startLine="14" startPosition="45" endLine="15" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1977954644795375516" fileName="RelayQueryExpression_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -85,6 +85,13 @@
       <varInfo nodeId="1977954644795408665" varName="parentNode" />
     </scopeInfo>
     <unitInfo nodeId="1977954644795408665" fileName="ResultStatement_Constraints.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.make.script.constraints.ResultStatement_Constraints" />
+  </root>
+  <root nodeRef="r:56325792-0540-48ec-8d52-897a8821cc64(jetbrains.mps.make.script.constraints)/3308693286243335385">
+    <nodeInfo nodeId="3308693286243335385" fileName="ResourceType_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3308693286243335385" fileName="ResourceType_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResourceType_Constraints#()V" />
+    <scopeInfo nodeId="3308693286243335385" fileName="ResourceType_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="62" />
+    <scopeInfo nodeId="3308693286243335385" fileName="ResourceType_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
+    <unitInfo nodeId="3308693286243335385" fileName="ResourceType_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.make.script.constraints.ResourceType_Constraints" />
   </root>
   <root nodeRef="r:56325792-0540-48ec-8d52-897a8821cc64(jetbrains.mps.make.script.constraints)/682890046602395483">
     <nodeInfo nodeId="682890046602395483" fileName="AdvanceWorkStatement_Constraints.java" startLine="23" startPosition="45" endLine="24" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

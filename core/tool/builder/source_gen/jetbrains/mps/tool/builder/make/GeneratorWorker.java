@@ -10,7 +10,7 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.resources.IMResource;
+import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.concurrent.Future;
@@ -74,7 +74,7 @@ public class GeneratorWorker extends MpsWorker {
     }
   }
 
-  private void setGenerationProperties() {
+  protected void setGenerationProperties() {
     boolean strictMode = Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.STRICT_MODE));
     GenerationSettingsProvider.getInstance().getGenerationSettings().setStrictMode(strictMode);
     if (strictMode) {
@@ -111,7 +111,7 @@ public class GeneratorWorker extends MpsWorker {
     info(s.toString());
     ProjectOperationContext ctx = new ProjectOperationContext(project);
 
-    Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
+    Iterable<MResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
     ModelAccess.instance().flushEventQueue();
     Future<IResult> res = new BuildMakeService().make(new MakeSession(ctx, myMessageHandler, true), resources, null, null, new EmptyProgressMonitor());
 
@@ -219,7 +219,7 @@ public class GeneratorWorker extends MpsWorker {
     });
   }
 
-  protected Iterable<IMResource> collectResources(IOperationContext context, final MpsWorker.ObjectsToProcess go) {
+  protected Iterable<MResource> collectResources(IOperationContext context, final MpsWorker.ObjectsToProcess go) {
     final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -241,9 +241,9 @@ public class GeneratorWorker extends MpsWorker {
       public boolean accept(SModel smd) {
         return GenerationFacade.canGenerate(smd);
       }
-    })).resources(false)).select(new ISelector<IResource, IMResource>() {
-      public IMResource select(IResource r) {
-        return (IMResource) r;
+    })).resources(false)).select(new ISelector<IResource, MResource>() {
+      public MResource select(IResource r) {
+        return (MResource) r;
       }
     });
   }

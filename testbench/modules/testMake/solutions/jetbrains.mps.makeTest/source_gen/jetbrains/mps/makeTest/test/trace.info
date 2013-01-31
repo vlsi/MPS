@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/1957199320903967681">
-    <nodeInfo nodeId="1957199320903967682" fileName="ChangeModel.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="1957199320903967690" fileName="ChangeModel.java" startLine="17" startPosition="36" endLine="18" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8788437410276520176" fileName="ChangeModel.java" startLine="18" startPosition="65" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8788437410276521488" fileName="ChangeModel.java" startLine="19" startPosition="60" endLine="20" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903967702" fileName="ChangeModel.java" startLine="23" startPosition="38" endLine="24" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7137969394171673935" fileName="ChangeModel.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeModel#()V" />
-    <nodeInfo nodeId="1957199320903967699" fileName="ChangeModel.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rollback#(Ljetbrains/mps/smodel/SModel;)V" />
-    <nodeInfo nodeId="1957199320903967686" fileName="ChangeModel.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="change#(Ljetbrains/mps/smodel/SModel;)V" />
-    <scopeInfo nodeId="7137969394171673938" fileName="ChangeModel.java" startLine="14" startPosition="24" endLine="14" endPosition="24" />
-    <scopeInfo nodeId="1957199320903967701" fileName="ChangeModel.java" startLine="23" startPosition="38" endLine="24" endPosition="118" />
-    <scopeInfo nodeId="7137969394171673935" fileName="ChangeModel.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="1957199320903967689" fileName="ChangeModel.java" startLine="17" startPosition="36" endLine="20" endPosition="49" />
-    <scopeInfo nodeId="1957199320903967699" fileName="ChangeModel.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+    <nodeInfo nodeId="1957199320903967682" fileName="ChangeModel.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="1957199320903967690" fileName="ChangeModel.java" startLine="18" startPosition="36" endLine="19" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8788437410276520176" fileName="ChangeModel.java" startLine="19" startPosition="65" endLine="20" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8788437410276521488" fileName="ChangeModel.java" startLine="20" startPosition="60" endLine="21" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7301870151127307007" fileName="ChangeModel.java" startLine="24" startPosition="38" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7137969394171673935" fileName="ChangeModel.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeModel#()V" />
+    <nodeInfo nodeId="1957199320903967699" fileName="ChangeModel.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rollback#(Ljetbrains/mps/smodel/SModel;)V" />
+    <nodeInfo nodeId="1957199320903967686" fileName="ChangeModel.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="change#(Ljetbrains/mps/smodel/SModel;)V" />
+    <scopeInfo nodeId="7137969394171673938" fileName="ChangeModel.java" startLine="15" startPosition="24" endLine="15" endPosition="24" />
+    <scopeInfo nodeId="1957199320903967701" fileName="ChangeModel.java" startLine="24" startPosition="38" endLine="25" endPosition="148" />
+    <scopeInfo nodeId="7137969394171673935" fileName="ChangeModel.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1957199320903967689" fileName="ChangeModel.java" startLine="18" startPosition="36" endLine="21" endPosition="49" />
+    <scopeInfo nodeId="1957199320903967699" fileName="ChangeModel.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1957199320903967712" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="1957199320903967686" fileName="ChangeModel.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="1957199320903967686" fileName="ChangeModel.java" startLine="18" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1957199320903967697" varName="model" />
     </scopeInfo>
-    <unitInfo nodeId="1957199320903967681" fileName="ChangeModel.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.makeTest.test.ChangeModel" />
+    <unitInfo nodeId="1957199320903967681" fileName="ChangeModel.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.makeTest.test.ChangeModel" />
   </root>
   <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/1957199320903967715">
     <nodeInfo nodeId="1957199320903967738" fileName="CheckDependencies_Test.java" startLine="22" startPosition="40" endLine="23" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

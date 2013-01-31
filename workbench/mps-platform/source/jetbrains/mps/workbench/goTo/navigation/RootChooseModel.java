@@ -18,31 +18,25 @@ package jetbrains.mps.workbench.goTo.navigation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.FilteredGlobalScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.FilteredScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.BaseScope;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
-import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
   public RootNodeNameIndex myIndex;
@@ -56,7 +50,7 @@ public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
   public NodeDescriptor[] find(boolean checkboxState) {
     if (checkboxState) return find(new FilteredGlobalScope());
     MPSProject project = getProject().getComponent(MPSProject.class);
-    return find(new FilterStubsScope(new ModulesOnlyScope(project.getModulesWithGenerators())));
+    return find(new FilterStubsScope(new ModulesScope(project.getModulesWithGenerators())));
   }
 
   public NodeDescriptor[] find(final IScope scope) {
@@ -104,67 +98,19 @@ public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
     return true;
   }
 
-  private static class FilterStubsScope extends BaseScope {
-    private final IScope inner;
-
-    public FilterStubsScope(IScope inner) {
-      this.inner = inner;
+  private static class FilterStubsScope extends FilteredScope {
+    public FilterStubsScope(SearchScope scope) {
+      super(scope);
     }
 
     @Override
-    public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-      return inner.getModelDescriptor(modelReference);
+    protected boolean acceptModule(SModule module) {
+      return true;
     }
 
     @Override
-    public Language getLanguage(SModuleReference moduleReference) {
-      return inner.getLanguage(moduleReference);
-    }
-
-    @Override
-    public DevKit getDevKit(ModuleReference ref) {
-      return inner.getDevKit(ref);
-    }
-
-    private boolean isExcluded(SModelDescriptor descriptor) {
-      return SModelStereotype.isStubModelStereotype(descriptor.getStereotype());
-    }
-
-    @Override
-    public Iterable<SModelDescriptor> getModelDescriptors() {
-      List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-      for (SModelDescriptor descriptor : inner.getModelDescriptors()) {
-        if (!isExcluded(descriptor)) {
-          result.add(descriptor);
-        }
-      }
-      return result;
-    }
-
-    @Override
-    public Iterable<SModelDescriptor> getOwnModelDescriptors() {
-      List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-      for (SModelDescriptor descriptor : inner.getOwnModelDescriptors()) {
-        if (!isExcluded(descriptor)) {
-          result.add(descriptor);
-        }
-      }
-      return result;
-    }
-
-    @Override
-    public Iterable<Language> getVisibleLanguages() {
-      return inner.getVisibleLanguages();
-    }
-
-    @Override
-    public Iterable<DevKit> getVisibleDevkits() {
-      return inner.getVisibleDevkits();
-    }
-
-    @Override
-    public Iterable<IModule> getVisibleModules() {
-      return inner.getVisibleModules();
+    protected boolean acceptModel(SModel model) {
+      return !SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model));
     }
   }
 }

@@ -17,10 +17,11 @@ import java.util.List;
 import java.util.LinkedList;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
+import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.ModelsOnlyScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 
 public class LanguageConceptsUsagesFinder implements IFinder {
   public LanguageConceptsUsagesFinder() {
@@ -57,7 +58,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
       for (SearchResult<SModel> sModelSearchResult : modelResults.getSearchResults()) {
         models.add(sModelSearchResult.getObject().getModelDescriptor());
       }
-      IScope scope = new ModelsOnlyScope(models.toArray(new SModelDescriptor[models.size()]));
+      IScope scope = new ModelsScope(models.toArray(new SModelDescriptor[models.size()]));
       SearchResults<SNode> results = new SearchResults();
       for (SNode node : roots) {
         if (monitor != null && monitor.isCanceled()) {

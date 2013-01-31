@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.project;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -130,9 +133,7 @@ public abstract class Project implements MPSModuleOwner {
   }
 
   public class ProjectScope extends DefaultScope {
-
     protected Set<IModule> getInitialModules() {
-
       Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
       assert Arrays.asList(openProjects).contains(Project.this) : "trying to get scope on a not-yet-loaded project";
 

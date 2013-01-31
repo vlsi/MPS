@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -192,6 +192,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     myModelListeners.clear();
   }
 
+  protected void notifyModelReplaced(SModel oldSModel) {
+    SModelRepository.getInstance().notifyModelReplaced(this, oldSModel);
+  }
+
   // Not SModel-specific listener notifications
 
   void fireBeforeModelFileChanged(SModelFileChangedEvent event) {
@@ -238,16 +242,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.modelLoadingStateChanged(this, oldState, newState);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  protected void fireModelReplaced() {
-    for (SModelListener sModelListener : getModelListeners()) {
-      try {
-        sModelListener.modelReplaced(this);
       } catch (Throwable t) {
         LOG.error(t);
       }

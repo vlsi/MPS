@@ -4,13 +4,15 @@ package jetbrains.mps.make.dependencies;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.resources.IMResource;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.IModule;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IListSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -35,43 +37,59 @@ public class ModulesClusterizer {
   public ModulesClusterizer() {
   }
 
-  public Iterable<? extends Iterable<IResource>> clusterize(Iterable<IResource> res) {
-    final Iterable<IResource> mres = Sequence.fromIterable(res).where(new IWhereFilter<IResource>() {
+  public Iterable<? extends Iterable<? extends IResource>> clusterize(Iterable<IResource> res) {
+    final Iterable<MResource> mres = Sequence.fromIterable(res).where(new IWhereFilter<IResource>() {
       public boolean accept(IResource r) {
-        return r instanceof IMResource;
+        return r instanceof MResource;
+      }
+    }).select(new ISelector<IResource, MResource>() {
+      public MResource select(IResource r) {
+        return ((MResource) r);
       }
     }).toListSequence();
-    Iterable<IModule> mods = Sequence.fromIterable(mres).select(new ISelector<IResource, IModule>() {
-      public IModule select(IResource r) {
-        return ((IMResource) r).module();
+    Iterable<IModule> mods = Sequence.fromIterable(mres).select(new ISelector<MResource, IModule>() {
+      public IModule select(MResource r) {
+        return r.module();
       }
     });
     List<IResource> rest = Sequence.fromIterable(res).subtract(Sequence.fromIterable(mres)).toListSequence();
     ModulesCluster clst = new ModulesCluster(mods);
     clst.collectRequired(mods);
-    return Sequence.fromIterable(clst.buildOrder()).select(new ISelector<Iterable<IModule>, List<IResource>>() {
-      public List<IResource> select(final Iterable<IModule> cl) {
-        return (List<IResource>) Sequence.fromIterable(mres).where(new IWhereFilter<IResource>() {
-          public boolean accept(IResource r) {
-            return Sequence.fromIterable(cl).contains(((IMResource) r).module());
+    Iterable<? extends Iterable<? extends IResource>> toBuild = Sequence.fromIterable(clst.buildOrder()).select(new ISelector<Iterable<IModule>, IListSequence<MResource>>() {
+      public IListSequence<MResource> select(final Iterable<IModule> cl) {
+        return Sequence.fromIterable(mres).where(new IWhereFilter<MResource>() {
+          public boolean accept(MResource r) {
+            return Sequence.fromIterable(cl).contains(r.module());
           }
         }).toListSequence();
       }
-    }).concat(Sequence.fromIterable((ListSequence.fromList(rest).isNotEmpty() ?
+    });
+    Iterable<? extends Iterable<IResource>> seq = (ListSequence.fromList(rest).isNotEmpty() ?
       Sequence.<List<IResource>>singleton(rest) :
       null
-    ))).toListSequence();
+    );
+
+    List<Iterable<? extends IResource>> result = ListSequence.fromList(new ArrayList<Iterable<? extends IResource>>());
+    ListSequence.fromList(result).addSequence(Sequence.fromIterable(toBuild));
+    ListSequence.fromList(result).addSequence(Sequence.fromIterable(seq));
+    return result;
   }
 
-  public Iterable<String> allUsedLangNamespaces(Iterable<IResource> cluster) {
-    Iterable<IResource> mres = Sequence.fromIterable(cluster).where(new IWhereFilter<IResource>() {
+
+
+  public Iterable<String> allUsedLangNamespaces(Iterable<? extends IResource> cluster) {
+    Iterable<MResource> mres = Sequence.fromIterable(cluster).where(new IWhereFilter<IResource>() {
       public boolean accept(IResource r) {
-        return r instanceof IMResource;
+        return r instanceof MResource;
+      }
+    }).select(new ISelector<IResource, MResource>() {
+      public MResource select(IResource r) {
+        return ((MResource) r);
       }
     }).toListSequence();
-    Iterable<IModule> mods = Sequence.fromIterable(mres).select(new ISelector<IResource, IModule>() {
-      public IModule select(IResource r) {
-        return ((IMResource) r).module();
+    Iterable<IModule> mods = Sequence.fromIterable(mres).select(new ISelector<MResource, IModule>() {
+      public IModule select(MResource r) {
+        return r.module();
       }
     });
     return allNamespaces(mods);

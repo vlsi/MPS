@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -76,7 +76,11 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
 
   protected synchronized void replaceModel(Runnable replacer) {
     ModelAccess.assertLegalWrite();
+
     final SModel oldSModel = getCurrentModelInternal();
+    notifyModelReplaced(oldSModel);
+
+
     if (oldSModel != null) {
       oldSModel.setModelDescriptor(null);
     }
@@ -88,18 +92,5 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
       newModel.setModelDescriptor(this);
     }
     MPSModuleRepository.getInstance().invalidateCaches();
-    Runnable modelReplacedNotifier = new Runnable() {
-      public void run() {
-        fireModelReplaced();
-        if (oldSModel != null) {
-          oldSModel.dispose();
-        }
-      }
-    };
-    if (ModelAccess.instance().isInEDT()) {
-      modelReplacedNotifier.run();
-    } else {
-      ModelAccess.instance().runWriteInEDT(modelReplacedNotifier);
-    }
   }
 }

@@ -826,7 +826,7 @@
       <varInfo nodeId="4774692914340656299" varName="resourcePath" />
       <varInfo nodeId="4774692914340656297" varName="resourceURL" />
     </scopeInfo>
-    <unitInfo nodeId="4774692914340655648" fileName="PathManager.java" startLine="78" startPosition="49" endLine="83" endPosition="3" unitName="jetbrains.mps.tool.builder.util.PathManager$1" />
+    <unitInfo nodeId="4774692914340655648" fileName="PathManager.java" startLine="78" startPosition="48" endLine="83" endPosition="3" unitName="jetbrains.mps.tool.builder.util.PathManager$1" />
     <unitInfo nodeId="4774692914340655668" fileName="PathManager.java" startLine="84" startPosition="53" endLine="89" endPosition="3" unitName="jetbrains.mps.tool.builder.util.PathManager$2" />
     <unitInfo nodeId="4774692914340657036" fileName="PathManager.java" startLine="456" startPosition="0" endLine="462" endPosition="0" unitName="jetbrains.mps.tool.builder.util.PathManager$StringHolder" />
     <unitInfo nodeId="4774692914340655529" fileName="PathManager.java" startLine="32" startPosition="0" endLine="463" endPosition="0" unitName="jetbrains.mps.tool.builder.util.PathManager" />

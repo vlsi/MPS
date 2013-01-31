@@ -6,10 +6,9 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class GResource extends MultiTuple._4<IModule, SModelDescriptor, Iterable<SModelDescriptor>, GenerationStatus> implements IResource, IGResource {
+public class GResource extends MultiTuple._4<IModule, SModelDescriptor, Iterable<SModelDescriptor>, GenerationStatus> implements IGResource {
   public GResource() {
     super();
   }

@@ -16,9 +16,10 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.GlobalScope;
 
 public class MissingDependenciesFixer {
   private static Logger LOG = Logger.getLogger(MissingDependenciesFixer.class);
@@ -69,10 +70,10 @@ public class MissingDependenciesFixer {
           wereChanges = true;
         }
         for (ModuleReference namespace : CollectionUtil.union(myModelDescriptor.getSModel().importedLanguages(), myModelDescriptor.getSModel().engagedOnGenerationLanguages())) {
-          if (moduleScope.getLanguage(namespace) != null) {
+          if (ScopeOperations.resolveModule(moduleScope, namespace, Language.class) != null) {
             continue;
           }
-          Language lang = GlobalScope.getInstance().getLanguage(namespace);
+          Language lang = ScopeOperations.resolveModule(moduleScope, namespace, Language.class);
           if (lang == null) {
             continue;
           }
@@ -81,10 +82,10 @@ public class MissingDependenciesFixer {
           wereChanges = true;
         }
         for (ModuleReference devKitNamespace : myModelDescriptor.getSModel().importedDevkits()) {
-          if (moduleScope.getDevKit(devKitNamespace) != null) {
+          if (ScopeOperations.resolveModule(moduleScope, devKitNamespace, DevKit.class) != null) {
             continue;
           }
-          DevKit devKit = GlobalScope.getInstance().getDevKit(devKitNamespace);
+          DevKit devKit = ScopeOperations.resolveModule(GlobalScope.getInstance(), devKitNamespace, DevKit.class);
           if (devKit == null) {
             continue;
           }

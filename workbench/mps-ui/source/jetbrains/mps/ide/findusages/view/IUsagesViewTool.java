@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,21 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module;
+package jetbrains.mps.ide.findusages.view;
 
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import com.intellij.openapi.components.BaseComponent;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
 
-/**
- * Gives a convenient way to access and resolve all visible modules and their models
- */
-public interface SModuleScope {
-
-  Iterable<SModule> getModules();
-
-  Iterable<SModel> getModels();
-
-  SModel resolve(SModelReference reference);
-
-  SModule resolve(SModuleReference reference);
+public interface IUsagesViewTool extends BaseComponent {
+  public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean forceNewTab, final String notFoundMsg);
 }

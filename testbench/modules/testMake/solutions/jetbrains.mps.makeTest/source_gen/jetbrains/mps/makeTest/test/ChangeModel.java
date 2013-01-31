@@ -5,6 +5,7 @@ package jetbrains.mps.makeTest.test;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 
@@ -21,6 +22,6 @@ public abstract class ChangeModel {
   }
 
   public void rollback(SModel model) {
-    ((DefaultSModelDescriptor) model.getModelDescriptor()).replaceModel(this.myModel, ModelLoadingState.FULLY_LOADED);
+    SModelRepository.getInstance().replaceModel((DefaultSModelDescriptor) model.getModelDescriptor(), this.myModel, ModelLoadingState.FULLY_LOADED);
   }
 }

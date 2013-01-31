@@ -13,44 +13,127 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class BaseScope implements IScope {
-  public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
-    return getModelDescriptor(new SModelReference(fqName, null));
-  }
-
-  public final Language getLanguage(String fqName) {
-    return getLanguage(new ModuleReference(fqName));
-  }
-
-  public Iterable<SModelDescriptor> getOwnModelDescriptors() {
-    return getModelDescriptors();
-  }
-
   @Override
-  public Iterable<SModule> getModules() {
-    return (Iterable) getVisibleModules();
-  }
+  public abstract Iterable<SModule> getModules();
 
   @Override
   public Iterable<SModel> getModels() {
-    return (Iterable) getModelDescriptors();
-  }
-
-  @Override
-  public SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
-    return getModelDescriptor((SModelReference) reference);  //To change body of implemented methods use File | Settings | File Templates.
+    List<SModel> models = new ArrayList<SModel>();
+    for (SModule module : getModules()) {
+      for (SModel model : module.getModels()) {
+        models.add(model);
+      }
+    }
+    return models;
   }
 
   @Override
   public SModule resolve(SModuleReference reference) {
-    // TODO (implement)
+    // todo: review this code!
+    // todo: extract if outside from for statement?
+    for (SModule module : getModules()) {
+      if (reference.getModuleId() != null) {
+        if (reference.getModuleId().equals(module.getModuleId())) {
+          return module;
+        }
+      } else {
+        if (module.getModuleName().equals(reference.getModuleName())) {
+          return module;
+        }
+      }
+    }
     return null;
+  }
+
+  @Override
+  public SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
+    // todo: like module resolve!
+    for (SModel model : getModels()) {
+      if (reference.getModelId() != null) {
+        if (model.getModelReference().equals(reference)) {
+          return model;
+        }
+      } else {
+        if (model.getModelName().equals(reference.getModelName())) {
+          return model;
+        }
+      }
+    }
+    return null;
+  }
+
+  // deprecated stuff
+  // remove after MPS 3.0
+  @Deprecated
+  @Override
+  public Language getLanguage(SModuleReference moduleReference) {
+    return ScopeOperations.resolveModule(this, moduleReference, Language.class);
+  }
+
+  @Deprecated
+  @Override
+  public DevKit getDevKit(ModuleReference ref) {
+    return ScopeOperations.resolveModule(this, ref, DevKit.class);
+  }
+
+  @Deprecated
+  @Override
+  public final SModelDescriptor getModelDescriptor(SModelReference modelReference) {
+    return ScopeOperations.getModelDescriptor(this, modelReference);
+  }
+
+  @Deprecated
+  @Override
+  public final Iterable<SModelDescriptor> getModelDescriptors() {
+    return ScopeOperations.getModelDescriptors(this);
+  }
+
+  @Deprecated
+  @Override
+  public final Iterable<Language> getVisibleLanguages() {
+    return ScopeOperations.getModules(this, Language.class);
+  }
+
+  @Deprecated
+  @Override
+  public final Iterable<DevKit> getVisibleDevkits() {
+    return ScopeOperations.getModules(this, DevKit.class);
+  }
+
+  @Deprecated
+  @Override
+  public final Iterable<IModule> getVisibleModules() {
+    return ScopeOperations.getModules(this, IModule.class);
+  }
+
+  @Deprecated
+  @Override
+  public final SModelDescriptor getModelDescriptor(SModelFqName fqName) {
+    return ScopeOperations.getModelDescriptor(this, fqName);
+  }
+
+  @Deprecated
+  @Override
+  public final Language getLanguage(String fqName) {
+    return ScopeOperations.getLanguage(this, fqName);
+  }
+
+  @Deprecated
+  @Override
+  public final Iterable<SModelDescriptor> getOwnModelDescriptors() {
+    throw new IllegalStateException();
   }
 }

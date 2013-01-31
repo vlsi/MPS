@@ -15,41 +15,26 @@
  */
 package jetbrains.mps.ide.findusages.model;
 
-import jetbrains.mps.ide.BootstrapScope;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
-import jetbrains.mps.ide.findusages.model.holders.*;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
-import jetbrains.mps.project.AbstractModule.ModuleScope;
-import jetbrains.mps.project.Project.ProjectScope;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.ide.findusages.model.holders.IHolder;
+import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
+import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
+import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
+import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
+import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModel;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class SearchQuery implements IExternalizeable {
-  private static final Logger LOG = Logger.getLogger(SearchQuery.class);
-
-  private static final String SCOPE = "scope";
-  private static final String SCOPE_TYPE = "scope_type";
-
   private static final String HOLDER = "holder";
   private static final String HOLDER_CLASS = "holder_class";
-
-  private static final String SCOPE_TYPE_GLOBAL = "global_scope";
-  private static final String SCOPE_TYPE_PROJECT = "project_scope";
-  private static final String SCOPE_TYPE_MODULE = "module_scope";
-  private static final String SCOPE_TYPE_MODELS = "model_scope";
-  private static final String SCOPE_TYPE_BOOTSTRAP = "bootstrap_scope";
-
-  private static final String MODULE_ID = "module_id";
-  private static final String MODELS = "models";
-  private static final String MODEL = "model";
-  private static final String MODEL_ID = "model_id";
 
   private IScope myScope;
   private IHolder myObjectHolder = new VoidHolder();
@@ -93,38 +78,11 @@ public class SearchQuery implements IExternalizeable {
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {
-    Element scopeXML = new Element(SCOPE);
-    if (myScope instanceof GlobalScope) {
-      scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_GLOBAL);
-    } else if (myScope instanceof ProjectScope) {
-      scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_PROJECT);
-    } else if (myScope instanceof ModuleScope) {
-      scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODULE);
-      AbstractModule abstractModule = (AbstractModule) ((ModuleScope) myScope).getModule();
-      if (abstractModule == null) {
-        LOG.warning("Owner is not found for module");
-        throw new CantSaveSomethingException("Module is not found for module. Maybe the module was deleted.");
-      }
-      scopeXML.setAttribute(MODULE_ID, abstractModule.getModuleFqName());
-    } else if (myScope instanceof ModelsOnlyScope) {
-      scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODELS);
-      Element modelsXML = new Element(MODELS);
-      for (SModelDescriptor sModelDescriptor : ((ModelsOnlyScope) myScope).getModelDescriptors()) {
-        Element modelXML = new Element(MODEL);
-        if (sModelDescriptor == null) {
-          LOG.warning("No model descriptor for model. Maybe the model was deleted");
-          throw new CantSaveSomethingException("Module is not found for module. Maybe the model was deleted");
-        }
-        modelXML.setAttribute(MODEL_ID, sModelDescriptor.getSModelReference().toString());
-        modelsXML.addContent(modelXML);
-      }
-      scopeXML.addContent(modelsXML);
-    } else if (myScope instanceof BootstrapScope) {
-      scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_BOOTSTRAP);
+    if (myScope instanceof FindUsagesScope) {
+      FindUsagesScope.save((FindUsagesScope) myScope, element, project);
     } else {
-      throw new CantSaveSomethingException("unsupported scope " + myScope.getClass());
+      throw new CantSaveSomethingException("unsupported scope " + myScope.getClass() + "; should be descendant of FindUsagesScope class");
     }
-    element.addContent(scopeXML);
 
     Element holderXML = new Element(HOLDER);
     holderXML.setAttribute(HOLDER_CLASS, myObjectHolder.getClass().getName());
@@ -133,40 +91,7 @@ public class SearchQuery implements IExternalizeable {
   }
 
   public void read(Element element, Project project) throws CantLoadSomethingException {
-    Element scopeXML = element.getChild(SCOPE);
-    String scopeType = scopeXML.getAttribute(SCOPE_TYPE).getValue();
-    if (scopeType.equals(SCOPE_TYPE_GLOBAL)) {
-      myScope = GlobalScopeMinusTransient.getInstance();
-    } else if (scopeType.equals(SCOPE_TYPE_PROJECT)) {
-      myScope = project.getScope();
-    } else if (scopeType.equals(SCOPE_TYPE_MODULE)) {
-      String moduleUID = scopeXML.getAttribute(MODULE_ID).getValue();
-      myScope = null;
-      for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
-        if (module.getModuleFqName().equals(moduleUID)) {
-          myScope = module.getScope();
-        }
-      }
-      if (myScope == null) {
-        LOG.warning("module scope not found for module  " + moduleUID);
-        throw new CantLoadSomethingException("module scope not found for module  " + moduleUID);
-      }
-    } else if (scopeType.equals(SCOPE_TYPE_MODELS)) {
-      Element modelsXML = scopeXML.getChild(MODELS);
-      List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-      for (Element modelXML : (List<Element>) modelsXML.getChildren(MODEL)) {
-        String modelUID = modelXML.getAttribute(MODEL_ID).getValue();
-        SModelDescriptor sModelDescriptor = project.getScope().getModelDescriptor(SModelReference.fromString(modelUID));
-        if (sModelDescriptor == null) {
-          LOG.warning("model scope not found for model " + modelUID);
-          throw new CantLoadSomethingException("model scope not found for model " + modelUID);
-        }
-      }
-      myScope = new ModelsOnlyScope(models.toArray(new SModelDescriptor[models.size()]));
-    }
-    if (scopeType.equals(SCOPE_TYPE_BOOTSTRAP)) {
-      myScope = BootstrapScope.getInstance();
-    }
+    myScope = FindUsagesScope.load(element, project);
 
     Element holderXML = element.getChild(HOLDER);
     String holderClass = holderXML.getAttributeValue(HOLDER_CLASS);

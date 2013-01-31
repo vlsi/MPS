@@ -19,7 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 
 import java.util.ArrayList;
@@ -40,6 +40,12 @@ public class CachesManager implements CoreComponent {
   private SModelRepositoryAdapter myModelRepoListener = new SModelRepositoryAdapter() {
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       onModelRemoved(modelDescriptor);
+    }
+
+    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+      for (SModelDescriptor replacedModel : replacedModels) {
+        onModelRemoved(replacedModel);
+      }
     }
   };
 
@@ -170,10 +176,6 @@ public class CachesManager implements CoreComponent {
       myCache = cache;
     }
 
-    @Override
-    public void modelReplaced(SModelDescriptor md) {
-      CachesManager.getInstance().removeCache(myCache.getKey());
-    }
 
     public void languageAdded(SModelLanguageEvent event) {
       myCache.languageAdded(event);

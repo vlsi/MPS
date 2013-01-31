@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.ide.ui.UISettings;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.components.JBRadioButton;
@@ -56,39 +55,36 @@ class EditorSettingsPreferencesPage {
   private JSlider myBlinkingRateSlider;
   private final EditorComponent myBlinkingDemo;
   private Timer myTimer;
-  private JRadioButton myDontShow;
-  private JRadioButton myTabPerAspect;
-  private JRadioButton myTabPerNode;
-  private JRadioButton myAllTabs;
-  private JBRadioButton myActivateMRUEditorOnCloseRadio;
-  private JBRadioButton myActivateRightNeighbouringTabRadioButton;
-  private JBRadioButton myActivateLeftEditorOnCloseRadio;
+  private JBRadioButton myDontShow;
+  private JBRadioButton myTabPerAspect;
+  private JBRadioButton myTabPerNode;
+  private JBRadioButton myAllTabs;
 
-  private JRadioButton myFirstSelection;
+  private JBRadioButton myFirstSelection;
   private EditorSettings mySettings;
 
   public EditorSettingsPreferencesPage(EditorSettings settings) {
     mySettings = settings;
-    JPanel panel = new JPanel(new GridLayoutManager(5, 1, new JBInsets(5,5,5,5), 10, 10));
+    JPanel panel = new JPanel(new GridLayoutManager(4, 1, new JBInsets(5,5,5,5), 10, 10));
 
     ButtonGroup group = new ButtonGroup();
 
     JPanel editorTabsRB = new JPanel(new GridLayout(4,1));
     editorTabsRB.setBorder(IdeBorderFactory.createTitledBorder("Editor Tabs", true));
 
-    myDontShow = new JRadioButton("Do not show tabs");
+    myDontShow = new JBRadioButton("Do not show tabs");
     editorTabsRB.add(myDontShow);
     group.add(myDontShow);
 
-    myTabPerAspect = new JRadioButton("Show 1 tab for each aspect");
+    myTabPerAspect = new JBRadioButton("Show 1 tab for each aspect");
     editorTabsRB.add(myTabPerAspect);
     group.add(myTabPerAspect);
 
-    myTabPerNode = new JRadioButton("Each aspect node in a separate tab");
+    myTabPerNode = new JBRadioButton("Each aspect node in a separate tab");
     editorTabsRB.add(myTabPerNode);
     group.add(myTabPerNode);
 
-    myAllTabs = new JRadioButton("Each aspect node in a separate tab, tabs for non-existing aspects");
+    myAllTabs = new JBRadioButton("Each aspect node in a separate tab, tabs for non-existing aspects");
     editorTabsRB.add(myAllTabs);
     group.add(myAllTabs);
 
@@ -96,25 +92,6 @@ class EditorSettingsPreferencesPage {
     myFirstSelection.setSelected(true);
 
     panel.add(editorTabsRB, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
-
-    group = new ButtonGroup();
-
-    JPanel closeTabRB = new JPanel(new GridLayout(3,1));
-    closeTabRB.setBorder(IdeBorderFactory.createTitledBorder("When closing active editor", true));
-
-    myActivateMRUEditorOnCloseRadio = new JBRadioButton("Activate most recently opened tab");
-    closeTabRB.add(myActivateMRUEditorOnCloseRadio);
-    group.add(myActivateMRUEditorOnCloseRadio);
-
-    myActivateRightNeighbouringTabRadioButton = new JBRadioButton("Activate right neighbouring tab");
-    closeTabRB.add(myActivateRightNeighbouringTabRadioButton);
-    group.add(myActivateRightNeighbouringTabRadioButton);
-
-    myActivateLeftEditorOnCloseRadio = new JBRadioButton("Activate left neighbouring tab");
-    closeTabRB.add(myActivateLeftEditorOnCloseRadio);
-    group.add(myActivateLeftEditorOnCloseRadio);
-
-    panel.add(closeTabRB, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     JPanel fontPropertiesPanel = new JPanel(new GridLayoutManager(5, 2, JBInsets.NONE, 2, 2));
 
@@ -144,7 +121,7 @@ class EditorSettingsPreferencesPage {
     myIndentSizeComboBox = new JComboBox(indents.toArray());
     fontPropertiesPanel.add(myIndentSizeComboBox, getEditorConstraint(4, 1));
 
-    panel.add(fontPropertiesPanel, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+    panel.add(fontPropertiesPanel, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     JPanel checkboxes = new JPanel(new GridLayout(3, 1));
     myUseBraces = new JCheckBox("Use Braces");
@@ -156,7 +133,7 @@ class EditorSettingsPreferencesPage {
     myPowerSaveModeCheckBox = new JCheckBox("Power Save Mode");
     checkboxes.add(myPowerSaveModeCheckBox);
 
-    panel.add(checkboxes, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+    panel.add(checkboxes, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     JPanel colorSettingsPanel = new JPanel();
     Border border = BorderFactory.createEmptyBorder(5, 5, 0, 0);
@@ -199,7 +176,7 @@ class EditorSettingsPreferencesPage {
     };
     panel.addMouseListener(adapter);
 
-    panel.add(colorSettingsPanel, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+    panel.add(colorSettingsPanel, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     myBlinkingDemo.setBackground(fontPropertiesPanel.getBackground());
 
@@ -309,10 +286,6 @@ class EditorSettingsPreferencesPage {
         mySettings.getState().setShowGrayed(myAllTabs.isSelected());
         applyState();
 
-        UISettings uiSettings = UISettings.getInstance();
-        uiSettings.ACTIVATE_MRU_EDITOR_ON_CLOSE = myActivateMRUEditorOnCloseRadio.isSelected();
-        uiSettings.ACTIVATE_RIGHT_EDITOR_ON_CLOSE = myActivateRightNeighbouringTabRadioButton.isSelected();
-
         mySettings.updateCachedValue();
 
         mySettings.fireEditorSettingsChanged();
@@ -350,12 +323,9 @@ class EditorSettingsPreferencesPage {
     boolean sameFgColor = mySelectionForegroundColorComponent.getColor().equals(EditorSettings.getDefaultSelectionForegroundColor());
     boolean sameBlinkingRate = myBlinkingRateSlider.getValue() == (int) (SLIDER_RATIO / (long) CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis());
     boolean sameTabs = myFirstSelection.isSelected();
-    UISettings uiSettings = UISettings.getInstance();
-    boolean sameCloseActiveTabs = uiSettings.ACTIVATE_MRU_EDITOR_ON_CLOSE == myActivateMRUEditorOnCloseRadio.isSelected()
-      && uiSettings.ACTIVATE_RIGHT_EDITOR_ON_CLOSE == myActivateRightNeighbouringTabRadioButton.isSelected();
 
     return !(sameTextWidth && sameIndentSize && sameAntialiasing && sameUseBraces && samePowerSaveMode
-      && sameFontSize && sameFontFamily && sameLineSpacing && sameBgColor && sameFgColor && sameBlinkingRate && sameTabs && sameCloseActiveTabs);
+      && sameFontSize && sameFontFamily && sameLineSpacing && sameBgColor && sameFgColor && sameBlinkingRate && sameTabs);
   }
 
   public void reset() {
@@ -389,11 +359,6 @@ class EditorSettingsPreferencesPage {
 
     applyState();
     myFirstSelection.setSelected(true);
-
-    UISettings uiSettings = UISettings.getInstance();
-    if (uiSettings.ACTIVATE_MRU_EDITOR_ON_CLOSE) myActivateMRUEditorOnCloseRadio.setSelected(true);
-    else if (uiSettings.ACTIVATE_RIGHT_EDITOR_ON_CLOSE) myActivateRightNeighbouringTabRadioButton.setSelected(true);
-    else myActivateLeftEditorOnCloseRadio.setSelected(true);
 
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {

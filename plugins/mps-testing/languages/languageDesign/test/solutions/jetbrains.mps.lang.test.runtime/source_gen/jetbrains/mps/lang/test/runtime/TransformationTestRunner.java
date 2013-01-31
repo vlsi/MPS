@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.Arrays;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -127,6 +128,9 @@ public class TransformationTestRunner {
   }
 
   private void clearSystemClipboard() {
+    if (GraphicsEnvironment.isHeadless()) {
+      return;
+    }
     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(TransformationTestRunner.EMPTY_CLIPBOARD_CONTENT, TransformationTestRunner.EMPTY_CLIPBOARD_CONTENT);
   }
 

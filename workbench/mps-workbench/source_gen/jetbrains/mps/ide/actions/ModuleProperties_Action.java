@@ -68,6 +68,7 @@ public class ModuleProperties_Action extends BaseAction {
     try {
       MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
       final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()), configurable, "#MPSPropertiesConfigurable");
+      configurable.setParentForCallBack(configurableEditor);
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           configurableEditor.show();

@@ -102,11 +102,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -137,6 +133,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -665,6 +662,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         updateStatusBarMessage();
       }
     });
+
+    SModelRepository.getInstance().addModelRepositoryListener(mySimpleModelListener);
   }
 
   protected void notifyCreation() {
@@ -686,7 +685,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       }
     };
-    if (ModelAccess.instance().isInEDT()){
+    if (ModelAccess.instance().isInEDT()) {
       notifyCreationRunnable.run();
     } else {
       ModelAccess.instance().runReadInEDT(notifyCreationRunnable);
@@ -1208,7 +1207,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     final EditorContext editorContext = createEditorContextForActions();
     for (final EditorCellKeyMapAction action : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
       try {
-        if (!(action.isShownInPopupMenu() && action.canExecute(null, (jetbrains.mps.openapi.editor.EditorContext) editorContext))) continue;
+        if (!(action.isShownInPopupMenu() && action.canExecute(null, (jetbrains.mps.openapi.editor.EditorContext) editorContext)))
+          continue;
         BaseAction mpsAction = new MyBaseAction(action, editorContext);
         mpsAction.addPlace(ActionPlace.EDITOR);
         result.add(mpsAction);
@@ -1294,6 +1294,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myHighlightManager.dispose();
 
     removeOurListeners();
+    SModelRepository.getInstance().removeModelRepositoryListener(mySimpleModelListener);
 
     EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
@@ -1402,13 +1403,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private void addOurListeners(@NotNull SModelDescriptor sm) {
     myEventsCollector.add(sm);
-    sm.addModelListener(mySimpleModelListener);
     myModelDescriptorsWithListener.add(sm);
   }
 
   private void removeOurListeners(@NotNull SModelDescriptor sm) {
     myEventsCollector.remove(sm);
-    sm.removeModelListener(mySimpleModelListener);
     myModelDescriptorsWithListener.remove(sm);
   }
 
@@ -2311,7 +2310,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return context != null ? context : TypeContextManager.getInstance().acquireTypecheckingContext(getNodeForTypechecking(), this);
   }
 
-  public ITypeContextOwner getTypecheckingContextOwner () {
+  public ITypeContextOwner getTypecheckingContextOwner() {
     return this;
   }
 
@@ -2531,11 +2530,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private List<INodeSubstituteAction> getMatchingActions(final EditorCell editorCell, final NodeSubstituteInfo substituteInfo, final boolean isSmart, final String pattern) {
-    return TypeContextManager.getInstance().runTypeCheckingComputation(this, myNode, new Computation<List<INodeSubstituteAction>>() {
+    return ModelAccess.instance().runReadAction(new Computable<List<INodeSubstituteAction>>() {
       @Override
-      public List<INodeSubstituteAction> compute(TypeCheckingContext context) {
-        return isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
-          substituteInfo.getMatchingActions(pattern, false);
+      public List<INodeSubstituteAction> compute() {
+        return TypeContextManager.getInstance().runTypeCheckingComputation(EditorComponent.this, myNode, new Computation<List<INodeSubstituteAction>>() {
+          @Override
+          public List<INodeSubstituteAction> compute(TypeCheckingContext context) {
+            return isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
+              substituteInfo.getMatchingActions(pattern, false);
+          }
+        });
       }
     });
   }
@@ -3166,24 +3170,39 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private class MySimpleModelListener extends SModelAdapter {
-    public void modelReplaced(final SModelDescriptor sm) {
+  private class MySimpleModelListener extends SModelRepositoryAdapter {
+    @Override
+    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
       assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
-      if (myNode != null) {
-        assertModelNotDisposed();
-        if (myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
-          clearModelDisposedTrace();
-          SNodeId oldId = myNode.getNodeId();
-          myNode = sm.getSModel().getNodeById(oldId);
+      boolean needToRebuild = false;
+
+      for (SModelDescriptor descriptor : replacedModels) {
+        if (myModelDescriptorsWithListener.contains(descriptor)) {
+          needToRebuild = true;
+        }
+        if (myNode != null) {
+          assertModelNotDisposed();
+          if (myNode.getModel().getSModelReference().equals(descriptor.getSModelReference())) {
+            clearModelDisposedTrace();
+            SNodeId oldId = myNode.getNodeId();
+            myNode = descriptor.getSModel().getNodeById(oldId);
+            needToRebuild = true;
+          }
         }
       }
-      rebuildEditorContent();
+
+      if (needToRebuild) {
+        rebuildEditorContent();
+      }
     }
 
+
     @Override
-    public void beforeModelDisposed(SModel sm) {
-      if (myNode != null && myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
-        myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
+    public void modelRemoved(SModelDescriptor modelDescriptor) {
+      if (myModelDescriptorsWithListener.contains(modelDescriptor)) {
+        if (myNode != null && myNode.getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
+          myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
+        }
       }
     }
   }

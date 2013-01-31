@@ -20,6 +20,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+/**
+ * The implementer must correctly define equals() and hashCode() for implementations
+ */
 public interface NodeDescriptor {
   String getName();
 

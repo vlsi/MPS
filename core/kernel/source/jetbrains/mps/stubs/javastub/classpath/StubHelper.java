@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.stubs.javastub.classpath;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class StubHelper {
@@ -44,7 +44,7 @@ public class StubHelper {
 
     if (moduleRef != null) {
       moduleName = moduleRef.getModuleName();
-      id = SModelId.foreign(name.getStereotype(), moduleRef.getModuleId().toString(), name.getLongName());
+      id = jetbrains.mps.smodel.SModelId.foreign(name.getStereotype(), moduleRef.getModuleId().toString(), name.getLongName());
     } else {
       id = StubMigrationHelper.convertModelUIDAny(name.getStereotype() + "#" + name.getLongName(), forceResolve);
     }

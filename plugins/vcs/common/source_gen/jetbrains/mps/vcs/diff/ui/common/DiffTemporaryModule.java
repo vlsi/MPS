@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.CopyUtil;
@@ -79,7 +80,7 @@ public class DiffTemporaryModule extends AbstractModule {
     // if we can't find model using full reference, try to find by fq-name 
     // this is needed for viewing diff on models saved before MPS 2.0 M5 
     for (IScope scope : ListSequence.fromList(scopes)) {
-      SModelDescriptor md = scope.getModelDescriptor(reference.getSModelFqName());
+      SModelDescriptor md = ScopeOperations.getModelDescriptor(scope, reference.getSModelFqName());
       if (md != null) {
         return md;
       }
@@ -144,11 +145,11 @@ public class DiffTemporaryModule extends AbstractModule {
     }
   }
 
-  public static SModelId genMergeSModelId(SModelId modelId, String version) {
+  public static org.jetbrains.mps.openapi.model.SModelId genMergeSModelId(org.jetbrains.mps.openapi.model.SModelId modelId, String version) {
     return SModelId.foreign("merge_" + version + "#" + modelId.toString());
   }
 
-  public static SModelId getOriginalSModelId(SModelId.ForeignSModelId modelId) {
+  public static org.jetbrains.mps.openapi.model.SModelId getOriginalSModelId(SModelId.ForeignSModelId modelId) {
     String id = modelId.getId();
     return SModelId.fromString(id.substring(id.indexOf("#") + 1));
   }
@@ -169,8 +170,8 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     @Override
-    public SModelDescriptor getModelDescriptor(SModelReference reference) {
-      return findModel(reference);
+    public org.jetbrains.mps.openapi.model.SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
+      return findModel((SModelReference) reference);
     }
   }
 

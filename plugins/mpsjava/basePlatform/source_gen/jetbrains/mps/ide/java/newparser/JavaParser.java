@@ -26,8 +26,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -62,10 +60,9 @@ public class JavaParser {
     Map<String, String> settings = new HashMap<String, String>();
     settings.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_6);
     settings.put(CompilerOptions.OPTION_DocCommentSupport, "enabled");
-    TypeNameResolver typeResolver = new TypeNameResolver(pkg);
     ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ?
-      new ASTConverter(typeResolver, stubsMode) :
-      new FullASTConverter(null, typeResolver)
+      new ASTConverter(stubsMode) :
+      new FullASTConverter(null)
     );
 
     List<SNode> resultNodes = new ArrayList<SNode>();
@@ -143,7 +140,6 @@ public class JavaParser {
     // now insert comments 
     attachComments(source, converter, util.recordedParsingInformation);
 
-
     return new JavaParser.JavaParseResult(resultNodes, resultPackageName, problemDescription(util.recordedParsingInformation));
   }
 
@@ -198,8 +194,12 @@ public class JavaParser {
           }
         }).count();
         for (String line : ListSequence.fromList(CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1]))))) {
+          String line_ = line;
+          if (line.startsWith(" ")) {
+            line_ = line.substring(1);
+          }
           SNode commentText = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TextCommentPart", null);
-          SPropertyOperations.set(commentText, "text", line);
+          SPropertyOperations.set(commentText, "text", line_);
           SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
           ListSequence.fromList(SLinkOperations.getTargets(commentLine, "commentPart", true)).addElement(commentText);
           ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).insertElement(pos++, commentLine);
@@ -212,14 +212,28 @@ public class JavaParser {
   }
 
   public void annotateWithmports(CompilationUnitDeclaration compResult, SNode clas) {
-    // <node> 
-    AttributeOperations.createAndSetAttrbiute(clas, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), "jetbrains.mps.baseLanguage.structure.JavaImports");
+    SNode imports = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImports", null);
+
+    // putting first: current package in terms of source code 
+    if (compResult.currentPackage != null) {
+      SNode currPkg = makeImport(compResult.currentPackage);
+      SPropertyOperations.set(currPkg, "onDemand", "" + (true));
+      ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).addElement(currPkg);
+    }
+
     if (compResult.imports != null) {
       for (ImportReference imprt : compResult.imports) {
-        // <node> 
-        ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(clas, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))), "entries", true)).addElement(makeImport(imprt));
+        ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).addElement(makeImport(imprt));
       }
     }
+
+    // inserting it in the beginning 
+    clas.insertChild("smodelAttribute", imports, null);
+
+    // we want to insert imports section before any javadoc 
+    // because javadoc is data while imports section is meta-data for assisting class resolving 
+
+    // <node> 
     // <node> 
   }
 
@@ -230,6 +244,7 @@ public class JavaParser {
     boolean isStatic = impRef.isStatic();
 
     SPropertyOperations.set(imp, "onDemand", "" + (onDemand));
+    SPropertyOperations.set(imp, "static", "" + (isStatic));
 
     char[][] toks = impRef.getImportName();
     StringBuffer sb = new StringBuffer();
@@ -335,6 +350,7 @@ public class JavaParser {
         if (!(ref instanceof DynamicReference)) {
           continue;
         }
+        // FIXME temp hack around typesystem looping when resolving certain dyn.references 
         if (ref.getRole().equals("baseMethodDeclaration")) {
           continue;
         }

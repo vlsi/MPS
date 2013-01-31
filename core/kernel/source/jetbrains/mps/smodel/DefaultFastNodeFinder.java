@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
@@ -30,12 +30,14 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   private SModelDescriptor myModelDescriptor;
   private boolean myInitialized;
   private SModelAdapter myListener = new MySModelAdapter();
+  private SModelRepositoryAdapter myRepositoryAdapter = new MySModelRepositoryAdapter();
 
   private Map<String, Set<SNode>> myNodes = new THashMap<String, Set<SNode>>();
 
   public DefaultFastNodeFinder(SModel model) {
     myModel = model;
     myModelDescriptor = model.getModelDescriptor();
+    SModelRepository.getInstance().addModelRepositoryListener(myRepositoryAdapter);
     myModelDescriptor.addModelListener(myListener);
   }
 
@@ -46,6 +48,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       myNodes.clear();
     }
     myModelDescriptor.removeModelListener(myListener);
+    SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryAdapter);
   }
 
   private void initCache() {
@@ -178,12 +181,18 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
         removeFromCache(event.getRoot());
       }
     }
+  }
+
+
+  private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
 
     @Override
-    public void modelReplaced(SModelDescriptor md) {
-      synchronized (myLock) {
-        myInitialized = false;
-        myNodes.clear();
+    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+      if (replacedModels.contains(myModelDescriptor)) {
+        synchronized (myLock) {
+          myInitialized = false;
+          myNodes.clear();
+        }
       }
     }
   }

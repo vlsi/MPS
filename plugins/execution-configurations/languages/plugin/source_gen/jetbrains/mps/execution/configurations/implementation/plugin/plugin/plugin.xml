@@ -9,8 +9,8 @@
   <idea-version since-build="123.1" />
   
   <depends>jetbrains.mps.execution.languages</depends>
-  <depends>jetbrains.mps.debugger-java</depends>
-  <depends>jetbrains.mps.debugger-api</depends>
+  <depends>jetbrains.mps.debugger.java</depends>
+  <depends>jetbrains.mps.debugger.api</depends>
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_PluginInitializer</implementation-class>

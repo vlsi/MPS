@@ -2585,23 +2585,23 @@
     <unitInfo nodeId="4040588429969043134" fileName="ModuleReferenceExpression_Behavior.java" startLine="21" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/4040588429969441025">
-    <nodeInfo nodeId="4040588429969441041" fileName="LanguageReferenceExpression_Behavior.java" startLine="19" startPosition="107" endLine="20" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4040588429969441048" fileName="LanguageReferenceExpression_Behavior.java" startLine="20" startPosition="75" endLine="21" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4040588429969441055" fileName="LanguageReferenceExpression_Behavior.java" startLine="21" startPosition="98" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4040588429969441025" fileName="LanguageReferenceExpression_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4040588429969441025" fileName="LanguageReferenceExpression_Behavior.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVisibleModules_4040588429969394404#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/util/List;" />
-    <scopeInfo nodeId="4040588429969441027" fileName="LanguageReferenceExpression_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="4040588429969441025" fileName="LanguageReferenceExpression_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="4040588429969441041" fileName="LanguageReferenceExpression_Behavior.java" startLine="21" startPosition="107" endLine="22" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4040588429969441048" fileName="LanguageReferenceExpression_Behavior.java" startLine="22" startPosition="75" endLine="23" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4040588429969441055" fileName="LanguageReferenceExpression_Behavior.java" startLine="23" startPosition="120" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4040588429969441025" fileName="LanguageReferenceExpression_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4040588429969441025" fileName="LanguageReferenceExpression_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVisibleModules_4040588429969394404#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/util/List;" />
+    <scopeInfo nodeId="4040588429969441027" fileName="LanguageReferenceExpression_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="4040588429969441025" fileName="LanguageReferenceExpression_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="4040588429969441025" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4040588429969441031" fileName="LanguageReferenceExpression_Behavior.java" startLine="19" startPosition="107" endLine="22" endPosition="18">
+    <scopeInfo nodeId="4040588429969441031" fileName="LanguageReferenceExpression_Behavior.java" startLine="21" startPosition="107" endLine="24" endPosition="18">
       <varInfo nodeId="4040588429969441042" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4040588429969441025" fileName="LanguageReferenceExpression_Behavior.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="4040588429969441025" fileName="LanguageReferenceExpression_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="4040588429969441032" varName="scope" />
       <varInfo nodeId="4040588429969441025" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4040588429969441025" fileName="LanguageReferenceExpression_Behavior.java" startLine="14" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.LanguageReferenceExpression_Behavior" />
+    <unitInfo nodeId="4040588429969441025" fileName="LanguageReferenceExpression_Behavior.java" startLine="16" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.LanguageReferenceExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/559557797393017727">
     <nodeInfo nodeId="559557797393017735" fileName="ModelReferenceExpression_Behavior.java" startLine="15" startPosition="73" endLine="16" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

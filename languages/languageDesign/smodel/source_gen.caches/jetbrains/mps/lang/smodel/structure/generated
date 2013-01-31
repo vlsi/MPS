@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3d2lxr8unjxvzzi6xlbsruq2a8tb63l">
+<dependencies version="2" modelHash="4910mbjmakpguvsy3khn0aa4p992j3i">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22hsdy8hx47u1rwu32z4quczy3521b0" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-ddd1r4834vaj68yb6hzovu8y4f5ek6m">
@@ -201,13 +201,13 @@
   <source id="1139867745658" name="Node_ReplaceWithNewOperation" hash="-3r31lk77x9c3cnbcr11qvtxc9wd0e2o">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1139870260207" name="LinkList_AddChildOperation" hash="-4auy4zcvzhy4l2lqp72gzfqsvk13yoh">
+  <source id="1139870260207" name="LinkList_AddChildOperation" hash="-90474tbrgqqcf0eotzcgeo2rmwv3xq2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1140029532506" name="LinkList_InsertChildFirstOperation" hash="7kl1hk7hquywrlx27cc7n4j1rciudxj">
+  <source id="1140029532506" name="LinkList_InsertChildFirstOperation" hash="9ums6n9ym5bv2kfdcsszdnadnnkja3h">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1140129518788" name="Link_DeleteChildOperation" hash="e68juzffxejr9dwkemb7s34i9r11xfw">
+  <source id="1140129518788" name="Link_DeleteChildOperation" hash="bwysfwi0eu88qs104ug4bwnukhptfnr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1140131837776" name="Node_ReplaceWithAnotherOperation" hash="cyw6sx10xtroikglysbifw4uwlq8o0y">
@@ -282,7 +282,7 @@
   <source id="1145573345940" name="Node_GetAllSiblingsOperation" hash="-6v9rmgo6khfguiwc52ni48o05j1kt6c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1145994841052" name="SConceptPropertyAccess" hash="981qwy23nc8w8kjm015vpl3zb9ii43h">
+  <source id="1145994841052" name="SConceptPropertyAccess" hash="cdtt8eybpiw2fjyj4lz5cnuqhxnrqeq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1146171026731" name="Property_HasValue_Enum" hash="-mwe2fctsw7p60yqf8omn2hsvbsmn3u">
@@ -324,7 +324,7 @@
   <source id="1172008320231" name="Node_IsNotNullOperation" hash="8w9i8dn0xvuwpc3ii5bs83bl7665656">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1172244025706" name="LinkList_AddAllOperation" hash="6l37jyu3bm34k1xmec8iasveob41eti">
+  <source id="1172244025706" name="LinkList_AddAllOperation" hash="bv6sbiu8g5lizx7oeqfhiot39g83us7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1172323065820" name="Node_GetConceptOperation" hash="1t9hm86ksx9a5fswu0fx7z00p7dxezp">
@@ -417,7 +417,7 @@
   <source id="1212008292747" name="Model_GetLongNameOperation" hash="-b1l9wdyik67htbfk33xl7q84x9qdsgq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1215103457144" name="LinkList_RemoveAllChildrenOperation" hash="3nhhbynbts4h2au6seeto69pimwh6qa">
+  <source id="1215103457144" name="LinkList_RemoveAllChildrenOperation" hash="35wxhlkuba1kjafd2sye1dx2qvq5p8h">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1215467301810" name="Property_RemoveOperation" hash="buyk1q5dtoxcdgpv57yhs6anenhpgkv">

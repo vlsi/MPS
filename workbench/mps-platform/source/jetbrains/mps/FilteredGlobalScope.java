@@ -15,74 +15,23 @@
  */
 package jetbrains.mps;
 
-import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.FilteredScope;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class FilteredGlobalScope extends BaseScope implements IScope {
-  private GlobalScope myScope = GlobalScope.getInstance();
-
+public class FilteredGlobalScope extends FilteredScope {
   public FilteredGlobalScope() {
+    super(GlobalScope.getInstance());
   }
 
   @Override
-  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-    return myScope.getModelDescriptor(modelReference);
+  protected boolean acceptModule(SModule module) {
+    return VisibleModuleRegistry.getInstance().isVisible(module);
   }
 
   @Override
-  public Language getLanguage(SModuleReference moduleReference) {
-    return myScope.getLanguage(moduleReference);
-  }
-
-  @Override
-  public DevKit getDevKit(ModuleReference ref) {
-    return myScope.getDevKit(ref);
-  }
-
-  @Override
-  public Iterable<SModelDescriptor> getModelDescriptors() {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    for (SModelDescriptor modelDescriptor : myScope.getModelDescriptors()) {
-      if (VisibleModuleRegistry.getInstance().isVisible(modelDescriptor.getModule())) {
-         result.add(modelDescriptor);
-      }
-    }
-    return result;
-  }
-
-  @Override
-  public Iterable<Language> getVisibleLanguages() {
-    return filter(myScope.getVisibleLanguages());
-  }
-
-  public Iterable<Solution> getVisibleSolutions() {
-    return filter(myScope.getVisibleSolutions());
-  }
-
-  @Override
-  public Iterable<DevKit> getVisibleDevkits() {
-    return filter(myScope.getVisibleDevkits());
-  }
-
-  public Iterable<IModule> getVisibleModules() {
-    return filter(myScope.getVisibleModules());
-  }
-
-  private <T extends IModule> Iterable<T> filter(Iterable<T> list) {
-    List<T> result = new ArrayList<T>();
-    for (T module : list) {
-      if (VisibleModuleRegistry.getInstance().isVisible(module)) {
-        result.add(module);
-      }
-    }
-    return result;
+  protected boolean acceptModel(SModel model) {
+    return acceptModule(model.getModule());
   }
 }

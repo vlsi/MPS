@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -649,9 +649,7 @@ public class SModel {
         }
         for (SReference ref : node.getReferences()) {
           SModelReference targetModelRef = ref.getTargetSModelReference();
-          if (targetModelRef == null) {
-            LOG.error("target model of reference '" + ref.getRole() + "' is null in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
-          } else {
+          if (targetModelRef != null) {
             result.add(targetModelRef);
           }
           SNode decl = node.getLinkDeclaration(ref.getRole());

@@ -63,7 +63,7 @@ import java.util.List;
     )
   }
 )
-public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateComponent<Element> {
+public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateComponent<Element>, IUsagesViewTool {
 
   private static final String VERSION_NUMBER = "0.9997";
   private static final String VERSION = "version";

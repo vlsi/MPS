@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.platform.watching.EventProcessor" file="EventProcessor.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.FSChangesWatcher" file="FSChangesWatcher.java">
     <classNode dependClassName="com.intellij.openapi.application.Application" />
@@ -31,7 +32,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.MPSCore" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.watching.EventProcessor" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.watching.FileProcessor" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadSession" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -119,7 +120,6 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.watching.EventProcessor" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.FSChangesWatcher" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.FileProcessor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />

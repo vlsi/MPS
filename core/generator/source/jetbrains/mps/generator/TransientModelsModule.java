@@ -23,7 +23,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -222,7 +222,7 @@ public class TransientModelsModule extends ClassLoadingModule {
     private boolean wasUnloaded = false;
 
     private TransientSModelDescriptor(SModelFqName fqName, String longName) {
-      super(new SModelReference(fqName, SModelId.generate()));
+      super(new SModelReference(fqName, jetbrains.mps.smodel.SModelId.generate()));
       myLongName = longName;
     }
 
@@ -263,7 +263,6 @@ public class TransientModelsModule extends ClassLoadingModule {
         LOG.debug("Dropped " + getSModelReference());
         mySModel.dispose();
         mySModel = null;
-        fireModelReplaced();
       }
     }
 

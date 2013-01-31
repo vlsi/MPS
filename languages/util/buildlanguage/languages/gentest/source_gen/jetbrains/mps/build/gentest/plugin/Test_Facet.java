@@ -11,14 +11,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.IGResource;
+import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
@@ -68,7 +67,7 @@ public class Test_Facet extends IFacet.Stub {
   }
 
   public static class Target_collectTest implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IGResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{GResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.build.gentest.Test.collectTest");
 
@@ -77,12 +76,13 @@ public class Test_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_rwbd_a0a = null;
+          final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              for (IResource resource : input) {
-                final GResource gr = (GResource) resource;
+              for (final GResource gr : Sequence.fromIterable(input)) {
                 final Wrappers._T<List<String>> tests = new Wrappers._T<List<String>>();
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
@@ -169,8 +169,10 @@ public class Test_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_rwbd_a0b = null;
+          final Iterable<ITestResource> input = (Iterable<ITestResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               if (pa.global().properties(Target_runTests.this.getName(), Test_Facet.Target_runTests.Parameters.class).testListener() == null) {
@@ -178,10 +180,10 @@ public class Test_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_rwbd_a0b);
               }
               monitor.currentProgress().beginWork("Testing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
-              for (IResource resource : input) {
-                String fqn = ((ITestResource) resource).getModule().getModuleFqName();
+              for (ITestResource resource : Sequence.fromIterable(input)) {
+                String fqn = resource.getModule().getModuleFqName();
                 monitor.currentProgress().advanceWork("Testing", 1, fqn);
-                ProcessBuilder pb = new ProcessBuilder(((ITestResource) resource).buildCommandLine());
+                ProcessBuilder pb = new ProcessBuilder(resource.buildCommandLine());
                 try {
                   Process process = pb.start();
                   UnitTestOutputReader reader = new UnitTestOutputReader(process, pa.global().properties(Target_runTests.this.getName(), Test_Facet.Target_runTests.Parameters.class).testListener());

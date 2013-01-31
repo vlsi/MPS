@@ -58,7 +58,8 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import java.util.Set;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -395,10 +396,12 @@ public class ChangesManagerTest {
     final EditableSModelDescriptor modelDescriptor = myUtilDiff.getModelDescriptor();
     waitForSomething(new Runnable() {
       public void run() {
-        modelDescriptor.addModelListener(new SModelAdapter() {
+        SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
           @Override
-          public void modelReplaced(SModelDescriptor descriptor) {
-            descriptor.removeModelListener(this);
+          public void modelsReplaced(Set<SModelDescriptor> modelDescriptors) {
+            if (modelDescriptors.contains(modelDescriptor)) {
+              SModelRepository.getInstance().removeModelRepositoryListener(this);
+            }
             waitCompleted();
           }
         });

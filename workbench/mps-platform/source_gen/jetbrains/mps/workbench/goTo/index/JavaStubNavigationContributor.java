@@ -22,13 +22,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.smodel.LanguageID;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.persistence.indexing.FastGoToRegistry;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import org.jetbrains.annotations.NonNls;
@@ -79,33 +72,7 @@ public class JavaStubNavigationContributor implements NodeNavigationContributor,
   public static void iterateClassPath(final ModuleReference module, final IClassPathItem item, Set<NodeDescriptor> result, final String pName) {
     final SModelReference model = StubHelper.uidForPackageInStubs(pName, LanguageID.JAVA, module, false);
     for (final String cls : item.getRootClasses(pName)) {
-      result.add(new NodeDescriptor() {
-        public String getName() {
-          return cls;
-        }
-
-        public SNodeReference getNodeReference() {
-          return new SNodePointer(model, new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(cls)));
-        }
-
-        public SConcept getConcept() {
-          String name = "jetbrains.mps.baseLanguage.structure.ClassConcept";
-          ClassifierKind kind = item.getClassifierKind(("".equals(pName) ?
-            cls :
-            pName + "." + cls
-          ));
-          if (kind == ClassifierKind.CLASS) {
-            name = "jetbrains.mps.baseLanguage.structure.ClassConcept";
-          } else if (kind == ClassifierKind.INTERFACE) {
-            name = "jetbrains.mps.baseLanguage.structure.Interface";
-          } else if (kind == ClassifierKind.ANNOTATIONS) {
-            name = "jetbrains.mps.baseLanguage.structure.Annotation";
-          } else if (kind == ClassifierKind.ENUM) {
-            name = "jetbrains.mps.baseLanguage.structure.EnumClass";
-          }
-          return SConceptRepository.getInstance().getConcept(name);
-        }
-      });
+      result.add(new JavaStubNodeDescriptor(item, pName, cls, model));
     }
     for (String subpack : item.getSubpackages(pName)) {
       iterateClassPath(module, item, result, subpack);

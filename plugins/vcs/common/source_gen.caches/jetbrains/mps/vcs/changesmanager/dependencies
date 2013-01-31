@@ -58,6 +58,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelChildEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelDevKitEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
@@ -95,7 +96,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.EventsCollector" />
-    <classNode extendsClassName="jetbrains.mps.smodel.SModelAdapter" />
+    <classNode extendsClassName="jetbrains.mps.smodel.SModelRepositoryAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifference" file="CurrentDifference.java">
     <classNode dependClassName="java.lang.Runnable" />

@@ -138,6 +138,7 @@ public class FSChangesWatcher implements ApplicationComponent {
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
     myConnection.disconnect();
     myConnection = null;
+    myReloadListeners.clear();
   }
 
   private void queueReload() {
@@ -234,6 +235,7 @@ public class FSChangesWatcher implements ApplicationComponent {
       synchronized (myLock) {
         if (myReloadSession == null) {
           myReloadSession = new ReloadSession(getReloadListeners());
+          myReloadSession.addProcessor(new FileProcessor());
         }
         ListSequence.fromList(events).where(new IWhereFilter<VFileEvent>() {
           public boolean accept(VFileEvent it) {
@@ -253,28 +255,38 @@ public class FSChangesWatcher implements ApplicationComponent {
       LOG.debug("Process after event for " + event.getPath());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          for (EventProcessor p : reloadSession.getProcessors()) {
+          for (FileProcessor p : reloadSession.getProcessors()) {
             if (event.getFile() == null) {
               LOG.warning("event.getFile() is null. Event: " + event.getClass().getName() + "; path=" + event.getPath());
               continue;
             }
-            if (!(p.accepts(event.getFile()))) {
+            FileProcessor processor;
+
+
+            if (p instanceof FileProcessor) {
+              processor = ((FileProcessor) p);
+            } else {
+              LOG.warning("file processors of different types: " + p.getClass().getName() + " and " + FileProcessor.class.getName());
+              continue;
+            }
+
+            if (!(processor.accepts(event.getFile()))) {
               continue;
             }
 
             if (event instanceof VFileContentChangeEvent) {
-              p.processContentChanged(event.getFile());
+              processor.processContentChanged(event.getFile());
             } else if (event instanceof VFileCreateEvent) {
-              p.processCreate(event.getFile());
+              processor.processCreate(event.getFile());
             } else if (event instanceof VFileDeleteEvent) {
-              p.processDelete(event.getFile());
+              processor.processDelete(event.getFile());
             } else if (event instanceof VFileCopyEvent) {
-              p.processCreate(event.getFile());
+              processor.processCreate(event.getFile());
             } else if (event instanceof VFileMoveEvent) {
               VFileMoveEvent re = (VFileMoveEvent) event;
               String name = re.getFile().getName();
-              p.processDelete(event.getFile());
-              p.processCreate(re.getNewParent().findChild(name));
+              processor.processDelete(event.getFile());
+              processor.processCreate(re.getNewParent().findChild(name));
             }
           }
         }
@@ -282,10 +294,13 @@ public class FSChangesWatcher implements ApplicationComponent {
     }
   }
 
+
+
   public static interface IReloadListener {
     public void reloadStarted();
     public void reloadFinished();
   }
+
 
   private static Logger LOG = Logger.getLogger(FSChangesWatcher.class);
 }

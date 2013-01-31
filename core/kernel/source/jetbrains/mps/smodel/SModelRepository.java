@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
@@ -26,6 +26,8 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -55,6 +57,8 @@ public class SModelRepository implements CoreComponent {
 
   private final Object myListenersLock = new Object();
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
+
+  private final MultiMap<SModelDescriptor, SModel> myReloadingDescriptorMap = new MultiMap<SModelDescriptor, SModel>();
 
   private SModelListener myModelsListener = new ModelChangeListener();
 
@@ -102,7 +106,7 @@ public class SModelRepository implements CoreComponent {
       myModelOwner.put(modelDescriptor, container);
       modelDescriptor.setModule(container);
 
-      assert modelReference.getModelId() != null:"can't add model w/o model id";
+      assert modelReference.getModelId() != null : "can't add model w/o model id";
       myIdToModelDescriptorMap.put(modelReference.getModelId(), modelDescriptor);
 
       if (modelReference.getSModelFqName() != null) {
@@ -179,7 +183,7 @@ public class SModelRepository implements CoreComponent {
     return myIdToModelDescriptorMap.get(id);
   }
 
-    @Deprecated
+  @Deprecated
   public List<SModelDescriptor> getModelDescriptorsByModelName(String modelName) {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor d : getModelDescriptors()) {
@@ -264,6 +268,58 @@ public class SModelRepository implements CoreComponent {
   public void refreshModels() {
   }
 
+  void notifyModelReplaced(BaseSModelDescriptor modelDescriptor, SModel oldSModel) {
+    ModelAccess.assertLegalWrite();
+
+    if (mySModelRepositoryListeners.isEmpty()){
+      oldSModel.dispose();
+      return;
+    }
+
+    synchronized (myReloadingDescriptorMap) {
+
+      boolean needToNotify = myReloadingDescriptorMap.isEmpty();
+      myReloadingDescriptorMap.putValue(modelDescriptor, oldSModel);
+
+      if (needToNotify) {
+        notifyAfterReload();
+      }
+
+
+
+    }
+
+  }
+
+  private void notifyAfterReload() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        synchronized (myReloadingDescriptorMap) {
+
+          assert !myReloadingDescriptorMap.isEmpty();
+
+          fireModelsReplaced(myReloadingDescriptorMap.keySet());
+          disposeOldModels();
+          myReloadingDescriptorMap.clear();
+        }
+      }
+    });
+  }
+
+  private void disposeOldModels() {
+    for (SModel oldModel : myReloadingDescriptorMap.values()) {
+      if (oldModel != null) {
+        oldModel.dispose();
+      }
+    }
+  }
+
+
+  public void replaceModel(DefaultSModelDescriptor descriptor, DefaultSModel newModel, final ModelLoadingState state) {
+    descriptor.replaceModel(newModel, state);
+  }
+
   //---------------------------events----------------------------
 
   public void addModelRepositoryListener(@NotNull SModelRepositoryListener l) {
@@ -338,6 +394,16 @@ public class SModelRepository implements CoreComponent {
     for (SModelRepositoryListener listener : listeners()) {
       try {
         listener.beforeModelDeleted(modelDescriptor);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  private void fireModelsReplaced(Set<SModelDescriptor> modelDescriptors) {
+    for (SModelRepositoryListener listener : listeners()) {
+      try {
+        listener.modelsReplaced(modelDescriptors);
       } catch (Throwable t) {
         LOG.error(t);
       }

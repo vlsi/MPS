@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.ScopeOperations;
+import jetbrains.mps.smodel.Language;
 
 public class LanguageReferenceExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -18,7 +20,7 @@ public class LanguageReferenceExpression_Behavior {
   @NotNull
   public static List<IModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode, IScope scope) {
     List<IModule> result = ListSequence.fromList(new ArrayList<IModule>());
-    ListSequence.fromList(result).addSequence(Sequence.fromIterable(scope.getVisibleLanguages()));
+    ListSequence.fromList(result).addSequence(Sequence.fromIterable(ScopeOperations.getModules(scope, Language.class)));
     return result;
   }
 }

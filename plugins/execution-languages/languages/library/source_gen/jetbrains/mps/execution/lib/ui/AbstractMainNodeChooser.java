@@ -23,8 +23,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -71,19 +70,18 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
           setNode(null);
           return;
         }
-        int lastDot = text.lastIndexOf(".");
+        final int lastDot = text.lastIndexOf(".");
         if (lastDot <= 0) {
           setNode(null);
           return;
         }
 
-        final List<SModelDescriptor> descriptors = getModelDescriptors(text.substring(0, lastDot));
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
+            Iterable<SModel> models = getModels(text.substring(0, lastDot));
             SNode foundNode = null;
-            for (SModelDescriptor descriptor : ListSequence.fromList(descriptors)) {
-              SModel smodel = descriptor.getSModel();
-              Iterable<SNode> nodes = findNodes(smodel, text);
+            for (SModel model : Sequence.fromIterable(models)) {
+              Iterable<SNode> nodes = findNodes((jetbrains.mps.smodel.SModel) model, text);
               if (!(Sequence.fromIterable(nodes).isEmpty())) {
                 foundNode = Sequence.fromIterable(nodes).first();
                 break;
@@ -96,9 +94,9 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     });
   }
 
-  protected abstract Iterable<SNode> findNodes(SModel model, String fqName);
+  protected abstract Iterable<SNode> findNodes(jetbrains.mps.smodel.SModel model, String fqName);
 
-  protected abstract List<SModelDescriptor> getModelDescriptors(String model);
+  protected abstract Iterable<SModel> getModels(String model);
 
   protected abstract List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor);
 

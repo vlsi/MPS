@@ -41,7 +41,10 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
 import junit.framework.TestCase;
 import junit.framework.TestFailure;
@@ -96,14 +99,14 @@ public class TestMain {
 */
 
   public static boolean testOnProjectCopy(final File source, final File destinationDir,
-                      final String projectName, ProjectRunnable pr) {
+                                          final String projectName, ProjectRunnable pr) {
     return testOnProjectCopy(source, destinationDir, projectName, pr, new String[0]);
   }
 
 
   public static boolean testOnProjectCopy(final File source, final File destinationDir,
-                      final String projectName, ProjectRunnable pr,
-                      final String... plugins) {
+                                          final String projectName, ProjectRunnable pr,
+                                          final String... plugins) {
     final Project project = startTestOnProjectCopy(source, destinationDir, projectName, plugins);
     if (project == null) {
       return false;
@@ -120,8 +123,8 @@ public class TestMain {
   }
 
   public static Project startTestOnProjectCopy(final File source, final File destinationDir,
-                         final String projectName,
-                         final String... plugins) {
+                                               final String projectName,
+                                               final String... plugins) {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     Logger.setThreshold("WARN");
     org.apache.log4j.BasicConfigurator.configure();
@@ -256,7 +259,7 @@ public class TestMain {
   }
 
   public static Language getLanguage(Project project, String languageName) {
-    return project.getScope().getLanguage(languageName);
+    return ScopeOperations.getLanguage(project.getScope(), languageName);
   }
 
   public static void updateLanguageClasspath(Language l, String classpath) {

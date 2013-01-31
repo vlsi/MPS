@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.Set;
 
 public abstract class SModelRepositoryAdapter implements SModelRepositoryListener {
   public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
@@ -42,6 +44,11 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
   public void modelRenamed(SModelDescriptor modelDescriptor) {
     modelRepositoryChanged();
     modelRepositoryChanged(modelDescriptor);
+  }
+
+  @Override
+  public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+    modelRepositoryChanged();
   }
 
   public void modelRepositoryChanged() {

@@ -6,6 +6,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 
+@Deprecated
 public interface IMResource extends IResource {
   public IModule module();
   public Iterable<SModelDescriptor> models();

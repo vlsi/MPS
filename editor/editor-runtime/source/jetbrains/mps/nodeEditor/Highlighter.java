@@ -39,7 +39,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -102,12 +102,17 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       }
     }
   };
-  private SModelListener myModelReloadListener = new SModelAdapter() {
-    public void modelReplaced(SModelDescriptor sm) {
-      for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
-        SNode sNode = editorComponent.getEditedNode();
-        if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) && sNode.getModel().getModelDescriptor() == sm) {
-          myCheckedOnceEditors.remove(editorComponent);
+  private SModelRepositoryListener myModelReloadListener = new SModelRepositoryAdapter() {
+    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+      for (SModelDescriptor modelDescriptor : replacedModels) {
+        if (!modelDescriptor.isRegistered()){
+          continue;
+        }
+        for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
+          SNode sNode = editorComponent.getEditedNode();
+          if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) && sNode.getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
+            myCheckedOnceEditors.remove(editorComponent);
+          }
         }
       }
     }
@@ -139,7 +144,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
     myClassLoaderManager.addReloadHandler(myReloadListener);
     myGlobalSModelEventsManager.addGlobalCommandListener(myModelCommandListener);
-    myGlobalSModelEventsManager.addGlobalModelListener(myModelReloadListener);
+    SModelRepository.getInstance().addModelRepositoryListener(myModelReloadListener);
 
     myInspectorTool = myProject.getComponent(InspectorTool.class);
     myMessageBusConnection = myProject.getMessageBus().connect();
@@ -168,8 +173,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   public void projectClosed() {
     stopUpdater();
     ModelAccess.instance().removeCommandListener(myCommandListener);
+    SModelRepository.getInstance().removeModelRepositoryListener(myModelReloadListener);
     myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
-    myGlobalSModelEventsManager.removeGlobalModelListener(myModelReloadListener);
     myClassLoaderManager.removeReloadHandler(myReloadListener);
     myMessageBusConnection.disconnect();
     myInspectorTool = null;
@@ -493,7 +498,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           if (myStopThread) return false;
 
           SNode node = editor.getEditedNode();
-          if (node == null || node.getModel()==null || jetbrains.mps.util.SNodeOperations.isDisposed(node)) return false;
+          if (node == null || node.getModel() == null || jetbrains.mps.util.SNodeOperations.isDisposed(node))
+            return false;
           if (node.getModel().getModelDescriptor() == null) {
             // asking runLoPrioRead() implementation to re-execute this task later:
             // editor was not updated in accordance with last modelReload event yet.

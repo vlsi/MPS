@@ -46,6 +46,7 @@
   <source id="5487985028841901793" name="MetaLevelActions" hash="-75x4t0xj537d0l3c0ba3kh4q172fw5m">
     <dep root="5487985028841901770" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <file name="MetaLevelActions_ActionGroup.java" />
   </source>

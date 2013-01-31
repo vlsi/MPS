@@ -27,7 +27,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -228,7 +228,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   private static SModelReference getSModelReference(SModule module) {
     SModelFqName fqName = getModelFqName(module);
     SModuleId moduleId = module.getModuleReference().getModuleId();
-    SModelId id = moduleId != null ? SModelId.foreign("project", moduleId.toString()) : null;
+    SModelId id = moduleId != null ? jetbrains.mps.smodel.SModelId.foreign("project", moduleId.toString()) : null;
     return new SModelReference(fqName, id);
   }
 
@@ -303,20 +303,19 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
     private void dropModel() {
       if (mySModel == null) return;
-      final SModel oldSModel = mySModel;
-      oldSModel.setModelDescriptor(null);
-      mySModel = null;
 
-      Runnable modelReplacedNotifier = new Runnable() {
-        public void run() {
-          fireModelReplaced();
-          oldSModel.dispose();
-        }
-      };
-      if (ModelAccess.instance().isInEDT()) {
-        modelReplacedNotifier.run();
+      final SModel oldModel = mySModel;
+      oldModel.setModelDescriptor(null);
+      mySModel = null;
+      if (ModelAccess.instance().canWrite()) {
+        notifyModelReplaced(oldModel);
       } else {
-        ModelAccess.instance().runWriteInEDT(modelReplacedNotifier);
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
+          public void run() {
+            notifyModelReplaced(oldModel);
+          }
+        });
       }
     }
 
