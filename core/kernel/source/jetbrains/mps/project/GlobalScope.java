@@ -17,8 +17,11 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.components.CoreComponent;
+import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 
@@ -65,5 +68,13 @@ public class GlobalScope extends BaseScope implements CoreComponent {
     return new ArrayList<SModel>(myModelRepository.getModelDescriptors());
   }
 
-  // todo: implement resolve() methods
+  @Override
+  public SModule resolve(SModuleReference reference) {
+    return myMPSModuleRepository.getModule(reference.getModuleId());
+  }
+
+  @Override
+  public SModel resolve(SModelReference reference) {
+    return myModelRepository.getModelDescriptor(reference.getModelId());
+  }
 }

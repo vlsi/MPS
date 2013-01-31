@@ -23,6 +23,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -31,7 +32,6 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class DefaultScope extends BaseScope {
-
   private final Object LOCK = new Object();
 
   private boolean myInitialized;
@@ -67,6 +67,47 @@ public abstract class DefaultScope extends BaseScope {
       }
     }
     return result;
+  }
+
+  @Override
+  public SModule resolve(SModuleReference reference) {
+    SModule module = MPSModuleRepository.getInstance().getModule(reference.getModuleId());
+    if (module == null) {
+      return null;
+    }
+
+    synchronized (LOCK) {
+      initialize();
+      if (myVisibleModules.contains(module) || myUsedLanguages.contains(module) || myUsedDevkits.contains(module)) {
+        return module;
+      } else {
+        return null;
+      }
+    }
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
+    if (reference == null) {
+      return null;
+    }
+
+    SModel model = SModelRepository.getInstance().getModelDescriptor(reference.getModelId());
+    if (model == null) {
+      return null;
+    }
+
+    synchronized (LOCK) {
+      initialize();
+
+      if (myVisibleModules.contains(model.getModule())) return model;
+
+      for (Language l : myUsedLanguages) {
+        if (l.getAccessoryModels().contains(model)) return model;
+      }
+    }
+
+    return null;
   }
 
   protected Collection<Language> getInitialUsedLanguages() {
