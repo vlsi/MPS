@@ -31,15 +31,14 @@
   </path>
   
   <path id="path.mps.ant.path">
-    <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-backend.jar" />
+    <pathelement location="${artifacts.mpsBootstrapCore}/lib/ant/lib/ant-mps.jar" />
     <pathelement location="${artifacts.IDEA}/lib/jdom.jar" />
     <pathelement location="${artifacts.IDEA}/lib/log4j.jar" />
-    <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
   </path>
   
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
-  <target name="assemble" depends="classes, fetchDependencies">
+  <target name="assemble" depends="classes, declare-mps-tasks, fetchDependencies">
     <mkdir dir="${build.layout}/mps-java" />
     <copy todir="${build.layout}/mps-java">
       <fileset dir="${artifacts.mpsJava}" />
@@ -61,11 +60,14 @@
         </tokenfilter>
       </filterchain>
     </copy>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-workbench-models">
+      <fileset dir="${mps_home}/plugins/mpsjava/workbench/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <jar destfile="${build.layout}/mps-java/lib/mpsjava.jar">
       <fileset dir="${build.tmp}/java/out/mps-java" />
       <zipfileset file="${mps_home}/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" prefix="modules/jetbrains.mps.ide.java" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/workbench" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java" />
-      <zipfileset dir="${mps_home}/plugins/mpsjava/workbench/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.java/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-workbench-models" prefix="modules/jetbrains.mps.ide.java/models" />
       <fileset dir="${build.tmp}/default/mpsjava.jar" />
     </jar>
     <mkdir dir="${build.layout}/mps-java/languages" />
@@ -88,10 +90,13 @@
       <fileset dir="${mps_home}/plugins/mpsjava/migration" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.java.migration.jar" />
     </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-migration-models">
+      <fileset dir="${mps_home}/plugins/mpsjava/migration/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <jar destfile="${build.layout}/mps-java/languages/jetbrains.mps.ide.java.migration-src.jar">
       <fileset dir="${mps_home}/plugins/mpsjava/migration/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mpsjava/migration/jetbrains.mps.ide.java.migration.msd" prefix="module" />
-      <zipfileset dir="${mps_home}/plugins/mpsjava/migration/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-migration-models" prefix="module/models" />
     </jar>
     <jar destfile="${build.layout}/ideaIntegration.jar">
       <fileset dir="${build.tmp}/java/out/ideaIntegration" />
@@ -175,9 +180,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
@@ -213,9 +218,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
@@ -251,9 +256,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
@@ -291,9 +296,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
@@ -332,9 +337,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
@@ -372,9 +377,9 @@
         <pathelement path="${build.tmp}/java/out/mps-java" />
         <fileset file="${artifacts.mpsJava}/lib/mps-java-common.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
@@ -406,9 +411,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />

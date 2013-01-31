@@ -37,15 +37,14 @@
   </path>
   
   <path id="path.mps.ant.path">
-    <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-backend.jar" />
+    <pathelement location="${artifacts.mpsBootstrapCore}/lib/ant/lib/ant-mps.jar" />
     <pathelement location="${artifacts.IDEA}/lib/jdom.jar" />
     <pathelement location="${artifacts.IDEA}/lib/log4j.jar" />
-    <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
   </path>
   
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
-  <target name="assemble" depends="classes">
+  <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}/mps-vcs" />
     <mkdir dir="${build.layout}/mps-vcs/lib" />
     <mkdir dir="${build.tmp}/default/vcs.jar" />
@@ -93,10 +92,13 @@
       <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.vcs.modelmetadata.jar" />
     </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-modelmetadata-languageModels">
+      <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <jar destfile="${build.layout}/mps-vcs/languages/jetbrains.mps.ide.vcs.modelmetadata-src.jar">
       <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/vcs/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" prefix="module" />
-      <zipfileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-modelmetadata-languageModels" prefix="module/languageModels" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -141,9 +143,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
@@ -183,9 +185,9 @@
         <fileset file="${artifacts.mpsMakePlugin}/mps-make.jar" />
         <path refid="path.java.library.idea-vcs" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
@@ -220,8 +222,8 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />

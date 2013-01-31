@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="-7j6o6ykt62mhmpn4nxohwqzw2lt25w2">
   <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-8cg3incxiljk3bq8078a2fws9395rb0" />
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="dtt7wsqvomsqa4dnrx887ciou0ozjba" />
-  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="-4tjusgyibdyw7typ8jz07nx08e3iis1" />
+  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="e2lalwp5e1wopwhv7m25j4dk5tfnifa" />
   <common hash="vavkngoh63mtfye77ql0pa12oocm1" />
   <source id="7471276865246050739" name="testmanifest" hash="8tz32i5o7x6580ml6t4qc6nigvjwdwe">
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />

@@ -11,22 +11,27 @@
   <property name="mpsBootstrapCore.version" value="${import.mpsBootstrapCore.mpsBootstrapCore.version}" />
   
   <path id="path.mps.ant.path">
-    <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-backend.jar" />
+    <pathelement location="${artifacts.mpsBootstrapCore}/lib/ant/lib/ant-mps.jar" />
     <pathelement location="${artifacts.IDEA}/lib/jdom.jar" />
     <pathelement location="${artifacts.IDEA}/lib/log4j.jar" />
-    <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
   </path>
   
-  <target name="assemble" depends="classes">
+  <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}/lib" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-platform-models">
+      <fileset dir="${mps_home}/plugins/mpsjava/platform/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-basePlatform-models">
+      <fileset dir="${mps_home}/plugins/mpsjava/basePlatform/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <jar destfile="${build.layout}/lib/mps-java-common.jar">
       <fileset dir="${build.tmp}/java/out/mps-java-common" />
       <zipfileset file="${mps_home}/plugins/mpsjava/platform/jetbrains.mps.ide.java.platform.msd" prefix="modules/jetbrains.mps.ide.java.platform" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/platform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java.platform" />
-      <zipfileset dir="${mps_home}/plugins/mpsjava/platform/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.java.platform/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-platform-models" prefix="modules/jetbrains.mps.ide.java.platform/models" />
       <zipfileset file="${mps_home}/plugins/mpsjava/basePlatform/jetbrains.mps.ide.java.basePlatform.msd" prefix="modules/jetbrains.mps.ide.java.basePlatform" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/basePlatform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java.basePlatform" />
-      <zipfileset dir="${mps_home}/plugins/mpsjava/basePlatform/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.java.basePlatform/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-basePlatform-models" prefix="modules/jetbrains.mps.ide.java.basePlatform/models" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -75,9 +80,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
