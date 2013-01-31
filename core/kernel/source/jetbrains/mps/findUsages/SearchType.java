@@ -15,23 +15,17 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.containers.MultiMap;
-import jetbrains.mps.util.containers.SetBasedMultiMap;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.indexing.FastFindSupport;
 import org.jetbrains.mps.openapi.persistence.indexing.FastFindUsagesRegistry;
 
-import java.util.Collection;
-import java.util.Map.Entry;
 import java.util.Set;
 
 public abstract class SearchType<T, R> {
@@ -43,7 +37,7 @@ public abstract class SearchType<T, R> {
 
   //--------intfc---------
 
-  public abstract MultiMap<SModel, R> findMatchingModelsInCache(Set<R> nodes, Iterable<SModelDescriptor> models, @Nullable Computable<Boolean> callback);
+  public abstract MultiMap<SModel, R> findMatchingModelsInCache(Set<R> nodes, Iterable<SModel> models, @Nullable Computable<Boolean> callback);
 
   public abstract Set<T> findInModel(MultiMap<SModel, R> models, @Nullable Computable<Boolean> callback);
 

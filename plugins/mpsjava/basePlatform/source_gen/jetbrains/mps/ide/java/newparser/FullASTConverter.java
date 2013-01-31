@@ -939,16 +939,6 @@ public class FullASTConverter extends ASTConverter {
     return unkName;
   }
 
-  /*package*/ SNode makeFieldDotExpression(SNode holder, String fieldName) {
-    SNode dotExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-    SLinkOperations.setTarget(dotExpr, "operand", holder, true);
-    SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
-    SLinkOperations.setTarget(dotExpr, "operation", fieldRef, true);
-    SReference sref = new DynamicReference("fieldDeclaration", fieldRef, null, fieldName);
-    fieldRef.setReference(sref.getRole(), sref);
-    return dotExpr;
-  }
-
   /*package*/ SNode convertExpression(MessageSend x) throws JavaParseException {
     // it's a method call 
     //  results in either LocalStaticMethodCall, LocalInstanceMethodCall, StaticMethodCall 

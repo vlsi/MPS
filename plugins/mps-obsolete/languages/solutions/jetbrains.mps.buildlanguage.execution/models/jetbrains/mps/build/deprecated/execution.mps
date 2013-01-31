@@ -47,10 +47,10 @@
   <import index="ph2v" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.project(MPS.Platform/com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="4dtg" modelUID="r:6ff1dacd-2ea5-47a0-9336-2eaecdee8a37(jetbrains.mps.execution.languages.plugin)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
-  <import index="as9o" modelUID="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" version="-1" />
-  <import index="jehi" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.icons(MPS.Platform/com.intellij.icons@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <import index="jehi" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.icons(MPS.Platform/com.intellij.icons@java_stub)" version="-1" />
   <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
+  <import index="as9o" modelUID="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
@@ -69,8 +69,8 @@
   <roots>
     <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="4197214709893770034">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="packaging" />
       <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="packaging" />
       <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="4197214709893770708" resolveInfo="Packaging Build Script" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4197214709893770131">
@@ -85,11 +85,11 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="packaging" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4197214709893770365">
-      <property name="description" nameId="tp4k.1213273179528" value="Generate Build Files And Place Them Into Base Directory" />
       <property name="name" nameId="tpck.1169194664001" value="GenerateBuildAction" />
-      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="packaging" />
       <property name="caption" nameId="tp4k.1205250923097" value="Generate Build Files" />
+      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+      <property name="description" nameId="tp4k.1213273179528" value="Generate Build Files And Place Them Into Base Directory" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="packaging" />
     </node>
     <node type="uhxm.BeforeTask" typeId="uhxm.7037083547576022975" id="4197214709893770399">
       <property name="name" nameId="tpck.1169194664001" value="Generate Build" />
@@ -97,8 +97,8 @@
     </node>
     <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="4197214709893770413">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="cutommps" />
       <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="cutommps" />
       <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="4197214709893770974" resolveInfo="Custom MPS Application" />
     </node>
     <node type="uhxm.RunConfiguration" typeId="uhxm.2401501559171345993" id="4197214709893770506">
@@ -107,14 +107,14 @@
       <link role="configurationKind" roleId="uhxm.2401501559171353314" targetNodeId="4197214709893781959" resolveInfo="Ant" />
     </node>
     <node type="uhxm.RunConfiguration" typeId="uhxm.2401501559171345993" id="4197214709893770708">
-      <property name="name" nameId="tpck.1169194664001" value="Packaging Build Script" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="packaging" />
+      <property name="name" nameId="tpck.1169194664001" value="Packaging Build Script" />
       <link role="configurationKind" roleId="uhxm.2401501559171353314" targetNodeId="4197214709893781959" resolveInfo="Ant" />
     </node>
     <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="4197214709893770905">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="buildlanguage" />
       <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="buildlanguage" />
       <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="4197214709893770506" resolveInfo="Build Language Project" />
     </node>
     <node type="uhxm.RunConfigurationProducer" typeId="uhxm.4366236229294105349" id="4197214709893770949">
@@ -143,15 +143,15 @@
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968026150" />
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6893245555985399815">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.build.deprecated" />
-      <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
-      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Legacy (deprecated) build languages for MPS" />
-      <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
-      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
       <property name="name" nameId="tpck.1169194664001" value="MPS Deprecated Build Languages" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Legacy (deprecated) build languages for MPS" />
+      <property name="version" nameId="tp4k.5023285075122009369" value="3.0" />
+      <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
+      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="123.1" />
       <property name="loadModules" nameId="tp4k.8842945788826116904" value="true" />
-      <property name="version" nameId="tp4k.5023285075122009369" value="3.0" />
+      <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
+      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
     </node>
     <node type="uhxm.RunConfigurationKind" typeId="uhxm.2401501559171345994" id="4197214709893781959">
       <property name="name" nameId="tpck.1169194664001" value="Ant" />

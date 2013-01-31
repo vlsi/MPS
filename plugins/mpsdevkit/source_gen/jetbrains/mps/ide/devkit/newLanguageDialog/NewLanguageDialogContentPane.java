@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -236,7 +237,7 @@ public class NewLanguageDialogContentPane extends JPanel {
             createdModel.addLanguage(extendedLanguage);
           }
           for (ModuleReference addedLanguage : createdModel.importedLanguages()) {
-            if (sandbox.getScope().getLanguage(addedLanguage) == null) {
+            if (ScopeOperations.resolveModule(sandbox.getScope(), addedLanguage, Language.class) == null) {
               sandbox.addUsedLanguage(addedLanguage);
             }
           }

@@ -29,6 +29,14 @@ public class LibraryDataType extends DataType {
     myDir = dir;
   }
 
+  public File getFile() {
+    return myDir;
+  }
+
+  public void setFile(File dir) {
+    myDir = dir;
+  }
+
   public boolean getCompile() {
     return myCompile;
   }

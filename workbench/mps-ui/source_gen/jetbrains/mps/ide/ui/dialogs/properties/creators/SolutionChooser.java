@@ -7,9 +7,10 @@ import java.util.List;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.Solution;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 
@@ -21,8 +22,8 @@ public class SolutionChooser implements Computable<List<ModuleReference>> {
     final Wrappers._T<List<ModuleReference>> solRefs = new Wrappers._T<List<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Iterable<Solution> solutions = new FilteredGlobalScope().getVisibleSolutions();
-        solRefs.value = Sequence.fromIterable(solutions).select(new ISelector<Solution, ModuleReference>() {
+        Iterable<SModule> modules = new FilteredGlobalScope().getModules();
+        solRefs.value = Sequence.fromIterable(modules).ofType(Solution.class).select(new ISelector<Solution, ModuleReference>() {
           public ModuleReference select(Solution it) {
             return it.getModuleReference();
           }

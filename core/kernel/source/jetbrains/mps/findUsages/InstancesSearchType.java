@@ -40,7 +40,7 @@ class InstancesSearchType extends SearchType<SNode, SConcept> {
     myExact = exact;
   }
 
-  public MultiMap<SModel, SConcept> findMatchingModelsInCache(Set<SConcept> concepts, Iterable<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
+  public MultiMap<SModel, SConcept> findMatchingModelsInCache(Set<SConcept> concepts, Iterable<SModel> models, @Nullable Computable<Boolean> callback) {
     Set<SConcept> queryConcepts = new HashSet<SConcept>();
     for (SConcept concept : concepts) {
       queryConcepts.add(concept);

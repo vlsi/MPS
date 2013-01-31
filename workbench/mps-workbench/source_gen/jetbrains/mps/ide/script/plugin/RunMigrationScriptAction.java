@@ -7,8 +7,8 @@ import com.intellij.openapi.project.DumbAware;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.IScope;
@@ -16,13 +16,16 @@ import java.util.ArrayList;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.IModule;
 
 public class RunMigrationScriptAction extends BaseAction implements DumbAware {
   private SNode myScript;
   private boolean myApplyToSelection;
   private IOperationContext myContext;
-  private List<SModelDescriptor> myModels;
-  private List<IModule> myModules;
+  private List<SModel> myModels;
+  private List<SModule> myModules;
 
   public RunMigrationScriptAction(SNode script, String name, boolean applyToSelection) {
     super(name);
@@ -52,13 +55,17 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
     if (project == null) {
       return false;
     }
-    myModels = e.getData(MPSCommonDataKeys.MODELS);
-    if (myModels == null) {
-      myModels = new ArrayList<SModelDescriptor>();
+    myModels = new ArrayList<SModel>();
+    if (e.getData(MPSCommonDataKeys.MODELS) != null) {
+      for (SModelDescriptor model : ListSequence.fromList(e.getData(MPSCommonDataKeys.MODELS))) {
+        myModels.add(model);
+      }
     }
-    myModules = e.getData(MPSDataKeys.MODULES);
-    if (myModules == null) {
-      myModules = new ArrayList<IModule>();
+    myModules = new ArrayList<SModule>();
+    if (e.getData(MPSDataKeys.MODULES) != null) {
+      for (IModule module : ListSequence.fromList(e.getData(MPSDataKeys.MODULES))) {
+        myModules.add(module);
+      }
     }
     return true;
   }

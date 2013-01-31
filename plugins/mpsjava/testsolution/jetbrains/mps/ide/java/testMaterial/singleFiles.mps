@@ -22,12 +22,12 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8051061021619748478">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7850349074889619109">
           <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7850349074889619110">
-            <property name="text" nameId="tpee.6329021646629104958" value=" comment line" />
+            <property name="text" nameId="tpee.6329021646629104958" value="comment line" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7850349074889619112">
           <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7850349074889619113">
-            <property name="text" nameId="tpee.6329021646629104958" value=" another comment" />
+            <property name="text" nameId="tpee.6329021646629104958" value="another comment" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8214006229592689726">

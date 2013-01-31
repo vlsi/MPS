@@ -911,7 +911,7 @@ public class ASTConverter {
       return null;
     }
     if (x.constant != Constant.NotAConstant) {
-      return convertConstant(x.constant);
+      return convertConstant(x.constant, new String(x.source()));
     } else if (x instanceof NullLiteral) {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
     } else {
@@ -923,25 +923,25 @@ public class ASTConverter {
 
 
 
-  /*package*/ SNode convertConstant(Constant x) {
+  /*package*/ SNode convertConstant(Constant x, String source) {
     if (x instanceof BooleanConstant) {
-      return convertConstant((BooleanConstant) x);
+      return convertConstant((BooleanConstant) x, source);
     } else if (x instanceof ByteConstant) {
-      return convertConstant((ByteConstant) x);
+      return convertConstant((ByteConstant) x, source);
     } else if (x instanceof CharConstant) {
-      return convertConstant((CharConstant) x);
+      return convertConstant((CharConstant) x, source);
     } else if (x instanceof DoubleConstant) {
-      return convertConstant((DoubleConstant) x);
+      return convertConstant((DoubleConstant) x, source);
     } else if (x instanceof FloatConstant) {
-      return convertConstant((FloatConstant) x);
+      return convertConstant((FloatConstant) x, source);
     } else if (x instanceof IntConstant) {
-      return convertConstant((IntConstant) x);
+      return convertConstant((IntConstant) x, source);
     } else if (x instanceof LongConstant) {
-      return convertConstant((LongConstant) x);
+      return convertConstant((LongConstant) x, source);
     } else if (x instanceof ShortConstant) {
-      return convertConstant((ShortConstant) x);
+      return convertConstant((ShortConstant) x, source);
     } else if (x instanceof StringConstant) {
-      return convertConstant((StringConstant) x);
+      return convertConstant((StringConstant) x, source);
     } else {
       if (x == null) {
         return null;
@@ -952,56 +952,67 @@ public class ASTConverter {
 
   }
 
-  /*package*/ SNode convertConstant(BooleanConstant x) {
+  /*package*/ SNode convertConstant(BooleanConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
     SPropertyOperations.set(result, "value", "" + (x.booleanValue()));
     return result;
   }
 
-  /*package*/ SNode convertConstant(ByteConstant x) {
+  /*package*/ SNode convertConstant(ByteConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
     SPropertyOperations.set(result, "value", "" + (x.byteValue()));
     return result;
   }
 
-  /*package*/ SNode convertConstant(CharConstant x) {
+  /*package*/ SNode convertConstant(CharConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CharConstant", null);
     String value = NameUtil.escapeChar(x.charValue());
     SPropertyOperations.set(result, "charConstant", value);
     return result;
   }
 
-  /*package*/ SNode convertConstant(DoubleConstant x) {
+  /*package*/ SNode convertConstant(DoubleConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FloatingPointConstant", null);
     SPropertyOperations.set(result, "value", x.doubleValue() + "");
     return result;
   }
 
-  /*package*/ SNode convertConstant(FloatConstant x) {
+  /*package*/ SNode convertConstant(FloatConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", null);
     SPropertyOperations.set(result, "value", x.floatValue() + "f");
     return result;
   }
 
-  /*package*/ SNode convertConstant(IntConstant x) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
-    SPropertyOperations.set(result, "value", "" + (x.intValue()));
-    return result;
+  /*package*/ SNode convertConstant(IntConstant x, String source) {
+    boolean hex = source.length() >= 2;
+    if (hex) {
+      char c = source.charAt(1);
+      hex = c == 'x' || c == 'X';
+    }
+    if (hex) {
+      SNode hexLit = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.HexIntegerLiteral", null);
+      SPropertyOperations.set(hexLit, "value", source.substring(2));
+      return hexLit;
+    } else {
+      SNode cnst = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+      SPropertyOperations.set(cnst, "value", "" + (x.intValue()));
+      return cnst;
+    }
   }
 
-  /*package*/ SNode convertConstant(LongConstant x) {
+  /*package*/ SNode convertConstant(LongConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LongLiteral", null);
     SPropertyOperations.set(result, "value", x.longValue() + "L");
     return result;
   }
 
-  /*package*/ SNode convertConstant(ShortConstant x) {
+  /*package*/ SNode convertConstant(ShortConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
     SPropertyOperations.set(result, "value", "" + (x.shortValue()));
     return result;
   }
 
-  /*package*/ SNode convertConstant(StringConstant x) {
+  /*package*/ SNode convertConstant(StringConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
     SPropertyOperations.set(result, "value", NameUtil.escapeString(x.stringValue()));
     return result;
