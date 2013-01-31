@@ -87,4 +87,9 @@
     <directClassInheritorsSearch implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaDirectInheritorsSearcher"/>
     <lang.findUsagesProvider language="MPS" implementationClass="jetbrains.mps.idea.java.psi.impl.MPSFindUsagesProvider"/>
   </extensions>
+
+  <extensions defaultExtensionNs="jetbrains.mps">
+    <nodeStructureViewProvider implementation="jetbrains.mps.idea.java.psi.structureView.MPSStructureViewFactory"/>
+  </extensions>
+
 </idea-plugin>
