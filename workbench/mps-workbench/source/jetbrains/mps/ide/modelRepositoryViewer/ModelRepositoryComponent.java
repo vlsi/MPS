@@ -17,6 +17,8 @@ package jetbrains.mps.ide.modelRepositoryViewer;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.editor.colors.ColorKey;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.icons.IconManager;
@@ -123,7 +125,7 @@ public class ModelRepositoryComponent {
           setFontStyle(getFontStyle() | Font.BOLD);
           //setColor(new Color(0x00, 0x00, 0x90));
         }
-        setColor(Color.BLACK);
+        setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED")));
         String text = myModelDescriptor.getLongName();
         if (myModelDescriptor instanceof DefaultSModelDescriptor) {
           text += "(" + ((DefaultSModelDescriptor) myModelDescriptor).getLoadingState().toString() + ")";

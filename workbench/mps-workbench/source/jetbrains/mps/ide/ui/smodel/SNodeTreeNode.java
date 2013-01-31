@@ -16,6 +16,8 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.editor.colors.ColorKey;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
@@ -27,7 +29,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
 
@@ -35,7 +36,6 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import java.awt.Color;
 import java.awt.font.TextAttribute;
-import java.util.List;
 
 public class SNodeTreeNode extends MPSTreeNodeEx {
   private static final Logger LOG = Logger.getLogger(SNodeTreeNode.class);
@@ -93,7 +93,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     if (hasErrors()) {
       setColor(Color.RED);
     } else {
-      setColor(Color.BLACK);
+      setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED")));
     }
     if (myNode != null) {
       setIcon(IconManager.getIconFor(myNode));
