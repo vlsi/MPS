@@ -15,11 +15,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.scopes.ClassifiersScope;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ResolveUnknownUtil {
   private static Logger LOG = Logger.getLogger(ResolveUnknownUtil.class);
@@ -241,15 +241,33 @@ public class ResolveUnknownUtil {
         return cls;
 
       } else {
-        // there is at least one token that must represent a static field 
+        // there is at least one token that must represent a static field (or enum constant) 
 
-        SNode statFieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
-        SLinkOperations.setTarget(statFieldRef, "classifier", cls, false);
+        final String memberName = SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).getElement(tokPos), "value");
+        SNode mbEnumConst = null;
 
-        SReference fieldRef = new DynamicReference("variableDeclaration", statFieldRef, null, SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).getElement(tokPos), "value"));
-        statFieldRef.setReference(fieldRef.getRole(), fieldRef);
+        if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+          mbEnumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return memberName.equals(SPropertyOperations.getString(it, "name"));
+            }
+          }).first();
+        }
 
-        operand = statFieldRef;
+        if (mbEnumConst != null) {
+          SNode enumRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+          SLinkOperations.setTarget(enumRef, "enumClass", SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
+          SLinkOperations.setTarget(enumRef, "enumConstantDeclaration", mbEnumConst, false);
+          operand = enumRef;
+
+        } else {
+          SNode statFieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+          SLinkOperations.setTarget(statFieldRef, "classifier", cls, false);
+          SReference fieldRef;
+          fieldRef = new DynamicReference("variableDeclaration", statFieldRef, null, memberName);
+          statFieldRef.setReference(fieldRef.getRole(), fieldRef);
+          operand = statFieldRef;
+        }
         // +1 is here because static field takes one extra token 
         tokPos = tokPos + 1;
       }

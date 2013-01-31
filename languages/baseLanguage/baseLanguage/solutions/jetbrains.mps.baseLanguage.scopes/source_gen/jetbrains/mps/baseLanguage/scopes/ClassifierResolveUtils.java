@@ -308,6 +308,10 @@ public class ClassifierResolveUtils {
 
         String fqName = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
         SNode cls = resolveFqName(fqName, moduleScope, contextNodeModel);
+        if (cls == null) {
+          return null;
+        }
+        cls = construct(cls, tokenizer);
         return cls;
       }
 
