@@ -13,7 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelScope;
+import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -51,6 +56,16 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   protected BaseSModelDescriptor(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     myModelReference = modelReference;
     mySource = source;
+  }
+
+  @Override
+  public SModelScope getModelScope() {
+    return getSModel().getModelScope();
+  }
+
+  @Override
+  public boolean isRoot(org.jetbrains.mps.openapi.model.SNode node) {
+    return getSModel().isRoot(node);
   }
 
   public void setModelRoot(ModelRoot modelRoot) {

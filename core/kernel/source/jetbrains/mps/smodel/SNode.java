@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelScope;
+import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -1980,6 +1982,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     @Override
+    public boolean isRoot(org.jetbrains.mps.openapi.model.SNode node) {
+      return myModel.isRoot(node);
+    }
+
+    @Override
     public void addRootNode(org.jetbrains.mps.openapi.model.SNode node) {
       myModel.addRoot((SNode) node);
     }
@@ -1992,6 +1999,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     @Override
     public org.jetbrains.mps.openapi.model.SNode getNode(org.jetbrains.mps.openapi.model.SNodeId id) {
       return myModel.getNode(id);
+    }
+
+    @Override
+    public SModelScope getModelScope() {
+      return myModel.getModelScope();
     }
 
     @NotNull
