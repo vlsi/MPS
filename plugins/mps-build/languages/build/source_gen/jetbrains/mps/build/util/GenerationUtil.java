@@ -25,6 +25,16 @@ public class GenerationUtil {
     return map;
   }
 
+  public static <K, V> ConcurrentMap<K, V> getTransientMap(SNode project, TemplateQueryContext genContext, String prefix) {
+    String key = getKey(prefix, genContext, project);
+    ConcurrentMap<K, V> map = (ConcurrentMap<K, V>) genContext.getTransientObject(key);
+    if (map == null) {
+      map = new ConcurrentHashMap<K, V>();
+      genContext.putTransientObject(key, map);
+    }
+    return map;
+  }
+
   public static <K> ConcurrentHashSet<K> getSessionSet(SNode project, TemplateQueryContext genContext, String prefix) {
     String key = getKey(prefix, genContext, project);
     ConcurrentHashSet<K> set = (ConcurrentHashSet<K>) genContext.getSessionObject(key);

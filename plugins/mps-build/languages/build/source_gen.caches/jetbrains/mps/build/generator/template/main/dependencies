@@ -14,6 +14,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_CopyProcessor_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_EchoProperties_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_EchoXml_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_File_Behavior" />

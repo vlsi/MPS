@@ -12,6 +12,10 @@ public class BuildInputSingleFile_BehaviorDescriptor extends BuildInputFileSet_B
     return BuildInputSingleFile_Behavior.virtual_getApproximateName_5610619299013425878(thisNode);
   }
 
+  public boolean virtual_isImplicit_1330375798085107777(SNode thisNode) {
+    return BuildInputSingleFile_Behavior.virtual_isImplicit_1330375798085107777(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildInputSingleFile";

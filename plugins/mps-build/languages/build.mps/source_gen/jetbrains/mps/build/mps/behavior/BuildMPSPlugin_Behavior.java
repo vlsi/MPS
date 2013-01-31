@@ -15,13 +15,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.util.DependenciesHelper;
-import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BuildMPSPlugin_Behavior {
   public static void init(SNode thisNode) {
@@ -54,20 +52,16 @@ public class BuildMPSPlugin_Behavior {
 
     // fetch stuff for ant task classpath 
     DependenciesHelper helper = new DependenciesHelper(artifacts.getGenContext(), artifacts.getProject());
-    VisibleModules visibleModules = new VisibleModules(project, artifacts.getGenContext());
-    visibleModules.collect();
-    BuildMPSPlugin_Behavior.call_findModule_3643570831019325688(thisNode, visibleModules, "jetbrains.mps.ant", "77c9a130-703f-4530-bf21-6580757768d0", artifacts, builder, helper);
-
     SNode originalProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(project, artifacts.getGenContext()), "jetbrains.mps.build.structure.BuildProject");
-    SNode mpsCoreModule = SNodeOperations.as(BehaviorReflection.invokeVirtual(Scope.class, originalProject, "virtual_getScope_7722139651431880752", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaModule"), "parts", 0}).resolve(originalProject, "mps-core"), "jetbrains.mps.build.structure.BuildSource_JavaModule");
-    if ((mpsCoreModule != null)) {
-      SNode mpsCoreJar = SNodeOperations.as(artifacts.findArtifact(mpsCoreModule), "jetbrains.mps.build.structure.BuildLayout_Node");
-      if ((mpsCoreJar != null)) {
-        helper.artifacts().put("mps-core", mpsCoreJar);
-        builder.add(mpsCoreJar, mpsCoreModule);
+    SNode antMpsModule = SNodeOperations.as(BehaviorReflection.invokeVirtual(Scope.class, originalProject, "virtual_getScope_7722139651431880752", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaModule"), "parts", 0}).resolve(originalProject, "ant-mps"), "jetbrains.mps.build.structure.BuildSource_JavaModule");
+    if ((antMpsModule != null)) {
+      SNode antMpsJar = SNodeOperations.as(artifacts.findArtifact(antMpsModule), "jetbrains.mps.build.structure.BuildLayout_Node");
+      if ((antMpsJar != null)) {
+        helper.artifacts().put("ant-mps", antMpsJar);
+        builder.add(antMpsJar, antMpsModule);
       }
 
-      SNode mpsCore = SNodeOperations.as(SNodeOperations.getContainingRoot(mpsCoreModule), "jetbrains.mps.build.structure.BuildProject");
+      SNode mpsCore = SNodeOperations.as(SNodeOperations.getContainingRoot(antMpsModule), "jetbrains.mps.build.structure.BuildProject");
       Scope visibleJarsScope = ScopeUtil.getVisibleJarsScope(mpsCore);
       SNode jdom = visibleJarsScope.resolve(mpsCore, "IDEA::lib/jdom.jar");
       if ((jdom != null)) {
@@ -97,18 +91,5 @@ public class BuildMPSPlugin_Behavior {
       }).concat(Sequence.fromIterable(Sequence.<DescendantsScope>singleton(DescendantsScope.forNamedElements(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind)))).toGenericArray(DescendantsScope.class));
     }
     return null;
-  }
-
-  public static void call_findModule_3643570831019325688(SNode thisNode, VisibleModules visibleModules, String fqName, String uid, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder, DependenciesHelper helper) {
-    SNode module = visibleModules.resolve(fqName, uid);
-    if ((module != null)) {
-      if (SNodeOperations.getContainingRoot(module) != SNodeOperations.getContainingRoot(thisNode)) {
-        SNode moduleJar = SNodeOperations.as(artifacts.findArtifact(module), "jetbrains.mps.build.structure.BuildLayout_Node");
-        if (moduleJar != null) {
-          helper.artifacts().put(SPropertyOperations.getString(module, "uuid"), moduleJar);
-          builder.add(moduleJar, module);
-        }
-      }
-    }
   }
 }

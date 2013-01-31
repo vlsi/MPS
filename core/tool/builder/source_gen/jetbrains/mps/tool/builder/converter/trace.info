@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:39e596a9-ed2d-4e2f-b055-9544a1f3a151(jetbrains.mps.tool.builder.converter)/7841036633975757760">
+    <nodeInfo nodeId="7841036633989771059" fileName="ConvertToBinaryWorker.java" startLine="19" startPosition="48" endLine="20" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7841036633989771065" fileName="ConvertToBinaryWorker.java" startLine="20" startPosition="51" endLine="21" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7841036633975757778" fileName="ConvertToBinaryWorker.java" startLine="23" startPosition="62" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7841036633975757798" fileName="ConvertToBinaryWorker.java" startLine="26" startPosition="30" endLine="27" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7841036633975757811" fileName="ConvertToBinaryWorker.java" startLine="31" startPosition="92" endLine="32" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7841036633975757821" fileName="ConvertToBinaryWorker.java" startLine="33" startPosition="9" endLine="34" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7841036633975757844" fileName="ConvertToBinaryWorker.java" startLine="35" startPosition="92" endLine="36" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7841036633975757846" fileName="ConvertToBinaryWorker.java" startLine="37" startPosition="7" endLine="38" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7841036633975757865" fileName="ConvertToBinaryWorker.java" startLine="39" startPosition="23" endLine="40" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7841036633975757875" fileName="ConvertToBinaryWorker.java" startLine="42" startPosition="36" endLine="43" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7841036633975757763" fileName="ConvertToBinaryWorker.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConvertToBinaryWorker#()V" />
+    <nodeInfo nodeId="7841036633975757775" fileName="ConvertToBinaryWorker.java" startLine="22" startPosition="9" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7841036633975757827" fileName="ConvertToBinaryWorker.java" startLine="34" startPosition="70" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7841036633975757856" fileName="ConvertToBinaryWorker.java" startLine="38" startPosition="110" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7841036633975757799" fileName="ConvertToBinaryWorker.java" startLine="21" startPosition="56" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7841036633975757767" fileName="ConvertToBinaryWorker.java" startLine="19" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convert#(Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7841036633975757876" fileName="ConvertToBinaryWorker.java" startLine="32" startPosition="70" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7841036633975757803" fileName="ConvertToBinaryWorker.java" startLine="31" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convertModelToBinary#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <scopeInfo nodeId="7841036633975757765" fileName="ConvertToBinaryWorker.java" startLine="16" startPosition="34" endLine="16" endPosition="34" />
+    <scopeInfo nodeId="7841036633975757777" fileName="ConvertToBinaryWorker.java" startLine="23" startPosition="62" endLine="24" endPosition="63" />
+    <scopeInfo nodeId="7841036633975757800" fileName="ConvertToBinaryWorker.java" startLine="26" startPosition="0" endLine="27" endPosition="37">
+      <varInfo nodeId="7841036633975757791" varName="ex" />
+    </scopeInfo>
+    <scopeInfo nodeId="7841036633975757795" fileName="ConvertToBinaryWorker.java" startLine="26" startPosition="30" endLine="27" endPosition="37" />
+    <scopeInfo nodeId="7841036633975757837" fileName="ConvertToBinaryWorker.java" startLine="35" startPosition="92" endLine="36" endPosition="113" />
+    <scopeInfo nodeId="7841036633975757860" fileName="ConvertToBinaryWorker.java" startLine="39" startPosition="23" endLine="40" endPosition="57" />
+    <scopeInfo nodeId="7841036633975757877" fileName="ConvertToBinaryWorker.java" startLine="42" startPosition="0" endLine="43" endPosition="49">
+      <varInfo nodeId="7841036633975757866" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="7841036633975757870" fileName="ConvertToBinaryWorker.java" startLine="42" startPosition="36" endLine="43" endPosition="49" />
+    <scopeInfo nodeId="7841036633975757763" fileName="ConvertToBinaryWorker.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7841036633975757774" fileName="ConvertToBinaryWorker.java" startLine="22" startPosition="9" endLine="25" endPosition="7" />
+    <scopeInfo nodeId="7841036633975757775" fileName="ConvertToBinaryWorker.java" startLine="22" startPosition="9" endLine="25" endPosition="7">
+      <varInfo nodeId="7841036633975757784" varName="entry" />
+    </scopeInfo>
+    <scopeInfo nodeId="7841036633975757819" fileName="ConvertToBinaryWorker.java" startLine="33" startPosition="9" endLine="41" endPosition="7">
+      <varInfo nodeId="7841036633975757820" varName="model" />
+      <varInfo nodeId="7841036633975757845" varName="success" />
+    </scopeInfo>
+    <scopeInfo nodeId="7841036633975757772" fileName="ConvertToBinaryWorker.java" startLine="19" startPosition="48" endLine="28" endPosition="5" />
+    <scopeInfo nodeId="7841036633975757767" fileName="ConvertToBinaryWorker.java" startLine="19" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="7841036633975757768" varName="map" />
+    </scopeInfo>
+    <scopeInfo nodeId="7841036633975757809" fileName="ConvertToBinaryWorker.java" startLine="31" startPosition="92" endLine="44" endPosition="5">
+      <varInfo nodeId="7841036633975757810" varName="source" />
+    </scopeInfo>
+    <scopeInfo nodeId="7841036633975757803" fileName="ConvertToBinaryWorker.java" startLine="31" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="7841036633975757806" varName="destFile" />
+      <varInfo nodeId="7841036633975757804" varName="sourceFile" />
+    </scopeInfo>
+    <unitInfo nodeId="7841036633975757760" fileName="ConvertToBinaryWorker.java" startLine="15" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.tool.builder.converter.ConvertToBinaryWorker" />
+  </root>
+</debugInfo>
+
