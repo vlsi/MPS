@@ -696,7 +696,6 @@ public class ConceptPropertiesHelper {
     }
     SLinkOperations.setTarget(modelComponent, "renderingCondition", SNodeOperations.copyNode(SLinkOperations.getTarget(cell, "renderingCondition", true)), true);
     SLinkOperations.setTarget(modelComponent, "menuDescriptor", SNodeOperations.copyNode(SLinkOperations.getTarget(cell, "menuDescriptor", true)), true);
-    SLinkOperations.setTarget(modelComponent, "cellBackgroundFunction", SNodeOperations.copyNode(SLinkOperations.getTarget(cell, "cellBackgroundFunction", true)), true);
     SLinkOperations.setTarget(modelComponent, "focusPolicyApplicable", SNodeOperations.copyNode(SLinkOperations.getTarget(cell, "focusPolicyApplicable", true)), true);
     SLinkOperations.setTarget(modelComponent, "actionMap", SLinkOperations.getTarget(cell, "actionMap", false), false);
     SLinkOperations.setTarget(modelComponent, "keyMap", SLinkOperations.getTarget(cell, "keyMap", false), false);
