@@ -21,27 +21,50 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
-/**
- * DO NOT implement this interface directly. Always use BaseScope class
- */
+@Deprecated
 public interface IScope extends SearchScope {
+  // use SearchScope instead IScope
 
+  @Deprecated
+  /*
+  Use ScopeOperations.getModelDescriptor(SearchScope, SModelReference)
+  */
   SModelDescriptor getModelDescriptor(SModelReference modelReference);
 
+  @Deprecated
+  /*
+  Use ScopeOperations.resolveModule(SearchScope, SModuleReference, Language.class)
+   */
   Language getLanguage(SModuleReference moduleReference);
 
+  @Deprecated
+  /*
+  Use ScopeOperations.resolveModule(SearchScope, ModuleReference, DevKit.class)
+   */
   DevKit getDevKit(ModuleReference ref);
 
+  /*
+  Use ScopeOperations.getModelDescriptors(SearchScope), but getModels() better
+   */
   Iterable<SModelDescriptor> getModelDescriptors();
 
-
+  @Deprecated
+  /*
+  Use ScopeOperations.getModules(SearchScope, Language.class)
+   */
   Iterable<Language> getVisibleLanguages();
 
+  @Deprecated
+  /*
+  Use ScopeOperations.getModules(SearchScope, DevKit.class)
+   */
   Iterable<DevKit> getVisibleDevkits();
 
+  @Deprecated
+  /*
+  Use ScopeOperations.getModules(SearchScope, IModule.class), but getModules() better
+   */
   Iterable<IModule> getVisibleModules();
-
-  //-----------deprecated------------
 
   @Deprecated
   /*
@@ -51,13 +74,13 @@ public interface IScope extends SearchScope {
 
   @Deprecated
   /*
-  Use IScopeUtils.getModelDescriptor(IScope, SModelFqName)
+  Use ScopeOperations.getModelDescriptor(SearchScope, SModelFqName)
    */
   SModelDescriptor getModelDescriptor(SModelFqName fqName);
 
   @Deprecated
   /*
-  Use IScopeUtils.getLanguage(IScope, String)
+  Use ScopeOperations.getLanguage(SearchScope, String)
    */
   Language getLanguage(String fqName);
 }
