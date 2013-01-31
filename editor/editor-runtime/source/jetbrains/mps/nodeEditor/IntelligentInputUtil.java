@@ -457,7 +457,7 @@ public class IntelligentInputUtil {
   }
 
   private static void activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.EditorContext editorContext, EditorCell cell, NodeSubstituteInfo info) {
-    ((NodeEditorComponent) editorContext.getEditorComponent()).activateNodeSubstituteChooser(cell, info, false);
+    ((EditorComponent) editorContext.getEditorComponent()).activateNodeSubstituteChooser(cell, info, false);
   }
 
   private static EditorCell findNodeCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode newNode) {
