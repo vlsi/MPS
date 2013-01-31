@@ -7,132 +7,90 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.BaseScope;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
-import java.util.LinkedHashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import java.util.Collections;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.DevKit;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public abstract class AbstractMigrationScriptHelper {
-  public AbstractMigrationScriptHelper() {
-  }
-
   public static void doRunScripts(List<SNode> scripts, IScope scope, IOperationContext context) {
     context.getComponent(MigrationScriptsTool.class).startMigration(scripts, scope, context);
   }
 
-  public static IScope createMigrationScope(List<SModelDescriptor> models, List<IModule> modules, boolean applyToSelection) {
-    AbstractMigrationScriptHelper.MigrationScope migrationScope = new AbstractMigrationScriptHelper.MigrationScope();
+  public static IScope createMigrationScope(Iterable<? extends SModel> models, Iterable<? extends SModule> modules, boolean applyToSelection) {
+    Set<SModel> modelsToMigration = SetSequence.fromSet(new HashSet<SModel>());
     if (applyToSelection) {
-      for (SModelDescriptor model : models) {
-        migrationScope.addModel(model);
-      }
-      for (IModule module : modules) {
-        migrationScope.addModule(module);
-        if (module instanceof Language) {
-          Language language = (Language) module;
-          for (Generator generator : language.getGenerators()) {
-            migrationScope.addModule(generator);
-          }
-        }
-      }
+      SetSequence.fromSet(modelsToMigration).addSequence(SetSequence.fromSet(collectModelsForMigration(models, modules)));
     }
     // TODO: why global scope??? 
-    if (migrationScope.isEmpty()) {
-      for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
-        migrationScope.addModule(module);
-      }
+    if (SetSequence.fromSet(modelsToMigration).isEmpty()) {
+      SetSequence.fromSet(modelsToMigration).addSequence(SetSequence.fromSet(collectModelsForMigration(Collections.<SModel>emptySet(), GlobalScope.getInstance().getModules())));
     }
-    return migrationScope;
+    return new ModelsScope(modelsToMigration);
   }
 
-  public static IScope createMigrationScope(List<SModelDescriptor> models, List<IModule> modules) {
-    AbstractMigrationScriptHelper.MigrationScope migrationScope = new AbstractMigrationScriptHelper.MigrationScope();
-    for (SModelDescriptor model : models) {
-      migrationScope.addModel(model);
-    }
-    for (IModule module : modules) {
-      migrationScope.addModule(module);
+  public static IScope createMigrationScope(Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
+    return new ModelsScope(collectModelsForMigration(models, modules));
+  }
+
+  private static Set<SModel> collectModelsForMigration(Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
+    Set<SModel> result = SetSequence.fromSet(new HashSet<SModel>());
+    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return includeModel(it);
+      }
+    }));
+    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(withGenerators(modules)).where(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
+        return !(it.isPackaged());
+      }
+    }).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
+      }
+    }).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return includeModel(it);
+      }
+    }));
+    return result;
+  }
+
+  private static Iterable<SModule> withGenerators(Iterable<? extends SModule> modules) {
+    Set<SModule> result = SetSequence.fromSet(new HashSet<SModule>());
+    for (SModule module : Sequence.fromIterable(modules)) {
+      SetSequence.fromSet(result).addElement(module);
       if (module instanceof Language) {
-        Language language = (Language) module;
-        for (Generator generator : language.getGenerators()) {
-          migrationScope.addModule(generator);
-        }
+        SetSequence.fromSet(result).addSequence(CollectionSequence.fromCollection(((Language) module).getGenerators()));
       }
     }
-    return migrationScope;
+    return result;
   }
 
-  private static class MigrationScope extends BaseScope {
-    private Set<SModelDescriptor> myModels = new LinkedHashSet<SModelDescriptor>();
-
-    private MigrationScope() {
+  private static boolean includeModel(SModel model) {
+    if (!(((model instanceof EditableSModelDescriptor)))) {
+      return false;
     }
-
-    public void addModel(SModelDescriptor model) {
-      if (!((model instanceof EditableSModelDescriptor))) {
-        return;
-      }
-      if (((EditableSModelDescriptor) model).isReadOnly()) {
-        return;
-      }
-      if (model.getStereotype() != null) {
-        if (model.getStereotype().equals(SModelStereotype.INTERNAL) || model.getStereotype().equals(SModelStereotype.INTERNAL_COPY) || SModelStereotype.isStubModelStereotype(model.getStereotype())) {
-          return;
-        }
-      }
-      myModels.add(model);
+    if (((EditableSModelDescriptor) model).isReadOnly()) {
+      return false;
     }
-
-    public void addModule(IModule module) {
-      if (!(module.isPackaged())) {
-        for (SModelDescriptor model : module.getOwnModelDescriptors()) {
-          addModel(model);
-        }
+    String modelStereotype = SModelStereotype.getStereotype(model);
+    if (modelStereotype != null) {
+      if (modelStereotype.equals(SModelStereotype.INTERNAL) || modelStereotype.equals(SModelStereotype.INTERNAL_COPY) || SModelStereotype.isStubModelStereotype(modelStereotype)) {
+        return false;
       }
     }
-
-    public List<SModelDescriptor> getModelDescriptors() {
-      return new ArrayList<SModelDescriptor>(myModels);
-    }
-
-    public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-      return SModelRepository.getInstance().getModelDescriptor(modelReference);
-    }
-
-    public List<Language> getVisibleLanguages() {
-      throw new UnsupportedOperationException();
-    }
-
-    public List<DevKit> getVisibleDevkits() {
-      throw new UnsupportedOperationException();
-    }
-
-    public Language getLanguage(SModuleReference moduleReference) {
-      return GlobalScope.getInstance().getLanguage(moduleReference);
-    }
-
-    public DevKit getDevKit(ModuleReference ref) {
-      return GlobalScope.getInstance().getDevKit(ref);
-    }
-
-    public Set<IModule> getVisibleModules() {
-      throw new UnsupportedOperationException();
-    }
-
-    public boolean isEmpty() {
-      return myModels.isEmpty();
-    }
+    return true;
   }
 }

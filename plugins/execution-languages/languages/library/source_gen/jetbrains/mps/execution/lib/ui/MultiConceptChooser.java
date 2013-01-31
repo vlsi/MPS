@@ -16,12 +16,9 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -32,8 +29,8 @@ import java.util.Set;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 /**
@@ -44,7 +41,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 public class MultiConceptChooser extends AbstractMainNodeChooser {
   @NotNull
   private final List<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargetConcepts = ListSequence.fromList(new ArrayList<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>());
-  private final GlobalFilteredScope myScope;
+  private final ModulesWithLanguagesScope myScope;
 
   @Deprecated
   public MultiConceptChooser(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>... targets) {
@@ -66,24 +63,17 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
       }
     }));
 
-    final Iterable<IModule> modules = ListSequence.fromList(myTargetConcepts).select(new ISelector<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, IModule>() {
-      public IModule select(final Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
-        final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            module.value = SNodeOperations.getModel(it._0()).getModelDescriptor().getModule();
+    final Iterable<Language> modules = ListSequence.fromList(myTargetConcepts).select(new ISelector<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, Language>() {
+      public Language select(final Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
+        return ModelAccess.instance().runReadAction(new Computable<Language>() {
+          public Language compute() {
+            return (Language) SNodeOperations.getModel(it._0()).getModelDescriptor().getModule();
           }
         });
-        return module.value;
       }
     });
-    myScope = new GlobalFilteredScope(MPSModuleRepository.getInstance(), SModelRepository.getInstance()) {
-      @Nullable
-      @Override
-      protected Iterable<IModule> getRequiredModules() {
-        return modules;
-      }
-    };
+
+    myScope = new ModulesWithLanguagesScope(GlobalScope.getInstance(), modules);
   }
 
   protected List<SNode> findToChooseFromOnInit(final FindUsagesManager manager, final ProgressMonitor monitor) {
@@ -106,12 +96,12 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
     }).toListSequence());
   }
 
-  protected List<SModelDescriptor> getModelDescriptors(String model) {
-    return myScope.getModelDescriptors(model);
+  protected Iterable<SModel> getModels(String model) {
+    return ScopeOperations.getModelsByName(myScope, model);
   }
 
-  protected Iterable<SNode> findNodes(SModel model, final String fqName) {
-    return ListSequence.fromList(SModelOperations.getNodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {
+  protected Iterable<SNode> findNodes(jetbrains.mps.smodel.SModel model, final String fqName) {
+    return ListSequence.fromList(SModelOperations.getNodes(((jetbrains.mps.smodel.SModel) model), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(final SNode node) {
         return ListSequence.fromList(myTargetConcepts).findFirst(new IWhereFilter<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
           public boolean accept(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {

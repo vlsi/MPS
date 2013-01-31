@@ -49,8 +49,8 @@ public class DefaultOptionsContainer {
     ViewOptions viewOptions = new ViewOptions(true, false);
     result.setOption(viewOptions);
     ScopeOptions scopeOptions = new ScopeOptions(((InternalFlag.isInternalMode() ?
-      ScopeOptions.GLOBAL_SCOPE :
-      ScopeOptions.PROJECT_SCOPE
+      ScopeOptions.ScopeType.GLOBAL :
+      ScopeOptions.ScopeType.PROJECT
     )), ScopeOptions.DEFAULT_VALUE, ScopeOptions.DEFAULT_VALUE);
     result.setOption(scopeOptions);
     return result;
