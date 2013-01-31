@@ -21,6 +21,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -34,9 +35,12 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
+import jetbrains.mps.util.iterable.TranslatingIterator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelScope;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -173,6 +177,27 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     if (node != null) return node;
     enforceFullLoad();
     return myIdToNodeMap.get(nodeId);
+  }
+
+  @Override
+  public SModelScope getModelScope() {
+    return new SModelScope() {
+      public Iterable<? extends org.jetbrains.mps.openapi.model.SModel> getModels() {
+        return new TranslatingIterator<ImportElement, org.jetbrains.mps.openapi.model.SModel>(myImports.iterator()) {
+          protected org.jetbrains.mps.openapi.model.SModel translate(ImportElement imp) {
+            return imp.getModelReference().resolve(MPSModuleRepository.getInstance());
+          }
+        };
+      }
+
+      public Iterable<SLanguage> getLanguages() {
+        return new TranslatingIterator<ModuleReference,SLanguage>(myLanguages.iterator()) {
+          protected SLanguage translate(ModuleReference ref) {
+            return new SLanguageLanguageAdapter(((Language) ref.resolve(MPSModuleRepository.getInstance())));
+          }
+        };
+      }
+    };
   }
 
   @NotNull
@@ -362,6 +387,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //---------loading state--------
 
+  //todo replace with isInRepository in public places
   public boolean canFireEvent() {
     return isRegistered() && !isUpdateMode();
   }
@@ -370,6 +396,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return canFireEvent();
   }
 
+  //todo replace with isInRepository in public places
   public boolean isRegistered() {
     return myModelDescriptor != null && myModelDescriptor.isRegistered();
   }
@@ -542,6 +569,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //---------fast node finder--------
 
+  //todo this is an external functionality. Should be implemented externally
   public final synchronized FastNodeFinder getFastNodeFinder() {
     if (myFastNodeFinder == null) {
       myFastNodeFinder = createFastNodeFinder();
@@ -554,6 +582,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return new DefaultFastNodeFinder(this);
   }
 
+  //todo this is an external functionality. Should be implemented externally
   public synchronized void disposeFastNodeFinder() {
     if (myFastNodeFinder != null) {
       myFastNodeFinder.dispose();
@@ -882,6 +911,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     myImplicitImports.add(element);
   }
 
+  //todo get rid of 1 usage, make package-protected
   public boolean isUpdateMode() {
     return false;
   }
