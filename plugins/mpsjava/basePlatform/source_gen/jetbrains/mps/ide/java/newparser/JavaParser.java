@@ -194,8 +194,12 @@ public class JavaParser {
           }
         }).count();
         for (String line : ListSequence.fromList(CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1]))))) {
+          String line_ = line;
+          if (line.startsWith(" ")) {
+            line_ = line.substring(1);
+          }
           SNode commentText = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TextCommentPart", null);
-          SPropertyOperations.set(commentText, "text", line);
+          SPropertyOperations.set(commentText, "text", line_);
           SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
           ListSequence.fromList(SLinkOperations.getTargets(commentLine, "commentPart", true)).addElement(commentText);
           ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).insertElement(pos++, commentLine);
@@ -240,6 +244,7 @@ public class JavaParser {
     boolean isStatic = impRef.isStatic();
 
     SPropertyOperations.set(imp, "onDemand", "" + (onDemand));
+    SPropertyOperations.set(imp, "static", "" + (isStatic));
 
     char[][] toks = impRef.getImportName();
     StringBuffer sb = new StringBuffer();

@@ -46,10 +46,4 @@ public class ClassifiersScope extends FilteringScope {
     return ClassifierResolveUtils.resolve(refText, contextClass, myModuleScope, (ModelPlusImportedScope) wrapped, myInlcudeAncestors);
     // <node> 
   }
-
-  @Override
-  public boolean contains(SNode n) {
-    boolean result = super.contains(n);
-    return result;
-  }
 }

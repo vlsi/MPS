@@ -6,6 +6,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class CommentHelper {
@@ -26,45 +27,55 @@ public class CommentHelper {
 
   public static List<String> processLines(Iterable<String> lines, String start, String end) {
     // remove start and end (if any) tags, indent 
-    List<String> result = ListSequence.fromList(new ArrayList<String>());
-    if (Sequence.fromIterable(lines).isEmpty()) {
+    List<String> result = ListSequence.fromListWithValues(new ArrayList<String>(), lines);
+    if (ListSequence.fromList(result).isEmpty()) {
       return result;
     }
     // remove start prefix 
-    if (trim_rf742u_a0a4a2(Sequence.fromIterable(lines).first()).equals(start)) {
-      lines = Sequence.fromIterable(lines).skip(1);
-    } else if (Sequence.fromIterable(lines).first().startsWith(start)) {
-      ListSequence.fromList(result).addElement(Sequence.fromIterable(lines).first().substring(start.length()));
-      lines = Sequence.fromIterable(lines).skip(1);
+    if (trim_rf742u_a0a4a2(ListSequence.fromList(result).first()).equals(start)) {
+      ListSequence.fromList(result).removeElementAt(0);
+    } else if (ListSequence.fromList(result).first().startsWith(start)) {
+      String trimmed = ListSequence.fromList(result).getElement(0).substring(start.length());
+      if (trimmed.startsWith(" ")) {
+        trimmed = trimmed.substring(1);
+      }
+      ListSequence.fromList(result).setElement(0, trimmed);
     }
+    if (ListSequence.fromList(result).isEmpty()) {
+      return result;
+    }
+    if ((end != null && end.length() > 0)) {
+      if (trim_rf742u_a0a0a6a2(ListSequence.fromList(result).last()).equals(end)) {
+        ListSequence.fromList(result).removeLastElement();
+      } else if (ListSequence.fromList(result).last().endsWith(end)) {
+        String trimmed = ListSequence.fromList(result).last();
+        trimmed = trimmed.substring(0, trimmed.length() - end.length());
+        ListSequence.fromList(result).setElement(ListSequence.fromList(result).count() - 1, trimmed);
+      }
+    }
+
     // find common indent for nonempty lines 
-    if (Sequence.fromIterable(lines).isNotEmpty()) {
-      int mintrim = Sequence.fromIterable(lines).first().length();
-      for (String line : Sequence.fromIterable(lines)) {
+    if (ListSequence.fromList(result).isNotEmpty()) {
+      int mintrim = ListSequence.fromList(result).first().length();
+      for (String line : ListSequence.fromList(result)) {
         if ((line != null && line.length() > 0)) {
-          mintrim = Math.min(mintrim, line.length() - StringUtils.stripStart(line, " \n\r\t").length());
+          mintrim = Math.min(mintrim, whitespaceOrStar(line));
         }
       }
       boolean trimok = mintrim > 0;
-      String prefix = Sequence.fromIterable(lines).first().substring(0, mintrim);
-      for (String line : Sequence.fromIterable(lines)) {
+      String prefix = ListSequence.fromList(result).first().substring(0, mintrim);
+      for (String line : ListSequence.fromList(result)) {
         if ((line != null && line.length() > 0)) {
           trimok = trimok && line.startsWith(prefix);
         }
       }
-      for (String line : Sequence.fromIterable(lines)) {
-        ListSequence.fromList(result).addElement((trimok && (line != null && line.length() > 0) ?
+      ListIterator<String> iter = result.listIterator();
+      while (iter.hasNext()) {
+        String line = iter.next();
+        iter.set((trimok && (line != null && line.length() > 0) ?
           line.substring(mintrim) :
           line
         ));
-      }
-    }
-    if ((end != null && end.length() > 0) && ListSequence.fromList(result).isNotEmpty()) {
-      if (trim_rf742u_a0a0a7a2(ListSequence.fromList(result).last()).equals(end)) {
-        ListSequence.fromList(result).removeLastElement();
-      } else if (ListSequence.fromList(result).last().endsWith(end)) {
-        String last = ListSequence.fromList(result).removeLastElement();
-        ListSequence.fromList(result).addElement(last.substring(0, last.length() - end.length()));
       }
     }
     return result;
@@ -84,6 +95,21 @@ public class CommentHelper {
 
 
 
+  private static int whitespaceOrStar(String s) {
+    char[] chars = s.toCharArray();
+    boolean wasStar = false;
+    int k = 0;
+    for (; k < chars.length; k++) {
+      char c = chars[k];
+      boolean stillWhitespace = Character.isWhitespace(c) || c == '*' && !(wasStar);
+      if (!(stillWhitespace)) {
+        return k;
+      }
+      wasStar = wasStar || c == '*';
+    }
+    return k;
+  }
+
   public static String trim_rf742u_a0a4a2(String str) {
     return (str == null ?
       null :
@@ -91,7 +117,7 @@ public class CommentHelper {
     );
   }
 
-  public static String trim_rf742u_a0a0a7a2(String str) {
+  public static String trim_rf742u_a0a0a6a2(String str) {
     return (str == null ?
       null :
       str.trim()

@@ -30,6 +30,9 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.baseLanguage.scopes.ClassifierResolveUtils;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.scope.FilteringByNameScope;
@@ -324,6 +327,10 @@ public class Classifier_Behavior {
 
     // todo: remove this logic from Classifier 
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+      Iterable<SNode> staticImportedFields = null;
+      if ((AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))) != null)) {
+        staticImportedFields = ClassifierResolveUtils.staticImportedFields(AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))));
+      }
       Iterable<SNode> variables = Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getThisType_7405920559687254782", new Object[]{}))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           // add instance fields + static fields 
@@ -333,32 +340,38 @@ public class Classifier_Behavior {
         public SNode select(SNode it) {
           return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
         }
-      });
+      }).concat(Sequence.fromIterable(staticImportedFields));
       // todo: name clashing? 
       return Scopes.forVariables(kind, variables, ScopeUtils.lazyParentScope(thisNode, kind));
     }
+
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")) {
+      Iterable<SNode> staticImportedMethods = null;
+      if ((AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))) != null)) {
+        staticImportedMethods = ClassifierResolveUtils.staticImportedMethods(AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))));
+      }
       Iterable<SNode> methods = Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getThisType_7405920559687254782", new Object[]{}))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          // add instance methods + static methods 
+          // add instance methods + static methods + static imported methods 
           return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && !(isStaticContext));
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
         }
-      });
+      }).concat(Sequence.fromIterable(staticImportedMethods));
+
       // todo: name clashing 
       return Scopes.forMethods(kind, new MethodsScope(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getThisType_7405920559687254782", new Object[]{}), methods), ScopeUtils.lazyParentScope(thisNode, kind));
     }
 
     {
-      SNode concept_i0bb;
-      concept_i0bb = kind;
-      if (SConceptOperations.isSubConceptOf(concept_i0bb, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind")) {
+      SNode concept_j0bb;
+      concept_j0bb = kind;
+      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.ContextClassifierKind")) {
         return CompositeWithParentScope.from(thisNode, thisNode, kind);
       }
-      if (SConceptOperations.isSubConceptOf(concept_i0bb, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
         // todo: Classifier should be ClassifierMember! 
         if (!(isStaticContext)) {
           return Scopes.forTypeVariables(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), ScopeUtils.lazyParentScope(thisNode, kind));
@@ -366,7 +379,7 @@ public class Classifier_Behavior {
           return ScopeUtils.lazyParentScope(thisNode, kind);
         }
       }
-      if (SConceptOperations.isSubConceptOf(concept_i0bb, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         // add instance fields + static fields 
         if (!(isStaticContext)) {
           Scope instanceMethods = BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getMembers_2201875424515824604", new Object[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")});
@@ -391,14 +404,14 @@ public class Classifier_Behavior {
         }
 
       }
-      if (SConceptOperations.isSubConceptOf(concept_i0bb, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.Classifier")) {
         if (SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass") || SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface") || SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
           return ClassifierScopes.getVisibleClassifiersScope(child, false);
         }
         return ClassifierScopes.getVisibleClassifiersScope(child, true);
 
       }
-      if (SConceptOperations.isSubConceptOf(concept_i0bb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+      if (SConceptOperations.isSubConceptOf(concept_j0bb, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
         {
           // in other cases - hide everything by name... 
           // todo: change! 
