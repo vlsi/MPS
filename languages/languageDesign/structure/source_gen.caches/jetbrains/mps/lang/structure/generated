@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="yt9swyjwffw4zeuidq4c030fhomltd">
-  <dep model="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" hash="-2zk34taupz8md1hti3g1sxy4zidk2sa" />
+  <dep model="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" hash="-1tuqfy1852tjwakuez3890x4ay69den" />
   <dep model="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)" hash="600zojfmu96tfi6cdi35fgtdxy0libe" />
-  <dep model="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" hash="ct1mx6n8wm3zt4szhb5bhhtlirlgi89" />
+  <dep model="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" hash="6dqdk03i6g2alzf0j4pz8fwo4xiya4x" />
   <common>
     <dep model="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" />
     <dep model="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)" />
-    <dep model="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" />
     <file name="Language.java" />
   </common>
 </dependencies>
