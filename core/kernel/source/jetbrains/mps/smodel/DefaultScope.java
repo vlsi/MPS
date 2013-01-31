@@ -71,7 +71,17 @@ public abstract class DefaultScope extends BaseScope {
 
   @Override
   public SModule resolve(SModuleReference reference) {
-    SModule module = MPSModuleRepository.getInstance().getModule(reference.getModuleId());
+    if (reference == null) {
+      return null;
+    }
+
+    SModule module;
+    if (reference.getModuleId() != null) {
+      module = MPSModuleRepository.getInstance().getModule(reference.getModuleId());
+    } else {
+      module = MPSModuleRepository.getInstance().getModuleByFqName(reference.getModuleName());
+    }
+
     if (module == null) {
       return null;
     }
@@ -92,7 +102,16 @@ public abstract class DefaultScope extends BaseScope {
       return null;
     }
 
-    SModel model = SModelRepository.getInstance().getModelDescriptor(reference.getModelId());
+    SModel model;
+    if (reference.getModelId() != null) {
+      model = SModelRepository.getInstance().getModelDescriptor(reference.getModelId());
+    } else {
+      // todo: do something with this code
+      SModelFqName fqName = ((SModelReference) reference).getSModelFqName();
+      if (fqName == null) return null;
+      model = SModelRepository.getInstance().getModelDescriptor(fqName);
+    }
+
     if (model == null) {
       return null;
     }
