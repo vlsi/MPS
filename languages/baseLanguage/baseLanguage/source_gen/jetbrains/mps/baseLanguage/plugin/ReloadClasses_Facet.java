@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.ITResource;
+import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
@@ -19,7 +19,6 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -61,7 +60,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
   }
 
   public static class Target_reloadClasses implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.baseLanguage.ReloadClasses.reloadClasses");
 
@@ -70,15 +69,17 @@ public class ReloadClasses_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_i849au_a0a = null;
+          final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               boolean nonEmptyCompilation = pa.global().properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() != null && pa.global().properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything();
 
-              if (nonEmptyCompilation && Sequence.fromIterable(input).any(new IWhereFilter<IResource>() {
-                public boolean accept(IResource in) {
-                  return ((TResource) in).module().reloadClassesAfterGeneration();
+              if (nonEmptyCompilation && Sequence.fromIterable(input).any(new IWhereFilter<TResource>() {
+                public boolean accept(TResource in) {
+                  return in.module().reloadClassesAfterGeneration();
                 }
               })) {
                 monitor.currentProgress().beginWork("Reloading classes", 1, monitor.currentProgress().workLeft());

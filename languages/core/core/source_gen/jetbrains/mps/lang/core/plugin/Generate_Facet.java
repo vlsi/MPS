@@ -33,9 +33,8 @@ import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.DefaultGenerationParametersProvider;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.smodel.resources.IMResource;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.resources.MResource;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -101,8 +100,10 @@ public class Generate_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0a = null;
+          final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
               if (pa.global().properties(Target_checkParameters.this.getName(), Generate_Facet.Target_checkParameters.Variables.class).project() == null) {
@@ -234,8 +235,10 @@ public class Generate_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0b = null;
+          final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
               IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
@@ -401,7 +404,7 @@ public class Generate_Facet extends IFacet.Stub {
   }
 
   public static class Target_preloadModels implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{MResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.preloadModels");
 
@@ -410,8 +413,10 @@ public class Generate_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           Iterable<IResource> _output_fi61u2_a0c = null;
+          final Iterable<MResource> input = (Iterable<MResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               int work = Sequence.fromIterable(input).count() * 100;
@@ -419,11 +424,10 @@ public class Generate_Facet extends IFacet.Stub {
                 return new IResult.SUCCESS(_output_fi61u2_a0c);
               }
               monitor.currentProgress().beginWork("Pre-loading models", work, monitor.currentProgress().workLeft());
-              Sequence.fromIterable(input).visitAll(new IVisitor<IResource>() {
-                public void visit(IResource mod) {
-                  MResource mres = ((MResource) mod);
+              Sequence.fromIterable(input).visitAll(new IVisitor<MResource>() {
+                public void visit(MResource mod) {
                   monitor.currentProgress().advanceWork("Pre-loading models", 100);
-                  Sequence.fromIterable(mres.models()).visitAll(new IVisitor<SModelDescriptor>() {
+                  Sequence.fromIterable(mod.models()).visitAll(new IVisitor<SModelDescriptor>() {
                     public void visit(final SModelDescriptor smd) {
                       ModelAccess.instance().runReadAction(new Runnable() {
                         public void run() {
@@ -502,7 +506,7 @@ public class Generate_Facet extends IFacet.Stub {
   }
 
   public static class Target_generate implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{MResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.generate");
 
@@ -511,8 +515,10 @@ public class Generate_Facet extends IFacet.Stub {
 
     public IJob createJob() {
       return new IJob.Stub() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
+        @Override
+        public IResult execute(final Iterable<IResource> rawInput, final IJobMonitor monitor, final IPropertiesAccessor pa, @NotNull final ProgressMonitor progressMonitor) {
           final Wrappers._T<Iterable<IResource>> _output_fi61u2_a0d = new Wrappers._T<Iterable<IResource>>(null);
+          final Iterable<MResource> input = (Iterable<MResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
               boolean generationOk = false;
@@ -546,15 +552,15 @@ public class Generate_Facet extends IFacet.Stub {
                 }
               };
 
-              progressMonitor.start("Generating", Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
-                public Integer combine(Integer s, IResource it) {
-                  return s + Sequence.fromIterable(((MResource) it).models()).count() * 1000;
+              progressMonitor.start("Generating", Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<MResource, Integer>() {
+                public Integer combine(Integer s, MResource it) {
+                  return s + Sequence.fromIterable(it.models()).count() * 1000;
                 }
               }));
               try {
-                List<SModelDescriptor> models = Sequence.fromIterable(input).translate(new ITranslator2<IResource, SModelDescriptor>() {
-                  public Iterable<SModelDescriptor> translate(IResource in) {
-                    return ((MResource) in).models();
+                List<SModelDescriptor> models = Sequence.fromIterable(input).translate(new ITranslator2<MResource, SModelDescriptor>() {
+                  public Iterable<SModelDescriptor> translate(MResource in) {
+                    return in.models();
                   }
                 }).toListSequence();
 

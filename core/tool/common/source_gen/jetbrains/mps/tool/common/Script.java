@@ -29,6 +29,9 @@ public class Script {
   private static final String ELEMENT_PROPERTY = "property";
   private static final String PATH = "path";
   private static final String VALUE = "value";
+  private static final String ELEMENT_CHUNK = "chunk";
+  private static final String ATTRIBUTE_BOOTSTRAP = "bootstrap";
+  private static final String ELEMENT_LIBRARYJAR = "libraryJar";
   private final Set<File> myModels = new LinkedHashSet<File>();
   private final Set<File> myModules = new LinkedHashSet<File>();
   private final Set<File> myExcludedFromDiff = new LinkedHashSet<File>();
@@ -41,6 +44,8 @@ public class Script {
   private final Map<String, String> myProperties = new LinkedHashMap<String, String>();
   private final List<String> myParameters = new ArrayList<String>();
   private boolean myLoadBootstrapLibraries = true;
+  private final Map<List<String>, Boolean> myChunks = new LinkedHashMap<List<String>, Boolean>();
+  private final List<String> myLibraryJars = new ArrayList<String>();
 
   public Script() {
   }
@@ -76,6 +81,16 @@ public class Script {
     }
     projectProperties.addAll(Arrays.asList(property));
   }
+
+  public void addChunk(List<String> modules, boolean isBootstrap) {
+    myChunks.put(modules, isBootstrap);
+  }
+
+  public void addLibraryJar(String libraryJar) {
+    myLibraryJars.add(libraryJar);
+  }
+
+
 
   public Set<File> getModels() {
     return Collections.unmodifiableSet(myModels);
@@ -188,6 +203,22 @@ public class Script {
     myLoadBootstrapLibraries = load;
   }
 
+  public Map<List<String>, Boolean> getChunks() {
+    return Collections.unmodifiableMap(myChunks);
+  }
+
+  public void updateChunks(Map<List<String>, Boolean> chunks) {
+    myChunks.putAll(chunks);
+  }
+
+  public List<String> getLibraryJars() {
+    return Collections.unmodifiableList(myLibraryJars);
+  }
+
+  public void updateLibraryJars(List<String> libraryJars) {
+    myLibraryJars.addAll(libraryJars);
+  }
+
   public void cloneTo(Object dest) {
     // TODO get rid of generic cloneTo 
     Class<? extends Script> srcClass = this.getClass();
@@ -232,6 +263,17 @@ public class Script {
     for (String p : myParameters) {
       data.addContent(new Element(ELEMENT_PARAMETER).setAttribute(VALUE, p));
     }
+    for (Map.Entry<List<String>, Boolean> chunk : myChunks.entrySet()) {
+      Element element = new Element(ELEMENT_CHUNK).setAttribute(ATTRIBUTE_BOOTSTRAP, chunk.getValue().toString());
+      for (String module : chunk.getKey()) {
+        element.addContent(new Element(ELEMENT_MODULE).setAttribute(PATH, module));
+      }
+      data.addContent(element);
+    }
+    for (String jar : myLibraryJars) {
+      data.addContent(new Element(ELEMENT_LIBRARYJAR).setAttribute(PATH, jar));
+    }
+
     return data;
   }
 
@@ -253,6 +295,24 @@ public class Script {
         addProjectFile(new File(e.getAttributeValue(PATH)), properties.toArray(new String[properties.size()]));
       } else if (ELEMENT_PARAMETER.equals(elementName)) {
         addParameter(e.getAttributeValue(VALUE));
+      } else if (ELEMENT_CHUNK.equals(elementName)) {
+        List<String> chunkModules = new ArrayList<String>();
+        List modules = e.getChildren();
+        for (Object oo : modules) {
+          Element moduleElement = (Element) oo;
+          if (ELEMENT_MODULE.equals(moduleElement.getName())) {
+            String path = moduleElement.getAttributeValue(PATH);
+            if ((path != null && path.length() > 0)) {
+              chunkModules.add(path);
+            }
+          }
+        }
+        addChunk(chunkModules, Boolean.parseBoolean(e.getAttributeValue(ATTRIBUTE_BOOTSTRAP)));
+      } else if (ELEMENT_LIBRARYJAR.equals(elementName)) {
+        String path = e.getAttributeValue(PATH);
+        if ((path != null && path.length() > 0)) {
+          addLibraryJar(path);
+        }
       }
     }
   }

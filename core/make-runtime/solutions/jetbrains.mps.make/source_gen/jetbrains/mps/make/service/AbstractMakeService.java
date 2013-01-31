@@ -45,18 +45,18 @@ public abstract class AbstractMakeService implements IMakeService {
     }
 
     protected final Future<IResult> processRawInput(final Iterable<? extends IResource> inputRes, final IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
-      final Wrappers._T<Iterable<? extends Iterable<IResource>>> clInput = new Wrappers._T<Iterable<? extends Iterable<IResource>>>();
+      final Wrappers._T<Iterable<? extends Iterable<? extends IResource>>> clInput = new Wrappers._T<Iterable<? extends Iterable<? extends IResource>>>();
       final Wrappers._T<Iterable<Iterable<String>>> usedLangs = new Wrappers._T<Iterable<Iterable<String>>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           final ModulesClusterizer mcr = new ModulesClusterizer();
           clInput.value = mcr.clusterize(Sequence.fromIterable(inputRes).select(new ISelector<IResource, IResource>() {
             public IResource select(IResource r) {
-              return (IResource) r;
+              return r;
             }
           }));
-          usedLangs.value = Sequence.fromIterable(clInput.value).select(new ISelector<Iterable<IResource>, Iterable<String>>() {
-            public Iterable<String> select(Iterable<IResource> it) {
+          usedLangs.value = Sequence.fromIterable(clInput.value).select(new ISelector<Iterable<? extends IResource>, Iterable<String>>() {
+            public Iterable<String> select(Iterable<? extends IResource> it) {
               return mcr.allUsedLangNamespaces(it);
             }
           }).toListSequence();
@@ -94,7 +94,7 @@ public abstract class AbstractMakeService implements IMakeService {
         })
       ));
 
-      return processClusteredInput(clInput.value, scripts, controller, monitor);
+      return processClusteredInput((Iterable<? extends Iterable<IResource>>) clInput.value, scripts, controller, monitor);
     }
 
     protected IScript toScript(ScriptBuilder scriptBuilder) {

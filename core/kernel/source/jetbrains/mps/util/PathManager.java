@@ -30,8 +30,6 @@ import java.util.List;
 public class PathManager {
   private static final Logger LOG = Logger.getLogger(PathManager.class);
 
-  private static final String PROPERTY_HOME_PATH = "mps.home.path";
-
   private static final String FILE = "file";
   private static final String JAR = "jar";
   private static final String JAR_DELIMITER = "!";
@@ -55,17 +53,7 @@ public class PathManager {
       return ourHomePath;
     }
 
-    if (System.getProperty(PROPERTY_HOME_PATH) != null) {
-      ourHomePath = getAbsolutePath(System.getProperty(PROPERTY_HOME_PATH));
-      return ourHomePath;
-    }
-
-    final Class aClass = PathManager.class;
-
-    String rootPath = getContainingJar(aClass);
-
-    //todo this line should be removed
-    if (rootPath == null) return new File(".").getAbsolutePath(); //we need this for build server
+    String rootPath = getContainingJar(PathManager.class);
 
     File root = new File(rootPath);
     root = root.getAbsoluteFile();
@@ -122,15 +110,6 @@ public class PathManager {
     return new String[]{getHomePath(), getIdeaPath()};
   }
 
-  public static String getBootstrapPath() {
-    // TODO temp fix
-    String mpsJar = getHomePath() + File.separator + "lib" + File.separatorChar + "mps.jar";
-    if (new File(mpsJar).exists()) {
-      return mpsJar + MODULES_PREFIX;
-    }
-    return getHomePath() + File.separator + "core";
-  }
-
   public static Collection<String> getBootstrapPaths() {
     List<String> paths;
     File lib = new File(getHomePath() + File.separator + "lib");
@@ -156,19 +135,6 @@ public class PathManager {
   private static boolean isMpsDir(File file) {
     return new File(file, "build.number").exists();
   }
-
-  private static String getAbsolutePath(String path) {
-    if (path.startsWith("~/") || path.startsWith("~\\")) {
-      path = System.getProperty("user.home") + path.substring(1);
-    }
-
-    File file = new File(path);
-    if (!file.exists()) return path;
-    file = file.getAbsoluteFile();
-    return file.getAbsolutePath();
-  }
-
-  //------------------
 
   /**
    * Attempts to detect classpath entry which contains given resource

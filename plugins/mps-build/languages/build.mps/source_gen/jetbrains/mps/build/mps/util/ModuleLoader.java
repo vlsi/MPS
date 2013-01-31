@@ -51,6 +51,8 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFileUtils;
 
 public class ModuleLoader {
+  private static final String CORE_LANGUAGE_UID = "ceab5195-25ea-4f22-9b92-103b95ca8c0c";
+  private static final String DESCRIPTOR_LANGUAGE_UID = "f4ad079d-bc71-4ffb-9600-9328705cf998";
   private final TemplateQueryContext genContext;
   private final SNode myModule;
   private SNode myOriginalModule;
@@ -259,11 +261,11 @@ public class ModuleLoader {
   private boolean checkModuleReference(ModuleDescriptor md) {
     boolean success = true;
     ModuleReference moduleReference = md.getModuleReference();
-    if (neq_a6ewnz_a0c0p(SPropertyOperations.getString(myModule, "name"), moduleReference.getModuleFqName())) {
+    if (neq_a6ewnz_a0c0r(SPropertyOperations.getString(myModule, "name"), moduleReference.getModuleFqName())) {
       report("name in import doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + moduleReference.getModuleFqName(), myOriginalModule);
       success = false;
     }
-    if (neq_a6ewnz_a0d0p(SPropertyOperations.getString(myModule, "uuid"), moduleReference.getModuleId().toString())) {
+    if (neq_a6ewnz_a0d0r(SPropertyOperations.getString(myModule, "uuid"), moduleReference.getModuleId().toString())) {
       report("module id in import doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + moduleReference.getModuleId().toString(), myOriginalModule);
       success = false;
     }
@@ -420,9 +422,13 @@ public class ModuleLoader {
   private void loadLanguageDeps(boolean checkOnly) {
     LanguageDescriptor descriptor = ((LanguageDescriptor) myModuleDescriptor);
     boolean importsCore = false;
+    boolean importsDescriptor = false;
     for (ModuleReference lang : descriptor.getExtendedLanguages()) {
-      if (!(importsCore) && "ceab5195-25ea-4f22-9b92-103b95ca8c0c".equals(lang.getModuleId())) {
+      if (!(importsCore) && CORE_LANGUAGE_UID.equals(lang.getModuleId().toString())) {
         importsCore = true;
+      }
+      if (!(importsDescriptor) && DESCRIPTOR_LANGUAGE_UID.equals(lang.getModuleId().toString())) {
+        importsDescriptor = true;
       }
       final SNode resolved = SNodeOperations.as(visible.resolve(lang.getModuleFqName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
@@ -440,11 +446,21 @@ public class ModuleLoader {
       }
     }
     if (!(importsCore) && !(checkOnly)) {
-      SNode resolved = SNodeOperations.as(visible.resolve("jetbrains.mps.lang.core", "ceab5195-25ea-4f22-9b92-103b95ca8c0c"), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+      SNode resolved = SNodeOperations.as(visible.resolve("jetbrains.mps.lang.core", CORE_LANGUAGE_UID), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
         report("cannot find jetbrains.mps.lang.core language in dependencies for " + SPropertyOperations.getString(myModule, "name"), myModule);
       } else {
         SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", null);
+        SLinkOperations.setTarget(ul, "language", resolved, false);
+        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).addElement(ul);
+      }
+    }
+    if (!(importsDescriptor) && !(checkOnly)) {
+      SNode resolved = SNodeOperations.as(visible.resolve("jetbrains.mps.lang.descriptor", DESCRIPTOR_LANGUAGE_UID), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+      if (resolved == null) {
+        report("cannot find jetbrains.mps.lang.descriptor language in dependencies for " + SPropertyOperations.getString(myModule, "name"), myModule);
+      } else {
+        SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", null);
         SLinkOperations.setTarget(ul, "language", resolved, false);
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).addElement(ul);
       }
@@ -667,7 +683,7 @@ public class ModuleLoader {
               SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
               it
             );
-            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0d0r0y(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
+            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0d0r0ab(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
           }
         }))) {
           report("jar stub library should be extracted into build script: " + relPath, myOriginalModule);
@@ -752,7 +768,7 @@ public class ModuleLoader {
       if (path.endsWith(".jar")) {
         SNode extr = ListSequence.fromList(previous).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a0a0a0a0a0a0d0j0z(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, p, "virtual_getRelativePath_5481553824944787371", new Object[]{}));
+            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a0a0a0a0a0a0d0j0bb(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, "dependency", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, p, "virtual_getRelativePath_5481553824944787371", new Object[]{}));
           }
         });
 
@@ -915,7 +931,7 @@ public class ModuleLoader {
             continue;
           }
 
-          if (eq_a6ewnz_a0c0f0d0c13(SPropertyOperations.getString(macro, "name"), macroName)) {
+          if (eq_a6ewnz_a0c0f0d0c33(SPropertyOperations.getString(macro, "name"), macroName)) {
             found = SNodeOperations.cast(macro, "jetbrains.mps.build.structure.BuildFolderMacro");
             break;
           }
@@ -947,35 +963,35 @@ public class ModuleLoader {
     }
   }
 
-  private static boolean neq_a6ewnz_a0c0p(Object a, Object b) {
+  private static boolean neq_a6ewnz_a0c0r(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean neq_a6ewnz_a0d0p(Object a, Object b) {
+  private static boolean neq_a6ewnz_a0d0r(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_a6ewnz_a0a1a0a0a0a0b0d0r0y(Object a, Object b) {
+  private static boolean eq_a6ewnz_a0a1a0a0a0a0b0d0r0ab(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_a6ewnz_a0a0a0a0a0a0a0d0j0z(Object a, Object b) {
+  private static boolean eq_a6ewnz_a0a0a0a0a0a0a0d0j0bb(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_a6ewnz_a0c0f0d0c13(Object a, Object b) {
+  private static boolean eq_a6ewnz_a0c0f0d0c33(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

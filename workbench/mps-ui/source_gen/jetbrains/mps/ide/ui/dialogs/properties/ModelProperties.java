@@ -21,6 +21,11 @@ import java.util.HashSet;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import java.util.Collections;
 
 public class ModelProperties {
   private static String USE_MODEL_FOLDER_FOR_GENERATION = "useModelFolderForGeneration";
@@ -33,6 +38,18 @@ public class ModelProperties {
   private boolean myDoNotGenerate;
   private boolean myGenerateIntoModelFolder;
 
+  public ModelProperties(SModelDescriptor modelDescriptor) {
+    myModelDescriptor = modelDescriptor;
+    SModel model = myModelDescriptor.getSModel();
+    myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
+    myUsedLanguages.addAll(model.importedLanguages());
+    myUsedDevKits.addAll(model.importedDevkits());
+    myLanguagesEngagedOnGeneration.addAll(model.engagedOnGenerationLanguages());
+    myDoNotGenerate = myModelDescriptor instanceof GeneratableSModelDescriptor && ((GeneratableSModelDescriptor) myModelDescriptor).isDoNotGenerate();
+    myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModelDescriptor && ((GeneratableSModelDescriptor) myModelDescriptor).isGenerateIntoModelFolder();
+  }
+
+  @Deprecated
   public ModelProperties(SModelDescriptor modelDescriptor, IOperationContext context) {
     myModelDescriptor = modelDescriptor;
     myContext = context;
@@ -200,6 +217,66 @@ public class ModelProperties {
     modelsInModel.removeAll(getImportedModels());
     for (SModelReference modelReference : modelsInModel) {
       smodel.deleteModelImport(modelReference);
+    }
+  }
+
+  public Condition<ModuleReference> getUsedLanguageRemoveCondition() {
+    final Wrappers._T<Set<ModuleReference>> usedLanguages = new Wrappers._T<Set<ModuleReference>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SModel m = myModelDescriptor.getSModel();
+        usedLanguages.value = SModelOperations.getUsedLanguages(m);
+      }
+    });
+    return new ModelProperties.LanguagesCondition(usedLanguages.value);
+  }
+
+  public Condition<SModelReference> getImportedModelsRemoveCondition() {
+    final Wrappers._T<Set<SModelReference>> models = new Wrappers._T<Set<SModelReference>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SModel m = myModelDescriptor.getSModel();
+        models.value = SModelOperations.getUsedImportedModels(m);
+      }
+    });
+    return new ModelProperties.ModelsCondition(models.value);
+  }
+
+
+
+
+  public class ModelsCondition implements Condition<SModelReference> {
+    private final Set<SModelReference> myModels;
+
+    public ModelsCondition(Set<SModelReference> models) {
+      myModels = models;
+    }
+
+    public boolean met(final SModelReference object) {
+      return !(myModels.contains(object));
+    }
+  }
+
+  private class LanguagesCondition implements Condition<ModuleReference> {
+    private final Set<ModuleReference> myUsedLanguages;
+
+    public LanguagesCondition(Set<ModuleReference> usedLanguages) {
+      myUsedLanguages = usedLanguages;
+    }
+
+    public boolean met(final ModuleReference object) {
+      IModule module = MPSModuleRepository.getInstance().getModuleByFqName(object.getModuleFqName());
+      if (!(module instanceof DevKit)) {
+        return !(myUsedLanguages.contains(object));
+      }
+
+      Set<ModuleReference> set = new HashSet<ModuleReference>();
+      for (Language language : ((DevKit) module).getAllExportedLanguages()) {
+        set.add(language.getModuleReference());
+      }
+      set.removeAll(ModelProperties.this.getUsedLanguages());
+      set.removeAll(ModelProperties.this.getUsedLanguages());
+      return Collections.disjoint(myUsedLanguages, set);
     }
   }
 }

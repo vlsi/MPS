@@ -41,9 +41,20 @@ import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.ItemRemovable;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.view.IUsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyCellState;
+import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyTableCellRender;
+import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
+import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
@@ -63,6 +74,8 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
@@ -85,6 +98,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableIte
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleDependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleUsedLangTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
+import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -100,10 +114,12 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import java.awt.Dimension;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -288,13 +304,40 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     @Override
-    public void apply() {
-      myDependTableModel.apply();
+    protected IScope getScope() {
+      return MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId()).getScope();
     }
 
     @Override
-    protected IScope getScope() {
-      return MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId()).getScope();
+    protected TableCellRenderer getTableCellRender() {
+      return new ModuleTableCellRender() {
+        @Override
+        protected DependencyCellState getDependencyCellState(ModuleReference moduleReference) {
+          if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) == null)
+            return DependencyCellState.NOT_AVALIABLE;
+          return super.getDependencyCellState(moduleReference);
+        }
+      };
+    }
+
+    @Override
+    protected void findUsages(final Object value) {
+      final SearchQuery[] query = new SearchQuery[1];
+      final IResultProvider[] provider = new IResultProvider[1];
+      final IScope scope = (IScope) myModule.getModuleScope();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          if(value instanceof ModuleReference) {
+            query[0] = new SearchQuery(
+              MPSModuleRepository.getInstance().getModuleByFqName(
+                ((ModuleReference)value).getModuleFqName()), scope);
+            provider[0] = FindUtils.makeProvider(new ModuleUsagesFinder());
+          }
+        }
+      });
+      IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
+      usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
+      forceCancelCloseDialog();
     }
   }
 
@@ -376,6 +419,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           TableUtil.removeSelectedItems(runtimeTable);
           myRuntimeTableModel.fireTableDataChanged();
         }
+      }).addExtraAction(new FindAnActionButton(runtimeTable) {
+        @Override
+        public void actionPerformed(AnActionEvent e) {
+          findUsages(myRuntimeTableModel.getValueAt(runtimeTable.getSelectionModel().getMinSelectionIndex(), 0));
+        }
       });
       decorator.setPreferredSize(new Dimension(500, 300));
 
@@ -389,6 +437,33 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     public boolean isModified() {
       return myRuntimeTableModel.isModified();
+    }
+
+    protected void findUsages(final Object value) {
+      final SearchQuery[] query = new SearchQuery[1];
+      final IResultProvider[] provider = new IResultProvider[1];
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          if(value instanceof SModelReference) {
+            query[0] = new SearchQuery(
+              SModelRepository.getInstance().getModelDescriptor(((jetbrains.mps.smodel.SModelReference) value).getSModelId()).getSModel(),
+              new ModulesOnlyScope(Arrays.asList(myModule))
+            );
+            provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
+          }
+          else if(value instanceof ModuleReference) {
+            query[0] = new SearchQuery(
+              MPSModuleRepository.getInstance().getModuleByFqName(
+                ((ModuleReference)value).getModuleFqName()),
+                GlobalScope.getInstance()
+            );
+            provider[0] = FindUtils.makeProvider(new ModuleUsagesFinder());
+          }
+        }
+      });
+      IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
+      usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
+      forceCancelCloseDialog();
     }
 
     protected List<AnActionButton> getAnActions() {

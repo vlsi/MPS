@@ -25,14 +25,14 @@
   <roots>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="5494815557703847191">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.debugger.java.customViewers" />
-      <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
-      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Debugger support for baseLanguage extensions" />
-      <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
-      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
       <property name="name" nameId="tpck.1169194664001" value="BaseLanguage Debugger Support" />
-      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="123.1" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Debugger support for baseLanguage extensions" />
       <property name="version" nameId="tp4k.5023285075122009369" value="3.0" />
+      <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
+      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
+      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="123.1" />
+      <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
+      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
     </node>
     <node type="kisg.CustomWatchablesContainer" typeId="kisg.5117350825036256317" id="2929731761237869234">
       <property name="name" nameId="tpck.1169194664001" value="CollectionsWatchables" />
@@ -77,7 +77,7 @@
   </roots>
   <root id="5494815557703847191">
     <node role="dependency" roleId="tp4k.5864553086652219115" type="tp4k.IdeaPluginDependency" typeId="tp4k.5864553086652219116" id="6713139039265405449">
-      <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.debugger-java" />
+      <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.debugger.java" />
     </node>
   </root>
   <root id="2929731761237869234">
@@ -899,9 +899,6 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2929731761237871950">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="2929731761237871951">
-                <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2929731761237871956">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2929731761237871932" resolveInfo="currentChild" />
-                </node>
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2929731761237871952">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="525317265755502001">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="525317265755487782" resolveInfo="node" />
@@ -909,6 +906,9 @@
                   <node role="operation" roleId="tpee.1197027833540" type="wch2.PrivateFieldReferenceOperation" typeId="wch2.6825241477451043705" id="7580556499267863964">
                     <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="cu2c.~SNode%dnext" resolveInfo="next" />
                   </node>
+                </node>
+                <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2929731761237871956">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2929731761237871932" resolveInfo="currentChild" />
                 </node>
               </node>
             </node>
@@ -1135,8 +1135,8 @@
                 <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="86gq.CreateBreakpointOperation" typeId="86gq.2569394751387978473" id="2244048449136669037">
-                <property name="kindPresentation" nameId="86gq.2569394751387978476" value="Java Line Breakpoint" />
                 <property name="kindName" nameId="86gq.2569394751387978475" value="JAVA_LINE_BREAKPOINT" />
+                <property name="kindPresentation" nameId="86gq.2569394751387978476" value="Java Line Breakpoint" />
                 <node role="nodeExpression" roleId="86gq.2569394751387978492" type="86gq.ConceptFunctionParameter_DebuggableNode" typeId="86gq.1270798772176052880" id="2244048449136669038" />
                 <node role="projectExpression" roleId="86gq.2569394751387978493" type="86gq.ConceptFunctionParameter_Debug_Project" typeId="86gq.1270798772176052876" id="2244048449136669039" />
               </node>
@@ -1157,8 +1157,8 @@
                 <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="86gq.CreateBreakpointOperation" typeId="86gq.2569394751387978473" id="2244048449136669047">
-                <property name="kindPresentation" nameId="86gq.2569394751387978476" value="Java Field Breakpoint" />
                 <property name="kindName" nameId="86gq.2569394751387978475" value="JAVA_FIELD_BREAKPOINT" />
+                <property name="kindPresentation" nameId="86gq.2569394751387978476" value="Java Field Breakpoint" />
                 <node role="projectExpression" roleId="86gq.2569394751387978493" type="86gq.ConceptFunctionParameter_Debug_Project" typeId="86gq.1270798772176052876" id="2244048449136669048" />
                 <node role="nodeExpression" roleId="86gq.2569394751387978492" type="86gq.ConceptFunctionParameter_DebuggableNode" typeId="86gq.1270798772176052880" id="2244048449136669049" />
               </node>

@@ -51,7 +51,6 @@
   <source id="5487985028841951123" name="NodeActionsAddition" hash="-9scpj8nz220sflqeud7533nectshhl6">
     <dep root="5487985028841950969" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <file name="NodeActionsAddition_ActionGroup.java" />
   </source>

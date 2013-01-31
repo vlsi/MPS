@@ -19,7 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
@@ -166,7 +166,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
   private static SModelReference getSModelReference(Language module) {
     SModelFqName fqName = getModelFqName(module);
     ModuleId moduleId = module.getModuleReference().getModuleId();
-    SModelId id = moduleId != null ? SModelId.foreign("descriptor", moduleId.toString()) : null;
+    SModelId id = moduleId != null ? jetbrains.mps.smodel.SModelId.foreign("descriptor", moduleId.toString()) : null;
     return new SModelReference(fqName, id);
   }
 

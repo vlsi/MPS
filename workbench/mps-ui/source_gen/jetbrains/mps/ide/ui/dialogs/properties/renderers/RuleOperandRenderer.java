@@ -19,11 +19,12 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
@@ -55,8 +56,8 @@ public class RuleOperandRenderer implements TableCellRenderer {
         final SNodeReference p = new SNodePointer(refC.getModelUID(), refC.getNodeID());
         nodeName = ModelAccess.instance().runReadAction(new Computable<String>() {
           public String compute() {
-            SModelDescriptor model = ((SNodePointer) p).getModel();
-            SNode node = ((SNodePointer) p).getNode();
+            SModelDescriptor model = SNodeOperations.getModelFromNodeReference((SNodePointer) p);
+            SNode node = p.resolve(MPSModuleRepository.getInstance());
             if (model == null || node == null) {
               return null;
             }

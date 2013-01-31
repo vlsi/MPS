@@ -61,6 +61,7 @@ import jetbrains.mps.tool.builder.paths.OutputPathRedirects;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.jps.builders.BuildRootIndex;
 import org.jetbrains.jps.builders.java.JavaSourceRootDescriptor;
+import org.jetbrains.jps.builders.logging.ProjectBuilderLogger;
 import org.jetbrains.jps.builders.storage.BuildDataPaths;
 import org.jetbrains.jps.incremental.FSOperations;
 import org.jetbrains.jps.incremental.ModuleBuildTarget;
@@ -199,6 +200,13 @@ public class MPSMakeMediator {
   }
 
   private boolean processFiles(boolean success, ReducedMakeFacetConfiguration makeFacetConfiguration) {
+    ProjectBuilderLogger logger = myContext.getCompileContext().getLoggingManager().getProjectBuilderLogger();
+    if (logger.isEnabled()) {
+      try {
+        logger.logCompiledPaths(makeFacetConfiguration.getWrittenFiles(), MPSMakeConstants.BUILDER_ID, "Written files:");
+      } catch (IOException ignore) {}
+    }
+
     for (String writtenFile : makeFacetConfiguration.getWrittenFiles()) {
       myContext.getCompileContext().processMessage(new FileGeneratedEvent());
       try {
@@ -232,6 +240,10 @@ public class MPSMakeMediator {
           success = false;
         }
       }
+    }
+
+    if (logger.isEnabled()) {
+      logger.logDeletedFiles(makeFacetConfiguration.getDeletedFiles());
     }
 
     for (String deletedFile : makeFacetConfiguration.getDeletedFiles()) {

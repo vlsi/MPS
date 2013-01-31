@@ -430,7 +430,7 @@
    <null/>
   </void>
   <void method="put">
-   <string>public java.util.List&lt;org.jetbrains.mps.openapi.model.SReference&gt; jetbrains.mps.smodel.SNode.getReferences()</string>
+   <string>public java.util.List&lt;jetbrains.mps.smodel.SReference&gt; jetbrains.mps.smodel.SNode.getReferences()</string>
    <int>1</int>
   </void>
   <void method="put">

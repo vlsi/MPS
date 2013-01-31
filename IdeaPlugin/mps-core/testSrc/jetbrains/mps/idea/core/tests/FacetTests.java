@@ -27,7 +27,6 @@ import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ModuleOrderEntry;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderEntry;
-import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
@@ -36,7 +35,9 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -190,9 +191,14 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
   public void testAddRemoveDependencies() throws Exception {
     final Module module2 = addModuleAndSetupFixture(myProjectBuilder);
-    MPSFacet mpsFacet2 = addMPSFacet(module2);
+    final MPSFacet mpsFacet2 = addMPSFacet(module2);
 
-    int originalDependCount = mpsFacet2.getSolution().getDependencies().size();
+    int originalDependCount = ModelAccess.instance().runReadAction(new Computable<Integer>() {
+      @Override
+      public Integer compute() {
+        return mpsFacet2.getSolution().getDependencies().size();
+      }
+    });
 
     ApplicationManager.getApplication().runWriteAction(new Runnable() {
       @Override
@@ -204,7 +210,13 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     });
     flushEDT();
 
-    List<Dependency> solution2Dependencies = mpsFacet2.getSolution().getDependencies();
+    // todo: should be one big ModelAccess.runWriteAction() ?
+    List<Dependency> solution2Dependencies = ModelAccess.instance().runReadAction(new Computable<List<Dependency>>() {
+      @Override
+      public List<Dependency> compute() {
+        return mpsFacet2.getSolution().getDependencies();
+      }
+    });
 
     assertEquals(originalDependCount + 1, solution2Dependencies.size());
     boolean found = false;
@@ -231,7 +243,13 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     });
     flushEDT();
 
-    assertEquals(originalDependCount, mpsFacet2.getSolution().getDependencies().size());
+    int finalDependenciesCount = ModelAccess.instance().runReadAction(new Computable<Integer>() {
+      @Override
+      public Integer compute() {
+        return mpsFacet2.getSolution().getDependencies().size();
+      }
+    });
+    assertEquals(originalDependCount, finalDependenciesCount);
     // commented out: we don't always depend on jdk any longer
 //    assertFalse(myFacet.getSolution().getModuleReference().equals(mpsFacet2.getSolution().getDependencies().get(0).getModuleRef()));
   }

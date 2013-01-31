@@ -7,6 +7,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationStatus;
 
+@Deprecated
 public interface IGResource extends IResource {
   public IModule module();
   public SModelDescriptor model();
