@@ -13,21 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public abstract class DefaultScope extends BaseScope {
-
   private final Object LOCK = new Object();
 
   private boolean myInitialized;
@@ -38,10 +42,76 @@ public abstract class DefaultScope extends BaseScope {
   private Set<DevKit> myUsedDevkits;
 
   @Override
-  public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
-    if (modelReference == null) return null;
+  public Iterable<SModule> getModules() {
+    Set<SModule> result = new HashSet<SModule>();
+    synchronized (LOCK) {
+      initialize();
+      result.addAll(myVisibleModules);
+      result.addAll(myUsedLanguages);
+      result.addAll(myUsedDevkits);
+    }
+    return result;
+  }
 
-    SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelReference);
+  @Override
+  public Iterable<SModel> getModels() {
+    List<SModel> result = new ArrayList<SModel>();
+    synchronized (LOCK) {
+      initialize();
+      for (IModule module : myVisibleModules) {
+        result.addAll(module.getOwnModelDescriptors());
+      }
+      for (Language language : myUsedLanguages) {
+        result.addAll(language.getOwnModelDescriptors()); // todo: ?
+        result.addAll(language.getAccessoryModels());
+      }
+    }
+    return result;
+  }
+
+  @Override
+  public SModule resolve(SModuleReference reference) {
+    if (reference == null) {
+      return null;
+    }
+
+    SModule module;
+    if (reference.getModuleId() != null) {
+      module = MPSModuleRepository.getInstance().getModule(reference.getModuleId());
+    } else {
+      module = MPSModuleRepository.getInstance().getModuleByFqName(reference.getModuleName());
+    }
+
+    if (module == null) {
+      return null;
+    }
+
+    synchronized (LOCK) {
+      initialize();
+      if (myVisibleModules.contains(module) || myUsedLanguages.contains(module) || myUsedDevkits.contains(module)) {
+        return module;
+      } else {
+        return null;
+      }
+    }
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
+    if (reference == null) {
+      return null;
+    }
+
+    SModel model;
+    if (reference.getModelId() != null) {
+      model = SModelRepository.getInstance().getModelDescriptor(reference.getModelId());
+    } else {
+      // todo: do something with this code
+      SModelFqName fqName = ((SModelReference) reference).getSModelFqName();
+      if (fqName == null) return null;
+      model = SModelRepository.getInstance().getModelDescriptor(fqName);
+    }
+
     if (model == null) {
       return null;
     }
@@ -57,85 +127,6 @@ public abstract class DefaultScope extends BaseScope {
     }
 
     return null;
-  }
-
-  @Override
-  public Language getLanguage(SModuleReference moduleReference) {
-    Language l = ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
-    if (l == null) return null;
-
-    synchronized (LOCK) {
-      initialize();
-      if (!myUsedLanguages.contains(l)) return null;
-      return l;
-    }
-  }
-
-  @Override
-  public DevKit getDevKit(ModuleReference ref) {
-    DevKit d = ModuleRepositoryFacade.getInstance().getModule(ref, DevKit.class);
-    if (d == null) return null;
-
-    synchronized (LOCK) {
-      initialize();
-      if (!myUsedDevkits.contains(d)) return null;
-      return d;
-    }
-  }
-
-  //todo replace with iterable
-  @Override
-  public List<SModelDescriptor> getModelDescriptors() {
-    ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    synchronized (LOCK) {
-      initialize();
-      for (SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors()) {
-        IModule module = d.getModule();
-        if (myVisibleModules.contains(module)) {
-          result.add(d);
-        }
-      }
-
-      for (Language l : myUsedLanguages) {
-        for (SModelDescriptor accessory : l.getAccessoryModels()) {
-          result.add(accessory);
-        }
-      }
-    }
-    return result;
-  }
-
-  //todo replace with iterable
-  @Override
-  public List<SModelDescriptor> getOwnModelDescriptors() {
-    ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    synchronized (LOCK) {
-      for (IModule module : getInitialModules()) {
-        result.addAll(module.getOwnModelDescriptors());
-      }
-    }
-    return result;
-  }
-
-  public Iterable<Language> getVisibleLanguages() {
-    synchronized (LOCK) {
-      initialize();
-      return Collections.unmodifiableSet(myUsedLanguages);
-    }
-  }
-
-  public Iterable<DevKit> getVisibleDevkits() {
-    synchronized (LOCK) {
-      initialize();
-      return Collections.unmodifiableSet(myUsedDevkits);
-    }
-  }
-
-  public Iterable<IModule> getVisibleModules() {
-    synchronized (LOCK) {
-      initialize();
-      return Collections.unmodifiableSet(myVisibleModules);
-    }
   }
 
   protected Collection<Language> getInitialUsedLanguages() {

@@ -35,7 +35,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.jetbrains.mps.openapi.module.SModuleScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 public class ClassifierResolveUtils {
   private ClassifierResolveUtils() {
@@ -474,7 +474,7 @@ public class ClassifierResolveUtils {
     return curr;
   }
 
-  public static SNode resolveFqName(String refText, SModuleScope moduleScope, org.jetbrains.mps.openapi.model.SModel contextNodeModel) {
+  public static SNode resolveFqName(String refText, SearchScope moduleScope, org.jetbrains.mps.openapi.model.SModel contextNodeModel) {
     // FIXME constant 20 
     int[] dotPositions = new int[20];
     int lastDot = -1;
@@ -530,7 +530,7 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  public static Iterable<org.jetbrains.mps.openapi.model.SModel> getModelsByName(SModuleScope moduleScope, String name) {
+  public static Iterable<org.jetbrains.mps.openapi.model.SModel> getModelsByName(SearchScope moduleScope, String name) {
     List<org.jetbrains.mps.openapi.model.SModel> models = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
 
     // THINK maybe we should put those models together, not use if-else 

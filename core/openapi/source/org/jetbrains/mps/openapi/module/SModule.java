@@ -62,7 +62,7 @@ public interface SModule {
   /**
    * Wraps and returns an optimized directory of all modules visible from the current module
    */
-  SModuleScope getModuleScope();
+  SearchScope getModuleScope();
 
   /**
    * All dependencies on modules of all kinds.

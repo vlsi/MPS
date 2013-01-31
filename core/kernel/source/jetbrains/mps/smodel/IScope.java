@@ -13,40 +13,75 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SModuleScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
-/**
- * DO NOT implement this interface directly. Always use BaseScope class
- */
-public interface IScope extends SModuleScope {
-
-  SModelDescriptor getModelDescriptor(SModelReference modelReference);
-
-  Language getLanguage(SModuleReference moduleReference);
-
-  DevKit getDevKit(ModuleReference ref);
-
-  Iterable<SModelDescriptor> getModelDescriptors();
-
-  Iterable<SModelDescriptor> getOwnModelDescriptors();
-
-  Iterable<Language> getVisibleLanguages();
-
-  Iterable<DevKit> getVisibleDevkits();
-
-  Iterable<IModule> getVisibleModules();
-
-  //-----------deprecated------------
+@Deprecated
+public interface IScope extends SearchScope {
+  // use SearchScope instead IScope
 
   @Deprecated
+  /*
+  Use ScopeOperations.getModelDescriptor(SearchScope, SModelReference)
+  */
+  SModelDescriptor getModelDescriptor(SModelReference modelReference);
+
+  @Deprecated
+  /*
+  Use ScopeOperations.resolveModule(SearchScope, SModuleReference, Language.class)
+   */
+  Language getLanguage(SModuleReference moduleReference);
+
+  @Deprecated
+  /*
+  Use ScopeOperations.resolveModule(SearchScope, ModuleReference, DevKit.class)
+   */
+  DevKit getDevKit(ModuleReference ref);
+
+  @Deprecated
+  /*
+  Use ScopeOperations.getModelDescriptors(SearchScope), but getModels() better
+   */
+  Iterable<SModelDescriptor> getModelDescriptors();
+
+  @Deprecated
+  /*
+  Use ScopeOperations.getModules(SearchScope, Language.class)
+   */
+  Iterable<Language> getVisibleLanguages();
+
+  @Deprecated
+  /*
+  Use ScopeOperations.getModules(SearchScope, DevKit.class)
+   */
+  Iterable<DevKit> getVisibleDevkits();
+
+  @Deprecated
+  /*
+  Use ScopeOperations.getModules(SearchScope, IModule.class), but getModules() better
+   */
+  Iterable<IModule> getVisibleModules();
+
+  @Deprecated
+  /*
+  Use something more meaningful
+   */
+  Iterable<SModelDescriptor> getOwnModelDescriptors();
+
+  @Deprecated
+  /*
+  Use ScopeOperations.getModelDescriptor(SearchScope, SModelFqName)
+   */
   SModelDescriptor getModelDescriptor(SModelFqName fqName);
 
   @Deprecated
+  /*
+  Use ScopeOperations.getLanguage(SearchScope, String)
+   */
   Language getLanguage(String fqName);
 }
