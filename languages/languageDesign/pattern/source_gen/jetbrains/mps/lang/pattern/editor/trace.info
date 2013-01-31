@@ -1229,7 +1229,7 @@
     <nodeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="59" startPosition="34" endLine="60" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="60" startPosition="95" endLine="61" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="63" startPosition="131" endLine="64" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="70" startPosition="84" endLine="71" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="70" startPosition="104" endLine="71" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="71" startPosition="100" endLine="72" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="72" startPosition="38" endLine="73" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="73" startPosition="36" endLine="74" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1321,7 +1321,7 @@
     <nodeInfo nodeId="2879868312062971238" fileName="OrPattern_Editor.java" startLine="144" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_oeflkv_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="4264731254635484625" fileName="OrPattern_Editor.java" startLine="154" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_oeflkv_a0_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="56" startPosition="132" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="69" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="69" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="4264731254635484621" fileName="OrPattern_Editor.java" startLine="172" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_oeflkv_b0_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="4264731254635484621" fileName="OrPattern_Editor.java" startLine="104" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="56" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -1404,7 +1404,7 @@
     <scopeInfo nodeId="2879868312062971229" fileName="OrPattern_Editor.java" startLine="117" startPosition="89" endLine="123" endPosition="22">
       <varInfo nodeId="2879868312062971229" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="70" startPosition="84" endLine="77" endPosition="24">
+    <scopeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="70" startPosition="104" endLine="77" endPosition="24">
       <varInfo nodeId="2879868312062971234" varName="editorCell" />
       <varInfo nodeId="2879868312062971234" varName="style" />
     </scopeInfo>
@@ -1455,7 +1455,8 @@
     <scopeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="56" startPosition="132" endLine="66" endPosition="7" />
     <scopeInfo nodeId="2879868312062971234" fileName="OrPattern_Editor.java" startLine="69" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="2879868312062971234" varName="editorContext" />
-      <varInfo nodeId="2879868312062971234" varName="node" />
+      <varInfo nodeId="2879868312062971234" varName="nextNode" />
+      <varInfo nodeId="2879868312062971234" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="4264731254635484621" fileName="OrPattern_Editor.java" startLine="172" startPosition="0" endLine="182" endPosition="0">
       <varInfo nodeId="4264731254635484621" varName="editorContext" />

@@ -3972,7 +3972,7 @@
     <nodeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="280" startPosition="34" endLine="281" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="281" startPosition="95" endLine="282" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="284" startPosition="131" endLine="285" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="291" startPosition="84" endLine="292" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="291" startPosition="104" endLine="292" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="292" startPosition="100" endLine="293" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="293" startPosition="38" endLine="294" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="294" startPosition="36" endLine="295" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4484,7 +4484,7 @@
     <nodeInfo nodeId="1057680424125015539" fileName="Generator_Editor.java" startLine="165" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1057680424125015517" fileName="Generator_Editor.java" startLine="201" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1057680424125015484" fileName="Generator_Editor.java" startLine="237" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="290" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="290" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="719" startPosition="0" endLine="730" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_cqvux8_fb5a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="277" startPosition="0" endLine="289" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1057680424125015437" fileName="Generator_Editor.java" startLine="313" startPosition="0" endLine="325" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_cqvux8_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -4847,7 +4847,7 @@
       <varInfo nodeId="1057680424125015555" varName="style" />
     </scopeInfo>
     <scopeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="278" startPosition="96" endLine="286" endPosition="9" />
-    <scopeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="291" startPosition="84" endLine="299" endPosition="24">
+    <scopeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="291" startPosition="104" endLine="299" endPosition="24">
       <varInfo nodeId="1057680424125015473" varName="editorCell" />
       <varInfo nodeId="1057680424125015473" varName="style" />
     </scopeInfo>
@@ -5070,7 +5070,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="290" startPosition="0" endLine="301" endPosition="0">
       <varInfo nodeId="1057680424125015473" varName="editorContext" />
-      <varInfo nodeId="1057680424125015473" varName="node" />
+      <varInfo nodeId="1057680424125015473" varName="nextNode" />
+      <varInfo nodeId="1057680424125015473" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="1057680424125015473" fileName="Generator_Editor.java" startLine="719" startPosition="0" endLine="730" endPosition="0">
       <varInfo nodeId="1057680424125015473" varName="editorContext" />

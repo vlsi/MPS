@@ -304,45 +304,45 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.applyBordered(style, editorCell);
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a0c0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a1c0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.TEXT_COLOR, CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a2c0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.FONT_STYLE, CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a3c0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.UNDERLINED, CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a4c0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.STRIKE_OUT, CellModel_URL_Editor._StyleParameter_QueryFunction_wgj6gq_a5c0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -454,27 +454,27 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getString(node, "noTargetText") == null;
   }
 
-  private static int _StyleParameter_QueryFunction_wgj6gq_a3c0(SNode node, EditorContext editorContext) {
+  private static int _StyleParameter_QueryFunction_wgj6gq_a3c0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_wgj6gq_a5c0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_wgj6gq_a5c0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_wgj6gq_a4c0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_wgj6gq_a4c0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_wgj6gq_a0c0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_wgj6gq_a0c0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_wgj6gq_a1c0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_wgj6gq_a1c0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_wgj6gq_a2c0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_wgj6gq_a2c0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
 }

@@ -139,10 +139,10 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_Error_Editor._StyleParameter_QueryFunction_xkqo7y_a1b0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
     style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
@@ -181,7 +181,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_xkqo7y_a1b0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_xkqo7y_a1b0(EditorContext editorContext, SNode node) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 }

@@ -81,10 +81,10 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     BaseLanguageStyle_StyleSheet.applyMethodName(style, editorCell);
     style.set(StyleAttributes.STRIKE_OUT, BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_8989zw_a0a0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BaseMethodDeclaration_NameCellComponent.BaseMethodDeclaration_name_postfixCellMenu_a0a0()}));
@@ -98,7 +98,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_8989zw_a0a0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_8989zw_a0a0(EditorContext editorContext, SNode node) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDeprecated_1224609060727", new Object[]{});
   }
 }

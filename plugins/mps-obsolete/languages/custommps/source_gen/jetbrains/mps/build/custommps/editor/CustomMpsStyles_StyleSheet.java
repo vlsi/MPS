@@ -7,8 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class CustomMpsStyles_StyleSheet {
   @Deprecated
@@ -17,10 +17,10 @@ public class CustomMpsStyles_StyleSheet {
     style.putAll(PackagingStyles_StyleSheet.getVariable(editorCell));
     style.set(StyleAttributes.UNDERLINED, CustomMpsStyles_StyleSheet._StyleParameter_QueryFunction_bu7lcg_a0a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     return style;
   }
@@ -29,14 +29,14 @@ public class CustomMpsStyles_StyleSheet {
     PackagingStyles_StyleSheet.applyVariable(style, editorCell);
     style.set(StyleAttributes.UNDERLINED, CustomMpsStyles_StyleSheet._StyleParameter_QueryFunction_bu7lcg_a0a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
   }
 
-  private static boolean _StyleParameter_QueryFunction_bu7lcg_a0a(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_bu7lcg_a0a(EditorContext editorContext, SNode node) {
     return true;
   }
 }

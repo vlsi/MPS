@@ -1445,7 +1445,7 @@
     <nodeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="65" startPosition="34" endLine="66" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="66" startPosition="95" endLine="67" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="69" startPosition="131" endLine="70" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="76" startPosition="84" endLine="77" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="76" startPosition="104" endLine="77" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="77" startPosition="100" endLine="78" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="78" startPosition="38" endLine="79" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="79" startPosition="36" endLine="80" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1521,7 +1521,7 @@
     <nodeInfo nodeId="1112317028031" fileName="EventType_Editor.java" startLine="108" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_koyvu4_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1112317028034" fileName="EventType_Editor.java" startLine="118" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_koyvu4_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="62" startPosition="132" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="75" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="75" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1112317028033" fileName="EventType_Editor.java" startLine="86" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_koyvu4_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="62" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1112317028030" fileName="EventType_Editor.java" startLine="136" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_koyvu4_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -1574,7 +1574,7 @@
     <scopeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="51" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1112317028032" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="76" startPosition="84" endLine="83" endPosition="24">
+    <scopeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="76" startPosition="104" endLine="83" endPosition="24">
       <varInfo nodeId="1112317028032" varName="editorCell" />
       <varInfo nodeId="1112317028032" varName="style" />
     </scopeInfo>
@@ -1613,7 +1613,8 @@
     <scopeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="62" startPosition="132" endLine="72" endPosition="7" />
     <scopeInfo nodeId="1112317028032" fileName="EventType_Editor.java" startLine="75" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="1112317028032" varName="editorContext" />
-      <varInfo nodeId="1112317028032" varName="node" />
+      <varInfo nodeId="1112317028032" varName="nextNode" />
+      <varInfo nodeId="1112317028032" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="1112317028033" fileName="EventType_Editor.java" startLine="86" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="1112317028033" varName="editorContext" />
@@ -2320,7 +2321,7 @@
     <nodeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="62" startPosition="34" endLine="63" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="63" startPosition="95" endLine="64" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="66" startPosition="131" endLine="67" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="73" startPosition="84" endLine="74" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="73" startPosition="104" endLine="74" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="74" startPosition="100" endLine="75" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="75" startPosition="38" endLine="76" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="76" startPosition="36" endLine="77" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2465,7 +2466,7 @@
     <nodeInfo nodeId="1112315748867" fileName="AgreementDeclarations_Editor.java" startLine="204" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_5606pw_c2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1112315785789" fileName="AgreementDeclarations_Editor.java" startLine="214" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_5606pw_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="59" startPosition="132" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="72" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="72" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1112315699834" fileName="AgreementDeclarations_Editor.java" startLine="83" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_5606pw_a1c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1112315840638" fileName="AgreementDeclarations_Editor.java" startLine="134" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_5606pw_a1e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1112311211659" fileName="AgreementDeclarations_Editor.java" startLine="146" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_5606pw_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -2575,7 +2576,7 @@
       <varInfo nodeId="1112315840636" varName="editorContext" />
       <varInfo nodeId="1112315840636" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="73" startPosition="84" endLine="80" endPosition="24">
+    <scopeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="73" startPosition="104" endLine="80" endPosition="24">
       <varInfo nodeId="1112315699833" varName="editorCell" />
       <varInfo nodeId="1112315699833" varName="style" />
     </scopeInfo>
@@ -2638,7 +2639,8 @@
     <scopeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="59" startPosition="132" endLine="69" endPosition="7" />
     <scopeInfo nodeId="1112315699833" fileName="AgreementDeclarations_Editor.java" startLine="72" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="1112315699833" varName="editorContext" />
-      <varInfo nodeId="1112315699833" varName="node" />
+      <varInfo nodeId="1112315699833" varName="nextNode" />
+      <varInfo nodeId="1112315699833" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="1112315699834" fileName="AgreementDeclarations_Editor.java" startLine="83" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="1112315699834" varName="editorContext" />

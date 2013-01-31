@@ -77,7 +77,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     }
 
     @Override
-    public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
+    public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
       editorCell.setSelectable(false);
       Style style = new StyleImpl();
@@ -127,10 +127,10 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, UnrestrictedClosureLiteral_Editor._StyleParameter_QueryFunction_8l0in6_a0c0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -179,7 +179,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_8l0in6_a0c0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_8l0in6_a0c0(EditorContext editorContext, SNode node) {
     return !(StatementList_Behavior.call_isCompact_1237546596168(SLinkOperations.getTarget(node, "body", true)));
   }
 }

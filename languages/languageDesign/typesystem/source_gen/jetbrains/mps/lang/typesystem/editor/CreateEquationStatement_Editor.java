@@ -135,10 +135,10 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0a0a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -153,10 +153,10 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyParenthesis(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0b0a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -171,10 +171,10 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyParenthesis(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, CreateEquationStatement_Editor._StyleParameter_QueryFunction_mi4qyq_a0f0a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
@@ -317,15 +317,15 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.getBoolean(node, "checkOnly"));
   }
 
-  private static Color _StyleParameter_QueryFunction_mi4qyq_a0a0a(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_mi4qyq_a0a0a(EditorContext editorContext, SNode node) {
     return MPSColors.DARK_BLUE;
   }
 
-  private static Color _StyleParameter_QueryFunction_mi4qyq_a0b0a(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_mi4qyq_a0b0a(EditorContext editorContext, SNode node) {
     return MPSColors.DARK_BLUE;
   }
 
-  private static Color _StyleParameter_QueryFunction_mi4qyq_a0f0a(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_mi4qyq_a0f0a(EditorContext editorContext, SNode node) {
     return MPSColors.DARK_BLUE;
   }
 }

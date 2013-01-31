@@ -4387,7 +4387,7 @@
     <nodeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="57" startPosition="34" endLine="58" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="58" startPosition="95" endLine="59" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="61" startPosition="131" endLine="62" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="68" startPosition="84" endLine="69" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="68" startPosition="104" endLine="69" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="69" startPosition="100" endLine="70" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="70" startPosition="38" endLine="71" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="71" startPosition="36" endLine="72" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4434,7 +4434,7 @@
     <nodeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="110" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_cly5ih_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1154547198372" fileName="OperationParm_ConceptList_Editor.java" startLine="79" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_cly5ih_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="54" startPosition="132" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="67" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="67" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1154547202185" fileName="OperationParm_ConceptList_Editor.java" startLine="88" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_cly5ih_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1154547244033" fileName="OperationParm_ConceptList_Editor.java" startLine="99" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_cly5ih_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="54" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -4480,7 +4480,7 @@
     <scopeInfo nodeId="1154547198372" fileName="OperationParm_ConceptList_Editor.java" startLine="79" startPosition="89" endLine="85" endPosition="22">
       <varInfo nodeId="1154547198372" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="68" startPosition="84" endLine="75" endPosition="24">
+    <scopeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="68" startPosition="104" endLine="75" endPosition="24">
       <varInfo nodeId="1154547221297" varName="editorCell" />
       <varInfo nodeId="1154547221297" varName="style" />
     </scopeInfo>
@@ -4504,7 +4504,8 @@
     <scopeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="54" startPosition="132" endLine="64" endPosition="7" />
     <scopeInfo nodeId="1154547221297" fileName="OperationParm_ConceptList_Editor.java" startLine="67" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="1154547221297" varName="editorContext" />
-      <varInfo nodeId="1154547221297" varName="node" />
+      <varInfo nodeId="1154547221297" varName="nextNode" />
+      <varInfo nodeId="1154547221297" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="1154547202185" fileName="OperationParm_ConceptList_Editor.java" startLine="88" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="1154547202185" varName="editorContext" />
@@ -9358,7 +9359,7 @@
     <nodeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="93" startPosition="34" endLine="94" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="94" startPosition="95" endLine="95" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="97" startPosition="131" endLine="98" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="104" startPosition="84" endLine="105" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="104" startPosition="104" endLine="105" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="105" startPosition="100" endLine="106" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="106" startPosition="38" endLine="107" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="107" startPosition="36" endLine="108" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -9449,7 +9450,7 @@
     <nodeInfo nodeId="1206995930398" fileName="ReplaceableAliasAndParms_Comp.java" startLine="128" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_n84rmm_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="2886182022232400326" fileName="ReplaceableAliasAndParms_Comp.java" startLine="151" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_n84rmm_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="90" startPosition="132" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="103" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="103" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="90" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1206995959905" fileName="ReplaceableAliasAndParms_Comp.java" startLine="114" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_n84rmm_a1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1206995959902" fileName="ReplaceableAliasAndParms_Comp.java" startLine="138" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_n84rmm_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -9524,7 +9525,7 @@
     <scopeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="79" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="1206995959904" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="104" startPosition="84" endLine="111" endPosition="24">
+    <scopeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="104" startPosition="104" endLine="111" endPosition="24">
       <varInfo nodeId="1206995959904" varName="editorCell" />
       <varInfo nodeId="1206995959904" varName="style" />
     </scopeInfo>
@@ -9552,7 +9553,8 @@
     <scopeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="90" startPosition="132" endLine="100" endPosition="7" />
     <scopeInfo nodeId="1206995959904" fileName="ReplaceableAliasAndParms_Comp.java" startLine="103" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="1206995959904" varName="editorContext" />
-      <varInfo nodeId="1206995959904" varName="node" />
+      <varInfo nodeId="1206995959904" varName="nextNode" />
+      <varInfo nodeId="1206995959904" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="1206995959905" fileName="ReplaceableAliasAndParms_Comp.java" startLine="114" startPosition="92" endLine="124" endPosition="24">
       <varInfo nodeId="1206995959905" varName="editorCell" />
@@ -11492,7 +11494,7 @@
     <nodeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="57" startPosition="34" endLine="58" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="58" startPosition="95" endLine="59" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="61" startPosition="131" endLine="62" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="68" startPosition="84" endLine="69" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="68" startPosition="104" endLine="69" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="69" startPosition="100" endLine="70" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="70" startPosition="38" endLine="71" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="71" startPosition="36" endLine="72" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -11539,7 +11541,7 @@
     <nodeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="110" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_1dt35m_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1803469493727536403" fileName="OperationParm_StopConceptList_Editor.java" startLine="79" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1dt35m_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="54" startPosition="132" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="67" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="67" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1803469493727536404" fileName="OperationParm_StopConceptList_Editor.java" startLine="88" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1dt35m_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1803469493727536408" fileName="OperationParm_StopConceptList_Editor.java" startLine="99" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1dt35m_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="54" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -11585,7 +11587,7 @@
     <scopeInfo nodeId="1803469493727536403" fileName="OperationParm_StopConceptList_Editor.java" startLine="79" startPosition="89" endLine="85" endPosition="22">
       <varInfo nodeId="1803469493727536403" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="68" startPosition="84" endLine="75" endPosition="24">
+    <scopeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="68" startPosition="104" endLine="75" endPosition="24">
       <varInfo nodeId="1803469493727536406" varName="editorCell" />
       <varInfo nodeId="1803469493727536406" varName="style" />
     </scopeInfo>
@@ -11609,7 +11611,8 @@
     <scopeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="54" startPosition="132" endLine="64" endPosition="7" />
     <scopeInfo nodeId="1803469493727536406" fileName="OperationParm_StopConceptList_Editor.java" startLine="67" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="1803469493727536406" varName="editorContext" />
-      <varInfo nodeId="1803469493727536406" varName="node" />
+      <varInfo nodeId="1803469493727536406" varName="nextNode" />
+      <varInfo nodeId="1803469493727536406" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="1803469493727536404" fileName="OperationParm_StopConceptList_Editor.java" startLine="88" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="1803469493727536404" varName="editorContext" />

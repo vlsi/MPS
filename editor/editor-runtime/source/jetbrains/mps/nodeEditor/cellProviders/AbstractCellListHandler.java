@@ -16,16 +16,17 @@
 package jetbrains.mps.nodeEditor.cellProviders;
 
 import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_InsertIntoCollection;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_InsertIntoCollection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
 
 public abstract class AbstractCellListHandler {
   public static final String ELEMENT_CELL_ACTIONS_SET = "element-cell-actions-set";
@@ -102,15 +103,9 @@ public abstract class AbstractCellListHandler {
   }
 
   protected EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
-    return createSeparatorCell(editorContext, prevNode);
+    return createSeparatorCell((jetbrains.mps.nodeEditor.EditorContext) editorContext, prevNode);
   }
 
-  // TODO: remove and replace with createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode)
-  @Deprecated
-  protected EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-    return createSeparatorCell((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
-  }
-  
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
    * <code>createSeparatorCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>

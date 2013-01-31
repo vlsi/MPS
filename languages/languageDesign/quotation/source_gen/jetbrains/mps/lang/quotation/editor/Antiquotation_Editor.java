@@ -62,10 +62,10 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, Antiquotation_Editor._StyleParameter_QueryFunction_lbdr4h_a0a0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -79,10 +79,10 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, Antiquotation_Editor._StyleParameter_QueryFunction_lbdr4h_a0d0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
@@ -204,10 +204,10 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, Antiquotation_Editor._StyleParameter_QueryFunction_lbdr4h_a0b0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -221,15 +221,15 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_lbdr4h_a0a0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_lbdr4h_a0a0(EditorContext editorContext, SNode node) {
     return Colors.BROWN;
   }
 
-  private static Color _StyleParameter_QueryFunction_lbdr4h_a0b0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_lbdr4h_a0b0(EditorContext editorContext, SNode node) {
     return Colors.BROWN;
   }
 
-  private static Color _StyleParameter_QueryFunction_lbdr4h_a0d0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_lbdr4h_a0d0(EditorContext editorContext, SNode node) {
     return Colors.BROWN;
   }
 }

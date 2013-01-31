@@ -34,10 +34,10 @@ public class TextCommentPart_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, TextCommentPart_Editor._StyleParameter_QueryFunction_z1r74j_a1a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new LastCommentPart());
@@ -52,7 +52,7 @@ public class TextCommentPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_z1r74j_a1a(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_z1r74j_a1a(EditorContext editorContext, SNode node) {
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isToDo_7236590470026152831", new Object[]{})) {
       return Color.BLUE;
     } else {

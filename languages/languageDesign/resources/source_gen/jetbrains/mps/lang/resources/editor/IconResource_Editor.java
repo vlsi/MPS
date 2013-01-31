@@ -179,10 +179,10 @@ public class IconResource_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, IconResource_Editor._StyleParameter_QueryFunction_79r3b6_a0a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -232,7 +232,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return EditorUtil.createSelectIconButton(node, "path", editorContext);
   }
 
-  private static Color _StyleParameter_QueryFunction_79r3b6_a0a(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_79r3b6_a0a(EditorContext editorContext, SNode node) {
     return (IconResource_Behavior.call_isValid_8974276187400030063(node) ?
       Color.BLACK :
       Color.RED

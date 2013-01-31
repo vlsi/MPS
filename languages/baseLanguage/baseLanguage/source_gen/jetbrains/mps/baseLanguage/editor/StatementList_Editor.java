@@ -88,10 +88,10 @@ public class StatementList_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, StatementList_Editor._StyleParameter_QueryFunction_u338ov_a1a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNodeList_u338ov_a0(editorContext, node));
@@ -106,21 +106,21 @@ public class StatementList_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, StatementList_Editor._StyleParameter_QueryFunction_u338ov_a1a0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_u338ov_a1a0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_u338ov_a1a0(EditorContext editorContext, SNode node) {
     return !(StatementList_Behavior.call_isCompact_1237546596168(node));
   }
 
-  private static boolean _StyleParameter_QueryFunction_u338ov_a1a(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_u338ov_a1a(EditorContext editorContext, SNode node) {
     return !(StatementList_Behavior.call_isCompact_1237546596168(node));
   }
 }

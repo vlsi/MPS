@@ -795,7 +795,7 @@
     <nodeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="102" startPosition="34" endLine="103" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="103" startPosition="95" endLine="104" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="106" startPosition="131" endLine="107" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="113" startPosition="84" endLine="114" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="113" startPosition="104" endLine="114" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="114" startPosition="100" endLine="115" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="115" startPosition="38" endLine="116" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="116" startPosition="36" endLine="117" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -979,7 +979,7 @@
     <nodeInfo nodeId="4818101245579894645" fileName="ContextBindingWrapper_Editor.java" startLine="131" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_2kuzvr_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="4818101245579931566" fileName="ContextBindingWrapper_Editor.java" startLine="170" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_2kuzvr_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="99" startPosition="132" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="112" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="112" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="4818101245579931550" fileName="ContextBindingWrapper_Editor.java" startLine="159" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_2kuzvr_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="99" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="4980855909371422178" fileName="ContextBindingWrapper_Editor.java" startLine="252" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_2kuzvr_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -1141,7 +1141,7 @@
       <varInfo nodeId="4818101245579931571" varName="editorContext" />
       <varInfo nodeId="4818101245579931571" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="113" startPosition="84" endLine="120" endPosition="24">
+    <scopeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="113" startPosition="104" endLine="120" endPosition="24">
       <varInfo nodeId="5572604531249746418" varName="editorCell" />
       <varInfo nodeId="5572604531249746418" varName="style" />
     </scopeInfo>
@@ -1169,7 +1169,8 @@
     <scopeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="99" startPosition="132" endLine="109" endPosition="7" />
     <scopeInfo nodeId="5572604531249746418" fileName="ContextBindingWrapper_Editor.java" startLine="112" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="5572604531249746418" varName="editorContext" />
-      <varInfo nodeId="5572604531249746418" varName="node" />
+      <varInfo nodeId="5572604531249746418" varName="nextNode" />
+      <varInfo nodeId="5572604531249746418" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="4818101245579931550" fileName="ContextBindingWrapper_Editor.java" startLine="159" startPosition="0" endLine="169" endPosition="0">
       <varInfo nodeId="4818101245579931550" varName="editorContext" />

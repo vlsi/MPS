@@ -1184,7 +1184,7 @@
     <nodeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="63" startPosition="34" endLine="64" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="64" startPosition="95" endLine="65" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="67" startPosition="131" endLine="68" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="74" startPosition="84" endLine="75" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="74" startPosition="104" endLine="75" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="75" startPosition="100" endLine="76" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="76" startPosition="38" endLine="77" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="77" startPosition="36" endLine="78" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1320,7 +1320,7 @@
     <nodeInfo nodeId="1572321421813478066" fileName="GWTModule_Editor.java" startLine="130" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_qbj93y_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1572321421811416541" fileName="GWTModule_Editor.java" startLine="140" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_qbj93y_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="60" startPosition="132" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="73" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="73" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1572321421811416526" fileName="GWTModule_Editor.java" startLine="85" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_qbj93y_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1572321421811416547" fileName="GWTModule_Editor.java" startLine="119" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_qbj93y_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="60" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -1428,7 +1428,7 @@
       <varInfo nodeId="1572321421811416545" varName="editorContext" />
       <varInfo nodeId="1572321421811416545" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="74" startPosition="84" endLine="81" endPosition="24">
+    <scopeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="74" startPosition="104" endLine="81" endPosition="24">
       <varInfo nodeId="1572321421811416553" varName="editorCell" />
       <varInfo nodeId="1572321421811416553" varName="style" />
     </scopeInfo>
@@ -1471,7 +1471,8 @@
     <scopeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="60" startPosition="132" endLine="70" endPosition="7" />
     <scopeInfo nodeId="1572321421811416553" fileName="GWTModule_Editor.java" startLine="73" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="1572321421811416553" varName="editorContext" />
-      <varInfo nodeId="1572321421811416553" varName="node" />
+      <varInfo nodeId="1572321421811416553" varName="nextNode" />
+      <varInfo nodeId="1572321421811416553" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="1572321421811416526" fileName="GWTModule_Editor.java" startLine="85" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="1572321421811416526" varName="editorContext" />
