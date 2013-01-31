@@ -17,14 +17,11 @@ package jetbrains.mps.findUsages;
 
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModuleScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -34,7 +31,7 @@ public class FindUsagesManager {
     return new FindUsagesManager();
   }
 
-  public <T, R> Set<T> findUsages(Set<R> nodes, SearchType<T, R> type, SModuleScope scope, @Nullable ProgressMonitor monitor) {
+  public <T, R> Set<T> findUsages(Set<R> nodes, SearchType<T, R> type, SearchScope scope, @Nullable ProgressMonitor monitor) {
     MultiMap<SModel, R> directSearch = type.findMatchingModelsInCache(nodes, scope.getModels(), null);
 
     Set<T> result = new HashSet<T>();

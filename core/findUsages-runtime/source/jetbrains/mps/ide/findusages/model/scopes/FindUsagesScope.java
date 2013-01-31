@@ -25,12 +25,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SModuleScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public abstract class FindUsagesScope extends BaseScope implements SModuleScope, IExternalizeable {
+public abstract class FindUsagesScope extends BaseScope implements SearchScope, IExternalizeable {
   private static final String SCOPE_CLASS_ATTR = "scope_class";
   private static final String SCOPE_TAG = "scope";
 

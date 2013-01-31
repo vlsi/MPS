@@ -5,7 +5,7 @@ package jetbrains.mps.execution.lib.ui;
 import jetbrains.mps.project.FilteredScope;
 import java.util.Set;
 import jetbrains.mps.smodel.Language;
-import org.jetbrains.mps.openapi.module.SModuleScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -18,7 +18,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 public class ModulesWithLanguagesScope extends FilteredScope {
   private Set<Language> requiredLanguages;
 
-  public ModulesWithLanguagesScope(SModuleScope innerScope, Iterable<Language> requiredLanguages) {
+  public ModulesWithLanguagesScope(SearchScope innerScope, Iterable<Language> requiredLanguages) {
     super(innerScope);
     this.requiredLanguages = SetSequence.fromSetWithValues(new HashSet<Language>(), requiredLanguages);
   }

@@ -22,12 +22,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SModuleScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 public abstract class FilteredScope extends BaseScope {
-  protected final SModuleScope myScope;
+  protected final SearchScope myScope;
 
-  public FilteredScope(SModuleScope scope) {
+  public FilteredScope(SearchScope scope) {
     myScope = scope;
   }
 

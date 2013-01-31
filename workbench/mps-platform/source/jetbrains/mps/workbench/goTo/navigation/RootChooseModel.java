@@ -33,7 +33,7 @@ import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
 
 import java.util.Collection;
@@ -99,7 +99,7 @@ public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
   }
 
   private static class FilterStubsScope extends FilteredScope {
-    public FilterStubsScope(SModuleScope scope) {
+    public FilterStubsScope(SearchScope scope) {
       super(scope);
     }
 
