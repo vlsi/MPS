@@ -36,7 +36,7 @@ public class ModulesScope extends FindUsagesScope {
   @NotNull
   private final List<SModule> myModules = new ArrayList<SModule>();
 
-  public <T extends SModule> ModulesScope(@NotNull Iterable<T> modules) {
+  public ModulesScope(@NotNull Iterable<? extends SModule> modules) {
     for (SModule module : modules) {
       myModules.add(module);
       addModule(module);

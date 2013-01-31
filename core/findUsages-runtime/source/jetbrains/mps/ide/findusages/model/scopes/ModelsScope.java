@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,7 +38,7 @@ public class ModelsScope extends FindUsagesScope {
   @NotNull
   private final List<SModel> myModels = new ArrayList<SModel>();
 
-  public <T extends SModel> ModelsScope(@NotNull Iterable<T> models) {
+  public ModelsScope(@NotNull Iterable<? extends SModel> models) {
     for (SModel model : models) {
       myModels.add(model);
       addModel(model);
@@ -55,6 +56,11 @@ public class ModelsScope extends FindUsagesScope {
 
   public ModelsScope(Element element, Project project) throws CantLoadSomethingException {
     this(resolveModels(element));
+  }
+
+  @Override
+  public Iterable<SModule> getModules() {
+    throw new UnsupportedOperationException();
   }
 
   private static List<SModel> resolveModels(Element element) throws CantLoadSomethingException {
