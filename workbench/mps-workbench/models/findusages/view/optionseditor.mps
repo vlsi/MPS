@@ -361,20 +361,20 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="28859145781927786">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="28859145781927787">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gv16.~ScopeOptions%d&lt;init&gt;(java%dlang%dString,java%dlang%dString,java%dlang%dString)" resolveInfo="ScopeOptions" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gv16.~ScopeOptions%d&lt;init&gt;(jetbrains%dmps%dide%dfindusages%dview%doptionseditor%doptions%dScopeOptions$ScopeType,java%dlang%dString,java%dlang%dString)" resolveInfo="ScopeOptions" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="28859145781927788">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="28859145781927789">
+                    <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5491034601522506116">
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="gv16.~ScopeOptions$ScopeType%dPROJECT" resolveInfo="PROJECT" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="gv16.~ScopeOptions$ScopeType" resolveInfo="ScopeOptions.ScopeType" />
+                    </node>
+                    <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5491034601522490534">
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="gv16.~ScopeOptions$ScopeType%dGLOBAL" resolveInfo="GLOBAL" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="gv16.~ScopeOptions$ScopeType" resolveInfo="ScopeOptions.ScopeType" />
+                    </node>
                     <node role="condition" roleId="tpee.1163668914799" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="28859145781927790">
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1p1s.~InternalFlag" resolveInfo="InternalFlag" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1p1s.~InternalFlag%disInternalMode()%cboolean" resolveInfo="isInternalMode" />
-                    </node>
-                    <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="28859145781927791">
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gv16.~ScopeOptions" resolveInfo="ScopeOptions" />
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gv16.~ScopeOptions%dGLOBAL_SCOPE" resolveInfo="GLOBAL_SCOPE" />
-                    </node>
-                    <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="28859145781927792">
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gv16.~ScopeOptions" resolveInfo="ScopeOptions" />
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gv16.~ScopeOptions%dPROJECT_SCOPE" resolveInfo="PROJECT_SCOPE" />
                     </node>
                   </node>
                 </node>

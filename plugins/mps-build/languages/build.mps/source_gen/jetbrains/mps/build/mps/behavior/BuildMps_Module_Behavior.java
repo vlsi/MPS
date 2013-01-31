@@ -149,12 +149,14 @@ public class BuildMps_Module_Behavior {
     for (SNode m : Sequence.fromIterable(genClosure.getAllModules())) {
       SNode artifact;
       if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(thisNode)) {
-        artifact = SNodeOperations.as(artifacts.findArtifact((SNodeOperations.isInstanceOf(m, "jetbrains.mps.build.mps.structure.BuildMps_DevKit") ?
-          SLinkOperations.getTarget(SNodeOperations.cast(m, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "path", true) :
-          m
-        )), "jetbrains.mps.build.structure.BuildLayout_Node");
+        artifact = SNodeOperations.as(artifacts.findArtifact(m), "jetbrains.mps.build.structure.BuildLayout_Node");
         if (artifact != null) {
           builder.add(artifact, m);
+        } else if (SNodeOperations.isInstanceOf(m, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
+          artifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(m, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_Node");
+          if (artifact != null) {
+            builder.add(artifact, m);
+          }
         }
       }
     }

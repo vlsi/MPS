@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.ui.dialogs.properties;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBLabel;
@@ -23,16 +24,30 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.view.IUsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyCellState;
+import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyTableCellRender;
+import jetbrains.mps.ide.ui.dialogs.properties.renders.ModelTableCellRender;
+import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
+import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
+import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelsOnlyScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -50,6 +65,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.table.TableCellRenderer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -166,6 +182,96 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     protected IScope getScope() {
       return myModelDescriptor.getModule().getScope();
     }
+
+    @Override
+    protected TableCellRenderer getTableCellRender() {
+      return new DependencyTableCellRender(getScope()) {
+        @Override
+        protected ModelTableCellRender getModelTableCellRender(IScope scope) {
+          return new ModelTableCellRender(scope) {
+            @Override
+            protected DependencyCellState getDependencyCellState(SModelReference modelReference) {
+              if( !StateUtil.isAvailable( (jetbrains.mps.smodel.SModelReference) modelReference) ) { return DependencyCellState.NOT_AVALIABLE; }
+              if( !StateUtil.isInScope(myScope, (jetbrains.mps.smodel.SModelReference) modelReference) ) { return DependencyCellState.NOT_IN_SCOPE; }
+              if( (myModelProperties.getImportedModelsRemoveCondition().met((jetbrains.mps.smodel.SModelReference) modelReference)) ) { return DependencyCellState.UNUSED; }
+
+              return super.getDependencyCellState(modelReference);
+            }
+          };
+        }
+
+        @Override
+        protected ModuleTableCellRender getModuleTableCellRender() {
+          return new InModelModuleTableCellRender();
+        }
+      };
+    }
+
+    @Override
+    protected void findUsages(final Object value) {
+      if(myInPlugin) {
+        Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(", Messages.getInformationIcon());
+        return;
+      }
+
+      final SearchQuery[] query = new SearchQuery[1];
+      final IResultProvider[] provider = new IResultProvider[1];
+      final IScope scope = new ModelsOnlyScope(myModelDescriptor);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          if(value instanceof ModuleReference) {
+            query[0] = new SearchQuery(
+              MPSModuleRepository.getInstance().getModuleByFqName(
+                ((ModuleReference)value).getModuleFqName()), scope);
+            provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder());
+          }
+          else if(value instanceof SModelReference) {
+            query[0] = new SearchQuery(
+              SModelRepository.getInstance().getModelDescriptor(((jetbrains.mps.smodel.SModelReference) value).getSModelId()).getSModel(), scope);
+            provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
+          }
+        }
+      });
+      IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
+      usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
+      forceCancelCloseDialog();
+    }
+
+    @Override
+    protected boolean confirmRemove(final Object value) {
+      if(value instanceof ModuleReference) {
+        final ModuleReference moduleReference = (ModuleReference)value;
+        if( !myModelProperties.getUsedLanguageRemoveCondition().met(moduleReference) ) {
+          ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
+            ProjectHelper.toIdeaProject(myProject), "Delete used language",
+            "This language is used by model. Do you really what to delete it?", "Model state will become inconsistent") {
+            @Override
+            public void doViewAction() {
+              findUsages(value);
+            }
+          };
+          viewUsagesDeleteDialog.show();
+          return viewUsagesDeleteDialog.isOK();
+        }
+      }
+      else if(value instanceof SModelReference) {
+        final SModelReference modelReference = (SModelReference)value;
+        if( !myModelProperties.getImportedModelsRemoveCondition().met((jetbrains.mps.smodel.SModelReference)modelReference) ) {
+          ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
+            ProjectHelper.toIdeaProject(myProject), "Delete imported model",
+            "This model is used in model. Do you really what to delete it?", "Model state will become inconsistent") {
+            @Override
+            public void doViewAction() {
+              findUsages(value);
+            }
+          };
+          viewUsagesDeleteDialog.show();
+          return viewUsagesDeleteDialog.isOK();
+        }
+      }
+
+      return super.confirmRemove(value);
+    }
   }
 
   public class ModelUsedLanguagesTab extends UsedLanguagesTab {
@@ -175,6 +281,51 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       return new ModelUsedLangTableModel(myModelProperties);
     }
 
+    @Override
+    protected TableCellRenderer getTableCellRender() {
+      return new InModelModuleTableCellRender();
+    }
+
+    @Override
+    protected void findUsages(final Object value) {
+      if(myInPlugin) {
+        Messages.showMessageDialog(ProjectHelper.toIdeaProject(myProject), "This functions is not implemented in plugin yet", "=(", Messages.getInformationIcon());
+        return;
+      }
+
+      final SearchQuery[] query = new SearchQuery[1];
+      final IResultProvider[] provider = new IResultProvider[1];
+      final IScope scope = new ModelsOnlyScope(myModelDescriptor);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          query[0] = new SearchQuery(
+            MPSModuleRepository.getInstance().getModuleByFqName(((ModuleReference)value).getModuleFqName()), scope);
+          provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder());
+        }
+      });
+      IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
+      usagesViewTool.findUsages(provider[0], query[0], true, true, true, "");
+      forceCancelCloseDialog();
+    }
+
+    @Override
+    protected boolean confirmRemove(final Object value) {
+      final ModuleReference moduleReference = (ModuleReference)value;
+      if( !myModelProperties.getUsedLanguageRemoveCondition().met(moduleReference) ) {
+        ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
+          ProjectHelper.toIdeaProject(myProject), "Delete used language",
+          "This language is used by model. Do you really what to delete it?", "Model state will become inconsistent") {
+          @Override
+          public void doViewAction() {
+            findUsages(value);
+          }
+        };
+        viewUsagesDeleteDialog.show();
+        return viewUsagesDeleteDialog.isOK();
+      }
+
+      return super.confirmRemove(value);
+    }
   }
 
   public class InfoTab extends Tab {
@@ -244,6 +395,15 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     public boolean isModified() {
       return myDoNotGenerateCheckBox.isSelected() != myModelProperties.isDoNotGenerate()
         || ( myIsDefSModelDescr ? (myGenerateIntoModelFolderCheckBox.isSelected() != myModelProperties.isGenerateIntoModelFolder()) : false );
+    }
+  }
+
+  private class InModelModuleTableCellRender extends ModuleTableCellRender {
+    @Override
+    protected DependencyCellState getDependencyCellState(ModuleReference moduleReference) {
+      if(myModelProperties.getUsedLanguageRemoveCondition().met(moduleReference)) { return DependencyCellState.UNUSED; }
+
+      return super.getDependencyCellState(moduleReference);
     }
   }
 }

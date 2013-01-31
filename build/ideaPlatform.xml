@@ -38,7 +38,7 @@
 
   <target name="force-resolve" depends="install-ivy">
     <property name="mps.ivy.home" value="${user.home}"/>
-    <ivy:retrieve pattern="../[orgPath]/[artifact]" overwritemode="different"/>
+    <ivy:retrieve pattern="../[orgPath]/[artifact]" overwritemode="different" log="quiet" />
   </target>
 
   <target name="resolve" depends="checkPlatformIsUpToDate" description="--> Retreive dependencies with ivy if platform is changed" if="${platformNeedUpdate}">

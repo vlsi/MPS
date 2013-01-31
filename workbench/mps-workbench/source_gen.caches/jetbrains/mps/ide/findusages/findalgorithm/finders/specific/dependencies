@@ -47,43 +47,22 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ModelUsagesFinder" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.IHolder" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.ModuleHolder" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ModelsScope" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.finders.ModelUsagesFinder" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScopeMinusTransient" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelsOnlyScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.LanguageUsagesFinder" file="LanguageUsagesFinder.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.IHolder" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.ModuleHolder" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.project.DevKit" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.project.ModuleUtil" />
-    <classNode dependClassName="jetbrains.mps.project.Solution" />
-    <classNode dependClassName="jetbrains.mps.project.dependency.GlobalModuleDependenciesManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
   </dependency>
   <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder" file="MappingConfigFinder.java">
@@ -103,22 +82,6 @@
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-    <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ModelUsagesFinder" file="ModelUsagesFinder.java">
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.IHolder" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.ModelHolder" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelFindOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
-    <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
   </dependency>
 </dependenciesRoot>

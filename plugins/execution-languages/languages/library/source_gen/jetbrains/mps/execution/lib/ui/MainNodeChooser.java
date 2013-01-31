@@ -8,11 +8,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.findUsages.FindUsagesManager;
@@ -26,8 +26,8 @@ import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 /**
@@ -40,7 +40,7 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
   private C myTargetConcept;
   @Nullable
   private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myAcceptor;
-  private final GlobalFilteredScope myScope;
+  private final ModulesWithLanguagesScope myScope;
 
   @Deprecated
   public MainNodeChooser() {
@@ -54,19 +54,13 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
     myTargetConcept = targetConcept;
     myAcceptor = acceptor;
 
-    final IModule[] module = new IModule[1];
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        module[0] = SNodeOperations.getModel(targetConcept).getModelDescriptor().getModule();
+    Language language = ModelAccess.instance().runReadAction(new Computable<Language>() {
+      public Language compute() {
+        return (Language) SNodeOperations.getModel(targetConcept).getModelDescriptor().getModule();
       }
     });
-    myScope = new GlobalFilteredScope(MPSModuleRepository.getInstance(), SModelRepository.getInstance()) {
-      @Nullable
-      @Override
-      protected Iterable<IModule> getRequiredModules() {
-        return Sequence.<IModule>singleton(module[0]);
-      }
-    };
+
+    myScope = new ModulesWithLanguagesScope(GlobalScope.getInstance(), Sequence.<Language>singleton(language));
   }
 
   public C getTargetConcept() {
@@ -100,12 +94,12 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
     }
   }
 
-  protected List<SModelDescriptor> getModelDescriptors(String model) {
-    return myScope.getModelDescriptors(model);
+  protected Iterable<SModel> getModels(String model) {
+    return ScopeOperations.getModelsByName(myScope, model);
   }
 
-  protected Iterable<SNode> findNodes(SModel model, final String fqName) {
-    return ListSequence.fromList(SModelOperations.getNodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {
+  protected Iterable<SNode> findNodes(jetbrains.mps.smodel.SModel model, final String fqName) {
+    return ListSequence.fromList(SModelOperations.getNodes(((jetbrains.mps.smodel.SModel) model), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         if (!(SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(myTargetConcept)))) {
           return false;

@@ -734,7 +734,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.persistence.DefaultModelRoot" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
-    <classNode dependClassName="jetbrains.mps.project.DevKit" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
@@ -751,6 +750,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.behavior.Module_BehaviorDescriptor" file="Module_BehaviorDescriptor.java">

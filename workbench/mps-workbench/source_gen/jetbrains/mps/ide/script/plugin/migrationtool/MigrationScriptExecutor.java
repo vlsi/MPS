@@ -18,7 +18,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -114,7 +114,7 @@ public class MigrationScriptExecutor {
         // can this be done? 
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            IScope scope = AbstractMigrationScriptHelper.createMigrationScope(Collections.<SModelDescriptor>emptyList(), getMPSProject().getModules());
+            IScope scope = AbstractMigrationScriptHelper.createMigrationScope(Collections.<SModel>emptyList(), getMPSProject().getModules());
             SearchResults results = finder.find(new SearchQuery(scope), promon.subTask(100));
             searchResults[0] = (List<SearchResult<SNode>>) results.getSearchResults();
           }

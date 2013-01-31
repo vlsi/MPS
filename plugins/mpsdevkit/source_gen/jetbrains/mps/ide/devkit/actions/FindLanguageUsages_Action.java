@@ -15,9 +15,10 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.LanguageUsagesFinder;
+import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.logging.Logger;
@@ -76,7 +77,7 @@ public class FindLanguageUsages_Action extends BaseAction {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
       final IModule module = ((IModule) MapSequence.fromMap(_params).get("module"));
-      final IScope scope = ((IScope) MapSequence.fromMap(_params).get("scope"));
+      final IScope scope = GlobalScope.getInstance();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           query[0] = new SearchQuery(module, scope);

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
-import com.intellij.icons.AllIcons;
 import com.intellij.icons.AllIcons.General;
 import com.intellij.ide.*;
 import com.intellij.openapi.actionSystem.*;
@@ -23,7 +22,6 @@ import com.intellij.pom.Navigatable;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.usageView.UsageViewBundle;
 import com.intellij.util.ui.tree.TreeUtil;
-import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.icons.MPSIcons.Actions;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -46,7 +44,8 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.TreeHighlighterExtension;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 

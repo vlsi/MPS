@@ -102,6 +102,7 @@
     <classNode dependClassName="java.util.concurrent.ConcurrentMap" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.util.containers.ConcurrentHashSet" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.build.util.JavaExportUtil" file="JavaExportUtil.java">
