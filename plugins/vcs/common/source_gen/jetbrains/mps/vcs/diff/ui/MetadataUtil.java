@@ -7,11 +7,11 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodeId;
@@ -29,6 +29,8 @@ public class MetadataUtil {
 
   public static SModel createMetadataModel(SModel model) {
     SModel metadataModel = new SModel(new SModelReference(new SModelFqName(SModelOperations.getModelName(model), "metadata"), SModelId.generate()));
+    metadataModel.addLanguage(ModuleReference.fromString("6df0089f-3288-4998-9d57-e698e7c8e145(jetbrains.mps.ide.vcs.modelmetadata)"));
+    metadataModel.addLanguage(ModuleReference.fromString("86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)"));
     SModelOperations.addRootNode(metadataModel, createModelRoot(model));
     return metadataModel;
   }
