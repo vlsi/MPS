@@ -13422,24 +13422,25 @@
     <nodeInfo nodeId="8504030010051008168" fileName="ResolveUnknownUtil.java" startLine="350" startPosition="0" endLine="351" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8504030010051008246" fileName="ResolveUnknownUtil.java" startLine="354" startPosition="63" endLine="355" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8504030010051008250" fileName="ResolveUnknownUtil.java" startLine="355" startPosition="21" endLine="356" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8504030010051008251" fileName="ResolveUnknownUtil.java" startLine="356" startPosition="0" endLine="357" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8504030010051008264" fileName="ResolveUnknownUtil.java" startLine="357" startPosition="93" endLine="358" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8504030010051008265" fileName="ResolveUnknownUtil.java" startLine="358" startPosition="0" endLine="359" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8504030010051008280" fileName="ResolveUnknownUtil.java" startLine="360" startPosition="25" endLine="361" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8504030010051008293" fileName="ResolveUnknownUtil.java" startLine="363" startPosition="99" endLine="364" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8504030010051008314" fileName="ResolveUnknownUtil.java" startLine="365" startPosition="5" endLine="366" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8504030010051008306" fileName="ResolveUnknownUtil.java" startLine="366" startPosition="0" endLine="367" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8504030010050369214" fileName="ResolveUnknownUtil.java" startLine="370" startPosition="69" endLine="371" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8504030010050369217" fileName="ResolveUnknownUtil.java" startLine="371" startPosition="17" endLine="372" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8504030010050369225" fileName="ResolveUnknownUtil.java" startLine="373" startPosition="49" endLine="374" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8504030010050369239" fileName="ResolveUnknownUtil.java" startLine="375" startPosition="65" endLine="376" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8504030010050369247" fileName="ResolveUnknownUtil.java" startLine="377" startPosition="12" endLine="378" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8504030010050369262" fileName="ResolveUnknownUtil.java" startLine="380" startPosition="41" endLine="381" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8504030010050369272" fileName="ResolveUnknownUtil.java" startLine="383" startPosition="9" endLine="384" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8504030010050369278" fileName="ResolveUnknownUtil.java" startLine="385" startPosition="5" endLine="386" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8504030010050369376" fileName="ResolveUnknownUtil.java" startLine="390" startPosition="103" endLine="391" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8504030010050369320" fileName="ResolveUnknownUtil.java" startLine="391" startPosition="38" endLine="392" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8504030010050351475" fileName="ResolveUnknownUtil.java" startLine="396" startPosition="0" endLine="397" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG_180675533" />
+    <nodeInfo nodeId="3311548509050166845" fileName="ResolveUnknownUtil.java" startLine="356" startPosition="0" endLine="357" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8504030010051008251" fileName="ResolveUnknownUtil.java" startLine="357" startPosition="122" endLine="358" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8504030010051008264" fileName="ResolveUnknownUtil.java" startLine="358" startPosition="146" endLine="359" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8504030010051008265" fileName="ResolveUnknownUtil.java" startLine="359" startPosition="0" endLine="360" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8504030010051008280" fileName="ResolveUnknownUtil.java" startLine="361" startPosition="25" endLine="362" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8504030010051008293" fileName="ResolveUnknownUtil.java" startLine="364" startPosition="99" endLine="365" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8504030010051008314" fileName="ResolveUnknownUtil.java" startLine="366" startPosition="5" endLine="367" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8504030010051008306" fileName="ResolveUnknownUtil.java" startLine="367" startPosition="0" endLine="368" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8504030010050369214" fileName="ResolveUnknownUtil.java" startLine="371" startPosition="69" endLine="372" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8504030010050369217" fileName="ResolveUnknownUtil.java" startLine="372" startPosition="17" endLine="373" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8504030010050369225" fileName="ResolveUnknownUtil.java" startLine="374" startPosition="49" endLine="375" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8504030010050369239" fileName="ResolveUnknownUtil.java" startLine="376" startPosition="65" endLine="377" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8504030010050369247" fileName="ResolveUnknownUtil.java" startLine="378" startPosition="12" endLine="379" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8504030010050369262" fileName="ResolveUnknownUtil.java" startLine="381" startPosition="41" endLine="382" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8504030010050369272" fileName="ResolveUnknownUtil.java" startLine="384" startPosition="9" endLine="385" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8504030010050369278" fileName="ResolveUnknownUtil.java" startLine="386" startPosition="5" endLine="387" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8504030010050369376" fileName="ResolveUnknownUtil.java" startLine="391" startPosition="103" endLine="392" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8504030010050369320" fileName="ResolveUnknownUtil.java" startLine="392" startPosition="38" endLine="393" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8504030010050351475" fileName="ResolveUnknownUtil.java" startLine="397" startPosition="0" endLine="398" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG_180675533" />
     <nodeInfo nodeId="8504030010050351477" fileName="ResolveUnknownUtil.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResolveUnknownUtil#()V" />
     <nodeInfo nodeId="6975480330829644519" fileName="ResolveUnknownUtil.java" startLine="177" startPosition="16" endLine="179" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8504030010051006467" fileName="ResolveUnknownUtil.java" startLine="318" startPosition="10" endLine="320" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -13459,31 +13460,31 @@
     <nodeInfo nodeId="8504030010051006216" fileName="ResolveUnknownUtil.java" startLine="230" startPosition="81" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7841446846210405569" fileName="ResolveUnknownUtil.java" startLine="251" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="8504030010051006312" fileName="ResolveUnknownUtil.java" startLine="275" startPosition="0" endLine="278" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8504030010051008273" fileName="ResolveUnknownUtil.java" startLine="359" startPosition="48" endLine="362" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8504030010051008286" fileName="ResolveUnknownUtil.java" startLine="362" startPosition="5" endLine="365" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8504030010050369260" fileName="ResolveUnknownUtil.java" startLine="380" startPosition="0" endLine="383" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8504030010051008273" fileName="ResolveUnknownUtil.java" startLine="360" startPosition="48" endLine="363" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8504030010051008286" fileName="ResolveUnknownUtil.java" startLine="363" startPosition="5" endLine="366" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8504030010050369260" fileName="ResolveUnknownUtil.java" startLine="381" startPosition="0" endLine="384" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="8504030010050369364" fileName="ResolveUnknownUtil.java" startLine="70" startPosition="29" endLine="74" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8504030010050602435" fileName="ResolveUnknownUtil.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7321423948506911747" fileName="ResolveUnknownUtil.java" startLine="140" startPosition="43" endLine="144" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8504030010051157892" fileName="ResolveUnknownUtil.java" startLine="162" startPosition="99" endLine="166" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8504030010051008143" fileName="ResolveUnknownUtil.java" startLine="344" startPosition="42" endLine="348" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8504030010050369314" fileName="ResolveUnknownUtil.java" startLine="389" startPosition="69" endLine="393" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8504030010050369314" fileName="ResolveUnknownUtil.java" startLine="390" startPosition="69" endLine="394" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8504030010051006119" fileName="ResolveUnknownUtil.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="8504030010051006136" fileName="ResolveUnknownUtil.java" startLine="47" startPosition="98" endLine="52" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6975480330829608342" fileName="ResolveUnknownUtil.java" startLine="174" startPosition="119" endLine="179" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7841446846211273972" fileName="ResolveUnknownUtil.java" startLine="249" startPosition="98" endLine="254" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8504030010051006322" fileName="ResolveUnknownUtil.java" startLine="280" startPosition="94" endLine="285" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="8504030010051006402" fileName="ResolveUnknownUtil.java" startLine="301" startPosition="169" endLine="306" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8504030010050369253" fileName="ResolveUnknownUtil.java" startLine="378" startPosition="63" endLine="383" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8504030010050369253" fileName="ResolveUnknownUtil.java" startLine="379" startPosition="63" endLine="384" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8504030010050602433" fileName="ResolveUnknownUtil.java" startLine="112" startPosition="0" endLine="118" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8504030010050602193" fileName="ResolveUnknownUtil.java" startLine="389" startPosition="0" endLine="395" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="reattachMethodArguments#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8504030010050602193" fileName="ResolveUnknownUtil.java" startLine="390" startPosition="0" endLine="396" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="reattachMethodArguments#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="8504030010051006117" fileName="ResolveUnknownUtil.java" startLine="37" startPosition="100" endLine="44" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8504030010051006128" fileName="ResolveUnknownUtil.java" startLine="46" startPosition="0" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7841446846211247746" fileName="ResolveUnknownUtil.java" startLine="248" startPosition="0" endLine="255" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7841446846211135307" fileName="ResolveUnknownUtil.java" startLine="263" startPosition="14" endLine="270" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8504030010051008076" fileName="ResolveUnknownUtil.java" startLine="329" startPosition="0" endLine="336" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8504030010051008125" fileName="ResolveUnknownUtil.java" startLine="341" startPosition="53" endLine="349" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8504030010050369245" fileName="ResolveUnknownUtil.java" startLine="377" startPosition="10" endLine="385" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8504030010050369245" fileName="ResolveUnknownUtil.java" startLine="378" startPosition="10" endLine="386" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8504030010050369372" fileName="ResolveUnknownUtil.java" startLine="70" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="8504030010051156111" fileName="ResolveUnknownUtil.java" startLine="290" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="makeFieldDotExpression#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="8504030010051006045" fileName="ResolveUnknownUtil.java" startLine="35" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -13492,14 +13493,14 @@
     <nodeInfo nodeId="8504030010050602251" fileName="ResolveUnknownUtil.java" startLine="95" startPosition="0" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8504030010051158070" fileName="ResolveUnknownUtil.java" startLine="173" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="8504030010051158090" fileName="ResolveUnknownUtil.java" startLine="191" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8504030010050369223" fileName="ResolveUnknownUtil.java" startLine="372" startPosition="94" endLine="385" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8504030010050369223" fileName="ResolveUnknownUtil.java" startLine="373" startPosition="94" endLine="386" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8504030010050785563" fileName="ResolveUnknownUtil.java" startLine="136" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="8504030010051158068" fileName="ResolveUnknownUtil.java" startLine="171" startPosition="0" endLine="185" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7841446846210659846" fileName="ResolveUnknownUtil.java" startLine="256" startPosition="0" endLine="270" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8504030010051158088" fileName="ResolveUnknownUtil.java" startLine="189" startPosition="0" endLine="204" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8504030010051008191" fileName="ResolveUnknownUtil.java" startLine="354" startPosition="0" endLine="369" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findClass#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="8504030010050785561" fileName="ResolveUnknownUtil.java" startLine="134" startPosition="0" endLine="150" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8504030010050369210" fileName="ResolveUnknownUtil.java" startLine="370" startPosition="0" endLine="388" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findConstructor#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8504030010051008191" fileName="ResolveUnknownUtil.java" startLine="354" startPosition="0" endLine="370" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findClass#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8504030010050369210" fileName="ResolveUnknownUtil.java" startLine="371" startPosition="0" endLine="389" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findConstructor#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="8504030010051006378" fileName="ResolveUnknownUtil.java" startLine="300" startPosition="0" endLine="322" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryFirstTokenAsVarRef#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="8504030010050367318" fileName="ResolveUnknownUtil.java" startLine="58" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolveConsCall#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;" />
     <nodeInfo nodeId="8504030010051005909" fileName="ResolveUnknownUtil.java" startLine="30" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolveQualNameRef#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;" />
@@ -13532,17 +13533,17 @@
     <scopeInfo nodeId="7841446846210405570" fileName="ResolveUnknownUtil.java" startLine="251" startPosition="45" endLine="252" endPosition="82" />
     <scopeInfo nodeId="8504030010051006313" fileName="ResolveUnknownUtil.java" startLine="276" startPosition="28" endLine="277" endPosition="18" />
     <scopeInfo nodeId="8504030010051006468" fileName="ResolveUnknownUtil.java" startLine="318" startPosition="12" endLine="319" endPosition="18" />
-    <scopeInfo nodeId="8504030010051008274" fileName="ResolveUnknownUtil.java" startLine="360" startPosition="25" endLine="361" endPosition="18" />
-    <scopeInfo nodeId="8504030010051008287" fileName="ResolveUnknownUtil.java" startLine="363" startPosition="99" endLine="364" endPosition="18" />
-    <scopeInfo nodeId="8504030010050369224" fileName="ResolveUnknownUtil.java" startLine="373" startPosition="49" endLine="374" endPosition="20" />
-    <scopeInfo nodeId="8504030010050369238" fileName="ResolveUnknownUtil.java" startLine="375" startPosition="65" endLine="376" endPosition="52" />
-    <scopeInfo nodeId="8504030010050369261" fileName="ResolveUnknownUtil.java" startLine="380" startPosition="41" endLine="381" endPosition="116" />
+    <scopeInfo nodeId="8504030010051008274" fileName="ResolveUnknownUtil.java" startLine="361" startPosition="25" endLine="362" endPosition="18" />
+    <scopeInfo nodeId="8504030010051008287" fileName="ResolveUnknownUtil.java" startLine="364" startPosition="99" endLine="365" endPosition="18" />
+    <scopeInfo nodeId="8504030010050369224" fileName="ResolveUnknownUtil.java" startLine="374" startPosition="49" endLine="375" endPosition="20" />
+    <scopeInfo nodeId="8504030010050369238" fileName="ResolveUnknownUtil.java" startLine="376" startPosition="65" endLine="377" endPosition="52" />
+    <scopeInfo nodeId="8504030010050369261" fileName="ResolveUnknownUtil.java" startLine="381" startPosition="41" endLine="382" endPosition="116" />
     <scopeInfo nodeId="8504030010050351477" fileName="ResolveUnknownUtil.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="8504030010050602436" fileName="ResolveUnknownUtil.java" startLine="114" startPosition="29" endLine="116" endPosition="26" />
     <scopeInfo nodeId="7321423948506911750" fileName="ResolveUnknownUtil.java" startLine="141" startPosition="102" endLine="143" endPosition="107" />
     <scopeInfo nodeId="8504030010051158063" fileName="ResolveUnknownUtil.java" startLine="206" startPosition="12" endLine="208" endPosition="0" />
     <scopeInfo nodeId="8504030010051008144" fileName="ResolveUnknownUtil.java" startLine="345" startPosition="26" endLine="347" endPosition="58" />
-    <scopeInfo nodeId="8504030010050369319" fileName="ResolveUnknownUtil.java" startLine="390" startPosition="103" endLine="392" endPosition="100" />
+    <scopeInfo nodeId="8504030010050369319" fileName="ResolveUnknownUtil.java" startLine="391" startPosition="103" endLine="393" endPosition="100" />
     <scopeInfo nodeId="8504030010051006120" fileName="ResolveUnknownUtil.java" startLine="39" startPosition="31" endLine="42" endPosition="26">
       <varInfo nodeId="8504030010051006085" varName="fieldRef" />
     </scopeInfo>
@@ -13554,7 +13555,7 @@
       <varInfo nodeId="8504030010051006332" varName="dotExpr" />
     </scopeInfo>
     <scopeInfo nodeId="8504030010051006403" fileName="ResolveUnknownUtil.java" startLine="302" startPosition="24" endLine="305" endPosition="18" />
-    <scopeInfo nodeId="8504030010050369260" fileName="ResolveUnknownUtil.java" startLine="380" startPosition="0" endLine="383" endPosition="0">
+    <scopeInfo nodeId="8504030010050369260" fileName="ResolveUnknownUtil.java" startLine="381" startPosition="0" endLine="384" endPosition="0">
       <varInfo nodeId="8504030010050369260" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="7625227064472365114" fileName="ResolveUnknownUtil.java" startLine="102" startPosition="118" endLine="106" endPosition="25">
@@ -13567,10 +13568,10 @@
     </scopeInfo>
     <scopeInfo nodeId="8504030010051006185" fileName="ResolveUnknownUtil.java" startLine="223" startPosition="29" endLine="227" endPosition="0" />
     <scopeInfo nodeId="8504030010051006238" fileName="ResolveUnknownUtil.java" startLine="238" startPosition="104" endLine="242" endPosition="0" />
-    <scopeInfo nodeId="8504030010050369314" fileName="ResolveUnknownUtil.java" startLine="389" startPosition="69" endLine="393" endPosition="5">
+    <scopeInfo nodeId="8504030010050369314" fileName="ResolveUnknownUtil.java" startLine="390" startPosition="69" endLine="394" endPosition="5">
       <varInfo nodeId="8504030010050369315" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="8504030010050602196" fileName="ResolveUnknownUtil.java" startLine="389" startPosition="69" endLine="393" endPosition="5" />
+    <scopeInfo nodeId="8504030010050602196" fileName="ResolveUnknownUtil.java" startLine="390" startPosition="69" endLine="394" endPosition="5" />
     <scopeInfo nodeId="8504030010051006119" fileName="ResolveUnknownUtil.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="8504030010051006129" fileName="ResolveUnknownUtil.java" startLine="47" startPosition="98" endLine="52" endPosition="8" />
     <scopeInfo nodeId="8504030010050602252" fileName="ResolveUnknownUtil.java" startLine="96" startPosition="109" endLine="101" endPosition="0">
@@ -13590,7 +13591,7 @@
       <varInfo nodeId="8504030010051008128" varName="className" />
       <varInfo nodeId="8504030010051008138" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="8504030010050602193" fileName="ResolveUnknownUtil.java" startLine="389" startPosition="0" endLine="395" endPosition="0">
+    <scopeInfo nodeId="8504030010050602193" fileName="ResolveUnknownUtil.java" startLine="390" startPosition="0" endLine="396" endPosition="0">
       <varInfo nodeId="8504030010050602197" varName="from" />
       <varInfo nodeId="8504030010050602199" varName="to" />
     </scopeInfo>
@@ -13609,7 +13610,7 @@
     <scopeInfo nodeId="8504030010051008076" fileName="ResolveUnknownUtil.java" startLine="329" startPosition="0" endLine="336" endPosition="5">
       <varInfo nodeId="8504030010051008077" varName="tok" />
     </scopeInfo>
-    <scopeInfo nodeId="8504030010050369246" fileName="ResolveUnknownUtil.java" startLine="377" startPosition="12" endLine="384" endPosition="53">
+    <scopeInfo nodeId="8504030010050369246" fileName="ResolveUnknownUtil.java" startLine="378" startPosition="12" endLine="385" endPosition="53">
       <varInfo nodeId="8504030010050369248" varName="argCount" />
       <varInfo nodeId="8504030010050369254" varName="subset" />
     </scopeInfo>
@@ -13637,22 +13638,23 @@
     </scopeInfo>
     <scopeInfo nodeId="8504030010051158070" fileName="ResolveUnknownUtil.java" startLine="173" startPosition="0" endLine="185" endPosition="0" />
     <scopeInfo nodeId="8504030010051158090" fileName="ResolveUnknownUtil.java" startLine="191" startPosition="0" endLine="204" endPosition="0" />
-    <scopeInfo nodeId="8504030010051008194" fileName="ResolveUnknownUtil.java" startLine="354" startPosition="63" endLine="367" endPosition="89">
+    <scopeInfo nodeId="8504030010050785563" fileName="ResolveUnknownUtil.java" startLine="136" startPosition="0" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="8504030010051008194" fileName="ResolveUnknownUtil.java" startLine="354" startPosition="63" endLine="368" endPosition="89">
       <varInfo nodeId="8504030010051008266" varName="claz" />
+      <varInfo nodeId="3311548509050166848" varName="contextClas" />
       <varInfo nodeId="8504030010051008247" varName="res" />
       <varInfo nodeId="8504030010051008252" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="8504030010050785563" fileName="ResolveUnknownUtil.java" startLine="136" startPosition="0" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="8504030010051008191" fileName="ResolveUnknownUtil.java" startLine="354" startPosition="0" endLine="369" endPosition="0">
+    <scopeInfo nodeId="8504030010051008191" fileName="ResolveUnknownUtil.java" startLine="354" startPosition="0" endLine="370" endPosition="0">
       <varInfo nodeId="8504030010051008232" varName="className" />
       <varInfo nodeId="8504030010051008218" varName="from" />
     </scopeInfo>
-    <scopeInfo nodeId="8504030010050369213" fileName="ResolveUnknownUtil.java" startLine="370" startPosition="69" endLine="386" endPosition="18">
+    <scopeInfo nodeId="8504030010050369213" fileName="ResolveUnknownUtil.java" startLine="371" startPosition="69" endLine="387" endPosition="18">
       <varInfo nodeId="8504030010050369218" varName="conss" />
       <varInfo nodeId="8504030010050369215" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8504030010051157860" fileName="ResolveUnknownUtil.java" startLine="187" startPosition="106" endLine="205" endPosition="0" />
-    <scopeInfo nodeId="8504030010050369210" fileName="ResolveUnknownUtil.java" startLine="370" startPosition="0" endLine="388" endPosition="0">
+    <scopeInfo nodeId="8504030010050369210" fileName="ResolveUnknownUtil.java" startLine="371" startPosition="0" endLine="389" endPosition="0">
       <varInfo nodeId="8504030010050369282" varName="args" />
       <varInfo nodeId="8504030010050369280" varName="claz" />
     </scopeInfo>
@@ -13728,14 +13730,14 @@
     </scopeInfo>
     <unitInfo nodeId="8504030010051006138" fileName="ResolveUnknownUtil.java" startLine="48" startPosition="17" endLine="52" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil$2" />
     <unitInfo nodeId="7841446846210405569" fileName="ResolveUnknownUtil.java" startLine="250" startPosition="183" endLine="254" endPosition="11" unitName="jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil$8" />
-    <unitInfo nodeId="8504030010050369260" fileName="ResolveUnknownUtil.java" startLine="379" startPosition="70" endLine="383" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil$9" />
+    <unitInfo nodeId="8504030010050369260" fileName="ResolveUnknownUtil.java" startLine="380" startPosition="70" endLine="384" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil$9" />
     <unitInfo nodeId="8504030010050602435" fileName="ResolveUnknownUtil.java" startLine="113" startPosition="15" endLine="118" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil$4" />
     <unitInfo nodeId="8504030010051006119" fileName="ResolveUnknownUtil.java" startLine="38" startPosition="17" endLine="44" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil$1" />
     <unitInfo nodeId="8504030010050369372" fileName="ResolveUnknownUtil.java" startLine="69" startPosition="15" endLine="79" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil$3" />
     <unitInfo nodeId="8504030010051158070" fileName="ResolveUnknownUtil.java" startLine="172" startPosition="17" endLine="185" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil$6" />
     <unitInfo nodeId="8504030010051158090" fileName="ResolveUnknownUtil.java" startLine="190" startPosition="17" endLine="204" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil$7" />
     <unitInfo nodeId="8504030010050785563" fileName="ResolveUnknownUtil.java" startLine="135" startPosition="15" endLine="150" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil$5" />
-    <unitInfo nodeId="8504030010050351475" fileName="ResolveUnknownUtil.java" startLine="24" startPosition="0" endLine="398" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil" />
+    <unitInfo nodeId="8504030010050351475" fileName="ResolveUnknownUtil.java" startLine="24" startPosition="0" endLine="399" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/8695552310380188156">
     <nodeInfo nodeId="8695552310380188162" fileName="AnnotationUtil.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourMap" />
