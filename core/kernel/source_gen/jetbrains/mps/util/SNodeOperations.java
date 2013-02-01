@@ -295,11 +295,19 @@ public class SNodeOperations {
 
   public static String getModelStereotype(org.jetbrains.mps.openapi.model.SModel model) {
     String name = model.getModelName();
-    return name.substring(name.indexOf("@") + 1);
+    int index = name.indexOf("@");
+    return (index == -1 ?
+      name :
+      name.substring(index + 1)
+    );
   }
 
   public static String getModelLongName(org.jetbrains.mps.openapi.model.SModel model) {
     String name = model.getModelName();
-    return name.substring(0, name.indexOf("@"));
+    int index = name.indexOf("@");
+    return (index == -1 ?
+      name :
+      name.substring(0, index)
+    );
   }
 }
