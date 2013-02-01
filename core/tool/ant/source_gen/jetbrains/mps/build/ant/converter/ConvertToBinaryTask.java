@@ -5,29 +5,28 @@ package jetbrains.mps.build.ant.converter;
 import org.apache.tools.ant.taskdefs.Copy;
 import java.util.Map;
 import java.util.HashMap;
+import java.io.File;
 import org.apache.tools.ant.util.FirstMatchMapper;
 import org.apache.tools.ant.util.GlobPatternMapper;
 import org.apache.tools.ant.util.IdentityMapper;
 import org.apache.tools.ant.BuildException;
+import jetbrains.mps.build.ant.MPSClasspathUtil;
 import java.util.List;
-import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.net.MalformedURLException;
 import java.net.URLClassLoader;
 import java.lang.reflect.Method;
 import java.io.IOException;
-import org.apache.tools.ant.PropertyHelper;
 import org.apache.tools.ant.util.FileUtils;
 import org.apache.tools.ant.types.FilterSetCollection;
 import java.util.Vector;
 import org.apache.tools.ant.Project;
-import org.jetbrains.annotations.NotNull;
 
 public class ConvertToBinaryTask extends Copy {
-  private static final String[] CLASSPATH = new String[]{"mps-openapi.jar", "mps-core.jar", "mps-collections.jar", "mps-closures.jar", "mps-tuples.jar", "mps-tool.jar", "trove4j.jar"};
-
   private Map<String, String> toConvert = new HashMap<String, String>();
+  private File mpsHome;
+
 
   public ConvertToBinaryTask() {
     FirstMatchMapper mapper = new FirstMatchMapper();
@@ -40,11 +39,19 @@ public class ConvertToBinaryTask extends Copy {
     fileUtils = new ConvertToBinaryTask.FileUtilsEx(fileUtils);
   }
 
+  public void setMpsHome(File mpsHome) {
+    this.mpsHome = mpsHome;
+  }
+
+  public File getMpsHome() {
+    return mpsHome;
+  }
+
   @Override
   public void execute() throws BuildException {
     super.execute();
     if (!(toConvert.isEmpty())) {
-      List<File> classPaths = buildClasspath();
+      Iterable<File> classPaths = MPSClasspathUtil.buildClasspath(getProject(), mpsHome);
       List<URL> classPathUrls = new ArrayList<URL>();
       for (File path : classPaths) {
         try {
@@ -68,56 +75,6 @@ public class ConvertToBinaryTask extends Copy {
     }
   }
 
-  private List<File> buildClasspath() {
-    List<File> homeFolders = new ArrayList<File>();
-    homeFolders.add(getHomeLocation());
-    Object mps_home = PropertyHelper.getProperty(getProject(), "mps_home");
-    if (mps_home instanceof String) {
-      File mpsHome = new File((String) mps_home);
-      if (mpsHome.isDirectory()) {
-        File lib = new File(mpsHome, "lib");
-        if (lib.isDirectory()) {
-          homeFolders.add(lib);
-        }
-      }
-    }
-    List<File> result = new ArrayList<File>();
-    for (String name : CLASSPATH) {
-      File file = null;
-      for (File home : homeFolders) {
-        File f = new File(home, name);
-        if (f.isFile()) {
-          file = f;
-          break;
-        }
-      }
-      if (file == null) {
-        throw new BuildException("cannot find `" + name + "' in " + homeFolders.toString());
-      } else {
-        result.add(file);
-      }
-    }
-    return result;
-  }
-
-  private File getHomeLocation() {
-    String containingJar = getContainingJar(ConvertToBinaryTask.class);
-    if (!(containingJar.toLowerCase().endsWith(".jar"))) {
-      throw new BuildException("cannot detect jar location: got `" + containingJar + "'");
-    }
-    File current = new File(containingJar);
-    for (int i = 0; i < 3; i++) {
-      current = current.getParentFile();
-      if (current == null) {
-        throw new BuildException("cannot detect jar location, no parent: got `" + containingJar + "'");
-      }
-      if (new File(current, "mps-core.jar").isFile()) {
-        return current;
-      }
-    }
-    throw new BuildException("cannot detect jar location, no mps-core.jar `" + containingJar + "'");
-  }
-
   public class FileUtilsEx extends FileUtils {
     private final FileUtils delegate;
 
@@ -138,85 +95,5 @@ public class ConvertToBinaryTask extends Copy {
         delegate.copyFile(sourceFile, destFile, filters, filterChains, overwrite, preserveLastModified, append, inputEncoding, outputEncoding, project, force);
       }
     }
-  }
-
-  @NotNull
-  private static String getContainingJar(Class aClass) {
-    return getResourceRoot(aClass, "/" + aClass.getName().replace('.', '/') + ".class");
-  }
-
-  /**
-   * Attempts to detect classpath entry which contains given resource
-   */
-  @NotNull
-  public static String getResourceRoot(Class context, String path) {
-    URL url = context.getResource(path);
-    if (url == null) {
-      url = ClassLoader.getSystemResource(path.substring(1));
-    }
-    if (url == null) {
-      throw new BuildException("cannot detect jar location for `" + path + "'");
-    }
-    return extractRoot(url, path);
-  }
-
-  /**
-   * Attempts to extract classpath entry part from passed URL.
-   */
-  @NotNull
-  private static String extractRoot(@NotNull URL resourceURL, String resourcePath) {
-    if (!(resourcePath.startsWith("/") || resourcePath.startsWith("\\"))) {
-      throw new BuildException("cannot detect jar location: precondition failed for" + resourcePath);
-    }
-    String protocol = resourceURL.getProtocol();
-    String resultPath = null;
-
-    if (FILE.equals(protocol)) {
-      String path = resourceURL.getFile();
-      String testPath = path.replace('\\', '/').toLowerCase();
-      String testResourcePath = resourcePath.replace('\\', '/').toLowerCase();
-      if (testPath.endsWith(testResourcePath)) {
-        resultPath = path.substring(0, path.length() - resourcePath.length());
-      }
-    } else
-    if (JAR.equals(protocol)) {
-      String fullPath = resourceURL.getFile();
-      int delimiter = fullPath.indexOf(JAR_DELIMITER);
-      if (delimiter >= 0) {
-        String archivePath = fullPath.substring(0, delimiter);
-        if (archivePath.startsWith(FILE + PROTOCOL_DELIMITER)) {
-          resultPath = archivePath.substring(FILE.length() + PROTOCOL_DELIMITER.length());
-        }
-      }
-    }
-    if (resultPath == null) {
-      throw new BuildException("cannot detect jar location: url=`" + resourceURL.toString() + "'");
-    }
-
-    if (resultPath.endsWith(File.separator)) {
-      resultPath = resultPath.substring(0, resultPath.length() - 1);
-    }
-
-    return replace(resultPath, "%20", " ");
-  }
-
-  private static final String FILE = "file";
-  private static final String JAR = "jar";
-  private static final String JAR_DELIMITER = "!";
-  private static final String PROTOCOL_DELIMITER = ":";
-
-  @NotNull
-  public static String replace(@NotNull String text, @NotNull String from, @NotNull String to) {
-    final StringBuilder result = new StringBuilder(text.length());
-    final int len = from.length();
-    for (int i = 0; i < text.length(); i++) {
-      if (text.regionMatches(i, from, 0, len)) {
-        result.append(to);
-        i += len - 1;
-        continue;
-      }
-      result.append(text.charAt(i));
-    }
-    return result.toString();
   }
 }

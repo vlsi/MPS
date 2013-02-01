@@ -135,7 +135,6 @@ public abstract class MpsLoadTask extends Task {
 
   @Override
   public void execute() throws BuildException {
-    checkMpsHome();
     Set<File> classPaths = calculateClassPath();
     if (myUsePropertiesAsMacro) {
       Hashtable properties = getProject().getProperties();
@@ -227,7 +226,7 @@ public abstract class MpsLoadTask extends Task {
   }
 
   private void outputBuildNumber() {
-    String antTaskBuildNumber = null;
+    String antTaskBuildNumber;
     URL resource = getClass().getResource("/build.number");
     if (resource == null) {
       log("Can't determine version of ant task.", Project.MSG_DEBUG);
@@ -243,7 +242,7 @@ public abstract class MpsLoadTask extends Task {
       log("Can't determine version of ant task.", Project.MSG_DEBUG);
       return;
     }
-    String mpsBuildNumber = null;
+    String mpsBuildNumber;
     try {
       mpsBuildNumber = MpsLoadTask.readBuildNumber(new FileInputStream(new File(myMpsHome.getAbsolutePath() + File.separator + "build.number")));
       if (mpsBuildNumber == null || mpsBuildNumber.isEmpty()) {
@@ -276,86 +275,25 @@ public abstract class MpsLoadTask extends Task {
     return new MyExecuteStreamHandler(this);
   }
 
-  protected void checkMpsHome() {
+  private void checkMpsHome() {
     if (myMpsHome == null) {
-      String mpsHomePath = getProject().getProperty("mps.home");
-      if ((mpsHomePath == null || mpsHomePath.length() == 0)) {
-        mpsHomePath = getProject().getProperty("mps_home");
-      }
-      if (mpsHomePath == null || !(getProject().resolveFile(mpsHomePath).exists())) {
-        throw new BuildException("Path to mps home expected. Specify mps.home property or mpshome attribute.");
-      }
-      myMpsHome = getProject().resolveFile(mpsHomePath);
+      myMpsHome = MPSClasspathUtil.resolveMPSHome(getProject(), true);
     }
     outputBuildNumber();
-  }
-
-  private File absolutePath(String path) {
-    return new File(myMpsHome.getAbsolutePath() + File.separator + path.replace('/', File.separatorChar));
-  }
-
-  protected Set<File> calculateClassPath() {
-    File[] pathsToLook;
-    if (absolutePath("classes").exists()) {
-      //         absolutePath("platform/uiLanguage"), 
-      //         absolutePath("core/kernel/xmlQuery/runtime"), 
-      //         absolutePath("platform/gtext"), 
-      //         absolutePath("platform/builders"), 
-      pathsToLook = new File[]{absolutePath("core"), absolutePath("lib"), absolutePath("plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runtime"), absolutePath("languages/baseLanguage/closures/runtime"), absolutePath("languages/baseLanguage/collections/runtime"), absolutePath("languages/baseLanguage/tuples/runtime"), absolutePath("languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search"), absolutePath("workbench/typesystemUi/classes"), absolutePath("MPSPlugin/apiclasses")};
-    } else {
-      pathsToLook = new File[]{absolutePath("lib")};
-    }
-    Set<File> classPaths = new LinkedHashSet<File>();
-    for (File path : pathsToLook) {
-      if (!(path.exists()) || (!(path.isDirectory()) && !(path.getAbsolutePath().endsWith(".jar")))) {
-        throw new BuildException(myMpsHome + " is invalid MPS home path: path " + path + " does not exist or is not a directory or a jar file.");
-      } else
-      if (!(path.isDirectory())) {
-        classPaths.add(path.getAbsoluteFile());
-      } else {
-        gatherAllClassesAndJarsUnder(path, classPaths);
-      }
-    }
-    File mpsClasses = absolutePath("classes");
-    if (mpsClasses.exists()) {
-      classPaths.add(mpsClasses);
-    }
-    return classPaths;
   }
 
   private boolean startsWith(String path, String prefix) {
     return path.startsWith(prefix) && (path.length() == prefix.length() || prefix.endsWith(File.separator) || path.charAt(prefix.length()) == File.separatorChar);
   }
 
-  protected abstract String getWorkerClass();
-
-  protected void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
-    if (dir.getName().equals("classes") || dir.getName().equals("classes_gen") || dir.getName().equals("apiclasses")) {
-      result.add(dir);
-      return;
-    }
-    File[] children = dir.listFiles();
-    //  we do not want trove different from ours in $mps.home$/lib 
-    String troveJar = "trove" + File.separator + "lib" + File.separator + "trove";
-    //  to provide right order of class loading, 
-    //  files go first 
-    for (File f : children) {
-      if (!(f.isDirectory())) {
-        if (f.getName().endsWith(".jar") && !(f.getName().contains("ant.jar")) && !(f.getPath().contains(troveJar))) {
-          result.add(f);
-        }
-      }
-    }
-    for (File f : children) {
-      if (f.isDirectory()) {
-        if (f.getName().equals("classes") || f.getName().equals("classes_gen")) {
-          result.add(f);
-        } else {
-          gatherAllClassesAndJarsUnder(f, result);
-        }
-      }
-    }
+  protected Set<File> calculateClassPath() {
+    checkMpsHome();
+    LinkedHashSet<File> result = new LinkedHashSet<File>();
+    result.addAll(MPSClasspathUtil.buildClasspath(getProject(), myMpsHome));
+    return result;
   }
+
+  protected abstract String getWorkerClass();
 
   public static String readBuildNumber(InputStream stream) {
     BufferedReader bufferedReader = null;

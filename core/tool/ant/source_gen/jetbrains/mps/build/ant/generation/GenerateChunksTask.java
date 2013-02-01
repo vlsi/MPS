@@ -64,11 +64,6 @@ public class GenerateChunksTask extends MpsLoadTask {
 
 
   @Override
-  protected void checkMpsHome() {
-    // do not check: there is no mps_home for us  
-  }
-
-  @Override
   protected Set<File> calculateClassPath() {
     Set<File> classPath = new LinkedHashSet<File>();
     String mpsHome = getProject().getProperty("artifacts.mps");
@@ -96,6 +91,34 @@ public class GenerateChunksTask extends MpsLoadTask {
     }
 
     return classPath;
+  }
+
+  protected void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
+    if (dir.getName().equals("classes") || dir.getName().equals("classes_gen") || dir.getName().equals("apiclasses")) {
+      result.add(dir);
+      return;
+    }
+    File[] children = dir.listFiles();
+    //  we do not want trove different from ours in $mps.home$/lib 
+    String troveJar = "trove" + File.separator + "lib" + File.separator + "trove";
+    //  to provide right order of class loading, 
+    //  files go first 
+    for (File f : children) {
+      if (!(f.isDirectory())) {
+        if (f.getName().endsWith(".jar") && !(f.getName().contains("ant.jar")) && !(f.getPath().contains(troveJar))) {
+          result.add(f);
+        }
+      }
+    }
+    for (File f : children) {
+      if (f.isDirectory()) {
+        if (f.getName().equals("classes") || f.getName().equals("classes_gen")) {
+          result.add(f);
+        } else {
+          gatherAllClassesAndJarsUnder(f, result);
+        }
+      }
+    }
   }
 
 
