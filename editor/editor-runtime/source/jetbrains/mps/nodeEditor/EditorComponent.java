@@ -1461,7 +1461,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myNode != null && myNode.getModel() != null) {
       SModel model = myNode.getModel();
       SModelDescriptor modelDescriptor = model.getModelDescriptor();
-      if (modelDescriptor != null && modelDescriptor.isRegistered() && !model.isUpdateMode()) {
+      if (modelDescriptor != null && modelDescriptor.isRegistered()) {
         assert myModelDescriptorsWithListener.contains(modelDescriptor) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
       }
     }

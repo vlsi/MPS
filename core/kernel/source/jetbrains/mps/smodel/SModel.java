@@ -934,8 +934,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     myImplicitImports.add(element);
   }
 
-  //todo get rid of 1 usage, make package-protected
-  public boolean isUpdateMode() {
+  boolean isUpdateMode() {
     return false;
   }
 
