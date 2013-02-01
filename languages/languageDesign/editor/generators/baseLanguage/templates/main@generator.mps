@@ -187,6 +187,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1176886006175">
       <property name="name" nameId="tpck.1169194664001" value="weave_QueryFunction_MethodDeclaration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1221059528506" resolveInfo="QueryFunction_StyleParameter" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184139379136">
@@ -269,11 +270,11 @@
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="1186404942965">
       <property name="name" nameId="tpck.1169194664001" value="StyleAttributeValue" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleSheet.Switch" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleClassItem" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1186410990478">
       <property name="name" nameId="tpck.1169194664001" value="StyleSheetClass_Stub" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleSheet.Stub" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleClassItem" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1198257250013">
       <property name="name" nameId="tpck.1169194664001" value="weave_CellModel_Indent" />
@@ -391,16 +392,16 @@
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="6083395046987581465">
       <property name="name" nameId="tpck.1169194664001" value="StyleAttribute" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleSheet.Switch" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleClassItem" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="7991857262602250026">
       <property name="name" nameId="tpck.1169194664001" value="template_StyleClassItemQueryCall" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleSheet.Switch" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleClassItem" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1221059528506" resolveInfo="QueryFunction_StyleParameter" />
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="6310912652621572011">
       <property name="name" nameId="tpck.1169194664001" value="StyleParameterQueryReturnType" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleSheet.Switch" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleClassItem.queryFunction" />
     </node>
   </roots>
   <root id="1096630339736">
