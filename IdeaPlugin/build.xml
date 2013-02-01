@@ -55,8 +55,10 @@
   <target name="prepare" depends="buildCore">
     <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
-    <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
+    <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/lib"/>
+    </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/lib"/>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>

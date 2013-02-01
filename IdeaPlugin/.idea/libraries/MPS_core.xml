@@ -2,7 +2,6 @@
   <library name="MPS-core">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/mps-core/lib/diffutils-1.2.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-backend.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-closures.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-collections.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-core.jar!/" />
@@ -15,6 +14,7 @@
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-ui.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-icons.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-editor-runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-tool.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
