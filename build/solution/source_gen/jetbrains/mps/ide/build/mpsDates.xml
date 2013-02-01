@@ -28,15 +28,14 @@
   </path>
   
   <path id="path.mps.ant.path">
-    <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-backend.jar" />
+    <pathelement location="${artifacts.mpsBootstrapCore}/lib/ant/lib/ant-mps.jar" />
     <pathelement location="${artifacts.IDEA}/lib/jdom.jar" />
     <pathelement location="${artifacts.IDEA}/lib/log4j.jar" />
-    <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
   </path>
   
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
-  <target name="assemble" depends="classes">
+  <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}/mps-dates" />
     <mkdir dir="${build.layout}/mps-dates/META-INF" />
     <echoxml file="${build.layout}/mps-dates/META-INF/plugin.xml">
@@ -78,12 +77,21 @@
       <fileset dir="${mps_home}/languages/util/dates" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.dates.jar" />
     </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-dates-languageAccessories">
+      <fileset dir="${mps_home}/languages/util/dates/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-dates-languageModels">
+      <fileset dir="${mps_home}/languages/util/dates/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-dates-generator-baseLanguage-template">
+      <fileset dir="${mps_home}/languages/util/dates/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <jar destfile="${build.layout}/mps-dates/languages/jetbrains.mps.baseLanguage.dates-src.jar">
       <fileset dir="${mps_home}/languages/util/dates/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/util/dates/jetbrains.mps.baseLanguage.dates.mpl" prefix="module" />
-      <zipfileset dir="${mps_home}/languages/util/dates/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
-      <zipfileset dir="${mps_home}/languages/util/dates/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
-      <zipfileset dir="${mps_home}/languages/util/dates/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-util-dates-languageAccessories" prefix="module/languageAccessories" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-util-dates-languageModels" prefix="module/languageModels" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-util-dates-generator-baseLanguage-template" prefix="module/generator/baseLanguage/template" />
     </jar>
     <mkdir dir="${build.layout}/mps-dates/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.datesInternal.jar" />
@@ -110,10 +118,13 @@
       <fileset dir="${mps_home}/languages/util/dates/internal" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.datesInternal.jar" />
     </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-dates-internal-languageModels">
+      <fileset dir="${mps_home}/languages/util/dates/internal/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <jar destfile="${build.layout}/mps-dates/languages/jetbrains.mps.baseLanguage.datesInternal-src.jar">
       <fileset dir="${mps_home}/languages/util/dates/internal/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/util/dates/internal/jetbrains.mps.baseLanguage.datesInternal.mpl" prefix="module" />
-      <zipfileset dir="${mps_home}/languages/util/dates/internal/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-util-dates-internal-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.layout}/mps-dates/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.dates.runtime.jar" />
@@ -133,10 +144,13 @@
       <fileset dir="${mps_home}/languages/util/dates/runtime" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.dates.runtime.jar" />
     </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-dates-runtime">
+      <fileset dir="${mps_home}/languages/util/dates/runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
     <jar destfile="${build.layout}/mps-dates/languages/jetbrains.mps.baseLanguage.dates.runtime-src.jar">
       <fileset dir="${mps_home}/languages/util/dates/runtime/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/util/dates/runtime/jetbrains.mps.baseLanguage.dates.runtime.msd" prefix="module" />
-      <zipfileset dir="${mps_home}/languages/util/dates/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-util-dates-runtime" prefix="module/" />
     </jar>
     <mkdir dir="${build.layout}/mps-dates/lib" />
     <jar destfile="${build.layout}/mps-dates/lib/icons.jar">
@@ -195,8 +209,8 @@
         <fileset file="${mps_home}/languages/util/dates/runtime/lib/joda-time-2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
@@ -240,8 +254,8 @@
         <fileset file="${mps_home}/languages/util/dates/runtime/lib/joda-time-2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />

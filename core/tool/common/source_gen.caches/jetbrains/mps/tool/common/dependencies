@@ -6,6 +6,36 @@
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
+  <dependency className="jetbrains.mps.tool.common.JDOMUtil" file="JDOMUtil.java">
+    <classNode dependClassName="java.io.BufferedOutputStream" />
+    <classNode dependClassName="java.io.CharArrayReader" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileInputStream" />
+    <classNode dependClassName="java.io.FileOutputStream" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStreamReader" />
+    <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="java.io.OutputStreamWriter" />
+    <classNode dependClassName="java.io.Writer" />
+    <classNode dependClassName="java.lang.Character" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.NumberFormatException" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.nio.charset.Charset" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jdom.Document" />
+    <classNode dependClassName="org.jdom.JDOMException" />
+    <classNode dependClassName="org.jdom.input.SAXBuilder" />
+    <classNode dependClassName="org.jdom.output.Format" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.xml.sax.EntityResolver" />
+    <classNode dependClassName="org.xml.sax.InputSource" />
+    <classNode dependClassName="org.xml.sax.SAXException" />
+    <classNode extendsClassName="org.jdom.output.XMLOutputter" />
+  </dependency>
   <dependency className="jetbrains.mps.tool.common.Script" file="Script.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileNotFoundException" />
@@ -44,7 +74,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.LinkedHashMap" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.tool.common.util.JDOMUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.common.JDOMUtil" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />

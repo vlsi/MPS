@@ -13,4 +13,8 @@ public class BuildInputSingleFile_Behavior {
   public static String virtual_getApproximateName_5610619299013425878(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "path", true), "virtual_getLastSegment_1368030936106771141", new Object[]{null});
   }
+
+  public static boolean virtual_isImplicit_1330375798085107777(SNode thisNode) {
+    return true;
+  }
 }

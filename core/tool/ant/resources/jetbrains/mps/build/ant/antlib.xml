@@ -14,6 +14,8 @@
 
   <!--used only in generated build scripts-->
   <taskdef name="generate" classname="jetbrains.mps.build.ant.generation.GenerateChunksTask" />
+  <taskdef name="copyModels" classname="jetbrains.mps.build.ant.converter.ConvertToBinaryTask" />
+
   <typedef name="chunk" classname="jetbrains.mps.build.ant.generation.Chunk" />
   <typedef name="module" classname="jetbrains.mps.build.ant.generation.ModuleChunkPart" />
   <typedef name="plugin" classname="jetbrains.mps.build.ant.generation.Plugin" />

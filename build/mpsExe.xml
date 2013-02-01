@@ -6,8 +6,8 @@
   <property name="mps.sign" location="${basedir}/build/sign"/>
 
   <property file="${artifacts.buildMPS}/build.properties" prefix="import.buildMPS" />
-  <property name="buildMPS.build.number" value="${import.buildMPS.buildMPS.build.number}"/>
-  <property name="buildMPS.version" value="${import.buildMPS.buildCore.version}"/>
+  <property name="buildMPS.build.number" value="${import.buildMPS.mps.build.number}"/>
+  <property name="buildMPS.version" value="${import.buildMPS.mpsBootstrapCore.version}"/>
 
   <property name="mps.bat" value="mps.bat"/>
   <property name="mps.vmoptions" value="mps.vmoptions"/>

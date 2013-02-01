@@ -14,6 +14,10 @@ public class BuildLayout_ImportContent_BehaviorDescriptor extends BuildLayout_No
     BuildLayout_ImportContent_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
   }
 
+  public boolean virtual_isImplicit_1330375798085107777(SNode thisNode) {
+    return BuildLayout_ImportContent_Behavior.virtual_isImplicit_1330375798085107777(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_ImportContent";

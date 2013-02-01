@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.LinkedHashMap;
 import java.io.File;
 import java.io.IOException;
-import jetbrains.mps.tool.common.util.JDOMUtil;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 
