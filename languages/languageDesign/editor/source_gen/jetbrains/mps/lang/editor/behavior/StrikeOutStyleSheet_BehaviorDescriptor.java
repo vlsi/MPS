@@ -9,8 +9,8 @@ public class StrikeOutStyleSheet_BehaviorDescriptor extends BooleanStyleSheetIte
   public StrikeOutStyleSheet_BehaviorDescriptor() {
   }
 
-  public StyleAttribute virtual_getStyleAttribute_2554389230519612632(SNode thisNode) {
-    return StrikeOutStyleSheet_Behavior.virtual_getStyleAttribute_2554389230519612632(thisNode);
+  public StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
+    return StrikeOutStyleSheet_Behavior.virtual_getStyleAttribute_3639065570239132541(thisNode);
   }
 
   public boolean virtual_useQuery_1223387362946(SNode thisNode) {

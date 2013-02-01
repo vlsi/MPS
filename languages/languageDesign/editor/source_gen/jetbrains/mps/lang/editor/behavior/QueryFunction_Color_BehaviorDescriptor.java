@@ -8,6 +8,10 @@ public class QueryFunction_Color_BehaviorDescriptor extends QueryFunction_StyleP
   public QueryFunction_Color_BehaviorDescriptor() {
   }
 
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return QueryFunction_Color_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
   public String virtual_getRGBValue_1225468086082(SNode thisNode) {
     return IQueryFunction_Color_Behavior.virtual_getRGBValue_1225468086082(thisNode);
   }

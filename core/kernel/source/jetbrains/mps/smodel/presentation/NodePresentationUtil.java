@@ -48,7 +48,7 @@ public class NodePresentationUtil {
     if (isLocalTo(referenceNode, referentNode)) {
       return -2;
     }
-    if (SModelStereotype.isUserModel(referentNode.getModel())) {
+    if (referentNode.getModel() != null && SModelStereotype.isUserModel(referentNode.getModel())) {
       return -1;
     }
     return 0;
