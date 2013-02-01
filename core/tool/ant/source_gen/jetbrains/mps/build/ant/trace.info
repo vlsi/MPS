@@ -54,11 +54,10 @@
     <nodeInfo nodeId="8797607015291174669" fileName="MPSClasspathUtil.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLASSPATH" />
     <nodeInfo nodeId="8797607015291212749" fileName="MPSClasspathUtil.java" startLine="23" startPosition="86" endLine="24" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8797607015291212754" fileName="MPSClasspathUtil.java" startLine="25" startPosition="60" endLine="26" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8797607015291212759" fileName="MPSClasspathUtil.java" startLine="26" startPosition="47" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8797607015291212784" fileName="MPSClasspathUtil.java" startLine="28" startPosition="29" endLine="29" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3983419922570464075" fileName="MPSClasspathUtil.java" startLine="30" startPosition="32" endLine="31" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3983419922570460997" fileName="MPSClasspathUtil.java" startLine="33" startPosition="7" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3983419922568951120" fileName="MPSClasspathUtil.java" startLine="35" startPosition="12" endLine="36" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9021282852892901869" fileName="MPSClasspathUtil.java" startLine="26" startPosition="47" endLine="27" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8797607015291212784" fileName="MPSClasspathUtil.java" startLine="29" startPosition="29" endLine="30" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3983419922570464075" fileName="MPSClasspathUtil.java" startLine="31" startPosition="30" endLine="32" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9021282852892934536" fileName="MPSClasspathUtil.java" startLine="35" startPosition="32" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8797607015291212799" fileName="MPSClasspathUtil.java" startLine="37" startPosition="5" endLine="38" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8797607015291212808" fileName="MPSClasspathUtil.java" startLine="39" startPosition="35" endLine="40" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8797607015291212815" fileName="MPSClasspathUtil.java" startLine="41" startPosition="37" endLine="42" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -109,10 +108,10 @@
     <nodeInfo nodeId="7841036633973695323" fileName="MPSClasspathUtil.java" startLine="158" startPosition="21" endLine="159" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="7841036633973695324" fileName="MPSClasspathUtil.java" startLine="160" startPosition="7" endLine="161" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7841036633973695330" fileName="MPSClasspathUtil.java" startLine="162" startPosition="5" endLine="163" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3983419922568951097" fileName="MPSClasspathUtil.java" startLine="35" startPosition="10" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8797607015291212850" fileName="MPSClasspathUtil.java" startLine="50" startPosition="12" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3983419922570336565" fileName="MPSClasspathUtil.java" startLine="65" startPosition="12" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8797607015291212789" fileName="MPSClasspathUtil.java" startLine="29" startPosition="45" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8797607015291212789" fileName="MPSClasspathUtil.java" startLine="30" startPosition="45" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9021282852892930094" fileName="MPSClasspathUtil.java" startLine="34" startPosition="5" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3983419922569984616" fileName="MPSClasspathUtil.java" startLine="58" startPosition="60" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7841036633973686436" fileName="MPSClasspathUtil.java" startLine="73" startPosition="42" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7841036633989742076" fileName="MPSClasspathUtil.java" startLine="79" startPosition="40" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -124,19 +123,19 @@
     <nodeInfo nodeId="7841036633973695193" fileName="MPSClasspathUtil.java" startLine="134" startPosition="62" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7841036633973695211" fileName="MPSClasspathUtil.java" startLine="139" startPosition="5" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7841036633973695225" fileName="MPSClasspathUtil.java" startLine="143" startPosition="0" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3983419922568724578" fileName="MPSClasspathUtil.java" startLine="24" startPosition="51" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8797607015291212820" fileName="MPSClasspathUtil.java" startLine="42" startPosition="38" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8797607015291212834" fileName="MPSClasspathUtil.java" startLine="47" startPosition="7" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3983419922570335288" fileName="MPSClasspathUtil.java" startLine="62" startPosition="81" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7841036633973694945" fileName="MPSClasspathUtil.java" startLine="90" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAntMPSJar#()Ljava/lang/String;" />
     <nodeInfo nodeId="7841036633973695304" fileName="MPSClasspathUtil.java" startLine="155" startPosition="45" endLine="160" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8797607015291212778" fileName="MPSClasspathUtil.java" startLine="27" startPosition="56" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8797607015291212778" fileName="MPSClasspathUtil.java" startLine="28" startPosition="5" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7841036633973695180" fileName="MPSClasspathUtil.java" startLine="132" startPosition="71" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8797607015291212811" fileName="MPSClasspathUtil.java" startLine="40" startPosition="23" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3983419922569984628" fileName="MPSClasspathUtil.java" startLine="61" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7841036633973695290" fileName="MPSClasspathUtil.java" startLine="154" startPosition="34" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="7841036633989742058" fileName="MPSClasspathUtil.java" startLine="77" startPosition="43" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="7841036633973695163" fileName="MPSClasspathUtil.java" startLine="129" startPosition="10" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3983419922568724578" fileName="MPSClasspathUtil.java" startLine="24" startPosition="51" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3983419922569912203" fileName="MPSClasspathUtil.java" startLine="57" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolveMPSHome#(Lorg/apache/tools/ant/Project;Z)Ljava/io/File;" />
     <nodeInfo nodeId="7841036633973694965" fileName="MPSClasspathUtil.java" startLine="96" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getResourceRoot#(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="7841036633973695267" fileName="MPSClasspathUtil.java" startLine="151" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="replace#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
@@ -145,8 +144,8 @@
     <nodeInfo nodeId="7841036633973695117" fileName="MPSClasspathUtil.java" startLine="121" startPosition="0" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3983419922567544155" fileName="MPSClasspathUtil.java" startLine="23" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="buildClasspath#(Lorg/apache/tools/ant/Project;Ljava/io/File;)Ljava/util/Collection;" />
     <nodeInfo nodeId="7841036633973695083" fileName="MPSClasspathUtil.java" startLine="111" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="extractRoot#(Ljava/net/URL;Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="8797607015291212793" fileName="MPSClasspathUtil.java" startLine="30" startPosition="32" endLine="31" endPosition="31" />
-    <scopeInfo nodeId="3983419922568951098" fileName="MPSClasspathUtil.java" startLine="35" startPosition="12" endLine="36" endPosition="34" />
+    <scopeInfo nodeId="8797607015291212793" fileName="MPSClasspathUtil.java" startLine="31" startPosition="30" endLine="32" endPosition="29" />
+    <scopeInfo nodeId="9021282852892930096" fileName="MPSClasspathUtil.java" startLine="35" startPosition="32" endLine="36" endPosition="47" />
     <scopeInfo nodeId="8797607015291212839" fileName="MPSClasspathUtil.java" startLine="48" startPosition="25" endLine="49" endPosition="92" />
     <scopeInfo nodeId="8797607015291212851" fileName="MPSClasspathUtil.java" startLine="50" startPosition="14" endLine="51" endPosition="25" />
     <scopeInfo nodeId="3983419922569984617" fileName="MPSClasspathUtil.java" startLine="59" startPosition="61" endLine="60" endPosition="55" />
@@ -162,12 +161,13 @@
     <scopeInfo nodeId="7841036633973695200" fileName="MPSClasspathUtil.java" startLine="135" startPosition="98" endLine="136" endPosition="124" />
     <scopeInfo nodeId="7841036633973695216" fileName="MPSClasspathUtil.java" startLine="140" startPosition="29" endLine="141" endPosition="99" />
     <scopeInfo nodeId="7841036633973695232" fileName="MPSClasspathUtil.java" startLine="144" startPosition="46" endLine="145" endPosition="68" />
+    <scopeInfo nodeId="3983419922568724580" fileName="MPSClasspathUtil.java" startLine="25" startPosition="60" endLine="27" endPosition="53" />
     <scopeInfo nodeId="8797607015291212824" fileName="MPSClasspathUtil.java" startLine="43" startPosition="25" endLine="45" endPosition="16" />
     <scopeInfo nodeId="7841036633973694949" fileName="MPSClasspathUtil.java" startLine="91" startPosition="40" endLine="93" endPosition="88">
       <varInfo nodeId="3983419922567164639" varName="aClass" />
     </scopeInfo>
     <scopeInfo nodeId="7841036633973695312" fileName="MPSClasspathUtil.java" startLine="156" startPosition="48" endLine="159" endPosition="17" />
-    <scopeInfo nodeId="8797607015291212782" fileName="MPSClasspathUtil.java" startLine="28" startPosition="29" endLine="32" endPosition="9">
+    <scopeInfo nodeId="8797607015291212782" fileName="MPSClasspathUtil.java" startLine="29" startPosition="29" endLine="33" endPosition="7">
       <varInfo nodeId="8797607015291212783" varName="lib" />
     </scopeInfo>
     <scopeInfo nodeId="7841036633973695185" fileName="MPSClasspathUtil.java" startLine="133" startPosition="27" endLine="137" endPosition="9">
@@ -197,9 +197,6 @@
     </scopeInfo>
     <scopeInfo nodeId="7841036633973695290" fileName="MPSClasspathUtil.java" startLine="154" startPosition="34" endLine="162" endPosition="5">
       <varInfo nodeId="7841036633973695291" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="3983419922568724580" fileName="MPSClasspathUtil.java" startLine="25" startPosition="60" endLine="34" endPosition="0">
-      <varInfo nodeId="8797607015291212758" varName="mps_home" />
     </scopeInfo>
     <scopeInfo nodeId="7841036633989742058" fileName="MPSClasspathUtil.java" startLine="77" startPosition="43" endLine="86" endPosition="5">
       <varInfo nodeId="7841036633989742059" varName="i" />
