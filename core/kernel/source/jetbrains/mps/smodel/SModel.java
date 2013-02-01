@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.iterable.TranslatingIterator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -361,9 +362,13 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     removeRootNode(node);
   }
 
-  //todo get rid of, replace by root counting
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public int rootsCount() {
-    return myRoots.size();
+    return IterableUtil.asCollection(getRootNodes()).size();
   }
 
   protected void performUndoableAction(SNodeUndoableAction action) {

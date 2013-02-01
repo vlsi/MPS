@@ -157,7 +157,7 @@ public class BinaryPersistence {
 
     os.writeInt(0xbaba);
 
-    ArrayList<SNode> roots = new ArrayList<SNode>(model.rootsCount());
+    ArrayList<SNode> roots = new ArrayList<SNode>();
     for (SNode root : model.roots()) {
       roots.add(root);
     }

@@ -280,7 +280,7 @@
     <nodeInfo nodeId="8204202203348315522" fileName="DataFlowManager.java" startLine="70" startPosition="5" endLine="71" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8204202203348315715" fileName="DataFlowManager.java" startLine="71" startPosition="20" endLine="72" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8204202203348315647" fileName="DataFlowManager.java" startLine="76" startPosition="91" endLine="77" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8204202203348315663" fileName="DataFlowManager.java" startLine="78" startPosition="74" endLine="79" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8204202203348315663" fileName="DataFlowManager.java" startLine="78" startPosition="89" endLine="79" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8204202203348315670" fileName="DataFlowManager.java" startLine="79" startPosition="78" endLine="80" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8204202203348315683" fileName="DataFlowManager.java" startLine="82" startPosition="15" endLine="83" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8204202203348315710" fileName="DataFlowManager.java" startLine="83" startPosition="68" endLine="84" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -344,7 +344,7 @@
     <scopeInfo nodeId="8204202203348315682" fileName="DataFlowManager.java" startLine="81" startPosition="36" endLine="87" endPosition="11" />
     <scopeInfo nodeId="4282822416100099109" fileName="DataFlowManager.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="8204202203348315512" fileName="DataFlowManager.java" startLine="67" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="8204202203348315662" fileName="DataFlowManager.java" startLine="78" startPosition="74" endLine="88" endPosition="9">
+    <scopeInfo nodeId="8204202203348315662" fileName="DataFlowManager.java" startLine="78" startPosition="89" endLine="88" endPosition="9">
       <varInfo nodeId="8204202203348315631" varName="buildersClass" />
       <varInfo nodeId="8204202203348315630" varName="dfaBuildersClassName" />
     </scopeInfo>

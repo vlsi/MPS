@@ -242,7 +242,7 @@ class GenerationSession {
 
     List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(myGenerationPlan.getMappingConfigurations(myMajorStep));
     if (mappingConfigurations.isEmpty()) {
-      if (inputModel.rootsCount() > 0) {
+      if (inputModel.getRootNodes().iterator().hasNext()) {
         myLogger.warning("skip model \"" + inputModel.getSModelFqName() + "\" : no generator available");
       }
       return inputModel;

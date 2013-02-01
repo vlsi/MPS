@@ -25,6 +25,7 @@ import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.Nullable;
 
@@ -127,12 +128,8 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
   }
 
   private static SNode[] getRoots(SModel model) {
-    SNode[] result = new SNode[model.rootsCount()];
-    Iterator<SNode> iter = model.rootsIterator();
-    for (int i = 0; i < result.length; i++) {
-      result[i] = iter.next();
-    }
-    return result;
+    Collection<SNode> collection = IterableUtil.asCollection(model.getRootNodes());
+    return collection.toArray(new SNode[collection.size()]);
   }
 
   @Override
