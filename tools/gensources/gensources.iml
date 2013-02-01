@@ -359,184 +359,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/util/ypath/solutions/sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/util/ypath/solutions/test/classes_gen" />
     </content>
-    <content url="file://$MODULE_DIR$/../../samples">
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/agreementLanguage/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/framework/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/languages/calculator/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/solutions/jetbrains.mps.calculator.sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/languages/complex/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/solutions/jetbrains.mps.complex.runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/solutions/sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/languages/secretCompartmentLanguage/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/solutions/runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/solutions/secretCompartmentLanguage.sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/myReaderConfiguration/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/readerConfigLanguage/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/readerFramework/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/formulaLanguage/language/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/formulaLanguage/runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang1/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang2/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang3/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang4/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang5/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang6/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang7/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/lambda/languages/lambdaCalculus/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/plainText/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleFacet/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleFacet/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/Constants/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/DecisionTable/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/Money/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/ParallelFor/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/SampleExtensions/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/Build/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/MoneyRuntime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/ParallelForUtils/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/SampleJavaExtensions.sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleLanguage/solutions/sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleLanguage/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleXML/languages/sampleXML/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleXML/languages/sampleXML/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleXML/solutions/sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/languages/theSimplestLanguage/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/languages/xmlLiterals/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/solutions/jetbrains.mps.samples.xmlLiterals.sandbox/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/agreement/agreementLanguage/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/agreement/framework/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/agreement/sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/languages/calculator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/languages/calculator/solutions/pluginSolution/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/solutions/jetbrains.mps.calculator.sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/languages/complex/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/solutions/jetbrains.mps.complex.runtime/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/solutions/sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/languages/secretCompartmentLanguage/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/solutions/runtime/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/solutions/secretCompartmentLanguage.sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/myReaderConfiguration/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/readerConfigLanguage/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/readerFramework/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/formulaLanguage/language/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/formulaLanguage/runtime/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang1/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang2/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang3/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang4/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang5/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang6/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang7/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/solutions/test_models/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/lambda/languages/lambdaCalculus/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/plainText/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/plainText/solutions/sample/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleFacet/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleFacet/solutions/pluginSolution/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/Constants/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/DecisionTable/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/Money/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/ParallelFor/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/SampleExtensions/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/Build/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/MoneyRuntime/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/ParallelForUtils/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/SampleJavaExtensions.build/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/SampleJavaExtensions.sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleLanguage/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleLanguage/solutions/sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleXML/languages/sampleXML/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleXML/languages/sampleXML/solutions/pluginSolution/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleXML/solutions/sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/languages/theSimplestLanguage/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/languages/xmlLiterals/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/solutions/jetbrains.mps.samples.xmlLiterals.sandbox/classes_gen" />
-    </content>
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="intentions-runtime" />
-    <orderEntry type="module" module-name="typesystemEngine" />
-    <orderEntry type="module" module-name="editor-runtime" />
-    <orderEntry type="module" module-name="actions-runtime" />
-    <orderEntry type="module" module-name="generator-engine" />
-    <orderEntry type="module" module-name="findUsages-runtime" />
-    <orderEntry type="module" module-name="make-runtime" />
-    <orderEntry type="module" module-name="Tuples-runtime" />
-    <orderEntry type="module" module-name="mps-platform" />
-    <orderEntry type="module" module-name="Closures-runtime" />
-    <orderEntry type="module" module-name="refactoring-runtime" />
-    <orderEntry type="module" module-name="baseLanguage-search" />
-    <orderEntry type="module" module-name="mps-workbench" />
-    <orderEntry type="module" module-name="uiLanguage-runtime" />
-    <orderEntry type="module" module-name="ant-mps" />
-    <orderEntry type="module" module-name="typesystemUi" />
-    <orderEntry type="module" module-name="typesystemIntegration" />
-    <orderEntry type="module" module-name="testbench" />
-    <orderEntry type="module" module-name="analyzers" />
-    <orderEntry type="module" module-name="baseLanguage-util" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../languages/util/dates/runtime/lib/joda-time-2.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../languages/util/dates/runtime/lib/joda-time-2.1-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../languages/util/gwtsupport/tools/gwt21/gwt-dev.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../languages/util/gwtsupport/tools/gwt21/gwt-servlet.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../languages/util/gwtsupport/tools/gwt21/gwt-user.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" name="Annotations" level="project" />
-    <orderEntry type="library" name="JDOM" level="project" />
-    <orderEntry type="library" name="Ant" level="project" />
-    <orderEntry type="library" name="ASM" level="project" />
-    <orderEntry type="library" name="Log4j" level="project" />
-    <orderEntry type="library" name="JMock" level="project" />
-    <orderEntry type="library" name="Beansbinding" level="project" />
-    <orderEntry type="library" name="Diff-utils" level="project" />
-    <orderEntry type="library" name="Eclipse-compiler" level="project" />
-    <orderEntry type="library" name="JUnit4" level="project" />
-    <orderEntry type="library" name="PicoContainer" level="project" />
-    <orderEntry type="library" name="Idea-extensions" level="project" />
-    <orderEntry type="library" name="Idea-plaform" level="project" />
-    <orderEntry type="module" module-name="mps-editor" />
-    <orderEntry type="module" module-name="debugger-api-api" />
-    <orderEntry type="module" module-name="mps-icons" />
     <content url="file://$MODULE_DIR$/../../plugins/debugger-api/languages">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/decision/jetbrains.mps.debugger.decisionTable/sandbox/source_gen" isTestSource="false" />
@@ -609,13 +431,13 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/jetbrains.mps.execution.sandbox/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/jetbrains.mps.execution.sandbox/classes_gen" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests.data">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests.data/test_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests.data/classes_gen" />
-    </content>
     <content url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests/test_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests/classes_gen" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests.data">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests.data/test_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests.data/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/mps-build">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/bash/sandbox/source_gen" isTestSource="false" />
@@ -765,6 +587,116 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/vcs/languages/modelmetadata/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/vcs/languages/modelmetadata/classes_gen" />
     </content>
+    <content url="file://$MODULE_DIR$/../../samples">
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/agreementLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/framework/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/languages/calculator/solutions/pluginSolution/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/solutions/jetbrains.mps.calculator.sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/languages/complex/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/solutions/jetbrains.mps.complex.runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/solutions/sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/languages/secretCompartmentLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/solutions/runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/solutions/secretCompartmentLanguage.sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/myReaderConfiguration/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/readerConfigLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/readerFramework/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/formulaLanguage/language/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/formulaLanguage/runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang1/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang2/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang3/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang4/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang5/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang6/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang7/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/lambda/languages/lambdaCalculus/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/plainText/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/KajaAndOr/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/KajaSceneConstruction/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/Kajak/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/solutions/JavaKajak/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/solutions/Kajak.sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleFacet/solutions/pluginSolution/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleFacet/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/Constants/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/DecisionTable/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/Money/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/ParallelFor/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/SampleExtensions/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/Build/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/MoneyRuntime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/ParallelForUtils/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/SampleJavaExtensions.sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleLanguage/solutions/sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleXML/languages/sampleXML/solutions/pluginSolution/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleXML/languages/sampleXML/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleXML/solutions/sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/languages/theSimplestLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/languages/xmlLiterals/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/solutions/jetbrains.mps.samples.xmlLiterals.sandbox/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/agreement/agreementLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/agreement/framework/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/agreement/sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/languages/calculator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/languages/calculator/solutions/pluginSolution/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/solutions/jetbrains.mps.calculator.sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/languages/complex/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/solutions/jetbrains.mps.complex.runtime/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/solutions/sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/languages/secretCompartmentLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/solutions/runtime/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/solutions/secretCompartmentLanguage.sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/myReaderConfiguration/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/readerConfigLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/fixedLengthReader/readerFramework/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/formulaLanguage/language/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/formulaLanguage/runtime/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang1/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang2/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang3/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang4/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang5/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang6/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang7/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/generator_demo/solutions/test_models/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/lambda/languages/lambdaCalculus/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/plainText/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/plainText/solutions/sample/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/KajaAndOr/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/KajaSceneConstruction/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/Kajak/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/solutions/JavaKajak/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/solutions/Kajak.sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleFacet/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleFacet/solutions/pluginSolution/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/Constants/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/DecisionTable/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/Money/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/ParallelFor/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/SampleExtensions/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/Build/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/MoneyRuntime/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/ParallelForUtils/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/SampleJavaExtensions.build/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/SampleJavaExtensions.sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleLanguage/solutions/sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleXML/languages/sampleXML/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleXML/languages/sampleXML/solutions/pluginSolution/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleXML/solutions/sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/languages/theSimplestLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/languages/xmlLiterals/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/solutions/jetbrains.mps.samples.xmlLiterals.sandbox/classes_gen" />
+    </content>
     <content url="file://$MODULE_DIR$/../../testbench/languages">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/languages/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/languages/source_gen" isTestSource="false" />
@@ -793,6 +725,84 @@
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoring/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoringTargetLang/classes_gen" />
     </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="collections-runtime" />
+    <orderEntry type="module" module-name="intentions-runtime" />
+    <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="editor-runtime" />
+    <orderEntry type="module" module-name="actions-runtime" />
+    <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="Tuples-runtime" />
+    <orderEntry type="module" module-name="mps-platform" />
+    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="refactoring-runtime" />
+    <orderEntry type="module" module-name="baseLanguage-search" />
+    <orderEntry type="module" module-name="mps-workbench" />
+    <orderEntry type="module" module-name="uiLanguage-runtime" />
+    <orderEntry type="module" module-name="ant-mps" />
+    <orderEntry type="module" module-name="typesystemUi" />
+    <orderEntry type="module" module-name="typesystemIntegration" />
+    <orderEntry type="module" module-name="testbench" />
+    <orderEntry type="module" module-name="analyzers" />
+    <orderEntry type="module" module-name="baseLanguage-util" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../languages/util/dates/runtime/lib/joda-time-2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../../languages/util/dates/runtime/lib/joda-time-2.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../languages/util/gwtsupport/tools/gwt21/gwt-dev.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../languages/util/gwtsupport/tools/gwt21/gwt-servlet.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../languages/util/gwtsupport/tools/gwt21/gwt-user.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Annotations" level="project" />
+    <orderEntry type="library" name="JDOM" level="project" />
+    <orderEntry type="library" name="Ant" level="project" />
+    <orderEntry type="library" name="ASM" level="project" />
+    <orderEntry type="library" name="Log4j" level="project" />
+    <orderEntry type="library" name="JMock" level="project" />
+    <orderEntry type="library" name="Beansbinding" level="project" />
+    <orderEntry type="library" name="Diff-utils" level="project" />
+    <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="library" name="JUnit4" level="project" />
+    <orderEntry type="library" name="PicoContainer" level="project" />
+    <orderEntry type="library" name="Idea-extensions" level="project" />
+    <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="module" module-name="mps-editor" />
+    <orderEntry type="module" module-name="debugger-api-api" />
+    <orderEntry type="module" module-name="mps-icons" />
   </component>
 </module>
 
