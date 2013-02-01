@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4sk9o0b4retyfgef78idq3m8uancpzi">
+<dependencies version="2" modelHash="9u93kfu5h7sppbb3ukyplblts9xmc96">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22hsdy8hx47u1rwu32z4quczy3521b0" />
   <dep model="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)" hash="bguqu24dpmqo8ocrijd3djlp64k0a8y" />
   <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" hash="-9tiodlci7000x1papko30qh12bllok0" />
@@ -25,7 +25,7 @@
   <source id="4394627182935280567" name="Filling" hash="3ch8pjathcbyxz5c5y5u8w4k2l9dt5p">
     <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" />
   </source>
-  <source id="3210697320273759353" name="PlaygroundDefinition" hash="3gmfvackl20fij8kc5dy87s0n7ov0e5">
+  <source id="3210697320273759353" name="PlaygroundDefinition" hash="-bf7bygeykp0tld9otp0mu3le3n5i9u9">
     <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" />
   </source>
   <source id="3210697320273799179" name="MarkSniffer" hash="1zyfxkwduh93hmij1fdehzsou6hbgre">

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3phsfaid2hosed80p7kmsp0cibyejuv">
+<dependencies version="2" modelHash="-34x1glszsulu1e9tqckkwqtz4x1o61e">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22hsdy8hx47u1rwu32z4quczy3521b0" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
-  <dep model="r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)" hash="bm065ltk2f837j8tygqf3jp2ezc2j51" />
+  <dep model="r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)" hash="-1fwdjjctb21fn55kuez76cu3gwiusmw" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-4ctgaab3eqc1qtf61d2b3etch21kmoh">
     <dep root="3210697320273550864" />
@@ -21,19 +21,19 @@
     <file name="KajaSceneConstruction_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="3210697320273550864" name="BuildWall" hash="-1lalj0oo9tvlut053x4cawz9w8gry0y">
+  <source id="3210697320273550864" name="BuildWall" hash="23f1zljrkkxikrpateonott6w8ob6ih">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3210697320273607253" name="DestroyWall" hash="8dcp706c29d4nbqv7l27xjnqkwsbz7z">
+  <source id="3210697320273607253" name="DestroyWall" hash="-7ffit9nupkoi1hry8k9x8efuqpx60vv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3210697320273608254" name="DropMark" hash="an62cnq65lkh1s77ptlqbyw0ugrqof7">
+  <source id="3210697320273608254" name="DropMark" hash="-c3cbpaae278u2tqtvf5tpd9dj20rz5e">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3210697320273608255" name="AbstractBuilderCommand" hash="691ucwc91nszrm2u5o9l3q7wlhpcuh0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3210697320273614431" name="PickMark" hash="-94lcux4pxuix5o8uaaiwlx81cvhzh4">
+  <source id="3210697320273614431" name="PickMark" hash="-t5fcr5x49d3094b53p6ttfey7q5yjt">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

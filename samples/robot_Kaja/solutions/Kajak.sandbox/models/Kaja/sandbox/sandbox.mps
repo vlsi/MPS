@@ -298,16 +298,16 @@
       <property name="name" nameId="tpck.1169194664001" value="buildSimplePlayground" />
       <node role="body" roleId="c2kz.3308300503039700860" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="3210697320273760072">
         <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.BuildWall" typeId="rvtb.3210697320273550864" id="3210697320273760074">
-          <property name="row" nameId="rvtb.3210697320273608256" value="1" />
           <property name="col" nameId="rvtb.3210697320273608257" value="4" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="1" />
         </node>
         <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.BuildWall" typeId="rvtb.3210697320273550864" id="3210697320273760075">
-          <property name="row" nameId="rvtb.3210697320273608256" value="2" />
           <property name="col" nameId="rvtb.3210697320273608257" value="4" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="2" />
         </node>
         <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.DropMark" typeId="rvtb.3210697320273608254" id="3210697320273760077">
-          <property name="row" nameId="rvtb.3210697320273608256" value="4" />
           <property name="col" nameId="rvtb.3210697320273608257" value="3" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="4" />
         </node>
       </node>
     </node>
