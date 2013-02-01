@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1904811872814056520" modelId="r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)">
+    <nodeInfo nodeId="1904811872814061025" fileName="VisualCell.java" startLine="11" startPosition="40" endLine="12" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="markCount" />
+    <nodeInfo nodeId="1904811872814061105" fileName="VisualCell.java" startLine="12" startPosition="42" endLine="13" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="canvas" />
+    <nodeInfo nodeId="1904811872814061019" fileName="VisualCell.java" startLine="15" startPosition="23" endLine="16" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872814100479" fileName="VisualCell.java" startLine="16" startPosition="34" endLine="17" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872814100511" fileName="VisualCell.java" startLine="17" startPosition="50" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872814074381" fileName="VisualCell.java" startLine="18" startPosition="49" endLine="19" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872814074302" fileName="VisualCell.java" startLine="19" startPosition="37" endLine="20" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872814061433" fileName="VisualCell.java" startLine="23" startPosition="34" endLine="24" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872814061488" fileName="VisualCell.java" startLine="27" startPosition="38" endLine="28" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872814061068" fileName="VisualCell.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setIcon#(Ljavax/swing/Icon;)V" />
+    <nodeInfo nodeId="1904811872814061474" fileName="VisualCell.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMarks#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1904811872814056522" fileName="VisualCell.java" startLine="14" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VisualCell#()V" />
+    <scopeInfo nodeId="1904811872814061071" fileName="VisualCell.java" startLine="23" startPosition="34" endLine="24" endPosition="25" />
+    <scopeInfo nodeId="1904811872814061477" fileName="VisualCell.java" startLine="27" startPosition="38" endLine="28" endPosition="26" />
+    <scopeInfo nodeId="1904811872814061068" fileName="VisualCell.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1904811872814061081" varName="icon" />
+    </scopeInfo>
+    <scopeInfo nodeId="1904811872814061474" fileName="VisualCell.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1904811872814061482" varName="marks" />
+    </scopeInfo>
+    <scopeInfo nodeId="1904811872814056525" fileName="VisualCell.java" startLine="15" startPosition="23" endLine="20" endPosition="49" />
+    <scopeInfo nodeId="1904811872814056522" fileName="VisualCell.java" startLine="14" startPosition="0" endLine="21" endPosition="3" />
+    <unitInfo nodeId="1904811872814056520" fileName="VisualCell.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="JavaKaja.runtime.VisualCell" />
+  </root>
+  <root nodeId="3308300503039473785" modelId="r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)">
+    <nodeInfo nodeId="3308300503039569051" fileName="KajaFrame.java" startLine="20" startPosition="33" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="HEIGHT" />
+    <nodeInfo nodeId="3308300503039569057" fileName="KajaFrame.java" startLine="21" startPosition="39" endLine="22" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WIDTH" />
+    <nodeInfo nodeId="3308300503039569087" fileName="KajaFrame.java" startLine="22" startPosition="38" endLine="23" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CELL_SIZE" />
+    <nodeInfo nodeId="3308300503039555780" fileName="KajaFrame.java" startLine="24" startPosition="0" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="width" />
+    <nodeInfo nodeId="3308300503039555786" fileName="KajaFrame.java" startLine="25" startPosition="48" endLine="26" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="height" />
+    <nodeInfo nodeId="3308300503039555830" fileName="KajaFrame.java" startLine="26" startPosition="50" endLine="27" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="canvas" />
+    <nodeInfo nodeId="3308300503039569118" fileName="KajaFrame.java" startLine="27" startPosition="82" endLine="28" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="row" />
+    <nodeInfo nodeId="3308300503039569126" fileName="KajaFrame.java" startLine="28" startPosition="22" endLine="29" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="col" />
+    <nodeInfo nodeId="3308300503039569151" fileName="KajaFrame.java" startLine="29" startPosition="22" endLine="30" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="direction" />
+    <nodeInfo nodeId="3308300503039569315" fileName="KajaFrame.java" startLine="30" startPosition="47" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="world" />
+    <nodeInfo nodeId="3308300503039600673" fileName="KajaFrame.java" startLine="31" startPosition="57" endLine="32" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="visuals" />
+    <nodeInfo nodeId="3210697320273701219" fileName="KajaFrame.java" startLine="32" startPosition="71" endLine="33" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="frame" />
+    <nodeInfo nodeId="4394627182934915879" fileName="KajaFrame.java" startLine="33" startPosition="56" endLine="34" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="karelIconNorth" />
+    <nodeInfo nodeId="1904811872813999892" fileName="KajaFrame.java" startLine="34" startPosition="30" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="karelIconEast" />
+    <nodeInfo nodeId="1904811872813999878" fileName="KajaFrame.java" startLine="35" startPosition="29" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="karelIconSouth" />
+    <nodeInfo nodeId="1904811872813999885" fileName="KajaFrame.java" startLine="36" startPosition="30" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="karelIconWest" />
+    <nodeInfo nodeId="3210697320273683533" fileName="KajaFrame.java" startLine="37" startPosition="29" endLine="38" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="stopped" />
+    <nodeInfo nodeId="3308300503039623576" fileName="KajaFrame.java" startLine="44" startPosition="9" endLine="45" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039647573" fileName="KajaFrame.java" startLine="46" startPosition="49" endLine="47" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1904811872813999908" fileName="KajaFrame.java" startLine="48" startPosition="5" endLine="49" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4394627182934915893" fileName="KajaFrame.java" startLine="49" startPosition="58" endLine="50" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872813999916" fileName="KajaFrame.java" startLine="50" startPosition="82" endLine="51" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872813999926" fileName="KajaFrame.java" startLine="51" startPosition="80" endLine="52" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872813999935" fileName="KajaFrame.java" startLine="52" startPosition="82" endLine="53" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872813999952" fileName="KajaFrame.java" startLine="53" startPosition="80" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3308300503039569564" fileName="KajaFrame.java" startLine="56" startPosition="39" endLine="57" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3308300503039569402" fileName="KajaFrame.java" startLine="57" startPosition="85" endLine="58" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039618820" fileName="KajaFrame.java" startLine="58" startPosition="45" endLine="59" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3308300503039618837" fileName="KajaFrame.java" startLine="59" startPosition="45" endLine="60" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039600690" fileName="KajaFrame.java" startLine="60" startPosition="33" endLine="61" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039602938" fileName="KajaFrame.java" startLine="61" startPosition="31" endLine="62" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569346" fileName="KajaFrame.java" startLine="63" startPosition="7" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3308300503039569591" fileName="KajaFrame.java" startLine="65" startPosition="5" endLine="66" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039555763" fileName="KajaFrame.java" startLine="66" startPosition="26" endLine="67" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039555798" fileName="KajaFrame.java" startLine="67" startPosition="57" endLine="68" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039555747" fileName="KajaFrame.java" startLine="68" startPosition="30" endLine="69" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039568998" fileName="KajaFrame.java" startLine="69" startPosition="57" endLine="70" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039505408" fileName="KajaFrame.java" startLine="70" startPosition="43" endLine="71" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039555478" fileName="KajaFrame.java" startLine="71" startPosition="27" endLine="72" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039614369" fileName="KajaFrame.java" startLine="72" startPosition="17" endLine="73" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569048" fileName="KajaFrame.java" startLine="76" startPosition="27" endLine="77" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039580747" fileName="KajaFrame.java" startLine="82" startPosition="39" endLine="83" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273683602" fileName="KajaFrame.java" startLine="83" startPosition="83" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273763030" fileName="KajaFrame.java" startLine="87" startPosition="33" endLine="88" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569634" fileName="KajaFrame.java" startLine="91" startPosition="35" endLine="92" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039569707" fileName="KajaFrame.java" startLine="97" startPosition="17" endLine="98" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039569714" fileName="KajaFrame.java" startLine="99" startPosition="16" endLine="100" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039569738" fileName="KajaFrame.java" startLine="101" startPosition="17" endLine="102" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039569755" fileName="KajaFrame.java" startLine="103" startPosition="16" endLine="104" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039569774" fileName="KajaFrame.java" startLine="105" startPosition="14" endLine="106" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3210697320273683599" fileName="KajaFrame.java" startLine="111" startPosition="18" endLine="112" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039569858" fileName="KajaFrame.java" startLine="113" startPosition="5" endLine="114" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569874" fileName="KajaFrame.java" startLine="116" startPosition="17" endLine="117" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569893" fileName="KajaFrame.java" startLine="117" startPosition="17" endLine="118" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3308300503039569895" fileName="KajaFrame.java" startLine="119" startPosition="16" endLine="120" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569908" fileName="KajaFrame.java" startLine="120" startPosition="17" endLine="121" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3308300503039569910" fileName="KajaFrame.java" startLine="122" startPosition="17" endLine="123" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569923" fileName="KajaFrame.java" startLine="123" startPosition="17" endLine="124" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3308300503039569925" fileName="KajaFrame.java" startLine="125" startPosition="16" endLine="126" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569938" fileName="KajaFrame.java" startLine="128" startPosition="5" endLine="129" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569994" fileName="KajaFrame.java" startLine="129" startPosition="31" endLine="130" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273683594" fileName="KajaFrame.java" startLine="134" startPosition="18" endLine="135" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039570037" fileName="KajaFrame.java" startLine="138" startPosition="17" endLine="139" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039570010" fileName="KajaFrame.java" startLine="139" startPosition="35" endLine="140" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3308300503039570051" fileName="KajaFrame.java" startLine="141" startPosition="16" endLine="142" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039570018" fileName="KajaFrame.java" startLine="142" startPosition="36" endLine="143" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3308300503039570065" fileName="KajaFrame.java" startLine="144" startPosition="17" endLine="145" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039570026" fileName="KajaFrame.java" startLine="145" startPosition="35" endLine="146" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3308300503039570079" fileName="KajaFrame.java" startLine="147" startPosition="16" endLine="148" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039570093" fileName="KajaFrame.java" startLine="150" startPosition="5" endLine="151" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039581742" fileName="KajaFrame.java" startLine="154" startPosition="31" endLine="155" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3210697320273683589" fileName="KajaFrame.java" startLine="159" startPosition="18" endLine="160" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039570102" fileName="KajaFrame.java" startLine="161" startPosition="5" endLine="162" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039570117" fileName="KajaFrame.java" startLine="162" startPosition="31" endLine="163" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273683584" fileName="KajaFrame.java" startLine="167" startPosition="18" endLine="168" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039570125" fileName="KajaFrame.java" startLine="169" startPosition="5" endLine="170" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039570140" fileName="KajaFrame.java" startLine="170" startPosition="34" endLine="171" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569786" fileName="KajaFrame.java" startLine="174" startPosition="30" endLine="175" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039569959" fileName="KajaFrame.java" startLine="178" startPosition="30" endLine="179" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3210697320273614310" fileName="KajaFrame.java" startLine="182" startPosition="46" endLine="183" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039683716" fileName="KajaFrame.java" startLine="186" startPosition="50" endLine="187" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6405700485436169977" fileName="KajaFrame.java" startLine="190" startPosition="30" endLine="191" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3210697320273614252" fileName="KajaFrame.java" startLine="194" startPosition="46" endLine="195" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039570150" fileName="KajaFrame.java" startLine="199" startPosition="9" endLine="200" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273550621" fileName="KajaFrame.java" startLine="206" startPosition="9" endLine="207" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273683547" fileName="KajaFrame.java" startLine="212" startPosition="25" endLine="213" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273721062" fileName="KajaFrame.java" startLine="213" startPosition="19" endLine="214" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273683565" fileName="KajaFrame.java" startLine="218" startPosition="18" endLine="219" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3210697320273550700" fileName="KajaFrame.java" startLine="220" startPosition="5" endLine="221" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273550661" fileName="KajaFrame.java" startLine="221" startPosition="30" endLine="222" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273683569" fileName="KajaFrame.java" startLine="226" startPosition="18" endLine="227" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3210697320273550765" fileName="KajaFrame.java" startLine="228" startPosition="5" endLine="229" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273550671" fileName="KajaFrame.java" startLine="229" startPosition="33" endLine="230" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273683574" fileName="KajaFrame.java" startLine="234" startPosition="18" endLine="235" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3210697320273550805" fileName="KajaFrame.java" startLine="236" startPosition="5" endLine="237" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273550813" fileName="KajaFrame.java" startLine="237" startPosition="30" endLine="238" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273683579" fileName="KajaFrame.java" startLine="242" startPosition="18" endLine="243" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3210697320273550787" fileName="KajaFrame.java" startLine="244" startPosition="5" endLine="245" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273550795" fileName="KajaFrame.java" startLine="245" startPosition="32" endLine="246" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3210697320273648239" fileName="KajaFrame.java" startLine="249" startPosition="43" endLine="250" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3210697320273648285" fileName="KajaFrame.java" startLine="253" startPosition="43" endLine="254" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039604660" fileName="KajaFrame.java" startLine="259" startPosition="39" endLine="260" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405700485436170976" fileName="KajaFrame.java" startLine="260" startPosition="33" endLine="261" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1904811872813999954" fileName="KajaFrame.java" startLine="261" startPosition="37" endLine="262" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1904811872814005112" fileName="KajaFrame.java" startLine="262" startPosition="30" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3308300503039604684" fileName="KajaFrame.java" startLine="264" startPosition="33" endLine="265" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872814005156" fileName="KajaFrame.java" startLine="267" startPosition="23" endLine="268" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872814005172" fileName="KajaFrame.java" startLine="268" startPosition="41" endLine="269" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1904811872814005175" fileName="KajaFrame.java" startLine="270" startPosition="22" endLine="271" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872814005188" fileName="KajaFrame.java" startLine="271" startPosition="40" endLine="272" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1904811872814005194" fileName="KajaFrame.java" startLine="273" startPosition="23" endLine="274" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1904811872814005207" fileName="KajaFrame.java" startLine="274" startPosition="41" endLine="275" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1904811872814005208" fileName="KajaFrame.java" startLine="276" startPosition="20" endLine="277" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039604714" fileName="KajaFrame.java" startLine="280" startPosition="33" endLine="281" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039604734" fileName="KajaFrame.java" startLine="282" startPosition="9" endLine="283" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3308300503039604746" fileName="KajaFrame.java" startLine="283" startPosition="55" endLine="284" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405700485436171005" fileName="KajaFrame.java" startLine="284" startPosition="37" endLine="285" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1904811872814005245" fileName="KajaFrame.java" startLine="289" startPosition="10" endLine="290" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3210697320273701192" fileName="KajaFrame.java" startLine="290" startPosition="40" endLine="291" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3210697320273701204" fileName="KajaFrame.java" startLine="295" startPosition="30" endLine="296" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039604624" fileName="KajaFrame.java" startLine="297" startPosition="15" endLine="298" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4394627182934915863" fileName="KajaFrame.java" startLine="298" startPosition="53" endLine="299" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405700485436171051" fileName="KajaFrame.java" startLine="299" startPosition="46" endLine="300" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4394627182934890641" fileName="KajaFrame.java" startLine="300" startPosition="51" endLine="301" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039604760" fileName="KajaFrame.java" startLine="304" startPosition="31" endLine="305" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3308300503039604729" fileName="KajaFrame.java" startLine="306" startPosition="9" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3308300503039473787" fileName="KajaFrame.java" startLine="39" startPosition="0" endLine="41" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="KajaFrame#()V" />
+    <nodeInfo nodeId="3308300503039555819" fileName="KajaFrame.java" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="perform#()V" />
+    <nodeInfo nodeId="3210697320273683597" fileName="KajaFrame.java" startLine="110" startPosition="29" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3210697320273683592" fileName="KajaFrame.java" startLine="133" startPosition="29" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3210697320273683587" fileName="KajaFrame.java" startLine="158" startPosition="28" endLine="161" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3210697320273683582" fileName="KajaFrame.java" startLine="166" startPosition="31" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3210697320273683560" fileName="KajaFrame.java" startLine="217" startPosition="44" endLine="220" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3210697320273683567" fileName="KajaFrame.java" startLine="225" startPosition="47" endLine="228" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3210697320273683572" fileName="KajaFrame.java" startLine="233" startPosition="44" endLine="236" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3210697320273683577" fileName="KajaFrame.java" startLine="241" startPosition="47" endLine="244" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3308300503039604697" fileName="KajaFrame.java" startLine="279" startPosition="9" endLine="282" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3210697320273701199" fileName="KajaFrame.java" startLine="294" startPosition="31" endLine="297" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3308300503039569042" fileName="KajaFrame.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3210697320273763026" fileName="KajaFrame.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="trace#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3308300503039569627" fileName="KajaFrame.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentCell#()LJavaKaja/runtime/Cell;" />
+    <nodeInfo nodeId="3308300503039581734" fileName="KajaFrame.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canMove#()Z" />
+    <nodeInfo nodeId="3308300503039569777" fileName="KajaFrame.java" startLine="173" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWall#()Z" />
+    <nodeInfo nodeId="3308300503039569953" fileName="KajaFrame.java" startLine="177" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMark#()Z" />
+    <nodeInfo nodeId="3210697320273614306" fileName="KajaFrame.java" startLine="181" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMark#(II)Z" />
+    <nodeInfo nodeId="3308300503039683705" fileName="KajaFrame.java" startLine="185" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="heading#(LJavaKaja/runtime/Direction;)Z" />
+    <nodeInfo nodeId="6405700485436169962" fileName="KajaFrame.java" startLine="189" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isFull#()Z" />
+    <nodeInfo nodeId="3210697320273614248" fileName="KajaFrame.java" startLine="193" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isFull#(II)Z" />
+    <nodeInfo nodeId="3308300503039570154" fileName="KajaFrame.java" startLine="198" startPosition="26" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3210697320273550619" fileName="KajaFrame.java" startLine="205" startPosition="30" endLine="209" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3210697320273648203" fileName="KajaFrame.java" startLine="248" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAllowedRow#(I)Z" />
+    <nodeInfo nodeId="3210697320273648281" fileName="KajaFrame.java" startLine="252" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAllowedCol#(I)Z" />
+    <nodeInfo nodeId="6405700485436170987" fileName="KajaFrame.java" startLine="285" startPosition="41" endLine="289" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3308300503039647563" fileName="KajaFrame.java" startLine="43" startPosition="44" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3308300503039580739" fileName="KajaFrame.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportError#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3210697320273683513" fileName="KajaFrame.java" startLine="211" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stop#()V" />
+    <nodeInfo nodeId="3308300503039570144" fileName="KajaFrame.java" startLine="197" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pause#()V" />
+    <nodeInfo nodeId="3210697320273550615" fileName="KajaFrame.java" startLine="204" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="minipause#()V" />
+    <nodeInfo nodeId="3308300503039569374" fileName="KajaFrame.java" startLine="55" startPosition="38" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="3308300503039570096" fileName="KajaFrame.java" startLine="157" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMark#()V" />
+    <nodeInfo nodeId="3308300503039570119" fileName="KajaFrame.java" startLine="165" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeMark#()V" />
+    <nodeInfo nodeId="3210697320273550653" fileName="KajaFrame.java" startLine="216" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMark#(II)V" />
+    <nodeInfo nodeId="3210697320273550663" fileName="KajaFrame.java" startLine="224" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeMark#(II)V" />
+    <nodeInfo nodeId="3210697320273550801" fileName="KajaFrame.java" startLine="232" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addWall#(II)V" />
+    <nodeInfo nodeId="3210697320273550783" fileName="KajaFrame.java" startLine="240" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeWall#(II)V" />
+    <nodeInfo nodeId="3308300503039604508" fileName="KajaFrame.java" startLine="293" startPosition="55" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3308300503039569344" fileName="KajaFrame.java" startLine="54" startPosition="0" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="3308300503039604730" fileName="KajaFrame.java" startLine="292" startPosition="13" endLine="303" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569663" fileName="KajaFrame.java" startLine="95" startPosition="32" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="1904811872814005147" fileName="KajaFrame.java" startLine="265" startPosition="34" endLine="278" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="3308300503039569805" fileName="KajaFrame.java" startLine="114" startPosition="33" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="3308300503039570002" fileName="KajaFrame.java" startLine="136" startPosition="5" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="3308300503039569656" fileName="KajaFrame.java" startLine="94" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNextCell#()LJavaKaja/runtime/Cell;" />
+    <nodeInfo nodeId="3308300503039604752" fileName="KajaFrame.java" startLine="291" startPosition="42" endLine="306" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3308300503039604667" fileName="KajaFrame.java" startLine="263" startPosition="0" endLine="279" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3308300503039569996" fileName="KajaFrame.java" startLine="132" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="turnLeft#()V" />
+    <nodeInfo nodeId="3308300503039569801" fileName="KajaFrame.java" startLine="109" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveKaja#()V" />
+    <nodeInfo nodeId="3308300503039555813" fileName="KajaFrame.java" startLine="42" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initializeComponents#()V" />
+    <nodeInfo nodeId="3308300503039604518" fileName="KajaFrame.java" startLine="258" startPosition="38" endLine="308" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="3308300503039604516" fileName="KajaFrame.java" startLine="257" startPosition="27" endLine="309" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="3308300503039569986" fileName="KajaFrame.java" startLine="256" startPosition="0" endLine="311" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateUI#()V" />
+    <scopeInfo nodeId="3308300503039473790" fileName="KajaFrame.java" startLine="40" startPosition="22" endLine="40" endPosition="22" />
+    <scopeInfo nodeId="3308300503039569851" fileName="KajaFrame.java" startLine="127" startPosition="14" endLine="127" endPosition="14" />
+    <scopeInfo nodeId="3308300503039570035" fileName="KajaFrame.java" startLine="149" startPosition="14" endLine="149" endPosition="14" />
+    <scopeInfo nodeId="3308300503039570156" fileName="KajaFrame.java" startLine="201" startPosition="0" endLine="201" endPosition="38">
+      <varInfo nodeId="3308300503039570157" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039570159" fileName="KajaFrame.java" startLine="201" startPosition="38" endLine="201" endPosition="38" />
+    <scopeInfo nodeId="3210697320273550624" fileName="KajaFrame.java" startLine="208" startPosition="0" endLine="208" endPosition="38">
+      <varInfo nodeId="3210697320273550625" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3210697320273550627" fileName="KajaFrame.java" startLine="208" startPosition="38" endLine="208" endPosition="38" />
+    <scopeInfo nodeId="3308300503039647564" fileName="KajaFrame.java" startLine="44" startPosition="9" endLine="45" endPosition="55" />
+    <scopeInfo nodeId="3308300503039647565" fileName="KajaFrame.java" startLine="46" startPosition="0" endLine="47" endPosition="36">
+      <varInfo nodeId="3308300503039647566" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039647568" fileName="KajaFrame.java" startLine="46" startPosition="49" endLine="47" endPosition="36" />
+    <scopeInfo nodeId="3308300503039569045" fileName="KajaFrame.java" startLine="76" startPosition="27" endLine="77" endPosition="14" />
+    <scopeInfo nodeId="3210697320273763029" fileName="KajaFrame.java" startLine="87" startPosition="33" endLine="88" endPosition="89" />
+    <scopeInfo nodeId="3308300503039569630" fileName="KajaFrame.java" startLine="91" startPosition="35" endLine="92" endPosition="27" />
+    <scopeInfo nodeId="3308300503039569669" fileName="KajaFrame.java" startLine="97" startPosition="17" endLine="98" endPosition="35" />
+    <scopeInfo nodeId="3308300503039569711" fileName="KajaFrame.java" startLine="99" startPosition="16" endLine="100" endPosition="35" />
+    <scopeInfo nodeId="3308300503039569735" fileName="KajaFrame.java" startLine="101" startPosition="17" endLine="102" endPosition="35" />
+    <scopeInfo nodeId="3308300503039569752" fileName="KajaFrame.java" startLine="103" startPosition="16" endLine="104" endPosition="35" />
+    <scopeInfo nodeId="3308300503039569665" fileName="KajaFrame.java" startLine="105" startPosition="14" endLine="106" endPosition="20" />
+    <scopeInfo nodeId="3210697320273683598" fileName="KajaFrame.java" startLine="111" startPosition="18" endLine="112" endPosition="13" />
+    <scopeInfo nodeId="3308300503039569841" fileName="KajaFrame.java" startLine="125" startPosition="16" endLine="126" endPosition="17" />
+    <scopeInfo nodeId="3210697320273683593" fileName="KajaFrame.java" startLine="134" startPosition="18" endLine="135" endPosition="13" />
+    <scopeInfo nodeId="3308300503039570029" fileName="KajaFrame.java" startLine="147" startPosition="16" endLine="148" endPosition="36" />
+    <scopeInfo nodeId="3308300503039581737" fileName="KajaFrame.java" startLine="154" startPosition="31" endLine="155" endPosition="37" />
+    <scopeInfo nodeId="3210697320273683588" fileName="KajaFrame.java" startLine="159" startPosition="18" endLine="160" endPosition="13" />
+    <scopeInfo nodeId="3210697320273683583" fileName="KajaFrame.java" startLine="167" startPosition="18" endLine="168" endPosition="13" />
+    <scopeInfo nodeId="3308300503039569780" fileName="KajaFrame.java" startLine="174" startPosition="30" endLine="175" endPosition="34" />
+    <scopeInfo nodeId="3308300503039569956" fileName="KajaFrame.java" startLine="178" startPosition="30" endLine="179" endPosition="43" />
+    <scopeInfo nodeId="3210697320273614309" fileName="KajaFrame.java" startLine="182" startPosition="46" endLine="183" endPosition="42" />
+    <scopeInfo nodeId="3308300503039683708" fileName="KajaFrame.java" startLine="186" startPosition="50" endLine="187" endPosition="39" />
+    <scopeInfo nodeId="6405700485436169965" fileName="KajaFrame.java" startLine="190" startPosition="30" endLine="191" endPosition="44" />
+    <scopeInfo nodeId="3210697320273614251" fileName="KajaFrame.java" startLine="194" startPosition="46" endLine="195" endPosition="43" />
+    <scopeInfo nodeId="3308300503039570155" fileName="KajaFrame.java" startLine="199" startPosition="9" endLine="200" endPosition="24" />
+    <scopeInfo nodeId="3210697320273550620" fileName="KajaFrame.java" startLine="206" startPosition="9" endLine="207" endPosition="23" />
+    <scopeInfo nodeId="3210697320273683561" fileName="KajaFrame.java" startLine="218" startPosition="18" endLine="219" endPosition="13" />
+    <scopeInfo nodeId="3210697320273683568" fileName="KajaFrame.java" startLine="226" startPosition="18" endLine="227" endPosition="13" />
+    <scopeInfo nodeId="3210697320273683573" fileName="KajaFrame.java" startLine="234" startPosition="18" endLine="235" endPosition="13" />
+    <scopeInfo nodeId="3210697320273683578" fileName="KajaFrame.java" startLine="242" startPosition="18" endLine="243" endPosition="13" />
+    <scopeInfo nodeId="3210697320273648206" fileName="KajaFrame.java" startLine="249" startPosition="43" endLine="250" endPosition="39" />
+    <scopeInfo nodeId="3210697320273648284" fileName="KajaFrame.java" startLine="253" startPosition="43" endLine="254" endPosition="38" />
+    <scopeInfo nodeId="1904811872814005149" fileName="KajaFrame.java" startLine="276" startPosition="20" endLine="277" endPosition="40" />
+    <scopeInfo nodeId="3308300503039604698" fileName="KajaFrame.java" startLine="280" startPosition="33" endLine="281" endPosition="27" />
+    <scopeInfo nodeId="3210697320273701200" fileName="KajaFrame.java" startLine="295" startPosition="30" endLine="296" endPosition="55" />
+    <scopeInfo nodeId="3308300503039604754" fileName="KajaFrame.java" startLine="304" startPosition="0" endLine="305" endPosition="40">
+      <varInfo nodeId="3308300503039604755" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039604757" fileName="KajaFrame.java" startLine="304" startPosition="31" endLine="305" endPosition="40" />
+    <scopeInfo nodeId="3308300503039473787" fileName="KajaFrame.java" startLine="39" startPosition="0" endLine="41" endPosition="3" />
+    <scopeInfo nodeId="3308300503039555819" fileName="KajaFrame.java" startLine="79" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="3308300503039580742" fileName="KajaFrame.java" startLine="82" startPosition="39" endLine="84" endPosition="11" />
+    <scopeInfo nodeId="3308300503039569808" fileName="KajaFrame.java" startLine="116" startPosition="17" endLine="118" endPosition="14" />
+    <scopeInfo nodeId="3308300503039569819" fileName="KajaFrame.java" startLine="119" startPosition="16" endLine="121" endPosition="14" />
+    <scopeInfo nodeId="3308300503039569830" fileName="KajaFrame.java" startLine="122" startPosition="17" endLine="124" endPosition="14" />
+    <scopeInfo nodeId="3308300503039570005" fileName="KajaFrame.java" startLine="138" startPosition="17" endLine="140" endPosition="14" />
+    <scopeInfo nodeId="3308300503039570013" fileName="KajaFrame.java" startLine="141" startPosition="16" endLine="143" endPosition="14" />
+    <scopeInfo nodeId="3308300503039570021" fileName="KajaFrame.java" startLine="144" startPosition="17" endLine="146" endPosition="14" />
+    <scopeInfo nodeId="3210697320273683516" fileName="KajaFrame.java" startLine="212" startPosition="25" endLine="214" endPosition="15" />
+    <scopeInfo nodeId="1904811872814005153" fileName="KajaFrame.java" startLine="267" startPosition="23" endLine="269" endPosition="20" />
+    <scopeInfo nodeId="1904811872814005170" fileName="KajaFrame.java" startLine="270" startPosition="22" endLine="272" endPosition="20" />
+    <scopeInfo nodeId="1904811872814005191" fileName="KajaFrame.java" startLine="273" startPosition="23" endLine="275" endPosition="20" />
+    <scopeInfo nodeId="3308300503039569042" fileName="KajaFrame.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="3210697320273763026" fileName="KajaFrame.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="3210697320273763038" varName="msg" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039569627" fileName="KajaFrame.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="3308300503039581734" fileName="KajaFrame.java" startLine="153" startPosition="0" endLine="157" endPosition="0" />
+    <scopeInfo nodeId="3308300503039569777" fileName="KajaFrame.java" startLine="173" startPosition="0" endLine="177" endPosition="0" />
+    <scopeInfo nodeId="3308300503039569953" fileName="KajaFrame.java" startLine="177" startPosition="0" endLine="181" endPosition="0" />
+    <scopeInfo nodeId="3210697320273614306" fileName="KajaFrame.java" startLine="181" startPosition="0" endLine="185" endPosition="0">
+      <varInfo nodeId="3210697320273614332" varName="col" />
+      <varInfo nodeId="3210697320273614323" varName="row" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039683705" fileName="KajaFrame.java" startLine="185" startPosition="0" endLine="189" endPosition="0">
+      <varInfo nodeId="3308300503039683714" varName="direction" />
+    </scopeInfo>
+    <scopeInfo nodeId="6405700485436169962" fileName="KajaFrame.java" startLine="189" startPosition="0" endLine="193" endPosition="0" />
+    <scopeInfo nodeId="3210697320273614248" fileName="KajaFrame.java" startLine="193" startPosition="0" endLine="197" endPosition="0">
+      <varInfo nodeId="3210697320273614274" varName="col" />
+      <varInfo nodeId="3210697320273614265" varName="row" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039570147" fileName="KajaFrame.java" startLine="198" startPosition="26" endLine="202" endPosition="5" />
+    <scopeInfo nodeId="3210697320273550618" fileName="KajaFrame.java" startLine="205" startPosition="30" endLine="209" endPosition="5" />
+    <scopeInfo nodeId="3210697320273648203" fileName="KajaFrame.java" startLine="248" startPosition="0" endLine="252" endPosition="0">
+      <varInfo nodeId="3210697320273648214" varName="row" />
+    </scopeInfo>
+    <scopeInfo nodeId="3210697320273648281" fileName="KajaFrame.java" startLine="252" startPosition="0" endLine="256" endPosition="0">
+      <varInfo nodeId="3210697320273648295" varName="col" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039580739" fileName="KajaFrame.java" startLine="81" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="3308300503039580745" varName="msg" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039570099" fileName="KajaFrame.java" startLine="158" startPosition="28" endLine="163" endPosition="15" />
+    <scopeInfo nodeId="3308300503039570122" fileName="KajaFrame.java" startLine="166" startPosition="31" endLine="171" endPosition="15" />
+    <scopeInfo nodeId="3210697320273683513" fileName="KajaFrame.java" startLine="211" startPosition="0" endLine="216" endPosition="0" />
+    <scopeInfo nodeId="3210697320273550656" fileName="KajaFrame.java" startLine="217" startPosition="44" endLine="222" endPosition="15" />
+    <scopeInfo nodeId="3210697320273550666" fileName="KajaFrame.java" startLine="225" startPosition="47" endLine="230" endPosition="15" />
+    <scopeInfo nodeId="3210697320273550804" fileName="KajaFrame.java" startLine="233" startPosition="44" endLine="238" endPosition="15" />
+    <scopeInfo nodeId="3210697320273550786" fileName="KajaFrame.java" startLine="241" startPosition="47" endLine="246" endPosition="15" />
+    <scopeInfo nodeId="3308300503039569375" fileName="KajaFrame.java" startLine="56" startPosition="39" endLine="62" endPosition="27">
+      <varInfo nodeId="3308300503039618821" varName="button" />
+      <varInfo nodeId="3308300503039569565" varName="shouldBeWall" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039570144" fileName="KajaFrame.java" startLine="197" startPosition="0" endLine="204" endPosition="0" />
+    <scopeInfo nodeId="3210697320273550615" fileName="KajaFrame.java" startLine="204" startPosition="0" endLine="211" endPosition="0" />
+    <scopeInfo nodeId="3308300503039604511" fileName="KajaFrame.java" startLine="294" startPosition="31" endLine="301" endPosition="96" />
+    <scopeInfo nodeId="3308300503039569374" fileName="KajaFrame.java" startLine="55" startPosition="38" endLine="63" endPosition="7">
+      <varInfo nodeId="3308300503039569377" varName="j" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039570096" fileName="KajaFrame.java" startLine="157" startPosition="0" endLine="165" endPosition="0" />
+    <scopeInfo nodeId="3308300503039570119" fileName="KajaFrame.java" startLine="165" startPosition="0" endLine="173" endPosition="0" />
+    <scopeInfo nodeId="3210697320273550653" fileName="KajaFrame.java" startLine="216" startPosition="0" endLine="224" endPosition="0">
+      <varInfo nodeId="3210697320273550689" varName="col" />
+      <varInfo nodeId="3210697320273550680" varName="row" />
+    </scopeInfo>
+    <scopeInfo nodeId="3210697320273550663" fileName="KajaFrame.java" startLine="224" startPosition="0" endLine="232" endPosition="0">
+      <varInfo nodeId="3210697320273550754" varName="col" />
+      <varInfo nodeId="3210697320273550745" varName="row" />
+    </scopeInfo>
+    <scopeInfo nodeId="3210697320273550801" fileName="KajaFrame.java" startLine="232" startPosition="0" endLine="240" endPosition="0">
+      <varInfo nodeId="3210697320273550817" varName="col" />
+      <varInfo nodeId="3210697320273550815" varName="row" />
+    </scopeInfo>
+    <scopeInfo nodeId="3210697320273550783" fileName="KajaFrame.java" startLine="240" startPosition="0" endLine="248" endPosition="0">
+      <varInfo nodeId="3210697320273550799" varName="col" />
+      <varInfo nodeId="3210697320273550797" varName="row" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039569345" fileName="KajaFrame.java" startLine="55" startPosition="38" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="3308300503039604508" fileName="KajaFrame.java" startLine="293" startPosition="55" endLine="303" endPosition="0" />
+    <scopeInfo nodeId="3308300503039569344" fileName="KajaFrame.java" startLine="54" startPosition="0" endLine="65" endPosition="5">
+      <varInfo nodeId="3308300503039569347" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039604753" fileName="KajaFrame.java" startLine="292" startPosition="13" endLine="303" endPosition="13" />
+    <scopeInfo nodeId="3308300503039569659" fileName="KajaFrame.java" startLine="95" startPosition="32" endLine="107" endPosition="5" />
+    <scopeInfo nodeId="3308300503039604668" fileName="KajaFrame.java" startLine="264" startPosition="33" endLine="278" endPosition="11" />
+    <scopeInfo nodeId="3308300503039569656" fileName="KajaFrame.java" startLine="94" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="3308300503039569999" fileName="KajaFrame.java" startLine="133" startPosition="29" endLine="151" endPosition="15" />
+    <scopeInfo nodeId="3308300503039569804" fileName="KajaFrame.java" startLine="110" startPosition="29" endLine="130" endPosition="15" />
+    <scopeInfo nodeId="3308300503039569996" fileName="KajaFrame.java" startLine="132" startPosition="0" endLine="153" endPosition="0" />
+    <scopeInfo nodeId="3308300503039569801" fileName="KajaFrame.java" startLine="109" startPosition="0" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="3308300503039555816" fileName="KajaFrame.java" startLine="43" startPosition="44" endLine="73" endPosition="15">
+      <varInfo nodeId="1904811872813999909" varName="classLoader" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039555813" fileName="KajaFrame.java" startLine="42" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="3308300503039604519" fileName="KajaFrame.java" startLine="259" startPosition="39" endLine="307" endPosition="0">
+      <varInfo nodeId="3308300503039604661" varName="cell" />
+      <varInfo nodeId="1904811872814005246" varName="cellIcon" />
+      <varInfo nodeId="3308300503039604747" varName="cellValue" />
+      <varInfo nodeId="3308300503039604735" varName="currentVisual" />
+      <varInfo nodeId="3210697320273701193" varName="isStopped" />
+      <varInfo nodeId="1904811872813999955" varName="karelIcon" />
+      <varInfo nodeId="6405700485436171006" varName="marks" />
+      <varInfo nodeId="6405700485436170988" varName="marksCaption" />
+      <varInfo nodeId="6405700485436170977" varName="worldCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039604517" fileName="KajaFrame.java" startLine="258" startPosition="38" endLine="308" endPosition="7" />
+    <scopeInfo nodeId="3308300503039604518" fileName="KajaFrame.java" startLine="258" startPosition="38" endLine="308" endPosition="7">
+      <varInfo nodeId="3308300503039604572" varName="j" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039569989" fileName="KajaFrame.java" startLine="257" startPosition="27" endLine="309" endPosition="5" />
+    <scopeInfo nodeId="3308300503039604516" fileName="KajaFrame.java" startLine="257" startPosition="27" endLine="309" endPosition="5">
+      <varInfo nodeId="3308300503039604580" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039569986" fileName="KajaFrame.java" startLine="256" startPosition="0" endLine="311" endPosition="0" />
+    <unitInfo nodeId="3308300503039604506" fileName="KajaFrame.java" startLine="293" startPosition="43" endLine="303" endPosition="11" unitName="JavaKaja.runtime.KajaFrame$1" />
+    <unitInfo nodeId="3308300503039473785" fileName="KajaFrame.java" startLine="20" startPosition="0" endLine="312" endPosition="0" unitName="JavaKaja.runtime.KajaFrame" />
+  </root>
+  <root nodeId="3308300503039569134" modelId="r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)">
+    <nodeInfo nodeId="3308300503039569136" fileName="Direction.java" startLine="11" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Direction#()V" />
+    <scopeInfo nodeId="3308300503039569139" fileName="Direction.java" startLine="12" startPosition="15" endLine="12" endPosition="15" />
+    <scopeInfo nodeId="3308300503039569136" fileName="Direction.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
+    <unitInfo nodeId="3308300503039569134" fileName="Direction.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="JavaKaja.runtime.Direction" />
+  </root>
+  <root nodeId="3308300503039569160" modelId="r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)">
+    <nodeInfo nodeId="3308300503039569168" fileName="Cell.java" startLine="6" startPosition="19" endLine="7" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="marks" />
+    <nodeInfo nodeId="3308300503039569174" fileName="Cell.java" startLine="7" startPosition="24" endLine="8" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="wall" />
+    <nodeInfo nodeId="3308300503039569180" fileName="Cell.java" startLine="8" startPosition="31" endLine="9" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="kaja" />
+    <nodeInfo nodeId="3308300503039569443" fileName="Cell.java" startLine="11" startPosition="29" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569194" fileName="Cell.java" startLine="16" startPosition="15" endLine="17" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3308300503039569204" fileName="Cell.java" startLine="18" startPosition="5" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569252" fileName="Cell.java" startLine="22" startPosition="27" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569311" fileName="Cell.java" startLine="26" startPosition="27" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039569220" fileName="Cell.java" startLine="30" startPosition="25" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569236" fileName="Cell.java" startLine="34" startPosition="27" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569304" fileName="Cell.java" startLine="38" startPosition="27" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039569268" fileName="Cell.java" startLine="42" startPosition="25" endLine="43" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569282" fileName="Cell.java" startLine="46" startPosition="28" endLine="47" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3308300503039569297" fileName="Cell.java" startLine="50" startPosition="25" endLine="51" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3308300503039569162" fileName="Cell.java" startLine="10" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Cell#(Z)V" />
+    <nodeInfo nodeId="3308300503039569190" fileName="Cell.java" startLine="15" startPosition="25" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3308300503039569248" fileName="Cell.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unsetKaja#()V" />
+    <nodeInfo nodeId="3308300503039569306" fileName="Cell.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isKaja#()Z" />
+    <nodeInfo nodeId="3308300503039569216" fileName="Cell.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setWall#()V" />
+    <nodeInfo nodeId="3308300503039569232" fileName="Cell.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unsetWall#()V" />
+    <nodeInfo nodeId="3308300503039569299" fileName="Cell.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWall#()Z" />
+    <nodeInfo nodeId="3308300503039569264" fileName="Cell.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addMark#()V" />
+    <nodeInfo nodeId="3308300503039569278" fileName="Cell.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeMark#()V" />
+    <nodeInfo nodeId="3308300503039569292" fileName="Cell.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMarks#()I" />
+    <nodeInfo nodeId="3308300503039569186" fileName="Cell.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setKaja#()V" />
+    <scopeInfo nodeId="3308300503039569165" fileName="Cell.java" startLine="11" startPosition="29" endLine="12" endPosition="21" />
+    <scopeInfo nodeId="3308300503039569192" fileName="Cell.java" startLine="16" startPosition="15" endLine="17" endPosition="69" />
+    <scopeInfo nodeId="3308300503039569251" fileName="Cell.java" startLine="22" startPosition="27" endLine="23" endPosition="17" />
+    <scopeInfo nodeId="3308300503039569309" fileName="Cell.java" startLine="26" startPosition="27" endLine="27" endPosition="16" />
+    <scopeInfo nodeId="3308300503039569219" fileName="Cell.java" startLine="30" startPosition="25" endLine="31" endPosition="16" />
+    <scopeInfo nodeId="3308300503039569235" fileName="Cell.java" startLine="34" startPosition="27" endLine="35" endPosition="17" />
+    <scopeInfo nodeId="3308300503039569302" fileName="Cell.java" startLine="38" startPosition="27" endLine="39" endPosition="16" />
+    <scopeInfo nodeId="3308300503039569267" fileName="Cell.java" startLine="42" startPosition="25" endLine="43" endPosition="12" />
+    <scopeInfo nodeId="3308300503039569281" fileName="Cell.java" startLine="46" startPosition="28" endLine="47" endPosition="12" />
+    <scopeInfo nodeId="3308300503039569295" fileName="Cell.java" startLine="50" startPosition="25" endLine="51" endPosition="17" />
+    <scopeInfo nodeId="3308300503039569162" fileName="Cell.java" startLine="10" startPosition="0" endLine="13" endPosition="3">
+      <varInfo nodeId="3308300503039569441" varName="wall" />
+    </scopeInfo>
+    <scopeInfo nodeId="3308300503039569189" fileName="Cell.java" startLine="15" startPosition="25" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="3308300503039569248" fileName="Cell.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="3308300503039569306" fileName="Cell.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="3308300503039569216" fileName="Cell.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="3308300503039569232" fileName="Cell.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="3308300503039569299" fileName="Cell.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="3308300503039569264" fileName="Cell.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="3308300503039569278" fileName="Cell.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="3308300503039569292" fileName="Cell.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="3308300503039569186" fileName="Cell.java" startLine="14" startPosition="0" endLine="21" endPosition="0" />
+    <unitInfo nodeId="3308300503039569160" fileName="Cell.java" startLine="6" startPosition="0" endLine="54" endPosition="0" unitName="JavaKaja.runtime.Cell" />
+  </root>
+</debugInfo>
+

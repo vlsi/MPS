@@ -383,6 +383,11 @@
       <modulePath path="${project}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="samples" />
       <modulePath path="${project}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/jetbrains.mps.samples.lambdaCalculus.sandbox.msd" folder="samples" />
       <modulePath path="${project}/samples/plainText/plainText.mpl" folder="samples" />
+      <modulePath path="${project}/samples/robot_Kaja/languages/KajaAndOr/KajaAndOr.mpl" folder="samples.robotKaja" />
+      <modulePath path="${project}/samples/robot_Kaja/languages/KajaSceneConstruction/KajaSceneConstruction.mpl" folder="samples.robotKaja" />
+      <modulePath path="${project}/samples/robot_Kaja/languages/Kajak/Kajak.mpl" folder="samples.robotKaja" />
+      <modulePath path="${project}/samples/robot_Kaja/solutions/JavaKajak/JavaKajak.msd" folder="samples.robotKaja" />
+      <modulePath path="${project}/samples/robot_Kaja/solutions/Kajak.sandbox/Kajak.sandbox.msd" folder="samples.robotKaja" />
       <modulePath path="${project}/samples/sampleFacet/sampleFacet.mpl" folder="samples" />
       <modulePath path="${project}/samples/sampleFacet/solutions/pluginSolution/pluginSolution.msd" folder="samples" />
       <modulePath path="${project}/samples/sampleJavaExtensions/languages/Constants/Constants.mpl" folder="samples.sampleJavaExtensions" />
