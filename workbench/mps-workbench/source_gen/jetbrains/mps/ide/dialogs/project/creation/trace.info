@@ -26,7 +26,7 @@
     <nodeInfo nodeId="1613125646032871578" fileName="NewModelDialog.java" startLine="87" startPosition="0" endLine="88" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1613125646032871585" fileName="NewModelDialog.java" startLine="88" startPosition="45" endLine="89" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1613125646032871590" fileName="NewModelDialog.java" startLine="89" startPosition="32" endLine="90" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1613125646032871614" fileName="NewModelDialog.java" startLine="92" startPosition="33" endLine="93" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1613125646032871614" fileName="NewModelDialog.java" startLine="92" startPosition="38" endLine="93" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3482941692036781056" fileName="NewModelDialog.java" startLine="94" startPosition="86" endLine="95" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3482941692036778461" fileName="NewModelDialog.java" startLine="95" startPosition="68" endLine="96" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3298715926002507883" fileName="NewModelDialog.java" startLine="98" startPosition="5" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -50,7 +50,7 @@
     <nodeInfo nodeId="1613125646032871652" fileName="NewModelDialog.java" startLine="145" startPosition="0" endLine="146" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5149305731183885505" fileName="NewModelDialog.java" startLine="151" startPosition="21" endLine="152" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5149305731183885508" fileName="NewModelDialog.java" startLine="153" startPosition="5" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3205480298361942003" fileName="NewModelDialog.java" startLine="155" startPosition="68" endLine="156" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3205480298361942003" fileName="NewModelDialog.java" startLine="155" startPosition="73" endLine="156" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3205480298362118237" fileName="NewModelDialog.java" startLine="156" startPosition="103" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3205480298361953055" fileName="NewModelDialog.java" startLine="157" startPosition="0" endLine="158" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3205480298361956628" fileName="NewModelDialog.java" startLine="158" startPosition="42" endLine="159" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -117,7 +117,7 @@
     <nodeInfo nodeId="3298715926002509960" fileName="NewModelDialog.java" startLine="265" startPosition="45" endLine="266" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3298715926002509963" fileName="NewModelDialog.java" startLine="266" startPosition="62" endLine="267" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3298715926002509939" fileName="NewModelDialog.java" startLine="268" startPosition="5" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3298715926002510063" fileName="NewModelDialog.java" startLine="270" startPosition="66" endLine="271" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3298715926002510063" fileName="NewModelDialog.java" startLine="270" startPosition="71" endLine="271" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3298715926002510068" fileName="NewModelDialog.java" startLine="271" startPosition="80" endLine="272" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3298715926002510066" fileName="NewModelDialog.java" startLine="273" startPosition="5" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3111211977501179471" fileName="NewModelDialog.java" startLine="274" startPosition="0" endLine="275" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -170,7 +170,7 @@
     <nodeInfo nodeId="1613125646032871529" fileName="NewModelDialog.java" startLine="84" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initContentPane#()V" />
     <nodeInfo nodeId="5149305731183885477" fileName="NewModelDialog.java" startLine="149" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
     <scopeInfo nodeId="1613125646032871526" fileName="NewModelDialog.java" startLine="80" startPosition="39" endLine="81" endPosition="20" />
-    <scopeInfo nodeId="3298715926002507287" fileName="NewModelDialog.java" startLine="92" startPosition="33" endLine="93" endPosition="31" />
+    <scopeInfo nodeId="3298715926002507287" fileName="NewModelDialog.java" startLine="92" startPosition="38" endLine="93" endPosition="31" />
     <scopeInfo nodeId="1613125646032871627" fileName="NewModelDialog.java" startLine="100" startPosition="31" endLine="101" endPosition="66" />
     <scopeInfo nodeId="3298715926002509804" fileName="NewModelDialog.java" startLine="106" startPosition="42" endLine="107" endPosition="58" />
     <scopeInfo nodeId="1613125646032871851" fileName="NewModelDialog.java" startLine="113" startPosition="49" endLine="114" endPosition="16" />
@@ -190,7 +190,7 @@
     <scopeInfo nodeId="3298715926002510013" fileName="NewModelDialog.java" startLine="250" startPosition="59" endLine="252" endPosition="19" />
     <scopeInfo nodeId="1613125646032871985" fileName="NewModelDialog.java" startLine="258" startPosition="49" endLine="260" endPosition="23" />
     <scopeInfo nodeId="3298715926002509959" fileName="NewModelDialog.java" startLine="265" startPosition="45" endLine="267" endPosition="19" />
-    <scopeInfo nodeId="3298715926002509899" fileName="NewModelDialog.java" startLine="270" startPosition="66" endLine="272" endPosition="19" />
+    <scopeInfo nodeId="3298715926002509899" fileName="NewModelDialog.java" startLine="270" startPosition="71" endLine="272" endPosition="19" />
     <scopeInfo nodeId="1613125646032871523" fileName="NewModelDialog.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="1613125646032871640" fileName="NewModelDialog.java" startLine="113" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="1613125646032871643" varName="e" />
@@ -255,7 +255,7 @@
       <varInfo nodeId="1613125646032871462" varName="stereotype" />
       <varInfo nodeId="1613125646032871464" varName="strict" />
     </scopeInfo>
-    <scopeInfo nodeId="3205480298361689315" fileName="NewModelDialog.java" startLine="155" startPosition="68" endLine="194" endPosition="7">
+    <scopeInfo nodeId="3205480298361689315" fileName="NewModelDialog.java" startLine="155" startPosition="73" endLine="194" endPosition="7">
       <varInfo nodeId="3205480298361953056" varName="memento" />
       <varInfo nodeId="3205480298362059485" varName="newModelRoot" />
       <varInfo nodeId="7959849052033901351" varName="newModelRootDescriptor" />

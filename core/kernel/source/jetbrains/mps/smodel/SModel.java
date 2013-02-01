@@ -408,6 +408,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return modelDescriptor != null ? modelDescriptor.getModelListeners() : Collections.<SModelListener>emptyList();
   }
 
+
   //todo code in the following methods should be written w/o duplication
 
   private void fireDevKitAddedEvent(@NotNull ModuleReference ref) {

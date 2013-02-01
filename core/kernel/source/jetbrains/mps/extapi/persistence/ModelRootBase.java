@@ -56,7 +56,7 @@ public abstract class ModelRootBase implements ModelRoot {
   public abstract Iterable<SModel> loadModels();
 
   @Override
-  public boolean isReadOnly() {
+  public boolean canCreateModels() {
     return getModule().isPackaged();
   }
 
