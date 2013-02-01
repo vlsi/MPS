@@ -64,7 +64,7 @@ public class GenerateChunksTask extends MpsLoadTask {
 
 
   @Override
-  protected Set<File> calculateClassPath() {
+  protected Set<File> calculateClassPath(boolean fork) {
     Set<File> classPath = new LinkedHashSet<File>();
     String mpsHome = getProject().getProperty("artifacts.mps");
     String pluginHome = getProject().getProperty("artifacts.mpsPlugin");

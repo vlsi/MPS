@@ -135,7 +135,7 @@ public abstract class MpsLoadTask extends Task {
 
   @Override
   public void execute() throws BuildException {
-    Set<File> classPaths = calculateClassPath();
+    Set<File> classPaths = calculateClassPath(myFork);
     if (myUsePropertiesAsMacro) {
       Hashtable properties = getProject().getProperties();
       for (Object name : properties.keySet()) {
@@ -286,10 +286,10 @@ public abstract class MpsLoadTask extends Task {
     return path.startsWith(prefix) && (path.length() == prefix.length() || prefix.endsWith(File.separator) || path.charAt(prefix.length()) == File.separatorChar);
   }
 
-  protected Set<File> calculateClassPath() {
+  protected Set<File> calculateClassPath(boolean fork) {
     checkMpsHome();
     LinkedHashSet<File> result = new LinkedHashSet<File>();
-    result.addAll(MPSClasspathUtil.buildClasspath(getProject(), myMpsHome));
+    result.addAll(MPSClasspathUtil.buildClasspath(getProject(), myMpsHome, fork));
     return result;
   }
 

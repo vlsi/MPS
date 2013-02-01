@@ -51,7 +51,7 @@ public class ConvertToBinaryTask extends Copy {
   public void execute() throws BuildException {
     super.execute();
     if (!(toConvert.isEmpty())) {
-      Iterable<File> classPaths = MPSClasspathUtil.buildClasspath(getProject(), mpsHome);
+      Iterable<File> classPaths = MPSClasspathUtil.buildClasspath(getProject(), mpsHome, false);
       List<URL> classPathUrls = new ArrayList<URL>();
       for (File path : classPaths) {
         try {
