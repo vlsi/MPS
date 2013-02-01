@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
-import jetbrains.mps.vfs.IFile;
+
+import java.util.Set;
 
 public interface SModelRepositoryListener {
   void beforeModelDeleted(SModelDescriptor modelDescriptor);
@@ -29,5 +30,20 @@ public interface SModelRepositoryListener {
   void modelAdded(SModelDescriptor modelDescriptor);
 
   void modelRenamed(SModelDescriptor modelDescriptor);
+
+  /**
+   * This method will be called by SModelRepository to notify clients that underlying
+   * SModel instances was replaced by another one (as a result of reloadFromDisk(),
+   * or replaceModel() methods execution).
+   * <p/>
+   * It is guaranteed that this method will be executed in event dispatch thread.
+   * <p/>
+   * Old instance of SModel will not be attached to any SModelDescriptor and will not
+   * be disposed till the end of notifications processing.
+   *
+   * @param md model descriptor with replaced SModel instance
+   */
+
+  void modelsReplaced(Set<SModelDescriptor> reloadedModels);
 }
 

@@ -15,26 +15,28 @@
  */
 package jetbrains.mps.nodeEditor.style;
 
-import jetbrains.mps.editor.runtime.ParametersInformation;
-import jetbrains.mps.editor.runtime.impl.CellUtil;
-import jetbrains.mps.editor.runtime.style.InheritableStyleAttribute;
 import jetbrains.mps.editor.runtime.style.SimpleStyleAttribute;
 import jetbrains.mps.nodeEditor.CaretPosition;
-import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
-import org.jetbrains.mps.openapi.model.SNode;
 
-import java.awt.Color;
-import java.awt.Font;
-
+/**
+ * Use jetbrains.mps.editor.runtime.style.StyleAttributes instead.
+ * This class will be removed after MPS 3.0
+ * */
+@Deprecated
 public class StyleAttributes extends jetbrains.mps.editor.runtime.style.StyleAttributes {
-  public static final StyleAttribute<DefaultBaseLine> DEFAULT_BASE_LINE = new SimpleStyleAttribute<DefaultBaseLine>("default-baseline",DefaultBaseLine.FIRST){};
+  public static final StyleAttribute<DefaultBaseLine> DEFAULT_BASE_LINE = new SimpleStyleAttribute<DefaultBaseLine>("default-baseline", DefaultBaseLine.FIRST, false) {
+  };
 
-  public static final StyleAttribute<CaretPosition> DEFAULT_CARET_POSITON = new SimpleStyleAttribute<CaretPosition>("default-caret-position"){};
+  public static final StyleAttribute<CaretPosition> DEFAULT_CARET_POSITON = new SimpleStyleAttribute<CaretPosition>("default-caret-position", null, false) {
+  };
 
-  public static final StyleAttribute<CellAlign> HORIZONTAL_ALIGN = new SimpleStyleAttribute<CellAlign>("horizontal-align", CellAlign.LEFT){};
+  public static final StyleAttribute<CellAlign> HORIZONTAL_ALIGN = new SimpleStyleAttribute<CellAlign>("horizontal-align", CellAlign.LEFT, false) {
+  };
 
-  public static final StyleAttribute<ScriptKind> SCRIPT_KIND = new SimpleStyleAttribute<ScriptKind>("script-kind", ScriptKind.NORMAL){};
+  public static final StyleAttribute<ScriptKind> SCRIPT_KIND = new SimpleStyleAttribute<ScriptKind>("script-kind", ScriptKind.NORMAL, false) {
+  };
 
-  public static final StyleAttribute<TableComponent> TABLE_COMPONENT = new SimpleStyleAttribute<TableComponent>("table-component", TableComponent.HORIZONTAL_COLLECTION){};
+  public static final StyleAttribute<TableComponent> TABLE_COMPONENT = new SimpleStyleAttribute<TableComponent>("table-component", TableComponent.HORIZONTAL_COLLECTION, false) {
+  };
 }

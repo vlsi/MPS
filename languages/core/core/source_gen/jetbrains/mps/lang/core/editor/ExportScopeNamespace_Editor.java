@@ -47,10 +47,10 @@ public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, ExportScopeNamespace_Editor._StyleParameter_QueryFunction_p7dwc8_a1c0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -82,7 +82,7 @@ public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_p7dwc8_a1c0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_p7dwc8_a1c0(EditorContext editorContext, SNode node) {
     return (SNodeOperations.getParent(node) != null) && jetbrains.mps.util.SNodeOperations.isRoot(SNodeOperations.getParent(node));
   }
 }

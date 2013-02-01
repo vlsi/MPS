@@ -16,6 +16,8 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.editor.colors.ColorKey;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.SModelReference;
@@ -46,7 +48,7 @@ public class SNodeGroupTreeNode extends TextTreeNode {
     if (hasErrors()) {
       setColor(Color.RED);
     }
-    setColor(Color.BLACK);
+    setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED")));
   }
 
   public ActionGroup getQuickCreateGroup(boolean plain) {

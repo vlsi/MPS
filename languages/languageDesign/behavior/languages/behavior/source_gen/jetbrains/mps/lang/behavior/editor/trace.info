@@ -683,7 +683,7 @@
     <nodeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="167" startPosition="34" endLine="168" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="168" startPosition="95" endLine="169" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="171" startPosition="131" endLine="172" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="178" startPosition="84" endLine="179" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="178" startPosition="104" endLine="179" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="179" startPosition="100" endLine="180" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="180" startPosition="38" endLine="181" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="181" startPosition="36" endLine="182" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1171,7 +1171,7 @@
     <nodeInfo nodeId="1225194473612" fileName="ConceptMethodDeclaration_Editor.java" startLine="479" startPosition="0" endLine="488" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gmtuod_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1233077388226" fileName="ConceptMethodDeclaration_Editor.java" startLine="524" startPosition="0" endLine="533" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gmtuod_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="164" startPosition="132" endLine="174" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="177" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="177" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1233077388228" fileName="ConceptMethodDeclaration_Editor.java" startLine="222" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="3059910031789039763" fileName="ConceptMethodDeclaration_Editor.java" startLine="235" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAlternation_gmtuod_k2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5864038008284430649" fileName="ConceptMethodDeclaration_Editor.java" startLine="321" startPosition="0" endLine="332" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gmtuod_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -1520,7 +1520,7 @@
       <varInfo nodeId="1225194473661" varName="editorContext" />
       <varInfo nodeId="1225194473661" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="178" startPosition="84" endLine="185" endPosition="24">
+    <scopeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="178" startPosition="104" endLine="185" endPosition="24">
       <varInfo nodeId="313898386614417809" varName="editorCell" />
       <varInfo nodeId="313898386614417809" varName="style" />
     </scopeInfo>
@@ -1658,7 +1658,8 @@
     <scopeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="164" startPosition="132" endLine="174" endPosition="7" />
     <scopeInfo nodeId="313898386614417809" fileName="ConceptMethodDeclaration_Editor.java" startLine="177" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="313898386614417809" varName="editorContext" />
-      <varInfo nodeId="313898386614417809" varName="node" />
+      <varInfo nodeId="313898386614417809" varName="nextNode" />
+      <varInfo nodeId="313898386614417809" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="1233077388228" fileName="ConceptMethodDeclaration_Editor.java" startLine="222" startPosition="0" endLine="233" endPosition="0">
       <varInfo nodeId="1233077388228" varName="editorContext" />
@@ -1870,7 +1871,7 @@
     <nodeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="94" startPosition="34" endLine="95" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="95" startPosition="95" endLine="96" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="98" startPosition="131" endLine="99" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="105" startPosition="84" endLine="106" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="105" startPosition="104" endLine="106" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="106" startPosition="100" endLine="107" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="107" startPosition="38" endLine="108" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="108" startPosition="36" endLine="109" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2095,7 +2096,7 @@
     <nodeInfo nodeId="1225194588683" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="247" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gggi92_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1233076624740" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="264" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gggi92_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="91" startPosition="132" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="104" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="104" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="274" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_gggi92_f2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1233076624742" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="146" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1233076624742" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="285" startPosition="0" endLine="296" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_gggi92_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -2266,7 +2267,7 @@
       <varInfo nodeId="1225194588687" varName="editorContext" />
       <varInfo nodeId="1225194588687" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="105" startPosition="84" endLine="112" endPosition="24">
+    <scopeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="105" startPosition="104" endLine="112" endPosition="24">
       <varInfo nodeId="1225194588673" varName="editorCell" />
       <varInfo nodeId="1225194588673" varName="style" />
     </scopeInfo>
@@ -2331,7 +2332,8 @@
     <scopeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="91" startPosition="132" endLine="101" endPosition="7" />
     <scopeInfo nodeId="1225194588673" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="104" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="1225194588673" varName="editorContext" />
-      <varInfo nodeId="1225194588673" varName="node" />
+      <varInfo nodeId="1225194588673" varName="nextNode" />
+      <varInfo nodeId="1225194588673" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="1225194588675" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="234" startPosition="89" endLine="244" endPosition="22">
       <varInfo nodeId="1225194588675" varName="editorCell" />

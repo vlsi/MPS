@@ -238,6 +238,44 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         ModelAccess.instance().runWriteInEDT(vfsNotifier);
       }
     }
+
+    public void modelsReplaced(final Set<SModelDescriptor> descriptors) {
+      for (SModelDescriptor sModelDescriptor : descriptors) {
+
+        if (!sModelDescriptor.isRegistered()) {
+          continue;
+        }
+
+        for (SNode root : sModelDescriptor.getSModel().roots()) {
+          updateModificationStamp(root);
+        }
+
+        Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
+        Collection<Pair<MPSNodeVirtualFile, String>> renamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
+        for (Iterator<Entry<SNodeReference, MPSNodeVirtualFile>> it = myVirtualFiles.entrySet().iterator(); it.hasNext(); ) {
+          Entry<SNodeReference, MPSNodeVirtualFile> entry = it.next();
+          if (!entry.getKey().getModelReference().equals(sModelDescriptor.getSModelReference())) continue;
+
+          SNode node = entry.getKey().resolve(MPSModuleRepository.getInstance());
+          MPSNodeVirtualFile file = entry.getValue();
+          if (node == null) {
+            deletedFiles.add(file);
+            it.remove();
+          } else {
+            String oldName = file.getName();
+            String newName = node.getPresentation();
+            if (!oldName.equals(newName)) {
+              renamedFiles.add(new Pair<MPSNodeVirtualFile, String>(file, newName));
+            }
+          }
+        }
+
+        VFSNotifier vfsNotifier = new VFSNotifier(deletedFiles, renamedFiles);
+        if (vfsNotifier.hasPendingNotifications()) {
+          ModelAccess.instance().runWriteInEDT(vfsNotifier);
+        }
+      }
+    }
   }
 
   private class MyModelListener extends SModelAdapter {
@@ -248,36 +286,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       updateModificationStamp(root);
     }
 
-    public void modelReplaced(final SModelDescriptor sm) {
-      for (SNode root : sm.getSModel().roots()) {
-        updateModificationStamp(root);
-      }
 
-      Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
-      Collection<Pair<MPSNodeVirtualFile, String>> renamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
-      for (Iterator<Entry<SNodeReference, MPSNodeVirtualFile>> it = myVirtualFiles.entrySet().iterator(); it.hasNext(); ) {
-        Entry<SNodeReference, MPSNodeVirtualFile> entry = it.next();
-        if (!entry.getKey().getModelReference().equals(sm.getSModelReference())) continue;
-
-        SNode node = entry.getKey().resolve(MPSModuleRepository.getInstance());
-        MPSNodeVirtualFile file = entry.getValue();
-        if (node == null) {
-          deletedFiles.add(file);
-          it.remove();
-        } else {
-          String oldName = file.getName();
-          String newName = node.getPresentation();
-          if (!oldName.equals(newName)) {
-            renamedFiles.add(new Pair<MPSNodeVirtualFile, String>(file, newName));
-          }
-        }
-      }
-
-      VFSNotifier vfsNotifier = new VFSNotifier(deletedFiles, renamedFiles);
-      if (vfsNotifier.hasPendingNotifications()) {
-        ModelAccess.instance().runWriteInEDT(vfsNotifier);
-      }
-    }
   }
 
   private class VFSNotifier implements Runnable {

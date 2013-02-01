@@ -71,10 +71,10 @@ public class JUnit4TestCaseRef_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.STRIKE_OUT, JUnit4TestCaseRef_Editor._StyleParameter_QueryFunction_hazblc_a0a0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -99,7 +99,7 @@ public class JUnit4TestCaseRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_hazblc_a0a0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_hazblc_a0a0(EditorContext editorContext, SNode node) {
     return SPropertyOperations.getBoolean(node, "muted");
   }
 }

@@ -138,7 +138,7 @@ public class FileProcessor extends EventProcessor {
     });
   }
 
-  protected boolean isEmpty() {
+  public boolean isEmpty() {
     return MapSequence.fromMap(dataMap).isEmpty();
   }
 

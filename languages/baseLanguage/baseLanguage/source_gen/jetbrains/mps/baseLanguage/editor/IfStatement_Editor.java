@@ -136,17 +136,17 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, IfStatement_Editor._StyleParameter_QueryFunction_eb7h0d_a1b4a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, IfStatement_Editor._StyleParameter_QueryFunction_eb7h0d_a2b4a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_eb7h0d_a1e0(editorContext, node));
@@ -201,10 +201,10 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, IfStatement_Editor._StyleParameter_QueryFunction_eb7h0d_a0a4a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -304,15 +304,15 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "ifFalseStatement", true) != null);
   }
 
-  private static boolean _StyleParameter_QueryFunction_eb7h0d_a0a4a(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_eb7h0d_a0a4a(EditorContext editorContext, SNode node) {
     return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
   }
 
-  private static boolean _StyleParameter_QueryFunction_eb7h0d_a1b4a(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_eb7h0d_a1b4a(EditorContext editorContext, SNode node) {
     return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
   }
 
-  private static boolean _StyleParameter_QueryFunction_eb7h0d_a2b4a(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_eb7h0d_a2b4a(EditorContext editorContext, SNode node) {
     return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
   }
 }

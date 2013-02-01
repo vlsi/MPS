@@ -207,6 +207,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     myModelListeners.clear();
   }
 
+  protected void notifyModelReplaced(SModel oldSModel) {
+    SModelRepository.getInstance().notifyModelReplaced(this, oldSModel);
+  }
+
   // Not SModel-specific listener notifications
 
   void fireBeforeModelFileChanged(SModelFileChangedEvent event) {
@@ -253,16 +257,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.modelLoadingStateChanged(this, oldState, newState);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  protected void fireModelReplaced() {
-    for (SModelListener sModelListener : getModelListeners()) {
-      try {
-        sModelListener.modelReplaced(this);
       } catch (Throwable t) {
         LOG.error(t);
       }

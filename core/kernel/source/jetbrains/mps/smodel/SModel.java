@@ -816,9 +816,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
         }
         for (SReference ref : node.getReferences()) {
           SModelReference targetModelRef = ref.getTargetSModelReference();
-          if (targetModelRef == null) {
-            LOG.error("target model of reference '" + ref.getRole() + "' is null in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
-          } else {
+          if (targetModelRef != null) {
             result.add(targetModelRef);
           }
           SNode decl = node.getLinkDeclaration(ref.getRole());

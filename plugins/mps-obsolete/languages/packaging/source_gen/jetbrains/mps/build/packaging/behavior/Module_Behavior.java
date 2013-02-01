@@ -32,8 +32,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.DevKit;
 
 public class Module_Behavior {
   public static void init(SNode thisNode) {
@@ -294,14 +294,10 @@ public class Module_Behavior {
 
   public static List<IModule> getAllAvailableModules_1222444746697() {
     List<IModule> list = ListSequence.fromList(new ArrayList<IModule>());
-    for (Language language : CollectionSequence.fromCollection(GlobalScope.getInstance().getVisibleLanguages())) {
-      ListSequence.fromList(list).addElement(language);
-    }
-    for (DevKit devKit : CollectionSequence.fromCollection(GlobalScope.getInstance().getVisibleDevkits())) {
-      ListSequence.fromList(list).addElement(devKit);
-    }
-    for (Solution solution : CollectionSequence.fromCollection(GlobalScope.getInstance().getVisibleSolutions())) {
-      ListSequence.fromList(list).addElement(solution);
+    for (SModule module : Sequence.fromIterable(GlobalScope.getInstance().getModules())) {
+      if (module instanceof IModule) {
+        ListSequence.fromList(list).addElement((IModule) module);
+      }
     }
     return list;
   }

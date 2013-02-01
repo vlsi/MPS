@@ -4,8 +4,7 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -13,10 +12,30 @@ public class QueryFunction_StyleParameter_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
-    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
+  public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
+    List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1161622981231"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1142886811589"));
-    return result;
+    if (QueryFunction_StyleParameter_Behavior.call_isSeparatorStyleQuery_7991857262598847349(thisNode)) {
+      ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "7991857262589831666"));
+      ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "7991857262589829730"));
+    }
+    return (List<SNode>) result;
+  }
+
+  public static boolean call_isSeparatorStyleQuery_7991857262598847349(SNode thisNode) {
+    return QueryFunction_StyleParameter_Behavior.call_getContainingCellModelRefNodeList_4310268853340642392(thisNode) != null;
+  }
+
+  public static SNode call_getContainingCellModelRefNodeList_4310268853340642392(SNode thisNode) {
+    SNode styleContainer = StyleClassItem_Behavior.call_getStyleContainer_7991857262599637608(QueryFunction_StyleParameter_Behavior.call_getStyleClassItem_7991857262599017464(thisNode));
+    if (styleContainer == null) {
+      return null;
+    }
+    return SNodeOperations.as(SNodeOperations.getParent(styleContainer), "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList");
+  }
+
+  public static SNode call_getStyleClassItem_7991857262599017464(SNode thisNode) {
+    return SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.StyleClassItem");
   }
 }

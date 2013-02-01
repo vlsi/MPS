@@ -16,6 +16,8 @@
 package jetbrains.mps.ide.ui;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.editor.colors.ColorKey;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.treeMessages.TreeMessage;
@@ -54,7 +56,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private String myText;
   private String myAdditionalText = null;
   private String myTooltipText;
-  private Color myColor = Color.BLACK;
+  private Color myColor = EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED"));
   private int myFontStyle = Font.PLAIN;
   private boolean myAutoExpandable = true;
   private ErrorState myErrorState = ErrorState.NONE;
@@ -292,7 +294,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   //todo make final
   protected void updatePresentation() {
-    setColor(Color.BLACK);
+    setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED")));
     doUpdatePresentation();
     if (myTree == null) {
       myTree = getTree();
@@ -321,6 +323,17 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
     if (additionalText != null) {
       setAdditionalText(additionalText);
+    }
+  }
+
+  public void updatePresentation(final boolean reloadSubTree, final boolean updateAncestors) {
+    renewPresentation();
+    if (reloadSubTree) {
+      updateSubTree();
+    }
+
+    if (updateAncestors) {
+      updateAncestorsPresentationInTree();
     }
   }
 

@@ -38,10 +38,10 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, XmlCDATA_Editor._StyleParameter_QueryFunction_ei20sr_a1a0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -55,10 +55,10 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlCDATA_Editor._StyleParameter_QueryFunction_ei20sr_a1c0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -83,11 +83,11 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_ei20sr_a1a0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_ei20sr_a1a0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{}));
   }
 
-  private static boolean _StyleParameter_QueryFunction_ei20sr_a1c0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_ei20sr_a1c0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{}));
   }
 }

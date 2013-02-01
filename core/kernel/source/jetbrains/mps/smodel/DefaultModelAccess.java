@@ -102,7 +102,7 @@ public class DefaultModelAccess extends ModelAccess {
 
   @Override
   public void runWriteInEDT(Runnable r) {
-    throw new UnsupportedOperationException();
+    runWriteAction(r);
   }
 
   @Override

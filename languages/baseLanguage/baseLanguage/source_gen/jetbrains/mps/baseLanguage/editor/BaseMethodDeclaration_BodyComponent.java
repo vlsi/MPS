@@ -64,10 +64,10 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
     BaseLanguageStyle_StyleSheet.applyLeftBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, BaseMethodDeclaration_BodyComponent._StyleParameter_QueryFunction_fao2ea_a0a0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -94,10 +94,10 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, BaseMethodDeclaration_BodyComponent._StyleParameter_QueryFunction_fao2ea_a0b0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
@@ -112,11 +112,11 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_fao2ea_a0a0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_fao2ea_a0a0(EditorContext editorContext, SNode node) {
     return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
   }
 
-  private static boolean _StyleParameter_QueryFunction_fao2ea_a0b0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_fao2ea_a0b0(EditorContext editorContext, SNode node) {
     return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
   }
 }

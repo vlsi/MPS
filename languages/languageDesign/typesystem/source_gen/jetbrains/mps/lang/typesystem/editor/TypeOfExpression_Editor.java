@@ -55,10 +55,10 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyCompactKeyWord(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, TypeOfExpression_Editor._StyleParameter_QueryFunction_ndq0bl_a0a0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -130,7 +130,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_ndq0bl_a0a0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_ndq0bl_a0a0(EditorContext editorContext, SNode node) {
     if (SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent")) {
       return Color.GRAY;
     } else {

@@ -3262,7 +3262,7 @@
     <nodeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="99" startPosition="34" endLine="100" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="100" startPosition="95" endLine="101" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="103" startPosition="131" endLine="104" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="110" startPosition="84" endLine="111" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="110" startPosition="104" endLine="111" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="111" startPosition="100" endLine="112" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="112" startPosition="38" endLine="113" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="113" startPosition="36" endLine="114" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3414,7 +3414,7 @@
     <nodeInfo nodeId="2298239814951037866" fileName="ExecuteRefactoringStatement_Editor.java" startLine="196" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_aspgo4_k0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="2298239814951043397" fileName="ExecuteRefactoringStatement_Editor.java" startLine="206" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_aspgo4_l0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="96" startPosition="132" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="109" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="109" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="2298239814950983818" fileName="ExecuteRefactoringStatement_Editor.java" startLine="185" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_aspgo4_i0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="96" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="2298239814950983821" fileName="ExecuteRefactoringStatement_Editor.java" startLine="242" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_aspgo4_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -3512,7 +3512,7 @@
       <varInfo nodeId="2298239814950983816" varName="editorContext" />
       <varInfo nodeId="2298239814950983816" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="110" startPosition="84" endLine="117" endPosition="24">
+    <scopeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="110" startPosition="104" endLine="117" endPosition="24">
       <varInfo nodeId="2298239814950983823" varName="editorCell" />
       <varInfo nodeId="2298239814950983823" varName="style" />
     </scopeInfo>
@@ -3568,7 +3568,8 @@
     <scopeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="96" startPosition="132" endLine="106" endPosition="7" />
     <scopeInfo nodeId="2298239814950983823" fileName="ExecuteRefactoringStatement_Editor.java" startLine="109" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="2298239814950983823" varName="editorContext" />
-      <varInfo nodeId="2298239814950983823" varName="node" />
+      <varInfo nodeId="2298239814950983823" varName="nextNode" />
+      <varInfo nodeId="2298239814950983823" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="2298239814950983818" fileName="ExecuteRefactoringStatement_Editor.java" startLine="185" startPosition="0" endLine="195" endPosition="0">
       <varInfo nodeId="2298239814950983818" varName="editorContext" />
@@ -4614,7 +4615,7 @@
     <nodeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="99" startPosition="34" endLine="100" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="100" startPosition="95" endLine="101" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="103" startPosition="131" endLine="104" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="110" startPosition="84" endLine="111" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="110" startPosition="104" endLine="111" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="111" startPosition="100" endLine="112" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="112" startPosition="38" endLine="113" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="113" startPosition="36" endLine="114" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4765,7 +4766,7 @@
     <nodeInfo nodeId="3700868637771354797" fileName="CreateRefactoringContext_Editor.java" startLine="187" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_drsbu8_i0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5152987006213765953" fileName="CreateRefactoringContext_Editor.java" startLine="197" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_drsbu8_k0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="96" startPosition="132" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="109" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="109" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="96" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="3700868637771248813" fileName="CreateRefactoringContext_Editor.java" startLine="215" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_drsbu8_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="3700868637771248816" fileName="CreateRefactoringContext_Editor.java" startLine="53" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_drsbu8_a0c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -4858,7 +4859,7 @@
       <varInfo nodeId="7340098493333217417" varName="editorContext" />
       <varInfo nodeId="7340098493333217417" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="110" startPosition="84" endLine="117" endPosition="24">
+    <scopeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="110" startPosition="104" endLine="117" endPosition="24">
       <varInfo nodeId="3700868637771354805" varName="editorCell" />
       <varInfo nodeId="3700868637771354805" varName="style" />
     </scopeInfo>
@@ -4914,7 +4915,8 @@
     <scopeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="96" startPosition="132" endLine="106" endPosition="7" />
     <scopeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="109" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="3700868637771354805" varName="editorContext" />
-      <varInfo nodeId="3700868637771354805" varName="node" />
+      <varInfo nodeId="3700868637771354805" varName="nextNode" />
+      <varInfo nodeId="3700868637771354805" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="3700868637771354805" fileName="CreateRefactoringContext_Editor.java" startLine="96" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="3700868637771354805" varName="editorContext" />
@@ -5198,7 +5200,7 @@
     <nodeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="56" startPosition="34" endLine="57" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="57" startPosition="95" endLine="58" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="60" startPosition="131" endLine="61" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="67" startPosition="84" endLine="68" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="67" startPosition="104" endLine="68" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="68" startPosition="100" endLine="69" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="69" startPosition="38" endLine="70" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="70" startPosition="36" endLine="71" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5235,7 +5237,7 @@
     <nodeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="96" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_egbvfh_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5497648299878741945" fileName="AskExpression_Editor.java" startLine="86" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_egbvfh_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="53" startPosition="132" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="66" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="66" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="53" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="5497648299878741941" fileName="AskExpression_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" />
     <scopeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="31" startPosition="101" endLine="32" endPosition="50" />
@@ -5278,7 +5280,7 @@
     <scopeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="46" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="5497648299878741954" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="67" startPosition="84" endLine="74" endPosition="24">
+    <scopeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="67" startPosition="104" endLine="74" endPosition="24">
       <varInfo nodeId="5497648299878741954" varName="editorCell" />
       <varInfo nodeId="5497648299878741954" varName="style" />
     </scopeInfo>
@@ -5302,7 +5304,8 @@
     <scopeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="53" startPosition="132" endLine="63" endPosition="7" />
     <scopeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="66" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="5497648299878741954" varName="editorContext" />
-      <varInfo nodeId="5497648299878741954" varName="node" />
+      <varInfo nodeId="5497648299878741954" varName="nextNode" />
+      <varInfo nodeId="5497648299878741954" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="5497648299878741954" fileName="AskExpression_Editor.java" startLine="53" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="5497648299878741954" varName="editorContext" />

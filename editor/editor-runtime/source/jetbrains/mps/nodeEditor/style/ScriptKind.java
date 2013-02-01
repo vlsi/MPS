@@ -16,8 +16,12 @@
 package jetbrains.mps.nodeEditor.style;
 
 /**
+ * Use jetbrains.mps.editor.runtime.style.ScriptKind instead.
+ * This class will be removed after MPS 3.0
+ *
  * Sergey.Sinchuk, Oct 29, 2009
  */
+@Deprecated
 public enum ScriptKind {
   NORMAL,
   SUPERSCRIPT,

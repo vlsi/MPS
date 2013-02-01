@@ -40,6 +40,8 @@ public class MPSCoreComponents implements ApplicationComponent {
     return "MPS Workbench";
   }
 
+  //getFileSystemProvider return ideaFileSystemProvider ? null
+
   @Override
   public void initComponent() {
     boolean useIoFile = MPSCore.getInstance().isTestMode() && "true".equals(System.getProperty("mps.vfs.useIoFile"));

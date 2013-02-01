@@ -158,10 +158,10 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, AbstractInequationStatement_Editor._StyleParameter_QueryFunction_ka3b3c_a0a0a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -176,10 +176,10 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyParenthesis(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, AbstractInequationStatement_Editor._StyleParameter_QueryFunction_ka3b3c_a0b0a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -194,10 +194,10 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyParenthesis(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, AbstractInequationStatement_Editor._StyleParameter_QueryFunction_ka3b3c_a0f0a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
@@ -211,10 +211,10 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, AbstractInequationStatement_Editor._StyleParameter_QueryFunction_ka3b3c_a0a1a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -416,19 +416,19 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", false, false) != null;
   }
 
-  private static Color _StyleParameter_QueryFunction_ka3b3c_a0a0a(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_ka3b3c_a0a0a(EditorContext editorContext, SNode node) {
     return MPSColors.DARK_BLUE;
   }
 
-  private static Color _StyleParameter_QueryFunction_ka3b3c_a0b0a(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_ka3b3c_a0b0a(EditorContext editorContext, SNode node) {
     return MPSColors.DARK_BLUE;
   }
 
-  private static Color _StyleParameter_QueryFunction_ka3b3c_a0f0a(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_ka3b3c_a0f0a(EditorContext editorContext, SNode node) {
     return MPSColors.DARK_BLUE;
   }
 
-  private static Color _StyleParameter_QueryFunction_ka3b3c_a0a1a(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_ka3b3c_a0a1a(EditorContext editorContext, SNode node) {
     return MPSColors.DARK_BLUE;
   }
 }

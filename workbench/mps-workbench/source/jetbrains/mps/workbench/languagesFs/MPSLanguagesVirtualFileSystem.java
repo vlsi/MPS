@@ -20,7 +20,9 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
@@ -68,9 +70,9 @@ public class MPSLanguagesVirtualFileSystem extends DeprecatedVirtualFileSystem i
   public VirtualFile findFileByPath(final @NotNull @NonNls String path) {
     return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
       public VirtualFile compute() {
-        Language language = GlobalScope.getInstance().getLanguage(path);
-        if (language != null) {
-          return getFileFor(language);
+        IModule language = MPSModuleRepository.getInstance().getModuleByFqName(path);
+        if (language instanceof Language) {
+          return getFileFor((Language) language);
         }
         return null;
       }

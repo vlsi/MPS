@@ -16,16 +16,17 @@
 package jetbrains.mps.nodeEditor.cellProviders;
 
 import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_InsertIntoCollection;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_InsertIntoCollection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
 
 public abstract class AbstractCellListHandler {
   public static final String ELEMENT_CELL_ACTIONS_SET = "element-cell-actions-set";
@@ -101,10 +102,10 @@ public abstract class AbstractCellListHandler {
     throw new RuntimeException("Method not implemented");
   }
 
-  protected EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-    return createSeparatorCell((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
+  protected EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
+    return createSeparatorCell((jetbrains.mps.nodeEditor.EditorContext) editorContext, prevNode);
   }
-  
+
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
    * <code>createSeparatorCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
@@ -177,12 +178,12 @@ public abstract class AbstractCellListHandler {
       emptyCell.setRole(getElementRole());
       myListEditorCell_Collection.addEditorCell(emptyCell);
     } else {
-      SNode lastNode = null;
+      SNode prevNode = null;
       while (listNodes.hasNext()) {
-        addSeparatorCell(editorContext, lastNode);
-        SNode node = listNodes.next();
-        myListEditorCell_Collection.addEditorCell(createNodeCell(editorContext, node));
-        lastNode = node;
+        SNode nextNode = listNodes.next();
+        addSeparatorCell(editorContext, prevNode, nextNode);
+        myListEditorCell_Collection.addEditorCell(createNodeCell(editorContext, nextNode));
+        prevNode = nextNode;
       }
     }
 
@@ -195,11 +196,11 @@ public abstract class AbstractCellListHandler {
 
   protected abstract List<? extends SNode> getNodesForList();
 
-  private void addSeparatorCell(EditorContext editorContext, SNode node) {
-    if (node == null) {
+  private void addSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
+    if (prevNode == null) {
       return;
     }
-    EditorCell separatorCell = createSeparatorCell(editorContext, node);
+    EditorCell separatorCell = createSeparatorCell(editorContext, prevNode, nextNode);
     if (separatorCell != null) {
       myListEditorCell_Collection.addEditorCell(separatorCell);
     }

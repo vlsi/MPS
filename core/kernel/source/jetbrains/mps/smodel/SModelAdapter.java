@@ -125,10 +125,6 @@ public class SModelAdapter implements SModelListener {
   public void beforeModelDisposed(SModel sm) {
   }
 
-  @Override
-  public void modelReplaced(SModelDescriptor md) {
-  }
-
   public void modelSaved(SModelDescriptor sm) {
   }
 

@@ -39,10 +39,10 @@ public class XmlCharRefValue_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, XmlCharRefValue_Editor._StyleParameter_QueryFunction_urzn0w_a1a0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
@@ -58,10 +58,10 @@ public class XmlCharRefValue_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlCharRefValue_Editor._StyleParameter_QueryFunction_urzn0w_a1c0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
@@ -91,11 +91,11 @@ public class XmlCharRefValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_urzn0w_a1a0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_urzn0w_a1a0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_3080189811177340436", new Object[]{}));
   }
 
-  private static boolean _StyleParameter_QueryFunction_urzn0w_a1c0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_urzn0w_a1c0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_3080189811177340441", new Object[]{}));
   }
 }

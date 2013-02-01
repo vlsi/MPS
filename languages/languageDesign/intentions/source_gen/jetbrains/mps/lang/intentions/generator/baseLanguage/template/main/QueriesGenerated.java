@@ -26,7 +26,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_3804167831988830136(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration")).isNotEmpty() && Language.getModelAspect(model.getModelDescriptor()) == LanguageAspect.INTENTIONS;
+    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration")).isNotEmpty() && Language.getModelAspect(model.getModelDescriptor()) == LanguageAspect.INTENTIONS;
   }
 
   public static Object propertyMacro_GetPropertyValue_7991477654791693985(final IOperationContext operationContext, final PropertyMacroContext _context) {

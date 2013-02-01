@@ -150,10 +150,10 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, BuildCompositePath_Editor._StyleParameter_QueryFunction_n78otj_a0a0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildCompositePath_Editor.BuildCompositePath_head_cellMenu_a0a0()}));
@@ -171,7 +171,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "tail", true) != null);
   }
 
-  private static Color _StyleParameter_QueryFunction_n78otj_a0a0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_n78otj_a0a0(EditorContext editorContext, SNode node) {
     IFile f = BuildCompositePath_Behavior.call_getFile_841084130032784919(node, Context.defaultContext());
     if (f == null) {
       return Color.BLACK;

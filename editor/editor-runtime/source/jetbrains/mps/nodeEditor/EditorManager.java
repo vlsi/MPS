@@ -25,8 +25,6 @@ import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
@@ -45,6 +43,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.awt.event.KeyEvent;
@@ -60,16 +59,6 @@ import java.util.Set;
 import java.util.Stack;
 
 public class EditorManager {
-  static {
-    // Just loading StyleAttributes class here to ensure all style attributes were initialized properly.
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        new jetbrains.mps.nodeEditor.style.StyleAttributes();
-      }
-    });
-  }
-
   private static final Logger LOG = Logger.getLogger(EditorManager.class);
 
   public static final String BIG_CELL_CONTEXT = "big-cell-context";

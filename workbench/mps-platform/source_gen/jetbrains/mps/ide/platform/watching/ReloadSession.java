@@ -15,23 +15,37 @@ import jetbrains.mps.logging.Logger;
 public class ReloadSession {
   private final Set<FSChangesWatcher.IReloadListener> myReloadListeners;
   private boolean myReloaded = false;
-  private FileProcessor myFileProcessor = new FileProcessor();
+  private Set<FileProcessor> myFileProcessors = SetSequence.fromSet(new HashSet<FileProcessor>());
 
-  public ReloadSession(Set<FSChangesWatcher.IReloadListener> reloadListeners) {
+  public ReloadSession(Set<FSChangesWatcher.IReloadListener> reloadListeners, Set<FileProcessor> processors) {
     myReloadListeners = SetSequence.fromSetWithValues(new HashSet<FSChangesWatcher.IReloadListener>(), reloadListeners);
+    myFileProcessors = SetSequence.fromSetWithValues(new HashSet<FileProcessor>(), processors);
   }
 
-  public EventProcessor[] getProcessors() {
-    return new EventProcessor[]{myFileProcessor};
+
+
+  public ReloadSession(Set<FSChangesWatcher.IReloadListener> reloadListeners) {
+    this(reloadListeners, null);
+  }
+
+  public void addProcessor(FileProcessor processor) {
+    SetSequence.fromSet(myFileProcessors).addElement(processor);
+  }
+
+
+
+  public FileProcessor[] getProcessors() {
+    return SetSequence.fromSet(myFileProcessors).toGenericArray(FileProcessor.class);
   }
 
   public boolean isEmpty() {
-    for (EventProcessor p : getProcessors()) {
+    for (FileProcessor p : getProcessors()) {
       if (!(p.isEmpty())) {
         return false;
       }
     }
     return true;
+
   }
 
   public void doReload(final ProgressMonitor monitor) {
@@ -43,7 +57,10 @@ public class ReloadSession {
     try {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          myFileProcessor.update(monitor.subTask(1, SubProgressKind.REPLACING));
+          int work = 1;
+          for (FileProcessor fileProcessor : getProcessors()) {
+            fileProcessor.update(monitor.subTask(work++, SubProgressKind.REPLACING));
+          }
 
           if (ClassLoaderManager.getInstance().isReloadRequested()) {
             monitor.subTask(1, SubProgressKind.REPLACING).start("Reloading classes... Please wait.", 1);

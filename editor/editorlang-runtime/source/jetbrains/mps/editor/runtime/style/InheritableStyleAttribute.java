@@ -22,16 +22,12 @@ package jetbrains.mps.editor.runtime.style;
 public class InheritableStyleAttribute<T> extends AbstractStyleAttribute<T> {
   private T myDefaultValue;
 
-  // In MPS 3.0 was modified to be protected.
-  // make is package-local after 3.0
-  protected InheritableStyleAttribute(String name, T defaultValue) {
-    super(name);
+  InheritableStyleAttribute(String name, T defaultValue) {
+    super(name, true);
     myDefaultValue = defaultValue;
   }
 
-  // In MPS 3.0 was modified to be protected.
-  // make is package-local after 3.0
-  protected InheritableStyleAttribute(String name) {
+  InheritableStyleAttribute(String name) {
     this(name, null);
   }
 

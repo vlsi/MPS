@@ -160,10 +160,10 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     XmlSS_StyleSheet.applyXmlComment(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, XmlComment_Editor._StyleParameter_QueryFunction_5fx40y_a0a0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -177,10 +177,10 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     XmlSS_StyleSheet.applyXmlComment(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, XmlComment_Editor._StyleParameter_QueryFunction_5fx40y_a0c0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -211,11 +211,11 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "lines", true)).count() <= 1;
   }
 
-  private static boolean _StyleParameter_QueryFunction_5fx40y_a0a0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_5fx40y_a0a0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{}));
   }
 
-  private static boolean _StyleParameter_QueryFunction_5fx40y_a0c0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_5fx40y_a0c0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{}));
   }
 }

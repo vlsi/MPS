@@ -35,7 +35,8 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.jetbrains.mps.openapi.module.SModuleScope;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ClassifierResolveUtils {
   private ClassifierResolveUtils() {
@@ -307,6 +308,10 @@ public class ClassifierResolveUtils {
 
         String fqName = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
         SNode cls = resolveFqName(fqName, moduleScope, contextNodeModel);
+        if (cls == null) {
+          return null;
+        }
+        cls = construct(cls, tokenizer);
         return cls;
       }
 
@@ -474,7 +479,7 @@ public class ClassifierResolveUtils {
     return curr;
   }
 
-  public static SNode resolveFqName(String refText, SModuleScope moduleScope, org.jetbrains.mps.openapi.model.SModel contextNodeModel) {
+  public static SNode resolveFqName(String refText, SearchScope moduleScope, org.jetbrains.mps.openapi.model.SModel contextNodeModel) {
     // FIXME constant 20 
     int[] dotPositions = new int[20];
     int lastDot = -1;
@@ -530,7 +535,7 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  public static Iterable<org.jetbrains.mps.openapi.model.SModel> getModelsByName(SModuleScope moduleScope, String name) {
+  public static Iterable<org.jetbrains.mps.openapi.model.SModel> getModelsByName(SearchScope moduleScope, String name) {
     List<org.jetbrains.mps.openapi.model.SModel> models = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
 
     // THINK maybe we should put those models together, not use if-else 
@@ -543,6 +548,87 @@ public class ClassifierResolveUtils {
       ListSequence.fromList(models).addSequence(ListSequence.fromList(SModelRepository.getInstance().getModelDescriptorsByModelName(name)));
     }
     return models;
+  }
+
+  public static Iterable<SNode> staticImportedMethods(SNode imports) {
+    return staticImportedThings(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), imports);
+  }
+
+  public static Iterable<SNode> staticImportedFields(SNode imports) {
+    return staticImportedThings(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), imports);
+  }
+
+  /**
+   * methodsOrFields: true for methods. false for fields
+   */
+  public static Iterable<SNode> staticImportedThings(final SNode neededConcept, SNode imports) {
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    IScope moduleScope = SNodeOperations.getModel(imports).getModelDescriptor().getModule().getScope();
+    for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getBoolean(it, "static");
+      }
+    })) {
+
+      if (SPropertyOperations.getBoolean(imp, "onDemand")) {
+        String className = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
+        SNode containingClas = resolveFqName(className, moduleScope, null);
+        if ((containingClas == null)) {
+          continue;
+        }
+
+        Iterable<SNode> neededMembers = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), containingClas, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.getConceptDeclaration(it) == neededConcept;
+          }
+        });
+        ListSequence.fromList(result).addSequence(Sequence.fromIterable(neededMembers));
+
+      } else {
+
+        final String memberName = SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(imp, "token", true)).last(), "value");
+        String className = Tokens_Behavior.call_stringRep_6148840541591441572(imp, 1);
+
+        SNode containingClas = resolveFqName(className, moduleScope, null);
+        if ((containingClas == null)) {
+          continue;
+        }
+
+        // or findAll instead of findFirst ? 
+        SNode neededMember = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), containingClas, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.getConceptDeclaration(it) == neededConcept;
+          }
+        }).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return memberName.equals(it.getName());
+          }
+        });
+
+        if ((neededMember == null)) {
+          continue;
+        }
+
+        ListSequence.fromList(result).addElement(neededMember);
+
+      }
+    }
+    return result;
+  }
+
+  public static boolean isImportedBy(SNode node, SNode imports) {
+    // TODO on-demand imports and probably inherited classes 
+    String name = SPropertyOperations.getString(node, "name");
+    for (SNode singleTypeImp : ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SPropertyOperations.getBoolean(it, "onDemand"));
+      }
+    })) {
+      if (SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(singleTypeImp, "token", true)).last(), "value").equals(name)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private static SModelDescriptor check_8z6r2b_a0a1a2(SModel checkedDotOperand) {

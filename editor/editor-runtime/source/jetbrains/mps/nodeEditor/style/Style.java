@@ -20,6 +20,11 @@ import jetbrains.mps.nodeEditor.CaretPosition;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
+/**
+ * Use jetbrains.mps.editor.runtime.style.StyleImpl instead.
+ * This class will be removed after MPS 3.0
+ * */
+@Deprecated
 public class Style extends StyleImpl {
   public Style() {
     super();

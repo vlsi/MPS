@@ -56,10 +56,10 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_Alternation_Editor._StyleParameter_QueryFunction_zgm7s3_a2b0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
@@ -98,10 +98,10 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_Alternation_Editor._StyleParameter_QueryFunction_zgm7s3_a1c0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_zgm7s3_a2a(editorContext, node));
@@ -411,11 +411,11 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.getBoolean(node, "vertical"));
   }
 
-  private static Color _StyleParameter_QueryFunction_zgm7s3_a2b0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_zgm7s3_a2b0(EditorContext editorContext, SNode node) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_zgm7s3_a1c0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_zgm7s3_a1c0(EditorContext editorContext, SNode node) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 }

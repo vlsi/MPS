@@ -79,8 +79,8 @@ public class TokensWithDots extends AbstractCellProvider {
     }
 
     @Override
-    public EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), tokenListHandler_ueckjp_a0.this.getSeparatorText(editorContext, node));
+    public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), tokenListHandler_ueckjp_a0.this.getSeparatorText(editorContext, prevNode));
       editorCell.setSelectable(false);
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyDot(style, editorCell);

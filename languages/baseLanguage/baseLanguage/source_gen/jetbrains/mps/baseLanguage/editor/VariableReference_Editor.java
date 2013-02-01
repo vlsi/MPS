@@ -52,17 +52,17 @@ public class VariableReference_Editor extends DefaultNodeEditor {
       BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
       style.set(StyleAttributes.TEXT_COLOR, VariableReference_Editor._Inline_ge17fi_a0a._StyleParameter_QueryFunction_ge17fi_a0a0a0((editorCell == null ?
         null :
-        editorCell.getSNode()
+        editorCell.getContext()
       ), (editorCell == null ?
         null :
-        editorCell.getContext()
+        editorCell.getSNode()
       )));
       style.set(StyleAttributes.FONT_STYLE, VariableReference_Editor._Inline_ge17fi_a0a._StyleParameter_QueryFunction_ge17fi_a1a0a0((editorCell == null ?
         null :
-        editorCell.getSNode()
+        editorCell.getContext()
       ), (editorCell == null ?
         null :
-        editorCell.getContext()
+        editorCell.getSNode()
       )));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -76,7 +76,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    private static int _StyleParameter_QueryFunction_ge17fi_a1a0a0(SNode node, EditorContext editorContext) {
+    private static int _StyleParameter_QueryFunction_ge17fi_a1a0a0(EditorContext editorContext, SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
         if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_7405920559687241224", new Object[]{})) {
           return MPSFonts.BOLD_ITALIC;
@@ -88,7 +88,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
       }
     }
 
-    private static Color _StyleParameter_QueryFunction_ge17fi_a0a0a0(SNode node, EditorContext editorContext) {
+    private static Color _StyleParameter_QueryFunction_ge17fi_a0a0a0(EditorContext editorContext, SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
         return MPSColors.DARK_MAGENTA;
       } else {

@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.ide.ui;
 
-import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicGraphicsUtils;
 import javax.swing.tree.TreeCellRenderer;
 import java.awt.*;
 
@@ -27,8 +25,6 @@ import java.awt.*;
 public class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
   private JLabel myMainTextLabel = new JLabel();
   private JLabel myAdditionalTextLabel = new JLabel();
-  private boolean mySelected;
-  private boolean myHasFocus;
   private MPSTreeNode myNode;
 
   public NewMPSTreeCellRenderer() {
@@ -93,13 +89,13 @@ public class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
       }
     }
     myMainTextLabel.setIcon(icon);
-    mySelected = selected;
-    myHasFocus = hasFocus;
 
     return this;
   }
 
   public void paint(Graphics g) {
+    super.paint(g);
+
     int imageOffset;
     Icon icon = myMainTextLabel.getIcon();
     if (icon != null) {
@@ -107,36 +103,6 @@ public class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
     } else {
       imageOffset = 0;
     }
-
-    if (!SystemInfo.isMac) {
-      Color background;
-      if (mySelected) {
-        background = UIManager.getColor("Tree.selectionBackground");
-      } else {
-        background = UIManager.getColor("Tree.textBackground");
-        if (background == null) {
-          background = getBackground();
-        }
-      }
-
-
-      if (background != null) {
-        g.setColor(background);
-        g.fillRect(imageOffset, 0, getWidth() - imageOffset, getHeight());
-      }
-
-      if (myHasFocus) {
-        Boolean drawDashedFocusIndicator = (Boolean) UIManager.get("Tree.drawDashedFocusIndicator");
-        if (drawDashedFocusIndicator != null && drawDashedFocusIndicator) {
-          BasicGraphicsUtils.drawDashedRect(g, imageOffset, 0, getWidth() - imageOffset - 1, getHeight() - 1);
-        } else {
-          g.setColor(UIManager.getColor("Tree.selectionBorderColor"));
-          g.drawRect(imageOffset, 0, getWidth() - imageOffset - 1, getHeight() - 1);
-        }
-      }
-    }
-
-    super.paint(g);
 
     if (myNode != null && myNode.getAggregatedErrorState() != ErrorState.NONE) {
       if (myNode.getAggregatedErrorState() == ErrorState.ERROR) {

@@ -140,10 +140,6 @@ public class EventsCollector {
       }
 
       @Override
-      public void modelReplaced(SModelDescriptor md) {
-      }
-
-      @Override
       public void beforeModelDisposed(SModel sm) {
       }
 

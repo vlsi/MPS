@@ -304,20 +304,19 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
     private void dropModel() {
       if (mySModel == null) return;
-      final SModel oldSModel = mySModel;
-      oldSModel.setModelDescriptor(null);
-      mySModel = null;
 
-      Runnable modelReplacedNotifier = new Runnable() {
-        public void run() {
-          fireModelReplaced();
-          oldSModel.dispose();
-        }
-      };
-      if (ModelAccess.instance().isInEDT()) {
-        modelReplacedNotifier.run();
+      final SModel oldModel = mySModel;
+      oldModel.setModelDescriptor(null);
+      mySModel = null;
+      if (ModelAccess.instance().canWrite()) {
+        notifyModelReplaced(oldModel);
       } else {
-        ModelAccess.instance().runWriteInEDT(modelReplacedNotifier);
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
+          public void run() {
+            notifyModelReplaced(oldModel);
+          }
+        });
       }
     }
 

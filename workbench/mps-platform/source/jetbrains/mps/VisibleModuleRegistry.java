@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -33,14 +34,14 @@ import java.util.regex.Pattern;
 public class VisibleModuleRegistry implements ApplicationComponent {
   ConcurrentMap<String, Boolean> myCache = new ConcurrentHashMap<String, Boolean>();
 
-  public boolean isVisible(final IModule module) {
+  public boolean isVisible(final SModule module) {
     if (module == null) return false;
     //project modules
     //contributed by plugin
     Set<MPSModuleOwner> moduleOwners = ModelAccess.instance().runReadAction(new Computable<Set<MPSModuleOwner>>() {
       @Override
       public Set<MPSModuleOwner> compute() {
-        return ModuleRepositoryFacade.getInstance().getModuleOwners(module);
+        return ModuleRepositoryFacade.getInstance().getModuleOwners((IModule) module);
       }
     });
     for (MPSModuleOwner owner : moduleOwners) {
@@ -49,7 +50,7 @@ public class VisibleModuleRegistry implements ApplicationComponent {
       }
       if (!owner.isHidden()) return true;
     }
-    String moduleFqName = module.getModuleFqName();
+    String moduleFqName = module.getModuleName();
     Boolean result = myCache.get(moduleFqName);
     if (result != null) return result;
     result = matchesMask(module);
@@ -57,12 +58,12 @@ public class VisibleModuleRegistry implements ApplicationComponent {
     return result;
   }
 
-  private boolean matchesMask(final IModule module) {
+  private boolean matchesMask(final SModule module) {
     //satisfying a mask
     VisibleModuleMask[] extensions = VisibleModuleMask.EP_VISIBLE_MODULES.getExtensions();
     for (VisibleModuleMask e : extensions) {
       Pattern p = Pattern.compile(e.mask);
-      if (p.matcher(module.getModuleFqName()).matches()) {
+      if (p.matcher(module.getModuleName()).matches()) {
         return true;
       }
     }

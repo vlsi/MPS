@@ -25,9 +25,13 @@ public abstract class AbstractStyleAttribute<T> implements StyleAttribute<T> {
   private int myIndex;
   private String myName;
 
-  AbstractStyleAttribute(String name) {
+  AbstractStyleAttribute(String name, boolean register) {
     myName = name;
-    myIndex = StyleAttributes.register(this);
+    if (register) {
+      myIndex = StyleAttributes.register(this);
+    } else {
+      myIndex = -1;
+    }
   }
 
   public String getName() {
@@ -39,6 +43,7 @@ public abstract class AbstractStyleAttribute<T> implements StyleAttribute<T> {
   }
 
   public int getIndex() {
+    assert myIndex != -1;
     return myIndex;
   }
 

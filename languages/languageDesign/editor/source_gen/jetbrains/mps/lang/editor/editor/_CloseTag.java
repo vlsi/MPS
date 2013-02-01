@@ -55,17 +55,17 @@ public class _CloseTag extends AbstractCellProvider {
     Styles_StyleSheet.applyBordered(style, editorCell);
     style.set(StyleAttributes.BACKGROUND_COLOR, _CloseTag._StyleParameter_QueryFunction_abi8e8_a0a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_abi8e8_a0a(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_abi8e8_a0a(EditorContext editorContext, SNode node) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 }

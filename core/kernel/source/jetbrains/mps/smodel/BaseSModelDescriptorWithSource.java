@@ -76,7 +76,11 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
 
   protected synchronized void replaceModel(Runnable replacer) {
     ModelAccess.assertLegalWrite();
+
     final SModel oldSModel = getCurrentModelInternal();
+    notifyModelReplaced(oldSModel);
+
+
     if (oldSModel != null) {
       oldSModel.setModelDescriptor(null);
     }
@@ -88,18 +92,5 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
       newModel.setModelDescriptor(this);
     }
     MPSModuleRepository.getInstance().invalidateCaches();
-    Runnable modelReplacedNotifier = new Runnable() {
-      public void run() {
-        fireModelReplaced();
-        if (oldSModel != null) {
-          oldSModel.dispose();
-        }
-      }
-    };
-    if (ModelAccess.instance().isInEDT()) {
-      modelReplacedNotifier.run();
-    } else {
-      ModelAccess.instance().runWriteInEDT(modelReplacedNotifier);
-    }
   }
 }

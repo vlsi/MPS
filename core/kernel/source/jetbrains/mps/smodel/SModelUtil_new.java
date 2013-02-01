@@ -33,6 +33,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Set;
 
 public class SModelUtil_new implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(SModelUtil_new.class);
@@ -55,12 +56,6 @@ public class SModelUtil_new implements CoreComponent {
       SModelUtil.clearCaches();
     }
 
-    public void modelReplaced(SModelDescriptor descriptor) {
-      if (Language.getModelAspect(descriptor) != LanguageAspect.STRUCTURE) {
-        return;
-      }
-      SModelUtil.clearCaches();
-    }
 
     public void propertyChanged(SModelPropertyEvent p0) {
       if (!LanguageAspect.STRUCTURE.is(p0.getModel())) {
@@ -80,12 +75,28 @@ public class SModelUtil_new implements CoreComponent {
     }
   };
 
+  private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter() {
+    @Override
+    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+      for (SModelDescriptor descriptor : replacedModels) {
+        if (!descriptor.isRegistered())  {
+          continue;
+        }
+        if (Language.getModelAspect(descriptor) == LanguageAspect.STRUCTURE) {
+          SModelUtil.clearCaches();
+          return;
+        }
+      }
+    }
+  };
+
   public SModelUtil_new(ClassLoaderManager clManager, GlobalSModelEventsManager meManager) {
     myClManager = clManager;
     myMeManager = meManager;
   }
 
   public void init() {
+    SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
     myClManager.addReloadHandler(myReloadHandler);
     myMeManager.addGlobalModelListener(myModelListener);
   }
@@ -93,6 +104,7 @@ public class SModelUtil_new implements CoreComponent {
   public void dispose() {
     myMeManager.removeGlobalModelListener(myModelListener);
     myClManager.removeReloadHandler(myReloadHandler);
+    SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
   }
 
   /**

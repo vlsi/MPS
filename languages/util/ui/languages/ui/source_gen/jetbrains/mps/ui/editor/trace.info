@@ -1776,7 +1776,7 @@
     <nodeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="79" startPosition="34" endLine="80" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="80" startPosition="95" endLine="81" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="83" startPosition="131" endLine="84" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="90" startPosition="84" endLine="91" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="90" startPosition="104" endLine="91" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="91" startPosition="100" endLine="92" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="92" startPosition="38" endLine="93" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="93" startPosition="36" endLine="94" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1802,7 +1802,7 @@
     <nodeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="138" startPosition="34" endLine="139" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="139" startPosition="95" endLine="140" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="142" startPosition="131" endLine="143" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="149" startPosition="84" endLine="150" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="149" startPosition="104" endLine="150" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="150" startPosition="100" endLine="151" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="151" startPosition="38" endLine="152" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="152" startPosition="36" endLine="153" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1974,9 +1974,9 @@
     <nodeInfo nodeId="1576918603588675439" fileName="common_UIObjectStatement.java" startLine="209" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_cz3bck_a0c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1576918603588675448" fileName="common_UIObjectStatement.java" startLine="247" startPosition="132" endLine="256" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="76" startPosition="132" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="89" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="89" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="135" startPosition="132" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="148" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="148" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5572604531249689986" fileName="common_UIObjectStatement.java" startLine="282" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_cz3bck_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1576918603588675424" fileName="common_UIObjectStatement.java" startLine="293" startPosition="0" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_cz3bck_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1576918603588675435" fileName="common_UIObjectStatement.java" startLine="304" startPosition="0" endLine="314" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_cz3bck_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -2175,11 +2175,11 @@
       <varInfo nodeId="1576918603588675450" varName="editorContext" />
       <varInfo nodeId="1576918603588675450" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="90" startPosition="84" endLine="97" endPosition="24">
+    <scopeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="90" startPosition="104" endLine="97" endPosition="24">
       <varInfo nodeId="5572604531249689990" varName="editorCell" />
       <varInfo nodeId="5572604531249689990" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="149" startPosition="84" endLine="156" endPosition="24">
+    <scopeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="149" startPosition="104" endLine="156" endPosition="24">
       <varInfo nodeId="1576918603588675427" varName="editorCell" />
       <varInfo nodeId="1576918603588675427" varName="style" />
     </scopeInfo>
@@ -2245,12 +2245,14 @@
     <scopeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="76" startPosition="132" endLine="86" endPosition="7" />
     <scopeInfo nodeId="5572604531249689990" fileName="common_UIObjectStatement.java" startLine="89" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="5572604531249689990" varName="editorContext" />
-      <varInfo nodeId="5572604531249689990" varName="node" />
+      <varInfo nodeId="5572604531249689990" varName="nextNode" />
+      <varInfo nodeId="5572604531249689990" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="135" startPosition="132" endLine="145" endPosition="7" />
     <scopeInfo nodeId="1576918603588675427" fileName="common_UIObjectStatement.java" startLine="148" startPosition="0" endLine="158" endPosition="0">
       <varInfo nodeId="1576918603588675427" varName="editorContext" />
-      <varInfo nodeId="1576918603588675427" varName="node" />
+      <varInfo nodeId="1576918603588675427" varName="nextNode" />
+      <varInfo nodeId="1576918603588675427" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="5572604531249689986" fileName="common_UIObjectStatement.java" startLine="282" startPosition="0" endLine="292" endPosition="0">
       <varInfo nodeId="5572604531249689986" varName="editorContext" />

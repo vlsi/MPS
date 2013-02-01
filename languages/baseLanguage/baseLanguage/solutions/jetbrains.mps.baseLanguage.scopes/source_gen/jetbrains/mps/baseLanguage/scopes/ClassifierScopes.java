@@ -47,20 +47,22 @@ public class ClassifierScopes {
     };
   }
 
-  public static Scope getReachableClassifiersScope(@NotNull SModel model, boolean includeAncestors) {
-    return new ClassifiersScope(model, "jetbrains.mps.baseLanguage.structure.Classifier", includeAncestors);
+  public static Scope getReachableClassifiersScope(@NotNull SModel model, SNode clas, boolean includeAncestors) {
+    return new ClassifiersScope(model, clas, "jetbrains.mps.baseLanguage.structure.Classifier", includeAncestors);
   }
 
-  public static Scope getReachableClassifiersScope(@NotNull SModel model, boolean includeAncestors, IScope scope) {
-    return new ClassifiersScope(model, "jetbrains.mps.baseLanguage.structure.Classifier", includeAncestors, scope);
+  public static Scope getReachableClassifiersScope(@NotNull SModel model, SNode clas, boolean includeAncestors, IScope scope) {
+    return new ClassifiersScope(model, clas, "jetbrains.mps.baseLanguage.structure.Classifier", includeAncestors, scope);
   }
 
   public static Scope getVisibleClassifiersScope(@NotNull final SNode contextNode, boolean includeAncestors) {
-    return filterVisibleClassifiersScope(contextNode, getReachableClassifiersScope(SNodeOperations.getModel(contextNode), includeAncestors));
+    SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+    return filterVisibleClassifiersScope(contextNode, getReachableClassifiersScope(SNodeOperations.getModel(contextNode), clas, includeAncestors));
   }
 
   public static Scope getVisibleClassifiersScope(@NotNull final SNode contextNode, boolean includeAncestors, IScope scope) {
-    return filterVisibleClassifiersScope(contextNode, getReachableClassifiersScope(SNodeOperations.getModel(contextNode), includeAncestors, scope));
+    SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+    return filterVisibleClassifiersScope(contextNode, getReachableClassifiersScope(SNodeOperations.getModel(contextNode), clas, includeAncestors, scope));
   }
 
   public static Scope getVisibleClassifiersWithDefaultConstructors(@NotNull final SNode contextNode, @NotNull IScope scope) {
@@ -82,23 +84,28 @@ public class ClassifierScopes {
   }
 
   public static Scope getVisibleClassesScope(@NotNull final SNode contextNode, @NotNull IScope scope) {
-    return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+    return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), clas, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public static Scope getVisibleInterfacesScope(@NotNull final SNode contextNode, @NotNull IScope scope) {
-    return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), "jetbrains.mps.baseLanguage.structure.Interface"));
+    SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+    return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), clas, "jetbrains.mps.baseLanguage.structure.Interface"));
   }
 
   public static Scope getWithClassExpressionClassifiers(@NotNull SNode contextNode, @NotNull IScope scope) {
-    return filterVisibleClassifiersScope(contextNode, filterWithClassExpressionClassifiers(getReachableClassifiersScope(SNodeOperations.getModel(contextNode), false)));
+    SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+    return filterVisibleClassifiersScope(contextNode, filterWithClassExpressionClassifiers(getReachableClassifiersScope(SNodeOperations.getModel(contextNode), clas, false)));
   }
 
   public static Scope getAnnotationClassifiersScope(@NotNull final SNode contextNode, @NotNull IScope scope) {
-    return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), "jetbrains.mps.baseLanguage.structure.Annotation"));
+    SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+    return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), clas, "jetbrains.mps.baseLanguage.structure.Annotation"));
   }
 
   public static Scope getThrowablesScope(@NotNull SNode contextNode, @NotNull IScope scope) {
-    return new FilteringScope(new ClassifiersScope(SNodeOperations.getModel(contextNode), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+    SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+    return new FilteringScope(new ClassifiersScope(SNodeOperations.getModel(contextNode), clas, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       @Override
       public boolean isExcluded(SNode node) {
         // todo: change it! need only extended classes here 
@@ -108,8 +115,9 @@ public class ClassifierScopes {
   }
 
   public static Scope getClassesForExtends(@NotNull SNode contextNode, @NotNull IScope scope) {
+    SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
     // not final ClassConcepts 
-    return new FilteringScope(filterWithClassExpressionClassifiers(new ClassifiersScope(SNodeOperations.getModel(contextNode), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+    return new FilteringScope(filterWithClassExpressionClassifiers(new ClassifiersScope(SNodeOperations.getModel(contextNode), clas, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
       @Override
       public boolean isExcluded(SNode node) {
         return SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "isFinal");

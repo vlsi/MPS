@@ -35,7 +35,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 class UsagesSearchType extends SearchType<SReference, SNode> {
-  public MultiMap<SModel, SNode> findMatchingModelsInCache(Set<SNode> nodes, Iterable<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
+  public MultiMap<SModel, SNode> findMatchingModelsInCache(Set<SNode> nodes, Iterable<SModel> models, @Nullable Computable<Boolean> callback) {
     MultiMap<SModel, SNode> result = new MultiMap<SModel, SNode>();
     MultiMap<FastFindSupport, SModel> gm = groupModelByFastFindSupport(models);
     for (Entry<FastFindSupport, Collection<SModel>> e : gm.entrySet()) {
@@ -60,7 +60,7 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
       Collection<SNode> nodes = e.getValue();
       Set<StaticReferenceInfo> srefs = new THashSet<StaticReferenceInfo>();
       for (SNode n : nodes) {
-        SModelReference mr = ((jetbrains.mps.smodel.SNode) n).getModel().getSModelReference();
+        SModelReference mr = n.getModel().getSModelReference();
         srefs.add(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), ((SNodeId) n.getNodeId())));
       }
 

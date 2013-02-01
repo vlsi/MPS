@@ -8,8 +8,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
@@ -19,24 +19,24 @@ public class Styles_StyleSheet {
     Style style = new StyleImpl(editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a2a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.DRAW_BORDER, true);
     return style;
@@ -114,10 +114,10 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.UNDERLINED, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a3j((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     return style;
   }
@@ -125,24 +125,24 @@ public class Styles_StyleSheet {
   public static void applyRootCellModelStyle(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a0a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a1a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a2a((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.DRAW_BORDER, true);
   }
@@ -193,21 +193,21 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.UNDERLINED, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a3j((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
   }
 
-  private static boolean _StyleParameter_QueryFunction_kkd5s1_a0a(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_kkd5s1_a0a(EditorContext editorContext, SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
     }
     return EditorCellModel_Behavior.call_isIndented_1237383418148(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
   }
 
-  private static boolean _StyleParameter_QueryFunction_kkd5s1_a1a(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_kkd5s1_a1a(EditorContext editorContext, SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
     }
@@ -223,14 +223,14 @@ public class Styles_StyleSheet {
     return false;
   }
 
-  private static boolean _StyleParameter_QueryFunction_kkd5s1_a2a(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_kkd5s1_a2a(EditorContext editorContext, SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
     }
     return EditorCellModel_Behavior.call_isOnNewLine_1237385424172(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
   }
 
-  private static boolean _StyleParameter_QueryFunction_kkd5s1_a3j(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_kkd5s1_a3j(EditorContext editorContext, SNode node) {
     return true;
   }
 }

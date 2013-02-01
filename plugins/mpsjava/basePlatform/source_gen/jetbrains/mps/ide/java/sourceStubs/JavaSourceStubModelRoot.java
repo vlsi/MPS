@@ -91,6 +91,7 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
   public Iterable<SModel> loadModels() {
     IFile path = FileSystem.getInstance().getFileByPath(myPath);
     Set<SModel> models = getModels(path, "");
+    // TODO this is probably wrong... models should be registered elsewhere 
     SetSequence.fromSet(models).visitAll(new IVisitor<SModel>() {
       public void visit(SModel it) {
         register(it);

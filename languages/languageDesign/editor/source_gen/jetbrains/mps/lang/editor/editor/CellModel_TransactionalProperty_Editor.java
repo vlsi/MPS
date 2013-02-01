@@ -285,52 +285,52 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a1b0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.TEXT_COLOR, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a2b0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a3b0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a4b0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.FONT_STYLE, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a5b0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.UNDERLINED, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a6b0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     style.set(StyleAttributes.STRIKE_OUT, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a7b0((editorCell == null ?
       null :
-      editorCell.getSNode()
+      editorCell.getContext()
     ), (editorCell == null ?
       null :
-      editorCell.getContext()
+      editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -421,31 +421,31 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static int _StyleParameter_QueryFunction_hop3er_a5b0(SNode node, EditorContext editorContext) {
+  private static int _StyleParameter_QueryFunction_hop3er_a5b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_hop3er_a7b0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_hop3er_a7b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_hop3er_a6b0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_hop3er_a6b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_hop3er_a1b0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_hop3er_a1b0(EditorContext editorContext, SNode node) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_hop3er_a2b0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_hop3er_a2b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_hop3er_a3b0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_hop3er_a3b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_hop3er_a4b0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_hop3er_a4b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
 }
