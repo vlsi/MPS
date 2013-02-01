@@ -9,7 +9,6 @@ import javax.swing.border.LineBorder;
 import javax.swing.Icon;
 
 public class VisualCell extends JPanel {
-  private JLabel markCount = new JLabel();
   private JLabel canvas = new JLabel();
 
   public VisualCell() {

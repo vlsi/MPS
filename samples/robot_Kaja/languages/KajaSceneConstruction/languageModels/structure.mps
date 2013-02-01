@@ -10,43 +10,34 @@
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3210697320273550864">
       <property name="name" nameId="tpck.1169194664001" value="BuildWall" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="build wall" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3210697320273608255" resolveInfo="AbstractBuilderCommand" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3210697320273607253">
       <property name="name" nameId="tpck.1169194664001" value="DestroyWall" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="destroy wall" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3210697320273608255" resolveInfo="AbstractBuilderCommand" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3210697320273608254">
       <property name="name" nameId="tpck.1169194664001" value="DropMark" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="drop mark" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3210697320273608255" resolveInfo="AbstractBuilderCommand" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3210697320273608255">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+      <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="AbstractBuilderCommand" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="c2kz.3265739055509559114" resolveInfo="AbstractCommand" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3210697320273614431">
       <property name="name" nameId="tpck.1169194664001" value="PickMark" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="pick mark" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3210697320273608255" resolveInfo="AbstractBuilderCommand" />
     </node>
   </roots>
-  <root id="3210697320273550864">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="3210697320273550867">
-      <property name="value" nameId="tpce.1105725733873" value="build wall" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
-  <root id="3210697320273607253">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="3210697320273607256">
-      <property name="value" nameId="tpce.1105725733873" value="destroy wall" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
-  <root id="3210697320273608254">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="3210697320273608276">
-      <property name="value" nameId="tpce.1105725733873" value="drop mark" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
+  <root id="3210697320273550864" />
+  <root id="3210697320273607253" />
+  <root id="3210697320273608254" />
   <root id="3210697320273608255">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3210697320273608256">
       <property name="name" nameId="tpck.1169194664001" value="row" />
@@ -56,15 +47,7 @@
       <property name="name" nameId="tpck.1169194664001" value="col" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3210697320273608258">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
-    </node>
   </root>
-  <root id="3210697320273614431">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="3210697320273614432">
-      <property name="value" nameId="tpce.1105725733873" value="pick mark" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-  </root>
+  <root id="3210697320273614431" />
 </model>
 

@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.samples.KajaSceneConstruction" uuid="b56912a3-674f-4530-b0cf-55261b526a1f" doNotGenerateAdapters="true">
+<language namespace="jetbrains.mps.samples.KajaSceneConstruction" uuid="b56912a3-674f-4530-b0cf-55261b526a1f">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels />
   <generators>
     <generator name="" generatorUID="jetbrains.mps.samples.KajaSceneConstruction#3210697320273563026" uuid="b4e19835-6919-44a5-8b70-73791426c235">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generator/template" />
+        </modelRoot>
       </models>
       <external-templates />
       <dependencies>

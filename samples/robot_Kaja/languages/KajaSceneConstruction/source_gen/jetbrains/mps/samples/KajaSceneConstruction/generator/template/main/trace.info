@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="9" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.QueriesGenerated" />
-  <root nodeId="3210697320273563034" modelId="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)">
+  <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273563034">
     <nodeInfo nodeId="3210697320273563064" fileName="QueriesGenerated.java" startLine="10" startPosition="154" endLine="11" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3210697320273563073" fileName="QueriesGenerated.java" startLine="14" startPosition="154" endLine="15" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3210697320273648349" fileName="QueriesGenerated.java" startLine="18" startPosition="154" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -11,7 +11,7 @@
     <scopeInfo nodeId="3210697320273648348" fileName="QueriesGenerated.java" startLine="18" startPosition="154" endLine="19" endPosition="69" />
     <scopeInfo nodeId="3210697320273648357" fileName="QueriesGenerated.java" startLine="22" startPosition="154" endLine="23" endPosition="69" />
   </root>
-  <root nodeId="3210697320273607275" modelId="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)">
+  <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273607275">
     <nodeInfo nodeId="3210697320273608241" fileName="QueriesGenerated.java" startLine="26" startPosition="154" endLine="27" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3210697320273608250" fileName="QueriesGenerated.java" startLine="30" startPosition="154" endLine="31" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3210697320273648399" fileName="QueriesGenerated.java" startLine="34" startPosition="154" endLine="35" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -21,7 +21,7 @@
     <scopeInfo nodeId="3210697320273648398" fileName="QueriesGenerated.java" startLine="34" startPosition="154" endLine="35" endPosition="69" />
     <scopeInfo nodeId="3210697320273648407" fileName="QueriesGenerated.java" startLine="38" startPosition="154" endLine="39" endPosition="69" />
   </root>
-  <root nodeId="3210697320273612346" modelId="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)">
+  <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273612346">
     <nodeInfo nodeId="3210697320273614398" fileName="QueriesGenerated.java" startLine="42" startPosition="154" endLine="43" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3210697320273614407" fileName="QueriesGenerated.java" startLine="46" startPosition="154" endLine="47" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3210697320273614418" fileName="QueriesGenerated.java" startLine="50" startPosition="154" endLine="51" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -35,7 +35,7 @@
     <scopeInfo nodeId="3210697320273648552" fileName="QueriesGenerated.java" startLine="58" startPosition="154" endLine="59" endPosition="69" />
     <scopeInfo nodeId="3210697320273648561" fileName="QueriesGenerated.java" startLine="62" startPosition="154" endLine="63" endPosition="69" />
   </root>
-  <root nodeId="3210697320273614443" modelId="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)">
+  <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273614443">
     <nodeInfo nodeId="3210697320273614495" fileName="QueriesGenerated.java" startLine="66" startPosition="154" endLine="67" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3210697320273614504" fileName="QueriesGenerated.java" startLine="70" startPosition="154" endLine="71" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3210697320273614515" fileName="QueriesGenerated.java" startLine="74" startPosition="154" endLine="75" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

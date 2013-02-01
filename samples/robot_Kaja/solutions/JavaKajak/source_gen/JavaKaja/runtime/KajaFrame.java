@@ -21,7 +21,6 @@ public abstract class KajaFrame {
   private static final int HEIGHT = 12;
   private static final int WIDTH = 16;
   private static final int CELL_SIZE = 70;
-
   protected final int width = CELL_SIZE * WIDTH;
   protected final int height = CELL_SIZE * HEIGHT;
   protected final JPanel canvas = new JPanel(new GridLayout(HEIGHT, WIDTH), true);
