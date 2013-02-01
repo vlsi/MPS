@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.samples.Kaja.intentions.IntentionsDescriptor" />
+  <root nodeId="7446293342517485574" modelId="r:c23df2a3-084e-497b-b2a5-1671f4fbf9de(jetbrains.mps.samples.Kaja.intentions)">
+    <nodeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="24" startPosition="36" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="28" startPosition="37" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="32" startPosition="44" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7446293342517152376" fileName="ExtractRoutine_Intention.java" startLine="36" startPosition="85" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3366354716707825760" fileName="ExtractRoutine_Intention.java" startLine="40" startPosition="76" endLine="41" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3366354716707825798" fileName="ExtractRoutine_Intention.java" startLine="41" startPosition="131" endLine="42" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7446293342517484795" fileName="ExtractRoutine_Intention.java" startLine="42" startPosition="65" endLine="43" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7446293342517484977" fileName="ExtractRoutine_Intention.java" startLine="43" startPosition="238" endLine="44" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7446293342517484985" fileName="ExtractRoutine_Intention.java" startLine="44" startPosition="108" endLine="45" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7446293342517484915" fileName="ExtractRoutine_Intention.java" startLine="45" startPosition="76" endLine="46" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3366354716707825777" fileName="ExtractRoutine_Intention.java" startLine="47" startPosition="69" endLine="48" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7446293342517485379" fileName="ExtractRoutine_Intention.java" startLine="49" startPosition="5" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="53" startPosition="37" endLine="54" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="16" startPosition="90" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractRoutine_Intention#()V" />
+    <nodeInfo nodeId="3366354716707825773" fileName="ExtractRoutine_Intention.java" startLine="46" startPosition="95" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="39" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <scopeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="17" startPosition="37" endLine="17" endPosition="37" />
+    <scopeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="66" />
+    <scopeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="24" startPosition="36" endLine="25" endPosition="17" />
+    <scopeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="28" startPosition="37" endLine="29" endPosition="17" />
+    <scopeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="32" startPosition="44" endLine="33" endPosition="16" />
+    <scopeInfo nodeId="7446293342517152372" fileName="ExtractRoutine_Intention.java" startLine="36" startPosition="85" endLine="37" endPosition="29" />
+    <scopeInfo nodeId="3366354716707825776" fileName="ExtractRoutine_Intention.java" startLine="47" startPosition="69" endLine="48" endPosition="257" />
+    <scopeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="53" startPosition="37" endLine="54" endPosition="51" />
+    <scopeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="16" startPosition="90" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="3366354716707825773" fileName="ExtractRoutine_Intention.java" startLine="46" startPosition="95" endLine="49" endPosition="5">
+      <varInfo nodeId="3366354716707825773" varName="selectedNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="7446293342517485574" varName="editorContext" />
+      <varInfo nodeId="7446293342517485574" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="7446293342517152374" fileName="ExtractRoutine_Intention.java" startLine="40" startPosition="76" endLine="50" endPosition="58">
+      <varInfo nodeId="7446293342517484978" varName="call" />
+      <varInfo nodeId="3366354716707825761" varName="routineDefinition" />
+      <varInfo nodeId="3366354716707825799" varName="selectedNodes" />
+    </scopeInfo>
+    <scopeInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="39" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="7446293342517485574" varName="editorContext" />
+      <varInfo nodeId="7446293342517485574" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="7446293342517485574" fileName="ExtractRoutine_Intention.java" startLine="16" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.samples.Kaja.intentions.ExtractRoutine_Intention" />
+  </root>
+  <root nodeId="859008965969467883" modelId="r:c23df2a3-084e-497b-b2a5-1671f4fbf9de(jetbrains.mps.samples.Kaja.intentions)">
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="14" startPosition="30" endLine="15" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="18" startPosition="36" endLine="19" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="22" startPosition="37" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="26" startPosition="44" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="859008965969467888" fileName="Foo_Intention.java" startLine="30" startPosition="85" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="35" startPosition="58" endLine="36" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="37" startPosition="5" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="859008965969467892" fileName="Foo_Intention.java" startLine="41" startPosition="90" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="48" startPosition="37" endLine="49" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="10" startPosition="71" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Foo_Intention#()V" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="34" startPosition="84" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="33" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="11" startPosition="26" endLine="11" endPosition="26" />
+    <scopeInfo nodeId="859008965969467887" fileName="Foo_Intention.java" startLine="45" startPosition="76" endLine="45" endPosition="76" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="14" startPosition="30" endLine="15" endPosition="57" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="18" startPosition="36" endLine="19" endPosition="17" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="22" startPosition="37" endLine="23" endPosition="17" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="26" startPosition="44" endLine="27" endPosition="17" />
+    <scopeInfo nodeId="859008965969467885" fileName="Foo_Intention.java" startLine="30" startPosition="85" endLine="31" endPosition="27" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="35" startPosition="58" endLine="36" endPosition="19" />
+    <scopeInfo nodeId="859008965969467891" fileName="Foo_Intention.java" startLine="41" startPosition="90" endLine="42" endPosition="17" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="48" startPosition="37" endLine="49" endPosition="51" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="10" startPosition="71" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="859008965969467883" varName="editorContext" />
+      <varInfo nodeId="859008965969467883" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="859008965969467883" varName="editorContext" />
+      <varInfo nodeId="859008965969467883" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="34" startPosition="84" endLine="38" endPosition="16" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="859008965969467883" varName="editorContext" />
+      <varInfo nodeId="859008965969467883" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="33" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="859008965969467883" varName="editorContext" />
+      <varInfo nodeId="859008965969467883" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="859008965969467883" fileName="Foo_Intention.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.samples.Kaja.intentions.Foo_Intention" />
+  </root>
+</debugInfo>
+
