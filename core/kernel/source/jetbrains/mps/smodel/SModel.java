@@ -206,6 +206,12 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return md == null ? new NullDataSource() : md.getSource();
   }
 
+  @Override
+  public boolean isReadOnly() {
+    SModelDescriptor md = getModelDescriptor();
+    return md != null && md.isReadOnly();
+  }
+
   public void save() throws IOException {
     //todo
   }
@@ -276,13 +282,13 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return this instanceof TransientSModel;
   }
 
-  //todo partially merge EditableSModelDescriptor into SModel, use descriptor's isReadOnly
-  @Deprecated   //todo get rid of it
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public boolean isNotEditable() {
-    assert !isDisposed();
-    SModelDescriptor d = getModelDescriptor();
-    if (!(d instanceof EditableSModelDescriptor)) return true;
-    return ((EditableSModelDescriptor) d).isReadOnly();
+    return isReadOnly();
   }
 
   //todo get rid of, try to cast, show an error if not casted

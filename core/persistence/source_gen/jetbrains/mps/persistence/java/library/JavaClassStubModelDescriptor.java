@@ -48,6 +48,10 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
     return (FolderSetDataSource) super.getSource();
   }
 
+  public boolean isReadOnly() {
+    return true;
+  }
+
   public synchronized SModel getSModel() {
     if (myModel == null) {
       myModel = createModel();

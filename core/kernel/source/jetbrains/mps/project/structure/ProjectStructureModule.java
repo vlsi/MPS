@@ -320,9 +320,12 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       }
     }
 
-    @Override
     public IModule getModule() {
       return myProjectStructureModule;
+    }
+
+    public boolean isReadOnly() {
+      return true;
     }
 
     @Override

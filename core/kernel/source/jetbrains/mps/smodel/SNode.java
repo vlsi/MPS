@@ -1977,6 +1977,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     @Override
+    public boolean isReadOnly() {
+      return false;
+    }
+
+    @Override
     public Iterable<? extends org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
       return myModel.roots();
     }

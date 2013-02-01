@@ -51,6 +51,8 @@ public interface SModel {
    */
   SModule getModule();
 
+  boolean isReadOnly();
+
   /**
    * Returns a collection of root nodes. Root nodes are all nodes added to model using addRootNode.
    * todo VP: should be immutable collection? Currently it isn't.
