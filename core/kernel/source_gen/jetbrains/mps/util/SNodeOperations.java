@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import java.util.Iterator;
 import java.util.Queue;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 public class SNodeOperations {
   public SNodeOperations() {
@@ -310,4 +311,10 @@ public class SNodeOperations {
       name.substring(0, index)
     );
   }
+
+  public static int nodesCount(org.jetbrains.mps.openapi.model.SModel model) {
+    return IterableUtil.asCollection(new NodesIterable(model)).size();
+  }
+
+
 }

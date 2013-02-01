@@ -52,7 +52,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myInputModel = inputModel;
     myOutputModel = outputModel;
     myShowBadChildWarning = showBadChildWarning;
-    myMappings = new GeneratorMappings(inputModel.registeredNodesCount());
+    myMappings = new GeneratorMappings(inputModel.rootsCount());
   }
 
   public IOperationContext getOperationContext() {
