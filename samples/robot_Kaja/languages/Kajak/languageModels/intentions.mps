@@ -23,10 +23,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="c2kz.3265739055509559114" resolveInfo="AbstractCommand" />
     </node>
-    <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="859008965969467883">
-      <property name="name" nameId="tpck.1169194664001" value="Foo" />
-      <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="c2kz.3265739055509559110" resolveInfo="Script" />
-    </node>
   </roots>
   <root id="7446293342517485574">
     <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="7446293342517152371">
@@ -193,29 +189,6 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3366354716707825761" resolveInfo="routineDefinition" />
               </node>
             </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
-  <root id="859008965969467883">
-    <node role="descriptionFunction" roleId="tp3j.2522969319638093993" type="tp3j.DescriptionBlock" typeId="tp3j.1192794782375" id="859008965969467884">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="859008965969467885">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="859008965969467888">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="859008965969467889">
-            <property name="value" nameId="tpee.1070475926801" value="To be removed" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="executeFunction" roleId="tp3j.2522969319638198291" type="tp3j.ExecuteBlock" typeId="tp3j.1192795911897" id="859008965969467886">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="859008965969467887" />
-    </node>
-    <node role="isApplicableFunction" roleId="tp3j.2522969319638093995" type="tp3j.IsApplicableBlock" typeId="tp3j.1192795771125" id="859008965969467890">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="859008965969467891">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="859008965969467892">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="859008965969467893">
-            <property name="value" nameId="tpee.1068580123138" value="false" />
           </node>
         </node>
       </node>
