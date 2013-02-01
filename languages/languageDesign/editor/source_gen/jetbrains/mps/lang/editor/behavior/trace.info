@@ -154,12 +154,12 @@
   <unitInfo fileName="PositionStyleClassItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.PositionStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="PunctuationLeftStyleClassItem_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.PunctuationLeftStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="PunctuationRightStyleClassItem_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.PunctuationRightStyleClassItem_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_Boolean_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Boolean_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_Boolean_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Boolean_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_CellProvider_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_CellProvider_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_Color_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Color_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_FontStyle_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_FontStyle_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_Color_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Color_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_FontStyle_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_FontStyle_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ImagePath_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ImagePath_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_Integer_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Integer_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_Integer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Integer_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_IsMethodCurrent_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_IsMethodCurrent_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_JComponent_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_JComponent_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_MatchingNode_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_MatchingNode_BehaviorDescriptor" />
@@ -171,11 +171,11 @@
   <unitInfo fileName="QueryFunction_NodeFactory_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_NodeFactory_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_NodeListFilter_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_NodeListFilter_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ParametersList_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_SNode_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_SNode_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_SNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_SNode_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_SeparatorText_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_SeparatorText_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_String_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_String_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_StyleParameter_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_Underlined_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Underlined_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_StyleParameter_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_Underlined_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Underlined_BehaviorDescriptor" />
   <unitInfo fileName="RGBColor_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.RGBColor_BehaviorDescriptor" />
   <unitInfo fileName="ReadOnlyModelAccessor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.ReadOnlyModelAccessor_BehaviorDescriptor" />
   <unitInfo fileName="RightTransformAnchorTagWrapper_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.RightTransformAnchorTagWrapper_BehaviorDescriptor" />
@@ -1982,51 +1982,69 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1221048114768" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1221055011632" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1221482169625">
-    <nodeInfo nodeId="1213877374463" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="15" startPosition="81" endLine="16" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7991857262594925036" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="16" startPosition="48" endLine="17" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7991857262594925041" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="17" startPosition="166" endLine="18" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7991857262594935167" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="19" startPosition="105" endLine="20" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7991857262594935172" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="20" startPosition="174" endLine="21" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877374483" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7991857262599679408" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="26" startPosition="88" endLine="27" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4310268853340676758" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="30" startPosition="98" endLine="31" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4310268853340753991" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="32" startPosition="33" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4310268853340754069" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="34" startPosition="5" endLine="35" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7991857262599032034" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="38" startPosition="82" endLine="39" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isSeparatorStyleQuery_7991857262598847349#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4310268853340753455" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="31" startPosition="186" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStyleClassItem_7991857262599017464#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7991857262594935158" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="18" startPosition="166" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getContainingCellModelRefNodeList_4310268853340642392#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="15" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <scopeInfo nodeId="1221482169627" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="7991857262598847352" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="26" startPosition="88" endLine="27" endPosition="126" />
-    <scopeInfo nodeId="4310268853340753457" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="32" startPosition="33" endLine="33" endPosition="18" />
-    <scopeInfo nodeId="7991857262599017467" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="38" startPosition="82" endLine="39" endPosition="121" />
-    <scopeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
+    <nodeInfo nodeId="1213877374463" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="20" startPosition="81" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7991857262594925036" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="21" startPosition="48" endLine="22" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7991857262594925041" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="22" startPosition="166" endLine="23" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7991857262594935167" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="24" startPosition="105" endLine="25" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7991857262594935172" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="25" startPosition="174" endLine="26" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877374483" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="27" startPosition="5" endLine="28" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7991857262599679408" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="31" startPosition="88" endLine="32" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4310268853340676758" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="35" startPosition="98" endLine="36" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4310268853340753991" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="37" startPosition="33" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4310268853340754069" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="39" startPosition="5" endLine="40" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7991857262599032034" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="43" startPosition="82" endLine="44" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243962465" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="47" startPosition="83" endLine="48" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243962463" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="51" startPosition="60" endLine="52" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8995034945243962463" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="52" startPosition="30" endLine="53" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8995034945243962463" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="53" startPosition="165" endLine="54" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8995034945243962463" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="54" startPosition="237" endLine="55" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8995034945243962463" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="52" startPosition="30" endLine="54" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243962463" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="52" startPosition="30" endLine="54" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isSeparatorStyleQuery_7991857262598847349#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4310268853340753455" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="36" startPosition="186" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStyleClassItem_7991857262599017464#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7991857262594935158" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="23" startPosition="166" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8995034945243962463" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_evejyl_a0a4#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="35" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getContainingCellModelRefNodeList_4310268853340642392#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="20" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="1221482169627" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="7991857262598847352" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="31" startPosition="88" endLine="32" endPosition="126" />
+    <scopeInfo nodeId="4310268853340753457" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="37" startPosition="33" endLine="38" endPosition="18" />
+    <scopeInfo nodeId="7991857262599017467" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="43" startPosition="82" endLine="44" endPosition="121" />
+    <scopeInfo nodeId="8995034945243961941" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="47" startPosition="83" endLine="48" endPosition="47" />
+    <scopeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1221482169625" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7991857262594935166" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="19" startPosition="105" endLine="21" endPosition="174" />
-    <scopeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="7991857262594935166" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="24" startPosition="105" endLine="26" endPosition="174" />
+    <scopeInfo nodeId="8995034945243962463" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="52" startPosition="30" endLine="54" endPosition="237" />
+    <scopeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="1221482169625" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1221482169625" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4310268853340642558" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="30" startPosition="98" endLine="35" endPosition="134">
+    <scopeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1221482169625" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243962463" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="51" startPosition="60" endLine="55" endPosition="24">
+      <varInfo nodeId="8995034945243962463" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="4310268853340642558" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="35" startPosition="98" endLine="40" endPosition="134">
       <varInfo nodeId="4310268853340676759" varName="styleContainer" />
     </scopeInfo>
-    <scopeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="8995034945243962463" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="51" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1221482169625" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7991857262589720647" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="15" startPosition="81" endLine="23" endPosition="32">
+    <scopeInfo nodeId="7991857262589720647" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="20" startPosition="81" endLine="28" endPosition="32">
       <varInfo nodeId="1213877374464" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="15" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="20" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1221482169625" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_Behavior" />
+    <unitInfo nodeId="1221482169625" fileName="QueryFunction_StyleParameter_Behavior.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1223387282640">
     <nodeInfo nodeId="1223387411964" fileName="StrikeOutStyleSheet_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4169,6 +4187,157 @@
       <varInfo nodeId="8598098202018087054" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="8598098202018087054" fileName="DefaultBaseLine_Behavior.java" startLine="10" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.DefaultBaseLine_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/8995034945243881892">
+    <nodeInfo nodeId="8995034945243887834" fileName="QueryFunction_Boolean_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243887832" fileName="QueryFunction_Boolean_Behavior.java" startLine="17" startPosition="60" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8995034945243887832" fileName="QueryFunction_Boolean_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243887832" fileName="QueryFunction_Boolean_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243887832" fileName="QueryFunction_Boolean_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8995034945243887832" fileName="QueryFunction_Boolean_Behavior.java" startLine="19" startPosition="162" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243881892" fileName="QueryFunction_Boolean_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8995034945243881892" fileName="QueryFunction_Boolean_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8995034945243887832" fileName="QueryFunction_Boolean_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_hekwuc_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="8995034945243881894" fileName="QueryFunction_Boolean_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="8995034945243887415" fileName="QueryFunction_Boolean_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="47" />
+    <scopeInfo nodeId="8995034945243887832" fileName="QueryFunction_Boolean_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" />
+    <scopeInfo nodeId="8995034945243881892" fileName="QueryFunction_Boolean_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
+      <varInfo nodeId="8995034945243881892" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243881892" fileName="QueryFunction_Boolean_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="8995034945243881892" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243887832" fileName="QueryFunction_Boolean_Behavior.java" startLine="17" startPosition="60" endLine="20" endPosition="24">
+      <varInfo nodeId="8995034945243887832" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243887832" fileName="QueryFunction_Boolean_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <unitInfo nodeId="8995034945243881892" fileName="QueryFunction_Boolean_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Boolean_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/8995034945243898910">
+    <nodeInfo nodeId="8995034945243899345" fileName="QueryFunction_Color_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="20" startPosition="60" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="21" startPosition="30" endLine="22" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="22" startPosition="165" endLine="23" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="23" startPosition="234" endLine="24" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243898910" fileName="QueryFunction_Color_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243898910" fileName="QueryFunction_Color_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_f41rqu_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="8995034945243898912" fileName="QueryFunction_Color_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="8995034945243898923" fileName="QueryFunction_Color_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="47" />
+    <scopeInfo nodeId="8995034945243898910" fileName="QueryFunction_Color_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="8995034945243898910" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="234" />
+    <scopeInfo nodeId="8995034945243898910" fileName="QueryFunction_Color_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="8995034945243898910" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="20" startPosition="60" endLine="24" endPosition="24">
+      <varInfo nodeId="8995034945243899343" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243899343" fileName="QueryFunction_Color_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0" />
+    <unitInfo nodeId="8995034945243898910" fileName="QueryFunction_Color_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Color_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/8995034945243920063">
+    <nodeInfo nodeId="8995034945243920495" fileName="QueryFunction_FontStyle_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243920493" fileName="QueryFunction_FontStyle_Behavior.java" startLine="17" startPosition="60" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8995034945243920493" fileName="QueryFunction_FontStyle_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243920493" fileName="QueryFunction_FontStyle_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243920493" fileName="QueryFunction_FontStyle_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8995034945243920493" fileName="QueryFunction_FontStyle_Behavior.java" startLine="19" startPosition="162" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243920063" fileName="QueryFunction_FontStyle_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8995034945243920063" fileName="QueryFunction_FontStyle_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8995034945243920493" fileName="QueryFunction_FontStyle_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_w20w5j_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="8995034945243920065" fileName="QueryFunction_FontStyle_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="8995034945243920076" fileName="QueryFunction_FontStyle_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="47" />
+    <scopeInfo nodeId="8995034945243920493" fileName="QueryFunction_FontStyle_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" />
+    <scopeInfo nodeId="8995034945243920063" fileName="QueryFunction_FontStyle_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
+      <varInfo nodeId="8995034945243920063" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243920063" fileName="QueryFunction_FontStyle_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="8995034945243920063" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243920493" fileName="QueryFunction_FontStyle_Behavior.java" startLine="17" startPosition="60" endLine="20" endPosition="24">
+      <varInfo nodeId="8995034945243920493" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243920493" fileName="QueryFunction_FontStyle_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <unitInfo nodeId="8995034945243920063" fileName="QueryFunction_FontStyle_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_FontStyle_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/8995034945243926059">
+    <nodeInfo nodeId="8995034945243926491" fileName="QueryFunction_Integer_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243926489" fileName="QueryFunction_Integer_Behavior.java" startLine="17" startPosition="60" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8995034945243926489" fileName="QueryFunction_Integer_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243926489" fileName="QueryFunction_Integer_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243926489" fileName="QueryFunction_Integer_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8995034945243926489" fileName="QueryFunction_Integer_Behavior.java" startLine="19" startPosition="162" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243926059" fileName="QueryFunction_Integer_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8995034945243926059" fileName="QueryFunction_Integer_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8995034945243926489" fileName="QueryFunction_Integer_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_e7nnrt_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="8995034945243926061" fileName="QueryFunction_Integer_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="8995034945243926072" fileName="QueryFunction_Integer_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="47" />
+    <scopeInfo nodeId="8995034945243926489" fileName="QueryFunction_Integer_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" />
+    <scopeInfo nodeId="8995034945243926059" fileName="QueryFunction_Integer_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
+      <varInfo nodeId="8995034945243926059" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243926059" fileName="QueryFunction_Integer_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="8995034945243926059" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243926489" fileName="QueryFunction_Integer_Behavior.java" startLine="17" startPosition="60" endLine="20" endPosition="24">
+      <varInfo nodeId="8995034945243926489" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243926489" fileName="QueryFunction_Integer_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <unitInfo nodeId="8995034945243926059" fileName="QueryFunction_Integer_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Integer_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/8995034945243932065">
+    <nodeInfo nodeId="8995034945243932497" fileName="QueryFunction_SNode_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243932495" fileName="QueryFunction_SNode_Behavior.java" startLine="17" startPosition="60" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8995034945243932495" fileName="QueryFunction_SNode_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243932495" fileName="QueryFunction_SNode_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243932495" fileName="QueryFunction_SNode_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8995034945243932495" fileName="QueryFunction_SNode_Behavior.java" startLine="19" startPosition="159" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243932065" fileName="QueryFunction_SNode_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8995034945243932065" fileName="QueryFunction_SNode_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8995034945243932495" fileName="QueryFunction_SNode_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_2z10xp_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="8995034945243932067" fileName="QueryFunction_SNode_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="8995034945243932078" fileName="QueryFunction_SNode_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="47" />
+    <scopeInfo nodeId="8995034945243932495" fileName="QueryFunction_SNode_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="159" />
+    <scopeInfo nodeId="8995034945243932065" fileName="QueryFunction_SNode_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
+      <varInfo nodeId="8995034945243932065" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243932065" fileName="QueryFunction_SNode_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="8995034945243932065" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243932495" fileName="QueryFunction_SNode_Behavior.java" startLine="17" startPosition="60" endLine="20" endPosition="24">
+      <varInfo nodeId="8995034945243932495" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243932495" fileName="QueryFunction_SNode_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <unitInfo nodeId="8995034945243932065" fileName="QueryFunction_SNode_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_SNode_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/8995034945243938081">
+    <nodeInfo nodeId="8995034945243938366" fileName="QueryFunction_Underlined_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243938364" fileName="QueryFunction_Underlined_Behavior.java" startLine="17" startPosition="60" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8995034945243938364" fileName="QueryFunction_Underlined_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243938364" fileName="QueryFunction_Underlined_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8995034945243938364" fileName="QueryFunction_Underlined_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8995034945243938364" fileName="QueryFunction_Underlined_Behavior.java" startLine="19" startPosition="162" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8995034945243938081" fileName="QueryFunction_Underlined_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8995034945243938081" fileName="QueryFunction_Underlined_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8995034945243938364" fileName="QueryFunction_Underlined_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ne4q0t_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="8995034945243938083" fileName="QueryFunction_Underlined_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="8995034945243938094" fileName="QueryFunction_Underlined_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="47" />
+    <scopeInfo nodeId="8995034945243938364" fileName="QueryFunction_Underlined_Behavior.java" startLine="18" startPosition="30" endLine="19" endPosition="162" />
+    <scopeInfo nodeId="8995034945243938081" fileName="QueryFunction_Underlined_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
+      <varInfo nodeId="8995034945243938081" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243938081" fileName="QueryFunction_Underlined_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="8995034945243938081" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243938364" fileName="QueryFunction_Underlined_Behavior.java" startLine="17" startPosition="60" endLine="20" endPosition="24">
+      <varInfo nodeId="8995034945243938364" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="8995034945243938364" fileName="QueryFunction_Underlined_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <unitInfo nodeId="8995034945243938081" fileName="QueryFunction_Underlined_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Underlined_Behavior" />
   </root>
 </debugInfo>
 
