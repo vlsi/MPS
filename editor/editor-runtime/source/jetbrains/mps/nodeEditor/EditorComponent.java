@@ -977,8 +977,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         disposeTypeCheckingContext();
         clearModelDisposedTrace();
         myNode = node;
-        //todo this is because of type system nodes, which are not registered in models. This code should be removed ASAP
-        if (myNode != null && myNode.getModel() != null && myNode.getModel().isRegistered()) {
+        if (myNode != null) {
           myNodePointer = new jetbrains.mps.smodel.SNodePointer(myNode);
           myVirtualFile = !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
         } else {
