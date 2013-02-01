@@ -171,14 +171,14 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   @Nullable
-  public org.jetbrains.mps.openapi.model.SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
+  public SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
     checkNotDisposed();
     if (myDisposed) return null;
 
     org.jetbrains.mps.openapi.model.SNode node = myIdToNodeMap.get(nodeId);
-    if (node != null) return node;
+    if (node != null) return ((SNode) node);
     enforceFullLoad();
-    return myIdToNodeMap.get(nodeId);
+    return ((SNode) myIdToNodeMap.get(nodeId));
   }
 
   @Override
@@ -642,8 +642,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
    */
   @Nullable
   public SNode getNodeById(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
-    org.jetbrains.mps.openapi.model.SNode node = getNode(nodeId);
-    return node instanceof SNode ? (SNode) node : null;
+    return getNode(nodeId);
   }
 
   //---------node registration--------
