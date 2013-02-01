@@ -171,7 +171,8 @@ public abstract class ModelAccess implements ModelCommandExecutor, SModelAccess 
     try {
       SModel model = node.getModel();
       if (model == null) return;
-      reg = model.isRegistered();
+      SModelDescriptor md = model.getModelDescriptor();
+      reg = md !=null && md.isRegistered() ;
     } finally {
       setReadEnabledFlag(old);
     }

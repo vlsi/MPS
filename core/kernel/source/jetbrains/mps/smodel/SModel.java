@@ -412,14 +412,18 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //todo replace with isInRepository in public places
   public boolean canFireEvent() {
-    return isRegistered() && !isUpdateMode();
+    return myModelDescriptor != null && myModelDescriptor.isRegistered() && !isUpdateMode();
   }
 
   protected boolean canFireReadEvent() {
     return canFireEvent();
   }
 
-  //todo replace with isInRepository in public places
+  @Deprecated
+  /**
+   * Not supposed to be used. Inline
+   * @Deprecated in 3.0
+   */
   public boolean isRegistered() {
     return myModelDescriptor != null && myModelDescriptor.isRegistered();
   }

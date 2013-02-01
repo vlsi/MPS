@@ -104,7 +104,8 @@ public class WorkbenchModelAccess extends ModelAccess {
     try {
       SModel model = node.getModel();
       if (model == null) return;
-      reg = model.isRegistered();
+      SModelDescriptor md = model.getModelDescriptor();
+      reg = md !=null && md.isRegistered() ;
     } finally {
       setReadEnabledFlag(old);
     }
