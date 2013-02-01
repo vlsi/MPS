@@ -222,76 +222,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     //todo
   }
 
-  //--------------DEPRECATED-------------------
-
-  //---------common properties--------
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  @NotNull
-  public SModelReference getSModelReference() {
-    return ((SModelReference) getReference());
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SModelId getSModelId() {
-    return getModelId();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SModelFqName getSModelFqName() {
-    return getSModelReference().getSModelFqName();
-  }
-
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  @NotNull
-  public String getStereotype() {
-    return jetbrains.mps.util.SNodeOperations.getModelStereotype(this);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  @NotNull
-  public String getLongName() {
-    return jetbrains.mps.util.SNodeOperations.getModelLongName(this);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean isTransient() {
-    return this instanceof TransientSModel;
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean isNotEditable() {
-    return isReadOnly();
-  }
+  //--------------IMPLEMENTATION-------------------
 
   //todo get rid of, try to cast, show an error if not casted
   public boolean isDisposed() {
@@ -313,63 +244,14 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     myModelDescriptor = modelDescriptor;
   }
 
-  //---------incremental load--------
-
   protected void enforceFullLoad() {
     if (myModelDescriptor == null) return;
     myModelDescriptor.forceLoad();
   }
 
-  //---------roots manipulation--------
-
   private void fireModelNodesReadAccess() {
     if (!canFireEvent()) return;
     NodeReadEventsCaster.fireModelNodesReadAccess(this);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public final Iterable<org.jetbrains.mps.openapi.model.SNode> roots() {
-    return getRootNodes();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public Iterator<org.jetbrains.mps.openapi.model.SNode> rootsIterator() {
-    return getRootNodes().iterator();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void addRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
-    addRootNode(node);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void removeRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
-    removeRootNode(node);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public int rootsCount() {
-    return IterableUtil.asCollection(getRootNodes()).size();
   }
 
   protected void performUndoableAction(SNodeUndoableAction action) {
@@ -377,38 +259,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     if (!UndoHelper.getInstance().needRegisterUndo(this)) return;
     UndoHelper.getInstance().addUndoableAction(action);
   }
-
-  //---------nodes manipulation--------
-
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public final Iterable<org.jetbrains.mps.openapi.model.SNode> nodes() {
-    return new NodesIterable(this);
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public Iterator<org.jetbrains.mps.openapi.model.SNode> nodesIterator() {
-    return new NodesIterator(getRootNodes().iterator());
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public int registeredNodesCount() {
-    return jetbrains.mps.util.SNodeOperations.nodesCount(this);
-  }
-
-  //---------loading state--------
 
   //todo replace with isInRepository in public places
   public boolean canFireEvent() {
@@ -419,22 +269,12 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return canFireEvent();
   }
 
-  @Deprecated
-  /**
-   * Not supposed to be used. Inline
-   * @Deprecated in 3.0
-   */
-  public boolean isRegistered() {
-    return myModelDescriptor != null && myModelDescriptor.isRegistered();
-  }
-
 //---------listeners--------
 
   private List<SModelListener> getModelListeners() {
     BaseSModelDescriptor modelDescriptor = (BaseSModelDescriptor) getModelDescriptor();
     return modelDescriptor != null ? modelDescriptor.getModelListeners() : Collections.<SModelListener>emptyList();
   }
-
 
   //todo code in the following methods should be written w/o duplication
 
@@ -639,16 +479,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return new jetbrains.mps.smodel.SNodeId.Regular(id);
   }
 
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  @Nullable
-  public SNode getNodeById(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
-    return getNode(nodeId);
-  }
-
   //---------node registration--------
 
   void registerNode(@NotNull SNode node) {
@@ -669,7 +499,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
     if (existingNode != null && existingNode != node) {
       assignNewId(node);
-      return;
     }
   }
 
@@ -941,8 +770,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return false;
   }
 
-  //other
-
   public static class ImportElement {
     private SModelReference myModelReference;
     private int myReferenceID;  // persistence related index
@@ -1152,7 +979,173 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     LOG.error(new IllegalModelAccessError("accessing disposed model"));
   }
 
-  //---------deprecated--------
+  //--------------DEPRECATED-------------------
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  @NotNull
+  public SModelReference getSModelReference() {
+    return ((SModelReference) getReference());
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SModelId getSModelId() {
+    return getModelId();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SModelFqName getSModelFqName() {
+    return getSModelReference().getSModelFqName();
+  }
+
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  @NotNull
+  public String getStereotype() {
+    return jetbrains.mps.util.SNodeOperations.getModelStereotype(this);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  @NotNull
+  public String getLongName() {
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(this);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean isTransient() {
+    return this instanceof TransientSModel;
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean isNotEditable() {
+    return isReadOnly();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public final Iterable<org.jetbrains.mps.openapi.model.SNode> roots() {
+    return getRootNodes();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public Iterator<org.jetbrains.mps.openapi.model.SNode> rootsIterator() {
+    return getRootNodes().iterator();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public void addRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+    addRootNode(node);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public void removeRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+    removeRootNode(node);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public int rootsCount() {
+    return IterableUtil.asCollection(getRootNodes()).size();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public final Iterable<org.jetbrains.mps.openapi.model.SNode> nodes() {
+    return new NodesIterable(this);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public Iterator<org.jetbrains.mps.openapi.model.SNode> nodesIterator() {
+    return new NodesIterator(getRootNodes().iterator());
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public int registeredNodesCount() {
+    return jetbrains.mps.util.SNodeOperations.nodesCount(this);
+  }
+
+  @Deprecated
+  /**
+   * Not supposed to be used. Inline
+   * @Deprecated in 3.0
+   */
+  public boolean isRegistered() {
+    return myModelDescriptor != null && myModelDescriptor.isRegistered();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  @Nullable
+  public SNode getNodeById(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
+    return getNode(nodeId);
+  }
+
+  @Deprecated
+  @Nullable
+  public SNode getNodeById(String idString) {
+    SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(idString);
+    assert nodeId != null : "wrong node id string";
+    return getNodeById(nodeId);
+  }
 
   @Deprecated
   public void addModelImport(ImportElement importElement) {
@@ -1170,13 +1163,5 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   @Deprecated
   public int getMaxImportIndex() {
     return myMaxImportIndex;
-  }
-
-  @Deprecated
-  @Nullable
-  public SNode getNodeById(String idString) {
-    SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(idString);
-    assert nodeId != null : "wrong node id string";
-    return getNodeById(nodeId);
   }
 }
