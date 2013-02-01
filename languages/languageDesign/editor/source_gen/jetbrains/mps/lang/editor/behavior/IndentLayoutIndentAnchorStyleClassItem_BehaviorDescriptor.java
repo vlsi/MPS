@@ -9,8 +9,8 @@ public class IndentLayoutIndentAnchorStyleClassItem_BehaviorDescriptor extends B
   public IndentLayoutIndentAnchorStyleClassItem_BehaviorDescriptor() {
   }
 
-  public StyleAttribute virtual_getStyleAttribute_2554389230519612632(SNode thisNode) {
-    return IndentLayoutIndentAnchorStyleClassItem_Behavior.virtual_getStyleAttribute_2554389230519612632(thisNode);
+  public StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
+    return IndentLayoutIndentAnchorStyleClassItem_Behavior.virtual_getStyleAttribute_3639065570239132541(thisNode);
   }
 
   public boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {

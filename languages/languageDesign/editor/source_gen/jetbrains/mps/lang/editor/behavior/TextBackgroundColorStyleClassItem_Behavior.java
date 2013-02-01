@@ -4,8 +4,6 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.openapi.editor.style.StyleAttribute;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class TextBackgroundColorStyleClassItem_Behavior {
   public static void init(SNode thisNode) {
@@ -13,9 +11,5 @@ public class TextBackgroundColorStyleClassItem_Behavior {
 
   public static boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     return SNodeOperations.isInstanceOf(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel") || SNodeOperations.isInstanceOf(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation");
-  }
-
-  public static StyleAttribute virtual_getStyleAttribute_2554389230519612632(SNode thisNode) {
-    return StyleAttributes.TEXT_BACKGROUND_COLOR;
   }
 }
