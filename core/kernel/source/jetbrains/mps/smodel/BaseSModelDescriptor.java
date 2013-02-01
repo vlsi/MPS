@@ -99,7 +99,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   @Override
-  public Iterable<? extends SNode> getRootNodes() {
+  public Iterable<SNode> getRootNodes() {
     return getSModel().roots();
   }
 

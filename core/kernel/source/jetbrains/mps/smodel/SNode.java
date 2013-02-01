@@ -1982,7 +1982,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     @Override
-    public Iterable<? extends org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
+    public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
       return myModel.roots();
     }
 

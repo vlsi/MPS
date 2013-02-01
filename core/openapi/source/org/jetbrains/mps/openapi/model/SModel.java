@@ -57,7 +57,7 @@ public interface SModel {
    * Returns a collection of root nodes. Root nodes are all nodes added to model using addRootNode.
    * todo VP: should be immutable collection? Currently it isn't.
    */
-  Iterable<? extends SNode> getRootNodes();
+  Iterable<SNode> getRootNodes();
 
   boolean isRoot(SNode node);
 

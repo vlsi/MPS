@@ -22,7 +22,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
@@ -44,6 +43,8 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelScope;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.openapi.model.util.NodesIterator;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -380,12 +381,20 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   //---------nodes manipulation--------
 
 
-  //todo move NodesIterable to API, inline
-  public final Iterable<SNode> nodes() {
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public final Iterable<org.jetbrains.mps.openapi.model.SNode> nodes() {
     return new NodesIterable(this);
   }
 
-  //todo move NodesIterator to API, inline
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public Iterator<org.jetbrains.mps.openapi.model.SNode> nodesIterator() {
     return new NodesIterator(getRootNodes().iterator());
   }
@@ -776,7 +785,8 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   @NotNull
   private static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
-    for (SNode node : model.nodes()) {
+    for (org.jetbrains.mps.openapi.model.SNode n1 : model.nodes()) {
+      SNode node = ((SNode) n1);
       if (RoleIdsComponent.isEnabled()) {
         SNodeReference ptrConcept = RoleIdsComponent.getConceptPointer(node);
         if (ptrConcept == null) {
