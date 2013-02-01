@@ -16,13 +16,13 @@
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="java.net.URLClassLoader" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Vector" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode dependClassName="org.apache.tools.ant.Project" />
+    <classNode dependClassName="org.apache.tools.ant.PropertyHelper" />
     <classNode dependClassName="org.apache.tools.ant.types.FilterSetCollection" />
     <classNode dependClassName="org.apache.tools.ant.util.FirstMatchMapper" />
     <classNode dependClassName="org.apache.tools.ant.util.GlobPatternMapper" />

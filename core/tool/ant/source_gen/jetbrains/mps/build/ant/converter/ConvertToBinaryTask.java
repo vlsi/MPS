@@ -9,15 +9,15 @@ import org.apache.tools.ant.util.FirstMatchMapper;
 import org.apache.tools.ant.util.GlobPatternMapper;
 import org.apache.tools.ant.util.IdentityMapper;
 import org.apache.tools.ant.BuildException;
-import java.io.File;
 import java.util.List;
-import java.util.Arrays;
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.net.MalformedURLException;
 import java.net.URLClassLoader;
 import java.lang.reflect.Method;
 import java.io.IOException;
+import org.apache.tools.ant.PropertyHelper;
 import org.apache.tools.ant.util.FileUtils;
 import org.apache.tools.ant.types.FilterSetCollection;
 import java.util.Vector;
@@ -25,6 +25,7 @@ import org.apache.tools.ant.Project;
 import org.jetbrains.annotations.NotNull;
 
 public class ConvertToBinaryTask extends Copy {
+  private static final String[] CLASSPATH = new String[]{"mps-openapi.jar", "mps-core.jar", "mps-collections.jar", "mps-closures.jar", "mps-tuples.jar", "mps-tool.jar", "trove4j.jar"};
 
   private Map<String, String> toConvert = new HashMap<String, String>();
 
@@ -43,11 +44,7 @@ public class ConvertToBinaryTask extends Copy {
   public void execute() throws BuildException {
     super.execute();
     if (!(toConvert.isEmpty())) {
-      File homeFolder = getHomeLocation();
-      if (!(homeFolder.isDirectory())) {
-        throw new BuildException("cannot detect home folder: got `" + homeFolder.getPath() + "'");
-      }
-      List<File> classPaths = Arrays.asList(new File(homeFolder, "mps-openapi.jar"), new File(homeFolder, "mps-core.jar"), new File(homeFolder, "mps-collections.jar"), new File(homeFolder, "mps-closures.jar"), new File(homeFolder, "mps-tuples.jar"), new File(homeFolder, "mps-tool.jar"), new File(homeFolder, "trove4j.jar"));
+      List<File> classPaths = buildClasspath();
       List<URL> classPathUrls = new ArrayList<URL>();
       for (File path : classPaths) {
         try {
@@ -69,6 +66,38 @@ public class ConvertToBinaryTask extends Copy {
         throw new BuildException("Cannot convert .mps into .mpb: " + t.getMessage() + "\n" + "Used class path: " + classPathUrls.toString(), t);
       }
     }
+  }
+
+  private List<File> buildClasspath() {
+    List<File> homeFolders = new ArrayList<File>();
+    homeFolders.add(getHomeLocation());
+    Object mps_home = PropertyHelper.getProperty(getProject(), "mps_home");
+    if (mps_home instanceof String) {
+      File mpsHome = new File((String) mps_home);
+      if (mpsHome.isDirectory()) {
+        File lib = new File(mpsHome, "lib");
+        if (lib.isDirectory()) {
+          homeFolders.add(lib);
+        }
+      }
+    }
+    List<File> result = new ArrayList<File>();
+    for (String name : CLASSPATH) {
+      File file = null;
+      for (File home : homeFolders) {
+        File f = new File(home, name);
+        if (f.isFile()) {
+          file = f;
+          break;
+        }
+      }
+      if (file == null) {
+        throw new BuildException("cannot find `" + name + "' in " + homeFolders.toString());
+      } else {
+        result.add(file);
+      }
+    }
+    return result;
   }
 
   private File getHomeLocation() {
