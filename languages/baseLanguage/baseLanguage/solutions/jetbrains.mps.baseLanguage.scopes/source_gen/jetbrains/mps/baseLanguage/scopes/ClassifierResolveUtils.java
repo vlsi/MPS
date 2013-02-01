@@ -308,6 +308,10 @@ public class ClassifierResolveUtils {
 
         String fqName = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
         SNode cls = resolveFqName(fqName, moduleScope, contextNodeModel);
+        if (cls == null) {
+          return null;
+        }
+        cls = construct(cls, tokenizer);
         return cls;
       }
 
@@ -610,6 +614,21 @@ public class ClassifierResolveUtils {
       }
     }
     return result;
+  }
+
+  public static boolean isImportedBy(SNode node, SNode imports) {
+    // TODO on-demand imports and probably inherited classes 
+    String name = SPropertyOperations.getString(node, "name");
+    for (SNode singleTypeImp : ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SPropertyOperations.getBoolean(it, "onDemand"));
+      }
+    })) {
+      if (SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(singleTypeImp, "token", true)).last(), "value").equals(name)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private static SModelDescriptor check_8z6r2b_a0a1a2(SModel checkedDotOperand) {

@@ -4,29 +4,36 @@ package jetbrains.mps.baseLanguage.scopes;
 
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.smodel.IScope;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ClassifiersScope extends FilteringScope {
   private IScope myModuleScope;
   private boolean myInlcudeAncestors;
+  private SNode myClassifier;
 
-  public ClassifiersScope(SModel model, String conceptFqName, boolean includeAncestors) {
+  public ClassifiersScope(SModel model, SNode clas, String conceptFqName, boolean includeAncestors) {
     super(new ModelPlusImportedScope(model, false, model.getModelDescriptor().getModule().getScope(), conceptFqName));
     myModuleScope = model.getModelDescriptor().getModule().getScope();
     myInlcudeAncestors = includeAncestors;
+    myClassifier = clas;
   }
 
-  public ClassifiersScope(SModel model, String conceptFqName, boolean includeAncestors, IScope scope) {
+  public ClassifiersScope(SModel model, SNode clas, String conceptFqName, boolean includeAncestors, IScope scope) {
     super(new ModelPlusImportedScope(model, false, scope, conceptFqName));
     myModuleScope = scope;
     myInlcudeAncestors = includeAncestors;
+    myClassifier = clas;
   }
 
-  public ClassifiersScope(SModel model, String conceptFqName) {
-    this(model, conceptFqName, false);
+  public ClassifiersScope(SModel model, SNode clas, String conceptFqName) {
+    this(model, clas, conceptFqName, false);
   }
 
   @Override
@@ -45,5 +52,22 @@ public class ClassifiersScope extends FilteringScope {
     SNode contextClass = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
     return ClassifierResolveUtils.resolve(refText, contextClass, myModuleScope, (ModelPlusImportedScope) wrapped, myInlcudeAncestors);
     // <node> 
+  }
+
+  @Override
+  public boolean contains(SNode node) {
+    if (super.contains(node)) {
+      return true;
+    }
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      return false;
+    }
+
+    SNode root = Sequence.fromIterable(ClassifierResolveUtils.getPathToRoot(myClassifier)).last();
+    if ((root != null) && (AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))) != null)) {
+      return ClassifierResolveUtils.isImportedBy(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))));
+    }
+
+    return false;
   }
 }
