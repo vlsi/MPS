@@ -96,8 +96,6 @@ public interface IModule extends SModule {
 
   List<String> getSourcePaths();
 
-  boolean isCompileInMPS();
-
   void invalidateCaches();
 
   boolean isChanged();
@@ -122,14 +120,19 @@ public interface IModule extends SModule {
     void adjust(SModelDescriptor model);
   }
 
-  // looks like java facet related methods
+//  ----- IClassLoadingModule methods
 
   IClassPathItem getClassPathItem();
+
+  IFile getClassesGen();
+
+  boolean isCompileInMPS();
 
 //  @Deprecated
 //  IClassPathItem getModuleWithDependenciesClassPathItem();
 
-  IFile getClassesGen();
+
+//  ----- IClassLoadingModule methods
 
 //  deprecated, use IClassLoadingModule#getClass instead
 //  @Deprecated

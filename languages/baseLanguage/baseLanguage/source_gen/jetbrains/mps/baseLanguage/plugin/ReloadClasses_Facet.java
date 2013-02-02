@@ -19,6 +19,7 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -79,7 +80,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
 
               if (nonEmptyCompilation && Sequence.fromIterable(input).any(new IWhereFilter<TResource>() {
                 public boolean accept(TResource in) {
-                  return in.module().reloadClassesAfterGeneration();
+                  return ((IClassLoadingModule) in.module()).reloadClassesAfterGeneration();
                 }
               })) {
                 monitor.currentProgress().beginWork("Reloading classes", 1, monitor.currentProgress().workLeft());
