@@ -87,8 +87,6 @@ public interface IModule extends SModule {
 
   String getOutputFor(org.jetbrains.mps.openapi.model.SModel model);
 
-  IFile getClassesGen();
-
   IFile getBundleHome();
 
   Collection<String> getIndexablePaths();
@@ -97,10 +95,6 @@ public interface IModule extends SModule {
   IScope getScope();
 
   List<String> getSourcePaths();
-
-  IClassPathItem getClassPathItem();
-
-  IClassPathItem getModuleWithDependenciesClassPathItem();
 
   boolean isCompileInMPS();
 
@@ -128,10 +122,20 @@ public interface IModule extends SModule {
     void adjust(SModelDescriptor model);
   }
 
-  // deprecated, use IClassLoadingModule#getClass instead
+  // looks like java facet related methods
+
+  IClassPathItem getClassPathItem();
+
+//  @Deprecated
+//  IClassPathItem getModuleWithDependenciesClassPathItem();
+
+  IFile getClassesGen();
+
+//  deprecated, use IClassLoadingModule#getClass instead
 //  @Deprecated
 //  Class getClass(String className);
 
+//  deprecated, use IClassLoadingModule#reloadClassesAfterGeneration instead
 //  @Deprecated
 //  boolean reloadClassesAfterGeneration();
 

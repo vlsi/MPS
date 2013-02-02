@@ -457,11 +457,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     }
   }
 
-  @Override
-  public IClassPathItem getModuleWithDependenciesClassPathItem() {
-    return getDependenciesClasspath(CollectionUtil.set((IModule) this), false);
-  }
-
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
     return new ClasspathCollector(modules).collect(includeStubSolutions);
   }
