@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
@@ -22,13 +22,30 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
-import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.project.structure.modules.mappingpriorities.*;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.vfs.IFile;
 
-import java.util.*;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
-public class Generator extends AbstractModule {
+public class Generator extends AbstractModule implements IClassLoadingModule {
   public static final Logger LOG = Logger.getLogger(Generator.class);
 
   private Language mySourceLanguage;
@@ -53,6 +70,11 @@ public class Generator extends AbstractModule {
 
     upgradeGeneratorDescriptor();
     reloadAfterDescriptorChange();
+  }
+
+  @Override
+  public Iterable<IClassLoadingModule> getClassLoadingDependencies() {
+    throw new UnsupportedOperationException();
   }
 
   public String getPluginPath() {
@@ -137,7 +159,7 @@ public class Generator extends AbstractModule {
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     assert moduleDescriptor instanceof GeneratorDescriptor;
 
-    super.setModuleDescriptor(moduleDescriptor,reloadClasses);
+    super.setModuleDescriptor(moduleDescriptor, reloadClasses);
 
     LanguageDescriptor languageDescriptor = getSourceLanguage().getModuleDescriptor();
     int index = languageDescriptor.getGenerators().indexOf(getModuleDescriptor());
@@ -257,10 +279,6 @@ public class Generator extends AbstractModule {
     return result;
   }
 
-  public Class getClass(String fqName) {
-    return mySourceLanguage.getClass(fqName);
-  }
-
   public Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
     Set<Language> result = new LinkedHashSet<Language>(super.getImplicitlyImportedLanguages(sm));
     if (SModelStereotype.isGeneratorModel(sm)) {
@@ -297,5 +315,47 @@ public class Generator extends AbstractModule {
       }
     }
     return result;
+  }
+
+  // classloading part
+  public Class getClass(String fqName) {
+    return mySourceLanguage.getClass(fqName);
+  }
+
+  @Override
+  public boolean canFindClass(String name) {
+//    return mySourceLanguage.canFindClass(name);
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public byte[] findClassBytes(String name) {
+//    return mySourceLanguage.findClassBytes(name);
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public ModuleClassLoader getClassLoader() {
+    return mySourceLanguage.getClassLoader();
+  }
+
+  @Override
+  public boolean canLoadFromSelf() {
+    return true;
+  }
+
+  @Override
+  public boolean canLoad() {
+    return true;
+  }
+
+  @Override
+  public URL findResource(String name) {
+    return mySourceLanguage.findResource(name);
+  }
+
+  @Override
+  public String findLibrary(String name) {
+    return mySourceLanguage.findLibrary(name);
   }
 }

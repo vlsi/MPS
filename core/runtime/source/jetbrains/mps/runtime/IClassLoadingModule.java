@@ -24,6 +24,7 @@ public interface IClassLoadingModule {
   String getPluginPath();
 
   //---class
+  Class getClass(String className);
 
   boolean canFindClass(String name);
 

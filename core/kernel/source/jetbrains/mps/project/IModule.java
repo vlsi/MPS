@@ -23,7 +23,6 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -127,11 +126,13 @@ public interface IModule extends SModule {
 
   boolean needReloading();
 
-  Class getClass(String className);
-
   public static interface ModelAdjuster {
     void adjust(SModelDescriptor model);
   }
+
+  // deprecated, use IClassLoadingModule#getClass instead
+//  @Deprecated
+//  Class getClass(String className);
 
   //-----todo ret rid of
 
