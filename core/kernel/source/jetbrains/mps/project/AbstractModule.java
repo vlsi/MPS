@@ -702,11 +702,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @Override
-  public boolean reloadClassesAfterGeneration() {
-    return true;
-  }
-
-  @Override
   public void invalidateCaches() {
     myScope.invalidateCaches();
   }

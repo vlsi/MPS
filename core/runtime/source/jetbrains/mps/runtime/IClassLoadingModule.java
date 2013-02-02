@@ -43,4 +43,8 @@ public interface IClassLoadingModule {
   //---library
 
   String findLibrary(String name);
+
+  //---other stuff
+  // maybe remove - all IClassLoadingModule with canLoad() is ok?
+  boolean reloadClassesAfterGeneration();
 }

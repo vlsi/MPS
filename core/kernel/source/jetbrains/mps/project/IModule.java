@@ -104,8 +104,6 @@ public interface IModule extends SModule {
 
   boolean isCompileInMPS();
 
-  boolean reloadClassesAfterGeneration();
-
   void invalidateCaches();
 
   boolean isChanged();
@@ -133,6 +131,9 @@ public interface IModule extends SModule {
   // deprecated, use IClassLoadingModule#getClass instead
 //  @Deprecated
 //  Class getClass(String className);
+
+//  @Deprecated
+//  boolean reloadClassesAfterGeneration();
 
   //-----todo ret rid of
 

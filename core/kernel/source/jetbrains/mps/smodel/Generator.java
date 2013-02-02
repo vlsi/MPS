@@ -358,4 +358,9 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   public String findLibrary(String name) {
     return mySourceLanguage.findLibrary(name);
   }
+
+  @Override
+  public boolean reloadClassesAfterGeneration() {
+    return true;
+  }
 }
