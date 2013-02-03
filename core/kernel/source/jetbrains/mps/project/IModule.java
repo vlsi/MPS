@@ -120,7 +120,7 @@ public interface IModule extends SModule {
     void adjust(SModelDescriptor model);
   }
 
-//  ----- IClassLoadingModule methods
+//  ----- IJavaModule methods
 
   IClassPathItem getClassPathItem();
 
@@ -128,9 +128,9 @@ public interface IModule extends SModule {
 
   boolean isCompileInMPS();
 
+//  use SModuleOperations#getModuleWithDependenciesClassPathItem instead
 //  @Deprecated
 //  IClassPathItem getModuleWithDependenciesClassPathItem();
-
 
 //  ----- IClassLoadingModule methods
 
