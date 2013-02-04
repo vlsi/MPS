@@ -72,6 +72,11 @@
     <component>
       <implementation-class>jetbrains.mps.ide.editor.warningPanel.MPSEditorWarningsManager</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>com.intellij.openapi.fileEditor.FileEditorDataProviderManager</implementation-class>
+    </component>
+
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
