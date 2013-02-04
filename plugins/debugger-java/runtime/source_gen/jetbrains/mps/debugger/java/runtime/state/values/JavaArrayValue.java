@@ -12,8 +12,6 @@ import com.sun.jdi.ArrayReference;
 import jetbrains.mps.debugger.java.runtime.state.watchables.JavaArrayItemWatchable;
 import javax.swing.Icon;
 import jetbrains.mps.debugger.java.api.ui.Icons;
-import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
-import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
 
 /*package*/ class JavaArrayValue extends JavaValue {
   private static final int MAX_ARRAY_VALUES = 100;
@@ -53,41 +51,5 @@ import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
   @Override
   public String getValuePresentation() {
     return (("{" + myValue.type().name() + "} ") + myValue.toString());
-  }
-
-  public JavaValue getElementValue(int index) {
-
-    return ValueUtil.getInstance().fromJDIRaw(EvaluationUtils.getInstance().getArrayElementAt((ArrayReference) myValue, index), myClassFQName, myThreadReference);
-  }
-
-  public int getSize() {
-    return ((ArrayReference) myValue).length();
-  }
-
-  public List<JavaValue> getAllElements() {
-    ArrayReference arrayReference = (ArrayReference) myValue;
-    List<Value> valueList = arrayReference.getValues();
-    List<JavaValue> result = new ArrayList<JavaValue>();
-    for (Value v : valueList) {
-      result.add(ValueUtil.getInstance().fromJDIRaw(v, myClassFQName, myThreadReference));
-    }
-    return result;
-  }
-
-  public List<JavaValue> getElements(int startIndex, int endIndex) {
-    if (startIndex > endIndex) {
-      return null;
-    }
-    // todo throw special kind of exception 
-    ArrayReference arrayReference = (ArrayReference) myValue;
-    if (startIndex < 0 || endIndex >= arrayReference.length()) {
-      return null;
-    }
-    List<Value> valueList = arrayReference.getValues(startIndex, endIndex);
-    List<JavaValue> result = new ArrayList<JavaValue>();
-    for (Value v : valueList) {
-      result.add(ValueUtil.getInstance().fromJDIRaw(v, myClassFQName, myThreadReference));
-    }
-    return result;
   }
 }

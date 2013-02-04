@@ -5,14 +5,28 @@ package jetbrains.mps.debugger.java.runtime.state.values;
 import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.StringReference;
+import java.util.List;
+import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 /*package*/ class JavaStringValue extends JavaObjectValue {
   public JavaStringValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value, classFQname, threadReference);
   }
 
-  public String getJavaStringValue() {
-    StringReference ref = (StringReference) myValue;
-    return ref.value();
+  @Override
+  public String getValuePresentation() {
+    return "\"" + ((StringReference) myValue).value() + "\"";
+  }
+
+  @Override
+  public boolean isStructure() {
+    return false;
+  }
+
+  @Override
+  public List<IWatchable> getSubvalues() {
+    return ListSequence.fromList(new ArrayList<IWatchable>());
   }
 }

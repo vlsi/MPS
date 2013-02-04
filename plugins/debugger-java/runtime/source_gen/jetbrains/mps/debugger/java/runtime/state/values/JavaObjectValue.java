@@ -16,16 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.debugger.java.api.state.watchables.JavaField;
 import javax.swing.Icon;
 import jetbrains.mps.debugger.java.api.ui.Icons;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
-import com.sun.jdi.ClassType;
-import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
-import jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy;
-import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 
 /*package*/ class JavaObjectValue extends JavaValue {
   public JavaObjectValue(Value value, String classFQname, ThreadReference threadReference) {
@@ -67,38 +57,5 @@ import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
   @Override
   public String getValuePresentation() {
     return (("{" + myValue.type().name() + "} ") + myValue.toString());
-  }
-
-  @Nullable
-  public JavaValue getFieldValue(String fieldName) {
-    try {
-      ObjectReference ref = (ObjectReference) myValue;
-      Field field = EvaluationUtils.getInstance().findField((ClassType) ref.referenceType(), fieldName);
-      return ValueUtil.getInstance().fromJDIRaw(ref.getValue(field), myClassFQName, myThreadReference);
-    } catch (InvalidEvaluatedExpressionException e) {
-      //  we get NPE instead 
-      return null;
-    }
-  }
-
-  @NotNull
-  private IObjectValueProxy createValueProxy() {
-    return (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(myValue);
-  }
-
-  public String getClassFqName() {
-    return ((ObjectReference) myValue).referenceType().name();
-  }
-
-  public String getClassName() {
-    return NameUtil.shortNameFromLongName(getClassFqName());
-  }
-
-  public boolean isInstanceOf(String className) {
-    try {
-      return createValueProxy().isInstanceOf("L" + className + ";");
-    } catch (EvaluationException e) {
-      return false;
-    }
   }
 }
