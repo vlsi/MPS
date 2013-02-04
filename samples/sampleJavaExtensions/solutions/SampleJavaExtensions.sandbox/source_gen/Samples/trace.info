@@ -611,8 +611,8 @@
     <nodeInfo nodeId="3385910400465347314" fileName="MoneySample.java" startLine="14" startPosition="91" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7427325263439038948" fileName="MoneySample.java" startLine="15" startPosition="38" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7427325263439038950" fileName="MoneySample.java" startLine="16" startPosition="0" endLine="17" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3385910400465347335" fileName="MoneySample.java" startLine="17" startPosition="84" endLine="18" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3385910400465347343" fileName="MoneySample.java" startLine="18" startPosition="55" endLine="19" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3385910400465347335" fileName="MoneySample.java" startLine="17" startPosition="84" endLine="18" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3385910400465347343" fileName="MoneySample.java" startLine="18" startPosition="65" endLine="19" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7427325263439038953" fileName="MoneySample.java" startLine="19" startPosition="49" endLine="20" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7427325263439041392" fileName="MoneySample.java" startLine="20" startPosition="117" endLine="21" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3385910400465347332" fileName="MoneySample.java" startLine="24" startPosition="38" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -1421,9 +1421,14 @@
             <property name="name" nameId="tpck.1169194664001" value="total" />
             <node role="type" roleId="tpee.5680397130376446158" type="v0h4.MoneyType" typeId="v0h4.5447719361346490730" id="3385910400465347337" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3385910400465347338">
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3385910400465347339">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3385910400465347285" resolveInfo="MoneySample" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3385910400465347328" resolveInfo="getDonation" />
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2721670271650430501">
+                <node role="operation" roleId="tpee.1197027833540" type="v0h4.ConvertTo" typeId="v0h4.1790427706118381722" id="2721670271650431352">
+                  <property name="targetCurrency" nameId="v0h4.1790427706118386783" value="EUR" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3385910400465347339">
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3385910400465347285" resolveInfo="MoneySample" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3385910400465347328" resolveInfo="getDonation" />
+                </node>
               </node>
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3385910400465347340">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3385910400465347315" resolveInfo="cash" />
@@ -1914,8 +1919,8 @@
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2975785153735223623">
-      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="store" />
+      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2975785153735223624" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2975785153735223625" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2975785153735223626">
@@ -1967,8 +1972,8 @@
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2975785153735223696">
-      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="retrieve" />
+      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="2975785153735223700">
         <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="2975785153735223621" resolveInfo="T" />
       </node>
@@ -2575,8 +2580,8 @@
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1404827149555729963" />
       </node>
       <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="4120418308311047821">
-        <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="log" />
+        <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4120418308311047822" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="4120418308311047827" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4120418308311047824">
