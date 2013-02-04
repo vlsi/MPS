@@ -322,7 +322,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
         //if not all the model is loaded, we try to look up the given concept only between root nodes first
         if (myNamesLoadingState.compareTo(ModelLoadingState.FULLY_LOADED) < 0) {
-          for (SNode root : structureModel.roots()) {
+          for (SNode root : structureModel.getRootNodes()) {
             String name = getConceptName(root);
             if (name == null) continue;
             myNameToConceptCache.putIfAbsent(name, root);

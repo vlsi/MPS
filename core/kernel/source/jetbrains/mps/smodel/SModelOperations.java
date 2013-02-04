@@ -45,7 +45,7 @@ public class SModelOperations {
 
   @Nullable
   public static SNode getRootByName(SModel model, @NotNull String name) {
-    for (SNode root : model.roots()) {
+    for (SNode root : model.getRootNodes()) {
       if (name.equals(root.getName())) return root;
     }
     return null;

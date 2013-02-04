@@ -28,7 +28,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.util.Condition;
@@ -116,7 +117,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     boolean wereErrors = false;
 
     myContextModules.add(context.getModule());
-    Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.roots(), new Condition<SNode>() {
+    Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.getRootNodes(), new Condition<SNode>() {
       public boolean met(SNode node) {
         return node.getName() != null;
       }

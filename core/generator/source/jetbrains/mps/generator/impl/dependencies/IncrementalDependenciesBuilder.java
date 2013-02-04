@@ -140,7 +140,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
       oldidsToOriginal.put(entry.getKey().getNodeId(), entry.getValue());
     }
     currentToOriginalMap = new HashMap<SNode, SNode>();
-    for (SNode root : newmodel.roots()) {
+    for (SNode root : newmodel.getRootNodes()) {
       SNodeId id = root.getNodeId();
       SNode original = oldidsToOriginal.get(id);
       if (original == null) {

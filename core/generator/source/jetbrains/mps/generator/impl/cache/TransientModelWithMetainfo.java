@@ -132,7 +132,7 @@ public class TransientModelWithMetainfo {
 
   public static TransientModelWithMetainfo create(SModel model, DependenciesBuilder builder) throws GenerationFailureException {
     ArrayList<SNode> roots = new ArrayList<SNode>();
-    for (SNode root1 : model.roots()) {
+    for (SNode root1 : model.getRootNodes()) {
       roots.add(root1);
     }
     TransientModelWithMetainfo metainfo = new TransientModelWithMetainfo(model.getSModelReference(), roots);

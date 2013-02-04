@@ -49,7 +49,7 @@ public class CloneUtil {
   }
 
   public static void cloneModel(SModel inputModel, SModel outputModel, boolean originalInput) {
-    for (SNode node : inputModel.roots()) {
+    for (SNode node : inputModel.getRootNodes()) {
       SNode outputNode = clone(node, outputModel, originalInput);
       outputModel.addRootNode(outputNode);
     }

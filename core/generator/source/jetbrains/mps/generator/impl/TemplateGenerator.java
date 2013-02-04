@@ -188,7 +188,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // root mapping rules
     ttrace.push("root mappings", false);
     ArrayList<SNode> rootsToCopy = new ArrayList<SNode>();
-    for (SNode root : myInputModel.roots()) {
+    for (SNode root : myInputModel.getRootNodes()) {
       rootsToCopy.add(root);
     }
     for (TemplateRootMappingRule rule : myRuleManager.getRoot_MappingRules()) {
@@ -645,7 +645,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private void revalidateAllReferences() throws GenerationCanceledException {
     // replace all postponed references
-    for (SNode root : myOutputModel.roots()) {
+    for (SNode root : myOutputModel.getRootNodes()) {
       checkMonitorCanceled();
       revalidateAllReferences(root);
     }

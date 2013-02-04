@@ -89,7 +89,7 @@ public class TextGeneratorEngine {
 
       resultsForModel.put(model, new ArrayList<TextGenerationResult>());
       int rootsCount = 0;
-      for (SNode root : model.roots()) {
+      for (SNode root : model.getRootNodes()) {
         roots.add(root);
         rootsCount++;
         assert root.getModel() == model;

@@ -54,7 +54,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   }
 
   private void initCache() {
-    for (SNode root : myModel.roots()) {
+    for (SNode root : myModel.getRootNodes()) {
       addToCache(root);
     }
     myInitialized = true;

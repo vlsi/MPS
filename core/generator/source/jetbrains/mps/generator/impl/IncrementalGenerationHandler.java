@@ -244,7 +244,7 @@ public class IncrementalGenerationHandler {
     myRootsCount = IterableUtil.asCollection(smodel.getRootNodes()).size();
 
     myUnchangedRoots = new HashSet<SNode>();
-    for (SNode root : smodel.roots()) {
+    for (SNode root : smodel.getRootNodes()) {
       String id = root.getNodeId().toString();
       GenerationRootDependencies rd = oldDependencies.getDependenciesFor(id);
       String oldHash;
@@ -295,7 +295,7 @@ public class IncrementalGenerationHandler {
     boolean changed;
 
     ArrayList<SNode> roots = new ArrayList<SNode>();
-    for (SNode root : smodel.roots()) {
+    for (SNode root : smodel.getRootNodes()) {
       roots.add(root);
     }
 

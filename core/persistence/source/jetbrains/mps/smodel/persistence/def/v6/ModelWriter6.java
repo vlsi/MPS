@@ -16,7 +16,9 @@
 package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -82,7 +84,7 @@ public class ModelWriter6 implements IModelWriter {
 
     // roots
     saveRootStubs(rootElement, sourceModel);   // only for quick roots access
-    for (SNode root : sourceModel.roots()) {
+    for (SNode root : sourceModel.getRootNodes()) {
       saveNode(rootElement, root, true);
     }
 
@@ -91,7 +93,7 @@ public class ModelWriter6 implements IModelWriter {
 
   protected void saveRootStubs(Element parent, SModel model) {
     Element roots = new Element(ModelPersistence.ROOT_STUBS);
-    for (SNode root : model.roots()) {
+    for (SNode root : model.getRootNodes()) {
       saveNode(roots, root, false);
     }
     parent.addContent(roots);

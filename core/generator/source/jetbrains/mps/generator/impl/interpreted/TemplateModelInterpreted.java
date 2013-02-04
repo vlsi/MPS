@@ -45,7 +45,7 @@ public class TemplateModelInterpreted implements TemplateModel {
   }
 
   private void init() {
-    for (SNode root : myModel.roots()) {
+    for (SNode root : myModel.getRootNodes()) {
       String conceptName = root.getConcept().getId();
       if (conceptName.equals(RuleUtil.concept_TemplateSwitch)) {
         mySwitches.add(new TemplateSwitchMappingInterpreted(root));

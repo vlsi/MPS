@@ -31,7 +31,7 @@ public class ModelLoader {
 
   public void update() {
     UnregisteredNodes.instance().clear();
-    for (SNode root : myModel.roots()) {
+    for (SNode root : myModel.getRootNodes()) {
       SNode fullRoot = myFullModel.getNode(root.getNodeId());
       if (fullRoot == null) continue; //this can happen after model update if the
       for (SNode child : IterableUtil.copyToList(fullRoot.getChildren())) {

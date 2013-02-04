@@ -76,7 +76,7 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
         return node.getName() != null;
       }
     };
-    Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.roots(), cond);
+    Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.getRootNodes(), cond);
     for (SNode outputRoot : iterable) {
       roots.add(getKey(outputModel.getSModelReference(), outputRoot));
     }

@@ -49,7 +49,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
         } else {
           Language lang = (Language) module;
           SModel strucModel = lang.getStructureModelDescriptor().getSModel();
-          for (SNode root : strucModel.roots()) {
+          for (SNode root : strucModel.getRootNodes()) {
             myConcepts.put(id, new SConceptNodeAdapter(langName + "." + root.getProperty(SNodeUtil.property_INamedConcept_name)));
           }
 

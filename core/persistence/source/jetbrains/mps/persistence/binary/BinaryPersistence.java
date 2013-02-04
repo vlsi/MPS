@@ -158,7 +158,7 @@ public class BinaryPersistence {
     os.writeInt(0xbaba);
 
     ArrayList<SNode> roots = new ArrayList<SNode>();
-    for (SNode root : model.roots()) {
+    for (SNode root : model.getRootNodes()) {
       roots.add(root);
     }
     new NodesWriter(model.getSModelReference()).writeNodes(roots, os);

@@ -79,7 +79,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
 
   public Iterable<SNode> getRootsToIterate(SModel model) {
     if (SModelStereotype.isStubModelStereotype(model.getStereotype())) return new EmptyIterable<SNode>();
-    return new ConditionalIterable<SNode>(model.roots(), new MyCondition());
+    return new ConditionalIterable<SNode>(model.getRootNodes(), new MyCondition());
   }
 
   @Override
