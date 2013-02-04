@@ -22,7 +22,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
@@ -117,7 +118,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
             return node.getPresentation().equals(name);
           }
         };
-        Iterator<SNode> iter = new ConditionalIterator<SNode>(sm.getSModel().rootsIterator(), cond);
+        Iterator<SNode> iter = new ConditionalIterator<SNode>(sm.getSModel().getRootNodes().iterator(), cond);
         if (!iter.hasNext()) return null;
         return getFileFor(iter.next());
       }

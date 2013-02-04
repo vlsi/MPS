@@ -136,7 +136,7 @@ public class TransientModelWithMetainfo {
       roots.add(root1);
     }
     TransientModelWithMetainfo metainfo = new TransientModelWithMetainfo(model.getSModelReference(), roots);
-    Iterator<SNode> it = model.rootsIterator();
+    Iterator<SNode> it = model.getRootNodes().iterator();
     while (it.hasNext()) {
       SNode root = it.next();
       SNode node = builder.getOriginalForOutput(root);

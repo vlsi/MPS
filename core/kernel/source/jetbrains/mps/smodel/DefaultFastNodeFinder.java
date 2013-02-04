@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SNode;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
@@ -61,7 +63,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   @Override
   public List<SNode> getNodes(String conceptFqName, boolean includeInherited) {
     // notify 'model nodes read access'
-    myModel.rootsIterator();
+    myModel.getRootNodes().iterator();
 
     // pre-loading model to avoid deadlock (model loading process requires a lock)
     // model cannot be unloaded afterwards, because we have model read access

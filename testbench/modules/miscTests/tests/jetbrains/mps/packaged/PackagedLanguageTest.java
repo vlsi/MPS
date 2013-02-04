@@ -73,7 +73,7 @@ public class PackagedLanguageTest {
     final SModel structureModel = structureModelDescriptor.getSModel();
     Assert.assertNotNull(structureModel);
     Assert.assertEquals(1, IterableUtil.asCollection(structureModel.getRootNodes()).size());
-    SNode root = structureModel.rootsIterator().next();
+    SNode root = structureModel.getRootNodes().iterator().next();
     Assert.assertEquals(PACKAGED_CONCEPT, SNodeAccessUtil.getProperty(root, "name"));
     final SNode propertyDeclaration = jetbrains.mps.util.SNodeOperations.getChild(root, "propertyDeclaration");
     Assert.assertNotNull(propertyDeclaration);
@@ -110,7 +110,7 @@ public class PackagedLanguageTest {
     final SModel libraryModel = libraryModelDescriptor.getSModel();
     Assert.assertNotNull(libraryModel);
     Assert.assertEquals(1, IterableUtil.asCollection(libraryModel.getRootNodes()).size());
-    final SNode root = libraryModel.rootsIterator().next();
+    final SNode root = libraryModel.getRootNodes().iterator().next();
     Assert.assertEquals("DummyLibraryClass", SNodeAccessUtil.getProperty(root, "name"));
 
     SNode method = null;

@@ -113,7 +113,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       }
 
       ArrayList<SNode> roots = new ArrayList<SNode>();
-      for (Iterator<SNode> it = model.rootsIterator(); it.hasNext(); ) {
+      for (Iterator<SNode> it = model.getRootNodes().iterator(); it.hasNext(); ) {
         roots.add(it.next());
       }
       ModelOutputStream mos = null;
@@ -230,7 +230,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     ModelOutputStream mos = new ModelOutputStream(os);
 
     ArrayList<SNode> roots = new ArrayList<SNode>();
-    for (Iterator<SNode> it = model.rootsIterator(); it.hasNext(); ) {
+    for (Iterator<SNode> it = model.getRootNodes().iterator(); it.hasNext(); ) {
       roots.add(it.next());
     }
     mos.writeInt(43);
