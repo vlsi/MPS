@@ -14,6 +14,7 @@
     <classNode extendsClassName="JavaKaja.runtime.KajaFrame" />
   </dependency>
   <dependency className="Kaja.sandbox.sandbox.Sample" file="Sample.java">
+    <classNode dependClassName="JavaKaja.runtime.Direction" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="JavaKaja.runtime.KajaFrame" />
   </dependency>
