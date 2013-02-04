@@ -10,8 +10,9 @@ import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.ArrayList;
 import com.sun.jdi.ObjectReference;
 import com.sun.jdi.Field;
-import java.util.Collections;
-import java.util.Comparator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.debugger.java.api.state.watchables.JavaField;
 import javax.swing.Icon;
 import jetbrains.mps.debugger.java.api.ui.Icons;
@@ -36,14 +37,17 @@ import jetbrains.mps.util.NameUtil;
     List<IWatchable> watchables = new ArrayList<IWatchable>();
     ObjectReference ref = (ObjectReference) myValue;
     if (ref != null) {
-      List<Field> fieldList = ref.referenceType().allFields();
-      Collections.sort(fieldList, new Comparator<Field>() {
-        @Override
-        public int compare(Field o1, Field o2) {
-          return o1.name().compareTo(o2.name());
+      List<Field> fieldList = ListSequence.fromList(new ArrayList<Field>());
+      ListSequence.fromList(fieldList).addSequence(ListSequence.fromList(ref.referenceType().allFields()));
+      for (Field f : ListSequence.fromList(fieldList).where(new IWhereFilter<Field>() {
+        public boolean accept(Field it) {
+          return !(it.isStatic());
         }
-      });
-      for (Field f : fieldList) {
+      }).sort(new ISelector<Field, String>() {
+        public String select(Field it) {
+          return it.name();
+        }
+      }, true)) {
         watchables.add(new JavaField(f, ref, myClassFQName, myThreadReference));
       }
     }
