@@ -16,7 +16,6 @@
 package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelRootUtil;
@@ -108,9 +107,9 @@ public class CloneModelProperties {
   }
 
   public void loadFrom(SModel model) {
-    myLongName = model.getLongName();
+    myLongName = jetbrains.mps.util.SNodeOperations.getModelLongName(model);
 
-    myStereotype = model.getStereotype();
+    myStereotype = jetbrains.mps.util.SNodeOperations.getModelStereotype(model);
     ModelRoot modelRoot = ModelRootUtil.getModelRoot(model.getModelDescriptor());
     if (modelRoot instanceof FolderModelRootBase) {
       myRoot = new RootReference();

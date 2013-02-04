@@ -51,7 +51,7 @@ public class ModelNodeData extends BaseNodeData {
   }
 
   public ModelNodeData(PathItemRole role, SModel model, boolean isResult, boolean resultsSection) {
-    super(role, model.getModelDescriptor().getLongName()+ (!model.getStereotype().isEmpty() ? "@"+ model.getStereotype(): ""), "", false, isResult, resultsSection);
+    super(role, model.getModelDescriptor().getLongName()+ (!jetbrains.mps.util.SNodeOperations.getModelStereotype(model).isEmpty() ? "@"+ jetbrains.mps.util.SNodeOperations.getModelStereotype(model) : ""), "", false, isResult, resultsSection);
     myModelReference = model.getModelDescriptor().getSModelReference();
   }
 

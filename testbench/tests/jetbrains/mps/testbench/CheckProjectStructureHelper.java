@@ -346,7 +346,7 @@ public class CheckProjectStructureHelper {
                 SNode node = reporter.getSNode();
                 if (!CheckProjectStructureUtil.filterIssue(node)) continue;
                 myErrors++;
-                errors.add("Error message: " + reporter.reportError() + "   model: " + node.getModel().getLongName() + " root: " + node.getContainingRoot() + " node: " + node);
+                errors.add("Error message: " + reporter.reportError() + "   model: " + jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()) + " root: " + node.getContainingRoot() + " node: " + node);
               }
               if (reporter.getMessageStatus().equals(MessageStatus.WARNING)) {
                 myWarnings++;
@@ -395,7 +395,7 @@ public class CheckProjectStructureHelper {
         if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
           errorMessages.
             append("Broken reference in model {").
-            append(node.getModel().getLongName()).
+            append(jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel())).
             append("}").
             append(" node ").
             append(node.getNodeId().toString()).

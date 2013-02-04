@@ -823,7 +823,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     //actually, detached models should not be distinguishable by some "disposed" property
     if (myModel == null || !myModel.isDisposed()) return;
 
-    String modelName = myModel.getLongName();
+    String modelName = jetbrains.mps.util.SNodeOperations.getModelLongName(myModel);
     if (ourErroredModels.add(modelName)) {
       System.err.println("CRITICAL: INVALID OPERATION DETECTED");
       System.err.println("model: " + modelName);

@@ -173,7 +173,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     //skip errors in java stubs because they can have reference to classes that doesn't present
     //in class path
     SModel model = getSourceNode().getModel();
-    if (model != null && SModelStereotype.isStubModelStereotype(model.getStereotype())) return;
+    if (model != null && SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(model))) return;
 
     synchronized (ourErrorReportedRefs) {
       if (ourErrorReportedRefs.contains(this)) return;

@@ -78,7 +78,7 @@ public class TemplateModelInterpreted implements TemplateModel {
 
   @Override
   public String getLongName() {
-    return myModel.getLongName();
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(myModel);
   }
 
   @Override

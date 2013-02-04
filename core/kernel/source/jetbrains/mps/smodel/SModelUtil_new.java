@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -68,7 +70,7 @@ public class SModelUtil_new implements CoreComponent {
         return;
       }
 
-      String modelName = p0.getNode().getModel().getLongName();
+      String modelName = jetbrains.mps.util.SNodeOperations.getModelLongName(p0.getNode().getModel());
       String newName = modelName + "." + p0.getNewPropertyValue();
       String oldName = modelName + "." + p0.getOldPropertyValue();
       SModelUtil.conceptRenamed(oldName, newName);

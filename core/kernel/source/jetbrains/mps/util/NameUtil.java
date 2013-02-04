@@ -384,7 +384,7 @@ public class NameUtil {
       return null;
     }
     String name = node.getName();
-    return node.getModel().getLongName() + "." + name;
+    return SNodeOperations.getModelLongName(node.getModel()) + "." + name;
   }
 
   public static String compactNodeFQName(SNode node) {
@@ -392,7 +392,7 @@ public class NameUtil {
       return "null";
     }
     String name = node.getName();
-    return compactNamespace(node.getModel().getLongName()) + "." + name;
+    return compactNamespace(SNodeOperations.getModelLongName(node.getModel())) + "." + name;
   }
 
   public static String escapeInvisibleCharacters(String s) {

@@ -552,7 +552,7 @@ public class TestMain {
           try {
             String className = ModelAccess.instance().runReadAction(new Computable<String>() {
               public String compute() {
-                return model.getLongName() + "." + outputRoot.getName();
+                return jetbrains.mps.util.SNodeOperations.getModelLongName(model) + "." + outputRoot.getName();
               }
             });
             final Class testClass = Class.forName(className, true, classLoader);

@@ -75,7 +75,7 @@ public class TextGen {
 
   public static TextGenerationResult generateText(SNode node, boolean withDebugInfo, @Nullable StringBuilder[] buffers) {
     TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
-    buffer.putUserObject(PACKAGE_NAME, node.getModel().getLongName());
+    buffer.putUserObject(PACKAGE_NAME, jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()));
     buffer.putUserObject(ROOT_NODE, node);
     appendNodeText(buffer, node, null);
     String topBufferText = buffer.getTopBufferText();

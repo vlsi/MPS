@@ -24,7 +24,7 @@ import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
@@ -122,7 +122,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     myModelProperties = new CloneModelProperties();
     myModelProperties.loadFrom(myCloningModel);
 
-    String newName = createNameForCopy(myCloningModel.getLongName(), myCloningModel.getStereotype());
+    String newName = createNameForCopy(jetbrains.mps.util.SNodeOperations.getModelLongName(myCloningModel), jetbrains.mps.util.SNodeOperations.getModelStereotype(myCloningModel));
     myModelProperties.setLongName(newName);
   }
 

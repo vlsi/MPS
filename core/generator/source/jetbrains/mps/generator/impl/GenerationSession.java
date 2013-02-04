@@ -243,7 +243,7 @@ class GenerationSession {
     List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(myGenerationPlan.getMappingConfigurations(myMajorStep));
     if (mappingConfigurations.isEmpty()) {
       if (inputModel.getRootNodes().iterator().hasNext()) {
-        myLogger.warning("skip model \"" + inputModel.getSModelFqName() + "\" : no generator available");
+        myLogger.warning("skip model \"" + inputModel.getSModelReference().getSModelFqName() + "\" : no generator available");
       }
       return inputModel;
     }
@@ -296,7 +296,7 @@ class GenerationSession {
 
     SModel outputModel = executeMajorStepInternal(inputModel, ruleManager);
     if (myLogger.getErrorCount() > 0) {
-      myLogger.warning("model \"" + inputModel.getSModelFqName() + "\" has been generated with errors");
+      myLogger.warning("model \"" + inputModel.getSModelReference().getSModelFqName() + "\" has been generated with errors");
     }
     return outputModel;
   }
@@ -319,7 +319,7 @@ class GenerationSession {
     // primary mapping
     // -----------------------
     if (myLogger.needsInfo()) {
-      myLogger.info("generating model '" + currentInputModel.getSModelFqName() + "' --> '" + currentOutputModel.getSModelFqName() + "'");
+      myLogger.info("generating model '" + currentInputModel.getSModelReference().getSModelFqName() + "' --> '" + currentOutputModel.getSModelReference().getSModelFqName() + "'");
     }
     boolean somethingHasBeenGenerated = applyRules(currentInputModel, currentOutputModel, true, ruleManager);
     if (!somethingHasBeenGenerated) {
@@ -346,7 +346,7 @@ class GenerationSession {
 
       SModel transientModel = createTransientModel();
       if (myLogger.needsInfo()) {
-        myLogger.info("next minor step '" + currentInputModel.getSModelFqName().getStereotype() + "' --> '" + transientModel.getSModelFqName().getStereotype() + "'");
+        myLogger.info("next minor step '" + currentInputModel.getSModelReference().getSModelFqName().getStereotype() + "' --> '" + transientModel.getSModelReference().getSModelFqName().getStereotype() + "'");
       }
       tracer.startTracing(currentInputModel, transientModel);
       if (!applyRules(currentInputModel, transientModel, false, ruleManager)) {
@@ -356,7 +356,7 @@ class GenerationSession {
         mySessionContext.getModule().removeModel(transientModel.getModelDescriptor());
         myMinorStep--;
         if (myLogger.needsInfo()) {
-          myLogger.info("unchanged, empty model '" + transientModel.getSModelFqName().getStereotype() + "' removed");
+          myLogger.info("unchanged, empty model '" + transientModel.getSModelReference().getSModelFqName().getStereotype() + "' removed");
         }
         break;
       }
@@ -442,7 +442,7 @@ class GenerationSession {
       ttrace.push("model clone", false);
       SModel currentInputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
-        myLogger.info("clone model '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
+        myLogger.info("clone model '" + currentInputModel.getSModelReference().getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelReference().getSModelFqName() + "'");
       }
       CloneUtil.cloneModelWithImports(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
       ttrace.pop();
@@ -502,7 +502,7 @@ class GenerationSession {
       ttrace.push("model clone", false);
       SModel currentOutputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
-        myLogger.info("clone model '" + currentModel.getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelFqName() + "'");
+        myLogger.info("clone model '" + currentModel.getSModelReference().getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelReference().getSModelFqName() + "'");
       }
       CloneUtil.cloneModelWithImports(currentModel, currentOutputModel_clone, false);
       ttrace.pop();

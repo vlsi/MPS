@@ -78,7 +78,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
   }
 
   public Iterable<SNode> getRootsToIterate(SModel model) {
-    if (SModelStereotype.isStubModelStereotype(model.getStereotype())) return new EmptyIterable<SNode>();
+    if (SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(model))) return new EmptyIterable<SNode>();
     return new ConditionalIterable<SNode>(model.getRootNodes(), new MyCondition());
   }
 
