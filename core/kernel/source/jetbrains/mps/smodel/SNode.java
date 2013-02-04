@@ -285,7 +285,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (p != null) {
       p.removeChild(this);
     } else if (myModel != null) {
-      myModel.removeRoot(this);
+      myModel.removeRootNode(this);
     }
   }
 
@@ -1998,7 +1998,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     @Override
     public void removeRootNode(org.jetbrains.mps.openapi.model.SNode node) {
-      myModel.removeRoot((SNode) node);
+      myModel.removeRootNode((SNode) node);
     }
 
     @Override

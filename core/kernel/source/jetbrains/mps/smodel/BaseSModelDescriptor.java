@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelScope;
-import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -29,9 +28,6 @@ import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -112,7 +108,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @Override
   public void removeRootNode(@NotNull SNode node) {
     // TODO remove cast
-    getSModel().removeRoot((jetbrains.mps.smodel.SNode) node);
+    getSModel().removeRootNode((jetbrains.mps.smodel.SNode) node);
   }
 
   @Override

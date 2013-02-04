@@ -24,7 +24,8 @@ import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -137,7 +138,7 @@ public class DelayedChanges {
             // root?
             if (myChildToReplace.getModel() != null && myChildToReplace.getModel().isRoot(myChildToReplace)) {
               myChildToReplace.getModel().addRoot(child);
-              myChildToReplace.getModel().removeRoot(myChildToReplace);
+              myChildToReplace.getModel().removeRootNode(myChildToReplace);
               myGenerator.rootReplaced(myChildToReplace, child);
             }
           } else {

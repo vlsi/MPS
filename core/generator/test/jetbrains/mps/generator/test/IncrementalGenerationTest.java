@@ -17,7 +17,8 @@ package jetbrains.mps.generator.test;
 
 import jetbrains.mps.TestMain;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Assert;
 import org.junit.Test;
@@ -103,7 +104,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
           SModel model = descr.getSModel();
           SNode root = SModelOperations.getRootByName(model,"StatementList_Editor");
           Assert.assertNotNull("No root in model", root);
-          descr.getSModel().removeRoot(root);
+          descr.getSModel().removeRootNode(root);
         }
       });
 
