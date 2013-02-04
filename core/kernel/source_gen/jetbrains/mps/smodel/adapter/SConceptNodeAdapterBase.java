@@ -4,6 +4,12 @@ package jetbrains.mps.smodel.adapter;
 
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SModelRepositoryListener;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import java.util.Set;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SLink;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
@@ -24,9 +30,24 @@ import jetbrains.mps.project.GlobalScope;
 public class SConceptNodeAdapterBase implements SAbstractConcept {
   private String myConceptName;
   private SNode myConcept;
+  private SModelRepositoryListener mySModelRepositoryAdapter = new SModelRepositoryAdapter() {
+    @Override
+    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+      if (myConcept == null) {
+        return;
+      }
+      for (SModelDescriptor model : SetSequence.fromSet(replacedModels)) {
+        if (model.getModelReference().equals(myConcept.getModel().getSModelReference())) {
+          myConcept = null;
+          return;
+        }
+      }
+    }
+  };
 
   public SConceptNodeAdapterBase(String conceptName) {
     myConceptName = conceptName;
+    SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryAdapter);
   }
 
   public String getQualifiedName() {
@@ -60,7 +81,7 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
   public SProperty findProperty(final String name) {
     SNode prop = ListSequence.fromList((List<SNode>) SModelSearchUtil.getPropertyDeclarations(getConcept())).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_vein7o_a0a0a0a0a0a0a8(SPropertyOperations.getString(it, "name"), name);
+        return eq_vein7o_a0a0a0a0a0a0a9(SPropertyOperations.getString(it, "name"), name);
       }
     });
     return (prop == null ?
@@ -100,7 +121,7 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     return myConceptName;
   }
 
-  private static boolean eq_vein7o_a0a0a0a0a0a0a8(Object a, Object b) {
+  private static boolean eq_vein7o_a0a0a0a0a0a0a9(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
