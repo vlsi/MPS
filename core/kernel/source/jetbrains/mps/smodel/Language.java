@@ -38,6 +38,7 @@ import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
@@ -330,7 +331,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
         }
 
         //if we haven't found a root concept, then try to find in any node in the model
-        for (SNode node : structureModel.nodes()) {
+        for (SNode node : new NodesIterable(structureModel)) {
           String name = getConceptName(node);
           if (name == null) continue;
           myNameToConceptCache.putIfAbsent(name, node);

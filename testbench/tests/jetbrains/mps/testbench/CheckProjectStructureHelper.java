@@ -38,7 +38,8 @@ import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.util.Computable;
@@ -49,6 +50,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 import javax.swing.*;
 import java.io.File;
@@ -293,7 +295,7 @@ public class CheckProjectStructureHelper {
   }
 
   private static void checkModelNodes(@NotNull SModel model, @NotNull final List<String> result) {
-    for (final SNode node : model.nodes()) {
+    for (final SNode node : new NodesIterable(model)) {
       final SConcept concept = node.getConcept();
       if (concept == null) {
         result.add("unknown concept of node: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
@@ -375,7 +377,7 @@ public class CheckProjectStructureHelper {
       }
     }
 
-    for (SNode node : sm.getSModel().nodes()) {
+    for (SNode node : new NodesIterable(sm.getSModel())) {
       Testbench.LOG.debug("Checking node " + node);
       if (SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
@@ -384,7 +386,7 @@ public class CheckProjectStructureHelper {
       }
     }
 
-    for (SNode node : sm.getSModel().nodes()) {
+    for (SNode node : new NodesIterable(sm.getSModel())) {
       for (SReference ref : node.getReferences()) {
         if (SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
           continue;

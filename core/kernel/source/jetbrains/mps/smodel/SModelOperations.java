@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -28,6 +30,7 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -63,7 +66,7 @@ public class SModelOperations {
       importedModels.add(sm.getSModelReference());
     }
 
-    for (SNode node : model.nodes()) {
+    for (SNode node : new NodesIterable(model)) {
       Language lang = jetbrains.mps.util.SNodeOperations.getLanguage(node);
       if (lang == null) {
         LOG.error("Can't find language " + NameUtil.namespaceFromConceptFQName(node.getConcept().getId()));
@@ -162,7 +165,7 @@ public class SModelOperations {
   //todo rewrite using iterators
   public static Set<ModuleReference> getUsedLanguages(@NotNull SModel model) {
     Set<ModuleReference> result = new HashSet<ModuleReference>();
-    for (SNode node : model.nodes()) {
+    for (SNode node : new NodesIterable(model)) {
       Language lang = jetbrains.mps.util.SNodeOperations.getLanguage(node);
       if (lang == null) continue;
       result.add(lang.getModuleReference());
@@ -252,7 +255,7 @@ public class SModelOperations {
   //todo rewrite using iterators
   public static Set<SModelReference> getUsedImportedModels(SModel sModel) {
     Set<SModelReference> result = new HashSet<SModelReference>();
-    for (SNode node : sModel.nodes()) {
+    for (SNode node : new NodesIterable(sModel)) {
       Iterable<? extends SReference> references = node.getReferences();
       for (SReference reference : references) {
         SModelReference targetModel = reference.getTargetSModelReference();

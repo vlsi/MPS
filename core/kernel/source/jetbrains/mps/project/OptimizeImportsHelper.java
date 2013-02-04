@@ -16,8 +16,10 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.modules.*;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -141,7 +143,7 @@ public class OptimizeImportsHelper {
     for (ModuleReference ref : modelDescriptor.getSModel().engagedOnGenerationLanguages()) {
       result.myUsedLanguages.add(ModuleRepositoryFacade.getInstance().getModule(ref, Language.class));
     }
-    for (SNode node : modelDescriptor.getSModel().nodes()) {
+    for (SNode node : new NodesIterable(modelDescriptor.getSModel())) {
       result.myUsedLanguages.add(jetbrains.mps.util.SNodeOperations.getLanguage(node));
       for (SReference ref : node.getReferences()) {
         SModelReference mr = ref.getTargetSModelReference();

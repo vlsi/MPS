@@ -61,6 +61,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import javax.swing.JComponent;
@@ -378,7 +379,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           int properties = 0;
           messageText.append("<html>");
           SModel model = myModelDescriptor.getSModel();
-          for (SNode node : model.nodes()) {
+          for (SNode node : new NodesIterable(model)) {
             references += IterableUtil.asCollection(node.getReferences()).size();
             properties += jetbrains.mps.util.SNodeOperations.getProperties(node).keySet().size();
           }
