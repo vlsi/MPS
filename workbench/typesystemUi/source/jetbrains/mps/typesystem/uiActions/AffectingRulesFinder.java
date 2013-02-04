@@ -25,6 +25,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
@@ -58,7 +59,9 @@ public class AffectingRulesFinder implements IFinder {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ruleId.o1));
         if (modelDescriptor == null) continue;
 
-        SNode rule = modelDescriptor.getSModel().getNodeById(ruleId.o2);
+        SNodeId nodeId = SNodeId.fromString(ruleId.o2);
+        assert nodeId != null : "wrong node id string";
+        SNode rule = modelDescriptor.getSModel().getNodeById(nodeId);
         if (rule == null) continue;
 
         rules.add(new SearchResult<SNode>(rule, "rules which affect node's type"));

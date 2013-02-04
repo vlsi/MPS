@@ -22,7 +22,8 @@ import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
@@ -156,7 +157,9 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (sNodeId == null) {
       throw new SelectionStoreException("Required node Id property missed, propertyName = " + propertyName);
     }
-    SNode sNode = sModel.getNodeById(sNodeId);
+    jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(sNodeId);
+    assert nodeId != null : "wrong node id string";
+    SNode sNode = sModel.getNodeById(nodeId);
     if (sNode == null) {
       throw new SelectionRestoreException();
     }

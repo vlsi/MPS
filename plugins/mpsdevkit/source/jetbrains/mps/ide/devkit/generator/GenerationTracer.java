@@ -21,7 +21,8 @@ import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -328,7 +329,9 @@ public class GenerationTracer implements IGenerationTracer {
     SNode inputNode = node;
     SNode outputNode = null;
     while (inputNode != null) {
-      outputNode = outputModel.getNodeById(inputNode.getNodeId().toString());
+      SNodeId nodeId = SNodeId.fromString(inputNode.getNodeId().toString());
+      assert nodeId != null : "wrong node id string";
+      outputNode = outputModel.getNodeById(nodeId);
       if (outputNode != null) break;
       inputNode = inputNode.getParent();
     }
@@ -391,7 +394,9 @@ public class GenerationTracer implements IGenerationTracer {
     SNode outputNode = node;
     SNode inputNode = null;
     while (outputNode != null) {
-      inputNode = inputModel.getNodeById(outputNode.getNodeId().toString());
+      SNodeId nodeId = SNodeId.fromString(outputNode.getNodeId().toString());
+      assert nodeId != null : "wrong node id string";
+      inputNode = inputModel.getNodeById(nodeId);
       if (inputNode != null) break;
       outputNode = outputNode.getParent();
     }
