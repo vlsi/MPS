@@ -15,6 +15,10 @@ public class CellMenuPart_PropertyPostfixHints_GetPostfixes_BehaviorDescriptor e
     return CellMenuPart_PropertyPostfixHints_GetPostfixes_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return CellMenuPart_PropertyPostfixHints_GetPostfixes_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes";
