@@ -1049,13 +1049,6 @@
     </node>
   </root>
   <root id="6895093993902311012">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5497648299878741978">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="chooser" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="7573235936722759491" resolveInfo="RefactoringParameterChooser" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="5957075241641459517" />
-    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="478744034994717596">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="478744034994715997" resolveInfo="RefactoringArgument" />
     </node>
