@@ -1947,7 +1947,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     @Override
     public SModelId getModelId() {
-      return myModel.getSModelId();
+      return myModel.getModelId();
     }
 
     @Override

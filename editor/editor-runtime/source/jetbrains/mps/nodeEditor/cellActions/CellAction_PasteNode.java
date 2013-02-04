@@ -84,7 +84,7 @@ public class CellAction_PasteNode extends EditorCellAction {
     final SModel modeltoPaste = nodeSelected.getModel();
 
     // sometimes model is not in repository (paste in merge dialog)
-    final boolean inRepository = SModelRepository.getInstance().getModelDescriptor(modeltoPaste.getSModelId()) != null;
+    final boolean inRepository = SModelRepository.getInstance().getModelDescriptor(modeltoPaste.getModelId()) != null;
 
     PasteNodeData data = CopyPasteUtil.getPasteNodeDataFromClipboard(modeltoPaste);
     if (data == null || data.getNodes().isEmpty()) {
