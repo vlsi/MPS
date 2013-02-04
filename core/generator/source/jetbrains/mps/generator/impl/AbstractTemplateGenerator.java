@@ -21,6 +21,7 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -53,7 +54,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myInputModel = inputModel;
     myOutputModel = outputModel;
     myShowBadChildWarning = showBadChildWarning;
-    myMappings = new GeneratorMappings(inputModel.rootsCount());
+    myMappings = new GeneratorMappings(IterableUtil.asCollection(inputModel.getRootNodes()).size());
   }
 
   public IOperationContext getOperationContext() {

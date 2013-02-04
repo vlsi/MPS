@@ -383,7 +383,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
             references += IterableUtil.asCollection(node.getReferences()).size();
             properties += jetbrains.mps.util.SNodeOperations.getProperties(node).keySet().size();
           }
-          messageText.append("Roots : ").append(model.rootsCount()).append("<br>");
+          messageText.append("Roots : ").append(IterableUtil.asCollection(model.getRootNodes()).size()).append("<br>");
           messageText.append("Nodes : ").append(jetbrains.mps.util.SNodeOperations.nodesCount(model)).append("<br>");
           messageText.append("References : ").append(references).append("<br>");
           messageText.append("Properties : ").append(properties).append("<br>");
