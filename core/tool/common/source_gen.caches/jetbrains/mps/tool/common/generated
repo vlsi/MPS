@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6dckgnjlw3sd0fmqem34lir831gtqa0">
+<dependencies version="2" modelHash="-76lgyw47u7hdqvielavc13ctw2vxipc">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
-  <common hash="9fs1qy284kw07pwdeigmwp35waw3rlj" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22hsdy8hx47u1rwu32z4quczy3521b0" />
+  <common hash="-4kmnk3zbyyw1ks399xklvrjl2wjqik4" />
   <source id="878521226297927156" name="Script" hash="-anvfqfd4xz23hr6c3ltusc0xugv91rn">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Script.java" />
   </source>
-  <source id="878521226297928383" name="ScriptData" hash="c6hytfxcoek4jfavbpujhjne2fbtgf1">
+  <source id="878521226297928383" name="ScriptData" hash="8jdue2ti9rwq3wdu5p97qgwt4fd1bv2">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ScriptData.java" />
@@ -22,6 +22,10 @@
   </source>
   <source id="7910428321252780319" name="ScriptProperties" hash="85wpxd7oivv7657kla6ikwrkmtnhp0p">
     <file name="ScriptProperties.java" />
+  </source>
+  <source id="8797607015334522630" name="JDOMUtil" hash="-cdru7snowvr9jrmh814bdqt0120dguo">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="JDOMUtil.java" />
   </source>
 </dependencies>
 

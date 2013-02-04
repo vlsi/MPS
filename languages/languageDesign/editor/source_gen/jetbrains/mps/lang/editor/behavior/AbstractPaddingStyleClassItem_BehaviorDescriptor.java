@@ -12,10 +12,6 @@ public abstract class AbstractPaddingStyleClassItem_BehaviorDescriptor extends F
     return AbstractPaddingStyleClassItem_Behavior.virtual_canUseSpaces_1226492824000(thisNode);
   }
 
-  public boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
-    return AbstractPaddingStyleClassItem_Behavior.virtual_isApplicableTo_1214304723440(thisNode, cellModel);
-  }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem";

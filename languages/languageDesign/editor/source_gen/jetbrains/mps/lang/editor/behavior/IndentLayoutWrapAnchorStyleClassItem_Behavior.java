@@ -16,7 +16,7 @@ public class IndentLayoutWrapAnchorStyleClassItem_Behavior {
     return SNodeOperations.isInstanceOf(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_Collection") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent") || SNodeOperations.isInstanceOf(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
   }
 
-  public static StyleAttribute virtual_getStyleAttribute_2554389230519612632(SNode thisNode) {
+  public static StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
     return StyleAttributes.INDENT_LAYOUT_WRAP_ANCHOR;
   }
 }

@@ -10,7 +10,7 @@ public class IndentLayoutNoWrapClassItem_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static StyleAttribute virtual_getStyleAttribute_2554389230519612632(SNode thisNode) {
+  public static StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
     return StyleAttributes.INDENT_LAYOUT_NO_WRAP;
   }
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="78d5kg1xer9w4kli6ab4zdsohdzmqh7">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22hsdy8hx47u1rwu32z4quczy3521b0" />
+  <dep model="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)" hash="bguqu24dpmqo8ocrijd3djlp64k0a8y" />
+  <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" hash="-9tiodlci7000x1papko30qh12bllok0" />
+  <common hash="1aaix4yd3va44cwo5xymo23zjp7m82u" />
+  <source id="3308300503039980203" name="Karel" hash="-5px0o12kh1j67anryqwls0qccnh9ut">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" />
+    <file name="Karel.java" />
+  </source>
+  <source id="7446293342517103305" name="Sample" hash="-deztmqox9nmmtmlddt0uwdcl53zz1sx">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" />
+    <file name="Sample.java" />
+  </source>
+  <source id="859008965969243552" name="Dog" hash="-65kbakmhrn01g8j5hra6xyj7ee62l13">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" />
+    <file name="Dog.java" />
+  </source>
+  <source id="4394627182934755441" name="Common" hash="1y8fq4ht2n7t64jj36cqukfcoseoqww">
+    <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" />
+  </source>
+  <source id="4394627182935280567" name="Filling" hash="3ch8pjathcbyxz5c5y5u8w4k2l9dt5p">
+    <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" />
+  </source>
+  <source id="3210697320273759353" name="PlaygroundDefinition" hash="-bf7bygeykp0tld9otp0mu3le3n5i9u9">
+    <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" />
+  </source>
+  <source id="3210697320273799179" name="MarkSniffer" hash="1zyfxkwduh93hmij1fdehzsou6hbgre">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)" />
+    <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" />
+    <file name="MarkSniffer.java" />
+  </source>
+</dependencies>
+

@@ -145,6 +145,9 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="535979196343220846">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="535979196343220847">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="644x.4003657351907891258" resolveInfo="calculateClassPath" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7757477914029694899">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7757477914029693921" resolveInfo="fork" />
+                </node>
               </node>
             </node>
           </node>
@@ -216,6 +219,10 @@
       </node>
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="535979196343218672">
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7757477914029693921">
+        <property name="name" nameId="tpck.1169194664001" value="fork" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="7757477914029693920" />
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="6690493898470464010">

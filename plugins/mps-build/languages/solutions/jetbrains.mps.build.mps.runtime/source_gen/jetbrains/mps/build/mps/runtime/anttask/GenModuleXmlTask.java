@@ -30,9 +30,9 @@ public class GenModuleXmlTask extends MpsLoadTask {
   }
 
   @Override
-  protected Set<File> calculateClassPath() {
+  protected Set<File> calculateClassPath(boolean fork) {
     if (myClasspath == null) {
-      return super.calculateClassPath();
+      return super.calculateClassPath(fork);
     }
     Set<File> path = new HashSet<File>();
     for (String pathelem : myClasspath.list()) {

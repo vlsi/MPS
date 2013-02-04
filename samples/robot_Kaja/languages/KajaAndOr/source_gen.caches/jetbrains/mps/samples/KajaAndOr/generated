@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="2cxe1b4lkwbtnua5c6sdacnvseob019">
+  <dep model="r:dbe0b701-addc-4f0f-9c68-6c511dfcc57c(jetbrains.mps.samples.KajaAndOr.typesystem)" hash="-6ieafiaoxrqj1plesh1jgiwmzyyj7du" />
+  <common>
+    <dep model="r:dbe0b701-addc-4f0f-9c68-6c511dfcc57c(jetbrains.mps.samples.KajaAndOr.typesystem)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
+

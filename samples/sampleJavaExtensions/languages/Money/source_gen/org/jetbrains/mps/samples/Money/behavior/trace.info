@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ConvertTo_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.ConvertTo_BehaviorDescriptor" />
   <unitInfo fileName="CurrencyDefTable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.CurrencyDefTable_BehaviorDescriptor" />
   <unitInfo fileName="CurrencyUnit_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.CurrencyUnit_BehaviorDescriptor" />
   <unitInfo fileName="GetAmount_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.GetAmount_BehaviorDescriptor" />
   <unitInfo fileName="GetCurrency_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.GetCurrency_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyConversionType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.MoneyConversionType_BehaviorDescriptor" />
   <unitInfo fileName="MoneyLiteral_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.MoneyLiteral_BehaviorDescriptor" />
   <unitInfo fileName="MoneyType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.MoneyType_BehaviorDescriptor" />
   <root nodeRef="r:66ae1c00-8213-4a4f-b278-da47b00dec95(org.jetbrains.mps.samples.Money.behavior)/6451560055131607330">
