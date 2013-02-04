@@ -31,8 +31,6 @@ import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ClassPathFactory;
-import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
@@ -70,7 +68,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -79,7 +76,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-public abstract class AbstractModule implements IModule, FileSystemListener {
+public abstract class AbstractModule implements IModule, JavaModuleFacet, FileSystemListener {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
   public static final String MODULE_DIR = "module";
@@ -91,17 +88,10 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
   private ModuleScope myScope = createScope();
 
-  private final Object LOCK = new Object();
-  private Runnable myClasspathInvalidator = new Runnable() {
-    public void run() {
-      synchronized (LOCK) {
-        myCachedClassPathItem = null;
-      }
-    }
-  };
-  private CompositeClassPathItem myCachedClassPathItem;
   protected boolean myChanged = false;
   private SRepository myRepo;
+
+  private final JavaModuleFacet javaModuleFacet = createJavaModuleFacet();
 
   //----model creation
 
@@ -109,6 +99,9 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     this(null);
   }
 
+  protected JavaModuleFacet createJavaModuleFacet() {
+    return new JavaModuleFacetImpl(this);
+  }
 
   protected AbstractModule(@Nullable IFile myDescriptorFile) {
     this.myDescriptorFile = myDescriptorFile;
@@ -335,27 +328,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   //----stubs
 
-  public Collection<String> getClassPath() {
-    Set<String> result = new LinkedHashSet<String>();
-    result.addAll(getAdditionalClassPath());
-    result.addAll(getOwnClassPath());
-    return result;
-  }
-
-  public Collection<String> getOwnClassPath() {
-    if (!isCompileInMPS()) return Collections.emptyList();
-
-    IFile classFolder = getClassesGen();
-    if (classFolder == null) return Collections.emptyList();
-
-    return Collections.singletonList(classFolder.getPath());
-  }
-
-  public Collection<String> getAdditionalClassPath() {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return Collections.emptySet();
-    return descriptor.getAdditionalJavaStubPaths();
-  }
 
   public static Collection<String> getStubPaths(ModuleDescriptor descriptor) {
     if (descriptor != null) {
@@ -368,9 +340,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   //----classpath
 
   protected void invalidateClassPath() {
-    synchronized (LOCK) {
-      myCachedClassPathItem = null;
-    }
+    // todo: remove method!
+    ((JavaModuleFacetImpl) javaModuleFacet).invalidateClassPath();
   }
 
   //todo check this code. Wy not to do it where we add jars?
@@ -463,33 +434,14 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   @Override
   public IClassPathItem getClassPathItem() {
-    synchronized (LOCK) {
-      if (myCachedClassPathItem == null) {
-        myCachedClassPathItem = new CompositeClassPathItem();
-        myCachedClassPathItem.addInvalidationAction(myClasspathInvalidator);
-
-        for (String path : getClassPath()) {
-          try {
-            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, this.getModuleName());
-            myCachedClassPathItem.add(pathItem);
-          } catch (IOException e) {
-            LOG.error(e.getMessage());
-          }
-        }
-      }
-
-      return myCachedClassPathItem;
-    }
+    return javaModuleFacet.getClassPathItem();
   }
 
+  @Deprecated
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
     return SModuleOperations.getDependenciesClasspath(modules, includeStubSolutions);
   }
 
-  public Class getClass(String className) {
-    //todo move to a subclass fully
-    throw new UnsupportedOperationException();
-  }
 //----
 
   @Override
@@ -529,7 +481,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   public IFile getClassesGen() {
-    return ProjectPathUtil.getClassesGenFolder(getDescriptorFile());
+    return javaModuleFacet.getClassesGen();
   }
 
   public Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {

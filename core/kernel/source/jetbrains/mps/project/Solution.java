@@ -28,7 +28,6 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -36,7 +35,11 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Igor Alshannikov
@@ -159,28 +162,35 @@ public class Solution extends ClassLoadingModule {
     return namespace;
   }
 
-  @Override
-  public Collection<String> getOwnClassPath() {
-    if (isPackaged()) {
-      return Collections.singletonList(FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());
-    }
 
-    if (!isCompileInMPS()) {
-      IFile classes = ProjectPathUtil.getClassesFolder(getDescriptorFile());
-      if (classes != null && classes.exists()) {
-        return Collections.singletonList(classes.getPath());
+  @Override
+  protected JavaModuleFacet createJavaModuleFacet() {
+    return new JavaModuleFacetImpl(this) {
+      @Override
+      public Collection<String> getOwnClassPath() {
+        if (isPackaged()) {
+          return Collections.singletonList(FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());
+        }
+
+        if (!isCompileInMPS()) {
+          IFile classes = ProjectPathUtil.getClassesFolder(getDescriptorFile());
+          if (classes != null && classes.exists()) {
+            return Collections.singletonList(classes.getPath());
+          }
+          return Collections.emptyList();
+        }
+
+        return super.getOwnClassPath();
       }
-      return Collections.emptyList();
-    }
 
-    return super.getOwnClassPath();
+      @Override
+      public boolean isCompileInMPS() {
+        ModuleDescriptor descriptor = getModuleDescriptor();
+        return descriptor != null && descriptor.getCompileInMPS();
+      }
+    };
   }
 
-  @Override
-  public boolean isCompileInMPS() {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    return descriptor != null && descriptor.getCompileInMPS();
-  }
 
   public String getGeneratorOutputPath() {
     IFile result = ProjectPathUtil.getGeneratorOutputPath(getDescriptorFile(), getModuleDescriptor());

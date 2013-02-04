@@ -18,6 +18,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.JavaModuleFacet;
+import jetbrains.mps.project.JavaModuleFacetImpl;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
@@ -133,9 +135,26 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   }
 
   @Override
-  public Collection<String> getAdditionalClassPath() {
-    return Collections.emptyList();
+  protected JavaModuleFacet createJavaModuleFacet() {
+    return new JavaModuleFacetImpl(this) {
+      @Override
+      public Collection<String> getAdditionalClassPath() {
+        return Collections.emptyList();
+      }
+
+      @Override
+      public boolean isCompileInMPS() {
+        // generator is always compiled in MPS
+        return true;
+      }
+
+      @Override
+      public IFile getClassesGen() {
+        return mySourceLanguage.getClassesGen();
+      }
+    };
   }
+
 
   public List<SModelDescriptor> getOwnTemplateModels() {
     List<SModelDescriptor> templateModels = new ArrayList<SModelDescriptor>();
@@ -223,11 +242,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return result;
   }
 
-  public boolean isCompileInMPS() {
-    // generator is always compiled in MPS
-    return true;
-  }
-
   public IFile getBundleHome() {
     return null;
   }
@@ -238,10 +252,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
 
   public String getTestsGeneratorOutputPath() {
     return mySourceLanguage.getTestsGeneratorOutputPath();
-  }
-
-  public IFile getClassesGen() {
-    return mySourceLanguage.getClassesGen();
   }
 
   public Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {

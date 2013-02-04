@@ -120,12 +120,15 @@ public interface IModule extends SModule {
     void adjust(SModelDescriptor model);
   }
 
-//  ----- IJavaModule methods
+//  ----- use cast to JavaModuleFacet methods
 
+  @Deprecated
   IClassPathItem getClassPathItem();
 
+  @Deprecated
   IFile getClassesGen();
 
+  @Deprecated
   boolean isCompileInMPS();
 
 //  use SModuleOperations#getModuleWithDependenciesClassPathItem instead
