@@ -978,6 +978,15 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   //--------------DEPRECATED-------------------
+  @Deprecated
+  /**
+   * Not supposed to be used. Inline
+   * @Deprecated in 3.0
+   */
+  public boolean isRegistered() {
+    return myModelDescriptor != null && myModelDescriptor.isRegistered();
+  }
+
 
   @Deprecated
   /**
@@ -1116,15 +1125,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
    */
   public int registeredNodesCount() {
     return jetbrains.mps.util.SNodeOperations.nodesCount(this);
-  }
-
-  @Deprecated
-  /**
-   * Not supposed to be used. Inline
-   * @Deprecated in 3.0
-   */
-  public boolean isRegistered() {
-    return myModelDescriptor != null && myModelDescriptor.isRegistered();
   }
 
   @Deprecated
