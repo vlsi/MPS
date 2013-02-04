@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.generator.TransientSModel;
 
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
@@ -197,7 +199,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     if (model == null) {
       return null;
     }
-    if (!model.isTransient()) {
+    if (!(model instanceof TransientSModel)) {
       return new jetbrains.mps.smodel.SNodePointer(node);
     }
 

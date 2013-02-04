@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -24,7 +25,6 @@ import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -180,7 +180,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
           NodeWithContext context = new NodeWithContext(node, myOperationContext.getInvocationContext());
           message.setHintObject(context);
         }
-      } else if (node.getModel() != null && node.getModel() != null && !node.getModel().isTransient()) {
+      } else if (node.getModel() != null && node.getModel() != null && !(node.getModel() instanceof TransientSModel)) {
         message.setHintObject(new jetbrains.mps.smodel.SNodePointer(node));
       }
     }
@@ -192,7 +192,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     if (model == null) {
       return false;
     }
-    if (model.isTransient()) {
+    if (model instanceof TransientSModel) {
       if (isWarning && !myKeepModelsWithWarnings) {
         return false;
       }
