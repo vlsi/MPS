@@ -142,7 +142,7 @@
   </root>
   <root nodeRef="r:6dff38c0-3c4e-455b-9e65-d46014c8a7f5(jetbrains.mps.debugger.java.runtime.state.values)/6957207478384132896">
     <nodeInfo nodeId="6957207478384132909" fileName="JavaStringValue.java" startLine="14" startPosition="92" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="913871795045673293" fileName="JavaStringValue.java" startLine="19" startPosition="40" endLine="20" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="913871795045673293" fileName="JavaStringValue.java" startLine="19" startPosition="40" endLine="20" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="913871795045658016" fileName="JavaStringValue.java" startLine="24" startPosition="32" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="913871795045579556" fileName="JavaStringValue.java" startLine="29" startPosition="42" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6957207478384132899" fileName="JavaStringValue.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaStringValue#(Lcom/sun/jdi/Value;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)V" />
@@ -150,7 +150,7 @@
     <nodeInfo nodeId="913871795045657777" fileName="JavaStringValue.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStructure#()Z" />
     <nodeInfo nodeId="913871795045575568" fileName="JavaStringValue.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvalues#()Ljava/util/List;" />
     <scopeInfo nodeId="6957207478384132908" fileName="JavaStringValue.java" startLine="14" startPosition="92" endLine="15" endPosition="47" />
-    <scopeInfo nodeId="913871795045672965" fileName="JavaStringValue.java" startLine="19" startPosition="40" endLine="20" endPosition="130" />
+    <scopeInfo nodeId="913871795045672965" fileName="JavaStringValue.java" startLine="19" startPosition="40" endLine="20" endPosition="61" />
     <scopeInfo nodeId="913871795045657784" fileName="JavaStringValue.java" startLine="24" startPosition="32" endLine="25" endPosition="17" />
     <scopeInfo nodeId="913871795045575647" fileName="JavaStringValue.java" startLine="29" startPosition="42" endLine="30" endPosition="62" />
     <scopeInfo nodeId="6957207478384132899" fileName="JavaStringValue.java" startLine="14" startPosition="0" endLine="17" endPosition="0">

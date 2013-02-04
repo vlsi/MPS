@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
   @Override
   public String getValuePresentation() {
-    return "\"" + ((StringReference) myValue).value() + "\"" + " (length = " + ((StringReference) myValue).value().length() + ")";
+    return "\"" + ((StringReference) myValue).value() + "\"";
   }
 
   @Override

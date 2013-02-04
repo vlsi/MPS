@@ -4,23 +4,29 @@ package jetbrains.mps.debugger.api.ui.tree;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.Icon;
 import jetbrains.mps.debug.api.programState.IValue;
+import javax.swing.tree.DefaultTreeModel;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
+import com.intellij.openapi.application.ApplicationManager;
 
 public class WatchableNode extends AbstractWatchableNode {
   private boolean myInitialized;
   @NotNull
-  private IWatchable myWatchable;
+  private final IWatchable myWatchable;
+  private final AbstractUiState myState;
 
-  public WatchableNode(@NotNull IWatchable watchable) {
-    this(null, watchable);
+  public WatchableNode(@NotNull IWatchable watchable, AbstractUiState state) {
+    this(null, watchable, state);
   }
 
-  public WatchableNode(IOperationContext context, @NotNull IWatchable watchable) {
+  public WatchableNode(IOperationContext context, @NotNull IWatchable watchable, AbstractUiState state) {
     super(context, watchable.getNode());
     myWatchable = watchable;
+    myState = state;
     setNodeIdentifier(calculateNodeId());
     setIcon(getNodeIcon());
   }
@@ -56,16 +62,29 @@ public class WatchableNode extends AbstractWatchableNode {
     return myWatchable.getValue();
   }
 
+  /*package*/ void nodeChanged() {
+    ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);
+  }
+
   @Override
   protected void doInit() {
     removeAllChildren();
     if (!(isLeaf())) {
-      List<IWatchable> subvalues = getValue().getSubvalues();
-      for (IWatchable watchable : subvalues) {
-        add(new WatchableNode(watchable));
-      }
+      myState.invokeEvaluation(new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
+          final List<IWatchable> subvalues = getValue().getSubvalues();
+          ApplicationManager.getApplication().invokeLater(new Runnable() {
+            public void run() {
+              for (IWatchable watchable : subvalues) {
+                add(new WatchableNode(watchable, myState));
+              }
+              updatePresentation();
+              myInitialized = true;
+              nodeChanged();
+            }
+          });
+        }
+      });
     }
-    updatePresentation();
-    myInitialized = true;
   }
 }

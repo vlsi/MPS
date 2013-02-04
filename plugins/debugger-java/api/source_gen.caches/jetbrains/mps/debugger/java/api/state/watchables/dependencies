@@ -36,9 +36,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IValue" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.WatchablesCategory" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaValue" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.ProxyForJava" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueUtil" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.state.watchables.JavaWatchable" />

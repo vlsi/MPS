@@ -1,53 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)/3432969378036013923">
-    <nodeInfo nodeId="3432969378036013927" fileName="JavaField.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="3432969378036013932" fileName="JavaField.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myField" />
-    <nodeInfo nodeId="3432969378036013935" fileName="JavaField.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" />
-    <nodeInfo nodeId="3432969378036013938" fileName="JavaField.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedValue" />
-    <nodeInfo nodeId="3432969378036013953" fileName="JavaField.java" startLine="24" startPosition="110" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3432969378036013956" fileName="JavaField.java" startLine="25" startPosition="40" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036013960" fileName="JavaField.java" startLine="26" startPosition="20" endLine="27" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036013964" fileName="JavaField.java" startLine="27" startPosition="22" endLine="28" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036013978" fileName="JavaField.java" startLine="31" startPosition="27" endLine="32" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036013984" fileName="JavaField.java" startLine="36" startPosition="27" endLine="37" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3432969378036014009" fileName="JavaField.java" startLine="38" startPosition="106" endLine="39" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036014023" fileName="JavaField.java" startLine="40" startPosition="5" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036014030" fileName="JavaField.java" startLine="45" startPosition="28" endLine="46" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036014037" fileName="JavaField.java" startLine="50" startPosition="37" endLine="51" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036014046" fileName="JavaField.java" startLine="55" startPosition="26" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036014053" fileName="JavaField.java" startLine="60" startPosition="43" endLine="61" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036013974" fileName="JavaField.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getField#()Lcom/sun/jdi/Field;" />
-    <nodeInfo nodeId="3432969378036013990" fileName="JavaField.java" startLine="37" startPosition="33" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3432969378036014026" fileName="JavaField.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljetbrains/mps/debug/api/programState/IValue;" />
-    <nodeInfo nodeId="3432969378036014033" fileName="JavaField.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentationIcon#()Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="3432969378036014042" fileName="JavaField.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3432969378036014049" fileName="JavaField.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategory#()Ljetbrains/mps/debug/api/programState/WatchablesCategory;" />
-    <nodeInfo nodeId="3432969378036013941" fileName="JavaField.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaField#(Lcom/sun/jdi/Field;Lcom/sun/jdi/ObjectReference;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)V" />
-    <nodeInfo nodeId="3432969378036013980" fileName="JavaField.java" startLine="35" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <scopeInfo nodeId="3432969378036013977" fileName="JavaField.java" startLine="31" startPosition="27" endLine="32" endPosition="19" />
-    <scopeInfo nodeId="3432969378036014008" fileName="JavaField.java" startLine="38" startPosition="106" endLine="39" endPosition="64" />
-    <scopeInfo nodeId="3432969378036014029" fileName="JavaField.java" startLine="45" startPosition="28" endLine="46" endPosition="25" />
-    <scopeInfo nodeId="3432969378036014036" fileName="JavaField.java" startLine="50" startPosition="37" endLine="51" endPosition="44" />
-    <scopeInfo nodeId="3432969378036014045" fileName="JavaField.java" startLine="55" startPosition="26" endLine="56" endPosition="16" />
-    <scopeInfo nodeId="3432969378036014052" fileName="JavaField.java" startLine="60" startPosition="43" endLine="61" endPosition="35" />
-    <scopeInfo nodeId="3432969378036013974" fileName="JavaField.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="3432969378036013952" fileName="JavaField.java" startLine="24" startPosition="110" endLine="28" endPosition="110" />
-    <scopeInfo nodeId="3432969378036014026" fileName="JavaField.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="3432969378036014033" fileName="JavaField.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="3432969378036014042" fileName="JavaField.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="3432969378036014049" fileName="JavaField.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="3432969378036013983" fileName="JavaField.java" startLine="36" startPosition="27" endLine="41" endPosition="16">
+    <nodeInfo nodeId="3432969378036013932" fileName="JavaField.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myField" />
+    <nodeInfo nodeId="3432969378036013935" fileName="JavaField.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" />
+    <nodeInfo nodeId="3432969378036013938" fileName="JavaField.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedValue" />
+    <nodeInfo nodeId="3432969378036013953" fileName="JavaField.java" startLine="21" startPosition="110" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3432969378036013956" fileName="JavaField.java" startLine="22" startPosition="40" endLine="23" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3432969378036013960" fileName="JavaField.java" startLine="23" startPosition="20" endLine="24" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3432969378036013964" fileName="JavaField.java" startLine="24" startPosition="22" endLine="25" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3432969378036013978" fileName="JavaField.java" startLine="28" startPosition="27" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036013984" fileName="JavaField.java" startLine="33" startPosition="27" endLine="34" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3432969378036014009" fileName="JavaField.java" startLine="35" startPosition="106" endLine="36" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3432969378036014023" fileName="JavaField.java" startLine="37" startPosition="5" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036014030" fileName="JavaField.java" startLine="42" startPosition="28" endLine="43" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036014037" fileName="JavaField.java" startLine="47" startPosition="37" endLine="48" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036014046" fileName="JavaField.java" startLine="52" startPosition="26" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036014053" fileName="JavaField.java" startLine="57" startPosition="43" endLine="58" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036013974" fileName="JavaField.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getField#()Lcom/sun/jdi/Field;" />
+    <nodeInfo nodeId="3432969378036013990" fileName="JavaField.java" startLine="34" startPosition="33" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3432969378036014026" fileName="JavaField.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljetbrains/mps/debug/api/programState/IValue;" />
+    <nodeInfo nodeId="3432969378036014033" fileName="JavaField.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentationIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="3432969378036014042" fileName="JavaField.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3432969378036014049" fileName="JavaField.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategory#()Ljetbrains/mps/debug/api/programState/WatchablesCategory;" />
+    <nodeInfo nodeId="3432969378036013941" fileName="JavaField.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaField#(Lcom/sun/jdi/Field;Lcom/sun/jdi/ObjectReference;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)V" />
+    <nodeInfo nodeId="3432969378036013980" fileName="JavaField.java" startLine="32" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <scopeInfo nodeId="3432969378036013977" fileName="JavaField.java" startLine="28" startPosition="27" endLine="29" endPosition="19" />
+    <scopeInfo nodeId="3432969378036014008" fileName="JavaField.java" startLine="35" startPosition="106" endLine="36" endPosition="64" />
+    <scopeInfo nodeId="3432969378036014029" fileName="JavaField.java" startLine="42" startPosition="28" endLine="43" endPosition="25" />
+    <scopeInfo nodeId="3432969378036014036" fileName="JavaField.java" startLine="47" startPosition="37" endLine="48" endPosition="44" />
+    <scopeInfo nodeId="3432969378036014045" fileName="JavaField.java" startLine="52" startPosition="26" endLine="53" endPosition="16" />
+    <scopeInfo nodeId="3432969378036014052" fileName="JavaField.java" startLine="57" startPosition="43" endLine="58" endPosition="35" />
+    <scopeInfo nodeId="3432969378036013974" fileName="JavaField.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="3432969378036013952" fileName="JavaField.java" startLine="21" startPosition="110" endLine="25" endPosition="110" />
+    <scopeInfo nodeId="3432969378036014026" fileName="JavaField.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="3432969378036014033" fileName="JavaField.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="3432969378036014042" fileName="JavaField.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="3432969378036014049" fileName="JavaField.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="3432969378036013983" fileName="JavaField.java" startLine="33" startPosition="27" endLine="38" endPosition="16">
       <varInfo nodeId="3432969378036013985" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036013941" fileName="JavaField.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="3432969378036013941" fileName="JavaField.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="3432969378036013948" varName="classFqName" />
       <varInfo nodeId="3432969378036013944" varName="field" />
       <varInfo nodeId="3432969378036013946" varName="parent" />
       <varInfo nodeId="3432969378036013950" varName="threadReference" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036013980" fileName="JavaField.java" startLine="35" startPosition="0" endLine="43" endPosition="0" />
-    <unitInfo nodeId="3432969378036013923" fileName="JavaField.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.watchables.JavaField" />
+    <scopeInfo nodeId="3432969378036013980" fileName="JavaField.java" startLine="32" startPosition="0" endLine="40" endPosition="0" />
+    <unitInfo nodeId="3432969378036013923" fileName="JavaField.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.watchables.JavaField" />
   </root>
   <root nodeRef="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)/3432969378036014056">
     <nodeInfo nodeId="3432969378036014059" fileName="JavaWatchable.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassFQName" />

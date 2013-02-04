@@ -241,4 +241,8 @@ public abstract class AbstractEvaluationModel {
       return false;
     }
   }
+
+  public JavaUiState getUiState() {
+    return myUiState;
+  }
 }

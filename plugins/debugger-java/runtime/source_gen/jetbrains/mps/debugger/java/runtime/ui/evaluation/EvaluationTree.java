@@ -228,7 +228,7 @@ import jetbrains.mps.ide.messages.Icons;
       private final AbstractEvaluationModel myModel;
 
       public MyWatchableNode(AbstractEvaluationModel model, @NotNull IWatchable watchable) {
-        super(watchable);
+        super(watchable, model.getUiState());
         myModel = model;
       }
 

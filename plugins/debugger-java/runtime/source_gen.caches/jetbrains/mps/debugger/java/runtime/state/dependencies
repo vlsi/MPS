@@ -21,6 +21,8 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.state.JavaUiStateImpl" file="JavaUiStateImpl.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaThread" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.Context" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
