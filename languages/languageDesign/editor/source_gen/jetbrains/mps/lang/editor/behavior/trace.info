@@ -167,7 +167,7 @@
   <unitInfo fileName="QueryFunction_ModelAccess_Getter_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ModelAccess_Getter_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ModelAccess_Setter_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ModelAccess_Setter_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ModelAccess_Validator_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ModelAccess_Validator_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_NodeCondition_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_NodeCondition_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_NodeCondition_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_NodeCondition_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_NodeFactory_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_NodeFactory_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_NodeListFilter_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_NodeListFilter_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ParametersList_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_BehaviorDescriptor" />
@@ -3576,41 +3576,41 @@
     <unitInfo nodeId="3044950653914721678" fileName="QueryFunction_MethodPresentation_Behavior.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_MethodPresentation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/3044950653914722187">
-    <nodeInfo nodeId="3044950653914722156" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="18" startPosition="117" endLine="19" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914722171" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="19" startPosition="261" endLine="20" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914722176" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="20" startPosition="166" endLine="21" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914722181" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="21" startPosition="174" endLine="22" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914722185" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="22" startPosition="166" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2893726635879146842" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="30" startPosition="60" endLine="31" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="31" startPosition="30" endLine="32" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="31" startPosition="30" endLine="32" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="31" startPosition="30" endLine="32" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="32" startPosition="162" endLine="33" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914722187" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3044950653914722187" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_dlnvzf_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3044950653914722187" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="3044950653914722189" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="2893726635879146105" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="47" />
-    <scopeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="31" startPosition="30" endLine="32" endPosition="162" />
-    <scopeInfo nodeId="3044950653914722187" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="2893726635879146842" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2893726635883778735" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="21" startPosition="81" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2893726635883791228" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="22" startPosition="48" endLine="23" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2893726635883791233" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="23" startPosition="166" endLine="24" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2893726635883791238" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="24" startPosition="174" endLine="25" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2893726635883778764" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="25" startPosition="166" endLine="26" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="29" startPosition="60" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="30" startPosition="30" endLine="31" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="30" startPosition="30" endLine="31" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="30" startPosition="30" endLine="31" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="31" startPosition="162" endLine="32" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914722187" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3044950653914722187" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_dlnvzf_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3044950653914722187" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="3044950653914722189" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="2893726635879146105" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="47" />
+    <scopeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="30" startPosition="30" endLine="31" endPosition="162" />
+    <scopeInfo nodeId="3044950653914722187" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="3044950653914722187" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914722187" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="3044950653914722187" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="3044950653914722187" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="30" startPosition="60" endLine="33" endPosition="24">
+    <scopeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="29" startPosition="60" endLine="32" endPosition="24">
       <varInfo nodeId="2893726635879146857" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914722155" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="18" startPosition="117" endLine="23" endPosition="18">
-      <varInfo nodeId="3044950653914722157" varName="result" />
+    <scopeInfo nodeId="2893726635883740507" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="21" startPosition="81" endLine="26" endPosition="32">
+      <varInfo nodeId="2893726635883778736" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="3044950653914722187" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="3044950653914722187" varName="thisConcept" />
+    <scopeInfo nodeId="2893726635879146857" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="3044950653914722187" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="3044950653914722187" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="3044950653914722187" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_NodeCondition_Behavior" />
+    <unitInfo nodeId="3044950653914722187" fileName="QueryFunction_NodeCondition_Behavior.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_NodeCondition_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/3044950653914722891">
     <nodeInfo nodeId="3044950653914722850" fileName="CellMenuPart_ReplaceChild_CustomChildConcept_Query_Behavior.java" startLine="21" startPosition="117" endLine="22" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

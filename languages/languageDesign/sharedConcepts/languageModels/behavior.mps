@@ -16,8 +16,8 @@
   </roots>
   <root id="1213877217441">
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1213877217442">
-      <property name="name" nameId="tpck.1169194664001" value="getFromParameterObject" />
       <property name="isPrivate" nameId="1i04.1225194472833" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="getFromParameterObject" />
       <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpek.1213877522908" resolveInfo="getFromParameterObject" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877217443">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1213877217444">

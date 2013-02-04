@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/1179766709016">
     <nodeInfo nodeId="1179766709018" fileName="typeof_CellKeyMap_FunctionParm_selectedNode_InferenceRule.java" startLine="21" startPosition="149" endLine="22" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1223982086188" fileName="typeof_CellKeyMap_FunctionParm_selectedNode_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -848,6 +848,58 @@
       <varInfo nodeId="2735767332089497931" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="2735767332089497931" fileName="typeof_TransactionPropertyHandler_newValue_InferenceRule.java" startLine="16" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.typeof_TransactionPropertyHandler_newValue_InferenceRule" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/2893726635884012057">
+    <nodeInfo nodeId="2893726635884024668" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2893726635884024668" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="23" startPosition="46" endLine="24" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2893726635884024668" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="24" startPosition="202" endLine="25" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="29" startPosition="46" endLine="30" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="34" startPosition="5" endLine="35" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="35" startPosition="126" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2893726635884024725" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="44" startPosition="61" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2893726635884024725" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="45" startPosition="30" endLine="46" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2893726635884024725" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="46" startPosition="165" endLine="47" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2893726635884024725" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="47" startPosition="289" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_ConceptFunctionParameter_editorContext_InferenceRule#()V" />
+    <nodeInfo nodeId="2893726635884024725" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2893726635884024725" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2893726635884024668" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="21" startPosition="117" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2893726635884024725" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_nq405k_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="18" startPosition="72" endLine="18" endPosition="72" />
+    <scopeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="29" startPosition="46" endLine="30" endPosition="88" />
+    <scopeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" />
+    <scopeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="34" startPosition="5" endLine="36" endPosition="45">
+      <varInfo nodeId="2893726635884012057" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2893726635884024725" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="289" />
+    <scopeInfo nodeId="2893726635884024668" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="279">
+      <varInfo nodeId="2893726635884024668" varName="_info_12389875345" />
+      <varInfo nodeId="2893726635884024668" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="2893726635884024725" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="44" startPosition="61" endLine="48" endPosition="24">
+      <varInfo nodeId="2893726635884024725" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="2893726635884012058" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="21" startPosition="117" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="2893726635884012057" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="2893726635884024725" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="44" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="2893726635884012057" varName="node" />
+      <varInfo nodeId="2893726635884012057" varName="status" />
+      <varInfo nodeId="2893726635884012057" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="2893726635884012057" fileName="typeof_ConceptFunctionParameter_editorContext_InferenceRule.java" startLine="17" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.editor.typesystem.typeof_ConceptFunctionParameter_editorContext_InferenceRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/3302086321380659367">
     <nodeInfo nodeId="3302086321380661388" fileName="fix_Braces_QuickFix.java" startLine="13" startPosition="44" endLine="14" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
