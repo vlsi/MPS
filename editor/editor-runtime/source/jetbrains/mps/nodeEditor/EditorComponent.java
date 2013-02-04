@@ -966,7 +966,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     setOperationContext(operationContext);
     editNode(node);
-    setReadOnly(node == null || node.getModel() == null || node.getModel().isNotEditable());
+    setReadOnly(node == null || node.getModel() == null || node.getModel().isReadOnly());
   }
 
   protected void editNode(final SNode node) {
