@@ -46,7 +46,7 @@ public abstract class ReferenceInfo {
   @Nullable
   public SModelReference getTargetModelReference(TemplateGenerator generator) {
     // local references only
-    return generator.getOutputModel().getSModelReference();
+    return generator.getOutputModel().getReference();
   }
 
   public String getReferenceRole() {

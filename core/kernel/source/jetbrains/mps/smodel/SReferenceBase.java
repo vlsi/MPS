@@ -67,14 +67,14 @@ abstract class SReferenceBase extends SReference {
     SModel m = getSourceNode().getModel();
     if (m == null) return true;
 
-    return !(m.getSModelReference().equals(getTargetSModelReference()));
+    return !(m.getReference().equals(getTargetSModelReference()));
   }
 
   public SModelReference getTargetSModelReference() {
     SNode immatureNode = myImmatureTargetNode;
     if (immatureNode == null || makeIndirect()) return myTargetModelReference;
     SModel model = immatureNode.getModel();
-    return model == null ? null : model.getSModelReference();
+    return model == null ? null : (SModelReference) model.getReference();
   }
 
   public synchronized void setTargetSModelReference(@NotNull SModelReference modelReference) {
@@ -140,7 +140,7 @@ abstract class SReferenceBase extends SReference {
     final SNode immatureNode = myImmatureTargetNode;
     myImmatureTargetNode = null;
     adjustMature(immatureNode);
-    setTargetSModelReference(immatureNode.getModel().getSModelReference());
+    setTargetSModelReference((SModelReference) immatureNode.getModel().getReference());
     setResolveInfo(jetbrains.mps.util.SNodeOperations.getResolveInfo(immatureNode));
   }
 

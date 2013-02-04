@@ -40,7 +40,7 @@ public class ModelWriter4 implements IModelWriter {
 
   public Document saveModel(SModel sourceModel) {
     Element rootElement = new Element(ModelPersistence.MODEL);
-    rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getSModelReference().toString());
+    rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());
     Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
     persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, getModelPersistenceVersion() + "");
     rootElement.addContent(persistenceElement);

@@ -1498,7 +1498,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
       // Getting modelDescriptor via SModelRepository because sometimes
       // node.getModel().getModelDescriptor() == null while reloading models from disk.
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model.getSModelReference());
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model.getReference());
       if (modelDescriptor != null) {
         result.add(modelDescriptor);
       }
@@ -3180,7 +3180,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
         if (myNode != null) {
           assertModelNotDisposed();
-          if (myNode.getModel().getSModelReference().equals(descriptor.getSModelReference())) {
+          if (myNode.getModel().getReference().equals(descriptor.getSModelReference())) {
             clearModelDisposedTrace();
             SNodeId oldId = myNode.getNodeId();
             myNode = descriptor.getSModel().getNode(oldId);
@@ -3198,7 +3198,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     @Override
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       if (myModelDescriptorsWithListener.contains(modelDescriptor)) {
-        if (myNode != null && myNode.getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
+        if (myNode != null && myNode.getModel().getReference().equals(modelDescriptor.getSModelReference())) {
           myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
         }
       }

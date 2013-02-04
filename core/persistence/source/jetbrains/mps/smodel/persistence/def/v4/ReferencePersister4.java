@@ -16,7 +16,9 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
@@ -107,7 +109,7 @@ public class ReferencePersister4 implements IReferencePersister {
 
   // -- create reference
   private SReference createReferenceInModelDoNotAddToSourceNode(SModel model, VisibleModelElements visibleModelElements) {
-    SModelReference importedModelReference = model.getSModelReference();
+    SModelReference importedModelReference = (SModelReference) model.getReference();
     if (myUseUIDs) {
       if (!myImportedModelInfo.equals("-1")) {
         importedModelReference = SModelReference.fromString(myImportedModelInfo);
@@ -159,7 +161,7 @@ public class ReferencePersister4 implements IReferencePersister {
     linkElement.setAttribute(ModelPersistence.ROLE, VersionUtil.formVersionedString(reference.getRole(), VersionUtil.getNodeLanguageVersion(node)));
 
     String targetModelInfo = "";
-    if (!((reference instanceof StaticReference) &&(node.getModel().getSModelReference().equals(reference.getTargetSModelReference())))) {
+    if (!((reference instanceof StaticReference) &&(node.getModel().getReference().equals(reference.getTargetSModelReference())))) {
       if (useUIDs) {
         targetModelInfo = reference.getTargetSModelReference().toString() + "#";
       } else {

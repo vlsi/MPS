@@ -243,7 +243,7 @@ class GenerationSession {
     List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(myGenerationPlan.getMappingConfigurations(myMajorStep));
     if (mappingConfigurations.isEmpty()) {
       if (inputModel.getRootNodes().iterator().hasNext()) {
-        myLogger.warning("skip model \"" + inputModel.getSModelReference().getSModelFqName() + "\" : no generator available");
+        myLogger.warning("skip model \"" + ((SModelReference) inputModel.getReference()).getSModelFqName() + "\" : no generator available");
       }
       return inputModel;
     }
@@ -296,7 +296,7 @@ class GenerationSession {
 
     SModel outputModel = executeMajorStepInternal(inputModel, ruleManager);
     if (myLogger.getErrorCount() > 0) {
-      myLogger.warning("model \"" + inputModel.getSModelReference().getSModelFqName() + "\" has been generated with errors");
+      myLogger.warning("model \"" + ((SModelReference) inputModel.getReference()).getSModelFqName() + "\" has been generated with errors");
     }
     return outputModel;
   }
@@ -319,7 +319,7 @@ class GenerationSession {
     // primary mapping
     // -----------------------
     if (myLogger.needsInfo()) {
-      myLogger.info("generating model '" + currentInputModel.getSModelReference().getSModelFqName() + "' --> '" + currentOutputModel.getSModelReference().getSModelFqName() + "'");
+      myLogger.info("generating model '" + ((SModelReference) currentInputModel.getReference()).getSModelFqName() + "' --> '" + ((SModelReference) currentOutputModel.getReference()).getSModelFqName() + "'");
     }
     boolean somethingHasBeenGenerated = applyRules(currentInputModel, currentOutputModel, true, ruleManager);
     if (!somethingHasBeenGenerated) {
@@ -346,7 +346,7 @@ class GenerationSession {
 
       SModel transientModel = createTransientModel();
       if (myLogger.needsInfo()) {
-        myLogger.info("next minor step '" + currentInputModel.getSModelReference().getSModelFqName().getStereotype() + "' --> '" + transientModel.getSModelReference().getSModelFqName().getStereotype() + "'");
+        myLogger.info("next minor step '" + ((SModelReference) currentInputModel.getReference()).getSModelFqName().getStereotype() + "' --> '" + ((SModelReference) transientModel.getReference()).getSModelFqName().getStereotype() + "'");
       }
       tracer.startTracing(currentInputModel, transientModel);
       if (!applyRules(currentInputModel, transientModel, false, ruleManager)) {
@@ -356,7 +356,7 @@ class GenerationSession {
         mySessionContext.getModule().removeModel(transientModel.getModelDescriptor());
         myMinorStep--;
         if (myLogger.needsInfo()) {
-          myLogger.info("unchanged, empty model '" + transientModel.getSModelReference().getSModelFqName().getStereotype() + "' removed");
+          myLogger.info("unchanged, empty model '" + ((SModelReference) transientModel.getReference()).getSModelFqName().getStereotype() + "' removed");
         }
         break;
       }
@@ -365,7 +365,7 @@ class GenerationSession {
         myLogger.error("failed to generate output after 10 repeated mappings");
         if (tracer.isTracing()) {
           myLogger.error("last rules applied:");
-          List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(transientModel.getSModelReference());
+          List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes((SModelReference) transientModel.getReference());
           for (Pair<SNode, SNode> pair : pairs) {
             myLogger.error(pair.o1, "rule: " + SNodeUtil.getDebugText(pair.o1),
               GeneratorUtil.describe(pair.o2, "input"));
@@ -442,7 +442,7 @@ class GenerationSession {
       ttrace.push("model clone", false);
       SModel currentInputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
-        myLogger.info("clone model '" + currentInputModel.getSModelReference().getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelReference().getSModelFqName() + "'");
+        myLogger.info("clone model '" + ((SModelReference) currentInputModel.getReference()).getSModelFqName() + "' --> '" + ((SModelReference) currentInputModel_clone.getReference()).getSModelFqName() + "'");
       }
       CloneUtil.cloneModelWithImports(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
       ttrace.pop();
@@ -502,7 +502,7 @@ class GenerationSession {
       ttrace.push("model clone", false);
       SModel currentOutputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
-        myLogger.info("clone model '" + currentModel.getSModelReference().getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelReference().getSModelFqName() + "'");
+        myLogger.info("clone model '" + ((SModelReference) currentModel.getReference()).getSModelFqName() + "' --> '" + ((SModelReference) currentOutputModel_clone.getReference()).getSModelFqName() + "'");
       }
       CloneUtil.cloneModelWithImports(currentModel, currentOutputModel_clone, false);
       ttrace.pop();

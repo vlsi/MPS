@@ -132,11 +132,11 @@ public class ModelReader4 implements IModelReader {
       }
 
       if (importedModelUIDString == null) {
-        LOG.error("Error loading import element for index " + importIndex + " in " + model.getSModelReference());
+        LOG.error("Error loading import element for index " + importIndex + " in " + model.getReference());
         continue;
       }
       if (importIndex > model.getMaxImportIndex()) {
-        LOG.warning("Import element " + importIndex + ":" + importedModelUIDString + " greater then max import index (" + model.getMaxImportIndex() + ") in " + model.getSModelReference());
+        LOG.warning("Import element " + importIndex + ":" + importedModelUIDString + " greater then max import index (" + model.getMaxImportIndex() + ") in " + model.getReference());
         model.setMaxImportIndex(importIndex);
       }
 

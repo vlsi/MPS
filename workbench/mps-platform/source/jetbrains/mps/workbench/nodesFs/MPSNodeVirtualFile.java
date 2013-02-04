@@ -61,7 +61,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
           myPath = myNode.getModelReference().getSModelFqName() + "/" + myName;
         } else {
           myName = "" + node.getPresentation();
-          myPath = node.getModel().getSModelReference().getSModelFqName() + "/" + myName;
+          myPath = ((SModelReference) node.getModel().getReference()).getSModelFqName() + "/" + myName;
         }
       }
     });

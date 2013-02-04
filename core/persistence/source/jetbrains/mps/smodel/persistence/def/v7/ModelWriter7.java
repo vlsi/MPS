@@ -39,10 +39,10 @@ public class ModelWriter7 implements IModelWriter {
 
   public Document saveModel(SModel sourceModel) {
     myModel = sourceModel;
-    myHelper = new WriteHelper(sourceModel.getSModelReference());
+    myHelper = new WriteHelper((SModelReference) sourceModel.getReference());
 
     Element rootElement = new Element(ModelPersistence.MODEL);
-    rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getSModelReference().toString());
+    rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());
 
     int version = myModel.getVersion();
     if (version >= 0) {

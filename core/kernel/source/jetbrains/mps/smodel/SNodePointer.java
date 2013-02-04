@@ -32,7 +32,7 @@ public class SNodePointer implements SNodeReference {
   public SNodePointer(SNode node) {
     if (node == null) return;
     SModel model = node.getModel();
-    myModelReference = model.getSModelReference();
+    myModelReference = (SModelReference) model.getReference();
     myNodeId = node.getNodeId();
   }
 

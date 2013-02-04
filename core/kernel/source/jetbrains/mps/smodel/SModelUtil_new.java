@@ -138,7 +138,7 @@ public class SModelUtil_new implements CoreComponent {
   }
 
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId, IScope scope, boolean fullNodeStructure) {
-    boolean isNotProjectModel = model==null || !ProjectModels.isProjectModel(model.getSModelReference());
+    boolean isNotProjectModel = model==null || !ProjectModels.isProjectModel(model.getReference());
     if (isNotProjectModel) {
       String fqName = ModelConstraints.getDefaultConcreteConceptFqName(conceptFqName);
       if (fqName != null) {

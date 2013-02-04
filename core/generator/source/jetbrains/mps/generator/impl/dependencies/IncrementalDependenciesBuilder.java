@@ -250,7 +250,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
   private void loadCachedModel() throws BrokenCacheException {
     // TODO if(myMinorStep >= stepCount) copy from current input model
     int stepsCount = myCache.getMinorCount(myMajorStep);
-    TransientModelWithMetainfo model = myCache.load(myMajorStep, myMinorStep >= stepsCount ? stepsCount - 1 : myMinorStep, currentOutputModel.getSModelReference());
+    TransientModelWithMetainfo model = myCache.load(myMajorStep, myMinorStep >= stepsCount ? stepsCount - 1 : myMinorStep, (SModelReference) currentOutputModel.getReference());
     if (model == null) {
       throw new BrokenCacheException(currentOutputModel);
     }

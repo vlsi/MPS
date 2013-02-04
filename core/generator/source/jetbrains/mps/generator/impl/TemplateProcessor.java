@@ -275,7 +275,7 @@ public class TemplateProcessor {
                 myGenerator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
                   GeneratorUtil.describe(macro, "template"),
                   GeneratorUtil.describe(templateContext.getInput(), "input"),
-                  new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelReference().getSModelFqName() + "'"));
+                  new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + ((SModelReference) myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference()).getSModelFqName() + "'"));
               }
             }
           }
@@ -295,7 +295,7 @@ public class TemplateProcessor {
             myGenerator.getLogger().error(child, "language of output node is '" + childLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
               GeneratorUtil.describe(macro, "template"),
               GeneratorUtil.describe(templateContext.getInput(), "input"),
-              new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelReference().getSModelFqName() + "'"));
+              new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + ((SModelReference) myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference()).getSModelFqName() + "'"));
           }
         }
 
@@ -635,7 +635,7 @@ public class TemplateProcessor {
   private void validateReferences(SNode node, final SNode inputNode) {
     for (SReference ref : node.getReferences()) {
       // reference to input model - illegal
-      if (myGenerator.getInputModel().getSModelReference().equals(ref.getTargetSModelReference())) {
+      if (myGenerator.getInputModel().getReference().equals(ref.getTargetSModelReference())) {
         // replace
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           ref.getRole(),

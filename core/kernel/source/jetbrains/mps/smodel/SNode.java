@@ -688,7 +688,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   void registerInModel(SModel model) {
     if (model != myModel) {
       if (myModel != null) {
-        LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
+        LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getReference() + "'");
         return;
       }
     }
@@ -1196,7 +1196,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     List<SNode> children = getChildren(role);
     int size = children.size();
     if (size > 1) {
-      String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getNodeId().toString() + "] " + getModel().getSModelReference() + "\n";
+      String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getNodeId().toString() + "] " + getModel().getReference() + "\n";
       errorMessage += "they are : " + getChildren(role);
       LOG.error(errorMessage, new Throwable(), this);
     }
@@ -1958,7 +1958,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     @NotNull
     @Override
     public SModelReference getReference() {
-      return myModel.getSModelReference();
+      return myModel.getReference();
     }
 
     @Override

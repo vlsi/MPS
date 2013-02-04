@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
 
@@ -94,14 +94,14 @@ public class ImmatureReferences implements CoreComponent {
   void add(SReferenceBase ref) {
     if (myDisabled) return;
     SModel model = ref.getSourceNode().getModel();
-    SModelReference modelRef = model == null ? VIRTUAL_REF : model.getSModelReference();
+    SModelReference modelRef = model == null ? VIRTUAL_REF : (SModelReference) model.getReference();
     ConcurrentMap<SReferenceBase, Object> refSet = getOrCreateRefSet(modelRef);
     refSet.put(ref, PRESENT);
   }
 
   void remove(SReferenceBase ref) {
     if (myDisabled) return;
-    SModelReference modelRef = ref.getSourceNode().getModel().getSModelReference();
+    SModelReference modelRef = (SModelReference) ref.getSourceNode().getModel().getReference();
     ConcurrentMap<SReferenceBase, Object> refSet = myReferences.get(modelRef);
     if (refSet != null) {
       refSet.remove(ref);

@@ -23,7 +23,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -109,7 +109,7 @@ public class TransientModelsModule extends ClassLoadingModule {
 
   public boolean addModelToKeep(SModel model, boolean force) {
     assert model instanceof TransientSModel;
-    String modelRef = model.getSModelReference().toString();
+    String modelRef = model.getReference().toString();
     if (force) {
       myModelsToKeep.add(modelRef);
       return true;
@@ -129,7 +129,7 @@ public class TransientModelsModule extends ClassLoadingModule {
 
   public boolean isModelToKeep(SModel model) {
     assert model instanceof TransientSModel;
-    return myModelsToKeep.contains(model.getSModelReference().toString());
+    return myModelsToKeep.contains(model.getReference().toString());
   }
 
   private boolean isValidName(String longName, String stereotype) {

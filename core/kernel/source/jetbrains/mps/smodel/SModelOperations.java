@@ -85,7 +85,7 @@ public class SModelOperations {
       }
 
       for (SReference reference : node.getReferences()) {
-        boolean internal = model.getSModelReference().equals(reference.getTargetSModelReference());
+        boolean internal = model.getReference().equals(reference.getTargetSModelReference());
         if (internal) continue;
 
         SModelReference targetModelReference = reference.getTargetSModelReference();
@@ -259,7 +259,7 @@ public class SModelOperations {
       Iterable<? extends SReference> references = node.getReferences();
       for (SReference reference : references) {
         SModelReference targetModel = reference.getTargetSModelReference();
-        if (sModel.getSModelReference().equals(targetModel)) continue;
+        if (sModel.getReference().equals(targetModel)) continue;
         if (targetModel == null || result.contains(targetModel)) continue;
 
         result.add(targetModel);

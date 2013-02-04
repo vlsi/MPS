@@ -552,12 +552,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         boolean external = true;
         if (inputReference instanceof PostponedReference){
           external = false;
-        } else if (inputNode.getModel().getSModelReference().equals(inputReference.getTargetSModelReference())){
+        } else if (inputNode.getModel().getReference().equals(inputReference.getTargetSModelReference())){
           external = false;
         }
         if (inputReference instanceof DynamicReference || external) {
           // dynamic & external references don't need validation => replace input model with output
-          SModelReference targetModelReference = external ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
+          SModelReference targetModelReference = external ? inputReference.getTargetSModelReference() : (SModelReference) myOutputModel.getReference();
           if (inputReference instanceof StaticReference) {
             if (targetModelReference == null) {
               myLogger.error(inputNode, "broken reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode) + " (target model is null)",

@@ -17,7 +17,8 @@ package jetbrains.mps.smodel.presentation;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 
@@ -123,7 +124,7 @@ public class NodePresentationUtil {
     }
 
     if (node.getModel() != null && node.getModel().isRoot(node)) {
-      return NameUtil.shortNameFromLongName(node.getConcept().getId()) + " (" + node.getModel().getSModelReference().getCompactPresentation() + ")";
+      return NameUtil.shortNameFromLongName(node.getConcept().getId()) + " (" + ((SModelReference) node.getModel().getReference()).getCompactPresentation() + ")";
     }
 
     return node.getRoleInParent() + " (" + NameUtil.compactNodeFQName(node.getContainingRoot()) + ")";

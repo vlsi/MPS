@@ -39,7 +39,7 @@ public class ModelWriter6 implements IModelWriter {
     myHelper = new VersionUtil(sourceModel);
 
     Element rootElement = new Element(ModelPersistence.MODEL);
-    rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getSModelReference().toString());
+    rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());
     Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
     persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, getModelPersistenceVersion() + "");
     rootElement.addContent(persistenceElement);

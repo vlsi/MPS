@@ -49,7 +49,7 @@ public final class JavaNameUtil {
   }
 
   public static String packageName(@NotNull SModel model) {
-    return packageNameForModelUID(model.getSModelReference());
+    return packageNameForModelUID(model.getReference());
   }
 
   public static String packageName(@Nullable String fqName) {

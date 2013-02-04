@@ -17,7 +17,9 @@ package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -37,7 +39,7 @@ public class VersionUtil {
   private Map<SModelReference, ImportElement> myImports;
 
   public VersionUtil(SModel model) {
-    myModelRef = model.getSModelReference();
+    myModelRef = (SModelReference) model.getReference();
     myImports = new HashMap<SModelReference, ImportElement>();
     fillReferenceIDs(model);  // replace "-1" indice to valid values and advance maxImportIndex
     for (ImportElement elem : model.importedModels()) {
@@ -86,7 +88,7 @@ public class VersionUtil {
 
   @NotNull
   private String genReferenceString(@Nullable SNode node, @NotNull String text, boolean usemodel) {
-    return node == null ? text : genReferenceString(node.getModel().getSModelReference(), text, usemodel);
+    return node == null ? text : genReferenceString((SModelReference) node.getModel().getReference(), text, usemodel);
   }
 
   public String genType(@NotNull SNode node) {

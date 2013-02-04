@@ -37,7 +37,7 @@ public class ComponentsUtil {
   public static Element nodeToElement(SNode node) {
     Element nodeElement = new Element(NODE);
     SModel model = node.getModel();
-    nodeElement.setAttribute(MODEL, model.getSModelReference().toString());
+    nodeElement.setAttribute(MODEL, model.getReference().toString());
     nodeElement.setAttribute(ID, node.getNodeId().toString());
     return nodeElement;
   }

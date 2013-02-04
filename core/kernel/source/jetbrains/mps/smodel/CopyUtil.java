@@ -88,7 +88,7 @@ public final class CopyUtil {
   }
 
   public static SModel copyModel(SModel model) {
-    SModel copy = new SModel(model.getSModelReference());
+    SModel copy = new SModel((SModelReference) model.getReference());
     copyModelContentAndPreserveIds(model, copy);
     copyModelProperties(model, copy);
     copy.setMaxImportIndex(model.getMaxImportIndex());

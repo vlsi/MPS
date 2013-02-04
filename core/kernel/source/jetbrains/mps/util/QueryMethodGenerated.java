@@ -20,7 +20,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 
@@ -72,7 +73,7 @@ public class QueryMethodGenerated implements CoreComponent {
 
   @NotNull
   public static Class getQueriesGeneratedClassFor(@NotNull SModelDescriptor sm, boolean suppressErrorLogging) throws ClassNotFoundException {
-    String packageName = JavaNameUtil.packageNameForModelUID(sm.getSModel().getSModelReference());
+    String packageName = JavaNameUtil.packageNameForModelUID(sm.getSModel().getReference());
     String queriesClassName = packageName + ".QueriesGenerated";
     IModule module = sm.getModule();
     if (module == null) {
@@ -98,12 +99,12 @@ public class QueryMethodGenerated implements CoreComponent {
   }
 
   private static Method getQueryMethod(SModel sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    Map<String, Method> methods = ourMethods.get(sourceModel.getSModelReference());
+    Map<String, Method> methods = ourMethods.get(sourceModel.getReference());
 
     if (methods == null) {
       Class queriesClass = getQueriesGeneratedClassFor(sourceModel.getModelDescriptor(), suppressErrorLogging);
 
-      methods = ourMethods.get(sourceModel.getSModelReference());
+      methods = ourMethods.get(sourceModel.getReference());
       if (methods == null) {
         methods = new HashMap<String, Method>();
         Method[] declaredMethods = queriesClass.getDeclaredMethods();
@@ -113,16 +114,16 @@ public class QueryMethodGenerated implements CoreComponent {
           methods.put(name, declaredMethod);
         }
 
-        ourMethods.putIfAbsent(sourceModel.getSModelReference(), methods);
+        ourMethods.putIfAbsent((SModelReference) sourceModel.getReference(), methods);
       }
     }
 
 
     Method method = methods.get(methodName);
     if (method == null) {
-      String className = JavaNameUtil.packageNameForModelUID(sourceModel.getSModelReference()) + ".QueriesGenerated";
+      String className = JavaNameUtil.packageNameForModelUID(sourceModel.getReference()) + ".QueriesGenerated";
       if (!suppressErrorLogging) {
-        LOG.error("couldn't find method '" + methodName + "' in '" + className + "' : TRY TO GENERATE model '" + sourceModel.getSModelReference() + "'");
+        LOG.error("couldn't find method '" + methodName + "' in '" + className + "' : TRY TO GENERATE model '" + sourceModel.getReference() + "'");
       }
       throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + className + "'");
     }

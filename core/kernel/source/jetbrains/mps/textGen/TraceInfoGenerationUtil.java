@@ -16,6 +16,7 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
@@ -119,7 +120,7 @@ public class TraceInfoGenerationUtil {
   }
 
   private static void warnIfUnitNameInvalid(String unitName, SNode node) {
-    String longName = node.getModel().getSModelReference().getSModelFqName().getLongName();
+    String longName = ((SModelReference) node.getModel().getReference()).getSModelFqName().getLongName();
     if (!(unitName.startsWith(longName))) {
       LOG.warning("Unit name has to start with model fqName. Fix " + unitName + " in " + longName + ".", node);
     } else if (unitName.length() <= longName.length() + 1 || !(unitName.substring(longName.length()).startsWith(".")) || unitName.substring(longName.length()+1).contains(".")) {

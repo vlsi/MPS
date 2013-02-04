@@ -142,7 +142,7 @@ public class BinaryPersistence {
     // header
     os.writeInt(HEADER);
     os.writeInt(STREAM_ID);
-    os.writeModelReference(model.getSModelReference());
+    os.writeModelReference((SModelReference) model.getReference());
     os.writeInt(model.getVersion());
     os.writeBoolean(model instanceof BinarySModel && ((BinarySModel) model).getHeader().isDoNotGenerate());
     os.writeInt(0xabab);
@@ -161,7 +161,7 @@ public class BinaryPersistence {
     for (SNode root : model.getRootNodes()) {
       roots.add(root);
     }
-    new NodesWriter(model.getSModelReference()).writeNodes(roots, os);
+    new NodesWriter((SModelReference) model.getReference()).writeNodes(roots, os);
   }
 
   private static void saveModuleRefList(Collection<ModuleReference> refs, ModelOutputStream os) throws IOException {
