@@ -17,8 +17,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class RefactoringParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -31,17 +29,6 @@ public class RefactoringParameter_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_u416ht_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_u416ht_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_u416ht_c0(editorContext, node));
-    if (renderingCondition_u416ht_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_u416ht_d0(editorContext, node));
-    }
-    return editorCell;
-  }
-
-  private EditorCell createCollection_u416ht_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_u416ht_d0");
-    editorCell.addEditorCell(this.createConstant_u416ht_a3a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_u416ht_b3a(editorContext, node));
     return editorCell;
   }
 
@@ -52,34 +39,10 @@ public class RefactoringParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_u416ht_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  chooser (deprecated):");
-    editorCell.setCellId("Constant_u416ht_a3a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createRefNode_u416ht_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_u416ht_b3a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("chooser");
-    provider.setNoTargetText("<no chooser>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -112,9 +75,5 @@ public class RefactoringParameter_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_u416ht_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "chooser", true) != null);
   }
 }

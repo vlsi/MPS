@@ -230,10 +230,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Context" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp1h.7953996722066252923" resolveInfo="ScopeOperation" />
     </node>
-    <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="5934994956485960451">
-      <property name="name" nameId="tpck.1169194664001" value="refParams" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="RefDecl.Params" />
-    </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="3302086321379403300">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ChangeFeatureNameExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="RefActions" />
@@ -5032,26 +5028,6 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7894072914855144462">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ge2m.4792031542972811415" resolveInfo="RefactoringContext" />
         </node>
-      </node>
-    </node>
-  </root>
-  <root id="5934994956485960451">
-    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="8158329457802371920">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp1h.6895093993902311015" resolveInfo="AskExpression" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="8158329457802371922">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="7573235936722759978" resolveInfo="reduce_AskExpression" />
-      </node>
-    </node>
-    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4312073247720511323">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp1h.4312073247720468747" resolveInfo="AskBooleanExpression" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="4312073247720514223">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="4312073247720514221" resolveInfo="reduce_AskBooleanExpression" />
-      </node>
-    </node>
-    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5934994956485965528">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp1h.5934994956485965463" resolveInfo="ErrorStatement" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="5934994956485965532">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5934994956485965530" resolveInfo="reduce_ErrorStatement" />
       </node>
     </node>
   </root>
