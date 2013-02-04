@@ -105,6 +105,9 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
         containingRole = ((IObjectValueProxy) MirrorUtil.getInstance().getValueProxyFromJava(" in role: " + (String) (containingRole).getJavaValue(), getVM()));
       } else {
         containingRole = ((IObjectValueProxy) MirrorUtil.getInstance().getValueProxyFromJava("", getVM()));
+        if (ProxyEqualsUtil.javaEquals(((IObjectValueProxy) node.getFieldValue("parent")), null)) {
+          containingRole = ((IObjectValueProxy) MirrorUtil.getInstance().getValueProxyFromJava(" (root)", getVM()));
+        }
       }
       return "node<" + (String) (((IObjectValueProxy) node.getFieldValue("myConceptFqName"))).getJavaValue() + ">" + (String) (containingRole).getJavaValue();
     }
