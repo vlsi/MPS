@@ -6,9 +6,11 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class SInterfaceConceptNodeAdapter extends SConceptNodeAdapterBase implements SInterfaceConcept {
   public SInterfaceConceptNodeAdapter(@NotNull String conceptName) {
@@ -16,14 +18,14 @@ public class SInterfaceConceptNodeAdapter extends SConceptNodeAdapterBase implem
   }
 
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
-    return ListSequence.fromList(SLinkOperations.getTargets(getConcept(), "extends", true)).select(new ISelector<SNode, SInterfaceConcept>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(((SNode) (getConcept().resolve(MPSModuleRepository.getInstance()))), "extends", true)).select(new ISelector<SNode, SInterfaceConcept>() {
       public SInterfaceConcept select(SNode it) {
         return ((SInterfaceConcept) new SInterfaceConceptNodeAdapter(NameUtil.nodeFQName(it)));
       }
     });
   }
 
-  public SNode getConcept() {
-    return ((SNode) super.getConcept());
+  public SNodePointer getConcept() {
+    return super.getConcept();
   }
 }
