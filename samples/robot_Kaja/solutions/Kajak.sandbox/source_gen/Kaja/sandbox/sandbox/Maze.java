@@ -5,41 +5,69 @@ package Kaja.sandbox.sandbox;
 import JavaKaja.runtime.KajaFrame;
 import JavaKaja.runtime.Direction;
 
-public class MarkSniffer extends KajaFrame {
-  public MarkSniffer() {
+public class Maze extends KajaFrame {
+  public Maze() {
   }
 
   protected void perform() {
-    // Searches for a mark on a custom playground, using a very primitive strategy 
-    buildSimplePlayground_from_library_PlaygroundDefinition_routine();
-    trace("Playground is ready.");
-    searchForMark_routine();
-    trace("Found a mark!");
-  }
-
-  public void safeStep_routine() {
-    if (!(isWall())) {
+    buildMaze_from_library_PlaygroundDefinition_routine();
+    while (!(heading(Direction.south))) {
+      turnLeft();
+      pause();
+    }
+    while (!(isWall())) {
       if (canMove()) {
         moveKaja();
         pause();
       } else {
         reportError("Oops, There's a wall in front of me. I can't make a step forward.");
       }
+    }
+    findDoor_routine();
+    if (canMove()) {
+      moveKaja();
+      pause();
     } else {
+      reportError("Oops, There's a wall in front of me. I can't make a step forward.");
+    }
+    sniffAround_routine();
+    // Definitions 
+  }
+
+  public void findDoor_routine() {
+    while (isWall()) {
+      turnLeft();
+      pause();
+      if (canMove()) {
+        moveKaja();
+        pause();
+      } else {
+        reportError("Oops, There's a wall in front of me. I can't make a step forward.");
+      }
       turnRight_from_library_Common_routine();
     }
   }
 
-  public void searchForMark_routine() {
-    if (isMark()) {
-      pickAll_from_library_Filling_routine();
-      while (!(heading(Direction.west))) {
-        turnLeft();
+  public void sniffAround_routine() {
+    while ((!(isMark()) && !(isWall()))) {
+      if (canMove()) {
+        moveKaja();
         pause();
+      } else {
+        reportError("Oops, There's a wall in front of me. I can't make a step forward.");
       }
+    }
+    if (isWall()) {
+      turnRight_from_library_Common_routine();
+      sniffAround_routine();
     } else {
-      safeStep_routine();
-      searchForMark_routine();
+      if (isMark()) {
+        removeMark();
+        pause();
+      } else {
+        reportError("Nothing to pick. The cell is empty.");
+      }
+      trace("Found a mark");
     }
   }
 
@@ -170,7 +198,7 @@ public class MarkSniffer extends KajaFrame {
   }
 
   public void turnRight_from_library_Common_routine() {
-    for (int indexVariable_ormfpz_a0e = 0; indexVariable_ormfpz_a0e < 3; indexVariable_ormfpz_a0e++) {
+    for (int indexVariable_pmgf_a0e = 0; indexVariable_pmgf_a0e < 3; indexVariable_pmgf_a0e++) {
       turnLeft();
       pause();
     }
@@ -209,30 +237,8 @@ public class MarkSniffer extends KajaFrame {
     }
   }
 
-  public void fillup_from_library_Filling_routine() {
-    while (!(isFull())) {
-      if (!(isFull())) {
-        addMark();
-        pause();
-      } else {
-        reportError("Cannot drop. The cell is already full.");
-      }
-    }
-  }
-
-  public void pickAll_from_library_Filling_routine() {
-    while (isMark()) {
-      if (isMark()) {
-        removeMark();
-        pause();
-      } else {
-        reportError("Nothing to pick. The cell is empty.");
-      }
-    }
-  }
-
   public static void main(String[] args) {
-    MarkSniffer script = new MarkSniffer();
+    Maze script = new Maze();
     script.initializeComponents();
     script.run();
   }
