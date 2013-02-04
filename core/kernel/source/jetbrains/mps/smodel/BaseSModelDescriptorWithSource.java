@@ -78,8 +78,6 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     ModelAccess.assertLegalWrite();
 
     final SModel oldSModel = getCurrentModelInternal();
-    notifyModelReplaced(oldSModel);
-
 
     if (oldSModel != null) {
       oldSModel.setModelDescriptor(null);
@@ -91,6 +89,9 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     if (newModel != null) {
       newModel.setModelDescriptor(this);
     }
+
+    notifyModelReplaced(oldSModel);
+
     MPSModuleRepository.getInstance().invalidateCaches();
   }
 }
