@@ -24,8 +24,8 @@ import jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionExce
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
-import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 
 /*package*/ class JavaObjectValue extends JavaValue {
   public JavaObjectValue(Value value, String classFQname, ThreadReference threadReference) {
@@ -94,15 +94,6 @@ import jetbrains.mps.util.NameUtil;
   @NotNull
   private IObjectValueProxy createValueProxy() {
     return (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(myValue);
-  }
-
-  @Nullable
-  public JavaValue executeMethod(String methodName, String jniSignature, Object... args) {
-    try {
-      return ValueUtil.getInstance().fromJDIRaw(createValueProxy().invokeMethod(methodName, jniSignature, myThreadReference, args).getJDIValue(), myClassFQName, myThreadReference);
-    } catch (EvaluationException e) {
-      return null;
-    }
   }
 
   public String getClassFqName() {
