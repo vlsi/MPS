@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
@@ -83,7 +83,7 @@ public class BuildLayout_JarManifest_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
       if (true) {
-        editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
+        editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
       }
       editorCell.setDefaultText("");
       return editorCell;

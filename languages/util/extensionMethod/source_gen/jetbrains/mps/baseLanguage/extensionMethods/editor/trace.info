@@ -962,7 +962,7 @@
     <nodeInfo nodeId="7353029842738567560" fileName="ExtensionMethodDeclaration_Editor.java" startLine="302" startPosition="35" endLine="303" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7353029842738567560" fileName="ExtensionMethodDeclaration_Editor.java" startLine="303" startPosition="48" endLine="304" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7353029842738567560" fileName="ExtensionMethodDeclaration_Editor.java" startLine="304" startPosition="26" endLine="305" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7353029842738567560" fileName="ExtensionMethodDeclaration_Editor.java" startLine="306" startPosition="15" endLine="307" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7353029842738567560" fileName="ExtensionMethodDeclaration_Editor.java" startLine="306" startPosition="15" endLine="307" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7353029842738567560" fileName="ExtensionMethodDeclaration_Editor.java" startLine="308" startPosition="5" endLine="309" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7353029842738567560" fileName="ExtensionMethodDeclaration_Editor.java" startLine="309" startPosition="73" endLine="310" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7353029842738567560" fileName="ExtensionMethodDeclaration_Editor.java" startLine="310" startPosition="57" endLine="311" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1074,7 +1074,7 @@
     <scopeInfo nodeId="1082537205635902545" fileName="ExtensionMethodDeclaration_Editor.java" startLine="184" startPosition="82" endLine="185" endPosition="85" />
     <scopeInfo nodeId="8022092943109749229" fileName="ExtensionMethodDeclaration_Editor.java" startLine="194" startPosition="40" endLine="195" endPosition="82" />
     <scopeInfo nodeId="8022092943109749229" fileName="ExtensionMethodDeclaration_Editor.java" startLine="195" startPosition="82" endLine="196" endPosition="81" />
-    <scopeInfo nodeId="7353029842738567560" fileName="ExtensionMethodDeclaration_Editor.java" startLine="306" startPosition="15" endLine="307" endPosition="65" />
+    <scopeInfo nodeId="7353029842738567560" fileName="ExtensionMethodDeclaration_Editor.java" startLine="306" startPosition="15" endLine="307" endPosition="95" />
     <scopeInfo nodeId="3897935848304631877" fileName="ExtensionMethodDeclaration_Editor.java" startLine="355" startPosition="111" endLine="356" endPosition="112" />
     <scopeInfo nodeId="7353029842738567568" fileName="ExtensionMethodDeclaration_Editor.java" startLine="359" startPosition="111" endLine="360" endPosition="99" />
     <scopeInfo nodeId="7353029842738567578" fileName="ExtensionMethodDeclaration_Editor.java" startLine="363" startPosition="111" endLine="364" endPosition="96" />

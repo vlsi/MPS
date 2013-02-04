@@ -585,7 +585,7 @@
     <nodeInfo nodeId="1198243759892" fileName="InferenceRule_Editor.java" startLine="345" startPosition="39" endLine="346" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1198243759892" fileName="InferenceRule_Editor.java" startLine="346" startPosition="52" endLine="347" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198243759892" fileName="InferenceRule_Editor.java" startLine="347" startPosition="26" endLine="348" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198243759892" fileName="InferenceRule_Editor.java" startLine="349" startPosition="15" endLine="350" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198243759892" fileName="InferenceRule_Editor.java" startLine="349" startPosition="15" endLine="350" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1198243759892" fileName="InferenceRule_Editor.java" startLine="351" startPosition="5" endLine="352" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1198243759892" fileName="InferenceRule_Editor.java" startLine="352" startPosition="73" endLine="353" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198243759892" fileName="InferenceRule_Editor.java" startLine="353" startPosition="57" endLine="354" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -721,7 +721,7 @@
     <scopeInfo nodeId="1193744398081" fileName="InferenceRule_Editor.java" startLine="191" startPosition="109" endLine="192" endPosition="87" />
     <scopeInfo nodeId="1193744398081" fileName="InferenceRule_Editor.java" startLine="194" startPosition="109" endLine="195" endPosition="86" />
     <scopeInfo nodeId="2995323193947542206" fileName="InferenceRule_Editor.java" startLine="202" startPosition="51" endLine="203" endPosition="84" />
-    <scopeInfo nodeId="1198243759892" fileName="InferenceRule_Editor.java" startLine="349" startPosition="15" endLine="350" endPosition="65" />
+    <scopeInfo nodeId="1198243759892" fileName="InferenceRule_Editor.java" startLine="349" startPosition="15" endLine="350" endPosition="95" />
     <scopeInfo nodeId="2995323193947542209" fileName="InferenceRule_Editor.java" startLine="419" startPosition="111" endLine="420" endPosition="100" />
     <scopeInfo nodeId="2995323193947574257" fileName="InferenceRule_Editor.java" startLine="423" startPosition="111" endLine="424" endPosition="100" />
     <scopeInfo nodeId="1183469471357" fileName="InferenceRule_Editor.java" startLine="53" startPosition="0" endLine="55" endPosition="0" />
@@ -7894,7 +7894,7 @@
     <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="275" startPosition="39" endLine="276" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="276" startPosition="52" endLine="277" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="277" startPosition="26" endLine="278" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="279" startPosition="15" endLine="280" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="279" startPosition="15" endLine="280" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="281" startPosition="5" endLine="282" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="282" startPosition="73" endLine="283" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="283" startPosition="57" endLine="284" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -8004,7 +8004,7 @@
     <scopeInfo nodeId="1198242245493" fileName="NonTypesystemRule_Editor.java" startLine="134" startPosition="84" endLine="135" endPosition="84" />
     <scopeInfo nodeId="1198242185705" fileName="NonTypesystemRule_Editor.java" startLine="141" startPosition="51" endLine="142" endPosition="86" />
     <scopeInfo nodeId="1198242185705" fileName="NonTypesystemRule_Editor.java" startLine="142" startPosition="86" endLine="143" endPosition="83" />
-    <scopeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="279" startPosition="15" endLine="280" endPosition="65" />
+    <scopeInfo nodeId="1198242185699" fileName="NonTypesystemRule_Editor.java" startLine="279" startPosition="15" endLine="280" endPosition="95" />
     <scopeInfo nodeId="1195214394150" fileName="NonTypesystemRule_Editor.java" startLine="41" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="1195214394172" fileName="NonTypesystemRule_Editor.java" startLine="48" startPosition="90" endLine="50" endPosition="110" />
     <scopeInfo nodeId="1217335697550" fileName="NonTypesystemRule_Editor.java" startLine="263" startPosition="91" endLine="265" endPosition="18">

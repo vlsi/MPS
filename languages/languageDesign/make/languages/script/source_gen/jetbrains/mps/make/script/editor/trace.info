@@ -2224,7 +2224,7 @@
     <nodeInfo nodeId="505095865854436865" fileName="Text_Editor.java" startLine="66" startPosition="71" endLine="67" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="505095865854436865" fileName="Text_Editor.java" startLine="67" startPosition="48" endLine="68" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="505095865854436865" fileName="Text_Editor.java" startLine="68" startPosition="46" endLine="69" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="505095865854436865" fileName="Text_Editor.java" startLine="70" startPosition="15" endLine="71" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="505095865854436865" fileName="Text_Editor.java" startLine="70" startPosition="15" endLine="71" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="505095865854436865" fileName="Text_Editor.java" startLine="72" startPosition="5" endLine="73" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="505095865854436865" fileName="Text_Editor.java" startLine="73" startPosition="73" endLine="74" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="505095865854436865" fileName="Text_Editor.java" startLine="74" startPosition="57" endLine="75" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2243,7 +2243,7 @@
     <scopeInfo nodeId="505095865854436857" fileName="Text_Editor.java" startLine="28" startPosition="48" endLine="29" endPosition="81" />
     <scopeInfo nodeId="505095865854436857" fileName="Text_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="81" />
     <scopeInfo nodeId="505095865854436857" fileName="Text_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="81" />
-    <scopeInfo nodeId="505095865854436865" fileName="Text_Editor.java" startLine="70" startPosition="15" endLine="71" endPosition="60" />
+    <scopeInfo nodeId="505095865854436865" fileName="Text_Editor.java" startLine="70" startPosition="15" endLine="71" endPosition="90" />
     <scopeInfo nodeId="505095865854436855" fileName="Text_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="505095865854436855" varName="editorContext" />
       <varInfo nodeId="505095865854436855" varName="node" />
