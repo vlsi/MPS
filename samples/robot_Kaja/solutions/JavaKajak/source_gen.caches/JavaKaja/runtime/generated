@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-7lw57d0ka3j8c0nngqa66hlth2osf1b">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22hsdy8hx47u1rwu32z4quczy3521b0" />
+  <common hash="-arqxoc3g7dd2n3fy150cfktyvx8gx7b" />
+  <source id="3308300503039473785" name="KajaFrame" hash="1zgz2rohl4ydyg39nq7w1bwykqf6mbt">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="KajaFrame.java" />
+  </source>
+  <source id="3308300503039569134" name="Direction" hash="-801ff1zbrt2oozt1ge31tpeowpeyib5">
+    <file name="Direction.java" />
+  </source>
+  <source id="3308300503039569160" name="Cell" hash="-9yklq2dhmap5n81q6zbez9tjv70kpaa">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="Cell.java" />
+  </source>
+  <source id="1904811872814056520" name="VisualCell" hash="53u2ewiu13pigzy0vjnvcuypc5vjdmq">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="VisualCell.java" />
+  </source>
+</dependencies>
+

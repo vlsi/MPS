@@ -387,6 +387,11 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/plainText/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/KajaAndOr/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/KajaSceneConstruction/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/Kajak/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/solutions/JavaKajak/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/solutions/Kajak.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleFacet/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleFacet/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/Constants/source_gen" isTestSource="false" />
@@ -437,6 +442,11 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/plainText/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/plainText/solutions/sample/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/KajaAndOr/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/KajaSceneConstruction/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/languages/Kajak/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/solutions/JavaKajak/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/robot_Kaja/solutions/Kajak.sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleFacet/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleFacet/solutions/pluginSolution/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/languages/Constants/classes_gen" />
