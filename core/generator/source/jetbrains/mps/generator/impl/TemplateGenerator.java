@@ -133,7 +133,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     // publish roots
     for (SNode outputRoot : myOutputRoots) {
-      myOutputModel.addRoot(outputRoot);
+      myOutputModel.addRootNode(outputRoot);
     }
 
     // reload "required" roots from cache

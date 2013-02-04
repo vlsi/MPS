@@ -193,7 +193,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
 
       List<Pair<String,SNode>> roots = new NodesReader(modelReference).readNodes(model, is);
       for (Pair<String,SNode> r : roots) {
-        model.addRoot(r.o2);
+        model.addRootNode(r.o2);
       }
 
       // ensure imports are back
@@ -248,7 +248,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     }
     List<Pair<String,SNode>> resultRoots = new NodesReader(resultModel.getSModelReference()).readNodes(resultModel, mis);
     for (Pair<String,SNode> root : resultRoots) {
-      resultModel.addRoot(root.o2);
+      resultModel.addRootNode(root.o2);
     }
 
     SModelOperations.validateLanguagesAndImports(resultModel, false, false);

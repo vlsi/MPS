@@ -1993,7 +1993,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     @Override
     public void addRootNode(org.jetbrains.mps.openapi.model.SNode node) {
-      myModel.addRoot((SNode) node);
+      myModel.addRootNode((SNode) node);
     }
 
     @Override

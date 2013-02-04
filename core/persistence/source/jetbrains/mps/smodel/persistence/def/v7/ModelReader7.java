@@ -109,7 +109,7 @@ public class ModelReader7 implements IModelReader {
     for (Element element : (List<Element>) roots.getChildren(ModelPersistence.NODE)) {
       SNode node = readNode(element, model, true);
       if (node != null) {
-        model.addRoot(node);
+        model.addRootNode(node);
       }
     }
     // nodes

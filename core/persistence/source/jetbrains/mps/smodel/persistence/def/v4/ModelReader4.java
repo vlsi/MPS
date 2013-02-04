@@ -17,7 +17,8 @@ package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.InternUtil;
@@ -153,7 +154,7 @@ public class ModelReader4 implements IModelReader {
       Element element = (Element) child;
       SNode snode = readNode(element, model, referenceDescriptors, false, versionsInfo);
       if (snode != null) {
-        model.addRoot(snode);
+        model.addRootNode(snode);
       }
     }
 

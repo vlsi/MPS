@@ -26,7 +26,8 @@ import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.PrintWriter;
@@ -289,7 +290,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     }
 
     for (SNode node : toCopy) {
-      currentOutputModel.addRoot(node);
+      currentOutputModel.addRootNode(node);
     }
     for (MappingsMemento val : toImport) {
       mappings.importPersisted(val, currentInputModel, currentOutputModel);

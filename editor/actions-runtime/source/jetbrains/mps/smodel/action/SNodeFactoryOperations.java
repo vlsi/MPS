@@ -48,7 +48,7 @@ public class SNodeFactoryOperations {
 
   public static SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
     SNode newNode = NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, model);
-    model.addRoot(newNode);
+    model.addRootNode(newNode);
     return newNode;
   }
 
@@ -101,7 +101,7 @@ public class SNodeFactoryOperations {
     SNode newChild = NodeFactoryManager.createNode(conceptFqName, oldChild, oldChildParent, model);
     if (newChild == null) return null;
     if (oldChildParent == null) {
-      model.addRoot(newChild);
+      model.addRootNode(newChild);
       model.removeRootNode(oldChild);
     } else {
       SNodeUtil.replaceWithAnother(oldChild, newChild);

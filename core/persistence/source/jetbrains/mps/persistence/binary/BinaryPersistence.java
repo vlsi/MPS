@@ -127,7 +127,7 @@ public class BinaryPersistence {
 
     List<Pair<String, SNode>> roots = new NodesReader(modelReference).readNodes(model, is);
     for (Pair<String, SNode> r : roots) {
-      model.addRoot(r.o2);
+      model.addRootNode(r.o2);
     }
 
     // ensure imports are back
