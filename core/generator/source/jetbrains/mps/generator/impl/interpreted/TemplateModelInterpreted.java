@@ -68,7 +68,7 @@ public class TemplateModelInterpreted implements TemplateModel {
   @Override
   public TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments) {
     assert template.getModelReference().equals(getSModelReference());
-    SNode templateNode = myModel.getNodeById(((SNodePointer) template).getNodeId());
+    SNode templateNode = myModel.getNode(((SNodePointer) template).getNodeId());
     if (templateNode == null || !RuleUtil.concept_TemplateDeclaration.equals(templateNode.getConcept().getId())) {
       return null;
     }

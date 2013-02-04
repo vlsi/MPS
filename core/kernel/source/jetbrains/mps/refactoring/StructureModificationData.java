@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.refactoring;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.InternUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -90,7 +91,7 @@ public class StructureModificationData {
       if (model == null) {
         return null;
       }
-      return model.getSModel().getNodeById(myNodeId);
+      return model.getSModel().getNode(myNodeId);
     }
 
     public SModelDescriptor getModel() {

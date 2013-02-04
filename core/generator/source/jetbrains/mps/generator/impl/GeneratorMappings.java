@@ -260,21 +260,21 @@ public class GeneratorMappings {
         SNodeId key = n.getKey();
         SNode inputNode = null;
         if(key != null) {
-          inputNode = inputModel.getNodeById(key);
+          inputNode = inputModel.getNode(key);
           if(inputNode == null) {
             continue;
           }
         }
         Object value = n.getValue();
         if(value instanceof SNodeId) {
-          SNode outputNode = outputModel.getNodeById((SNodeId) value);
+          SNode outputNode = outputModel.getNode((SNodeId) value);
           if(outputNode == null) {
             continue;
           }
           addOutputNode(currentMapping, inputNode, outputNode);
         } else if(value instanceof List) {
           for(SNodeId id : (List<SNodeId>)value) {
-            SNode outputNode = outputModel.getNodeById(id);
+            SNode outputNode = outputModel.getNode(id);
             if(outputNode == null) {
               continue;
             }
@@ -286,19 +286,19 @@ public class GeneratorMappings {
 
     // output for input
     for(Entry<SNodeId, Object> e : val.getCopiedOutputNodeForInputNode().entrySet()) {
-      SNode inputNode = inputModel.getNodeById(e.getKey());
+      SNode inputNode = inputModel.getNode(e.getKey());
       if(inputNode == null) {
         continue;
       }
       Object value = e.getValue();
       if(value instanceof SNodeId) {
-        SNode outputNode = outputModel.getNodeById((SNodeId) value);
+        SNode outputNode = outputModel.getNode((SNodeId) value);
         if(outputNode == null) {
           continue;
         }
         myCopiedOutputNodeForInputNode.put(inputNode, outputNode);
       } else if(value instanceof List) {
-        SNode outputNode = outputModel.getNodeById(((List<SNodeId>) value).get(0));
+        SNode outputNode = outputModel.getNode(((List<SNodeId>) value).get(0));
         if(outputNode == null) {
           continue;
         }

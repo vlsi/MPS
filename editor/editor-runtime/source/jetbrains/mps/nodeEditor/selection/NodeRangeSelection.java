@@ -159,7 +159,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     }
     jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(sNodeId);
     assert nodeId != null : "wrong node id string";
-    SNode sNode = sModel.getNodeById(nodeId);
+    SNode sNode = sModel.getNode(nodeId);
     if (sNode == null) {
       throw new SelectionRestoreException();
     }

@@ -174,7 +174,7 @@ public class TypecheckerStateViewComponent extends JPanel {
       public void run() {
         jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(ruleID);
         assert nodeId != null : "wrong node id string";
-        SNode rule = modelDescriptor.getSModel().getNodeById(nodeId);
+        SNode rule = modelDescriptor.getSModel().getNode(nodeId);
         if (rule == null) {
           LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
           return;

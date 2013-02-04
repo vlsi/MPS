@@ -145,7 +145,7 @@ public class EquationInfo {
     if (modelDescriptor == null) return null;
     SNodeId nodeId = SNodeId.fromString(myRuleId);
     assert nodeId != null : "wrong node id string";
-    return modelDescriptor.getSModel().getNodeById(nodeId);
+    return modelDescriptor.getSModel().getNode(nodeId);
   }
 
   boolean isStrong() {

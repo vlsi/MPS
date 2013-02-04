@@ -131,7 +131,7 @@ public class DefaultCellInfo implements CellInfo {
           if (editorComponent.getEditedNode() != null &&
             EqualUtil.equals(myNodePointer.getModelReference(),
               editorComponent.getEditedNode().getModel().getSModelReference())) {
-            node = editorComponent.getEditedNode().getModel().getNodeById(((SNodePointer) myNodePointer).getNodeId());
+            node = editorComponent.getEditedNode().getModel().getNode(((SNodePointer) myNodePointer).getNodeId());
           } else {
             node = myNodePointer.resolve(MPSModuleRepository.getInstance());
           }

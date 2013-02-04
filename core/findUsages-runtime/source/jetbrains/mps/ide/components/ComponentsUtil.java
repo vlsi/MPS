@@ -55,7 +55,7 @@ public class ComponentsUtil {
     if (modelDescriptor == null) return null;
     jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(id);
     assert nodeId != null : "wrong node id string";
-    return modelDescriptor.getSModel().getNodeById(nodeId);
+    return modelDescriptor.getSModel().getNode(nodeId);
   }
 
   public static SNodeReference nodePointerFromElement(Element nodeElement) {

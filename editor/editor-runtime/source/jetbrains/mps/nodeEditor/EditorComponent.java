@@ -99,7 +99,6 @@ import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -3184,7 +3183,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (myNode.getModel().getSModelReference().equals(descriptor.getSModelReference())) {
             clearModelDisposedTrace();
             SNodeId oldId = myNode.getNodeId();
-            myNode = descriptor.getSModel().getNodeById(oldId);
+            myNode = descriptor.getSModel().getNode(oldId);
             needToRebuild = true;
           }
         }

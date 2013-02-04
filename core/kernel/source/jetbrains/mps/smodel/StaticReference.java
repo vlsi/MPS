@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -107,7 +107,7 @@ public final class StaticReference extends SReferenceBase {
       return null;
     }
 
-    SNode targetNode = targetModel.getNodeById(targetNodeId);
+    SNode targetNode = targetModel.getNode(targetNodeId);
     if (targetNode != null) return targetNode;
     targetNode = UnregisteredNodes.instance().get(targetModel.getSModelReference(), targetNodeId);
     if (targetNode == null) {

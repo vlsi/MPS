@@ -331,7 +331,7 @@ public class GenerationTracer implements IGenerationTracer {
     while (inputNode != null) {
       SNodeId nodeId = SNodeId.fromString(inputNode.getNodeId().toString());
       assert nodeId != null : "wrong node id string";
-      outputNode = outputModel.getNodeById(nodeId);
+      outputNode = outputModel.getNode(nodeId);
       if (outputNode != null) break;
       inputNode = inputNode.getParent();
     }
@@ -396,7 +396,7 @@ public class GenerationTracer implements IGenerationTracer {
     while (outputNode != null) {
       SNodeId nodeId = SNodeId.fromString(outputNode.getNodeId().toString());
       assert nodeId != null : "wrong node id string";
-      inputNode = inputModel.getNodeById(nodeId);
+      inputNode = inputModel.getNode(nodeId);
       if (inputNode != null) break;
       outputNode = outputNode.getParent();
     }

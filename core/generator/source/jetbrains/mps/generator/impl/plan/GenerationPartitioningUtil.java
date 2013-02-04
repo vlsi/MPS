@@ -194,7 +194,7 @@ public class GenerationPartitioningUtil {
         if (refModel != null) {
           jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(nodeID);
           assert nodeId != null : "wrong node id string";
-          SNode mappingConfig = refModel.getSModel().getNodeById(nodeId);
+          SNode mappingConfig = refModel.getSModel().getNode(nodeId);
           if (mappingConfig != null) {
             return s + mappingConfig.getName();
           }
