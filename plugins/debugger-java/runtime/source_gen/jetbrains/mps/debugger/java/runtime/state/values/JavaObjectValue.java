@@ -81,16 +81,6 @@ import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
     }
   }
 
-  public List<JavaValue> getFieldValues() {
-    ObjectReference ref = (ObjectReference) myValue;
-    List<Field> fieldList = ref.referenceType().fields();
-    List<JavaValue> result = new ArrayList<JavaValue>();
-    for (Field f : fieldList) {
-      result.add(ValueUtil.getInstance().fromJDIRaw(ref.getValue(f), myClassFQName, myThreadReference));
-    }
-    return result;
-  }
-
   @NotNull
   private IObjectValueProxy createValueProxy() {
     return (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(myValue);
