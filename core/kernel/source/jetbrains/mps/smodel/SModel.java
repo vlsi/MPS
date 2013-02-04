@@ -942,8 +942,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return changed;
   }
 
-
-
   void changeModelReference(SModelReference newModelReference) {
     enforceFullLoad();
     SModelReference oldReference = myReference;

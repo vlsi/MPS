@@ -42,7 +42,6 @@ import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.LanguageAspect;
 import javax.lang.model.SourceVersion;
 import org.jetbrains.annotations.Nullable;
@@ -242,11 +241,6 @@ public class NewModelDialog extends DialogWrapper {
     }
 
     SModelFqName modelUID = new SModelFqName(modelName, myModelStereotype.getSelectedItem().toString());
-    if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
-      setErrorText("Model with an uid " + modelName + " already exists");
-      return false;
-    }
-
     if (modelName.lastIndexOf(".") == modelName.length()) {
       setErrorText("Empty model short name isn't allowed");
       return false;

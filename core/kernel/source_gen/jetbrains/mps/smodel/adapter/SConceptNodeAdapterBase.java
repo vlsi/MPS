@@ -86,7 +86,7 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
   }
 
   public SLanguage getLanguage() {
-    return new SLanguageLanguageAdapter(((Language) SNodeOperations.getModel(getConcept()).getModelDescriptor().getModule()));
+    return new SLanguageLanguageAdapter(((Language)  SNodeOperations.getModel(getConcept()).getModelDescriptor().getModule()));
   }
 
   public SNode getConcept() {
