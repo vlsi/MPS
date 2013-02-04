@@ -15,8 +15,8 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy;
 import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
-import jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.ProxyEqualsUtil;
+import jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
 
 public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
@@ -64,7 +64,10 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
       result.add(new SNodeWatchables.MyWatchable_text(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) node.invokeMethod("getPresentation", "()Ljava/lang/String;", getThreadReference())).getJDIValue(), getThreadReference()), "text"));
       result.add(new SNodeWatchables.MyWatchable_id(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) node.getFieldValue("myId")).getJDIValue(), getThreadReference()), "id"));
       result.add(new SNodeWatchables.MyWatchable_model(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) node.getFieldValue("myModel")).getJDIValue(), getThreadReference()), "model"));
-      result.add(new SNodeWatchables.MyWatchable_concept(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) EvaluationUtils.getInstance().invokeStaticMethod("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getConceptDeclaration", "(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;", getThreadReference(), value)).getJDIValue(), getThreadReference()), "concept"));
+      result.add(new SNodeWatchables.MyWatchable_concept(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) node.getFieldValue("myConceptFqName")).getJDIValue(), getThreadReference()), "concept"));
+      if (!(ProxyEqualsUtil.javaEquals(((IObjectValueProxy) node.getFieldValue("parent")), null))) {
+        result.add(new SNodeWatchables.MyWatchable_parent(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) node.getFieldValue("parent")).getJDIValue(), getThreadReference()), "parent"));
+      }
 
       IArrayValueProxy properties = ((IArrayValueProxy) node.getFieldValue("myProperties"));
       if (!(ProxyEqualsUtil.javaEquals(properties, null))) {
