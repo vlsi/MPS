@@ -39,15 +39,11 @@ public class WatchableNode extends AbstractWatchableNode {
   }
 
   protected String calculateNodeId() {
-    return myWatchable.getName() + " = " + getValuePresentation(myWatchable.getValue());
-  }
-
-  @NotNull
-  protected String getValuePresentation(IValue value) {
+    IValue value = myWatchable.getValue();
     if (value == null) {
-      return "null";
+      return myWatchable.getName() + " = null";
     }
-    return value.getValuePresentation();
+    return myWatchable.getName() + " = " + value.getValuePresentation();
   }
 
   @Override
