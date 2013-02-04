@@ -16,6 +16,7 @@
 package org.jetbrains.mps.openapi.module;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -94,4 +95,10 @@ public interface SModule {
   Iterable<SModel> getModels();
 
   Iterable<ModelRoot> getModelRoots();
+
+  // do not use!!!
+  boolean containsFacet(Class clazz);
+
+  @Nullable
+  <T> T getFacet(Class<T> clazz);
 }

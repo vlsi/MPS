@@ -119,6 +119,12 @@ public abstract class AbstractModule implements IModule, JavaModuleFacet, FileSy
 
   @Override
   public final EditableSModelDescriptor createModel(String name, @NotNull ModelRoot root, ModelAdjuster adj) {
+    // why ModelRoot register model in module? WTF
+    // should be public AbstractModule#addModel method!
+    // ourModelsCreationListeners should be called in addModel method
+
+    // so this goes to SModuleOperation method with createModel from ModelRoot, apply adj and register in module
+    // deprecated
     if (!root.canCreateModel(name)) {
       LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
       return null;
@@ -764,6 +770,17 @@ public abstract class AbstractModule implements IModule, JavaModuleFacet, FileSy
 
   public boolean isChanged() {
     return myChanged;
+  }
+
+  @Override
+  public boolean containsFacet(Class clazz) {
+    return false;
+  }
+
+  @Override
+  @Nullable
+  public <T> T getFacet(Class<T> clazz) {
+    return null;
   }
 
   public class ModuleScope extends DefaultScope {
