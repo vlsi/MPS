@@ -3,6 +3,7 @@
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="jetbrains" />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <sourcePath />
