@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.baseLanguage.sandbox" uuid="4f57e080-33c7-449c-96f9-dd8dfead6ae4" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <sourcePath />
