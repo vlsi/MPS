@@ -23,31 +23,14 @@ import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
-import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
-import jetbrains.mps.ide.messages.DefaultMessageHandler;
-import com.intellij.openapi.progress.util.ProgressWindow;
-import jetbrains.mps.generator.GenerationFacade;
-import java.util.Collections;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.ide.generator.TransientModelsComponent;
-import com.intellij.openapi.util.Disposer;
+import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationGeneratorUtil;
+import jetbrains.mps.debugger.java.runtime.evaluation.TransformingGenerationHandler;
 import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
-import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.compiler.CompilationResultAdapter;
-import org.eclipse.jdt.internal.compiler.CompilationResult;
-import org.eclipse.jdt.core.compiler.CategorizedProblem;
-import jetbrains.mps.generator.IncrementalGenerationStrategy;
-import java.util.Map;
-import jetbrains.mps.generator.GenerationCacheContainer;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 
 public abstract class AbstractEvaluationModel {
-  /*package*/ static final String EVALUATOR_NAME = "EvaluatorInstance";
+  public static final String EVALUATOR_NAME = "EvaluatorInstance";
   public static final boolean IS_DEVELOPER_MODE = Boolean.getBoolean("evaluation.developer");
   protected JavaUiState myUiState;
   protected final DebugSession myDebugSession;
@@ -119,71 +102,11 @@ public abstract class AbstractEvaluationModel {
 
   @Nullable
   public Class generateAndLoadEvaluatorClass() throws EvaluationException {
-    try {
-
-      final String fullClassName = this.myAuxModel.getLongName() + "." + AbstractEvaluationModel.EVALUATOR_NAME;
-      InMemoryJavaGenerationHandler handler = new MyInMemoryJavaGenerationHandler(false, true, myGenerationListeners);
-      AbstractEvaluationModel.MyCompilationResultAdapter compilationResult = new AbstractEvaluationModel.MyCompilationResultAdapter();
-      handler.setCompilationListener(compilationResult);
-      Project ideaProject = this.myAuxModule.getMPSProject().getProject();
-      DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
-      ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
-      boolean successful = GenerationFacade.generateModels(myContext.getProject(), Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new AbstractEvaluationModel.MyIncrementalGenerationStrategy()).saveTransientModels(IS_DEVELOPER_MODE).rebuildAll(false).reporting(false, false, false, 0).create(), myContext.getProject().getComponent(TransientModelsComponent.class));
-
-      Disposer.dispose(progressWindow);
-
-      String source = handler.getSources().get(fullClassName);
-
-      if (successful && (source != null && source.length() > 0)) {
-        if (isDeveloperMode()) {
-          System.err.println(source);
-        }
-        ClassLoader parentClassLoader = this.myUiState.getClass().getClassLoader();
-        return Class.forName(fullClassName, true, handler.getCompiler().getClassLoader(parentClassLoader));
-      } else if ((source != null && source.length() > 0) && !(successful)) {
-        String text = "Errors during compilation";
-        if (compilationResult.hasErrors()) {
-          text += ":\n" + compilationResult.getMessage();
-        } else {
-          text += ".";
-        }
-        throw new EvaluationException(text);
-      } else {
-        throw new EvaluationException("Errors during generation.");
-      }
-    } catch (EvaluationException e) {
-      throw e;
-    } catch (ClassNotFoundException e) {
-      throw new EvaluationException(e);
-    }
+    return EvaluationGeneratorUtil.generateAndLoadEvaluatorClass(myAuxModule.getMPSProject().getProject(), myAuxModel, EVALUATOR_NAME, myContext, IS_DEVELOPER_MODE, new TransformingGenerationHandler(false, true, myGenerationListeners), myUiState.getClass().getClassLoader());
   }
 
   public Evaluator createEvaluatorInstance(Class clazz) throws EvaluationException {
-    try {
-      Evaluator evaluator;
-      try {
-        evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
-      } catch (InvocationTargetException e) {
-        // try again 
-        myUiState = myDebugSession.refresh();
-        evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
-      }
-      return evaluator;
-    } catch (InvocationTargetException e) {
-      // invocation target exceptions from newInstance method call via reflection 
-      // second time, which means refresh did not help 
-      // this is bad 
-      // I personally think something should be done with all those exceptions 
-      // other then hiding them from user 
-      // but I do not know what 
-      throw new InvocationTargetEvaluationException(e.getCause());
-    } catch (NoSuchMethodException e) {
-      throw new EvaluationException(e);
-    } catch (IllegalAccessException e) {
-      throw new EvaluationException(e);
-    } catch (InstantiationException e) {
-      throw new EvaluationException(e);
-    }
+    return EvaluationGeneratorUtil.createInstance(clazz, new Class[]{JavaUiState.class}, new Object[]{myUiState});
   }
 
   public String getPresentation() {
@@ -192,54 +115,6 @@ public abstract class AbstractEvaluationModel {
         return BehaviorReflection.invokeVirtual(String.class, getNodeToShow(), "virtual_getEvaluatorPresentation_9172312269976647295", new Object[]{});
       }
     });
-  }
-
-  public class MyCompilationResultAdapter extends CompilationResultAdapter {
-    private final StringBuffer myBuffer = new StringBuffer();
-    private boolean myHasErrors;
-
-    public MyCompilationResultAdapter() {
-    }
-
-    @Override
-    public void onCompilationResult(CompilationResult result) {
-      if (result.hasErrors()) {
-        myHasErrors = true;
-        for (CategorizedProblem error : result.getErrors()) {
-          myBuffer.append(error.getMessage());
-          myBuffer.append("\n");
-        }
-      }
-    }
-
-    public boolean hasErrors() {
-      return myHasErrors;
-    }
-
-    public String getMessage() {
-      return myBuffer.toString();
-    }
-  }
-
-  private class MyIncrementalGenerationStrategy implements IncrementalGenerationStrategy {
-    public MyIncrementalGenerationStrategy() {
-    }
-
-    public Map<String, String> getModelHashes(SModelDescriptor p0, IOperationContext p1) {
-      return Collections.emptyMap();
-    }
-
-    public GenerationCacheContainer getContainer() {
-      return null;
-    }
-
-    public GenerationDependencies getDependencies(SModelDescriptor p0) {
-      return null;
-    }
-
-    public boolean isIncrementalEnabled() {
-      return false;
-    }
   }
 
   public JavaUiState getUiState() {

@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationGeneratorUtil" file="EvaluationGeneratorUtil.java">
+    <classNode dependClassName="com.intellij.openapi.progress.util.ProgressWindow" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.util.Disposer" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassLoader" />
+    <classNode dependClassName="java.lang.ClassNotFoundException" />
+    <classNode dependClassName="java.lang.IllegalAccessException" />
+    <classNode dependClassName="java.lang.InstantiationException" />
+    <classNode dependClassName="java.lang.NoSuchMethodException" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuffer" />
+    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationCacheContainer" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
+    <classNode dependClassName="jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependencies" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.TransientModelsComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.messages.DefaultMessageHandler" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="org.eclipse.jdt.core.compiler.CategorizedProblem" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.CompilationResult" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.compiler.CompilationResultAdapter" />
+    <classNode extendsClassName="jetbrains.mps.generator.IncrementalGenerationStrategy" />
+  </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider" file="EvaluationProvider.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.awt.event.WindowAdapter" />
@@ -102,6 +137,35 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils" />
+  </dependency>
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.TransformingGenerationHandler" file="TransformingGenerationHandler.java">
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
+    <classNode dependClassName="jetbrains.mps.reloading.ClassPathFactory" />
+    <classNode dependClassName="jetbrains.mps.reloading.CompositeClassPathItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="jetbrains.mps.util.PathManager" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode extendsClassName="jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler" />
   </dependency>
 </dependenciesRoot>
 

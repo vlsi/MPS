@@ -838,5 +838,230 @@
     <unitInfo nodeId="1137554513386372373" fileName="EvaluationProvider.java" startLine="143" startPosition="53" endLine="161" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$7" />
     <unitInfo nodeId="671562190169411198" fileName="EvaluationProvider.java" startLine="35" startPosition="0" endLine="268" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider" />
   </root>
+  <root nodeRef="r:1f2ecb68-8f37-460f-acb8-866f8f05b15e(jetbrains.mps.debugger.java.runtime.evaluation)/846214144096702003">
+    <nodeInfo nodeId="7757449281563189698" fileName="EvaluationGeneratorUtil.java" startLine="32" startPosition="9" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7757449281563189705" fileName="EvaluationGeneratorUtil.java" startLine="33" startPosition="0" endLine="34" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2119552402221528229" fileName="EvaluationGeneratorUtil.java" startLine="34" startPosition="83" endLine="35" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4026243246343679368" fileName="EvaluationGeneratorUtil.java" startLine="35" startPosition="134" endLine="36" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7757449281563189736" fileName="EvaluationGeneratorUtil.java" startLine="36" startPosition="56" endLine="37" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7757449281563189742" fileName="EvaluationGeneratorUtil.java" startLine="37" startPosition="84" endLine="38" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7757449281563189756" fileName="EvaluationGeneratorUtil.java" startLine="38" startPosition="77" endLine="39" endPosition="480" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7757449281563189770" fileName="EvaluationGeneratorUtil.java" startLine="39" startPosition="480" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7757449281563189771" fileName="EvaluationGeneratorUtil.java" startLine="40" startPosition="0" endLine="41" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7757449281563189774" fileName="EvaluationGeneratorUtil.java" startLine="41" startPosition="39" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7757449281563189775" fileName="EvaluationGeneratorUtil.java" startLine="42" startPosition="0" endLine="43" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7757449281563189784" fileName="EvaluationGeneratorUtil.java" startLine="43" startPosition="62" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3247539798412754545" fileName="EvaluationGeneratorUtil.java" startLine="45" startPosition="66" endLine="46" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2119552402221528235" fileName="EvaluationGeneratorUtil.java" startLine="47" startPosition="76" endLine="48" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2119552402221528299" fileName="EvaluationGeneratorUtil.java" startLine="49" startPosition="44" endLine="50" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2119552402221528292" fileName="EvaluationGeneratorUtil.java" startLine="51" startPosition="16" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7757449281563189877" fileName="EvaluationGeneratorUtil.java" startLine="53" startPosition="9" endLine="54" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7757449281563189883" fileName="EvaluationGeneratorUtil.java" startLine="55" startPosition="14" endLine="56" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7757449281563189645" fileName="EvaluationGeneratorUtil.java" startLine="58" startPosition="37" endLine="59" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3247539798412871874" fileName="EvaluationGeneratorUtil.java" startLine="60" startPosition="40" endLine="61" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="846214144104339686" fileName="EvaluationGeneratorUtil.java" startLine="66" startPosition="9" endLine="67" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7757449281563189635" fileName="EvaluationGeneratorUtil.java" startLine="68" startPosition="43" endLine="69" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3247539798412871889" fileName="EvaluationGeneratorUtil.java" startLine="70" startPosition="39" endLine="71" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3247539798412905669" fileName="EvaluationGeneratorUtil.java" startLine="72" startPosition="40" endLine="73" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3247539798412905685" fileName="EvaluationGeneratorUtil.java" startLine="74" startPosition="40" endLine="75" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2119552402221522272" fileName="EvaluationGeneratorUtil.java" startLine="80" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBuffer" />
+    <nodeInfo nodeId="2119552402221522276" fileName="EvaluationGeneratorUtil.java" startLine="81" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHasErrors" />
+    <nodeInfo nodeId="2119552402221522317" fileName="EvaluationGeneratorUtil.java" startLine="88" startPosition="31" endLine="89" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2119552402221522346" fileName="EvaluationGeneratorUtil.java" startLine="90" startPosition="61" endLine="91" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2119552402221528102" fileName="EvaluationGeneratorUtil.java" startLine="91" startPosition="46" endLine="92" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2119552402221528157" fileName="EvaluationGeneratorUtil.java" startLine="97" startPosition="32" endLine="98" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2119552402221528188" fileName="EvaluationGeneratorUtil.java" startLine="101" startPosition="32" endLine="102" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="650256487570809921" fileName="EvaluationGeneratorUtil.java" startLine="110" startPosition="90" endLine="111" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="650256487570809924" fileName="EvaluationGeneratorUtil.java" startLine="114" startPosition="52" endLine="115" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="650256487570809926" fileName="EvaluationGeneratorUtil.java" startLine="118" startPosition="72" endLine="119" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="650256487570809928" fileName="EvaluationGeneratorUtil.java" startLine="122" startPosition="43" endLine="123" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2119552402221528290" fileName="EvaluationGeneratorUtil.java" startLine="51" startPosition="14" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7757449281563189881" fileName="EvaluationGeneratorUtil.java" startLine="55" startPosition="12" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2119552402221522254" fileName="EvaluationGeneratorUtil.java" startLine="83" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyCompilationResultAdapter#()V" />
+    <nodeInfo nodeId="726740647142989944" fileName="EvaluationGeneratorUtil.java" startLine="107" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyIncrementalGenerationStrategy#()V" />
+    <nodeInfo nodeId="2119552402221528140" fileName="EvaluationGeneratorUtil.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasErrors#()Z" />
+    <nodeInfo nodeId="2119552402221528164" fileName="EvaluationGeneratorUtil.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="650256487570793934" fileName="EvaluationGeneratorUtil.java" startLine="110" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelHashes#(Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/Map;" />
+    <nodeInfo nodeId="650256487570793944" fileName="EvaluationGeneratorUtil.java" startLine="114" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#()Ljetbrains/mps/generator/GenerationCacheContainer;" />
+    <nodeInfo nodeId="650256487570793948" fileName="EvaluationGeneratorUtil.java" startLine="118" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDependencies#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/generator/impl/dependencies/GenerationDependencies;" />
+    <nodeInfo nodeId="650256487570793954" fileName="EvaluationGeneratorUtil.java" startLine="122" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isIncrementalEnabled#()Z" />
+    <nodeInfo nodeId="2119552402221522412" fileName="EvaluationGeneratorUtil.java" startLine="89" startPosition="27" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2119552402221528248" fileName="EvaluationGeneratorUtil.java" startLine="48" startPosition="50" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2119552402221522284" fileName="EvaluationGeneratorUtil.java" startLine="87" startPosition="63" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2119552402221522262" fileName="EvaluationGeneratorUtil.java" startLine="86" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCompilationResult#(Lorg/eclipse/jdt/internal/compiler/CompilationResult;)V" />
+    <nodeInfo nodeId="3247539798412786197" fileName="EvaluationGeneratorUtil.java" startLine="65" startPosition="125" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7757449281563189785" fileName="EvaluationGeneratorUtil.java" startLine="44" startPosition="0" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="846214144105154640" fileName="EvaluationGeneratorUtil.java" startLine="65" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createInstance#(Ljava/lang/Class;[Ljava/lang/Class;[Ljava/lang/Object;)null" />
+    <nodeInfo nodeId="7757449281563189616" fileName="EvaluationGeneratorUtil.java" startLine="31" startPosition="274" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="846214144105083840" fileName="EvaluationGeneratorUtil.java" startLine="30" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="generateAndLoadEvaluatorClass#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;Ljava/lang/String;Ljetbrains/mps/smodel/IOperationContext;ZLjetbrains/mps/generator/generationTypes/InMemoryJavaGenerationHandler;Ljava/lang/ClassLoader;)Ljava/lang/Class;" />
+    <scopeInfo nodeId="2119552402221522257" fileName="EvaluationGeneratorUtil.java" startLine="83" startPosition="41" endLine="83" endPosition="41" />
+    <scopeInfo nodeId="726740647142989945" fileName="EvaluationGeneratorUtil.java" startLine="107" startPosition="46" endLine="107" endPosition="46" />
+    <scopeInfo nodeId="7757449281563189786" fileName="EvaluationGeneratorUtil.java" startLine="45" startPosition="66" endLine="46" endPosition="102" />
+    <scopeInfo nodeId="2119552402221528249" fileName="EvaluationGeneratorUtil.java" startLine="49" startPosition="44" endLine="50" endPosition="57" />
+    <scopeInfo nodeId="2119552402221528291" fileName="EvaluationGeneratorUtil.java" startLine="51" startPosition="16" endLine="52" endPosition="22" />
+    <scopeInfo nodeId="7757449281563189882" fileName="EvaluationGeneratorUtil.java" startLine="55" startPosition="14" endLine="56" endPosition="67" />
+    <scopeInfo nodeId="7757449281563189641" fileName="EvaluationGeneratorUtil.java" startLine="58" startPosition="0" endLine="59" endPosition="14">
+      <varInfo nodeId="7757449281563189642" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="7757449281563189644" fileName="EvaluationGeneratorUtil.java" startLine="58" startPosition="37" endLine="59" endPosition="14" />
+    <scopeInfo nodeId="3247539798412871869" fileName="EvaluationGeneratorUtil.java" startLine="60" startPosition="0" endLine="61" endPosition="39">
+      <varInfo nodeId="3247539798412871870" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3247539798412871872" fileName="EvaluationGeneratorUtil.java" startLine="60" startPosition="40" endLine="61" endPosition="39" />
+    <scopeInfo nodeId="3247539798412786198" fileName="EvaluationGeneratorUtil.java" startLine="66" startPosition="9" endLine="67" endPosition="80" />
+    <scopeInfo nodeId="3247539798412786200" fileName="EvaluationGeneratorUtil.java" startLine="68" startPosition="0" endLine="69" endPosition="66">
+      <varInfo nodeId="3247539798412786201" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3247539798412786203" fileName="EvaluationGeneratorUtil.java" startLine="68" startPosition="43" endLine="69" endPosition="66" />
+    <scopeInfo nodeId="3247539798412871883" fileName="EvaluationGeneratorUtil.java" startLine="70" startPosition="0" endLine="71" endPosition="39">
+      <varInfo nodeId="3247539798412871884" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3247539798412871886" fileName="EvaluationGeneratorUtil.java" startLine="70" startPosition="39" endLine="71" endPosition="39" />
+    <scopeInfo nodeId="3247539798412905662" fileName="EvaluationGeneratorUtil.java" startLine="72" startPosition="0" endLine="73" endPosition="39">
+      <varInfo nodeId="3247539798412905663" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3247539798412905665" fileName="EvaluationGeneratorUtil.java" startLine="72" startPosition="40" endLine="73" endPosition="39" />
+    <scopeInfo nodeId="3247539798412905677" fileName="EvaluationGeneratorUtil.java" startLine="74" startPosition="0" endLine="75" endPosition="39">
+      <varInfo nodeId="3247539798412905678" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3247539798412905680" fileName="EvaluationGeneratorUtil.java" startLine="74" startPosition="40" endLine="75" endPosition="39" />
+    <scopeInfo nodeId="2119552402221528143" fileName="EvaluationGeneratorUtil.java" startLine="97" startPosition="32" endLine="98" endPosition="25" />
+    <scopeInfo nodeId="2119552402221528167" fileName="EvaluationGeneratorUtil.java" startLine="101" startPosition="32" endLine="102" endPosition="33" />
+    <scopeInfo nodeId="650256487570793943" fileName="EvaluationGeneratorUtil.java" startLine="110" startPosition="90" endLine="111" endPosition="36" />
+    <scopeInfo nodeId="650256487570793947" fileName="EvaluationGeneratorUtil.java" startLine="114" startPosition="52" endLine="115" endPosition="18" />
+    <scopeInfo nodeId="650256487570793953" fileName="EvaluationGeneratorUtil.java" startLine="118" startPosition="72" endLine="119" endPosition="18" />
+    <scopeInfo nodeId="650256487570793957" fileName="EvaluationGeneratorUtil.java" startLine="122" startPosition="43" endLine="123" endPosition="19" />
+    <scopeInfo nodeId="2119552402221522254" fileName="EvaluationGeneratorUtil.java" startLine="83" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="2119552402221522415" fileName="EvaluationGeneratorUtil.java" startLine="90" startPosition="61" endLine="92" endPosition="32" />
+    <scopeInfo nodeId="726740647142989944" fileName="EvaluationGeneratorUtil.java" startLine="107" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="2119552402221528140" fileName="EvaluationGeneratorUtil.java" startLine="97" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="2119552402221528164" fileName="EvaluationGeneratorUtil.java" startLine="101" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="650256487570793934" fileName="EvaluationGeneratorUtil.java" startLine="110" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="650256487570793939" varName="p0" />
+      <varInfo nodeId="650256487570793941" varName="p1" />
+    </scopeInfo>
+    <scopeInfo nodeId="650256487570793944" fileName="EvaluationGeneratorUtil.java" startLine="114" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="650256487570793948" fileName="EvaluationGeneratorUtil.java" startLine="118" startPosition="0" endLine="121" endPosition="0">
+      <varInfo nodeId="650256487570793951" varName="p0" />
+    </scopeInfo>
+    <scopeInfo nodeId="650256487570793954" fileName="EvaluationGeneratorUtil.java" startLine="122" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="2119552402221522412" fileName="EvaluationGeneratorUtil.java" startLine="89" startPosition="27" endLine="93" endPosition="9">
+      <varInfo nodeId="2119552402221522413" varName="error" />
+    </scopeInfo>
+    <scopeInfo nodeId="2119552402221522286" fileName="EvaluationGeneratorUtil.java" startLine="88" startPosition="31" endLine="93" endPosition="9" />
+    <scopeInfo nodeId="7757449281563189876" fileName="EvaluationGeneratorUtil.java" startLine="47" startPosition="76" endLine="54" endPosition="44">
+      <varInfo nodeId="2119552402221528236" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="2119552402221522267" fileName="EvaluationGeneratorUtil.java" startLine="87" startPosition="63" endLine="94" endPosition="7" />
+    <scopeInfo nodeId="2119552402221522262" fileName="EvaluationGeneratorUtil.java" startLine="86" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="2119552402221522265" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3247539798412785649" fileName="EvaluationGeneratorUtil.java" startLine="65" startPosition="125" endLine="76" endPosition="5" />
+    <scopeInfo nodeId="846214144105154640" fileName="EvaluationGeneratorUtil.java" startLine="65" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="3247539798412785673" varName="clazz" />
+      <varInfo nodeId="846214144104272641" varName="parameterClasses" />
+      <varInfo nodeId="846214144104220811" varName="parameters" />
+    </scopeInfo>
+    <scopeInfo nodeId="7757449281563189655" fileName="EvaluationGeneratorUtil.java" startLine="32" startPosition="9" endLine="57" endPosition="7">
+      <varInfo nodeId="2119552402221528230" varName="compilationResult" />
+      <varInfo nodeId="7757449281563189706" varName="fullClassName" />
+      <varInfo nodeId="7757449281563189737" varName="messageHandler" />
+      <varInfo nodeId="7757449281563189743" varName="progressWindow" />
+      <varInfo nodeId="7757449281563189776" varName="source" />
+      <varInfo nodeId="7757449281563189757" varName="successful" />
+    </scopeInfo>
+    <scopeInfo nodeId="7757449281563189615" fileName="EvaluationGeneratorUtil.java" startLine="31" startPosition="274" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="846214144105083840" fileName="EvaluationGeneratorUtil.java" startLine="30" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="846214144098379722" varName="className" />
+      <varInfo nodeId="846214144099589710" varName="context" />
+      <varInfo nodeId="846214144101020317" varName="handler" />
+      <varInfo nodeId="846214144099356827" varName="ideaProject" />
+      <varInfo nodeId="846214144098265154" varName="modelDescriptor" />
+      <varInfo nodeId="846214144099940079" varName="parentloader" />
+      <varInfo nodeId="846214144098394999" varName="saveTransientModels" />
+    </scopeInfo>
+    <unitInfo nodeId="726740647142989940" fileName="EvaluationGeneratorUtil.java" startLine="106" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationGeneratorUtil$MyIncrementalGenerationStrategy" />
+    <unitInfo nodeId="2119552402221522252" fileName="EvaluationGeneratorUtil.java" startLine="79" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationGeneratorUtil$MyCompilationResultAdapter" />
+    <unitInfo nodeId="846214144096702003" fileName="EvaluationGeneratorUtil.java" startLine="29" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationGeneratorUtil" />
+  </root>
+  <root nodeRef="r:1f2ecb68-8f37-460f-acb8-866f8f05b15e(jetbrains.mps.debugger.java.runtime.evaluation)/846214144107559327">
+    <nodeInfo nodeId="846214144107559329" fileName="TransformingGenerationHandler.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerationListeners" />
+    <nodeInfo nodeId="846214144107559346" fileName="TransformingGenerationHandler.java" startLine="31" startPosition="147" endLine="32" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="846214144107559349" fileName="TransformingGenerationHandler.java" startLine="32" startPosition="38" endLine="33" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="846214144107559368" fileName="TransformingGenerationHandler.java" startLine="37" startPosition="47" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="846214144107559382" fileName="TransformingGenerationHandler.java" startLine="42" startPosition="78" endLine="43" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="846214144107559387" fileName="TransformingGenerationHandler.java" startLine="43" startPosition="71" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="846214144107559388" fileName="TransformingGenerationHandler.java" startLine="44" startPosition="0" endLine="45" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="846214144107559399" fileName="TransformingGenerationHandler.java" startLine="46" startPosition="9" endLine="47" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="846214144107559416" fileName="TransformingGenerationHandler.java" startLine="48" startPosition="29" endLine="49" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="846214144107559421" fileName="TransformingGenerationHandler.java" startLine="50" startPosition="5" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="846214144107559422" fileName="TransformingGenerationHandler.java" startLine="51" startPosition="0" endLine="52" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="846214144107559439" fileName="TransformingGenerationHandler.java" startLine="56" startPosition="143" endLine="57" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="846214144107559450" fileName="TransformingGenerationHandler.java" startLine="58" startPosition="24" endLine="59" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="846214144107559456" fileName="TransformingGenerationHandler.java" startLine="59" startPosition="108" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="846214144107559461" fileName="TransformingGenerationHandler.java" startLine="62" startPosition="13" endLine="63" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="846214144107559475" fileName="TransformingGenerationHandler.java" startLine="65" startPosition="117" endLine="66" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="846214144107559485" fileName="TransformingGenerationHandler.java" startLine="69" startPosition="31" endLine="70" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="846214144107559490" fileName="TransformingGenerationHandler.java" startLine="71" startPosition="9" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="846214144107559494" fileName="TransformingGenerationHandler.java" startLine="74" startPosition="5" endLine="75" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="846214144107559327" fileName="TransformingGenerationHandler.java" startLine="78" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG_499062187" />
+    <nodeInfo nodeId="846214144107559471" fileName="TransformingGenerationHandler.java" startLine="64" startPosition="58" endLine="67" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="846214144107559342" fileName="TransformingGenerationHandler.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TransformingGenerationHandler#(ZZLjava/lang/Iterable;)V" />
+    <nodeInfo nodeId="846214144107559364" fileName="TransformingGenerationHandler.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canHandle#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+    <nodeInfo nodeId="846214144107559397" fileName="TransformingGenerationHandler.java" startLine="45" startPosition="96" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="846214144107559469" fileName="TransformingGenerationHandler.java" startLine="63" startPosition="89" endLine="68" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="846214144107559459" fileName="TransformingGenerationHandler.java" startLine="61" startPosition="30" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="846214144107559375" fileName="TransformingGenerationHandler.java" startLine="41" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassPath#(Ljava/util/Set;)Ljetbrains/mps/reloading/CompositeClassPathItem;" />
+    <nodeInfo nodeId="846214144107559457" fileName="TransformingGenerationHandler.java" startLine="60" startPosition="0" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="846214144107559445" fileName="TransformingGenerationHandler.java" startLine="57" startPosition="64" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="846214144107559425" fileName="TransformingGenerationHandler.java" startLine="55" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleOutput#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/generator/GenerationStatus;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/progress/ProgressMonitor;)Z" />
+    <scopeInfo nodeId="846214144107559367" fileName="TransformingGenerationHandler.java" startLine="37" startPosition="47" endLine="38" endPosition="30" />
+    <scopeInfo nodeId="846214144107559398" fileName="TransformingGenerationHandler.java" startLine="46" startPosition="9" endLine="47" endPosition="97" />
+    <scopeInfo nodeId="846214144107559412" fileName="TransformingGenerationHandler.java" startLine="48" startPosition="0" endLine="49" endPosition="69">
+      <varInfo nodeId="846214144107559413" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="846214144107559415" fileName="TransformingGenerationHandler.java" startLine="48" startPosition="29" endLine="49" endPosition="69" />
+    <scopeInfo nodeId="846214144107559474" fileName="TransformingGenerationHandler.java" startLine="65" startPosition="117" endLine="66" endPosition="41" />
+    <scopeInfo nodeId="846214144107559481" fileName="TransformingGenerationHandler.java" startLine="69" startPosition="0" endLine="70" endPosition="23">
+      <varInfo nodeId="846214144107559482" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="846214144107559484" fileName="TransformingGenerationHandler.java" startLine="69" startPosition="31" endLine="70" endPosition="23" />
+    <scopeInfo nodeId="846214144107559345" fileName="TransformingGenerationHandler.java" startLine="31" startPosition="147" endLine="33" endPosition="95" />
+    <scopeInfo nodeId="846214144107559470" fileName="TransformingGenerationHandler.java" startLine="64" startPosition="58" endLine="67" endPosition="13" />
+    <scopeInfo nodeId="846214144107559471" fileName="TransformingGenerationHandler.java" startLine="64" startPosition="58" endLine="67" endPosition="13">
+      <varInfo nodeId="846214144107559472" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="846214144107559342" fileName="TransformingGenerationHandler.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="846214144107559356" varName="keepSources" />
+      <varInfo nodeId="846214144107559358" varName="listeners" />
+      <varInfo nodeId="846214144107559354" varName="reloadClasses" />
+    </scopeInfo>
+    <scopeInfo nodeId="846214144107559364" fileName="TransformingGenerationHandler.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="846214144107559372" varName="inputModel" />
+    </scopeInfo>
+    <scopeInfo nodeId="846214144107559460" fileName="TransformingGenerationHandler.java" startLine="62" startPosition="13" endLine="68" endPosition="11" />
+    <scopeInfo nodeId="846214144107559381" fileName="TransformingGenerationHandler.java" startLine="42" startPosition="78" endLine="52" endPosition="18">
+      <varInfo nodeId="846214144107559389" varName="path" />
+      <varInfo nodeId="846214144107559383" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="846214144107559458" fileName="TransformingGenerationHandler.java" startLine="61" startPosition="30" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="846214144107559375" fileName="TransformingGenerationHandler.java" startLine="41" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="846214144107559378" varName="contextModules" />
+    </scopeInfo>
+    <scopeInfo nodeId="846214144107559449" fileName="TransformingGenerationHandler.java" startLine="58" startPosition="24" endLine="73" endPosition="7">
+      <varInfo nodeId="846214144107559451" varName="evaluator" />
+    </scopeInfo>
+    <scopeInfo nodeId="846214144107559438" fileName="TransformingGenerationHandler.java" startLine="56" startPosition="143" endLine="75" endPosition="76">
+      <varInfo nodeId="846214144107559440" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="846214144107559425" fileName="TransformingGenerationHandler.java" startLine="55" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="846214144107559432" varName="context" />
+      <varInfo nodeId="846214144107559428" varName="inputModel" />
+      <varInfo nodeId="846214144107559426" varName="module" />
+      <varInfo nodeId="846214144107559434" varName="monitor" />
+      <varInfo nodeId="846214144107559430" varName="status" />
+    </scopeInfo>
+    <unitInfo nodeId="846214144107559327" fileName="TransformingGenerationHandler.java" startLine="28" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.TransformingGenerationHandler" />
+  </root>
 </debugInfo>
 

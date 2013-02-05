@@ -35,10 +35,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -135,7 +134,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     createVars();
     tryToImport(nodesToImport);
 
-    SModelOperations.validateLanguagesAndImports(smodel, false, true);
+    SModelOperations.validateLanguagesAndImports(smodel, true, true);
   }
 
   protected SNode createEvaluator(SModelDescriptor model) {
@@ -235,34 +234,18 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       String unitPackage = unitFqName.substring(0, lastDot);
       importStubForFqName(unitPackage);
     }
-    List<SNode> classifiers = myScope.getNodes(new Condition<SNode>() {
-      public boolean met(@NotNull SNode node) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"))) {
-          return false;
-        }
-
-        String nodesUnitName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Object[]{});
-        if ((nodesUnitName == null || nodesUnitName.length() == 0)) {
-          return false;
-        }
-        return nodesUnitName.equals(unitFqName);
-      }
-    });
-    if (classifiers.isEmpty()) {
+    SNode unit = new UnitScope(getModule().getScope()).findUnit(unitFqName);
+    if (unit == null) {
       return null;
     }
     SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-    SLinkOperations.setTarget(classifierType, "classifier", SNodeOperations.cast(classifiers.get(0), "jetbrains.mps.baseLanguage.structure.Classifier"), false);
+    SLinkOperations.setTarget(classifierType, "classifier", SNodeOperations.cast(unit, "jetbrains.mps.baseLanguage.structure.Classifier"), false);
     return classifierType;
   }
 
   private void importStubForFqName(String fqName) {
-    SModelReference stubReference = StubHelper.uidForPackageInStubs(fqName);
-    if (stubReference == null) {
-      LOG.error("Stub for " + fqName + " was not found.");
-      return;
-    }
-    myAuxModel.getSModel().addModelImport(stubReference, false);
+    SModelId id = SModelId.foreign("java_stub", fqName);
+    myAuxModel.getSModel().addModelImport(new SModelReference(new SModelFqName(fqName, "java_stub"), id), false);
   }
 
   private void createVars() {
