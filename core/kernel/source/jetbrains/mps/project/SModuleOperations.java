@@ -21,6 +21,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
+import java.io.File;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
@@ -46,6 +47,7 @@ public class SModuleOperations {
         for (String fileKind : fileBasedModelRoot.getSupportedFileKinds()) {
           if (!FileBasedModelRoot.EXCLUDED.equals(fileKind)) {
             for (String file : fileBasedModelRoot.getFiles(fileKind)) {
+//              checkContentPath(file, module, modelRoot);
               result.add(exposePath(file));
             }
           }
@@ -54,6 +56,7 @@ public class SModuleOperations {
 
       // todo: obsolete model root type
       if (modelRoot instanceof FolderModelRootBase) {
+//        checkContentPath(((FolderModelRootBase) modelRoot).getPath(), module, modelRoot);
         result.add(exposePath(((FolderModelRootBase) modelRoot).getPath()));
       }
     }
@@ -61,8 +64,37 @@ public class SModuleOperations {
     return result;
   }
 
+  // helpers
   private static String exposePath(String path) {
     String suffix = path.endsWith("." + MPSExtentions.MPS_ARCH) ? "!/" : "";
     return path + suffix;
+  }
+
+  private static void checkContentPath(String path, SModule module, ModelRoot modelRoot) {
+    if (module.getModuleName().startsWith("MPS.")) {
+      // filter MPS.Core etc
+      return;
+    }
+
+    String sig = (containsFilesWithSuffix(new File(path), ".java") ? "j" : "") + (containsFilesWithSuffix(new File(path), ".class") ? "c" : "");
+    if (sig.length() == 2) {
+      sig = "j&c";
+    }
+    if (!sig.isEmpty()) {
+      System.out.printf("!%s at %s type in %s%n", sig, modelRoot.getType(), module.getModuleName());
+    }
+  }
+
+  private static boolean containsFilesWithSuffix(File path, String suffix) {
+    if (path.isFile()) {
+      return path.getName().endsWith(suffix);
+    } else if (path.isDirectory()) {
+      for (File child : path.listFiles()) {
+        if (containsFilesWithSuffix(child, suffix)) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 }
