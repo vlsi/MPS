@@ -447,6 +447,14 @@ public abstract class AbstractModule implements IModule, JavaModuleFacet, FileSy
     return ((JavaModuleFacetImpl) javaModuleFacet).getClassPath();
   }
 
+  public Collection<String> getAdditionalClassPath() {
+    return ((JavaModuleFacetImpl) javaModuleFacet).getAdditionalClassPath();
+  }
+
+  public Collection<String> getOwnClassPath() {
+    return ((JavaModuleFacetImpl) javaModuleFacet).getOwnClassPath();
+  }
+
   @Deprecated
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
     return SModuleOperations.getDependenciesClasspath(modules, includeStubSolutions);
