@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-exy2zmpbeseh7835fxlcjt5a5f3neql">
+<dependencies version="2" modelHash="3gknhupt7yytqyrgs02xyoom4o6wugr">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22hsdy8hx47u1rwu32z4quczy3521b0" />
   <dep model="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)" hash="bguqu24dpmqo8ocrijd3djlp64k0a8y" />
   <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" hash="-9tiodlci7000x1papko30qh12bllok0" />
@@ -34,7 +34,7 @@
     <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" />
     <file name="MarkSniffer.java" />
   </source>
-  <source id="8614576427117861066" name="Maze" hash="-8isxm6gbko5cr5uatdey4rldwbvls6p">
+  <source id="8614576427117861066" name="Maze" hash="83bfvm901i04o7dgnig86tvdh4frktr">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)" />
     <dep model="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)" />
