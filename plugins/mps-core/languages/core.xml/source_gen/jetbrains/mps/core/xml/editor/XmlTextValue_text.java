@@ -73,7 +73,6 @@ public class XmlTextValue_text extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      keyEvent.consume();
       int index = ((EditorCell_Label) editorContext.getSelectedCell()).getCaretPosition();
       SNode attr = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute");
       int currIndex = ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).indexOf(node);
@@ -86,7 +85,7 @@ public class XmlTextValue_text extends EditorCellKeyMap {
         ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).insertElement(currIndex + 1, newText);
       }
       SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.core.xml.structure.XmlEntityRefValue");
-      SPropertyOperations.set(newRef, "entityName", "amp");
+      SPropertyOperations.set(newRef, "entityName", "quot");
       ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).insertElement(currIndex + 1, newRef);
       editorContext.selectWRTFocusPolicy(newRef);
     }
