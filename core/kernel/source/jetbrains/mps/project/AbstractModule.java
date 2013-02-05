@@ -650,28 +650,8 @@ public abstract class AbstractModule implements IModule, JavaModuleFacet, FileSy
   }
 
   @Override
-  public Collection<String> getIndexablePaths() {
-    List<String> result = new ArrayList<String>();
-
-    IFile home = getBundleHome();
-    if (home != null) {
-      String suffix = isPackaged() ? "!/" : "";
-      result.add(home.getPath() + suffix);
-    }
-
-    ModuleDescriptor d = getModuleDescriptor();
-    if (d == null) return result;
-
-    for (ModelRootDescriptor rootDescriptor : d.getModelRootDescriptors()) {
-      jetbrains.mps.project.structure.model.ModelRoot root = rootDescriptor.getRoot();
-      if (root == null) continue;
-
-      String path = root.getPath();
-      String suffix = path.endsWith("." + MPSExtentions.MPS_ARCH) ? "!/" : "";
-      result.add(path + suffix);
-    }
-
-    return result;
+  public final Collection<String> getIndexablePaths() {
+    return SModuleOperations.getIndexablePaths(this);
   }
 
   @Override

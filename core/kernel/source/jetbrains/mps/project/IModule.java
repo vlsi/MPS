@@ -108,6 +108,7 @@ public interface IModule extends SModule {
 
   // AbstractModule#createModel
   // ModelAdjuster? WTF? something between creating and registration I think
+  // talk with Evgeny
   SModelDescriptor createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
 
   // SModule#getModels. But how to migrate? ModuleOperations.getOwnModelDescriptors with unchecked cast?
@@ -133,6 +134,8 @@ public interface IModule extends SModule {
   // should be implemented via model roots
   // check it out in IDEA!
   // how to check is it works: clean ~/.idea/system and check cmd+n
+  // use SModuleOperations.getIndexablePaths
+  @Deprecated
   Collection<String> getIndexablePaths();
 
   // SModule#getModuleScope
