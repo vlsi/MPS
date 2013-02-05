@@ -35,6 +35,7 @@
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.evaluation.IWatchListener" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationUtilsImpl" file="EvaluationUtilsImpl.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.ArrayReference" />
     <classNode dependClassName="com.sun.jdi.ArrayType" />
