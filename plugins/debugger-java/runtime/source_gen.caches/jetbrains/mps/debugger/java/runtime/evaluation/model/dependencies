@@ -14,10 +14,10 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.Evaluator" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.JavaUiState" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationGeneratorUtil" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.TransformingGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationAuxModule" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationContext" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.structure.EvaluationGeneratorUtil" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.structure.TransformingGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -34,6 +34,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.evaluation.structure.IEvaluationContainer" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationAuxModule" file="EvaluationAuxModule.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
