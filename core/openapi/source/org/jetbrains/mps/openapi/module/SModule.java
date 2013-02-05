@@ -99,4 +99,6 @@ public interface SModule {
   // do not use
   @Nullable
   <T extends ModuleFacet> T getFacet(Class<T> clazz);
+
+  Iterable<ModuleFacet> getFacets();
 }

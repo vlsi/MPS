@@ -776,6 +776,11 @@ public abstract class AbstractModule implements IModule, JavaModuleFacet, FileSy
     return null;
   }
 
+  @Override
+  public Iterable<ModuleFacet> getFacets() {
+    return Collections.emptySet();
+  }
+
   public class ModuleScope extends DefaultScope {
     protected ModuleScope() {
 
