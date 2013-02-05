@@ -519,8 +519,19 @@
       <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.RoutineCall" typeId="c2kz.3308300503039700882" id="8614576427117879931">
         <link role="definition" roleId="c2kz.3308300503039730636" targetNodeId="8614576427117879929" resolveInfo="sniffAround" />
       </node>
-      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.EmptyLine" typeId="c2kz.3308300503039740438" id="8614576427117866073" />
-      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.EmptyLine" typeId="c2kz.3308300503039740438" id="8614576427117866102" />
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.IfStatement" typeId="c2kz.3308300503039647678" id="642541832611875738">
+        <node role="condition" roleId="c2kz.3308300503039647680" type="6ms5.And" typeId="6ms5.1904811872814253578" id="642541832611875799">
+          <node role="right" roleId="6ms5.1904811872814253581" type="6ms5.And" typeId="6ms5.1904811872814253578" id="642541832611875828">
+            <node role="left" roleId="6ms5.1904811872814253580" type="c2kz.IsWall" typeId="c2kz.3308300503039647788" id="642541832611875825" />
+            <node role="right" roleId="6ms5.1904811872814253581" type="c2kz.Heading" typeId="c2kz.3308300503039683649" id="642541832611875803">
+              <node role="direction" roleId="c2kz.3308300503039683650" type="c2kz.South" typeId="c2kz.3308300503039675723" id="642541832613394201" />
+            </node>
+          </node>
+          <node role="left" roleId="6ms5.1904811872814253580" type="c2kz.IsMark" typeId="c2kz.6405700485436186598" id="642541832611875796" />
+        </node>
+        <node role="trueBranch" roleId="c2kz.3308300503039647684" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="642541832611875742" />
+        <node role="falseBranch" roleId="c2kz.3308300503039647685" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="642541832611875744" />
+      </node>
       <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.CommentLine" typeId="c2kz.6405700485436287811" id="8614576427117866163">
         <property name="text" nameId="c2kz.6405700485436287813" value="Definitions" />
       </node>
