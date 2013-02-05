@@ -234,7 +234,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       String unitPackage = unitFqName.substring(0, lastDot);
       importStubForFqName(unitPackage);
     }
-    SNode unit = new UnitScope(getModule().getScope()).findUnit(unitFqName);
+    SNode unit = new UnitScope(myAuxModule.getScope()).findUnit(unitFqName);
     if (unit == null) {
       return null;
     }
@@ -253,7 +253,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           // creating scope 
-          myScope = new ReachableClassifiersScope(myAuxModel.getSModel(), IClassifiersSearchScope.CLASSIFFIER, getModule().getScope());
+          myScope = new ReachableClassifiersScope(myAuxModel.getSModel(), IClassifiersSearchScope.CLASSIFFIER, myAuxModule.getScope());
         }
       });
     }

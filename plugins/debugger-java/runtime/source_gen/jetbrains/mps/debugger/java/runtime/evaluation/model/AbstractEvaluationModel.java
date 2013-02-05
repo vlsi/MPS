@@ -67,18 +67,6 @@ public abstract class AbstractEvaluationModel implements IEvaluationContainer {
     myShowContext = isShowContext;
   }
 
-  public DebugSession getDebugSession() {
-    return this.myDebugSession;
-  }
-
-  public EvaluationAuxModule getModule() {
-    return myAuxModule;
-  }
-
-  public EditableSModelDescriptor getModel() {
-    return myAuxModel;
-  }
-
   public List<Language> getRequiredLanguages() {
     return myLanguages;
   }
@@ -90,10 +78,6 @@ public abstract class AbstractEvaluationModel implements IEvaluationContainer {
 
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
     ListSequence.fromList(myGenerationListeners).addElement(listener);
-  }
-
-  public boolean isDeveloperMode() {
-    return AbstractEvaluationModel.IS_DEVELOPER_MODE;
   }
 
   public void updateState() {
@@ -118,10 +102,6 @@ public abstract class AbstractEvaluationModel implements IEvaluationContainer {
         return BehaviorReflection.invokeVirtual(String.class, getNodeToShow(), "virtual_getEvaluatorPresentation_9172312269976647295", new Object[]{});
       }
     });
-  }
-
-  public JavaUiState getUiState() {
-    return myUiState;
   }
 
   public IOperationContext getContext() {
