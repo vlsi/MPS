@@ -10,8 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class SimpleVarWatchable implements IWatchable {
   public static final WatchablesCategory VARIABLES_CATEGORY = new WatchablesCategory("variables");
-  private String myVarName;
-  private SimpleValue myValue;
+  private final String myVarName;
+  private final SimpleValue myValue;
 
   public SimpleVarWatchable(String varName, String value) {
     myVarName = varName;

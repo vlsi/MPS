@@ -5,23 +5,36 @@ package jetbrains.mps.debugger.java.runtime.state.values;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
+import com.sun.jdi.ArrayReference;
+import javax.swing.Icon;
+import jetbrains.mps.debugger.java.api.ui.Icons;
 import java.util.List;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.ArrayList;
-import com.sun.jdi.ArrayReference;
 import jetbrains.mps.debugger.java.runtime.state.watchables.JavaArrayItemWatchable;
-import javax.swing.Icon;
-import jetbrains.mps.debugger.java.api.ui.Icons;
 
 /*package*/ class JavaArrayValue extends JavaValue {
   private static final int MAX_ARRAY_VALUES = 100;
+  private final String myPresentation;
+  private final boolean myIsStructure;
 
   public JavaArrayValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value, classFQname, threadReference);
+    myPresentation = (("{" + myValue.type().name() + "} ") + myValue.toString());
+    myIsStructure = check_smfa65_a0a2a3(((ArrayReference) myValue)) > 0;
   }
 
   @Override
-  public List<IWatchable> getSubvalues() {
+  public Icon getPresentationIcon() {
+    return Icons.VARIABLE_OBJECT;
+  }
+
+  @Override
+  public boolean isStructure() {
+    return myIsStructure;
+  }
+
+  public List<IWatchable> calculateSubvalues() {
     List<IWatchable> watchables = new ArrayList<IWatchable>();
     ArrayReference arrayRef = (ArrayReference) myValue;
     if (arrayRef != null) {
@@ -39,17 +52,14 @@ import jetbrains.mps.debugger.java.api.ui.Icons;
   }
 
   @Override
-  public Icon getPresentationIcon() {
-    return Icons.VARIABLE_OBJECT;
-  }
-
-  @Override
-  public boolean isStructure() {
-    return true;
-  }
-
-  @Override
   public String getValuePresentation() {
-    return (("{" + myValue.type().name() + "} ") + myValue.toString());
+    return myPresentation;
+  }
+
+  private static int check_smfa65_a0a2a3(ArrayReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.length();
+    }
+    return 0;
   }
 }

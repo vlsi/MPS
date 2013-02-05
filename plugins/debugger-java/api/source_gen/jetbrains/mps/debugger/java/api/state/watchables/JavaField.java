@@ -16,13 +16,15 @@ import jetbrains.mps.debug.api.programState.WatchablesCategory;
 public class JavaField extends JavaWatchable implements IWatchable {
   private final Field myField;
   private final ObjectReference myParent;
-  private JavaValue myCachedValue;
+  private final JavaValue myCachedValue;
+  private final String myName;
 
   public JavaField(Field field, ObjectReference parent, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myField = field;
     myParent = parent;
     myCachedValue = ValueUtil.getInstance().fromJDI(myParent.getValue(myField), classFqName, threadReference);
+    myName = calculateName();
   }
 
   public Field getField() {
@@ -31,6 +33,10 @@ public class JavaField extends JavaWatchable implements IWatchable {
 
   @Override
   public String getName() {
+    return myName;
+  }
+
+  private String calculateName() {
     String name = myField.name();
     if (myField.isStatic() && !(myField.declaringType().name().equals(myParent.referenceType().name()))) {
       name = name + " (" + myField.declaringType().name() + ")";

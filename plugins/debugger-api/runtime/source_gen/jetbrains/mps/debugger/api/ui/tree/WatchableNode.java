@@ -10,8 +10,8 @@ import javax.swing.Icon;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.tree.DefaultTreeModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import java.util.List;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class WatchableNode extends AbstractWatchableNode {
   private boolean myInitialized;
@@ -72,10 +72,10 @@ public class WatchableNode extends AbstractWatchableNode {
     if (!(isLeaf())) {
       myState.invokeEvaluation(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-          final List<IWatchable> subvalues = getValue().getSubvalues();
+          myWatchable.getValue().initSubvalues();
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
-              for (IWatchable watchable : subvalues) {
+              for (IWatchable watchable : ListSequence.fromList(getValue().getSubvalues())) {
                 add(new WatchableNode(watchable, myState));
               }
               updatePresentation();

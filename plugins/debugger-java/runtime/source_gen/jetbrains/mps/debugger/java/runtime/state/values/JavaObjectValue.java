@@ -5,6 +5,8 @@ package jetbrains.mps.debugger.java.runtime.state.values;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
+import javax.swing.Icon;
+import jetbrains.mps.debugger.java.api.ui.Icons;
 import java.util.List;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.ArrayList;
@@ -14,16 +16,31 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.debugger.java.api.state.watchables.JavaField;
-import javax.swing.Icon;
-import jetbrains.mps.debugger.java.api.ui.Icons;
 
 /*package*/ class JavaObjectValue extends JavaValue {
+  private final String myPresentation;
+
   public JavaObjectValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value, classFQname, threadReference);
+    myPresentation = (("{" + myValue.type().name() + "} ") + myValue.toString());
   }
 
   @Override
-  public List<IWatchable> getSubvalues() {
+  public Icon getPresentationIcon() {
+    return Icons.VARIABLE_OBJECT;
+  }
+
+  @Override
+  public boolean isStructure() {
+    return true;
+  }
+
+  @Override
+  public String getValuePresentation() {
+    return myPresentation;
+  }
+
+  public List<IWatchable> calculateSubvalues() {
     List<IWatchable> watchables = new ArrayList<IWatchable>();
     ObjectReference ref = (ObjectReference) myValue;
     if (ref != null) {
@@ -42,20 +59,5 @@ import jetbrains.mps.debugger.java.api.ui.Icons;
       }
     }
     return watchables;
-  }
-
-  @Override
-  public Icon getPresentationIcon() {
-    return Icons.VARIABLE_OBJECT;
-  }
-
-  @Override
-  public boolean isStructure() {
-    return true;
-  }
-
-  @Override
-  public String getValuePresentation() {
-    return (("{" + myValue.type().name() + "} ") + myValue.toString());
   }
 }

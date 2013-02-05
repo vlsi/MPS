@@ -11,13 +11,16 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 /*package*/ class JavaStringValue extends JavaObjectValue {
+  private final String myPresentation;
+
   public JavaStringValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value, classFQname, threadReference);
+    myPresentation = "\"" + ((StringReference) myValue).value() + "\"";
   }
 
   @Override
   public String getValuePresentation() {
-    return "\"" + ((StringReference) myValue).value() + "\"";
+    return myPresentation;
   }
 
   @Override
@@ -26,7 +29,7 @@ import java.util.ArrayList;
   }
 
   @Override
-  public List<IWatchable> getSubvalues() {
+  public List<IWatchable> calculateSubvalues() {
     return ListSequence.fromList(new ArrayList<IWatchable>());
   }
 }
