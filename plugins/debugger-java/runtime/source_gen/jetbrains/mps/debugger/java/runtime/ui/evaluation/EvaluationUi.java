@@ -5,7 +5,7 @@ package jetbrains.mps.debugger.java.runtime.ui.evaluation;
 import javax.swing.JPanel;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.DataKey;
-import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debugger.java.runtime.evaluation.structure.IEvaluationContainer;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 import org.jetbrains.annotations.NotNull;
@@ -25,7 +25,8 @@ import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
 
 public abstract class EvaluationUi extends JPanel {
   private static final Logger LOG = Logger.getLogger(EvaluationUi.class);
-  public static final DataKey<AbstractEvaluationModel> EVALUATION_MODEL = DataKey.create("Evaluation Model");
+  public static final DataKey<IEvaluationContainer> EVALUATION_CONTAINER = DataKey.create("Evaluation Container");
+  public static final DataKey<DebugSession> DEBUG_SESSION = DataKey.create("Debug Session");
   protected final DebugSession myDebugSession;
   protected final EvaluationTree myTree;
   private EvaluationUi.IErrorTextListener myErrorListener;
@@ -37,7 +38,7 @@ public abstract class EvaluationUi extends JPanel {
     myDebugSession = session;
     myAutoUpdate = autoUpdate;
     myDebugSession.addChangeListener(mySessionChangeAdapter);
-    myTree = new EvaluationTree();
+    myTree = new EvaluationTree(myDebugSession);
   }
 
   protected abstract void update();
@@ -49,13 +50,13 @@ public abstract class EvaluationUi extends JPanel {
     myTree.dispose();
   }
 
-  protected void evaluate(final AbstractEvaluationModel model) {
+  protected void evaluate(final IEvaluationContainer model) {
     if (!(myDebugSession.getEvaluationProvider().canEvaluate())) {
       setErrorText("Program should be paused on breakpoint to evaluate");
       return;
     }
     try {
-      final Class clazz = model.generateAndLoadEvaluatorClass();
+      final Class clazz = model.generateClass();
       setEvaluating(model);
       myDebugSession.getEventsProcessor().scheduleEvaluation(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
@@ -74,7 +75,7 @@ public abstract class EvaluationUi extends JPanel {
             LOG.error(t);
           }
         }
-      }, check_4q63yg_b0a2a1a11(myDebugSession.getUiState().getThread()));
+      }, check_4q63yg_b0a2a1a21(myDebugSession.getUiState().getThread()));
     } catch (InvalidEvaluatedExpressionException e) {
       setFailure(e.getCause(), null, model);
     } catch (InvocationTargetEvaluationException e) {
@@ -88,7 +89,7 @@ public abstract class EvaluationUi extends JPanel {
     }
   }
 
-  private void setSuccess(@NotNull final IValueProxy evaluatedValue, final AbstractEvaluationModel model) {
+  private void setSuccess(@NotNull final IValueProxy evaluatedValue, final IEvaluationContainer model) {
     invokeLaterIfNeeded(new Runnable() {
       public void run() {
         myTree.setResultProxy(evaluatedValue, model);
@@ -97,7 +98,7 @@ public abstract class EvaluationUi extends JPanel {
     });
   }
 
-  private void setEvaluating(final AbstractEvaluationModel model) {
+  private void setEvaluating(final IEvaluationContainer model) {
     invokeLaterIfNeeded(new Runnable() {
       public void run() {
         myTree.setEvaluating(model);
@@ -106,7 +107,7 @@ public abstract class EvaluationUi extends JPanel {
     });
   }
 
-  private void setFailure(@Nullable final Throwable error, @Nullable final String message, final AbstractEvaluationModel model) {
+  private void setFailure(@Nullable final Throwable error, @Nullable final String message, final IEvaluationContainer model) {
     invokeLaterIfNeeded(new Runnable() {
       public void run() {
         if (error != null) {
@@ -184,7 +185,7 @@ public abstract class EvaluationUi extends JPanel {
     }
   }
 
-  private static ThreadReference check_4q63yg_b0a2a1a11(JavaThread checkedDotOperand) {
+  private static ThreadReference check_4q63yg_b0a2a1a21(JavaThread checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getThread();
     }

@@ -86,6 +86,8 @@ public abstract class AbstractEvaluationModel implements IEvaluationContainer {
   @NotNull
   public abstract SNode getNodeToShow();
 
+
+
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
     ListSequence.fromList(myGenerationListeners).addElement(listener);
   }
@@ -102,7 +104,7 @@ public abstract class AbstractEvaluationModel implements IEvaluationContainer {
   public abstract AbstractEvaluationModel copy(boolean watch);
 
   @Nullable
-  public Class generateAndLoadEvaluatorClass() throws EvaluationException {
+  public Class generateClass() throws EvaluationException {
     return EvaluationGeneratorUtil.generateAndLoadEvaluatorClass(myAuxModule.getMPSProject().getProject(), myAuxModel, EVALUATOR_NAME, myContext, IS_DEVELOPER_MODE, new TransformingGenerationHandler(false, true, myGenerationListeners), myUiState.getClass().getClassLoader());
   }
 
@@ -120,5 +122,13 @@ public abstract class AbstractEvaluationModel implements IEvaluationContainer {
 
   public JavaUiState getUiState() {
     return myUiState;
+  }
+
+  public IOperationContext getContext() {
+    return new ModuleContext(myAuxModule, myAuxModule.getMPSProject());
+  }
+
+  public SNode getNode() {
+    return getNodeToShow();
   }
 }

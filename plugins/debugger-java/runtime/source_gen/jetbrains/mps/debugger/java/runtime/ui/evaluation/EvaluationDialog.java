@@ -5,7 +5,7 @@ package jetbrains.mps.debugger.java.runtime.ui.evaluation;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
-import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debugger.java.runtime.evaluation.structure.IEvaluationContainer;
 import javax.swing.Action;
 import com.intellij.openapi.ui.DialogWrapper;
 import java.awt.event.ActionEvent;
@@ -13,8 +13,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 
 public class EvaluationDialog extends AbstractEvaluationDialog {
-  public EvaluationDialog(final IOperationContext context, @NotNull EvaluationProvider provider, AbstractEvaluationModel evalModel) {
-    super(context, provider, evalModel, "Evaluate");
+  public EvaluationDialog(final IOperationContext context, @NotNull EvaluationProvider provider, IEvaluationContainer container) {
+    super(context, provider, container, "Evaluate");
   }
 
   @Override

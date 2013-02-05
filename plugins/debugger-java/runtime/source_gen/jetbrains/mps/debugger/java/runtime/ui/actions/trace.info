@@ -232,14 +232,14 @@
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="22" startPosition="36" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="23" startPosition="34" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="28" startPosition="32" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2915139105446486206" fileName="RemoveWatchAction_Action.java" startLine="33" startPosition="9" endLine="34" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="33" startPosition="9" endLine="34" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2915139105446486206" fileName="RemoveWatchAction_Action.java" startLine="33" startPosition="9" endLine="34" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="33" startPosition="9" endLine="34" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="35" startPosition="27" endLine="36" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="36" startPosition="90" endLine="37" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="42" startPosition="53" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="44" startPosition="5" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2915139105446486231" fileName="RemoveWatchAction_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2915139105446486240" fileName="RemoveWatchAction_Action.java" startLine="50" startPosition="100" endLine="51" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2915139105446486231" fileName="RemoveWatchAction_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2915139105446486240" fileName="RemoveWatchAction_Action.java" startLine="50" startPosition="101" endLine="51" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2915139105446486250" fileName="RemoveWatchAction_Action.java" startLine="52" startPosition="39" endLine="53" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="55" startPosition="27" endLine="56" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="60" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -253,8 +253,8 @@
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="48" startPosition="96" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="48" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="28" startPosition="32" endLine="29" endPosition="16" />
-    <scopeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="33" startPosition="9" endLine="34" endPosition="112" />
-    <scopeInfo nodeId="8643693251546861733" fileName="RemoveWatchAction_Action.java" startLine="33" startPosition="9" endLine="34" endPosition="112" />
+    <scopeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="33" startPosition="9" endLine="34" endPosition="116" />
+    <scopeInfo nodeId="8643693251546861733" fileName="RemoveWatchAction_Action.java" startLine="33" startPosition="9" endLine="34" endPosition="116" />
     <scopeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="42" startPosition="53" endLine="43" endPosition="19" />
     <scopeInfo nodeId="2915139105446486249" fileName="RemoveWatchAction_Action.java" startLine="52" startPosition="39" endLine="53" endPosition="69" />
     <scopeInfo nodeId="8643693251546861699" fileName="RemoveWatchAction_Action.java" startLine="55" startPosition="0" endLine="56" endPosition="89">
@@ -295,41 +295,41 @@
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="20" startPosition="34" endLine="21" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="21" startPosition="34" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="26" startPosition="32" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2915139105446351500" fileName="EditWatchAction_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2915139105446351500" fileName="EditWatchAction_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="33" startPosition="27" endLine="34" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="34" startPosition="88" endLine="35" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="40" startPosition="53" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="42" startPosition="5" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2915139105446351456" fileName="EditWatchAction_Action.java" startLine="47" startPosition="9" endLine="48" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2915139105446351465" fileName="EditWatchAction_Action.java" startLine="48" startPosition="100" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2915139105446351467" fileName="EditWatchAction_Action.java" startLine="49" startPosition="26" endLine="50" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="51" startPosition="27" endLine="52" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="56" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="2915139105446351456" fileName="EditWatchAction_Action.java" startLine="47" startPosition="9" endLine="48" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="846214144112200226" fileName="EditWatchAction_Action.java" startLine="48" startPosition="105" endLine="49" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="846214144112249057" fileName="EditWatchAction_Action.java" startLine="50" startPosition="49" endLine="51" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2915139105446351467" fileName="EditWatchAction_Action.java" startLine="52" startPosition="7" endLine="53" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="54" startPosition="27" endLine="55" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="59" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="39" startPosition="95" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="846214144112247377" fileName="EditWatchAction_Action.java" startLine="49" startPosition="88" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditWatchAction_Action#()V" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="30" startPosition="89" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="46" startPosition="96" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="46" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="46" startPosition="96" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="46" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="26" startPosition="32" endLine="27" endPosition="16" />
-    <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="112" />
-    <scopeInfo nodeId="8643693251546861775" fileName="EditWatchAction_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="112" />
+    <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="186" />
+    <scopeInfo nodeId="8643693251546861775" fileName="EditWatchAction_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="186" />
     <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="40" startPosition="53" endLine="41" endPosition="19" />
-    <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="51" startPosition="0" endLine="52" endPosition="87">
+    <scopeInfo nodeId="846214144112247379" fileName="EditWatchAction_Action.java" startLine="50" startPosition="49" endLine="51" endPosition="15" />
+    <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="54" startPosition="0" endLine="55" endPosition="87">
       <varInfo nodeId="8643693251546861757" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="51" startPosition="27" endLine="52" endPosition="87" />
+    <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="54" startPosition="27" endLine="55" endPosition="87" />
     <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="33" startPosition="0" endLine="35" endPosition="44">
       <varInfo nodeId="8643693251546861757" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="33" startPosition="27" endLine="35" endPosition="44" />
     <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="19" startPosition="35" endLine="22" endPosition="40" />
-    <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="47" startPosition="9" endLine="50" endPosition="173">
-      <varInfo nodeId="2915139105446351457" varName="model" />
-    </scopeInfo>
     <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="39" startPosition="95" endLine="43" endPosition="16" />
     <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
@@ -338,16 +338,20 @@
       <varInfo nodeId="8643693251546861757" varName="_params" />
       <varInfo nodeId="8643693251546861757" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="46" startPosition="96" endLine="53" endPosition="5" />
+    <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="47" startPosition="9" endLine="53" endPosition="138">
+      <varInfo nodeId="2915139105446351457" varName="container" />
+      <varInfo nodeId="846214144112200227" varName="session" />
+    </scopeInfo>
     <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="30" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="8643693251546861757" varName="_params" />
       <varInfo nodeId="8643693251546861757" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="46" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="46" startPosition="96" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="46" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="8643693251546861757" varName="_params" />
       <varInfo nodeId="8643693251546861757" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.EditWatchAction_Action" />
+    <unitInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.EditWatchAction_Action" />
   </root>
   <root nodeRef="r:a3396333-01e8-4d8f-ac7d-92203e663cdb(jetbrains.mps.debugger.java.runtime.ui.actions)/8894158296385402494">
     <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9b1c15byef2pzu3ota1zvfv9414x4jv">
+<dependencies version="2" modelHash="4oc5bho2tmeblhckjnnccmilpurnnf8">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -17,8 +17,8 @@
   <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="5xhpnwgaud84z3dx07nvdqm5c9bdesm" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
-  <common hash="-7uye2zf1r5r5yc78hud9jsg8iocete0" />
-  <source id="4352118152439824931" name="DebugSession" hash="-dkkceekyele7ncmthv09wmnshul84vr">
+  <common hash="-cs8mkl1ql7811idkfdaidog5teqds4" />
+  <source id="4352118152439824931" name="DebugSession" hash="7kq60vfznewexsod396f06yb2jk3rl9">
     <dep root="4352118152439825362" />
     <dep root="4352118152439825500" />
     <dep root="4352118152439826150" />
@@ -39,7 +39,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaUiStateImpl.java" />
   </source>
-  <source id="4352118152439825500" name="PausedJavaUiState" hash="bfnjticxy87ye3klb8z1evbi6jst5re">
+  <source id="4352118152439825500" name="PausedJavaUiState" hash="boqe45vb1xvms04h5vrpfutx8za63ef">
     <dep root="4352118152439825362" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />

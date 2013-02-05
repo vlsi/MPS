@@ -7,12 +7,12 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpoint" />
-    <classNode dependClassName="jetbrains.mps.debug.api.evaluation.IEvaluationProvider" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.RequestManager" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.VMEventsProcessorManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.Context" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.JavaUiStateImpl" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.RunningJavaUiState" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

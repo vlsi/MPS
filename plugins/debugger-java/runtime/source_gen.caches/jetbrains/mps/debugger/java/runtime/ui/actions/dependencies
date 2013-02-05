@@ -63,8 +63,8 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.structure.IEvaluationContainer" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -89,7 +89,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.evaluation.IEvaluationProvider" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.DebugActionsUtil" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.structure.IEvaluationContainer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

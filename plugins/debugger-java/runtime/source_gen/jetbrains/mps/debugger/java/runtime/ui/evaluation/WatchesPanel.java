@@ -6,7 +6,7 @@ import jetbrains.mps.debugger.java.runtime.state.SessionStopDisposer;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 import jetbrains.mps.workbench.action.BaseGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
-import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debugger.java.runtime.evaluation.structure.IEvaluationContainer;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -23,7 +23,7 @@ public class WatchesPanel extends EvaluationUi {
     myProvider = provider;
     myProvider.addWatchListener(new EvaluationProvider.WatchAdapter() {
       @Override
-      public void watchAdded(final AbstractEvaluationModel model) {
+      public void watchAdded(final IEvaluationContainer model) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           @Override
           public void run() {
@@ -35,7 +35,7 @@ public class WatchesPanel extends EvaluationUi {
       }
 
       @Override
-      public void watchUpdated(final AbstractEvaluationModel model) {
+      public void watchUpdated(final IEvaluationContainer model) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           @Override
           public void run() {
@@ -45,7 +45,7 @@ public class WatchesPanel extends EvaluationUi {
       }
 
       @Override
-      public void watchRemoved(final AbstractEvaluationModel model) {
+      public void watchRemoved(final IEvaluationContainer model) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           @Override
           public void run() {
@@ -75,14 +75,14 @@ public class WatchesPanel extends EvaluationUi {
 
   @Override
   protected void update() {
-    for (AbstractEvaluationModel model : myProvider.getWatches()) {
+    for (IEvaluationContainer model : myProvider.getWatches()) {
       model.updateState();
     }
   }
 
   @Override
   public void evaluate() {
-    for (AbstractEvaluationModel model : myProvider.getWatches()) {
+    for (IEvaluationContainer model : myProvider.getWatches()) {
       evaluate(model);
     }
   }
