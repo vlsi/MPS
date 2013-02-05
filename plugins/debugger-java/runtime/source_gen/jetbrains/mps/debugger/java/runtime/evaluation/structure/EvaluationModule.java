@@ -4,9 +4,13 @@ package jetbrains.mps.debugger.java.runtime.evaluation.structure;
 
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.ModuleId;
 
 public class EvaluationModule extends AbstractModule implements SModule {
   public EvaluationModule() {
+    ModuleReference reference = new ModuleReference("Evaluation Container Module", ModuleId.regular());
+    setModuleReference(reference);
   }
 
   public String toString() {

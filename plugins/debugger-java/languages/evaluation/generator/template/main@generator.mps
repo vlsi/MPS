@@ -22,9 +22,11 @@
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1620955434532218412">
       <property name="name" nameId="tpck.1169194664001" value="main" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1620955434532219968">
       <property name="name" nameId="tpck.1169194664001" value="EvaluatorInstance" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     </node>
   </roots>
   <root id="1620955434532218412">

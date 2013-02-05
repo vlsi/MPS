@@ -29,18 +29,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.debugger.java.runtime.evaluation.structure.BlImportUtil;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
@@ -51,16 +49,15 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.sun.jdi.InvalidStackFrameException;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.CopyUtil;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.ide.plugins.PluginManager;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debugger.java.runtime.JavaDebugger;
 import java.io.File;
 import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   private AbstractClassifiersScope myScope;
@@ -145,86 +142,28 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   }
 
   private void tryToImport(List<SNodeReference> nodesToImport) {
-    List<SNode> nodes = CopyUtil.copy(ListSequence.fromList(nodesToImport).select(new ISelector<SNodeReference, SNode>() {
-      public SNode select(SNodeReference it) {
-        return (SNode) ((SNodePointer) it).getNode();
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (it != null);
-      }
-    }).toListSequence());
-    for (SNode node : ListSequence.fromList(nodes)) {
-      if (node == null) {
-        continue;
-      }
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression")) {
-        SNode clone = _quotation_createNode_qkk2f2_a0a0b0b0k(node);
-        transformNode(clone);
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(getNodeToShow(), "evaluatedStatements", true), "statement", true)).addElement(clone);
-      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement")) {
-        transformNode(node);
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(getNodeToShow(), "evaluatedStatements", true), "statement", true)).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Statement"));
-      }
-    }
-  }
-
-  private void transformNode(SNode node) {
-    // try to resolve variables 
-    ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return ListSequence.fromList(SNodeOperations.getChildren(it)).isEmpty();
-      }
-    }).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        transformNodeToProperVariableReference(it);
-      }
-    });
-    // all links to subs -> to debugger stubs 
-    for (SNode d : ListSequence.fromList(SNodeOperations.getDescendants(node, null, true, new String[]{}))) {
-      replaceStubReferences(d);
-    }
-  }
-
-  private void replaceStubReferences(SNode node) {
-    for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
-      SModel targetModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(reference));
-      if (neq_qkk2f2_a0b0a0m(targetModel, myAuxModel.getSModel())) {
-        SModelDescriptor scopeModel = myAuxModule.getScope().getModelDescriptor(targetModel.getSModelReference());
-        if (scopeModel != null && neq_qkk2f2_a0a1a1a0a21(scopeModel.getSModel(), targetModel)) {
-          String resolveInfo = SLinkOperations.getResolveInfo(reference);
-          if ((resolveInfo == null || resolveInfo.length() == 0)) {
-            resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(SLinkOperations.getTargetNode(reference));
-          }
-          node.setReference(SLinkOperations.getRole(reference), new DynamicReference(SLinkOperations.getRole(reference), node, scopeModel.getSModelReference(), resolveInfo));
-        }
-      }
-    }
-  }
-
-  private void transformNodeToProperVariableReference(SNode node) {
-    if ((int) ListSequence.fromList(SNodeOperations.getReferences(node)).count() == 1) {
-      final SReference reference = ListSequence.fromList(SNodeOperations.getReferences(node)).first();
-      if (neq_qkk2f2_a0a1a0a31(SNodeOperations.getModel(SLinkOperations.getTargetNode(reference)), myAuxModel.getSModel()) && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept")) {
+    BlImportUtil.tryToImport(SLinkOperations.getTarget(getNodeToShow(), "evaluatedStatements", true), nodesToImport, new _FunctionTypes._return_P1_E0<SNode, SReference>() {
+      public SNode invoke(final SReference variableReference) {
         SNode matchingVar = ListSequence.fromList(SLinkOperations.getTargets(getNodeToShow(), "variables", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode variable) {
-            return eq_qkk2f2_a0a0a0a0a0a0a1a0a31(SNodePointer.deserialize(SPropertyOperations.getString(variable, "highLevelNodeId")), SLinkOperations.getTargetNode(reference).getReference());
+            return eq_qkk2f2_a0a0a0a0a0a0a0a0c0a0k(SNodePointer.deserialize(SPropertyOperations.getString(variable, "highLevelNodeId")), SLinkOperations.getTargetNode(variableReference).getReference());
           }
         });
         if (matchingVar == null) {
           matchingVar = ListSequence.fromList(SLinkOperations.getTargets(getNodeToShow(), "variables", true)).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode variable) {
-              return eq_qkk2f2_a0a0a0a0a0a0a1a1a0a31(SPropertyOperations.getString(variable, "name"), SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
+              return eq_qkk2f2_a0a0a0a0a0a0a1a0a0c0a0k(SPropertyOperations.getString(variable, "name"), SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTargetNode(variableReference), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
             }
           });
         }
-        if (matchingVar != null) {
-          SNode newVariableReference = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", null);
-          SLinkOperations.setTarget(newVariableReference, "baseVariableDeclaration", matchingVar, false);
-          SNodeOperations.replaceWithAnother(node, newVariableReference);
-        }
+        return matchingVar;
       }
-    }
+    }, new _FunctionTypes._return_P1_E0<SNode, SNode>() {
+      public SNode invoke(SNode variable) {
+        SNode newVariableReference = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", null);
+        return SLinkOperations.setTarget(newVariableReference, "baseVariableDeclaration", variable, false);
+      }
+    });
   }
 
   @Nullable
@@ -364,49 +303,17 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
   private static Logger LOG = Logger.getLogger(LowLevelEvaluationModel.class);
 
-  private static SNode _quotation_createNode_qkk2f2_a0a0b0b0k(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = (SNode) parameter_1;
-    if (quotedNode_3 != null) {
-      quotedNode_2.addChild("expression", HUtil.copyIfNecessary(quotedNode_3));
-    }
-    return quotedNode_2;
-  }
-
-  private static boolean neq_qkk2f2_a0b0a0m(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
-  }
-
-  private static boolean neq_qkk2f2_a0a1a1a0a21(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
-  }
-
-  private static boolean eq_qkk2f2_a0a0a0a0a0a0a1a0a31(Object a, Object b) {
+  private static boolean eq_qkk2f2_a0a0a0a0a0a0a0a0c0a0k(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_qkk2f2_a0a0a0a0a0a0a1a1a0a31(Object a, Object b) {
+  private static boolean eq_qkk2f2_a0a0a0a0a0a0a1a0a0c0a0k(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
-  }
-
-  private static boolean neq_qkk2f2_a0a1a0a31(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
   }
 }
