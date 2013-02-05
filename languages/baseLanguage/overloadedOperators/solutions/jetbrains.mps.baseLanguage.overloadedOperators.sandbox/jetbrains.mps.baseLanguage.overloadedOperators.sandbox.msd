@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.baseLanguage.overloadedOperators.sandbox" uuid="b35bb3d4-59ec-4075-a2bb-8d977813e263" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

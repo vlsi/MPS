@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.lang.dataFlow.analyzers.sandbox" uuid="dcec1766-60d6-4245-a118-8c05dd9c559e" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.quickQuery.runtime" uuid="8a97af52-a1ac-4297-b776-d35bf47ce8da" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />
