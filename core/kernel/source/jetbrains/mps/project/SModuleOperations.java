@@ -57,7 +57,6 @@ public class SModuleOperations {
 
       // todo: obsolete model root type
       if (modelRoot instanceof FolderModelRootBase) {
-//        checkContentPath(((FolderModelRootBase) modelRoot).getPath(), module, modelRoot);
         result.add(exposePath(((FolderModelRootBase) modelRoot).getPath()));
       }
     }
