@@ -202,6 +202,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     reloadAfterDescriptorChange();
     MPSModuleRepository.getInstance().fireModuleChanged(this);
 
+    // move outside set_ block and just call ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     if (reloadClasses) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     }

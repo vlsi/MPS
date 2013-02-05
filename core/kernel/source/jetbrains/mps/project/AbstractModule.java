@@ -58,6 +58,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.ModuleFacet;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -764,14 +765,9 @@ public abstract class AbstractModule implements IModule, JavaModuleFacet, FileSy
     return myChanged;
   }
 
-  @Override
-  public boolean containsFacet(Class clazz) {
-    return false;
-  }
-
-  @Override
   @Nullable
-  public <T> T getFacet(Class<T> clazz) {
+  @Override
+  public <T extends ModuleFacet> T getFacet(Class<T> clazz) {
     return null;
   }
 

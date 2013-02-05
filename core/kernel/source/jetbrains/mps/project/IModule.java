@@ -34,6 +34,10 @@ import java.util.Collection;
 import java.util.List;
 
 public interface IModule extends SModule {
+  // events
+  // dependency change
+  // used languages change
+
   // SModule#getModuleReference
   // ask Misha about return type
   // oooor it doesn't matter here
@@ -135,6 +139,7 @@ public interface IModule extends SModule {
   // check it out in IDEA!
   // how to check is it works: clean ~/.idea/system and check cmd+n
   // use SModuleOperations.getIndexablePaths
+  // todo: look at idea indexing subsystem
   @Deprecated
   Collection<String> getIndexablePaths();
 
@@ -177,9 +182,12 @@ public interface IModule extends SModule {
   void dispose();
 
   // ?, classes oO? possibility to listen reload action in API and use it in facet!
+  // ModuleSource!
+  // reloadClasses -> outside
   void reloadFromDisk(boolean reloadClasses);
 
   // should be final in AbstractModule? expose to SModule?
+  // ModuleSource (@see DataSource, maybe abstract from files?)
   boolean needReloading();
 
   // dislike it =(
@@ -214,14 +222,22 @@ public interface IModule extends SModule {
 
   //-----todo ret rid of
 
+  // SModule#getModuleName
   String getModuleFqName();
 
   //todo move to model
+  // remove
+  // check is it imported on language model creation
+  // optimize imports (not remove it)
+  // see AddMissingImports / looks like create migration for this + customize create model dialog
   Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
 
   //todo move to model
+  // like previous
   Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
 
+  // methods for getOutputFor() method
+  // extract outside IModule / it's not IModule func anyway
   //todo used only in language,generator,solution
   String getGeneratorOutputPath();
 

@@ -96,9 +96,7 @@ public interface SModule {
 
   Iterable<ModelRoot> getModelRoots();
 
-  // do not use!!!
-  boolean containsFacet(Class clazz);
-
+  // do not use
   @Nullable
-  <T> T getFacet(Class<T> clazz);
+  <T extends ModuleFacet> T getFacet(Class<T> clazz);
 }
