@@ -346,7 +346,7 @@ public abstract class AbstractModule implements IModule, JavaModuleFacet, FileSy
 
   //----classpath
 
-  protected void invalidateClassPath() {
+  protected final void invalidateClassPath() {
     // todo: remove method!
     ((JavaModuleFacetImpl) javaModuleFacet).invalidateClassPath();
   }
@@ -440,25 +440,30 @@ public abstract class AbstractModule implements IModule, JavaModuleFacet, FileSy
   }
 
   @Override
-  public IClassPathItem getClassPathItem() {
+  public final IClassPathItem getClassPathItem() {
     return javaModuleFacet.getClassPathItem();
   }
 
-  public Collection<String> getClassPath() {
+  public final Collection<String> getClassPath() {
     return ((JavaModuleFacetImpl) javaModuleFacet).getClassPath();
   }
 
-  public Collection<String> getAdditionalClassPath() {
+  public final Collection<String> getAdditionalClassPath() {
     return ((JavaModuleFacetImpl) javaModuleFacet).getAdditionalClassPath();
   }
 
-  public Collection<String> getOwnClassPath() {
+  public final Collection<String> getOwnClassPath() {
     return ((JavaModuleFacetImpl) javaModuleFacet).getOwnClassPath();
   }
 
   @Deprecated
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
     return SModuleOperations.getDependenciesClasspath(modules, includeStubSolutions);
+  }
+
+  @Override
+  public final IClassPathItem getModuleWithDependenciesClassPathItem() {
+    return SModuleOperations.getModuleWithDependenciesClassPathItem(this);
   }
 
 //----
@@ -499,7 +504,7 @@ public abstract class AbstractModule implements IModule, JavaModuleFacet, FileSy
     return new ArrayList<SModel>(SModelRepository.getInstance().getModelDescriptors(this));
   }
 
-  public IFile getClassesGen() {
+  public final IFile getClassesGen() {
     return javaModuleFacet.getClassesGen();
   }
 
@@ -668,8 +673,8 @@ public abstract class AbstractModule implements IModule, JavaModuleFacet, FileSy
   }
 
   @Override
-  public boolean isCompileInMPS() {
-    return false;
+  public final boolean isCompileInMPS() {
+    return javaModuleFacet.isCompileInMPS();
   }
 
   @Override
