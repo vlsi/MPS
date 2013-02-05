@@ -17,6 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.reloading.IClassPathItem;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -71,8 +72,7 @@ public class SModuleOperations {
   }
 
   private static void checkContentPath(String path, SModule module, ModelRoot modelRoot) {
-    if (module.getModuleName().startsWith("MPS.")) {
-      // filter MPS.Core etc
+    if (PersistenceRegistry.JAVA_CLASSES_ROOT.equals(modelRoot.getType())) {
       return;
     }
 
