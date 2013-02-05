@@ -15,16 +15,16 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class SModuleOperations {
   // todo: all args should be SModule
@@ -36,27 +36,33 @@ public class SModuleOperations {
     return new ClasspathCollector(modules).collect(includeStubSolutions);
   }
 
-  public static Collection<String> getIndexablePaths(IModule module) {
-    List<String> result = new ArrayList<String>();
+  public static Collection<String> getIndexablePaths(SModule module) {
+    // todo: maybe move getIndexablePaths method to FileBasedModelRoot, or even in ModelRoot classes?
+    Set<String> result = new TreeSet<String>();
 
-    IFile home = module.getBundleHome();
-    if (home != null) {
-      String suffix = module.isPackaged() ? "!/" : "";
-      result.add(home.getPath() + suffix);
-    }
+    for (ModelRoot modelRoot : module.getModelRoots()) {
+      if (modelRoot instanceof FileBasedModelRoot) {
+        FileBasedModelRoot fileBasedModelRoot = (FileBasedModelRoot) modelRoot;
+        for (String fileKind : fileBasedModelRoot.getSupportedFileKinds()) {
+          if (!FileBasedModelRoot.EXCLUDED.equals(fileKind)) {
+            for (String file : fileBasedModelRoot.getFiles(fileKind)) {
+              result.add(exposePath(file));
+            }
+          }
+        }
+      }
 
-    ModuleDescriptor d = module.getModuleDescriptor();
-    if (d == null) return result;
-
-    for (ModelRootDescriptor rootDescriptor : d.getModelRootDescriptors()) {
-      jetbrains.mps.project.structure.model.ModelRoot root = rootDescriptor.getRoot();
-      if (root == null) continue;
-
-      String path = root.getPath();
-      String suffix = path.endsWith("." + MPSExtentions.MPS_ARCH) ? "!/" : "";
-      result.add(path + suffix);
+      // todo: obsolete model root type
+      if (modelRoot instanceof FolderModelRootBase) {
+        result.add(exposePath(((FolderModelRootBase) modelRoot).getPath()));
+      }
     }
 
     return result;
+  }
+
+  private static String exposePath(String path) {
+    String suffix = path.endsWith("." + MPSExtentions.MPS_ARCH) ? "!/" : "";
+    return path + suffix;
   }
 }
