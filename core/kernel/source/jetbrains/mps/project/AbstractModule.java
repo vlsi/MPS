@@ -443,6 +443,10 @@ public abstract class AbstractModule implements IModule, JavaModuleFacet, FileSy
     return javaModuleFacet.getClassPathItem();
   }
 
+  public Collection<String> getClassPath() {
+    return ((JavaModuleFacetImpl) javaModuleFacet).getClassPath();
+  }
+
   @Deprecated
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
     return SModuleOperations.getDependenciesClasspath(modules, includeStubSolutions);

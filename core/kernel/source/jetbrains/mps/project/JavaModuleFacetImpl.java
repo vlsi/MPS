@@ -54,7 +54,7 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
     }
   }
 
-  private Collection<String> getClassPath() {
+  public Collection<String> getClassPath() {
     Set<String> result = new LinkedHashSet<String>();
     result.addAll(getAdditionalClassPath());
     result.addAll(getOwnClassPath());
