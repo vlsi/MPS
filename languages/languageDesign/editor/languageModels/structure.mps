@@ -22,10 +22,11 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpcb" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" implicit="yes" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
+  <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1071666914219">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editor.png" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptEditorDeclaration" />
@@ -112,8 +113,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1078938745671">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editorComponent.png" />
       <property name="name" nameId="tpck.1169194664001" value="EditorComponentDeclaration" />
@@ -143,8 +144,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1166049232041" resolveInfo="AbstractComponent" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1081293058843">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/keyMap.png" />
       <property name="name" nameId="tpck.1169194664001" value="CellKeyMapDeclaration" />
@@ -304,8 +305,8 @@
       <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1138197631095" resolveInfo="none" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139535219966">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/actionMap.png" />
       <property name="name" nameId="tpck.1169194664001" value="CellActionMapDeclaration" />
@@ -615,8 +616,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1166040637528">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/menuComponent.png" />
       <property name="name" nameId="tpck.1169194664001" value="CellMenuComponent" />
@@ -796,8 +797,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389658414" resolveInfo="CellModel_Property" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186402211651">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editorStylesheet.png" />
       <property name="name" nameId="tpck.1169194664001" value="StyleSheet" />
@@ -1081,8 +1082,8 @@
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1216308599511">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="false" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="PositionStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
@@ -1402,8 +1403,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7667276221847612622">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/parametersInformation.png" />
       <property name="name" nameId="tpck.1169194664001" value="ParametersInformationQuery" />
@@ -1649,6 +1650,12 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="nextNode" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8233876857994246075">
+      <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ApplySideTransforms" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="apply side transforms" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
     </node>
   </roots>
   <root id="1071666914219">
@@ -2643,7 +2650,7 @@
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1164914727930">
       <property name="role" nameId="tpce.1071599776563" value="replacementConcept" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
   </root>
   <root id="1164996492011">
@@ -3613,6 +3620,12 @@
   <root id="7991857262589829730">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7991857262589829731">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
+  </root>
+  <root id="8233876857994246075">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8233876857994286197">
+      <property name="name" nameId="tpck.1169194664001" value="side" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpdg.1215604970641" resolveInfo="Side" />
     </node>
   </root>
 </model>

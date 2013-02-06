@@ -20,6 +20,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
+  <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1179766709016">
       <property name="name" nameId="tpck.1169194664001" value="typeof_CellKeyMap_FunctionParm_selectedNode" />
@@ -103,6 +104,9 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4310268853341507745">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ConceptFunctionParameter_prevNode" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Parameters" />
+    </node>
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="5531627918740446722">
+      <property name="name" nameId="tpck.1169194664001" value="check_CellMenuPart_ApplySideTransforms" />
     </node>
   </roots>
   <root id="1179766709016">
@@ -1605,6 +1609,41 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4310268853341507748">
       <property name="name" nameId="tpck.1169194664001" value="node" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpc2.7991857262589831666" resolveInfo="ConceptFunctionParameter_prevNode" />
+    </node>
+  </root>
+  <root id="5531627918740446722">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="5531627918740447042">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5531627918740463487">
+        <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5531627918740473199">
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_HasValue_Enum" typeId="tp25.1146171026731" id="5531627918740485998">
+            <node role="value" roleId="tp25.1146171026732" type="tp25.EnumMemberReference" typeId="tp25.1138676077309" id="5531627918740486000">
+              <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="tpdg.3609453419537306772" />
+            </node>
+          </node>
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5531627918740464004">
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="5531627918740469408">
+              <link role="property" roleId="tp25.1138056395725" targetNodeId="tpc2.8233876857994286197" resolveInfo="side" />
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="5531627918740463499">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="5531627918740447711" resolveInfo="cellMenuPart_ApplySideTransforms" />
+            </node>
+          </node>
+        </node>
+        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5531627918740463489">
+          <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="5531627918740486078">
+            <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="5531627918740486186">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="5531627918740447711" resolveInfo="cellMenuPart_ApplySideTransforms" />
+            </node>
+            <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5531627918740486090">
+              <property name="value" nameId="tpee.1070475926801" value="`both sides' are not supported" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="5531627918740447711">
+      <property name="name" nameId="tpck.1169194664001" value="cellMenuPart_ApplySideTransforms" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpc2.8233876857994246075" resolveInfo="CellMenuPart_ApplySideTransforms" />
     </node>
   </root>
 </model>
