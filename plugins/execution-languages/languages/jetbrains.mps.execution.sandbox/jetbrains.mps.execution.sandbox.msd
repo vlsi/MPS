@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.execution.sandbox" uuid="da731361-e684-4dc9-bd18-2dec00d1d099" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
     <modelRoot path="${mps_home}/lib/icons.jar" type="java_classes" />
     <modelRoot path="${mps_home}/lib/resources.jar" type="java_classes" />

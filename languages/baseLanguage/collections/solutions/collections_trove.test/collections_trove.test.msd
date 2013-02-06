@@ -2,7 +2,7 @@
 <solution name="collections_trove.test" uuid="fb186431-2788-490b-9e84-c2b84ef0ca77" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

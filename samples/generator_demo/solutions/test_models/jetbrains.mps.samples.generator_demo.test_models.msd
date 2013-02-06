@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.samples.generator_demo.test_models" uuid="adf7f1c4-f8f1-4e3c-b795-09c7acee7b4f" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

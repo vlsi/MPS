@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.baseLanguage.unittest" uuid="e60b351d-8d80-4c13-8ad4-3e4759e2a3ea" pluginKind="PLUGIN_OTHER" compileInMPS="true" generatorOutputPath="${mps_home}/languages/baseLanguage/baseLanguage/tests_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

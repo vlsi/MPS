@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.samples.smodelLanguage-samples" uuid="8ff25029-6ea8-4612-9a0a-439f73131035" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="smodelLanguage" />
     </modelRoot>
   </models>
   <sourcePath />

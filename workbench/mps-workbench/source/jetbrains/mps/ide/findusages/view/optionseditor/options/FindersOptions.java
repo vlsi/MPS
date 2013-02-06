@@ -22,7 +22,6 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Language;
@@ -83,7 +82,7 @@ public class FindersOptions extends BaseOptions {
         continue;
       }
 
-      Class finderClass = module.getClass(finderClassName);
+      Class finderClass = ((Language) module).getClass(finderClassName);
       if (finderClass != null) {
         try {
           IFinder finder = (IFinder) finderClass.newInstance();
