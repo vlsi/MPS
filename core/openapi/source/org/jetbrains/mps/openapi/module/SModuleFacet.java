@@ -15,5 +15,5 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-public interface ModuleFacet {
+public interface SModuleFacet {
 }
