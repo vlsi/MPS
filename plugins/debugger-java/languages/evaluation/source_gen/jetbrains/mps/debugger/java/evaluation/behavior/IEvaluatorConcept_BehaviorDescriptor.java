@@ -5,5 +5,5 @@ package jetbrains.mps.debugger.java.evaluation.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface IEvaluatorConcept_BehaviorDescriptor {
-  public String virtual_getEvaluatorPresentation_9172312269976647295(SNode thisNode);
+  public SNode virtual_getCode_317191294093624551(SNode thisNode);
 }

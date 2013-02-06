@@ -31,7 +31,7 @@ import javax.swing.JComponent;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel;
 import jetbrains.mps.project.ProjectOperationContext;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer;
+import jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationWithContextContainer;
 
 public class EvaluationProvider implements IEvaluationProvider {
   private final DebugSession myDebugSession;
@@ -170,12 +170,12 @@ public class EvaluationProvider implements IEvaluationProvider {
 
   @Nullable
   private IEvaluationContainer createEvaluationContainer(boolean isWatch) {
-    return new EvaluationContainer(myDebugSession.getProject(), myDebugSession, myContainerModule, ListSequence.fromList(new ArrayList<SNodeReference>()));
+    return new EvaluationWithContextContainer(myDebugSession.getProject(), myDebugSession, myContainerModule, ListSequence.fromList(new ArrayList<SNodeReference>()), isWatch);
   }
 
   @Nullable
   private IEvaluationContainer createEvaluationContainer(boolean isWatch, List<SNodeReference> selectedNodes) {
-    return new EvaluationContainer(myDebugSession.getProject(), myDebugSession, myContainerModule, selectedNodes);
+    return new EvaluationWithContextContainer(myDebugSession.getProject(), myDebugSession, myContainerModule, selectedNodes, isWatch);
   }
 
   public List<IEvaluationContainer> getWatches() {

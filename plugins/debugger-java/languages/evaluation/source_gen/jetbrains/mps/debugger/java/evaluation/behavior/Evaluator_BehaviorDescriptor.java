@@ -4,12 +4,16 @@ package jetbrains.mps.debugger.java.evaluation.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
-import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 
-public class Evaluator_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor {
+public class Evaluator_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor, IEvaluatorConcept_BehaviorDescriptor {
   public Evaluator_BehaviorDescriptor() {
+  }
+
+  public SNode virtual_getCode_317191294093624551(SNode thisNode) {
+    return Evaluator_Behavior.virtual_getCode_317191294093624551(thisNode);
   }
 
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {

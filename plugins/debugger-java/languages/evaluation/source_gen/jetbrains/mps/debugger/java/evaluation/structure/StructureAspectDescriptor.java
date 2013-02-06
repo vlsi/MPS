@@ -20,7 +20,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 3:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.evaluation.structure.Evaluator", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.evaluation.structure.Evaluator", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.ScopeProvider", "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"}, new String[]{}, new String[]{});
       case 4:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"}, new String[]{"isShowContext"}, new String[]{});
       case 5:

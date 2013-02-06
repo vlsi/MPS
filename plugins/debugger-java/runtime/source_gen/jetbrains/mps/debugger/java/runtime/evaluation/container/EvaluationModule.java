@@ -5,11 +5,22 @@ package jetbrains.mps.debugger.java.runtime.evaluation.container;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import jetbrains.mps.extapi.persistence.FolderModelRootBase;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.project.GlobalScope;
 
 public class EvaluationModule extends AbstractModule implements SModule {
   private final ModuleDescriptor myDescriptor;
+  private final Set<String> myClassPaths = SetSequence.fromSet(new HashSet<String>());
 
   public EvaluationModule() {
     ModuleReference reference = new ModuleReference("Evaluation Container Module", ModuleId.regular());
@@ -21,10 +32,42 @@ public class EvaluationModule extends AbstractModule implements SModule {
     return "Evaluation Module";
   }
 
-
-
   @Override
   public ModuleDescriptor getModuleDescriptor() {
     return myDescriptor;
   }
+
+  @Override
+  protected Iterable<ModelRoot> loadRoots() {
+    Set<ModelRoot> result = new HashSet<ModelRoot>();
+    for (String stub : SetSequence.fromSet(myClassPaths)) {
+      FolderModelRootBase modelRoot = (FolderModelRootBase) PersistenceRegistry.getInstance().getModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT).create();
+      modelRoot.setPath(stub);
+      result.add(modelRoot);
+    }
+    return result;
+  }
+
+  @Override
+  public Set<String> getAdditionalClassPath() {
+    return myClassPaths;
+  }
+
+  public String addClassPathItem(String path) {
+    if (SetSequence.fromSet(myClassPaths).contains(path)) {
+      path = null;
+    } else {
+      SetSequence.fromSet(myClassPaths).addElement(path);
+    }
+    invalidateClassPath();
+    MPSModuleRepository.getInstance().fireModuleChanged(this);
+    return path;
+  }
+
+  @NotNull
+  public IScope getScope() {
+    return GlobalScope.getInstance();
+  }
+
+
 }

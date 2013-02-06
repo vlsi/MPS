@@ -67,7 +67,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.PresentationUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -94,6 +93,7 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.Evaluator_Behavior" file="Evaluator_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -102,6 +102,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.behavior.Evaluator_Behavior" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.behavior.IEvaluatorConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor" />
@@ -147,7 +148,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.IEvaluatorConcept_BehaviorDescriptor" file="IEvaluatorConcept_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariableReference_BehaviorDescriptor" file="LowLevelVariableReference_BehaviorDescriptor.java">

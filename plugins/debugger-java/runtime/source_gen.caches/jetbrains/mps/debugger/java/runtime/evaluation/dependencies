@@ -13,10 +13,10 @@
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.JavaUiState" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.Properties" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationWithContextContainer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EditWatchDialog" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog" />

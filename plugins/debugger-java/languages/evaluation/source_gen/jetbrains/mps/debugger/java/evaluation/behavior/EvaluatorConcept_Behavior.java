@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.debugger.java.runtime.evaluation.container.PresentationUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -32,8 +31,8 @@ public class EvaluatorConcept_Behavior {
     return _quotation_createNode_29c8r0_a0a2();
   }
 
-  public static String virtual_getEvaluatorPresentation_9172312269976647295(SNode thisNode) {
-    return PresentationUtil.getPresentation(SLinkOperations.getTarget(thisNode, "evaluatedStatements", true));
+  public static SNode virtual_getCode_317191294093624551(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "evaluatedStatements", true);
   }
 
   @Deprecated
