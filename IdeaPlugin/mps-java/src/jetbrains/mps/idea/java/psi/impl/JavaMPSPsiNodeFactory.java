@@ -45,6 +45,26 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
         return new MPSPsiClassifierType(id, concept, containingRole);
       }
     });
+    factories.put("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", new MPSPsiNodeFactory() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        MPSPsiMethod method = new MPSPsiMethod(id, concept, containingRole);
+        method.addChild(null, new MPSPsiParameterList());
+        return method;
+      }
+    });
+    factories.put("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", new MPSPsiNodeFactory() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiParameter(id, concept, containingRole);
+      }
+    });
+//    factories.put("jetbrains.mps.baseLanguage.structure.IntegerType", new MPSPsiNodeFactory() {
+//      @Override
+//      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+//        return new MPSPsiParameter(id, concept, containingRole);
+//      }
+//    });
   }
 
   @Override

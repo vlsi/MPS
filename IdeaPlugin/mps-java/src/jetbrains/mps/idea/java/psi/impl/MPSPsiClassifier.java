@@ -1,7 +1,11 @@
 package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiClass;
+import com.intellij.psi.search.GlobalSearchScope;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
@@ -17,7 +21,11 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   @Nullable
   @Override
   public String getQualifiedName() {
-    return getContainingModel().getQualifiedName() + "." + getName();
+    String modelQName = getContainingModel().getQualifiedName();
+    // Q: is this available somewhere as util?  should it?
+    int atSign = modelQName.indexOf("@");
+    String pkgName = atSign < 0 ? modelQName : modelQName.substring(0, modelQName.indexOf("@"));
+    return pkgName + "." + getName();
   }
 
   @Override
@@ -39,5 +47,19 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   public boolean isDeprecated() {
     // TODO @Deprecated annotation?
     return false;
+  }
+
+  /**
+   * Check if this classifier is built on top of java psi.
+   * In this case return the real, underlying, psi node, not this one.
+   */
+  @NotNull
+  public PsiClass getRealPsiNode() {
+    MPSPsiModel model = getContainingModel();
+    String modelName = model.getQualifiedName();
+    if (modelName.endsWith("@java_stub")) {
+      return JavaPsiFacade.getInstance(getProject()).findClass(getQualifiedName(), GlobalSearchScope.allScope(getProject()));
+    }
+    return this;
   }
 }

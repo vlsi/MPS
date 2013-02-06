@@ -16,15 +16,22 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Pair;
 import com.intellij.psi.*;
 import com.intellij.psi.javadoc.PsiDocComment;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.IncorrectOperationException;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.*;
 
@@ -35,6 +42,7 @@ public class MPSPsiClass extends MPSPsiClassifier implements PsiClass {
 
   public MPSPsiClass(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
+
   }
 
   @Nullable
@@ -133,7 +141,13 @@ public class MPSPsiClass extends MPSPsiClassifier implements PsiClass {
   @NotNull
   @Override
   public PsiMethod[] getMethods() {
-    return new PsiMethod[0];
+    PsiMethod[] methods = getChildrenOfType("member", PsiMethod.class);
+    if (methods == null) {
+      return PsiMethod.EMPTY_ARRAY;
+    } else {
+      return methods;
+    }
+//    return new PsiMethod[0];
   }
 
   @NotNull

@@ -102,20 +102,6 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     return null;
   }
 
-  protected <T extends PsiElement> T[] getChildrenOfType(String role, @NotNull Class<T> aClass) {
-    if (role == null) return null;
-
-    List<T> result = null;
-    for (PsiElement child = getFirstChild(); child != null; child = child.getNextSibling()) {
-      if (child instanceof MPSPsiNode && role.equals(((MPSPsiNode) child).getContainingRole()) && aClass.isInstance(child)) {
-        if (result == null) result = new SmartList<T>();
-        //noinspection unchecked
-        result.add((T) child);
-      }
-    }
-    return result == null ? null : ArrayUtil.toObjectArray(result, aClass);
-  }
-
   @Override
   public String toString() {
     return NameUtil.shortNameFromLongName(myConcept) + (myContainingRole == null ? "" : " in " + myContainingRole);
@@ -155,6 +141,8 @@ public class MPSPsiNode extends MPSPsiNodeBase {
   public boolean canNavigateToSource() {
     return isValid();
   }
+
+
 
 /*
   @Nullable
