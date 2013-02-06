@@ -4,7 +4,6 @@ package jetbrains.mps.samples.Kaja.generator.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -28,19 +27,19 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_7060824959896330163(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)", "LookingDirection"), "north")).equals(SPropertyOperations.getString_def(_context.getNode(), "direction", null));
+    return SPropertyOperations.hasValue(_context.getNode(), "direction", "north", null);
   }
 
   public static boolean baseMappingRule_Condition_7060824959896205081(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)", "LookingDirection"), "east")).equals(SPropertyOperations.getString_def(_context.getNode(), "direction", null));
+    return SPropertyOperations.hasValue(_context.getNode(), "direction", "east", null);
   }
 
   public static boolean baseMappingRule_Condition_7060824959896333440(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)", "LookingDirection"), "south")).equals(SPropertyOperations.getString_def(_context.getNode(), "direction", null));
+    return SPropertyOperations.hasValue(_context.getNode(), "direction", "south", null);
   }
 
   public static boolean baseMappingRule_Condition_7060824959896333392(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)", "LookingDirection"), "west")).equals(SPropertyOperations.getString_def(_context.getNode(), "direction", null));
+    return SPropertyOperations.hasValue(_context.getNode(), "direction", "west", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_3308300503039570175(final IOperationContext operationContext, final PropertyMacroContext _context) {
