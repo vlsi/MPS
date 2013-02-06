@@ -13,7 +13,7 @@ import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -69,9 +69,9 @@ import jetbrains.mps.ide.messages.Icons;
     MapSequence.fromMap(myStates).removeKey(model);
   }
 
-  /*package*/ void setResultProxy(IValueProxy valueProxy, IEvaluationContainer model) {
+  /*package*/ void setResultValue(JavaValue value, IEvaluationContainer model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
-    MapSequence.fromMap(myStates).put(model, new EvaluationTree.ResultState(model.getPresentation(), valueProxy, myClassFqName, myThreadReference));
+    MapSequence.fromMap(myStates).put(model, new EvaluationTree.ResultState(model.getPresentation(), value, myClassFqName, myThreadReference));
   }
 
   /*package*/ void setError(@NotNull String text, IEvaluationContainer model) {
@@ -194,16 +194,16 @@ import jetbrains.mps.ide.messages.Icons;
 
   private class ResultState extends EvaluationTree.EvaluationState {
     @NotNull
-    private final IValueProxy myValueProxy;
+    private final JavaValue myValue;
     @NotNull
     private final String myClassFqName;
     private final ThreadReference myThreadReference;
     private final String myPresentation;
     private CalculatedWatchable myCachedWatchable;
 
-    public ResultState(String presentation, IValueProxy proxy, @NotNull String classFqName, ThreadReference threadReference) {
+    public ResultState(String presentation, JavaValue value, @NotNull String classFqName, ThreadReference threadReference) {
       myPresentation = presentation;
-      myValueProxy = proxy;
+      myValue = value;
       myClassFqName = classFqName;
       myThreadReference = threadReference;
     }
@@ -211,7 +211,7 @@ import jetbrains.mps.ide.messages.Icons;
     public void rebuild(MPSTreeNode rootTreeNode, IEvaluationContainer model) {
       final boolean canEvalaute = myDebugSession.getEvaluationProvider().canEvaluate();
       if (canEvalaute) {
-        myCachedWatchable = new CalculatedWatchable(myPresentation, myValueProxy.getJDIValue(), myClassFqName, myThreadReference);
+        myCachedWatchable = new CalculatedWatchable(myPresentation, myValue, myClassFqName, myThreadReference);
       }
       if (myCachedWatchable != null) {
         WatchableNode watchableNode = new EvaluationTree.ResultState.MyWatchableNode(model, myCachedWatchable) {

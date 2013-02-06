@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel" file="AbstractEvaluationModel.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -14,7 +13,8 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.Evaluator" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.JavaUiState" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationGeneratorUtil" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.GeneratorUtil" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.Properties" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.TransformingGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationAuxModule" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationContext" />

@@ -10,9 +10,12 @@ import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 import org.jetbrains.annotations.NotNull;
 import java.awt.BorderLayout;
+import com.sun.jdi.ThreadReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
+import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 import jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException;
 import jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException;
@@ -20,7 +23,6 @@ import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
 
 public abstract class EvaluationUi extends JPanel {
@@ -58,13 +60,16 @@ public abstract class EvaluationUi extends JPanel {
     try {
       final Class clazz = model.generateClass();
       setEvaluating(model);
+      final ThreadReference thread = check_4q63yg_a0c0b0m(myDebugSession.getUiState().getThread());
       myDebugSession.getEventsProcessor().scheduleEvaluation(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           try {
             Evaluator evaluator = model.createEvaluatorInstance(clazz);
             IValueProxy evaluatedValue = evaluator.evaluate();
             if (evaluatedValue != null) {
-              setSuccess(evaluatedValue, model);
+              JavaValue value = ValueUtil.getInstance().fromJDI(evaluatedValue.getJDIValue(), thread);
+              value.initSubvalues();
+              setSuccess(value, model);
             } else {
               setFailure(null, "Evaluation returned null.", model);
             }
@@ -75,7 +80,7 @@ public abstract class EvaluationUi extends JPanel {
             LOG.error(t);
           }
         }
-      }, check_4q63yg_b0a2a1a21(myDebugSession.getUiState().getThread()));
+      }, thread);
     } catch (InvalidEvaluatedExpressionException e) {
       setFailure(e.getCause(), null, model);
     } catch (InvocationTargetEvaluationException e) {
@@ -89,10 +94,10 @@ public abstract class EvaluationUi extends JPanel {
     }
   }
 
-  private void setSuccess(@NotNull final IValueProxy evaluatedValue, final IEvaluationContainer model) {
+  private void setSuccess(@NotNull final JavaValue evaluatedValue, final IEvaluationContainer model) {
     invokeLaterIfNeeded(new Runnable() {
       public void run() {
-        myTree.setResultProxy(evaluatedValue, model);
+        myTree.setResultValue(evaluatedValue, model);
         myTree.rebuildEvaluationTreeNowIfNotDisposed();
       }
     });
@@ -185,7 +190,7 @@ public abstract class EvaluationUi extends JPanel {
     }
   }
 
-  private static ThreadReference check_4q63yg_b0a2a1a21(JavaThread checkedDotOperand) {
+  private static ThreadReference check_4q63yg_a0c0b0m(JavaThread checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getThread();
     }

@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debugger.java.api.state.JavaUiState;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EditWatchDialog;
@@ -90,7 +90,7 @@ public class EvaluationProvider implements IEvaluationProvider {
     myDebugSession.getEventsProcessor().scheduleEvaluation(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         if (state.isPausedOnBreakpoint()) {
-          final IEvaluationContainer model = createEvaluationContainer(AbstractEvaluationModel.IS_DEVELOPER_MODE, selectedNodes);
+          final IEvaluationContainer model = createEvaluationContainer(Properties.IS_DEVELOPER_MODE, selectedNodes);
           if (model == null) {
             return;
           }

@@ -26,7 +26,7 @@ public class EvaluationDialog extends AbstractEvaluationDialog {
       }
     }, new DialogWrapper.DialogWrapperAction("Watch") {
       protected void doAction(ActionEvent p0) {
-        myProvider.addWatch(myEvaluationPanel.getEvaluationModel());
+        myProvider.addWatch(myEvaluationPanel.getEvaluationContainer());
         doOKAction();
       }
     }, new DialogWrapper.DialogWrapperAction("Close") {

@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.Highlighter;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
@@ -35,7 +36,7 @@ public class EvaluationPanel extends EvaluationUi {
     myHighlighter = project.getComponent(Highlighter.class);
 
     myEvaluationModel = evaluationModel;
-    if (isDeveloperMode()) {
+    if (Properties.IS_DEVELOPER_MODE) {
       myEvaluationModel.addGenerationListener(new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode result) {
           EvaluationPanel.this.updateGenerationResultTab(result);
@@ -62,7 +63,7 @@ public class EvaluationPanel extends EvaluationUi {
     splitPane.setTopComponent(myEditor.getComponenet());
     splitPane.setBottomComponent(new JBScrollPane(myTree));
 
-    if (isDeveloperMode()) {
+    if (Properties.IS_DEVELOPER_MODE) {
       myTabbedPane.addTab("Main", splitPane);
       add(myTabbedPane);
     } else {
@@ -78,7 +79,7 @@ public class EvaluationPanel extends EvaluationUi {
     myHighlighter.addAdditionalEditor(myEditor.getEditor());
   }
 
-  public IEvaluationContainer getEvaluationModel() {
+  public IEvaluationContainer getEvaluationContainer() {
     return myEvaluationModel;
   }
 
@@ -97,13 +98,13 @@ public class EvaluationPanel extends EvaluationUi {
     evaluate(myEvaluationModel);
   }
 
-  public void updateGenerationResultTab(final SNode generatedResult) {
+  private void updateGenerationResultTab(final SNode generatedResult) {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         if (EvaluationPanel.this.myResultEditor == null) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              EvaluationPanel.this.myResultEditor = new EmbeddableEditor(myEvaluationModel.getContext(), (EditableSModelDescriptor) myEvaluationModel.getNode().getModel(), generatedResult, false);
+              EvaluationPanel.this.myResultEditor = new EmbeddableEditor(myEvaluationModel.getContext(), (EditableSModelDescriptor) myEvaluationModel.getNode().getModel().getModelDescriptor(), generatedResult, false);
             }
           });
           EvaluationPanel.this.myTabbedPane.add("Generated Result", EvaluationPanel.this.myResultEditor.getComponenet());
@@ -121,9 +122,5 @@ public class EvaluationPanel extends EvaluationUi {
 
   protected void update() {
     myEvaluationModel.updateState();
-  }
-
-  private boolean isDeveloperMode() {
-    return Boolean.getBoolean("evaluation.developer");
   }
 }

@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import jetbrains.mps.debugger.java.api.state.JavaUiState;
 import java.util.List;
@@ -17,24 +18,24 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.ProjectModels;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
-import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -49,6 +50,7 @@ public class EvaluationContainer implements IEvaluationContainer {
   private volatile SModelReference myContainerModel;
   private volatile SNodeReference myNode;
   private final MPSModuleRepository myDebuggerRepository = MPSModuleRepository.getInstance();
+  private volatile IOperationContext myContext;
 
   private final DebugSession myDebugSession;
   private volatile JavaUiState myUiState;
@@ -64,8 +66,10 @@ public class EvaluationContainer implements IEvaluationContainer {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         BaseSModelDescriptor descriptor = ProjectModels.createDescriptorFor(true);
-        SModelRepository.getInstance().registerModelDescriptor(descriptor, myContainerModule.resolve(myDebuggerRepository));
+        SModule containerModule = myContainerModule.resolve(myDebuggerRepository);
+        SModelRepository.getInstance().registerModelDescriptor(descriptor, containerModule);
         myContainerModel = descriptor.getModelReference();
+        myContext = new ModuleContext(containerModule, ProjectHelper.toMPSProject(myProject));
       }
     });
     ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -82,7 +86,7 @@ public class EvaluationContainer implements IEvaluationContainer {
 
 
   public Class generateClass() throws EvaluationException {
-    return EvaluationGeneratorUtil.generateAndLoadEvaluatorClass(myProject, SModelRepository.getInstance().getModelDescriptor(myContainerModel), AbstractEvaluationModel.EVALUATOR_NAME, getContext(), Boolean.getBoolean("evaluation.developer"), new TransformingGenerationHandler(false, true, myGenerationListeners), ((ClassLoadingModule) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cf8c9de5-1b4a-4dc8-8e6d-847159af31dd"))).getClassLoader());
+    return GeneratorUtil.generateAndLoadEvaluatorClass(myProject, SModelRepository.getInstance().getModelDescriptor(myContainerModel), Properties.EVALUATOR_NAME, getContext(), Properties.IS_DEVELOPER_MODE, new TransformingGenerationHandler(false, true, myGenerationListeners), ((ClassLoadingModule) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cf8c9de5-1b4a-4dc8-8e6d-847159af31dd"))).getClassLoader());
   }
 
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
@@ -90,7 +94,7 @@ public class EvaluationContainer implements IEvaluationContainer {
   }
 
   public Evaluator createEvaluatorInstance(Class clazz) throws EvaluationException {
-    return EvaluationGeneratorUtil.createInstance(clazz, new Class[]{JavaUiState.class}, new Object[]{myUiState});
+    return GeneratorUtil.createInstance(clazz, new Class[]{JavaUiState.class}, new Object[]{myUiState});
   }
 
 
@@ -108,11 +112,15 @@ public class EvaluationContainer implements IEvaluationContainer {
 
 
   public String getPresentation() {
-    return PresentationUtil.getPresentation(SLinkOperations.getTarget(SNodeOperations.cast(getNode(), "jetbrains.mps.debugger.java.evaluation.structure.Evaluator"), "code", true));
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
+      public String compute() {
+        return PresentationUtil.getPresentation(SLinkOperations.getTarget(SNodeOperations.cast(getNode(), "jetbrains.mps.debugger.java.evaluation.structure.Evaluator"), "code", true));
+      }
+    });
   }
 
   public IOperationContext getContext() {
-    return new ModuleContext(myContainerModule.resolve(myDebuggerRepository), ProjectHelper.toMPSProject(myProject));
+    return myContext;
   }
 
   public SNode getNode() {
@@ -145,13 +153,13 @@ public class EvaluationContainer implements IEvaluationContainer {
       }
     }, new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode variable) {
-        return createInternalVariableReference_jbng3m_a0a3a8a52(variable.getName());
+        return createInternalVariableReference_jbng3m_a0a3a8a62(variable.getName());
       }
     });
 
+    SModelOperations.validateLanguagesAndImports(containerModel.getSModel(), true, true);
     containerModel.getSModel().addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
     containerModel.getSModel().addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
-    SModelOperations.validateLanguagesAndImports(containerModel.getSModel(), true, true);
   }
 
   protected SNode createEvaluatorNode() {
@@ -160,7 +168,7 @@ public class EvaluationContainer implements IEvaluationContainer {
     return evaluator;
   }
 
-  private static SNode createInternalVariableReference_jbng3m_a0a3a8a52(Object p0) {
+  private static SNode createInternalVariableReference_jbng3m_a0a3a8a62(Object p0) {
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null, GlobalScope.getInstance(), false);
     {
       n1.setProperty("name", (String) p0);

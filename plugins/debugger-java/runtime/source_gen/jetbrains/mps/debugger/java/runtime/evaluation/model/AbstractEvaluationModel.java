@@ -24,15 +24,14 @@ import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
-import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationGeneratorUtil;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.GeneratorUtil;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.TransformingGenerationHandler;
 import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public abstract class AbstractEvaluationModel implements IEvaluationContainer {
-  public static final String EVALUATOR_NAME = "EvaluatorInstance";
-  public static final boolean IS_DEVELOPER_MODE = Boolean.getBoolean("evaluation.developer");
   protected JavaUiState myUiState;
   protected final DebugSession myDebugSession;
   protected final IOperationContext myContext;
@@ -89,11 +88,11 @@ public abstract class AbstractEvaluationModel implements IEvaluationContainer {
 
   @Nullable
   public Class generateClass() throws EvaluationException {
-    return EvaluationGeneratorUtil.generateAndLoadEvaluatorClass(myAuxModule.getMPSProject().getProject(), myAuxModel, EVALUATOR_NAME, myContext, IS_DEVELOPER_MODE, new TransformingGenerationHandler(false, true, myGenerationListeners), myUiState.getClass().getClassLoader());
+    return GeneratorUtil.generateAndLoadEvaluatorClass(myAuxModule.getMPSProject().getProject(), myAuxModel, Properties.EVALUATOR_NAME, myContext, Properties.IS_DEVELOPER_MODE, new TransformingGenerationHandler(false, true, myGenerationListeners), myUiState.getClass().getClassLoader());
   }
 
   public Evaluator createEvaluatorInstance(Class clazz) throws EvaluationException {
-    return EvaluationGeneratorUtil.createInstance(clazz, new Class[]{JavaUiState.class}, new Object[]{myUiState});
+    return GeneratorUtil.createInstance(clazz, new Class[]{JavaUiState.class}, new Object[]{myUiState});
   }
 
   public String getPresentation() {
