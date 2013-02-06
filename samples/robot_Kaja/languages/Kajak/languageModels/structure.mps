@@ -177,6 +177,18 @@
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="trace" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3265739055509559114" resolveInfo="AbstractCommand" />
     </node>
+    <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="7060824959893064709">
+      <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="LookingDirection" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Logical" />
+      <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7060824959893078082">
+      <property name="name" nameId="tpck.1169194664001" value="Looking" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Logical" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="looking" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3308300503039647681" resolveInfo="LogicalExpression" />
+    </node>
   </roots>
   <root id="3265739055509559110">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3265739055509559116">
@@ -339,6 +351,30 @@
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3210697320273763055">
       <property name="name" nameId="tpck.1169194664001" value="message" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+  </root>
+  <root id="7060824959893064709">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893064772">
+      <property name="internalValue" nameId="tpce.1083923523171" value="0" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="north" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893078070">
+      <property name="internalValue" nameId="tpce.1083923523171" value="1" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="east" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893078073">
+      <property name="internalValue" nameId="tpce.1083923523171" value="2" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="south" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893078077">
+      <property name="internalValue" nameId="tpce.1083923523171" value="3" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="west" />
+    </node>
+  </root>
+  <root id="7060824959893078082">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7060824959893078083">
+      <property name="name" nameId="tpck.1169194664001" value="direction" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="7060824959893064709" resolveInfo="LookingDirection" />
     </node>
   </root>
 </model>

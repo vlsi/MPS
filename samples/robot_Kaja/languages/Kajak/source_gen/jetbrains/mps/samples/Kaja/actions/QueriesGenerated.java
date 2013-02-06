@@ -106,7 +106,7 @@ public class QueriesGenerated {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression");
       Computable computable = new Computable() {
         public Object compute() {
-          return ListSequence.fromListAndArray(new ArrayList<String>(), "heading", "mark", "full", "wall");
+          return ListSequence.fromListAndArray(new ArrayList<String>(), "heading", "mark", "full", "wall", "looking");
         }
       };
       Iterable<String> parameterObjects = (Iterable<String>) computable.compute();
@@ -123,6 +123,8 @@ public class QueriesGenerated {
               expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.IsFull", null);
             } else if ((item).equals("wall")) {
               expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.IsWall", null);
+            } else if ((item).equals("looking")) {
+              expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.Looking", null);
             } else {
               throw new IllegalArgumentException("Cannot find a match for " + (item));
             }

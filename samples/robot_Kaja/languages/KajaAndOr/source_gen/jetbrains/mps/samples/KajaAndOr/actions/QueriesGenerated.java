@@ -197,4 +197,45 @@ public class QueriesGenerated {
     }
     return result;
   }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Looking_7060824959894576633(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression");
+      Computable computable = new Computable() {
+        public Object compute() {
+          return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel(), operationContext.getScope())).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return !(SPropertyOperations.getBoolean(it, "abstract"));
+            }
+          }).toListSequence();
+        }
+      };
+      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
+      assert parameterObjects != null;
+      for (final SNode item : parameterObjects) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
+          public SNode doSubstitute(String pattern) {
+            SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
+            SLinkOperations.setTarget(newInitializedInstance, "left", SNodeOperations.copyNode(_context.getSourceNode()), true);
+            SNodeOperations.replaceWithAnother(_context.getSourceNode(), newInitializedInstance);
+            return SLinkOperations.getTarget(newInitializedInstance, "right", true);
+          }
+
+          public String getMatchingText(String pattern) {
+            return SPropertyOperations.getString((item), "conceptAlias");
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+
+          public String getDescriptionText(String pattern) {
+            return SPropertyOperations.getString((item), "name");
+          }
+        });
+      }
+    }
+    return result;
+  }
 }

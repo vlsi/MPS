@@ -10,6 +10,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -101,6 +102,21 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_3308300503039907032(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_7060824959893643239(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    switch (SPropertyOperations.getInteger_def(_context.getNode(), "direction", null)) {
+      case 0:
+        return SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.North", null);
+      case 1:
+        return SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.East", null);
+      case 2:
+        return SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.South", null);
+      case 3:
+        return SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.West", null);
+      default:
+        throw new IllegalStateException("Incomprehensible direction " + SPropertyOperations.getInteger_def(_context.getNode(), "direction", null));
+    }
   }
 
   public static Iterable sourceNodesQuery_3308300503039580700(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

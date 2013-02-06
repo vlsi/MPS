@@ -12,9 +12,9 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 19:
+      case 20:
         return new Script_BehaviorDescriptor();
-      case 21:
+      case 22:
         return new Step_BehaviorDescriptor();
       case 10:
         return new LeftTurn_BehaviorDescriptor();
@@ -22,25 +22,25 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new IfStatement_BehaviorDescriptor();
       case 9:
         return new IsWall_BehaviorDescriptor();
-      case 13:
+      case 14:
         return new Not_BehaviorDescriptor();
-      case 15:
+      case 16:
         return new Repeat_BehaviorDescriptor();
-      case 24:
+      case 25:
         return new While_BehaviorDescriptor();
-      case 12:
+      case 13:
         return new North_BehaviorDescriptor();
       case 3:
         return new East_BehaviorDescriptor();
-      case 20:
+      case 21:
         return new South_BehaviorDescriptor();
-      case 23:
+      case 24:
         return new West_BehaviorDescriptor();
       case 5:
         return new Heading_BehaviorDescriptor();
-      case 18:
+      case 19:
         return new RoutineDefinition_BehaviorDescriptor();
-      case 17:
+      case 18:
         return new RoutineCall_BehaviorDescriptor();
       case 4:
         return new EmptyLine_BehaviorDescriptor();
@@ -48,7 +48,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new CommandList_BehaviorDescriptor();
       case 2:
         return new Drop_BehaviorDescriptor();
-      case 14:
+      case 15:
         return new Pick_BehaviorDescriptor();
       case 8:
         return new IsMark_BehaviorDescriptor();
@@ -58,14 +58,16 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new IsFull_BehaviorDescriptor();
       case 11:
         return new Library_BehaviorDescriptor();
-      case 16:
+      case 17:
         return new Require_BehaviorDescriptor();
-      case 22:
+      case 23:
         return new TraceMessage_BehaviorDescriptor();
+      case 12:
+        return new Looking_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.Kaja.structure.CommandList", "jetbrains.mps.samples.Kaja.structure.CommentLine", "jetbrains.mps.samples.Kaja.structure.Drop", "jetbrains.mps.samples.Kaja.structure.East", "jetbrains.mps.samples.Kaja.structure.EmptyLine", "jetbrains.mps.samples.Kaja.structure.Heading", "jetbrains.mps.samples.Kaja.structure.IfStatement", "jetbrains.mps.samples.Kaja.structure.IsFull", "jetbrains.mps.samples.Kaja.structure.IsMark", "jetbrains.mps.samples.Kaja.structure.IsWall", "jetbrains.mps.samples.Kaja.structure.LeftTurn", "jetbrains.mps.samples.Kaja.structure.Library", "jetbrains.mps.samples.Kaja.structure.North", "jetbrains.mps.samples.Kaja.structure.Not", "jetbrains.mps.samples.Kaja.structure.Pick", "jetbrains.mps.samples.Kaja.structure.Repeat", "jetbrains.mps.samples.Kaja.structure.Require", "jetbrains.mps.samples.Kaja.structure.RoutineCall", "jetbrains.mps.samples.Kaja.structure.RoutineDefinition", "jetbrains.mps.samples.Kaja.structure.Script", "jetbrains.mps.samples.Kaja.structure.South", "jetbrains.mps.samples.Kaja.structure.Step", "jetbrains.mps.samples.Kaja.structure.TraceMessage", "jetbrains.mps.samples.Kaja.structure.West", "jetbrains.mps.samples.Kaja.structure.While"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.Kaja.structure.CommandList", "jetbrains.mps.samples.Kaja.structure.CommentLine", "jetbrains.mps.samples.Kaja.structure.Drop", "jetbrains.mps.samples.Kaja.structure.East", "jetbrains.mps.samples.Kaja.structure.EmptyLine", "jetbrains.mps.samples.Kaja.structure.Heading", "jetbrains.mps.samples.Kaja.structure.IfStatement", "jetbrains.mps.samples.Kaja.structure.IsFull", "jetbrains.mps.samples.Kaja.structure.IsMark", "jetbrains.mps.samples.Kaja.structure.IsWall", "jetbrains.mps.samples.Kaja.structure.LeftTurn", "jetbrains.mps.samples.Kaja.structure.Library", "jetbrains.mps.samples.Kaja.structure.Looking", "jetbrains.mps.samples.Kaja.structure.North", "jetbrains.mps.samples.Kaja.structure.Not", "jetbrains.mps.samples.Kaja.structure.Pick", "jetbrains.mps.samples.Kaja.structure.Repeat", "jetbrains.mps.samples.Kaja.structure.Require", "jetbrains.mps.samples.Kaja.structure.RoutineCall", "jetbrains.mps.samples.Kaja.structure.RoutineDefinition", "jetbrains.mps.samples.Kaja.structure.Script", "jetbrains.mps.samples.Kaja.structure.South", "jetbrains.mps.samples.Kaja.structure.Step", "jetbrains.mps.samples.Kaja.structure.TraceMessage", "jetbrains.mps.samples.Kaja.structure.West", "jetbrains.mps.samples.Kaja.structure.While"};
 }

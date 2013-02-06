@@ -4,11 +4,13 @@
   <unitInfo fileName="QueriesGenerated.java" startLine="123" startPosition="34" endLine="127" endPosition="7" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$5" />
   <unitInfo fileName="QueriesGenerated.java" startLine="41" startPosition="36" endLine="49" endPosition="9" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$1" />
   <unitInfo fileName="QueriesGenerated.java" startLine="164" startPosition="34" endLine="172" endPosition="7" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$7" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="205" startPosition="34" endLine="213" endPosition="7" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$9" />
   <unitInfo fileName="QueriesGenerated.java" startLine="53" startPosition="57" endLine="72" endPosition="13" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$2" />
   <unitInfo fileName="QueriesGenerated.java" startLine="176" startPosition="53" endLine="195" endPosition="9" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$8" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="217" startPosition="53" endLine="236" endPosition="9" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$10" />
   <unitInfo fileName="QueriesGenerated.java" startLine="92" startPosition="53" endLine="113" endPosition="9" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$4" />
   <unitInfo fileName="QueriesGenerated.java" startLine="131" startPosition="53" endLine="154" endPosition="9" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$6" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="26" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="26" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated" />
   <root nodeRef="r:7300eb0d-e71e-4ce8-9bcb-0e6de0a42f4e(jetbrains.mps.samples.KajaAndOr.actions)/1904811872814253598">
     <nodeInfo nodeId="1904811872814253610" fileName="QueriesGenerated.java" startLine="85" startPosition="33" endLine="86" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1904811872814253655" fileName="QueriesGenerated.java" startLine="93" startPosition="53" endLine="94" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -36,10 +38,19 @@
     <nodeInfo nodeId="642541832612583694" fileName="QueriesGenerated.java" startLine="180" startPosition="97" endLine="181" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="642541832611943651" fileName="QueriesGenerated.java" startLine="184" startPosition="57" endLine="185" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="642541832612559960" fileName="QueriesGenerated.java" startLine="192" startPosition="60" endLine="193" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7060824959894576677" fileName="QueriesGenerated.java" startLine="208" startPosition="45" endLine="209" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7060824959894576639" fileName="QueriesGenerated.java" startLine="218" startPosition="53" endLine="219" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7060824959894576645" fileName="QueriesGenerated.java" startLine="219" startPosition="115" endLine="220" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7060824959894576653" fileName="QueriesGenerated.java" startLine="220" startPosition="128" endLine="221" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7060824959894576658" fileName="QueriesGenerated.java" startLine="221" startPosition="97" endLine="222" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7060824959894576664" fileName="QueriesGenerated.java" startLine="225" startPosition="57" endLine="226" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7060824959894576691" fileName="QueriesGenerated.java" startLine="233" startPosition="60" endLine="234" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3210697320273834955" fileName="QueriesGenerated.java" startLine="99" startPosition="18" endLine="101" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="642541832612112346" fileName="QueriesGenerated.java" startLine="167" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7060824959894576675" fileName="QueriesGenerated.java" startLine="208" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="1904811872814296434" fileName="QueriesGenerated.java" startLine="138" startPosition="18" endLine="142" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="642541832612072302" fileName="QueriesGenerated.java" startLine="165" startPosition="33" endLine="170" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7060824959894576670" fileName="QueriesGenerated.java" startLine="206" startPosition="33" endLine="211" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1904811872814253660" fileName="QueriesGenerated.java" startLine="94" startPosition="29" endLine="101" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1904811872814296422" fileName="QueriesGenerated.java" startLine="133" startPosition="29" endLine="142" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1904811872814253606" fileName="QueriesGenerated.java" startLine="85" startPosition="33" endLine="86" endPosition="85" />
@@ -52,6 +63,9 @@
     <scopeInfo nodeId="642541832612112347" fileName="QueriesGenerated.java" startLine="167" startPosition="45" endLine="168" endPosition="71" />
     <scopeInfo nodeId="642541832611943650" fileName="QueriesGenerated.java" startLine="184" startPosition="57" endLine="185" endPosition="73" />
     <scopeInfo nodeId="642541832612559739" fileName="QueriesGenerated.java" startLine="192" startPosition="60" endLine="193" endPosition="65" />
+    <scopeInfo nodeId="7060824959894576676" fileName="QueriesGenerated.java" startLine="208" startPosition="45" endLine="209" endPosition="71" />
+    <scopeInfo nodeId="7060824959894576663" fileName="QueriesGenerated.java" startLine="225" startPosition="57" endLine="226" endPosition="73" />
+    <scopeInfo nodeId="7060824959894576690" fileName="QueriesGenerated.java" startLine="233" startPosition="60" endLine="234" endPosition="65" />
     <scopeInfo nodeId="1904811872814296423" fileName="QueriesGenerated.java" startLine="134" startPosition="39" endLine="137" endPosition="35">
       <varInfo nodeId="642541832606714994" varName="andNode" />
     </scopeInfo>
@@ -61,10 +75,17 @@
     <scopeInfo nodeId="642541832612112346" fileName="QueriesGenerated.java" startLine="167" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="642541832612112346" varName="it" />
     </scopeInfo>
+    <scopeInfo nodeId="7060824959894576675" fileName="QueriesGenerated.java" startLine="208" startPosition="0" endLine="211" endPosition="0">
+      <varInfo nodeId="7060824959894576675" varName="it" />
+    </scopeInfo>
     <scopeInfo nodeId="642541832611943597" fileName="QueriesGenerated.java" startLine="177" startPosition="53" endLine="181" endPosition="84">
       <varInfo nodeId="642541832612589491" varName="newInitializedInstance" />
     </scopeInfo>
+    <scopeInfo nodeId="7060824959894576638" fileName="QueriesGenerated.java" startLine="218" startPosition="53" endLine="222" endPosition="84">
+      <varInfo nodeId="7060824959894576640" varName="newInitializedInstance" />
+    </scopeInfo>
     <scopeInfo nodeId="642541832612205956" fileName="QueriesGenerated.java" startLine="165" startPosition="33" endLine="170" endPosition="30" />
+    <scopeInfo nodeId="7060824959894576669" fileName="QueriesGenerated.java" startLine="206" startPosition="33" endLine="211" endPosition="30" />
     <scopeInfo nodeId="1904811872814253608" fileName="QueriesGenerated.java" startLine="93" startPosition="53" endLine="103" endPosition="71">
       <varInfo nodeId="1904811872814253656" varName="conjuction" />
     </scopeInfo>
@@ -72,6 +93,7 @@
       <varInfo nodeId="1904811872814296420" varName="conjuction" />
     </scopeInfo>
     <unitInfo nodeId="642541832612112346" fileName="QueriesGenerated.java" startLine="166" startPosition="241" endLine="170" endPosition="11" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$8" />
+    <unitInfo nodeId="7060824959894576675" fileName="QueriesGenerated.java" startLine="207" startPosition="241" endLine="211" endPosition="11" unitName="jetbrains.mps.samples.KajaAndOr.actions.QueriesGenerated$10" />
   </root>
   <root nodeRef="r:7300eb0d-e71e-4ce8-9bcb-0e6de0a42f4e(jetbrains.mps.samples.KajaAndOr.actions)/1904811872814312764">
     <nodeInfo nodeId="642541832611218926" fileName="QueriesGenerated.java" startLine="44" startPosition="47" endLine="45" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

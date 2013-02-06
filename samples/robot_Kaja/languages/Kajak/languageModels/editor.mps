@@ -118,6 +118,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="c2kz.3210697320273763054" resolveInfo="TraceMessage" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7060824959893078090">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Logical" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="c2kz.7060824959893078082" resolveInfo="Looking" />
+    </node>
   </roots>
   <root id="3265739055509559117">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3265739055509559119">
@@ -924,6 +928,23 @@
         <property name="text" nameId="tpc2.1073389577007" value="&lt;-" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="3210697320273763061" />
+    </node>
+  </root>
+  <root id="7060824959893078090">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7060824959893079739">
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7060824959893079742" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="7060824959893079749">
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="AliasEditorComponent" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="7060824959893079803">
+          <property name="tag" nameId="tpc2.1214320119174" value="ext_2_RTransform" />
+        </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="7060824959893079858">
+          <property name="flag" nameId="tpc2.1186414551515" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7060824959893079754">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="c2kz.7060824959893078083" resolveInfo="direction" />
+      </node>
     </node>
   </root>
 </model>
