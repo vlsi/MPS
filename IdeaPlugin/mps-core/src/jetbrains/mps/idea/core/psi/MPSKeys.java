@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,21 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.projectView;
+package jetbrains.mps.idea.core.psi;
 
-import com.intellij.openapi.actionSystem.DataKey;
-import jetbrains.mps.vfs.IFile;
+import com.intellij.openapi.util.Key;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.Set;
+/**
+ * Created with IntelliJ IDEA.
+ * User: fyodor
+ * Date: 2/5/13
+ * Time: 3:36 PM
+ * To change this template use File | Settings | File Templates.
+ */
+public class MPSKeys {
+  public static final Key<SModelReference> MODEL_REFERENCE = Key.create("mps.model.reference");
+  public static final Key<SNodeReference> NODE_REFERENCE = Key.create("mps.node.reference");
 
-public class MPSDataKeys {
-    public static final DataKey<Set<IFile>> MODEL_FILES = DataKey.create("mps.model.files");
 }

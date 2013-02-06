@@ -115,6 +115,9 @@
     <compileServer.plugin classpath="jps/mps-jps-plugin.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-openapi.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar"/>
     <library.type implementation="jetbrains.mps.idea.core.library.ModuleLibraryType"/>
     <projectConfigurable instance="jetbrains.mps.idea.core.codeStyle.MpsCodeStyleSettingsConfigurable" order="after colors"/>
+    <lang.fileViewProviderFactory language="MPS"
+                                  implementationClass="jetbrains.mps.idea.core.psi.MPSFileViewProviderFactory"/>
+    <navbar implementation="jetbrains.mps.idea.core.psi.MPSNavBarExtension" id="MPSNavbar"/>
   </extensions>
 
   <actions>
