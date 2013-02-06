@@ -108,6 +108,8 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.typeof_LinkPatternVariableReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.typeof_MatchStatement_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.typeof_MultipleForeachLoopVariable_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.typeof_Node_InferTypeOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.typeof_Node_TypeOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.typeof_NormalTypeClause_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.typeof_OperationContextExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.typesystem.typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule" />
@@ -731,6 +733,28 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.typesystem.typeof_Node_InferTypeOperation_InferenceRule" file="typeof_Node_InferTypeOperation_InferenceRule.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.typesystem.typeof_Node_TypeOperation_InferenceRule" file="typeof_Node_TypeOperation_InferenceRule.java">
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

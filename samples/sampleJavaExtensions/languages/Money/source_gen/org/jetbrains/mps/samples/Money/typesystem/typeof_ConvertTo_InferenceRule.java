@@ -7,7 +7,9 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class typeof_ConvertTo_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ConvertTo_InferenceRule() {
@@ -15,6 +17,11 @@ public class typeof_ConvertTo_InferenceRule extends AbstractInferenceRule_Runtim
 
   public void applyRule(final SNode conversion, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // <node> 
+    {
+      SNode _nodeToCheck_1029348928467 = conversion;
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)", "654553635094918384", 0, null);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)", "654553635094917777", true), (SNode) _quotation_createNode_6ibh7v_a0b0b(), _info_12389875345);
+    }
   }
 
   public String getApplicableConceptFQName() {
@@ -30,5 +37,11 @@ public class typeof_ConvertTo_InferenceRule extends AbstractInferenceRule_Runtim
 
   public boolean overrides() {
     return false;
+  }
+
+  private static SNode _quotation_createNode_6ibh7v_a0b0b() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("org.jetbrains.mps.samples.Money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }
