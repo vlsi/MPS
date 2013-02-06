@@ -1,42 +1,42 @@
 <products>
-    <product name="MPS">
-        <code>MPS</code>
+  <product name="MPS">
+    <code>MPS</code>
 
-        <channel id="MPS20EAP" name="MPS 2" status="eap"
-                 url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
-                 feedback="http://youtrack.jetbrains.net"
-                 majorVersion="2">
-          <build number="MPS-117.9406" version="MPS 2.5.3">
-            <message>JetBrains MPS 2.5.3 is available.</message>
-          </build>
-        </channel>
+    <channel id="MPS20EAP" name="MPS 2" status="eap"
+             url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
+             feedback="http://youtrack.jetbrains.net"
+             majorVersion="2">
+      <build number="117.9406" version="2.5.3">
+        <message>JetBrains MPS 2.5.3 is available.</message>
+      </build>
+    </channel>
 
-      <channel id="MPS20" name="MPS 2" status="release"
-               url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
-               feedback="http://youtrack.jetbrains.net"
-               majorVersion="2">
-        <build number="MPS-117.9406" version="MPS 2.5.3">
-          <message>JetBrains MPS 2.5.3 is available.</message>
-        </build>
-      </channel>
+    <channel id="MPS20" name="MPS 2" status="release"
+             url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
+             feedback="http://youtrack.jetbrains.net"
+             majorVersion="2">
+      <build number="117.9406" version="2.5.3">
+        <message>JetBrains MPS 2.5.3 is available.</message>
+      </build>
+    </channel>
 
-      <channel id="MPS25EAP" name="MPS 2.5" status="eap"
-               url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
-               feedback="http://youtrack.jetbrains.net"
-               majorVersion="2" minorVersoin="5">
-        <build number="MPS-117.9406" version="MPS 2.5.3">
-          <message>JetBrains MPS 2.5.3 is available.</message>
-        </build>
-      </channel>
+    <channel id="MPS25EAP" name="MPS 2.5" status="eap"
+             url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
+             feedback="http://youtrack.jetbrains.net"
+             majorVersion="2" minorVersoin="5">
+      <build number="117.9406" version="2.5.3">
+        <message>JetBrains MPS 2.5.3 is available.</message>
+      </build>
+    </channel>
 
-      <channel id="MPS25" name="MPS 2.5" status="release"
-               url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
-               feedback="http://youtrack.jetbrains.net"
-               majorVersion="2" minorVersoin="5">
-        <build number="MPS-117.9406" version="MPS 2.5.3">
-          <message>JetBrains MPS 2.5.3 is available.</message>
-        </build>
-      </channel>
+    <channel id="MPS25" name="MPS 2.5" status="release"
+             url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
+             feedback="http://youtrack.jetbrains.net"
+             majorVersion="2" minorVersoin="5">
+      <build number="117.9406" version="2.5.3">
+        <message>JetBrains MPS 2.5.3 is available.</message>
+      </build>
+    </channel>
 
-    </product>
+  </product>
 </products>
