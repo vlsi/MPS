@@ -5,7 +5,7 @@ package jetbrains.mps.debugger.java.runtime.ui.evaluation;
 import javax.swing.JPanel;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.DataKey;
-import jetbrains.mps.debugger.java.runtime.evaluation.structure.IEvaluationContainer;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 import org.jetbrains.annotations.NotNull;

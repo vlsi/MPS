@@ -27,7 +27,7 @@
   <import index="d822" modelUID="r:63e7a653-1334-49d4-8e81-fd72b84fb4ff(jetbrains.mps.debugger.java.runtime.state)" version="-1" />
   <import index="f5hh" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" version="-1" />
   <import index="jehi" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.icons(MPS.Platform/com.intellij.icons@java_stub)" version="-1" />
-  <import index="i1lu" modelUID="r:f5448de3-0d76-42bb-afa7-00b3b32de849(jetbrains.mps.debugger.java.runtime.evaluation.structure)" version="-1" />
+  <import index="i1lu" modelUID="r:f5448de3-0d76-42bb-afa7-00b3b32de849(jetbrains.mps.debugger.java.runtime.evaluation.container)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
@@ -40,34 +40,34 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="watches" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8643693251546861633">
-      <property name="description" nameId="tp4k.1213273179528" value="New Watch..." />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+      <property name="description" nameId="tp4k.1213273179528" value="New Watch..." />
       <property name="name" nameId="tpck.1169194664001" value="AddWatchAction" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="New Watch..." />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="watches" />
+      <property name="caption" nameId="tp4k.1205250923097" value="New Watch..." />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8643693251546861699">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="RemoveWatchAction" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Remove Watch" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="watches" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Remove Watch" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8643693251546861757">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="EditWatchAction" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Edit Watch" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="watches" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Edit Watch" />
     </node>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="3585489156472415414">
       <property name="id" nameId="tp4k.5023285075122009366" value="just.a.mock.descriptor" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="description" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="url" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="description" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="vendor" />
-      <property name="name" nameId="tpck.1169194664001" value="name" />
       <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="mock" />
+      <property name="name" nameId="tpck.1169194664001" value="name" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="123.1" />
       <property name="version" nameId="tp4k.5023285075122009369" value="version" />
     </node>

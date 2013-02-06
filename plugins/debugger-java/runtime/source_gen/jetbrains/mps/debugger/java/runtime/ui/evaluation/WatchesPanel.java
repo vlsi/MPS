@@ -6,7 +6,7 @@ import jetbrains.mps.debugger.java.runtime.state.SessionStopDisposer;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 import jetbrains.mps.workbench.action.BaseGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
-import jetbrains.mps.debugger.java.runtime.evaluation.structure.IEvaluationContainer;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionPlaces;

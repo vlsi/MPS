@@ -6,7 +6,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 import jetbrains.mps.debugger.java.runtime.state.SessionStopDisposer;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.debugger.java.runtime.evaluation.structure.IEvaluationContainer;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import java.awt.Dimension;

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi;
-import jetbrains.mps.debugger.java.runtime.evaluation.structure.IEvaluationContainer;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;

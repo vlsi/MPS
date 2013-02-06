@@ -6,13 +6,13 @@ import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.List;
-import jetbrains.mps.debugger.java.runtime.evaluation.structure.IEvaluationContainer;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.debugger.java.runtime.evaluation.structure.EvaluationModule;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.IModule;
@@ -31,7 +31,7 @@ import javax.swing.JComponent;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel;
 import jetbrains.mps.project.ProjectOperationContext;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.debugger.java.runtime.evaluation.structure.EvaluationContainer;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer;
 
 public class EvaluationProvider implements IEvaluationProvider {
   private final DebugSession myDebugSession;

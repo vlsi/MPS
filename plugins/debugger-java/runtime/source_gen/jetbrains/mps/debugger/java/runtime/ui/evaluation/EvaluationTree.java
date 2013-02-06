@@ -6,7 +6,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.sun.jdi.ThreadReference;
 import java.util.Map;
-import jetbrains.mps.debugger.java.runtime.evaluation.structure.IEvaluationContainer;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
