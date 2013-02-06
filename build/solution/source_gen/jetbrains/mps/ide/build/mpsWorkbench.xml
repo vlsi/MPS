@@ -96,7 +96,6 @@
       <fileset dir="${mps_home}/languages/languageDesign/script/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/languageDesign/script/solutions/pluginSolution/jetbrains.mps.lang.script.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/script/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
-      <zipfileset dir="${mps_home}/languages/languageDesign/script/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.typesystem.pluginSolution.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.typesystem.pluginSolution.jar/META-INF" />
@@ -124,7 +123,6 @@
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.typesystem.pluginSolution-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution/jetbrains.mps.lang.typesystem.pluginSolution.msd" prefix="module" />
-      <zipfileset dir="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
       <zipfileset dir="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone.jar" />
@@ -214,7 +212,6 @@
       <fileset dir="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution/jetbrains.mps.uiLanguage.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
-      <zipfileset dir="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.uiLanguage.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.uiLanguage.jar/META-INF" />
@@ -279,7 +276,7 @@
       <zipfileset dir="${mps_home}/workbench/mps-workbench/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide/models" />
       <zipfileset file="${mps_home}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" prefix="modules/jetbrains.mps.ide.uiLanguage.runtime" />
       <zipfileset dir="${mps_home}/languages/util/uiLanguage/runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.uiLanguage.runtime" />
-      <zipfileset dir="${mps_home}/languages/util/uiLanguage/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.uiLanguage.runtime/" />
+      <zipfileset dir="${mps_home}/languages/util/uiLanguage/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.uiLanguage.runtime/jetbrains" />
       <zipfileset file="${mps_home}/workbench/mps-platform/source/META-INF/MPSCore.xml" prefix="META-INF" />
       <zipfileset file="${mps_home}/workbench/mps-editor/source/META-INF/MPSEditor.xml" prefix="META-INF" />
     </jar>

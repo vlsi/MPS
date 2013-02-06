@@ -139,7 +139,7 @@
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.ParallelForUtils-src.jar">
       <fileset dir="${project_home}/solutions/ParallelForUtils/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/solutions/ParallelForUtils/org.jetbrains.mps.samples.ParallelForUtils.msd" prefix="module" />
-      <zipfileset dir="${project_home}/solutions/ParallelForUtils" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
+      <zipfileset dir="${project_home}/solutions/ParallelForUtils/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/org.jetbrains.mps.samples.Money.jar" />
     <mkdir dir="${build.tmp}/default/org.jetbrains.mps.samples.Money.jar/META-INF" />

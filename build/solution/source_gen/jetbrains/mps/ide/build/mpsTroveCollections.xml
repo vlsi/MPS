@@ -106,7 +106,7 @@
     <jar destfile="${build.layout}/mps-trove/languages/collections_trove.runtime-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" prefix="module" />
-      <zipfileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
+      <zipfileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/jetbrains" />
     </jar>
     <mkdir dir="${build.layout}/mps-trove/lib" />
     <jar destfile="${build.layout}/mps-trove/lib/icons.jar">

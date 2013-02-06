@@ -165,10 +165,10 @@
       <fileset dir="${build.tmp}/java/out/debugger-api" />
       <zipfileset file="${mps_home}/plugins/debugger-api/api/jetbrains.mps.debugger.api.api.msd" prefix="modules/jetbrains.mps.debugger.api.api" />
       <zipfileset dir="${mps_home}/plugins/debugger-api/api" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.api.api" />
-      <zipfileset dir="${mps_home}/plugins/debugger-api/api" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.debugger.api.api/" />
+      <zipfileset dir="${mps_home}/plugins/debugger-api/api/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.debugger.api.api/jetbrains" />
       <zipfileset file="${mps_home}/plugins/debugger-api/runtime/jetbrains.mps.debugger.api.runtime.msd" prefix="modules/jetbrains.mps.debugger.api.runtime" />
       <zipfileset dir="${mps_home}/plugins/debugger-api/runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.api.runtime" />
-      <zipfileset dir="${mps_home}/plugins/debugger-api/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.debugger.api.runtime/" />
+      <zipfileset dir="${mps_home}/plugins/debugger-api/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.debugger.api.runtime/jetbrains" />
     </jar>
     <zip destfile="${build.layout}/mps-debugger-api/nanocProject.zip">
       <zipfileset dir="${mps_home}/plugins/debugger-api/languages/nanoc" prefix="nanocProject">
@@ -285,7 +285,7 @@
       <fileset dir="${build.tmp}/java/out/debugger-java" />
       <zipfileset file="${mps_home}/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" prefix="modules/jetbrains.mps.debugger.java.api" />
       <zipfileset dir="${mps_home}/plugins/debugger-java/api" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.java.api" />
-      <zipfileset dir="${mps_home}/plugins/debugger-java/api" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.debugger.java.api/" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java/api/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.debugger.java.api/jetbrains" />
       <zipfileset file="${mps_home}/plugins/debugger-java/runtime/jetbrains.mps.debugger.java.runtime.msd" prefix="modules/jetbrains.mps.debugger.java.runtime" />
       <zipfileset dir="${mps_home}/plugins/debugger-java/runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.java.runtime" />
       <zipfileset dir="${mps_home}/plugins/debugger-java/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.debugger.java.runtime/models" />
@@ -295,7 +295,6 @@
       <zipfileset file="${mps_home}/plugins/debugger-java-customViewers/META-INF/plugin.xml" prefix="META-INF" />
       <zipfileset file="${mps_home}/plugins/debugger-java-customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" prefix="jetbrains.mps.debugger.java.customViewers.plugin" />
       <zipfileset dir="${mps_home}/plugins/debugger-java-customViewers" includes="icons/**, resources/**" prefix="jetbrains.mps.debugger.java.customViewers.plugin" />
-      <zipfileset dir="${mps_home}/plugins/debugger-java-customViewers" includes="**/*.mps, **/*.metadata, **/*.history" prefix="jetbrains.mps.debugger.java.customViewers.plugin/" />
       <zipfileset dir="${mps_home}/plugins/debugger-java-customViewers/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="jetbrains.mps.debugger.java.customViewers.plugin/models" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>

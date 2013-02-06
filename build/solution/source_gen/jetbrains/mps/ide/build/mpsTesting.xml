@@ -126,7 +126,7 @@
     <jar destfile="${build.layout}/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime-src.jar">
       <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/jetbrains.mps.lang.test.runtime.msd" prefix="module" />
-      <zipfileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
+      <zipfileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/jetbrains" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.editorTest.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.editorTest.jar/META-INF" />

@@ -75,13 +75,13 @@
       <fileset dir="${build.tmp}/java/out/mps-tuples" />
       <zipfileset file="${mps_home}/languages/baseLanguage/tuples/runtime/jetbrains.mps.baseLanguage.tuples.runtime.msd" prefix="modules/jetbrains.mps.baseLanguage.tuples.runtime" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/tuples/runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.baseLanguage.tuples.runtime" />
-      <zipfileset dir="${mps_home}/languages/baseLanguage/tuples/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.baseLanguage.tuples.runtime/" />
+      <zipfileset dir="${mps_home}/languages/baseLanguage/tuples/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.baseLanguage.tuples.runtime/jetbrains" />
     </jar>
     <jar destfile="${build.layout}/lib/mps-closures.jar">
       <fileset dir="${build.tmp}/java/out/mps-closures" />
       <zipfileset file="${mps_home}/languages/baseLanguage/closures/runtime/closures.runtime.msd" prefix="modules/closures.runtime" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/closures/runtime" includes="icons/**, resources/**" prefix="modules/closures.runtime" />
-      <zipfileset dir="${mps_home}/languages/baseLanguage/closures/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/closures.runtime/" />
+      <zipfileset dir="${mps_home}/languages/baseLanguage/closures/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/closures.runtime/jetbrains" />
     </jar>
     <jar destfile="${build.layout}/lib/mps-collections.jar">
       <fileset dir="${build.tmp}/java/out/mps-collections" />
@@ -103,7 +103,7 @@
       <fileset dir="${build.tmp}/java/out/mps-persistence" />
       <zipfileset file="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" prefix="modules/jetbrains.mps.analyzers.runtime" />
       <zipfileset dir="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.analyzers.runtime" />
-      <zipfileset dir="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.analyzers.runtime/" />
+      <zipfileset dir="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.analyzers.runtime/jetbrains" />
       <zipfileset file="${mps_home}/core/kernel/kernelSolution/jetbrains.mps.kernel.msd" prefix="modules/jetbrains.mps.kernel" />
       <zipfileset dir="${mps_home}/core/kernel/kernelSolution" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.kernel" />
       <zipfileset dir="${mps_home}/core/kernel/kernelSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.kernel/" />
@@ -112,10 +112,9 @@
       <zipfileset dir="${mps_home}/core/persistence/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.persistence/models" />
       <zipfileset file="${mps_home}/core/kernel/smodelRuntime/jetbrains.mps.runtime.msd" prefix="modules/jetbrains.mps.runtime" />
       <zipfileset dir="${mps_home}/core/kernel/smodelRuntime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.runtime" />
-      <zipfileset dir="${mps_home}/core/kernel/smodelRuntime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.runtime/" />
+      <zipfileset dir="${mps_home}/core/kernel/smodelRuntime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.runtime/jetbrains" />
       <zipfileset file="${mps_home}/core/findUsages-runtime/jetbrains.mps.findUsages.runtime.msd" prefix="modules/jetbrains.mps.findUsages.runtime" />
       <zipfileset dir="${mps_home}/core/findUsages-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.findUsages.runtime" />
-      <zipfileset dir="${mps_home}/core/findUsages-runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.findUsages.runtime/" />
       <zipfileset dir="${mps_home}/core/findUsages-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.findUsages.runtime/models" />
       <zipfileset file="${mps_home}/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" prefix="modules/jetbrains.mps.refactoring.runtime" />
       <zipfileset dir="${mps_home}/core/refactoring-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.refactoring.runtime" />
@@ -125,16 +124,16 @@
       <zipfileset dir="${mps_home}/core/kernel/patternRuntime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.lang.pattern.runtime/models" />
       <zipfileset file="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.traceInfo.msd" prefix="modules/jetbrains.mps.traceInfo" />
       <zipfileset dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.traceInfo" />
-      <zipfileset dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.traceInfo/" />
+      <zipfileset dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.traceInfo/jetbrains" />
       <zipfileset file="${mps_home}/core/generator/solutions/traceInfo/util/jetbrains.mps.traceInfo.cache.msd" prefix="modules/jetbrains.mps.traceInfo.cache" />
       <zipfileset dir="${mps_home}/core/generator/solutions/traceInfo/util" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.traceInfo.cache" />
       <zipfileset dir="${mps_home}/core/generator/solutions/traceInfo/util/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.traceInfo.cache/models" />
       <zipfileset file="${mps_home}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" prefix="modules/jetbrains.mps.dataFlow.runtime" />
       <zipfileset dir="${mps_home}/core/kernel/dataFlowRuntime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.dataFlow.runtime" />
-      <zipfileset dir="${mps_home}/core/kernel/dataFlowRuntime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.dataFlow.runtime/" />
+      <zipfileset dir="${mps_home}/core/kernel/dataFlowRuntime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.dataFlow.runtime/jetbrains" />
       <zipfileset file="${mps_home}/core/kernel/stubUtils/stubUtils.msd" prefix="modules/stubUtils" />
       <zipfileset dir="${mps_home}/core/kernel/stubUtils" includes="icons/**, resources/**" prefix="modules/stubUtils" />
-      <zipfileset dir="${mps_home}/core/kernel/stubUtils" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/stubUtils/" />
+      <zipfileset dir="${mps_home}/core/kernel/stubUtils/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/stubUtils/jetbrains" />
       <zipfileset file="${mps_home}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" prefix="modules/jetbrains.mps.typesystemEngine" />
       <zipfileset dir="${mps_home}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.typesystemEngine" />
       <zipfileset dir="${mps_home}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.typesystemEngine/" />
@@ -143,16 +142,16 @@
       <zipfileset dir="${mps_home}/core/generator/solutions/generator/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.generator/models" />
       <zipfileset file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" prefix="modules/jetbrains.mps.make.runtime" />
       <zipfileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.make.runtime" />
-      <zipfileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.make.runtime/" />
+      <zipfileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.make.runtime/jetbrains" />
       <zipfileset file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" prefix="modules/jetbrains.mps.make" />
       <zipfileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.make" />
-      <zipfileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.make/" />
+      <zipfileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.make/jetbrains" />
       <zipfileset file="${mps_home}/core/kernel/resources/jetbrains.mps.smodel.resources.msd" prefix="modules/jetbrains.mps.smodel.resources" />
       <zipfileset dir="${mps_home}/core/kernel/resources" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.smodel.resources" />
-      <zipfileset dir="${mps_home}/core/kernel/resources" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.smodel.resources/" />
+      <zipfileset dir="${mps_home}/core/kernel/resources/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.smodel.resources/jetbrains" />
       <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" prefix="modules/jetbrains.mps.baseLanguage.search" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.baseLanguage.search" />
-      <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.baseLanguage.search/" />
+      <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.baseLanguage.search/jetbrains" />
       <zipfileset file="${mps_home}/languages/core/stub/MPS.Core/MPS.Core.msd" prefix="modules/MPS.Core" />
       <zipfileset dir="${mps_home}/languages/core/stub/MPS.Core" includes="icons/**, resources/**" prefix="modules/MPS.Core" />
       <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/jetbrains.mps.baseLanguage.util.msd" prefix="modules/jetbrains.mps.baseLanguage.util" />
@@ -1888,7 +1887,7 @@
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime-src.jar">
       <fileset dir="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/jetbrains.mps.baseLanguage.regexp.runtime.msd" prefix="module" />
-      <zipfileset dir="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
+      <zipfileset dir="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/jetbrains" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.scopes.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.scopes.jar/META-INF" />

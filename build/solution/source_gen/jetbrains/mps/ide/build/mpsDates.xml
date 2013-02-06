@@ -136,7 +136,7 @@
     <jar destfile="${build.layout}/mps-dates/languages/jetbrains.mps.baseLanguage.dates.runtime-src.jar">
       <fileset dir="${mps_home}/languages/util/dates/runtime/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/util/dates/runtime/jetbrains.mps.baseLanguage.dates.runtime.msd" prefix="module" />
-      <zipfileset dir="${mps_home}/languages/util/dates/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
+      <zipfileset dir="${mps_home}/languages/util/dates/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/jetbrains" />
     </jar>
     <mkdir dir="${build.layout}/mps-dates/lib" />
     <jar destfile="${build.layout}/mps-dates/lib/icons.jar">
