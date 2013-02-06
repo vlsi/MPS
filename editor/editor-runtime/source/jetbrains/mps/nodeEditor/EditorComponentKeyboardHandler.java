@@ -16,13 +16,22 @@
 package jetbrains.mps.nodeEditor;
 
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
+import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.util.Pair;
 
 import java.awt.event.KeyEvent;
-import java.util.List;
+import java.util.Collection;
 
 public class EditorComponentKeyboardHandler implements KeyboardHandler {
+  private final KeymapHandler<KeyEvent> myKeymapHandler;
+
+  public EditorComponentKeyboardHandler(KeymapHandler<KeyEvent> keymapHandler) {
+    myKeymapHandler = keymapHandler;
+  }
+
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
     EditorComponent nodeEditor = editorContext.getNodeEditorComponent();
     nodeEditor.hideMessageToolTip();
@@ -32,7 +41,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     }
 
     CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
-    EditorCell selectedCell = editorContext.getSelectedCell();
+    jetbrains.mps.nodeEditor.cells.EditorCell selectedCell = editorContext.getSelectedCell();
 
     // process action
     if (selectedCell != null && actionType != null && selectedCell.executeAction(actionType)) {
@@ -51,14 +60,13 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     EditorComponent nodeEditor = editorContext.getNodeEditorComponent();
     nodeEditor.hideMessageToolTip();
 
-    final EditorCell selectedCell = editorContext.getSelectedCell();
-
-    if (selectedCell != null && selectedCell.processKeyTyped(keyEvent, false)) {
-      keyEvent.consume();
+    if (processKeyMaps(editorContext, keyEvent)) {
       return true;
     }
 
-    if (processKeyMaps(editorContext, keyEvent)) {
+    final jetbrains.mps.nodeEditor.cells.EditorCell selectedCell = editorContext.getSelectedCell();
+    if (selectedCell != null && selectedCell.processKeyTyped(keyEvent, false)) {
+      keyEvent.consume();
       return true;
     }
 
@@ -94,20 +102,32 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
 
   private boolean processKeyMaps(EditorContext editorContext, KeyEvent keyEvent) {
     EditorCell selectedCell = editorContext.getSelectedCell();
-    if (selectedCell != null) {
-      List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo = KeyMapUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
-      if (actionsInfo.size() == 1 && !(actionsInfo.get(0).o1.isMenuAlwaysShown())) {
-        EditorCellKeyMapAction action = actionsInfo.get(0).o1;
-        EditorCell contextCell = actionsInfo.get(0).o2;
-        KeyMapUtil.executeKeyMapAction(action, keyEvent, contextCell, editorContext);
-        return true;
-      } else if (actionsInfo.size() > 1 ||
-        (actionsInfo.size() == 1 && actionsInfo.get(0).o1.isMenuAlwaysShown())) {
-        // show menu
-        KeyMapUtil.showActionsMenu(actionsInfo, keyEvent, editorContext, selectedCell);
-        return true;
-      }
+    if (selectedCell == null) {
+      return false;
     }
-    return false;
+
+    if (keyEvent.getID() != KeyEvent.KEY_PRESSED && keyEvent.getID() != KeyEvent.KEY_TYPED) {
+      // Looks like unnecessary check
+      return false;
+    }
+
+    int keyCode = keyEvent.getKeyCode();
+    if (keyCode == KeyEvent.VK_CONTROL || keyCode == KeyEvent.VK_ALT || keyCode == KeyEvent.VK_SHIFT ||
+      keyCode == KeyEvent.VK_PAGE_UP || keyCode == KeyEvent.VK_PAGE_DOWN) {
+      return false;
+    }
+
+    Collection<Pair<KeyMapAction, EditorCell>> actionCellPairs = myKeymapHandler.getActions(selectedCell, keyEvent, editorContext);
+    if (actionCellPairs.size() == 0) {
+      return false;
+    }
+    Pair<KeyMapAction, EditorCell> first = actionCellPairs.iterator().next();
+    if (actionCellPairs.size() == 1 && !first.o1.isMenuAlwaysShown()) {
+      myKeymapHandler.executeAction(first.o1, first.o2, editorContext);
+    } else {
+      // show menu
+      myKeymapHandler.showActionsMenu(actionCellPairs, editorContext, selectedCell);
+    }
+    return true;
   }
 }

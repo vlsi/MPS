@@ -146,7 +146,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   EditorCell getContainingBigCell();
   boolean isAncestorOf(EditorCell cell);
 
-  // TODO: modify editor generator to use styles for FocusPolicy
   /**
    * @deprecated remove after MPS 3.0
    */

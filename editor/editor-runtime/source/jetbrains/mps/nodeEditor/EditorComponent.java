@@ -86,12 +86,15 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
+import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -347,6 +350,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private Set<SModelDescriptor> myLastDeps = new HashSet<SModelDescriptor>();
 
+  private KeymapHandler<KeyEvent> myKeymapHandler = new AWTKeymapHandler();
+
   public EditorComponent(IOperationContext operationContext) {
     this(operationContext, false, false);
   }
@@ -431,7 +436,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     // --- keyboard handling ---
     myKbdHandlersStack = new Stack<KeyboardHandler>();
-    myKbdHandlersStack.push(new EditorComponentKeyboardHandler());
+    myKbdHandlersStack.push(new EditorComponentKeyboardHandler(myKeymapHandler));
 
     // --- init action map --   
     myActionMap = new HashMap<CellActionType, EditorCellAction>();
@@ -1205,9 +1210,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     EditorCell cell = getSelectedCell();
 
     final EditorContext editorContext = createEditorContextForActions();
-    for (final EditorCellKeyMapAction action : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
+    for (final KeyMapAction action : myKeymapHandler.getAllRegisteredActions(cell, editorContext)) {
       try {
-        if (!(action.isShownInPopupMenu() && action.canExecute(null, (jetbrains.mps.openapi.editor.EditorContext) editorContext)))
+        if (!(action.isShownInPopupMenu() && action.canExecute(editorContext)))
           continue;
         BaseAction mpsAction = new MyBaseAction(action, editorContext);
         mpsAction.addPlace(ActionPlace.EDITOR);
@@ -1216,7 +1221,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         LOG.error(t);
       }
     }
-
     return result;
   }
 
@@ -3147,10 +3151,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private static class MyBaseAction extends BaseAction implements DumbAware {
-    private final EditorCellKeyMapAction myAction;
+    private final KeyMapAction myAction;
     private final EditorContext myEditorContext;
 
-    public MyBaseAction(EditorCellKeyMapAction action, EditorContext editorContext) {
+    public MyBaseAction(KeyMapAction action, EditorContext editorContext) {
       super("" + action.getDescriptionText());
       myAction = action;
       myEditorContext = editorContext;
@@ -3163,7 +3167,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
       try {
-        myAction.execute(null, (jetbrains.mps.openapi.editor.EditorContext) myEditorContext);
+        myAction.execute(myEditorContext);
       } catch (Throwable t) {
         LOG.error(t);
       }

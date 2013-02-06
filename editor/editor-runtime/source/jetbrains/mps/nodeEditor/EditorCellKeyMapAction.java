@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.event.KeyEvent;
@@ -24,12 +25,7 @@ import java.util.List;
  * Author: Sergey Dmitriev
  * Created Nov 4, 2003
  */
-public abstract class EditorCellKeyMapAction {
-  public static final int CARET_AT_ANY_POSITION = 0;
-  public static final int CARET_AT_FIRST_POSITION = 1;
-  public static final int CARET_AT_LAST_POSITION = 2;
-  public static final int CARET_AT_INTERMEDIATE_POSITION = 3;
-
+public abstract class EditorCellKeyMapAction implements KeyMapAction {
   private int myCaretPolicy;
   private boolean myShownInPopupMenu = false;
 
@@ -43,8 +39,8 @@ public abstract class EditorCellKeyMapAction {
     return true;
   }
 
-  public boolean canExecute(KeyEvent keyEvent, jetbrains.mps.openapi.editor.EditorContext context) {
-    return canExecute(keyEvent, (EditorContext) context);
+  public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
+    return canExecute(null, (EditorContext) context);
   }
 
   /**
@@ -59,8 +55,8 @@ public abstract class EditorCellKeyMapAction {
   /**
    * This method should become abstract after MPS 3.0
    */
-  public void execute(KeyEvent keyEvent, jetbrains.mps.openapi.editor.EditorContext context) {
-    execute(keyEvent, (EditorContext) context);
+  public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
+    execute(null, (EditorContext) context);
   }
 
   public String getDescriptionText() {

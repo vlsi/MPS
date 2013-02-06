@@ -44,7 +44,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   private EditorComponent myNodeEditorComponent;
   private SModelDescriptor myModelDescriptor;
   private IOperationContext myOperationContext;
-  private EditorCell myContextCell;
+  private jetbrains.mps.openapi.editor.cells.EditorCell myContextCell;
   private List<Pair<SNode,SNodeReference>> myModelModifications = null;
   private IPerformanceTracer myPerformanceTracer = null;
 
@@ -342,10 +342,10 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   public EditorCell getContextCell() {
     if (myContextCell == null) return getNodeEditorComponent().getSelectedCell();
-    return myContextCell;
+    return (EditorCell) myContextCell;
   }
 
-  public void runWithContextCell(EditorCell contextCell, final Runnable r) {
+  public void runWithContextCell(jetbrains.mps.openapi.editor.cells.EditorCell contextCell, final Runnable r) {
     runWithContextCell(contextCell, new Computable<Object>() {
       public Object compute() {
         r.run();
@@ -355,8 +355,8 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   }
 
 
-  public <T> T runWithContextCell(EditorCell contextCell, Computable<T> r) {
-    EditorCell oldContextCell = myContextCell;
+  public <T> T runWithContextCell(jetbrains.mps.openapi.editor.cells.EditorCell contextCell, Computable<T> r) {
+    jetbrains.mps.openapi.editor.cells.EditorCell oldContextCell = myContextCell;
     myContextCell = contextCell;
     try {
       return r.compute();
