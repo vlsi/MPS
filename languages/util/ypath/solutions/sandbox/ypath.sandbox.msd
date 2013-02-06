@@ -2,7 +2,7 @@
 <solution name="ypath.sandbox" uuid="c13beb70-150a-461e-b6de-05489d7b1dd3" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <sourcePath />

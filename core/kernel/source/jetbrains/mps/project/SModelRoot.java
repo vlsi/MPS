@@ -19,7 +19,7 @@ import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -153,8 +153,11 @@ public class SModelRoot extends FolderModelRootBase {
     if (mod == null) {
       return new InvalidModelRootManager(moduleId, className, "module is absent");
     }
+    if (!(mod instanceof IClassLoadingModule)) {
+      return new InvalidModelRootManager(moduleId, className, "module is not IClassLoadingModule");
+    }
 
-    Class managerClass = mod.getClass(className);
+    Class managerClass = ((IClassLoadingModule) mod).getClass(className);
     if (managerClass == null) {
       return new InvalidModelRootManager(moduleId, className, "class is absent");
     }

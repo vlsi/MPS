@@ -19,6 +19,8 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.JavaModuleFacet;
+import jetbrains.mps.project.JavaModuleFacetImpl;
 
 public class EvaluationAuxModule extends AbstractModule {
   private Project myProject;
@@ -60,10 +62,7 @@ public class EvaluationAuxModule extends AbstractModule {
     return myUsedLanguages;
   }
 
-  @Override
-  public Set<String> getAdditionalClassPath() {
-    return myClassPaths;
-  }
+
 
   public String addClassPathItem(String path) {
     if (SetSequence.fromSet(myClassPaths).contains(path)) {
@@ -99,5 +98,15 @@ public class EvaluationAuxModule extends AbstractModule {
 
   public void setContextModule(IModule contextModule) {
     myContextModule = contextModule;
+  }
+
+  @Override
+  protected JavaModuleFacet createJavaModuleFacet() {
+    return new JavaModuleFacetImpl(this) {
+      @Override
+      public Set<String> getAdditionalClassPath() {
+        return myClassPaths;
+      }
+    };
   }
 }

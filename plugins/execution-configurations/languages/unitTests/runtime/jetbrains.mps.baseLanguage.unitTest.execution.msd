@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.baseLanguage.unitTest.execution" uuid="f618e99a-2641-465c-bb54-31fe76f9e285" pluginKind="PLUGIN_CORE" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
     <modelRoot path="${module}/classes_gen" type="java_classes" />
   </models>

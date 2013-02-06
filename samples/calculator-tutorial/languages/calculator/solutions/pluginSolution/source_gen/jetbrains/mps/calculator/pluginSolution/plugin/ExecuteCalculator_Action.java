@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.logging.Logger;
 
 public class ExecuteCalculator_Action extends BaseAction {
@@ -90,7 +91,7 @@ public class ExecuteCalculator_Action extends BaseAction {
   private Class getCalcClass(final Map<String, Object> _params) {
     String className = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("calcNode")), "name");
     String fqClassName = SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode"))).getLongName() + "." + className;
-    return SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode"))).getModelDescriptor().getModule().getClass(fqClassName);
+    return ((IClassLoadingModule) SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode"))).getModelDescriptor().getModule()).getClass(fqClassName);
   }
 
   private Method getMainMethod(final Map<String, Object> _params) {

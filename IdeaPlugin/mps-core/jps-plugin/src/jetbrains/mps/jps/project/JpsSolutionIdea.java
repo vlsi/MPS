@@ -6,6 +6,8 @@ import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import jetbrains.mps.jps.build.MPSCompilerUtil;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
+import jetbrains.mps.project.JavaModuleFacet;
+import jetbrains.mps.project.JavaModuleFacetImpl;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -31,7 +33,12 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -97,8 +104,7 @@ public class JpsSolutionIdea extends Solution {
         JpsLibrary lib = ((JpsLibraryDependency) jpsDep).getLibrary();
         if (lib == null) {
           MPSCompilerUtil.debug(myCompileContext, "**** not found lib dep: " + ((JpsLibraryDependency) jpsDep).getLibraryReference().getLibraryName());
-        }
-        else {
+        } else {
           String name = lib.getName();
           solution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(name));
         }
@@ -129,21 +135,25 @@ public class JpsSolutionIdea extends Solution {
   }
 
   @Override
-  public IFile getClassesGen() {
-    IFile descriptorFile = getDescriptorFile();
-    if (descriptorFile != null && descriptorFile.isReadOnly()) {
-      myCompileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, " super.ClassesGen " + super.getClassesGen()));
-      return super.getClassesGen();
-    }
+  protected JavaModuleFacet createJavaModuleFacet() {
+    return new JavaModuleFacetImpl(this) {
+      @Override
+      public IFile getClassesGen() {
+        IFile descriptorFile = getDescriptorFile();
+        if (descriptorFile != null && descriptorFile.isReadOnly()) {
+          myCompileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, " super.ClassesGen " + super.getClassesGen()));
+          return super.getClassesGen();
+        }
 
-    // FIX hard-coded forTests=false
-    // TODO use ProjectPaths.getModuleOutputDir(myModule, false); (using JpsJavaExtensionService directly to be compatible with IDEA 12.0.0 release)
-    File outputDir = JpsJavaExtensionService.getInstance().getOutputDirectory(myModule, false);
-    MPSCompilerUtil.debug(myCompileContext, " ClassesGen from module " + FileSystem.getInstance().getFileByPath(outputDir.getPath()));
-    if (outputDir != null) return FileSystem.getInstance().getFileByPath(outputDir.getPath());
-    else return null;
+        // FIX hard-coded forTests=false
+        // TODO use ProjectPaths.getModuleOutputDir(myModule, false); (using JpsJavaExtensionService directly to be compatible with IDEA 12.0.0 release)
+        File outputDir = JpsJavaExtensionService.getInstance().getOutputDirectory(myModule, false);
+        MPSCompilerUtil.debug(myCompileContext, " ClassesGen from module " + FileSystem.getInstance().getFileByPath(outputDir.getPath()));
+        if (outputDir != null) return FileSystem.getInstance().getFileByPath(outputDir.getPath());
+        else return null;
+      }
+    };
   }
-
 
   // Needed only for ReducedGenerationWorker
   @Override

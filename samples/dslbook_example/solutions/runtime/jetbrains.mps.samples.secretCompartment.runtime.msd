@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.samples.secretCompartment.runtime" uuid="086f6299-eca0-43c4-bbca-fab3f95963aa" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

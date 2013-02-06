@@ -2,7 +2,7 @@
 <solution name="org.jetbrains.mps.samples.SampleJavaExtensions.sandbox" uuid="639d7914-0883-43ff-93b8-e99ab48a259c" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <sourcePath />
