@@ -91,7 +91,7 @@ public class SideTransformUtil {
         }
       }));
       ListSequence.fromList(removeByConditions).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(actionBuilder, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", false, new String[]{})));
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(invokeActionBuilder(actionBuilder, node, context)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(invokeActionBuilder(actionBuilder, node, cellSide, context)));
     }
 
     // remove with conditions 
@@ -145,9 +145,9 @@ public class SideTransformUtil {
     }
   }
 
-  private static List<INodeSubstituteAction> invokeActionBuilder(SNode actionsBuilder, SNode node, IOperationContext context) {
+  private static List<INodeSubstituteAction> invokeActionBuilder(SNode actionsBuilder, SNode node, CellSide cellSide, IOperationContext context) {
     try {
-      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, actionsBuilder, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "call_getBuilderQueryMethodName_1220279234749", new Object[]{}), context, new SideTransformActionsBuilderContext(node, SNodeOperations.getModel(node), null), SNodeOperations.getModel(actionsBuilder));
+      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, actionsBuilder, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "call_getBuilderQueryMethodName_1220279234749", new Object[]{}), context, new SideTransformActionsBuilderContext(node, SNodeOperations.getModel(node), cellSide, null), SNodeOperations.getModel(actionsBuilder));
     } catch (Exception e) {
       LOG.error(e);
       return Collections.emptyList();
