@@ -235,16 +235,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     setLanguageDescriptor(languageDescriptor, false);
   }
 
-  public String getGeneratorOutputPath() {
-    IFile result = ProjectPathUtil.getGeneratorOutputPath(getDescriptorFile(), getModuleDescriptor());
-    return result != null ? result.getPath() : null;
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    IFile result = ProjectPathUtil.getGeneratorTestsOutputPath(getDescriptorFile(), getModuleDescriptor());
-    return result != null ? result.getPath() : null;
-  }
-
   public List<SNode> getConceptDeclarations() {
     SModelDescriptor structureModel = getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptyList();

@@ -246,14 +246,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return null;
   }
 
-  public String getGeneratorOutputPath() {
-    return mySourceLanguage.getGeneratorOutputPath();
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    return mySourceLanguage.getTestsGeneratorOutputPath();
-  }
-
   public Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
     Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>(super.getImplicitlyImportedModelsFor(sm));
 

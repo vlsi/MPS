@@ -231,6 +231,14 @@ public interface IModule extends SModule {
   @Deprecated
   String getModuleFqName();
 
+  // ProjectPathUtil#getGeneratorOutputPath
+  @Deprecated
+  String getGeneratorOutputPath();
+
+  // ProjectPathUtil#getTestsGeneratorOutputPath
+  @Deprecated
+  String getTestsGeneratorOutputPath();
+
   //todo move to model
   // remove
   // check is it imported on language model creation
@@ -241,12 +249,4 @@ public interface IModule extends SModule {
   //todo move to model
   // like previous
   Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
-
-  // methods for getOutputFor() method
-  // extract outside IModule / it's not IModule func anyway
-  //todo used only in language,generator,solution
-  String getGeneratorOutputPath();
-
-  //todo used only in solution
-  String getTestsGeneratorOutputPath();
 }

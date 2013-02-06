@@ -44,14 +44,6 @@ public class EvaluationAuxModule extends AbstractModule {
     return GlobalScope.getInstance();
   }
 
-  public String getGeneratorOutputPath() {
-    return null;
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    return null;
-  }
-
   @Override
   public void addUsedLanguage(ModuleReference reference) {
     SetSequence.fromSet(myUsedLanguages).addElement(reference);

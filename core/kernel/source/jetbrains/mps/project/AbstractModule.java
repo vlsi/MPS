@@ -708,14 +708,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return new ModuleScope();
   }
 
-  public String getGeneratorOutputPath() {
-    return null;
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    return null;
-  }
-
   public boolean isChanged() {
     return myChanged;
   }
@@ -780,6 +772,20 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   @Deprecated
   public final Collection<String> getIndexablePaths() {
     return SModuleOperations.getIndexablePaths(this);
+  }
+
+  @Override
+  @Deprecated
+  public final String getGeneratorOutputPath() {
+    IFile result = ProjectPathUtil.getGeneratorOutputPath(this);
+    return result != null ? result.getPath() : null;
+  }
+
+  @Override
+  @Deprecated
+  public final String getTestsGeneratorOutputPath() {
+    IFile result = ProjectPathUtil.getGeneratorTestsOutputPath(this);
+    return result != null ? result.getPath() : null;
   }
 
   // JavaModuleFacet
