@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.lang.smodel.pluginSolution.plugin.Migration30_ActionGroup;
+import jetbrains.mps.lang.smodel.pluginSolution.plugin.Migrations30_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import java.util.List;
@@ -43,7 +43,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(MigrateConceptProperties_ActionGroup.ID, Migration30_ActionGroup.ID, Migration30_ActionGroup.LABEL_ID_remove_concept_properties);
+    insertGroupIntoAnother(MigrateConceptProperties_ActionGroup.ID, Migrations30_ActionGroup.ID, Migrations30_ActionGroup.LABEL_ID_remove_concept_properties);
     insertGroupIntoAnother(Structure_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_structure);
     insertGroupIntoAnother(Structure_ActionGroup.ID, "EditorPopup_ActionGroupstructure", null);
     insertGroupIntoAnother(ShowHelp_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_showHelp);

@@ -388,7 +388,6 @@ public class ConceptPropertiesHelper {
 
     if (SetSequence.fromSet(superNodes).isEmpty()) {
       declaration = _quotation_createNode_azpnkk_a0a0o0v(SLinkOperations.getTarget(SLinkOperations.getTarget(conceptLink, "conceptLinkDeclaration", false), "targetType", false), SLinkOperations.getTarget(SLinkOperations.getTarget(conceptLink, "conceptLinkDeclaration", false), "targetType", false));
-      SLinkOperations.setTarget(reference, "variableDeclaration", SLinkOperations.getTarget(declaration, "localVariableDeclaration", true), false);
     } else {
 
       SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
@@ -396,31 +395,29 @@ public class ConceptPropertiesHelper {
       SNode firstNodeExpression = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.SuperNodeExpression", null);
       SLinkOperations.setTarget(firstNodeExpression, "superConcept", SetSequence.fromSet(superNodes).first(), false);
       declaration = _quotation_createNode_azpnkk_a0f0a41a12(SLinkOperations.getTarget(SLinkOperations.getTarget(conceptLink, "conceptLinkDeclaration", false), "targetType", false), firstNodeExpression, methodCall);
-      SLinkOperations.setTarget(reference, "variableDeclaration", SLinkOperations.getTarget(declaration, "localVariableDeclaration", true), false);
-
-      for (SNode superNode : SetSequence.fromSet(superNodes)) {
-        if (superNode == SetSequence.fromSet(superNodes).first()) {
-          continue;
-        }
-
-        SNode superMethodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
-        SLinkOperations.setTarget(superMethodCall, "baseMethodDeclaration", overridenMethod, false);
-        SNode superNodeExpression = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.SuperNodeExpression", null);
-        SLinkOperations.setTarget(superNodeExpression, "superConcept", superNode, false);
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_azpnkk_a0a6a8a0o0v(superNodeExpression, superMethodCall, reference));
+    }
+    SLinkOperations.setTarget(reference, "variableDeclaration", SLinkOperations.getTarget(declaration, "localVariableDeclaration", true), false);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(declaration);
+    for (SNode superNode : SetSequence.fromSet(superNodes)) {
+      if (superNode == SetSequence.fromSet(superNodes).first()) {
+        continue;
       }
 
+      SNode superMethodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
+      SLinkOperations.setTarget(superMethodCall, "baseMethodDeclaration", overridenMethod, false);
+      SNode superNodeExpression = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.SuperNodeExpression", null);
+      SLinkOperations.setTarget(superNodeExpression, "superConcept", superNode, false);
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_azpnkk_a0a6a71a12(superNodeExpression, superMethodCall, reference));
     }
 
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(declaration);
 
     for (SNode link : SetSequence.fromSet(allLinks)) {
       SNode refExpression = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.NodeRefExpression", null);
       SLinkOperations.setTarget(refExpression, "referentNode", SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false), "jetbrains.mps.lang.core.structure.INamedConcept"), false);
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_azpnkk_a0a2a81a12(reference, refExpression));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_azpnkk_a0a2a02a12(reference, refExpression));
     }
 
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_azpnkk_a0a02a12(reference));
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_azpnkk_a0a22a12(reference));
 
     if (MapSequence.fromMap(completedConceptsByLinkDeclaration).get(SLinkOperations.getTarget(conceptLink, "conceptLinkDeclaration", false)) == null) {
       MapSequence.fromMap(completedConceptsByLinkDeclaration).put(SLinkOperations.getTarget(conceptLink, "conceptLinkDeclaration", false), ListSequence.fromList(new ArrayList<SNode>()));
@@ -857,7 +854,7 @@ public class ConceptPropertiesHelper {
     return quotedNode_4;
   }
 
-  private static SNode _quotation_createNode_azpnkk_a0a6a8a0o0v(Object parameter_1, Object parameter_2, Object parameter_3) {
+  private static SNode _quotation_createNode_azpnkk_a0a6a71a12(Object parameter_1, Object parameter_2, Object parameter_3) {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
@@ -888,7 +885,7 @@ public class ConceptPropertiesHelper {
     return quotedNode_4;
   }
 
-  private static SNode _quotation_createNode_azpnkk_a0a2a81a12(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_azpnkk_a0a2a02a12(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -911,7 +908,7 @@ public class ConceptPropertiesHelper {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_azpnkk_a0a02a12(Object parameter_1) {
+  private static SNode _quotation_createNode_azpnkk_a0a22a12(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
