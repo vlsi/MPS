@@ -67,6 +67,7 @@ public interface IModule extends SModule {
   DependenciesManager getDependenciesManager();
 
   // ?
+
   /**
    * Explicitly declared deps +
    * <p>explicitly extended languages + all the generators (for a lang)
@@ -77,6 +78,7 @@ public interface IModule extends SModule {
   List<Dependency> getDependencies();
 
   // ?
+
   /**
    * Explicitly used langs +
    * <p>all bootstrap langs (for a generator)
@@ -86,6 +88,7 @@ public interface IModule extends SModule {
   Collection<ModuleReference> getUsedLanguagesReferences();
 
   // ?
+
   /**
    * Explicitly used devkits
    *
@@ -140,6 +143,7 @@ public interface IModule extends SModule {
   // how to check is it works: clean ~/.idea/system and check cmd+n
   // use SModuleOperations.getIndexablePaths
   // todo: look at idea indexing subsystem
+  // use SModuleOperations#getIndexablePaths
   @Deprecated
   Collection<String> getIndexablePaths();
 
@@ -195,8 +199,9 @@ public interface IModule extends SModule {
     void adjust(SModelDescriptor model);
   }
 
-//  ----- use cast to JavaModuleFacet methods
+  // ----- deprecated part
 
+  // JavaModuleFacet part. Use module.getFacet(JavaModuleFacet.class).{method}
   @Deprecated
   IClassPathItem getClassPathItem();
 
@@ -206,11 +211,11 @@ public interface IModule extends SModule {
   @Deprecated
   boolean isCompileInMPS();
 
-//  use SModuleOperations#getModuleWithDependenciesClassPathItem instead
+  //  use SModuleOperations#getModuleWithDependenciesClassPathItem instead
   @Deprecated
   IClassPathItem getModuleWithDependenciesClassPathItem();
 
-//  ----- IClassLoadingModule methods
+  // IClassLoadingModule part. Use module.getFacet(IClassLoadingModule).{method}
 
 //  deprecated, use IClassLoadingModule#getClass instead
 //  @Deprecated
@@ -220,9 +225,10 @@ public interface IModule extends SModule {
 //  @Deprecated
 //  boolean reloadClassesAfterGeneration();
 
-  //-----todo ret rid of
+  // other methods
 
   // SModule#getModuleName
+  @Deprecated
   String getModuleFqName();
 
   //todo move to model
