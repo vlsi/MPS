@@ -177,6 +177,7 @@ public class QueriesGenerated {
           public SNode doSubstitute(String pattern) {
             SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
             SLinkOperations.setTarget(newInitializedInstance, "left", SNodeOperations.copyNode(_context.getSourceNode()), true);
+            SNodeOperations.replaceWithAnother(_context.getSourceNode(), newInitializedInstance);
             return SLinkOperations.getTarget(newInitializedInstance, "right", true);
           }
 

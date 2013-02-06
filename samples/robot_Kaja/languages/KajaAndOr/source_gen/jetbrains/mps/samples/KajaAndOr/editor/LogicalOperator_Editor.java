@@ -56,6 +56,7 @@ public class LogicalOperator_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
     editorCell.getStyle().putAll(style);
+    DeleteLogicalOperator.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new LogicalOperator_Editor.ReplaceWith_LogicalOperator_cellMenu_a0c0()}));
     return editorCell;
   }
@@ -88,6 +89,7 @@ public class LogicalOperator_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no left>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    DeleteLogicalOperator.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -105,6 +107,7 @@ public class LogicalOperator_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no right>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    DeleteLogicalOperatorFromBehind.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

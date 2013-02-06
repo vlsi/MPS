@@ -16,22 +16,26 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="3308300503040148312">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <property name="name" nameId="tpck.1169194664001" value="IfElse" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
     </node>
     <node type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="7446293342517269098">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Logical" />
       <property name="name" nameId="tpck.1169194664001" value="Negate" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Logical" />
     </node>
     <node type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="859008965969369893">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <property name="name" nameId="tpck.1169194664001" value="While_to_if" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
+    </node>
+    <node type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="5125227785235936167">
+      <property name="name" nameId="tpck.1169194664001" value="DirectionIncludesParent" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Logical" />
     </node>
   </roots>
   <root id="3308300503040148312">
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="3308300503040148313">
-      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_1_RTransform" />
       <property name="description" nameId="tpdg.1158952484319" value="end of the true branch allows for else" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_1_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="c2kz.3308300503039647678" resolveInfo="IfStatement" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="3308300503040148401">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="c2kz.3265739055509559114" resolveInfo="AbstractCommand" />
@@ -102,8 +106,8 @@
     </node>
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="859008965969370131">
       <property name="side" nameId="tpdg.1215605257730" value="left" />
-      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_3_RTransform" />
       <property name="description" nameId="tpdg.1158952484319" value="if to while" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_3_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="c2kz.3308300503039647678" resolveInfo="IfStatement" />
       <node role="precondition" roleId="tpdg.1154622757656" type="tpdg.SideTransformHintSubstitutePreconditionFunction" typeId="tpdg.1154622616118" id="859008965969370132">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="859008965969370133">
@@ -202,8 +206,8 @@
   <root id="7446293342517269098">
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="7446293342517269099">
       <property name="side" nameId="tpdg.1215605257730" value="left" />
-      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_2_RTransform" />
       <property name="description" nameId="tpdg.1158952484319" value="Prepend not to logical expressions" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_2_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="c2kz.3308300503039647681" resolveInfo="LogicalExpression" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="7446293342517269146">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="c2kz.3308300503039654064" resolveInfo="Not" />
@@ -263,8 +267,8 @@
     </node>
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="7446293342517448131">
       <property name="side" nameId="tpdg.1215605257730" value="left" />
-      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_2_RTransform" />
       <property name="description" nameId="tpdg.1158952484319" value="Easily turn one logical expression into another one" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_2_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="c2kz.3308300503039647681" resolveInfo="LogicalExpression" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="7446293342517448175">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="c2kz.3308300503039647681" resolveInfo="LogicalExpression" />
@@ -536,6 +540,24 @@
           </node>
           <node role="matchingText" roleId="tpdg.1177498166690" type="tpdg.SideTransform_SimpleString" typeId="tpdg.1196433923911" id="859008965969369903">
             <property name="text" nameId="tpdg.1196433942569" value="if" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="5125227785235936167">
+    <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="5125227785235936465">
+      <property name="transformTag" nameId="tpdg.1140829165817" value="default_RTransform" />
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="c2kz.3308300503039675705" resolveInfo="Direction" />
+      <node role="part" roleId="tpdg.1177442283389" type="tpdg.IncludeRightTransformForNodePart" typeId="tpdg.1180111159572" id="1412244050168830031">
+        <node role="nodeBlock" roleId="tpdg.1180111489972" type="tpdg.QueryFunction_SideTransform_NodeQuery" typeId="tpdg.1178537049112" id="1412244050168830032">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1412244050168830033">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1412244050168832074">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1412244050168832437">
+                <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="1412244050168832073" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="1412244050168887469" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

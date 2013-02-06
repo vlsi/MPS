@@ -325,7 +325,7 @@
     </node>
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="642541832611943584">
       <property name="description" nameId="tpdg.1158952484319" value="Append And/Or to heading" />
-      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_4_RTransform" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="default_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="c2kz.3308300503039683649" resolveInfo="Heading" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="642541832611943585">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="c2kz.3308300503039647681" resolveInfo="LogicalExpression" />
@@ -358,6 +358,16 @@
                       <link role="link" roleId="tp25.1138056516764" targetNodeId="6ms5.1904811872814253580" />
                     </node>
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="642541832612596987">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="642541832612589491" resolveInfo="newInitializedInstance" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5125227785237463748">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5125227785237469935">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="5125227785237463746" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithAnotherOperation" typeId="tp25.1140131837776" id="5125227785237472547">
+                    <node role="replacementNode" roleId="tp25.1140131861877" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5125227785237472589">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="642541832612589491" resolveInfo="newInitializedInstance" />
                     </node>
                   </node>

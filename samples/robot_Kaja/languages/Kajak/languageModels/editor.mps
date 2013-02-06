@@ -558,9 +558,6 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="3308300503039683659">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="c2kz.3308300503039683650" />
-        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="642541832611875894">
-          <property name="tag" nameId="tpc2.1214320119174" value="ext_4_RTransform" />
-        </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="3308300503039683656" />
     </node>
