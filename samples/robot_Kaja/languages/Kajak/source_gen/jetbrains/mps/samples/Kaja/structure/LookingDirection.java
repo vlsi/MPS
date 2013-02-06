@@ -7,10 +7,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum LookingDirection {
-  north("north", 0),
-  east("east", 1),
-  south("south", 2),
-  west("west", 3);
+  north("north", "north"),
+  east("east", "east"),
+  south("south", "south"),
+  west("west", "west");
 
   private String myName;
 
@@ -19,7 +19,7 @@ public enum LookingDirection {
   }
 
   public String getValueAsString() {
-    return "" + this.myValue;
+    return this.myValue;
   }
 
   public static List<LookingDirection> getConstants() {
@@ -54,14 +54,14 @@ public enum LookingDirection {
     return LookingDirection.getDefault();
   }
 
-  private int myValue;
+  private String myValue;
 
-  LookingDirection(String name, int value) {
+  LookingDirection(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
 
-  public int getValue() {
+  public String getValue() {
     return this.myValue;
   }
 }

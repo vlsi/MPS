@@ -181,7 +181,7 @@
       <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="LookingDirection" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Logical" />
-      <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+      <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7060824959893078082">
       <property name="name" nameId="tpck.1169194664001" value="Looking" />
@@ -355,19 +355,19 @@
   </root>
   <root id="7060824959893064709">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893064772">
-      <property name="internalValue" nameId="tpce.1083923523171" value="0" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="north" />
       <property name="externalValue" nameId="tpce.1083923523172" value="north" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893078070">
-      <property name="internalValue" nameId="tpce.1083923523171" value="1" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="east" />
       <property name="externalValue" nameId="tpce.1083923523172" value="east" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893078073">
-      <property name="internalValue" nameId="tpce.1083923523171" value="2" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="south" />
       <property name="externalValue" nameId="tpce.1083923523172" value="south" />
     </node>
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7060824959893078077">
-      <property name="internalValue" nameId="tpce.1083923523171" value="3" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="west" />
       <property name="externalValue" nameId="tpce.1083923523172" value="west" />
     </node>
   </root>

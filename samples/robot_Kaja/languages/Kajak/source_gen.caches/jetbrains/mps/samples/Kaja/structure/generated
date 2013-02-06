@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2qqbtdfu6lfc7p85wvypaazfkvgbwtg">
+<dependencies version="2" modelHash="2nnzebp8wiem11cwowuxgcaui9njt3b">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
@@ -132,7 +132,7 @@
   <source id="3210697320273763054" name="TraceMessage" hash="-e0mr90jgfmxt1qpy5hn2r3nxgapcjla">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7060824959893064709" name="LookingDirection" hash="eedkixrxr5h8kp7sirx4xyr5d6sfpcn">
+  <source id="7060824959893064709" name="LookingDirection" hash="-3wpuexmyot10d2997oyywyj273uspww">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
