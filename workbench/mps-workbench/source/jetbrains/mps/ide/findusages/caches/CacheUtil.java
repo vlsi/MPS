@@ -19,9 +19,10 @@ import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -32,8 +33,8 @@ class CacheUtil {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (final IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-          for (String path : m.getIndexablePaths()) {
+        for (final SModule m : MPSModuleRepository.getInstance().getModules()) {
+          for (String path : SModuleOperations.getIndexablePaths(m)) {
             VirtualFile file = VirtualFileUtils.getVirtualFile(path);
             if (file == null) continue;
             files.add(file);
@@ -41,6 +42,7 @@ class CacheUtil {
         }
       }
     });
+
     return files;
   }
 
