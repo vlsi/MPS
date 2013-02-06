@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.nanoc.pluginSolution" uuid="145e4b07-c585-49f6-847f-007fdad1f453" pluginKind="PLUGIN_OTHER" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="jetbrains" />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <sourcePath />
