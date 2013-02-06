@@ -144,10 +144,12 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="3210697320273763071">
       <property name="name" nameId="tpck.1169194664001" value="reduce_TraceMessage" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="c2kz.3210697320273763054" resolveInfo="TraceMessage" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="7060824959893177707">
       <property name="name" nameId="tpck.1169194664001" value="reduce_Looking" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Logical" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="c2kz.7060824959893078082" resolveInfo="Looking" />
     </node>
   </roots>
