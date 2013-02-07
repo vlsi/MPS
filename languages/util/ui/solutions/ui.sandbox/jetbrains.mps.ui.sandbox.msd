@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.ui.sandbox" uuid="3f6b4db2-3eb5-44c8-a9bd-d6d426d08010" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

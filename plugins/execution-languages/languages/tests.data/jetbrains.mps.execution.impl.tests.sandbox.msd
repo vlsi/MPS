@@ -2,8 +2,7 @@
 <solution name="jetbrains.mps.execution.impl.tests.sandbox" uuid="6cbb1052-4510-427f-926c-3476bfd7e801" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="models" />
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

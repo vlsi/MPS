@@ -2,7 +2,7 @@
 <solution name="secretCompartmentLanguage.sandbox" uuid="a86a20c0-6fca-490d-9ad5-e66a13a10beb" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

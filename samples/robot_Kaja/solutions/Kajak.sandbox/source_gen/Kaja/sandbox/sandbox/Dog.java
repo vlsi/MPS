@@ -18,6 +18,12 @@ public class Dog extends KajaFrame {
     lay_routine();
     turnAround_routine();
     fetch_routine();
+    if (!(isFull())) {
+      addMark();
+      pause();
+    } else {
+      reportError("Cannot drop. The cell is already full.");
+    }
     turnAround_routine();
     runArround_routine();
   }

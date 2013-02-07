@@ -243,7 +243,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.pluginSolution.plugin.Migration30_ActionGroup" file="Migration30_ActionGroup.java">
+  <dependency className="jetbrains.mps.lang.smodel.pluginSolution.plugin.Migrations30_ActionGroup" file="Migrations30_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
@@ -286,7 +286,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSNodeOpenAPI_Action" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSNodeReferenceOpenAPI_Action" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSReferenceOpenAPI_Action" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.pluginSolution.plugin.Migration30_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.pluginSolution.plugin.Migrations30_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.pluginSolution.plugin._Adapters" file="_Adapters.java">

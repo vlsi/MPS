@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.baseLanguage.tuples.runtime" uuid="d44dab97-aaac-44cb-9745-8a14db674c03" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
     <modelRoot path="${module}/classes" type="java_classes" />
   </models>

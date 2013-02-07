@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.baseLanguage.tuples.sandbox" uuid="b6900d79-ce91-4dcc-9a61-e45a3b321b3f" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.transformation.test.inputModels" uuid="cdd4e8a8-17c1-4f16-b054-27e94948bd47" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

@@ -2,7 +2,7 @@
 <solution name="closures.runtime" uuid="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
     <modelRoot path="${module}/classes" type="java_classes" />
   </models>

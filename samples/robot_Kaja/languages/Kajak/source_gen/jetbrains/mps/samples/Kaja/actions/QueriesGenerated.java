@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.action.ModelActions;
 
 public class QueriesGenerated {
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IfStatement_3308300503040148314(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -104,7 +105,7 @@ public class QueriesGenerated {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression");
       Computable computable = new Computable() {
         public Object compute() {
-          return ListSequence.fromListAndArray(new ArrayList<String>(), "heading", "mark", "full", "wall");
+          return ListSequence.fromListAndArray(new ArrayList<String>(), "heading", "mark", "full", "wall", "looking");
         }
       };
       Iterable<String> parameterObjects = (Iterable<String>) computable.compute();
@@ -121,6 +122,8 @@ public class QueriesGenerated {
               expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.IsFull", null);
             } else if ((item).equals("wall")) {
               expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.IsWall", null);
+            } else if ((item).equals("looking")) {
+              expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.Looking", null);
             } else {
               throw new IllegalArgumentException("Cannot find a match for " + (item));
             }
@@ -161,6 +164,20 @@ public class QueriesGenerated {
           return this.getMatchingText(pattern);
         }
       });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Direction_5125227785235936465(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      Computable computable = new Computable() {
+        public Object compute() {
+          return SNodeOperations.getParent(_context.getSourceNode());
+        }
+      };
+      SNode node = (SNode) computable.compute();
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, _context.getSide(), _context.getTransformationTag(), operationContext)));
     }
     return result;
   }

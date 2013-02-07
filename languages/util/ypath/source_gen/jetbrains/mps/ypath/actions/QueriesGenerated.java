@@ -38,7 +38,6 @@ import jetbrains.mps.ypath.runtime.TraversalAxis;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
-import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.util.Quadruplet;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
@@ -601,7 +600,7 @@ public class QueriesGenerated {
         }
       };
       SNode node = (SNode) computable.compute();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, _context.getSide(), _context.getTransformationTag(), operationContext)));
     }
     return result;
   }
@@ -615,7 +614,7 @@ public class QueriesGenerated {
         }
       };
       SNode node = (SNode) computable.compute();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, _context.getSide(), _context.getTransformationTag(), operationContext)));
     }
     return result;
   }
@@ -629,7 +628,7 @@ public class QueriesGenerated {
         }
       };
       SNode node = (SNode) computable.compute();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, _context.getSide(), _context.getTransformationTag(), operationContext)));
     }
     return result;
   }

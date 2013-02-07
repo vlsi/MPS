@@ -2,7 +2,7 @@
 <solution name="myReaderConfiguration" uuid="2403a764-6efe-4d9b-a8ae-0fe408281aaa" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

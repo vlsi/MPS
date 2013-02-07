@@ -2,7 +2,7 @@
 <solution name="ypath.test" uuid="26af8f6b-3531-46d0-8700-83a313e4566e" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <sourcePath />

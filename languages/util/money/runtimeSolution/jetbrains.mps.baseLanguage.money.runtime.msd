@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.baseLanguage.money.runtime" uuid="4df1d09b-d6ae-453e-8622-14c0d6e4c038" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

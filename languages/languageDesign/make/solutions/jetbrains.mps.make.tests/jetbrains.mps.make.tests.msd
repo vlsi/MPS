@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.make.tests" uuid="ad44d830-d9b6-4c92-9e56-821fcc11b493" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

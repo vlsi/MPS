@@ -421,10 +421,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "actionType", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1238774271163(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.hasValue(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", false, false), "side", null, null);
-  }
-
   public static boolean ifMacro_Condition_5425882385312225561(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "nodeQuery", true) != null) || ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "handler", true), "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_targetNode", false, new String[]{})).isNotEmpty();
   }

@@ -3,8 +3,8 @@
   <models>
     <modelRoot path="${mps_home}/plugins/execution-configurations/languages/plugin/classes" type="java_classes" />
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
       <sourceRoot location="models" />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <stubModelEntries>

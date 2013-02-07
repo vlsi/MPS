@@ -15,17 +15,20 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SideTransformActionsBuilderContext {
   private SNode mySourceNode;
   private SModel myModel;
+  private final CellSide mySide;
   private String myTransformationTag;
 
-  public SideTransformActionsBuilderContext(SNode sourceNode, SModel model, String transformationTag) {
+  public SideTransformActionsBuilderContext(SNode sourceNode, SModel model, CellSide side, String transformationTag) {
     mySourceNode = sourceNode;
     myModel = model;
+    mySide = side;
     myTransformationTag = transformationTag;
   }
 
@@ -39,5 +42,9 @@ public class SideTransformActionsBuilderContext {
 
   public String getTransformationTag() {
     return myTransformationTag;
+  }
+
+  public CellSide getSide() {
+    return mySide;
   }
 }

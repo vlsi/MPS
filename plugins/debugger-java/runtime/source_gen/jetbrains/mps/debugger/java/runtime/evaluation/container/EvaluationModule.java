@@ -17,6 +17,9 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.JavaModuleFacet;
+import jetbrains.mps.project.JavaModuleFacetImpl;
+import java.util.Collection;
 
 public class EvaluationModule extends AbstractModule implements SModule {
   private final ModuleDescriptor myDescriptor;
@@ -48,11 +51,6 @@ public class EvaluationModule extends AbstractModule implements SModule {
     return result;
   }
 
-  @Override
-  public Set<String> getAdditionalClassPath() {
-    return myClassPaths;
-  }
-
   public String addClassPathItem(String path) {
     if (SetSequence.fromSet(myClassPaths).contains(path)) {
       path = null;
@@ -69,5 +67,13 @@ public class EvaluationModule extends AbstractModule implements SModule {
     return GlobalScope.getInstance();
   }
 
-
+  @Override
+  protected JavaModuleFacet createJavaModuleFacet() {
+    return new JavaModuleFacetImpl(this) {
+      @Override
+      protected Collection<String> getAdditionalClassPath() {
+        return myClassPaths;
+      }
+    };
+  }
 }

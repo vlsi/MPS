@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.execution.library" uuid="04b376d5-fc16-403b-a344-c68b30193c6a" pluginKind="PLUGIN_OTHER" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

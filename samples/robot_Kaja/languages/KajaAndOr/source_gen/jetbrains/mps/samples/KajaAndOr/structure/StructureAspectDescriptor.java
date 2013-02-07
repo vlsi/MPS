@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaAndOr.structure.And", "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator", false, new String[]{"jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"}, new String[]{}, new String[]{});
       case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator", "jetbrains.mps.samples.Kaja.structure.LogicalExpression", false, new String[]{"jetbrains.mps.samples.Kaja.structure.LogicalExpression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator", "jetbrains.mps.samples.Kaja.structure.LogicalExpression", false, new String[]{"jetbrains.mps.samples.Kaja.structure.LogicalExpression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 2:
         return new CompiledConceptDescriptor("jetbrains.mps.samples.KajaAndOr.structure.Or", "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator", false, new String[]{"jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"}, new String[]{}, new String[]{});
       default:
