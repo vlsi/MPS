@@ -4686,7 +4686,8 @@ __switch__:
 
         private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SLinkOperations.setTarget(_context.getSourceNode(), "visibility", result, true);
-          return result;
+          editorContext.selectWRTFocusPolicy(_context.getSourceNode());
+          return null;
         }
       }, operationContext);
       for (final INodeSubstituteAction action : list) {
@@ -4713,7 +4714,8 @@ __switch__:
 
         private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SLinkOperations.setTarget(_context.getSourceNode(), "type", result, true);
-          return result;
+          editorContext.selectWRTFocusPolicy(_context.getSourceNode());
+          return null;
         }
       }, operationContext);
       for (final INodeSubstituteAction action : list) {
