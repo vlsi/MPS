@@ -8,8 +8,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi;
-import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
-import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
+import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.logging.Logger;
 
@@ -29,7 +29,7 @@ public class EditWatchAction_Action extends BaseAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setVisible(EvaluationUi.EVALUATION_MODEL.getData(event.getDataContext()) != null);
+      event.getPresentation().setVisible(EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext()) != null && EvaluationUi.DEBUG_SESSION.getData(event.getDataContext()) != null);
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "EditWatchAction", t);
       this.disable(event.getPresentation());
@@ -45,9 +45,12 @@ public class EditWatchAction_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      AbstractEvaluationModel model = EvaluationUi.EVALUATION_MODEL.getData(event.getDataContext());
-      // todo remove cast 
-      ((EvaluationProvider) model.getDebugSession().getEvaluationProvider()).showEditWatchDialog(MPSCommonDataKeys.OPERATION_CONTEXT.getData(event.getDataContext()), model);
+      IEvaluationContainer container = EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext());
+      DebugSession session = EvaluationUi.DEBUG_SESSION.getData(event.getDataContext());
+      if (container == null || session == null) {
+        return;
+      }
+      session.getEvaluationProvider().showEditWatchDialog(MPSCommonDataKeys.OPERATION_CONTEXT.getData(event.getDataContext()), container);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "EditWatchAction", t);
     }

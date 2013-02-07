@@ -41,7 +41,7 @@
   <import index="tpe5" modelUID="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="18oi" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.beans(JDK/java.beans@java_stub)" version="-1" />
-  <import index="mcvh" modelUID="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debug.runtime.settings)" version="-1" />
+  <import index="mcvh" modelUID="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)" version="-1" />
   <import index="1p1s" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps(MPS.Core/jetbrains.mps@java_stub)" version="-1" />
   <import index="tty3" modelUID="r:e12fc70b-3d1d-4dc2-9467-5147656e0455(jetbrains.mps.baseLanguage.unitTest.execution.settings)" version="1" />
   <import index="d2gh" modelUID="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)" version="2" />
@@ -94,19 +94,19 @@
   <roots>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6893245555985399815">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.execution.configurations" />
-      <property name="name" nameId="tpck.1169194664001" value="Execution Configurations" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Execution configurations for MPS" />
-      <property name="version" nameId="tp4k.5023285075122009369" value="3.0" />
-      <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
+      <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Execution configurations for MPS" />
+      <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
+      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
+      <property name="name" nameId="tpck.1169194664001" value="Execution Configurations" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="123.1" />
       <property name="loadModules" nameId="tp4k.8842945788826116904" value="true" />
-      <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
-      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
+      <property name="version" nameId="tp4k.5023285075122009369" value="3.0" />
     </node>
     <node type="uhxm.RunConfiguration" typeId="uhxm.2401501559171345993" id="6062668769033909448">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="java" />
       <property name="name" nameId="tpck.1169194664001" value="Java" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="java" />
       <link role="configurationKind" roleId="uhxm.2401501559171353314" targetNodeId="6062668769033909641" resolveInfo="Java Application" />
     </node>
     <node type="uhxm.RunConfigurationKind" typeId="uhxm.2401501559171345994" id="6062668769033909641">
@@ -115,9 +115,9 @@
     </node>
     <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="6062668769033909643">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
-      <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="java" />
       <property name="canDebug" nameId="uhxm.6226796386650281949" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="java" />
+      <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="6062668769033909448" resolveInfo="Java" />
     </node>
     <node type="uhxm.RunConfigurationProducer" typeId="uhxm.4366236229294105349" id="6062668769033909683">
@@ -128,15 +128,15 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.execution" />
     </node>
     <node type="uhxm.RunConfiguration" typeId="uhxm.2401501559171345993" id="6062668769034010590">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.execution" />
       <property name="name" nameId="tpck.1169194664001" value="JUnit Tests" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.execution" />
       <link role="configurationKind" roleId="uhxm.2401501559171353314" targetNodeId="6062668769034010588" resolveInfo="JUnit Tests" />
     </node>
     <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="6062668769034010900">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
-      <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.execution" />
       <property name="canDebug" nameId="uhxm.6226796386650281949" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="junit.execution" />
+      <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="6062668769034010590" resolveInfo="JUnit Tests" />
     </node>
     <node type="uhxm.RunConfigurationProducer" typeId="uhxm.4366236229294105349" id="6062668769034010995">
@@ -153,9 +153,9 @@
     </node>
     <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="6062668769034024381">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
-      <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <property name="canDebug" nameId="uhxm.6226796386650281949" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="mps" />
+      <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="6062668769034024114" resolveInfo="MPS Instance" />
     </node>
     <node type="rzqf.CommandDeclaration" typeId="rzqf.856705193941281768" id="6062668769034024422">
@@ -173,8 +173,8 @@
     </node>
     <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="6391517972808447593">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="false" />
-      <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="remote" />
+      <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <link role="runConfiguration" roleId="uhxm.1048802521465114237" targetNodeId="6391517972808447557" resolveInfo="Remote" />
       <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="6391517972808447557" resolveInfo="Remote" />
     </node>
@@ -183,8 +183,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="remote" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="357096973092112028">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="mps" />
       <property name="name" nameId="tpck.1169194664001" value="ProjectChooser" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="mps" />
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968026150" />
   </roots>
@@ -4563,8 +4563,8 @@
         </node>
       </node>
       <node role="parameterDeclaration" roleId="rzqf.6129022259108579245" type="rzqf.ExplicitCommandParameterDeclaration" typeId="rzqf.856705193941281762" id="1282994116698447486">
-        <property name="name" nameId="tpck.1169194664001" value="projectToOpen" />
         <property name="isRequired" nameId="rzqf.856705193941281763" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="projectToOpen" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1282994116698452435">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fxg7.~File" resolveInfo="File" />
         </node>

@@ -12,12 +12,12 @@ public class IEvaluatorConcept_Behavior {
   }
 
   @Deprecated
-  public static String call_getEvaluatorPresentation_9172312269976647295(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getEvaluatorPresentation_9172312269976647295", new Object[]{});
+  public static SNode call_getCode_317191294093624551(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getCode_317191294093624551", new Object[]{});
   }
 
   @Deprecated
-  public static String callSuper_getEvaluatorPresentation_9172312269976647295(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), callerConceptFqName, "virtual_getEvaluatorPresentation_9172312269976647295", new Class[]{SNode.class}, new Object[]{});
+  public static SNode callSuper_getCode_317191294093624551(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), callerConceptFqName, "virtual_getCode_317191294093624551", new Class[]{SNode.class}, new Object[]{});
   }
 }

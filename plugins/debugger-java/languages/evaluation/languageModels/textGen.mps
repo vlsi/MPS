@@ -11,6 +11,7 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <roots>
     <node type="2omo.ConceptTextGenDeclaration" typeId="2omo.1233670071145" id="948722627350505706">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
       <link role="conceptDeclaration" roleId="2omo.1233670257997" targetNodeId="8sls.6036237525966182694" resolveInfo="LowLevelVariable" />
     </node>
     <node type="2omo.LanguageTextGenDeclaration" typeId="2omo.1233921373471" id="948722627350506005">

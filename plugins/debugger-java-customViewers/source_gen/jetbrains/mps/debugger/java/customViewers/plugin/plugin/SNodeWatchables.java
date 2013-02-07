@@ -93,4 +93,16 @@ public class SNodeWatchables {
       return ourCategory;
     }
   }
+
+  public static class MyWatchable_parent extends CustomJavaWatchable {
+    private static WatchablesCategory ourCategory = new WatchablesCategory("parent");
+
+    public MyWatchable_parent(JavaValue value, String name) {
+      super(value, name);
+    }
+
+    public WatchablesCategory getCategory() {
+      return ourCategory;
+    }
+  }
 }

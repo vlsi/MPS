@@ -5,9 +5,10 @@ package jetbrains.mps.debugger.java.runtime.state.watchables;
 import jetbrains.mps.debugger.java.api.state.watchables.JavaWatchable;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import com.sun.jdi.ArrayReference;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
+import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
@@ -15,11 +16,13 @@ import jetbrains.mps.debug.api.programState.WatchablesCategory;
 public class JavaArrayItemWatchable extends JavaWatchable implements IWatchable {
   private final ArrayReference myArray;
   private final int myIndex;
+  private final JavaValue myValue;
 
   public JavaArrayItemWatchable(ArrayReference arrayReference, int index, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myArray = arrayReference;
     myIndex = index;
+    myValue = ValueUtil.getInstance().fromJDI(myArray.getValue(myIndex), myClassFQName, myThreadReference);
   }
 
   public ArrayReference getArray() {
@@ -33,12 +36,12 @@ public class JavaArrayItemWatchable extends JavaWatchable implements IWatchable 
 
   @Override
   public IValue getValue() {
-    return ValueUtil.getInstance().fromJDI(myArray.getValue(myIndex), myClassFQName, myThreadReference);
+    return myValue;
   }
 
   @Override
   public Icon getPresentationIcon() {
-    return getValue().getPresentationIcon();
+    return myValue.getPresentationIcon();
   }
 
   @Override
