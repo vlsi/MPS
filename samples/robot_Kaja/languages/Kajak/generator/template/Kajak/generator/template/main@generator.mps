@@ -144,7 +144,17 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="3210697320273763071">
       <property name="name" nameId="tpck.1169194664001" value="reduce_TraceMessage" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="c2kz.3210697320273763054" resolveInfo="TraceMessage" />
+    </node>
+    <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="7060824959893177707">
+      <property name="name" nameId="tpck.1169194664001" value="reduce_Looking" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Logical" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="c2kz.7060824959893078082" resolveInfo="Looking" />
+    </node>
+    <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="7060824959896164452">
+      <property name="name" nameId="tpck.1169194664001" value="ReduceDirectionEnum" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Logical" />
     </node>
   </roots>
   <root id="3308300503039570163">
@@ -211,6 +221,12 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="c2kz.3308300503039683649" resolveInfo="Heading" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="3308300503039683666">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="3308300503039683664" resolveInfo="reduce_Heading" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7060824959893176543">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="c2kz.7060824959893078082" resolveInfo="Looking" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7060824959893177709">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="7060824959893177707" resolveInfo="reduce_Looking" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="3308300503039683776">
@@ -2157,6 +2173,176 @@
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="3210697320273763085">
             <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="3210697320273763086" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="7060824959893177707">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7060824959893184039">
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7060824959893184040" />
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7060824959893184041">
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7060824959893184042" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7060824959893184043" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7060824959893184044" />
+      </node>
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7060824959893184045">
+        <property name="name" nameId="tpck.1169194664001" value="foo" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7060824959893184046" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7060824959893184047" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7060824959893184048">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7060824959893184049">
+            <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="7060824959893184050">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7060824959893184061" resolveInfo="heading" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7060824959893184051">
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="7060824959896242529">
+                  <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="7060824959896164452" resolveInfo="ReduceDirectionEnum" />
+                  <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="7060824959896242619">
+                    <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7060824959896242620">
+                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7060824959896242676">
+                        <node role="expression" roleId="tpee.1068580123156" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7060824959896242675" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7060824959893184059" />
+            </node>
+            <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="7060824959893184060" />
+          </node>
+        </node>
+      </node>
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7060824959893184061">
+        <property name="name" nameId="tpck.1169194664001" value="heading" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="7060824959893184062" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7060824959893184063" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7060824959893184064">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7060824959893184065">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7060824959893184066">
+              <property name="value" nameId="tpee.1068580123138" value="false" />
+            </node>
+          </node>
+        </node>
+        <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7060824959893184067">
+          <property name="name" nameId="tpck.1169194664001" value="direction" />
+          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7060824959893184068">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wd51.3308300503039569134" resolveInfo="Direction" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="7060824959896164452">
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7060824959896330160">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="c2kz.7060824959893078082" resolveInfo="Looking" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="7060824959896330161">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7060824959896346893">
+          <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="wd51.3308300503039569140" resolveInfo="north" />
+          <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="wd51.3308300503039569134" resolveInfo="Direction" />
+        </node>
+      </node>
+      <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="7060824959896330163">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7060824959896330164">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4970597638045689794">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4970597638045784968">
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_HasValue_Enum" typeId="tp25.1146171026731" id="4970597638045796873">
+                <node role="value" roleId="tp25.1146171026732" type="tp25.EnumMemberReference" typeId="tp25.1138676077309" id="4970597638045796875">
+                  <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="c2kz.7060824959893064772" />
+                </node>
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4970597638045690200">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4970597638045776468">
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="c2kz.7060824959893078083" resolveInfo="direction" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4970597638045689792" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7060824959896165449">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="c2kz.7060824959893078082" resolveInfo="Looking" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="7060824959896221880">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7060824959896240570">
+          <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="wd51.3308300503039569142" resolveInfo="east" />
+          <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="wd51.3308300503039569134" resolveInfo="Direction" />
+        </node>
+      </node>
+      <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="7060824959896205081">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7060824959896205082">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4970597638045824303">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4970597638045831219">
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_HasValue_Enum" typeId="tp25.1146171026731" id="4970597638045855002">
+                <node role="value" roleId="tp25.1146171026732" type="tp25.EnumMemberReference" typeId="tp25.1138676077309" id="4970597638045855004">
+                  <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="c2kz.7060824959893078070" />
+                </node>
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4970597638045824709">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4970597638045827420">
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="c2kz.7060824959893078083" resolveInfo="direction" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4970597638045824301" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7060824959896333437">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="c2kz.7060824959893078082" resolveInfo="Looking" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="7060824959896333438">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7060824959896371069">
+          <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="wd51.3308300503039569143" resolveInfo="south" />
+          <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="wd51.3308300503039569134" resolveInfo="Direction" />
+        </node>
+      </node>
+      <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="7060824959896333440">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7060824959896333441">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4970597638045859084">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4970597638045866005">
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_HasValue_Enum" typeId="tp25.1146171026731" id="4970597638045877923">
+                <node role="value" roleId="tp25.1146171026732" type="tp25.EnumMemberReference" typeId="tp25.1138676077309" id="4970597638045877925">
+                  <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="c2kz.7060824959893078073" />
+                </node>
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4970597638045859490">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4970597638045862201">
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="c2kz.7060824959893078083" resolveInfo="direction" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4970597638045859082" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7060824959896333389">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="c2kz.7060824959893078082" resolveInfo="Looking" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="7060824959896333390">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="7060824959896371209">
+          <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="wd51.3308300503039569144" resolveInfo="west" />
+          <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="wd51.3308300503039569134" resolveInfo="Direction" />
+        </node>
+      </node>
+      <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="7060824959896333392">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7060824959896333393">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4970597638045883426">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4970597638045890339">
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_HasValue_Enum" typeId="tp25.1146171026731" id="4970597638045902257">
+                <node role="value" roleId="tp25.1146171026732" type="tp25.EnumMemberReference" typeId="tp25.1138676077309" id="4970597638045902259">
+                  <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="c2kz.7060824959893078077" />
+                </node>
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4970597638045883843">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4970597638045886540">
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="c2kz.7060824959893078083" resolveInfo="direction" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4970597638045883415" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

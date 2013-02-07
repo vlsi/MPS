@@ -2,7 +2,7 @@
 <solution name="stubUtils" uuid="b55d8dfc-0d9d-43d5-886d-c644e7083bff" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

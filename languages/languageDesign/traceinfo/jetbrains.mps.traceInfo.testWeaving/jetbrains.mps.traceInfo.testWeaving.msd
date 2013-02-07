@@ -2,7 +2,6 @@
 <solution name="jetbrains.mps.traceInfo.testWeaving" uuid="dc080be0-da6e-4885-aed0-7d999c120619" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
       <sourceRoot location="models" />
     </modelRoot>
   </models>

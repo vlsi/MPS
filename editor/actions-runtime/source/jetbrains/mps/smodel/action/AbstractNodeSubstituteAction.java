@@ -46,7 +46,20 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   protected AbstractNodeSubstituteAction() {
   }
 
-  protected abstract SNode doSubstitute(String pattern);
+  protected SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+    return doSubstitute(pattern);
+  }
+
+  /**
+   * @deprecated Since MPS 3.0 was replaced by:
+   * <code>doSubstitute(@Nullable final EditorContext editorContext, String pattern)</code>
+   *
+   * Was left for compatibility with generated code. Later should be removed.
+   */
+  @Deprecated
+  protected SNode doSubstitute(String pattern) {
+    throw new UnsupportedOperationException();
+  }
 
   public SNode getSourceNode() {
     return mySourceNode;
@@ -143,7 +156,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
 
     Runnable runnable = new Runnable() {
       public void run() {
-        newNode[0] = doSubstitute(pattern);
+        newNode[0] = doSubstitute(context, pattern);
         if (context != null) {
           if (newNode[0] == null) {
             context.flushEvents();

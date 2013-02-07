@@ -2,7 +2,7 @@
 <solution name="internalCollections.test" uuid="b5660d3a-8a0d-4815-881b-7c884f61c9c7" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

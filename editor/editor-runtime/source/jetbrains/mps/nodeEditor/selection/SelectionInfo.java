@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -92,7 +93,11 @@ public class SelectionInfo {
           LOG.error("Specified selection class module was not found by ID: " + myModuleID);
           return null;
         }
-        selectionClass = module.getClass(mySelectionClassName);
+        if (!(module instanceof Language)) {
+          LOG.error("Specified selection class module was not Language: " + myModuleID);
+          return null;
+        }
+        selectionClass = ((Language) module).getClass(mySelectionClassName);
       } else {
         selectionClass = (Class<Selection>) getClass().getClassLoader().loadClass(mySelectionClassName);
       }

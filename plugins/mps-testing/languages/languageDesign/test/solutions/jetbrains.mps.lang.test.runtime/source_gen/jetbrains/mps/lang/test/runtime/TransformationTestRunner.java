@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.Arrays;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.runtime.IClassLoadingModule;
 import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
 import java.util.Map;
@@ -93,7 +94,7 @@ public class TransformationTestRunner {
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        clazz.value = projectTest.getModelDescriptor().getModule().getClass(className);
+        clazz.value = ((IClassLoadingModule) projectTest.getModelDescriptor().getModule()).getClass(className);
         String classloader = clazz.value.getClassLoader().toString();
         String module = projectTest.getModelDescriptor().getModule().getModuleFqName();
         assert classloader.contains(module) : "class: " + clazz.value + "; classloader: " + classloader + "; module: " + module;

@@ -10,8 +10,8 @@ import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import javax.swing.Icon;
 
 public abstract class CustomJavaWatchable implements IWatchable {
-  private JavaValue myCachedValue;
-  private String myVisibleName;
+  private final JavaValue myCachedValue;
+  private final String myVisibleName;
 
   public CustomJavaWatchable(JavaValue value, String name) {
     myCachedValue = value;

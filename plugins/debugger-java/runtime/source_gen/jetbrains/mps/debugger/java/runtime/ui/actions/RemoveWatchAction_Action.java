@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi;
-import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
@@ -31,7 +31,7 @@ public class RemoveWatchAction_Action extends BaseAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setEnabled(EvaluationUi.EVALUATION_MODEL.getData(event.getDataContext()) != null);
+      event.getPresentation().setEnabled(EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext()) != null);
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "RemoveWatchAction", t);
       this.disable(event.getPresentation());
@@ -47,7 +47,7 @@ public class RemoveWatchAction_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      AbstractEvaluationModel model = EvaluationUi.EVALUATION_MODEL.getData(event.getDataContext());
+      IEvaluationContainer model = EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext());
       IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);
       if (evaluationProvider != null) {
         ((EvaluationProvider) evaluationProvider).removeWatch(model);

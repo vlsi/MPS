@@ -30,10 +30,15 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -109,9 +114,10 @@ public class FindUtils {
       Class c = null;
       for (SModelDescriptor model : models) {
         IModule module = model.getModule();
-        if (module == null) continue;
-        c = module.getClass(className);
-        if (c != null) break;
+        if (module instanceof IClassLoadingModule) {
+          c = ((IClassLoadingModule) module).getClass(className);
+          if (c != null) break;
+        }
       }
 
       if (c == null) {

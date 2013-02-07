@@ -155,7 +155,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
 
     private static Class getTestClass(IModule module, String className) {
       if (module instanceof IClassLoadingModule && ((IClassLoadingModule) module).canLoad()) {
-        return module.getClass(className);
+        return ((IClassLoadingModule) module).getClass(className);
       } else {
         try {
           return getTestClassLoaderForModule(module).loadClass(className);

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-coc3oaqqvmmxq087mbghdc2nrcgb85t">
+<dependencies version="2" modelHash="-59wozbvz2arl7aqrjhxw3gewr5vldxz">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22hsdy8hx47u1rwu32z4quczy3521b0" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="3x8dkjn6dcfrdbj332g30xpv4vlad6k">
     <dep root="1790427706118304177" />
     <dep root="1790427706118381722" />
-    <dep root="1790427706118391955" />
     <dep root="3607579524910560662" />
     <dep root="3607579524910560663" />
     <dep root="5447719361346490674" />
@@ -34,10 +33,7 @@
   <source id="1790427706118304177" name="GetCurrency" hash="3480vc5up6491ef6kp12qza6tcod78g">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1790427706118381722" name="ConvertTo" hash="54nvecwptof25y3y2cxyl0qupt9w87y">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-  </source>
-  <source id="1790427706118391955" name="MoneyConversionType" hash="-7oojo7knfxhjaa4oxkhgi4u32fn195u">
+  <source id="1790427706118381722" name="ConvertTo" hash="-5ehr2xwt1mk8i0tjzfoi2lu2v51v0cw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3607579524910560662" name="CurrencyDefTable" hash="6okbumy0epqbyqruyhb5o04kkz2ad7a">

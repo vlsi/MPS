@@ -18,11 +18,13 @@ import java.util.Collections;
 /*package*/ class JavaMethodWatchable extends JavaWatchable {
   private final Method myMethod;
   private final boolean myIsEnter;
+  private final JavaMethodWatchable.JavaMethodValue myValue;
 
   public JavaMethodWatchable(Method method, boolean enter, String classFQName, ThreadReference threadReference) {
     super(classFQName, threadReference);
     myMethod = method;
     myIsEnter = enter;
+    myValue = new JavaMethodWatchable.JavaMethodValue();
   }
 
   @Override
@@ -40,7 +42,7 @@ import java.util.Collections;
 
   @Override
   public IValue getValue() {
-    return new JavaMethodWatchable.JavaMethodValue();
+    return myValue;
   }
 
   @Override
@@ -55,12 +57,15 @@ import java.util.Collections;
   }
 
   private class JavaMethodValue implements IValue {
+    private final String myPresentation;
+
     private JavaMethodValue() {
+      myPresentation = myMethod.declaringType().name() + "." + myMethod.name();
     }
 
     @Override
     public String getValuePresentation() {
-      return myMethod.declaringType().name() + "." + myMethod.name();
+      return myPresentation;
     }
 
     @Override
@@ -71,6 +76,9 @@ import java.util.Collections;
     @Override
     public boolean isStructure() {
       return false;
+    }
+
+    public void initSubvalues() {
     }
 
     @Override

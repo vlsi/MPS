@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.runtime.state;
 
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
-import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
+import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.java.runtime.engine.events.Context;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +20,7 @@ import jetbrains.mps.debugger.java.runtime.engine.DebugProcessAdapter;
 public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
   private final EventsProcessor myEventsProcessor;
   private volatile boolean myIsMute = false;
-  private IEvaluationProvider myEvaluationProvider;
+  private EvaluationProvider myEvaluationProvider;
 
   public DebugSession(EventsProcessor eventsProcessor, final Project p) {
     super(p);
@@ -140,11 +140,11 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
   }
 
   @Override
-  public IEvaluationProvider getEvaluationProvider() {
+  public EvaluationProvider getEvaluationProvider() {
     return myEvaluationProvider;
   }
 
-  public void setEvaluationProvider(IEvaluationProvider evaluationProvider) {
+  public void setEvaluationProvider(EvaluationProvider evaluationProvider) {
     myEvaluationProvider = evaluationProvider;
   }
 

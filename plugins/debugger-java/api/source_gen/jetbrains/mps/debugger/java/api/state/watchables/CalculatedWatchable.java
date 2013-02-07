@@ -4,10 +4,8 @@ package jetbrains.mps.debugger.java.api.state.watchables;
 
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
-import com.sun.jdi.Value;
 import org.jetbrains.annotations.NotNull;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
@@ -17,10 +15,10 @@ public class CalculatedWatchable extends JavaWatchable implements IWatchable {
   private final JavaValue myValue;
   private final String myName;
 
-  public CalculatedWatchable(String name, Value value, @NotNull String classFqName, ThreadReference threadReference) {
+  public CalculatedWatchable(String name, JavaValue value, @NotNull String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myName = name;
-    myValue = ValueUtil.getInstance().fromJDI(value, myClassFQName, threadReference);
+    myValue = value;
   }
 
   @Override

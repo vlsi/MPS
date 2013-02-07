@@ -23,7 +23,6 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -35,19 +34,39 @@ import java.util.Collection;
 import java.util.List;
 
 public interface IModule extends SModule {
+  // events
+  // dependency change
+  // used languages change
+
+  // SModule#getModuleReference
+  // ask Misha about return type
+  // oooor it doesn't matter here
   @NotNull
   ModuleReference getModuleReference();
 
+  // ?, move to AbstractModule, remove usages as much as possible
+  // up reasonable getters to SModule
   ModuleDescriptor getModuleDescriptor();
 
+  // ?, move to AbstractModule, remove usages as much as possible
+  // add setters to IModule and use it as much as possible
+  // invalidate something if only current != prev
   void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses);
 
+  // ?, move to AbstractModule, remove usages as much as possible
   IFile getDescriptorFile();
+  // IFile getModuleRoot() <- clash with model root // to SModuleOperations / maybe SModule
+  // IFile getModuleFolder() ?
+  // use as much as possible
 
   //----deps
 
+  // review SDependency part in SModule
+
+  // extract methods from DependenciesManager to SModule ?
   DependenciesManager getDependenciesManager();
 
+  // ?
   /**
    * Explicitly declared deps +
    * <p>explicitly extended languages + all the generators (for a lang)
@@ -57,6 +76,7 @@ public interface IModule extends SModule {
    */
   List<Dependency> getDependencies();
 
+  // ?
   /**
    * Explicitly used langs +
    * <p>all bootstrap langs (for a generator)
@@ -65,6 +85,7 @@ public interface IModule extends SModule {
    */
   Collection<ModuleReference> getUsedLanguagesReferences();
 
+  // ?
   /**
    * Explicitly used devkits
    *
@@ -72,77 +93,151 @@ public interface IModule extends SModule {
    */
   Collection<ModuleReference> getUsedDevkitReferences();
 
+  // cast to AbstractModule I think
   void addDependency(SModuleReference moduleRef, boolean reexport);
 
+  // cast to AbstractModule I think
   void addUsedLanguage(ModuleReference langRef);
 
+  // cast to AbstractModule I think
   void addUsedDevkit(ModuleReference devkitRef);
 
+  // remove? invalidate on add?
+  // ouch. basically it's callback on dependencies change
+  // so two purposes: initiate invaliding and invalidate action
+  // maybe we need one big DependenciesManager with invalidating actions
   void invalidateDependencies();
 
   //----
 
+  // AbstractModule#createModel
+  // ModelAdjuster? WTF? something between creating and registration I think
+  // talk with Evgeny
   SModelDescriptor createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
 
+  // SModule#getModels. But how to migrate? ModuleOperations.getOwnModelDescriptors with unchecked cast?
+  // When is it safe to migrate method call? calc expected type?
   List<SModelDescriptor> getOwnModelDescriptors();
 
+  // let's go to the mall?
+  // should be property of generator, but for now - cast
+  // ModuleDescriptor should have getOutputPath() method?
   String getOutputFor(org.jetbrains.mps.openapi.model.SModel model);
 
-  IFile getClassesGen();
-
+  // wtf? If it home for module descriptor just use module descriptor dir!
+  // ooups. for packaged modules it's jar file
+  // so check usages of method! why we need it?
+  // -> getModuleFolder()
+  // so getModuleFolder() is ${module} getter and should be open
+  // getModuleFile() is ok, but with cast
+  // other things is forbidden
+  // !!! to be notice: 2 jars: src and compiled classes
   IFile getBundleHome();
 
+  // rethink it, move to util and remove
+  // should be implemented via model roots
+  // check it out in IDEA!
+  // how to check is it works: clean ~/.idea/system and check cmd+n
+  // use SModuleOperations.getIndexablePaths
+  // todo: look at idea indexing subsystem
+  @Deprecated
   Collection<String> getIndexablePaths();
 
+  // SModule#getModuleScope
   @NotNull
   IScope getScope();
 
+  // ???, to util, use model roots? what does it mean source paths?
+  // cast to AbstractModule for now
+  // use facet after generate before compile to add source paths
   List<String> getSourcePaths();
 
-  IClassPathItem getClassPathItem();
-
-  IClassPathItem getModuleWithDependenciesClassPathItem();
-
-  boolean isCompileInMPS();
-
-  boolean reloadClassesAfterGeneration();
-
+  // should be do nothing, remove
+  // should be listening
   void invalidateCaches();
 
+  // just for file-backed modules
+  // for now cast!
   boolean isChanged();
 
+  // ...
   void setChanged();
 
+  // ...
   void save();
 
+  // AbstractModule#onModuleLoad
+  // is it refactorings? move to it
   void onModuleLoad();
 
+  // why we need it?
+  // reasonable use: in build scripts, but in this case we have only files, and it's just check for jar file
   boolean isPackaged();
 
+  // ?
+  // btw onModuleRegistered
   void attach();
 
+  // ?
   void dispose();
 
+  // ?, classes oO? possibility to listen reload action in API and use it in facet!
+  // ModuleSource!
+  // reloadClasses -> outside
   void reloadFromDisk(boolean reloadClasses);
 
+  // should be final in AbstractModule? expose to SModule?
+  // ModuleSource (@see DataSource, maybe abstract from files?)
   boolean needReloading();
 
-  Class getClass(String className);
-
+  // dislike it =(
   public static interface ModelAdjuster {
     void adjust(SModelDescriptor model);
   }
 
+//  ----- use cast to JavaModuleFacet methods
+
+  @Deprecated
+  IClassPathItem getClassPathItem();
+
+  @Deprecated
+  IFile getClassesGen();
+
+  @Deprecated
+  boolean isCompileInMPS();
+
+//  use SModuleOperations#getModuleWithDependenciesClassPathItem instead
+  @Deprecated
+  IClassPathItem getModuleWithDependenciesClassPathItem();
+
+//  ----- IClassLoadingModule methods
+
+//  deprecated, use IClassLoadingModule#getClass instead
+//  @Deprecated
+//  Class getClass(String className);
+
+//  deprecated, use IClassLoadingModule#reloadClassesAfterGeneration instead
+//  @Deprecated
+//  boolean reloadClassesAfterGeneration();
+
   //-----todo ret rid of
 
+  // SModule#getModuleName
   String getModuleFqName();
 
   //todo move to model
+  // remove
+  // check is it imported on language model creation
+  // optimize imports (not remove it)
+  // see AddMissingImports / looks like create migration for this + customize create model dialog
   Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
 
   //todo move to model
+  // like previous
   Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
 
+  // methods for getOutputFor() method
+  // extract outside IModule / it's not IModule func anyway
   //todo used only in language,generator,solution
   String getGeneratorOutputPath();
 

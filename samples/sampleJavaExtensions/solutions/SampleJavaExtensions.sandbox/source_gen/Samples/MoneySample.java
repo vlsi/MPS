@@ -15,7 +15,7 @@ public class MoneySample {
     Money cash = new Money(10, "EUR");
 
     // Money literal can be manipulated just like any other type of literals in MPS 
-    Money total = cash.plus(MoneySample.getDonation());
+    Money total = cash.plus(MoneySample.getDonation().to("EUR"));
     System.out.println("total amount: " + total);
     // Code with the classes from org.jetbrains.mps.samples.MoneyRuntime will be generated and then used at run-time 
     // Try "Preview Generated Text (Control|Cmd + Alt + Shift + F9)" 

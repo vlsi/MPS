@@ -20,9 +20,18 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IllegalModelChangeError;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -70,28 +79,38 @@ public class QueryMethodGenerated implements CoreComponent {
     return ourClassesReportedAsNotFound.add(className);
   }
 
+  private static void reportErrorWhileClassLoading(String className, boolean suppressErrorLogging, String message) throws ClassNotFoundException {
+    if (!suppressErrorLogging) {
+      if (needReport(className)) {
+        LOG.error(message);
+      }
+    }
+    throw new ClassNotFoundException(message);
+  }
+
   @NotNull
   public static Class getQueriesGeneratedClassFor(@NotNull SModelDescriptor sm, boolean suppressErrorLogging) throws ClassNotFoundException {
     String packageName = JavaNameUtil.packageNameForModelUID(sm.getSModel().getSModelReference());
     String queriesClassName = packageName + ".QueriesGenerated";
+
     IModule module = sm.getModule();
     if (module == null) {
-      if (!suppressErrorLogging) {
-        if (needReport(queriesClassName)) {
-          LOG.error("couldn't find class 'QueriesGenerated' for model '" + sm.getSModelReference() + "' : no module");
-        }
-      }
-      throw new ClassNotFoundException("couldn't find class 'QueriesGenerated': no module for model '" + sm.getSModelReference() + "'");
+      reportErrorWhileClassLoading(
+        queriesClassName, suppressErrorLogging,
+        "couldn't find class 'QueriesGenerated': no module for model '" + sm.getSModelReference() + "'");
     }
-    Class queriesClass = module.getClass(queriesClassName);
+    if (!(module instanceof IClassLoadingModule)) {
+      reportErrorWhileClassLoading(
+        queriesClassName, suppressErrorLogging,
+        "couldn't find class 'QueriesGenerated': module " + module.getModuleName() + " not implements IClassLoadingModule");
+    }
 
+    Class queriesClass = ((IClassLoadingModule) module).getClass(queriesClassName);
     if (queriesClass == null) {
-      if (!suppressErrorLogging) {
-        if (needReport(queriesClassName)) {
-          LOG.error("couldn't find class 'QueriesGenerated' for model '" + sm.getSModelReference() + "' : TRY TO GENERATE");
-        }
-      }
-      throw new ClassNotFoundException("'" + queriesClassName + "' in module " + module.getModuleFqName());
+      reportErrorWhileClassLoading(
+        queriesClassName, suppressErrorLogging,
+        "couldn't find class 'QueriesGenerated' for model '" + sm.getSModelReference() + "' : TRY TO GENERATE"
+      );
     }
 
     return queriesClass;

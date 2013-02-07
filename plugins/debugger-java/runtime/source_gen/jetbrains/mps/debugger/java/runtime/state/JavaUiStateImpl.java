@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.runtime.engine.events.Context;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public abstract class JavaUiStateImpl extends JavaUiState {
   protected final DebugSession myDebugSession;
@@ -57,6 +58,14 @@ public abstract class JavaUiStateImpl extends JavaUiState {
 
   protected EventsProcessor getEventProcessor() {
     return myDebugSession.getEventsProcessor();
+  }
+
+  @Override
+  public void invokeEvaluation(_FunctionTypes._void_P0_E0 command) {
+    if (getContext() == null) {
+      return;
+    }
+    myDebugSession.getEventsProcessor().scheduleEvaluation(command, getThread().getThread());
   }
 
   private static boolean eq_vkri5_a0a4a6(Object a, Object b) {

@@ -36,7 +36,7 @@ public interface SModelRepositoryListener {
    * SModel instances was replaced by another one (as a result of reloadFromDisk(),
    * or replaceModel() methods execution).
    * <p/>
-   * It is guaranteed that this method will be executed in event dispatch thread.
+   * It is guaranteed that this method will be executed in event dispatch thread if EDT is available.
    * <p/>
    * Old instance of SModel will not be attached to any SModelDescriptor and will not
    * be disposed till the end of notifications processing.

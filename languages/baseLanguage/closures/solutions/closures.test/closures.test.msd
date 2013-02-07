@@ -2,7 +2,7 @@
 <solution name="closures.test" uuid="7a0c7a21-43a3-4bb4-b898-a819ebed44a5" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

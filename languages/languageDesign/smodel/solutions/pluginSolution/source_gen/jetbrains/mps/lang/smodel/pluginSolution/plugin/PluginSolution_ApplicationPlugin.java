@@ -30,12 +30,12 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new MigrateToSReferenceOpenAPI_Action());
     // groups 
     addGroup(new LanguageInternalAddition_ActionGroup());
-    addGroup(new Migration30_ActionGroup());
+    addGroup(new Migrations30_ActionGroup());
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(Migration30_ActionGroup.ID, ModuleActions_ActionGroup.ID, null);
-    insertGroupIntoAnother(Migration30_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_migration);
+    insertGroupIntoAnother(Migrations30_ActionGroup.ID, ModuleActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(Migrations30_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_migration);
     insertGroupIntoAnother(LanguageInternalAddition_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_find_javastub_usages);
   }
 }

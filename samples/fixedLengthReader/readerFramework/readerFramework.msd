@@ -2,7 +2,7 @@
 <solution name="readerFramework" uuid="f4f64bcd-8732-4771-be32-6b92ca717f39" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

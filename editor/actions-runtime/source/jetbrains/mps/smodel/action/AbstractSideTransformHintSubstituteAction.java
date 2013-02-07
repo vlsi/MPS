@@ -35,6 +35,4 @@ public abstract class AbstractSideTransformHintSubstituteAction extends Abstract
   public AbstractSideTransformHintSubstituteAction(SNode concept, Object parameterNode, SNode sourceNode) {
     super(concept, parameterNode, sourceNode);
   }
-
-  public abstract SNode doSubstitute(String pattern);
 }

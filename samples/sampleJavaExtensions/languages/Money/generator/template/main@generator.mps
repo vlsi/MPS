@@ -44,10 +44,6 @@
       <property name="name" nameId="tpck.1169194664001" value="reduce_ConvertTo" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="v0h4.1790427706118381722" resolveInfo="ConvertTo" />
     </node>
-    <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1790427706118391960">
-      <property name="name" nameId="tpck.1169194664001" value="reduce_MoneyConversionType" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="v0h4.1790427706118391955" resolveInfo="MoneyConversionType" />
-    </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="2864272256649712529">
       <property name="name" nameId="tpck.1169194664001" value="reduce_GreaterThanExpression" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpee.1081506762703" resolveInfo="GreaterThanExpression" />
@@ -199,12 +195,6 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="v0h4.1790427706118381722" resolveInfo="ConvertTo" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1790427706118386764">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1790427706118386761" resolveInfo="reduce_ConvertTo" />
-      </node>
-    </node>
-    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1790427706118391962">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="v0h4.1790427706118391955" resolveInfo="MoneyConversionType" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1790427706118391963">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1790427706118391960" resolveInfo="reduce_MoneyConversionType" />
       </node>
     </node>
   </root>
@@ -495,11 +485,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </root>
-  <root id="1790427706118391960">
-    <node role="contentNode" roleId="tpf8.1092060348987" type="v0h4.MoneyConversionType" typeId="v0h4.1790427706118391955" id="1790427706118391968">
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1790427706118391969" />
     </node>
   </root>
   <root id="2864272256649712529">

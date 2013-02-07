@@ -21,7 +21,7 @@
     <nodeInfo nodeId="5487985028841950544" fileName="DesignPartLoader.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="reloadHandler" />
     <nodeInfo nodeId="5487985028841950549" fileName="DesignPartLoader.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="classes" />
     <nodeInfo nodeId="5487985028841950578" fileName="DesignPartLoader.java" startLine="26" startPosition="77" endLine="27" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841950588" fileName="DesignPartLoader.java" startLine="28" startPosition="25" endLine="29" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841950588" fileName="DesignPartLoader.java" startLine="28" startPosition="25" endLine="29" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841950592" fileName="DesignPartLoader.java" startLine="30" startPosition="5" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841950613" fileName="DesignPartLoader.java" startLine="36" startPosition="9" endLine="37" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841950626" fileName="DesignPartLoader.java" startLine="38" startPosition="26" endLine="39" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -54,11 +54,11 @@
     <nodeInfo nodeId="5487985028841950688" fileName="DesignPartLoader.java" startLine="60" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregisterFromClassLoadManager#()V" />
     <nodeInfo nodeId="5487985028841950570" fileName="DesignPartLoader.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFeatureDesign#(Ljava/lang/String;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/ypath/design/IFeatureDesign;" />
     <nodeInfo nodeId="5487985028841950705" fileName="DesignPartLoader.java" startLine="67" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModuleFor#(Ljetbrains/mps/smodel/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-    <nodeInfo nodeId="5487985028841950602" fileName="DesignPartLoader.java" startLine="35" startPosition="79" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5487985028841950594" fileName="DesignPartLoader.java" startLine="34" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFeatureDesign#(Ljava/lang/String;Ljetbrains/mps/project/IModule;)Ljetbrains/mps/ypath/design/IFeatureDesign;" />
+    <nodeInfo nodeId="5487985028841950602" fileName="DesignPartLoader.java" startLine="35" startPosition="91" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5487985028841950594" fileName="DesignPartLoader.java" startLine="34" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFeatureDesign#(Ljava/lang/String;Ljetbrains/mps/runtime/IClassLoadingModule;)Ljetbrains/mps/ypath/design/IFeatureDesign;" />
     <scopeInfo nodeId="5487985028841950563" fileName="DesignPartLoader.java" startLine="23" startPosition="29" endLine="23" endPosition="29" />
     <scopeInfo nodeId="5487985028841950523" fileName="DesignPartLoader.java" startLine="84" startPosition="29" endLine="84" endPosition="29" />
-    <scopeInfo nodeId="5487985028841950587" fileName="DesignPartLoader.java" startLine="28" startPosition="25" endLine="29" endPosition="61" />
+    <scopeInfo nodeId="5487985028841950587" fileName="DesignPartLoader.java" startLine="28" startPosition="25" endLine="29" endPosition="73" />
     <scopeInfo nodeId="5487985028841950603" fileName="DesignPartLoader.java" startLine="47" startPosition="0" endLine="48" endPosition="36">
       <varInfo nodeId="5487985028841950610" varName="t" />
     </scopeInfo>
@@ -95,7 +95,7 @@
     <scopeInfo nodeId="5487985028841950612" fileName="DesignPartLoader.java" startLine="36" startPosition="9" endLine="46" endPosition="50">
       <varInfo nodeId="5487985028841950614" varName="klass" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841950601" fileName="DesignPartLoader.java" startLine="35" startPosition="79" endLine="50" endPosition="16" />
+    <scopeInfo nodeId="5487985028841950601" fileName="DesignPartLoader.java" startLine="35" startPosition="91" endLine="50" endPosition="16" />
     <scopeInfo nodeId="5487985028841950594" fileName="DesignPartLoader.java" startLine="34" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="5487985028841950597" varName="fqClassName" />
       <varInfo nodeId="5487985028841950599" varName="module" />

@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.logging.Logger;
 
@@ -60,7 +61,11 @@ public class RemoveConceptProperties_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new ConceptPropertiesHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).migrateNextStep();
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          new ConceptPropertiesHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).migrate();
+        }
+      });
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RemoveConceptProperties", t);
     }

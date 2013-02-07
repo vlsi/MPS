@@ -401,9 +401,10 @@ public class SModelRepository implements CoreComponent {
   }
 
   private void fireModelsReplaced(Set<SModelDescriptor> modelDescriptors) {
+    Set<SModelDescriptor> unmodifiableModelDescriptorsSet = Collections.unmodifiableSet(modelDescriptors);
     for (SModelRepositoryListener listener : listeners()) {
       try {
-        listener.modelsReplaced(modelDescriptors);
+        listener.modelsReplaced(unmodifiableModelDescriptorsSet);
       } catch (Throwable t) {
         LOG.error(t);
       }

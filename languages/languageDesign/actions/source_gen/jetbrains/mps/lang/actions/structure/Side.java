@@ -8,7 +8,8 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum Side {
   right("right", null),
-  left("left", "left");
+  left("left", "left"),
+  both_sides("both sides", "both");
 
   private String myName;
 
@@ -24,6 +25,7 @@ public enum Side {
     List<Side> list = ListSequence.fromList(new LinkedList<Side>());
     ListSequence.fromList(list).addElement(Side.right);
     ListSequence.fromList(list).addElement(Side.left);
+    ListSequence.fromList(list).addElement(Side.both_sides);
     return list;
   }
 
@@ -40,6 +42,9 @@ public enum Side {
     }
     if (value.equals(Side.left.getValueAsString())) {
       return Side.left;
+    }
+    if (value.equals(Side.both_sides.getValueAsString())) {
+      return Side.both_sides;
     }
     return Side.getDefault();
   }

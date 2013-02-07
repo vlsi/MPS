@@ -53,6 +53,8 @@ public class ProjectPathUtil {
   }
 
   public static IFile getGeneratorOutputPath(IFile file, ModuleDescriptor descriptor) {
+    // file -> module descriptor file
+    // move to AbstractModule
     String generatorOutputPath;
     if (descriptor instanceof SolutionDescriptor) {
       generatorOutputPath = ((SolutionDescriptor) descriptor).getOutputPath();

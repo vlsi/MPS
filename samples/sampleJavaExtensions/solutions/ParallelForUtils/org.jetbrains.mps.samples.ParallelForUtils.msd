@@ -2,7 +2,7 @@
 <solution name="org.jetbrains.mps.samples.ParallelForUtils" uuid="bc474121-298a-4a06-9066-cd79e543e9d5" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <sourcePath />

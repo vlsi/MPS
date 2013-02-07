@@ -42,15 +42,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ConvertTo" />
-      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="to" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="convert to" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1790427706118391955">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-      <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="MoneyConversionType" />
-      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="MoneyConversion" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3607579524910560662">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
@@ -96,12 +89,6 @@
     </node>
   </root>
   <root id="1790427706118381722">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1790427706118391925">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="conversionTable" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1790427706118386783">
       <property name="name" nameId="tpck.1169194664001" value="targetCurrency" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
@@ -114,7 +101,6 @@
       <node role="target" roleId="tpce.1105736901241" type="v0h4.MoneyType" typeId="5447719361346490730" id="1790427706118390902" />
     </node>
   </root>
-  <root id="1790427706118391955" />
   <root id="3607579524910560662">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3607579524910560668">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
