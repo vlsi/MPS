@@ -129,7 +129,12 @@ public class MPSPsiClass extends MPSPsiClassifier implements PsiClass {
   @NotNull
   @Override
   public PsiField[] getFields() {
-    return new PsiField[0];
+    PsiField[] fields = getChildrenOfType("member", PsiField.class);
+    if (fields == null) {
+      return PsiField.EMPTY_ARRAY;
+    } else {
+      return fields;
+    }
   }
 
   @NotNull
@@ -141,7 +146,6 @@ public class MPSPsiClass extends MPSPsiClassifier implements PsiClass {
     } else {
       return methods;
     }
-//    return new PsiMethod[0];
   }
 
   @NotNull

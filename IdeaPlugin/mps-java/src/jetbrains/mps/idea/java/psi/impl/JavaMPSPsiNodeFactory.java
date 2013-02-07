@@ -61,6 +61,7 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
         return new MPSPsiParameter(id, concept, containingRole);
       }
     });
+    // FIXME must be done via subConceptFactory
     factories.put("jetbrains.mps.baseLanguage.structure.IntegerType", new MPSPsiNodeFactory() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
@@ -71,6 +72,13 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiPrimitiveType(id, concept, containingRole);
+      }
+    });
+
+    factories.put("jetbrains.mps.baseLanguage.structure.FieldDeclaration", new MPSPsiNodeFactory() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiField(id, concept, containingRole);
       }
     });
 
