@@ -18,11 +18,16 @@ package jetbrains.mps.lang.editor.generator.internal;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -39,6 +44,28 @@ public class AbstractCellMenuPart_ApplySideTransforms implements SubstituteInfoP
   @Override
   public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode node = (SNode) cellContext.get(CellContext.EDITED_NODE);
-    return ModelActions.createRightTransformHintSubstituteActions(node, cellSide, null, editorContext.getOperationContext());
+    List<INodeSubstituteAction> list = ModelActions.createRightTransformHintSubstituteActions(node, cellSide, null, editorContext.getOperationContext());
+
+    List<INodeSubstituteAction> wrapperList = new LinkedList<INodeSubstituteAction>();
+    for (final INodeSubstituteAction action : list) {
+      wrapperList.add(new NodeSubstituteActionWrapper(action) {
+        @Override
+        public SNode substitute(@Nullable jetbrains.mps.openapi.editor.EditorContext context, String pattern) {
+          if (context != null) {
+            EditorCell contextCell = context.getContextCell();
+            if (contextCell instanceof EditorCell_Constant && contextCell.isErrorState()) {
+              ((EditorCell_Constant) contextCell).synchronizeViewWithModel();
+            }
+          }
+          return super.substitute(context, pattern);
+        }
+
+        public String toString() {
+          return "Wrapper for ApplySideTransforms" + action + "(" + action.getClass() + ")";
+        }
+      });
+    }
+    return wrapperList;
+
   }
 }
