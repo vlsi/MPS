@@ -37,10 +37,10 @@
     </scopeInfo>
   </root>
   <root nodeRef="r:955096a2-f771-47be-8e4e-7630c6f73d0e(jetbrains.mps.samples.lambdaCalculus.actions)/1934341835352312223">
-    <nodeInfo nodeId="1934341835352573356" fileName="QueriesGenerated.java" startLine="175" startPosition="64" endLine="176" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1934341835352573356" fileName="QueriesGenerated.java" startLine="175" startPosition="103" endLine="176" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1934341835352573361" fileName="QueriesGenerated.java" startLine="176" startPosition="79" endLine="177" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1934341835352573367" fileName="QueriesGenerated.java" startLine="177" startPosition="84" endLine="178" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1934341835352497811" fileName="QueriesGenerated.java" startLine="175" startPosition="64" endLine="178" endPosition="24" />
+    <scopeInfo nodeId="1934341835352497811" fileName="QueriesGenerated.java" startLine="175" startPosition="103" endLine="178" endPosition="24" />
   </root>
   <root nodeRef="r:955096a2-f771-47be-8e4e-7630c6f73d0e(jetbrains.mps.samples.lambdaCalculus.actions)/3978364766705549165">
     <nodeInfo nodeId="3978364766705549176" fileName="QueriesGenerated.java" startLine="99" startPosition="94" endLine="100" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -45,14 +45,16 @@ public class SModuleOperations {
     for (ModelRoot modelRoot : module.getModelRoots()) {
       if (modelRoot instanceof FileBasedModelRoot) {
         FileBasedModelRoot fileBasedModelRoot = (FileBasedModelRoot) modelRoot;
-        for (String fileKind : fileBasedModelRoot.getSupportedFileKinds()) {
-          if (!FileBasedModelRoot.EXCLUDED.equals(fileKind)) {
-            for (String file : fileBasedModelRoot.getFiles(fileKind)) {
-//              checkContentPath(file, module, modelRoot);
-              result.add(exposePath(file));
-            }
-          }
-        }
+        result.add(exposePath(fileBasedModelRoot.getContentRoot()));
+        // todo: use excluded & source folders like IDEA
+//        for (String fileKind : fileBasedModelRoot.getSupportedFileKinds()) {
+//          if (!FileBasedModelRoot.EXCLUDED.equals(fileKind)) {
+//            for (String file : fileBasedModelRoot.getFiles(fileKind)) {
+////              checkContentPath(file, module, modelRoot);
+//              result.add(exposePath(file));
+//            }
+//          }
+//        }
       }
 
       // todo: obsolete model root type

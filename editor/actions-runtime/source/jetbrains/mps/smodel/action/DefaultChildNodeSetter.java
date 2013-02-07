@@ -18,7 +18,9 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
@@ -43,7 +45,8 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
     return myLinkDeclaration;
   }
 
-  public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
+  @Override
+  public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope, @Nullable EditorContext editorContext) {
     if (newChild != null && !SModelUtil.isAcceptableTarget(myLinkDeclaration, newChild)) {
       LOG.error("couldn't set instance of " + newChild.getConcept().getId() +
         " as child '" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration) + "' to " + SNodeUtil.getDebugText(parentNode));
