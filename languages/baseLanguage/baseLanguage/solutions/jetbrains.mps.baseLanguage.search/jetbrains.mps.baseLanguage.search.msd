@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.baseLanguage.search" uuid="a0c108f0-1637-416e-a249-3effbaa4c998" pluginKind="PLUGIN_CORE" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

@@ -13,11 +13,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.EditorContext;
 
 public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_IBaseTestBlock_5110219550150514378(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
@@ -25,11 +25,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
           SLinkOperations.setTarget(result, "left", _context.getSourceNode(), true);
           return result;
@@ -53,11 +53,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
           SLinkOperations.setTarget(result, "right", _context.getSourceNode(), true);
           return result;

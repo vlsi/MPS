@@ -100,5 +100,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       NonTypesystemRule_Runtime nonTypesystemRule = new RightTransformActionDeprecated_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_CellMenuPart_ApplySideTransforms_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
   }
 }

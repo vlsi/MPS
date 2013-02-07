@@ -21,9 +21,13 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.*;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -258,7 +262,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
               return getMatchingText(pattern);
             }
 
-            public SNode doSubstitute(String pattern) {
+            public SNode doSubstitute(@Nullable final jetbrains.mps.openapi.editor.EditorContext editorContext, String pattern) {
               return null;
             }
           });

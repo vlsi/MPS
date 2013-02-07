@@ -19,7 +19,7 @@ import jetbrains.mps.debug.api.programState.WatchablesCategory;
 public class JavaLocalVariable extends JavaWatchable implements IWatchable {
   private final LocalVariable myLocalVariable;
   private final JavaStackFrame myStackFrame;
-  private JavaValue myCachedValue;
+  private final JavaValue myCachedValue;
 
   public JavaLocalVariable(LocalVariable variable, JavaStackFrame stackFrame, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
@@ -28,6 +28,8 @@ public class JavaLocalVariable extends JavaWatchable implements IWatchable {
     StackFrame javaStackFrame = myStackFrame.getStackFrame();
     if (javaStackFrame != null) {
       myCachedValue = ValueUtil.getInstance().fromJDI(javaStackFrame.getValue(myLocalVariable), classFqName, threadReference);
+    } else {
+      myCachedValue = null;
     }
   }
 

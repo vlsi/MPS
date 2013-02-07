@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.transformation.test.incremental" uuid="7084cc23-3207-4211-af9f-717ab0917945" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <sourcePath />

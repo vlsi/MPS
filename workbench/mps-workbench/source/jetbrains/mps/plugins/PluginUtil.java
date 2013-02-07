@@ -24,6 +24,7 @@ import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -31,7 +32,11 @@ import jetbrains.mps.util.ModuleNameUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class PluginUtil {
   private static final Logger LOG = Logger.getLogger(PluginUtil.class);
@@ -61,18 +66,20 @@ public class PluginUtil {
 
     final ArrayList<T> plugins = new ArrayList<T>();
     for (IModule module : sortedModules) {
-      String pluginClassName = creator.getPlugin(module);
-      if (pluginClassName == null) continue;
-      T plugin = (T) createPlugin(module, pluginClassName);
-      if (plugin == null) continue;
+      if (module instanceof IClassLoadingModule) {
+        String pluginClassName = creator.getPlugin(module);
+        if (pluginClassName == null) continue;
+        T plugin = (T) createPlugin((IClassLoadingModule) module, pluginClassName);
+        if (plugin == null) continue;
 
-      plugins.add(plugin);
+        plugins.add(plugin);
+      }
     }
 
     return plugins;
   }
 
-  private static Object createPlugin(IModule module, String className) {
+  private static Object createPlugin(IClassLoadingModule module, String className) {
     try {
       Class pluginClass = module.getClass(className);
       if (pluginClass == null) return null;

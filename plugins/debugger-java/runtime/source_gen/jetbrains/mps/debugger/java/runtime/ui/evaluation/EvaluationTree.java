@@ -6,13 +6,14 @@ import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.sun.jdi.ThreadReference;
 import java.util.Map;
-import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -40,12 +41,14 @@ import jetbrains.mps.ide.messages.Icons;
 /*package*/ class EvaluationTree extends MPSTree implements DataProvider {
   private String myClassFqName;
   private ThreadReference myThreadReference;
-  private Map<AbstractEvaluationModel, EvaluationTree.EvaluationState> myStates = MapSequence.fromMap(new HashMap<AbstractEvaluationModel, EvaluationTree.EvaluationState>());
+  private Map<IEvaluationContainer, EvaluationTree.EvaluationState> myStates = MapSequence.fromMap(new HashMap<IEvaluationContainer, EvaluationTree.EvaluationState>());
+  private final DebugSession myDebugSession;
   @Nullable
   private ActionGroup myActionGroup = null;
 
-  public EvaluationTree() {
+  public EvaluationTree(DebugSession session) {
     super();
+    myDebugSession = session;
     setRootVisible(false);
     setShowsRootHandles(true);
     rebuildNow();
@@ -56,32 +59,32 @@ import jetbrains.mps.ide.messages.Icons;
     myThreadReference = threadReference;
   }
 
-  /*package*/ void addModel(AbstractEvaluationModel model) {
+  /*package*/ void addModel(IEvaluationContainer model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     MapSequence.fromMap(myStates).put(model, new EvaluationTree.InitializedState());
   }
 
-  /*package*/ void removeModel(AbstractEvaluationModel model) {
+  /*package*/ void removeModel(IEvaluationContainer model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     MapSequence.fromMap(myStates).removeKey(model);
   }
 
-  /*package*/ void setResultProxy(IValueProxy valueProxy, AbstractEvaluationModel model) {
+  /*package*/ void setResultValue(JavaValue value, IEvaluationContainer model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
-    MapSequence.fromMap(myStates).put(model, new EvaluationTree.ResultState(model.getPresentation(), valueProxy, myClassFqName, myThreadReference));
+    MapSequence.fromMap(myStates).put(model, new EvaluationTree.ResultState(model.getPresentation(), value, myClassFqName, myThreadReference));
   }
 
-  /*package*/ void setError(@NotNull String text, AbstractEvaluationModel model) {
+  /*package*/ void setError(@NotNull String text, IEvaluationContainer model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     MapSequence.fromMap(myStates).put(model, new EvaluationTree.FailureState(text));
   }
 
-  /*package*/ void setError(@NotNull Throwable error, AbstractEvaluationModel model) {
+  /*package*/ void setError(@NotNull Throwable error, IEvaluationContainer model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     MapSequence.fromMap(myStates).put(model, new EvaluationTree.FailureState(error));
   }
 
-  /*package*/ void setEvaluating(AbstractEvaluationModel model) {
+  /*package*/ void setEvaluating(IEvaluationContainer model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     MapSequence.fromMap(myStates).put(model, new EvaluationTree.EvaluationInProgressState());
   }
@@ -89,7 +92,7 @@ import jetbrains.mps.ide.messages.Icons;
   @Override
   protected MPSTreeNode rebuild() {
     MPSTreeNode rootTreeNode = new TextTreeNode("Evaluation Result");
-    for (AbstractEvaluationModel model : SetSequence.fromSet(MapSequence.fromMap(myStates).keySet())) {
+    for (IEvaluationContainer model : SetSequence.fromSet(MapSequence.fromMap(myStates).keySet())) {
       MapSequence.fromMap(myStates).get(model).rebuild(rootTreeNode, model);
     }
     return rootTreeNode;
@@ -128,11 +131,13 @@ import jetbrains.mps.ide.messages.Icons;
 
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(EvaluationUi.EVALUATION_MODEL.getName())) {
+    if (dataId.equals(EvaluationUi.EVALUATION_CONTAINER.getName())) {
       MPSTreeNode node = findSelectedNode();
       if (node != null && node instanceof EvaluationTree.EvaluationModelNode) {
         return ((EvaluationTree.EvaluationModelNode) node).getModel();
       }
+    } else if (dataId.equals(EvaluationUi.DEBUG_SESSION.getName())) {
+      return myDebugSession;
     } else if (dataId.equals(VariablesTree.MPS_DEBUGGER_VALUE.getName())) {
       MPSTreeNode node = findSelectedNode();
       if (node != null && node instanceof EvaluationTree.ResultState.MyWatchableNode) {
@@ -161,18 +166,18 @@ import jetbrains.mps.ide.messages.Icons;
     public EvaluationState() {
     }
 
-    public abstract void rebuild(MPSTreeNode rootTreeNode, AbstractEvaluationModel model);
+    public abstract void rebuild(MPSTreeNode rootTreeNode, IEvaluationContainer model);
   }
 
   public static interface EvaluationModelNode {
-    public AbstractEvaluationModel getModel();
+    public IEvaluationContainer getModel();
   }
 
   private static class InitializedState extends EvaluationTree.EvaluationState {
     public InitializedState() {
     }
 
-    public void rebuild(MPSTreeNode rootTreeNode, AbstractEvaluationModel model) {
+    public void rebuild(MPSTreeNode rootTreeNode, IEvaluationContainer model) {
       rootTreeNode.add(new EvaluationTree.InitialTreeNode(model));
       // todo? 
     }
@@ -182,31 +187,31 @@ import jetbrains.mps.ide.messages.Icons;
     public EvaluationInProgressState() {
     }
 
-    public void rebuild(MPSTreeNode rootTreeNode, AbstractEvaluationModel model) {
+    public void rebuild(MPSTreeNode rootTreeNode, IEvaluationContainer model) {
       rootTreeNode.add(new EvaluationTree.EvaluatingTreeNode(model));
     }
   }
 
   private class ResultState extends EvaluationTree.EvaluationState {
     @NotNull
-    private final IValueProxy myValueProxy;
+    private final JavaValue myValue;
     @NotNull
     private final String myClassFqName;
     private final ThreadReference myThreadReference;
     private final String myPresentation;
     private CalculatedWatchable myCachedWatchable;
 
-    public ResultState(String presentation, IValueProxy proxy, @NotNull String classFqName, ThreadReference threadReference) {
+    public ResultState(String presentation, JavaValue value, @NotNull String classFqName, ThreadReference threadReference) {
       myPresentation = presentation;
-      myValueProxy = proxy;
+      myValue = value;
       myClassFqName = classFqName;
       myThreadReference = threadReference;
     }
 
-    public void rebuild(MPSTreeNode rootTreeNode, AbstractEvaluationModel model) {
-      final boolean canEvalaute = model.getDebugSession().getEvaluationProvider().canEvaluate();
+    public void rebuild(MPSTreeNode rootTreeNode, IEvaluationContainer model) {
+      final boolean canEvalaute = myDebugSession.getEvaluationProvider().canEvaluate();
       if (canEvalaute) {
-        myCachedWatchable = new CalculatedWatchable(myPresentation, myValueProxy.getJDIValue(), myClassFqName, myThreadReference);
+        myCachedWatchable = new CalculatedWatchable(myPresentation, myValue, myClassFqName, myThreadReference);
       }
       if (myCachedWatchable != null) {
         WatchableNode watchableNode = new EvaluationTree.ResultState.MyWatchableNode(model, myCachedWatchable) {
@@ -225,14 +230,14 @@ import jetbrains.mps.ide.messages.Icons;
     }
 
     private class MyWatchableNode extends WatchableNode implements EvaluationTree.EvaluationModelNode {
-      private final AbstractEvaluationModel myModel;
+      private final IEvaluationContainer myModel;
 
-      public MyWatchableNode(AbstractEvaluationModel model, @NotNull IWatchable watchable) {
-        super(watchable);
+      public MyWatchableNode(IEvaluationContainer model, @NotNull IWatchable watchable) {
+        super(watchable, myDebugSession.getUiState());
         myModel = model;
       }
 
-      public AbstractEvaluationModel getModel() {
+      public IEvaluationContainer getModel() {
         return myModel;
       }
 
@@ -262,7 +267,7 @@ import jetbrains.mps.ide.messages.Icons;
       myError = error;
     }
 
-    public void rebuild(MPSTreeNode rootTreeNode, AbstractEvaluationModel model) {
+    public void rebuild(MPSTreeNode rootTreeNode, IEvaluationContainer model) {
       if (myError != null) {
         rootTreeNode.add(new EvaluationTree.ErrorTreeNode(model, myError));
       } else {
@@ -273,10 +278,10 @@ import jetbrains.mps.ide.messages.Icons;
 
   private class ErrorTreeNode extends TextTreeNode implements EvaluationTree.EvaluationModelNode {
     private final List<String> myExtendedMessage = ListSequence.fromList(new ArrayList<String>());
-    private final AbstractEvaluationModel myModel;
+    private final IEvaluationContainer myModel;
     private Throwable myThrowable;
 
-    public ErrorTreeNode(AbstractEvaluationModel model, @NotNull String text, String... extendedMessage) {
+    public ErrorTreeNode(IEvaluationContainer model, @NotNull String text, String... extendedMessage) {
       super(model.getPresentation() + " = " + text);
       myModel = model;
       if (extendedMessage != null && extendedMessage.length > 0) {
@@ -288,7 +293,7 @@ import jetbrains.mps.ide.messages.Icons;
       doInit();
     }
 
-    public ErrorTreeNode(AbstractEvaluationModel model, Throwable t) {
+    public ErrorTreeNode(IEvaluationContainer model, Throwable t) {
       this(model, (t.getMessage() == null ?
         t.toString() :
         t.getMessage()
@@ -323,7 +328,7 @@ import jetbrains.mps.ide.messages.Icons;
       }
     }
 
-    public AbstractEvaluationModel getModel() {
+    public IEvaluationContainer getModel() {
       return myModel;
     }
 
@@ -344,9 +349,9 @@ import jetbrains.mps.ide.messages.Icons;
   }
 
   private static class EvaluatingTreeNode extends TextTreeNode implements EvaluationTree.EvaluationModelNode {
-    private final AbstractEvaluationModel myModel;
+    private final IEvaluationContainer myModel;
 
-    public EvaluatingTreeNode(AbstractEvaluationModel model) {
+    public EvaluatingTreeNode(IEvaluationContainer model) {
       super(model.getPresentation() + " = " + "evaluating...");
       myModel = model;
     }
@@ -363,13 +368,13 @@ import jetbrains.mps.ide.messages.Icons;
       setIcon(Icons.INFORMATION_ICON);
     }
 
-    public AbstractEvaluationModel getModel() {
+    public IEvaluationContainer getModel() {
       return myModel;
     }
   }
 
   private static class InitialTreeNode extends TextTreeNode {
-    public InitialTreeNode(AbstractEvaluationModel model) {
+    public InitialTreeNode(IEvaluationContainer model) {
       super(model.getPresentation() + " = ");
       setIcon(jetbrains.mps.debugger.java.api.ui.Icons.WATCH);
     }

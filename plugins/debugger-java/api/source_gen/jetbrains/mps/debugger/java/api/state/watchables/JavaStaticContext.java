@@ -16,10 +16,12 @@ import com.sun.jdi.Field;
 
 public class JavaStaticContext extends JavaWatchable implements IWatchable {
   private final ReferenceType myStaticType;
+  private final JavaStaticContext.StaticContextValue myValue;
 
   public JavaStaticContext(ReferenceType staticType, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myStaticType = staticType;
+    myValue = new JavaStaticContext.StaticContextValue();
   }
 
   @Override
@@ -34,7 +36,8 @@ public class JavaStaticContext extends JavaWatchable implements IWatchable {
 
   @Override
   public IValue getValue() {
-    return new JavaStaticContext.StaticContextValue();
+    assert myValue != null;
+    return myValue;
   }
 
   @Override
@@ -48,12 +51,16 @@ public class JavaStaticContext extends JavaWatchable implements IWatchable {
   }
 
   private class StaticContextValue implements IValue {
+    private final String myName;
+    private volatile List<IWatchable> mySubvalues;
+
     private StaticContextValue() {
+      myName = myStaticType.name();
     }
 
     @Override
     public String getValuePresentation() {
-      return myStaticType.name();
+      return myName;
     }
 
     @Override
@@ -66,8 +73,7 @@ public class JavaStaticContext extends JavaWatchable implements IWatchable {
       return true;
     }
 
-    @Override
-    public List<IWatchable> getSubvalues() {
+    public List<IWatchable> calculateSubvalues() {
       List<IWatchable> result = new ArrayList<IWatchable>();
       for (Field field : myStaticType.fields()) {
         if (!(field.isStatic())) {
@@ -76,6 +82,14 @@ public class JavaStaticContext extends JavaWatchable implements IWatchable {
         result.add(new JavaStaticField(field, myClassFQName, myThreadReference));
       }
       return result;
+    }
+
+    public List<IWatchable> getSubvalues() {
+      return mySubvalues;
+    }
+
+    public void initSubvalues() {
+      mySubvalues = calculateSubvalues();
     }
   }
 }

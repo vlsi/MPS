@@ -462,6 +462,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Layout" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpc2.7651593722933768974" resolveInfo="MaxWidthStyleClassItem" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8233876857994311437">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpc2.8233876857994246075" resolveInfo="CellMenuPart_ApplySideTransforms" />
+    </node>
   </roots>
   <root id="1078153915535">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1078154255343">
@@ -6858,8 +6862,8 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1186412603348">
-        <property name="attractsFocus" nameId="tpc2.1130859485024" value="3" />
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no query&gt;" />
+        <property name="attractsFocus" nameId="tpc2.1130859485024" value="3" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.1186403803051" />
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="1186412621877">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1186412621878">
@@ -10280,6 +10284,42 @@
         </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="7651593722933779504" />
+    </node>
+  </root>
+  <root id="8233876857994311437">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="8233876857994315541">
+      <property name="vertical" nameId="tpc2.1073389446425" value="true" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="8233876857994315542">
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8233876857994315543">
+          <property name="text" nameId="tpc2.1073389577007" value="apply side transforms" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="5531627918740390393">
+            <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
+          </node>
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="5531627918740390394">
+            <property name="color" nameId="tpc2.1186403713874" value="lightGray" />
+          </node>
+        </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="8233876857994315546">
+          <property name="flag" nameId="tpc2.1186414551515" value="false" />
+        </node>
+        <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="8233876857994315547" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5531627918740434736">
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5531627918740436695">
+          <property name="text" nameId="tpc2.1073389577007" value="  " />
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5531627918740436709">
+          <property name="text" nameId="tpc2.1073389577007" value="side:" />
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="8233876857994323830">
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.8233876857994286197" resolveInfo="side" />
+        </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="5531627918740434738">
+          <property name="flag" nameId="tpc2.1186414551515" value="false" />
+        </node>
+        <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="5531627918740434741" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="8233876857994315561" />
     </node>
   </root>
 </model>

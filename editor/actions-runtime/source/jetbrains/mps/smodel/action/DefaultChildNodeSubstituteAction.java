@@ -17,8 +17,10 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.actions.runtime.impl.ActionsUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -77,11 +79,11 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     return myScope;
   }
 
-  public SNode doSubstitute(String pattern) {
+  public final SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
     SNode parentNode = getSourceNode();
     SNode newChild = createChildNode(getParameterObject(), parentNode.getModel(), pattern);
     if (newChild != null) {
-      return mySetter.execute(parentNode, myCurrentChild, newChild, getScope());
+      return mySetter.execute(parentNode, myCurrentChild, newChild, getScope(), editorContext);
     }
     return null;
   }

@@ -6,12 +6,15 @@ import jetbrains.mps.debug.api.programState.IValue;
 import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
+import java.util.List;
+import jetbrains.mps.debug.api.programState.IWatchable;
 
 public abstract class JavaValue extends ProxyForJava implements IValue {
   @Nullable
   protected final Value myValue;
   protected final String myClassFQName;
   protected final ThreadReference myThreadReference;
+  private volatile List<IWatchable> mySubvalues;
 
   public JavaValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value);
@@ -27,5 +30,15 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
 
   public String getClassFQName() {
     return myClassFQName;
+  }
+
+  public void initSubvalues() {
+    mySubvalues = calculateSubvalues();
+  }
+
+  public abstract List<IWatchable> calculateSubvalues();
+
+  public List<IWatchable> getSubvalues() {
+    return mySubvalues;
   }
 }

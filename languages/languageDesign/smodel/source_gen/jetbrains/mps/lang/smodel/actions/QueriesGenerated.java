@@ -28,8 +28,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.ModelActions;
-import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
@@ -295,7 +296,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeOperation");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "parameter", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter");
           return _context.getSourceNode();
         }
@@ -321,7 +322,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
           SLinkOperations.setTarget(newNode, "leftExpression", _context.getSourceNode(), true);
           return newNode;
@@ -343,7 +344,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
           SLinkOperations.setTarget(newNode, "leftExpression", _context.getSourceNode(), true);
           SPropertyOperations.set(newNode, "asCast", "" + (true));
@@ -371,7 +372,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression");
           SLinkOperations.setTarget(newNode, "leftExpression", _context.getSourceNode(), true);
           return newNode;
@@ -402,7 +403,7 @@ public class QueriesGenerated {
         }
       };
       SNode node = (SNode) computable.compute();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, _context.getSide(), _context.getTransformationTag(), operationContext)));
     }
     return result;
   }
@@ -416,7 +417,7 @@ public class QueriesGenerated {
         }
       };
       SNode node = (SNode) computable.compute();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, _context.getSide(), _context.getTransformationTag(), operationContext)));
     }
     return result;
   }

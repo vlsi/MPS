@@ -505,6 +505,25 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1826062868817955706">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1826062868817955707">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1826062868817955708">
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1826062868817955709">
+                <property name="value" nameId="tpee.1068580123138" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1826062868817955710">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1826062868817955711">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877247289" resolveInfo="parameter" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1826062868817955712">
+              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1826062868817955713">
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpcw.1194033889146" resolveInfo="ConceptFunctionParameter_editorContext" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1213877247287">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1213877247288">
             <property name="value" nameId="tpee.1068580123138" value="true" />
@@ -628,6 +647,18 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1826062868817474088">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1826062868817474089">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1826062868817474090">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3044950653914720690" resolveInfo="result" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="1826062868817474091">
+              <node role="argument" roleId="tp2q.1160612519549" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="1826062868817474092">
+                <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="tpcw.1194033889146" resolveInfo="ConceptFunctionParameter_editorContext" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3044950653914720728">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3044950653914720729">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3044950653914720690" resolveInfo="result" />
@@ -676,6 +707,25 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1213877273953">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1213877273954">
                 <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpdg.1177337833147" resolveInfo="ConceptFunctionParameter_parameterObject" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1826062868817943136">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1826062868817943137">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1826062868817943138">
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1826062868817943139">
+                <property name="value" nameId="tpee.1068580123138" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1826062868817943140">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1826062868817943141">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877273957" resolveInfo="parameter" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="1826062868817943142">
+              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1826062868817946840">
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpcw.1194033889146" resolveInfo="ConceptFunctionParameter_editorContext" />
               </node>
             </node>
           </node>
@@ -797,6 +847,18 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="3044950653914717875">
               <node role="argument" roleId="tp2q.1160612519549" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="3044950653914717871">
                 <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="tpcw.1161622665029" resolveInfo="ConceptFunctionParameter_model" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1826062868817304393">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1826062868817304394">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1826062868817304395">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3044950653914717833" resolveInfo="result" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="1826062868817304396">
+              <node role="argument" roleId="tp2q.1160612519549" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="1826062868817304397">
+                <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="tpcw.1194033889146" resolveInfo="ConceptFunctionParameter_editorContext" />
               </node>
             </node>
           </node>
@@ -1071,6 +1133,25 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8510000234497366458">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8510000234497366459">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8510000234497366460">
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="8510000234497366461">
+                <property name="value" nameId="tpee.1068580123138" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8510000234497366462">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8510000234497366463">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877372986" resolveInfo="parameter" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="8510000234497366464">
+              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8510000234497368225">
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpcw.1194033889146" resolveInfo="ConceptFunctionParameter_editorContext" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1213877372984">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1213877372985">
             <property name="value" nameId="tpee.1068580123138" value="true" />
@@ -1255,6 +1336,18 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="3044950653914721902">
               <node role="argument" roleId="tp2q.1160612519549" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="3044950653914721898">
                 <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="tpdg.1154465273778" resolveInfo="ConceptFunctionParameter_parentNode" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8510000234497365256">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8510000234497365257">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8510000234497365258">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3044950653914721855" resolveInfo="result" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="8510000234497365259">
+              <node role="argument" roleId="tp2q.1160612519549" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="8510000234497365260">
+                <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="tpcw.1194033889146" resolveInfo="ConceptFunctionParameter_editorContext" />
               </node>
             </node>
           </node>
@@ -2360,6 +2453,25 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8510000234498528207">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8510000234498528208">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8510000234498528209">
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="8510000234498528210">
+                <property name="value" nameId="tpee.1068580123138" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8510000234498528211">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8510000234498528212">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877477309" resolveInfo="parameter" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="8510000234498528213">
+              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8510000234498528691">
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpcw.1194033889146" resolveInfo="ConceptFunctionParameter_editorContext" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1213877477307">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1213877477308">
             <property name="value" nameId="tpee.1068580123138" value="true" />
@@ -2521,6 +2633,18 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="3044950653914719345">
               <node role="argument" roleId="tp2q.1160612519549" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="3044950653914719341">
                 <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="tpcw.1161622665029" resolveInfo="ConceptFunctionParameter_model" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8510000234498527533">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8510000234498527534">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8510000234498527535">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3044950653914719303" resolveInfo="result" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="8510000234498527536">
+              <node role="argument" roleId="tp2q.1160612519549" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="8510000234498527537">
+                <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="tpcw.1194033889146" resolveInfo="ConceptFunctionParameter_editorContext" />
               </node>
             </node>
           </node>

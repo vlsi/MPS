@@ -8,6 +8,7 @@
   <import index="c2kz" modelUID="r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)" version="5" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="rvtb" modelUID="r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)" version="0" implicit="yes" />
+  <import index="6ms5" modelUID="r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)" version="0" implicit="yes" />
   <roots>
     <node type="c2kz.Script" typeId="c2kz.3265739055509559110" id="3308300503039980203">
       <property name="name" nameId="tpck.1169194664001" value="Karel" />
@@ -29,6 +30,9 @@
     </node>
     <node type="c2kz.Script" typeId="c2kz.3265739055509559110" id="3210697320273799179">
       <property name="name" nameId="tpck.1169194664001" value="MarkSniffer" />
+    </node>
+    <node type="c2kz.Script" typeId="c2kz.3265739055509559110" id="8614576427117861066">
+      <property name="name" nameId="tpck.1169194664001" value="Maze" />
     </node>
   </roots>
   <root id="3308300503039980203">
@@ -148,6 +152,7 @@
       <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.RoutineCall" typeId="c2kz.3308300503039700882" id="859008965969243606">
         <link role="definition" roleId="c2kz.3308300503039730636" targetNodeId="859008965969243554" resolveInfo="fetch" />
       </node>
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.Drop" typeId="c2kz.6405700485436120871" id="8614576427117843766" />
       <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.RoutineCall" typeId="c2kz.3308300503039700882" id="859008965969339455">
         <link role="definition" roleId="c2kz.3308300503039730636" targetNodeId="859008965969243571" resolveInfo="turnAround" />
       </node>
@@ -337,6 +342,63 @@
         </node>
       </node>
     </node>
+    <node role="definitions" roleId="c2kz.4394627182934741783" type="c2kz.RoutineDefinition" typeId="c2kz.3308300503039700857" id="8614576427117861068">
+      <property name="name" nameId="tpck.1169194664001" value="buildMaze" />
+      <node role="body" roleId="c2kz.3308300503039700860" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="8614576427117861069">
+        <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.BuildWall" typeId="rvtb.3210697320273550864" id="8614576427117861079">
+          <property name="col" nameId="rvtb.3210697320273608257" value="1" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="4" />
+        </node>
+        <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.BuildWall" typeId="rvtb.3210697320273550864" id="8614576427117861082">
+          <property name="col" nameId="rvtb.3210697320273608257" value="2" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="4" />
+        </node>
+        <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.BuildWall" typeId="rvtb.3210697320273550864" id="8614576427117861085">
+          <property name="col" nameId="rvtb.3210697320273608257" value="4" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="4" />
+        </node>
+        <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.BuildWall" typeId="rvtb.3210697320273550864" id="8614576427117861089">
+          <property name="col" nameId="rvtb.3210697320273608257" value="5" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="4" />
+        </node>
+        <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.BuildWall" typeId="rvtb.3210697320273550864" id="8614576427117861094">
+          <property name="col" nameId="rvtb.3210697320273608257" value="5" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="5" />
+        </node>
+        <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.BuildWall" typeId="rvtb.3210697320273550864" id="8614576427117861100">
+          <property name="col" nameId="rvtb.3210697320273608257" value="5" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="6" />
+        </node>
+        <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.BuildWall" typeId="rvtb.3210697320273550864" id="8614576427117861107">
+          <property name="col" nameId="rvtb.3210697320273608257" value="5" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="7" />
+        </node>
+        <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.BuildWall" typeId="rvtb.3210697320273550864" id="8614576427117861115">
+          <property name="col" nameId="rvtb.3210697320273608257" value="5" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="8" />
+        </node>
+        <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.BuildWall" typeId="rvtb.3210697320273550864" id="8614576427117861124">
+          <property name="col" nameId="rvtb.3210697320273608257" value="4" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="8" />
+        </node>
+        <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.BuildWall" typeId="rvtb.3210697320273550864" id="8614576427117861134">
+          <property name="col" nameId="rvtb.3210697320273608257" value="3" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="8" />
+        </node>
+        <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.BuildWall" typeId="rvtb.3210697320273550864" id="8614576427117861145">
+          <property name="col" nameId="rvtb.3210697320273608257" value="2" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="8" />
+        </node>
+        <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.BuildWall" typeId="rvtb.3210697320273550864" id="8614576427117861157">
+          <property name="col" nameId="rvtb.3210697320273608257" value="1" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="8" />
+        </node>
+        <node role="commands" roleId="c2kz.3308300503039896128" type="rvtb.DropMark" typeId="rvtb.3210697320273608254" id="8614576427117880066">
+          <property name="col" nameId="rvtb.3210697320273608257" value="1" />
+          <property name="row" nameId="rvtb.3210697320273608256" value="5" />
+        </node>
+      </node>
+    </node>
   </root>
   <root id="3210697320273799179">
     <node role="body" roleId="c2kz.3265739055509559116" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="3210697320273799180">
@@ -417,6 +479,101 @@
       </node>
       <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.TraceMessage" typeId="c2kz.3210697320273763054" id="3210697320273799214">
         <property name="message" nameId="c2kz.3210697320273763055" value="Found a mark!" />
+      </node>
+    </node>
+  </root>
+  <root id="8614576427117861066">
+    <node role="body" roleId="c2kz.3265739055509559116" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="8614576427117861067">
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.Require" typeId="c2kz.4394627182934757449" id="8614576427117861172">
+        <link role="library" roleId="c2kz.4394627182934757450" targetNodeId="3210697320273759353" resolveInfo="PlaygroundDefinition" />
+      </node>
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.Require" typeId="c2kz.4394627182934757449" id="8614576427117862036">
+        <link role="library" roleId="c2kz.4394627182934757450" targetNodeId="4394627182934755441" resolveInfo="Common" />
+      </node>
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.RoutineCall" typeId="c2kz.3308300503039700882" id="8614576427117861178">
+        <link role="definition" roleId="c2kz.3308300503039730636" targetNodeId="8614576427117861068" resolveInfo="buildMaze" />
+      </node>
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.EmptyLine" typeId="c2kz.3308300503039740438" id="8614576427117861181" />
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.While" typeId="c2kz.3308300503039667424" id="8614576427117861210">
+        <node role="condition" roleId="c2kz.3308300503039667426" type="c2kz.Not" typeId="c2kz.3308300503039654064" id="8614576427117861547">
+          <node role="original" roleId="c2kz.3308300503039654067" type="c2kz.Heading" typeId="c2kz.3308300503039683649" id="8614576427117861553">
+            <node role="direction" roleId="c2kz.3308300503039683650" type="c2kz.South" typeId="c2kz.3308300503039675723" id="8614576427117861559" />
+          </node>
+        </node>
+        <node role="body" roleId="c2kz.3308300503039667427" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="8614576427117861214">
+          <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.LeftTurn" typeId="c2kz.3308300503039647627" id="8614576427117861564" />
+        </node>
+      </node>
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.While" typeId="c2kz.3308300503039667424" id="8614576427117861578">
+        <node role="condition" roleId="c2kz.3308300503039667426" type="c2kz.Not" typeId="c2kz.3308300503039654064" id="8614576427117861596">
+          <node role="original" roleId="c2kz.3308300503039654067" type="c2kz.IsWall" typeId="c2kz.3308300503039647788" id="8614576427117861602" />
+        </node>
+        <node role="body" roleId="c2kz.3308300503039667427" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="8614576427117861582">
+          <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.Step" typeId="c2kz.3265739055509559138" id="8614576427117861607" />
+        </node>
+      </node>
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.RoutineCall" typeId="c2kz.3308300503039700882" id="8614576427117866045">
+        <link role="definition" roleId="c2kz.3308300503039730636" targetNodeId="8614576427117861879" resolveInfo="findDoor" />
+      </node>
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.Step" typeId="c2kz.3265739055509559138" id="8614576427117871700" />
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.RoutineCall" typeId="c2kz.3308300503039700882" id="8614576427117879931">
+        <link role="definition" roleId="c2kz.3308300503039730636" targetNodeId="8614576427117879929" resolveInfo="sniffAround" />
+      </node>
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.EmptyLine" typeId="c2kz.3308300503039740438" id="7060824959891889417" />
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.EmptyLine" typeId="c2kz.3308300503039740438" id="7060824959895013630" />
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.CommentLine" typeId="c2kz.6405700485436287811" id="8614576427117866163">
+        <property name="text" nameId="c2kz.6405700485436287813" value="Definitions" />
+      </node>
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.RoutineDefinition" typeId="c2kz.3308300503039700857" id="8614576427117861879">
+        <property name="name" nameId="tpck.1169194664001" value="findDoor" />
+        <node role="body" roleId="c2kz.3308300503039700860" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="8614576427117861881">
+          <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.While" typeId="c2kz.3308300503039667424" id="8614576427117861901">
+            <node role="condition" roleId="c2kz.3308300503039667426" type="c2kz.IsWall" typeId="c2kz.3308300503039647788" id="8614576427117861918" />
+            <node role="body" roleId="c2kz.3308300503039667427" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="8614576427117861905">
+              <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.LeftTurn" typeId="c2kz.3308300503039647627" id="8614576427117861924" />
+              <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.Step" typeId="c2kz.3265739055509559138" id="8614576427117861930" />
+              <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.RoutineCall" typeId="c2kz.3308300503039700882" id="8614576427117862061">
+                <link role="definition" roleId="c2kz.3308300503039730636" targetNodeId="4394627182934755443" resolveInfo="turnRight" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.EmptyLine" typeId="c2kz.3308300503039740438" id="8614576427117902136" />
+      <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.RoutineDefinition" typeId="c2kz.3308300503039700857" id="8614576427117879929">
+        <property name="name" nameId="tpck.1169194664001" value="sniffAround" />
+        <node role="body" roleId="c2kz.3308300503039700860" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="8614576427117879930">
+          <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.While" typeId="c2kz.3308300503039667424" id="8614576427117879633">
+            <node role="condition" roleId="c2kz.3308300503039667426" type="6ms5.And" typeId="6ms5.1904811872814253578" id="8614576427117885938">
+              <node role="right" roleId="6ms5.1904811872814253581" type="c2kz.Not" typeId="c2kz.3308300503039654064" id="8614576427117885958">
+                <node role="original" roleId="c2kz.3308300503039654067" type="c2kz.IsWall" typeId="c2kz.3308300503039647788" id="8614576427117885936" />
+              </node>
+              <node role="left" roleId="6ms5.1904811872814253580" type="c2kz.Not" typeId="c2kz.3308300503039654064" id="8614576427117885951">
+                <node role="original" roleId="c2kz.3308300503039654067" type="c2kz.IsMark" typeId="c2kz.6405700485436186598" id="8614576427117885948" />
+              </node>
+            </node>
+            <node role="body" roleId="c2kz.3308300503039667427" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="8614576427117879637">
+              <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.Step" typeId="c2kz.3265739055509559138" id="8614576427117885980" />
+            </node>
+          </node>
+          <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.IfStatement" typeId="c2kz.3308300503039647678" id="8614576427117879859">
+            <node role="condition" roleId="c2kz.3308300503039647680" type="c2kz.IsWall" typeId="c2kz.3308300503039647788" id="8614576427117879919" />
+            <node role="trueBranch" roleId="c2kz.3308300503039647684" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="8614576427117879863">
+              <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.RoutineCall" typeId="c2kz.3308300503039700882" id="8614576427117879927">
+                <link role="definition" roleId="c2kz.3308300503039730636" targetNodeId="4394627182934755443" resolveInfo="turnRight" />
+              </node>
+              <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.RoutineCall" typeId="c2kz.3308300503039700882" id="8614576427117880008">
+                <link role="definition" roleId="c2kz.3308300503039730636" targetNodeId="8614576427117879929" resolveInfo="sniffAround" />
+              </node>
+            </node>
+            <node role="falseBranch" roleId="c2kz.3308300503039647685" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="8614576427117879865">
+              <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.Pick" typeId="c2kz.6405700485436170013" id="8614576427117880031" />
+              <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.TraceMessage" typeId="c2kz.3210697320273763054" id="8614576427117886000">
+                <property name="message" nameId="c2kz.3210697320273763055" value="Found a mark" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </root>

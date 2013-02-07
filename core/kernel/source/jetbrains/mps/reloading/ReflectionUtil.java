@@ -16,8 +16,9 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.util.JavaNameUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -27,7 +28,7 @@ public final class ReflectionUtil {
   private ReflectionUtil() {
   }
 
-  private static Class forName(IModule module, String className) {
+  private static Class forName(IClassLoadingModule module, String className) {
     Class result = module.getClass(className);
     if (result != null) {
       return result;
@@ -36,7 +37,15 @@ public final class ReflectionUtil {
     }
   }
 
+  @Deprecated
   public static Class forName(IModule module, SNode classNode) {
+    if (!(module instanceof IClassLoadingModule)) {
+      throw new IllegalStateException();
+    }
+    return forName((IClassLoadingModule) module, classNode);
+  }
+
+  public static Class forName(IClassLoadingModule module, SNode classNode) {
     String dottedName = classNode.getName();
     String dollarName = "null";
     if (dottedName != null) {

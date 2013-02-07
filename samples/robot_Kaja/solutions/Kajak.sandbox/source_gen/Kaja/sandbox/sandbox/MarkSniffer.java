@@ -71,8 +71,106 @@ public class MarkSniffer extends KajaFrame {
     }
   }
 
+  public void buildMaze_from_library_PlaygroundDefinition_routine() {
+    if (isAllowedRow(4) && isAllowedCol(1)) {
+      addWall(4, 1);
+      minipause();
+
+    } else {
+      reportError("Attempted to build wall outside of the playground!");
+    }
+    if (isAllowedRow(4) && isAllowedCol(2)) {
+      addWall(4, 2);
+      minipause();
+
+    } else {
+      reportError("Attempted to build wall outside of the playground!");
+    }
+    if (isAllowedRow(4) && isAllowedCol(4)) {
+      addWall(4, 4);
+      minipause();
+
+    } else {
+      reportError("Attempted to build wall outside of the playground!");
+    }
+    if (isAllowedRow(4) && isAllowedCol(5)) {
+      addWall(4, 5);
+      minipause();
+
+    } else {
+      reportError("Attempted to build wall outside of the playground!");
+    }
+    if (isAllowedRow(5) && isAllowedCol(5)) {
+      addWall(5, 5);
+      minipause();
+
+    } else {
+      reportError("Attempted to build wall outside of the playground!");
+    }
+    if (isAllowedRow(6) && isAllowedCol(5)) {
+      addWall(6, 5);
+      minipause();
+
+    } else {
+      reportError("Attempted to build wall outside of the playground!");
+    }
+    if (isAllowedRow(7) && isAllowedCol(5)) {
+      addWall(7, 5);
+      minipause();
+
+    } else {
+      reportError("Attempted to build wall outside of the playground!");
+    }
+    if (isAllowedRow(8) && isAllowedCol(5)) {
+      addWall(8, 5);
+      minipause();
+
+    } else {
+      reportError("Attempted to build wall outside of the playground!");
+    }
+    if (isAllowedRow(8) && isAllowedCol(4)) {
+      addWall(8, 4);
+      minipause();
+
+    } else {
+      reportError("Attempted to build wall outside of the playground!");
+    }
+    if (isAllowedRow(8) && isAllowedCol(3)) {
+      addWall(8, 3);
+      minipause();
+
+    } else {
+      reportError("Attempted to build wall outside of the playground!");
+    }
+    if (isAllowedRow(8) && isAllowedCol(2)) {
+      addWall(8, 2);
+      minipause();
+
+    } else {
+      reportError("Attempted to build wall outside of the playground!");
+    }
+    if (isAllowedRow(8) && isAllowedCol(1)) {
+      addWall(8, 1);
+      minipause();
+
+    } else {
+      reportError("Attempted to build wall outside of the playground!");
+    }
+    if (isAllowedRow(5) && isAllowedCol(1)) {
+      if (!(isFull(5, 1))) {
+        addMark(5, 1);
+        minipause();
+      } else {
+        reportError("Cannot drop. The cell is already full.");
+        return;
+      }
+    } else {
+      reportError("Attempted to drop marks outside of the playground!");
+    }
+  }
+
   public void turnRight_from_library_Common_routine() {
-    for (int indexVariable_ormfpz_a0d = 0; indexVariable_ormfpz_a0d < 3; indexVariable_ormfpz_a0d++) {
+    for (int indexVariable_ormfpz_a0e = 0; indexVariable_ormfpz_a0e < 3; indexVariable_ormfpz_a0e++) {
       turnLeft();
       pause();
     }

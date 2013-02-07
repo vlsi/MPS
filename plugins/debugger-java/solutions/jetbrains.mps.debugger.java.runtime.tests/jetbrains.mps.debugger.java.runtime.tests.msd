@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.debugger.java.runtime.tests" uuid="70b17f0c-ff72-43e8-9468-eda69efb2b71" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

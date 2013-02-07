@@ -4,22 +4,24 @@ package jetbrains.mps.debugger.java.runtime.evaluation;
 
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
-import jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationAuxModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.List;
-import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debugger.java.api.state.JavaUiState;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EditWatchDialog;
@@ -28,14 +30,13 @@ import java.awt.event.WindowEvent;
 import javax.swing.JComponent;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.debugger.java.runtime.evaluation.model.LowLevelEvaluationModel;
+import jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationWithContextContainer;
 
 public class EvaluationProvider implements IEvaluationProvider {
   private final DebugSession myDebugSession;
-  private EvaluationAuxModule myAuxModule;
-  private final List<AbstractEvaluationModel> myWatches = new ArrayList<AbstractEvaluationModel>();
+  private volatile SModuleReference myContainerModule;
+  private final List<IEvaluationContainer> myWatches = new ArrayList<IEvaluationContainer>();
   private final List<EvaluationProvider.IWatchListener> myWatchListeners = new ArrayList<EvaluationProvider.IWatchListener>();
 
   public EvaluationProvider(@NotNull DebugSession debugSession) {
@@ -55,25 +56,20 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   private void init() {
-    final Wrappers._T<EvaluationAuxModule> module = new Wrappers._T<EvaluationAuxModule>();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        module.value = new EvaluationAuxModule(myDebugSession.getProject());
-        MPSModuleRepository.getInstance().registerModule(module.value, myDebugSession.getProject().getComponent(MPSProject.class));
+        EvaluationModule module = new EvaluationModule();
+        MPSModuleRepository.getInstance().registerModule(module, ProjectHelper.toMPSProject(myDebugSession.getProject()));
+        myContainerModule = module.getModuleReference();
       }
     });
-
-    synchronized (this) {
-      myAuxModule = module.value;
-    }
   }
 
   private synchronized void dispose() {
-    final EvaluationAuxModule module = myAuxModule;
-    myAuxModule = null;
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().unregisterModule(module, getDebugSession().getProject().getComponent(MPSProject.class));
+        MPSModuleRepository.getInstance().unregisterModule((IModule) myContainerModule.resolve(MPSModuleRepository.getInstance()), ProjectHelper.toMPSProject(myDebugSession.getProject()));
+        myContainerModule = null;
       }
     });
   }
@@ -94,7 +90,7 @@ public class EvaluationProvider implements IEvaluationProvider {
     myDebugSession.getEventsProcessor().scheduleEvaluation(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         if (state.isPausedOnBreakpoint()) {
-          final AbstractEvaluationModel model = createLowLevelEvaluationModel(AbstractEvaluationModel.IS_DEVELOPER_MODE, selectedNodes);
+          final IEvaluationContainer model = createEvaluationContainer(Properties.IS_DEVELOPER_MODE, selectedNodes);
           if (model == null) {
             return;
           }
@@ -110,7 +106,7 @@ public class EvaluationProvider implements IEvaluationProvider {
     }, state.getThread().getThread());
   }
 
-  public void showEditWatchDialog(IOperationContext context, final AbstractEvaluationModel model) {
+  public void showEditWatchDialog(IOperationContext context, final IEvaluationContainer model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     final EditWatchDialog editWatchDialog = new EditWatchDialog(context, this, model);
     editWatchDialog.getWindow().addWindowListener(new WindowAdapter() {
@@ -127,10 +123,10 @@ public class EvaluationProvider implements IEvaluationProvider {
     return new WatchesPanel(this);
   }
 
-  public void addWatch(final AbstractEvaluationModel evaluationModel) {
+  public void addWatch(final IEvaluationContainer evaluationModel) {
     myDebugSession.getEventsProcessor().schedule(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        AbstractEvaluationModel copy = evaluationModel.copy(true);
+        IEvaluationContainer copy = evaluationModel.copy(true);
         synchronized (myWatches) {
           myWatches.add(copy);
         }
@@ -142,7 +138,7 @@ public class EvaluationProvider implements IEvaluationProvider {
   public void createWatch() {
     myDebugSession.getEventsProcessor().schedule(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        final AbstractEvaluationModel model = createLowLevelEvaluationModel(true);
+        final IEvaluationContainer model = createEvaluationContainer(true);
         if (model == null) {
           return;
         }
@@ -161,7 +157,7 @@ public class EvaluationProvider implements IEvaluationProvider {
     });
   }
 
-  public void removeWatch(AbstractEvaluationModel model) {
+  public void removeWatch(IEvaluationContainer model) {
     synchronized (myWatches) {
       myWatches.remove(model);
     }
@@ -173,31 +169,17 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   @Nullable
-  private AbstractEvaluationModel createLowLevelEvaluationModel(boolean isShowContext) {
-    EvaluationAuxModule module = null;
-    synchronized (this) {
-      if (myAuxModule == null) {
-        return null;
-      }
-      module = myAuxModule;
-    }
-    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, module, isShowContext, ListSequence.fromList(new ArrayList<SNodeReference>()));
+  private IEvaluationContainer createEvaluationContainer(boolean isWatch) {
+    return new EvaluationWithContextContainer(myDebugSession.getProject(), myDebugSession, myContainerModule, ListSequence.fromList(new ArrayList<SNodeReference>()), isWatch);
   }
 
   @Nullable
-  private AbstractEvaluationModel createLowLevelEvaluationModel(boolean isShowContext, List<SNodeReference> selectedNodes) {
-    EvaluationAuxModule module = null;
-    synchronized (this) {
-      if (myAuxModule == null) {
-        return null;
-      }
-      module = myAuxModule;
-    }
-    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, module, isShowContext, selectedNodes);
+  private IEvaluationContainer createEvaluationContainer(boolean isWatch, List<SNodeReference> selectedNodes) {
+    return new EvaluationWithContextContainer(myDebugSession.getProject(), myDebugSession, myContainerModule, selectedNodes, isWatch);
   }
 
-  public List<AbstractEvaluationModel> getWatches() {
-    List<AbstractEvaluationModel> watchesCopy = new ArrayList<AbstractEvaluationModel>();
+  public List<IEvaluationContainer> getWatches() {
+    List<IEvaluationContainer> watchesCopy = new ArrayList<IEvaluationContainer>();
     synchronized (myWatches) {
       watchesCopy.addAll(myWatches);
     }
@@ -212,19 +194,19 @@ public class EvaluationProvider implements IEvaluationProvider {
     return listeners;
   }
 
-  private void fireWatchAdded(AbstractEvaluationModel model) {
+  private void fireWatchAdded(IEvaluationContainer model) {
     for (EvaluationProvider.IWatchListener listener : getListeners()) {
       listener.watchAdded(model);
     }
   }
 
-  private void fireWatchUpdated(AbstractEvaluationModel model) {
+  private void fireWatchUpdated(IEvaluationContainer model) {
     for (EvaluationProvider.IWatchListener listener : getListeners()) {
       listener.watchUpdated(model);
     }
   }
 
-  private void fireWatchRemoved(AbstractEvaluationModel model) {
+  private void fireWatchRemoved(IEvaluationContainer model) {
     for (EvaluationProvider.IWatchListener listener : getListeners()) {
       listener.watchRemoved(model);
     }
@@ -243,9 +225,9 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public static interface IWatchListener {
-    public void watchAdded(AbstractEvaluationModel model);
-    public void watchUpdated(AbstractEvaluationModel model);
-    public void watchRemoved(AbstractEvaluationModel model);
+    public void watchAdded(IEvaluationContainer model);
+    public void watchUpdated(IEvaluationContainer model);
+    public void watchRemoved(IEvaluationContainer model);
   }
 
   public static class WatchAdapter implements EvaluationProvider.IWatchListener {
@@ -253,15 +235,15 @@ public class EvaluationProvider implements IEvaluationProvider {
     }
 
     @Override
-    public void watchAdded(AbstractEvaluationModel model) {
+    public void watchAdded(IEvaluationContainer model) {
     }
 
     @Override
-    public void watchUpdated(AbstractEvaluationModel model) {
+    public void watchUpdated(IEvaluationContainer model) {
     }
 
     @Override
-    public void watchRemoved(AbstractEvaluationModel model) {
+    public void watchRemoved(IEvaluationContainer model) {
     }
   }
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="eb485bfsxcsadqmge6vevqmkmic8kjr">
+<dependencies version="2" modelHash="77oqu8czg6lm43690a8a2opdmanqii0">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22hsdy8hx47u1rwu32z4quczy3521b0" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="aj9x9bjbz3xk5wu168gcn7hijx3f6fy">
@@ -16,6 +16,7 @@
     <dep root="6036237525966315974" />
     <dep root="6036237525966316030" />
     <dep root="7915630211773477333" />
+    <dep root="846214144113532833" />
     <dep root="9050639307831392587" />
     <dep root="9146111288436274341" />
     <dep root="9172312269976647291" />
@@ -27,16 +28,16 @@
     <file name="Evaluation_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="6036237525966182693" name="EvaluatorConcept" hash="-8qimrk0z35yhfn91soekbqagrywgtpy">
+  <source id="6036237525966182693" name="EvaluatorConcept" hash="-b5yk0j210und15ao0ik33i32fpt28lx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6036237525966182694" name="LowLevelVariable" hash="-emuyp5h0p11jyxvbh0lcju467mbwnax">
+  <source id="6036237525966182694" name="LowLevelVariable" hash="-8ld3w1x29sybc37tb3u6hy89xm7h7hb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6036237525966315974" name="EvaluatorsThisExpression" hash="bcp92zcwwlyd6nx0l2pv6j877pqafrq">
+  <source id="6036237525966315974" name="EvaluatorsThisExpression" hash="8mxh6j1sluxl2c971uzmbretq1edgkd">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6036237525966316030" name="EvaluatorsSuperMethodCall" hash="-581z09op2bv8yygsu2w6pnno1jyhxjn">
+  <source id="6036237525966316030" name="EvaluatorsSuperMethodCall" hash="bf00bg18hx19okfyb3h17jbmou8f7le">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1707366700950402060" name="GenerationHelperAnnotation" hash="-7qb9nq01fwbz724ft5kuf3fy2truzpd">
@@ -45,7 +46,7 @@
   <source id="4698880862823893381" name="ToEvaluateAnnotation" hash="cfx0hc3x3398ud9a3qmbk2i99jd35w0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="9050639307831392587" name="LowLevelVariableReference" hash="-3lv44v6u8oa2rola7gofujxj3w6gzup">
+  <source id="9050639307831392587" name="LowLevelVariableReference" hash="bsz3c88fhfzska99zs9f039dn49nn8q">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5816417461675171490" name="UnprocessedAnnotation" hash="-a5favoa621dsiz67xa6f8dory6j89uj">
@@ -54,16 +55,19 @@
   <source id="9146111288436274341" name="DoNotTransformAnnotation" hash="-a2iavxj2yd0220lnrlffqpz0irgcbh2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="9172312269976647291" name="IEvaluatorConcept" hash="4ynuiub21ockj7e7el8lfeujmqr650i">
+  <source id="9172312269976647291" name="IEvaluatorConcept" hash="-38m8tnqhmk6p7rf83hgyvfb1vnnbquc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4336756357323803637" name="UnitNode" hash="-3gax0cqv86dwz6mgjj6fb74lslsycy0">
+  <source id="4336756357323803637" name="UnitNode" hash="4vltju4tihpacxwesmuee2ynwyuex33">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4544608336420691672" name="DebuggedType" hash="dinz4yw0qmfk8qzcgkvjid369hfba1c">
+  <source id="4544608336420691672" name="DebuggedType" hash="5nz746slcyfhu6mznjsq1md1bhrd6mb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7915630211773477333" name="DownCastToLowLevel" hash="-76mfyf76gl4w96m4999k57rj7xrbb1t">
+  <source id="7915630211773477333" name="DownCastToLowLevel" hash="cfzt0vy2ma5aov8jagt0shr4ybtlkmu">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="846214144113532833" name="Evaluator" hash="dgicnp2i6h4j9sam5gcppmwwrxgvh65">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

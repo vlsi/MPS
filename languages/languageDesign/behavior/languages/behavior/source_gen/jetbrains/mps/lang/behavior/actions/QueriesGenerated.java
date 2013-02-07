@@ -24,6 +24,8 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior;
 
 public class QueriesGenerated {
@@ -85,7 +87,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SNode result = SuperNodeExpression_Behavior.call_getSuperConcept_7448026190102457310(_context.getSourceNode());
           if (result == null) {
             result = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");

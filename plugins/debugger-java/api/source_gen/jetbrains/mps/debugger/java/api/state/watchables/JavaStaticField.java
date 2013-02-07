@@ -19,7 +19,7 @@ public class JavaStaticField extends JavaWatchable implements IWatchable {
   public JavaStaticField(Field field, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myField = field;
-    myCachedValue = ValueUtil.getInstance().fromJDI(field.declaringType().getValue(myField), myClassFQName, threadReference);
+    myCachedValue = ValueUtil.getInstance().fromJDI(myField.declaringType().getValue(myField), myClassFQName, myThreadReference);
   }
 
   @Override
@@ -39,7 +39,7 @@ public class JavaStaticField extends JavaWatchable implements IWatchable {
 
   @Override
   public Icon getPresentationIcon() {
-    return getValue().getPresentationIcon();
+    return myCachedValue.getPresentationIcon();
   }
 
   @Override

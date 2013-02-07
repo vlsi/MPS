@@ -13,21 +13,27 @@
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6036237525966316003">
       <property name="name" nameId="tpck.1169194664001" value="typeof_EvaluatorsThisExpression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4454641827113760511">
       <property name="name" nameId="tpck.1169194664001" value="typeof_LowLevelVariable" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="8054553590745290955">
       <property name="name" nameId="tpck.1169194664001" value="typeof_LowLevelVariableReference" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="4544608336420700080">
       <property name="name" nameId="tpck.1169194664001" value="DebuggedtypeIsHighLevelType" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4544608336420717491">
       <property name="name" nameId="tpck.1169194664001" value="typeof_UnitNode" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="7915630211773498575">
       <property name="name" nameId="tpck.1169194664001" value="typeof_DownCastToLowLevel" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="old" />
     </node>
   </roots>
   <root id="6036237525966316003">

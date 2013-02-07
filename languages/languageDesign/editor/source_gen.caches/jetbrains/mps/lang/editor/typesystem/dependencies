@@ -32,6 +32,7 @@
   <dependency className="jetbrains.mps.lang.editor.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.IndentLayoutShouldntBeUsedWithBraces_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.RightTransformActionDeprecated_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_CellMenuPart_ApplySideTransforms_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_CellModel_RefCell_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_CellModel_RefNodeList_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.editor.typesystem.check_CellModel_RefNode_InferenceRule" />
@@ -56,6 +57,19 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.typesystem.check_CellMenuPart_ApplySideTransforms_NonTypesystemRule" file="check_CellMenuPart_ApplySideTransforms_NonTypesystemRule.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.typesystem.check_CellModel_RefCell_InferenceRule" file="check_CellModel_RefCell_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />

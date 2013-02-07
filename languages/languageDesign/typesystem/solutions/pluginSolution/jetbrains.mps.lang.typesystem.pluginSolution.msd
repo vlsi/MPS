@@ -2,7 +2,6 @@
 <solution name="jetbrains.mps.lang.typesystem.pluginSolution" uuid="ce5a0f58-7430-42db-a0f4-1620a3eecede" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
       <sourceRoot location="models" />
     </modelRoot>
   </models>

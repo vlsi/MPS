@@ -25,9 +25,9 @@ import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import java.util.regex.Pattern;
 
@@ -352,11 +352,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseAttribute"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNode element = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement");
           int index = ListSequence.fromList(SLinkOperations.getTargets(element, "attributes", true)).indexOf(_context.getSourceNode());
           return ListSequence.fromList(SLinkOperations.getTargets(element, "attributes", true)).insertElement(index + 1, result);
@@ -380,11 +380,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseAttribute"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "attributes", true)).insertElement(0, result);
         }
       }, operationContext);
@@ -406,7 +406,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SPropertyOperations.set(_context.getSourceNode(), "shortEmptyNotation", "" + (true));
           ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "content", true)).clear();
           return _context.getSourceNode();
@@ -433,7 +433,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SNode elem = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement");
           ListSequence.fromList(SLinkOperations.getTargets(elem, "content", true)).clear();
           SPropertyOperations.set(elem, "shortEmptyNotation", "" + (true));
@@ -461,11 +461,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlContent"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           return SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), result);
         }
       }, operationContext);
@@ -487,11 +487,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlValuePart"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           return SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), result);
         }
       }, operationContext);

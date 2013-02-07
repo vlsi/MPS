@@ -138,17 +138,17 @@ public class VariablesTree extends MPSTree implements DataProvider {
       for (SNode snode : MapSequence.fromMap(nodeToVarsMap).keySet()) {
         List<IWatchable> watchablesWithNodes = MapSequence.fromMap(nodeToVarsMap).get(snode);
         if (watchablesWithNodes.size() == 1) {
-          rootTreeNode.add(new WatchableNode(myContext, ListSequence.fromList(watchablesWithNodes).first()));
+          rootTreeNode.add(new WatchableNode(myContext, ListSequence.fromList(watchablesWithNodes).first(), myUiState));
         } else {
           NodeTreeNode nodeTreeNode = new NodeTreeNode(myContext, snode);
           for (IWatchable watchable : watchablesWithNodes) {
-            nodeTreeNode.add(new WatchableNode(myContext, watchable));
+            nodeTreeNode.add(new WatchableNode(myContext, watchable, myUiState));
           }
           rootTreeNode.add(nodeTreeNode);
         }
       }
       for (IWatchable watchable : orphanes) {
-        rootTreeNode.add(new WatchableNode(myContext, watchable));
+        rootTreeNode.add(new WatchableNode(myContext, watchable, myUiState));
       }
     }
     return rootTreeNode;

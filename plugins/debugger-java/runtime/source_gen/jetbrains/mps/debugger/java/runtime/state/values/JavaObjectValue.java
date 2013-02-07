@@ -5,49 +5,24 @@ package jetbrains.mps.debugger.java.runtime.state.values;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
+import javax.swing.Icon;
+import jetbrains.mps.debugger.java.api.ui.Icons;
 import java.util.List;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.ArrayList;
 import com.sun.jdi.ObjectReference;
 import com.sun.jdi.Field;
-import java.util.Collections;
-import java.util.Comparator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.debugger.java.api.state.watchables.JavaField;
-import javax.swing.Icon;
-import jetbrains.mps.debugger.java.api.ui.Icons;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
-import com.sun.jdi.ClassType;
-import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
-import jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy;
-import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
-import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
-import jetbrains.mps.util.NameUtil;
 
 /*package*/ class JavaObjectValue extends JavaValue {
+  private final String myPresentation;
+
   public JavaObjectValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value, classFQname, threadReference);
-  }
-
-  @Override
-  public List<IWatchable> getSubvalues() {
-    List<IWatchable> watchables = new ArrayList<IWatchable>();
-    ObjectReference ref = (ObjectReference) myValue;
-    if (ref != null) {
-      List<Field> fieldList = ref.referenceType().allFields();
-      Collections.sort(fieldList, new Comparator<Field>() {
-        @Override
-        public int compare(Field o1, Field o2) {
-          return o1.name().compareTo(o2.name());
-        }
-      });
-      for (Field f : fieldList) {
-        watchables.add(new JavaField(f, ref, myClassFQName, myThreadReference));
-      }
-    }
-    return watchables;
+    myPresentation = (("{" + myValue.type().name() + "} ") + myValue.toString());
   }
 
   @Override
@@ -62,58 +37,27 @@ import jetbrains.mps.util.NameUtil;
 
   @Override
   public String getValuePresentation() {
-    return (("{" + myValue.type().name() + "} ") + myValue.toString());
+    return myPresentation;
   }
 
-  @Nullable
-  public JavaValue getFieldValue(String fieldName) {
-    try {
-      ObjectReference ref = (ObjectReference) myValue;
-      Field field = EvaluationUtils.getInstance().findField((ClassType) ref.referenceType(), fieldName);
-      return ValueUtil.getInstance().fromJDIRaw(ref.getValue(field), myClassFQName, myThreadReference);
-    } catch (InvalidEvaluatedExpressionException e) {
-      //  we get NPE instead 
-      return null;
-    }
-  }
-
-  public List<JavaValue> getFieldValues() {
+  public List<IWatchable> calculateSubvalues() {
+    List<IWatchable> watchables = new ArrayList<IWatchable>();
     ObjectReference ref = (ObjectReference) myValue;
-    List<Field> fieldList = ref.referenceType().fields();
-    List<JavaValue> result = new ArrayList<JavaValue>();
-    for (Field f : fieldList) {
-      result.add(ValueUtil.getInstance().fromJDIRaw(ref.getValue(f), myClassFQName, myThreadReference));
+    if (ref != null) {
+      List<Field> fieldList = ListSequence.fromList(new ArrayList<Field>());
+      ListSequence.fromList(fieldList).addSequence(ListSequence.fromList(ref.referenceType().allFields()));
+      for (Field f : ListSequence.fromList(fieldList).where(new IWhereFilter<Field>() {
+        public boolean accept(Field it) {
+          return !(it.isStatic());
+        }
+      }).sort(new ISelector<Field, String>() {
+        public String select(Field it) {
+          return it.name();
+        }
+      }, true)) {
+        watchables.add(new JavaField(f, ref, myClassFQName, myThreadReference));
+      }
     }
-    return result;
-  }
-
-  @NotNull
-  private IObjectValueProxy createValueProxy() {
-    return (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(myValue);
-  }
-
-  @Nullable
-  public JavaValue executeMethod(String methodName, String jniSignature, Object... args) {
-    try {
-      return ValueUtil.getInstance().fromJDIRaw(createValueProxy().invokeMethod(methodName, jniSignature, myThreadReference, args).getJDIValue(), myClassFQName, myThreadReference);
-    } catch (EvaluationException e) {
-      return null;
-    }
-  }
-
-  public String getClassFqName() {
-    return ((ObjectReference) myValue).referenceType().name();
-  }
-
-  public String getClassName() {
-    return NameUtil.shortNameFromLongName(getClassFqName());
-  }
-
-  public boolean isInstanceOf(String className) {
-    try {
-      return createValueProxy().isInstanceOf("L" + className + ";");
-    } catch (EvaluationException e) {
-      return false;
-    }
+    return watchables;
   }
 }

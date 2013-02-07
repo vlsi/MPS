@@ -36,6 +36,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -183,7 +185,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SNode mae = SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", null));
           SLinkOperations.setTarget(mae, "tuple", _context.getSourceNode(), true);
           return mae;
@@ -210,7 +212,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration"), "final", "" + (true));
           return _context.getSourceNode();
         }

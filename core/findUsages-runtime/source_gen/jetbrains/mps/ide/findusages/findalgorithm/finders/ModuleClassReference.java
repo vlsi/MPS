@@ -5,6 +5,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.runtime.IClassLoadingModule;
 
 public class ModuleClassReference<T> {
   private ModuleReference myModuleRef;
@@ -28,7 +29,10 @@ public class ModuleClassReference<T> {
     if (module == null) {
       return null;
     }
-    Class loadedClass = module.getClass(myClassName);
+    if (!(module instanceof IClassLoadingModule)) {
+      throw new IllegalStateException();
+    }
+    Class loadedClass = ((IClassLoadingModule) module).getClass(myClassName);
     if (loadedClass == null) {
       return null;
     }

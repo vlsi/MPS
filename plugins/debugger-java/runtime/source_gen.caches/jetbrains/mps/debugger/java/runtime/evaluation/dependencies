@@ -9,21 +9,21 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.JavaUiState" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationAuxModule" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.LowLevelEvaluationModel" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.Properties" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationWithContextContainer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EditWatchDialog" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
@@ -31,10 +31,12 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.debug.api.evaluation.IEvaluationProvider" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.evaluation.IWatchListener" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationUtilsImpl" file="EvaluationUtilsImpl.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.ArrayReference" />
     <classNode dependClassName="com.sun.jdi.ArrayType" />

@@ -22,7 +22,7 @@ import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.CollectionUtil;
@@ -62,10 +62,11 @@ public class TestModule extends ClassLoadingModule {
   }
 
   public Class getClass(String fqName) {
-    if (myPeer == null) {
+    if (!(myPeer instanceof IClassLoadingModule)) {
       throw new IllegalStateException();
     }
-    return myPeer.getClass(fqName);
+
+    return ((IClassLoadingModule) myPeer).getClass(fqName);
   }
 
   public String getGeneratorOutputPath() {

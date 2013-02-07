@@ -22,6 +22,8 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -79,7 +81,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.ExpressionWithUnit");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           return SNodeOperations.replaceWithAnother(_context.getSourceNode(), _quotation_createNode_9can6o_a0a0a0a0a(_context.getSourceNode(), "PERCENT"));
         }
 
@@ -95,7 +97,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.ExpressionWithUnit");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           return SNodeOperations.replaceWithAnother(_context.getSourceNode(), _quotation_createNode_9can6o_a0a0a0b0a(_context.getSourceNode(), "PIXEL"));
         }
 
@@ -116,7 +118,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.ColumnLayoutConstraint");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "spanCols", "jetbrains.mps.baseLanguage.structure.Expression");
           return _context.getSourceNode();
         }
@@ -138,7 +140,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.RowLayoutConstraint");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "spanRows", "jetbrains.mps.baseLanguage.structure.Expression");
           return _context.getSourceNode();
         }

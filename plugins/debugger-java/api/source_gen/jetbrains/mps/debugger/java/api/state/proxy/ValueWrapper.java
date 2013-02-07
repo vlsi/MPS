@@ -18,11 +18,13 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
   protected final JavaValue myWrappedValue;
   @NotNull
   protected final IValueProxy myValueProxy;
+  private final String myPresentation;
 
   public ValueWrapper(JavaValue value) {
     super(value.getValue(), value.getClassFQName(), value.myThreadReference);
     myWrappedValue = value;
     myValueProxy = MirrorUtil.getInstance().getValueProxy(value.getValue());
+    myPresentation = myWrappedValue.getValuePresentation();
   }
 
   @Override
@@ -32,11 +34,10 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
 
   @Override
   public String getValuePresentation() {
-    return myWrappedValue.getValuePresentation();
+    return myPresentation;
   }
 
-  @Override
-  public List<IWatchable> getSubvalues() {
+  public List<IWatchable> calculateSubvalues() {
     List<IWatchable> result = new ArrayList<IWatchable>();
     for (IWatchable watchable : getSubvaluesImpl()) {
       result.add(watchable);

@@ -6,7 +6,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 import jetbrains.mps.debugger.java.runtime.state.SessionStopDisposer;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import java.awt.Dimension;
@@ -19,7 +19,7 @@ public abstract class AbstractEvaluationDialog extends DialogWrapper {
   protected final EvaluationPanel myEvaluationPanel;
   private final SessionStopDisposer mySessionStopDisposer;
 
-  public AbstractEvaluationDialog(IOperationContext context, EvaluationProvider provider, AbstractEvaluationModel model, String title) {
+  public AbstractEvaluationDialog(IOperationContext context, EvaluationProvider provider, IEvaluationContainer model, String title) {
     super(ProjectHelper.toIdeaProject(context.getProject()));
     setTitle(title);
 

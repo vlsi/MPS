@@ -27,6 +27,9 @@ public class SimpleValue implements IValue {
     return new ArrayList<IWatchable>();
   }
 
+  public void initSubvalues() {
+  }
+
   public Icon getPresentationIcon() {
     return null;
   }

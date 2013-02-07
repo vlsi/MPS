@@ -85,11 +85,13 @@
     <nodeInfo nodeId="4474271214082915205" fileName="IValue.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentationIcon#()Ljavax/swing/Icon;" />
     <nodeInfo nodeId="4474271214082915209" fileName="IValue.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStructure#()Z" />
     <nodeInfo nodeId="4474271214082915213" fileName="IValue.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvalues#()Ljava/util/List;" />
+    <nodeInfo nodeId="948222233231027694" fileName="IValue.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initSubvalues#()V" />
     <scopeInfo nodeId="4474271214082915201" fileName="IValue.java" startLine="9" startPosition="0" endLine="10" endPosition="0" />
     <scopeInfo nodeId="4474271214082915205" fileName="IValue.java" startLine="10" startPosition="0" endLine="11" endPosition="0" />
     <scopeInfo nodeId="4474271214082915209" fileName="IValue.java" startLine="11" startPosition="0" endLine="12" endPosition="0" />
     <scopeInfo nodeId="4474271214082915213" fileName="IValue.java" startLine="12" startPosition="0" endLine="13" endPosition="0" />
-    <unitInfo nodeId="4474271214082915199" fileName="IValue.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.debug.api.programState.IValue" />
+    <scopeInfo nodeId="948222233231027694" fileName="IValue.java" startLine="13" startPosition="0" endLine="14" endPosition="0" />
+    <unitInfo nodeId="4474271214082915199" fileName="IValue.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.debug.api.programState.IValue" />
   </root>
   <root nodeRef="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)/4474271214082916598">
     <nodeInfo nodeId="4474271214082916600" fileName="IWatchable.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />

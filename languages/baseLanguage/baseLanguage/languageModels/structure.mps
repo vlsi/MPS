@@ -7,7 +7,6 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="356a" modelUID="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" version="0" />
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068498886294">
       <property name="name" nameId="tpck.1169194664001" value="AssignmentExpression" />
@@ -1595,6 +1594,11 @@
       <property name="name" nameId="tpck.1169194664001" value="JavaImport" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="unresolved" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="java import" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3609453419506221441">
+      <property name="name" nameId="tpck.1169194664001" value="IncompleteMemberDeclaration" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </roots>
@@ -3977,6 +3981,39 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6528213125912083987">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6528213125912070246" resolveInfo="Tokens" />
+    </node>
+  </root>
+  <root id="3609453419506221441">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3609453419506222262">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="459106287010823049">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3609453419506282388">
+      <property name="name" nameId="tpck.1169194664001" value="static" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3609453419506282390">
+      <property name="name" nameId="tpck.1169194664001" value="final" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3609453419506282393">
+      <property name="name" nameId="tpck.1169194664001" value="abstract" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3609453419506283925">
+      <property name="name" nameId="tpck.1169194664001" value="synchronized" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3609453419506286246">
+      <property name="name" nameId="tpck.1169194664001" value="volatile" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3609453419535151784">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="type" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1068431790189" resolveInfo="Type" />
     </node>
   </root>
 </model>

@@ -15,6 +15,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueriesGenerated {
@@ -35,7 +37,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SPropertyOperations.set(SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract", "" + (true));
           return _context.getSourceNode();
         }
@@ -57,7 +59,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SPropertyOperations.set(SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "final", "" + (true));
           return _context.getSourceNode();
         }

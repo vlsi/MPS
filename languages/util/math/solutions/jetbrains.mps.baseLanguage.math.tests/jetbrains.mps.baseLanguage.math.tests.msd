@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.baseLanguage.math.tests" uuid="9cc656d8-ed07-4493-9531-69f1c9c308c5" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <sourcePath />

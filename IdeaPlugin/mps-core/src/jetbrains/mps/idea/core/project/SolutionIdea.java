@@ -20,7 +20,6 @@ import com.intellij.ProjectTopics;
 import com.intellij.facet.Facet;
 import com.intellij.facet.FacetManager;
 import com.intellij.facet.FacetManagerAdapter;
-import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
@@ -51,7 +50,8 @@ import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
 import jetbrains.mps.idea.core.library.ModuleLibraryType;
 import jetbrains.mps.idea.core.project.stubs.DifferentSdkException;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
-import jetbrains.mps.idea.core.project.stubs.SdkClassesImporter;
+import jetbrains.mps.project.JavaModuleFacet;
+import jetbrains.mps.project.JavaModuleFacetImpl;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -328,18 +328,23 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  public IFile getClassesGen() {
-    IFile descriptorFile = getDescriptorFile();
-    if (descriptorFile != null && descriptorFile.isReadOnly()) {
-      return super.getClassesGen();
-    }
+  protected JavaModuleFacet createJavaModuleFacet() {
+    return new JavaModuleFacetImpl(this) {
+      @Override
+      public IFile getClassesGen() {
+        IFile descriptorFile = getDescriptorFile();
+        if (descriptorFile != null && descriptorFile.isReadOnly()) {
+          return super.getClassesGen();
+        }
 
-    CompilerModuleExtension compilerModuleExtension = ModuleRootManager.getInstance(myModule).getModuleExtension(CompilerModuleExtension.class);
-    VirtualFile compilerOutputPath = compilerModuleExtension.getCompilerOutputPath();
-    if (compilerOutputPath == null) {
-      return null;
-    }
-    return FileSystem.getInstance().getFileByPath(compilerOutputPath.getPath());
+        CompilerModuleExtension compilerModuleExtension = ModuleRootManager.getInstance(myModule).getModuleExtension(CompilerModuleExtension.class);
+        VirtualFile compilerOutputPath = compilerModuleExtension.getCompilerOutputPath();
+        if (compilerOutputPath == null) {
+          return null;
+        }
+        return FileSystem.getInstance().getFileByPath(compilerOutputPath.getPath());
+      }
+    };
   }
 
   private void addLibs(SolutionDescriptor solutionDescriptor) {
