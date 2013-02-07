@@ -572,11 +572,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
           SLinkOperations.setTarget(result, "left", _context.getSourceNode(), true);
           return result;
@@ -767,11 +767,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart");
           SLinkOperations.setTarget(node, "left", _context.getSourceNode(), true);
           return node;
@@ -795,11 +795,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart");
           SPropertyOperations.set(node, "start", SPropertyOperations.getString(_context.getSourceNode(), "character"));
           return node;
@@ -823,11 +823,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart");
           SPropertyOperations.set(node, "end", SPropertyOperations.getString(_context.getSourceNode(), "character"));
           return node;

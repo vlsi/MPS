@@ -334,11 +334,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.BinaryArithmeticExpression"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNode source = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.bash.structure.ArithmeticExpression");
           while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.bash.structure.BinaryArithmeticExpression")) {
             SNode parent = SNodeOperations.cast(SNodeOperations.getParent(source), "jetbrains.mps.bash.structure.BinaryArithmeticExpression");
@@ -371,11 +371,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.BinaryArithmeticExpression"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNode source = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.bash.structure.ArithmeticExpression");
           while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.bash.structure.BinaryArithmeticExpression")) {
             SNode parent = SNodeOperations.cast(SNodeOperations.getParent(source), "jetbrains.mps.bash.structure.BinaryArithmeticExpression");
@@ -487,11 +487,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.FollowingCommandList"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
           SNodeFactoryOperations.setNewChild(SLinkOperations.getTarget(SLinkOperations.getTarget(result, "baseCommand", true), "base", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
           SLinkOperations.setTarget(SLinkOperations.getTarget(result, "baseCommand", true), "following", _context.getSourceNode(), true);
@@ -516,11 +516,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.FollowingCommandList"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SLinkOperations.setTarget(SLinkOperations.getTarget(result, "baseCommand", true), "following", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "following", true), true);
           SLinkOperations.setTarget(SLinkOperations.getTarget(result, "baseCommand", true), "base", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "base", true), true);
           SLinkOperations.setTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "following", result, true);
@@ -547,11 +547,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.FollowingPipeline"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SLinkOperations.setTarget(SLinkOperations.getTarget(result, "basePipeline", true), "following", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "following", true), true);
           SLinkOperations.setTarget(SLinkOperations.getTarget(result, "basePipeline", true), "command", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "command", true), true);
           SNodeFactoryOperations.setNewChild(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
@@ -577,11 +577,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.FollowingPipeline"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
           SLinkOperations.setTarget(SLinkOperations.getTarget(result, "basePipeline", true), "following", _context.getSourceNode(), true);
           SNodeFactoryOperations.setNewChild(SLinkOperations.getTarget(result, "basePipeline", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
@@ -606,11 +606,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CombiningConditionalExpression"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNode source = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.bash.structure.ConditionalExpression");
           SNodeOperations.replaceWithAnother(source, result);
           SLinkOperations.setTarget(result, "right", source, true);
@@ -635,11 +635,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CombiningConditionalExpression"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNode source = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.bash.structure.ConditionalExpression");
           SNodeOperations.replaceWithAnother(source, result);
           SLinkOperations.setTarget(result, "left", source, true);

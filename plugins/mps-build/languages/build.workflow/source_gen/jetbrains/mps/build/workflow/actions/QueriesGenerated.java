@@ -23,12 +23,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.EditorContext;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_XmlBaseElement_7926701909975919246(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -96,7 +96,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseElement");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
-          public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
             SNode cp = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfFileSet");
             ListSequence.fromList(SLinkOperations.getTargets(cp, "elements", true)).addElement(nodeToWrap);
             return cp;
@@ -106,9 +106,10 @@ public class QueriesGenerated {
             return false;
           }
 
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
-            SNode wrappedNode = this.wrapNode(nc, nc.getModel());
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+          @Override
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+            SNode wrappedNode = this.wrapNode(nc, nc.getModel(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
             if (this.returnSmallPart(nc)) {
               return nc;
             } else {
@@ -130,7 +131,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseElement");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
-          public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
             SNode cp = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath");
             SLinkOperations.setTarget(cp, "classpath", nodeToWrap, true);
             return cp;
@@ -140,9 +141,10 @@ public class QueriesGenerated {
             return false;
           }
 
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
-            SNode wrappedNode = this.wrapNode(nc, nc.getModel());
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+          @Override
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+            SNode wrappedNode = this.wrapNode(nc, nc.getModel(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
             if (this.returnSmallPart(nc)) {
               return nc;
             } else {

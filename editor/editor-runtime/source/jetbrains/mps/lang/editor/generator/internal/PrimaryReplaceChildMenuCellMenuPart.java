@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -47,7 +48,7 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPart, 
             currentChild,
             CellUtil.getLinkDeclarationTarget(linkDeclaration),
             new AbstractChildNodeSetter() {
-              public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
+              public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope, @Nullable EditorContext editorContext) {
                 if (oldChild == null) {
                   parentNode.addChild(role, newChild);
                 } else {

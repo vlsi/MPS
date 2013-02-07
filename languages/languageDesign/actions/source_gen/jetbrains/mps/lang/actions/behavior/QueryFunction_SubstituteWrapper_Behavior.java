@@ -24,6 +24,9 @@ public class QueryFunction_SubstituteWrapper_Behavior {
     if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model")) {
       return false;
     }
+    if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext")) {
+      return false;
+    }
     return true;
   }
 
@@ -42,6 +45,7 @@ public class QueryFunction_SubstituteWrapper_Behavior {
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1177568407352"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)", "1161622878565"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1154465273778"));
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)", "1194033889146"));
     return result;
   }
 

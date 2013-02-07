@@ -94,7 +94,8 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
   /**
    * implements IChildNodeSetter
    */
-  public SNode doExecute(SNode parentNode, SNode oldNode, SNode newNode, IScope scope) {
+  @Override
+  public SNode doExecute(SNode parentNode, SNode oldNode, SNode newNode, IScope scope, @Nullable EditorContext editorContext) {
     SNodeUtil.replaceWithAnother(oldNode, newNode);
     return newNode;
   }

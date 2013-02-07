@@ -576,6 +576,7 @@
   <dependency className="jetbrains.mps.baseLanguage.editor.BaseAssignmentExpression_Editor" file="BaseAssignmentExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.AssignmentExpression_LeftArgument_Actions" />
@@ -604,6 +605,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.AbstractChildNodeSetter" />
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.ModelActions" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept" />
@@ -749,6 +751,7 @@
   <dependency className="jetbrains.mps.baseLanguage.editor.BinaryOperation_Editor" file="BinaryOperation_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
@@ -779,6 +782,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.AbstractChildNodeSetter" />
     <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.ModelActions" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept" />

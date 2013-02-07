@@ -27,6 +27,8 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -40,8 +42,6 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -214,7 +214,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildStringPart");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
-          public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
             SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildString", null);
             ListSequence.fromList(SLinkOperations.getTargets(res, "parts", true)).addElement(nodeToWrap);
             return res;
@@ -224,9 +224,10 @@ public class QueriesGenerated {
             return false;
           }
 
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
-            SNode wrappedNode = this.wrapNode(nc, nc.getModel());
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+          @Override
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+            SNode wrappedNode = this.wrapNode(nc, nc.getModel(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
             if (this.returnSmallPart(nc)) {
               return nc;
             } else {
@@ -248,7 +249,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildString");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
-          public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
             SNode init = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildVariableMacroInitWithString");
             SLinkOperations.setTarget(init, "value", nodeToWrap, true);
             return init;
@@ -258,9 +259,10 @@ public class QueriesGenerated {
             return false;
           }
 
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
-            SNode wrappedNode = this.wrapNode(nc, nc.getModel());
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+          @Override
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+            SNode wrappedNode = this.wrapNode(nc, nc.getModel(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
             if (this.returnSmallPart(nc)) {
               return nc;
             } else {
@@ -378,7 +380,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildInputSingleFolder");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
-          public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
             SNode n = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSource_JavaFiles");
             SLinkOperations.setTarget(n, "resset", nodeToWrap, true);
             return n;
@@ -388,9 +390,10 @@ public class QueriesGenerated {
             return false;
           }
 
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
-            SNode wrappedNode = this.wrapNode(nc, nc.getModel());
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+          @Override
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+            SNode wrappedNode = this.wrapNode(nc, nc.getModel(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
             if (this.returnSmallPart(nc)) {
               return nc;
             } else {
@@ -412,7 +415,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaJar");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
-          public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
             SNode n = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar");
             SLinkOperations.setTarget(n, "jar", nodeToWrap, true);
             return n;
@@ -422,9 +425,10 @@ public class QueriesGenerated {
             return false;
           }
 
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
-            SNode wrappedNode = this.wrapNode(nc, nc.getModel());
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+          @Override
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+            SNode wrappedNode = this.wrapNode(nc, nc.getModel(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
             if (this.returnSmallPart(nc)) {
               return nc;
             } else {
@@ -446,7 +450,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaCP");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
-          public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
             SNode n = SModelOperations.createNewNode(model, null, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP");
             SLinkOperations.setTarget(n, "classpath", nodeToWrap, true);
             return n;
@@ -456,9 +460,10 @@ public class QueriesGenerated {
             return false;
           }
 
-          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
-            SNode wrappedNode = this.wrapNode(nc, nc.getModel());
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+          @Override
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+            SNode wrappedNode = this.wrapNode(nc, nc.getModel(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
             if (this.returnSmallPart(nc)) {
               return nc;
             } else {
@@ -664,11 +669,11 @@ public class QueriesGenerated {
     {
       final String[] lastPattern = new String[1];
       List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildStringPart"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           return SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), result);
         }
       }, operationContext);
