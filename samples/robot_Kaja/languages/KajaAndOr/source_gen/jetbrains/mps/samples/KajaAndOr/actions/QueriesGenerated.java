@@ -22,6 +22,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorContext;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_LogicalOperator_642541832606605390(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -90,7 +92,7 @@ public class QueriesGenerated {
       assert parameterObjects != null;
       for (final String item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
+          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
             SNode conjuction;
             if ((item).equals("and")) {
               conjuction = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.KajaAndOr.structure.And");
@@ -129,7 +131,7 @@ public class QueriesGenerated {
       assert parameterObjects != null;
       for (final String item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
+          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
             SNode conjuction;
             if ((item).equals("and")) {
               SNode andNode = SConceptOperations.createNewNode("jetbrains.mps.samples.KajaAndOr.structure.And", null);
@@ -174,7 +176,7 @@ public class QueriesGenerated {
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
+          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
             SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
             SLinkOperations.setTarget(newInitializedInstance, "left", SNodeOperations.copyNode(_context.getSourceNode()), true);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), newInitializedInstance);
@@ -215,7 +217,7 @@ public class QueriesGenerated {
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
+          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
             SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
             SLinkOperations.setTarget(newInitializedInstance, "left", SNodeOperations.copyNode(_context.getSourceNode()), true);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), newInitializedInstance);

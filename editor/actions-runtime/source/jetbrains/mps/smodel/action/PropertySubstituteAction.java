@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.PropertySupport;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -40,7 +42,8 @@ public class PropertySubstituteAction extends AbstractNodeSubstituteAction {
     return getMatchingText(pattern);
   }
 
-  public SNode doSubstitute(String pattern) {
+  @Override
+  public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
     SNodeAccessUtil.setProperty(getSourceNode(), myPropertyName, myPropertyValue);
     return null;
   }

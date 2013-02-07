@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -36,7 +38,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.AbstractCommand");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(_context.getSourceNode(), "falseBranch", true), "commands", "jetbrains.mps.samples.Kaja.structure.EmptyLine");
           return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getSourceNode(), "falseBranch", true), "commands", true)).first();
         }
@@ -58,7 +60,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.While");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SNode whileNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.Kaja.structure.While");
           SLinkOperations.setTarget(whileNode, "condition", SLinkOperations.getTarget(_context.getSourceNode(), "condition", true), true);
           SLinkOperations.setTarget(whileNode, "body", SLinkOperations.getTarget(_context.getSourceNode(), "trueBranch", true), true);
@@ -82,7 +84,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.Not");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SNode notNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.Kaja.structure.Not");
           return SLinkOperations.setTarget(notNode, "original", _context.getSourceNode(), true);
         }
@@ -112,7 +114,7 @@ public class QueriesGenerated {
       assert parameterObjects != null;
       for (final String item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
+          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
             SNode expression;
             if ((item).equals("heading")) {
               expression = SConceptOperations.createNewNode("jetbrains.mps.samples.Kaja.structure.Heading", null);
@@ -149,7 +151,7 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.IfStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SNode ifNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.Kaja.structure.IfStatement");
           SLinkOperations.setTarget(ifNode, "condition", SLinkOperations.getTarget(_context.getSourceNode(), "condition", true), true);
           SLinkOperations.setTarget(ifNode, "trueBranch", SLinkOperations.getTarget(_context.getSourceNode(), "body", true), true);

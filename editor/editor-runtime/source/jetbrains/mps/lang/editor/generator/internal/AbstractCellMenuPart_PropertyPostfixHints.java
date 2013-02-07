@@ -21,16 +21,17 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.PropertySupport;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PatternUtil;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.*;
@@ -53,7 +54,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     if (postfixes == null) {
       postfixes = new ArrayList<String>();
     }
-    for (int i = 0; i < postfixes.size();) {
+    for (int i = 0; i < postfixes.size(); ) {
       if (postfixes.get(i) == null) {
         LOG.error("Invalid postfix value (null) was returned from: " + this.getClass() + "; getPostfixes() method");
         postfixes.remove(i);
@@ -66,7 +67,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     final PropertySupport propertySupport = PropertySupport.getPropertySupport(property);
     for (final String postfix : postfixes) {
       actions.add(new PostfixSubstituteAction(postfix, node, postfixGroup,
-        propertySupport, property.getName(), context.getScope(), editorContext));
+        propertySupport, property.getName(), context.getScope()));
     }
     return (List) actions;
   }
@@ -77,7 +78,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>getPostfixes(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>getPostfixes(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
   public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
@@ -126,7 +127,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
       if (myCurrentPattern.length() > 0) {
         boolean exactMatch = false;
         for (int i = 0; !(isMatchingSomething) && i < myCurrentPattern.length(); i++) {
-          if (i > 0 && ! Character.isUpperCase(myCurrentPattern.charAt(i))) {
+          if (i > 0 && !Character.isUpperCase(myCurrentPattern.charAt(i))) {
             continue;
           }
           Matcher itemMatcher = this.getItemPattern(NameUtil.decapitalize(myCurrentPattern.substring(i))).matcher("");
@@ -183,16 +184,14 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     private final PropertySupport myPropertySupport;
     private final String myPropertyName;
     private final IScope myScope;
-    private final EditorContext myEditorContext;
 
-    public PostfixSubstituteAction(String postfix, SNode node, PostfixGroup postfixGroup, PropertySupport propertySupport, String propertyName, IScope scope, EditorContext editorContext) {
+    public PostfixSubstituteAction(String postfix, SNode node, PostfixGroup postfixGroup, PropertySupport propertySupport, String propertyName, IScope scope) {
       super(null, postfix, node);
       myPostfix = postfix;
       myPostfixGroup = postfixGroup;
       myPropertySupport = propertySupport;
       myPropertyName = propertyName;
       myScope = scope;
-      myEditorContext = editorContext;
     }
 
     @Override
@@ -213,16 +212,16 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
       return myPostfixGroup.getMatchingText(pattern, myPostfix);
     }
 
-    public SNode doSubstitute(String pattern) {
+    public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
       String propertyName = myPropertyName;
       assert propertyName != null;
       SNodeAccessUtil.setProperty(getSourceNode(), propertyName, myPostfixGroup.getMatchingText(pattern, myPostfix));
 
-      myEditorContext.flushEvents();
+      editorContext.flushEvents();
 
-      EditorCell editorCell = myEditorContext.getSelectedCell();
+      EditorCell editorCell = editorContext.getSelectedCell();
       if (editorCell instanceof EditorCell_Label) {
-        ((EditorCell_Label)editorCell).end();
+        editorCell.end();
       }
 
       return null;
