@@ -253,55 +253,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return result;
   }
 
-  public Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
-    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>(super.getImplicitlyImportedModelsFor(sm));
-
-    LanguageAspect aspect = Language.getModelAspect(sm);
-
-    if (aspect != LanguageAspect.STRUCTURE && getStructureModelDescriptor() != null) {
-      result.add(getStructureModelDescriptor());
-    }
-
-    if (aspect != LanguageAspect.CONSTRAINTS && LanguageAspect.CONSTRAINTS.get(this) != null) {
-      result.add(LanguageAspect.CONSTRAINTS.get(this));
-    }
-
-    if (aspect != LanguageAspect.BEHAVIOR && LanguageAspect.BEHAVIOR.get(this) != null) {
-      result.add(LanguageAspect.BEHAVIOR.get(this));
-    }
-
-    for (Language extended : ModuleUtil.refsToLanguages(getExtendedLanguageRefs())) {
-      SModelDescriptor structure = LanguageAspect.STRUCTURE.get(extended);
-      if (structure != null) {
-        result.add(structure);
-      }
-      if (LanguageAspect.CONSTRAINTS.get(extended) != null) {
-        result.add(LanguageAspect.CONSTRAINTS.get(extended));
-      }
-
-      if (aspect != null && aspect.get(extended) != null) {
-        result.add(aspect.get(extended));
-      }
-    }
-
-    return result;
-  }
-
-  public Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
-    Set<Language> result = new LinkedHashSet<Language>(super.getImplicitlyImportedLanguages(sm));
-
-    LanguageAspect aspect = Language.getModelAspect(sm);
-    if (aspect != null) {
-      for (ModuleReference namespace : aspect.getAllLanguagesToImport(this)) {
-        Language language = GlobalScope.getInstance().getLanguage(namespace);
-        if (language != null) {
-          result.add(language);
-        }
-      }
-    }
-    return result;
-  }
-
   public SModelDescriptor getStructureModelDescriptor() {
     return LanguageAspect.STRUCTURE.get(this);
   }

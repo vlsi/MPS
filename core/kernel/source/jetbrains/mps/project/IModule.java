@@ -227,26 +227,40 @@ public interface IModule extends SModule {
 
   // other methods
 
-  // SModule#getModuleName
+  /**
+   * @see SModule#getModuleName
+   */
+  //
   @Deprecated
   String getModuleFqName();
 
-  // ProjectPathUtil#getGeneratorOutputPath
+  /**
+   * @see ProjectPathUtil#getGeneratorOutputPath(org.jetbrains.mps.openapi.module.SModule)
+   */
   @Deprecated
   String getGeneratorOutputPath();
 
-  // ProjectPathUtil#getTestsGeneratorOutputPath
+  /**
+   * @see ProjectPathUtil#getGeneratorTestsOutputPath(org.jetbrains.mps.openapi.module.SModule)
+   */
   @Deprecated
   String getTestsGeneratorOutputPath();
 
-  //todo move to model
-  // remove
-  // check is it imported on language model creation
-  // optimize imports (not remove it)
-  // see AddMissingImports / looks like create migration for this + customize create model dialog
+  /**
+   * This method always returns empty list. All implicitly imported models added to model while model creation
+   * todo: use manager in model creation / in optimize model imports / in migration action
+   *
+   * @see ModelsImplicitImportsManager
+   */
+  @Deprecated
   Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
 
-  //todo move to model
-  // like previous
+  /**
+   * This method always returns empty list. All implicitly imported models added to model while model creation
+   * todo: use manager in model creation / in optimize model imports / in migration action
+   *
+   * @see ModelsImplicitImportsManager
+   */
+  @Deprecated
   Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
 }

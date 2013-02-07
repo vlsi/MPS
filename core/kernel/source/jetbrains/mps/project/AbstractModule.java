@@ -468,18 +468,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return new ArrayList<SModel>(SModelRepository.getInstance().getModelDescriptors(this));
   }
 
-  public Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
-    return new LinkedHashSet<SModelDescriptor>();
-  }
-
-  public Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
-    Set<Language> result = new LinkedHashSet<Language>();
-    if (SModelStereotype.isGeneratorModel(sm)) {
-      result.add(BootstrapLanguages.generatorLanguage());
-    }
-    return result;
-  }
-
   public IFile getDescriptorFile() {
     return myDescriptorFile;
   }
@@ -786,6 +774,18 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   public final String getTestsGeneratorOutputPath() {
     IFile result = ProjectPathUtil.getGeneratorTestsOutputPath(this);
     return result != null ? result.getPath() : null;
+  }
+
+  @Override
+  @Deprecated
+  public final Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
+    return (Collection) ModelsImplicitImportsManager.getImplicitlyImportedModelsFor(this, sm);
+  }
+
+  @Override
+  @Deprecated
+  public final Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
+    return ModelsImplicitImportsManager.getImplicitlyImportedLanguages(this, sm);
   }
 
   // JavaModuleFacet

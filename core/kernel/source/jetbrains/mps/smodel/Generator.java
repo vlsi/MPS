@@ -20,6 +20,8 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.JavaModuleFacet;
 import jetbrains.mps.project.JavaModuleFacetImpl;
+import jetbrains.mps.project.ModelsImplicitImportsManager;
+import jetbrains.mps.project.ModelsImplicitImportsManager.ImplicitImportsContributor;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
@@ -37,6 +39,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriority
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -244,51 +247,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
 
   public IFile getBundleHome() {
     return null;
-  }
-
-  public Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
-    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>(super.getImplicitlyImportedModelsFor(sm));
-
-    SModelDescriptor structureModelDescriptor = getSourceLanguage().getStructureModelDescriptor();
-    if (structureModelDescriptor != null) {
-      result.add(structureModelDescriptor);
-    }
-
-    SModelDescriptor constraints = LanguageAspect.CONSTRAINTS.get(getSourceLanguage());
-    if (constraints != null) {
-      result.add(constraints);
-    }
-
-    for (Language language : ModuleUtil.refsToLanguages(getSourceLanguage().getExtendedLanguageRefs())) {
-      SModelDescriptor structure = language.getStructureModelDescriptor();
-      if (structure != null) {
-        result.add(structure);
-      }
-
-      SModelDescriptor constr = LanguageAspect.CONSTRAINTS.get(language);
-      if (constr != null) {
-        result.add(constr);
-      }
-    }
-
-    for (Language language : SModelOperations.getLanguages(sm.getSModel(), getScope())) {
-      SModelDescriptor struc = language.getStructureModelDescriptor();
-      if (struc != null) {
-        result.add(struc);
-      }
-    }
-
-    return result;
-  }
-
-  public Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
-    Set<Language> result = new LinkedHashSet<Language>(super.getImplicitlyImportedLanguages(sm));
-    if (SModelStereotype.isGeneratorModel(sm)) {
-      result.add(getSourceLanguage());
-
-      result.addAll(ModuleUtil.refsToLanguages(getSourceLanguage().getExtendedLanguageRefs()));
-    }
-    return result;
   }
 
   public boolean deleteReferenceFromPriorities(SModelReference ref) {
