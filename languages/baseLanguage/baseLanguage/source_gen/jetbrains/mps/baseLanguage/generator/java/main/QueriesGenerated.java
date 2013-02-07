@@ -63,6 +63,11 @@ public class QueriesGenerated {
     return true;
   }
 
+  public static boolean baseMappingRule_Condition_4747365393927488517(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    _context.showErrorMessage(_context.getNode(), "Incomplete member declaration in the code, ignoring");
+    return true;
+  }
+
   public static Object propertyMacro_GetPropertyValue_1224072736283(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "resource_" + _context.getNode().getNodeId().toString();
   }
@@ -110,7 +115,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_3073231036165996124(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), _quotation_createNode_x583g4_b0a0a0r()));
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), _quotation_createNode_x583g4_b0a0a0s()));
   }
 
   public static boolean ifMacro_Condition_1201570983175(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -222,7 +227,7 @@ public class QueriesGenerated {
     return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
   }
 
-  private static SNode _quotation_createNode_x583g4_b0a0a0r() {
+  private static SNode _quotation_createNode_x583g4_b0a0a0s() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~Closeable")));
