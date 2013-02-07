@@ -39,8 +39,13 @@ public abstract class EditorCellKeyMapAction implements KeyMapAction {
     return true;
   }
 
-  public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
+  // TODO: remove it after regeneration
+  public boolean canExecute(KeyEvent keyEvent, jetbrains.mps.openapi.editor.EditorContext context) {
     return canExecute(null, (EditorContext) context);
+  }
+
+  public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
+    return canExecute(null, context);
   }
 
   /**
@@ -52,11 +57,16 @@ public abstract class EditorCellKeyMapAction implements KeyMapAction {
   public void execute(KeyEvent keyEvent, EditorContext context) {
   }
 
+  // TODO: remove it after regeneration
+  public void execute(KeyEvent keyEvent, jetbrains.mps.openapi.editor.EditorContext context) {
+    execute(null, (EditorContext) context);
+  }
+
   /**
    * This method should become abstract after MPS 3.0
    */
   public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
-    execute(null, (EditorContext) context);
+    execute(null, context);
   }
 
   public String getDescriptionText() {
