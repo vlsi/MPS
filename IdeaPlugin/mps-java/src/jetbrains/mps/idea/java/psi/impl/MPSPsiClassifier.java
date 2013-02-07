@@ -2,6 +2,10 @@ package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiClass;
+import com.intellij.psi.PsiElement;
+import com.intellij.psi.ResolveState;
+import com.intellij.psi.impl.PsiClassImplUtil;
+import com.intellij.psi.scope.PsiScopeProcessor;
 import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
@@ -47,6 +51,15 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   public boolean isDeprecated() {
     // TODO @Deprecated annotation?
     return false;
+  }
+
+  // Needed for completion to work
+  @Override
+  public boolean processDeclarations(@NotNull PsiScopeProcessor processor,
+                                     @NotNull ResolveState state,
+                                     PsiElement lastParent,
+                                     @NotNull PsiElement place) {
+    return PsiClassImplUtil.processDeclarationsInClass(this, processor, state, null, lastParent, place, false);
   }
 
   /**

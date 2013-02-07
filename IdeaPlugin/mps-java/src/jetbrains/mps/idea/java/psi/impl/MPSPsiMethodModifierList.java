@@ -17,10 +17,12 @@
 package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.psi.PsiAnnotation;
+import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiModifier;
 import com.intellij.psi.PsiModifier.ModifierConstant;
 import com.intellij.psi.PsiModifierList;
 import com.intellij.util.IncorrectOperationException;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -38,7 +40,20 @@ public class MPSPsiMethodModifierList extends MPSPsiNodeBase implements PsiModif
 
   @Override
   public boolean hasModifierProperty(@ModifierConstant @NotNull @NonNls String name) {
-    return PsiModifier.PUBLIC.equals(name);
+    PsiElement parent = getParent();
+    if (!(parent instanceof MPSPsiNode)) {
+      return false;
+    }
+    MPSPsiNode mpsParent = (MPSPsiNode) parent;
+    MPSPsiNode visibility = mpsParent.getChildOfType("visibility", MPSPsiNode.class);
+    if (PsiModifier.PUBLIC.equals(name)) {
+      return visibility != null && "jetbrains.mps.baseLanguage.structure.PublicVisibility".equals(visibility.getConcept());
+    } else if (PsiModifier.PROTECTED.equals(name)) {
+      return visibility != null && "jetbrains.mps.baseLanguage.structure.ProtectedVisibility".equals(visibility.getConcept());
+    } else if (PsiModifier.PRIVATE.equals(name)) {
+      return visibility != null && "jetbrains.mps.baseLanguage.structure.PrivateVisibility".equals(visibility.getConcept());
+    }
+    return false;
   }
 
   @Override

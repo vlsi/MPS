@@ -72,14 +72,11 @@ public class MPSPsiParameter extends MPSPsiNode implements PsiParameter {
   @Override
   public PsiType getType() {
     MPSPsiNode typeNode = getChildOfType("type", MPSPsiNode.class);
-    if (typeNode instanceof MPSPsiClassifierType) {
-      return ((MPSPsiClassifierType) typeNode).getPsiType();
-
-    } else {
-      // TODO: TYPE NOT CLASSIFIER TYPE
+    if (!(typeNode instanceof ComputesPsiType)) {
+      return null;
     }
 
-    return null;
+    return ((ComputesPsiType) typeNode).getPsiType();
   }
 
   @Nullable

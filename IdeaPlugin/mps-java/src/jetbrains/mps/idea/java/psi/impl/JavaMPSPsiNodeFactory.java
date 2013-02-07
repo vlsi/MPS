@@ -19,6 +19,8 @@ package jetbrains.mps.idea.java.psi.impl;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.HashMap;
@@ -30,6 +32,7 @@ import java.util.Map;
 public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
 
   private static final Map<String, MPSPsiNodeFactory> factories = new HashMap<String, MPSPsiNodeFactory>();
+  private static final Map<String, MPSPsiNodeFactory> subConceptFactories = new HashMap<String, MPSPsiNodeFactory>();
 
   static {
     factories.put(BootstrapLanguages.concept_baseLanguage_ClassConcept, new MPSPsiNodeFactory() {
@@ -49,7 +52,6 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         MPSPsiMethod method = new MPSPsiMethod(id, concept, containingRole);
-        method.addChild(null, new MPSPsiParameterList());
         return method;
       }
     });
@@ -59,12 +61,27 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
         return new MPSPsiParameter(id, concept, containingRole);
       }
     });
-//    factories.put("jetbrains.mps.baseLanguage.structure.IntegerType", new MPSPsiNodeFactory() {
+    factories.put("jetbrains.mps.baseLanguage.structure.IntegerType", new MPSPsiNodeFactory() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiPrimitiveType(id, concept, containingRole);
+      }
+    });
+    factories.put("jetbrains.mps.baseLanguage.structure.VoidType", new MPSPsiNodeFactory() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiPrimitiveType(id, concept, containingRole);
+      }
+    });
+
+
+//    subConceptFactories.put("jetbrains.mps.baseLanguage.structure.PrimitiveType", new MPSPsiNodeFactory() {
 //      @Override
 //      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-//        return new MPSPsiParameter(id, concept, containingRole);
+//        return new MPSPsiPrimitiveType(id, concept, containingRole);
 //      }
 //    });
+
   }
 
   @Override

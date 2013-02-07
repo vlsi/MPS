@@ -17,6 +17,7 @@ import com.intellij.psi.PsiIdentifier;
 import com.intellij.psi.PsiInvalidElementAccessException;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiMethod;
+import com.intellij.psi.PsiModifier;
 import com.intellij.psi.PsiModifier.ModifierConstant;
 import com.intellij.psi.PsiModifierList;
 import com.intellij.psi.PsiParameterList;
@@ -29,14 +30,18 @@ import com.intellij.psi.PsiTypeElement;
 import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.PsiTypeParameterList;
 import com.intellij.psi.ResolveState;
+import com.intellij.psi.impl.ElementPresentationUtil;
 import com.intellij.psi.impl.PsiSuperMethodImplUtil;
+import com.intellij.psi.impl.light.JavaIdentifier;
 import com.intellij.psi.javadoc.PsiDocComment;
 import com.intellij.psi.scope.PsiScopeProcessor;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.SearchScope;
 import com.intellij.psi.util.MethodSignature;
 import com.intellij.psi.util.MethodSignatureBackedByPsiMethod;
+import com.intellij.ui.RowIcon;
 import com.intellij.util.IncorrectOperationException;
+import com.intellij.util.PlatformIcons;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import org.jetbrains.annotations.NonNls;
@@ -55,6 +60,8 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
 
   public MPSPsiMethod(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
+    addChild(null, new MPSPsiMethodModifierList());
+    addChild(null, new MPSPsiParameterList());
   }
 
   public void addChild(MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
@@ -128,7 +135,7 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
   @Nullable
   @Override
   public PsiIdentifier getNameIdentifier() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return new JavaIdentifier(getManager(), this);
   }
 
   @NotNull
@@ -170,12 +177,12 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
   @NotNull
   @Override
   public PsiModifierList getModifierList() {
-    return new MPSPsiMethodModifierList();
+    return getChildOfType(MPSPsiMethodModifierList.class);
   }
 
   @Override
   public boolean hasModifierProperty(@ModifierConstant @NonNls @NotNull String name) {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return getModifierList().hasModifierProperty(name);
   }
 
   @Override
@@ -232,5 +239,12 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
     } else {
       return null;
     }
+  }
+
+  @Override
+  public Icon getElementIcon(final int flags) {
+    Icon methodIcon = hasModifierProperty(PsiModifier.ABSTRACT) ? PlatformIcons.ABSTRACT_METHOD_ICON : PlatformIcons.METHOD_ICON;
+    RowIcon baseIcon = ElementPresentationUtil.createLayeredIcon(methodIcon, this, false);
+    return ElementPresentationUtil.addVisibilityIcon(this, flags, baseIcon);
   }
 }

@@ -90,7 +90,7 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     return null;
   }
 
-  protected <T extends PsiElement> T getChildOfType(String role, @NotNull Class<T> aClass) {
+  public <T extends PsiElement> T getChildOfType(String role, @NotNull Class<T> aClass) {
     if (role == null) return null;
 
     List<T> result = null;

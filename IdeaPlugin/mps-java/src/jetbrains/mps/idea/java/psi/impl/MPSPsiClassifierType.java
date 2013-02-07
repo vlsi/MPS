@@ -145,7 +145,7 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
 
       @Override
       public String getPresentableText() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return getClassName();
       }
 
       @Override
