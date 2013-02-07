@@ -542,47 +542,6 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="920354110794005120" />
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="846214144110471453">
-                <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="846214144110471488">
-                  <property name="text" nameId="tpee.6329021646629104958" value="wat?" />
-                </node>
-              </node>
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="846214144110470220">
-                <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.StatementCommentPart" typeId="tpee.6329021646629175143" id="846214144110470221">
-                  <node role="commentedStatement" roleId="tpee.6329021646629175144" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="920354110794005121">
-                    <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="920354110794005122">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="162769737603668787">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="920354110794004969" resolveInfo="myEvaluationModel" />
-                      </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="920354110794005126">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f3c7.7757449281563189561" resolveInfo="getRequiredLanguages" />
-                      </node>
-                    </node>
-                    <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="920354110794005127">
-                      <property name="name" nameId="tpck.1169194664001" value="language" />
-                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="920354110794005128">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~Language" resolveInfo="Language" />
-                      </node>
-                    </node>
-                    <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="920354110794005129">
-                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="920354110794005130">
-                        <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="920354110794005131">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="162769737603668786">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="920354110794004963" resolveInfo="myEditor" />
-                          </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="920354110794005135">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpru.1227605579938" resolveInfo="addLanguage" />
-                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="920354110794005136">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="920354110794005127" resolveInfo="language" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
             </node>
           </node>
         </node>

@@ -47,9 +47,6 @@ public class EvaluationPanel extends EvaluationUi {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         myEditor = new EmbeddableEditor(myEvaluationModel.getContext(), (EditableSModelDescriptor) myEvaluationModel.getNode().getModel().getModelDescriptor(), myEvaluationModel.getNode(), true);
-
-        // wat? 
-        // <node> 
       }
     });
 
