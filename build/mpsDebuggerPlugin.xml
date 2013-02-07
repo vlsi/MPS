@@ -905,17 +905,19 @@
         <module file="${mps_home}/plugins/debugger-api/api/jetbrains.mps.debugger.api.api.msd" />
         <module file="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/jetbrains.mps.debugger.api.lang.mpl" />
         <module file="${mps_home}/plugins/debugger-api/runtime/jetbrains.mps.debugger.api.runtime.msd" />
-        <module file="${mps_home}/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" />
-        <module file="${mps_home}/plugins/debugger-java/languages/customViewers/jetbrains.mps.debugger.java.customViewers.mpl" />
-        <module file="${mps_home}/plugins/debugger-java/languages/evaluation/jetbrains.mps.debugger.java.evaluation.mpl" />
         <module file="${mps_home}/plugins/debugger-java/languages/privateMembers/jetbrains.mps.debugger.java.privateMembers.mpl" />
         <module file="${mps_home}/plugins/execution-api/jetbrains.mps.execution.api.msd" />
         <module file="${mps_home}/plugins/execution-api/languages/common/jetbrains.mps.execution.common.mpl" />
         <module file="${mps_home}/plugins/execution-api/languages/settings/jetbrains.mps.execution.settings.mpl" />
       </chunk>
       <chunk>
-        <module file="${mps_home}/plugins/debugger-java-customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" />
+        <module file="${mps_home}/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" />
+        <module file="${mps_home}/plugins/debugger-java/languages/customViewers/jetbrains.mps.debugger.java.customViewers.mpl" />
+        <module file="${mps_home}/plugins/debugger-java/languages/evaluation/jetbrains.mps.debugger.java.evaluation.mpl" />
         <module file="${mps_home}/plugins/debugger-java/runtime/jetbrains.mps.debugger.java.runtime.msd" />
+      </chunk>
+      <chunk>
+        <module file="${mps_home}/plugins/debugger-java-customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" />
       </chunk>
     </generate>
   </target>
@@ -924,14 +926,14 @@
     <delete dir="${mps_home}/plugins/debugger-api/api/source_gen" />
     <delete dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" />
     <delete dir="${mps_home}/plugins/debugger-api/runtime/source_gen" />
-    <delete dir="${mps_home}/plugins/debugger-java/api/source_gen" />
-    <delete dir="${mps_home}/plugins/debugger-java/languages/customViewers/source_gen" />
-    <delete dir="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen" />
     <delete dir="${mps_home}/plugins/debugger-java/languages/privateMembers/source_gen" />
     <delete dir="${mps_home}/plugins/execution-api/source_gen" />
     <delete dir="${mps_home}/plugins/execution-api/languages/common/source_gen" />
     <delete dir="${mps_home}/plugins/execution-api/languages/settings/source_gen" />
-    <delete dir="${mps_home}/plugins/debugger-java-customViewers/source_gen" />
+    <delete dir="${mps_home}/plugins/debugger-java/api/source_gen" />
+    <delete dir="${mps_home}/plugins/debugger-java/languages/customViewers/source_gen" />
+    <delete dir="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen" />
     <delete dir="${mps_home}/plugins/debugger-java/runtime/source_gen" />
+    <delete dir="${mps_home}/plugins/debugger-java-customViewers/source_gen" />
   </target>
 </project>
