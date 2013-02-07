@@ -52,6 +52,10 @@ public class MPSPsiMethodModifierList extends MPSPsiNodeBase implements PsiModif
       return visibility != null && "jetbrains.mps.baseLanguage.structure.ProtectedVisibility".equals(visibility.getConcept());
     } else if (PsiModifier.PRIVATE.equals(name)) {
       return visibility != null && "jetbrains.mps.baseLanguage.structure.PrivateVisibility".equals(visibility.getConcept());
+    } else if (PsiModifier.ABSTRACT.equals(name)) {
+      boolean isAbstractClass = mpsParent instanceof MPSPsiClassifier && "true".equals(mpsParent.getProperty("abstractClass"));
+      boolean isAbstractMethod = mpsParent instanceof MPSPsiMethod && "true".equals(mpsParent.getProperty("isAbstract"));
+      return isAbstractClass || isAbstractMethod;
     }
     return false;
   }

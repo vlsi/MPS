@@ -3,15 +3,20 @@ package jetbrains.mps.idea.java.psi.impl;
 import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiModifier.ModifierConstant;
+import com.intellij.psi.PsiModifierList;
 import com.intellij.psi.ResolveState;
 import com.intellij.psi.impl.PsiClassImplUtil;
 import com.intellij.psi.scope.PsiScopeProcessor;
 import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
+
+import javax.swing.Icon;
 
 /**
  * evgeny, 1/28/13
@@ -20,6 +25,7 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
 
   public MPSPsiClassifier(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
+    addChild(null, new MPSPsiMethodModifierList());
   }
 
   @Nullable
@@ -60,6 +66,22 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
                                      PsiElement lastParent,
                                      @NotNull PsiElement place) {
     return PsiClassImplUtil.processDeclarationsInClass(this, processor, state, null, lastParent, place, false);
+  }
+
+  @Nullable
+  @Override
+  public PsiModifierList getModifierList() {
+    return getChildOfType(MPSPsiMethodModifierList.class);
+  }
+
+  @Override
+  public boolean hasModifierProperty(@ModifierConstant @NonNls @NotNull String name) {
+    return getModifierList().hasModifierProperty(name);
+  }
+
+  @Override
+  public Icon getElementIcon(final int flags) {
+    return PsiClassImplUtil.getClassIcon(flags, this);
   }
 
   /**

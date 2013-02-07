@@ -284,14 +284,4 @@ public class MPSPsiClass extends MPSPsiClassifier implements PsiClass {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  @Nullable
-  @Override
-  public PsiModifierList getModifierList() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  @Override
-  public boolean hasModifierProperty(@PsiModifier.ModifierConstant @NonNls @NotNull String name) {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
-  }
 }

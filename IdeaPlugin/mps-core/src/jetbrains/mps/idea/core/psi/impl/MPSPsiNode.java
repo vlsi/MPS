@@ -30,7 +30,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * evgeny, 1/25/13
@@ -41,11 +43,13 @@ public class MPSPsiNode extends MPSPsiNodeBase {
   private final String myConcept;
   private final String myContainingRole;
   private String myName;
+  private Map<String, String> myProperties;
 
   public MPSPsiNode(SNodeId id, String concept, String containingRole) {
     myId = id;
     myConcept = concept;
     myContainingRole = containingRole;
+    myProperties = new HashMap<String, String>();
   }
 
   public String getName() {
@@ -68,11 +72,22 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     return new SNodePointer((SModelReference) getContainingModel().getModelReference(), myId);
   }
 
+  public String getProperty(String key) {
+    // special treatment of name: I just repeated how it's done in setProperty for now
+    // don't think it's needed
+    if ("name".equals(key)) {
+      return myName;
+    }
+    return myProperties.get(key);
+  }
+
   void setProperty(String key, String value) {
     // TODO
     if (key.equals("name")) {
       myName = value;
+      return;
     }
+    myProperties.put(key, value);
   }
 
   protected <T extends PsiElement> T getReferenceTarget(String role, @NotNull Class<T> aClass) {
@@ -81,7 +96,7 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     List<T> result = null;
     for (PsiElement child = getFirstChild(); child != null; child = child.getNextSibling()) {
       if (child instanceof MPSPsiRef && role.equals(((MPSPsiRef) child).getContainingRole())) {
-        MPSPsiNode refTarget = ((MPSPsiRef)child).resolve();
+        MPSPsiNode refTarget = ((MPSPsiRef) child).resolve();
         if (aClass.isInstance(refTarget)) {
           return (T) refTarget;
         }
