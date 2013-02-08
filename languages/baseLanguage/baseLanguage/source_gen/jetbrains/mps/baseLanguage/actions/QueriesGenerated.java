@@ -2389,7 +2389,7 @@ __switch__:
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null);
             SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            SPropertyOperations.set(result, "isStatic", "" + (SPropertyOperations.getBoolean(curr, "static")));
+            SPropertyOperations.set(result, "nonStatic", "" + (!(SPropertyOperations.getBoolean(curr, "static"))));
             SPropertyOperations.set(result, "abstractClass", "" + (SPropertyOperations.getBoolean(curr, "abstract")));
             SPropertyOperations.set(result, "isFinal", "" + (SPropertyOperations.getBoolean(curr, "final")));
             SLinkOperations.setTarget(result, "visibility", SLinkOperations.getTarget(curr, "visibility", true), true);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="a8qej49oo9hfu2kkvmq6oz0m3i1v81h">
+<dependencies version="2" modelHash="6kwf954ali81ovh8hm3eptny1w7pbb1">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
@@ -179,9 +179,11 @@
   </common>
   <source id="1138168268784" name="binaryOperations" hash="1q533zwqxzxzuzo9hmrldcwun58tckg">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
   </source>
   <source id="1158793282643" name="BL_node_factories" hash="58ahf80a0ryvuzkg6rx9mjwl0wypizs">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
   </source>
   <source id="1158872173903" name="ExpectedType_FactoryUtil" hash="2a6q2mugi5k32bisq6x91mrdk4xy59f">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -481,7 +483,7 @@
   <source id="3609453419515104699" name="for_IncompleteMember" hash="86pgsoa2nqub8xcrt3nb7uc0cek8rv">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="8233876857985871846" name="ctor_MemberBasedOnIncomplete" hash="7rperu8gbjazaffngnyuhxjc4q0m98k">
+  <source id="8233876857985871846" name="ctor_MemberBasedOnIncomplete" hash="-acyqiman47qrj6306x3cwz1jrobtozs">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>
