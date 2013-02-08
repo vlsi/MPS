@@ -28,11 +28,6 @@ public class Sample extends KajaFrame {
         reportError("Oops, There's a wall in front of me. I can't make a step forward.");
       }
     }
-    if (isMark()) {
-    } else {
-    }
-    while (!(isWall())) {
-    }
     if (!(isFull())) {
       addMark();
       pause();
@@ -42,11 +37,8 @@ public class Sample extends KajaFrame {
     turnRight_routine();
   }
 
-  public void foo_routine() {
-  }
-
   public void turnRight_routine() {
-    for (int indexVariable_kf1bs5_a0b = 0; indexVariable_kf1bs5_a0b < 3; indexVariable_kf1bs5_a0b++) {
+    for (int indexVariable_kf1bs5_a0a = 0; indexVariable_kf1bs5_a0a < 3; indexVariable_kf1bs5_a0a++) {
       turnLeft();
       pause();
     }
