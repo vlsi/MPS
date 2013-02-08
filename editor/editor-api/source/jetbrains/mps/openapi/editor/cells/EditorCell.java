@@ -125,4 +125,6 @@ public interface EditorCell {
   Style getStyle();
 
   KeyMap getKeyMap();
+
+  void addKeyMap(KeyMap keyMap);
 }

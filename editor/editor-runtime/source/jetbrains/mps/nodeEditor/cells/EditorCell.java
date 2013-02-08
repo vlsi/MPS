@@ -15,13 +15,19 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -89,11 +95,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   boolean executeAction(CellActionType type);
   EditorCellAction getApplicableCellAction(CellActionType type);
   Set<CellActionType> getAvailableActions();
-
-  // TODO: move this method to open API
-  void addKeyMap(EditorCellKeyMap keyMap);
-
-  EditorCellKeyMap getKeyMap();
 
   /**
    * Starting from MPS 3.0 use getEditorComponent(); instead
