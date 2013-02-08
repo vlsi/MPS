@@ -25,24 +25,12 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_eb7h0d_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_eb7h0d_c0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = IfStatement_Editor.renderingCondition_eb7h0d_a2a(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_eb7h0d_a2a(editorContext, node);
-    } else {
-      editorCell = this.createConstant_eb7h0d_a2a_0(editorContext, node);
-    }
-    return editorCell;
-  }
-
   private EditorCell createCollection_eb7h0d_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_eb7h0d_a");
     editorCell.addEditorCell(this.createConstant_eb7h0d_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_eb7h0d_b0(editorContext, node));
-    editorCell.addEditorCell(this.createAlternation_eb7h0d_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_eb7h0d_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_eb7h0d_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_eb7h0d_e0(editorContext, node));
     if (renderingCondition_eb7h0d_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -76,24 +64,25 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_eb7h0d_a2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_eb7h0d_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
-    editorCell.setCellId("Constant_eb7h0d_a2a");
+    editorCell.setCellId("Constant_eb7h0d_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "block");
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_eb7h0d_a2a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
-    editorCell.setCellId("Constant_eb7h0d_a2a_0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, IfStatement_Editor._StyleParameter_QueryFunction_eb7h0d_a0c0((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    )));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, IfStatement_Editor._StyleParameter_QueryFunction_eb7h0d_a1c0((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    )));
     style.set(StyleAttributes.MATCHING_LABEL, "block");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -204,11 +193,15 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_eb7h0d_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "trueBranch", true), "commands", true)).isNotEmpty();
-  }
-
   private static boolean renderingCondition_eb7h0d_a5a(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "falseBranch", true), "commands", true)).isNotEmpty();
+  }
+
+  private static boolean _StyleParameter_QueryFunction_eb7h0d_a0c0(EditorContext editorContext, SNode node) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "trueBranch", true), "commands", true)).isEmpty();
+  }
+
+  private static boolean _StyleParameter_QueryFunction_eb7h0d_a1c0(EditorContext editorContext, SNode node) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "trueBranch", true), "commands", true)).isNotEmpty();
   }
 }
