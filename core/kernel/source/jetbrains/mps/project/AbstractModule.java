@@ -779,12 +779,14 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   @Override
   @Deprecated
   public final Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
+//    return Collections.emptyList();
     return (Collection) ModelsImplicitImportsManager.getImplicitlyImportedModelsFor(this, sm);
   }
 
   @Override
   @Deprecated
   public final Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
+//    return Collections.emptyList();
     return ModelsImplicitImportsManager.getImplicitlyImportedLanguages(this, sm);
   }
 

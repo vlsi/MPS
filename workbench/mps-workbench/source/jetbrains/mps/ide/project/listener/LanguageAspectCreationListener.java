@@ -17,7 +17,6 @@ package jetbrains.mps.ide.project.listener;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.listener.ModelCreationListener;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -31,8 +30,6 @@ public class LanguageAspectCreationListener extends ModelCreationListener {
     Language language = (Language) model.getModule();
     LanguageAspect aspect = language.getAspectForModel(model);
 
-    for (ModuleReference impLang : aspect.getAllLanguagesToImport(language)) {
-      model.getSModel().addLanguage(impLang);
-    }
+    model.getSModel().addLanguage(aspect.getMainLanguage());
   }
 }
