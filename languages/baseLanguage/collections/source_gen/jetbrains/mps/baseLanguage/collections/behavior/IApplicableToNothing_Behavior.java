@@ -8,14 +8,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class IApplicableToNothing_Behavior {
@@ -25,31 +26,35 @@ public class IApplicableToNothing_Behavior {
   public static Set<SNode> call_getAllApplicableTypes_5994574781955687463(final SConcept thisConcept) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     Iterable<SNode> implementList;
-    if (SNodeOperations.isInstanceOf(((SNode) thisConcept), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-      implementList = ListSequence.fromList(SLinkOperations.getTargets(((SNode) thisConcept), "implements", true)).select(new ISelector<SNode, SNode>() {
+    if (SNodeOperations.isInstanceOf(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+      implementList = ListSequence.fromList(SLinkOperations.getTargets(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "implements", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, "intfc", false);
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isSubConceptOf(((SNode) it), "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation") && (SConceptOperations.isSuperConceptOf(((SNode) it), NameUtil.nodeFQName(((SNode) thisConcept))));
+          return IApplicableToNothing_Behavior.call_hasApplicableTypes_2142237368811537351(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), ((SNode) it));
         }
       });
     } else {
-      SetSequence.fromSet(result).addElement(BehaviorReflection.invokeVirtualStatic((Class<SNode>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) thisConcept))), "virtual_getApplicableType_5994574781955586127", new Object[]{}));
-      implementList = ListSequence.fromList(SLinkOperations.getTargets(((SNode) thisConcept), "extends", true)).select(new ISelector<SNode, SNode>() {
+      SetSequence.fromSet(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())))), "virtual_getApplicableTypes_5994574781955586127", new Object[]{})));
+      implementList = ListSequence.fromList(SLinkOperations.getTargets(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "extends", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, "intfc", false);
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isSubConceptOf(((SNode) it), "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation") && (SConceptOperations.isSuperConceptOf(((SNode) it), NameUtil.nodeFQName(((SNode) thisConcept))));
+          return IApplicableToNothing_Behavior.call_hasApplicableTypes_2142237368811537351(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), ((SNode) it));
         }
       });
     }
     for (SNode impl : Sequence.fromIterable(implementList)) {
-      SetSequence.fromSet(result).addSequence(SetSequence.fromSet(IApplicableToNothing_Behavior.call_getAllApplicableTypes_5994574781955687463(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) impl))))));
+      SetSequence.fromSet(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) impl))), "virtual_getApplicableTypes_5994574781955586127", new Object[]{})));
     }
     return result;
+  }
+
+  public static boolean call_hasApplicableTypes_2142237368811537351(SConcept thisConcept, SNode it) {
+    return SConceptOperations.isSubConceptOf(it, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing") && !(SConceptOperations.isExactly(it, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"));
   }
 }
