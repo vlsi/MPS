@@ -6,16 +6,17 @@ import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.runtime.IClassLoadingModule;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -28,22 +29,32 @@ public class FacetsScope extends SimpleScope {
   public static Iterable<SNode> getAvailableFacets(SNode contextNode) {
     SModule contextModule = contextNode.getModel().getModelDescriptor().getModule();
 
-    Set<Language> contextLanguages = SetSequence.fromSet(new HashSet<Language>());
+    Set<SModule> contextModules = SetSequence.fromSet(new HashSet<SModule>());
     for (SModule module : Sequence.fromIterable(contextModule.getModuleScope().getModules())) {
-      if (module instanceof Language) {
-        SetSequence.fromSet(contextLanguages).addElement((Language) module);
+      if (module instanceof IClassLoadingModule && ((IClassLoadingModule) module).canLoad()) {
+        SetSequence.fromSet(contextModules).addElement(module);
       }
     }
-    Iterable<SNode> facets = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, EditableSModelDescriptor>() {
-      public EditableSModelDescriptor select(Language it) {
-        return LanguageAspect.PLUGIN.get(it);
+    SetSequence.fromSet(contextModules).addElement(contextModule);
+
+    // collect models 
+    Iterable<SModel> models = SetSequence.fromSet(contextModules).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        if (it instanceof Language) {
+          return Sequence.<SModel>singleton(LanguageAspect.PLUGIN.get((Language) it));
+        } else {
+          return it.getModels();
+        }
       }
-    }).where(new IWhereFilter<EditableSModelDescriptor>() {
-      public boolean accept(EditableSModelDescriptor it) {
+    });
+
+    // collect facets 
+    Iterable<SNode> facets = Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
         return it != null;
       }
-    }).translate(new ITranslator2<EditableSModelDescriptor, SNode>() {
-      public Iterable<SNode> translate(EditableSModelDescriptor it) {
+    }).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel it) {
         return (Iterable<SNode>) it.getRootNodes();
       }
     }).where(new IWhereFilter<SNode>() {
