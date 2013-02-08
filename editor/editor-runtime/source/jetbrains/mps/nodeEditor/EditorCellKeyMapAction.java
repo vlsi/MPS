@@ -40,37 +40,8 @@ public abstract class EditorCellKeyMapAction extends KeyMapActionImpl {
     return true;
   }
 
-  // TODO: remove it after regeneration
-  @Override
-  public int getCaretPolicy() {
-    return super.getCaretPolicy();    //To change body of overridden methods use File | Settings | File Templates.
-  }
-
-  // TODO: remove it after regeneration
-  @Override
-  public void setCaretPolicy(int policy) {
-    super.setCaretPolicy(policy);    //To change body of overridden methods use File | Settings | File Templates.
-  }
-
-  // TODO: remove it after regeneration
-  @Override
-  public boolean isShownInPopupMenu() {
-    return super.isShownInPopupMenu();    //To change body of overridden methods use File | Settings | File Templates.
-  }
-
-  // TODO: remove it after regeneration
-  @Override
-  public void setShownInPopupMenu(boolean show) {
-    super.setShownInPopupMenu(show);    //To change body of overridden methods use File | Settings | File Templates.
-  }
-
-  // TODO: remove it after regeneration
-  public boolean canExecute(KeyEvent keyEvent, jetbrains.mps.openapi.editor.EditorContext context) {
-    return canExecute(null, (EditorContext) context);
-  }
-
   public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
-    return canExecute(null, context);
+    return canExecute(null, (EditorContext) context);
   }
 
   /**
@@ -82,21 +53,8 @@ public abstract class EditorCellKeyMapAction extends KeyMapActionImpl {
   public void execute(KeyEvent keyEvent, EditorContext context) {
   }
 
-  // TODO: remove it after regeneration
-  public void execute(KeyEvent keyEvent, jetbrains.mps.openapi.editor.EditorContext context) {
-    execute(null, (EditorContext) context);
-  }
-
-  /**
-   * This method should become abstract after MPS 3.0
-   */
   public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
-    execute(null, context);
-  }
-
-  // TODO: remove it after regeneration
-  public String getDescriptionText() {
-    return super.getDescriptionText();
+    execute(null, (EditorContext) context);
   }
 
   public boolean isMenuAlwaysShown() {
@@ -115,9 +73,5 @@ public abstract class EditorCellKeyMapAction extends KeyMapActionImpl {
   @Deprecated
   protected List<SNode> getSelectedNodes(EditorContext context) {
     return getSelectedNodes((jetbrains.mps.openapi.editor.EditorContext) context);
-  }
-
-  protected List<SNode> getSelectedNodes(jetbrains.mps.openapi.editor.EditorContext context) {
-    return super.getSelectedNodes(context);
   }
 }

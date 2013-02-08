@@ -28,38 +28,4 @@ import java.util.Collection;
  */
 @Deprecated
 public class EditorCellKeyMap extends KeyMapImpl {
-  @Override
-  public boolean isApplicableToEveryModel() {
-    return super.isApplicableToEveryModel();
-  }
-
-  @Override
-  public void setApplicableToEveryModel(boolean isApplicable) {
-    super.setApplicableToEveryModel(isApplicable);
-  }
-
-  @Override
-  public void addKeyMap(KeyMap keyMap) {
-    super.addKeyMap(keyMap);
-  }
-
-  @Override
-  public void putAction(String modifiers, String keyCode, KeyMapAction action) {
-    super.putAction(modifiers, keyCode, action);
-  }
-
-  @Override
-  public Collection<KeyMapAction> getActions(Collection<ActionKey> keys) {
-    return super.getActions(keys);
-  }
-
-  @Override
-  public Collection<KeyMapAction> getAllActions() {
-    return super.getAllActions();
-  }
-
-  @Override
-  public Collection<ActionKey> getActionKeys() {
-    return super.getActionKeys();
-  }
 }
