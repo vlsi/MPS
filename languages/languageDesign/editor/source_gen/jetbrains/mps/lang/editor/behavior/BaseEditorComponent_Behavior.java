@@ -6,10 +6,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Set;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 
@@ -19,8 +27,38 @@ public class BaseEditorComponent_Behavior {
 
   public static List<SNode> call_getApplicableComponents_1213877372457(SNode thisNode, IScope scope) {
     final SNode conceptDeclaration = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
-    List<SNode> editorComponents = SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(thisNode), scope, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration");
-    return ListSequence.fromList(editorComponents).where(new IWhereFilter<SNode>() {
+
+    SModule contextModule = SNodeOperations.getModel(thisNode).getModelDescriptor().getModule();
+
+    Set<Language> contextLanguages = SetSequence.fromSet(new HashSet<Language>());
+    for (SModule module : Sequence.fromIterable(contextModule.getModuleScope().getModules())) {
+      if (module instanceof Language) {
+        SetSequence.fromSet(contextLanguages).addElement((Language) module);
+      }
+    }
+
+    Iterable<SNode> editorComponents = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, EditableSModelDescriptor>() {
+      public EditableSModelDescriptor select(Language it) {
+        return LanguageAspect.EDITOR.get(it);
+      }
+    }).where(new IWhereFilter<EditableSModelDescriptor>() {
+      public boolean accept(EditableSModelDescriptor it) {
+        return it != null;
+      }
+    }).translate(new ITranslator2<EditableSModelDescriptor, SNode>() {
+      public Iterable<SNode> translate(EditableSModelDescriptor it) {
+        return (Iterable<SNode>) it.getRootNodes();
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration");
+      }
+    });
+    return Sequence.fromIterable(editorComponents).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SConceptOperations.isSuperConceptOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), NameUtil.nodeFQName(conceptDeclaration));
       }

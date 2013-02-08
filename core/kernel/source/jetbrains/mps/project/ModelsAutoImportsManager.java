@@ -186,21 +186,6 @@ public class ModelsAutoImportsManager {
     }
 
     @Override
-    public Set<SModel> getAutoImportedModels(Language contextLanguage, SModel model) {
-      Set<SModel> result = new LinkedHashSet<SModel>();
-
-      if (Language.getModelAspect(model) == LanguageAspect.EDITOR) {
-        for (Language extended : ModuleUtil.refsToLanguages(contextLanguage.getExtendedLanguageRefs())) {
-          if (LanguageAspect.EDITOR.get(extended) != null) {
-            result.add(LanguageAspect.EDITOR.get(extended));
-          }
-        }
-      }
-
-      return result;
-    }
-
-    @Override
     public Set<Language> getAutoImportedLanguages(Language contextLanguage, SModel model) {
       LanguageAspect aspect = Language.getModelAspect(model);
       if (aspect != null) {
