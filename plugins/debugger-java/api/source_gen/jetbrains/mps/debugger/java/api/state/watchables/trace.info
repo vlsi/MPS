@@ -214,7 +214,7 @@
     <nodeInfo nodeId="3432969378036015958" fileName="JavaStaticContext.java" startLine="33" startPosition="43" endLine="34" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3243898559542284819" fileName="JavaStaticContext.java" startLine="38" startPosition="28" endLine="39" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="3432969378036015965" fileName="JavaStaticContext.java" startLine="39" startPosition="27" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036015973" fileName="JavaStaticContext.java" startLine="44" startPosition="37" endLine="45" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036015973" fileName="JavaStaticContext.java" startLine="44" startPosition="37" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3432969378036015980" fileName="JavaStaticContext.java" startLine="49" startPosition="26" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3243898559542275233" fileName="JavaStaticContext.java" startLine="54" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="948222233231450954" fileName="JavaStaticContext.java" startLine="55" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySubvalues" />
@@ -245,7 +245,7 @@
     <nodeInfo nodeId="3432969378036015923" fileName="JavaStaticContext.java" startLine="76" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calculateSubvalues#()Ljava/util/List;" />
     <scopeInfo nodeId="3432969378036015950" fileName="JavaStaticContext.java" startLine="28" startPosition="27" endLine="29" endPosition="20" />
     <scopeInfo nodeId="3432969378036015957" fileName="JavaStaticContext.java" startLine="33" startPosition="43" endLine="34" endPosition="49" />
-    <scopeInfo nodeId="3432969378036015972" fileName="JavaStaticContext.java" startLine="44" startPosition="37" endLine="45" endPosition="33" />
+    <scopeInfo nodeId="3432969378036015972" fileName="JavaStaticContext.java" startLine="44" startPosition="37" endLine="45" endPosition="34" />
     <scopeInfo nodeId="3432969378036015979" fileName="JavaStaticContext.java" startLine="49" startPosition="26" endLine="50" endPosition="16" />
     <scopeInfo nodeId="3432969378036015983" fileName="JavaStaticContext.java" startLine="57" startPosition="34" endLine="58" endPosition="35" />
     <scopeInfo nodeId="3432969378036015984" fileName="JavaStaticContext.java" startLine="62" startPosition="42" endLine="63" endPosition="20" />

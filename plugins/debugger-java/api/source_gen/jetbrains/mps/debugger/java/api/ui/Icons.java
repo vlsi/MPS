@@ -7,10 +7,11 @@ import javax.swing.Icon;
 public class Icons {
   public static final Icon VARIABLE_PRIMITIVE = IconContainer.ICON_a0;
   public static final Icon VARIABLE_OBJECT = IconContainer.ICON_a1;
-  public static final Icon WATCH = IconContainer.ICON_a2;
-  public static final Icon THREAD_RUNNING = IconContainer.ICON_a3;
-  public static final Icon THREAD_SUSPENDED = IconContainer.ICON_a4;
-  public static final Icon THREAD_AT_BREAKPOINT = IconContainer.ICON_a5;
+  public static final Icon WATCHABLE_STATIC = IconContainer.ICON_a2;
+  public static final Icon WATCH = IconContainer.ICON_a3;
+  public static final Icon THREAD_RUNNING = IconContainer.ICON_a4;
+  public static final Icon THREAD_SUSPENDED = IconContainer.ICON_a5;
+  public static final Icon THREAD_AT_BREAKPOINT = IconContainer.ICON_a6;
 
   public Icons() {
   }

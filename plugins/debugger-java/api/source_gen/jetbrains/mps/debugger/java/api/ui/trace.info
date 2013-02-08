@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.api.ui.IconContainer" />
+  <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.debugger.java.api.ui.IconContainer" />
   <root nodeRef="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)/3432969378036014082">
     <nodeInfo nodeId="1247371618987935931" fileName="Icons.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARIABLE_PRIMITIVE" />
     <nodeInfo nodeId="1247371618987935922" fileName="Icons.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VARIABLE_OBJECT" />
-    <nodeInfo nodeId="1247371618987935859" fileName="Icons.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WATCH" />
-    <nodeInfo nodeId="1247371618987935850" fileName="Icons.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="THREAD_RUNNING" />
-    <nodeInfo nodeId="1247371618987935841" fileName="Icons.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="THREAD_SUSPENDED" />
-    <nodeInfo nodeId="1247371618987935832" fileName="Icons.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="THREAD_AT_BREAKPOINT" />
-    <nodeInfo nodeId="3432969378036016282" fileName="Icons.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Icons#()V" />
-    <scopeInfo nodeId="3432969378036016285" fileName="Icons.java" startLine="15" startPosition="18" endLine="15" endPosition="18" />
-    <scopeInfo nodeId="3432969378036016282" fileName="Icons.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
-    <unitInfo nodeId="3432969378036014082" fileName="Icons.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debugger.java.api.ui.Icons" />
+    <nodeInfo nodeId="1048610105750085655" fileName="Icons.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WATCHABLE_STATIC" />
+    <nodeInfo nodeId="1247371618987935859" fileName="Icons.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WATCH" />
+    <nodeInfo nodeId="1247371618987935850" fileName="Icons.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="THREAD_RUNNING" />
+    <nodeInfo nodeId="1247371618987935841" fileName="Icons.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="THREAD_SUSPENDED" />
+    <nodeInfo nodeId="1247371618987935832" fileName="Icons.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="THREAD_AT_BREAKPOINT" />
+    <nodeInfo nodeId="3432969378036016282" fileName="Icons.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Icons#()V" />
+    <scopeInfo nodeId="3432969378036016285" fileName="Icons.java" startLine="16" startPosition="18" endLine="16" endPosition="18" />
+    <scopeInfo nodeId="3432969378036016282" fileName="Icons.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <unitInfo nodeId="3432969378036014082" fileName="Icons.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.debugger.java.api.ui.Icons" />
   </root>
 </debugInfo>
 
