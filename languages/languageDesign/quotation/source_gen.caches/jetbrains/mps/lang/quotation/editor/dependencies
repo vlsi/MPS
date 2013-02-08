@@ -361,7 +361,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.editor._CreateAntiquotationKeyMap" file="_CreateAntiquotationKeyMap.java">
-    <classNode dependClassName="java.awt.event.KeyEvent" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
@@ -374,26 +373,27 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.PropertyAccessor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.KeyMapAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCellKeyMap" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCellKeyMapAction" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.KeyMapActionImpl" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.KeyMapImpl" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.editor._Quotation_createModel" file="_Quotation_createModel.java">
-    <classNode dependClassName="java.awt.event.KeyEvent" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.KeyMapAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCellKeyMap" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCellKeyMapAction" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.KeyMapActionImpl" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.KeyMapImpl" />
   </dependency>
 </dependenciesRoot>
 

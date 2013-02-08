@@ -1521,58 +1521,55 @@
   </root>
   <root nodeRef="r:cfa67b95-96eb-4cda-8630-cfa01b12e5be(jetbrains.mps.gwt.client.editor)/1572321421812788716">
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="18" startPosition="29" endLine="19" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="19" startPosition="42" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="20" startPosition="34" endLine="21" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="19" startPosition="42" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="20" startPosition="24" endLine="21" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="21" startPosition="61" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="26" startPosition="39" endLine="27" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="30" startPosition="40" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="34" startPosition="91" endLine="35" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="34" startPosition="66" endLine="35" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="36" startPosition="34" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="38" startPosition="7" endLine="39" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="40" startPosition="32" endLine="41" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="43" startPosition="145" endLine="44" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="45" startPosition="7" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="49" startPosition="85" endLine="50" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="50" startPosition="62" endLine="51" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421812788723" fileName="PathFilter_Enter.java" startLine="54" startPosition="152" endLine="55" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421812788735" fileName="PathFilter_Enter.java" startLine="58" startPosition="146" endLine="59" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="43" startPosition="148" endLine="44" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="45" startPosition="7" endLine="46" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="49" startPosition="60" endLine="50" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="50" startPosition="62" endLine="51" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421812788723" fileName="PathFilter_Enter.java" startLine="54" startPosition="127" endLine="55" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421812788735" fileName="PathFilter_Enter.java" startLine="58" startPosition="121" endLine="59" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="62" startPosition="34" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="20" startPosition="34" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="20" startPosition="24" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PathFilter_Enter_Action0#()V" />
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="35" startPosition="62" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="39" startPosition="49" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="42" startPosition="7" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Z" />
-    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Z" />
+    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="42" startPosition="7" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PathFilter_Enter#()V" />
-    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="34" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="34" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="26" startPosition="39" endLine="27" endPosition="38" />
     <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="30" startPosition="40" endLine="31" endPosition="19" />
     <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="36" startPosition="34" endLine="37" endPosition="21" />
     <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="40" startPosition="32" endLine="41" endPosition="21" />
-    <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="43" startPosition="145" endLine="44" endPosition="116" />
-    <scopeInfo nodeId="1572321421812788722" fileName="PathFilter_Enter.java" startLine="54" startPosition="152" endLine="55" endPosition="69" />
-    <scopeInfo nodeId="1572321421812788720" fileName="PathFilter_Enter.java" startLine="58" startPosition="146" endLine="59" endPosition="98" />
+    <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="43" startPosition="148" endLine="44" endPosition="21" />
+    <scopeInfo nodeId="1572321421812788722" fileName="PathFilter_Enter.java" startLine="54" startPosition="127" endLine="55" endPosition="69" />
+    <scopeInfo nodeId="1572321421812788720" fileName="PathFilter_Enter.java" startLine="58" startPosition="121" endLine="59" endPosition="98" />
     <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="62" startPosition="34" endLine="63" endPosition="22" />
-    <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="20" startPosition="34" endLine="22" endPosition="46" />
-    <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="49" startPosition="85" endLine="51" endPosition="115">
+    <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="20" startPosition="24" endLine="22" endPosition="46" />
+    <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="49" startPosition="60" endLine="51" endPosition="105">
       <varInfo nodeId="1572321421812788716" varName="contextCell" />
     </scopeInfo>
     <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1572321421812788716" varName="editorContext" />
-      <varInfo nodeId="1572321421812788716" varName="keyEvent" />
       <varInfo nodeId="1572321421812788716" varName="node" />
       <varInfo nodeId="1572321421812788716" varName="selectedNodes" />
     </scopeInfo>
     <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="58" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1572321421812788716" varName="editorContext" />
-      <varInfo nodeId="1572321421812788716" varName="keyEvent" />
       <varInfo nodeId="1572321421812788716" varName="node" />
       <varInfo nodeId="1572321421812788716" varName="selectedNodes" />
     </scopeInfo>
@@ -1580,19 +1577,16 @@
     <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="18" startPosition="29" endLine="22" endPosition="46">
       <varInfo nodeId="1572321421812788716" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="42" startPosition="7" endLine="46" endPosition="19" />
     <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1572321421812788716" varName="editorContext" />
-      <varInfo nodeId="1572321421812788716" varName="keyEvent" />
     </scopeInfo>
     <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="18" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="34" startPosition="91" endLine="46" endPosition="19">
+    <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="34" startPosition="66" endLine="46" endPosition="104">
       <varInfo nodeId="1572321421812788716" varName="contextCell" />
       <varInfo nodeId="1572321421812788716" varName="contextNode" />
     </scopeInfo>
     <scopeInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="34" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1572321421812788716" varName="editorContext" />
-      <varInfo nodeId="1572321421812788716" varName="keyEvent" />
     </scopeInfo>
     <unitInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="25" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.gwt.client.editor.PathFilter_Enter$PathFilter_Enter_Action0" />
     <unitInfo nodeId="1572321421812788716" fileName="PathFilter_Enter.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.gwt.client.editor.PathFilter_Enter" />
@@ -1828,58 +1822,55 @@
   </root>
   <root nodeRef="r:cfa67b95-96eb-4cda-8630-cfa01b12e5be(jetbrains.mps.gwt.client.editor)/1572321421814003145">
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="18" startPosition="28" endLine="19" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="19" startPosition="42" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="20" startPosition="34" endLine="21" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="19" startPosition="42" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="20" startPosition="24" endLine="21" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="21" startPosition="59" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="26" startPosition="38" endLine="27" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="30" startPosition="40" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="34" startPosition="91" endLine="35" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="34" startPosition="66" endLine="35" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="36" startPosition="34" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="38" startPosition="7" endLine="39" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="40" startPosition="32" endLine="41" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="43" startPosition="141" endLine="44" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="45" startPosition="7" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="49" startPosition="85" endLine="50" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="50" startPosition="62" endLine="51" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421814003152" fileName="GWTModule_Enter.java" startLine="54" startPosition="152" endLine="55" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421814003164" fileName="GWTModule_Enter.java" startLine="58" startPosition="146" endLine="59" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="43" startPosition="144" endLine="44" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="45" startPosition="7" endLine="46" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="49" startPosition="60" endLine="50" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="50" startPosition="62" endLine="51" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421814003152" fileName="GWTModule_Enter.java" startLine="54" startPosition="127" endLine="55" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421814003164" fileName="GWTModule_Enter.java" startLine="58" startPosition="121" endLine="59" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="62" startPosition="34" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="20" startPosition="34" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="20" startPosition="24" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GWTModule_Enter_Action0#()V" />
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="35" startPosition="62" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="39" startPosition="49" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="42" startPosition="7" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Z" />
-    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Z" />
+    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="42" startPosition="7" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GWTModule_Enter#()V" />
-    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="34" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="34" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="26" startPosition="38" endLine="27" endPosition="38" />
     <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="30" startPosition="40" endLine="31" endPosition="19" />
     <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="36" startPosition="34" endLine="37" endPosition="21" />
     <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="40" startPosition="32" endLine="41" endPosition="21" />
-    <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="43" startPosition="141" endLine="44" endPosition="116" />
-    <scopeInfo nodeId="1572321421814003151" fileName="GWTModule_Enter.java" startLine="54" startPosition="152" endLine="55" endPosition="73" />
-    <scopeInfo nodeId="1572321421814003149" fileName="GWTModule_Enter.java" startLine="58" startPosition="146" endLine="59" endPosition="106" />
+    <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="43" startPosition="144" endLine="44" endPosition="21" />
+    <scopeInfo nodeId="1572321421814003151" fileName="GWTModule_Enter.java" startLine="54" startPosition="127" endLine="55" endPosition="73" />
+    <scopeInfo nodeId="1572321421814003149" fileName="GWTModule_Enter.java" startLine="58" startPosition="121" endLine="59" endPosition="106" />
     <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="62" startPosition="34" endLine="63" endPosition="22" />
-    <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="20" startPosition="34" endLine="22" endPosition="46" />
-    <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="49" startPosition="85" endLine="51" endPosition="115">
+    <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="20" startPosition="24" endLine="22" endPosition="46" />
+    <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="49" startPosition="60" endLine="51" endPosition="105">
       <varInfo nodeId="1572321421814003145" varName="contextCell" />
     </scopeInfo>
     <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1572321421814003145" varName="editorContext" />
-      <varInfo nodeId="1572321421814003145" varName="keyEvent" />
       <varInfo nodeId="1572321421814003145" varName="node" />
       <varInfo nodeId="1572321421814003145" varName="selectedNodes" />
     </scopeInfo>
     <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="58" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1572321421814003145" varName="editorContext" />
-      <varInfo nodeId="1572321421814003145" varName="keyEvent" />
       <varInfo nodeId="1572321421814003145" varName="node" />
       <varInfo nodeId="1572321421814003145" varName="selectedNodes" />
     </scopeInfo>
@@ -1887,19 +1878,16 @@
     <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="18" startPosition="28" endLine="22" endPosition="46">
       <varInfo nodeId="1572321421814003145" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="42" startPosition="7" endLine="46" endPosition="19" />
     <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1572321421814003145" varName="editorContext" />
-      <varInfo nodeId="1572321421814003145" varName="keyEvent" />
     </scopeInfo>
     <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="18" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="34" startPosition="91" endLine="46" endPosition="19">
+    <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="34" startPosition="66" endLine="46" endPosition="104">
       <varInfo nodeId="1572321421814003145" varName="contextCell" />
       <varInfo nodeId="1572321421814003145" varName="contextNode" />
     </scopeInfo>
     <scopeInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="34" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1572321421814003145" varName="editorContext" />
-      <varInfo nodeId="1572321421814003145" varName="keyEvent" />
     </scopeInfo>
     <unitInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="25" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.gwt.client.editor.GWTModule_Enter$GWTModule_Enter_Action0" />
     <unitInfo nodeId="1572321421814003145" fileName="GWTModule_Enter.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.gwt.client.editor.GWTModule_Enter" />
