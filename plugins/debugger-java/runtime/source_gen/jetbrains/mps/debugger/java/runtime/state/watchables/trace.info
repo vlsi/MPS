@@ -54,7 +54,7 @@
     <nodeInfo nodeId="3187167456722650067" fileName="JavaWatchpointWatchable.java" startLine="36" startPosition="27" endLine="37" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3187167456722650074" fileName="JavaWatchpointWatchable.java" startLine="41" startPosition="43" endLine="42" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3187167456722650081" fileName="JavaWatchpointWatchable.java" startLine="46" startPosition="28" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3187167456722650095" fileName="JavaWatchpointWatchable.java" startLine="51" startPosition="37" endLine="52" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3187167456722650095" fileName="JavaWatchpointWatchable.java" startLine="51" startPosition="37" endLine="52" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3187167456722650102" fileName="JavaWatchpointWatchable.java" startLine="56" startPosition="26" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3187167456722650063" fileName="JavaWatchpointWatchable.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
     <nodeInfo nodeId="3187167456722650070" fileName="JavaWatchpointWatchable.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategory#()Ljetbrains/mps/debug/api/programState/WatchablesCategory;" />
@@ -66,7 +66,7 @@
     <scopeInfo nodeId="3187167456722650066" fileName="JavaWatchpointWatchable.java" startLine="36" startPosition="27" endLine="37" endPosition="30" />
     <scopeInfo nodeId="3187167456722650073" fileName="JavaWatchpointWatchable.java" startLine="41" startPosition="43" endLine="42" endPosition="51" />
     <scopeInfo nodeId="3187167456722650080" fileName="JavaWatchpointWatchable.java" startLine="46" startPosition="28" endLine="47" endPosition="19" />
-    <scopeInfo nodeId="3187167456722650094" fileName="JavaWatchpointWatchable.java" startLine="51" startPosition="37" endLine="52" endPosition="33" />
+    <scopeInfo nodeId="3187167456722650094" fileName="JavaWatchpointWatchable.java" startLine="51" startPosition="37" endLine="52" endPosition="30" />
     <scopeInfo nodeId="3187167456722650101" fileName="JavaWatchpointWatchable.java" startLine="56" startPosition="26" endLine="57" endPosition="16" />
     <scopeInfo nodeId="3187167456722650038" fileName="JavaWatchpointWatchable.java" startLine="29" startPosition="120" endLine="32" endPosition="97">
       <varInfo nodeId="3243898559544383083" varName="current" />

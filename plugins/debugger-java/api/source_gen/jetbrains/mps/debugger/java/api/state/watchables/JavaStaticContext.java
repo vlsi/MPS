@@ -65,7 +65,7 @@ public class JavaStaticContext extends JavaWatchable implements IWatchable {
 
     @Override
     public Icon getPresentationIcon() {
-      return Icons.VARIABLE_OBJECT;
+      return Icons.VALUE_OBJECT;
     }
 
     @Override

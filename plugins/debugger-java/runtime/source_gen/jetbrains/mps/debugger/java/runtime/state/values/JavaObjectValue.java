@@ -27,7 +27,7 @@ import jetbrains.mps.debugger.java.api.state.watchables.JavaField;
 
   @Override
   public Icon getPresentationIcon() {
-    return Icons.VARIABLE_OBJECT;
+    return Icons.VALUE_OBJECT;
   }
 
   @Override
