@@ -191,9 +191,14 @@ public class ModelsAutoImportsManager {
 
       LanguageAspect aspect = Language.getModelAspect(model);
 
-      for (Language extended : ModuleUtil.refsToLanguages(contextLanguage.getExtendedLanguageRefs())) {
-        if (aspect != null && aspect.get(extended) != null) {
-          result.add(aspect.get(extended));
+      if (aspect == LanguageAspect.STRUCTURE ||
+        aspect == LanguageAspect.EDITOR ||
+        aspect == LanguageAspect.ACTIONS ||
+        aspect == LanguageAspect.PLUGIN) {
+        for (Language extended : ModuleUtil.refsToLanguages(contextLanguage.getExtendedLanguageRefs())) {
+          if (aspect.get(extended) != null) {
+            result.add(aspect.get(extended));
+          }
         }
       }
 
