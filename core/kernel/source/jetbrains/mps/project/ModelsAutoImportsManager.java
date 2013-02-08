@@ -191,16 +191,7 @@ public class ModelsAutoImportsManager {
 
       LanguageAspect aspect = Language.getModelAspect(model);
 
-      if (aspect != LanguageAspect.STRUCTURE && contextLanguage.getStructureModelDescriptor() != null) {
-        result.add(contextLanguage.getStructureModelDescriptor());
-      }
-
       for (Language extended : ModuleUtil.refsToLanguages(contextLanguage.getExtendedLanguageRefs())) {
-        SModelDescriptor structure = LanguageAspect.STRUCTURE.get(extended);
-        if (structure != null) {
-          result.add(structure);
-        }
-
         if (aspect != null && aspect.get(extended) != null) {
           result.add(aspect.get(extended));
         }
