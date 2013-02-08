@@ -4,9 +4,11 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -16,7 +18,10 @@ public class IContainerOperation_Behavior {
 
   public static SNode virtual_expectedOperandType_2141797557973018589(SNode thisNode, SNode elementType) {
     SNode jt = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
-    for (SNode et : SLinkOperations.getConceptLinkTargets(thisNode, "expectedOperandType")) {
+    if (!(SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"))) {
+      return jt;
+    }
+    for (SNode et : IApplicableToNothing_Behavior.call_getAllApplicableTypes_5994574781955687463(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")))))) {
       if ((et != null)) {
         SNode rt = SNodeOperations.copyNode(et);
         if (ListSequence.fromList(SNodeOperations.getChildren(rt)).isNotEmpty()) {
