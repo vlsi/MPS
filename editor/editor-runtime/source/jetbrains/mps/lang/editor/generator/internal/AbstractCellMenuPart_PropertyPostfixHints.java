@@ -212,18 +212,21 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
       return myPostfixGroup.getMatchingText(pattern, myPostfix);
     }
 
+    @Override
     public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
       String propertyName = myPropertyName;
       assert propertyName != null;
       SNodeAccessUtil.setProperty(getSourceNode(), propertyName, myPostfixGroup.getMatchingText(pattern, myPostfix));
 
-      editorContext.flushEvents();
-
-      EditorCell editorCell = editorContext.getSelectedCell();
-      if (editorCell instanceof EditorCell_Label) {
-        editorCell.end();
+      if (editorContext != null) {
+        // put caret at the end of text, TODO use editorContext.select(getSourceNode(), myPropertyName, -1 /* end */);
+        editorContext.flushEvents();
+        EditorCell selectedCell = editorContext.getSelectedCell();
+        if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isEditable()) {
+          EditorCell_Label cell = (EditorCell_Label) selectedCell;
+          cell.end();
+        }
       }
-
       return null;
     }
   }

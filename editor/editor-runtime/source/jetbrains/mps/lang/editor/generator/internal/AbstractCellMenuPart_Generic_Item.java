@@ -58,7 +58,7 @@ public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInf
 
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         handleAction(node, node.getModel(), context.getScope(), context, editorContext);
-        return node;
+        return null;
       }
     });
 

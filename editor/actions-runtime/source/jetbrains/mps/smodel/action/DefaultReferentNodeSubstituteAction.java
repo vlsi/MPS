@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.CopyUtil;
 import org.jetbrains.annotations.Nullable;
@@ -93,6 +94,17 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
         throw new RuntimeException("Couldn't set referent node: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(parameterNode));
       }
       SNodeAccessUtil.setReferenceTarget(getSourceNode(), SModelUtil.getGenuineLinkRole(linkDeclaration), parameterNode);
+
+      if (editorContext != null) {
+        // put caret at the end of text, TODO use editorContext.select(getSourceNode(), SModelUtil.getGenuineLinkRole(linkDeclaration), -1 /* end */);
+        editorContext.flushEvents();
+        jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = editorContext.getSelectedCell();
+        if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isEditable()) {
+          EditorCell_Label cell = (EditorCell_Label) selectedCell;
+          cell.end();
+        }
+      }
+
     }
     return null;
   }

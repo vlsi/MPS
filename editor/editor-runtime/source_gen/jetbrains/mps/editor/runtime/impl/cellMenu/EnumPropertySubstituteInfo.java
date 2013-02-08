@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
   private SNode myNode;
@@ -40,6 +42,16 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
           String propertyName = SPropertyOperations.getString(myPropertyDeclaration, "name");
           assert propertyName != null;
           SNodeAccessUtil.setProperty(getSourceNode(), propertyName, SPropertyOperations.getString(enumMemberDeclaration, "internalValue"));
+
+          if (editorContext != null) {
+            // TODO use editorContext.select(getSourceNode(), propertyName, -1 /* end */); 
+            editorContext.flushEvents();
+            EditorCell selectedCell = editorContext.getSelectedCell();
+            if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isEditable()) {
+              EditorCell_Label cell = (EditorCell_Label) selectedCell;
+              cell.end();
+            }
+          }
           return null;
         }
       });

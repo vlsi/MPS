@@ -69,7 +69,7 @@ public class SNodeAccessUtil {
     SModel model = node.getModel();
 
     //todo try to remove
-    if (threadSet.contains(pair) || model == null || !model.canFireEvent()) {
+    if (threadSet.contains(pair)) {
       node.setProperty(propertyName, propertyValue);
       return;
     }
