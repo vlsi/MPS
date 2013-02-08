@@ -26,7 +26,7 @@ import jetbrains.mps.debugger.java.runtime.state.watchables.JavaArrayItemWatchab
 
   @Override
   public Icon getPresentationIcon() {
-    return Icons.VARIABLE_OBJECT;
+    return Icons.VALUE_ARRAY;
   }
 
   @Override
