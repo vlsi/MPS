@@ -247,8 +247,7 @@ public interface IModule extends SModule {
   String getTestsGeneratorOutputPath();
 
   /**
-   * This method always returns empty list. All implicitly imported models added to model while model creation
-   * todo: use manager in model creation / in optimize model imports / in migration action
+   * This method always returns empty list. All auto imported models added to model in model creation
    *
    * @see ModelsAutoImportsManager
    */
@@ -256,8 +255,7 @@ public interface IModule extends SModule {
   Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
 
   /**
-   * This method always returns empty list. All implicitly imported models added to model while model creation
-   * todo: use manager in model creation / in optimize model imports / in migration action
+   * This method always returns empty list. All auto imported languages added to model in model creation
    *
    * @see ModelsAutoImportsManager
    */
