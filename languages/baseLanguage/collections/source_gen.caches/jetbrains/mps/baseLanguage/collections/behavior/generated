@@ -17,7 +17,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-61t0ssclnq98watuhaxiooxslhpr5yv" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-d0ztk04yjcpn12oqicw9ztee8ofwbaz" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="ds41xwd3vhafeazos843c1dygtjbmpd" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-d9b89uhusvais3hd8hq931xn1ig3cgh" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="akhdydbhjjog28feg67o2k0h0fepfz2" />
   <dep model="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)" hash="-b5v7vode0atfwf05b1m8slm4ufdmwtl" />
   <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="-bsx9nqeu3phtzjl7qheg3fy1r62vv3m" />
@@ -158,6 +158,12 @@
     <file name="HeadListOperation_BehaviorDescriptor.java" />
     <file name="HeadMapOperation_BehaviorDescriptor.java" />
     <file name="HeadSetOperation_BehaviorDescriptor.java" />
+    <file name="IApplicableToCollectioon_BehaviorDescriptor.java" />
+    <file name="IApplicableToDeque_BehaviorDescriptor.java" />
+    <file name="IApplicableToList_BehaviorDescriptor.java" />
+    <file name="IApplicableToNothing_BehaviorDescriptor.java" />
+    <file name="IApplicableToQueue_BehaviorDescriptor.java" />
+    <file name="IApplicableToStack_BehaviorDescriptor.java" />
     <file name="ICollectionOperation_BehaviorDescriptor.java" />
     <file name="IContainerOperation_BehaviorDescriptor.java" />
     <file name="IDequeOperation_BehaviorDescriptor.java" />

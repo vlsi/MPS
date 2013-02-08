@@ -855,6 +855,27 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.SortedSetOperation_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToCollectioon_BehaviorDescriptor" file="IApplicableToCollectioon_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToList_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToDeque_BehaviorDescriptor" file="IApplicableToDeque_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToList_BehaviorDescriptor" file="IApplicableToList_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing_BehaviorDescriptor" file="IApplicableToNothing_BehaviorDescriptor.java" />
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToQueue_BehaviorDescriptor" file="IApplicableToQueue_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToDeque_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToStack_BehaviorDescriptor" file="IApplicableToStack_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToDeque_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.behavior.ICollectionOperation_BehaviorDescriptor" file="ICollectionOperation_BehaviorDescriptor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />

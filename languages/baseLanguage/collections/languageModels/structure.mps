@@ -1311,6 +1311,30 @@
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="testRemove" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="540871147943773365" resolveInfo="SingleArgumentSequenceOperation" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5994574781936691958">
+      <property name="name" nameId="tpck.1169194664001" value="IApplicableToNothing" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="applicable" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5994574781936692983">
+      <property name="name" nameId="tpck.1169194664001" value="IApplicableToCollectioon" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="applicable" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5994574781936692984">
+      <property name="name" nameId="tpck.1169194664001" value="IApplicableToList" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="applicable" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5994574781936692987">
+      <property name="name" nameId="tpck.1169194664001" value="IApplicableToDeque" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="applicable" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5994574781936692988">
+      <property name="name" nameId="tpck.1169194664001" value="IApplicableToQueue" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="applicable" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5994574781936692989">
+      <property name="name" nameId="tpck.1169194664001" value="IApplicableToStack" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="applicable" />
+    </node>
   </roots>
   <root id="1151688443754">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1151688676805">
@@ -2839,6 +2863,32 @@
       <node role="target" roleId="tpce.1105736901241" type="tp2q.CollectionType" typeId="7125221305512719026" id="7072176981128353962">
         <node role="elementType" roleId="5686963296372573084" type="tpee.WildCardType" typeId="tpee.1171903607971" id="7072176981128353964" />
       </node>
+    </node>
+  </root>
+  <root id="5994574781936691958" />
+  <root id="5994574781936692983">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781936757396">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692984" resolveInfo="IApplicableToList" />
+    </node>
+  </root>
+  <root id="5994574781936692984">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781936692985">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936691958" resolveInfo="IApplicableToNothing" />
+    </node>
+  </root>
+  <root id="5994574781936692987">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781936757400">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936691958" resolveInfo="IApplicableToNothing" />
+    </node>
+  </root>
+  <root id="5994574781936692988">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781936757404">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692987" resolveInfo="IApplicableToDeque" />
+    </node>
+  </root>
+  <root id="5994574781936692989">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781940473490">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692987" resolveInfo="IApplicableToDeque" />
     </node>
   </root>
 </model>
