@@ -195,22 +195,11 @@ public class ModelsAutoImportsManager {
         result.add(contextLanguage.getStructureModelDescriptor());
       }
 
-//      if (aspect != LanguageAspect.CONSTRAINTS && LanguageAspect.CONSTRAINTS.get(contextLanguage) != null) {
-//        result.add(LanguageAspect.CONSTRAINTS.get(contextLanguage));
-//      }
-
-      if (aspect != LanguageAspect.BEHAVIOR && LanguageAspect.BEHAVIOR.get(contextLanguage) != null) {
-        result.add(LanguageAspect.BEHAVIOR.get(contextLanguage));
-      }
-
       for (Language extended : ModuleUtil.refsToLanguages(contextLanguage.getExtendedLanguageRefs())) {
         SModelDescriptor structure = LanguageAspect.STRUCTURE.get(extended);
         if (structure != null) {
           result.add(structure);
         }
-//        if (LanguageAspect.CONSTRAINTS.get(extended) != null) {
-//          result.add(LanguageAspect.CONSTRAINTS.get(extended));
-//        }
 
         if (aspect != null && aspect.get(extended) != null) {
           result.add(aspect.get(extended));
@@ -222,14 +211,12 @@ public class ModelsAutoImportsManager {
 
     @Override
     public Set<Language> getAutoImportedLanguages(Language contextLanguage, SModel model) {
-      Set<Language> result = new LinkedHashSet<Language>();
-
       LanguageAspect aspect = Language.getModelAspect(model);
       if (aspect != null) {
-        result.add(ScopeOperations.resolveLanguage(GlobalScope.getInstance(), aspect.getMainLanguage()));
+        return Collections.singleton(ScopeOperations.resolveLanguage(GlobalScope.getInstance(), aspect.getMainLanguage()));
+      } else {
+        return Collections.emptySet();
       }
-
-      return result;
     }
 
     @Override
