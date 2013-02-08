@@ -40,11 +40,12 @@
     <nodeInfo nodeId="3748622964431569738" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="114" startPosition="113" endLine="115" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6056407548442790601" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="117" startPosition="115" endLine="118" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8857655676219707644" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="120" startPosition="109" endLine="121" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748622964431481101" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="122" startPosition="5" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3748622964431480765" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="123" startPosition="0" endLine="124" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="127" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="130" startPosition="36" endLine="131" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="132" startPosition="5" endLine="133" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="550410144631189522" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="123" startPosition="105" endLine="124" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748622964431481101" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="125" startPosition="5" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3748622964431480765" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="126" startPosition="0" endLine="127" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="130" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="133" startPosition="36" endLine="134" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="135" startPosition="5" endLine="136" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="56" startPosition="95" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="175734484443909642" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="71" startPosition="67" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6688182789575851575" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="76" startPosition="105" endLine="79" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -56,15 +57,16 @@
     <nodeInfo nodeId="3748622964431566093" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="113" startPosition="5" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6056407548442057001" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="116" startPosition="5" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8857655676219703345" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="119" startPosition="5" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="129" startPosition="84" endLine="132" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="550410144631182845" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="122" startPosition="5" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="132" startPosition="84" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ImportModelsWithUsedClassifiers_Action#()V" />
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="47" startPosition="89" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="129" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_rft9c_a0b0e0d0e0a#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="132" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_rft9c_a0b0e0d0e0a#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SModelReference;" />
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="56" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="175734484443909909" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="82" startPosition="98" endLine="90" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3748622964430841302" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="107" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeToImport#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3748622964430841302" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="107" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeToImport#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="175734484443909840" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="75" startPosition="0" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="175734484443909632" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="69" startPosition="130" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="64" startPosition="96" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
@@ -87,7 +89,8 @@
     <scopeInfo nodeId="3748622964431566095" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="114" startPosition="113" endLine="115" endPosition="156" />
     <scopeInfo nodeId="6056407548442057003" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="117" startPosition="115" endLine="118" endPosition="169" />
     <scopeInfo nodeId="8857655676219703347" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="120" startPosition="109" endLine="121" endPosition="154" />
-    <scopeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="130" startPosition="36" endLine="131" endPosition="52" />
+    <scopeInfo nodeId="550410144631182847" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="123" startPosition="105" endLine="124" endPosition="159" />
+    <scopeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="133" startPosition="36" endLine="134" endPosition="52" />
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="50" startPosition="0" endLine="52" endPosition="44">
       <varInfo nodeId="175734484443895487" varName="t" />
     </scopeInfo>
@@ -100,7 +103,7 @@
       <varInfo nodeId="175734484443924898" varName="modelToImport" />
     </scopeInfo>
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="129" startPosition="84" endLine="133" endPosition="16" />
+    <scopeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="132" startPosition="84" endLine="136" endPosition="16" />
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="36" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="56" startPosition="95" endLine="61" endPosition="16" />
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="47" startPosition="89" endLine="53" endPosition="5" />
@@ -108,7 +111,7 @@
       <varInfo nodeId="3748622964431012557" varName="mref" />
       <varInfo nodeId="3748622964430869337" varName="nodeToImport" />
     </scopeInfo>
-    <scopeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="129" startPosition="0" endLine="135" endPosition="0">
+    <scopeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="132" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="3748622964431012559" varName="checkedDotOperand" />
     </scopeInfo>
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="56" startPosition="0" endLine="63" endPosition="0">
@@ -122,8 +125,8 @@
     <scopeInfo nodeId="175734484443909909" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="82" startPosition="98" endLine="90" endPosition="11">
       <varInfo nodeId="175734484443909910" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3748622964430841304" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="107" startPosition="91" endLine="124" endPosition="16" />
-    <scopeInfo nodeId="3748622964430841302" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="107" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="3748622964430841304" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="107" startPosition="91" endLine="127" endPosition="16" />
+    <scopeInfo nodeId="3748622964430841302" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="107" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="3748622964430841302" varName="_params" />
       <varInfo nodeId="3748622964430845050" varName="nodeWithRef" />
     </scopeInfo>
@@ -149,7 +152,7 @@
       <varInfo nodeId="175734484443895487" varName="_params" />
       <varInfo nodeId="175734484443895487" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="33" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.ide.migration.migration25.ImportModelsWithUsedClassifiers_Action" />
+    <unitInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="33" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.ide.migration.migration25.ImportModelsWithUsedClassifiers_Action" />
   </root>
   <root nodeRef="r:ac0b1498-2795-4a56-a562-d0f2d196bfe1(jetbrains.mps.ide.migration.migration25)/1828409047608281136">
     <nodeInfo nodeId="1828409047608281136" fileName="MigrationScript_DebuggerMoved_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

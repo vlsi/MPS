@@ -120,6 +120,9 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
     if (SNodeOperations.isInstanceOf(nodeWithRef, "jetbrains.mps.lang.smodel.structure.NodeRefExpression")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(nodeWithRef, "jetbrains.mps.lang.smodel.structure.NodeRefExpression"), "referentNode", false);
     }
+    if (SNodeOperations.isInstanceOf(nodeWithRef, "jetbrains.mps.baseLanguage.structure.ClassCreator")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(nodeWithRef, "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false);
+    }
 
     return null;
   }
