@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -146,7 +149,7 @@ public class SModel {
     return ((Iterator) myRoots.iterator());
   }
 
-  public void addRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+  public void addRoot(@NotNull final org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
     ModelChange.assertLegalNodeRegistration(this, node);
     enforceFullLoad();
@@ -164,11 +167,15 @@ public class SModel {
     SNode sn = (SNode) node;
     myRoots.add(sn);
     sn.registerInModel(this);
-    performUndoableAction(new AddRootUndoableAction(node));
+    performUndoableAction(new Computable<SNodeUndoableAction>() {
+      public SNodeUndoableAction compute() {
+        return new AddRootUndoableAction(node);
+      }
+    });
     fireRootAddedEvent(sn);
   }
 
-  public void removeRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+  public void removeRoot(@NotNull final org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
     ModelChange.assertLegalNodeUnRegistration(this, node);
     enforceFullLoad();
@@ -176,7 +183,11 @@ public class SModel {
       myRoots.remove(node);
       SNode sn = (SNode) node;
       sn.unRegisterFromModel();
-      performUndoableAction(new RemoveRootUndoableAction(node));
+      performUndoableAction(new Computable<SNodeUndoableAction>() {
+        public SNodeUndoableAction compute() {
+          return new RemoveRootUndoableAction(node);
+        }
+      });
       fireRootRemovedEvent(sn);
     }
   }
@@ -185,10 +196,10 @@ public class SModel {
     return myRoots.size();
   }
 
-  protected void performUndoableAction(SNodeUndoableAction action) {
+  protected void performUndoableAction(Computable<SNodeUndoableAction> action) {
     if (!canFireEvent()) return;
     if (!UndoHelper.getInstance().needRegisterUndo(this)) return;
-    UndoHelper.getInstance().addUndoableAction(action);
+    UndoHelper.getInstance().addUndoableAction(action.compute());
   }
 
   //---------nodes manipulation--------
