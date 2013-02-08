@@ -16,29 +16,18 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.project.listener.ModelCreationListener;
-import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class ModelsAutoImportsManager {
   private static Set<AutoImportsContributor> contributors = new HashSet<AutoImportsContributor>();
-
-  static {
-    ModelsAutoImportsManager.registerContributor(new GeneratorModelsAutoImports());
-  }
 
   public static void registerContributor(AutoImportsContributor contributor) {
     contributors.add(contributor);
@@ -107,73 +96,6 @@ public class ModelsAutoImportsManager {
       for (DevKit devKit : getAutoImportedDevKits(module, model)) {
         ((SModelDescriptor) model).getSModel().addDevKit(devKit.getModuleReference());
       }
-    }
-  }
-
-  private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {
-    @Override
-    public Class<Generator> getApplicableSModuleClass() {
-      return Generator.class;
-    }
-
-    @Override
-    public Set<SModel> getAutoImportedModels(Generator contextGenerator, SModel model) {
-      Set<SModel> result = new LinkedHashSet<SModel>();
-      Language sourceLanguage = ((Generator) contextGenerator).getSourceLanguage();
-
-      SModelDescriptor structureModelDescriptor = sourceLanguage.getStructureModelDescriptor();
-      if (structureModelDescriptor != null) {
-        result.add(structureModelDescriptor);
-      }
-
-      SModelDescriptor constraints = LanguageAspect.CONSTRAINTS.get(sourceLanguage);
-      if (constraints != null) {
-        result.add(constraints);
-      }
-
-      for (Language language : ModuleUtil.refsToLanguages(sourceLanguage.getExtendedLanguageRefs())) {
-        SModelDescriptor structure = language.getStructureModelDescriptor();
-        if (structure != null) {
-          result.add(structure);
-        }
-
-        SModelDescriptor constr = LanguageAspect.CONSTRAINTS.get(language);
-        if (constr != null) {
-          result.add(constr);
-        }
-      }
-
-      for (Language language : SModelOperations.getLanguages(((SModelDescriptor) model).getSModel(), ((Generator) contextGenerator).getScope())) {
-        SModelDescriptor struc = language.getStructureModelDescriptor();
-        if (struc != null) {
-          result.add(struc);
-        }
-      }
-
-      return result;
-    }
-
-    @Override
-    public Set<Language> getAutoImportedLanguages(Generator contextGenerator, SModel model) {
-      if (SModelStereotype.isGeneratorModel(model)) {
-        Language sourceLanguage = ((Generator) contextGenerator).getSourceLanguage();
-
-        Set<Language> result = new LinkedHashSet<Language>();
-        result.add(BootstrapLanguages.generatorLanguage());
-        result.add((Language) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.GENERATOR_CONTEXT.getModuleId()));
-
-        result.add(sourceLanguage);
-        result.addAll(ModuleUtil.refsToLanguages(sourceLanguage.getExtendedLanguageRefs()));
-
-        return result;
-      } else {
-        return Collections.emptySet();
-      }
-    }
-
-    @Override
-    public Set<DevKit> getAutoImportedDevKits(Generator contextModule, SModel model) {
-      return Collections.singleton((DevKit) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.DEVKIT_GENERAL.getModuleId()));
     }
   }
 }
