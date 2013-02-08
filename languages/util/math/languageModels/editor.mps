@@ -153,10 +153,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.3922637823318870907" resolveInfo="MatrixZero" />
     </node>
-    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6219660258344752948">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.6219660258344759893" resolveInfo="MatrixInitializerIndex" />
-    </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="963844843316139392">
       <property name="name" nameId="tpck.1169194664001" value="delete_exponent" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="methods" />
@@ -1854,11 +1850,6 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="39kg.3922637823319028533" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="3922637823319028569" />
-    </node>
-  </root>
-  <root id="6219660258344752948">
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6219660258344752950">
-      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
     </node>
   </root>
   <root id="963844843316139392">
