@@ -7073,6 +7073,33 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8857655676219703345">
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8857655676219703743">
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="8857655676219706732">
+              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="8857655676219707348">
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tp25.1219352745532" resolveInfo="NodeRefExpression" />
+              </node>
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8857655676219703422">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3748622964430845050" resolveInfo="nodeWithRef" />
+            </node>
+          </node>
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8857655676219703347">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8857655676219707644">
+              <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8857655676219708581">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="8857655676219721215">
+                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tp25.1219352800908" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="8857655676219707973">
+                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tp25.1219352745532" resolveInfo="NodeRefExpression" />
+                  <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8857655676219707662">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3748622964430845050" resolveInfo="nodeWithRef" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="3748622964431481101" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3748622964431480765">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3748622964431480763" />
@@ -7089,6 +7116,12 @@
     </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="175734484443895488">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="175734484443895489">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8857655676219733355">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8857655676219733490">
+            <property name="text" nameId="tpee.6329021646629104958" value="todo: rename action name. Something like &quot;import implicitly imported models&quot; ?" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="8857655676219732977" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="175734484443909613">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="175734484443909614">
             <property name="name" nameId="tpck.1169194664001" value="mpsProject" />

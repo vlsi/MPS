@@ -63,6 +63,8 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      // todo: rename action name. Something like "import implicitly imported models" ? 
+
       MPSProject mpsProject = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class);
       List<IModule> allModules = ListSequence.fromListWithValues(new ArrayList<IModule>(), mpsProject.getModulesWithGenerators());
       for (IModule module : ListSequence.fromList(allModules)) {
@@ -80,7 +82,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
           Set<SModelReference> dependencies = SetSequence.fromSet(new HashSet<SModelReference>());
           for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
             SNode nodeToImport = ImportModelsWithUsedClassifiers_Action.this.getNodeToImport(node, _params);
-            SModelReference mref = check_rft9c_a0b0e0d0c0a(SNodeOperations.getModel(nodeToImport));
+            SModelReference mref = check_rft9c_a0b0e0d0e0a(SNodeOperations.getModel(nodeToImport));
             if (mref == null) {
               continue;
             }
@@ -115,13 +117,16 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
     if (SNodeOperations.isInstanceOf(nodeWithRef, "jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(nodeWithRef, "jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall"), "baseMethodDeclaration", false);
     }
+    if (SNodeOperations.isInstanceOf(nodeWithRef, "jetbrains.mps.lang.smodel.structure.NodeRefExpression")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(nodeWithRef, "jetbrains.mps.lang.smodel.structure.NodeRefExpression"), "referentNode", false);
+    }
 
     return null;
   }
 
   private static Logger LOG = Logger.getLogger(ImportModelsWithUsedClassifiers_Action.class);
 
-  private static SModelReference check_rft9c_a0b0e0d0c0a(SModel checkedDotOperand) {
+  private static SModelReference check_rft9c_a0b0e0d0e0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModelReference();
     }
