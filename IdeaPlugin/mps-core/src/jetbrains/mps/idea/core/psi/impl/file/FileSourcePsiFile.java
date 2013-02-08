@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.psi.impl.file;
 
+import com.intellij.lang.Language;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.progress.ProgressIndicatorProvider;
 import com.intellij.psi.FileViewProvider;
@@ -26,7 +27,11 @@ import com.intellij.psi.PsiInvalidElementAccessException;
 import com.intellij.psi.impl.PsiManagerImpl;
 import com.intellij.psi.impl.file.PsiBinaryFileImpl;
 import com.intellij.psi.impl.source.PsiFileImpl;
+import com.intellij.psi.impl.source.PsiPlainTextFileImpl;
+import com.intellij.psi.impl.source.tree.FileElement;
+import com.intellij.psi.impl.source.tree.TreeElement;
 import com.intellij.psi.search.PsiElementProcessor;
+import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.xml.XmlElementType;
 import jetbrains.mps.fileTypes.MPSFileType;
@@ -45,15 +50,13 @@ import java.util.List;
  * Time: 11:47 AM
  * To change this template use File | Settings | File Templates.
  */
-public class FileSourcePsiFile extends PsiFileImpl {
+public class FileSourcePsiFile extends PsiPlainTextFileImpl {
 
   private String myModelName;
   private List<RootNodePsiElement> myChildren;
 
-  private static IFileElementType MPS_FILE = new IFileElementType(MPSLanguage.INSTANCE);
-
   public FileSourcePsiFile(FileViewProvider viewProvider, String modelName) {
-    super(XmlElementType.XML_FILE, XmlElementType.XML_FILE, viewProvider);
+    super(viewProvider);
     myModelName = modelName;
   }
 
@@ -77,15 +80,26 @@ public class FileSourcePsiFile extends PsiFileImpl {
     return super.processChildren(processor);
   }
 
+  @Override
+  protected FileElement createFileElement(CharSequence docText) {
+    return super.createFileElement(docText);    //To change body of overridden methods use File | Settings | File Templates.
+  }
+
+  @Override
+  public TreeElement createContentLeafElement(CharSequence leafText) {
+    return super.createContentLeafElement(leafText);    //To change body of overridden methods use File | Settings | File Templates.
+  }
+
+  @NotNull
+  @Override
+  public Language getLanguage() {
+    return MPSLanguage.INSTANCE;
+  }
+
   @NotNull
   @Override
   public PsiElement[] getChildren() {
     return myChildren.toArray(new PsiElement[myChildren.size()]);
-  }
-
-  @Override
-  public void accept(@NotNull PsiElementVisitor visitor) {
-    visitor.visitFile(this);
   }
 
   public void update(PsiElement[] roots) {
@@ -107,5 +121,19 @@ public class FileSourcePsiFile extends PsiFileImpl {
   @Override
   public FileType getFileType() {
     return MPSFileType.INSTANCE;
+  }
+
+  @Override
+  public String toString() {
+    return "PsiFile(MPS model):" + getName();
+  }
+
+  private static class FileSourceElement extends FileElement {
+
+    public FileSourceElement(IElementType type, CharSequence text) {
+      super(type, text);
+
+    }
+
   }
 }

@@ -24,6 +24,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.psi.impl.PsiManagerImpl;
+import com.intellij.testFramework.LightVirtualFile;
 import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
@@ -49,7 +50,7 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
   }
 
   private static class MySingleRootFileViewProvider extends SingleRootFileViewProvider {
-    public AtomicReference<PsiFile> myPsiFile  = new AtomicReference<PsiFile>();;
+    private AtomicReference<PsiFile> myPsiFile  = new AtomicReference<PsiFile>();;
 
     public MySingleRootFileViewProvider(PsiManager manager, VirtualFile file, boolean physical) {
       super(manager, file, physical);
@@ -88,7 +89,12 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
     }
 
     private PsiFile createFile() {
-      SModelReference smref = getVirtualFile().getUserData(MPSKeys.MODEL_REFERENCE);
+      VirtualFile virtualFile = getVirtualFile();
+      if (virtualFile instanceof LightVirtualFile) {
+        virtualFile = ((LightVirtualFile)virtualFile).getOriginalFile();
+      }
+
+      SModelReference smref = virtualFile.getUserData(MPSKeys.MODEL_REFERENCE);
       if(smref != null) {
         MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());
         MPSPsiModel psiModel = mpsPsiProvider.getPsi(smref);
