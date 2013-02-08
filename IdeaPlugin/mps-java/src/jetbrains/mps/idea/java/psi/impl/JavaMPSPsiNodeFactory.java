@@ -20,6 +20,7 @@ import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
@@ -32,13 +33,18 @@ import java.util.Map;
 public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
 
   private static final Map<String, MPSPsiNodeFactory> factories = new HashMap<String, MPSPsiNodeFactory>();
-  private static final Map<String, MPSPsiNodeFactory> subConceptFactories = new HashMap<String, MPSPsiNodeFactory>();
 
   static {
     factories.put(BootstrapLanguages.concept_baseLanguage_ClassConcept, new MPSPsiNodeFactory() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiClass(id, concept, containingRole);
+      }
+    });
+    factories.put("jetbrains.mps.baseLanguage.structure.Interface", new MPSPsiNodeFactory() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiInterface(id, concept, containingRole);
       }
     });
     // TODO use MPS-generated constant value
@@ -68,20 +74,6 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
         return new MPSPsiParameter(id, concept, containingRole);
       }
     });
-    // FIXME must be done via subConceptFactory
-    factories.put("jetbrains.mps.baseLanguage.structure.IntegerType", new MPSPsiNodeFactory() {
-      @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiPrimitiveType(id, concept, containingRole);
-      }
-    });
-    factories.put("jetbrains.mps.baseLanguage.structure.VoidType", new MPSPsiNodeFactory() {
-      @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        return new MPSPsiPrimitiveType(id, concept, containingRole);
-      }
-    });
-
     factories.put("jetbrains.mps.baseLanguage.structure.FieldDeclaration", new MPSPsiNodeFactory() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
@@ -94,23 +86,33 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
         return new MPSPsiField(id, concept, containingRole);
       }
     });
-
-
-//    subConceptFactories.put("jetbrains.mps.baseLanguage.structure.PrimitiveType", new MPSPsiNodeFactory() {
-//      @Override
-//      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-//        return new MPSPsiPrimitiveType(id, concept, containingRole);
-//      }
-//    });
+    factories.put("jetbrains.mps.baseLanguage.structure.PrimitiveType", new MPSPsiNodeFactory() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiPrimitiveType(id, concept, containingRole);
+      }
+    });
 
   }
 
   @Override
   public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-    final MPSPsiNodeFactory nodeFactory = factories.get(concept);
-    if (nodeFactory != null) {
-      return nodeFactory.create(id, concept, containingRole);
+
+    String superConcept = concept;
+    MPSPsiNodeFactory factory = null;
+
+    while (factory == null && superConcept != null) {
+      factory = factories.get(superConcept);
+      // TODO Could use SConcept.getSuperConcept instead?
+      ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(superConcept);
+      assert desc != null;
+      superConcept = desc.getSuperConcept();
     }
+
+    if (factory != null) {
+      return factory.create(id, concept, containingRole);
+    }
+
     return null;
   }
 }

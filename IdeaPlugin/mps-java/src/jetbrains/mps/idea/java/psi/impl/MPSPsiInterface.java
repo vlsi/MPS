@@ -16,53 +16,42 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
-import com.intellij.openapi.util.Pair;
-import com.intellij.psi.*;
-import com.intellij.psi.impl.PsiClassImplUtil;
-import com.intellij.psi.impl.light.JavaIdentifier;
-import com.intellij.psi.javadoc.PsiDocComment;
-import com.intellij.util.ArrayUtil;
-import com.intellij.util.IncorrectOperationException;
-import org.jetbrains.annotations.NonNls;
+import com.intellij.psi.PsiClassType;
+import com.intellij.psi.PsiReferenceList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
-import java.util.*;
-
 /**
- * evgeny, 1/25/13
+ * danilla 2/8/13
  */
-public class MPSPsiClass extends MPSPsiClassifier implements PsiClass {
 
-  public MPSPsiClass(SNodeId id, String concept, String containingRole) {
+public class MPSPsiInterface extends MPSPsiClassifier {
+  public MPSPsiInterface(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
   }
 
   @Nullable
   @Override
   public PsiReferenceList getExtendsList() {
-    return null;
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Nullable
   @Override
   public PsiReferenceList getImplementsList() {
-    return null;
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @NotNull
   @Override
   public PsiClassType[] getExtendsListTypes() {
-    return getTypes("superclass");
+    return getTypes("extendedInterface");
   }
 
   @NotNull
   @Override
   public PsiClassType[] getImplementsListTypes() {
-    return getTypes("implementedInterface");
+    return PsiClassType.EMPTY_ARRAY;
   }
-
-
-
 }
