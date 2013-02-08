@@ -250,7 +250,7 @@ public interface IModule extends SModule {
    * This method always returns empty list. All implicitly imported models added to model while model creation
    * todo: use manager in model creation / in optimize model imports / in migration action
    *
-   * @see ModelsImplicitImportsManager
+   * @see ModelsAutoImportsManager
    */
   @Deprecated
   Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
@@ -259,7 +259,7 @@ public interface IModule extends SModule {
    * This method always returns empty list. All implicitly imported models added to model while model creation
    * todo: use manager in model creation / in optimize model imports / in migration action
    *
-   * @see ModelsImplicitImportsManager
+   * @see ModelsAutoImportsManager
    */
   @Deprecated
   Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);

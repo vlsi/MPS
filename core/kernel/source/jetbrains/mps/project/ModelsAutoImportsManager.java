@@ -15,12 +15,15 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.ScopeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -31,54 +34,92 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class ModelsImplicitImportsManager {
-  private static Set<ImplicitImportsContributor> contributors = new HashSet<ImplicitImportsContributor>();
+public class ModelsAutoImportsManager {
+  private static Set<AutoImportsContributor> contributors = new HashSet<AutoImportsContributor>();
 
   static {
-    ModelsImplicitImportsManager.registerContributor(new GeneratorModelsImplicitImports());
-    ModelsImplicitImportsManager.registerContributor(new LanguageModelsImplicitImports());
+    ModelsAutoImportsManager.registerContributor(new GeneratorModelsAutoImports());
+    ModelsAutoImportsManager.registerContributor(new LanguageModelsAutoImports());
   }
 
-  public static void registerContributor(ImplicitImportsContributor contributor) {
+  public static void registerContributor(AutoImportsContributor contributor) {
     contributors.add(contributor);
   }
 
-  public static Set<SModel> getImplicitlyImportedModelsFor(SModule contextModule, SModel model) {
+  public static Set<SModel> getAutoImportedModels(SModule contextModule, SModel model) {
     Set<SModel> result = new HashSet<SModel>();
-    for (ImplicitImportsContributor contributor : contributors) {
+    for (AutoImportsContributor contributor : contributors) {
       if (contributor.getApplicableSModuleClass().isInstance(contextModule)) {
-        result.addAll(contributor.getImplicitlyImportedModelsFor(contextModule, model));
+        result.addAll(contributor.getAutoImportedModels(contextModule, model));
       }
     }
     return result;
   }
 
-  public static Set<Language> getImplicitlyImportedLanguages(SModule contextModule, SModel model) {
+  public static Set<Language> getAutoImportedLanguages(SModule contextModule, SModel model) {
     Set<Language> result = new HashSet<Language>();
-    for (ImplicitImportsContributor contributor : contributors) {
+    for (AutoImportsContributor contributor : contributors) {
       if (contributor.getApplicableSModuleClass().isInstance(contextModule)) {
-        result.addAll(contributor.getImplicitlyUsedLanguages(contextModule, model));
+        result.addAll(contributor.getAutoImportedLanguages(contextModule, model));
       }
     }
     return result;
   }
 
-  public static interface ImplicitImportsContributor<ModuleType extends SModule> {
-    public Class<ModuleType> getApplicableSModuleClass();
-
-    public Set<SModel> getImplicitlyImportedModelsFor(ModuleType contextModule, SModel model);
-
-    public Set<Language> getImplicitlyUsedLanguages(ModuleType contextModule, SModel model);
+  public static Set<DevKit> getAutoImportedDevKits(SModule contextModule, SModel model) {
+    Set<DevKit> result = new HashSet<DevKit>();
+    for (AutoImportsContributor contributor : contributors) {
+      if (contributor.getApplicableSModuleClass().isInstance(contextModule)) {
+        result.addAll(contributor.getAutoImportedDevKits(contextModule, model));
+      }
+    }
+    return result;
   }
 
-  private static class GeneratorModelsImplicitImports implements ImplicitImportsContributor<Generator> {
+  public static abstract class AutoImportsContributor<ModuleType extends SModule> {
+    public abstract Class<ModuleType> getApplicableSModuleClass();
+
+    public Set<SModel> getAutoImportedModels(ModuleType contextModule, SModel model) {
+      return Collections.emptySet();
+    }
+
+    public Set<Language> getAutoImportedLanguages(ModuleType contextModule, SModel model) {
+      return Collections.emptySet();
+    }
+
+    public Set<DevKit> getAutoImportedDevKits(ModuleType contextModule, SModel model) {
+      return Collections.emptySet();
+    }
+  }
+
+  public static class AutoImportsModelCreationListener extends ModelCreationListener {
+    @Override
+    public boolean isApplicable(SModule module, SModel model) {
+      return true;
+    }
+
+    @Override
+    public void onCreate(SModule module, SModel model) {
+      for (SModel modelToImport : getAutoImportedModels(module, model)) {
+        ((SModelDescriptor) model).getSModel().addModelImport((SModelReference) modelToImport.getModelReference(), false);
+      }
+      for (Language language : getAutoImportedLanguages(module, model)) {
+        ((SModelDescriptor) model).getSModel().addLanguage(language.getModuleReference());
+      }
+      for (DevKit devKit : getAutoImportedDevKits(module, model)) {
+        ((SModelDescriptor) model).getSModel().addDevKit(devKit.getModuleReference());
+      }
+    }
+  }
+
+  private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {
     @Override
     public Class<Generator> getApplicableSModuleClass() {
       return Generator.class;
     }
 
     @Override
-    public Set<SModel> getImplicitlyImportedModelsFor(Generator contextGenerator, SModel model) {
+    public Set<SModel> getAutoImportedModels(Generator contextGenerator, SModel model) {
       Set<SModel> result = new LinkedHashSet<SModel>();
       Language sourceLanguage = ((Generator) contextGenerator).getSourceLanguage();
 
@@ -115,12 +156,14 @@ public class ModelsImplicitImportsManager {
     }
 
     @Override
-    public Set<Language> getImplicitlyUsedLanguages(Generator contextGenerator, SModel model) {
+    public Set<Language> getAutoImportedLanguages(Generator contextGenerator, SModel model) {
       if (SModelStereotype.isGeneratorModel(model)) {
         Language sourceLanguage = ((Generator) contextGenerator).getSourceLanguage();
 
         Set<Language> result = new LinkedHashSet<Language>();
         result.add(BootstrapLanguages.generatorLanguage());
+        result.add((Language) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.GENERATOR_CONTEXT.getModuleId()));
+
         result.add(sourceLanguage);
         result.addAll(ModuleUtil.refsToLanguages(sourceLanguage.getExtendedLanguageRefs()));
 
@@ -129,16 +172,21 @@ public class ModelsImplicitImportsManager {
         return Collections.emptySet();
       }
     }
+
+    @Override
+    public Set<DevKit> getAutoImportedDevKits(Generator contextModule, SModel model) {
+      return Collections.singleton((DevKit) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.DEVKIT_GENERAL.getModuleId()));
+    }
   }
 
-  private static class LanguageModelsImplicitImports implements ImplicitImportsContributor<Language> {
+  private static class LanguageModelsAutoImports extends AutoImportsContributor<Language> {
     @Override
     public Class<Language> getApplicableSModuleClass() {
       return Language.class;
     }
 
     @Override
-    public Set<SModel> getImplicitlyImportedModelsFor(Language contextLanguage, SModel model) {
+    public Set<SModel> getAutoImportedModels(Language contextLanguage, SModel model) {
       Set<SModel> result = new LinkedHashSet<SModel>();
 
       LanguageAspect aspect = Language.getModelAspect(model);
@@ -151,9 +199,9 @@ public class ModelsImplicitImportsManager {
 //        result.add(LanguageAspect.CONSTRAINTS.get(contextLanguage));
 //      }
 
-//      if (aspect != LanguageAspect.BEHAVIOR && LanguageAspect.BEHAVIOR.get(contextLanguage) != null) {
-//        result.add(LanguageAspect.BEHAVIOR.get(contextLanguage));
-//      }
+      if (aspect != LanguageAspect.BEHAVIOR && LanguageAspect.BEHAVIOR.get(contextLanguage) != null) {
+        result.add(LanguageAspect.BEHAVIOR.get(contextLanguage));
+      }
 
       for (Language extended : ModuleUtil.refsToLanguages(contextLanguage.getExtendedLanguageRefs())) {
         SModelDescriptor structure = LanguageAspect.STRUCTURE.get(extended);
@@ -173,7 +221,7 @@ public class ModelsImplicitImportsManager {
     }
 
     @Override
-    public Set<Language> getImplicitlyUsedLanguages(Language contextLanguage, SModel model) {
+    public Set<Language> getAutoImportedLanguages(Language contextLanguage, SModel model) {
       Set<Language> result = new LinkedHashSet<Language>();
 
       LanguageAspect aspect = Language.getModelAspect(model);
@@ -182,6 +230,11 @@ public class ModelsImplicitImportsManager {
       }
 
       return result;
+    }
+
+    @Override
+    public Set<DevKit> getAutoImportedDevKits(Language contextModule, SModel model) {
+      return Collections.singleton((DevKit) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.DEVKIT_GENERAL.getModuleId()));
     }
   }
 }

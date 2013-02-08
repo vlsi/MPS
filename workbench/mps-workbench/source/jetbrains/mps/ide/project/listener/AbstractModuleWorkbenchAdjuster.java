@@ -17,6 +17,7 @@ package jetbrains.mps.ide.project.listener;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsModelCreationListener;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -29,9 +30,7 @@ public class AbstractModuleWorkbenchAdjuster implements ApplicationComponent {
   }
 
   public void initComponent() {
-    AbstractModule.registerModelCreationListener(new GeneratorModelCreationListener());
-    AbstractModule.registerModelCreationListener(new LanguageAspectCreationListener());
-    AbstractModule.registerModelCreationListener(new LanguageModelCreationListener());
+    AbstractModule.registerModelCreationListener(new AutoImportsModelCreationListener());
     AbstractModule.registerModelCreationListener(new TestsModelCreationListener());
   }
 
