@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.ScopeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -39,7 +38,6 @@ public class ModelsAutoImportsManager {
 
   static {
     ModelsAutoImportsManager.registerContributor(new GeneratorModelsAutoImports());
-    ModelsAutoImportsManager.registerContributor(new LanguageModelsAutoImports());
   }
 
   public static void registerContributor(AutoImportsContributor contributor) {
@@ -175,28 +173,6 @@ public class ModelsAutoImportsManager {
 
     @Override
     public Set<DevKit> getAutoImportedDevKits(Generator contextModule, SModel model) {
-      return Collections.singleton((DevKit) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.DEVKIT_GENERAL.getModuleId()));
-    }
-  }
-
-  private static class LanguageModelsAutoImports extends AutoImportsContributor<Language> {
-    @Override
-    public Class<Language> getApplicableSModuleClass() {
-      return Language.class;
-    }
-
-    @Override
-    public Set<Language> getAutoImportedLanguages(Language contextLanguage, SModel model) {
-      LanguageAspect aspect = Language.getModelAspect(model);
-      if (aspect != null) {
-        return Collections.singleton(ScopeOperations.resolveLanguage(GlobalScope.getInstance(), aspect.getMainLanguage()));
-      } else {
-        return Collections.emptySet();
-      }
-    }
-
-    @Override
-    public Set<DevKit> getAutoImportedDevKits(Language contextModule, SModel model) {
       return Collections.singleton((DevKit) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.DEVKIT_GENERAL.getModuleId()));
     }
   }
