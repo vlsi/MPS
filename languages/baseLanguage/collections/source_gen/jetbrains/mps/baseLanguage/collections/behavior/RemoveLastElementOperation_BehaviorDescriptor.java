@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class RemoveLastElementOperation_BehaviorDescriptor extends NoArgumentsSequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor {
+public class RemoveLastElementOperation_BehaviorDescriptor extends NoArgumentsSequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor, IApplicableToList_BehaviorDescriptor, IApplicableToDeque_BehaviorDescriptor {
   public RemoveLastElementOperation_BehaviorDescriptor() {
   }
 

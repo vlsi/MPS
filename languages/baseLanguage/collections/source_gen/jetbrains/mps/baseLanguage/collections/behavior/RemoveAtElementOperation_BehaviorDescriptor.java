@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class RemoveAtElementOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor {
+public class RemoveAtElementOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IApplicableToList_BehaviorDescriptor {
   public RemoveAtElementOperation_BehaviorDescriptor() {
   }
 

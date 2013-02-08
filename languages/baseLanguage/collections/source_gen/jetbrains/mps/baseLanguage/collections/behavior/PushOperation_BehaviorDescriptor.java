@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class PushOperation_BehaviorDescriptor extends SingleArgumentSequenceOperation_BehaviorDescriptor implements IStackOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor {
+public class PushOperation_BehaviorDescriptor extends SingleArgumentSequenceOperation_BehaviorDescriptor implements IStackOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor, IApplicableToDeque_BehaviorDescriptor {
   public PushOperation_BehaviorDescriptor() {
   }
 

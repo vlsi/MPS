@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class AddFirstElementOperation_BehaviorDescriptor extends SingleArgumentSequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor, IStackOperation_BehaviorDescriptor {
+public class AddFirstElementOperation_BehaviorDescriptor extends SingleArgumentSequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor, IStackOperation_BehaviorDescriptor, IApplicableToList_BehaviorDescriptor, IApplicableToDeque_BehaviorDescriptor {
   public AddFirstElementOperation_BehaviorDescriptor() {
   }
 

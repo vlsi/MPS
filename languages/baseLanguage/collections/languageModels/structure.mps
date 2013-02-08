@@ -9,7 +9,7 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
+  <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="8" implicit="yes" />
   <import index="tp2z" modelUID="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1151688443754">
@@ -1316,7 +1316,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="applicable" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5994574781936692983">
-      <property name="name" nameId="tpck.1169194664001" value="IApplicableToCollectioon" />
+      <property name="name" nameId="tpck.1169194664001" value="IApplicableToCollection" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="applicable" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5994574781936692984">
@@ -1407,7 +1407,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2141797557973018607" resolveInfo="IListOperation" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943756784">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollectioon" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollection" />
     </node>
   </root>
   <root id="1160666733551">
@@ -1428,7 +1428,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6801639034384909355" resolveInfo="IStackOperation" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943756750">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollectioon" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollection" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943756761">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692988" resolveInfo="IApplicableToQueue" />
@@ -1522,7 +1522,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692989" resolveInfo="IApplicableToStack" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943757050">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollectioon" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollection" />
     </node>
   </root>
   <root id="1171391069720">
@@ -1609,7 +1609,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6801639034384909355" resolveInfo="IStackOperation" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943756984">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollectioon" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollection" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943756995">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692988" resolveInfo="IApplicableToQueue" />
@@ -2920,7 +2920,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2141797557973018607" resolveInfo="IListOperation" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943756849">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollectioon" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollection" />
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="2526372162255441545">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />
@@ -2937,7 +2937,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2141797557973018607" resolveInfo="IListOperation" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943756841">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollectioon" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollection" />
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="4611582986551058030">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />
@@ -2959,7 +2959,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2141797557973018607" resolveInfo="IListOperation" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943822441">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollectioon" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollection" />
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="5699792037748043362">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />
@@ -2973,7 +2973,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2141797557973018607" resolveInfo="IListOperation" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943822447">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollectioon" />
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692983" resolveInfo="IApplicableToCollection" />
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="7072176981128353960">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />

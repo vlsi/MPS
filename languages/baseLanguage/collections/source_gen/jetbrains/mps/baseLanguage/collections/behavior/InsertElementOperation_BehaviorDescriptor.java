@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class InsertElementOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor {
+public class InsertElementOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IApplicableToList_BehaviorDescriptor {
   public InsertElementOperation_BehaviorDescriptor() {
   }
 

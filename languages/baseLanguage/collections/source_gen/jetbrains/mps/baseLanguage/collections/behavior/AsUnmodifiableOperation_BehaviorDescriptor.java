@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class AsUnmodifiableOperation_BehaviorDescriptor extends NoArgumentsSequenceOperation_BehaviorDescriptor implements ICollectionOperation_BehaviorDescriptor, IListOperation_BehaviorDescriptor {
+public class AsUnmodifiableOperation_BehaviorDescriptor extends NoArgumentsSequenceOperation_BehaviorDescriptor implements ICollectionOperation_BehaviorDescriptor, IListOperation_BehaviorDescriptor, IApplicableToCollectioon_BehaviorDescriptor {
   public AsUnmodifiableOperation_BehaviorDescriptor() {
   }
 

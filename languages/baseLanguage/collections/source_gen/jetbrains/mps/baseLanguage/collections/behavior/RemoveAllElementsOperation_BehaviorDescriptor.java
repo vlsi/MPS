@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class RemoveAllElementsOperation_BehaviorDescriptor extends SingleArgumentSequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IQueueOperation_BehaviorDescriptor, IStackOperation_BehaviorDescriptor {
+public class RemoveAllElementsOperation_BehaviorDescriptor extends SingleArgumentSequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IQueueOperation_BehaviorDescriptor, IStackOperation_BehaviorDescriptor, IApplicableToCollectioon_BehaviorDescriptor, IApplicableToQueue_BehaviorDescriptor, IApplicableToStack_BehaviorDescriptor {
   public RemoveAllElementsOperation_BehaviorDescriptor() {
   }
 

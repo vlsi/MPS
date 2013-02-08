@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class RemoveWhereOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IStackOperation_BehaviorDescriptor, IQueueOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor {
+public class RemoveWhereOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IStackOperation_BehaviorDescriptor, IQueueOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor, IApplicableToList_BehaviorDescriptor, IApplicableToDeque_BehaviorDescriptor {
   public RemoveWhereOperation_BehaviorDescriptor() {
   }
 
