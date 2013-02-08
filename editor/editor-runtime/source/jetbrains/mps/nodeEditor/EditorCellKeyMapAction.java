@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.openapi.editor.cells.KeyMapAction;
+import jetbrains.mps.editor.runtime.cells.KeyMapActionImpl;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.event.KeyEvent;
@@ -24,19 +24,44 @@ import java.util.List;
 /**
  * Author: Sergey Dmitriev
  * Created Nov 4, 2003
+ * <p/>
+ * was replaced with KeyMapActionImpl
+ * remove this class after MPS 3.0
  */
-public abstract class EditorCellKeyMapAction implements KeyMapAction {
-  private int myCaretPolicy;
-  private boolean myShownInPopupMenu = false;
-
+@Deprecated
+public abstract class EditorCellKeyMapAction extends KeyMapActionImpl {
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>canExecute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   * This method should be removed after MPS 3.0
+   *             <code>canExecute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             This method should be removed after MPS 3.0
    */
   @Deprecated
   public boolean canExecute(KeyEvent keyEvent, EditorContext context) {
     return true;
+  }
+
+  // TODO: remove it after regeneration
+  @Override
+  public int getCaretPolicy() {
+    return super.getCaretPolicy();    //To change body of overridden methods use File | Settings | File Templates.
+  }
+
+  // TODO: remove it after regeneration
+  @Override
+  public void setCaretPolicy(int policy) {
+    super.setCaretPolicy(policy);    //To change body of overridden methods use File | Settings | File Templates.
+  }
+
+  // TODO: remove it after regeneration
+  @Override
+  public boolean isShownInPopupMenu() {
+    return super.isShownInPopupMenu();    //To change body of overridden methods use File | Settings | File Templates.
+  }
+
+  // TODO: remove it after regeneration
+  @Override
+  public void setShownInPopupMenu(boolean show) {
+    super.setShownInPopupMenu(show);    //To change body of overridden methods use File | Settings | File Templates.
   }
 
   // TODO: remove it after regeneration
@@ -50,8 +75,8 @@ public abstract class EditorCellKeyMapAction implements KeyMapAction {
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>execute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   * This method should be removed after MPS 3.0
+   *             <code>execute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             This method should be removed after MPS 3.0
    */
   @Deprecated
   public void execute(KeyEvent keyEvent, EditorContext context) {
@@ -73,24 +98,8 @@ public abstract class EditorCellKeyMapAction implements KeyMapAction {
     return null;
   }
 
-  public int getCaretPolicy() {
-    return myCaretPolicy;
-  }
-
-  public void setCaretPolicy(int policy) {
-    myCaretPolicy = policy;
-  }
-
   public boolean isMenuAlwaysShown() {
     return false;
-  }
-
-  public boolean isShownInPopupMenu() {
-    return myShownInPopupMenu;
-  }
-
-  public void setShownInPopupMenu(boolean toShow) {
-    myShownInPopupMenu = toShow;
   }
 
   public String getKeyStroke() {
@@ -99,14 +108,14 @@ public abstract class EditorCellKeyMapAction implements KeyMapAction {
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>getSelectedNodes(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   * This method should be removed after MPS 3.0
+   *             <code>getSelectedNodes(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             This method should be removed after MPS 3.0
    */
   @Deprecated
   protected List<SNode> getSelectedNodes(EditorContext context) {
     return getSelectedNodes((jetbrains.mps.openapi.editor.EditorContext) context);
   }
-  
+
   protected List<SNode> getSelectedNodes(jetbrains.mps.openapi.editor.EditorContext context) {
     return context.getEditorComponent().getSelectedNodes();
   }

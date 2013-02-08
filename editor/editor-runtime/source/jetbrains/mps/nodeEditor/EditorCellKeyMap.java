@@ -16,130 +16,50 @@
 package jetbrains.mps.nodeEditor;
 
 
+import jetbrains.mps.editor.runtime.cells.KeyMapImpl;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
-import jetbrains.mps.util.Pair;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
 
-public class EditorCellKeyMap implements KeyMap {
-  private HashMap<ActionKey, KeyMapAction> myActionMap;
-  private List<Pair<ActionKey, KeyMapAction>> myDuplicatedActionList;
-  private List<KeyMap> myChildKeyMaps;
-  private boolean myApplicableToEveryModel = false;
-
-  public EditorCellKeyMap() {
-    myActionMap = new HashMap<ActionKey, KeyMapAction>();
-  }
-
+/**
+ * was replaced with KeyMapImpl
+ * remove this class after MPS 3.0
+ */
+@Deprecated
+public class EditorCellKeyMap extends KeyMapImpl {
+  @Override
   public boolean isApplicableToEveryModel() {
-    return myApplicableToEveryModel;
+    return super.isApplicableToEveryModel();
   }
 
+  @Override
   public void setApplicableToEveryModel(boolean isApplicable) {
-    myApplicableToEveryModel = isApplicable;
+    super.setApplicableToEveryModel(isApplicable);
   }
 
   @Override
   public void addKeyMap(KeyMap keyMap) {
-    if (myChildKeyMaps == null) {
-      myChildKeyMaps = new LinkedList<KeyMap>();
-    }
-    myChildKeyMaps.add(keyMap);
+    super.addKeyMap(keyMap);
   }
 
   @Override
   public void putAction(String modifiers, String keyCode, KeyMapAction action) {
-    boolean keyTyped = keyCode.length() == 1;
-    ActionKey key = new ActionKey(modifiers, keyCode, keyTyped);
-    if (!myActionMap.containsKey(key)) {
-      myActionMap.put(key, action);
-    } else {
-      if (myDuplicatedActionList == null) {
-        myDuplicatedActionList = new LinkedList<Pair<ActionKey, KeyMapAction>>();
-      }
-      myDuplicatedActionList.add(new Pair<ActionKey, KeyMapAction>(key, action));
-    }
+    super.putAction(modifiers, keyCode, action);
   }
 
   @Override
-  public Collection<ActionKey> getActionKeys() {
-    return getActionKeys(new HashSet<ActionKey>());
-  }
-
-  private Collection<ActionKey> getActionKeys(Set<ActionKey> result) {
-    result.addAll(myActionMap.keySet());
-    if (myChildKeyMaps != null) {
-      for (KeyMap childKeyMap : myChildKeyMaps) {
-        if (childKeyMap instanceof EditorCellKeyMap) {
-          ((EditorCellKeyMap) childKeyMap).getActionKeys(result);
-        } else {
-          result.addAll(childKeyMap.getActionKeys());
-        }
-      }
-    }
-    return result;
+  public Collection<KeyMapAction> getActions(Collection<ActionKey> keys) {
+    return super.getActions(keys);
   }
 
   @Override
   public Collection<KeyMapAction> getAllActions() {
-    return getAllActions(new ArrayList<KeyMapAction>());
-  }
-
-  private Collection<KeyMapAction> getAllActions(Collection<KeyMapAction> result) {
-    result.addAll(myActionMap.values());
-    if (myDuplicatedActionList != null) {
-      for (Pair<ActionKey, KeyMapAction> pair : myDuplicatedActionList) {
-        result.add(pair.o2);
-      }
-    }
-    if (myChildKeyMaps != null) {
-      for (KeyMap childKeyMap : myChildKeyMaps) {
-        if (childKeyMap instanceof EditorCellKeyMap) {
-          ((EditorCellKeyMap) childKeyMap).getAllActions(result);
-        } else {
-          result.addAll(childKeyMap.getAllActions());
-        }
-      }
-    }
-    return result;
+    return super.getAllActions();
   }
 
   @Override
-  public Collection<KeyMapAction> getActions(Collection<KeyMap.ActionKey> keys) {
-    return getActions(keys, new ArrayList<KeyMapAction>());
-  }
-
-  private Collection<KeyMapAction> getActions(Collection<KeyMap.ActionKey> keys, Collection<KeyMapAction> result) {
-    for (ActionKey actionKey : keys) {
-      KeyMapAction action = myActionMap.get(actionKey);
-      if (action != null) {
-        result.add(action);
-        if (myDuplicatedActionList != null) {
-          for (Pair<ActionKey, KeyMapAction> pair : myDuplicatedActionList) {
-            if (pair.o1.equals(actionKey)) {
-              result.add(pair.o2);
-            }
-          }
-        }
-      }
-    }
-
-    if (myChildKeyMaps != null) {
-      for (KeyMap childKeyMap : myChildKeyMaps) {
-        if (childKeyMap instanceof EditorCellKeyMap) {
-          ((EditorCellKeyMap) childKeyMap).getActions(keys, result);
-        } else {
-          result.addAll(childKeyMap.getActions(keys));
-        }
-      }
-    }
-    return result;
+  public Collection<ActionKey> getActionKeys() {
+    return super.getActionKeys();
   }
 }
