@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
   @Override
   public Icon getPresentationIcon() {
-    return Icons.VARIABLE_PRIMITIVE;
+    return Icons.VALUE_PRIMITIVE;
   }
 
   @Override

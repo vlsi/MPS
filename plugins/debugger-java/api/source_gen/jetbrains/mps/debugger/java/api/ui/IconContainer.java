@@ -6,10 +6,12 @@ import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 
 public class IconContainer {
+  protected static Icon ICON_a3 = AllIcons.Nodes.Static;
+  protected static Icon ICON_a2 = AllIcons.Debugger.Db_array;
   protected static Icon ICON_a0 = AllIcons.Debugger.Db_primitive;
   protected static Icon ICON_a1 = AllIcons.Debugger.Value;
-  protected static Icon ICON_a2 = AllIcons.Debugger.Watch;
-  protected static Icon ICON_a3 = AllIcons.Debugger.ThreadRunning;
-  protected static Icon ICON_a4 = AllIcons.Debugger.ThreadSuspended;
-  protected static Icon ICON_a5 = AllIcons.Debugger.ThreadAtBreakpoint;
+  protected static Icon ICON_a4 = AllIcons.Debugger.Watch;
+  protected static Icon ICON_a5 = AllIcons.Debugger.ThreadRunning;
+  protected static Icon ICON_a6 = AllIcons.Debugger.ThreadSuspended;
+  protected static Icon ICON_a7 = AllIcons.Debugger.ThreadAtBreakpoint;
 }

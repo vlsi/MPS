@@ -49,7 +49,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
   @Override
   public Icon getPresentationIcon() {
-    return Icons.VARIABLE_OBJECT;
+    return Icons.VALUE_OBJECT;
   }
 
   @Override

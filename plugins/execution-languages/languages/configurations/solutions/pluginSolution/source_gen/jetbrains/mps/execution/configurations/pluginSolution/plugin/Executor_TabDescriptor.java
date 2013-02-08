@@ -21,6 +21,10 @@ public class Executor_TabDescriptor extends RelationDescriptor {
     return "Executor";
   }
 
+  public int compareTo(RelationDescriptor descriptor) {
+    return new Executor_Order().compare(this, descriptor);
+  }
+
   public void startListening() {
     throw new RuntimeException("NOT IMPLEMENTED");
   }
