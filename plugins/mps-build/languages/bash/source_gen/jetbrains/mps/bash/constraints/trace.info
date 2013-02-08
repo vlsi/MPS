@@ -61,7 +61,7 @@
     <nodeInfo nodeId="3147078024759132826" fileName="SimpleWord_Constraints.java" startLine="21" startPosition="82" endLine="22" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3147078024759132826" fileName="SimpleWord_Constraints.java" startLine="25" startPosition="37" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3147078024759132826" fileName="SimpleWord_Constraints.java" startLine="30" startPosition="76" endLine="31" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3263637656468797851" fileName="SimpleWord_Constraints.java" startLine="32" startPosition="134" endLine="33" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3263637656468797851" fileName="SimpleWord_Constraints.java" startLine="32" startPosition="127" endLine="33" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3147078024759132826" fileName="SimpleWord_Constraints.java" startLine="38" startPosition="40" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3147078024759132826" fileName="SimpleWord_Constraints.java" startLine="43" startPosition="84" endLine="44" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8474643070102108664" fileName="SimpleWord_Constraints.java" startLine="45" startPosition="75" endLine="46" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -82,7 +82,7 @@
     <nodeInfo nodeId="3147078024759132826" fileName="SimpleWord_Constraints.java" startLine="20" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
     <scopeInfo nodeId="3147078024759132826" fileName="SimpleWord_Constraints.java" startLine="16" startPosition="35" endLine="17" endPosition="53" />
     <scopeInfo nodeId="3147078024759132826" fileName="SimpleWord_Constraints.java" startLine="25" startPosition="37" endLine="26" endPosition="20" />
-    <scopeInfo nodeId="3263637656468797840" fileName="SimpleWord_Constraints.java" startLine="32" startPosition="134" endLine="33" endPosition="96" />
+    <scopeInfo nodeId="3263637656468797840" fileName="SimpleWord_Constraints.java" startLine="32" startPosition="127" endLine="33" endPosition="96" />
     <scopeInfo nodeId="3147078024759132826" fileName="SimpleWord_Constraints.java" startLine="38" startPosition="40" endLine="39" endPosition="20" />
     <scopeInfo nodeId="8474643070102108663" fileName="SimpleWord_Constraints.java" startLine="45" startPosition="75" endLine="46" endPosition="23" />
     <scopeInfo nodeId="3905757829894475594" fileName="SimpleWord_Constraints.java" startLine="48" startPosition="75" endLine="49" endPosition="23" />

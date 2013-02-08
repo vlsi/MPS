@@ -29,7 +29,7 @@ public class SimpleWord_Constraints extends BaseConstraintsDescriptor {
       @Override
       public void setValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "word";
-        if (!(SimpleWord_Behavior.call_splitValue_3147078024759753598(node, (SPropertyOperations.getString(propertyValue)), scope))) {
+        if (!(SimpleWord_Behavior.call_splitValue_3147078024759753598(node, (SPropertyOperations.getString(propertyValue))))) {
           SPropertyOperations.set(node, "word", (SPropertyOperations.getString(propertyValue)));
         }
       }
