@@ -25,10 +25,9 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
 
 public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
@@ -80,13 +79,12 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
           SModel model = modelDescriptor.getSModel();
           Set<SModelReference> dependencies = SetSequence.fromSet(new HashSet<SModelReference>());
           for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
-            for (SReference ref : Sequence.fromIterable(node.getReferences())) {
-              SModelReference mref = check_rft9c_a0a0a0e0d0c0a(check_rft9c_a0a0a0a4a3a2a0(SNodeOperations.getTargetNodeSilently(ref)));
-              if (mref == null) {
-                continue;
-              }
-              SetSequence.fromSet(dependencies).addElement(mref);
+            SNode nodeToImport = ImportModelsWithUsedClassifiers_Action.this.getNodeToImport(node, _params);
+            SModelReference mref = check_rft9c_a0b0e0d0c0a(SNodeOperations.getModel(nodeToImport));
+            if (mref == null) {
+              continue;
             }
+            SetSequence.fromSet(dependencies).addElement(mref);
           }
           // remove all imported already models 
           SetSequence.fromSet(dependencies).removeElement(modelDescriptor.getSModelReference());
@@ -104,18 +102,28 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
     }
   }
 
-  private static Logger LOG = Logger.getLogger(ImportModelsWithUsedClassifiers_Action.class);
-
-  private static SModelReference check_rft9c_a0a0a0e0d0c0a(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModelReference();
+  /*package*/ SNode getNodeToImport(SNode nodeWithRef, final Map<String, Object> _params) {
+    if (SNodeOperations.isInstanceOf(nodeWithRef, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(nodeWithRef, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
     }
+    if (SNodeOperations.isInstanceOf(nodeWithRef, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(nodeWithRef, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false);
+    }
+    if (SNodeOperations.isInstanceOf(nodeWithRef, "jetbrains.mps.baseLanguage.structure.StaticFieldReference")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(nodeWithRef, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), "classifier", false);
+    }
+    if (SNodeOperations.isInstanceOf(nodeWithRef, "jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(nodeWithRef, "jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall"), "baseMethodDeclaration", false);
+    }
+
     return null;
   }
 
-  private static SModel check_rft9c_a0a0a0a4a3a2a0(SNode checkedDotOperand) {
+  private static Logger LOG = Logger.getLogger(ImportModelsWithUsedClassifiers_Action.class);
+
+  private static SModelReference check_rft9c_a0b0e0d0c0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getModel();
+      return checkedDotOperand.getSModelReference();
     }
     return null;
   }
