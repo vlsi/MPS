@@ -241,6 +241,10 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
     }
   }
 
+  public boolean isStatic() {
+    return "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration".equals(getConcept());
+  }
+
   @Override
   public Icon getElementIcon(final int flags) {
     Icon methodIcon = hasModifierProperty(PsiModifier.ABSTRACT) ? PlatformIcons.ABSTRACT_METHOD_ICON : PlatformIcons.METHOD_ICON;

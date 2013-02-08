@@ -139,7 +139,11 @@ public class MPSPsiField extends MPSPsiNode implements PsiField {
 
   @Override
   public boolean hasModifierProperty(@ModifierConstant @NonNls @NotNull String name) {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return getModifierList().hasModifierProperty(name);
+  }
+
+  public boolean isStatic() {
+    return "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration".equals(getConcept());
   }
 
   @Override

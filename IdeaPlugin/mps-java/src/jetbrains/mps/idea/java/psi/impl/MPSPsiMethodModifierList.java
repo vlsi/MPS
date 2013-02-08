@@ -56,6 +56,13 @@ public class MPSPsiMethodModifierList extends MPSPsiNodeBase implements PsiModif
       boolean isAbstractClass = mpsParent instanceof MPSPsiClassifier && "true".equals(mpsParent.getProperty("abstractClass"));
       boolean isAbstractMethod = mpsParent instanceof MPSPsiMethod && "true".equals(mpsParent.getProperty("isAbstract"));
       return isAbstractClass || isAbstractMethod;
+    } else if (PsiModifier.FINAL.equals(name)) {
+      return "true".equals(mpsParent.getProperty("isFinal"));
+    } else if (PsiModifier.STATIC.equals(name)) {
+      boolean isStaticField = mpsParent instanceof MPSPsiField && ((MPSPsiField) mpsParent).isStatic();
+      boolean isStaticMethod = mpsParent instanceof MPSPsiMethod && ((MPSPsiMethod) mpsParent).isStatic();
+      boolean isStaticClass = mpsParent instanceof MPSPsiClass && "true".equals(mpsParent.getProperty("isStatic"));
+      return isStaticClass || isStaticMethod || isStaticField;
     }
     return false;
   }

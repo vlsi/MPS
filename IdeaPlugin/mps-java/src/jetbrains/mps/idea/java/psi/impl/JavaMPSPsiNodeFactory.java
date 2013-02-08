@@ -55,6 +55,13 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
         return method;
       }
     });
+    factories.put("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", new MPSPsiNodeFactory() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        MPSPsiMethod method = new MPSPsiMethod(id, concept, containingRole);
+        return method;
+      }
+    });
     factories.put("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", new MPSPsiNodeFactory() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
@@ -76,6 +83,12 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
     });
 
     factories.put("jetbrains.mps.baseLanguage.structure.FieldDeclaration", new MPSPsiNodeFactory() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiField(id, concept, containingRole);
+      }
+    });
+    factories.put("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", new MPSPsiNodeFactory() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiField(id, concept, containingRole);
