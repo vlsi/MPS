@@ -189,14 +189,10 @@ public class ModelsAutoImportsManager {
     public Set<SModel> getAutoImportedModels(Language contextLanguage, SModel model) {
       Set<SModel> result = new LinkedHashSet<SModel>();
 
-      LanguageAspect aspect = Language.getModelAspect(model);
-
-      if (aspect == LanguageAspect.STRUCTURE ||
-        aspect == LanguageAspect.EDITOR
-        ) {
+      if (Language.getModelAspect(model) == LanguageAspect.EDITOR) {
         for (Language extended : ModuleUtil.refsToLanguages(contextLanguage.getExtendedLanguageRefs())) {
-          if (aspect.get(extended) != null) {
-            result.add(aspect.get(extended));
+          if (LanguageAspect.EDITOR.get(extended) != null) {
+            result.add(LanguageAspect.EDITOR.get(extended));
           }
         }
       }
