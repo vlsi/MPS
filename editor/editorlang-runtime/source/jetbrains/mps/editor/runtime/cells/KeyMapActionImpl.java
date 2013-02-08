@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.editor.runtime.cells;
 
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
+import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.List;
 
 /**
  * User: shatalin
@@ -36,8 +38,8 @@ public abstract class KeyMapActionImpl implements KeyMapAction {
   }
 
   @Override
-  public boolean canExecute(EditorContext editorContext) {
-    return true;
+  public String getDescriptionText() {
+    return null;
   }
 
   @Override
@@ -47,5 +49,9 @@ public abstract class KeyMapActionImpl implements KeyMapAction {
 
   public void setShownInPopupMenu(boolean show) {
     myShownInPopupMenu = show;
+  }
+
+  protected List<SNode> getSelectedNodes(jetbrains.mps.openapi.editor.EditorContext context) {
+    return context.getEditorComponent().getSelectedNodes();
   }
 }

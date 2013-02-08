@@ -94,8 +94,9 @@ public abstract class EditorCellKeyMapAction extends KeyMapActionImpl {
     execute(null, context);
   }
 
+  // TODO: remove it after regeneration
   public String getDescriptionText() {
-    return null;
+    return super.getDescriptionText();
   }
 
   public boolean isMenuAlwaysShown() {
@@ -117,6 +118,6 @@ public abstract class EditorCellKeyMapAction extends KeyMapActionImpl {
   }
 
   protected List<SNode> getSelectedNodes(jetbrains.mps.openapi.editor.EditorContext context) {
-    return context.getEditorComponent().getSelectedNodes();
+    return super.getSelectedNodes(context);
   }
 }
