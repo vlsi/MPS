@@ -191,14 +191,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
   }
 
-  public String getGeneratorOutputPath() {
-    return null;
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    return null;
-  }
-
   @Override
   public Collection<ModuleReference> getUsedLanguagesReferences() {
     return Collections.singleton(BootstrapLanguages.PROJECT);

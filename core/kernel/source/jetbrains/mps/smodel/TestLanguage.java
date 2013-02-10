@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.vfs.IFile;
@@ -25,21 +25,13 @@ public class TestLanguage extends Language {
 
   //this is for tests only. Can be later converted into subclass
   public static Language newInstance(LanguageDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    Language language = new TestLanguage(descriptor,null);
+    Language language = new TestLanguage(descriptor, null);
 
     Language registered = MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
-    if (registered==language){
+    if (registered == language) {
       language.setLanguageDescriptor(descriptor, false);
     }
 
     return registered;
-  }
-
-  public String getGeneratorOutputPath() {
-    return null;
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    return null;
   }
 }

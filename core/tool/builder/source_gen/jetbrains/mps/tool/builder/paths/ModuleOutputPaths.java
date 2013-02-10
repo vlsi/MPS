@@ -34,15 +34,25 @@ public class ModuleOutputPaths {
         return FileGenerationUtil.getCachesPath(mod.getGeneratorOutputPath());
       }
     }));
-
+    // todo: use union of output paths for models? 
     this.sortedTestOutDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).select(new ISelector<IModule, String>() {
       public String select(IModule mod) {
-        return mod.getTestsGeneratorOutputPath();
+        // todo: tmp hack 
+        String path = mod.getTestsGeneratorOutputPath();
+        return (path != null ?
+          path :
+          mod.getGeneratorOutputPath()
+        );
       }
     }));
     this.sortedTestOutCacheDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).select(new ISelector<IModule, String>() {
       public String select(IModule mod) {
-        return FileGenerationUtil.getCachesPath(mod.getTestsGeneratorOutputPath());
+        // todo: tmp hack 
+        String path = mod.getTestsGeneratorOutputPath();
+        if (path == null) {
+          path = mod.getGeneratorOutputPath();
+        }
+        return FileGenerationUtil.getCachesPath(path);
       }
     }));
 

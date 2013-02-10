@@ -5,21 +5,20 @@ package jetbrains.mps.lang.structure.constraints;
 import jetbrains.mps.scope.DelegatingScope;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.scope.FilteringScope;
-import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 /*package*/ class ConceptDeclarationExtendedConceptSearchScope extends DelegatingScope {
-  public ConceptDeclarationExtendedConceptSearchScope(@Nullable final SNode concept, IScope scope) {
+  public ConceptDeclarationExtendedConceptSearchScope(@Nullable final SNode concept, SNode contextNode) {
     if (concept == null) {
       wrapped = new EmptyScope();
       return;
     }
 
-    wrapped = new FilteringScope(new ModelPlusImportedScope(SNodeOperations.getModel(concept), false, scope, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+    wrapped = new FilteringScope(new ConceptsScope(contextNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       @Override
       public boolean isExcluded(SNode node) {
         return node == concept || SModelUtil.isAssignableConcept(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), concept);

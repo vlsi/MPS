@@ -71,7 +71,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
   protected JavaModuleFacet createJavaModuleFacet() {
     return new JavaModuleFacetImpl(this) {
       @Override
-      protected Collection<String> getAdditionalClassPath() {
+      public Collection<String> getAdditionalClassPath() {
         return myClassPaths;
       }
     };

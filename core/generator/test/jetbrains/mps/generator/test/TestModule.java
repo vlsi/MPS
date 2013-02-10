@@ -69,14 +69,6 @@ public class TestModule extends ClassLoadingModule {
     return ((IClassLoadingModule) myPeer).getClass(fqName);
   }
 
-  public String getGeneratorOutputPath() {
-    return null;
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    return null;
-  }
-
   @Override
   public DependenciesManager getDependenciesManager() {
     if (myPeer == null) throw new IllegalStateException();

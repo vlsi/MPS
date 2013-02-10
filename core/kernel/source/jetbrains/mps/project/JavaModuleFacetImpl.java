@@ -48,12 +48,14 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
     myModule = module;
   }
 
-  protected void invalidateClassPath() {
+  @Override
+  public void invalidateClassPath() {
     synchronized (LOCK) {
       myCachedClassPathItem = null;
     }
   }
 
+  @Override
   public Collection<String> getClassPath() {
     Set<String> result = new LinkedHashSet<String>();
     result.addAll(getAdditionalClassPath());
@@ -61,7 +63,8 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
     return result;
   }
 
-  protected Collection<String> getOwnClassPath() {
+  @Override
+  public Collection<String> getOwnClassPath() {
     if (!isCompileInMPS()) return Collections.emptyList();
 
     IFile classFolder = getClassesGen();
@@ -70,7 +73,8 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
     return Collections.singletonList(classFolder.getPath());
   }
 
-  protected Collection<String> getAdditionalClassPath() {
+  @Override
+  public Collection<String> getAdditionalClassPath() {
     ModuleDescriptor descriptor = myModule.getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
     return descriptor.getAdditionalJavaStubPaths();

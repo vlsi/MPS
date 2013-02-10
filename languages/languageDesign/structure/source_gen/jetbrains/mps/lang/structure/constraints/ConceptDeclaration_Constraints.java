@@ -5,7 +5,13 @@ package jetbrains.mps.lang.structure.constraints;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
@@ -13,11 +19,6 @@ import java.util.Map;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodePointer;
@@ -32,6 +33,26 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
       "${language_descriptor}/icons/rootableConcept.png" :
       "${language_descriptor}/icons/structure.png"
     );
+  }
+
+  @Override
+  public boolean hasOwnDefaultScopeProvider() {
+    return true;
+  }
+
+  @Override
+  public ReferenceScopeProvider getDefaultScopeProvider() {
+    return new BaseScopeProvider() {
+      @Override
+      public SNodeReference getSearchScopeValidatorNode() {
+        return breakingNode_8geshg_a0a0a0a0a3;
+      }
+
+      @Override
+      public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+        return new ConceptsScope(_context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+      }
+    };
   }
 
   @Override
@@ -65,13 +86,13 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_8geshg_a0a0a0a0a1a0b0a1a4;
+            return breakingNode_8geshg_a0a0a0a0a1a0b0a1a6;
           }
 
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             // don't allow cycling 
-            return new ConceptDeclarationExtendedConceptSearchScope(_context.getReferenceNode(), operationContext.getScope());
+            return new ConceptDeclarationExtendedConceptSearchScope(_context.getReferenceNode(), _context.getContextNode());
           }
         };
       }
@@ -83,6 +104,7 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
     return LanguageAspect.STRUCTURE.is(model) || SModelStereotype.isGeneratorModel(model);
   }
 
+  private static SNodePointer breakingNode_8geshg_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "8857655676216515363");
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1227087258260");
-  private static SNodePointer breakingNode_8geshg_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "843447540011607884");
+  private static SNodePointer breakingNode_8geshg_a0a0a0a0a1a0b0a1a6 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "843447540011607884");
 }

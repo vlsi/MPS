@@ -191,17 +191,6 @@ public class Solution extends ClassLoadingModule {
     };
   }
 
-
-  public String getGeneratorOutputPath() {
-    IFile result = ProjectPathUtil.getGeneratorOutputPath(getDescriptorFile(), getModuleDescriptor());
-    return result != null ? result.getPath() : null;
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    IFile result = ProjectPathUtil.getGeneratorTestsOutputPath(getDescriptorFile(), getModuleDescriptor());
-    return result != null ? result.getPath() : null;
-  }
-
   public boolean reloadClassesAfterGeneration() {
     SolutionDescriptor descriptor = getModuleDescriptor();
     return descriptor != null && descriptor.getKind() != SolutionKind.NONE;

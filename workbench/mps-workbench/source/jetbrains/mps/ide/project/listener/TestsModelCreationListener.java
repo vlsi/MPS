@@ -15,20 +15,27 @@
  */
 package jetbrains.mps.ide.project.listener;
 
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class TestsModelCreationListener extends ModelCreationListener {
-  public boolean isApplicable(IModule module, SModelDescriptor model) {
+  public boolean isApplicable(SModule module, SModel model) {
     return SModelStereotype.isTestModel(model);
   }
 
-  public void onCreate(IModule module, SModelDescriptor model) {
-    if (!new GlobalModuleDependenciesManager(model.getModule()).getUsedLanguages().contains(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.UNITTEST, Language.class))) {
-      model.getModule().addUsedLanguage(BootstrapLanguages.UNITTEST);
+  public void onCreate(SModule module, SModel model) {
+    Language unitTestLanguage = ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.UNITTEST, Language.class);
+    if (!new GlobalModuleDependenciesManager(model.getModule()).getUsedLanguages().contains(unitTestLanguage)) {
+      ((AbstractModule) model.getModule()).addUsedLanguage(BootstrapLanguages.UNITTEST);
     }
-    model.getSModel().addLanguage(BootstrapLanguages.UNITTEST);
+    ((SModelDescriptor) model).getSModel().addLanguage(BootstrapLanguages.UNITTEST);
   }
 }

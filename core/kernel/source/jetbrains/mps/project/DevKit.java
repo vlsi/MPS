@@ -74,14 +74,6 @@ public class DevKit extends AbstractModule {
     invalidateDependencies();
   }
 
-  public String getGeneratorOutputPath() {
-    return null;
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    return null;
-  }
-
   @Override
   protected ModuleDescriptor loadDescriptor() {
     return ModulesMiner.getInstance().loadModuleDescriptor(getDescriptorFile());
