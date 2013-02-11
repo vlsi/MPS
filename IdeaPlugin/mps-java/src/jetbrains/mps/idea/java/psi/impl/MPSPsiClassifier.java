@@ -27,6 +27,7 @@ import com.intellij.util.ArrayUtil;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -330,5 +331,23 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
       return JavaPsiFacade.getInstance(getProject()).findClass(getQualifiedName(), GlobalSearchScope.allScope(getProject()));
     }
     return this;
+  }
+
+  class ClassTypeParameterList extends MPSPsiNodeBase implements PsiTypeParameterList {
+
+    @Override
+    public String toString() {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public PsiTypeParameter[] getTypeParameters() {
+      return new PsiTypeParameter[0];  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public int getTypeParameterIndex(PsiTypeParameter typeParameter) {
+      return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    }
   }
 }

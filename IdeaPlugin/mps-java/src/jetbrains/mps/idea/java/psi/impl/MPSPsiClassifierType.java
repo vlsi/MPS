@@ -22,12 +22,18 @@ import com.intellij.psi.PsiClassType;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiSubstitutor;
 import com.intellij.psi.PsiType;
+import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.search.GlobalSearchScope;
+import com.intellij.util.ArrayUtil;
+import com.jgoodies.common.collect.ArrayListModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * evgeny, 1/28/13
@@ -38,9 +44,9 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
     super(id, concept, containingRole);
   }
 
-  public PsiClass getTargetClass() {
-    return getReferenceTarget("classifier", PsiClass.class);
-  }
+//  public PsiClass getTargetClass() {
+//    return getReferenceTarget("classifier", PsiClass.class);
+//  }
 
   @Override
   public PsiClassType getPsiType() {
@@ -72,7 +78,21 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
       @NotNull
       @Override
       public PsiType[] getParameters() {
-        return new PsiType[0];  //To change body of implemented methods use File | Settings | File Templates.
+        MPSPsiNode[] typeParamNodes = MPSPsiClassifierType.this.getChildrenOfType("parameter", MPSPsiNode.class);
+        if (typeParamNodes == null || typeParamNodes.length == 0) {
+          return PsiType.EMPTY_ARRAY;
+        }
+
+        List<PsiType> paramTypes = new ArrayList<PsiType>(typeParamNodes.length);
+        for (MPSPsiNode tn : typeParamNodes) {
+          if (!(tn instanceof ComputesPsiType)) continue;
+          PsiType psiType = ((ComputesPsiType) tn).getPsiType();
+          // should probably put all params, even those which failed to resolve
+//          if (psiType == null) continue;
+          paramTypes.add(psiType);
+        }
+
+        return ArrayUtil.toObjectArray(paramTypes, PsiType.class);
       }
 
       @NotNull
@@ -88,7 +108,10 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
 
           @Override
           public PsiSubstitutor getSubstitutor() {
-            return PsiSubstitutor.EMPTY;
+            if (clas == null) return null;
+            PsiType[] params = getParameters();
+            PsiSubstitutor subst = PsiSubstitutor.EMPTY;
+            return subst.putAll(clas, params);
           }
 
           @Override
@@ -121,7 +144,7 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
       @NotNull
       @Override
       public PsiClassType rawType() {
-        // FIXME
+        // FIXME should we strip type params here
         return this;
       }
 
@@ -166,7 +189,6 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
 
       @Override
       public boolean equalsToText(@NonNls String text) {
-        // FIXME
         if (text == null) return false;
         return text.equals(getClassName());
       }
