@@ -123,7 +123,7 @@
       </node>
       <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.EmptyLine" typeId="c2kz.3308300503039740438" id="3177886886428366428" />
       <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.RoutineDefinition" typeId="c2kz.3308300503039700857" id="3177886886428366310">
-        <property name="name" nameId="tpck.1169194664001" value="turnRight" />
+        <property name="name" nameId="tpck.1169194664001" value="turn right" />
         <node role="body" roleId="c2kz.3308300503039700860" type="c2kz.CommandList" typeId="c2kz.3308300503039896127" id="3177886886428366312">
           <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.Repeat" typeId="c2kz.3308300503039660364" id="3177886886428366319">
             <property name="count" nameId="c2kz.3308300503039660366" value="3" />
@@ -135,7 +135,7 @@
       </node>
       <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.Drop" typeId="c2kz.6405700485436120871" id="3177886886428367493" />
       <node role="commands" roleId="c2kz.3308300503039896128" type="c2kz.RoutineCall" typeId="c2kz.3308300503039700882" id="3177886886428366338">
-        <link role="definition" roleId="c2kz.3308300503039730636" targetNodeId="3177886886428366310" resolveInfo="turnRight" />
+        <link role="definition" roleId="c2kz.3308300503039730636" targetNodeId="3177886886428366310" resolveInfo="turn right" />
       </node>
     </node>
   </root>
