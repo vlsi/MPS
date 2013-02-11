@@ -30,6 +30,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
+    <dependency reexport="false">5004e7d9-a353-4cb0-960a-68fc804bd95d(jetbrains.mps.samples.JavaKaja)</dependency>
   </dependencies>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
