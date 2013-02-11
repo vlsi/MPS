@@ -21,8 +21,12 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiInvalidElementAccessException;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.impl.light.LightElement;
+import com.intellij.util.ArrayUtil;
+import com.intellij.util.SmartList;
 import jetbrains.mps.fileTypes.MPSLanguage;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 /**
  * evgeny, 1/25/13
@@ -99,6 +103,29 @@ public abstract class MPSPsiNodeBase extends LightElement {
     return result;
   }
 
+  protected <T extends PsiElement> T[] getChildrenOfType(String role, @NotNull Class<T> aClass) {
+    if (role == null) return null;
+
+    List<T> result = null;
+    for (PsiElement child = getFirstChild(); child != null; child = child.getNextSibling()) {
+      if (child instanceof MPSPsiNode && role.equals(((MPSPsiNode) child).getContainingRole()) && aClass.isInstance(child)) {
+        if (result == null) result = new SmartList<T>();
+        //noinspection unchecked
+        result.add((T) child);
+      }
+    }
+    return result == null ? null : ArrayUtil.toObjectArray(result, aClass);
+  }
+
+  protected <T extends PsiElement> T getChildOfType(@NotNull Class<T> aClass) {
+    for (PsiElement child = getFirstChild(); child != null; child = child.getNextSibling()) {
+      if (child instanceof MPSPsiNodeBase && aClass.isInstance(child)) {
+        return (T) child;
+      }
+    }
+    return null;
+  }
+
   @Override
   public PsiElement getNextSibling() {
     return next;
@@ -115,7 +142,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
     return parent;
   }
 
-  void addChild(MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
+  public void addChild(MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
     MPSPsiNodeBase firstChild = first;
     if (anchor == null) {
       if (firstChild != null) {
@@ -139,7 +166,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
     node.parent = this;
   }
 
-  void removeChild(@NotNull MPSPsiNodeBase node) {
+  public void removeChild(@NotNull MPSPsiNodeBase node) {
     MPSPsiNodeBase firstChild = first;
     if (firstChild == node) {
       first = node.next;
