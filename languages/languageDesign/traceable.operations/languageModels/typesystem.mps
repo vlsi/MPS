@@ -5,7 +5,7 @@
   <language namespace="eba1dbb3-0bc4-4ce9-a184-05c9135353be(jetbrains.mps.lang.traceable.operations)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="lyxe" modelUID="r:1e4195e3-e1e5-4a37-8e8b-eab96753b17f(jetbrains.mps.lang.traceable.operations.structure)" version="-1" />
-  <import index="tpeq" modelUID="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" version="-1" implicit="yes" />
+  <import index="tpeq" modelUID="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
@@ -14,8 +14,8 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1381762044504275935">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_Node_CopyWithTraceOperation" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="typeof_Node_CopyWithTraceOperation" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="2603522263179374361">
       <property name="name" nameId="tpck.1169194664001" value="typeof_NList_CopyWithTraceOperation" />

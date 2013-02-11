@@ -175,7 +175,6 @@
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.HierarchyModelListener" />
     <classNode dependClassName="jetbrains.mps.ide.ui.TreeHighlighterExtension" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.listener.ModelCreationListener" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
@@ -183,6 +182,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelListener" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView" />
   </dependency>
   <dependency className="jetbrains.mps.ide.hierarchy.IconContainer" file="IconContainer.java">

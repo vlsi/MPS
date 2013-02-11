@@ -44,14 +44,6 @@ public class TemporaryModelOwner extends AbstractModule {
     });
   }
 
-  public String getTestsGeneratorOutputPath() {
-    return null;
-  }
-
-  public String getGeneratorOutputPath() {
-    return null;
-  }
-
   @Override
   public Collection<ModuleReference> getUsedLanguagesReferences() {
     Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();

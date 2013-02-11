@@ -9,6 +9,7 @@
   <language namespace="5dc5fc0d-37ef-4782-8192-8b5ce1f69f80(jetbrains.mps.baseLanguage.extensionMethods)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+  <language namespace="71c80332-b17f-4f0a-be23-b5cba1d261f7(jetbrains.mps.ui.swt)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="sqp9" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" />
   <import index="2j3h" modelUID="r:2ca63f28-9d3e-4a14-8ffa-4a524cb41743(jetbrains.mps.ui.swt.generator.template.helper)" version="-1" />
@@ -301,8 +302,8 @@
         </node>
         <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="6991444902044111515">
           <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="6991444902044111516">
-            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
             <property name="messageText" nameId="tpf8.1169670173015" value="unsupported concept" />
+            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
           </node>
         </node>
       </node>

@@ -21,9 +21,12 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.ClassLoadingModule;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.JavaModuleFacet;
 import jetbrains.mps.project.JavaModuleFacetImpl;
+import jetbrains.mps.project.ModelsAutoImportsManager;
+import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
@@ -56,7 +59,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -66,6 +68,10 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   public static final String LANGUAGE_MODELS = "languageModels";
+
+  static {
+    ModelsAutoImportsManager.registerContributor(new LanguageModelsAutoImports());
+  }
 
   private LanguageDescriptor myLanguageDescriptor;
 
@@ -235,16 +241,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     setLanguageDescriptor(languageDescriptor, false);
   }
 
-  public String getGeneratorOutputPath() {
-    IFile result = ProjectPathUtil.getGeneratorOutputPath(getDescriptorFile(), getModuleDescriptor());
-    return result != null ? result.getPath() : null;
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    IFile result = ProjectPathUtil.getGeneratorTestsOutputPath(getDescriptorFile(), getModuleDescriptor());
-    return result != null ? result.getPath() : null;
-  }
-
   public List<SNode> getConceptDeclarations() {
     SModelDescriptor structureModel = getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptyList();
@@ -258,55 +254,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
         && getAspectForModel(md) == null
         && !isAccessoryModel(md.getSModelReference())) {
         result.add(((EditableSModelDescriptor) md));
-      }
-    }
-    return result;
-  }
-
-  public Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
-    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>(super.getImplicitlyImportedModelsFor(sm));
-
-    LanguageAspect aspect = Language.getModelAspect(sm);
-
-    if (aspect != LanguageAspect.STRUCTURE && getStructureModelDescriptor() != null) {
-      result.add(getStructureModelDescriptor());
-    }
-
-    if (aspect != LanguageAspect.CONSTRAINTS && LanguageAspect.CONSTRAINTS.get(this) != null) {
-      result.add(LanguageAspect.CONSTRAINTS.get(this));
-    }
-
-    if (aspect != LanguageAspect.BEHAVIOR && LanguageAspect.BEHAVIOR.get(this) != null) {
-      result.add(LanguageAspect.BEHAVIOR.get(this));
-    }
-
-    for (Language extended : ModuleUtil.refsToLanguages(getExtendedLanguageRefs())) {
-      SModelDescriptor structure = LanguageAspect.STRUCTURE.get(extended);
-      if (structure != null) {
-        result.add(structure);
-      }
-      if (LanguageAspect.CONSTRAINTS.get(extended) != null) {
-        result.add(LanguageAspect.CONSTRAINTS.get(extended));
-      }
-
-      if (aspect != null && aspect.get(extended) != null) {
-        result.add(aspect.get(extended));
-      }
-    }
-
-    return result;
-  }
-
-  public Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
-    Set<Language> result = new LinkedHashSet<Language>(super.getImplicitlyImportedLanguages(sm));
-
-    LanguageAspect aspect = Language.getModelAspect(sm);
-    if (aspect != null) {
-      for (ModuleReference namespace : aspect.getAllLanguagesToImport(this)) {
-        Language language = GlobalScope.getInstance().getLanguage(namespace);
-        if (language != null) {
-          result.add(language);
-        }
       }
     }
     return result;
@@ -530,5 +477,27 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   @Deprecated
   public static Language newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     return (Language) ModuleRepositoryFacade.createModule(handle, moduleOwner);
+  }
+
+  private static class LanguageModelsAutoImports extends AutoImportsContributor<Language> {
+    @Override
+    public Class<Language> getApplicableSModuleClass() {
+      return Language.class;
+    }
+
+    @Override
+    public Set<Language> getAutoImportedLanguages(Language contextLanguage, org.jetbrains.mps.openapi.model.SModel model) {
+      LanguageAspect aspect = Language.getModelAspect(model);
+      if (aspect != null) {
+        return Collections.singleton(ScopeOperations.resolveLanguage(GlobalScope.getInstance(), aspect.getMainLanguage()));
+      } else {
+        return Collections.emptySet();
+      }
+    }
+
+    @Override
+    public Set<DevKit> getAutoImportedDevKits(Language contextModule, org.jetbrains.mps.openapi.model.SModel model) {
+      return Collections.singleton((DevKit) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.DEVKIT_GENERAL.getModuleId()));
+    }
   }
 }

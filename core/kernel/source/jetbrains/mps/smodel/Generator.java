@@ -17,9 +17,12 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.JavaModuleFacet;
 import jetbrains.mps.project.JavaModuleFacetImpl;
+import jetbrains.mps.project.ModelsAutoImportsManager;
+import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
@@ -49,6 +52,10 @@ import java.util.Set;
 
 public class Generator extends AbstractModule implements IClassLoadingModule {
   public static final Logger LOG = Logger.getLogger(Generator.class);
+
+  static {
+    ModelsAutoImportsManager.registerContributor(new GeneratorModelsAutoImports());
+  }
 
   private Language mySourceLanguage;
   private GeneratorDescriptor myGeneratorDescriptor;
@@ -246,59 +253,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return null;
   }
 
-  public String getGeneratorOutputPath() {
-    return mySourceLanguage.getGeneratorOutputPath();
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    return mySourceLanguage.getTestsGeneratorOutputPath();
-  }
-
-  public Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
-    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>(super.getImplicitlyImportedModelsFor(sm));
-
-    SModelDescriptor structureModelDescriptor = getSourceLanguage().getStructureModelDescriptor();
-    if (structureModelDescriptor != null) {
-      result.add(structureModelDescriptor);
-    }
-
-    SModelDescriptor constraints = LanguageAspect.CONSTRAINTS.get(getSourceLanguage());
-    if (constraints != null) {
-      result.add(constraints);
-    }
-
-    for (Language language : ModuleUtil.refsToLanguages(getSourceLanguage().getExtendedLanguageRefs())) {
-      SModelDescriptor structure = language.getStructureModelDescriptor();
-      if (structure != null) {
-        result.add(structure);
-      }
-
-      SModelDescriptor constr = LanguageAspect.CONSTRAINTS.get(language);
-      if (constr != null) {
-        result.add(constr);
-      }
-    }
-
-    for (Language language : SModelOperations.getLanguages(sm.getSModel(), getScope())) {
-      SModelDescriptor struc = language.getStructureModelDescriptor();
-      if (struc != null) {
-        result.add(struc);
-      }
-    }
-
-    return result;
-  }
-
-  public Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
-    Set<Language> result = new LinkedHashSet<Language>(super.getImplicitlyImportedLanguages(sm));
-    if (SModelStereotype.isGeneratorModel(sm)) {
-      result.add(getSourceLanguage());
-
-      result.addAll(ModuleUtil.refsToLanguages(getSourceLanguage().getExtendedLanguageRefs()));
-    }
-    return result;
-  }
-
   public boolean deleteReferenceFromPriorities(SModelReference ref) {
     boolean[] descriptorChanged = new boolean[]{false};
     Iterator<MappingPriorityRule> it = myGeneratorDescriptor.getPriorityRules().iterator();
@@ -372,5 +326,33 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   @Override
   public boolean reloadClassesAfterGeneration() {
     return true;
+  }
+
+  private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {
+    @Override
+    public Class<Generator> getApplicableSModuleClass() {
+      return Generator.class;
+    }
+
+    @Override
+    public Set<Language> getAutoImportedLanguages(Generator contextGenerator, org.jetbrains.mps.openapi.model.SModel model) {
+      if (SModelStereotype.isGeneratorModel(model)) {
+        Language sourceLanguage = contextGenerator.getSourceLanguage();
+
+        Set<Language> result = new LinkedHashSet<Language>();
+        result.add(BootstrapLanguages.generatorLanguage());
+        result.add((Language) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.GENERATOR_CONTEXT.getModuleId()));
+        result.addAll(ModuleUtil.refsToLanguages(sourceLanguage.getExtendedLanguageRefs()));
+
+        return result;
+      } else {
+        return Collections.emptySet();
+      }
+    }
+
+    @Override
+    public Set<DevKit> getAutoImportedDevKits(Generator contextModule, org.jetbrains.mps.openapi.model.SModel model) {
+      return Collections.singleton((DevKit) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.DEVKIT_GENERAL.getModuleId()));
+    }
   }
 }

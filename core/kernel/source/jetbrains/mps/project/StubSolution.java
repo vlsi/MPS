@@ -42,14 +42,6 @@ public class StubSolution extends Solution {
     return registered;
   }
 
-  public String getGeneratorOutputPath() {
-    return null;
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    return null;
-  }
-
   protected SolutionDescriptor loadDescriptor() {
     return getModuleDescriptor();
   }
