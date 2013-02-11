@@ -82,6 +82,9 @@
       <fileset dir="${build.tmp}/default/mps-plugin.jar" />
     </jar>
     <echo file="${build.layout}/mps-core/build.number">version=${buildCore.version}${line.separator}plugin.version=${plugin.version}</echo>
+    <copy todir="${build.layout}/mps-core">
+      <fileset file="${mps_home}/IdeaPlugin/mps-core/idea12.jar" />
+    </copy>
     <mkdir dir="${build.layout}/mps-vcs" />
     <mkdir dir="${build.layout}/mps-vcs/lib" />
     <jar destfile="${build.layout}/mps-vcs/lib/mps-vcs-core.jar">

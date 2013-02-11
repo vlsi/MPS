@@ -16,18 +16,25 @@
 
 package jetbrains.mps.idea.core.library;
 
+import com.intellij.openapi.fileTypes.FileTypes;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.LibraryOrderEntry;
 import com.intellij.openapi.roots.OrderEntry;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
+import com.intellij.openapi.roots.libraries.DummyLibraryProperties;
 import com.intellij.openapi.roots.libraries.Library;
+import com.intellij.openapi.roots.libraries.ui.OrderRoot;
 import com.intellij.openapi.roots.ui.configuration.libraryEditor.NewLibraryEditor;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer.LibraryLevel;
+import com.intellij.openapi.vfs.JarFileSystem;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.project.SolutionIdea;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
@@ -61,7 +68,7 @@ public class ModuleLibrariesUtil {
   }
 
   private static boolean hasModule(Library library, IModule module) {
-    if (!isSuitableModule(module) || !ModuleLibraryType.isModuleLibrary(library)) {
+    if (!isSuitableModule(module) || !MpsModuleLibraryKindContainer.isModuleLibrary(library)) {
       return false;
     }
     Solution solution = (Solution) module;
@@ -74,7 +81,7 @@ public class ModuleLibrariesUtil {
 
   @NotNull
   public static Set<ModuleReference> getModules(final Library library) {
-    if (!ModuleLibraryType.isModuleLibrary(library)) {
+    if (!MpsModuleLibraryKindContainer.isModuleLibrary(library)) {
       return Collections.emptySet();
     }
     final Set<ModuleReference> modules = new HashSet<ModuleReference>();
@@ -111,7 +118,7 @@ public class ModuleLibrariesUtil {
     if (library != null) {
       return library;
     }
-    Set<VirtualFile> stubFiles = ModuleLibraryType.getModuleJars((Solution) usedModule);
+    Set<VirtualFile> stubFiles = getModuleJars((Solution) usedModule);
     IFile descriptorFile = usedModule.getDescriptorFile();
     VirtualFile descriptorVirtualFile = null;
     if (descriptorFile != null) {
@@ -143,8 +150,68 @@ public class ModuleLibrariesUtil {
     if (moduleXml != null) {
       editor.addRoot(moduleXml, ModuleXmlRootDetector.MPS_MODULE_XML);
     }
-    editor.setType(ModuleLibraryType.getInstance());
-    editor.setProperties(ModuleLibraryType.getInstance().createDefaultProperties());
+    editor.setType(MpsModuleLibraryKindContainer.getModuleLibraryType());
+    editor.setProperties(new DummyLibraryProperties());
     return container.createLibrary(editor, LibraryLevel.PROJECT);
+  }
+
+  public static List<ModuleReference> calculateVisibleModules(final Set<VirtualFile> excluded) {
+    final List<ModuleReference> availableSolutions = new ArrayList<ModuleReference>();
+    final List<ModuleReference> availableLanguages = new ArrayList<ModuleReference>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for (IModule module : ModuleRepositoryFacade.getInstance().getAllModules(IModule.class)) {
+          if (module instanceof SolutionIdea || module.getDescriptorFile() == null) {
+            continue;
+          }
+          if (excluded.contains(VirtualFileUtils.getVirtualFile(module.getDescriptorFile()))) {
+            // skip solutions that are already in a lib
+            continue;
+          }
+          if (module instanceof Solution) {
+            availableSolutions.add(module.getModuleReference());
+          } else {
+            availableLanguages.add(module.getModuleReference());
+          }
+        }
+      }
+    });
+    List<ModuleReference> result = new ArrayList<ModuleReference>();
+    result.addAll(availableSolutions);
+    result.addAll(availableLanguages);
+    return result;
+  }
+
+  @Nullable
+  public static VirtualFile getJarFile(String path) {
+    VirtualFile vFile = VirtualFileManager.getInstance().findFileByUrl(VirtualFileManager.constructUrl(LocalFileSystem.PROTOCOL, path));
+    if (vFile == null || vFile.isDirectory() || vFile.getFileType() != FileTypes.ARCHIVE) {
+      return null;
+    }
+    return JarFileSystem.getInstance().findFileByPath(vFile.getPath() + JarFileSystem.JAR_SEPARATOR);
+  }
+
+  public static Set<VirtualFile> getModuleJars(AbstractModule usedModule) {
+    Set<VirtualFile> stubFiles = new HashSet<VirtualFile>();
+    for (String stubPath : usedModule.getAllStubPaths()) {
+      VirtualFile jarFile = getJarFile(stubPath);
+      if (jarFile != null) {
+        stubFiles.add(jarFile);
+      }
+    }
+    return stubFiles;
+  }
+
+  public static Set<OrderRoot> createRootsFor(List<ModuleReference> chosenElements) {
+    final Set<OrderRoot> roots = new LinkedHashSet<OrderRoot>();
+    for (ModuleReference moduleReference : chosenElements) {
+      AbstractModule module = (AbstractModule) ModuleRepositoryFacade.getInstance().getModule(moduleReference);
+      roots.add(new OrderRoot(VirtualFileUtils.getVirtualFile(module.getDescriptorFile()), ModuleXmlRootDetector.MPS_MODULE_XML, false));
+      for (VirtualFile virtualFile : getModuleJars(module)) {
+        roots.add(new OrderRoot(virtualFile, OrderRootType.CLASSES, false));
+      }
+    }
+    return roots;
   }
 }

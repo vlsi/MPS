@@ -34,7 +34,7 @@ import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
-import jetbrains.mps.idea.core.library.ModuleLibraryType;
+import jetbrains.mps.idea.core.library.MpsModuleLibraryKindContainer;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -43,7 +43,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -73,7 +72,7 @@ public class SolutionIdea extends Solution {
       @Override
       public void run() {
         for (final Library library : projectLibraryTable.getLibraries()) {
-          if (ModuleLibraryType.isModuleLibrary(library)) {
+          if (MpsModuleLibraryKindContainer.isModuleLibrary(library)) {
             library.getRootProvider().addRootSetChangedListener(myRootSetListener);
           }
         }
@@ -101,7 +100,7 @@ public class SolutionIdea extends Solution {
       @Override
       public void run() {
         for (final Library library : projectLibraryTable.getLibraries()) {
-          if (ModuleLibraryType.isModuleLibrary(library)) {
+          if (MpsModuleLibraryKindContainer.isModuleLibrary(library)) {
             library.getRootProvider().removeRootSetChangedListener(myRootSetListener);
           }
         }
@@ -173,7 +172,7 @@ public class SolutionIdea extends Solution {
           return true;
         }
 
-        if (ModuleLibraryType.isModuleLibrary(library)) {
+        if (MpsModuleLibraryKindContainer.isModuleLibrary(library)) {
           Set<ModuleReference> moduleReferences = ModuleLibrariesUtil.getModules(library);
           for (ModuleReference moduleReference : moduleReferences) {
             if (modules.containsKey(moduleReference)) {
@@ -357,7 +356,7 @@ public class SolutionIdea extends Solution {
 
     @Override
     public void afterLibraryAdded(final Library newLibrary) {
-      if (ModuleLibraryType.isModuleLibrary(newLibrary)) {
+      if (MpsModuleLibraryKindContainer.isModuleLibrary(newLibrary)) {
         newLibrary.getRootProvider().addRootSetChangedListener(myRootSetListener);
       }
     }
