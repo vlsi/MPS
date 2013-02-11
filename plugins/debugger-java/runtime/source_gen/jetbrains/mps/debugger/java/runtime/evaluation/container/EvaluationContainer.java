@@ -162,19 +162,16 @@ public class EvaluationContainer implements IEvaluationContainer {
   }
 
   private class MyBaseLanguagesImportHelper extends BaseLanguagesImportHelper {
-    public MyBaseLanguagesImportHelper() {
-    }
-
     public SNode findVariable(SReference variableReference) {
       return null;
     }
 
     public SNode createVariableReference(SNode variable) {
-      return createInternalVariableReference_jbng3m_a0a2cb(variable.getName());
+      return createInternalVariableReference_jbng3m_a0a1cb(variable.getName());
     }
   }
 
-  private static SNode createInternalVariableReference_jbng3m_a0a2cb(Object p0) {
+  private static SNode createInternalVariableReference_jbng3m_a0a1cb(Object p0) {
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null, GlobalScope.getInstance(), false);
     {
       n1.setProperty("name", (String) p0);
