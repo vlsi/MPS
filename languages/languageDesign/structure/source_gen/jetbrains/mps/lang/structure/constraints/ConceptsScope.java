@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ConceptsScope extends SimpleScope {
   public ConceptsScope(SNode contextNode, SNode metaConcept) {
+    // todo: make better name for this scope 
     super(getAvailableConcepts(contextNode, metaConcept));
   }
 
@@ -52,7 +53,7 @@ public class ConceptsScope extends SimpleScope {
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+        return SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept");
       }
     });
 
@@ -61,6 +62,6 @@ public class ConceptsScope extends SimpleScope {
 
   @Nullable
   public String getReferenceText(@NotNull SNode target) {
-    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "virtual_getFqName_1213877404258", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Object[]{});
   }
 }
