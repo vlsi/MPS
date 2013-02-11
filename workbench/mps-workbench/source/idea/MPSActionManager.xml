@@ -53,5 +53,12 @@
     <group id="FindMenuGroup" popup="true">
       <add-to-group group-id="EditCreateDeleteGroup" anchor="before" relative-to-action="EditSelectGroup"/>
     </group>
+
+    <action id="Find" class="com.intellij.openapi.editor.actions.IncrementalFindAction" icon="/actions/menu-find.png"/>
+    <action id="Replace" class="com.intellij.openapi.editor.actions.ReplaceAction" icon="/actions/menu-replace.png"/>
+    <action id="FindNext" class="com.intellij.ide.actions.SearchAgainAction"/>
+    <action id="FindPrevious" class="com.intellij.ide.actions.SearchBackAction"/>
+    <action id="FindWordAtCaret" class="com.intellij.openapi.editor.actions.FindWordAtCaretAction"/>
+    <action id="FindUsages" class="com.intellij.find.actions.FindUsagesAction"/>
   </actions>
 </component>
