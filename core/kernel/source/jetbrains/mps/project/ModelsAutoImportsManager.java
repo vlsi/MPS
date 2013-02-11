@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -27,6 +28,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ModelsAutoImportsManager {
+  // todo: should be application component ?
+  // todo: is auto imports workbench functionality?
   private static Set<AutoImportsContributor> contributors = new HashSet<AutoImportsContributor>();
 
   public static void registerContributor(AutoImportsContributor contributor) {
@@ -88,12 +91,19 @@ public class ModelsAutoImportsManager {
     @Override
     public void onCreate(SModule module, SModel model) {
       for (SModel modelToImport : getAutoImportedModels(module, model)) {
+        // todo: ! what's up with module? add model module to module dependencies?
         ((SModelDescriptor) model).getSModel().addModelImport((SModelReference) modelToImport.getModelReference(), false);
       }
       for (Language language : getAutoImportedLanguages(module, model)) {
+        if (!new GlobalModuleDependenciesManager(model.getModule()).getUsedLanguages().contains(language)) {
+          ((AbstractModule) model.getModule()).addUsedLanguage(language.getModuleReference());
+        }
         ((SModelDescriptor) model).getSModel().addLanguage(language.getModuleReference());
       }
       for (DevKit devKit : getAutoImportedDevKits(module, model)) {
+        if (!((AbstractModule) model.getModule()).getUsedDevkitReferences().contains(devKit.getModuleReference())) {
+          ((AbstractModule) model.getModule()).addUsedDevkit(devKit.getModuleReference());
+        }
         ((SModelDescriptor) model).getSModel().addDevKit(devKit.getModuleReference());
       }
     }

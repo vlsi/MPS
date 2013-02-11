@@ -17,6 +17,7 @@ package jetbrains.mps.ide.project.listener;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsModelCreationListener;
 import org.jetbrains.annotations.NotNull;
 
@@ -26,12 +27,13 @@ import org.jetbrains.annotations.NotNull;
 public class AbstractModuleWorkbenchAdjuster implements ApplicationComponent {
   @NotNull
   public String getComponentName() {
+    // todo: why workbench adjuster?
     return "Abstract Module Workbench Adjuster";
   }
 
   public void initComponent() {
+    ModelsAutoImportsManager.registerContributor(new TestsModelAutoImports());
     AbstractModule.registerModelCreationListener(new AutoImportsModelCreationListener());
-    AbstractModule.registerModelCreationListener(new TestsModelCreationListener());
   }
 
   public void disposeComponent() {
