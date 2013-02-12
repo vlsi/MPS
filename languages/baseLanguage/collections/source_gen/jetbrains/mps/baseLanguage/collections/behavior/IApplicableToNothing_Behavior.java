@@ -18,6 +18,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IApplicableToNothing_Behavior {
   public static void init(SNode thisNode) {
@@ -56,5 +57,29 @@ public class IApplicableToNothing_Behavior {
 
   public static boolean call_hasApplicableTypes_2142237368811537351(SConcept thisConcept, SNode it) {
     return SConceptOperations.isSubConceptOf(it, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing") && !(SConceptOperations.isExactly(it, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"));
+  }
+
+  public static SNode virtual_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
+    SNode jt = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
+    for (SNode et : IApplicableToNothing_Behavior.call_getAllApplicableTypes_5994574781955687463(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))))) {
+      if ((et != null)) {
+        SNode rt = SNodeOperations.copyNode(et);
+        if (ListSequence.fromList(SNodeOperations.getChildren(rt)).isNotEmpty()) {
+          SNodeOperations.replaceWithAnother(ListSequence.fromList(SNodeOperations.getChildren(rt)).first(), SNodeOperations.copyNode(elementType));
+        }
+        ListSequence.fromList(SLinkOperations.getTargets(jt, "argument", true)).addElement(rt);
+      }
+    }
+    return jt;
+  }
+
+  @Deprecated
+  public static SNode call_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expectedOperandType_6368025520509018230", new Object[]{elementType});
+  }
+
+  @Deprecated
+  public static SNode callSuper_expectedOperandType_6368025520509018230(SNode thisNode, String callerConceptFqName, SNode elementType) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"), callerConceptFqName, "virtual_expectedOperandType_6368025520509018230", new Class[]{SNode.class, SNode.class}, new Object[]{elementType});
   }
 }

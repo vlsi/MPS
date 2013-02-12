@@ -11,10 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing_Behavior;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -40,27 +39,13 @@ public class SequenceOperation_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    if (SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation")) {
+    if (SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")) {
       SNode opnd = SLinkOperations.getTarget(SNodeOperations.as(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
       if ((opnd != null)) {
         SNode opndtype = TypeChecker.getInstance().getTypeOf(opnd);
-        for (final SNode cld : ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), "conceptLinkDeclaration", true)).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return "expectedOperandType".equals(SPropertyOperations.getString(it, "name"));
-          }
-        })) {
-          for (SNode exptype : ListSequence.fromList(SLinkOperations.getTargets(childConcept, "conceptLink", true)).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return cld == SLinkOperations.getTarget(it, "conceptLinkDeclaration", false);
-            }
-          }).select(new ISelector<SNode, SNode>() {
-            public SNode select(SNode it) {
-              return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.AggregationConceptLink"), "target", true);
-            }
-          })) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(opndtype, exptype, false)) {
-              return true;
-            }
+        for (SNode exptype : (IApplicableToNothing_Behavior.call_getAllApplicableTypes_5994574781955687463(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.castConcept(((SNode) childConcept), "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")))))) {
+          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(opndtype, exptype, false)) {
+            return true;
           }
         }
       }

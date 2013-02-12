@@ -11,8 +11,8 @@ public class TestRemoveElementOperation_BehaviorDescriptor extends SingleArgumen
   public TestRemoveElementOperation_BehaviorDescriptor() {
   }
 
-  public SNode virtual_expectedOperandType_2141797557973018589(SNode thisNode, SNode elementType) {
-    return IContainerOperation_Behavior.virtual_expectedOperandType_2141797557973018589(thisNode, elementType);
+  public SNode virtual_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
+    return IApplicableToNothing_Behavior.virtual_expectedOperandType_6368025520509018230(thisNode, elementType);
   }
 
   public List<SNode> virtual_getApplicableTypes_5994574781955586127(SConcept thisConcept) {
