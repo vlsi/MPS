@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.selection.*;
 import jetbrains.mps.nodeEditor.selection.SingularSelection.SideSelectDirection;
 import jetbrains.mps.openapi.editor.*;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -592,6 +593,13 @@ public class NodeEditorActions {
   public static class ShowMessage extends EditorCellAction {
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       ((EditorComponent) context.getEditorComponent()).showMessageTooltip();
+    }
+  }
+
+  public static class ClearSelection extends EditorCellAction {
+    @Override
+    public void execute(EditorContext context) {
+      ((EditorComponent) context.getEditorComponent()).getSelectionManager().clearSelection();
     }
   }
 }

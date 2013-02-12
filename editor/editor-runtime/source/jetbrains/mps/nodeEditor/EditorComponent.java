@@ -59,6 +59,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.NodeEditorActions.ClearSelection;
 import jetbrains.mps.nodeEditor.NodeEditorActions.CompleteSmart;
 import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_CopyNode;
@@ -483,6 +484,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myActionMap.put(CellActionType.COMPLETE_SMART, new CompleteSmart());
 
     myActionMap.put(CellActionType.SHOW_MESSAGE, new ShowMessage());
+    myActionMap.put(CellActionType.ESCAPE, new ClearSelection());
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {

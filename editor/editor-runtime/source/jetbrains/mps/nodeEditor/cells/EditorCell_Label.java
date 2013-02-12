@@ -85,6 +85,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     setAction(CellActionType.COPY, new CopyLabelText());
     setAction(CellActionType.PASTE, new PasteIntoLabelText());
     setAction(CellActionType.CUT, new CutLabelText());
+    setAction(CellActionType.ESCAPE, new ClearSelection());
   }
 
   public boolean isFirstPositionInBigCell() {
@@ -881,6 +882,18 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
     public void execute(EditorContext context) {
       setCaretPosition(getNextLocalEnd(true), mySelect);
+    }
+  }
+
+  private class ClearSelection extends EditorCellAction {
+    @Override
+    public boolean canExecute(EditorContext context) {
+      return true;
+    }
+
+    @Override
+    public void execute(EditorContext context) {
+      myTextLine.resetSelection();
     }
   }
 
