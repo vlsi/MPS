@@ -22,11 +22,15 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
 import java.util.Collection;
 
 public interface JavaModuleFacet extends SModuleFacet {
+  // for "generate" task
   boolean isCompileInMPS();
 
+  // for "generate" task
   IFile getClassesGen();
 
+  // for run configurations, "own" module classpath == classes_gen + runtime module jars basically
   Collection<String> getClassPath();
 
+  // for stubs
   IClassPathItem getClassPathItem();
 }

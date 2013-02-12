@@ -52,20 +52,26 @@ public class JavaModuleFacetImpl extends DumbJavaModuleFacetImpl {
   public final IClassPathItem getClassPathItem() {
     synchronized (LOCK) {
       if (cachedClassPathItem == null) {
-        cachedClassPathItem = new CompositeClassPathItem();
+        cachedClassPathItem = createClassPathItem(getClassPath(), module.getModuleName());
         cachedClassPathItem.addInvalidationAction(classpathInvalidator);
-
-        for (String path : getClassPath()) {
-          try {
-            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, module.getModuleName());
-            cachedClassPathItem.add(pathItem);
-          } catch (IOException e) {
-            LOG.error(e.getMessage());
-          }
-        }
       }
 
       return cachedClassPathItem;
     }
+  }
+
+  public static CompositeClassPathItem createClassPathItem(Iterable<String> classPath, String requestor) {
+    CompositeClassPathItem classPathItem = new CompositeClassPathItem();
+
+    for (String path : classPath) {
+      try {
+        IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, requestor);
+        classPathItem.add(pathItem);
+      } catch (IOException e) {
+        LOG.error(e.getMessage());
+      }
+    }
+
+    return classPathItem;
   }
 }

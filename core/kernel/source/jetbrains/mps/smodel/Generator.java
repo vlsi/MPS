@@ -151,12 +151,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
       }
 
       @Override
-      public boolean isCompileInMPS() {
-        // generator is always compiled in MPS
-        return true;
-      }
-
-      @Override
       public IFile getClassesGen() {
         return mySourceLanguage.getFacet(JavaModuleFacet.class).getClassesGen();
       }
