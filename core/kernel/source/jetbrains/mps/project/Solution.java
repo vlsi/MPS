@@ -35,13 +35,10 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -172,23 +169,6 @@ public class Solution extends ClassLoadingModule {
   protected List<SModuleFacet> createFacets() {
     List<SModuleFacet> facets = new ArrayList<SModuleFacet>();
     facets.add(new JavaModuleFacetImpl(this) {
-      @Override
-      public Collection<String> getOwnClassPath() {
-        if (isPackaged()) {
-          return Collections.singletonList(FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());
-        }
-
-        if (!isCompileInMPS()) {
-          IFile classes = ProjectPathUtil.getClassesFolder(getDescriptorFile());
-          if (classes != null && classes.exists()) {
-            return Collections.singletonList(classes.getPath());
-          }
-          return Collections.emptyList();
-        }
-
-        return super.getOwnClassPath();
-      }
-
       @Override
       public boolean isCompileInMPS() {
         ModuleDescriptor descriptor = getModuleDescriptor();

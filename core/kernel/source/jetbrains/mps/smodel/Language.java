@@ -23,12 +23,11 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleUtil;
-import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
@@ -49,7 +48,6 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -416,27 +414,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   @Override
   protected List<SModuleFacet> createFacets() {
     List<SModuleFacet> facets = new ArrayList<SModuleFacet>();
-    facets.add(new JavaModuleFacetImpl(this) {
-      @Override
-      public boolean isCompileInMPS() {
-        // language is always compiled in MPS
-        return true;
-      }
-
-      @Override
-      public Collection<String> getOwnClassPath() {
-        if (isPackaged()) {
-          return Collections.singletonList(
-            FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());
-        }
-
-        IFile classesGen = ProjectPathUtil.getClassesGenFolder(getDescriptorFile());
-        if (classesGen != null) {
-          return Collections.singletonList(classesGen.getPath());
-        }
-        return Collections.emptyList();
-      }
-    });
+    facets.add(new JavaModuleFacetImpl(this));
     TestsFacet testsFacet = TestsFacetImpl.fromModule(this);
     if (testsFacet != null) {
       facets.add(testsFacet);

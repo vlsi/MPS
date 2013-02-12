@@ -16,7 +16,7 @@
 package jetbrains.mps.project.facets;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -27,43 +27,45 @@ public class JavaModuleFacetImpl extends DumbJavaModuleFacetImpl {
   private static final Logger LOG = Logger.getLogger(JavaModuleFacetImpl.class);
 
   private final Object LOCK = new Object();
-  private Runnable myClasspathInvalidator = new Runnable() {
+  private Runnable classpathInvalidator = new Runnable() {
     public void run() {
       synchronized (LOCK) {
-        myCachedClassPathItem = null;
+        cachedClassPathItem = null;
       }
     }
   };
-  private CompositeClassPathItem myCachedClassPathItem;
+  private CompositeClassPathItem cachedClassPathItem;
+  private AbstractModule module;
 
-  public JavaModuleFacetImpl(IModule module) {
-    super(module);
+  public JavaModuleFacetImpl(AbstractModule module) {
+    super(module.getModuleDescriptor(), module.getDescriptorFile());
+    this.module = module;
   }
 
   public void invalidateClassPath() {
     synchronized (LOCK) {
-      myCachedClassPathItem = null;
+      cachedClassPathItem = null;
     }
   }
 
   @Override
   public final IClassPathItem getClassPathItem() {
     synchronized (LOCK) {
-      if (myCachedClassPathItem == null) {
-        myCachedClassPathItem = new CompositeClassPathItem();
-        myCachedClassPathItem.addInvalidationAction(myClasspathInvalidator);
+      if (cachedClassPathItem == null) {
+        cachedClassPathItem = new CompositeClassPathItem();
+        cachedClassPathItem.addInvalidationAction(classpathInvalidator);
 
         for (String path : getClassPath()) {
           try {
-            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, myModule.getModuleName());
-            myCachedClassPathItem.add(pathItem);
+            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, module.getModuleName());
+            cachedClassPathItem.add(pathItem);
           } catch (IOException e) {
             LOG.error(e.getMessage());
           }
         }
       }
 
-      return myCachedClassPathItem;
+      return cachedClassPathItem;
     }
   }
 }

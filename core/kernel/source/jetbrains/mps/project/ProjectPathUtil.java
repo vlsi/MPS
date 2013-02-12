@@ -15,33 +15,26 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.project.facets.DumbJavaModuleFacetImpl;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.TestLanguage;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.mps.openapi.module.SModule;
 
 /**
  * evgeny, 3/8/11
  */
 public class ProjectPathUtil {
 
+  /**
+   * @see jetbrains.mps.project.facets.DumbJavaModuleFacetImpl#getClassesGen
+   */
+  @Deprecated
   public static IFile getClassesGenFolder(IFile moduleDescriptor) {
-    if (moduleDescriptor == null) {
-      return null;
-    }
-    if (moduleDescriptor.isReadOnly()) {
-      // packaged
-      IFile bundleHome = FileSystem.getInstance().getBundleHome(moduleDescriptor);
-      return bundleHome != null ? FileSystem.getInstance().getFileByPath(bundleHome.getPath() + "!") : null;
-    }
-    IFile parent = moduleDescriptor.getParent();
-    return parent != null ? parent.getDescendant("classes_gen") : null;
+    return new DumbJavaModuleFacetImpl(null, moduleDescriptor).getClassesGen();
   }
 
   public static IFile getClassesFolder(IFile moduleDescriptor) {

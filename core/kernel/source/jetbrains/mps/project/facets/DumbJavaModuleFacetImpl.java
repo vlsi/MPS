@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.project.facets;
 
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.Collection;
@@ -27,11 +27,12 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class DumbJavaModuleFacetImpl implements JavaModuleFacet {
-  // todo: use SModule instead
-  protected final IModule myModule;
+  protected final ModuleDescriptor moduleDescriptor;
+  protected final IFile descriptorFile;
 
-  public DumbJavaModuleFacetImpl(IModule module) {
-    myModule = module;
+  public DumbJavaModuleFacetImpl(ModuleDescriptor moduleDescriptor, IFile descriptorFile) {
+    this.moduleDescriptor = moduleDescriptor;
+    this.descriptorFile = descriptorFile;
   }
 
   @Override
@@ -43,7 +44,18 @@ public class DumbJavaModuleFacetImpl implements JavaModuleFacet {
   }
 
   public Collection<String> getOwnClassPath() {
-    if (!isCompileInMPS()) return Collections.emptyList();
+    if (!isCompileInMPS()) {
+      // todo: remove classes logic
+      IFile classes = ProjectPathUtil.getClassesFolder(descriptorFile);
+      if (classes != null && classes.exists()) {
+        return Collections.singletonList(classes.getPath());
+      }
+      return Collections.emptyList();
+    }
+
+    if (descriptorFile != null && isPackaged()) {
+      return Collections.singletonList(FileSystem.getInstance().getBundleHome(descriptorFile).getPath());
+    }
 
     IFile classFolder = getClassesGen();
     if (classFolder == null) return Collections.emptyList();
@@ -52,9 +64,8 @@ public class DumbJavaModuleFacetImpl implements JavaModuleFacet {
   }
 
   public Collection<String> getAdditionalClassPath() {
-    ModuleDescriptor descriptor = myModule.getModuleDescriptor();
-    if (descriptor == null) return Collections.emptySet();
-    return descriptor.getAdditionalJavaStubPaths();
+    if (moduleDescriptor == null) return Collections.emptySet();
+    return moduleDescriptor.getAdditionalJavaStubPaths();
   }
 
   @Override
@@ -64,11 +75,24 @@ public class DumbJavaModuleFacetImpl implements JavaModuleFacet {
 
   @Override
   public IFile getClassesGen() {
-    return ProjectPathUtil.getClassesGenFolder(myModule.getDescriptorFile());
+    if (descriptorFile == null) {
+      return null;
+    }
+    if (isPackaged()) {
+      IFile bundleHome = FileSystem.getInstance().getBundleHome(descriptorFile);
+      return bundleHome != null ? FileSystem.getInstance().getFileByPath(bundleHome.getPath() + "!") : null;
+    }
+    IFile parent = descriptorFile.getParent();
+    return parent != null ? parent.getDescendant("classes_gen") : null;
   }
 
   @Override
   public boolean isCompileInMPS() {
     return true;
+  }
+
+  private boolean isPackaged() {
+    // todo: ?
+    return descriptorFile.isReadOnly();
   }
 }

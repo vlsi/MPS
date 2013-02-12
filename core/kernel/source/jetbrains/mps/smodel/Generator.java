@@ -19,13 +19,14 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -157,7 +158,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
 
       @Override
       public IFile getClassesGen() {
-        return mySourceLanguage.getClassesGen();
+        return mySourceLanguage.getFacet(JavaModuleFacet.class).getClassesGen();
       }
     });
   }
