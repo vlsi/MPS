@@ -23,13 +23,13 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.JavaModuleFacet;
 import jetbrains.mps.project.JavaModuleFacetImpl;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -414,7 +414,8 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   @Override
   protected List<SModuleFacet> createFacets() {
-    return Collections.<SModuleFacet>singletonList(new JavaModuleFacetImpl(this) {
+    List<SModuleFacet> facets = new ArrayList<SModuleFacet>();
+    facets.add(new JavaModuleFacetImpl(this) {
       @Override
       public boolean isCompileInMPS() {
         // language is always compiled in MPS
@@ -435,6 +436,8 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
         return Collections.emptyList();
       }
     });
+    facets.add(TestsFacetImpl.fromModule(this));
+    return facets;
   }
 
   @Override

@@ -23,6 +23,7 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
+import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -777,8 +778,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   @Override
   @Deprecated
   public final String getTestsGeneratorOutputPath() {
-    IFile result = ProjectPathUtil.getGeneratorTestsOutputPath(this);
-    return result != null ? result.getPath() : null;
+    TestsFacet testsFacet = this.getFacet(TestsFacet.class);
+    return testsFacet != null ? testsFacet.getTestsOutputPath() : null;
   }
 
   @Override

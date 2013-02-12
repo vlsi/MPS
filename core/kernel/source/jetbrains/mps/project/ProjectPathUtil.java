@@ -97,20 +97,4 @@ public class ProjectPathUtil {
       return null;
     }
   }
-
-  public static IFile getGeneratorTestsOutputPath(SModule module) {
-    // todo: remove
-    if (module instanceof TestLanguage || module instanceof StubSolution) {
-      return null;
-    }
-    if (module instanceof Generator) {
-      return getGeneratorTestsOutputPath(((Generator) module).getSourceLanguage());
-    }
-    // todo: instance of Language | Solution?
-    if (module instanceof IModule) {
-      return getGeneratorTestsOutputPath(((IModule) module).getDescriptorFile(), ((IModule) module).getModuleDescriptor());
-    } else {
-      return null;
-    }
-  }
 }

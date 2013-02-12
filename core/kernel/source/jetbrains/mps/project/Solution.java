@@ -20,6 +20,7 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -36,6 +37,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -166,7 +168,8 @@ public class Solution extends ClassLoadingModule {
 
   @Override
   protected List<SModuleFacet> createFacets() {
-    return Collections.<SModuleFacet>singletonList(new JavaModuleFacetImpl(this) {
+    List<SModuleFacet> facets = new ArrayList<SModuleFacet>();
+    facets.add(new JavaModuleFacetImpl(this) {
       @Override
       public Collection<String> getOwnClassPath() {
         if (isPackaged()) {
@@ -190,6 +193,8 @@ public class Solution extends ClassLoadingModule {
         return descriptor != null && descriptor.getCompileInMPS();
       }
     });
+    facets.add(TestsFacetImpl.fromModule(this));
+    return facets;
   }
 
   public boolean reloadClassesAfterGeneration() {

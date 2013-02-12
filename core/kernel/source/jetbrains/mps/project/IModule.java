@@ -234,7 +234,7 @@ public interface IModule extends SModule {
   String getGeneratorOutputPath();
 
   /**
-   * @see ProjectPathUtil#getGeneratorTestsOutputPath(org.jetbrains.mps.openapi.module.SModule)
+   * @see jetbrains.mps.project.facets.TestsFacet#getTestsOutputPath()
    */
   @Deprecated
   String getTestsGeneratorOutputPath();
