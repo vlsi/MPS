@@ -23,6 +23,7 @@ import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -163,6 +164,12 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
 
     return BinaryModelPersistence.getDigestMap(getSource().getFile());
   }
+
+  @Override
+  public boolean isGeneratable() {
+    return !isDoNotGenerate() && !getSource().isReadOnly() && SModelStereotype.isUserModel(this);
+  }
+
 
   @Override
   public void setDoNotGenerate(boolean value) {

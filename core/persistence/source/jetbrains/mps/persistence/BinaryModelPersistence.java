@@ -91,7 +91,9 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
       for (SNode node : model.roots()) {
         DigestBuilderOutputStream os = ModelDigestUtil.createDigestBuilderOutputStream();
         try {
-          new NodesWriter(model.getSModelReference()).writeNode(node, new ModelOutputStream(os));
+          ModelOutputStream mos = new ModelOutputStream(os);
+          new NodesWriter(model.getSModelReference()).writeNode(node, mos);
+          mos.flush();
         } catch (IOException ignored) {
           /* should never happen */
         }
@@ -102,7 +104,9 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
       }
 
       DigestBuilderOutputStream os = ModelDigestUtil.createDigestBuilderOutputStream();
-      BinaryPersistence.saveModelProperties(model, new ModelOutputStream(os));
+      ModelOutputStream mos = new ModelOutputStream(os);
+      BinaryPersistence.saveModelProperties(model, mos);
+      mos.flush();
       result.put(GeneratableSModelDescriptor.HEADER, os.getResult());
 
       StringBuilder combinedHash = new StringBuilder();
