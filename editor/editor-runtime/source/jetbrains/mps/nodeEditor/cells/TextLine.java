@@ -16,6 +16,8 @@
 package jetbrains.mps.nodeEditor.cells;
 
 
+import com.intellij.openapi.editor.colors.EditorColors;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -37,6 +39,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class TextLine {
+  // COLORS: Remove hardcoded color
   private static final Color ERROR_COLOR = new Color(255, 220, 220);
 
   private static Map<Font, FontMetrics> ourFontMetricsCache = new HashMap<Font, FontMetrics>();
@@ -84,9 +87,9 @@ public class TextLine {
   private int myMinimalLength = 0;
 
   private double myLineSpacing = EditorSettings.getInstance().getLineSpacing();
-  private Color mySelectedTextColor = EditorSettings.getInstance().getSelectionForegroundColor();
-  private Color myTextSelectedTextColor = EditorSettings.getInstance().getSelectionForegroundColor();
-  private Color myTextSelectedBackgroundColor = EditorSettings.getInstance().getSelectionBackgroundColor().darker();
+  private Color mySelectedTextColor = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_FOREGROUND_COLOR);
+  private Color myTextSelectedTextColor = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_FOREGROUND_COLOR);
+  private Color myTextSelectedBackgroundColor = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_BACKGROUND_COLOR);
 
   private Color myErrorColor = Color.red;
 
@@ -207,7 +210,7 @@ public class TextLine {
     myUnderlined = myStyle.get(StyleAttributes.UNDERLINED);
 
     myTextColor = myStyle.get(StyleAttributes.TEXT_COLOR);
-    myNullTextColor = myStyle.get(StyleAttributes.NULL_TEXT_COLOR);
+    myNullTextColor = EditorColorsManager.getInstance().getGlobalScheme().getDefaultForeground();
     myTextBackground = myStyle.get(StyleAttributes.TEXT_BACKGROUND_COLOR);
     myNullTextBackground = myStyle.get(StyleAttributes.NULL_TEXT_BACKGROUND_COLOR);
     mySelectedTextBackground = myStyle.get(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR);
@@ -349,10 +352,11 @@ public class TextLine {
   public Color getTextColor() {
     init();
     if (myControlOvered) {
+      // COLORS: Remove hardcoded color
       return Color.BLUE;
     }
 
-    if (!myNull) {
+    if (!myNull && myTextColor != null) {
       return myTextColor;
     } else {
       return myNullTextColor;
@@ -371,7 +375,7 @@ public class TextLine {
     if (myShowsErrorColor) {
       return ERROR_COLOR;
     } else {
-      return mySelectedTextColor;
+      return mySelectedTextColor != null ? mySelectedTextColor : getTextColor();
     }
   }
 
@@ -502,7 +506,7 @@ public class TextLine {
         g.fillRect(selectionStartX + 1, shiftY + getPaddingTop() + 1, selectionEndX - selectionStartX - 2, myTextHeight - 2);
       }
 
-      g.setColor(myTextSelectedTextColor);
+      g.setColor(myTextSelectedTextColor != null ? myTextSelectedTextColor : getTextColor());
       g.drawString(selectedText, selectionStartX, baselineY);
       if (isUnderlined()) {
         g.drawLine(selectionStartX, baselineY + 1, selectionEndX, baselineY + 1);
@@ -521,6 +525,7 @@ public class TextLine {
 
   private void drawStrikeOutLine(Graphics g, int beginX, int endX, int constY) {
     Color textColor = g.getColor();
+    // COLORS: Remove hardcoded color
     g.setColor(Color.DARK_GRAY);
     g.drawLine(beginX, constY + 1, endX, constY + 1);
     g.setColor(textColor);
@@ -534,6 +539,7 @@ public class TextLine {
     if (getCaretPosition() != 0) {
       x--;
     }
+    // COLORS: Remove hardcoded color
     g.setColor(Color.BLACK);
     g.drawRect(x, shiftY, 1, myTextHeight - 1);
   }

@@ -8,7 +8,7 @@
   <unitInfo fileName="BackgroundColorStyleClassItem_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BackgroundColorStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="BaseEditorComponent_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BaseEditorComponent_BehaviorDescriptor" />
   <unitInfo fileName="BaseLineCell_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BaseLineCell_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="376" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="384" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BooleanStyleSheetItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_BehaviorDescriptor" />
   <unitInfo fileName="BracketColorStyleClassItem_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BracketColorStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="CaretPositionParameter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CaretPositionParameter_BehaviorDescriptor" />
@@ -152,6 +152,8 @@
   <unitInfo fileName="ParametersInformationStyleClassItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.ParametersInformationStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="PositionChildrenStyleClassItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.PositionChildrenStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="PositionStyleClassItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.PositionStyleClassItem_BehaviorDescriptor" />
+  <unitInfo fileName="PreDefinedStyleClassItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.PreDefinedStyleClassItem_BehaviorDescriptor" />
+  <unitInfo fileName="PreDefinedStyleSheetClass_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.PreDefinedStyleSheetClass_BehaviorDescriptor" />
   <unitInfo fileName="PunctuationLeftStyleClassItem_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.PunctuationLeftStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="PunctuationRightStyleClassItem_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.PunctuationRightStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_Boolean_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Boolean_BehaviorDescriptor" />
@@ -188,6 +190,8 @@
   <unitInfo fileName="SideTransformAnchorTagStyleClassItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SideTransformAnchorTagStyleClassItem_BehaviorDescriptor" />
   <unitInfo fileName="StrikeOutStyleSheet_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StrikeOutStyleSheet_BehaviorDescriptor" />
   <unitInfo fileName="StyleClassItem_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleClassItem_BehaviorDescriptor" />
+  <unitInfo fileName="StyleKeyPack_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleKeyPack_BehaviorDescriptor" />
+  <unitInfo fileName="StyleKey_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleKey_BehaviorDescriptor" />
   <unitInfo fileName="StyleSheetClassReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleSheetClassReference_BehaviorDescriptor" />
   <unitInfo fileName="StyleSheetClass_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleSheetClass_BehaviorDescriptor" />
   <unitInfo fileName="StyleSheet_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleSheet_BehaviorDescriptor" />
@@ -3838,6 +3842,20 @@
       <varInfo nodeId="3696012239575646494" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="3696012239575646494" fileName="CellModel_URL_Behavior.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_URL_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/4151393920407069289">
+    <nodeInfo nodeId="4151393920407078855" fileName="StyleKey_Behavior.java" startLine="12" startPosition="78" endLine="13" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4151393920407069289" fileName="StyleKey_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4151393920407069289" fileName="StyleKey_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="4151393920407069451" fileName="StyleKey_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="4151393920407075341" fileName="StyleKey_Behavior.java" startLine="12" startPosition="78" endLine="13" endPosition="60" />
+    <scopeInfo nodeId="4151393920407069289" fileName="StyleKey_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="4151393920407069289" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4151393920407069289" fileName="StyleKey_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="4151393920407069289" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="4151393920407069289" fileName="StyleKey_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleKey_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/5270353093116090438">
     <nodeInfo nodeId="5270353093116096525" fileName="CellActionMapDeclaration_Behavior.java" startLine="15" startPosition="82" endLine="16" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

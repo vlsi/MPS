@@ -108,7 +108,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
       Style style = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.applyMethodName(style, editorCell);
+      BaseLanguageStyle_StyleSheet.applyMPSMethodCall(style, editorCell);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

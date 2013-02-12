@@ -173,6 +173,7 @@ public class NodeSubstitutePatternEditor {
     }
 
     public void paint(Graphics g) {
+      // COLORS: move colors to properties
       Rectangle bounds = g.getClipBounds();
       g.setColor(Color.YELLOW);
       g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);

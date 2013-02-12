@@ -91,6 +91,14 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpc2.625126330682908270" resolveInfo="CellModel_ReferencePresentation" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="4151393920414947254">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpc2.4151393920404716535" resolveInfo="PreDefinedStyleClassItem" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="4151393920516603319">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpc2.4151393920415038203" resolveInfo="PreDefinedStyleSheetClass" />
+    </node>
   </roots>
   <root id="1213104840151">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1213104840152">
@@ -1007,6 +1015,20 @@
         </node>
       </node>
     </node>
+    <node role="canBeParent" roleId="tp1t.1213106478122" type="tp1t.ConstraintFunction_CanBeAParent" typeId="tp1t.1203001093456" id="4151393920417567783">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4151393920417567784">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4151393920417570439">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4151393920417570735">
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="4151393920417573312">
+              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="4151393920417573321">
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpc2.1186402373407" resolveInfo="StyleSheetClass" />
+              </node>
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintFunctionParameter_childNode" typeId="tp1t.6738154313879680265" id="4151393920417570438" />
+          </node>
+        </node>
+      </node>
+    </node>
   </root>
   <root id="1227861662670">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1227861665046">
@@ -1079,6 +1101,47 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNotNullOperation" typeId="tp25.1172008320231" id="625126330682991649" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="4151393920414947254">
+    <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="4151393920414947255">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4151393920414947256">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4151393920414950358">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4151393920415083088">
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="4151393920415085665">
+              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="4151393920415085674">
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpc2.4151393920415038203" resolveInfo="PreDefinedStyleSheetClass" />
+              </node>
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintFunctionParameter_parentNode" typeId="tp1t.1202989658459" id="4151393920415082787" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="4151393920516603319">
+    <node role="canBeParent" roleId="tp1t.1213106478122" type="tp1t.ConstraintFunction_CanBeAParent" typeId="tp1t.1203001093456" id="4151393920516603320">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4151393920516603321">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="4151393920522902552">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.StatementCommentPart" typeId="tpee.6329021646629175143" id="4151393920522902553">
+            <node role="commentedStatement" roleId="tpee.6329021646629175144" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4151393920516603534">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4151393920516603834">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="4151393920516606411">
+                  <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="4151393920522903300">
+                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpc2.4151393920404716535" resolveInfo="PreDefinedStyleClassItem" />
+                  </node>
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintFunctionParameter_childNode" typeId="tp1t.6738154313879680265" id="4151393920516603533" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4151393920522902616">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4151393920522902615">
+            <property name="value" nameId="tpee.1068580123138" value="true" />
           </node>
         </node>
       </node>

@@ -17,6 +17,8 @@ package jetbrains.mps.nodeEditor.leftHighlighter;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.editor.colors.EditorColors;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.UIUtil;
 import gnu.trove.TIntObjectHashMap;
@@ -56,7 +58,7 @@ import java.util.List;
 public class LeftEditorHighlighter extends JComponent implements TooltipComponent {
   private static final Logger LOG = Logger.getLogger(LeftEditorHighlighter.class);
   public static final String ICON_AREA = "LeftEditorHighlighterIconArea";
-  private static final Color BACKGROUND_COLOR = Color.WHITE; // new Color(0xF0F0F0);
+  private static final Color BACKGROUND_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.GUTTER_BACKGROUND);
 
   private static final int MIN_LEFT_TEXT_WIDTH = 0;
   private static final int MIN_ICON_RENDERERS_WIDTH = 14;
@@ -279,13 +281,17 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         g.setColor(EditorComponent.CARET_ROW_COLOR);
         g.fillRect(clipBounds.x, selectedCellY, clipBounds.width, selectedCellHeight);
         // Drawing folding line
-        UIUtil.drawVDottedLine(g2d, myFoldingLineX, clipBounds.y, selectedCellY, getBackground(), Color.gray);
-        UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY, selectedCellY + selectedCellHeight, EditorComponent.CARET_ROW_COLOR, Color.gray);
-        UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY + selectedCellHeight, clipBounds.y + clipBounds.height, getBackground(), Color.gray);
+        UIUtil.drawVDottedLine(g2d, myFoldingLineX, clipBounds.y, selectedCellY, getBackground(),
+          EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));
+        UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY, selectedCellY + selectedCellHeight, EditorComponent.CARET_ROW_COLOR,
+          EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));
+        UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY + selectedCellHeight, clipBounds.y + clipBounds.height, getBackground(),
+          EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR));
         return;
       }
     }
     // Drawing folding line
+    // COLORS: Remove hardcoded color
     UIUtil.drawVDottedLine(g2d, myFoldingLineX, clipBounds.y, clipBounds.y + clipBounds.height, getBackground(), Color.gray);
   }
 
@@ -317,6 +323,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         continue;
       }
       column.paint(g);
+      //  COLORS: find out where it is and remove hardcoded color
       UIUtil.drawVDottedLine((Graphics2D) g, myRightToLeft ? column.getX() : column.getX() + column.getWidth() - 1,
         (int) clipBounds.getMinY(), (int) clipBounds.getMaxY(), getBackground(), Color.GRAY);
     }

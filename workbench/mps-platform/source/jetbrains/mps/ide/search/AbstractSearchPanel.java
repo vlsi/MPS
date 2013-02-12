@@ -17,8 +17,10 @@ package jetbrains.mps.ide.search;
 
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.editor.impl.EditorHeaderComponent;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.text.StringUtil;
+import com.intellij.ui.LightColors;
 import com.intellij.ui.components.panels.NonOpaquePanel;
 import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.ui.CompletionTextField;
@@ -35,8 +37,9 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 
-public abstract class AbstractSearchPanel extends JPanel {
-  protected final Color myBadSequenceColor = Color.pink;
+public abstract class AbstractSearchPanel extends EditorHeaderComponent {
+  protected final Color myBadSequenceColor = LightColors.RED;
+  protected final Color myDefaultBackground;
   protected HistoryCompletionTextField myText = new HistoryCompletionTextField();
   private JCheckBox myIsCaseSensitive = new JCheckBox("Match Case");
   private JCheckBox myIsWordsOnly = new JCheckBox("Words");
@@ -56,9 +59,11 @@ public abstract class AbstractSearchPanel extends JPanel {
   protected abstract void deactivate();
 
   protected AbstractSearchPanel() {
-    super(new BorderLayout(0, 0));
+    super();
     setPreferredSize(new Dimension((int) getPreferredSize().getWidth(),
       (int) myText.getPreferredSize().getHeight() + 5));
+
+    myDefaultBackground = myText.getBackground();
 
     JPanel mainPanel = new NonOpaquePanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
     mainPanel.add(new JLabel("Text:"));
@@ -237,7 +242,7 @@ public abstract class AbstractSearchPanel extends JPanel {
     if (matches == 0) {
       myText.setBackground(myBadSequenceColor);
     } else if (myText.getBackground() == myBadSequenceColor) {
-      myText.setBackground(Color.white);
+      myText.setBackground(myDefaultBackground);
     }
   }
 
@@ -250,24 +255,6 @@ public abstract class AbstractSearchPanel extends JPanel {
     revalidate();
     setVisible(true);
     myText.requestFocus();
-  }
-
-  @Override
-  protected void paintComponent(Graphics g) {
-    super.paintComponent(g);
-
-    //copied from IDEA's class EditorSearchComponent
-    Graphics2D g2d = (Graphics2D) g;
-    final Color BORDER_COLOR = new Color(0x87, 0x87, 0x87);
-    final Color GRADIENT_C1 = getBackground();
-    final Color GRADIENT_C2 = new Color(Math.max(0, GRADIENT_C1.getRed() - 0x18),
-      Math.max(0, GRADIENT_C1.getGreen() - 0x18),
-      Math.max(0, GRADIENT_C1.getBlue() - 0x18));
-    g2d.setPaint(new GradientPaint(0, 0, GRADIENT_C1, 0, getHeight(), GRADIENT_C2));
-    g2d.fillRect(1, 1, getWidth(), getHeight() - 1);
-    g.setColor(BORDER_COLOR);
-    g2d.setPaint(null);
-    g.drawLine(0, getHeight() - 1, getWidth(), getHeight() - 1);
   }
 
   protected void addToHistory() {
@@ -293,6 +280,7 @@ public abstract class AbstractSearchPanel extends JPanel {
 
     public HistoryCompletionTextField() {
       super();
+      this.setHideCompletionOnClick(true);
     }
 
     public HistoryCompletionTextField(List<String> possibleValues) {

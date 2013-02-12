@@ -19,6 +19,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.editor.colors.EditorColors;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorSettings.MyState;
 import jetbrains.mps.nodeEditor.cells.TextLine;
@@ -136,24 +138,8 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
     myState.myHighlightChanges = highlightChanges;
   }
 
-  public Color getSelectionBackgroundColor() {
-    return myState.mySelectionBackground;
-  }
-
-  public Color getSelectionForegroundColor() {
-    return myState.mySelectionForeground;
-  }
-
-  static Color getDefaultSelectionBackgroundColor() {
-    return new Color(82, 109, 165);
-  }
-
-  static Color getDefaultSelectionForegroundColor() {
-    return Color.WHITE;
-  }
-
   public Color getRangeSelectionForegroundColor() {
-    return getSelectionBackgroundColor();
+    return EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_FOREGROUND_COLOR);
   }
 
   public int getSpacesWidth(int size) {
@@ -212,6 +198,10 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
     mySpaceWidth = -1;
   }
 
+  public Color getSelectionBackgroundColor() {
+    return EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_BACKGROUND_COLOR);
+  }
+
   public static class MyState {
     private String myFontFamily = "Monospaced";
     private int myFontSize = 13;
@@ -219,9 +209,6 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
 
     private int myTextWidth = 500;
     private boolean myUseAntialiasing = true;
-
-    private Color mySelectionForeground = getDefaultSelectionForegroundColor();
-    private Color mySelectionBackground = getDefaultSelectionBackgroundColor();
 
     private boolean myUseBraces = true;
 
@@ -248,10 +235,6 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
       if (myUseAntialiasing != otherState.myUseAntialiasing) return false;
       if (myUseBraces != otherState.myUseBraces) return false;
       if (myFontFamily != null ? !myFontFamily.equals(otherState.myFontFamily) : otherState.myFontFamily != null)
-        return false;
-      if (mySelectionBackground != null ? !mySelectionBackground.equals(otherState.mySelectionBackground) : otherState.mySelectionBackground != null)
-        return false;
-      if (mySelectionForeground != null ? !mySelectionForeground.equals(otherState.mySelectionForeground) : otherState.mySelectionForeground != null)
         return false;
 
       if (myIndentSize != otherState.myIndentSize) {
@@ -287,8 +270,6 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
       result = 31 * result + (myPowerSaveMode ? 1 : 0);
       result = 31 * result + (myHighlightChanges ? 1 : 0);
       result = 31 * result + (myUseAntialiasing ? 1 : 0);
-      result = 31 * result + (mySelectionForeground != null ? mySelectionForeground.hashCode() : 0);
-      result = 31 * result + (mySelectionBackground != null ? mySelectionBackground.hashCode() : 0);
       result = 31 * result + (myUseBraces ? 1 : 0);
       return result;
     }
@@ -339,22 +320,6 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
 
     public void setUseAntialiasing(boolean useAntialiasing) {
       myUseAntialiasing = useAntialiasing;
-    }
-
-    public int getSelectionForeground() {
-      return mySelectionForeground.getRGB();
-    }
-
-    public void setSelectionForeground(int rgb) {
-      mySelectionForeground = new Color(rgb);
-    }
-
-    public int getSelectionBackground() {
-      return mySelectionBackground.getRGB();
-    }
-
-    public void setSelectionBackground(int rgb) {
-      mySelectionBackground = new Color(rgb);
     }
 
     public boolean isUseBraces() {

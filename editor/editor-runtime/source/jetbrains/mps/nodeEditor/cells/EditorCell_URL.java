@@ -30,6 +30,7 @@ import java.awt.event.MouseEvent;
 public class EditorCell_URL extends EditorCell_Property {
   protected EditorCell_URL(EditorContext editorContext, ModelAccessor accessor, SNode node) {
     super(editorContext, accessor, node);
+    // COLORS: Remove hardcoded color
     this.setTextColor(Color.BLUE);
   }
 

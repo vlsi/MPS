@@ -72,6 +72,10 @@
     <component>
       <implementation-class>jetbrains.mps.ide.editor.warningPanel.MPSEditorWarningsManager</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.nodeEditor.style.StyleRegistryIdeaImpl</implementation-class>
+    </component>
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
