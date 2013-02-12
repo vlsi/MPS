@@ -19,11 +19,10 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.generator.ModelDigestUtil;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
+import jetbrains.mps.persistence.BinaryModelPersistence;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collections;
+import java.io.ByteArrayInputStream;
 import java.util.Map;
 
 /**
@@ -50,13 +49,11 @@ public class BinaryModelDigestIndex extends BaseModelDigestIndex {
 
   @Override
   public int getVersion() {
-    return 1;
+    return 2;
   }
 
   @Override
   protected Map<String, String> calculateDigest(byte[] content) {
-    String fileHash = ModelDigestUtil.hashBytes(content);
-    // TODO per-root digest
-    return fileHash == null ? null : Collections.singletonMap(GeneratableSModelDescriptor.FILE, fileHash);
+    return BinaryModelPersistence.getDigestMap(new ByteArrayInputStream(content));
   }
 }

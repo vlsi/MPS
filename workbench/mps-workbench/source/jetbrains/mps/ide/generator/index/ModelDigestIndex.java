@@ -19,7 +19,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.smodel.persistence.def.ModelDigestHelper;
+import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -53,6 +53,6 @@ public class ModelDigestIndex extends BaseModelDigestIndex {
 
   @Override
   protected Map<String, String> calculateDigest(byte[] content) {
-    return ModelDigestHelper.getDigestMap(new InputStreamReader(new ByteArrayInputStream(content), FileUtil.DEFAULT_CHARSET));
+    return DefaultModelPersistence.getDigestMap(new InputStreamReader(new ByteArrayInputStream(content), FileUtil.DEFAULT_CHARSET));
   }
 }

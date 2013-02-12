@@ -19,12 +19,21 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.Map;
 
 /**
  * evgeny, 11/9/12
@@ -82,4 +91,24 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     return dataSource instanceof FileDataSource;
   }
 
+  public static Map<String, String> getDigestMap(@NotNull IFile mpsFile) {
+    InputStream is = null;
+    try {
+      is = mpsFile.openInputStream();
+      return getDigestMap(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET));
+    } catch (IOException e) {
+      /* ignore */
+    } finally {
+      FileUtil.closeFileSafe(is);
+    }
+    return null;
+  }
+
+  public static Map<String, String> getDigestMap(Reader input) {
+    try {
+      return ModelPersistence.calculateHashes(FileUtil.read(input));
+    } catch (ModelReadException e) {
+      return null;
+    }
+  }
 }

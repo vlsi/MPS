@@ -37,7 +37,7 @@ public class ModelDigestUtil {
     InputStream is = null;
     try {
       is = file.openInputStream();
-      return isText ? hashText(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET)) : hash(is);
+      return isText ? hashText(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET)) : hashBytes(is);
     } catch (IOException e) {
       /* ignore */
     } finally {
@@ -54,7 +54,7 @@ public class ModelDigestUtil {
 
   public static String hashBytes(byte[] content) {
     try {
-      return hash(new ByteArrayInputStream(content));
+      return hashBytes(new ByteArrayInputStream(content));
     } catch (IOException e) {
       // it can't happen
       throw new IllegalStateException(e);
@@ -73,7 +73,7 @@ public class ModelDigestUtil {
     }
   }
 
-  private static String hash(InputStream stream) throws IOException {
+  public static String hashBytes(InputStream stream) throws IOException {
     try {
       MessageDigest digest = MessageDigest.getInstance("SHA");
       byte[] block = new byte[1024];

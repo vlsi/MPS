@@ -16,6 +16,9 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.persistence.BinaryModelPersistence;
+import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
@@ -33,7 +36,7 @@ import static jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
 
 /**
  * evgeny, 11/21/12
- *
+ * <p/>
  * TODO FastFindSupportProvider
  */
 public class BinarySModelDescriptor extends BaseEditableSModelDescriptor implements GeneratableSModelDescriptor, RefactorableSModelDescriptor {
@@ -147,14 +150,18 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
 
   @Override
   public String getModelHash() {
-    // TODO
-    return null;
+    String modelHash = ModelDigestHelper.getInstance().getModelHash(getSource());
+    if (modelHash != null) return modelHash;
+
+    return ModelDigestUtil.hash(getSource().getFile(), false);
   }
 
   @Override
   public Map<String, String> getGenerationHashes() {
-    // TODO
-    return null;
+    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource());
+    if (generationHashes != null) return generationHashes;
+
+    return BinaryModelPersistence.getDigestMap(getSource().getFile());
   }
 
   @Override
