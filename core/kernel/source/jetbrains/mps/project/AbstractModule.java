@@ -832,16 +832,28 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return getJavaFacet().getClassPath();
   }
 
+  /**
+   * JavaModuleFacetImpl#getAdditionalClassPath only for overriding
+   * Use @see JavaModuleFacetImpl#getClassPath instead
+   */
   @Deprecated
   public final Collection<String> getAdditionalClassPath() {
-    return getJavaFacet().getAdditionalClassPath();
+    return ((JavaModuleFacetImpl) getJavaFacet()).getAdditionalClassPath();
   }
 
+
+  /**
+   * JavaModuleFacetImpl#getOwnClassPath only for overriding
+   * Use JavaModuleFacetImpl#getClassPath instead
+   */
   @Deprecated
   public final Collection<String> getOwnClassPath() {
-    return getJavaFacet().getOwnClassPath();
+    return ((JavaModuleFacetImpl) getJavaFacet()).getOwnClassPath();
   }
 
+  /**
+   * @see SModuleOperations#getDependenciesClasspath
+   */
   @Deprecated
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
     return SModuleOperations.getDependenciesClasspath(modules, includeStubSolutions);
@@ -853,10 +865,13 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return SModuleOperations.getModuleWithDependenciesClassPathItem(this);
   }
 
+  /**
+   * Just don't use!
+   */
   @Deprecated
   protected final void invalidateClassPath() {
     // todo: remove this method!
-    getJavaFacet().invalidateClassPath();
+    ((JavaModuleFacetImpl) getJavaFacet()).invalidateClassPath();
   }
 
   @Override

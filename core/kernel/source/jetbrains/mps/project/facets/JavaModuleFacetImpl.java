@@ -17,24 +17,14 @@ package jetbrains.mps.project.facets;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ProjectPathUtil;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.vfs.IFile;
 
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
-public class JavaModuleFacetImpl implements JavaModuleFacet {
+public class JavaModuleFacetImpl extends DumbJavaModuleFacetImpl {
   private static final Logger LOG = Logger.getLogger(JavaModuleFacetImpl.class);
-
-  // todo: use SModule instead
-  private final IModule myModule;
 
   private final Object LOCK = new Object();
   private Runnable myClasspathInvalidator = new Runnable() {
@@ -47,39 +37,13 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
   private CompositeClassPathItem myCachedClassPathItem;
 
   public JavaModuleFacetImpl(IModule module) {
-    myModule = module;
+    super(module);
   }
 
-  @Override
   public void invalidateClassPath() {
     synchronized (LOCK) {
       myCachedClassPathItem = null;
     }
-  }
-
-  @Override
-  public Collection<String> getClassPath() {
-    Set<String> result = new LinkedHashSet<String>();
-    result.addAll(getAdditionalClassPath());
-    result.addAll(getOwnClassPath());
-    return result;
-  }
-
-  @Override
-  public Collection<String> getOwnClassPath() {
-    if (!isCompileInMPS()) return Collections.emptyList();
-
-    IFile classFolder = getClassesGen();
-    if (classFolder == null) return Collections.emptyList();
-
-    return Collections.singletonList(classFolder.getPath());
-  }
-
-  @Override
-  public Collection<String> getAdditionalClassPath() {
-    ModuleDescriptor descriptor = myModule.getModuleDescriptor();
-    if (descriptor == null) return Collections.emptySet();
-    return descriptor.getAdditionalJavaStubPaths();
   }
 
   @Override
@@ -101,15 +65,5 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
 
       return myCachedClassPathItem;
     }
-  }
-
-  @Override
-  public IFile getClassesGen() {
-    return ProjectPathUtil.getClassesGenFolder(myModule.getDescriptorFile());
-  }
-
-  @Override
-  public boolean isCompileInMPS() {
-    return true;
   }
 }

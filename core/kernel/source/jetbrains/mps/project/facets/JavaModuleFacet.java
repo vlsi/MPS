@@ -22,17 +22,11 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
 import java.util.Collection;
 
 public interface JavaModuleFacet extends SModuleFacet {
-  IClassPathItem getClassPathItem();
+  boolean isCompileInMPS();
 
   IFile getClassesGen();
 
-  boolean isCompileInMPS();
-
   Collection<String> getClassPath();
 
-  Collection<String> getAdditionalClassPath();
-
-  Collection<String> getOwnClassPath();
-
-  void invalidateClassPath();
+  IClassPathItem getClassPathItem();
 }
