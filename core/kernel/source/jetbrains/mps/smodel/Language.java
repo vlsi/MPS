@@ -29,6 +29,7 @@ import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -436,7 +437,10 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
         return Collections.emptyList();
       }
     });
-    facets.add(TestsFacetImpl.fromModule(this));
+    TestsFacet testsFacet = TestsFacetImpl.fromModule(this);
+    if (testsFacet != null) {
+      facets.add(testsFacet);
+    }
     return facets;
   }
 

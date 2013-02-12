@@ -20,6 +20,7 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -193,7 +194,10 @@ public class Solution extends ClassLoadingModule {
         return descriptor != null && descriptor.getCompileInMPS();
       }
     });
-    facets.add(TestsFacetImpl.fromModule(this));
+    TestsFacet testsFacet = TestsFacetImpl.fromModule(this);
+    if (testsFacet != null) {
+      facets.add(testsFacet);
+    }
     return facets;
   }
 

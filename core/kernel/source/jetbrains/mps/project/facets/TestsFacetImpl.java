@@ -20,7 +20,6 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class TestsFacetImpl implements TestsFacet {
@@ -44,8 +43,8 @@ public class TestsFacetImpl implements TestsFacet {
     }
   }
 
-  @NotNull
+  @Nullable
   public static TestsFacet fromModule(AbstractModule module) {
-    return new TestsFacetImpl(module.getDescriptorFile().getParent());
+    return module.getDescriptorFile() != null ? new TestsFacetImpl(module.getDescriptorFile().getParent()) : null;
   }
 }
