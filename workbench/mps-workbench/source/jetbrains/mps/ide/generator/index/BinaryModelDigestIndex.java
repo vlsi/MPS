@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,21 @@
 package jetbrains.mps.ide.generator.index;
 
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.util.indexing.FileBasedIndex.InputFilter;
+import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.smodel.persistence.def.ModelDigestHelper;
-import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStreamReader;
+import java.util.Collections;
 import java.util.Map;
 
-public class ModelDigestIndex extends BaseModelDigestIndex {
-  public static final ID<Integer, Map<String, String>> NAME = ID.create("ModelDigest");
+/**
+ * evgeny, 2/12/13
+ */
+public class BinaryModelDigestIndex extends BaseModelDigestIndex {
+  public static final ID<Integer, Map<String, String>> NAME = ID.create("BinaryModelDigest");
 
   @NotNull
   @Override
@@ -37,22 +39,24 @@ public class ModelDigestIndex extends BaseModelDigestIndex {
   }
 
   @Override
-  public InputFilter getInputFilter() {
-    return new InputFilter() {
+  public FileBasedIndex.InputFilter getInputFilter() {
+    return new FileBasedIndex.InputFilter() {
       @Override
       public boolean acceptInput(VirtualFile file) {
-        return file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
+        return file.getFileType().equals(MPSFileTypeFactory.MODEL_BINARY_FILE_TYPE);
       }
     };
   }
 
   @Override
   public int getVersion() {
-    return 7;
+    return 1;
   }
 
   @Override
   protected Map<String, String> calculateDigest(byte[] content) {
-    return ModelDigestHelper.getDigestMap(new InputStreamReader(new ByteArrayInputStream(content), FileUtil.DEFAULT_CHARSET));
+    String fileHash = ModelDigestUtil.hashBytes(content);
+    // TODO per-root digest
+    return fileHash == null ? null : Collections.singletonMap(GeneratableSModelDescriptor.FILE, fileHash);
   }
 }

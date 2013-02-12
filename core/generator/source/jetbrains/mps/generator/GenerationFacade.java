@@ -71,7 +71,7 @@ public class GenerationFacade {
       GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
       if (!sm.isGeneratable()) continue;
 
-      if (statusManager.generationRequired(sm, context)) {
+      if (statusManager.generationRequired(sm)) {
         result.add(sm);
         continue;
       }
@@ -101,7 +101,7 @@ public class GenerationFacade {
         if (oldHash == null) {
           continue;
         }
-        String newHash = ModelGenerationStatusManager.getInstance().currentHash(rmd, context);
+        String newHash = statusManager.currentHash(rmd);
         if (newHash == null || !oldHash.equals(newHash)) {
           result.add(sm);
           break;

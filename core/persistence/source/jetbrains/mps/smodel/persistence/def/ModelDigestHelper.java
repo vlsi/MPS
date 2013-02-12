@@ -13,23 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator;
+package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.DataSource;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ModelDigestHelper {
-  public static final String HEADER = "header";
-  public static final String FILE = "model";
 
   private static ModelDigestHelper ourInstance = new ModelDigestHelper();
   private List<DigestProvider> myProviders = new CopyOnWriteArrayList<DigestProvider>();
@@ -46,34 +48,47 @@ public class ModelDigestHelper {
     myProviders.add(provider);
   }
 
-  public Map<String, String> getGenerationHashes(@NotNull SModelDescriptor descriptor, IOperationContext operationContext) {
-    DataSource source = descriptor.getSource();
+  public Map<String, String> getGenerationHashes(@NotNull DefaultSModelDescriptor descriptor) {
+    FileDataSource source = descriptor.getSource();
     for (DigestProvider p : myProviders) {
-      Map<String, String> result = p.getGenerationHashes(operationContext, source);
+      Map<String, String> result = p.getGenerationHashes(source);
       if (result != null) return result;
     }
 
-    if (source instanceof FileDataSource && descriptor instanceof DefaultSModelDescriptor) {
-      return ModelDigestUtil.getDigestMap(((FileDataSource) source).getFile());
-    }
-
-    return null;
+    return getDigestMap(source.getFile());
   }
 
-  public String getModelHashFast(@NotNull SModelDescriptor descriptor, IOperationContext operationContext) {
-    DataSource source = descriptor.getSource();
+  public String getModelHash(@NotNull DefaultSModelDescriptor descriptor) {
+    FileDataSource source = descriptor.getSource();
     for (DigestProvider p : myProviders) {
-      Map<String, String> result = p.getGenerationHashes(operationContext, source);
-      if (result != null) return result.get(FILE);
+      Map<String, String> result = p.getGenerationHashes(source);
+      if (result != null) return result.get(GeneratableSModelDescriptor.FILE);
     }
-    if (descriptor instanceof GeneratableSModelDescriptor) {
-      return ((GeneratableSModelDescriptor) descriptor).getModelHash();
+    return ModelDigestUtil.hash(descriptor.getSource().getFile(), true);
+  }
+
+  public static Map<String, String> getDigestMap(@NotNull IFile mpsFile) {
+    InputStream is = null;
+    try {
+      is = mpsFile.openInputStream();
+      return getDigestMap(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET));
+    } catch (IOException e) {
+      /* ignore */
+    } finally {
+      FileUtil.closeFileSafe(is);
     }
     return null;
   }
 
+  public static Map<String, String> getDigestMap(Reader input) {
+    try {
+      return ModelPersistence.calculateHashes(FileUtil.read(input));
+    } catch (ModelReadException e) {
+      return null;
+    }
+  }
 
   public interface DigestProvider {
-    Map<String, String> getGenerationHashes(IOperationContext operationContext, @NotNull DataSource f);
+    Map<String, String> getGenerationHashes(@NotNull FileDataSource f);
   }
 }

@@ -186,7 +186,7 @@ public class GenerationOptions {
     private IncrementalGenerationStrategy myIncrementalStrategy = new IncrementalGenerationStrategy() {
       @Override
       public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
-        return Collections.EMPTY_MAP;
+        return Collections.emptyMap();
       }
 
       @Override

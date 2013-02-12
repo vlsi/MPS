@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public abstract class IHashProvider {
-  public abstract String getHash(byte[] modelBytes);
+  public abstract String getHash(String content);
 
-  public abstract Map<String, String> getRootHashes(byte[] modelBytes);
+  public abstract Map<String, String> getRootHashes(String content);
 
   protected static String extractId(String tag) {
     if (tag == null) return null;
@@ -38,15 +37,5 @@ public abstract class IHashProvider {
     if (index < tag.length() && tag.charAt(index) == '"') return tag.substring(offset, index);
 
     return null;
-  }
-
-  public static class SimpleHashProvider extends IHashProvider {
-    public String getHash(byte[] modelBytes) {
-      return "";
-    }
-
-    public Map<String, String> getRootHashes(byte[] modelBytes) {
-      return new HashMap<String, String>();
-    }
   }
 }

@@ -31,7 +31,6 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -152,7 +151,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   }
 
   public Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext) {
-    return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent)editorContext.getEditorComponent()).getTypecheckingContextOwner(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
+    return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
       public Set<EditorMessage> compute(TypeCheckingContext p0) {
         return doCreateMessages(node, list, wasCheckedOnce, editorContext);
       }
