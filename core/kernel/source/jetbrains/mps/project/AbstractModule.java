@@ -42,9 +42,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
@@ -646,15 +644,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @Override
-  public String getOutputFor(SModel model) {
-    if (SModelStereotype.isTestModel(model)) {
-      return getTestsGeneratorOutputPath();
-    } else {
-      return getGeneratorOutputPath();
-    }
-  }
-
-  @Override
   public void reloadFromDisk(boolean reloadClasses) {
     ModelAccess.instance().checkWriteAccess();
     try {
@@ -750,6 +739,11 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     }
   }
 
+  public String getOutputPath() {
+    IFile result = ProjectPathUtil.getGeneratorOutputPath(this);
+    return result != null ? result.getPath() : null;
+  }
+
   // deprecated part
   @Override
   @Deprecated
@@ -763,11 +757,16 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return SModuleOperations.getIndexablePaths(this);
   }
 
+  @Deprecated
+  @Override
+  public final String getOutputFor(SModel model) {
+    return SModuleOperations.getOutputPathFor(model);
+  }
+
   @Override
   @Deprecated
   public final String getGeneratorOutputPath() {
-    IFile result = ProjectPathUtil.getGeneratorOutputPath(this);
-    return result != null ? result.getPath() : null;
+    return getOutputPath();
   }
 
   @Override

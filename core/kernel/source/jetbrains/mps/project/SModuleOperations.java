@@ -18,7 +18,10 @@ package jetbrains.mps.project;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -64,6 +67,16 @@ public class SModuleOperations {
     }
 
     return result;
+  }
+
+  public static String getOutputPathFor(SModel model) {
+    // todo: move to SModelOperations?
+    SModule module = model.getModule();
+    if (SModelStereotype.isTestModel(model) && module.getFacet(TestsFacet.class) != null) {
+      return module.getFacet(TestsFacet.class).getTestsOutputPath();
+    } else {
+      return ((AbstractModule) module).getOutputPath();
+    }
   }
 
   // helpers

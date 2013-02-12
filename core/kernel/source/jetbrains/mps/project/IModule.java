@@ -122,11 +122,6 @@ public interface IModule extends SModule {
   // When is it safe to migrate method call? calc expected type?
   List<SModelDescriptor> getOwnModelDescriptors();
 
-  // let's go to the mall?
-  // should be property of generator, but for now - cast
-  // ModuleDescriptor should have getOutputPath() method?
-  String getOutputFor(org.jetbrains.mps.openapi.model.SModel model);
-
   // wtf? If it home for module descriptor just use module descriptor dir!
   // ooups. for packaged modules it's jar file
   // so check usages of method! why we need it?
@@ -224,7 +219,16 @@ public interface IModule extends SModule {
   String getModuleFqName();
 
   /**
-   * @see ProjectPathUtil#getGeneratorOutputPath(org.jetbrains.mps.openapi.module.SModule)
+   * Simple way: use SModuleOperations#getOutputPathFor
+   * Right way: use AbstractModule#getOutputPath or TestsFacet#getOutputPath instead
+   *
+   * @see SModuleOperations#getOutputPathFor(org.jetbrains.mps.openapi.model.SModel)
+   */
+  @Deprecated
+  String getOutputFor(org.jetbrains.mps.openapi.model.SModel model);
+
+  /**
+   * @see jetbrains.mps.project.AbstractModule#getOutputPath()
    */
   @Deprecated
   String getGeneratorOutputPath();
