@@ -53,6 +53,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -412,8 +413,8 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   @Override
-  protected JavaModuleFacet createJavaModuleFacet() {
-    return new JavaModuleFacetImpl(this) {
+  protected List<SModuleFacet> createFacets() {
+    return Collections.<SModuleFacet>singletonList(new JavaModuleFacetImpl(this) {
       @Override
       public boolean isCompileInMPS() {
         // language is always compiled in MPS
@@ -433,7 +434,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
         }
         return Collections.emptyList();
       }
-    };
+    });
   }
 
   @Override

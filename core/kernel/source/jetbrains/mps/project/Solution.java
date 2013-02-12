@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -164,8 +165,8 @@ public class Solution extends ClassLoadingModule {
 
 
   @Override
-  protected JavaModuleFacet createJavaModuleFacet() {
-    return new JavaModuleFacetImpl(this) {
+  protected List<SModuleFacet> createFacets() {
+    return Collections.<SModuleFacet>singletonList(new JavaModuleFacetImpl(this) {
       @Override
       public Collection<String> getOwnClassPath() {
         if (isPackaged()) {
@@ -188,7 +189,7 @@ public class Solution extends ClassLoadingModule {
         ModuleDescriptor descriptor = getModuleDescriptor();
         return descriptor != null && descriptor.getCompileInMPS();
       }
-    };
+    });
   }
 
   public boolean reloadClassesAfterGeneration() {

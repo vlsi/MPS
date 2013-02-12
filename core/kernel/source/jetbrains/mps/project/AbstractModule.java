@@ -91,7 +91,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   protected boolean myChanged = false;
   private SRepository myRepo;
 
-  private final JavaModuleFacet javaModuleFacet = createJavaModuleFacet();
+  // just for now
+  private final List<SModuleFacet> myFacets;
 
   //----model creation
 
@@ -99,12 +100,14 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     this(null);
   }
 
-  protected JavaModuleFacet createJavaModuleFacet() {
-    return new JavaModuleFacetImpl(this);
+  protected List<SModuleFacet> createFacets() {
+    // todo: why java module facet by default?
+    return Collections.<SModuleFacet>singletonList(new JavaModuleFacetImpl(this));
   }
 
   protected AbstractModule(@Nullable IFile myDescriptorFile) {
     this.myDescriptorFile = myDescriptorFile;
+    myFacets = createFacets();
   }
 
   private static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
@@ -693,15 +696,17 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   @Nullable
   @Override
   public <T extends SModuleFacet> T getFacet(Class<T> clazz) {
-    if (JavaModuleFacet.class.isAssignableFrom(clazz)) {
-      return (T) javaModuleFacet;
+    for (SModuleFacet facet : myFacets) {
+      if (clazz.isInstance(facet)) {
+        return (T) facet;
+      }
     }
     return null;
   }
 
   @Override
   public Iterable<SModuleFacet> getFacets() {
-    return Collections.<SModuleFacet>singleton(javaModuleFacet);
+    return Collections.unmodifiableList(myFacets);
   }
 
   public class ModuleScope extends DefaultScope {
