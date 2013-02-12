@@ -35,16 +35,6 @@ public class TestsFacetImpl implements TestsFacet {
     return myModuleHome.getDescendant("test_gen");
   }
 
-  @NotNull
-  public static TestsFacet fromLanguageDescriptorFile(LanguageDescriptor descriptor, IFile descriptorFile) {
-    return new TestsFacetImpl(descriptorFile.getParent());
-  }
-
-  @NotNull
-  public static TestsFacet fromSolutionDescriptor(SolutionDescriptor descriptor, IFile descriptorFile) {
-    return new TestsFacetImpl(descriptorFile.getParent());
-  }
-
   @Nullable
   public static TestsFacet fromModuleDescriptor(ModuleDescriptor descriptor, IFile descriptorFile) {
     if (descriptor instanceof LanguageDescriptor || descriptor instanceof SolutionDescriptor) {

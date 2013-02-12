@@ -58,8 +58,6 @@ public class ProjectPathUtil {
   }
 
   public static IFile getGeneratorOutputPath(IFile file, ModuleDescriptor descriptor) {
-    // file -> module descriptor file
-    // move to AbstractModule
     String generatorOutputPath;
     if (descriptor instanceof SolutionDescriptor) {
       generatorOutputPath = ((SolutionDescriptor) descriptor).getOutputPath();
@@ -81,21 +79,5 @@ public class ProjectPathUtil {
   public static IFile getGeneratorTestsOutputPath(IFile file, ModuleDescriptor descriptor) {
     TestsFacet testsFacet = TestsFacetImpl.fromModuleDescriptor(descriptor, file);
     return testsFacet != null ? testsFacet.getTestsOutputPath() : null;
-  }
-
-  public static IFile getGeneratorOutputPath(SModule module) {
-    // todo: remove
-    if (module instanceof TestLanguage || module instanceof StubSolution) {
-      return null;
-    }
-    if (module instanceof Generator) {
-      return getGeneratorOutputPath(((Generator) module).getSourceLanguage());
-    }
-    // todo: instance of Language | Solution?
-    if (module instanceof IModule) {
-      return getGeneratorOutputPath(((IModule) module).getDescriptorFile(), ((IModule) module).getModuleDescriptor());
-    } else {
-      return null;
-    }
   }
 }

@@ -327,6 +327,11 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return true;
   }
 
+  @Override
+  public IFile getOutputPath() {
+    return mySourceLanguage.getOutputPath();
+  }
+
   private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {
     @Override
     public Class<Generator> getApplicableSModuleClass() {

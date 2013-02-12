@@ -746,7 +746,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   public IFile getOutputPath() {
-    return ProjectPathUtil.getGeneratorOutputPath(this);
+    return ProjectPathUtil.getGeneratorOutputPath(getDescriptorFile(), getModuleDescriptor());
   }
 
   // deprecated part
