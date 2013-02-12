@@ -29,7 +29,7 @@ import java.security.NoSuchAlgorithmException;
 public class ModelDigestUtil {
 
   /**
-   *  Ignores newlines when isText == true.
+   * Ignores newlines when isText == true.
    */
   public static String hash(IFile file, boolean isText) {
     if (file == null) return null;
@@ -103,6 +103,46 @@ public class ModelDigestUtil {
       return new BigInteger(res).toString(Character.MAX_RADIX);
     } catch (NoSuchAlgorithmException e) {
       throw new IllegalStateException(e);
+    }
+  }
+
+  public static DigestBuilderOutputStream createDigestBuilderOutputStream() {
+    try {
+      return new DigestBuilderOutputStream(MessageDigest.getInstance("SHA"));
+    } catch (NoSuchAlgorithmException e) {
+      throw new IllegalStateException(e);
+    }
+  }
+
+  public final static class DigestBuilderOutputStream extends OutputStream {
+
+    private final MessageDigest digest;
+
+    private DigestBuilderOutputStream(MessageDigest digest) {
+      this.digest = digest;
+    }
+
+    @Override
+    public void write(int b) throws IOException {
+      digest.update((byte) (b & 0xff));
+    }
+
+    @Override
+    public void write(byte[] b) throws IOException {
+      digest.update(b);
+    }
+
+    @Override
+    public void write(byte[] b, int off, int len) throws IOException {
+      if (off < 0 || off > b.length || len < 0 || off + len > b.length) {
+        throw new IndexOutOfBoundsException();
+      }
+      digest.update(b, off, len);
+    }
+
+    public String getResult() {
+      byte[] res = digest.digest();
+      return new BigInteger(res).toString(Character.MAX_RADIX);
     }
   }
 }
