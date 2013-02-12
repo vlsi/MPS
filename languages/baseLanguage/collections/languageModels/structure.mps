@@ -1954,8 +1954,8 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943756792">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692984" resolveInfo="IApplicableToList" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943756803">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692987" resolveInfo="IApplicableToDeque" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4271499389004534912">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692989" resolveInfo="IApplicableToStack" />
     </node>
   </root>
   <root id="1227022179634">
@@ -2366,8 +2366,8 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3358009230508699640">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6801639034384909353" resolveInfo="IDequeOperation" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943756956">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692987" resolveInfo="IApplicableToDeque" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4271499389004537304">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692989" resolveInfo="IApplicableToStack" />
     </node>
   </root>
   <root id="3358009230508699932">
@@ -2384,8 +2384,8 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3358009230508699935">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6801639034384909353" resolveInfo="IDequeOperation" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943756974">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692987" resolveInfo="IApplicableToDeque" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4271499389004537308">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692989" resolveInfo="IApplicableToStack" />
     </node>
   </root>
   <root id="3358009230509514604" />
@@ -2422,8 +2422,11 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943757117">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692984" resolveInfo="IApplicableToList" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943757130">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692987" resolveInfo="IApplicableToDeque" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4271499389004536340">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692989" resolveInfo="IApplicableToStack" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4271499389004536355">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692988" resolveInfo="IApplicableToQueue" />
     </node>
   </root>
   <root id="599357942184015200" />
@@ -2463,8 +2466,8 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5784983078884872744">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6801639034384909353" resolveInfo="IDequeOperation" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5994574781943756938">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692987" resolveInfo="IApplicableToDeque" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4271499389004537300">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5994574781936692989" resolveInfo="IApplicableToStack" />
     </node>
   </root>
   <root id="5232196642625574978">
