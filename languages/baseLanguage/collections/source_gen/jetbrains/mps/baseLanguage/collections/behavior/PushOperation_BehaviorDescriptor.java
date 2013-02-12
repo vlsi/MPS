@@ -7,7 +7,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
-public class PushOperation_BehaviorDescriptor extends SingleArgumentSequenceOperation_BehaviorDescriptor implements IStackOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor, IApplicableToDeque_BehaviorDescriptor {
+public class PushOperation_BehaviorDescriptor extends SingleArgumentSequenceOperation_BehaviorDescriptor implements IStackOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor, IApplicableToStack_BehaviorDescriptor {
   public PushOperation_BehaviorDescriptor() {
   }
 
@@ -16,7 +16,7 @@ public class PushOperation_BehaviorDescriptor extends SingleArgumentSequenceOper
   }
 
   public List<SNode> virtual_getApplicableTypes_5994574781955586127(SConcept thisConcept) {
-    return IApplicableToDeque_Behavior.virtual_getApplicableTypes_5994574781955586127(thisConcept);
+    return IApplicableToStack_Behavior.virtual_getApplicableTypes_5994574781955586127(thisConcept);
   }
 
   public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {

@@ -7,7 +7,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
-public class AddFirstElementOperation_BehaviorDescriptor extends SingleArgumentSequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor, IStackOperation_BehaviorDescriptor, IApplicableToList_BehaviorDescriptor, IApplicableToDeque_BehaviorDescriptor {
+public class AddFirstElementOperation_BehaviorDescriptor extends SingleArgumentSequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor, IStackOperation_BehaviorDescriptor, IApplicableToList_BehaviorDescriptor, IApplicableToStack_BehaviorDescriptor {
   public AddFirstElementOperation_BehaviorDescriptor() {
   }
 

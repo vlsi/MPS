@@ -7,7 +7,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
-public class RemoveWhereOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IStackOperation_BehaviorDescriptor, IQueueOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor, IApplicableToList_BehaviorDescriptor, IApplicableToDeque_BehaviorDescriptor {
+public class RemoveWhereOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IStackOperation_BehaviorDescriptor, IQueueOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor, IApplicableToList_BehaviorDescriptor, IApplicableToStack_BehaviorDescriptor, IApplicableToQueue_BehaviorDescriptor {
   public RemoveWhereOperation_BehaviorDescriptor() {
   }
 
