@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.generator.ModelDigestHelper;
-import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.persistence.def.ModelDigestHelper;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
-import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;

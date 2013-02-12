@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator;
+package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;

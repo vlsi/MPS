@@ -5,7 +5,7 @@ import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
 import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import com.intellij.util.io.EnumeratorStringDescriptor;
-import jetbrains.mps.generator.ModelDigestHelper;
+import jetbrains.mps.smodel.persistence.def.ModelDigestHelper;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 

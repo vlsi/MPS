@@ -31,6 +31,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
+import jetbrains.mps.smodel.persistence.def.ModelDigestHelper;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.testbench.Testbench;
