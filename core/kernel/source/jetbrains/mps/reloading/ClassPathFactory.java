@@ -41,7 +41,7 @@ public class ClassPathFactory {
 
   @NotNull
   public RealClassPathItem createFromPathFS(String path, @Nullable String requestor) throws IOException {
-    boolean jared = path.contains("!/");
+    boolean jared = path.contains("!/") || path.endsWith(".jar");
     boolean exists = jared ? FileSystem.getInstance().getFileByPath(path).exists() : new File(path).exists();
     if (!exists) {
       String moduleString = requestor == null ? "" : (" in " + requestor.toString());
@@ -50,11 +50,15 @@ public class ClassPathFactory {
       return new NonExistingClassPathItem(path);
     }
 
-    if (!jared && new File(path).isDirectory()) {
-      return new FileClassPathItem(path);
-    } else {
+    if (jared) {
       return new JarFileClassPathItem(path);
     }
+
+    if (new File(path).isDirectory()) {
+      return new FileClassPathItem(path);
+    }
+
+    return new NonExistingClassPathItem(path);
   }
 
   @NotNull
