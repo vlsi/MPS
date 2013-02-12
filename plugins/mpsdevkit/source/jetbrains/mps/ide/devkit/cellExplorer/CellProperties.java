@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.ide.devkit.cellExplorer;
 
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class CellProperties {
 
@@ -46,9 +46,9 @@ public class CellProperties {
     myCellWidth = myCell.getWidth() + "";
     myCellHeight = myCell.getHeight() + "";
     myCellEffectiveWidth = myCell.getEffectiveWidth() + "";
-    myRootCell = (myCell.getEditor().getRootCell() == myCell) ? "Yes" : "No";
-    myCellID = (String) (myCell.getCellId());
-    myCellRole = "" + (myCell.getCellRole());
+    myRootCell = (myCell.getEditorComponent().getRootCell() == myCell) ? "Yes" : "No";
+    myCellID = myCell.getCellId();
+    myCellRole = "" + (myCell.getRole());
 
     mySNode = myCell.getSNode();
     String name = mySNode.getName();

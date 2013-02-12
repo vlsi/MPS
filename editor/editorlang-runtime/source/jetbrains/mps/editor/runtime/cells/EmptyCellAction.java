@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,31 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.cellActions;
+package jetbrains.mps.editor.runtime.cells;
 
-import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /**
- * Author: Sergey Dmitriev.
- * Time: Nov 5, 2003 1:03:02 PM
+ * User: shatalin
+ * Date: 2/12/13
  */
-public class CellAction_DeleteReference extends AbstractCellAction {
-  private SNode mySource;
-  private String myRole;
+public class EmptyCellAction extends AbstractCellAction {
+  private static EmptyCellAction ourInstance;
 
-  public CellAction_DeleteReference(SNode source, String role) {
-    mySource = source;
-    myRole = role;
+  public static EmptyCellAction getInstance() {
+    if (ourInstance == null) {
+      ourInstance = new EmptyCellAction();
+    }
+    return ourInstance;
   }
 
-  public boolean canExecute(EditorContext context) {
-    return true;
-  }
-
+  @Override
   public void execute(EditorContext context) {
-    SNodeAccessUtil.setReferenceTarget(mySource, myRole, null);
   }
 }

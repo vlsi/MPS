@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CellAction_DeleteOnErrorReference extends EditorCellAction {
+public class CellAction_DeleteOnErrorReference extends AbstractCellAction {
   private SNode mySource;
   private String myRole;
 

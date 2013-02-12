@@ -35,7 +35,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cells.EditorCell {
   // TODO: Pulled up to jetbrains.mps.openapi.editor.cells.EditorCell. Remove it.
@@ -88,13 +87,12 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   void setSubstituteInfo(NodeSubstituteInfo substitueInfo);
   NodeSubstituteInfo getSubstituteInfo();
 
-  EditorCellAction getAction(CellActionType type);
-  // TODO: move this method to open API
+  /**
+   * Since MPS 3.0 use setAction(jetbrains.mps.openapi.editor.cells.CellActionType, jetbrains.mps.openapi.editor.cells.CellAction) instead
+   * should be removed after MPS 3.0
+   */
+  @Deprecated
   void setAction(CellActionType type, EditorCellAction action);
-  boolean canExecuteAction(CellActionType type);
-  boolean executeAction(CellActionType type);
-  EditorCellAction getApplicableCellAction(CellActionType type);
-  Set<CellActionType> getAvailableActions();
 
   /**
    * Starting from MPS 3.0 use getEditorComponent(); instead

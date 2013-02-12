@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.util.Pair;
 
@@ -40,11 +39,11 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       return true;
     }
 
-    CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
+    jetbrains.mps.openapi.editor.cells.CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
     jetbrains.mps.nodeEditor.cells.EditorCell selectedCell = editorContext.getSelectedCell();
 
     // process action
-    if (selectedCell != null && actionType != null && selectedCell.executeAction(actionType)) {
+    if (selectedCell != null && actionType != null && editorContext.getEditorComponent().getActionHandler().executeAction(selectedCell, actionType)) {
       return true;
     }
 
@@ -70,10 +69,10 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       return true;
     }
 
-    CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
+    jetbrains.mps.openapi.editor.cells.CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
 
     if (selectedCell != null) {
-      boolean strictMatching = CellActionType.RIGHT_TRANSFORM.equals(actionType) || CellActionType.LEFT_TRANSFORM.equals(actionType);
+      boolean strictMatching = jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM.equals(actionType) || jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM.equals(actionType);
 
       if (selectedCell.isErrorState() && strictMatching) {
         if (selectedCell.validate(strictMatching, false)) {
@@ -82,7 +81,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       }
 
       if (actionType != null) {
-        if (selectedCell.executeAction(actionType)) {
+        if (editorContext.getEditorComponent().getActionHandler().executeAction(selectedCell, actionType)) {
           return true;
         }
       }

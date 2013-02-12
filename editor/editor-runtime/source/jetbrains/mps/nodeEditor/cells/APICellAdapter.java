@@ -106,8 +106,4 @@ public class APICellAdapter {
   public static boolean isLastPositionInBigCell(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isLastPositionInBigCell();
   }
-
-  public static boolean executeAction(EditorCell cell, CellActionType type) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).executeAction(type);
-  }
 }

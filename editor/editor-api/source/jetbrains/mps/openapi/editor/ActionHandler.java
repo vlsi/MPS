@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,22 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.cellActions;
+package jetbrains.mps.openapi.editor;
 
-import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 /**
- * Author: Sergey Dmitriev.
- * Time: Nov 6, 2003 5:00:20 PM
+ * User: shatalin
+ * Date: 2/12/13
  */
-public class CellAction_Empty extends AbstractCellAction {
-  private Throwable myCreationPoint = new Throwable();
+public interface ActionHandler {
+  boolean executeAction(EditorCell editorCell, CellActionType type);
 
-  public boolean canExecute(EditorContext context) {
-    return true;
-  }
+  boolean executeAction(EditorCell editorCell, CellAction action);
 
-  public void execute(EditorContext context) {
-  }
+  CellAction getApplicableCellAction(EditorCell editorCell, CellActionType type);
 }

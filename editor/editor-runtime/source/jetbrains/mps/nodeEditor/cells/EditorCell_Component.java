@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
@@ -46,6 +47,11 @@ public class EditorCell_Component extends EditorCell_Basic {
         nodeEditorComponent.sendKeyEvent(e);
       }
     });
+    setAction(CellActionType.COPY, EmptyCellAction.getInstance());
+    setAction(CellActionType.CUT, EmptyCellAction.getInstance());
+    setAction(CellActionType.PASTE, EmptyCellAction.getInstance());
+    setAction(CellActionType.PASTE_AFTER, EmptyCellAction.getInstance());
+    setAction(CellActionType.PASTE_BEFORE, EmptyCellAction.getInstance());
   }
 
   public void setX(int x) {
@@ -129,14 +135,5 @@ public class EditorCell_Component extends EditorCell_Basic {
 
   public String toString() {
     return "ComponentCell";
-  }
-
-  @Override
-  public boolean canExecuteAction(CellActionType type) {
-    switch (type) {
-      case COPY: case CUT: case PASTE: case PASTE_AFTER: case PASTE_BEFORE:
-        return false;
-    }
-    return super.canExecuteAction(type);
   }
 }

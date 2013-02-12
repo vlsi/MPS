@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import java.awt.event.KeyEvent;
 
+// TODO: remove?
 public class KeyMap_EditorCellActionWrapper extends EditorCellKeyMapAction {
   private EditorCellAction myCellAction;
 

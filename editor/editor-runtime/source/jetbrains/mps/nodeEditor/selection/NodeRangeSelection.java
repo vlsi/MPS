@@ -15,16 +15,21 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -178,7 +183,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
       });
     } else if (selectedCellsSize == 1) {
       EditorCell nodeCell = getFirstCell();
-      final EditorCellAction action = nodeCell.getAction(CellActionType.DELETE);
+      final CellAction action = nodeCell.getAction(CellActionType.DELETE);
       if (action == null) return;
 
       if (!ModelAccess.instance().runReadAction(new Computable<Boolean>() {

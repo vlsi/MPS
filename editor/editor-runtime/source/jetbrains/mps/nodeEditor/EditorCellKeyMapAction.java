@@ -57,14 +57,6 @@ public abstract class EditorCellKeyMapAction extends KeyMapActionImpl {
     execute(null, (EditorContext) context);
   }
 
-  public boolean isMenuAlwaysShown() {
-    return false;
-  }
-
-  public String getKeyStroke() {
-    return "";
-  }
-
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
    *             <code>getSelectedNodes(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>

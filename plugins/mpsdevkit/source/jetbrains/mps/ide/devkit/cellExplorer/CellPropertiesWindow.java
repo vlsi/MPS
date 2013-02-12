@@ -15,12 +15,19 @@
  */
 package jetbrains.mps.ide.devkit.cellExplorer;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.Frame;
+import java.awt.GridLayout;
 
 /**
  * Created by IntelliJ IDEA.
