@@ -13,9 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project.facets;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;

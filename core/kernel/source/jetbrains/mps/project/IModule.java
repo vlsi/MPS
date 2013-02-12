@@ -196,7 +196,9 @@ public interface IModule extends SModule {
   @Deprecated
   boolean isCompileInMPS();
 
-  //  use SModuleOperations#getModuleWithDependenciesClassPathItem instead
+  /**
+   * @see SModuleOperations#getModuleWithDependenciesClassPathItem instead
+   */
   @Deprecated
   IClassPathItem getModuleWithDependenciesClassPathItem();
 

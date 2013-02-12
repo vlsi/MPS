@@ -7,7 +7,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.JavaModuleFacetImpl;
+import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
