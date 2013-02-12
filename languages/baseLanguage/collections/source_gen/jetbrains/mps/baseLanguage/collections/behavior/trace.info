@@ -1978,13 +1978,13 @@
     <nodeInfo nodeId="5994574781955788628" fileName="IApplicableToNothing_Behavior.java" startLine="27" startPosition="103" endLine="28" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5994574781955687486" fileName="IApplicableToNothing_Behavior.java" startLine="28" startPosition="66" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5994574781956187643" fileName="IApplicableToNothing_Behavior.java" startLine="32" startPosition="39" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2142237368812335400" fileName="IApplicableToNothing_Behavior.java" startLine="36" startPosition="41" endLine="37" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2142237368812335400" fileName="IApplicableToNothing_Behavior.java" startLine="36" startPosition="41" endLine="37" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5994574781956002219" fileName="IApplicableToNothing_Behavior.java" startLine="40" startPosition="12" endLine="41" endPosition="371" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5994574781956360349" fileName="IApplicableToNothing_Behavior.java" startLine="43" startPosition="39" endLine="44" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2142237368812367153" fileName="IApplicableToNothing_Behavior.java" startLine="47" startPosition="41" endLine="48" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2142237368812367153" fileName="IApplicableToNothing_Behavior.java" startLine="47" startPosition="41" endLine="48" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5994574781955956209" fileName="IApplicableToNothing_Behavior.java" startLine="52" startPosition="61" endLine="53" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5994574781963016640" fileName="IApplicableToNothing_Behavior.java" startLine="54" startPosition="5" endLine="55" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2142237368811537558" fileName="IApplicableToNothing_Behavior.java" startLine="58" startPosition="101" endLine="59" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2142237368811537558" fileName="IApplicableToNothing_Behavior.java" startLine="58" startPosition="106" endLine="59" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6368025520509018236" fileName="IApplicableToNothing_Behavior.java" startLine="62" startPosition="106" endLine="63" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6368025520509018261" fileName="IApplicableToNothing_Behavior.java" startLine="65" startPosition="25" endLine="66" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6368025520509018269" fileName="IApplicableToNothing_Behavior.java" startLine="67" startPosition="82" endLine="68" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2012,11 +2012,11 @@
     <nodeInfo nodeId="5994574781955586073" fileName="IApplicableToNothing_Behavior.java" startLine="27" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAllApplicableTypes_5994574781955687463#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/Set;" />
     <scopeInfo nodeId="5994574781955586075" fileName="IApplicableToNothing_Behavior.java" startLine="24" startPosition="43" endLine="24" endPosition="43" />
     <scopeInfo nodeId="5994574781956187264" fileName="IApplicableToNothing_Behavior.java" startLine="32" startPosition="39" endLine="33" endPosition="63" />
-    <scopeInfo nodeId="2142237368811596112" fileName="IApplicableToNothing_Behavior.java" startLine="36" startPosition="41" endLine="37" endPosition="246" />
+    <scopeInfo nodeId="2142237368811596112" fileName="IApplicableToNothing_Behavior.java" startLine="36" startPosition="41" endLine="37" endPosition="256" />
     <scopeInfo nodeId="5994574781956360348" fileName="IApplicableToNothing_Behavior.java" startLine="43" startPosition="39" endLine="44" endPosition="63" />
-    <scopeInfo nodeId="5994574781956387602" fileName="IApplicableToNothing_Behavior.java" startLine="47" startPosition="41" endLine="48" endPosition="246" />
+    <scopeInfo nodeId="5994574781956387602" fileName="IApplicableToNothing_Behavior.java" startLine="47" startPosition="41" endLine="48" endPosition="256" />
     <scopeInfo nodeId="5994574781955764233" fileName="IApplicableToNothing_Behavior.java" startLine="52" startPosition="61" endLine="53" endPosition="302" />
-    <scopeInfo nodeId="2142237368811537354" fileName="IApplicableToNothing_Behavior.java" startLine="58" startPosition="101" endLine="59" endPosition="234" />
+    <scopeInfo nodeId="2142237368811537354" fileName="IApplicableToNothing_Behavior.java" startLine="58" startPosition="106" endLine="59" endPosition="244" />
     <scopeInfo nodeId="6368025520509018268" fileName="IApplicableToNothing_Behavior.java" startLine="67" startPosition="82" endLine="68" endPosition="148" />
     <scopeInfo nodeId="5994574781955586073" fileName="IApplicableToNothing_Behavior.java" startLine="77" startPosition="103" endLine="78" endPosition="171" />
     <scopeInfo nodeId="5994574781955586073" fileName="IApplicableToNothing_Behavior.java" startLine="82" startPosition="136" endLine="83" endPosition="335" />
@@ -2039,7 +2039,7 @@
       <varInfo nodeId="5994574781955764229" varName="impl" />
     </scopeInfo>
     <scopeInfo nodeId="5994574781955586073" fileName="IApplicableToNothing_Behavior.java" startLine="58" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="2142237368811537504" varName="it" />
+      <varInfo nodeId="2142237368811537504" varName="concept" />
       <varInfo nodeId="5994574781955586073" varName="thisConcept" />
     </scopeInfo>
     <scopeInfo nodeId="5994574781955586073" fileName="IApplicableToNothing_Behavior.java" startLine="76" startPosition="0" endLine="80" endPosition="0">

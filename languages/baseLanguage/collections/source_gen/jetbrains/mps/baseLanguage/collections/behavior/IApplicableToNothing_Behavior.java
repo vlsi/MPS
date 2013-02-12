@@ -34,7 +34,7 @@ public class IApplicableToNothing_Behavior {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return IApplicableToNothing_Behavior.call_hasApplicableTypes_2142237368811537351(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), ((SNode) it));
+          return IApplicableToNothing_Behavior.call_hasApplicableTypes_2142237368811537351(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())))), ((SNode) it));
         }
       });
     } else {
@@ -45,7 +45,7 @@ public class IApplicableToNothing_Behavior {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return IApplicableToNothing_Behavior.call_hasApplicableTypes_2142237368811537351(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), ((SNode) it));
+          return IApplicableToNothing_Behavior.call_hasApplicableTypes_2142237368811537351(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())))), ((SNode) it));
         }
       });
     }
@@ -55,8 +55,8 @@ public class IApplicableToNothing_Behavior {
     return result;
   }
 
-  public static boolean call_hasApplicableTypes_2142237368811537351(SConcept thisConcept, SNode it) {
-    return SConceptOperations.isSubConceptOf(it, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing") && !(SConceptOperations.isExactly(it, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"));
+  public static boolean call_hasApplicableTypes_2142237368811537351(SConcept thisConcept, SNode concept) {
+    return SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing") && !(SConceptOperations.isExactly(concept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"));
   }
 
   public static SNode virtual_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
