@@ -13,6 +13,10 @@ import jetbrains.mps.project.GlobalScope;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
+      InferenceRule_Runtime inferenceRule = new typeof_ConvertTo_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_GetAmount_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
