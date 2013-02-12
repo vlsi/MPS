@@ -19,8 +19,15 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Collections;
 import java.util.Map;
 
 public class LanguageModelDigestIndex extends BaseModelDigestIndex {
@@ -44,6 +51,16 @@ public class LanguageModelDigestIndex extends BaseModelDigestIndex {
 
   @Override
   public int getVersion() {
-    return 1;
+    return 2;
+  }
+
+  @Override
+  protected Map<String, String> calculateDigest(byte[] content) {
+    String fileHash = null;
+    try {
+      fileHash = ModelDigestUtil.hashText(new InputStreamReader(new ByteArrayInputStream(content), FileUtil.DEFAULT_CHARSET));
+    } catch (IOException ignored) {
+    }
+    return fileHash == null ? null : Collections.singletonMap(GeneratableSModelDescriptor.FILE, fileHash);
   }
 }

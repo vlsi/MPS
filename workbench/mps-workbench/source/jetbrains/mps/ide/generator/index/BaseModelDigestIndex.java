@@ -5,11 +5,11 @@ import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
 import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import com.intellij.util.io.EnumeratorStringDescriptor;
-import jetbrains.mps.smodel.persistence.def.ModelDigestHelper;
-import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,11 +25,12 @@ public abstract class BaseModelDigestIndex extends SingleEntryFileBasedIndexExte
     return new SingleEntryIndexer<Map<String, String>>(false) {
       @Override
       protected Map<String, String> computeValue(@NotNull FileContent inputData) {
-        final byte[] content = inputData.getContent();
-        return ModelDigestHelper.getDigestMap(new InputStreamReader(new ByteArrayInputStream(content), FileUtil.DEFAULT_CHARSET));
+        return calculateDigest(inputData.getContent());
       }
     };
   }
+
+  protected abstract Map<String, String> calculateDigest(byte[] content);
 
   @Override
   public boolean dependsOnFileContent() {

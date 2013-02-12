@@ -98,6 +98,7 @@
   <!--        <fileBasedIndex implementation="NamedNodeIndex"/> -->
   <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.LanguageModelDigestIndex"/>
   <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.ModelDigestIndex"/>
+  <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.BinaryModelDigestIndex"/>
   <fileBasedIndex implementation="com.intellij.psi.search.FilenameIndex"/>
   <indexedRootsProvider implementation="jetbrains.mps.ide.findusages.caches.MPSIndexedRootsProvider"/>
 
