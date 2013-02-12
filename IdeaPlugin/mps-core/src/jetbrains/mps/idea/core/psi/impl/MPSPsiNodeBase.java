@@ -142,7 +142,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
     return parent;
   }
 
-  void addChild(MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
+  public void addChild(MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
     MPSPsiNodeBase firstChild = first;
     if (anchor == null) {
       if (firstChild != null) {
