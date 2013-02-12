@@ -42,6 +42,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
@@ -194,8 +195,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   @Override
   public SModel resolveInDependencies(org.jetbrains.mps.openapi.model.SModelId ref) {
-    // TODO API (implement)
-    return null;
+    // TODO: implement something more meaningful
+    return SModelRepository.getInstance().getModelDescriptor(ref);
   }
 
   @Override
