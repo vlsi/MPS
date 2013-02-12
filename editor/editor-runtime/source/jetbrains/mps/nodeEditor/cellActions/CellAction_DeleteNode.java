@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
+import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -28,7 +28,7 @@ import java.util.List;
  * Author: Sergey Dmitriev.
  * Time: Nov 5, 2003 1:03:02 PM
  */
-public class CellAction_DeleteNode extends AbstractCellAction {
+public class CellAction_DeleteNode extends EditorCellAction {
   private SNode mySemanticNode;
 
   public CellAction_DeleteNode(SNode semanticNode) {

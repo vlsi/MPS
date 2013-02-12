@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.openapi.editor.EditorContext;
 
 /**
  * Author: Sergey Dmitriev.
  * Time: Nov 6, 2003 5:00:20 PM
  */
-public class CellAction_Empty extends AbstractCellAction {
+public class CellAction_Empty extends EditorCellAction {
   private Throwable myCreationPoint = new Throwable();
 
   public boolean canExecute(EditorContext context) {

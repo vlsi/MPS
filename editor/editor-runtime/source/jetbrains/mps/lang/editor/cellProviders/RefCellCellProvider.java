@@ -15,20 +15,20 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
+import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Iterator;
 
@@ -66,7 +66,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
       if (ReferenceConceptUtil.getCharacteristicReference(((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode()) != null) {
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));
       } else {
-        editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+        editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       }
     } else {
       if (myIsAggregation) {
