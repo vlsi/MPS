@@ -26,32 +26,31 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.ModelDigestHelper.DigestProvider;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.Map;
 
 public class IndexBasedLanguageModelDigest implements ApplicationComponent {
+  @Override
   @NotNull
   public String getComponentName() {
     return "Index based language model digest component";
   }
 
+  @Override
   public void initComponent() {
     ModelDigestHelper.getInstance().addDigestProvider(new DigestProvider() {
       @Override
-      public Map<String, String> getGenerationHashes(final IOperationContext operationContext, @NotNull DataSource source) {
-        if (!(source instanceof FileDataSource)) return null;
-        IFile iFile = ((FileDataSource) source).getFile();
-        if (iFile == null) return null;
+      public Map<String, String> getGenerationHashes(@NotNull FileDataSource source) {
+        IFile iFile = source.getFile();
         try {
           VirtualFile file = VirtualFileUtils.getVirtualFile(iFile);
           if (file == null) return null;
 
           final Map<String, String>[] valueArray = new Map[]{null};
           FileBasedIndex.getInstance().processValues(LanguageModelDigestIndex.NAME, FileBasedIndex.getFileId(file), file, new ValueProcessor<Map<String, String>>() {
+            @Override
             public boolean process(VirtualFile file, Map<String, String> values) {
               valueArray[0] = values;
               return true;
@@ -67,6 +66,7 @@ public class IndexBasedLanguageModelDigest implements ApplicationComponent {
 
   }
 
+  @Override
   public void disposeComponent() {
 
   }

@@ -25,18 +25,22 @@ import java.util.Map;
 public class ModelDigestIndex extends BaseModelDigestIndex {
   public static final ID<Integer, Map<String, String>> NAME = ID.create("ModelDigest");
 
+  @Override
   public ID<Integer, Map<String, String>> getName() {
     return NAME;
   }
 
+  @Override
   public InputFilter getInputFilter() {
     return new InputFilter() {
+      @Override
       public boolean acceptInput(VirtualFile file) {
         return file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
       }
     };
   }
 
+  @Override
   public int getVersion() {
     return 7;
   }

@@ -106,7 +106,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   private boolean generationRequired(SModule module, IOperationContext context) {
     if (!(module instanceof AbstractModule)) return false;
     for (SModelDescriptor md : ((AbstractModule) module).getOwnModelDescriptors()) {
-      boolean required = ModelGenerationStatusManager.getInstance().generationRequired(md, context);
+      boolean required = ModelGenerationStatusManager.getInstance().generationRequired(md);
       if (required) return true;
     }
     return false;
@@ -132,7 +132,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     jetbrains.mps.project.Project project = node.getOperationContext().getProject();
     if (DumbService.getInstance(ProjectHelper.toIdeaProject(project)).isDumb()) return GenerationStatus.UPDATING;
 
-    boolean required = ModelGenerationStatusManager.getInstance().generationRequired(node.getSModelDescriptor(), new ProjectOperationContext(project));
+    boolean required = ModelGenerationStatusManager.getInstance().generationRequired(node.getSModelDescriptor());
     return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;
   }
 

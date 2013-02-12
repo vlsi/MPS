@@ -27,6 +27,8 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Map;
+
 import static jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
 
 /**
@@ -145,6 +147,13 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
 
   @Override
   public String getModelHash() {
+    // TODO
+    return null;
+  }
+
+  @Override
+  public Map<String, String> getGenerationHashes() {
+    // TODO
     return null;
   }
 

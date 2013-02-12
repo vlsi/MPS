@@ -26,12 +26,11 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.testbench.Testbench;
@@ -42,14 +41,11 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
-import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -163,7 +159,7 @@ public class GenerationTestBase {
         }
       });
       List<String> hashes = new ArrayList<String>();
-      hashes.add(incrementalStrategy.getHash().get(ModelDigestHelper.FILE));
+      hashes.add(incrementalStrategy.getHash().get(GeneratableSModelDescriptor.FILE));
 
       // Stage 1. Regenerate
 
@@ -174,7 +170,7 @@ public class GenerationTestBase {
         Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
         new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-      p.getComponent(TransientModelsComponent.class));
+        p.getComponent(TransientModelsComponent.class));
 
       Map<String, String> generated = replaceInContent(generationHandler.getGeneratedContent(), new String[]{randomName, originalModel.getModule().getModuleFqName()}, new String[]{randomId, originalModel.getModule().getModuleReference().getModuleId().toString()});
       assertNoDiff(generationHandler.getExistingContent(), generated);
@@ -204,7 +200,7 @@ public class GenerationTestBase {
             incrementalStrategy.buildHash();
           }
         });
-        hashes.add(incrementalStrategy.getHash().get(ModelDigestHelper.FILE));
+        hashes.add(incrementalStrategy.getHash().get(GeneratableSModelDescriptor.FILE));
         Assert.assertNotNull(generationHandler.getLastDependencies());
         incrementalStrategy.setDependencies(generationHandler.getLastDependencies());
 
@@ -219,7 +215,7 @@ public class GenerationTestBase {
           Collections.singletonList(descr), ModuleContext.create(descr, p),
           generationHandler,
           new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-      p.getComponent(TransientModelsComponent.class));
+          p.getComponent(TransientModelsComponent.class));
         time.add(System.nanoTime() - start);
 
         incrementalGenerationResults = generationHandler.getGeneratedContent();
@@ -237,7 +233,7 @@ public class GenerationTestBase {
         Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
         new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-      p.getComponent(TransientModelsComponent.class));
+        p.getComponent(TransientModelsComponent.class));
       time.add(System.nanoTime() - start);
 
       assertNoDiff(incrementalGenerationResults, generationHandler.getGeneratedContent());
@@ -255,7 +251,7 @@ public class GenerationTestBase {
     } finally {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          MPSModuleRepository.getInstance().unregisterModule(tm,myOwner);
+          MPSModuleRepository.getInstance().unregisterModule(tm, myOwner);
         }
       });
     }
@@ -315,13 +311,13 @@ public class GenerationTestBase {
     } catch (IOException e) {
       Assert.fail(e.getMessage());
     }
-    return ModelDigestUtil.getDigestMap(os.toByteArray());
+    return ModelDigestHelper.getDigestMap(new InputStreamReader(new ByteArrayInputStream(os.toByteArray()), FileUtil.DEFAULT_CHARSET));
   }
 
   private static Map<String, String> getEmptyDigest() {
     Map<String, String> result = new HashMap<String, String>();
-    result.put(ModelDigestHelper.FILE, ModelDigestUtil.hash(""));
-    result.put(ModelDigestHelper.HEADER, ModelDigestUtil.hash(""));
+    result.put(GeneratableSModelDescriptor.FILE, ModelDigestUtil.hashText(""));
+    result.put(GeneratableSModelDescriptor.HEADER, ModelDigestUtil.hashText(""));
     return result;
 
   }
@@ -395,8 +391,8 @@ public class GenerationTestBase {
     void buildHash() {
       Map<String, String> hashes = getHashes(myModel.getSModel());
       if (myHash != null) {
-        Assert.assertEquals("header's SHA1 shouldn't change after model change", myHash.get(ModelDigestHelper.HEADER), hashes.get(ModelDigestHelper.HEADER));
-        Assert.assertNotSame("file's SHA1 should change after model change", myHash.get(ModelDigestHelper.FILE), hashes.get(ModelDigestHelper.FILE));
+        Assert.assertEquals("header's SHA1 shouldn't change after model change", myHash.get(GeneratableSModelDescriptor.HEADER), hashes.get(GeneratableSModelDescriptor.HEADER));
+        Assert.assertNotSame("file's SHA1 should change after model change", myHash.get(GeneratableSModelDescriptor.FILE), hashes.get(GeneratableSModelDescriptor.FILE));
       }
       myHash = hashes;
     }

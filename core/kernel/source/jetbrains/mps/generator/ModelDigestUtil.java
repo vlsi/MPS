@@ -15,57 +15,29 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Map;
 
 /**
  * Evgeny Gryaznov, Sep 2, 2010
  */
 public class ModelDigestUtil {
 
-  public static Map<String, String> getDigestMap(@NotNull IFile file) {
-    InputStream is = null;
-    byte[] modelBytes = null;
-    try {
-      is = file.openInputStream();
-      modelBytes = ReadUtil.read(is);
-    } catch (IOException e) {
-      /* ignore */
-    } finally {
-      FileUtil.closeFileSafe(is);
-    }
-    if (modelBytes == null) {
-      return null;
-    }
-    return getDigestMap(modelBytes);
-  }
-
-  public static Map<String, String> getDigestMap(byte[] modelBytes) {
-    try {
-      // TODO plugable hashes...
-      return ModelPersistence.calculateHashes(modelBytes);
-    } catch (ModelReadException e) {
-      return null;
-    }
-  }
-
-  public static String hash(IFile file) {
+  /**
+   *  Ignores newlines when isText == true.
+   */
+  public static String hash(IFile file, boolean isText) {
     if (file == null) return null;
 
     InputStream is = null;
     try {
       is = file.openInputStream();
-      return hash(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET));
+      return isText ? hash(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET)) : hash(is);
     } catch (IOException e) {
       /* ignore */
     } finally {
@@ -80,20 +52,39 @@ public class ModelDigestUtil {
     return null;
   }
 
-  public static String hash(byte[] content) {
+  public static String hashBytes(byte[] content) {
     try {
-      return hash(new InputStreamReader(new ByteArrayInputStream(content), FileUtil.DEFAULT_CHARSET));
+      return hash(new ByteArrayInputStream(content));
     } catch (IOException e) {
       // it can't happen
       throw new IllegalStateException(e);
     }
   }
 
-  public static String hash(String content) {
+  /**
+   * Ignores newlines.
+   */
+  public static String hashText(String content) {
     try {
       return hash(new StringReader(content));
     } catch (IOException e) {
       // it can't happen
+      throw new IllegalStateException(e);
+    }
+  }
+
+  private static String hash(InputStream stream) throws IOException {
+    try {
+      MessageDigest digest = MessageDigest.getInstance("SHA");
+      byte[] block = new byte[1024];
+      int size;
+      while ((size = stream.read(block)) > 0) {
+        digest.update(block, 0, size);
+      }
+
+      byte[] res = digest.digest();
+      return new BigInteger(res).toString(Character.MAX_RADIX);
+    } catch (NoSuchAlgorithmException e) {
       throw new IllegalStateException(e);
     }
   }

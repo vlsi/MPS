@@ -16,8 +16,9 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
-import jetbrains.mps.generator.ModelDigestHelper;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import org.jdom.Element;
 
@@ -80,7 +81,7 @@ public class GenerationDependencies {
     this.myUsedModelsHashes = externalHashes;
     for (GenerationRootDependencies rd : data) {
       String id = rd.getRootId();
-      myRootDependenciesMap.put(id == null ? ModelDigestHelper.HEADER : id, rd);
+      myRootDependenciesMap.put(id == null ? GeneratableSModelDescriptor.HEADER : id, rd);
     }
     this.myDependenciesTraces = dependenciesTraces;
   }
@@ -231,7 +232,7 @@ public class GenerationDependencies {
         if (!externalHashes.containsKey(modelReference)) {
           SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
           Map<String, String> hashes = incrementalStrategy.getModelHashes(sm, operationContext);
-          String value = hashes != null ? hashes.get(ModelDigestHelper.FILE) : null;
+          String value = hashes != null ? hashes.get(GeneratableSModelDescriptor.FILE) : null;
           externalHashes.put(modelReference, value);
         }
       }

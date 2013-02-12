@@ -19,24 +19,30 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
 public class LanguageModelDigestIndex extends BaseModelDigestIndex {
   public static final ID<Integer, Map<String, String>> NAME = ID.create("LanguageModelDigest");
 
+  @NotNull
+  @Override
   public ID<Integer, Map<String, String>> getName() {
     return NAME;
   }
 
+  @Override
   public InputFilter getInputFilter() {
     return new InputFilter() {
+      @Override
       public boolean acceptInput(VirtualFile file) {
         return file.getFileType().equals(MPSFileTypeFactory.LANGUAGE_FILE_TYPE);
       }
     };
   }
 
+  @Override
   public int getVersion() {
     return 1;
   }
