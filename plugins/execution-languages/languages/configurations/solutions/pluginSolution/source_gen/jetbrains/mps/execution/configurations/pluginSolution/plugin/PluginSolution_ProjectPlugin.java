@@ -18,6 +18,7 @@ public class PluginSolution_ProjectPlugin extends BaseProjectPlugin {
   public List<RelationDescriptor> initTabbedEditors(Project project) {
     List<RelationDescriptor> result = new ArrayList();
     result.add(new Executor_TabDescriptor());
+    result.add(new Producer_TabDescriptor());
     result.add(new Run_Configuration_TabDescriptor());
     return result;
   }

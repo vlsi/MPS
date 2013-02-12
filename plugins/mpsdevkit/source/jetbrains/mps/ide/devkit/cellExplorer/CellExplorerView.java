@@ -22,35 +22,44 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.icons.MPSIcons.CellExplorer;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellKeyMap;
-import jetbrains.mps.nodeEditor.EditorCellKeyMapAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.openapi.editor.cells.KeyMap;
+import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
+import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.ide.tools.BaseProjectTool;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.BorderLayout;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * @author Kostik
@@ -340,40 +349,37 @@ public class CellExplorerView extends BaseProjectTool {
   }
 
   private class KeyMapTreeNode extends MPSTreeNode {
-    public KeyMapTreeNode(EditorCellKeyMap keyMap) {
+    public KeyMapTreeNode(KeyMap keyMap) {
       super(null);
       setNodeIdentifier("KeyMaps");
 
-      List<Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey>> list =
-        new ArrayList<Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey>>(keyMap.getAllActionsAndKeys());
-
-
-      Collections.sort(list, new Comparator<Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey>>() {
-        public int compare(Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey> o1, Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey> o2) {
-          return o1.o2.toString().compareTo(o2.o2.toString());
+      List<ActionKey> actionKeys = new ArrayList<ActionKey>(keyMap.getActionKeys());
+      Collections.sort(actionKeys, new Comparator<ActionKey>() {
+        public int compare(ActionKey firstKey, ActionKey secondKey) {
+          return firstKey.toString().compareTo(secondKey.toString());
         }
       });
 
-      for (Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey> key : list) {
-        String text = key.o2.toString();
+      for (ActionKey actionKey : actionKeys) {
+        String prefix = actionKey.toString();
+        for (KeyMapAction keyMapAction : keyMap.getActions(Collections.singleton(actionKey))) {
+          String label = prefix;
+          if (keyMapAction.getDescriptionText() != null && keyMapAction.getDescriptionText().length() != 0) {
+            label += " (" + keyMapAction.getDescriptionText() + ")";
+          }
+          add(new TextTreeNode(label) {
+            {
+              setIcon(CellExplorer.CellActionKey);
+            }
 
-        if (key.o1.getDescriptionText() != null && key.o1.getDescriptionText().length() != 0) {
-          text += " (" + key.o1.getDescriptionText() + ")";
+            public boolean isLeaf() {
+              return true;
+            }
+          });
         }
-
-        add(new TextTreeNode(text) {
-          {
-            setIcon(CellExplorer.CellActionKey);
-          }
-
-          public boolean isLeaf() {
-            return true;
-          }
-        });
-
-        setIcon(CellExplorer.CellKeyMap);
-        setNodeIdentifier("Keymap");
       }
+      setIcon(CellExplorer.CellKeyMap);
+      setNodeIdentifier("Keymap");
     }
   }
 }

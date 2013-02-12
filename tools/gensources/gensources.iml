@@ -457,7 +457,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/Build/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/MoneyRuntime/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/ParallelForUtils/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/SampleJavaExtensions.build/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleJavaExtensions/solutions/SampleJavaExtensions.sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleLanguage/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/sampleLanguage/solutions/sandbox/classes_gen" />

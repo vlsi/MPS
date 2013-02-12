@@ -84,7 +84,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEventVisitorAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelPropertyEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelReferenceEvent" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.ITypeContextOwner" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.ITypechecking" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />

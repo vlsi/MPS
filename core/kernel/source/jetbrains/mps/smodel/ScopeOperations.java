@@ -34,6 +34,10 @@ public class ScopeOperations {
     return result;
   }
 
+  public static Language resolveLanguage(SearchScope scope, SModuleReference reference) {
+    return resolveModule(scope, reference, Language.class);
+  }
+
   public static <T extends SModule> T resolveModule(SearchScope scope, SModuleReference reference, Class<T> moduleClass) {
     SModule module = scope.resolve(reference);
     if (module != null && !(moduleClass.isInstance(module))) {

@@ -18,8 +18,11 @@ package jetbrains.mps.project;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.TestLanguage;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModule;
 
 /**
  * evgeny, 3/8/11
@@ -77,5 +80,37 @@ public class ProjectPathUtil {
       return file.getParent().getDescendant("test_gen");
     }
     return null;
+  }
+
+  public static IFile getGeneratorOutputPath(SModule module) {
+    // todo: remove
+    if (module instanceof TestLanguage || module instanceof StubSolution) {
+      return null;
+    }
+    if (module instanceof Generator) {
+      return getGeneratorOutputPath(((Generator) module).getSourceLanguage());
+    }
+    // todo: instance of Language | Solution?
+    if (module instanceof IModule) {
+      return getGeneratorOutputPath(((IModule) module).getDescriptorFile(), ((IModule) module).getModuleDescriptor());
+    } else {
+      return null;
+    }
+  }
+
+  public static IFile getGeneratorTestsOutputPath(SModule module) {
+    // todo: remove
+    if (module instanceof TestLanguage || module instanceof StubSolution) {
+      return null;
+    }
+    if (module instanceof Generator) {
+      return getGeneratorTestsOutputPath(((Generator) module).getSourceLanguage());
+    }
+    // todo: instance of Language | Solution?
+    if (module instanceof IModule) {
+      return getGeneratorTestsOutputPath(((IModule) module).getDescriptorFile(), ((IModule) module).getModuleDescriptor());
+    } else {
+      return null;
+    }
   }
 }

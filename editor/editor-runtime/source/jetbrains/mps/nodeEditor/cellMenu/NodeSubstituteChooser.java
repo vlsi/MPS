@@ -166,7 +166,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private List<INodeSubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
-    return TypeContextManager.getInstance().runTypeCheckingComputation(myEditorComponent, myEditorComponent.getEditedNode(), new Computation<List<INodeSubstituteAction>>() {
+    return TypeContextManager.getInstance().runTypeCheckingComputation(myEditorComponent.getTypecheckingContextOwner(), myEditorComponent.getEditedNode(), new Computation<List<INodeSubstituteAction>>() {
       @Override
       public List<INodeSubstituteAction> compute(TypeCheckingContext context) {
         if (myIsSmart) {

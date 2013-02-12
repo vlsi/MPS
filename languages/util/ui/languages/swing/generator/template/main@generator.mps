@@ -11,6 +11,7 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="5dc5fc0d-37ef-4782-8192-8b5ce1f69f80(jetbrains.mps.baseLanguage.extensionMethods)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
+  <language namespace="51805413-e01e-4f51-bf62-a054ab51eb54(jetbrains.mps.ui.swing)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="sqp9" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" />
   <import index="pehv" modelUID="r:91ff8447-bd7d-4bda-8eca-b4411481c27f(jetbrains.mps.ui.swing.generator.template.helper)" version="-1" />
@@ -301,8 +302,8 @@
         </node>
         <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="6991444902044116092">
           <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="6991444902044116093">
-            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
             <property name="messageText" nameId="tpf8.1169670173015" value="unsupported concept" />
+            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
           </node>
         </node>
       </node>
@@ -1442,8 +1443,8 @@
     </node>
     <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="7617727720685133759">
       <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="7617727720685133760">
-        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
         <property name="messageText" nameId="tpf8.1169670173015" value="Horizontal constraint broken" />
+        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
       </node>
     </node>
   </root>
@@ -2267,8 +2268,8 @@
     </node>
     <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="7617727720685366827">
       <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="7617727720685366828">
-        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
         <property name="messageText" nameId="tpf8.1169670173015" value="Horizontal constraint broken" />
+        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
       </node>
     </node>
   </root>
@@ -3147,8 +3148,8 @@
         </node>
         <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="6030013275786801737">
           <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="6030013275786801738">
-            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
             <property name="messageText" nameId="tpf8.1169670173015" value="unsupported constraint" />
+            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
           </node>
         </node>
       </node>
@@ -3315,8 +3316,8 @@
         </node>
         <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="6030013275786801739">
           <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="6030013275786801740">
-            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
             <property name="messageText" nameId="tpf8.1169670173015" value="unsupported constraint" />
+            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
           </node>
         </node>
       </node>
@@ -3483,8 +3484,8 @@
         </node>
         <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="6030013275786801741">
           <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="6030013275786801742">
-            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
             <property name="messageText" nameId="tpf8.1169670173015" value="unsupported constraint" />
+            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
           </node>
         </node>
       </node>
@@ -3651,8 +3652,8 @@
         </node>
         <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="6030013275786801743">
           <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="6030013275786801744">
-            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
             <property name="messageText" nameId="tpf8.1169670173015" value="unsupported constraint" />
+            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
           </node>
         </node>
       </node>
@@ -3684,8 +3685,8 @@
     </node>
     <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="6030013275786725639">
       <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="6030013275786725640">
-        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
         <property name="messageText" nameId="tpf8.1169670173015" value="unsupported constraint" />
+        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
       </node>
     </node>
   </root>

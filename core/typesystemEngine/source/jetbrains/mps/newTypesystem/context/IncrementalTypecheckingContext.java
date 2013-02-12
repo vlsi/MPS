@@ -123,7 +123,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
 
   @Override
   public boolean isIncrementalMode() {
-    return false; /*!myTypeChecker.isGenerationMode() && getState().getInequalitySystem() == null;*/
+    return true; /*!myTypeChecker.isGenerationMode() && getState().getInequalitySystem() == null;*/
   }
 
   public void runTypeCheckingAction(Runnable r) {

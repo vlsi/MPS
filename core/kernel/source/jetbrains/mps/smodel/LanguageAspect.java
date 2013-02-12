@@ -78,12 +78,6 @@ public enum LanguageAspect {
       return BootstrapLanguages.TYPESYSTEM;
     }
 
-    public List<ModuleReference> getAllLanguagesToImport(Language l) {
-      List<ModuleReference> result = new ArrayList<ModuleReference>(super.getAllLanguagesToImport(l));
-      result.add(l.getModuleReference());
-      return result;
-    }
-
     public String getHelpURL() {
       return CONFLUENCE_BASE + "Typesystem";
     }
@@ -235,14 +229,6 @@ public enum LanguageAspect {
       modelRoot = ModelRootUtil.getModelRoot(structureModel);
     }
     return l.createModel(l.getModuleName() + "." + getName(), modelRoot, null);
-  }
-
-  public List<ModuleReference> getAllLanguagesToImport(Language l) {
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
-    if (getMainLanguage() != null) {
-      result.add(getMainLanguage());
-    }
-    return result;
   }
 
   @Nullable

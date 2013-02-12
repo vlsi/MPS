@@ -34,10 +34,10 @@ public class Sample extends KajaFrame {
     } else {
       reportError("Cannot drop. The cell is already full.");
     }
-    turnRight_routine();
+    turn_SPACE_right_routine();
   }
 
-  public void turnRight_routine() {
+  public void turn_SPACE_right_routine() {
     for (int indexVariable_kf1bs5_a0a = 0; indexVariable_kf1bs5_a0a < 3; indexVariable_kf1bs5_a0a++) {
       turnLeft();
       pause();

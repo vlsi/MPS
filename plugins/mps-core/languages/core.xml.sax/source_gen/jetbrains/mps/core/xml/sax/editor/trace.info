@@ -2789,80 +2789,74 @@
   </root>
   <root nodeRef="r:1c9826ed-1ac5-4a4a-a16c-c4f33a9e7348(jetbrains.mps.core.xml.sax.editor)/2264311582634141283">
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="18" startPosition="30" endLine="19" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="19" startPosition="42" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="20" startPosition="34" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="19" startPosition="42" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="20" startPosition="24" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="21" startPosition="63" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="26" startPosition="40" endLine="27" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="30" startPosition="40" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="34" startPosition="91" endLine="35" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="34" startPosition="66" endLine="35" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="36" startPosition="34" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="38" startPosition="7" endLine="39" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="40" startPosition="32" endLine="41" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="43" startPosition="154" endLine="44" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="45" startPosition="7" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="49" startPosition="85" endLine="50" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="50" startPosition="62" endLine="51" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2264311582634141303" fileName="XMLSAXBreakReturn.java" startLine="54" startPosition="152" endLine="55" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="43" startPosition="157" endLine="44" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="45" startPosition="7" endLine="46" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="49" startPosition="60" endLine="50" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="50" startPosition="62" endLine="51" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2264311582634141303" fileName="XMLSAXBreakReturn.java" startLine="54" startPosition="127" endLine="55" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2264311582634141295" fileName="XMLSAXBreakReturn.java" startLine="59" startPosition="70" endLine="60" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="64" startPosition="34" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="20" startPosition="34" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="20" startPosition="24" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="XMLSAXBreakReturn_Action0#()V" />
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="35" startPosition="62" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="39" startPosition="49" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="42" startPosition="7" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Z" />
-    <nodeInfo nodeId="2264311582634141288" fileName="XMLSAXBreakReturn.java" startLine="58" startPosition="146" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Z" />
+    <nodeInfo nodeId="2264311582634141288" fileName="XMLSAXBreakReturn.java" startLine="58" startPosition="121" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="42" startPosition="7" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="58" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="58" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
     <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="XMLSAXBreakReturn#()V" />
-    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="34" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="34" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="26" startPosition="40" endLine="27" endPosition="38" />
     <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="30" startPosition="40" endLine="31" endPosition="19" />
     <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="36" startPosition="34" endLine="37" endPosition="21" />
     <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="40" startPosition="32" endLine="41" endPosition="21" />
-    <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="43" startPosition="154" endLine="44" endPosition="116" />
-    <scopeInfo nodeId="2264311582634141302" fileName="XMLSAXBreakReturn.java" startLine="54" startPosition="152" endLine="55" endPosition="71" />
+    <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="43" startPosition="157" endLine="44" endPosition="21" />
+    <scopeInfo nodeId="2264311582634141302" fileName="XMLSAXBreakReturn.java" startLine="54" startPosition="127" endLine="55" endPosition="71" />
     <scopeInfo nodeId="2264311582634141294" fileName="XMLSAXBreakReturn.java" startLine="59" startPosition="70" endLine="60" endPosition="110" />
     <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="64" startPosition="34" endLine="65" endPosition="22" />
-    <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="20" startPosition="34" endLine="22" endPosition="46" />
-    <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="49" startPosition="85" endLine="51" endPosition="115">
+    <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="20" startPosition="24" endLine="22" endPosition="46" />
+    <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="49" startPosition="60" endLine="51" endPosition="105">
       <varInfo nodeId="2264311582634141283" varName="contextCell" />
     </scopeInfo>
     <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="2264311582634141283" varName="editorContext" />
-      <varInfo nodeId="2264311582634141283" varName="keyEvent" />
       <varInfo nodeId="2264311582634141283" varName="node" />
       <varInfo nodeId="2264311582634141283" varName="selectedNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="2264311582634141287" fileName="XMLSAXBreakReturn.java" startLine="58" startPosition="146" endLine="61" endPosition="7" />
+    <scopeInfo nodeId="2264311582634141287" fileName="XMLSAXBreakReturn.java" startLine="58" startPosition="121" endLine="61" endPosition="7" />
     <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="18" startPosition="30" endLine="22" endPosition="46">
       <varInfo nodeId="2264311582634141283" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="42" startPosition="7" endLine="46" endPosition="19" />
     <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="2264311582634141283" varName="editorContext" />
-      <varInfo nodeId="2264311582634141283" varName="keyEvent" />
     </scopeInfo>
     <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="58" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="2264311582634141283" varName="editorContext" />
-      <varInfo nodeId="2264311582634141283" varName="keyEvent" />
       <varInfo nodeId="2264311582634141283" varName="node" />
       <varInfo nodeId="2264311582634141283" varName="selectedNodes" />
     </scopeInfo>
     <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="18" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="34" startPosition="91" endLine="46" endPosition="19">
+    <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="34" startPosition="66" endLine="46" endPosition="104">
       <varInfo nodeId="2264311582634141283" varName="contextCell" />
       <varInfo nodeId="2264311582634141283" varName="contextNode" />
     </scopeInfo>
     <scopeInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="34" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="2264311582634141283" varName="editorContext" />
-      <varInfo nodeId="2264311582634141283" varName="keyEvent" />
     </scopeInfo>
     <unitInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="25" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.core.xml.sax.editor.XMLSAXBreakReturn$XMLSAXBreakReturn_Action0" />
     <unitInfo nodeId="2264311582634141283" fileName="XMLSAXBreakReturn.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.core.xml.sax.editor.XMLSAXBreakReturn" />

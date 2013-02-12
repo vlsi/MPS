@@ -62,8 +62,8 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
 
   private Pair<SNode, NonTypesystemRule_Runtime> myRuleAndNodeBeingChecked = null;
 
-  public NonTypeSystemComponent(TypeChecker typeChecker, IncrementalTypechecking nodeTypesComponent) {
-    super(typeChecker, null, nodeTypesComponent);
+  public NonTypeSystemComponent(TypeChecker typeChecker, State state, IncrementalTypechecking nodeTypesComponent) {
+    super(typeChecker, state, nodeTypesComponent);
   }
 
   @Override
@@ -73,6 +73,7 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
   }
 
   public void clearNodeTypes() {
+    super.clearNodeTypes();
     clearAllExceptErrors();
     myNodesToErrorsMap.clear();
   }
@@ -345,7 +346,8 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
 
   @Override
   protected boolean isIncrementalMode() {
-    return false; // can never be
+    final boolean incrementalMode = getState().getTypeCheckingContext().isIncrementalMode();
+    return incrementalMode; // alright, alright
   }
 
   private static class MyTypesReadListener implements TypesReadListener {

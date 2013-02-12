@@ -29,7 +29,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -181,7 +182,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (true) {
-      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_RECURSIVELY);
+      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
     }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_a0d0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_b0d0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_c0d0()}));
     SNode attributeConcept = provider.getRoleAttribute();

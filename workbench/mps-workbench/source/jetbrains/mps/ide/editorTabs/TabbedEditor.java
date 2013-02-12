@@ -37,7 +37,6 @@ import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateGroupsBuilder;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.EditorSettingsListener;
 import jetbrains.mps.openapi.editor.EditorState;
@@ -50,7 +49,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -61,6 +60,7 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
@@ -78,7 +78,7 @@ public class TabbedEditor extends BaseNodeEditor {
 
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     public void settingsChanged() {
-      SNodeReference node = getCurrentEditorComponent() == null ? null : getCurrentEditorComponent().getEditedNodePointer();
+      SNodeReference node = getCurrentlyEditedNode();
       JComponent comp = myTabsComponent.getComponent();
       if (comp != null) {
         getComponent().remove(comp);
@@ -183,10 +183,8 @@ public class TabbedEditor extends BaseNodeEditor {
   private void showNodeInternal(SNode node, boolean select, boolean fromTabs) {
     SNode containingRoot = node.getModel() != null && node.getModel().isRoot(node) ? node : node.getContainingRoot();
     SNodeReference currentlyEditedNode = getCurrentlyEditedNode();
-    EditorComponent editor = getCurrentEditorComponent();
-    if (editor == null) {
+    if (getCurrentEditorComponent() == null) {
       showEditor();
-      editor = getCurrentEditorComponent();
     }
 
     boolean rootChange = getCurrentlyEditedNode() == null || (containingRoot != currentlyEditedNode.resolve(MPSModuleRepository.getInstance()));
@@ -204,27 +202,19 @@ public class TabbedEditor extends BaseNodeEditor {
       SModelDescriptor md = containingRoot.getModel().getModelDescriptor();
       IModule module = md.getModule();
       assert module != null : md.getSModelReference().toString() + "; node is disposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(node);
-      editor.editNode(containingRoot, new ModuleContext(module, myContext.getProject()));
+      editNode(new SNodePointer(containingRoot), new ModuleContext(module, myContext.getProject()), select);
 
       model = getCurrentNodeModel();
       assert model != null;
 
       model.addModelListener(myModelListener);
 
-      if (ModelAccess.instance().isInEDT()) {
-        updateProperties();
-      } else {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          @Override
-          public void run() {
-            updateProperties();
-          }
-        });
-      }
-    }
-
-    if (select) {
-      editor.selectNode(node);
+      executeInEDT(new Runnable() {
+        @Override
+        public void run() {
+          updateProperties();
+        }
+      });
     }
   }
 

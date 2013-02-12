@@ -43,7 +43,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3308300503039570175(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return SPropertyOperations.getString(_context.getNode(), "name").replaceAll(" ", "_SPACE_");
   }
 
   public static Object propertyMacro_GetPropertyValue_859008965969411038(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -56,9 +56,9 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_3308300503039701227(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.samples.Kaja.structure.Script", false, false) != null) {
-      return SPropertyOperations.getString(_context.getNode(), "name") + "_routine";
+      return SPropertyOperations.getString(_context.getNode(), "name").replaceAll(" ", "_SPACE_") + "_routine";
     } else if (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.samples.Kaja.structure.Library", false, false) != null) {
-      return SPropertyOperations.getString(_context.getNode(), "name") + "_library_routine_from_" + SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.samples.Kaja.structure.Library", false, false), "name");
+      return SPropertyOperations.getString(_context.getNode(), "name").replaceAll(" ", "_SPACE_") + "_library_routine_from_" + SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.samples.Kaja.structure.Library", false, false), "name").replaceAll(" ", "_SPACE_");
     } else {
       throw new IllegalArgumentException("The routine " + SPropertyOperations.getString(_context.getNode(), "name") + " seems to have no parent script nor library");
     }

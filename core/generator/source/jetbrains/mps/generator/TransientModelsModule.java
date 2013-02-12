@@ -65,14 +65,6 @@ public class TransientModelsModule extends ClassLoadingModule {
     return ((IClassLoadingModule) myOriginalModule).getClass(fqName);
   }
 
-  public String getGeneratorOutputPath() {
-    return null;
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    return null;
-  }
-
   public boolean hasPublished() {
     return !myPublished.isEmpty();
   }

@@ -17,11 +17,14 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 public class GeneralPurpose_DevKit {
-  public static final ModuleReference MODULE_REFERENCE = ModuleReference.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)");
+  @Deprecated
+  public static final ModuleReference MODULE_REFERENCE = BootstrapLanguages.DEVKIT_GENERAL;
 
+  @Deprecated
   public static DevKit get() {
     return ModuleRepositoryFacade.getInstance().getModule(MODULE_REFERENCE, DevKit.class);
   }

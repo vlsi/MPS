@@ -412,10 +412,9 @@
       <modulePath path="${project}/samples/sampleJavaExtensions/languages/Money/org.jetbrains.mps.samples.Money.mpl" folder="samples.sampleJavaExtensions" />
       <modulePath path="${project}/samples/sampleJavaExtensions/languages/ParallelFor/org.jetbrains.mps.samples.ParallelFor.mpl" folder="samples.sampleJavaExtensions" />
       <modulePath path="${project}/samples/sampleJavaExtensions/languages/SampleExtensions/org.jetbrains.mps.samples.IfAndUnless.mpl" folder="samples.sampleJavaExtensions" />
-      <modulePath path="${project}/samples/sampleJavaExtensions/solutions/Build/org.jetbrains.mps.samples.Build.msd" folder="samples" />
+      <modulePath path="${project}/samples/sampleJavaExtensions/solutions/Build/org.jetbrains.mps.samples.Build.msd" folder="samples.sampleJavaExtensions" />
       <modulePath path="${project}/samples/sampleJavaExtensions/solutions/MoneyRuntime/org.jetbrains.mps.samples.MoneyRuntime.msd" folder="samples.sampleJavaExtensions" />
       <modulePath path="${project}/samples/sampleJavaExtensions/solutions/ParallelForUtils/org.jetbrains.mps.samples.ParallelForUtils.msd" folder="samples.sampleJavaExtensions" />
-      <modulePath path="${project}/samples/sampleJavaExtensions/solutions/SampleJavaExtensions.build/SampleJavaExtensions.build.msd" folder="samples.sampleJavaExtensions" />
       <modulePath path="${project}/samples/sampleJavaExtensions/solutions/SampleJavaExtensions.sandbox/org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.msd" folder="samples.sampleJavaExtensions" />
       <modulePath path="${project}/samples/sampleLanguage/jetbrains.mps.debug.sampleLanguage.mpl" folder="debugger" />
       <modulePath path="${project}/samples/sampleLanguage/solutions/sandbox/jetbrains.mps.samples.sampleLanguage.sandbox.msd" folder="samples" />

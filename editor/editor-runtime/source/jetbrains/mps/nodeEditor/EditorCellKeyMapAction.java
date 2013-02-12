@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.editor.runtime.cells.KeyMapActionImpl;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.event.KeyEvent;
@@ -23,68 +24,41 @@ import java.util.List;
 /**
  * Author: Sergey Dmitriev
  * Created Nov 4, 2003
+ * <p/>
+ * was replaced with KeyMapActionImpl
+ * remove this class after MPS 3.0
  */
-public abstract class EditorCellKeyMapAction {
-  public static final int CARET_AT_ANY_POSITION = 0;
-  public static final int CARET_AT_FIRST_POSITION = 1;
-  public static final int CARET_AT_LAST_POSITION = 2;
-  public static final int CARET_AT_INTERMEDIATE_POSITION = 3;
-
-  private int myCaretPolicy;
-  private boolean myShownInPopupMenu = false;
-
+@Deprecated
+public abstract class EditorCellKeyMapAction extends KeyMapActionImpl {
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>canExecute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   * This method should be removed after MPS 3.0
+   *             <code>canExecute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             This method should be removed after MPS 3.0
    */
   @Deprecated
   public boolean canExecute(KeyEvent keyEvent, EditorContext context) {
     return true;
   }
 
-  public boolean canExecute(KeyEvent keyEvent, jetbrains.mps.openapi.editor.EditorContext context) {
-    return canExecute(keyEvent, (EditorContext) context);
+  public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
+    return canExecute(null, (EditorContext) context);
   }
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>execute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   * This method should be removed after MPS 3.0
+   *             <code>execute(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             This method should be removed after MPS 3.0
    */
   @Deprecated
   public void execute(KeyEvent keyEvent, EditorContext context) {
   }
 
-  /**
-   * This method should become abstract after MPS 3.0
-   */
-  public void execute(KeyEvent keyEvent, jetbrains.mps.openapi.editor.EditorContext context) {
-    execute(keyEvent, (EditorContext) context);
-  }
-
-  public String getDescriptionText() {
-    return null;
-  }
-
-  public int getCaretPolicy() {
-    return myCaretPolicy;
-  }
-
-  public void setCaretPolicy(int policy) {
-    myCaretPolicy = policy;
+  public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
+    execute(null, (EditorContext) context);
   }
 
   public boolean isMenuAlwaysShown() {
     return false;
-  }
-
-  public boolean isShownInPopupMenu() {
-    return myShownInPopupMenu;
-  }
-
-  public void setShownInPopupMenu(boolean toShow) {
-    myShownInPopupMenu = toShow;
   }
 
   public String getKeyStroke() {
@@ -93,15 +67,11 @@ public abstract class EditorCellKeyMapAction {
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>getSelectedNodes(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   * This method should be removed after MPS 3.0
+   *             <code>getSelectedNodes(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             This method should be removed after MPS 3.0
    */
   @Deprecated
   protected List<SNode> getSelectedNodes(EditorContext context) {
     return getSelectedNodes((jetbrains.mps.openapi.editor.EditorContext) context);
-  }
-  
-  protected List<SNode> getSelectedNodes(jetbrains.mps.openapi.editor.EditorContext context) {
-    return context.getEditorComponent().getSelectedNodes();
   }
 }

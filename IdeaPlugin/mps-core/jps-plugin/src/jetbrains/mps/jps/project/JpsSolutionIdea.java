@@ -13,6 +13,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -155,11 +156,15 @@ public class JpsSolutionIdea extends Solution {
     };
   }
 
-  // Needed only for ReducedGenerationWorker
   @Override
-  public String getTestsGeneratorOutputPath() {
-    //return ""; // just not null
-    return getClassesGen().getPath();
+  public String getOutputFor(SModel model) {
+    if (SModelStereotype.isTestModel(model)) {
+      // Needed only for ReducedGenerationWorker
+      //return ""; // just not null
+      return getClassesGen().getPath();
+    } else {
+      return super.getOutputFor(model);
+    }
   }
 
   @Override

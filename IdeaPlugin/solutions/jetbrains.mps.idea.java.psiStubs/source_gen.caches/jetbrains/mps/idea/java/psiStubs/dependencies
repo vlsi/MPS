@@ -117,7 +117,6 @@
     <classNode dependClassName="com.intellij.psi.PsiFileSystemItem" />
     <classNode dependClassName="com.intellij.psi.PsiJavaFile" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Map" />

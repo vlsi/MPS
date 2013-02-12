@@ -86,12 +86,15 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
+import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -347,6 +350,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private Set<SModelDescriptor> myLastDeps = new HashSet<SModelDescriptor>();
 
+  private KeymapHandler<KeyEvent> myKeymapHandler = new AWTKeymapHandler();
+
   public EditorComponent(IOperationContext operationContext) {
     this(operationContext, false, false);
   }
@@ -431,7 +436,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     // --- keyboard handling ---
     myKbdHandlersStack = new Stack<KeyboardHandler>();
-    myKbdHandlersStack.push(new EditorComponentKeyboardHandler());
+    myKbdHandlersStack.push(new EditorComponentKeyboardHandler(myKeymapHandler));
 
     // --- init action map --   
     myActionMap = new HashMap<CellActionType, EditorCellAction>();
@@ -667,59 +672,39 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   protected void notifyCreation() {
-    Runnable notifyCreationRunnable = new Runnable() {
-      @Override
-      public void run() {
-        if (myOperationContext == null) {
-          LOG.warning("Trying to notify EditorComponent creation with null operation context");
-        } else {
-          if (myOperationContext.getProject() == null) {
-            return;
-          }
-          Project ideaProject = ProjectHelper.toIdeaProject(myOperationContext.getProject());
-          if (ideaProject == null) {
-            return;
-          }
-          EditorComponentCreateListener listener = ideaProject.getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
-          listener.editorComponentCreated(EditorComponent.this);
-        }
-      }
-    };
-    if (ModelAccess.instance().isInEDT()) {
-      notifyCreationRunnable.run();
+    if (myOperationContext == null) {
+      LOG.warning("Trying to notify EditorComponent creation with null operation context");
     } else {
-      ModelAccess.instance().runReadInEDT(notifyCreationRunnable);
+      if (myOperationContext.getProject() == null) {
+        return;
+      }
+      Project ideaProject = ProjectHelper.toIdeaProject(myOperationContext.getProject());
+      if (ideaProject == null) {
+        return;
+      }
+      EditorComponentCreateListener listener = ideaProject.getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
+      listener.editorComponentCreated(EditorComponent.this);
     }
   }
 
   protected void notifyDisposal() {
-    Runnable notifyDisposalRunnable = new Runnable() {
-      @Override
-      public void run() {
-        if (myOperationContext == null) {
-          LOG.warning("Trying to notify disposal with empty operation context");
-          return;
-        }
-        if (myOperationContext.getProject() == null) {
-          return;
-        }
-        if (myOperationContext.getProject().isDisposed()) {
-          LOG.error("Trying to notify disposal of EditorComponent related to disposed project. This may cause memory leaks.");
-          return;
-        }
-        Project ideaProject = ProjectHelper.toIdeaProject(myOperationContext.getProject());
-        if (ideaProject == null) {
-          return;
-        }
-        EditorComponentCreateListener listener = ideaProject.getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
-        listener.editorComponentDisposed(EditorComponent.this);
-      }
-    };
-    if (ModelAccess.instance().isInEDT()) {
-      notifyDisposalRunnable.run();
-    } else {
-      ModelAccess.instance().runReadInEDT(notifyDisposalRunnable);
+    if (myOperationContext == null) {
+      LOG.warning("Trying to notify disposal with empty operation context");
+      return;
     }
+    if (myOperationContext.getProject() == null) {
+      return;
+    }
+    if (myOperationContext.getProject().isDisposed()) {
+      LOG.error("Trying to notify disposal of EditorComponent related to disposed project. This may cause memory leaks.");
+      return;
+    }
+    Project ideaProject = ProjectHelper.toIdeaProject(myOperationContext.getProject());
+    if (ideaProject == null) {
+      return;
+    }
+    EditorComponentCreateListener listener = ideaProject.getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
+    listener.editorComponentDisposed(this);
   }
 
   public boolean onEscape() {
@@ -987,16 +972,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
         SModel model = node == null ? null : node.getModel();
         setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
-        if (ModelAccess.instance().isInEDT()) {
-          rebuildEditorContent();
-        } else {
-          ModelAccess.instance().runReadInEDT(new Runnable() {
-            @Override
-            public void run() {
-              rebuildEditorContent();
-            }
-          });
-        }
+        rebuildEditorContent();
         getTypeCheckingContext();
       }
     });
@@ -1205,9 +1181,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     EditorCell cell = getSelectedCell();
 
     final EditorContext editorContext = createEditorContextForActions();
-    for (final EditorCellKeyMapAction action : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
+    for (final KeyMapAction action : myKeymapHandler.getAllRegisteredActions(cell, editorContext)) {
       try {
-        if (!(action.isShownInPopupMenu() && action.canExecute(null, (jetbrains.mps.openapi.editor.EditorContext) editorContext)))
+        if (!(action.isShownInPopupMenu() && action.canExecute(editorContext)))
           continue;
         BaseAction mpsAction = new MyBaseAction(action, editorContext);
         mpsAction.addPlace(ActionPlace.EDITOR);
@@ -1216,7 +1192,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         LOG.error(t);
       }
     }
-
     return result;
   }
 
@@ -2533,7 +2508,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return ModelAccess.instance().runReadAction(new Computable<List<INodeSubstituteAction>>() {
       @Override
       public List<INodeSubstituteAction> compute() {
-        return TypeContextManager.getInstance().runTypeCheckingComputation(EditorComponent.this, myNode, new Computation<List<INodeSubstituteAction>>() {
+        return TypeContextManager.getInstance().runTypeCheckingComputation(getTypecheckingContextOwner(), myNode, new Computation<List<INodeSubstituteAction>>() {
           @Override
           public List<INodeSubstituteAction> compute(TypeCheckingContext context) {
             return isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
@@ -3147,10 +3122,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private static class MyBaseAction extends BaseAction implements DumbAware {
-    private final EditorCellKeyMapAction myAction;
+    private final KeyMapAction myAction;
     private final EditorContext myEditorContext;
 
-    public MyBaseAction(EditorCellKeyMapAction action, EditorContext editorContext) {
+    public MyBaseAction(KeyMapAction action, EditorContext editorContext) {
       super("" + action.getDescriptionText());
       myAction = action;
       myEditorContext = editorContext;
@@ -3163,7 +3138,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
       try {
-        myAction.execute(null, (jetbrains.mps.openapi.editor.EditorContext) myEditorContext);
+        myAction.execute(myEditorContext);
       } catch (Throwable t) {
         LOG.error(t);
       }

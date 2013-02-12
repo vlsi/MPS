@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import JavaKaja.runtime.KajaFrame;
 
 public class AbstractBuilderCommand_Constraints extends BaseConstraintsDescriptor {
   public AbstractBuilderCommand_Constraints() {
@@ -28,7 +29,7 @@ public class AbstractBuilderCommand_Constraints extends BaseConstraintsDescripto
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "col";
-        return (SPropertyOperations.getInteger(propertyValue)) > 0;
+        return (SPropertyOperations.getInteger(propertyValue)) > 0 && (SPropertyOperations.getInteger(propertyValue)) < KajaFrame.WIDTH - 1;
       }
     });
     properties.put("row", new BasePropertyConstraintsDescriptor("row", this) {
@@ -40,7 +41,7 @@ public class AbstractBuilderCommand_Constraints extends BaseConstraintsDescripto
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "row";
-        return (SPropertyOperations.getInteger(propertyValue)) > 0;
+        return (SPropertyOperations.getInteger(propertyValue)) > 0 && (SPropertyOperations.getInteger(propertyValue)) < KajaFrame.HEIGHT - 1;
       }
     });
     return properties;

@@ -12,15 +12,15 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 8:
+      case 9:
         return new EnumerationMemberDeclaration_Constraints();
       case 2:
         return new ConceptDeclaration_Constraints();
-      case 10:
+      case 11:
         return new LinkDeclaration_Constraints();
-      case 7:
+      case 8:
         return new EnumerationDataTypeDeclaration_Constraints();
-      case 13:
+      case 14:
         return new ReferenceConceptLink_Constraints();
       case 1:
         return new AnnotationLinkDeclaration_Constraints();
@@ -28,7 +28,7 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new ConceptLink_Constraints();
       case 5:
         return new ConceptProperty_Constraints();
-      case 9:
+      case 10:
         return new InterfaceConceptDeclaration_Constraints();
       case 6:
         return new ConstrainedDataTypeDeclaration_Constraints();
@@ -36,15 +36,17 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new ConceptLinkDeclaration_Constraints();
       case 0:
         return new AbstractConceptDeclaration_Constraints();
-      case 12:
+      case 13:
         return new PropertyDeclaration_Constraints();
-      case 11:
+      case 12:
         return new MigratedToMethodAnnotation_Constraints();
+      case 7:
+        return new DataTypeDeclaration_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConceptLink", "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.ConceptProperty", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation", "jetbrains.mps.lang.structure.structure.PropertyDeclaration", "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConceptLink", "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.ConceptProperty", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation", "jetbrains.mps.lang.structure.structure.PropertyDeclaration", "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"};
 }
