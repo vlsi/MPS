@@ -745,9 +745,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     }
   }
 
-  public String getOutputPath() {
-    IFile result = ProjectPathUtil.getGeneratorOutputPath(this);
-    return result != null ? result.getPath() : null;
+  public IFile getOutputPath() {
+    return ProjectPathUtil.getGeneratorOutputPath(this);
   }
 
   // deprecated part
@@ -766,20 +765,29 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   @Deprecated
   @Override
   public final String getOutputFor(SModel model) {
-    return SModuleOperations.getOutputPathFor(model);
+    IFile outputPath = SModuleOperations.getOutputPathFor(model);
+    return outputPath != null ? outputPath.getPath() : null;
   }
 
   @Override
   @Deprecated
   public final String getGeneratorOutputPath() {
-    return getOutputPath();
+    IFile outputPath = getOutputPath();
+    return outputPath != null ? outputPath.getPath() : null;
   }
 
   @Override
   @Deprecated
   public final String getTestsGeneratorOutputPath() {
     TestsFacet testsFacet = this.getFacet(TestsFacet.class);
-    return testsFacet != null ? testsFacet.getTestsOutputPath() : null;
+    if (testsFacet == null) {
+      return null;
+    }
+    IFile testsOutputPath = testsFacet.getTestsOutputPath();
+    if (testsOutputPath == null) {
+      return null;
+    }
+    return testsOutputPath.getPath();
   }
 
   @Override

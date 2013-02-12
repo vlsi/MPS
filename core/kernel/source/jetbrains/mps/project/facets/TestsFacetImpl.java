@@ -31,8 +31,8 @@ public class TestsFacetImpl implements TestsFacet {
   }
 
   @Override
-  public String getTestsOutputPath() {
-    return myModuleHome.getDescendant("test_gen").getPath();
+  public IFile getTestsOutputPath() {
+    return myModuleHome.getDescendant("test_gen");
   }
 
   @NotNull

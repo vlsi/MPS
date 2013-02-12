@@ -21,6 +21,7 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -69,7 +70,7 @@ public class SModuleOperations {
     return result;
   }
 
-  public static String getOutputPathFor(SModel model) {
+  public static IFile getOutputPathFor(SModel model) {
     // todo: move to SModelOperations?
     SModule module = model.getModule();
     if (SModelStereotype.isTestModel(model) && module.getFacet(TestsFacet.class) != null) {

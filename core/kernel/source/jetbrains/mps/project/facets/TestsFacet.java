@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.project.facets;
 
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 public interface TestsFacet extends SModuleFacet {
-  String getTestsOutputPath();
+  IFile getTestsOutputPath();
 }

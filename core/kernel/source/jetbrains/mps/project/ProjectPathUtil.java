@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.project.facets.TestsFacet;
+import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -75,11 +77,10 @@ public class ProjectPathUtil {
     return null;
   }
 
+  @Deprecated
   public static IFile getGeneratorTestsOutputPath(IFile file, ModuleDescriptor descriptor) {
-    if (file != null && (descriptor instanceof SolutionDescriptor || descriptor instanceof LanguageDescriptor)) {
-      return file.getParent().getDescendant("test_gen");
-    }
-    return null;
+    TestsFacet testsFacet = TestsFacetImpl.fromModuleDescriptor(descriptor, file);
+    return testsFacet != null ? testsFacet.getTestsOutputPath() : null;
   }
 
   public static IFile getGeneratorOutputPath(SModule module) {

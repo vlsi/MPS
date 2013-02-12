@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -55,7 +56,7 @@ public class TestModule extends ClassLoadingModule {
   }
 
   @Override
-  public String getOutputPath() {
+  public IFile getOutputPath() {
     return ((AbstractModule) myPeer).getOutputPath();
   }
 
