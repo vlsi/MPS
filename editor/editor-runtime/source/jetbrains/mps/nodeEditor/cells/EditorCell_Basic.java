@@ -38,6 +38,7 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -96,7 +97,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   private Style myStyle = new Style(this);
 
-  private EditorCellKeyMap myKeyMap;
+  private KeyMap myKeyMap;
   private String myCellId;
   private String myRole;
   private SNodeReference myLinkDeclarationPointer;
@@ -264,7 +265,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return cellAction;
   }
 
-  public void addKeyMap(EditorCellKeyMap keyMap) {
+  public void addKeyMap(KeyMap keyMap) {
     if (myKeyMap != null) {
       myKeyMap.addKeyMap(keyMap);
     } else {
@@ -272,7 +273,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
   }
 
-  public EditorCellKeyMap getKeyMap() {
+  public KeyMap getKeyMap() {
     return myKeyMap;
   }
 

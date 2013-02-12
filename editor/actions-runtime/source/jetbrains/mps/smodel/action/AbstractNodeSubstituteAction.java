@@ -19,16 +19,15 @@ import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.PatternUtil;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.Icon;
-import java.awt.Font;
+import javax.swing.*;
+import java.awt.*;
 
 public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAction {
   private static final Logger LOG = Logger.getLogger(AbstractNodeSubstituteAction.class);
@@ -46,7 +45,20 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   protected AbstractNodeSubstituteAction() {
   }
 
-  protected abstract SNode doSubstitute(String pattern);
+  protected SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+    return doSubstitute(pattern);
+  }
+
+  /**
+   * @deprecated Since MPS 3.0 was replaced by:
+   *             <code>doSubstitute(@Nullable final EditorContext editorContext, String pattern)</code>
+   *             <p/>
+   *             Was left for compatibility with generated code. Later should be removed.
+   */
+  @Deprecated
+  protected SNode doSubstitute(String pattern) {
+    throw new UnsupportedOperationException();
+  }
 
   public SNode getSourceNode() {
     return mySourceNode;
@@ -143,24 +155,17 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
 
     Runnable runnable = new Runnable() {
       public void run() {
-        newNode[0] = doSubstitute(pattern);
         if (context != null) {
-          if (newNode[0] == null) {
-            context.flushEvents();
-
-            EditorCell selectedCell = (EditorCell) context.getSelectedCell();
-            if (selectedCell != null) {
-              selectedCell.getContainingBigCell().synchronizeViewWithModel();
-            }
-
-            // put caret at the end of text
-            if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isEditable()) {
-              EditorCell_Label cell = (EditorCell_Label) selectedCell;
-              cell.end();
-            }
-          } else {
-            context.selectWRTFocusPolicy(newNode[0], true);
+          // completion can be invoked by typing invalid stuff into exising cells, revert it back to the model state
+          EditorCell selectedCell = (EditorCell) context.getSelectedCell();
+          if (selectedCell != null) {
+            selectedCell.getContainingBigCell().synchronizeViewWithModel();
           }
+        }
+
+        newNode[0] = doSubstitute(context, pattern);
+        if (context != null && newNode[0] != null) {
+          context.selectWRTFocusPolicy(newNode[0], true);
         }
       }
     };

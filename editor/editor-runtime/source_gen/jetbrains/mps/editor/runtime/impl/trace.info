@@ -85,15 +85,15 @@
     <nodeInfo nodeId="1182113674817469716" fileName="LanguagesKeymapManager.java" startLine="69" startPosition="60" endLine="70" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817469725" fileName="LanguagesKeymapManager.java" startLine="73" startPosition="30" endLine="74" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817469735" fileName="LanguagesKeymapManager.java" startLine="77" startPosition="59" endLine="78" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817538823" fileName="LanguagesKeymapManager.java" startLine="82" startPosition="6" endLine="83" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817538829" fileName="LanguagesKeymapManager.java" startLine="84" startPosition="30" endLine="85" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469792" fileName="LanguagesKeymapManager.java" startLine="87" startPosition="13" endLine="88" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817469803" fileName="LanguagesKeymapManager.java" startLine="89" startPosition="36" endLine="90" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1182113674817538823" fileName="LanguagesKeymapManager.java" startLine="82" startPosition="6" endLine="83" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1182113674817538829" fileName="LanguagesKeymapManager.java" startLine="84" startPosition="30" endLine="85" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1182113674817469792" fileName="LanguagesKeymapManager.java" startLine="87" startPosition="13" endLine="88" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1182113674817469803" fileName="LanguagesKeymapManager.java" startLine="89" startPosition="36" endLine="90" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1182113674817540166" fileName="LanguagesKeymapManager.java" startLine="91" startPosition="52" endLine="92" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817469784" fileName="LanguagesKeymapManager.java" startLine="95" startPosition="31" endLine="96" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817469762" fileName="LanguagesKeymapManager.java" startLine="99" startPosition="12" endLine="100" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1182113674817538812" fileName="LanguagesKeymapManager.java" startLine="101" startPosition="5" endLine="102" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817540188" fileName="LanguagesKeymapManager.java" startLine="105" startPosition="83" endLine="106" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1182113674817540188" fileName="LanguagesKeymapManager.java" startLine="105" startPosition="73" endLine="106" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1182113674817469837" fileName="LanguagesKeymapManager.java" startLine="106" startPosition="131" endLine="107" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1182113674817469842" fileName="LanguagesKeymapManager.java" startLine="107" startPosition="62" endLine="108" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="1182113674817469847" fileName="LanguagesKeymapManager.java" startLine="108" startPosition="41" endLine="109" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -107,9 +107,9 @@
     <nodeInfo nodeId="1182113674817469570" fileName="LanguagesKeymapManager.java" startLine="126" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyModuleRepositoryListener#()V" />
     <nodeInfo nodeId="1182113674817469574" fileName="LanguagesKeymapManager.java" startLine="129" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moduleInitialized#(Ljetbrains/mps/project/IModule;)V" />
     <nodeInfo nodeId="1182113674817469607" fileName="LanguagesKeymapManager.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unload#()V" />
-    <nodeInfo nodeId="1182113674817469670" fileName="LanguagesKeymapManager.java" startLine="50" startPosition="76" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1182113674817469670" fileName="LanguagesKeymapManager.java" startLine="50" startPosition="66" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1182113674817469721" fileName="LanguagesKeymapManager.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearCaches#()V" />
-    <nodeInfo nodeId="1182113674817469809" fileName="LanguagesKeymapManager.java" startLine="90" startPosition="64" endLine="93" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1182113674817469809" fileName="LanguagesKeymapManager.java" startLine="90" startPosition="54" endLine="93" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1182113674817469870" fileName="LanguagesKeymapManager.java" startLine="110" startPosition="106" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1182113674817469882" fileName="LanguagesKeymapManager.java" startLine="117" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregisterLanguageKeyMaps#(Ljetbrains/mps/smodel/Language;)V" />
     <nodeInfo nodeId="1182113674817469635" fileName="LanguagesKeymapManager.java" startLine="121" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/editor/runtime/impl/LanguagesKeymapManager;" />
@@ -122,11 +122,11 @@
     <nodeInfo nodeId="1182113674817469699" fileName="LanguagesKeymapManager.java" startLine="62" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
     <nodeInfo nodeId="1182113674817469580" fileName="LanguagesKeymapManager.java" startLine="132" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeModuleRemoved#(Ljetbrains/mps/project/IModule;)V" />
     <nodeInfo nodeId="1182113674817469662" fileName="LanguagesKeymapManager.java" startLine="50" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyMapsForLanguage#(Ljetbrains/mps/smodel/Language;)Ljava/util/List;" />
-    <nodeInfo nodeId="1182113674817469798" fileName="LanguagesKeymapManager.java" startLine="88" startPosition="96" endLine="94" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1182113674817469798" fileName="LanguagesKeymapManager.java" startLine="88" startPosition="86" endLine="94" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1182113674817469781" fileName="LanguagesKeymapManager.java" startLine="86" startPosition="162" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1182113674817469825" fileName="LanguagesKeymapManager.java" startLine="105" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findKeyMapClassByDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Class;" />
-    <nodeInfo nodeId="1182113674817540157" fileName="LanguagesKeymapManager.java" startLine="85" startPosition="73" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1182113674817469756" fileName="LanguagesKeymapManager.java" startLine="83" startPosition="35" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1182113674817540157" fileName="LanguagesKeymapManager.java" startLine="85" startPosition="63" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1182113674817469756" fileName="LanguagesKeymapManager.java" startLine="83" startPosition="25" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1182113674817469729" fileName="LanguagesKeymapManager.java" startLine="77" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerLanguageKeyMaps#(Ljetbrains/mps/smodel/Language;)V" />
     <scopeInfo nodeId="1182113674817469573" fileName="LanguagesKeymapManager.java" startLine="126" startPosition="42" endLine="126" endPosition="42" />
     <scopeInfo nodeId="1182113674817469579" fileName="LanguagesKeymapManager.java" startLine="129" startPosition="51" endLine="129" endPosition="51" />
@@ -161,7 +161,7 @@
     <scopeInfo nodeId="1182113674817469644" fileName="LanguagesKeymapManager.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="2481791643076261667" varName="coreComponents" />
     </scopeInfo>
-    <scopeInfo nodeId="1182113674817469669" fileName="LanguagesKeymapManager.java" startLine="50" startPosition="76" endLine="54" endPosition="60" />
+    <scopeInfo nodeId="1182113674817469669" fileName="LanguagesKeymapManager.java" startLine="50" startPosition="66" endLine="54" endPosition="60" />
     <scopeInfo nodeId="1182113674817469685" fileName="LanguagesKeymapManager.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
     <scopeInfo nodeId="1182113674817469707" fileName="LanguagesKeymapManager.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="1182113674817469802" fileName="LanguagesKeymapManager.java" startLine="89" startPosition="36" endLine="93" endPosition="13">
@@ -177,7 +177,7 @@
     <scopeInfo nodeId="1182113674817469791" fileName="LanguagesKeymapManager.java" startLine="87" startPosition="13" endLine="94" endPosition="11">
       <varInfo nodeId="1182113674817469793" varName="keyMapClass" />
     </scopeInfo>
-    <scopeInfo nodeId="1182113674817469831" fileName="LanguagesKeymapManager.java" startLine="105" startPosition="83" endLine="114" endPosition="37">
+    <scopeInfo nodeId="1182113674817469831" fileName="LanguagesKeymapManager.java" startLine="105" startPosition="73" endLine="114" endPosition="37">
       <varInfo nodeId="1182113674817540189" varName="fqName" />
       <varInfo nodeId="1182113674817469862" varName="language" />
       <varInfo nodeId="1182113674817469848" varName="languageNamespace" />
@@ -187,7 +187,7 @@
     <scopeInfo nodeId="1182113674817469825" fileName="LanguagesKeymapManager.java" startLine="105" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="1182113674817469829" varName="declaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1182113674817540157" fileName="LanguagesKeymapManager.java" startLine="85" startPosition="73" endLine="98" endPosition="7">
+    <scopeInfo nodeId="1182113674817540157" fileName="LanguagesKeymapManager.java" startLine="85" startPosition="63" endLine="98" endPosition="7">
       <varInfo nodeId="1182113674817540158" varName="keyMapDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1182113674817469766" fileName="LanguagesKeymapManager.java" startLine="84" startPosition="30" endLine="98" endPosition="7" />

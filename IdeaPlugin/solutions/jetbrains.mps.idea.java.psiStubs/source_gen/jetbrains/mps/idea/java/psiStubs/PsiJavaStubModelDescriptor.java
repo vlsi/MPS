@@ -22,10 +22,10 @@ import com.intellij.psi.PsiClass;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import com.intellij.psi.PsiFileSystemItem;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiElement;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiElement;
 
 public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor implements PsiListener, DataSourceListener {
   private SModelReference myModelRef;
@@ -95,30 +95,11 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
       return;
     }
 
-    System.out.println("MODEL ROOT RECEIVED EVENT");
-    for (PsiFileSystemItem f : Sequence.fromIterable(event.getRemoved())) {
-      System.out.println("Psi file removed:  file=" + f.getName());
-    }
-    for (PsiFileSystemItem f : Sequence.fromIterable(event.getCreated())) {
-      System.out.println("Psi file created:  file=" + f.getName());
-    }
-    for (PsiFile f : SetSequence.fromSet(event.getChanged().keySet())) {
-      System.out.print("Psi change:  file=" + f.getName() + " elements=");
-      for (PsiElement e : SetSequence.fromSet(event.getChanged().get(f))) {
-        System.out.print(" " + e.getClass().getName());
-      }
-      System.out.println();
-    }
-
-    System.out.flush();
-
-
-
     ASTConverter converter = new ASTConverter();
 
     // TODO Order can be important, be careful with class name changes (how to find old root node?) 
 
-    // FIXME Very dumb for now, just to code something 
+    // FIXME Pretty dumb for now 
 
     for (PsiFileSystemItem file : Sequence.fromIterable(event.getRemoved())) {
       SetSequence.fromSet(MapSequence.fromMap(myRootsPerFile).get((PsiJavaFile) file)).visitAll(new IVisitor<SNode>() {
@@ -127,8 +108,6 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
         }
       });
       MapSequence.fromMap(myRootsPerFile).removeKey((PsiJavaFile) file);
-
-      System.out.println("Removing " + file.getName());
     }
 
     for (PsiFileSystemItem file : Sequence.fromIterable(event.getCreated())) {
@@ -143,8 +122,6 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
       if (SetSequence.fromSet(roots).isNotEmpty()) {
         MapSequence.fromMap(myRootsPerFile).put((PsiJavaFile) file, roots);
       }
-
-      System.err.println("Creating " + file.getName());
     }
 
     for (PsiFile file : SetSequence.fromSet(event.getChanged().keySet())) {
@@ -169,8 +146,6 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
           } else {
             SModelOperations.addRootNode(myModel, node);
           }
-
-          System.out.println("Re-parsing class " + ((PsiClass) e).getName());
         }
       }
     }

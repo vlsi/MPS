@@ -37,7 +37,7 @@
     <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="67" startPosition="34" endLine="68" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="68" startPosition="47" endLine="69" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="69" startPosition="26" endLine="70" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="71" startPosition="15" endLine="72" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="71" startPosition="15" endLine="72" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="73" startPosition="5" endLine="74" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="74" startPosition="90" endLine="75" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="75" startPosition="73" endLine="76" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -58,7 +58,7 @@
     <scopeInfo nodeId="4079382982702596670" fileName="CheckedDotExpression_Editor.java" startLine="29" startPosition="48" endLine="30" endPosition="80" />
     <scopeInfo nodeId="4079382982702596670" fileName="CheckedDotExpression_Editor.java" startLine="30" startPosition="80" endLine="31" endPosition="81" />
     <scopeInfo nodeId="4079382982702596670" fileName="CheckedDotExpression_Editor.java" startLine="31" startPosition="81" endLine="32" endPosition="80" />
-    <scopeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="71" startPosition="15" endLine="72" endPosition="66" />
+    <scopeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="71" startPosition="15" endLine="72" endPosition="96" />
     <scopeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="4079382982702596668" varName="editorContext" />
       <varInfo nodeId="4079382982702596668" varName="node" />

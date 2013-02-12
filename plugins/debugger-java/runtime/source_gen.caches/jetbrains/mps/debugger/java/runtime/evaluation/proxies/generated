@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-eb2zpxsy34zubbq6erkybnmse8zx5hz">
+<dependencies version="2" modelHash="3frmcbrf67nn4o7f955bft9rpkpz78f">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22hsdy8hx47u1rwu32z4quczy3521b0" />
   <dep model="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)" hash="4vubq6tv6otbiuyl5vdix9384h08d7n" />
   <common hash="1docfj3hmi0rqr0ji5jb0ijvcoiilv4" />
-  <source id="3102837338444216503" name="ObjectValueProxy" hash="aasg84etb3xerfmaqtg7xxr6yg9be6y">
+  <source id="3102837338444216503" name="ObjectValueProxy" hash="-96h442oljbyoxjboahb33t87qdx9cc1">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)" />
     <file name="ObjectValueProxy.java" />
   </source>
-  <source id="3102837338444216799" name="NullValueProxy" hash="2u5wpo0c2ie7tkq0ozzoddzjumo62gq">
+  <source id="3102837338444216799" name="NullValueProxy" hash="1wzox68mgfdtk4o32rewvpk1llt1qk8">
     <file name="NullValueProxy.java" />
   </source>
-  <source id="3102837338444216936" name="ArrayValueProxy" hash="-dk8xhxc9r32e1mr7f6cmrbnzi8fulk">
+  <source id="3102837338444216936" name="ArrayValueProxy" hash="dvpd8jfupdn799u6rz99jzfo57cjjid">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)" />
     <file name="ArrayValueProxy.java" />

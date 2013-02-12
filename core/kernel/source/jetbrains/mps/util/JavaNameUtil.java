@@ -16,16 +16,31 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * User: Dmitriev.
  * Date: Jan 13, 2004
  */
 public final class JavaNameUtil {
+
+  private static Set<String> JAVA_KEYWORDS = new HashSet<String>();
+
+  static {
+    JAVA_KEYWORDS.addAll(Arrays.asList(
+      "abstract", "continue", "for", "new", "switch", "assert", "default", "if", "package", "synchronized", "boolean", "do", "goto", "private",
+      "this", "break", "double", "implements", "protected", "throw", "byte", "else", "import", "public", "throws", "case", "enum", "instanceof",
+      "return", "transient", "catch", "extends", "int", "short", "try", "char", "final", "interface", "static", "void", "class", "finally", "long",
+      "strictfp", "volatile", "const", "float", "native", "super", "while", "true", "false", "null"));
+  }
+
 
   private JavaNameUtil() {
   }
@@ -80,5 +95,26 @@ public final class JavaNameUtil {
 
   public static String nestedClassName(String packageName, String fqClassName) {
     return fqClassName.substring(packageName.length() + 1);
+  }
+
+  public static boolean isJavaIdentifier(@NotNull String text) {
+    int len = text.length();
+    if (len == 0) return false;
+
+    if (!isJavaIdentifierStart(text.charAt(0))) return false;
+
+    for (int i = 1; i < len; i++) {
+      if (!isJavaIdentifierPart(text.charAt(i))) return false;
+    }
+
+    return !(JAVA_KEYWORDS.contains(text));
+  }
+
+  public static boolean isJavaIdentifierStart(char c) {
+    return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' || Character.isJavaIdentifierStart(c);
+  }
+
+  public static boolean isJavaIdentifierPart(char c) {
+    return c >= '0' && c <= '9' || isJavaIdentifierStart(c);
   }
 }

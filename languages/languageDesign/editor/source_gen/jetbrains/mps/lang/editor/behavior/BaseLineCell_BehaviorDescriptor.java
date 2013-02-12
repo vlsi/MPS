@@ -9,8 +9,8 @@ public class BaseLineCell_BehaviorDescriptor extends BooleanStyleSheetItem_Behav
   public BaseLineCell_BehaviorDescriptor() {
   }
 
-  public StyleAttribute virtual_getStyleAttribute_2554389230519612632(SNode thisNode) {
-    return BaseLineCell_Behavior.virtual_getStyleAttribute_2554389230519612632(thisNode);
+  public StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
+    return BaseLineCell_Behavior.virtual_getStyleAttribute_3639065570239132541(thisNode);
   }
 
   @Override

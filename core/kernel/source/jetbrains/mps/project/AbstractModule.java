@@ -31,13 +31,26 @@ import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ClassPathFactory;
-import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.DefaultScope;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -45,14 +58,24 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.*;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
+import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public abstract class AbstractModule implements IModule, FileSystemListener {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
@@ -66,17 +89,10 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
   private ModuleScope myScope = createScope();
 
-  private final Object LOCK = new Object();
-  private Runnable myClasspathInvalidator = new Runnable() {
-    public void run() {
-      synchronized (LOCK) {
-        myCachedClassPathItem = null;
-      }
-    }
-  };
-  private CompositeClassPathItem myCachedClassPathItem;
   protected boolean myChanged = false;
   private SRepository myRepo;
+
+  private final JavaModuleFacet javaModuleFacet = createJavaModuleFacet();
 
   //----model creation
 
@@ -84,6 +100,9 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     this(null);
   }
 
+  protected JavaModuleFacet createJavaModuleFacet() {
+    return new JavaModuleFacetImpl(this);
+  }
 
   protected AbstractModule(@Nullable IFile myDescriptorFile) {
     this.myDescriptorFile = myDescriptorFile;
@@ -101,6 +120,12 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   @Override
   public final EditableSModelDescriptor createModel(String name, @NotNull ModelRoot root, ModelAdjuster adj) {
+    // why ModelRoot register model in module? WTF
+    // should be public AbstractModule#addModel method!
+    // ourModelsCreationListeners should be called in addModel method
+
+    // so this goes to SModuleOperation method with createModel from ModelRoot, apply adj and register in module
+    // deprecated
     if (!root.canCreateModel(name)) {
       LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
       return null;
@@ -137,7 +162,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   @Override
   public String getModuleName() {
-    return getModuleFqName();
+    return myModuleReference.getModuleFqName();
   }
 
   @Override
@@ -197,10 +222,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   //module reference is immutable, so we cn return original
   public ModuleReference getModuleReference() {
     return myModuleReference;
-  }
-
-  public String getModuleFqName() {
-    return myModuleReference.getModuleFqName();
   }
 
   //----save
@@ -310,27 +331,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   //----stubs
 
-  public Collection<String> getClassPath() {
-    Set<String> result = new LinkedHashSet<String>();
-    result.addAll(getAdditionalClassPath());
-    result.addAll(getOwnClassPath());
-    return result;
-  }
-
-  public Collection<String> getOwnClassPath() {
-    if (!isCompileInMPS()) return Collections.emptyList();
-
-    IFile classFolder = getClassesGen();
-    if (classFolder == null) return Collections.emptyList();
-
-    return Collections.singletonList(classFolder.getPath());
-  }
-
-  public Collection<String> getAdditionalClassPath() {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return Collections.emptySet();
-    return descriptor.getAdditionalJavaStubPaths();
-  }
 
   public static Collection<String> getStubPaths(ModuleDescriptor descriptor) {
     if (descriptor != null) {
@@ -341,13 +341,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   //----classpath
-
-  protected void invalidateClassPath() {
-    synchronized (LOCK) {
-      myCachedClassPathItem = null;
-    }
-  }
-
   //todo check this code. Wy not to do it where we add jars?
   protected void updatePackagedDescriptorClasspath() {
     if (!isPackaged()) return;
@@ -436,40 +429,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     }
   }
 
-  @Override
-  public IClassPathItem getClassPathItem() {
-    synchronized (LOCK) {
-      if (myCachedClassPathItem == null) {
-        myCachedClassPathItem = new CompositeClassPathItem();
-        myCachedClassPathItem.addInvalidationAction(myClasspathInvalidator);
 
-        for (String path : getClassPath()) {
-          try {
-            IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, this.getModuleName());
-            myCachedClassPathItem.add(pathItem);
-          } catch (IOException e) {
-            LOG.error(e.getMessage());
-          }
-        }
-      }
-
-      return myCachedClassPathItem;
-    }
-  }
-
-  @Override
-  public IClassPathItem getModuleWithDependenciesClassPathItem() {
-    return getDependenciesClasspath(CollectionUtil.set((IModule) this), false);
-  }
-
-  public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
-    return new ClasspathCollector(modules).collect(includeStubSolutions);
-  }
-
-  public Class getClass(String className) {
-    //todo move to a subclass fully
-    throw new UnsupportedOperationException();
-  }
 //----
 
   @Override
@@ -506,22 +466,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   @Override
   public Collection<SModel> getModels() {
     return new ArrayList<SModel>(SModelRepository.getInstance().getModelDescriptors(this));
-  }
-
-  public IFile getClassesGen() {
-    return ProjectPathUtil.getClassesGenFolder(getDescriptorFile());
-  }
-
-  public Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
-    return new LinkedHashSet<SModelDescriptor>();
-  }
-
-  public Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
-    Set<Language> result = new LinkedHashSet<Language>();
-    if (SModelStereotype.isGeneratorModel(sm)) {
-      result.add(BootstrapLanguages.generatorLanguage());
-    }
-    return result;
   }
 
   public IFile getDescriptorFile() {
@@ -672,41 +616,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @Override
-  public Collection<String> getIndexablePaths() {
-    List<String> result = new ArrayList<String>();
-
-    IFile home = getBundleHome();
-    if (home != null) {
-      String suffix = isPackaged() ? "!/" : "";
-      result.add(home.getPath() + suffix);
-    }
-
-    ModuleDescriptor d = getModuleDescriptor();
-    if (d == null) return result;
-
-    for (ModelRootDescriptor rootDescriptor : d.getModelRootDescriptors()) {
-      jetbrains.mps.project.structure.model.ModelRoot root = rootDescriptor.getRoot();
-      if (root == null) continue;
-
-      String path = root.getPath();
-      String suffix = path.endsWith("." + MPSExtentions.MPS_ARCH) ? "!/" : "";
-      result.add(path + suffix);
-    }
-
-    return result;
-  }
-
-  @Override
-  public boolean isCompileInMPS() {
-    return false;
-  }
-
-  @Override
-  public boolean reloadClassesAfterGeneration() {
-    return true;
-  }
-
-  @Override
   public void invalidateCaches() {
     myScope.invalidateCaches();
   }
@@ -787,16 +696,22 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return new ModuleScope();
   }
 
-  public String getGeneratorOutputPath() {
-    return null;
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    return null;
-  }
-
   public boolean isChanged() {
     return myChanged;
+  }
+
+  @Nullable
+  @Override
+  public <T extends SModuleFacet> T getFacet(Class<T> clazz) {
+    if (JavaModuleFacet.class.isAssignableFrom(clazz)) {
+      return (T) javaModuleFacet;
+    }
+    return null;
+  }
+
+  @Override
+  public Iterable<SModuleFacet> getFacets() {
+    return Collections.<SModuleFacet>singleton(javaModuleFacet);
   }
 
   public class ModuleScope extends DefaultScope {
@@ -832,5 +747,105 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     public String toString() {
       return "Scope of module " + AbstractModule.this;
     }
+  }
+
+  // deprecated part
+  @Override
+  @Deprecated
+  public final String getModuleFqName() {
+    return getModuleName();
+  }
+
+  @Override
+  @Deprecated
+  public final Collection<String> getIndexablePaths() {
+    return SModuleOperations.getIndexablePaths(this);
+  }
+
+  @Override
+  @Deprecated
+  public final String getGeneratorOutputPath() {
+    IFile result = ProjectPathUtil.getGeneratorOutputPath(this);
+    return result != null ? result.getPath() : null;
+  }
+
+  @Override
+  @Deprecated
+  public final String getTestsGeneratorOutputPath() {
+    IFile result = ProjectPathUtil.getGeneratorTestsOutputPath(this);
+    return result != null ? result.getPath() : null;
+  }
+
+  @Override
+  @Deprecated
+  public final Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
+    return Collections.emptyList();
+  }
+
+  @Override
+  @Deprecated
+  public final Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
+    return Collections.emptyList();
+  }
+
+  // JavaModuleFacet
+  @NotNull
+  private JavaModuleFacet getJavaFacet() {
+    JavaModuleFacet facet = getFacet(JavaModuleFacet.class);
+    if (facet != null) {
+      return facet;
+    } else {
+      throw new IllegalArgumentException();
+    }
+  }
+
+  @Override
+  @Deprecated
+  public final boolean isCompileInMPS() {
+    return getJavaFacet().isCompileInMPS();
+  }
+
+  @Override
+  @Deprecated
+  public final IClassPathItem getClassPathItem() {
+    return getJavaFacet().getClassPathItem();
+  }
+
+  @Deprecated
+  public final Collection<String> getClassPath() {
+    return getJavaFacet().getClassPath();
+  }
+
+  @Deprecated
+  public final Collection<String> getAdditionalClassPath() {
+    return getJavaFacet().getAdditionalClassPath();
+  }
+
+  @Deprecated
+  public final Collection<String> getOwnClassPath() {
+    return getJavaFacet().getOwnClassPath();
+  }
+
+  @Deprecated
+  public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
+    return SModuleOperations.getDependenciesClasspath(modules, includeStubSolutions);
+  }
+
+  @Override
+  @Deprecated
+  public final IClassPathItem getModuleWithDependenciesClassPathItem() {
+    return SModuleOperations.getModuleWithDependenciesClassPathItem(this);
+  }
+
+  @Deprecated
+  protected final void invalidateClassPath() {
+    // todo: remove this method!
+    getJavaFacet().invalidateClassPath();
+  }
+
+  @Override
+  @Deprecated
+  public final IFile getClassesGen() {
+    return getJavaFacet().getClassesGen();
   }
 }

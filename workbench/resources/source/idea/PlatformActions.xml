@@ -183,10 +183,10 @@
         <separator/>
         <group id="CutCopyPasteGroup">
           <!--MPS Patch: our classes-->
-          <action id="$Cut" class="com.intellij.ide.actions.CutAction" icon="AllIcons.Actions.Menu_cut"/>
-          <action id="$Copy" class="com.intellij.ide.actions.CopyAction" icon="AllIcons.Actions.Copy"/>
+          <action id="$Cut" class="jetbrains.mps.workbench.actions.MPSCutAction" icon="AllIcons.Actions.Menu_cut"/>
+          <action id="$Copy" class="jetbrains.mps.workbench.actions.MPSCopyAction" icon="AllIcons.Actions.Copy"/>
           <action id="CopyPaths" class="com.intellij.ide.actions.CopyPathsAction"/>
-          <action id="$Paste" class="com.intellij.ide.actions.PasteAction" icon="AllIcons.Actions.Menu_paste"/>
+          <action id="$Paste" class="jetbrains.mps.workbench.actions.MPSPasteAction" icon="AllIcons.Actions.Menu_paste"/>
           <action id="PasteMultiple" class="com.intellij.openapi.editor.actions.MultiplePasteAction"/>
           <!--MPS Patch end-->
           <reference ref="EditorPasteSimple"/>

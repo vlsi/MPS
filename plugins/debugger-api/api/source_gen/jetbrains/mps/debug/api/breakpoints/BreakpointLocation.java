@@ -5,8 +5,8 @@ package jetbrains.mps.debug.api.breakpoints;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -25,7 +25,6 @@ public class BreakpointLocation {
 
   public BreakpointLocation(@NotNull SNodeReference nodePointer) {
     myNodePointer = nodePointer;
-    LOG.assertLog(((SNodePointer) nodePointer).getNode() != null);
   }
 
   public BreakpointLocation(@NotNull SNode node) {

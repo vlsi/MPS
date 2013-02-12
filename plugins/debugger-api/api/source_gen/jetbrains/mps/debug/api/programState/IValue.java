@@ -10,4 +10,5 @@ public interface IValue {
   public Icon getPresentationIcon();
   public boolean isStructure();
   public List<IWatchable> getSubvalues();
+  public void initSubvalues();
 }

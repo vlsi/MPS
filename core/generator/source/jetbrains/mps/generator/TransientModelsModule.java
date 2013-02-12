@@ -23,7 +23,8 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -57,18 +58,11 @@ public class TransientModelsModule extends ClassLoadingModule {
   }
 
   public Class getClass(String fqName) {
-    if (!(myOriginalModule instanceof ClassLoadingModule)) {
+    // todo: TransientModelsModule? seriously?
+    if (!(myOriginalModule instanceof IClassLoadingModule)) {
       throw new IllegalStateException();
     }
-    return ((ClassLoadingModule) myOriginalModule).getClass(fqName);
-  }
-
-  public String getGeneratorOutputPath() {
-    return null;
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    return null;
+    return ((IClassLoadingModule) myOriginalModule).getClass(fqName);
   }
 
   public boolean hasPublished() {

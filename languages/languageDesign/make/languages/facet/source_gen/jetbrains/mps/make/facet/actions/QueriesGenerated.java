@@ -34,8 +34,9 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.ModelActions;
-import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -304,7 +305,7 @@ __switch__:
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SLinkOperations.setNewChild(_context.getSourceNode(), "resource", "jetbrains.mps.baseLanguage.structure.Expression");
           return _context.getSourceNode();
         }
@@ -338,7 +339,7 @@ __switch__:
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
+          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
             SNode tre = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.make.facet.structure.TargetReferenceExpression");
             SLinkOperations.setTarget(tre, "facetRef", _context.getSourceNode(), true);
             SLinkOperations.setTarget(tre, "target", (item), false);
@@ -367,7 +368,7 @@ __switch__:
         }
       };
       SNode node = (SNode) computable.compute();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, _context.getSide(), _context.getTransformationTag(), operationContext)));
     }
     return result;
   }
@@ -377,7 +378,7 @@ __switch__:
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.TargetDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
+        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SPropertyOperations.set(_context.getSourceNode(), "optional", "" + (true));
           return _context.getSourceNode();
         }

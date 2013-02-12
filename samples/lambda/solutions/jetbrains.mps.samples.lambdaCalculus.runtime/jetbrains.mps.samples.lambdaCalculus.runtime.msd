@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.samples.lambdaCalculus.runtime" uuid="3adc1bc4-83b1-45f4-b261-03e8e8553ebc" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="jetbrains" />
     </modelRoot>
   </models>
   <sourcePath />

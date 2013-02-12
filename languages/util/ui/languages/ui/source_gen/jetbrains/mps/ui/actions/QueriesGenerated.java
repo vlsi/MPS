@@ -30,6 +30,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -292,7 +294,7 @@ public class QueriesGenerated {
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
+          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
             return SNodeOperations.replaceWithAnother(_context.getSourceNode(), _quotation_createNode_8jobl_a0a0a0a0a(_context.getSourceNode(), (item)));
           }
 

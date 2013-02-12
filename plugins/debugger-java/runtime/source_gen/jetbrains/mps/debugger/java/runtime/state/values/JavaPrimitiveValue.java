@@ -5,26 +5,27 @@ package jetbrains.mps.debugger.java.runtime.state.values;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
+import javax.swing.Icon;
+import jetbrains.mps.debugger.java.api.ui.Icons;
 import java.util.List;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.ArrayList;
-import javax.swing.Icon;
-import jetbrains.mps.debugger.java.api.ui.Icons;
-import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
 
 /*package*/ class JavaPrimitiveValue extends JavaValue {
+  private final String myPresentation;
+
   public JavaPrimitiveValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value, classFQname, threadReference);
-  }
-
-  @Override
-  public List<IWatchable> getSubvalues() {
-    return new ArrayList<IWatchable>();
+    if (myValue == null) {
+      myPresentation = "null";
+    } else {
+      myPresentation = myValue.toString();
+    }
   }
 
   @Override
   public Icon getPresentationIcon() {
-    return Icons.VARIABLE_PRIMITIVE;
+    return Icons.VALUE_PRIMITIVE;
   }
 
   @Override
@@ -34,16 +35,10 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
 
   @Override
   public String getValuePresentation() {
-    if (myValue == null) {
-      return "null";
-    }
-    return myValue.toString();
+    return myPresentation;
   }
 
-  public Object getJavaValue() {
-    if (myValue == null) {
-      return null;
-    }
-    return MirrorUtil.getInstance().getJavaValue(myValue);
+  public List<IWatchable> calculateSubvalues() {
+    return new ArrayList<IWatchable>();
   }
 }

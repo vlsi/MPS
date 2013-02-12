@@ -123,4 +123,8 @@ public interface EditorCell {
   EditorComponent getEditorComponent();
 
   Style getStyle();
+
+  KeyMap getKeyMap();
+
+  void addKeyMap(KeyMap keyMap);
 }

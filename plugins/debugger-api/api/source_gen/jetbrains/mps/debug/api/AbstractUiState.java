@@ -9,6 +9,9 @@ import java.util.List;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import java.util.Collections;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.logging.Logger;
 
 public abstract class AbstractUiState {
   protected static final int NO_FRAME = -1;
@@ -94,4 +97,18 @@ public abstract class AbstractUiState {
     }
     return Collections.emptyList();
   }
+
+  public void invokeEvaluation(final _FunctionTypes._void_P0_E0 command) {
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
+        try {
+          command.invoke();
+        } catch (Throwable t) {
+          LOG.error("", t);
+        }
+      }
+    });
+  }
+
+  private static Logger LOG = Logger.getLogger(AbstractUiState.class);
 }

@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -55,9 +56,9 @@ public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInf
         return null;
       }
 
-      public SNode doSubstitute(String pattern) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         handleAction(node, node.getModel(), context.getScope(), context, editorContext);
-        return node;
+        return null;
       }
     });
 

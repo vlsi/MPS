@@ -24,4 +24,8 @@ public class BuildLayout_Import_Behavior {
       builder.add(artifact);
     }
   }
+
+  public static boolean virtual_isImplicit_1330375798085107777(SNode thisNode) {
+    return true;
+  }
 }

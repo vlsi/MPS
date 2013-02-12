@@ -15,6 +15,10 @@ public class QueryFunction_MethodPresentation_BehaviorDescriptor extends Concept
     return QueryFunction_MethodPresentation_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return QueryFunction_MethodPresentation_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation";

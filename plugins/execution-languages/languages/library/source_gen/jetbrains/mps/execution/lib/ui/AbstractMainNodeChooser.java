@@ -25,10 +25,12 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.logging.Logger;
 
 public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
   private SNodeReference myNodePointer;
@@ -81,7 +83,10 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
             Iterable<SModel> models = getModels(text.substring(0, lastDot));
             SNode foundNode = null;
             for (SModel model : Sequence.fromIterable(models)) {
-              Iterable<SNode> nodes = findNodes((jetbrains.mps.smodel.SModel) model, text);
+              if (!(model instanceof DefaultSModelDescriptor)) {
+                LOG.error("Unknown kind of model " + model);
+              }
+              Iterable<SNode> nodes = findNodes(((DefaultSModelDescriptor) model).getSModel(), text);
               if (!(Sequence.fromIterable(nodes).isEmpty())) {
                 foundNode = Sequence.fromIterable(nodes).first();
                 break;
@@ -165,6 +170,8 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     super.dispose();
     ListSequence.fromList(myListeners).clear();
   }
+
+  private static Logger LOG = Logger.getLogger(AbstractMainNodeChooser.class);
 
   private static SNode check_wlpn4v_a0a0i(SNodePointer checkedDotOperand, AbstractMainNodeChooser checkedDotThisExpression) {
     if (null != checkedDotOperand) {

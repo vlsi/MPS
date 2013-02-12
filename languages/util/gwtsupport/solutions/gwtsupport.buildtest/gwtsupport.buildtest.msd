@@ -2,7 +2,7 @@
 <solution name="gwtsupport.buildtest" uuid="04462093-4c58-4a21-85b6-bef85bbb0577" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <sourcePath />

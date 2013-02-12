@@ -15,7 +15,7 @@ public class EditableStyleClassItem_Behavior {
     return SNodeOperations.isInstanceOf(cellModel, "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel");
   }
 
-  public static StyleAttribute virtual_getStyleAttribute_2554389230519612632(SNode thisNode) {
+  public static StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
     return StyleAttributes.EDITABLE;
   }
 }

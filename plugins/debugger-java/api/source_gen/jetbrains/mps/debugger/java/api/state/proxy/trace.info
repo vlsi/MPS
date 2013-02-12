@@ -27,77 +27,90 @@
     <unitInfo nodeId="3432969378036013921" fileName="ProxyForJava.java" startLine="6" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.proxy.ProxyForJava" />
   </root>
   <root nodeRef="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)/3432969378036013922">
-    <nodeInfo nodeId="3432969378036015283" fileName="JavaValue.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassFQName" />
-    <nodeInfo nodeId="3432969378036015286" fileName="JavaValue.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThreadReference" />
-    <nodeInfo nodeId="3432969378036015299" fileName="JavaValue.java" startLine="16" startPosition="86" endLine="17" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3432969378036015301" fileName="JavaValue.java" startLine="17" startPosition="17" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036015305" fileName="JavaValue.java" startLine="18" startPosition="20" endLine="19" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036015309" fileName="JavaValue.java" startLine="19" startPosition="32" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036015484" fileName="JavaValue.java" startLine="24" startPosition="27" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036015491" fileName="JavaValue.java" startLine="28" startPosition="34" endLine="29" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036015279" fileName="JavaValue.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
-    <nodeInfo nodeId="3432969378036015487" fileName="JavaValue.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3432969378036015480" fileName="JavaValue.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Lcom/sun/jdi/Value;" />
-    <nodeInfo nodeId="3432969378036015289" fileName="JavaValue.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaValue#(Lcom/sun/jdi/Value;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)V" />
-    <scopeInfo nodeId="3432969378036015483" fileName="JavaValue.java" startLine="24" startPosition="27" endLine="25" endPosition="19" />
-    <scopeInfo nodeId="3432969378036015490" fileName="JavaValue.java" startLine="28" startPosition="34" endLine="29" endPosition="25" />
-    <scopeInfo nodeId="3432969378036015487" fileName="JavaValue.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="3432969378036015298" fileName="JavaValue.java" startLine="16" startPosition="86" endLine="20" endPosition="40" />
-    <scopeInfo nodeId="3432969378036015480" fileName="JavaValue.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="3432969378036015289" fileName="JavaValue.java" startLine="16" startPosition="0" endLine="22" endPosition="0">
+    <nodeInfo nodeId="3432969378036015283" fileName="JavaValue.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassFQName" />
+    <nodeInfo nodeId="3432969378036015286" fileName="JavaValue.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThreadReference" />
+    <nodeInfo nodeId="948222233230197043" fileName="JavaValue.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySubvalues" />
+    <nodeInfo nodeId="3432969378036015299" fileName="JavaValue.java" startLine="19" startPosition="86" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3432969378036015301" fileName="JavaValue.java" startLine="20" startPosition="17" endLine="21" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3432969378036015305" fileName="JavaValue.java" startLine="21" startPosition="20" endLine="22" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3432969378036015309" fileName="JavaValue.java" startLine="22" startPosition="32" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3432969378036015484" fileName="JavaValue.java" startLine="27" startPosition="27" endLine="28" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036015491" fileName="JavaValue.java" startLine="31" startPosition="34" endLine="32" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="948222233230197356" fileName="JavaValue.java" startLine="35" startPosition="31" endLine="36" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="948222233230177189" fileName="JavaValue.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calculateSubvalues#()Ljava/util/List;" />
+    <nodeInfo nodeId="948222233230195507" fileName="JavaValue.java" startLine="41" startPosition="42" endLine="42" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036015279" fileName="JavaValue.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="3432969378036015487" fileName="JavaValue.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="948222233230196082" fileName="JavaValue.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initSubvalues#()V" />
+    <nodeInfo nodeId="948222233230195500" fileName="JavaValue.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvalues#()Ljava/util/List;" />
+    <nodeInfo nodeId="3432969378036015480" fileName="JavaValue.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Lcom/sun/jdi/Value;" />
+    <nodeInfo nodeId="3432969378036015289" fileName="JavaValue.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaValue#(Lcom/sun/jdi/Value;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)V" />
+    <scopeInfo nodeId="3432969378036015483" fileName="JavaValue.java" startLine="27" startPosition="27" endLine="28" endPosition="19" />
+    <scopeInfo nodeId="3432969378036015490" fileName="JavaValue.java" startLine="31" startPosition="34" endLine="32" endPosition="25" />
+    <scopeInfo nodeId="948222233230196086" fileName="JavaValue.java" startLine="35" startPosition="31" endLine="36" endPosition="39" />
+    <scopeInfo nodeId="948222233230177189" fileName="JavaValue.java" startLine="39" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="948222233230195505" fileName="JavaValue.java" startLine="41" startPosition="42" endLine="42" endPosition="23" />
+    <scopeInfo nodeId="3432969378036015487" fileName="JavaValue.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="948222233230196082" fileName="JavaValue.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="948222233230195500" fileName="JavaValue.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="3432969378036015298" fileName="JavaValue.java" startLine="19" startPosition="86" endLine="23" endPosition="40" />
+    <scopeInfo nodeId="3432969378036015480" fileName="JavaValue.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="3432969378036015289" fileName="JavaValue.java" startLine="19" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="3432969378036015294" varName="classFQname" />
       <varInfo nodeId="3432969378036015296" varName="threadReference" />
       <varInfo nodeId="3432969378036015292" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="3432969378036013922" fileName="JavaValue.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.proxy.JavaValue" />
+    <unitInfo nodeId="3432969378036013922" fileName="JavaValue.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.proxy.JavaValue" />
   </root>
   <root nodeRef="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)/3432969378036014408">
     <nodeInfo nodeId="3432969378036014412" fileName="ValueWrapper.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWrappedValue" />
-    <nodeInfo nodeId="3432969378036014425" fileName="ValueWrapper.java" startLine="22" startPosition="40" endLine="23" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3432969378036014435" fileName="ValueWrapper.java" startLine="23" startPosition="77" endLine="24" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7157912897227775582" fileName="ValueWrapper.java" startLine="24" startPosition="27" endLine="25" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036014453" fileName="ValueWrapper.java" startLine="29" startPosition="37" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036014462" fileName="ValueWrapper.java" startLine="34" startPosition="40" endLine="35" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036014472" fileName="ValueWrapper.java" startLine="39" startPosition="42" endLine="40" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3432969378036014484" fileName="ValueWrapper.java" startLine="41" startPosition="53" endLine="42" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036014489" fileName="ValueWrapper.java" startLine="43" startPosition="5" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036014492" fileName="ValueWrapper.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvaluesImpl#()Ljava/util/List;" />
-    <nodeInfo nodeId="3432969378036014501" fileName="ValueWrapper.java" startLine="50" startPosition="32" endLine="51" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036014508" fileName="ValueWrapper.java" startLine="54" startPosition="47" endLine="55" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2775784362813808865" fileName="ValueWrapper.java" startLine="58" startPosition="33" endLine="59" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="948222233230766526" fileName="ValueWrapper.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPresentation" />
+    <nodeInfo nodeId="3432969378036014425" fileName="ValueWrapper.java" startLine="23" startPosition="40" endLine="24" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3432969378036014435" fileName="ValueWrapper.java" startLine="24" startPosition="77" endLine="25" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7157912897227775582" fileName="ValueWrapper.java" startLine="25" startPosition="27" endLine="26" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="948222233230766960" fileName="ValueWrapper.java" startLine="26" startPosition="76" endLine="27" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3432969378036014453" fileName="ValueWrapper.java" startLine="31" startPosition="37" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036014462" fileName="ValueWrapper.java" startLine="36" startPosition="40" endLine="37" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036014472" fileName="ValueWrapper.java" startLine="40" startPosition="48" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3432969378036014484" fileName="ValueWrapper.java" startLine="42" startPosition="53" endLine="43" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3432969378036014489" fileName="ValueWrapper.java" startLine="44" startPosition="5" endLine="45" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036014492" fileName="ValueWrapper.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvaluesImpl#()Ljava/util/List;" />
+    <nodeInfo nodeId="3432969378036014501" fileName="ValueWrapper.java" startLine="51" startPosition="32" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036014508" fileName="ValueWrapper.java" startLine="55" startPosition="47" endLine="56" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2775784362813808865" fileName="ValueWrapper.java" startLine="59" startPosition="33" endLine="60" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3432969378036014415" fileName="ValueWrapper.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValueProxy" />
-    <nodeInfo nodeId="3432969378036014479" fileName="ValueWrapper.java" startLine="40" startPosition="58" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3432969378036014504" fileName="ValueWrapper.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThreadReference#()Lcom/sun/jdi/ThreadReference;" />
-    <nodeInfo nodeId="2775784362813807946" fileName="ValueWrapper.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVM#()Lcom/sun/jdi/VirtualMachine;" />
-    <nodeInfo nodeId="3432969378036014449" fileName="ValueWrapper.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentationIcon#()Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="3432969378036014458" fileName="ValueWrapper.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValuePresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3432969378036014497" fileName="ValueWrapper.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStructure#()Z" />
-    <nodeInfo nodeId="3432969378036014419" fileName="ValueWrapper.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ValueWrapper#(Ljetbrains/mps/debugger/java/api/state/proxy/JavaValue;)V" />
-    <nodeInfo nodeId="3432969378036014467" fileName="ValueWrapper.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvalues#()Ljava/util/List;" />
-    <scopeInfo nodeId="3432969378036014452" fileName="ValueWrapper.java" startLine="29" startPosition="37" endLine="30" endPosition="48" />
-    <scopeInfo nodeId="3432969378036014461" fileName="ValueWrapper.java" startLine="34" startPosition="40" endLine="35" endPosition="49" />
-    <scopeInfo nodeId="3432969378036014483" fileName="ValueWrapper.java" startLine="41" startPosition="53" endLine="42" endPosition="28" />
-    <scopeInfo nodeId="3432969378036014492" fileName="ValueWrapper.java" startLine="47" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="3432969378036014500" fileName="ValueWrapper.java" startLine="50" startPosition="32" endLine="51" endPosition="16" />
-    <scopeInfo nodeId="3432969378036014507" fileName="ValueWrapper.java" startLine="54" startPosition="47" endLine="55" endPosition="29" />
-    <scopeInfo nodeId="2775784362813807949" fileName="ValueWrapper.java" startLine="58" startPosition="33" endLine="59" endPosition="36" />
-    <scopeInfo nodeId="3432969378036014424" fileName="ValueWrapper.java" startLine="22" startPosition="40" endLine="25" endPosition="76" />
-    <scopeInfo nodeId="3432969378036014479" fileName="ValueWrapper.java" startLine="40" startPosition="58" endLine="43" endPosition="5">
+    <nodeInfo nodeId="3432969378036014479" fileName="ValueWrapper.java" startLine="41" startPosition="58" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3432969378036014504" fileName="ValueWrapper.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThreadReference#()Lcom/sun/jdi/ThreadReference;" />
+    <nodeInfo nodeId="2775784362813807946" fileName="ValueWrapper.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVM#()Lcom/sun/jdi/VirtualMachine;" />
+    <nodeInfo nodeId="3432969378036014449" fileName="ValueWrapper.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentationIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="3432969378036014458" fileName="ValueWrapper.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValuePresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3432969378036014497" fileName="ValueWrapper.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStructure#()Z" />
+    <nodeInfo nodeId="3432969378036014419" fileName="ValueWrapper.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ValueWrapper#(Ljetbrains/mps/debugger/java/api/state/proxy/JavaValue;)V" />
+    <nodeInfo nodeId="948222233230756266" fileName="ValueWrapper.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calculateSubvalues#()Ljava/util/List;" />
+    <scopeInfo nodeId="3432969378036014452" fileName="ValueWrapper.java" startLine="31" startPosition="37" endLine="32" endPosition="48" />
+    <scopeInfo nodeId="3432969378036014461" fileName="ValueWrapper.java" startLine="36" startPosition="40" endLine="37" endPosition="26" />
+    <scopeInfo nodeId="3432969378036014483" fileName="ValueWrapper.java" startLine="42" startPosition="53" endLine="43" endPosition="28" />
+    <scopeInfo nodeId="3432969378036014492" fileName="ValueWrapper.java" startLine="48" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="3432969378036014500" fileName="ValueWrapper.java" startLine="51" startPosition="32" endLine="52" endPosition="16" />
+    <scopeInfo nodeId="3432969378036014507" fileName="ValueWrapper.java" startLine="55" startPosition="47" endLine="56" endPosition="29" />
+    <scopeInfo nodeId="2775784362813807949" fileName="ValueWrapper.java" startLine="59" startPosition="33" endLine="60" endPosition="36" />
+    <scopeInfo nodeId="3432969378036014479" fileName="ValueWrapper.java" startLine="41" startPosition="58" endLine="44" endPosition="5">
       <varInfo nodeId="3432969378036014481" varName="watchable" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036014504" fileName="ValueWrapper.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="2775784362813807946" fileName="ValueWrapper.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="3432969378036014449" fileName="ValueWrapper.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="3432969378036014458" fileName="ValueWrapper.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="3432969378036014497" fileName="ValueWrapper.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="3432969378036014419" fileName="ValueWrapper.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="3432969378036014422" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="3432969378036014471" fileName="ValueWrapper.java" startLine="39" startPosition="42" endLine="44" endPosition="18">
+    <scopeInfo nodeId="3432969378036014504" fileName="ValueWrapper.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="2775784362813807946" fileName="ValueWrapper.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="3432969378036014424" fileName="ValueWrapper.java" startLine="23" startPosition="40" endLine="27" endPosition="59" />
+    <scopeInfo nodeId="3432969378036014449" fileName="ValueWrapper.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="3432969378036014458" fileName="ValueWrapper.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="3432969378036014497" fileName="ValueWrapper.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="948222233230756271" fileName="ValueWrapper.java" startLine="40" startPosition="48" endLine="45" endPosition="18">
       <varInfo nodeId="3432969378036014473" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036014467" fileName="ValueWrapper.java" startLine="38" startPosition="0" endLine="46" endPosition="0" />
-    <unitInfo nodeId="3432969378036014408" fileName="ValueWrapper.java" startLine="17" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper" />
+    <scopeInfo nodeId="3432969378036014419" fileName="ValueWrapper.java" startLine="23" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="3432969378036014422" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="948222233230756266" fileName="ValueWrapper.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
+    <unitInfo nodeId="3432969378036014408" fileName="ValueWrapper.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper" />
   </root>
   <root nodeRef="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)/3432969378036014521">
     <nodeInfo nodeId="1858303129749154084" fileName="JavaThread.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStackFrames" />

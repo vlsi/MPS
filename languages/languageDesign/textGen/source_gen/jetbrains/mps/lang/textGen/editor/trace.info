@@ -1478,7 +1478,7 @@
     <nodeInfo nodeId="1234191836333" fileName="OperationCall_Editor.java" startLine="146" startPosition="91" endLine="147" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1234191836333" fileName="OperationCall_Editor.java" startLine="147" startPosition="128" endLine="148" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1234191836333" fileName="OperationCall_Editor.java" startLine="148" startPosition="106" endLine="149" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234191836333" fileName="OperationCall_Editor.java" startLine="150" startPosition="87" endLine="151" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234191836333" fileName="OperationCall_Editor.java" startLine="150" startPosition="87" endLine="151" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234191836333" fileName="OperationCall_Editor.java" startLine="152" startPosition="5" endLine="153" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234191836333" fileName="OperationCall_Editor.java" startLine="153" startPosition="49" endLine="154" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234257105287" fileName="OperationCall_Editor.java" startLine="157" startPosition="87" endLine="158" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1527,7 +1527,7 @@
     <scopeInfo nodeId="1234191836333" fileName="OperationCall_Editor.java" startLine="109" startPosition="131" endLine="110" endPosition="139" />
     <scopeInfo nodeId="1234191545501" fileName="OperationCall_Editor.java" startLine="140" startPosition="48" endLine="141" endPosition="80" />
     <scopeInfo nodeId="1234191545501" fileName="OperationCall_Editor.java" startLine="141" startPosition="80" endLine="142" endPosition="84" />
-    <scopeInfo nodeId="1234191836333" fileName="OperationCall_Editor.java" startLine="150" startPosition="87" endLine="151" endPosition="65" />
+    <scopeInfo nodeId="1234191836333" fileName="OperationCall_Editor.java" startLine="150" startPosition="87" endLine="151" endPosition="95" />
     <scopeInfo nodeId="1234191836338" fileName="OperationCall_Editor.java" startLine="175" startPosition="111" endLine="176" endPosition="145" />
     <scopeInfo nodeId="1234191836333" fileName="OperationCall_Editor.java" startLine="80" startPosition="66" endLine="82" endPosition="93">
       <varInfo nodeId="1234191836333" varName="listOwner" />
@@ -1752,7 +1752,7 @@
     <nodeInfo nodeId="1234525383202" fileName="UtilityMethodDeclaration_Editor.java" startLine="210" startPosition="35" endLine="211" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234525383202" fileName="UtilityMethodDeclaration_Editor.java" startLine="211" startPosition="49" endLine="212" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1234525383202" fileName="UtilityMethodDeclaration_Editor.java" startLine="212" startPosition="26" endLine="213" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234525383202" fileName="UtilityMethodDeclaration_Editor.java" startLine="214" startPosition="15" endLine="215" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234525383202" fileName="UtilityMethodDeclaration_Editor.java" startLine="214" startPosition="15" endLine="215" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234525383202" fileName="UtilityMethodDeclaration_Editor.java" startLine="216" startPosition="5" endLine="217" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234525383202" fileName="UtilityMethodDeclaration_Editor.java" startLine="217" startPosition="73" endLine="218" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1234525383202" fileName="UtilityMethodDeclaration_Editor.java" startLine="218" startPosition="57" endLine="219" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1825,7 +1825,7 @@
     <scopeInfo nodeId="1234525223496" fileName="UtilityMethodDeclaration_Editor.java" startLine="138" startPosition="81" endLine="139" endPosition="84" />
     <scopeInfo nodeId="1234525223496" fileName="UtilityMethodDeclaration_Editor.java" startLine="139" startPosition="84" endLine="140" endPosition="81" />
     <scopeInfo nodeId="1234525223496" fileName="UtilityMethodDeclaration_Editor.java" startLine="140" startPosition="81" endLine="141" endPosition="82" />
-    <scopeInfo nodeId="1234525383202" fileName="UtilityMethodDeclaration_Editor.java" startLine="214" startPosition="15" endLine="215" endPosition="65" />
+    <scopeInfo nodeId="1234525383202" fileName="UtilityMethodDeclaration_Editor.java" startLine="214" startPosition="15" endLine="215" endPosition="95" />
     <scopeInfo nodeId="1234526063195" fileName="UtilityMethodDeclaration_Editor.java" startLine="249" startPosition="111" endLine="250" endPosition="55" />
     <scopeInfo nodeId="1234525694456" fileName="UtilityMethodDeclaration_Editor.java" startLine="50" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="1234525743998" fileName="UtilityMethodDeclaration_Editor.java" startLine="70" startPosition="66" endLine="72" endPosition="93">
@@ -2079,13 +2079,13 @@
     <nodeInfo nodeId="1234532456580" fileName="UtilityMethodCall_Editor.java" startLine="169" startPosition="48" endLine="170" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234532456580" fileName="UtilityMethodCall_Editor.java" startLine="170" startPosition="58" endLine="171" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234532456580" fileName="UtilityMethodCall_Editor.java" startLine="171" startPosition="47" endLine="172" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234532456580" fileName="UtilityMethodCall_Editor.java" startLine="173" startPosition="87" endLine="174" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234532456580" fileName="UtilityMethodCall_Editor.java" startLine="173" startPosition="87" endLine="174" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234532456580" fileName="UtilityMethodCall_Editor.java" startLine="175" startPosition="5" endLine="176" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234532456580" fileName="UtilityMethodCall_Editor.java" startLine="176" startPosition="34" endLine="177" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234532456566" fileName="UtilityMethodCall_Editor.java" startLine="180" startPosition="91" endLine="181" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1234532456566" fileName="UtilityMethodCall_Editor.java" startLine="181" startPosition="132" endLine="182" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1234532456566" fileName="UtilityMethodCall_Editor.java" startLine="182" startPosition="106" endLine="183" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1234532456566" fileName="UtilityMethodCall_Editor.java" startLine="184" startPosition="87" endLine="185" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234532456566" fileName="UtilityMethodCall_Editor.java" startLine="184" startPosition="87" endLine="185" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234532456566" fileName="UtilityMethodCall_Editor.java" startLine="186" startPosition="5" endLine="187" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1234532456566" fileName="UtilityMethodCall_Editor.java" startLine="187" startPosition="49" endLine="188" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234529242066" fileName="UtilityMethodCall_Editor.java" startLine="191" startPosition="87" endLine="192" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2143,8 +2143,8 @@
     <scopeInfo nodeId="1234529242065" fileName="UtilityMethodCall_Editor.java" startLine="144" startPosition="80" endLine="145" endPosition="81" />
     <scopeInfo nodeId="1234529242065" fileName="UtilityMethodCall_Editor.java" startLine="145" startPosition="81" endLine="146" endPosition="84" />
     <scopeInfo nodeId="1234529242065" fileName="UtilityMethodCall_Editor.java" startLine="146" startPosition="84" endLine="147" endPosition="81" />
-    <scopeInfo nodeId="1234532456580" fileName="UtilityMethodCall_Editor.java" startLine="173" startPosition="87" endLine="174" endPosition="60" />
-    <scopeInfo nodeId="1234532456566" fileName="UtilityMethodCall_Editor.java" startLine="184" startPosition="87" endLine="185" endPosition="65" />
+    <scopeInfo nodeId="1234532456580" fileName="UtilityMethodCall_Editor.java" startLine="173" startPosition="87" endLine="174" endPosition="90" />
+    <scopeInfo nodeId="1234532456566" fileName="UtilityMethodCall_Editor.java" startLine="184" startPosition="87" endLine="185" endPosition="95" />
     <scopeInfo nodeId="1234532456571" fileName="UtilityMethodCall_Editor.java" startLine="209" startPosition="111" endLine="210" endPosition="225" />
     <scopeInfo nodeId="1234532456584" fileName="UtilityMethodCall_Editor.java" startLine="214" startPosition="69" endLine="215" endPosition="19" />
     <scopeInfo nodeId="1234532456566" fileName="UtilityMethodCall_Editor.java" startLine="83" startPosition="66" endLine="85" endPosition="93">

@@ -19,8 +19,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
@@ -101,4 +101,8 @@ public interface EditorContext {
   EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role);
 
   EditorCell createRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute);
+
+  void runWithContextCell(EditorCell contextCell, Runnable r);
+
+  <T> T runWithContextCell(EditorCell contextCell, Computable<T> r);
 }

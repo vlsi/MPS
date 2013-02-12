@@ -6746,7 +6746,7 @@
     <nodeInfo nodeId="6635062342941213765" fileName="InitialPropertyValueClause_Editor.java" startLine="124" startPosition="34" endLine="125" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6635062342941213765" fileName="InitialPropertyValueClause_Editor.java" startLine="125" startPosition="58" endLine="126" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6635062342941213765" fileName="InitialPropertyValueClause_Editor.java" startLine="126" startPosition="60" endLine="127" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6635062342941213765" fileName="InitialPropertyValueClause_Editor.java" startLine="128" startPosition="15" endLine="129" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6635062342941213765" fileName="InitialPropertyValueClause_Editor.java" startLine="128" startPosition="15" endLine="129" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6635062342941213765" fileName="InitialPropertyValueClause_Editor.java" startLine="130" startPosition="5" endLine="131" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6635062342941213765" fileName="InitialPropertyValueClause_Editor.java" startLine="131" startPosition="73" endLine="132" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6635062342941213765" fileName="InitialPropertyValueClause_Editor.java" startLine="132" startPosition="57" endLine="133" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -6780,7 +6780,7 @@
     <scopeInfo nodeId="6635062342941213708" fileName="InitialPropertyValueClause_Editor.java" startLine="87" startPosition="27" endLine="88" endPosition="32" />
     <scopeInfo nodeId="5808948296580771094" fileName="InitialPropertyValueClause_Editor.java" startLine="95" startPosition="41" endLine="96" endPosition="62" />
     <scopeInfo nodeId="6635062342941213661" fileName="InitialPropertyValueClause_Editor.java" startLine="104" startPosition="44" endLine="105" endPosition="46" />
-    <scopeInfo nodeId="6635062342941213765" fileName="InitialPropertyValueClause_Editor.java" startLine="128" startPosition="15" endLine="129" endPosition="65" />
+    <scopeInfo nodeId="6635062342941213765" fileName="InitialPropertyValueClause_Editor.java" startLine="128" startPosition="15" endLine="129" endPosition="95" />
     <scopeInfo nodeId="6635062342941213661" fileName="InitialPropertyValueClause_Editor.java" startLine="101" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="6635062342941213661" varName="s" />
     </scopeInfo>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:a5ddf2e2-82ac-4496-924f-5c515b082a89(jetbrains.mps.build.ant.converter)/288299486413331049">
+    <nodeInfo nodeId="7841036633973603097" fileName="ConvertToBinaryTask.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="toConvert" />
+    <nodeInfo nodeId="4003657351907890379" fileName="ConvertToBinaryTask.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mpsHome" />
+    <nodeInfo nodeId="7841036633973612411" fileName="ConvertToBinaryTask.java" startLine="31" startPosition="32" endLine="32" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2593114247422295382" fileName="ConvertToBinaryTask.java" startLine="32" startPosition="53" endLine="33" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2593114247422298312" fileName="ConvertToBinaryTask.java" startLine="33" startPosition="54" endLine="34" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2593114247422299195" fileName="ConvertToBinaryTask.java" startLine="34" startPosition="27" endLine="35" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7841036633973614514" fileName="ConvertToBinaryTask.java" startLine="35" startPosition="25" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7841036633973615340" fileName="ConvertToBinaryTask.java" startLine="36" startPosition="22" endLine="37" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2593114247422288072" fileName="ConvertToBinaryTask.java" startLine="37" startPosition="37" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2593114247422577594" fileName="ConvertToBinaryTask.java" startLine="38" startPosition="16" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907890412" fileName="ConvertToBinaryTask.java" startLine="42" startPosition="40" endLine="43" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907890420" fileName="ConvertToBinaryTask.java" startLine="46" startPosition="28" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7841036633973629236" fileName="ConvertToBinaryTask.java" startLine="51" startPosition="47" endLine="52" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7841036633976430573" fileName="ConvertToBinaryTask.java" startLine="53" startPosition="33" endLine="54" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7841036633976430594" fileName="ConvertToBinaryTask.java" startLine="54" startPosition="96" endLine="55" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7841036633976430604" fileName="ConvertToBinaryTask.java" startLine="57" startPosition="13" endLine="58" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7841036633976430618" fileName="ConvertToBinaryTask.java" startLine="59" startPosition="43" endLine="60" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7841036633976430626" fileName="ConvertToBinaryTask.java" startLine="62" startPosition="7" endLine="63" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7841036633976430645" fileName="ConvertToBinaryTask.java" startLine="64" startPosition="11" endLine="65" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7841036633976430652" fileName="ConvertToBinaryTask.java" startLine="65" startPosition="118" endLine="66" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7841036633976430657" fileName="ConvertToBinaryTask.java" startLine="66" startPosition="56" endLine="67" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7841036633976430664" fileName="ConvertToBinaryTask.java" startLine="67" startPosition="71" endLine="68" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7841036633976430685" fileName="ConvertToBinaryTask.java" startLine="70" startPosition="83" endLine="71" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7841036633976430703" fileName="ConvertToBinaryTask.java" startLine="72" startPosition="9" endLine="73" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2593114247422580873" fileName="ConvertToBinaryTask.java" startLine="79" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delegate" />
+    <nodeInfo nodeId="2593114247422582383" fileName="ConvertToBinaryTask.java" startLine="81" startPosition="44" endLine="82" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2593114247422581211" fileName="ConvertToBinaryTask.java" startLine="86" startPosition="40" endLine="87" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7841036633976680549" fileName="ConvertToBinaryTask.java" startLine="92" startPosition="50" endLine="93" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2593114247422601002" fileName="ConvertToBinaryTask.java" startLine="94" startPosition="14" endLine="95" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7841036633976680556" fileName="ConvertToBinaryTask.java" startLine="94" startPosition="12" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4003657351907890406" fileName="ConvertToBinaryTask.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMpsHome#(Ljava/io/File;)V" />
+    <nodeInfo nodeId="4003657351907890416" fileName="ConvertToBinaryTask.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMpsHome#()Ljava/io/File;" />
+    <nodeInfo nodeId="7841036633976430674" fileName="ConvertToBinaryTask.java" startLine="69" startPosition="29" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2593114247422582375" fileName="ConvertToBinaryTask.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FileUtilsEx#(Lorg/apache/tools/ant/util/FileUtils;)V" />
+    <nodeInfo nodeId="2593114247422581039" fileName="ConvertToBinaryTask.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultEncoding#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7841036633976430619" fileName="ConvertToBinaryTask.java" startLine="56" startPosition="36" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7841036633976680541" fileName="ConvertToBinaryTask.java" startLine="91" startPosition="269" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7841036633976430599" fileName="ConvertToBinaryTask.java" startLine="55" startPosition="53" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2593114247422585801" fileName="ConvertToBinaryTask.java" startLine="90" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="copyFile#(Ljava/io/File;Ljava/io/File;Lorg/apache/tools/ant/types/FilterSetCollection;Ljava/util/Vector;ZZZLjava/lang/String;Ljava/lang/String;Lorg/apache/tools/ant/Project;Z)V" />
+    <nodeInfo nodeId="2593114247422285181" fileName="ConvertToBinaryTask.java" startLine="31" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConvertToBinaryTask#()V" />
+    <nodeInfo nodeId="7841036633976430704" fileName="ConvertToBinaryTask.java" startLine="63" startPosition="142" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7841036633973632952" fileName="ConvertToBinaryTask.java" startLine="52" startPosition="20" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7841036633973629228" fileName="ConvertToBinaryTask.java" startLine="50" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#()V" />
+    <scopeInfo nodeId="4003657351907890411" fileName="ConvertToBinaryTask.java" startLine="42" startPosition="40" endLine="43" endPosition="27" />
+    <scopeInfo nodeId="4003657351907890419" fileName="ConvertToBinaryTask.java" startLine="46" startPosition="28" endLine="47" endPosition="19" />
+    <scopeInfo nodeId="7841036633976430603" fileName="ConvertToBinaryTask.java" startLine="57" startPosition="13" endLine="58" endPosition="56" />
+    <scopeInfo nodeId="7841036633976430620" fileName="ConvertToBinaryTask.java" startLine="59" startPosition="0" endLine="60" endPosition="38">
+      <varInfo nodeId="7841036633976430611" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="7841036633976430615" fileName="ConvertToBinaryTask.java" startLine="59" startPosition="43" endLine="60" endPosition="38" />
+    <scopeInfo nodeId="7841036633976430684" fileName="ConvertToBinaryTask.java" startLine="70" startPosition="83" endLine="71" endPosition="27" />
+    <scopeInfo nodeId="2593114247422582379" fileName="ConvertToBinaryTask.java" startLine="81" startPosition="44" endLine="82" endPosition="31" />
+    <scopeInfo nodeId="2593114247422581043" fileName="ConvertToBinaryTask.java" startLine="86" startPosition="40" endLine="87" endPosition="43" />
+    <scopeInfo nodeId="7841036633976680548" fileName="ConvertToBinaryTask.java" startLine="92" startPosition="50" endLine="93" endPosition="64" />
+    <scopeInfo nodeId="7841036633976680557" fileName="ConvertToBinaryTask.java" startLine="94" startPosition="14" endLine="95" endPosition="159" />
+    <scopeInfo nodeId="4003657351907890406" fileName="ConvertToBinaryTask.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="4003657351907890409" varName="mpsHome" />
+    </scopeInfo>
+    <scopeInfo nodeId="4003657351907890416" fileName="ConvertToBinaryTask.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="2593114247422582375" fileName="ConvertToBinaryTask.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="2593114247422582382" varName="delegate" />
+    </scopeInfo>
+    <scopeInfo nodeId="7841036633976430643" fileName="ConvertToBinaryTask.java" startLine="64" startPosition="11" endLine="68" endPosition="44">
+      <varInfo nodeId="7841036633976430651" varName="converter" />
+      <varInfo nodeId="7841036633976430644" varName="converterClass" />
+      <varInfo nodeId="7841036633976430656" varName="method" />
+    </scopeInfo>
+    <scopeInfo nodeId="7841036633976430705" fileName="ConvertToBinaryTask.java" startLine="69" startPosition="0" endLine="73" endPosition="144">
+      <varInfo nodeId="7841036633976430669" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="7841036633976430673" fileName="ConvertToBinaryTask.java" startLine="69" startPosition="29" endLine="73" endPosition="144" />
+    <scopeInfo nodeId="2593114247422581039" fileName="ConvertToBinaryTask.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="7841036633976430601" fileName="ConvertToBinaryTask.java" startLine="56" startPosition="36" endLine="61" endPosition="9" />
+    <scopeInfo nodeId="2593114247422585828" fileName="ConvertToBinaryTask.java" startLine="91" startPosition="269" endLine="96" endPosition="7" />
+    <scopeInfo nodeId="7841036633976430599" fileName="ConvertToBinaryTask.java" startLine="55" startPosition="53" endLine="62" endPosition="7">
+      <varInfo nodeId="7841036633976430621" varName="path" />
+    </scopeInfo>
+    <scopeInfo nodeId="2593114247422285185" fileName="ConvertToBinaryTask.java" startLine="31" startPosition="32" endLine="39" endPosition="63">
+      <varInfo nodeId="2593114247422295383" varName="first" />
+      <varInfo nodeId="7841036633973612410" varName="mapper" />
+    </scopeInfo>
+    <scopeInfo nodeId="2593114247422585801" fileName="ConvertToBinaryTask.java" startLine="90" startPosition="0" endLine="98" endPosition="0">
+      <varInfo nodeId="2593114247422585817" varName="append" />
+      <varInfo nodeId="2593114247422585807" varName="destFile" />
+      <varInfo nodeId="2593114247422585811" varName="filterChains" />
+      <varInfo nodeId="2593114247422585809" varName="filters" />
+      <varInfo nodeId="2593114247422585825" varName="force" />
+      <varInfo nodeId="2593114247422585819" varName="inputEncoding" />
+      <varInfo nodeId="2593114247422585821" varName="outputEncoding" />
+      <varInfo nodeId="2593114247422585813" varName="overwrite" />
+      <varInfo nodeId="2593114247422585815" varName="preserveLastModified" />
+      <varInfo nodeId="2593114247422585823" varName="project" />
+      <varInfo nodeId="2593114247422585805" varName="sourceFile" />
+    </scopeInfo>
+    <scopeInfo nodeId="2593114247422285181" fileName="ConvertToBinaryTask.java" startLine="31" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="7841036633973632954" fileName="ConvertToBinaryTask.java" startLine="53" startPosition="33" endLine="74" endPosition="7">
+      <varInfo nodeId="7841036633976430625" varName="classLoader" />
+      <varInfo nodeId="7841036633976430593" varName="classPathUrls" />
+      <varInfo nodeId="7841036633976430572" varName="classPaths" />
+    </scopeInfo>
+    <scopeInfo nodeId="7841036633973629233" fileName="ConvertToBinaryTask.java" startLine="51" startPosition="47" endLine="75" endPosition="5" />
+    <scopeInfo nodeId="7841036633973629228" fileName="ConvertToBinaryTask.java" startLine="50" startPosition="0" endLine="77" endPosition="0" />
+    <unitInfo nodeId="2593114247422577195" fileName="ConvertToBinaryTask.java" startLine="78" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.build.ant.converter.ConvertToBinaryTask$FileUtilsEx" />
+    <unitInfo nodeId="288299486413331049" fileName="ConvertToBinaryTask.java" startLine="26" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.build.ant.converter.ConvertToBinaryTask" />
+  </root>
+</debugInfo>
+

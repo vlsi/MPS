@@ -8,7 +8,7 @@ import java.util.HashMap;
 import jetbrains.mps.ypath.design.IFeatureDesign;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -26,13 +26,13 @@ public class DesignPartLoader {
   public IFeatureDesign getFeatureDesign(String fqClassName, SModel smodel) {
     SModule module = getModuleFor(smodel);
     if (module != null) {
-      return getFeatureDesign(fqClassName, (IModule) module);
+      return getFeatureDesign(fqClassName, (IClassLoadingModule) module);
     }
     return null;
   }
 
   @SuppressWarnings("unchecked")
-  private IFeatureDesign getFeatureDesign(String fqClassName, IModule module) {
+  private IFeatureDesign getFeatureDesign(String fqClassName, IClassLoadingModule module) {
     try {
       Class<?> klass = classes.get(fqClassName);
       if (klass == null) {

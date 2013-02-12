@@ -8,7 +8,7 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import java.util.Map;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
-import jetbrains.mps.nodeEditor.EditorCellKeyMap;
+import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -37,7 +37,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
       clearCaches();
     }
   };
-  private Map<Language, List<EditorCellKeyMap>> myLanguagesToKeyMaps = MapSequence.fromMap(new HashMap<Language, List<EditorCellKeyMap>>());
+  private Map<Language, List<KeyMap>> myLanguagesToKeyMaps = MapSequence.fromMap(new HashMap<Language, List<KeyMap>>());
   private LanguagesKeymapManager.MyModuleRepositoryListener myListener = new LanguagesKeymapManager.MyModuleRepositoryListener();
   private MPSModuleRepository myRepository;
   private ClassLoaderManager myClassLoaderManager;
@@ -47,7 +47,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     myClassLoaderManager = coreComponents.getClassLoaderManager();
   }
 
-  public List<EditorCellKeyMap> getKeyMapsForLanguage(@NotNull Language l) {
+  public List<KeyMap> getKeyMapsForLanguage(@NotNull Language l) {
     if (!(MapSequence.fromMap(myLanguagesToKeyMaps).containsKey(l))) {
       registerLanguageKeyMaps(l);
     }
@@ -80,14 +80,14 @@ public class LanguagesKeymapManager implements ApplicationComponent {
       editorModelDescriptor.getSModel() :
       null
     );
-    List<EditorCellKeyMap> keyMaps;
+    List<KeyMap> keyMaps;
     if (editorModel != null) {
-      keyMaps = ListSequence.fromList(new ArrayList<EditorCellKeyMap>());
+      keyMaps = ListSequence.fromList(new ArrayList<KeyMap>());
       for (SNode keyMapDeclaration : ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"))) {
         try {
-          Class<EditorCellKeyMap> keyMapClass = findKeyMapClassByDeclaration(keyMapDeclaration);
+          Class<KeyMap> keyMapClass = findKeyMapClassByDeclaration(keyMapDeclaration);
           if (keyMapClass != null) {
-            EditorCellKeyMap keyMap = keyMapClass.newInstance();
+            KeyMap keyMap = keyMapClass.newInstance();
             if (keyMap.isApplicableToEveryModel()) {
               ListSequence.fromList(keyMaps).addElement(keyMap);
             }
@@ -102,7 +102,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     MapSequence.fromMap(myLanguagesToKeyMaps).put(language, keyMaps);
   }
 
-  private Class<EditorCellKeyMap> findKeyMapClassByDeclaration(SNode declaration) {
+  private Class<KeyMap> findKeyMapClassByDeclaration(SNode declaration) {
     String fqName = BehaviorReflection.invokeVirtual(String.class, declaration, "virtual_getFqName_1213877404258", new Object[]{});
     String namespace = NameUtil.namespaceFromLongName(fqName);
     assert namespace.endsWith(".editor");

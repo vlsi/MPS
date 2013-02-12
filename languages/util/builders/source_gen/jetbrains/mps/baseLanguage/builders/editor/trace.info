@@ -3311,7 +3311,7 @@
     <nodeInfo nodeId="4315270135340848379" fileName="SimpleBuilder_Editor.java" startLine="129" startPosition="51" endLine="130" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4315270135340848379" fileName="SimpleBuilder_Editor.java" startLine="130" startPosition="36" endLine="131" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4315270135340848379" fileName="SimpleBuilder_Editor.java" startLine="131" startPosition="48" endLine="132" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4315270135340848379" fileName="SimpleBuilder_Editor.java" startLine="133" startPosition="17" endLine="134" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4315270135340848379" fileName="SimpleBuilder_Editor.java" startLine="133" startPosition="17" endLine="134" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4315270135340848379" fileName="SimpleBuilder_Editor.java" startLine="135" startPosition="7" endLine="136" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4315270135340848379" fileName="SimpleBuilder_Editor.java" startLine="136" startPosition="36" endLine="137" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4315270135340543555" fileName="SimpleBuilder_Editor.java" startLine="141" startPosition="89" endLine="142" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3401,7 +3401,7 @@
     <scopeInfo nodeId="4315270135340629602" fileName="SimpleBuilder_Editor.java" startLine="77" startPosition="101" endLine="78" endPosition="50" />
     <scopeInfo nodeId="4315270135340629602" fileName="SimpleBuilder_Editor.java" startLine="99" startPosition="89" endLine="100" endPosition="66" />
     <scopeInfo nodeId="4315270135340629602" fileName="SimpleBuilder_Editor.java" startLine="110" startPosition="131" endLine="111" endPosition="139" />
-    <scopeInfo nodeId="4315270135340848379" fileName="SimpleBuilder_Editor.java" startLine="133" startPosition="17" endLine="134" endPosition="62" />
+    <scopeInfo nodeId="4315270135340848379" fileName="SimpleBuilder_Editor.java" startLine="133" startPosition="17" endLine="134" endPosition="92" />
     <scopeInfo nodeId="4315270135340543555" fileName="SimpleBuilder_Editor.java" startLine="143" startPosition="48" endLine="144" endPosition="80" />
     <scopeInfo nodeId="4315270135340543555" fileName="SimpleBuilder_Editor.java" startLine="145" startPosition="109" endLine="146" endPosition="85" />
     <scopeInfo nodeId="4315270135340543565" fileName="SimpleBuilder_Editor.java" startLine="156" startPosition="40" endLine="157" endPosition="82" />

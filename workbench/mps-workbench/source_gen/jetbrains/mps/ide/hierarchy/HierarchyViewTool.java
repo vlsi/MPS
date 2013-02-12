@@ -14,7 +14,7 @@ import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.ui.TreeHighlighterExtension;
 
@@ -64,12 +64,12 @@ public class HierarchyViewTool extends AbstractHierarchyView {
     super.createTool();
     myModelListener = new HierarchyModelListener(this.myHierarchyTree);
     this.myCreationListener = new ModelCreationListener() {
-      public boolean isApplicable(IModule module, SModelDescriptor m) {
-        return m.getModule() instanceof Language && LanguageAspect.STRUCTURE.equals(((Language) m.getModule()).getAspectForModel(m));
+      public boolean isApplicable(SModule module, SModel model) {
+        return model.getModule() instanceof Language && LanguageAspect.STRUCTURE.equals(((Language) model.getModule()).getAspectForModel(model));
       }
 
-      public void onCreate(IModule module, SModelDescriptor m) {
-        onCreateStructureModel(m);
+      public void onCreate(SModule module, SModel model) {
+        onCreateStructureModel((SModelDescriptor) model);
       }
     };
     AbstractModule.registerModelCreationListener(myCreationListener);

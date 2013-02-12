@@ -26,16 +26,18 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -50,6 +52,7 @@ public abstract class BaseNodeEditor implements Editor {
   private JComponent myComponent = new EditorPanel();
   private IOperationContext myContext;
   private JComponent myReplace = null;
+  private SNodeReference myCurrentlyEditedNode = null;
 
   public BaseNodeEditor(IOperationContext context) {
     myContext = context;
@@ -76,7 +79,33 @@ public abstract class BaseNodeEditor implements Editor {
   }
 
   public SNodeReference getCurrentlyEditedNode() {
-    return myEditorComponent == null ? null : myEditorComponent.getEditedNodePointer();
+    return myCurrentlyEditedNode;
+  }
+
+  protected void editNode(final SNodeReference nodeReference, final IOperationContext context, final boolean select) {
+    assert myEditorComponent != null;
+    executeInEDT(new Runnable() {
+      @Override
+      public void run() {
+        SNode node = nodeReference.resolve(MPSModuleRepository.getInstance());
+        if (node == null) {
+          return;
+        }
+        myEditorComponent.editNode(node, context);
+        if (select) {
+          myEditorComponent.selectNode(node);
+        }
+      }
+    });
+    myCurrentlyEditedNode = nodeReference;
+  }
+
+  protected void executeInEDT(Runnable runnable) {
+    if (ModelAccess.instance().isInEDT()) {
+      runnable.run();
+    } else {
+      ModelAccess.instance().runReadInEDT(runnable);
+    }
   }
 
   public void dispose() {
@@ -123,6 +152,7 @@ public abstract class BaseNodeEditor implements Editor {
       myComponent.remove(myEditorComponent.getExternalComponent());
       myEditorComponent.dispose();
       myEditorComponent = null;
+      myCurrentlyEditedNode = null;
     }
 
     if (myReplace != null) {
@@ -162,40 +192,33 @@ public abstract class BaseNodeEditor implements Editor {
     if (!(state instanceof BaseEditorState)) return;
 
     final BaseEditorState s = (BaseEditorState) state;
-    if (s.myMemento != null) {
-      assert myEditorComponent != null;
-      assert myEditorComponent.getEditorContext() != null;
-
-      getEditorContext().setMemento(s.myMemento);
+    if (s.myMemento == null) {
+      return;
     }
-    if (s.myInspectorMemento != null) {
-      final NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
-      if (editorComponent != null) {
-        if (editorComponent.getInspector() != null) {
-          editorComponent.getInspector().getEditorContext().setMemento(s.myInspectorMemento);
-        } else {
-          SwingUtilities.invokeLater(new Runnable() {
-            int tries = 0;
-
-            @Override
-            public void run() {
-              EditorComponent inspector = editorComponent.getInspector();
-              if (inspector != null) {
-                inspector.getEditorContext().setMemento(s.myInspectorMemento);
-              } else if ((tries++) < 3) {
-                try {
-                  Thread.sleep(tries * 500);
-                } catch (InterruptedException ignore) {
-                }
-                SwingUtilities.invokeLater(this);
-              } else {
-                LOG.error("couln't restore inspector state: no inspector tool");
-              }
-            }
-          });
-        }
+    assert myEditorComponent != null;
+    assert myEditorComponent.getEditorContext() != null;
+    final EditorContext editorContext = getEditorContext();
+    executeInEDT(new Runnable() {
+      @Override
+      public void run() {
+        editorContext.setMemento(s.myMemento);
       }
+    });
+    if (s.myInspectorMemento == null || !(getCurrentEditorComponent() instanceof NodeEditorComponent)) {
+      return;
     }
+    final NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
+    if (editorComponent.getInspector() == null) {
+      LOG.error("No inspector - memento will not be restored");
+      return;
+    }
+    final EditorContext inspectorEditorContext = editorComponent.getInspector().getEditorContext();
+    executeInEDT(new Runnable() {
+      @Override
+      public void run() {
+        inspectorEditorContext.setMemento(s.myInspectorMemento);
+      }
+    });
   }
 
   public static class BaseEditorState implements EditorState {

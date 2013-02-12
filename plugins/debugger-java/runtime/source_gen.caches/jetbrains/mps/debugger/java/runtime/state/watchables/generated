@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="byk0ujtau2k5l483e9cmbmu56dsrefw">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
-  <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="ooi92yf6nj82kw52eojat6fxg0ab6e" />
-  <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" hash="3yorthh5gltptsp6jtsm8coqh41xxfp" />
-  <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" hash="68n3guuxxy6csog7vz04pr9t29kvoze" />
+<dependencies version="2" modelHash="cne2vn4i7k9lve4fofa53ln1cjjvvzy">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7lsvs8iu2lacya158h4835le2lignlu" />
+  <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="2dwxf8w6oj5zpfbtgmdrreuj7n7ytal" />
+  <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" hash="6k7sv7y9rti1q6cbzrsiovpyyyf5apb" />
+  <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" hash="bf41oqi9y2iqtvi4amdey6fb1ahdtpy" />
   <dep model="r:b54bdfd2-1093-4bb6-bc08-562a3cd72450(jetbrains.mps.debugger.java.runtime.ui)" hash="-dzethuer9k5i9hrbhi7xzjaexblhz54" />
   <common hash="-detu6qpbr1kpcyefzawi8w6l7m1hi4u" />
-  <source id="3187167456722645007" name="JavaArrayItemWatchable" hash="-2jmto88noqcx3y5rg3egzgzh9o5cbst">
+  <source id="3187167456722645007" name="JavaArrayItemWatchable" hash="bh97k0zq97p6fmoafgaoyv9vzbn3re0">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" />
     <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" />
     <file name="JavaArrayItemWatchable.java" />
   </source>
-  <source id="3187167456722649969" name="JavaWatchpointWatchable" hash="a7f8wkrs8v28ocw26mph31kc8t6hjqo">
+  <source id="3187167456722649969" name="JavaWatchpointWatchable" hash="-6z05vwyk8vppsefkuv041yc1bnyzpau">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" />
     <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" />
@@ -28,13 +28,13 @@
     <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" />
     <file name="JavaReturnWatchable.java" />
   </source>
-  <source id="3187167456722650243" name="JavaMethodWatchable" hash="-byfcfykd6n8b8s0k20lvhesebo6sjas">
+  <source id="3187167456722650243" name="JavaMethodWatchable" hash="-bj769oezzkz4e29x07nkhucj97mz6jl">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" />
     <dep model="r:b54bdfd2-1093-4bb6-bc08-562a3cd72450(jetbrains.mps.debugger.java.runtime.ui)" />
     <file name="JavaMethodWatchable.java" />
   </source>
-  <source id="3187167456722650363" name="JavaExceptionWatchable" hash="806qv8wel8u2caue6r9xme40uqb13br">
+  <source id="3187167456722650363" name="JavaExceptionWatchable" hash="eue7nqztjrs4zzv5tgdjpb6uy02fhlt">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" />
     <dep model="r:b54bdfd2-1093-4bb6-bc08-562a3cd72450(jetbrains.mps.debugger.java.runtime.ui)" />

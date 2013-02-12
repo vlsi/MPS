@@ -9,8 +9,7 @@
       <root url="file://$PROJECT_DIR$/../testbench/source" />
       <root url="file://$PROJECT_DIR$/../testbench/source_gen" />
       <root url="file://$PROJECT_DIR$/../languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen" />
-      <root url="file://$PROJECT_DIR$/../languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc" />
-      <root url="file://$PROJECT_DIR$/../languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
+      <root url="file://$PROJECT_DIR$/../plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
     </SOURCES>
   </library>
 </component>

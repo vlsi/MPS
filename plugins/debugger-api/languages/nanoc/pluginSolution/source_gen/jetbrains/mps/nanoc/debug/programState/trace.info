@@ -191,25 +191,28 @@
     <nodeInfo nodeId="3990508698139428984" fileName="SimpleValue.java" startLine="18" startPosition="40" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139428991" fileName="SimpleValue.java" startLine="22" startPosition="32" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3990508698139428999" fileName="SimpleValue.java" startLine="26" startPosition="42" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139429008" fileName="SimpleValue.java" startLine="30" startPosition="37" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3990508698139429008" fileName="SimpleValue.java" startLine="33" startPosition="37" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="948222233231495379" fileName="SimpleValue.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initSubvalues#()V" />
     <nodeInfo nodeId="3990508698139428970" fileName="SimpleValue.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleValue#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="3990508698139428980" fileName="SimpleValue.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValuePresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="3990508698139428987" fileName="SimpleValue.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStructure#()Z" />
     <nodeInfo nodeId="3990508698139428994" fileName="SimpleValue.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvalues#()Ljava/util/List;" />
-    <nodeInfo nodeId="3990508698139429004" fileName="SimpleValue.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentationIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="3990508698139429004" fileName="SimpleValue.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentationIcon#()Ljavax/swing/Icon;" />
+    <scopeInfo nodeId="948222233231495383" fileName="SimpleValue.java" startLine="30" startPosition="31" endLine="30" endPosition="31" />
     <scopeInfo nodeId="3990508698139428975" fileName="SimpleValue.java" startLine="14" startPosition="36" endLine="15" endPosition="20" />
     <scopeInfo nodeId="3990508698139428983" fileName="SimpleValue.java" startLine="18" startPosition="40" endLine="19" endPosition="19" />
     <scopeInfo nodeId="3990508698139428990" fileName="SimpleValue.java" startLine="22" startPosition="32" endLine="23" endPosition="17" />
     <scopeInfo nodeId="3990508698139428998" fileName="SimpleValue.java" startLine="26" startPosition="42" endLine="27" endPosition="39" />
-    <scopeInfo nodeId="3990508698139429007" fileName="SimpleValue.java" startLine="30" startPosition="37" endLine="31" endPosition="16" />
+    <scopeInfo nodeId="3990508698139429007" fileName="SimpleValue.java" startLine="33" startPosition="37" endLine="34" endPosition="16" />
+    <scopeInfo nodeId="948222233231495379" fileName="SimpleValue.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="3990508698139428970" fileName="SimpleValue.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="3990508698139428973" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="3990508698139428980" fileName="SimpleValue.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="3990508698139428987" fileName="SimpleValue.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="3990508698139428994" fileName="SimpleValue.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="3990508698139429004" fileName="SimpleValue.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <unitInfo nodeId="3990508698139428964" fileName="SimpleValue.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.SimpleValue" />
+    <scopeInfo nodeId="3990508698139429004" fileName="SimpleValue.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="3990508698139428964" fileName="SimpleValue.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.nanoc.debug.programState.SimpleValue" />
   </root>
   <root nodeRef="r:7fe59955-507a-46f0-b09f-056540eafdc9(jetbrains.mps.nanoc.debug.programState)/3990508698139429870">
     <nodeInfo nodeId="3990508698139429873" fileName="GDBStackFrame.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FUNCTION" />

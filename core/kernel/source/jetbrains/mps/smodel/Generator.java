@@ -13,23 +13,49 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.JavaModuleFacet;
+import jetbrains.mps.project.JavaModuleFacetImpl;
+import jetbrains.mps.project.ModelsAutoImportsManager;
+import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
-import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.project.structure.modules.mappingpriorities.*;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.vfs.IFile;
 
-import java.util.*;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
-public class Generator extends AbstractModule {
+public class Generator extends AbstractModule implements IClassLoadingModule {
   public static final Logger LOG = Logger.getLogger(Generator.class);
+
+  static {
+    ModelsAutoImportsManager.registerContributor(new GeneratorModelsAutoImports());
+  }
 
   private Language mySourceLanguage;
   private GeneratorDescriptor myGeneratorDescriptor;
@@ -53,6 +79,11 @@ public class Generator extends AbstractModule {
 
     upgradeGeneratorDescriptor();
     reloadAfterDescriptorChange();
+  }
+
+  @Override
+  public Iterable<IClassLoadingModule> getClassLoadingDependencies() {
+    throw new UnsupportedOperationException();
   }
 
   public String getPluginPath() {
@@ -111,9 +142,26 @@ public class Generator extends AbstractModule {
   }
 
   @Override
-  public Collection<String> getAdditionalClassPath() {
-    return Collections.emptyList();
+  protected JavaModuleFacet createJavaModuleFacet() {
+    return new JavaModuleFacetImpl(this) {
+      @Override
+      public Collection<String> getAdditionalClassPath() {
+        return Collections.emptyList();
+      }
+
+      @Override
+      public boolean isCompileInMPS() {
+        // generator is always compiled in MPS
+        return true;
+      }
+
+      @Override
+      public IFile getClassesGen() {
+        return mySourceLanguage.getClassesGen();
+      }
+    };
   }
+
 
   public List<SModelDescriptor> getOwnTemplateModels() {
     List<SModelDescriptor> templateModels = new ArrayList<SModelDescriptor>();
@@ -137,7 +185,7 @@ public class Generator extends AbstractModule {
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     assert moduleDescriptor instanceof GeneratorDescriptor;
 
-    super.setModuleDescriptor(moduleDescriptor,reloadClasses);
+    super.setModuleDescriptor(moduleDescriptor, reloadClasses);
 
     LanguageDescriptor languageDescriptor = getSourceLanguage().getModuleDescriptor();
     int index = languageDescriptor.getGenerators().indexOf(getModuleDescriptor());
@@ -201,74 +249,8 @@ public class Generator extends AbstractModule {
     return result;
   }
 
-  public boolean isCompileInMPS() {
-    // generator is always compiled in MPS
-    return true;
-  }
-
   public IFile getBundleHome() {
     return null;
-  }
-
-  public String getGeneratorOutputPath() {
-    return mySourceLanguage.getGeneratorOutputPath();
-  }
-
-  public String getTestsGeneratorOutputPath() {
-    return mySourceLanguage.getTestsGeneratorOutputPath();
-  }
-
-  public IFile getClassesGen() {
-    return mySourceLanguage.getClassesGen();
-  }
-
-  public Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
-    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>(super.getImplicitlyImportedModelsFor(sm));
-
-    SModelDescriptor structureModelDescriptor = getSourceLanguage().getStructureModelDescriptor();
-    if (structureModelDescriptor != null) {
-      result.add(structureModelDescriptor);
-    }
-
-    SModelDescriptor constraints = LanguageAspect.CONSTRAINTS.get(getSourceLanguage());
-    if (constraints != null) {
-      result.add(constraints);
-    }
-
-    for (Language language : ModuleUtil.refsToLanguages(getSourceLanguage().getExtendedLanguageRefs())) {
-      SModelDescriptor structure = language.getStructureModelDescriptor();
-      if (structure != null) {
-        result.add(structure);
-      }
-
-      SModelDescriptor constr = LanguageAspect.CONSTRAINTS.get(language);
-      if (constr != null) {
-        result.add(constr);
-      }
-    }
-
-    for (Language language : SModelOperations.getLanguages(sm.getSModel(), getScope())) {
-      SModelDescriptor struc = language.getStructureModelDescriptor();
-      if (struc != null) {
-        result.add(struc);
-      }
-    }
-
-    return result;
-  }
-
-  public Class getClass(String fqName) {
-    return mySourceLanguage.getClass(fqName);
-  }
-
-  public Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
-    Set<Language> result = new LinkedHashSet<Language>(super.getImplicitlyImportedLanguages(sm));
-    if (SModelStereotype.isGeneratorModel(sm)) {
-      result.add(getSourceLanguage());
-
-      result.addAll(ModuleUtil.refsToLanguages(getSourceLanguage().getExtendedLanguageRefs()));
-    }
-    return result;
   }
 
   public boolean deleteReferenceFromPriorities(SModelReference ref) {
@@ -297,5 +279,80 @@ public class Generator extends AbstractModule {
       }
     }
     return result;
+  }
+
+  // classloading part
+  public Class getClass(String fqName) {
+    return mySourceLanguage.getClass(fqName);
+  }
+
+  @Override
+  public boolean canFindClass(String name) {
+//    return mySourceLanguage.canFindClass(name);
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public byte[] findClassBytes(String name) {
+//    return mySourceLanguage.findClassBytes(name);
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public ModuleClassLoader getClassLoader() {
+    return mySourceLanguage.getClassLoader();
+  }
+
+  @Override
+  public boolean canLoadFromSelf() {
+    return true;
+  }
+
+  @Override
+  public boolean canLoad() {
+    return true;
+  }
+
+  @Override
+  public URL findResource(String name) {
+    return mySourceLanguage.findResource(name);
+  }
+
+  @Override
+  public String findLibrary(String name) {
+    return mySourceLanguage.findLibrary(name);
+  }
+
+  @Override
+  public boolean reloadClassesAfterGeneration() {
+    return true;
+  }
+
+  private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {
+    @Override
+    public Class<Generator> getApplicableSModuleClass() {
+      return Generator.class;
+    }
+
+    @Override
+    public Set<Language> getAutoImportedLanguages(Generator contextGenerator, org.jetbrains.mps.openapi.model.SModel model) {
+      if (SModelStereotype.isGeneratorModel(model)) {
+        Language sourceLanguage = contextGenerator.getSourceLanguage();
+
+        Set<Language> result = new LinkedHashSet<Language>();
+        result.add(BootstrapLanguages.generatorLanguage());
+        result.add((Language) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.GENERATOR_CONTEXT.getModuleId()));
+        result.addAll(ModuleUtil.refsToLanguages(sourceLanguage.getExtendedLanguageRefs()));
+
+        return result;
+      } else {
+        return Collections.emptySet();
+      }
+    }
+
+    @Override
+    public Set<DevKit> getAutoImportedDevKits(Generator contextModule, org.jetbrains.mps.openapi.model.SModel model) {
+      return Collections.singleton((DevKit) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.DEVKIT_GENERAL.getModuleId()));
+    }
   }
 }

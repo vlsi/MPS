@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ooi92yf6nj82kw52eojat6fxg0ab6e">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+<dependencies version="2" modelHash="2dwxf8w6oj5zpfbtgmdrreuj7n7ytal">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22hsdy8hx47u1rwu32z4quczy3521b0" />
   <common hash="6x94o5thew6216b8cyl84xjcsmz6thh" />
   <source id="4474271214082913243" name="IThread" hash="2xtdonr3jskglomnrdk66lcu40gpdes">
     <file name="IThread.java" />
@@ -18,10 +18,10 @@
   <source id="4474271214082914148" name="ILocation" hash="-3uvkgg3dhjk9y5o8hiw4eiwa18svxp1">
     <file name="ILocation.java" />
   </source>
-  <source id="4474271214082915199" name="IValue" hash="-6np9ijpejmv5jlvvsfmf2jm9uhjh1ht">
+  <source id="4474271214082915199" name="IValue" hash="-970ezrybj850qofwqxta4eizmfb5a8k">
     <file name="IValue.java" />
   </source>
-  <source id="4474271214082916598" name="IWatchable" hash="6f55gt2o440gzydvkgvt3skbygcdkv6">
+  <source id="4474271214082916598" name="IWatchable" hash="22ljjsk5saiikjodawmgkq7n6snqq7o">
     <file name="IWatchable.java" />
   </source>
 </dependencies>

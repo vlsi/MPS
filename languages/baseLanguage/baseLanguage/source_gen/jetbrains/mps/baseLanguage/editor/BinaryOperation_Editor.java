@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -52,7 +53,8 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       // hack before actions are refactored 
       List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(SNodeOperations.getParent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), new AbstractChildNodeSetter() {
-        protected SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
+        @Override
+        protected SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope, @Nullable EditorContext editorContext) {
           SNode sourceNode = (SNode) oldChild;
           SNode result = (SNode) newChild;
           SNodeOperations.replaceWithAnother(sourceNode, result);
