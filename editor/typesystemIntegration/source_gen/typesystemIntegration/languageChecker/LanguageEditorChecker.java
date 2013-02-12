@@ -152,7 +152,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   }
 
   public Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext) {
-    return TypeContextManager.getInstance().runTypeCheckingComputation((ITypeContextOwner) editorContext.getEditorComponent(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
+    return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent)editorContext.getEditorComponent()).getTypecheckingContextOwner(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
       public Set<EditorMessage> compute(TypeCheckingContext p0) {
         return doCreateMessages(node, list, wasCheckedOnce, editorContext);
       }

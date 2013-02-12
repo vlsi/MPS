@@ -18,7 +18,7 @@ import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.typesystem.inference.ITypeContextOwner;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModel;
@@ -48,7 +48,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private static boolean DISABLED = false;
@@ -81,7 +80,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
 
   @Override
   protected Set<EditorMessage> createMessages(final SNode rootNode, final List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
-    return TypeContextManager.getInstance().runTypeCheckingComputation((ITypeContextOwner) editorContext.getEditorComponent(), rootNode, new ITypechecking.Computation<Set<EditorMessage>>() {
+    return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), rootNode, new ITypechecking.Computation<Set<EditorMessage>>() {
       public Set<EditorMessage> compute(TypeCheckingContext p0) {
         return doCreateMessages(rootNode, events, wasCheckedOnce, editorContext);
       }
