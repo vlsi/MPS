@@ -17,11 +17,11 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
@@ -43,7 +43,7 @@ public class RunUtil {
     return makeBeforeRun(project, Sequence.fromIterable(Sequence.fromArray(nodes)).toListSequence());
   }
 
-  public static boolean makeBeforeRun(final Project project, final List<SNode> nodes) {
+  public static boolean makeBeforeRun(Project project, final List<SNode> nodes) {
     if (ThreadUtils.isEventDispatchThread()) {
       throw new RuntimeException("Can't run make from the event dispatch thread");
     }
@@ -57,7 +57,7 @@ public class RunUtil {
           }
         }).distinct().where(new IWhereFilter<SModelDescriptor>() {
           public boolean accept(SModelDescriptor it) {
-            return ModelGenerationStatusManager.getInstance().generationRequired(it, new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
+            return ModelGenerationStatusManager.getInstance().generationRequired(it);
           }
         }));
       }
@@ -65,7 +65,7 @@ public class RunUtil {
     return makeModels(project, descriptors.value);
   }
 
-  public static boolean makePointersBeforeRun(final Project project, List<SNodeReference> nodes) {
+  public static boolean makePointersBeforeRun(Project project, List<SNodeReference> nodes) {
     if (ThreadUtils.isEventDispatchThread()) {
       throw new RuntimeException("Can't run make from the event dispatch thread");
     }
@@ -79,7 +79,7 @@ public class RunUtil {
       }
     }).distinct().where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
-        return ModelGenerationStatusManager.getInstance().generationRequired(it, new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
+        return ModelGenerationStatusManager.getInstance().generationRequired(it);
       }
     })));
   }

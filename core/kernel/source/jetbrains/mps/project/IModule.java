@@ -137,16 +137,6 @@ public interface IModule extends SModule {
   // !!! to be notice: 2 jars: src and compiled classes
   IFile getBundleHome();
 
-  // rethink it, move to util and remove
-  // should be implemented via model roots
-  // check it out in IDEA!
-  // how to check is it works: clean ~/.idea/system and check cmd+n
-  // use SModuleOperations.getIndexablePaths
-  // todo: look at idea indexing subsystem
-  // use SModuleOperations#getIndexablePaths
-  @Deprecated
-  Collection<String> getIndexablePaths();
-
   // SModule#getModuleScope
   @NotNull
   IScope getScope();
@@ -230,7 +220,6 @@ public interface IModule extends SModule {
   /**
    * @see SModule#getModuleName
    */
-  //
   @Deprecated
   String getModuleFqName();
 
@@ -261,4 +250,10 @@ public interface IModule extends SModule {
    */
   @Deprecated
   Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
+
+  /**
+   * @see SModuleOperations#getIndexablePaths
+   */
+  @Deprecated
+  Collection<String> getIndexablePaths();
 }

@@ -62,7 +62,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelListener" />
     <classNode dependClassName="jetbrains.mps.typesystem.checking.HighlightUtil" />
     <classNode dependClassName="jetbrains.mps.typesystem.checking.TypesEditorChecker" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.ITypeContextOwner" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.ITypechecking" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeContextManager" />

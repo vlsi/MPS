@@ -297,7 +297,8 @@ public class JarFileClassPathItem extends RealClassPathItem {
         }
       }
     } catch (IOException e) {
-      LOG.error(e);
+      LOG.error("Path " + myFile.getPath() + " (" + myFile.getAbsolutePath() + ") \n" +
+        "File exists: " + myFile.exists(), e);
     } finally {
       if (zf != null) {
         try {

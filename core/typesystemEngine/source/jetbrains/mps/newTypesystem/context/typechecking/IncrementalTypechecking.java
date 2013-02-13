@@ -61,7 +61,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
   public IncrementalTypechecking(SNode node, State state) {
     super(node, state);
-    myNonTypeSystemComponent = new NonTypeSystemComponent(TypeChecker.getInstance(), this);
+    myNonTypeSystemComponent = new NonTypeSystemComponent(TypeChecker.getInstance(), state, this);
     myModelListener = new MyModelListener();
     myModelListenerManager = new MyModelListenerManager(myModelListener);
     myModelListenerManager.track(myRootNode);

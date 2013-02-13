@@ -70,7 +70,7 @@ public class RebuildRequiredModels_Action extends BaseAction {
           final ModelGenerationStatusManager mgsm = ModelGenerationStatusManager.getInstance();
           models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(allModels).where(new IWhereFilter<SModelDescriptor>() {
             public boolean accept(SModelDescriptor it) {
-              return it.isGeneratable() && mgsm.generationRequired(it, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+              return it.isGeneratable() && mgsm.generationRequired(it);
             }
           }));
         }

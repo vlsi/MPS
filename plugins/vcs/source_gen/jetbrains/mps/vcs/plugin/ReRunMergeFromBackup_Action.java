@@ -133,7 +133,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
   }
 
   private String selectMineModel(String currentModel, String backUpModel, final Map<String, Object> _params) {
-    if (ModelDigestUtil.hash(currentModel).equals(ModelDigestUtil.hash(backUpModel))) {
+    if (ModelDigestUtil.hashText(currentModel).equals(ModelDigestUtil.hashText(backUpModel))) {
       return backUpModel;
     } else {
       String current = "Currently Loaded Model";

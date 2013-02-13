@@ -2511,7 +2511,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return ModelAccess.instance().runReadAction(new Computable<List<INodeSubstituteAction>>() {
       @Override
       public List<INodeSubstituteAction> compute() {
-        return TypeContextManager.getInstance().runTypeCheckingComputation(EditorComponent.this, myNode, new Computation<List<INodeSubstituteAction>>() {
+        return TypeContextManager.getInstance().runTypeCheckingComputation(getTypecheckingContextOwner(), myNode, new Computation<List<INodeSubstituteAction>>() {
           @Override
           public List<INodeSubstituteAction> compute(TypeCheckingContext context) {
             return isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :

@@ -146,7 +146,7 @@ public class IntentionsSupport {
             public IntentionType compute() {
               if (isInconsistentEditor() || myEditor.isReadOnly()) return null;
               // TODO check for ActionsAsIntentions
-              return TypeContextManager.getInstance().runTypeCheckingComputation(myEditor, myEditor.getEditedNode(), new Computation<IntentionType>() {
+              return TypeContextManager.getInstance().runTypeCheckingComputation(myEditor.getTypecheckingContextOwner(), myEditor.getEditedNode(), new Computation<IntentionType>() {
                 @Override
                 public IntentionType compute(TypeCheckingContext context) {
                   return IntentionsManager.getInstance().getHighestAvailableBaseIntentionType(myEditor.getSelectedNode(), myEditor.getEditorContext());
@@ -373,7 +373,7 @@ public class IntentionsSupport {
       final QueryDescriptor query = new QueryDescriptor();
       query.setIntentionClass(BaseIntention.class);
       query.setEnabledOnly(true);
-      final Collection<Pair<IntentionExecutable, SNode>> availableIntentions = TypeContextManager.getInstance().runTypeCheckingComputation(myEditor, myEditor.getEditedNode(), new Computation<Collection<Pair<IntentionExecutable, SNode>>>() {
+      final Collection<Pair<IntentionExecutable, SNode>> availableIntentions = TypeContextManager.getInstance().runTypeCheckingComputation(myEditor.getTypecheckingContextOwner(), myEditor.getEditedNode(), new Computation<Collection<Pair<IntentionExecutable, SNode>>>() {
         @Override
         public Collection<Pair<IntentionExecutable, SNode>> compute(TypeCheckingContext context) {
           return IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext);

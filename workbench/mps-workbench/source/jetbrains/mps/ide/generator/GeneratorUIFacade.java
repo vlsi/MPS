@@ -33,7 +33,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.ModelCommandExecutor.RunnableWithProgress;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -205,13 +205,7 @@ public class GeneratorUIFacade {
             GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
             if (!sm.isGeneratable()) return null;
 
-            Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
-            if (generationHashes != null) {
-              return generationHashes;
-            }
-
-            String hash = sm.getModelHash();
-            return hash != null ? Collections.singletonMap(ModelDigestHelper.FILE, hash) : null;
+            return sm.getGenerationHashes();
           }
 
           @Override

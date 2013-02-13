@@ -184,11 +184,11 @@ public class ProjectFactory {
     LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     languageDescriptor.getUsedDevkits().add(LanguageDesign_DevKit.MODULE_REFERENCE);
 
-    LanguageAspect.STRUCTURE.createNew(language, false);
-    LanguageAspect.EDITOR.createNew(language, false);
-    LanguageAspect.CONSTRAINTS.createNew(language, false);
-    LanguageAspect.BEHAVIOR.createNew(language, false);
-    LanguageAspect.TYPESYSTEM.createNew(language, false);
+    LanguageAspect.STRUCTURE.createNew(language, false).save();
+    LanguageAspect.EDITOR.createNew(language, false).save();
+    LanguageAspect.CONSTRAINTS.createNew(language, false).save();
+    LanguageAspect.BEHAVIOR.createNew(language, false).save();
+    LanguageAspect.TYPESYSTEM.createNew(language, false).save();
     
     language.setLanguageDescriptor(languageDescriptor, false);
 

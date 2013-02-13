@@ -132,11 +132,6 @@ public class SModelOperations {
       }
     }
 
-    if (model.getModelDescriptor() != null && model.getModelDescriptor().getModule() != null) {
-      IModule module = model.getModelDescriptor().getModule();
-      languages.addAll(module.getImplicitlyImportedLanguages(model.getModelDescriptor()));
-    }
-
     return new ArrayList<Language>(languages);
   }
 
@@ -188,13 +183,6 @@ public class SModelOperations {
     for (SModelDescriptor importedModel : importedModels(model, scope)) {
       if (importedModel != sourceModel) {
         result.add(importedModel);
-      }
-    }
-
-    if (sourceModel != null) {
-      IModule module = sourceModel.getModule();
-      if (module != null) {
-        result.addAll(module.getImplicitlyImportedModelsFor(sourceModel));
       }
     }
 

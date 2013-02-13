@@ -315,7 +315,7 @@ public class FileUtil {
 
       StringBuilder result = new StringBuilder();
 
-      String line = null;
+      String line;
       while ((line = r.readLine()) != null) {
         result.append(line).append("\n");
       }
@@ -324,13 +324,7 @@ public class FileUtil {
     } catch (IOException e) {
       throw new RuntimeException(e);
     } finally {
-      try {
-        if (r != null) {
-          r.close();
-        }
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
+      FileUtil.closeFileSafe(r);
     }
   }
 

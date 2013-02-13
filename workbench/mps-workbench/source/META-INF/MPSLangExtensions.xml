@@ -78,6 +78,8 @@
   <!-- Editor -->
   <applicationConfigurable instance="jetbrains.mps.nodeEditor.EditorSettingsConfigurable" id="editor" key="title.editor"
                            bundle="messages.ApplicationBundle" order="after appearance" childrenEPName="com.intellij.editorOptionsProvider"/>
+ <!--Code Style-->
+  <projectConfigurable instance="jetbrains.mps.ide.codeStyle.CodeStyleSettingsConfigurable" order="after colors"/>
 
   <!--<projectService serviceInterface="com.intellij.semantic.SemService" serviceImplementation="com.intellij.semantic.SemServiceImpl"/>
 
@@ -98,6 +100,7 @@
   <!--        <fileBasedIndex implementation="NamedNodeIndex"/> -->
   <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.LanguageModelDigestIndex"/>
   <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.ModelDigestIndex"/>
+  <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.BinaryModelDigestIndex"/>
   <fileBasedIndex implementation="com.intellij.psi.search.FilenameIndex"/>
   <indexedRootsProvider implementation="jetbrains.mps.ide.findusages.caches.MPSIndexedRootsProvider"/>
 
