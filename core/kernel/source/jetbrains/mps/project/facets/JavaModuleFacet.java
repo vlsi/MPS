@@ -17,6 +17,7 @@ package jetbrains.mps.project.facets;
 
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 import java.util.Collection;
@@ -25,10 +26,15 @@ public interface JavaModuleFacet extends SModuleFacet {
   // for "generate" task
   boolean isCompileInMPS();
 
-  // for "generate" task
+  // for "generate" task if isCompileInMPS == true
+  @Nullable
   IFile getClassesGen();
 
-  // for run configurations, "own" module classpath == classes_gen + runtime module jars basically
+  // for "compilation" task
+  // contains classes folder if isCompileInMPS == false && folder exists
+  Collection<String> getLibraryClassPath();
+
+  // for "run" task, classpath == classes folder + library class path
   Collection<String> getClassPath();
 
   // for stubs

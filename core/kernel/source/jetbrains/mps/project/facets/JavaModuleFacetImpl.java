@@ -17,14 +17,26 @@ package jetbrains.mps.project.facets;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.ProjectPathUtil;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
-public class JavaModuleFacetImpl extends DumbJavaModuleFacetImpl {
+/**
+ * todo: divide into two parts: JavaModuleFacetSrcImpl && JavaModuleFacetPackagedImpl
+ */
+public class JavaModuleFacetImpl implements JavaModuleFacet {
   private static final Logger LOG = Logger.getLogger(JavaModuleFacetImpl.class);
+
+  private final AbstractModule module;
 
   private final Object LOCK = new Object();
   private Runnable classpathInvalidator = new Runnable() {
@@ -35,13 +47,56 @@ public class JavaModuleFacetImpl extends DumbJavaModuleFacetImpl {
     }
   };
   private CompositeClassPathItem cachedClassPathItem;
-  private AbstractModule module;
 
   public JavaModuleFacetImpl(AbstractModule module) {
-    super(module.getModuleDescriptor(), module.getDescriptorFile());
     this.module = module;
   }
 
+  @Override
+  public boolean isCompileInMPS() {
+    return true;
+  }
+
+  @Override
+  @Nullable
+  public IFile getClassesGen() {
+    return isCompileInMPS() ? ProjectPathUtil.getClassesGenFolder(module.getDescriptorFile()) : null;
+  }
+
+  @Override
+  public Collection<String> getLibraryClassPath() {
+    Set<String> libraryClassPath = new LinkedHashSet<String>();
+
+    // add additional java stub paths
+    ModuleDescriptor moduleDescriptor = module.getModuleDescriptor();
+    if (moduleDescriptor != null) {
+      libraryClassPath.addAll(moduleDescriptor.getAdditionalJavaStubPaths());
+    }
+
+    // add classes folder for modules compiled outside MPS
+    if (!isCompileInMPS()) {
+      // todo: remove this logic?
+      IFile classes = ProjectPathUtil.getClassesFolder(module.getDescriptorFile());
+      if (classes != null && classes.exists()) {
+        libraryClassPath.add(classes.getPath());
+      }
+    }
+
+    return libraryClassPath;
+  }
+
+  @Override
+  public final Collection<String> getClassPath() {
+    Set<String> result = new LinkedHashSet<String>();
+    result.addAll(getLibraryClassPath());
+    IFile classesGen = getClassesGen();
+    if (classesGen != null) {
+      result.add(classesGen.getPath());
+    }
+    return result;
+  }
+
+  // IClassPathItem section
   public void invalidateClassPath() {
     synchronized (LOCK) {
       cachedClassPathItem = null;

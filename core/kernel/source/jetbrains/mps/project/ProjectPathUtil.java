@@ -15,26 +15,29 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.facets.DumbJavaModuleFacetImpl;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.TestLanguage;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModule;
 
-/**
- * evgeny, 3/8/11
- */
 public class ProjectPathUtil {
-
-  /**
-   * @see jetbrains.mps.project.facets.DumbJavaModuleFacetImpl#getClassesGen
-   */
-  @Deprecated
   public static IFile getClassesGenFolder(IFile moduleDescriptor) {
-    return new DumbJavaModuleFacetImpl(null, moduleDescriptor).getClassesGen();
+    if (moduleDescriptor == null) {
+      return null;
+    }
+    if (moduleDescriptor.isReadOnly()) {
+      // packaged
+      IFile bundleHome = FileSystem.getInstance().getBundleHome(moduleDescriptor);
+      return bundleHome != null ? FileSystem.getInstance().getFileByPath(bundleHome.getPath() + "!") : null;
+    }
+    IFile parent = moduleDescriptor.getParent();
+    return parent != null ? parent.getDescendant("classes_gen") : null;
   }
 
   public static IFile getClassesFolder(IFile moduleDescriptor) {
@@ -51,6 +54,8 @@ public class ProjectPathUtil {
   }
 
   public static IFile getGeneratorOutputPath(IFile file, ModuleDescriptor descriptor) {
+    // file -> module descriptor file
+    // move to AbstractModule
     String generatorOutputPath;
     if (descriptor instanceof SolutionDescriptor) {
       generatorOutputPath = ((SolutionDescriptor) descriptor).getOutputPath();
@@ -72,5 +77,21 @@ public class ProjectPathUtil {
   public static IFile getGeneratorTestsOutputPath(IFile file, ModuleDescriptor descriptor) {
     TestsFacet testsFacet = TestsFacetImpl.fromModuleDescriptor(descriptor, file);
     return testsFacet != null ? testsFacet.getTestsOutputPath() : null;
+  }
+
+  public static IFile getGeneratorOutputPath(SModule module) {
+    // todo: remove
+    if (module instanceof TestLanguage || module instanceof StubSolution) {
+      return null;
+    }
+    if (module instanceof Generator) {
+      return getGeneratorOutputPath(((Generator) module).getSourceLanguage());
+    }
+    // todo: instance of Language | Solution?
+    if (module instanceof IModule) {
+      return getGeneratorOutputPath(((IModule) module).getDescriptorFile(), ((IModule) module).getModuleDescriptor());
+    } else {
+      return null;
+    }
   }
 }

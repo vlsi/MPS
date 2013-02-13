@@ -832,23 +832,15 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return getJavaFacet().getClassPath();
   }
 
-  /**
-   * JavaModuleFacetImpl#getAdditionalClassPath only for overriding
-   * Use @see JavaModuleFacetImpl#getClassPath instead
-   */
   @Deprecated
   public final Collection<String> getAdditionalClassPath() {
-    return ((JavaModuleFacetImpl) getJavaFacet()).getAdditionalClassPath();
+    return getJavaFacet().getLibraryClassPath();
   }
 
-
-  /**
-   * JavaModuleFacetImpl#getOwnClassPath only for overriding
-   * Use JavaModuleFacetImpl#getClassPath instead
-   */
   @Deprecated
   public final Collection<String> getOwnClassPath() {
-    return ((JavaModuleFacetImpl) getJavaFacet()).getOwnClassPath();
+    IFile classesGen = getJavaFacet().getClassesGen();
+    return classesGen != null ? Collections.singleton(classesGen.getPath()) : Collections.<String>emptySet();
   }
 
   /**
