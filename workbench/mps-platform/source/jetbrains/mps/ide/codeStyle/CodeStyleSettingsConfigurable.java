@@ -15,18 +15,10 @@
  */
 package jetbrains.mps.ide.codeStyle;
 
-import com.intellij.openapi.components.PersistentStateComponent;
-import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.components.State;
-import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
-import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
-import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -34,57 +26,19 @@ import javax.swing.JComponent;
 /**
  * Evgeny Gryaznov, 1/6/11
  */
-@State(
-  name = "CodeStyleSettings",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$PROJECT_FILE$"
-    )
-  }
-)
-public class CodeStyleSettingsConfigurable implements PersistentStateComponent<CodeStyleSettings>, ProjectComponent, SearchableConfigurable {
-
+public class CodeStyleSettingsConfigurable implements SearchableConfigurable {
   private CodeStylePreferencesPage myPage;
-  private CodeStyleSettings myState = new CodeStyleSettings();
-  private Project myProject;
+  private final Project myProject;
 
   public CodeStyleSettingsConfigurable(Project project) {
     myProject = project;
   }
 
-  private CodeStylePreferencesPage getPage() {
+  public CodeStylePreferencesPage getPage() {
     if (myPage == null) {
-      myPage = new CodeStylePreferencesPage(myState);
+      myPage = new CodeStylePreferencesPage(CodeStyleSettingsComponent.getInstance(myProject).getState());
     }
     return myPage;
-  }
-
-  public CodeStyleSettings getState() {
-    return myState;
-  }
-
-  public void loadState(CodeStyleSettings state) {
-    myState = state;
-  }
-
-  public void projectOpened() {
-    CodeStyleSettingsRegistry.registerSettings(ProjectHelper.toMPSProject(myProject), myState);
-  }
-
-  public void projectClosed() {
-    CodeStyleSettingsRegistry.unregisterSettings(ProjectHelper.toMPSProject(myProject));
-  }
-
-  @NotNull
-  public String getComponentName() {
-    return "Code Style Settings Configurable";
-  }
-
-  public void initComponent() {
-  }
-
-  public void disposeComponent() {
   }
 
   public JComponent createComponent() {

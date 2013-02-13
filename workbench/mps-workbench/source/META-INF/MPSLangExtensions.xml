@@ -78,6 +78,8 @@
   <!-- Editor -->
   <applicationConfigurable instance="jetbrains.mps.nodeEditor.EditorSettingsConfigurable" id="editor" key="title.editor"
                            bundle="messages.ApplicationBundle" order="after appearance" childrenEPName="com.intellij.editorOptionsProvider"/>
+ <!--Code Style-->
+  <projectConfigurable instance="jetbrains.mps.ide.codeStyle.CodeStyleSettingsConfigurable" order="after colors"/>
 
   <!--<projectService serviceInterface="com.intellij.semantic.SemService" serviceImplementation="com.intellij.semantic.SemServiceImpl"/>
 
