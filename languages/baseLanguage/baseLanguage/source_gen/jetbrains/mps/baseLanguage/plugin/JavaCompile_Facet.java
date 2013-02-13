@@ -18,15 +18,18 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.IModule;
+import java.util.Set;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
@@ -37,7 +40,6 @@ import jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler;
 import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters.Variables;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.compiler.JavaCompiler;
-import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -45,7 +47,7 @@ import jetbrains.mps.compiler.CompilationResultAdapter;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.smodel.resources.CResource;
@@ -107,22 +109,23 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.SUCCESS(_output_wf1ya0_a0a);
               }
               pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(false);
-              final Iterable<IModule> toCompile = Sequence.fromIterable(input).select(new ISelector<TResource, IModule>() {
+              final Set<SModule> toCompile = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable(input).select(new ISelector<TResource, IModule>() {
                 public IModule select(TResource it) {
                   return it.module();
                 }
               }).where(new IWhereFilter<IModule>() {
                 public boolean accept(IModule it) {
-                  return it != null && it.isCompileInMPS();
+                  JavaModuleFacet facet = check_wf1ya0_a0a0a0a0a0a2a0a0(it);
+                  return facet != null && facet.isCompileInMPS();
                 }
-              }).distinct();
-              if ((int) Sequence.fromIterable(toCompile).count() == 0) {
+              }).distinct());
+              if ((int) SetSequence.fromSet(toCompile).count() == 0) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0a);
               }
               final Wrappers._T<MPSCompilationResult> cr = new Wrappers._T<MPSCompilationResult>();
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
-                  cr.value = new ModuleMaker().make(SetSequence.fromSetWithValues(new HashSet<IModule>(), toCompile), progressMonitor);
+                  cr.value = new ModuleMaker().make(toCompile, progressMonitor);
                 }
               });
               if (cr.value != null) {
@@ -148,10 +151,9 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
-                if (!(tres.module().isCompileInMPS())) {
-                  continue;
+                if (SetSequence.fromSet(toCompile).contains(tres.module())) {
+                  _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
                 }
-                _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
               }
             default:
               return new IResult.SUCCESS(_output_wf1ya0_a0a);
@@ -250,6 +252,13 @@ public class JavaCompile_Facet extends IFacet.Stub {
         return (JavaCompile_Facet.Target_compile.Parameters) super.assign(from);
       }
     }
+
+    private static JavaModuleFacet check_wf1ya0_a0a0a0a0a0a2a0a0(IModule checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getFacet(JavaModuleFacet.class);
+      }
+      return null;
+    }
   }
 
   public static class Target_auxCompile implements ITargetEx2 {
@@ -286,7 +295,8 @@ public class JavaCompile_Facet extends IFacet.Stub {
               // collect modules to compile 
               Iterable<TResource> toCompile = Sequence.fromIterable(input).where(new IWhereFilter<TResource>() {
                 public boolean accept(TResource it) {
-                  return !(it.module().isCompileInMPS());
+                  JavaModuleFacet facet = it.module().getFacet(JavaModuleFacet.class);
+                  return facet != null && !(facet.isCompileInMPS());
                 }
               });
 
@@ -468,7 +478,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
               final Wrappers._T<CompositeClassPathItem> ccp = new Wrappers._T<CompositeClassPathItem>();
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
-                  ccp.value = (CompositeClassPathItem) AbstractModule.getDependenciesClasspath(modules, true);
+                  ccp.value = JavaModuleOperations.createClassPathItem(JavaModuleOperations.collectCompileClasspath(modules, true), "JavaCompile_Facet");
                   Sequence.fromIterable(pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).classPath()).visitAll(new IVisitor<IClassPathItem>() {
                     public void visit(IClassPathItem cpi) {
                       ccp.value.add(cpi);
