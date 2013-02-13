@@ -103,7 +103,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
     return result;
   }
 
-  protected <T extends PsiElement> T[] getChildrenOfType(String role, @NotNull Class<T> aClass) {
+  public <T extends PsiElement> T[] getChildrenOfType(String role, @NotNull Class<T> aClass) {
     if (role == null) return null;
 
     List<T> result = null;
