@@ -33,7 +33,6 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
@@ -183,26 +182,8 @@ public class ModuleMaker {
   }
 
   public static Set<String> collectCompileClasspath(Set<SModule> modules) {
-    Set<SModule> dependentModules = new HashSet<SModule>(new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE));
-
-    Set<SModule> fromGenerators = new HashSet<SModule>();
-    for (SModule m : dependentModules) {
-      if (!(m instanceof Language)) continue;
-
-      //todo this is a hack since we compile generator with language's classpath, too
-      // 1. Generator is always compiled together with the language (???)
-      // 2. Generator may have its own compile time dependencies (imports in the generated queries)
-      // 3. Let's not ignore them
-      for (Generator generator : ((Language) m).getGenerators()) {
-        if (dependentModules.contains(generator)) continue;
-
-        fromGenerators.addAll(new GlobalModuleDependenciesManager(generator).getModules(Deptype.COMPILE));
-      }
-    }
-    dependentModules.addAll(fromGenerators);
-
     Set<String> result = new HashSet<String>();
-    for (SModule module : dependentModules) {
+    for (SModule module : new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE)) {
       JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
       if (facet != null) {
         // todo: ignore this logic because of incremental compilation
