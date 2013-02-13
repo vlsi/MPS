@@ -18,6 +18,7 @@ import com.intellij.psi.PsiTypeParameterList;
 import com.intellij.psi.ResolveState;
 import com.intellij.psi.impl.InheritanceImplUtil;
 import com.intellij.psi.impl.PsiClassImplUtil;
+import com.intellij.psi.impl.PsiImplUtil;
 import com.intellij.psi.impl.PsiSuperMethodImplUtil;
 import com.intellij.psi.impl.light.JavaIdentifier;
 import com.intellij.psi.javadoc.PsiDocComment;
@@ -47,6 +48,7 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   public MPSPsiClassifier(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
     addChild(null, new MPSPsiMethodModifierList());
+//    addChild(null, new MPSPsiTypeParamList());
   }
 
   @Nullable
@@ -82,7 +84,7 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
 
   @Override
   public boolean hasTypeParameters() {
-    return false;
+    return getTypeParameters().length > 0;
   }
 
   @Nullable
@@ -94,7 +96,13 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   @NotNull
   @Override
   public PsiTypeParameter[] getTypeParameters() {
-    return new PsiTypeParameter[0];
+//    return PsiImplUtil.getTypeParameters(this);
+    MPSPsiTypeParameter[] typeParams = getChildrenOfType("typeVariableDeclaration", MPSPsiTypeParameter.class);
+    if (typeParams == null) {
+      return PsiTypeParameter.EMPTY_ARRAY;
+    } else {
+      return typeParams;
+    }
   }
 
   @Nullable
