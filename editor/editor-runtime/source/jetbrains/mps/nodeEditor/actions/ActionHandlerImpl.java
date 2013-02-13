@@ -70,7 +70,7 @@ public class ActionHandlerImpl implements ActionHandler {
           CellAction currentAction = current.getAction(type);
           if (currentAction != null && currentAction.canExecute(getEditorContext())) {
             if (type == CellActionType.INSERT) {
-              return getOverridingRightBoundaryAction(currentAction, current, type);
+              return getOverridingRightBoundaryAction(currentAction, editorCell, type);
             } else {
               return currentAction;
             }
