@@ -4105,14 +4105,7 @@
     <scopeInfo nodeId="3525058663444350173" fileName="QueryFunction_Style_Behavior.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
     <unitInfo nodeId="3525058663444342705" fileName="QueryFunction_Style_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Style_Behavior" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/3525058663446372270">
-    <nodeInfo nodeId="3525058663446372270" fileName="StyleKeyPack_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="3525058663446372272" fileName="StyleKeyPack_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="3525058663446372270" fileName="StyleKeyPack_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="3525058663446372270" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="3525058663446372270" fileName="StyleKeyPack_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleKeyPack_Behavior" />
-  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/3525058663446372270" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/3639065570239685486">
     <nodeInfo nodeId="3639065570239687549" fileName="PaddingLeftStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3639065570239685486" fileName="PaddingLeftStyleClassItem_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

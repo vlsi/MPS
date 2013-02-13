@@ -471,10 +471,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Style" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpc2.3525058663444303551" resolveInfo="QueryFunction_Style" />
     </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3525058663446372270">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpc2.4151393920374910722" resolveInfo="StyleKeyPack" />
-    </node>
   </roots>
   <root id="1213877183870">
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1213877183871">
@@ -13969,11 +13965,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </root>
-  <root id="3525058663446372270">
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="3525058663446372271">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3525058663446372272" />
     </node>
   </root>
 </model>
