@@ -28,6 +28,10 @@ import jetbrains.mps.smodel.Language;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * @see jetbrains.mps.make.ModuleMaker#collectCompileClasspath
+ */
+@Deprecated
 public class ClasspathCollector {
   private Set<IModule> myStart;
   private Set<IClassPathItem> myResult = new LinkedHashSet<IClassPathItem>();

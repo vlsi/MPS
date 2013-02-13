@@ -36,7 +36,4 @@ public interface JavaModuleFacet extends SModuleFacet {
 
   // for "run" task, classpath == classes folder + library class path
   Collection<String> getClassPath();
-
-  // for stubs
-  IClassPathItem getClassPathItem();
 }

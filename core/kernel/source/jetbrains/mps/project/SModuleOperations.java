@@ -35,15 +35,6 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class SModuleOperations {
-  // todo: all args should be SModule
-  public static IClassPathItem getModuleWithDependenciesClassPathItem(IModule module) {
-    return getDependenciesClasspath(Collections.singleton(module), false);
-  }
-
-  public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
-    return new ClasspathCollector(modules).collect(includeStubSolutions);
-  }
-
   public static Collection<String> getIndexablePaths(SModule module) {
     // todo: maybe move getIndexablePaths method to FileBasedModelRoot, or even in ModelRoot classes?
     Set<String> result = new TreeSet<String>();
@@ -90,6 +81,17 @@ public class SModuleOperations {
     } else {
       throw new IllegalArgumentException();
     }
+  }
+
+  // deprecated methods
+  @Deprecated
+  public static IClassPathItem getModuleWithDependenciesClassPathItem(IModule module) {
+    return getDependenciesClasspath(Collections.singleton(module), false);
+  }
+
+  @Deprecated
+  public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
+    return new ClasspathCollector(modules).collect(includeStubSolutions);
   }
 
   // helpers

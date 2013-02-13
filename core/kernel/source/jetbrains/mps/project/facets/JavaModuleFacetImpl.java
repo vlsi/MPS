@@ -38,16 +38,6 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
 
   private final AbstractModule module;
 
-  private final Object LOCK = new Object();
-  private Runnable classpathInvalidator = new Runnable() {
-    public void run() {
-      synchronized (LOCK) {
-        cachedClassPathItem = null;
-      }
-    }
-  };
-  private CompositeClassPathItem cachedClassPathItem;
-
   public JavaModuleFacetImpl(AbstractModule module) {
     this.module = module;
   }
@@ -96,25 +86,7 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
     return result;
   }
 
-  // IClassPathItem section
-  public void invalidateClassPath() {
-    synchronized (LOCK) {
-      cachedClassPathItem = null;
-    }
-  }
-
-  @Override
-  public final IClassPathItem getClassPathItem() {
-    synchronized (LOCK) {
-      if (cachedClassPathItem == null) {
-        cachedClassPathItem = createClassPathItem(getClassPath(), module.getModuleName());
-        cachedClassPathItem.addInvalidationAction(classpathInvalidator);
-      }
-
-      return cachedClassPathItem;
-    }
-  }
-
+  // util method
   public static CompositeClassPathItem createClassPathItem(Iterable<String> classPath, String requestor) {
     CompositeClassPathItem classPathItem = new CompositeClassPathItem();
 

@@ -78,7 +78,6 @@ public class EvaluationModule extends AbstractModule implements SModule {
     } else {
       SetSequence.fromSet(myClassPaths).addElement(path);
     }
-    myJavaModuleFacet.invalidateClassPath();
     MPSModuleRepository.getInstance().fireModuleChanged(this);
     return path;
   }

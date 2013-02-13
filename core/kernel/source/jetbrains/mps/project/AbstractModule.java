@@ -816,7 +816,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   @Override
   @Deprecated
   public final IClassPathItem getClassPathItem() {
-    return getJavaFacet(this).getClassPathItem();
+    return JavaModuleFacetImpl.createClassPathItem(getJavaFacet(this).getClassPath(), getModuleName());
   }
 
   @Deprecated
@@ -850,12 +850,10 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   /**
-   * Just don't use!
+   * This method do nothing actually
    */
   @Deprecated
   protected final void invalidateClassPath() {
-    // todo: remove this method!
-    ((JavaModuleFacetImpl) getJavaFacet(this)).invalidateClassPath();
   }
 
   @Override

@@ -24,15 +24,16 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
@@ -181,6 +182,40 @@ public class ModuleMaker {
     }
   }
 
+  public static Set<String> collectCompileClasspath(Set<SModule> modules) {
+    Set<SModule> dependentModules = new HashSet<SModule>(new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE));
+
+    Set<SModule> fromGenerators = new HashSet<SModule>();
+    for (SModule m : dependentModules) {
+      if (!(m instanceof Language)) continue;
+
+      //todo this is a hack since we compile generator with language's classpath, too
+      // 1. Generator is always compiled together with the language (???)
+      // 2. Generator may have its own compile time dependencies (imports in the generated queries)
+      // 3. Let's not ignore them
+      for (Generator generator : ((Language) m).getGenerators()) {
+        if (dependentModules.contains(generator)) continue;
+
+        fromGenerators.addAll(new GlobalModuleDependenciesManager(generator).getModules(Deptype.COMPILE));
+      }
+    }
+    dependentModules.addAll(fromGenerators);
+
+    Set<String> result = new HashSet<String>();
+    for (SModule module : dependentModules) {
+      JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+      if (facet != null) {
+        if (modules.contains(module)) {
+          result.addAll(facet.getLibraryClassPath());
+        } else {
+          result.addAll(facet.getClassPath());
+        }
+      }
+    }
+
+    return result;
+  }
+
   // private methods, all modules here is SModule with JavaModuleFacet
   private void handle(IMessage msg) {
     if (handler != null && msg.getKind().ordinal() >= myLevel.ordinal()) {
@@ -267,10 +302,15 @@ public class ModuleMaker {
         String path = fqName.replace('/', File.separatorChar) + toCopy.getFile().getName();
 
         if (new File(toCopy.getFile().getAbsolutePath()).exists()) {
-          FileUtil.copyFile(
-            new File(toCopy.getFile().getAbsolutePath()),
-            new File(getJavaFacet(module).getClassesGen().getDescendant(path).getPath())
-          );
+          IFile classesGen = getJavaFacet(module).getClassesGen();
+          if (classesGen != null) {
+            FileUtil.copyFile(
+              new File(toCopy.getFile().getAbsolutePath()),
+              new File(classesGen.getDescendant(path).getPath())
+            );
+          } else {
+            // log ?
+          }
         }
       }
     }
@@ -308,7 +348,7 @@ public class ModuleMaker {
   private IClassPathItem computeDependenciesClassPath(Set<SModule> modules) {
     ttrace.push("dependencies classpath", false);
     try {
-      return AbstractModule.getDependenciesClasspath((Set) modules, false);
+      return JavaModuleFacetImpl.createClassPathItem(collectCompileClasspath(modules), ModuleMaker.class.getName());
     } finally {
       ttrace.pop();
     }
