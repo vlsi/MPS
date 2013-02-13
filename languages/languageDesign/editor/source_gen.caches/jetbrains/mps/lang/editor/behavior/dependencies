@@ -309,6 +309,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_SNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_SeparatorText_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_String_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_Style_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_Underlined_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.RGBColor_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ReadOnlyModelAccessor_BehaviorDescriptor" />
@@ -2565,6 +2566,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_Style_Behavior" file="QueryFunction_Style_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_Style_BehaviorDescriptor" file="QueryFunction_Style_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_Style_Behavior" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_Underlined_Behavior" file="QueryFunction_Underlined_Behavior.java">
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -2726,6 +2740,9 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.StyleKeyPack_Behavior" file="StyleKeyPack_Behavior.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.StyleKeyPack_BehaviorDescriptor" file="StyleKeyPack_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

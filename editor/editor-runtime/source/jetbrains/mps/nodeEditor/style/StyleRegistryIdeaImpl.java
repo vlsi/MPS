@@ -147,6 +147,7 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
   private void fillIdeaMappings() {
     try {
       addIdeaMappingsExt("FOLDED_TEXT","FOLDED_TEXT_ATTRIBUTES");
+      addIdeaMappingsExt("URL","HYPERLINK_ATTRIBUTES");
 
       addIdeaMappingsExt("LOCAL_VARIABLE","LOCAL_VARIABLE_ATTRIBUTES");
       addIdeaMappingsExt("PARAMETER","PARAMETER_ATTRIBUTES");
@@ -167,6 +168,7 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
       addIdeaMappingsExt("DOC_TAG","JAVA_DOC_TAG");
       addIdeaMappingsExt("KEYWORD","JAVA_KEYWORD");
       addIdeaMappingsExt("LINE_COMMENT","JAVA_LINE_COMMENT");
+      addIdeaMappingsExt("BLOCK_COMMENT","JAVA_BLOCK_COMMENT");
       addIdeaMappingsExt("NUMBER","JAVA_NUMBER");
       addIdeaMappingsExt("STRING","JAVA_STRING");
       addIdeaMappingsExt("OPERATION_SIGN","JAVA_OPERATION_SIGN");

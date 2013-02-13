@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.editor.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.editor.constraints.ConstraintsAspectDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/1213104840151">
     <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="22" startPosition="44" endLine="23" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1213104840151" fileName="CellModel_Component_Constraints.java" startLine="27" startPosition="83" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -879,47 +879,7 @@
     <unitInfo nodeId="1873972548978313577" fileName="StyleSheetClass_Constraints.java" startLine="39" startPosition="15" endLine="72" endPosition="5" unitName="jetbrains.mps.lang.editor.constraints.StyleSheetClass_Constraints$1" />
     <unitInfo nodeId="1873972548978313577" fileName="StyleSheetClass_Constraints.java" startLine="27" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.editor.constraints.StyleSheetClass_Constraints" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/4151393920414947254">
-    <nodeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="14" startPosition="49" endLine="15" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="24" startPosition="200" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="25" startPosition="96" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="29" startPosition="5" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="30" startPosition="0" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4151393920414950358" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
-    <nodeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PreDefinedStyleClassItem_Constraints#()V" />
-    <nodeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <scopeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="14" startPosition="49" endLine="15" endPosition="74" />
-    <scopeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="67" />
-    <scopeInfo nodeId="4151393920414947256" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="117" />
-    <scopeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="4151393920414947254" varName="childConcept" />
-      <varInfo nodeId="4151393920414947254" varName="link" />
-      <varInfo nodeId="4151393920414947254" varName="node" />
-      <varInfo nodeId="4151393920414947254" varName="operationContext" />
-      <varInfo nodeId="4151393920414947254" varName="parentNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="24" startPosition="200" endLine="31" endPosition="18">
-      <varInfo nodeId="4151393920414947254" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="4151393920414947254" varName="checkingNodeContext" />
-      <varInfo nodeId="4151393920414947254" varName="childConcept" />
-      <varInfo nodeId="4151393920414947254" varName="link" />
-      <varInfo nodeId="4151393920414947254" varName="node" />
-      <varInfo nodeId="4151393920414947254" varName="operationContext" />
-      <varInfo nodeId="4151393920414947254" varName="parentNode" />
-    </scopeInfo>
-    <unitInfo nodeId="4151393920414947254" fileName="PreDefinedStyleClassItem_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.constraints.PreDefinedStyleClassItem_Constraints" />
-  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/4151393920414947254" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/4151393920516603319">
     <nodeInfo nodeId="4151393920516603319" fileName="PreDefinedStyleSheetClass_Constraints.java" startLine="13" startPosition="50" endLine="14" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4151393920516603319" fileName="PreDefinedStyleSheetClass_Constraints.java" startLine="18" startPosition="44" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

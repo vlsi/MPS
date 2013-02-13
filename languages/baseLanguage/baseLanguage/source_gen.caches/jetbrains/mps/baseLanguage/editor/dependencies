@@ -1315,11 +1315,11 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.CommentedStatementsBlock_Editor" file="CommentedStatementsBlock_Editor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.CommentedStatementsBlock_Actions" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo" />

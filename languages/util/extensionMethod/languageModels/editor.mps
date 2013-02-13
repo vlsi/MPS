@@ -538,7 +538,7 @@
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7685333756920187168">
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.7475103831140260499" resolveInfo="MPSMethodCall" />
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.7730231143345707542" resolveInfo="MPSMethodCall" />
           </node>
         </node>
       </node>

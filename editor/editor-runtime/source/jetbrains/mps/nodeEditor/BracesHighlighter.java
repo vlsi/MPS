@@ -101,7 +101,10 @@ public class BracesHighlighter {
   private void clearBracesSelection() {
     if (!myHightLightedCells.isEmpty()) {
       for (EditorCell editorCell: myHightLightedCells) {
-        editorCell.getStyle().putAll(getBracesAttributes());
+        //TODO: editorCell.getStyle().putAll(getBracesAttributes());
+        editorCell.getStyle().set(StyleAttributes.TEXT_COLOR, getBracesAttributes().get(StyleAttributes.TEXT_COLOR));
+        editorCell.getStyle().set(StyleAttributes.TEXT_BACKGROUND_COLOR, getBracesAttributes().get(StyleAttributes.TEXT_BACKGROUND_COLOR));
+        editorCell.getStyle().set(StyleAttributes.FONT_STYLE, getBracesAttributes().get(StyleAttributes.FONT_STYLE));
         myEditorComponent.leftUnhighlightCell(editorCell);
       }
     }
@@ -132,7 +135,10 @@ public class BracesHighlighter {
 
   private void hightlightCell(EditorCell editorCell) {
     myHightLightedCells.add(editorCell);
-    editorCell.getStyle().putAll(getMatchedBraceAttributes());
+    //TODO: editorCell.getStyle().putAll(getMatchedBraceAttributes());
+    editorCell.getStyle().set(StyleAttributes.TEXT_COLOR, getMatchedBraceAttributes().get(StyleAttributes.TEXT_COLOR));
+    editorCell.getStyle().set(StyleAttributes.TEXT_BACKGROUND_COLOR, getMatchedBraceAttributes().get(StyleAttributes.TEXT_BACKGROUND_COLOR));
+    editorCell.getStyle().set(StyleAttributes.FONT_STYLE, getMatchedBraceAttributes().get(StyleAttributes.FONT_STYLE));
   }
 
 
@@ -143,7 +149,7 @@ public class BracesHighlighter {
   }
   private static Style getBracesAttributes() {
     if(ourBraceAttributes == null)
-      ourBraceAttributes = StyleRegistry.getInstance().getStyle("JAVA_BRACES");
+      ourBraceAttributes = StyleRegistry.getInstance().getStyle("BRACES");
     return ourBraceAttributes;
   }
 }

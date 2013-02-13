@@ -15,6 +15,7 @@
   <import index="8q6x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" version="-1" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="-1" />
   <import index="tpcb" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" implicit="yes" />
+  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1071666914219">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -1664,6 +1665,11 @@
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="apply side transforms" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3525058663444303551">
+      <property name="name" nameId="tpck.1169194664001" value="QueryFunction_Style" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Style" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+    </node>
   </roots>
   <root id="1071666914219">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1078153129734">
@@ -2874,12 +2880,6 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1186402373407" resolveInfo="StyleSheetClass" />
     </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4151393920420337912">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="preDefinedStyleClass" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4151393920415038203" resolveInfo="PreDefinedStyleSheetClass" />
-    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1186402303894">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
@@ -3344,7 +3344,7 @@
   <root id="4526149749187797167">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="4526149749187937572">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" roleId="tpce.1105736901241" type=".jetbrains.mps.lang.editor.structure.StyledTextType" typeId="3903367331818357915" id="1511134095826078599" />
+      <node role="target" roleId="tpce.1105736901241" type="tpc2.StyledTextType" typeId="3903367331818357915" id="1511134095826078599" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741641670">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
@@ -3506,6 +3506,11 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="4151393920374910634" resolveInfo="StyleKey" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3525058663444350845">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="queryStyle" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3525058663444303551" resolveInfo="QueryFunction_Style" />
+    </node>
   </root>
   <root id="4151393920374910634" />
   <root id="4151393920415038203" />
@@ -3526,5 +3531,6 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpdg.1215604970641" resolveInfo="Side" />
     </node>
   </root>
+  <root id="3525058663444303551" />
 </model>
 

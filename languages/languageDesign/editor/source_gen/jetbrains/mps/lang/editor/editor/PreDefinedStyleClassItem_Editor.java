@@ -79,6 +79,7 @@ public class PreDefinedStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_vnxsp2_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vnxsp2_d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_vnxsp2_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vnxsp2_f0(editorContext, node));
     return editorCell;
   }
 
@@ -128,6 +129,23 @@ public class PreDefinedStyleClassItem_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("query");
     provider.setNoTargetText("allways");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_vnxsp2_f0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("queryStyle");
+    provider.setNoTargetText("<no queryStyle>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

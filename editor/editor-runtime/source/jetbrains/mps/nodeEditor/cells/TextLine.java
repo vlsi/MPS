@@ -539,8 +539,7 @@ public class TextLine {
     if (getCaretPosition() != 0) {
       x--;
     }
-    // COLORS: Remove hardcoded color
-    g.setColor(Color.BLACK);
+    g.setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.CARET_COLOR));
     g.drawRect(x, shiftY, 1, myTextHeight - 1);
   }
 

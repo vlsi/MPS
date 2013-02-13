@@ -172,9 +172,9 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConceptFunctionParameter_childNode_BehaviorDescriptor();
       case 76:
         return new CellModel_NonEmptyProperty_BehaviorDescriptor();
-      case 170:
-        return new StyleSheet_BehaviorDescriptor();
       case 171:
+        return new StyleSheet_BehaviorDescriptor();
+      case 172:
         return new StyleSheetClass_BehaviorDescriptor();
       case 104:
         return new FontStyleStyleClassItem_BehaviorDescriptor();
@@ -184,13 +184,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new BackgroundColorStyleClassItem_BehaviorDescriptor();
       case 4:
         return new BracketColorStyleClassItem_BehaviorDescriptor();
-      case 164:
+      case 165:
         return new SelectableStyleSheetItem_BehaviorDescriptor();
       case 1:
         return new AutoDeletableStyleClassItem_BehaviorDescriptor();
       case 98:
         return new DrawBorderStyleClassItem_BehaviorDescriptor();
-      case 180:
+      case 181:
         return new UnderlinedStyleClassItem_BehaviorDescriptor();
       case 103:
         return new FontSizeStyleClassItem_BehaviorDescriptor();
@@ -198,7 +198,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new EditableStyleClassItem_BehaviorDescriptor();
       case 106:
         return new ForegroundNullColorStyleClassItem_BehaviorDescriptor();
-      case 172:
+      case 173:
         return new StyleSheetClassReference_BehaviorDescriptor();
       case 73:
         return new CellModel_Indent_BehaviorDescriptor();
@@ -208,19 +208,19 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new CellModel_BlockEnd_BehaviorDescriptor();
       case 62:
         return new CellModel_Block_BehaviorDescriptor();
-      case 162:
-        return new SelectOperation_BehaviorDescriptor();
       case 163:
+        return new SelectOperation_BehaviorDescriptor();
+      case 164:
         return new SelectPositionParameter_BehaviorDescriptor();
       case 5:
         return new CaretPositionParameter_BehaviorDescriptor();
       case 119:
         return new LayoutConstraintStyleClassItem_BehaviorDescriptor();
-      case 166:
+      case 167:
         return new SideTransformAnchorTagStyleClassItem_BehaviorDescriptor();
-      case 176:
+      case 177:
         return new TextBackgroundColorStyleClassItem_BehaviorDescriptor();
-      case 175:
+      case 176:
         return new TextBackgroundColorSelectedStyleClassItem_BehaviorDescriptor();
       case 97:
         return new DefaultCaretPositionStyleClassItem_BehaviorDescriptor();
@@ -236,11 +236,11 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new PositionStyleClassItem_BehaviorDescriptor();
       case 83:
         return new CellModel_TransactionalProperty_BehaviorDescriptor();
-      case 179:
+      case 180:
         return new TransactionalPropertyHandler_BehaviorDescriptor();
-      case 178:
+      case 179:
         return new TransactionPropertyHandler_oldValue_BehaviorDescriptor();
-      case 177:
+      case 178:
         return new TransactionPropertyHandler_newValue_BehaviorDescriptor();
       case 131:
         return new PositionChildrenStyleClassItem_BehaviorDescriptor();
@@ -252,15 +252,15 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new QueryFunction_FontStyle_BehaviorDescriptor();
       case 142:
         return new QueryFunction_Integer_BehaviorDescriptor();
-      case 157:
+      case 158:
         return new QueryFunction_Underlined_BehaviorDescriptor();
-      case 167:
+      case 168:
         return new StrikeOutStyleSheet_BehaviorDescriptor();
       case 137:
         return new QueryFunction_Boolean_BehaviorDescriptor();
-      case 158:
-        return new RGBColor_BehaviorDescriptor();
       case 159:
+        return new RGBColor_BehaviorDescriptor();
+      case 160:
         return new ReadOnlyModelAccessor_BehaviorDescriptor();
       case 78:
         return new CellModel_ReadOnlyModelAccessor_BehaviorDescriptor();
@@ -320,21 +320,21 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConceptFunctionParameter_StyledText_BehaviorDescriptor();
       case 0:
         return new AppendTextOperation_BehaviorDescriptor();
-      case 165:
+      case 166:
         return new SetBoldOperation_BehaviorDescriptor();
-      case 173:
+      case 174:
         return new StyledTextType_BehaviorDescriptor();
       case 96:
         return new DefaultBaseLine_BehaviorDescriptor();
       case 21:
         return new CellLayout_Superscript_BehaviorDescriptor();
-      case 161:
+      case 162:
         return new ScriptKindClassItem_BehaviorDescriptor();
       case 94:
         return new ConceptFunctionParameter_selectedNode_BehaviorDescriptor();
       case 22:
         return new CellLayout_Table_BehaviorDescriptor();
-      case 174:
+      case 175:
         return new TableComponentStyleClassItem_BehaviorDescriptor();
       case 70:
         return new CellModel_Empty_BehaviorDescriptor();
@@ -344,7 +344,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new QueryFunction_SNode_BehaviorDescriptor();
       case 84:
         return new CellModel_URL_BehaviorDescriptor();
-      case 160:
+      case 161:
         return new RightTransformAnchorTagWrapper_BehaviorDescriptor();
       case 155:
         return new QueryFunction_SeparatorText_BehaviorDescriptor();
@@ -366,18 +366,20 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConceptFunctionParameter_nextNode_BehaviorDescriptor();
       case 133:
         return new PreDefinedStyleClassItem_BehaviorDescriptor();
-      case 168:
+      case 169:
         return new StyleKey_BehaviorDescriptor();
       case 134:
         return new PreDefinedStyleSheetClass_BehaviorDescriptor();
-      case 169:
+      case 170:
         return new StyleKeyPack_BehaviorDescriptor();
       case 34:
         return new CellMenuPart_ApplySideTransforms_BehaviorDescriptor();
+      case 157:
+        return new QueryFunction_Style_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.structure.AppendTextOperation", "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem", "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.BaseLineCell", "jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem", "jetbrains.mps.lang.editor.structure.CaretPositionParameter", "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", "jetbrains.mps.lang.editor.structure.CellActionMapItem", "jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction", "jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode", "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", "jetbrains.mps.lang.editor.structure.CellKeyMapItem", "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke", "jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNodes", "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction", "jetbrains.mps.lang.editor.structure.CellLayout_Flow", "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", "jetbrains.mps.lang.editor.structure.CellLayout_Indent", "jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old", "jetbrains.mps.lang.editor.structure.CellLayout_Superscript", "jetbrains.mps.lang.editor.structure.CellLayout_Table", "jetbrains.mps.lang.editor.structure.CellLayout_Vertical", "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid", "jetbrains.mps.lang.editor.structure.CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property", "jetbrains.mps.lang.editor.structure.CellMenuDescriptor", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode", "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms", "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create", "jetbrains.mps.lang.editor.structure.CellModel_Alternation", "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell", "jetbrains.mps.lang.editor.structure.CellModel_Block", "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd", "jetbrains.mps.lang.editor.structure.CellModel_BlockStart", "jetbrains.mps.lang.editor.structure.CellModel_Collection", "jetbrains.mps.lang.editor.structure.CellModel_Component", "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty", "jetbrains.mps.lang.editor.structure.CellModel_Constant", "jetbrains.mps.lang.editor.structure.CellModel_Custom", "jetbrains.mps.lang.editor.structure.CellModel_Empty", "jetbrains.mps.lang.editor.structure.CellModel_Error", "jetbrains.mps.lang.editor.structure.CellModel_Image", "jetbrains.mps.lang.editor.structure.CellModel_Indent", "jetbrains.mps.lang.editor.structure.CellModel_JComponent", "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess", "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty", "jetbrains.mps.lang.editor.structure.CellModel_Property", "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.CellModel_RefCell", "jetbrains.mps.lang.editor.structure.CellModel_RefNode", "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation", "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", "jetbrains.mps.lang.editor.structure.CellModel_URL", "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_prevNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_selectedNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text", "jetbrains.mps.lang.editor.structure.DefaultBaseLine", "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem", "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem", "jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem", "jetbrains.mps.lang.editor.structure.EditableStyleClassItem", "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", "jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem", "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem", "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem", "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem", "jetbrains.mps.lang.editor.structure.HorizontalAlign", "jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem", "jetbrains.mps.lang.editor.structure.InlineEditorComponent", "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration", "jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem", "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem", "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", "jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem", "jetbrains.mps.lang.editor.structure.ModelAccessor", "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem", "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem", "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionStyleClassItem", "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem", "jetbrains.mps.lang.editor.structure.PreDefinedStyleSheetClass", "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean", "jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider", "jetbrains.mps.lang.editor.structure.QueryFunction_Color", "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", "jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath", "jetbrains.mps.lang.editor.structure.QueryFunction_Integer", "jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent", "jetbrains.mps.lang.editor.structure.QueryFunction_JComponent", "jetbrains.mps.lang.editor.structure.QueryFunction_MatchingNode", "jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter", "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList", "jetbrains.mps.lang.editor.structure.QueryFunction_SNode", "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText", "jetbrains.mps.lang.editor.structure.QueryFunction_String", "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined", "jetbrains.mps.lang.editor.structure.RGBColor", "jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", "jetbrains.mps.lang.editor.structure.ScriptKindClassItem", "jetbrains.mps.lang.editor.structure.SelectOperation", "jetbrains.mps.lang.editor.structure.SelectPositionParameter", "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", "jetbrains.mps.lang.editor.structure.SetBoldOperation", "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem", "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet", "jetbrains.mps.lang.editor.structure.StyleKey", "jetbrains.mps.lang.editor.structure.StyleKeyPack", "jetbrains.mps.lang.editor.structure.StyleSheet", "jetbrains.mps.lang.editor.structure.StyleSheetClass", "jetbrains.mps.lang.editor.structure.StyleSheetClassReference", "jetbrains.mps.lang.editor.structure.StyledTextType", "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem", "jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem", "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue", "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue", "jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler", "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.structure.AppendTextOperation", "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem", "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.BaseLineCell", "jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem", "jetbrains.mps.lang.editor.structure.CaretPositionParameter", "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", "jetbrains.mps.lang.editor.structure.CellActionMapItem", "jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction", "jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode", "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", "jetbrains.mps.lang.editor.structure.CellKeyMapItem", "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke", "jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNodes", "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction", "jetbrains.mps.lang.editor.structure.CellLayout_Flow", "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", "jetbrains.mps.lang.editor.structure.CellLayout_Indent", "jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old", "jetbrains.mps.lang.editor.structure.CellLayout_Superscript", "jetbrains.mps.lang.editor.structure.CellLayout_Table", "jetbrains.mps.lang.editor.structure.CellLayout_Vertical", "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid", "jetbrains.mps.lang.editor.structure.CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property", "jetbrains.mps.lang.editor.structure.CellMenuDescriptor", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode", "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms", "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create", "jetbrains.mps.lang.editor.structure.CellModel_Alternation", "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell", "jetbrains.mps.lang.editor.structure.CellModel_Block", "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd", "jetbrains.mps.lang.editor.structure.CellModel_BlockStart", "jetbrains.mps.lang.editor.structure.CellModel_Collection", "jetbrains.mps.lang.editor.structure.CellModel_Component", "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty", "jetbrains.mps.lang.editor.structure.CellModel_Constant", "jetbrains.mps.lang.editor.structure.CellModel_Custom", "jetbrains.mps.lang.editor.structure.CellModel_Empty", "jetbrains.mps.lang.editor.structure.CellModel_Error", "jetbrains.mps.lang.editor.structure.CellModel_Image", "jetbrains.mps.lang.editor.structure.CellModel_Indent", "jetbrains.mps.lang.editor.structure.CellModel_JComponent", "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess", "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty", "jetbrains.mps.lang.editor.structure.CellModel_Property", "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.CellModel_RefCell", "jetbrains.mps.lang.editor.structure.CellModel_RefNode", "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation", "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", "jetbrains.mps.lang.editor.structure.CellModel_URL", "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_prevNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_selectedNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text", "jetbrains.mps.lang.editor.structure.DefaultBaseLine", "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem", "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem", "jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem", "jetbrains.mps.lang.editor.structure.EditableStyleClassItem", "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", "jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem", "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem", "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem", "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem", "jetbrains.mps.lang.editor.structure.HorizontalAlign", "jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem", "jetbrains.mps.lang.editor.structure.InlineEditorComponent", "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration", "jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem", "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem", "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", "jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem", "jetbrains.mps.lang.editor.structure.ModelAccessor", "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem", "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem", "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionStyleClassItem", "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem", "jetbrains.mps.lang.editor.structure.PreDefinedStyleSheetClass", "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean", "jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider", "jetbrains.mps.lang.editor.structure.QueryFunction_Color", "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", "jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath", "jetbrains.mps.lang.editor.structure.QueryFunction_Integer", "jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent", "jetbrains.mps.lang.editor.structure.QueryFunction_JComponent", "jetbrains.mps.lang.editor.structure.QueryFunction_MatchingNode", "jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter", "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList", "jetbrains.mps.lang.editor.structure.QueryFunction_SNode", "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText", "jetbrains.mps.lang.editor.structure.QueryFunction_String", "jetbrains.mps.lang.editor.structure.QueryFunction_Style", "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined", "jetbrains.mps.lang.editor.structure.RGBColor", "jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", "jetbrains.mps.lang.editor.structure.ScriptKindClassItem", "jetbrains.mps.lang.editor.structure.SelectOperation", "jetbrains.mps.lang.editor.structure.SelectPositionParameter", "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", "jetbrains.mps.lang.editor.structure.SetBoldOperation", "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem", "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet", "jetbrains.mps.lang.editor.structure.StyleKey", "jetbrains.mps.lang.editor.structure.StyleKeyPack", "jetbrains.mps.lang.editor.structure.StyleSheet", "jetbrains.mps.lang.editor.structure.StyleSheetClass", "jetbrains.mps.lang.editor.structure.StyleSheetClassReference", "jetbrains.mps.lang.editor.structure.StyledTextType", "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem", "jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem", "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue", "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue", "jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler", "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"};
 }
