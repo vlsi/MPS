@@ -50,7 +50,7 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
   @Override
   @Nullable
   public IFile getClassesGen() {
-    return isCompileInMPS() ? ProjectPathUtil.getClassesGenFolder(module.getDescriptorFile()) : null;
+    return ProjectPathUtil.getClassesGenFolder(module.getDescriptorFile());
   }
 
   @Override
