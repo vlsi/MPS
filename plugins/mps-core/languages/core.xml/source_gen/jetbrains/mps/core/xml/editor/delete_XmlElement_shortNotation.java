@@ -5,8 +5,8 @@ package jetbrains.mps.core.xml.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class delete_XmlElement_shortNotation {
@@ -14,7 +14,7 @@ public class delete_XmlElement_shortNotation {
     editorCell.setAction(CellActionType.DELETE, new delete_XmlElement_shortNotation.delete_XmlElement_shortNotation_DELETE(node));
   }
 
-  public static class delete_XmlElement_shortNotation_DELETE extends EditorCellAction {
+  public static class delete_XmlElement_shortNotation_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public delete_XmlElement_shortNotation_DELETE(SNode node) {

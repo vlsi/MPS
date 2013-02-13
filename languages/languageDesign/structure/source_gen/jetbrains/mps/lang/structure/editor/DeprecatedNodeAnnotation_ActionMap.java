@@ -5,8 +5,8 @@ package jetbrains.mps.lang.structure.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DeprecatedNodeAnnotation_ActionMap {
@@ -14,7 +14,7 @@ public class DeprecatedNodeAnnotation_ActionMap {
     editorCell.setAction(CellActionType.DELETE, new DeprecatedNodeAnnotation_ActionMap.DeprecatedNodeAnnotation_ActionMap_DELETE(node));
   }
 
-  public static class DeprecatedNodeAnnotation_ActionMap_DELETE extends EditorCellAction {
+  public static class DeprecatedNodeAnnotation_ActionMap_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public DeprecatedNodeAnnotation_ActionMap_DELETE(SNode node) {

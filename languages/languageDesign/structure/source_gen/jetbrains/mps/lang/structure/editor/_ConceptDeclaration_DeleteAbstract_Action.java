@@ -5,8 +5,8 @@ package jetbrains.mps.lang.structure.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class _ConceptDeclaration_DeleteAbstract_Action {
@@ -14,7 +14,7 @@ public class _ConceptDeclaration_DeleteAbstract_Action {
     editorCell.setAction(CellActionType.DELETE, new _ConceptDeclaration_DeleteAbstract_Action._ConceptDeclaration_DeleteAbstract_Action_DELETE(node));
   }
 
-  public static class _ConceptDeclaration_DeleteAbstract_Action_DELETE extends EditorCellAction {
+  public static class _ConceptDeclaration_DeleteAbstract_Action_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public _ConceptDeclaration_DeleteAbstract_Action_DELETE(SNode node) {

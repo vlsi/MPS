@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.editor.runtime.cells;
 
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -33,6 +34,11 @@ public abstract class KeyMapActionImpl implements KeyMapAction {
     return myCaretPolicy;
   }
 
+  @Override
+  public boolean canExecute(EditorContext editorContext) {
+    return true;
+  }
+
   public void setCaretPolicy(int policy) {
     myCaretPolicy = policy;
   }
@@ -45,6 +51,16 @@ public abstract class KeyMapActionImpl implements KeyMapAction {
   @Override
   public boolean isShownInPopupMenu() {
     return myShownInPopupMenu;
+  }
+
+  @Override
+  public String getKeyStroke() {
+    return "";
+  }
+
+  @Override
+  public boolean isMenuAlwaysShown() {
+    return false;
   }
 
   public void setShownInPopupMenu(boolean show) {

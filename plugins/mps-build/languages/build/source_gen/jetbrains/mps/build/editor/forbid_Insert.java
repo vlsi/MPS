@@ -5,8 +5,8 @@ package jetbrains.mps.build.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.ide.editor.actions.EditorActionUtils;
 
 public class forbid_Insert {
@@ -15,7 +15,7 @@ public class forbid_Insert {
     editorCell.setAction(CellActionType.INSERT, new forbid_Insert.forbid_Insert_INSERT(node));
   }
 
-  public static class forbid_Insert_INSERT_BEFORE extends EditorCellAction {
+  public static class forbid_Insert_INSERT_BEFORE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public forbid_Insert_INSERT_BEFORE(SNode node) {
@@ -58,7 +58,7 @@ public class forbid_Insert {
     }
   }
 
-  public static class forbid_Insert_INSERT extends EditorCellAction {
+  public static class forbid_Insert_INSERT extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public forbid_Insert_INSERT(SNode node) {

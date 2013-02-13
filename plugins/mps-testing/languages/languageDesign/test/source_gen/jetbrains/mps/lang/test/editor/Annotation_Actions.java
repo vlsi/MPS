@@ -5,8 +5,8 @@ package jetbrains.mps.lang.test.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Annotation_Actions {
@@ -14,7 +14,7 @@ public class Annotation_Actions {
     editorCell.setAction(CellActionType.DELETE, new Annotation_Actions.Annotation_Actions_DELETE(node));
   }
 
-  public static class Annotation_Actions_DELETE extends EditorCellAction {
+  public static class Annotation_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public Annotation_Actions_DELETE(SNode node) {

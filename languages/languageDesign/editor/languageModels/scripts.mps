@@ -29,14 +29,14 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1234198385755">
-      <property name="title" nameId="tp33.1177457669450" value="Horizontal Gap Migration" />
       <property name="category" nameId="tp33.1206123296179" value="editor language" />
-      <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
+      <property name="title" nameId="tp33.1177457669450" value="Horizontal Gap Migration" />
       <property name="name" nameId="tpck.1169194664001" value="HorizontalGapMigration" />
+      <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1237726848485">
-      <property name="title" nameId="tp33.1177457669450" value="Migration to Indent Layout" />
       <property name="category" nameId="tp33.1206123296179" value="editor language" />
+      <property name="title" nameId="tp33.1177457669450" value="Migration to Indent Layout" />
       <property name="name" nameId="tpck.1169194664001" value="MigrationToIndentLayout" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="113254018726283913">
@@ -1244,6 +1244,38 @@
         <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.FQNameMethodSpecification" typeId="tp33.4774682482449847011" id="1456224659233706102">
           <property name="snodeId" nameId="tp33.2291767839160466985" value="~Style.get(jetbrains.mps.nodeEditor.style.StyleAttribute):java.lang.Object" />
         </node>
+      </node>
+    </node>
+    <node role="part" roleId="tp33.1177458178889" type="tp33.WhitespaceMigrationScriptPart" typeId="tp33.2598676492883244606" id="6715535892752750026" />
+    <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="6715535892752750956">
+      <property name="updateClassifierTypes" nameId="tp33.7867202088808133349" value="true" />
+      <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="nu8v.~CellAction" resolveInfo="CellAction" />
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="6715535892752752896">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~CellAction%dcanExecute(jetbrains%dmps%dopenapi%deditor%dEditorContext)%cboolean" resolveInfo="canExecute" />
+        <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.FQNameMethodSpecification" typeId="tp33.4774682482449847011" id="6715535892752752900">
+          <property name="snodeId" nameId="tp33.2291767839160466985" value="~EditorCellAction.canExecute(jetbrains.mps.nodeEditor.EditorContext):boolean" />
+        </node>
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="6715535892754537494">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~CellAction%dcanExecute(jetbrains%dmps%dopenapi%deditor%dEditorContext)%cboolean" resolveInfo="canExecute" />
+        <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.FQNameMethodSpecification" typeId="tp33.4774682482449847011" id="6715535892754537495">
+          <property name="snodeId" nameId="tp33.2291767839160466985" value="~EditorCellAction.canExecute(jetbrains.mps.openapi.editor.EditorContext):boolean" />
+        </node>
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="6715535892752754083">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~CellAction%dexecute(jetbrains%dmps%dopenapi%deditor%dEditorContext)%cvoid" resolveInfo="execute" />
+        <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.DirectMethodSpecification" typeId="tp33.2291767839159498115" id="6715535892752754093">
+          <link role="methodDeclaration" roleId="tp33.2291767839159499865" targetNodeId="9a8.~EditorCellAction%dexecute(jetbrains%dmps%dnodeEditor%dEditorContext)%cvoid" resolveInfo="execute" />
+        </node>
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="6715535892752755279">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~CellAction%dexecute(jetbrains%dmps%dopenapi%deditor%dEditorContext)%cvoid" resolveInfo="execute" />
+        <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.DirectMethodSpecification" typeId="tp33.2291767839159498115" id="6715535892752755285">
+          <link role="methodDeclaration" roleId="tp33.2291767839159499865" targetNodeId="9a8.~EditorCellAction%dexecute(jetbrains%dmps%dopenapi%deditor%dEditorContext)%cvoid" resolveInfo="execute" />
+        </node>
+      </node>
+      <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="6715535892752751133">
+        <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="9a8.~EditorCellAction" resolveInfo="EditorCellAction" />
       </node>
     </node>
   </root>

@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
@@ -15,7 +15,7 @@ public class ParameterDeclaration_Name_Actions {
     editorCell.setAction(CellActionType.RIGHT_TRANSFORM, new ParameterDeclaration_Name_Actions.ParameterDeclaration_Name_Actions_RIGHT_TRANSFORM(node));
   }
 
-  public static class ParameterDeclaration_Name_Actions_RIGHT_TRANSFORM extends EditorCellAction {
+  public static class ParameterDeclaration_Name_Actions_RIGHT_TRANSFORM extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public ParameterDeclaration_Name_Actions_RIGHT_TRANSFORM(SNode node) {

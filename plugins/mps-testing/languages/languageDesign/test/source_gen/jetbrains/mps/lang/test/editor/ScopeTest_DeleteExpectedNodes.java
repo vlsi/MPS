@@ -5,8 +5,8 @@ package jetbrains.mps.lang.test.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -15,7 +15,7 @@ public class ScopeTest_DeleteExpectedNodes {
     editorCell.setAction(CellActionType.DELETE, new ScopeTest_DeleteExpectedNodes.ScopeTest_DeleteExpectedNodes_DELETE(node));
   }
 
-  public static class ScopeTest_DeleteExpectedNodes_DELETE extends EditorCellAction {
+  public static class ScopeTest_DeleteExpectedNodes_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public ScopeTest_DeleteExpectedNodes_DELETE(SNode node) {

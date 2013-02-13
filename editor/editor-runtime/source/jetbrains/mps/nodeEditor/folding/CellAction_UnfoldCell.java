@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.nodeEditor.folding;
 
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.util.Condition;
 
-public class CellAction_UnfoldCell extends EditorCellAction {
+public class CellAction_UnfoldCell extends AbstractCellAction {
 
   public boolean canExecute(EditorContext context) {
     EditorCell selectedCell = (EditorCell) context.getSelectedCell();

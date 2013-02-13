@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.regexp.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -15,7 +15,7 @@ public class IntervalSymbolClassPart_removeRight {
     editorCell.setAction(CellActionType.DELETE, new IntervalSymbolClassPart_removeRight.IntervalSymbolClassPart_removeRight_DELETE(node));
   }
 
-  public static class IntervalSymbolClassPart_removeRight_DELETE extends EditorCellAction {
+  public static class IntervalSymbolClassPart_removeRight_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public IntervalSymbolClassPart_removeRight_DELETE(SNode node) {

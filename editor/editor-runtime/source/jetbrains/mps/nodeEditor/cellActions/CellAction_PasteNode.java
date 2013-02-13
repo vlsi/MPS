@@ -17,10 +17,10 @@ package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
-import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
@@ -37,9 +37,9 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.SwingUtilities;
 import java.util.HashSet;
@@ -51,7 +51,7 @@ import java.util.Set;
  * Author: Sergey Dmitriev.
  * Time: Nov 26, 2003 2:06:41 PM
  */
-public class CellAction_PasteNode extends EditorCellAction {
+public class CellAction_PasteNode extends AbstractCellAction {
   private static final Logger LOG = Logger.getLogger(CellAction_PasteNode.class);
 
   public boolean canExecute(EditorContext context) {

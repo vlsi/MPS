@@ -5,8 +5,8 @@ package jetbrains.mps.lang.plugin.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class PersistenPropertyDeclaration_Actions {
@@ -14,7 +14,7 @@ public class PersistenPropertyDeclaration_Actions {
     editorCell.setAction(CellActionType.RIGHT_TRANSFORM, new PersistenPropertyDeclaration_Actions.PersistenPropertyDeclaration_Actions_RIGHT_TRANSFORM(node));
   }
 
-  public static class PersistenPropertyDeclaration_Actions_RIGHT_TRANSFORM extends EditorCellAction {
+  public static class PersistenPropertyDeclaration_Actions_RIGHT_TRANSFORM extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public PersistenPropertyDeclaration_Actions_RIGHT_TRANSFORM(SNode node) {

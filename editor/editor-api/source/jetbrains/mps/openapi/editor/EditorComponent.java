@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.openapi.editor;
 
+import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -64,4 +66,8 @@ public interface EditorComponent {
   boolean isReadOnly();
 
   void update();
+
+  ActionHandler getActionHandler();
+
+  CellAction getComponentAction(CellActionType type);
 }

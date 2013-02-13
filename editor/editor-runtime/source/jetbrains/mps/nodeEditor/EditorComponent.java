@@ -61,6 +61,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.NodeEditorActions.CompleteSmart;
 import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
+import jetbrains.mps.nodeEditor.actions.ActionHandlerImpl;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_CopyNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_CutNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_PasteNode;
@@ -94,6 +95,8 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.openapi.editor.ActionHandler;
+import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -102,7 +105,6 @@ import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -301,7 +303,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private Stack<KeyboardHandler> myKbdHandlersStack;
   private MouseListener myMouseEventHandler;
-  private HashMap<CellActionType, EditorCellAction> myActionMap;
+  private HashMap<jetbrains.mps.openapi.editor.cells.CellActionType, CellAction> myActionMap;
 
   private NodeSubstituteChooser myNodeSubstituteChooser;
   private NodeInformationDialog myNodeInformationDialog;
@@ -351,6 +353,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private Set<SModelDescriptor> myLastDeps = new HashSet<SModelDescriptor>();
 
   private KeymapHandler<KeyEvent> myKeymapHandler = new AWTKeymapHandler();
+  private ActionHandler myActionHandler = new ActionHandlerImpl(this);
 
   public EditorComponent(IOperationContext operationContext) {
     this(operationContext, false, false);
@@ -367,14 +370,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     setFocusTraversalPolicy(new FocusTraversalPolicy() {
       public Component getComponentAfter(Container aContainer, Component aComponent) {
         if (myIsInFiguresHierarchy) {
-          executeComponentAction(CellActionType.NEXT);
+          executeComponentAction(jetbrains.mps.openapi.editor.cells.CellActionType.NEXT);
         }
         return myIsInFiguresHierarchy ? aContainer : null;
       }
 
       public Component getComponentBefore(Container aContainer, Component aComponent) {
         if (myIsInFiguresHierarchy) {
-          executeComponentAction(CellActionType.PREV);
+          executeComponentAction(jetbrains.mps.openapi.editor.cells.CellActionType.PREV);
         }
         return myIsInFiguresHierarchy ? aContainer : null;
       }
@@ -439,50 +442,50 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myKbdHandlersStack.push(new EditorComponentKeyboardHandler(myKeymapHandler));
 
     // --- init action map --   
-    myActionMap = new HashMap<CellActionType, EditorCellAction>();
+    myActionMap = new HashMap<jetbrains.mps.openapi.editor.cells.CellActionType, CellAction>();
     // -- navigation
-    myActionMap.put(CellActionType.LEFT, new NodeEditorActions.MoveLeft());
-    myActionMap.put(CellActionType.RIGHT, new NodeEditorActions.MoveRight());
-    myActionMap.put(CellActionType.UP, new NodeEditorActions.MoveUp());
-    myActionMap.put(CellActionType.DOWN, new NodeEditorActions.MoveDown());
-    myActionMap.put(CellActionType.NEXT, new NodeEditorActions.MoveNext());
-    myActionMap.put(CellActionType.PREV, new NodeEditorActions.MovePrev());
-    myActionMap.put(CellActionType.LOCAL_HOME, new NodeEditorActions.MoveLocal(true));
-    myActionMap.put(CellActionType.LOCAL_END, new NodeEditorActions.MoveLocal(false));
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.LEFT, new NodeEditorActions.MoveLeft());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT, new NodeEditorActions.MoveRight());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.UP, new NodeEditorActions.MoveUp());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.DOWN, new NodeEditorActions.MoveDown());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.NEXT, new NodeEditorActions.MoveNext());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.PREV, new NodeEditorActions.MovePrev());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.LOCAL_HOME, new NodeEditorActions.MoveLocal(true));
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.LOCAL_END, new NodeEditorActions.MoveLocal(false));
 
-    myActionMap.put(CellActionType.ROOT_HOME, new NodeEditorActions.MoveToRoot(true));
-    myActionMap.put(CellActionType.ROOT_END, new NodeEditorActions.MoveToRoot(false));
-    myActionMap.put(CellActionType.HOME, new NodeEditorActions.MoveHome());
-    myActionMap.put(CellActionType.END, new NodeEditorActions.MoveEnd());
-    myActionMap.put(CellActionType.PAGE_DOWN, new NodeEditorActions.MovePageUp());
-    myActionMap.put(CellActionType.PAGE_UP, new NodeEditorActions.MovePageDown());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.ROOT_HOME, new NodeEditorActions.MoveToRoot(true));
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.ROOT_END, new NodeEditorActions.MoveToRoot(false));
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.HOME, new NodeEditorActions.MoveHome());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.END, new NodeEditorActions.MoveEnd());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.PAGE_DOWN, new NodeEditorActions.MovePageUp());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.PAGE_UP, new NodeEditorActions.MovePageDown());
 
-    myActionMap.put(CellActionType.SELECT_UP, new NodeEditorActions.SelectUp());
-    myActionMap.put(CellActionType.SELECT_DOWN, new NodeEditorActions.SelectDown());
-    myActionMap.put(CellActionType.SELECT_RIGHT, new NodeEditorActions.SideSelect(CellSide.RIGHT));
-    myActionMap.put(CellActionType.SELECT_LEFT, new NodeEditorActions.SideSelect(CellSide.LEFT));
-    myActionMap.put(CellActionType.SELECT_NEXT, new NodeEditorActions.EnlargeSelection(true));
-    myActionMap.put(CellActionType.SELECT_PREVIOUS, new NodeEditorActions.EnlargeSelection(false));
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.SELECT_UP, new NodeEditorActions.SelectUp());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.SELECT_DOWN, new NodeEditorActions.SelectDown());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.SELECT_RIGHT, new NodeEditorActions.SideSelect(CellSide.RIGHT));
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.SELECT_LEFT, new NodeEditorActions.SideSelect(CellSide.LEFT));
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.SELECT_NEXT, new NodeEditorActions.EnlargeSelection(true));
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.SELECT_PREVIOUS, new NodeEditorActions.EnlargeSelection(false));
 
-    myActionMap.put(CellActionType.COPY, new CellAction_CopyNode());
-    myActionMap.put(CellActionType.CUT, new CellAction_CutNode());
-    myActionMap.put(CellActionType.PASTE, new CellAction_PasteNode());
-    myActionMap.put(CellActionType.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
-    myActionMap.put(CellActionType.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.COPY, new CellAction_CopyNode());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.CUT, new CellAction_CutNode());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.PASTE, new CellAction_PasteNode());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
 
-    myActionMap.put(CellActionType.FOLD, new CellAction_FoldCell());
-    myActionMap.put(CellActionType.UNFOLD, new CellAction_UnfoldCell());
-    myActionMap.put(CellActionType.FOLD_ALL, new CellAction_FoldAll());
-    myActionMap.put(CellActionType.UNFOLD_ALL, new CellAction_UnfoldAll());
-    myActionMap.put(CellActionType.TOGGLE_FOLDING, new CallAction_ToggleCellFolding());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.FOLD, new CellAction_FoldCell());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.UNFOLD, new CellAction_UnfoldCell());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.FOLD_ALL, new CellAction_FoldAll());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.UNFOLD_ALL, new CellAction_UnfoldAll());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.TOGGLE_FOLDING, new CallAction_ToggleCellFolding());
 
-    myActionMap.put(CellActionType.RIGHT_TRANSFORM, new CellAction_SideTransform(CellSide.RIGHT));
-    myActionMap.put(CellActionType.LEFT_TRANSFORM, new CellAction_SideTransform(CellSide.LEFT));
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM, new CellAction_SideTransform(CellSide.RIGHT));
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM, new CellAction_SideTransform(CellSide.LEFT));
 
-    myActionMap.put(CellActionType.COMPLETE, new NodeEditorActions.Complete());
-    myActionMap.put(CellActionType.COMPLETE_SMART, new CompleteSmart());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.COMPLETE, new NodeEditorActions.Complete());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.COMPLETE_SMART, new CompleteSmart());
 
-    myActionMap.put(CellActionType.SHOW_MESSAGE, new ShowMessage());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.SHOW_MESSAGE, new ShowMessage());
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -1492,33 +1495,33 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myHighlightManager;
   }
 
-  public CellActionType getActionType(KeyEvent keyEvent, EditorContext editorContext) {
+  public jetbrains.mps.openapi.editor.cells.CellActionType getActionType(KeyEvent keyEvent, EditorContext editorContext) {
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && shiftDown(keyEvent)) {
-      return CellActionType.SELECT_HOME;
+      return jetbrains.mps.openapi.editor.cells.CellActionType.SELECT_HOME;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_END && shiftDown(keyEvent)) {
-      return CellActionType.SELECT_END;
+      return jetbrains.mps.openapi.editor.cells.CellActionType.SELECT_END;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN && noKeysDown(keyEvent)) {
-      return CellActionType.PAGE_DOWN;
+      return jetbrains.mps.openapi.editor.cells.CellActionType.PAGE_DOWN;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP && noKeysDown(keyEvent)) {
-      return CellActionType.PAGE_UP;
+      return jetbrains.mps.openapi.editor.cells.CellActionType.PAGE_UP;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && noKeysDown(keyEvent)) {
-      return CellActionType.NEXT;
+      return jetbrains.mps.openapi.editor.cells.CellActionType.NEXT;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && shiftDown(keyEvent)) {
-      return CellActionType.PREV;
+      return jetbrains.mps.openapi.editor.cells.CellActionType.PREV;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && ctrlDown(keyEvent)) {
-      return CellActionType.COMPLETE;
+      return jetbrains.mps.openapi.editor.cells.CellActionType.COMPLETE;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && ctrlShiftDown(keyEvent)) {
-      return CellActionType.COMPLETE_SMART;
+      return jetbrains.mps.openapi.editor.cells.CellActionType.COMPLETE_SMART;
     }
     if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
-      return CellActionType.SHOW_MESSAGE;
+      return jetbrains.mps.openapi.editor.cells.CellActionType.SHOW_MESSAGE;
     }
 
     // ---
@@ -1527,7 +1530,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
       if (!(selectedCell instanceof EditorCell_STHint)) {
         if (!(selectedCell instanceof EditorCell_Label)) {
-          return CellActionType.RIGHT_TRANSFORM;
+          return jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM;
         }
         EditorCell_Label labelCell = (EditorCell_Label) selectedCell;
 
@@ -1536,11 +1539,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         int caretPosition = labelCell.getCaretPosition();
         //System.out.println("text:" + text + " len:" + text.length() + "caret at:" + caretPosition);
         if (caretPosition == text.length()) {
-          return CellActionType.RIGHT_TRANSFORM;
+          return jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM;
         }
 
         if (caretPosition == 0) {
-          return CellActionType.LEFT_TRANSFORM;
+          return jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM;
         }
       }
     }
@@ -1567,8 +1570,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return keyEvent.getModifiers() == KeyEvent.CTRL_MASK;
   }
 
-  boolean executeComponentAction(CellActionType type) {
-    final EditorCellAction action = getComponentAction(type);
+  boolean executeComponentAction(jetbrains.mps.openapi.editor.cells.CellActionType type) {
+    final CellAction action = getComponentAction(type);
     if (action != null && action.executeInCommand()) {
       executeCommand(new Runnable() {
         public void run() {
@@ -1583,10 +1586,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
-  public EditorCellAction getComponentAction(final CellActionType type) {
-    return ModelAccess.instance().runReadAction(new Computable<EditorCellAction>() {
-      public EditorCellAction compute() {
-        EditorCellAction action = myActionMap.get(type);
+  public CellAction getComponentAction(final jetbrains.mps.openapi.editor.cells.CellActionType type) {
+    return ModelAccess.instance().runReadAction(new Computable<CellAction>() {
+      public CellAction compute() {
+        CellAction action = myActionMap.get(type);
         if (action != null && action.canExecute(getEditorContext())) {
           return action;
         }
@@ -2387,7 +2390,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (!isReadOnly()) {
       return true;
     }
-    CellActionType actionType = getActionType(keyEvent, getEditorContext());
+    jetbrains.mps.openapi.editor.cells.CellActionType actionType = getActionType(keyEvent, getEditorContext());
     if (actionType != null) {
       switch (actionType) {
         case SELECT_LEFT:
@@ -3193,7 +3196,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public static interface CellSynchronizationWithModelListener {
-    public void cellSynchronizedWithModel(EditorCell cell);
+    public void cellSynchronizedWithModel(jetbrains.mps.openapi.editor.cells.EditorCell cell);
   }
 
   public static interface EditorDisposeListener {
@@ -3205,6 +3208,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myLeftHighlighter != null) {
       myLeftHighlighter.repaint();
     }
+  }
+
+  public ActionHandler getActionHandler() {
+    return myActionHandler;
   }
 
   private class ReferenceUnderliner {
@@ -3303,11 +3310,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           }
           EditorCell selectedCell = getSelectedCell();
           if (selectedCell != null) {
-            if (selectedCell.canExecuteAction(CellActionType.CUT)) {
-              selectedCell.executeAction(CellActionType.CUT);
-            }
+            myActionHandler.executeAction(selectedCell, jetbrains.mps.openapi.editor.cells.CellActionType.CUT);
           } else {
-            getSelectionManager().getSelection().executeAction(CellActionType.CUT);
+            getSelectionManager().getSelection().executeAction(jetbrains.mps.openapi.editor.cells.CellActionType.CUT);
           }
         }
       }, getCurrentProject());
@@ -3335,11 +3340,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           }
           EditorCell selectedCell = getSelectedCell();
           if (selectedCell != null) {
-            if (selectedCell.canExecuteAction(CellActionType.COPY)) {
-              selectedCell.executeAction(CellActionType.COPY);
-            }
+            myActionHandler.executeAction(selectedCell, jetbrains.mps.openapi.editor.cells.CellActionType.COPY);
           } else {
-            getSelectionManager().getSelection().executeAction(CellActionType.COPY);
+            getSelectionManager().getSelection().executeAction(jetbrains.mps.openapi.editor.cells.CellActionType.COPY);
           }
         }
       }, getCurrentProject());
@@ -3366,11 +3369,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           }
           EditorCell selectedCell = getSelectedCell();
           if (selectedCell != null) {
-            if (selectedCell.canExecuteAction(CellActionType.PASTE)) {
-              selectedCell.executeAction(CellActionType.PASTE);
-            }
+            myActionHandler.executeAction(selectedCell, jetbrains.mps.openapi.editor.cells.CellActionType.PASTE);
           } else {
-            getSelectionManager().getSelection().executeAction(CellActionType.PASTE);
+            getSelectionManager().getSelection().executeAction(jetbrains.mps.openapi.editor.cells.CellActionType.PASTE);
           }
         }
       }, getCurrentProject());

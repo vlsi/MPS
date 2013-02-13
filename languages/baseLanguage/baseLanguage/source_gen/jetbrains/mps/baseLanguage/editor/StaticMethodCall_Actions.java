@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.baseLanguage.behavior.StaticMethodCall_Behavior;
 
 public class StaticMethodCall_Actions {
@@ -14,7 +14,7 @@ public class StaticMethodCall_Actions {
     editorCell.setAction(CellActionType.DELETE, new StaticMethodCall_Actions.StaticMethodCall_Actions_DELETE(node));
   }
 
-  public static class StaticMethodCall_Actions_DELETE extends EditorCellAction {
+  public static class StaticMethodCall_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public StaticMethodCall_Actions_DELETE(SNode node) {

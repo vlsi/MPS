@@ -5,8 +5,8 @@ package jetbrains.mps.lang.smodel.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -15,7 +15,7 @@ public class SemanticDowncastExpression_Symbol_Actions {
     editorCell.setAction(CellActionType.DELETE, new SemanticDowncastExpression_Symbol_Actions.SemanticDowncastExpression_Symbol_Actions_DELETE(node));
   }
 
-  public static class SemanticDowncastExpression_Symbol_Actions_DELETE extends EditorCellAction {
+  public static class SemanticDowncastExpression_Symbol_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public SemanticDowncastExpression_Symbol_Actions_DELETE(SNode node) {

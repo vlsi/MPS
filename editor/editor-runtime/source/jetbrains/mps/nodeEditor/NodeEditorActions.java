@@ -15,22 +15,26 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.nodeEditor.cells.CellConditions;
+import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.selection.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
+import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.SingularSelection.SideSelectDirection;
-import jetbrains.mps.openapi.editor.*;
-import jetbrains.mps.openapi.editor.cells.*;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.awt.*;
+import java.awt.Rectangle;
 import java.util.List;
 
 
 public class NodeEditorActions {
-  public abstract static class NavigationAction extends EditorCellAction {
+  public abstract static class NavigationAction extends AbstractCellAction {
     @Override
     public boolean executeInCommand() {
       return false;
@@ -565,7 +569,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class Complete extends EditorCellAction {
+  public static class Complete extends AbstractCellAction {
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = (EditorCell) context.getSelectedCell();
       return selection != null && selection.getSubstituteInfo() != null;
@@ -577,7 +581,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class CompleteSmart extends EditorCellAction {
+  public static class CompleteSmart extends AbstractCellAction {
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = (EditorCell) context.getSelectedCell();
       return selection != null && selection.getSubstituteInfo() != null;
@@ -589,7 +593,7 @@ public class NodeEditorActions {
     }
   }
 
-  public static class ShowMessage extends EditorCellAction {
+  public static class ShowMessage extends AbstractCellAction {
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       ((EditorComponent) context.getEditorComponent()).showMessageTooltip();
     }

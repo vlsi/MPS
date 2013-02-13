@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class LowerBoundToWildcard {
@@ -14,7 +14,7 @@ public class LowerBoundToWildcard {
     editorCell.setAction(CellActionType.DELETE, new LowerBoundToWildcard.LowerBoundToWildcard_DELETE(node));
   }
 
-  public static class LowerBoundToWildcard_DELETE extends EditorCellAction {
+  public static class LowerBoundToWildcard_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public LowerBoundToWildcard_DELETE(SNode node) {

@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.selection.SelectionInfo;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.ide.datatransfer.SNodeTransferable;
 import java.util.Collections;

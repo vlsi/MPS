@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -15,7 +15,7 @@ public class DotExpression_Actions_DeleteOperation {
     editorCell.setAction(CellActionType.DELETE, new DotExpression_Actions_DeleteOperation.DotExpression_Actions_DeleteOperation_DELETE(node));
   }
 
-  public static class DotExpression_Actions_DeleteOperation_DELETE extends EditorCellAction {
+  public static class DotExpression_Actions_DeleteOperation_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public DotExpression_Actions_DeleteOperation_DELETE(SNode node) {
