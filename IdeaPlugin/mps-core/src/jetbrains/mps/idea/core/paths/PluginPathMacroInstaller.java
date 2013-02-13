@@ -45,6 +45,9 @@ public class PluginPathMacroInstaller implements ApplicationComponent {
   @Override
   public void initComponent() {
     IdeaPluginDescriptor mpsCorePlugin = PluginManager.getPlugin(PluginManager.getPluginByClassName(getClass().getName()));
+    if (mpsCorePlugin == null) {
+      return;
+    }
     Set<IdeaPluginDescriptor> mpsPlugins = new HashSet<IdeaPluginDescriptor>();
     mpsPlugins.add(mpsCorePlugin);
     boolean changed;
