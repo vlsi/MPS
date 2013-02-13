@@ -205,11 +205,12 @@ public class ModuleMaker {
     for (SModule module : dependentModules) {
       JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
       if (facet != null) {
-        if (modules.contains(module)) {
-          result.addAll(facet.getLibraryClassPath());
-        } else {
-          result.addAll(facet.getClassPath());
-        }
+        // todo: ignore this logic because of incremental compilation
+//        if (modules.contains(module)) {
+//          result.addAll(facet.getLibraryClassPath());
+//        } else {
+        result.addAll(facet.getClassPath());
+//        }
       }
     }
 
