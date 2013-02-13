@@ -18,9 +18,6 @@ package jetbrains.mps.generator;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -30,7 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -49,7 +45,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     @Override
     public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
       Set<SModelDescriptor> registeredModels = new HashSet<SModelDescriptor>();
-      for (SModelDescriptor modelDescriptor : replacedModels){
+      for (SModelDescriptor modelDescriptor : replacedModels) {
         if (modelDescriptor.isRegistered()) {
           registeredModels.add(modelDescriptor);
         }

@@ -20,7 +20,6 @@ import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.mo
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -53,7 +52,7 @@ public class NodesWriter {
   }
 
   public void writeNode(SNode node, ModelOutputStream os) throws IOException {
-    os.writeString(node.getConcept().getId());
+    os.writeString(node.getConcept().getQualifiedName());
     os.writeNodeId(node.getNodeId());
     os.writeString(node.getRoleInParent());
     os.writeByte('{');
@@ -102,7 +101,7 @@ public class NodesWriter {
   protected void writeProperties(SNode node, ModelOutputStream os) throws IOException {
     final Map<String, String> properties = new HashMap<String, String>();
     for (String name : node.getPropertyNames()) {
-      properties.put(name, SNodeAccessUtil.getProperty(node, name));
+      properties.put(name, node.getProperty(name));
     }
     os.writeInt(properties.size());
     for (Entry<String, String> entry : properties.entrySet()) {

@@ -114,6 +114,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
         combinedHash.append(entry.getKey()).append(" ").append(entry.getValue()).append("\n");
       }
       result.put(GeneratableSModelDescriptor.FILE, ModelDigestUtil.hashText(combinedHash.toString()));
+      return result;
 
     } catch (ModelReadException ignored) {
     } catch (IOException ignored) {
