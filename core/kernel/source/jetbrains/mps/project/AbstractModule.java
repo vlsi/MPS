@@ -23,8 +23,8 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
-import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
+import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
@@ -447,7 +447,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   protected void reloadAfterDescriptorChange() {
     updatePackagedDescriptorClasspath();
     updateModelsSet();
-    invalidateClassPath();
   }
 
   @Override
@@ -816,7 +815,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   @Override
   @Deprecated
   public final IClassPathItem getClassPathItem() {
-    return JavaModuleFacetImpl.createClassPathItem(getJavaFacet(this).getClassPath(), getModuleName());
+    return JavaModuleOperations.createClassPathItem(getJavaFacet(this).getClassPath(), getModuleName());
   }
 
   @Deprecated
@@ -835,9 +834,6 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return classesGen != null ? Collections.singleton(classesGen.getPath()) : Collections.<String>emptySet();
   }
 
-  /**
-   * @see SModuleOperations#getDependenciesClasspath
-   */
   @Deprecated
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
     return SModuleOperations.getDependenciesClasspath(modules, includeStubSolutions);

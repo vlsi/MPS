@@ -29,8 +29,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.project.facets.JavaModuleFacetImpl;
+import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
@@ -181,23 +180,6 @@ public class ModuleMaker {
     }
   }
 
-  public static Set<String> collectCompileClasspath(Set<SModule> modules) {
-    Set<String> result = new HashSet<String>();
-    for (SModule module : new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE)) {
-      JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
-      if (facet != null) {
-        // todo: ignore this logic because of incremental compilation
-//        if (modules.contains(module)) {
-//          result.addAll(facet.getLibraryClassPath());
-//        } else {
-        result.addAll(facet.getClassPath());
-//        }
-      }
-    }
-
-    return result;
-  }
-
   // private methods, all modules here is SModule with JavaModuleFacet
   private void handle(IMessage msg) {
     if (handler != null && msg.getKind().ordinal() >= myLevel.ordinal()) {
@@ -330,7 +312,8 @@ public class ModuleMaker {
   private IClassPathItem computeDependenciesClassPath(Set<SModule> modules) {
     ttrace.push("dependencies classpath", false);
     try {
-      return JavaModuleFacetImpl.createClassPathItem(collectCompileClasspath(modules), ModuleMaker.class.getName());
+      Set<String> classpath = JavaModuleOperations.collectCompileClasspath(modules, true);
+      return JavaModuleOperations.createClassPathItem(classpath, ModuleMaker.class.getName());
     } finally {
       ttrace.pop();
     }

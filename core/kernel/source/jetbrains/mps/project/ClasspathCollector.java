@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * @see jetbrains.mps.make.ModuleMaker#collectCompileClasspath
+ * @see jetbrains.mps.project.facets.JavaModuleOperations#collectCompileClasspath(java.util.Set, boolean)
  */
 @Deprecated
 public class ClasspathCollector {

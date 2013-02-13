@@ -15,17 +15,12 @@
  */
 package jetbrains.mps.project.facets;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.reloading.ClassPathFactory;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.IOException;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -34,8 +29,6 @@ import java.util.Set;
  * todo: divide into two parts: JavaModuleFacetSrcImpl && JavaModuleFacetPackagedImpl
  */
 public class JavaModuleFacetImpl implements JavaModuleFacet {
-  private static final Logger LOG = Logger.getLogger(JavaModuleFacetImpl.class);
-
   private final AbstractModule module;
 
   public JavaModuleFacetImpl(AbstractModule module) {
@@ -84,21 +77,5 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
       result.add(classesGen.getPath());
     }
     return result;
-  }
-
-  // util method
-  public static CompositeClassPathItem createClassPathItem(Iterable<String> classPath, String requestor) {
-    CompositeClassPathItem classPathItem = new CompositeClassPathItem();
-
-    for (String path : classPath) {
-      try {
-        IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, requestor);
-        classPathItem.add(pathItem);
-      } catch (IOException e) {
-        LOG.error(e.getMessage());
-      }
-    }
-
-    return classPathItem;
   }
 }

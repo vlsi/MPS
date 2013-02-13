@@ -197,7 +197,7 @@ public interface IModule extends SModule {
   boolean isCompileInMPS();
 
   /**
-   * @see SModuleOperations#getModuleWithDependenciesClassPathItem instead
+   * @see jetbrains.mps.project.facets.JavaModuleOperations#collectCompileClasspath instead
    */
   @Deprecated
   IClassPathItem getModuleWithDependenciesClassPathItem();

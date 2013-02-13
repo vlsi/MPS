@@ -15,11 +15,16 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
+import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
@@ -29,6 +34,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
@@ -91,7 +97,24 @@ public class SModuleOperations {
 
   @Deprecated
   public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
-    return new ClasspathCollector(modules).collect(includeStubSolutions);
+    Set<String> classpath = JavaModuleOperations.collectCompileClasspath(modules, true);
+
+    CompositeClassPathItem result = new CompositeClassPathItem();
+    result.add(JavaModuleOperations.createClassPathItem(classpath, SModuleOperations.class.getName()));
+    if (includeStubSolutions) {
+      //this is needed because we can use this class before these stub solutions are loaded
+      result.add(CommonPaths.getJDKClassPath());
+      result.add(CommonPaths.getMPSClassPath());
+      for (String s : CommonPaths.getMPSPaths(ClasspathReader.ClassType.TEST)) {
+        try {
+          result.add(ClassPathFactory.getInstance().createFromPath(s, null));
+        } catch (IOException e) {
+          // LOG?
+        }
+      }
+    }
+
+    return result;
   }
 
   // helpers
