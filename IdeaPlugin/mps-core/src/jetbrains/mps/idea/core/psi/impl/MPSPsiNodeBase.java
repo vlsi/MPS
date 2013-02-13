@@ -74,12 +74,12 @@ public abstract class MPSPsiNodeBase extends LightElement {
   }
 
   @Override
-  public PsiElement getFirstChild() {
+  public MPSPsiNodeBase getFirstChild() {
     return first;
   }
 
   @Override
-  public PsiElement getLastChild() {
+  public MPSPsiNodeBase getLastChild() {
     MPSPsiNodeBase firstChild = first;
     return firstChild == null ? null : firstChild.prev;
   }
