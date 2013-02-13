@@ -5,8 +5,8 @@ package jetbrains.mps.ypath.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 
 public class IFeature_opposite_DELETE {
@@ -14,7 +14,7 @@ public class IFeature_opposite_DELETE {
     editorCell.setAction(CellActionType.DELETE, new IFeature_opposite_DELETE.IFeature_opposite_DELETE_DELETE(node));
   }
 
-  public static class IFeature_opposite_DELETE_DELETE extends EditorCellAction {
+  public static class IFeature_opposite_DELETE_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public IFeature_opposite_DELETE_DELETE(SNode node) {

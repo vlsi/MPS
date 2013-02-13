@@ -5,8 +5,8 @@ package jetbrains.mps.build.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class delete_reexport_inJavaDependencyLibrary {
@@ -14,7 +14,7 @@ public class delete_reexport_inJavaDependencyLibrary {
     editorCell.setAction(CellActionType.DELETE, new delete_reexport_inJavaDependencyLibrary.delete_reexport_inJavaDependencyLibrary_DELETE(node));
   }
 
-  public static class delete_reexport_inJavaDependencyLibrary_DELETE extends EditorCellAction {
+  public static class delete_reexport_inJavaDependencyLibrary_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public delete_reexport_inJavaDependencyLibrary_DELETE(SNode node) {

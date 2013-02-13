@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.regexp.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -15,7 +15,7 @@ public class IntersectionSymbolClassPart_Right_Actions {
     editorCell.setAction(CellActionType.DELETE, new IntersectionSymbolClassPart_Right_Actions.IntersectionSymbolClassPart_Right_Actions_DELETE(node));
   }
 
-  public static class IntersectionSymbolClassPart_Right_Actions_DELETE extends EditorCellAction {
+  public static class IntersectionSymbolClassPart_Right_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public IntersectionSymbolClassPart_Right_Actions_DELETE(SNode node) {

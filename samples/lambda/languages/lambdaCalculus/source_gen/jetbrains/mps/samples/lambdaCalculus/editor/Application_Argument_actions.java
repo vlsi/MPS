@@ -5,8 +5,8 @@ package jetbrains.mps.samples.lambdaCalculus.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -15,7 +15,7 @@ public class Application_Argument_actions {
     editorCell.setAction(CellActionType.DELETE, new Application_Argument_actions.Application_Argument_actions_DELETE(node));
   }
 
-  public static class Application_Argument_actions_DELETE extends EditorCellAction {
+  public static class Application_Argument_actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public Application_Argument_actions_DELETE(SNode node) {

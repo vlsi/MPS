@@ -5,15 +5,15 @@ package jetbrains.mps.lang.actions.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 
 public class Disable_Delete {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new Disable_Delete.Disable_Delete_DELETE(node));
   }
 
-  public static class Disable_Delete_DELETE extends EditorCellAction {
+  public static class Disable_Delete_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public Disable_Delete_DELETE(SNode node) {

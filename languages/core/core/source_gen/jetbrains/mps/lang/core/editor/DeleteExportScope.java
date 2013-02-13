@@ -5,8 +5,8 @@ package jetbrains.mps.lang.core.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DeleteExportScope {
@@ -14,7 +14,7 @@ public class DeleteExportScope {
     editorCell.setAction(CellActionType.DELETE, new DeleteExportScope.DeleteExportScope_DELETE(node));
   }
 
-  public static class DeleteExportScope_DELETE extends EditorCellAction {
+  public static class DeleteExportScope_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public DeleteExportScope_DELETE(SNode node) {

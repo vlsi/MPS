@@ -5,15 +5,15 @@ package jetbrains.mps.lang.editor.tableTests.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 
 public class DataCellActionMap {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new DataCellActionMap.DataCellActionMap_DELETE(node));
   }
 
-  public static class DataCellActionMap_DELETE extends EditorCellAction {
+  public static class DataCellActionMap_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public DataCellActionMap_DELETE(SNode node) {

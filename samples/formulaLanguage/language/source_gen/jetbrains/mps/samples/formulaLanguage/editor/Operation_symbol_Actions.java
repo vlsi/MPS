@@ -5,15 +5,15 @@ package jetbrains.mps.samples.formulaLanguage.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 
 public class Operation_symbol_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new Operation_symbol_Actions.Operation_symbol_Actions_DELETE(node));
   }
 
-  public static class Operation_symbol_Actions_DELETE extends EditorCellAction {
+  public static class Operation_symbol_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public Operation_symbol_Actions_DELETE(SNode node) {

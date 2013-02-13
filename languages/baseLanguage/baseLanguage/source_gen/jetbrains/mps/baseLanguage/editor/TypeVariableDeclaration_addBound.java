@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class TypeVariableDeclaration_addBound {
@@ -14,7 +14,7 @@ public class TypeVariableDeclaration_addBound {
     editorCell.setAction(CellActionType.RIGHT_TRANSFORM, new TypeVariableDeclaration_addBound.TypeVariableDeclaration_addBound_RIGHT_TRANSFORM(node));
   }
 
-  public static class TypeVariableDeclaration_addBound_RIGHT_TRANSFORM extends EditorCellAction {
+  public static class TypeVariableDeclaration_addBound_RIGHT_TRANSFORM extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public TypeVariableDeclaration_addBound_RIGHT_TRANSFORM(SNode node) {
