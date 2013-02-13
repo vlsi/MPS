@@ -30,6 +30,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
@@ -49,15 +50,26 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 
 public class ModuleMaker {
   private static final Logger LOG = Logger.getLogger(ModuleMaker.class);
 
   private final static int MAX_ERRORS = 100;
 
-  private Map<String, IModule> myContainingModules = new HashMap<String, IModule>();
-  private Map<IModule, ModuleSources> myModuleSources = new HashMap<IModule, ModuleSources>();
+  private Map<String, SModule> myContainingModules = new HashMap<String, SModule>();
+  private Map<SModule, ModuleSources> myModuleSources = new HashMap<SModule, ModuleSources>();
   private Dependencies myDependencies;
   private final IPerformanceTracer ttrace;
   private final IMessageHandler handler;
@@ -118,7 +130,7 @@ public class ModuleMaker {
 
       ttrace.push("modules to compile", false);
       monitor.step("Calculating modules to compile");
-      Set<IModule> toCompile = getModulesToCompile(candidates);
+      Set<IModule> toCompile = (Set) getModulesToCompile((Set) candidates);
       ttrace.pop();
       monitor.advance(1);
 
@@ -141,7 +153,7 @@ public class ModuleMaker {
 
           inner.step("compiling " + cycle);
           ttrace.push("processing cycle", false);
-          MPSCompilationResult result = compile(cycle);
+          MPSCompilationResult result = compile((Set) cycle);
           inner.advance(cycle.size());
           ttrace.pop();
           errorCount += result.getErrors();
@@ -169,18 +181,19 @@ public class ModuleMaker {
     }
   }
 
+  // private methods, all modules here is SModule with JavaModuleFacet
   private void handle(IMessage msg) {
     if (handler != null && msg.getKind().ordinal() >= myLevel.ordinal()) {
       handler.handle(msg);
     }
   }
 
-  private MPSCompilationResult compile(Set<IModule> modules) {
+  private MPSCompilationResult compile(Set<SModule> modules) {
     boolean hasAnythingToCompile = false;
     List<MyMessage> messages = new ArrayList<MyMessage>();
 
-    for (IModule m : modules) {
-      if (m.isCompileInMPS()) {
+    for (SModule m : modules) {
+      if (getJavaFacet(m).isCompileInMPS()) {
         hasAnythingToCompile = true;
       }
     }
@@ -194,18 +207,18 @@ public class ModuleMaker {
     boolean hasFilesToCopyOrDelete = false;
 
     ttrace.push("preparing to compile", false);
-    Set<IModule> modulesWithRemovals = new HashSet<IModule>();
-    for (IModule m : modules) {
+    Set<SModule> modulesWithRemovals = new HashSet<SModule>();
+    for (SModule m : modules) {
       if (areClassesUpToDate(m)) continue;
 
-      if (!m.isCompileInMPS()) {
-        String text = "Module which compiled in IDEA depend on module which has to be compiled in MPS:" + m.getModuleFqName();
+      if (!getJavaFacet(m).isCompileInMPS()) {
+        String text = "Module which compiled in IDEA depend on module which has to be compiled in MPS:" + m.getModuleName();
         messages.add(new MyMessage(MessageKind.WARNING, text, m));
         LOG.debug(text, m);
         continue;
       }
 
-      ModuleSources sources = getModuleSources(m);
+      ModuleSources sources = getModuleSources((IModule) m);
       hasFilesToCopyOrDelete |= !sources.isResourcesUpToDate();
       hasJavaToCompile |= !sources.isJavaUpToDate();
 
@@ -226,7 +239,7 @@ public class ModuleMaker {
     }
 
     ttrace.push("invalidating classpath", false);
-    for (IModule module : modulesWithRemovals) {
+    for (SModule module : modulesWithRemovals) {
       invalidateCompiledClasses(module);
     }
     ttrace.pop();
@@ -245,7 +258,7 @@ public class ModuleMaker {
     }
 
     ttrace.push("copying resources", false);
-    for (IModule module : modules) {
+    for (SModule module : modules) {
       ModuleSources sources = getModuleSources(module);
       for (ResourceFile toCopy : sources.getResourcesToCopy()) {
         String fqName = toCopy.getPath();
@@ -256,7 +269,7 @@ public class ModuleMaker {
         if (new File(toCopy.getFile().getAbsolutePath()).exists()) {
           FileUtil.copyFile(
             new File(toCopy.getFile().getAbsolutePath()),
-            new File(module.getClassesGen().getDescendant(path).getPath())
+            new File(getJavaFacet(module).getClassesGen().getDescendant(path).getPath())
           );
         }
       }
@@ -264,7 +277,7 @@ public class ModuleMaker {
     ttrace.pop();
 
     ttrace.push("updating classpath", false);
-    for (IModule module : modules) {
+    for (SModule module : modules) {
       invalidateCompiledClasses(module);
     }
     ttrace.pop();
@@ -272,8 +285,8 @@ public class ModuleMaker {
     return new MPSCompilationResult(listener == null ? 0 : listener.getErrorCount(), 0, false, hasJavaToCompile, messages);
   }
 
-  private void invalidateCompiledClasses(IModule module) {
-    IFile classesGen = module.getClassesGen();
+  private void invalidateCompiledClasses(SModule module) {
+    IFile classesGen = getJavaFacet(module).getClassesGen();
     if (classesGen != null) {
       ClassPathFactory.getInstance().invalidate(Collections.singleton(classesGen.getPath()));
     }
@@ -292,20 +305,20 @@ public class ModuleMaker {
     return result.toString();
   }
 
-  private IClassPathItem computeDependenciesClassPath(Set<IModule> modules) {
+  private IClassPathItem computeDependenciesClassPath(Set<SModule> modules) {
     ttrace.push("dependencies classpath", false);
     try {
-      return AbstractModule.getDependenciesClasspath(modules, false);
+      return AbstractModule.getDependenciesClasspath((Set) modules, false);
     } finally {
       ttrace.pop();
     }
   }
 
-  private Set<IModule> getModulesToCompile(Collection<IModule> candidates) {
+  private Set<SModule> getModulesToCompile(Collection<SModule> candidates) {
     ttrace.push("checking if " + candidates.size() + " modules are dirty", false);
-    Set<IModule> allModules = candidates instanceof Set ? (Set<IModule>) candidates : new HashSet<IModule>(candidates);
-    List<IModule> dirtyModules = new ArrayList<IModule>(candidates.size());
-    for (IModule m : candidates) {
+    Set<SModule> allModules = candidates instanceof Set ? (Set<SModule>) candidates : new HashSet<SModule>(candidates);
+    List<SModule> dirtyModules = new ArrayList<SModule>(candidates.size());
+    for (SModule m : candidates) {
       if (isDirty(m)) {
         dirtyModules.add(m);
       }
@@ -317,15 +330,15 @@ public class ModuleMaker {
     // C={m|m from M, exists m* from D: m* in R*(m)}
     // to compile T=D union C
 
-    Map<IModule, Set<IModule>> backDependencies = new HashMap<IModule, Set<IModule>>();
+    Map<SModule, Set<SModule>> backDependencies = new HashMap<SModule, Set<SModule>>();
 
     ttrace.push("building back deps", false);
 
-    for (IModule m : candidates) {
-      for (IModule dep : new GlobalModuleDependenciesManager(m).getModules(Deptype.COMPILE)) {
-        Set<IModule> incoming = backDependencies.get(dep);
+    for (SModule m : candidates) {
+      for (SModule dep : new GlobalModuleDependenciesManager(m).getModules(Deptype.COMPILE)) {
+        Set<SModule> incoming = backDependencies.get(dep);
         if (incoming == null) {
-          incoming = new HashSet<IModule>();
+          incoming = new HashSet<SModule>();
           backDependencies.put(dep, incoming);
         }
         incoming.add(m);
@@ -334,15 +347,15 @@ public class ModuleMaker {
     ttrace.pop();
 
     ttrace.push("adding modules dependent on dirty ones - " + dirtyModules.size(), false);
-    Set<IModule> toCompile = new LinkedHashSet<IModule>();
+    Set<SModule> toCompile = new LinkedHashSet<SModule>();
     // BFS from dirtyModules along backDependencies
-    LinkedList<IModule> queue = new LinkedList<IModule>(dirtyModules);
+    LinkedList<SModule> queue = new LinkedList<SModule>(dirtyModules);
     while (!queue.isEmpty()) {
-      IModule m = queue.removeFirst();
+      SModule m = queue.removeFirst();
       if (allModules.contains(m)) {
         toCompile.add(m);
       }
-      Set<IModule> backDeps = backDependencies.remove(m);
+      Set<SModule> backDeps = backDependencies.remove(m);
       if (backDeps != null) {
         queue.addAll(backDeps);
       }
@@ -352,20 +365,20 @@ public class ModuleMaker {
     return toCompile;
   }
 
-  private boolean isDirty(IModule m) {
+  private boolean isDirty(SModule m) {
     if (isExcluded(m)) return false;
     if (areClassesUpToDate(m)) return false;
     return true;
   }
 
-  private boolean areClassesUpToDate(IModule m) {
+  private boolean areClassesUpToDate(SModule m) {
     if (isExcluded(m)) return true;
-    if (!m.isCompileInMPS()) return true;
+    if (!getJavaFacet(m).isCompileInMPS()) return true;
 
     return getModuleSources(m).isUpToDate();
   }
 
-  private ModuleSources getModuleSources(IModule module) {
+  private ModuleSources getModuleSources(SModule module) {
     ModuleSources moduleSources = myModuleSources.get(module);
     if (moduleSources == null) {
       moduleSources = new ModuleSources(module, myModuleSources, myDependencies, ttrace);
@@ -374,10 +387,10 @@ public class ModuleMaker {
     return moduleSources;
   }
 
-  private boolean isExcluded(IModule m) {
+  private boolean isExcluded(SModule m) {
     if (!(m instanceof Solution) && !(m instanceof Language)) return true;
     if (m.isPackaged()) return true;
-    if (!m.isCompileInMPS()) return true;
+    if (!getJavaFacet(m).isCompileInMPS()) return true;
 
     return false;
   }
@@ -385,11 +398,11 @@ public class ModuleMaker {
   private class MyCompilationResultAdapter extends CompilationResultAdapter {
     private int myErrorCount = 0;
     private int myOutputtedErrors = 0;
-    private final Set<IModule> myModules;
+    private final Set<SModule> myModules;
     private IClassPathItem myClassPathItems;
     private List<MyMessage> myMessages;
 
-    public MyCompilationResultAdapter(Set<IModule> modules, IClassPathItem classPathItems, List<MyMessage> messages) {
+    public MyCompilationResultAdapter(Set<SModule> modules, IClassPathItem classPathItems, List<MyMessage> messages) {
       myModules = modules;
       myClassPathItems = classPathItems;
       myMessages = messages;
@@ -412,7 +425,7 @@ public class ModuleMaker {
           final String fqName = NameUtil.namespaceFromPath(fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()));
           classesWithErrors.add(fqName);
 
-          IModule containingModule = myContainingModules.get(fqName);
+          SModule containingModule = myContainingModules.get(fqName);
           assert containingModule != null;
           JavaFile javaFile = myModuleSources.get(containingModule).getJavaFile(fqName);
 
@@ -453,8 +466,8 @@ public class ModuleMaker {
           containerClassName = containerClassName.substring(0, index);
         }
         if (myContainingModules.containsKey(containerClassName)) {
-          IModule m = myContainingModules.get(containerClassName);
-          File classesGen = new File(m.getClassesGen().getPath());
+          SModule m = myContainingModules.get(containerClassName);
+          File classesGen = new File(getJavaFacet(m).getClassesGen().getPath());
           String packageName = NameUtil.namespaceFromLongName(fqName);
           File outputDir = new File(classesGen + File.separator + NameUtil.pathFromNamespace(packageName));
           if (!outputDir.exists()) {

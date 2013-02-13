@@ -79,6 +79,8 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
+
 public abstract class AbstractModule implements IModule, FileSystemListener {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
@@ -805,41 +807,31 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   // JavaModuleFacet
-  @NotNull
-  private JavaModuleFacet getJavaFacet() {
-    JavaModuleFacet facet = getFacet(JavaModuleFacet.class);
-    if (facet != null) {
-      return facet;
-    } else {
-      throw new IllegalArgumentException();
-    }
-  }
-
   @Override
   @Deprecated
   public final boolean isCompileInMPS() {
-    return getJavaFacet().isCompileInMPS();
+    return getJavaFacet(this).isCompileInMPS();
   }
 
   @Override
   @Deprecated
   public final IClassPathItem getClassPathItem() {
-    return getJavaFacet().getClassPathItem();
+    return getJavaFacet(this).getClassPathItem();
   }
 
   @Deprecated
   public final Collection<String> getClassPath() {
-    return getJavaFacet().getClassPath();
+    return getJavaFacet(this).getClassPath();
   }
 
   @Deprecated
   public final Collection<String> getAdditionalClassPath() {
-    return getJavaFacet().getLibraryClassPath();
+    return getJavaFacet(this).getLibraryClassPath();
   }
 
   @Deprecated
   public final Collection<String> getOwnClassPath() {
-    IFile classesGen = getJavaFacet().getClassesGen();
+    IFile classesGen = getJavaFacet(this).getClassesGen();
     return classesGen != null ? Collections.singleton(classesGen.getPath()) : Collections.<String>emptySet();
   }
 
@@ -863,12 +855,12 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   @Deprecated
   protected final void invalidateClassPath() {
     // todo: remove this method!
-    ((JavaModuleFacetImpl) getJavaFacet()).invalidateClassPath();
+    ((JavaModuleFacetImpl) getJavaFacet(this)).invalidateClassPath();
   }
 
   @Override
   @Deprecated
   public final IFile getClassesGen() {
-    return getJavaFacet().getClassesGen();
+    return getJavaFacet(this).getClassesGen();
   }
 }
