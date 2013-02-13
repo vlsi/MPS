@@ -24,6 +24,7 @@ import org.jetbrains.annotations.NotNull;
 public class MPSFileTypeFactory extends FileTypeFactory {
 
   public static final FileType MODEL_FILE_TYPE = MPSFileType.INSTANCE;
+  public static final FileType MODEL_BINARY_FILE_TYPE = MPSBinaryModelFileType.INSTANCE;
 
   public static final FileType PROJECT_FILE_TYPE = new MPSProjectFileType("MPS Project", "MPS Project File Type", MPSExtentions.MPS_PROJECT, FileIcons.PROJECT_ICON);
   public static final FileType SOLUTION_FILE_TYPE = new XMLFileType("Solution", "MPS Solution File Type", MPSExtentions.SOLUTION, FileIcons.SOLUTION_ICON);
@@ -32,8 +33,9 @@ public class MPSFileTypeFactory extends FileTypeFactory {
 
   public static final FileType MPS_NODE_FILE_TYPE = new MPSNodeFileType();
 
-  public static final FileType[] MPS_FILE_TYPES = {PROJECT_FILE_TYPE, MODEL_FILE_TYPE, SOLUTION_FILE_TYPE, LANGUAGE_FILE_TYPE, DEVKIT_FILE_TYPE};
+  public static final FileType[] MPS_FILE_TYPES = {PROJECT_FILE_TYPE, MODEL_FILE_TYPE, MODEL_BINARY_FILE_TYPE, SOLUTION_FILE_TYPE, LANGUAGE_FILE_TYPE, DEVKIT_FILE_TYPE};
 
+  @Override
   public void createFileTypes(@NotNull FileTypeConsumer consumer) {
     for (FileType f : MPS_FILE_TYPES) {
       consumer.consume(f, f.getDefaultExtension());

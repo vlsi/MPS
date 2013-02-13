@@ -19,9 +19,10 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.model.SModelId;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -209,10 +210,16 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       String hash = myHash;
       if (hash == null) {
         IFile descriptorFile = myModule.getDescriptorFile();
-        hash = ModelDigestUtil.hash(descriptorFile);
+        hash = ModelDigestUtil.hash(descriptorFile, true);
+        // TODO add existing aspects hash
         myHash = hash;
       }
       return hash;
+    }
+
+    @Override
+    public Map<String, String> getGenerationHashes() {
+      return Collections.singletonMap(GeneratableSModelDescriptor.FILE, getModelHash());
     }
 
     @Override

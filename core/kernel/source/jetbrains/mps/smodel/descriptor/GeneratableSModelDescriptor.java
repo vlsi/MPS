@@ -17,16 +17,28 @@ package jetbrains.mps.smodel.descriptor;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 
+import java.util.Map;
+
 /**
  * evgeny, 11/8/12
  */
 public interface GeneratableSModelDescriptor extends SModelDescriptor {
+
+  static final String HEADER = "header";
+  static final String FILE = "model";
 
   boolean isGeneratable();
 
   boolean isGenerateIntoModelFolder();
 
   String getModelHash();
+
+  /**
+   *  rootId => root hash
+   *  HEADER => header hash
+   *  FILE => model hash
+   */
+  Map<String, String> getGenerationHashes();
 
   void setDoNotGenerate(boolean value);
 

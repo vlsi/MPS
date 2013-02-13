@@ -5,7 +5,6 @@ import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
 import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import com.intellij.util.io.EnumeratorStringDescriptor;
-import jetbrains.mps.generator.ModelDigestUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.DataInput;
@@ -20,17 +19,20 @@ public abstract class BaseModelDigestIndex extends SingleEntryFileBasedIndexExte
     return new MapStringStringExternalizer();
   }
 
+  @NotNull
   @Override
   public SingleEntryIndexer<Map<String, String>> getIndexer() {
     return new SingleEntryIndexer<Map<String, String>>(false) {
       @Override
       protected Map<String, String> computeValue(@NotNull FileContent inputData) {
-        final byte[] content = inputData.getContent();
-        return ModelDigestUtil.getDigestMap(content);
+        return calculateDigest(inputData.getContent());
       }
     };
   }
 
+  protected abstract Map<String, String> calculateDigest(byte[] content);
+
+  @Override
   public boolean dependsOnFileContent() {
     return true;
   }
@@ -38,6 +40,7 @@ public abstract class BaseModelDigestIndex extends SingleEntryFileBasedIndexExte
   public class MapStringStringExternalizer implements DataExternalizer<Map<String, String>> {
     private DataExternalizer<String> myInnerExternalizer = new EnumeratorStringDescriptor();
 
+    @Override
     public void save(DataOutput output, Map<String, String> map) throws IOException {
       output.writeInt(map.size());
       for (Map.Entry<String, String> entry : map.entrySet()) {
@@ -46,6 +49,7 @@ public abstract class BaseModelDigestIndex extends SingleEntryFileBasedIndexExte
       }
     }
 
+    @Override
     public Map<String, String> read(DataInput input) throws IOException {
       Map<String, String> result = new HashMap<String, String>();
       for (int i = input.readInt(); i > 0; i--) {

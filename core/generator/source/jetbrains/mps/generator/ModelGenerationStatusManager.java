@@ -76,17 +76,19 @@ public class ModelGenerationStatusManager implements CoreComponent {
     INSTANCE = null;
   }
 
-  public String currentHash(SModelDescriptor sm, IOperationContext operationContext) {
-    return ModelDigestHelper.getInstance().getModelHashFast(sm, operationContext);
+  public String currentHash(SModelDescriptor md) {
+    if (!(md instanceof GeneratableSModelDescriptor)) return null;
+    GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
+    return sm.getModelHash();
   }
 
-  public boolean generationRequired(SModelDescriptor md, IOperationContext operationContext) {
+  public boolean generationRequired(SModelDescriptor md) {
     if (!(md instanceof GeneratableSModelDescriptor)) return false;
     GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
     if (!sm.isGeneratable()) return false;
     if (sm instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) sm).isChanged()) return true;
 
-    String currentHash = ModelDigestHelper.getInstance().getModelHashFast(sm, operationContext);
+    String currentHash = sm.getModelHash();
     if (currentHash == null) return true;
 
     String generatedHash = getGenerationHash(sm);

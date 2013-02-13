@@ -10,8 +10,6 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.Map;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
-import jetbrains.mps.generator.ModelDigestHelper;
-import java.util.Collections;
 
 public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
   private final GenerationCacheContainer cache;
@@ -45,16 +43,7 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
       return null;
     }
 
-    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, context);
-    if (generationHashes != null) {
-      return generationHashes;
-    }
-
-    String hash = sm.getModelHash();
-    return (hash != null ?
-      Collections.singletonMap(ModelDigestHelper.FILE, hash) :
-      null
-    );
+    return sm.getGenerationHashes();
   }
 
   @Override

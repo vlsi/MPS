@@ -142,8 +142,8 @@ import java.util.Set;
 
 
   protected void setInvalidationResult(boolean result) {
+    setInvalidationWasPerformed(true);
     myCacheWasRebuilt = false;
-    myInvalidationWasPerformed = true;
     myInvalidationResult = result;
   }
   /*

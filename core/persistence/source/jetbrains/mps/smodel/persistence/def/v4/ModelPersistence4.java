@@ -15,15 +15,45 @@
  */
 package jetbrains.mps.smodel.persistence.def.v4;
 
-import jetbrains.mps.smodel.persistence.def.IModelReader;
-import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.smodel.persistence.def.v3.ModelPersistence3;
+import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.smodel.persistence.def.*;
+import jetbrains.mps.smodel.persistence.lines.LineContent;
+import jetbrains.mps.util.xml.XMLSAXHandler;
 
-public class ModelPersistence4 extends ModelPersistence3 {
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
+public class ModelPersistence4 implements IModelPersistence {
+
+  @Override
+  public IHashProvider getHashProvider() {
+    return new HashProvider4();
+  }
+
+  @Override
+  public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
+    return null;
+  }
+
+  @Override
+  public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
+    return null;
+  }
+
+  @Override
+  public Map<ModelPersistence.IndexEntry, Integer> index(char[] data) {
+    return Collections.emptyMap();
+  }
+
+  @Override
   public IModelWriter getModelWriter() {
     return new ModelWriter4();
   }
 
+  @Override
   public IModelReader getModelReader() {
     return new ModelReader4();
   }
