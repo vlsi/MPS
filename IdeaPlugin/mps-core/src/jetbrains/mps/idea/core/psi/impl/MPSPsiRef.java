@@ -32,7 +32,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 /**
  * evgeny, 1/25/13
  */
-public class MPSPsiRef extends MPSPsiNodeBase {
+public class MPSPsiRef extends MPSPsiNodeBase implements PsiReference {
 
   private String role;
   private SModelReference model;
@@ -54,6 +54,7 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     return role;
   }
 
+  @Override
   public MPSPsiNode resolve() {
     // Note: we expect that PSI clients do take read lock to resolve references
     ApplicationManager.getApplication().assertReadAccessAllowed();
@@ -62,6 +63,7 @@ public class MPSPsiRef extends MPSPsiNodeBase {
       @Override
       public MPSPsiNode compute() {
         if (model != null && nodeId != null) {
+
           return MPSPsiProvider.getInstance(getProject()).getPsi(new SNodePointer((jetbrains.mps.smodel.SModelReference) model, nodeId));
         } else {
           // TODO dynamic ref
@@ -83,9 +85,8 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     return referenceText;
   }
 
-  @Override
-  public PsiReference getReference() {
-    return new PsiReference() {
+
+
       @Override
       public PsiElement getElement() {
         return MPSPsiRef.this;
@@ -96,12 +97,13 @@ public class MPSPsiRef extends MPSPsiNodeBase {
         return null;
       }
 
-      @Nullable
-      @Override
-      public PsiElement resolve() {
-        // TODO
-        return null;
-      }
+//      @Nullable
+//      @Override
+//      public PsiElement resolve() {
+//        // TODO
+////        return null;
+//        return MPSPsiRef.this.resolve();
+//      }
 
       @NotNull
       @Override
@@ -137,8 +139,6 @@ public class MPSPsiRef extends MPSPsiNodeBase {
       public boolean isSoft() {
         return false;
       }
-    };
-  }
 
   @Override
   public String toString() {
