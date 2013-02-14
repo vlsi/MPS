@@ -11,14 +11,8 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 
@@ -50,20 +44,6 @@ public class VariableReference_Editor extends DefaultNodeEditor {
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
-      style.set(StyleAttributes.TEXT_COLOR, VariableReference_Editor._Inline_ge17fi_a0a._StyleParameter_QueryFunction_ge17fi_a0a0a0((editorCell == null ?
-        null :
-        editorCell.getContext()
-      ), (editorCell == null ?
-        null :
-        editorCell.getSNode()
-      )));
-      style.set(StyleAttributes.FONT_STYLE, VariableReference_Editor._Inline_ge17fi_a0a._StyleParameter_QueryFunction_ge17fi_a1a0a0((editorCell == null ?
-        null :
-        editorCell.getContext()
-      ), (editorCell == null ?
-        null :
-        editorCell.getSNode()
-      )));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -74,26 +54,6 @@ public class VariableReference_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
-    }
-
-    private static int _StyleParameter_QueryFunction_ge17fi_a1a0a0(EditorContext editorContext, SNode node) {
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
-        if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_7405920559687241224", new Object[]{})) {
-          return MPSFonts.BOLD_ITALIC;
-        } else {
-          return MPSFonts.BOLD;
-        }
-      } else {
-        return MPSFonts.PLAIN;
-      }
-    }
-
-    private static Color _StyleParameter_QueryFunction_ge17fi_a0a0a0(EditorContext editorContext, SNode node) {
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
-        return MPSColors.DARK_MAGENTA;
-      } else {
-        return MPSColors.BLACK;
-      }
     }
   }
 

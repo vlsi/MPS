@@ -16,21 +16,17 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -49,7 +45,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     @Override
     public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
       Set<SModelDescriptor> registeredModels = new HashSet<SModelDescriptor>();
-      for (SModelDescriptor modelDescriptor : replacedModels){
+      for (SModelDescriptor modelDescriptor : replacedModels) {
         if (modelDescriptor.isRegistered()) {
           registeredModels.add(modelDescriptor);
         }
@@ -76,17 +72,19 @@ public class ModelGenerationStatusManager implements CoreComponent {
     INSTANCE = null;
   }
 
-  public String currentHash(SModelDescriptor sm, IOperationContext operationContext) {
-    return ModelDigestHelper.getInstance().getModelHashFast(sm, operationContext);
+  public String currentHash(SModel md) {
+    if (!(md instanceof GeneratableSModel)) return null;
+    GeneratableSModel sm = (GeneratableSModel) md;
+    return sm.getModelHash();
   }
 
-  public boolean generationRequired(SModelDescriptor md, IOperationContext operationContext) {
-    if (!(md instanceof GeneratableSModelDescriptor)) return false;
-    GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
+  public boolean generationRequired(SModel md) {
+    if (!(md instanceof GeneratableSModel)) return false;
+    GeneratableSModel sm = (GeneratableSModel) md;
     if (!sm.isGeneratable()) return false;
     if (sm instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) sm).isChanged()) return true;
 
-    String currentHash = ModelDigestHelper.getInstance().getModelHashFast(sm, operationContext);
+    String currentHash = sm.getModelHash();
     if (currentHash == null) return true;
 
     String generatedHash = getGenerationHash(sm);
@@ -95,7 +93,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     return !generatedHash.equals(currentHash);
   }
 
-  private String getGenerationHash(@NotNull SModelDescriptor sm) {
+  private String getGenerationHash(@NotNull GeneratableSModel sm) {
     return getLastGenerationHash(sm);
   }
 
@@ -124,7 +122,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     }
   }
 
-  public static String getLastGenerationHash(SModelDescriptor sm) {
+  public static String getLastGenerationHash(GeneratableSModel sm) {
     GenerationDependencies generationDependencies = GenerationDependenciesCache.getInstance().get(sm);
     if (generationDependencies == null) return null;
 

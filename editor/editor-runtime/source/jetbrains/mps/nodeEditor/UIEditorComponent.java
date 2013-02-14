@@ -25,8 +25,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
 
 import javax.swing.KeyStroke;
-import javax.swing.border.LineBorder;
-import java.awt.Color;
 import java.util.List;
 
 public class UIEditorComponent extends EditorComponent {
@@ -36,9 +34,6 @@ public class UIEditorComponent extends EditorComponent {
     super(operationContext);
     unregisterKeyboardAction(KeyStroke.getKeyStroke("ESCAPE"));
     myInspector = inspector;
-
-    myInspector.getExternalComponent().setBorder(new LineBorder(Color.DARK_GRAY));
-    getExternalComponent().setBorder(new LineBorder(Color.DARK_GRAY));
 
     getSelectionManager().addSelectionListener(new SingularSelectionListenerAdapter() {
       @Override

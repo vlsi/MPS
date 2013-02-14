@@ -21,6 +21,7 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.checkers.LanguageChecker;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -37,9 +38,7 @@ import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
@@ -49,6 +48,10 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.*;
 import java.io.File;
@@ -102,7 +105,7 @@ public class CheckProjectStructureHelper {
     IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
-    Collection<SModelDescriptor> models = new ModelsExtractor(module, false).includingGenerators().getModels();
+    Collection<SModel> models = new ModelsExtractor(module, false).includingGenerators().getModels();
 
     return checkModels(models);
   }
@@ -112,17 +115,17 @@ public class CheckProjectStructureHelper {
     IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
-    Collection<SModelDescriptor> models = new ModelsExtractor(module, true).includingGenerators().getModels();
+    Collection<SModel> models = new ModelsExtractor(module, true).includingGenerators().getModels();
 
     return checkStructure(models);
   }
 
   public List<String> checkGenerationStatus(ModulesMiner.ModuleHandle moduleHandle) {
     ModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
-    IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
-    Collection<SModelDescriptor> models = new ModelsExtractor(module, false).includingGenerators().getModels();
+    Collection<SModel> models = new ModelsExtractor(module, false).includingGenerators().getModels();
 
     return checkModelsGenerationStatus(models);
   }
@@ -146,7 +149,7 @@ public class CheckProjectStructureHelper {
     IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
-    Collection<SModelDescriptor> models = new ModelsExtractor(module, false).getModels();
+    Collection<SModel> models = new ModelsExtractor(module, false).getModels();
     return applyChecker(new TypesystemChecker(), models);
   }
 
@@ -155,7 +158,7 @@ public class CheckProjectStructureHelper {
     IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
-    Collection<SModelDescriptor> models = new ModelsExtractor(module, false).getModels();
+    Collection<SModel> models = new ModelsExtractor(module, false).getModels();
     return applyChecker(new LanguageChecker(), models);
   }
 
@@ -214,32 +217,32 @@ public class CheckProjectStructureHelper {
     });
   }
 
-  private List<String> checkModelsGenerationStatus(final Iterable<SModelDescriptor> models) {
+  private List<String> checkModelsGenerationStatus(final Iterable<SModel> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModelDescriptor md : models) {
-          if (!(md instanceof GeneratableSModelDescriptor)) continue;
-          GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
+        for (SModel md : models) {
+          if (!(md instanceof GeneratableSModel)) continue;
+          GeneratableSModel sm = (GeneratableSModel) md;
           if (!sm.isGeneratable()) continue;
 
-          IModule module = sm.getModule();
+          SModule module = sm.getModule();
           if (module == null) {
-            errors.add("Model without a module: " + sm.getSModelReference().toString());
+            errors.add("Model without a module: " + sm.getModelReference().toString());
             continue;
           }
           String genHash = ModelGenerationStatusManager.getLastGenerationHash(sm);
           if (genHash == null) {
-            errors.add("No generated hash for " + sm.getSModelReference().toString());
+            errors.add("No generated hash for " + sm.getModelReference().toString());
             continue;
           }
           String realHash = sm.getModelHash();
           if (realHash == null) {
-            errors.add("cannot gen cache for " + sm.getSModelReference().toString());
+            errors.add("cannot gen cache for " + sm.getModelReference().toString());
             continue;
           }
           if (!realHash.equals(genHash)) {
-            errors.add("model requires generation: " + sm.getSModelReference().toString() + " last genHash:" + genHash + " modelHash:" + realHash);
+            errors.add("model requires generation: " + sm.getModelReference().toString() + " last genHash:" + genHash + " modelHash:" + realHash);
           }
         }
       }
@@ -247,24 +250,24 @@ public class CheckProjectStructureHelper {
     return errors;
   }
 
-  private List<String> checkStructure(final Iterable<SModelDescriptor> models) {
+  private List<String> checkStructure(final Iterable<SModel> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModelDescriptor sm : models) {
+        for (SModel sm : models) {
           if (!SModelStereotype.isUserModel(sm)) continue;
-          checkModelNodes(sm.getSModel(), errors);
+          checkModelNodes(((SModelDescriptor) sm).getSModel(), errors);
         }
       }
     });
     return errors;
   }
 
-  private List<String> checkModels(final Iterable<SModelDescriptor> models) {
+  private List<String> checkModels(final Iterable<SModel> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModelDescriptor sm : models) {
+        for (SModel sm : models) {
           if (!SModelStereotype.isUserModel(sm)) continue;
           StringBuilder errorMessages = checkModel(sm);
 
@@ -292,7 +295,7 @@ public class CheckProjectStructureHelper {
     return errors;
   }
 
-  private static void checkModelNodes(@NotNull SModel model, @NotNull final List<String> result) {
+  private static void checkModelNodes(@NotNull jetbrains.mps.smodel.SModel model, @NotNull final List<String> result) {
     for (final SNode node : model.nodes()) {
       final SConcept concept = node.getConcept();
       if (concept == null) {
@@ -323,15 +326,15 @@ public class CheckProjectStructureHelper {
     }
   }
 
-  private List<String> applyChecker(final jetbrains.mps.checkers.INodeChecker checker, final Iterable<SModelDescriptor> models) {
+  private List<String> applyChecker(final jetbrains.mps.checkers.INodeChecker checker, final Iterable<SModel> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModelDescriptor sm : models) {
+        for (SModel sm : models) {
           if (!SModelStereotype.isUserModel(sm)) continue;
           if (SModelStereotype.isGeneratorModel(sm)) continue;
           ModuleOperationContext operationContext = new ModuleOperationContext(sm.getModule());
-          for (SNode root : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(sm.getSModel(), null)) {
+          for (SNode root : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(((SModelDescriptor) sm).getSModel(), null)) {
             Set<IErrorReporter> errorReporters = null;
             try {
               errorReporters = checker.getErrors(root, operationContext);
@@ -358,8 +361,8 @@ public class CheckProjectStructureHelper {
     return errors;
   }
 
-  private StringBuilder checkModel(final SModelDescriptor sm) {
-    final IScope scope = sm.getModule().getScope();
+  private StringBuilder checkModel(final SModel sm) {
+    final IScope scope = (IScope) sm.getModule().getModuleScope();
     StringBuilder errorMessages = new StringBuilder();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
@@ -367,7 +370,7 @@ public class CheckProjectStructureHelper {
       }
     });
     if (!validationResult.isEmpty()) {
-      errorMessages.append("errors in model: ").append(sm.getSModelReference().toString()).append("\n");
+      errorMessages.append("errors in model: ").append(sm.getModelReference().toString()).append("\n");
       for (String item : validationResult) {
         errorMessages.append("\t");
         errorMessages.append(item);
@@ -375,7 +378,7 @@ public class CheckProjectStructureHelper {
       }
     }
 
-    for (SNode node : sm.getSModel().nodes()) {
+    for (SNode node : ((SModelDescriptor) sm).getSModel().nodes()) {
       Testbench.LOG.debug("Checking node " + node);
       if (SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
@@ -384,7 +387,7 @@ public class CheckProjectStructureHelper {
       }
     }
 
-    for (SNode node : sm.getSModel().nodes()) {
+    for (SNode node : ((SModelDescriptor) sm).getSModel().nodes()) {
       for (SReference ref : node.getReferences()) {
         if (SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
           continue;

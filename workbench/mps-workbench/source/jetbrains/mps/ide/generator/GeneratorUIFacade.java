@@ -19,6 +19,7 @@ import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
@@ -33,10 +34,10 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.ModelCommandExecutor.RunnableWithProgress;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import javax.swing.*;
 import java.util.*;
@@ -200,18 +201,12 @@ public class GeneratorUIFacade {
         final GenerationCacheContainer cache = incremental && settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null;
         IncrementalGenerationStrategy strategy = new IncrementalGenerationStrategy() {
           @Override
-          public Map<String, String> getModelHashes(SModelDescriptor md, IOperationContext operationContext) {
-            if (!(md instanceof GeneratableSModelDescriptor)) return null;
-            GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
+          public Map<String, String> getModelHashes(SModel md, IOperationContext operationContext) {
+            if (!(md instanceof GeneratableSModel)) return null;
+            GeneratableSModel sm = (GeneratableSModel) md;
             if (!sm.isGeneratable()) return null;
 
-            Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
-            if (generationHashes != null) {
-              return generationHashes;
-            }
-
-            String hash = sm.getModelHash();
-            return hash != null ? Collections.singletonMap(ModelDigestHelper.FILE, hash) : null;
+            return sm.getGenerationHashes();
           }
 
           @Override
@@ -220,7 +215,7 @@ public class GeneratorUIFacade {
           }
 
           @Override
-          public GenerationDependencies getDependencies(SModelDescriptor sm) {
+          public GenerationDependencies getDependencies(SModel sm) {
             return incremental ? GenerationDependenciesCache.getInstance().get(sm) : null;
           }
 

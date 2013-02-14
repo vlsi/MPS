@@ -6,6 +6,8 @@ import java.util.Map;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import java.awt.Color;
 import java.util.EnumMap;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.vcs.FileStatus;
@@ -13,10 +15,10 @@ import com.intellij.openapi.vcs.FileStatus;
 public class ChangeColors {
   private static final Map<ChangeType, Color> ourColors = new EnumMap<ChangeType, Color>(ChangeType.class);
   private static final Map<ChangeType, Color> ourTreeColors = new EnumMap<ChangeType, Color>(ChangeType.class);
-  public static final Color ADD = new Color(214, 245, 214);
-  public static final Color DELETE = new Color(203, 203, 203);
-  public static final Color CHANGE = new Color(188, 207, 249);
-  private static final Color CONFLICTED = new Color(245, 164, 164);
+  public static final Color ADD = StyleRegistry.getInstance().getStyle("DIFF_INSERTED").get(StyleAttributes.TEXT_BACKGROUND_COLOR);
+  public static final Color DELETE = StyleRegistry.getInstance().getStyle("DIFF_DELETED").get(StyleAttributes.TEXT_BACKGROUND_COLOR);
+  public static final Color CHANGE = StyleRegistry.getInstance().getStyle("DIFF_MODIFIED").get(StyleAttributes.TEXT_BACKGROUND_COLOR);
+  private static final Color CONFLICTED = StyleRegistry.getInstance().getStyle("DIFF_CONFLICT").get(StyleAttributes.TEXT_BACKGROUND_COLOR);
 
   private ChangeColors() {
   }

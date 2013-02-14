@@ -15,27 +15,27 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.datatransfer.PasteNodeData;
+import jetbrains.mps.datatransfer.PastePlaceHint;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
-import jetbrains.mps.datatransfer.PasteNodeData;
-import jetbrains.mps.datatransfer.PastePlaceHint;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.cells.CellFinders;
 
 import java.util.List;
 import java.util.Set;
 
 
-public class CellAction_PasteNodeRelative extends EditorCellAction {
+public class CellAction_PasteNodeRelative extends AbstractCellAction {
   private static final Logger LOG = Logger.getLogger(CellAction_PasteNodeRelative.class);
 
   PastePlaceHint myPastePlaceHint;

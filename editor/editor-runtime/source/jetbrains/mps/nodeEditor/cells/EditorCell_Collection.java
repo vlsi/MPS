@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -37,12 +36,14 @@ import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.style.Style;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.ArrayWrapper;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -172,6 +173,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     if (myFoldedCell == null) {
       EditorCell_Constant foldedCell = new EditorCell_Constant(getContext(), getSNode(), FOLDED_TEXT);
       Style style = foldedCell.getStyle();
+      // COLORS: Remove hardcoded colors & font
       style.set(StyleAttributes.FONT_STYLE, Font.BOLD);
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, Color.lightGray);
       style.set(StyleAttributes.TEXT_COLOR, Color.darkGray);
@@ -311,6 +313,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     setBracesEnabled(true);
     myOpeningBrace.setEnabled(true);
     myClosingBrace.setEnabled(true);
+    // COLORS: Remove hardcoded color
     getEditor().leftHighlightCell(this, new Color(80, 0, 120));
   }
 
@@ -856,7 +859,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     super.onRemove();
   }
 
-  private class SelectFirstChild extends EditorCellAction {
+  private class SelectFirstChild extends AbstractCellAction {
     public boolean canExecute(EditorContext context) {
       return EditorCell_Collection.this.isSelected() && findChild(CellFinders.FIRST_SELECTABLE_LEAF) != null;
     }
@@ -868,7 +871,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
   }
 
-  private class SelectLastChild extends EditorCellAction {
+  private class SelectLastChild extends AbstractCellAction {
     public boolean canExecute(EditorContext context) {
       return EditorCell_Collection.this.isSelected() && findChild(CellFinders.LAST_SELECTABLE_LEAF) != null;
     }
@@ -892,12 +895,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
   }
 
-  public void setAction(CellActionType type, EditorCellAction action) {
+  public void setAction(CellActionType type, CellAction action) {
     super.setAction(type, action);
     if (isTransparentCollection()) {
       for (jetbrains.mps.openapi.editor.cells.EditorCell child : getEditorCells()) {
         if (child.getSNode() == getSNode()) {
-          ((EditorCell) child).setAction(type, action);
+          child.setAction(type, action);
         }
       }
     }
@@ -923,6 +926,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       String text = getBraceText();
 
       Style style = new StyleImpl();
+      // COLORS: Remove hardcoded color & font
       style.set(StyleAttributes.TEXT_COLOR, Color.BLUE);
       style.set(StyleAttributes.FONT_STYLE, Font.BOLD);
       style.set(StyleAttributes.PADDING_LEFT, new Padding(0.0));

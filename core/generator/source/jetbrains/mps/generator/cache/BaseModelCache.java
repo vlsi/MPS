@@ -30,8 +30,8 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
@@ -39,15 +39,15 @@ import java.util.WeakHashMap;
 public abstract class BaseModelCache<T> implements CoreComponent {
 
   protected final Map<SModel, T> myCache = new WeakHashMap<SModel, T>();
-  protected final BidirectionalMap<IFile, SModelDescriptor> myFilesToModels = new BidirectionalMap<IFile, SModelDescriptor>();
+  protected final BidirectionalMap<IFile, SModel> myFilesToModels = new BidirectionalMap<IFile, SModel>();
   private final BaseModelCache<T>.MyCacheGenerator myCacheGenerator;
   private SModelRepository myModelRepository;
   private final SModelRepositoryAdapter myModelRepositoryListener = new MyModelRepositoryListener();
 
   @Nullable
-  protected abstract T readCache(SModelDescriptor model);
+  protected abstract T readCache(SModel model);
 
-  protected abstract void saveCache(@NotNull T t, SModelDescriptor model, StreamHandler handler);
+  protected abstract void saveCache(@NotNull T t, SModel model, StreamHandler handler);
 
   protected abstract T generateCache(GenerationStatus status);
 
@@ -55,7 +55,7 @@ public abstract class BaseModelCache<T> implements CoreComponent {
   public abstract String getCacheFileName();
 
   @Nullable
-  protected abstract IFile getCacheFile(SModelDescriptor modelDescriptor);
+  protected abstract IFile getCacheFile(SModel modelDescriptor);
 
   protected BaseModelCache(SModelRepository modelRepository) {
     myModelRepository = modelRepository;
@@ -75,7 +75,7 @@ public abstract class BaseModelCache<T> implements CoreComponent {
   }
 
   @Nullable
-  public T get(@NotNull SModelDescriptor modelDescriptor) {
+  public T get(@NotNull SModel modelDescriptor) {
     synchronized (myCache) {
       if (myCache.containsKey(modelDescriptor)) {
         return myCache.get(modelDescriptor);
@@ -94,15 +94,15 @@ public abstract class BaseModelCache<T> implements CoreComponent {
   }
 
   @Nullable
-  public T lookup(@NotNull IFile cacheFile) {
+  public final T lookup(@NotNull IFile cacheFile) {
     synchronized (myCache) {
       if (!cacheFile.exists()) {
         return null;
       }
-      SModelDescriptor modelDescriptor = myFilesToModels.get(cacheFile);
+      SModel modelDescriptor = myFilesToModels.get(cacheFile);
       if (modelDescriptor == null) {
         return null;
-      }      
+      }
       if (myCache.containsKey(modelDescriptor)) {
         return myCache.get(modelDescriptor);
       }
@@ -111,9 +111,9 @@ public abstract class BaseModelCache<T> implements CoreComponent {
       return cache;
     }
   }
-  
-  public SModelDescriptor invalidateCacheForFile(IFile file) {
-    SModelDescriptor md;
+
+  public SModel invalidateCacheForFile(IFile file) {
+    SModel md;
     synchronized (myCache) {
       md = myFilesToModels.get(file);
       if (md != null) {
@@ -134,33 +134,13 @@ public abstract class BaseModelCache<T> implements CoreComponent {
     }
   }
 
-  public List<IFile> getCachesDirs(IModule m) {
-    List<IFile> result = new ArrayList<IFile>();
-
-    if (m.getGeneratorOutputPath() != null) {
-      IFile file = getCachesDirInternal(m, m.getGeneratorOutputPath());
-      if (file != null) {
-        result.add(file);
-      }
-    }
-
-    if (m.getTestsGeneratorOutputPath() != null) {
-      IFile file = getCachesDirInternal(m, m.getTestsGeneratorOutputPath());
-      if (file != null) {
-        result.add(file);
-      }
-    }
-
-    return result;
-  }
-
   @Nullable
-  protected IFile getCachesDirInternal(IModule module, String outputPath) {
+  protected IFile getCachesDirInternal(SModule module, String outputPath) {
     return getCachesDir(module, outputPath);
   }
 
   @Nullable
-  public static IFile getCachesDir(IModule module, String outputPath) {
+  public static IFile getCachesDir(SModule module, String outputPath) {
     if (outputPath == null) return null;
 
     if (module.isPackaged()) {
@@ -173,7 +153,7 @@ public abstract class BaseModelCache<T> implements CoreComponent {
       if (module instanceof Generator) {
         descriptorFile = ((Generator) module).getSourceLanguage().getDescriptorFile();
       } else {
-        descriptorFile = module.getDescriptorFile();
+        descriptorFile = ((IModule) module).getDescriptorFile();
       }
       return descriptorFile.getParent().getParent().getDescendant(FileGenerationUtil.getCachesPath(suffix));
     } else {
@@ -182,6 +162,7 @@ public abstract class BaseModelCache<T> implements CoreComponent {
   }
 
   protected class MyCacheGenerator implements CacheGenerator {
+    @Override
     public void generateCache(GenerationStatus status, StreamHandler handler) {
       T cache = BaseModelCache.this.generateCache(status);
       if (cache == null) return;
@@ -202,7 +183,7 @@ public abstract class BaseModelCache<T> implements CoreComponent {
     }
   }
 
-  public void clean(SModel model) {
+  public final void clean(SModel model) {
     synchronized (myCache) {
       myCache.remove(model);
     }

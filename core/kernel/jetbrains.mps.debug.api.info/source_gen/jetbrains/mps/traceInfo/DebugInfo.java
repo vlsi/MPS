@@ -26,7 +26,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.LinkedHashMap;
 import org.jdom.Element;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jdom.DataConversionException;
 
 public class DebugInfo {
@@ -265,7 +265,7 @@ public class DebugInfo {
     return element;
   }
 
-  public static DebugInfo fromXml(Element root, SModelDescriptor descriptor) {
+  public static DebugInfo fromXml(Element root, SModel model) {
     DebugInfo info = new DebugInfo();
     try {
       DebugInfoRoot unspecified = DebugInfoRoot.fromXml(root, null);

@@ -13,12 +13,13 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
@@ -66,16 +67,19 @@ public class RebuildRequiredModels_Action extends BaseAction {
       final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          Iterable<SModelDescriptor> allModels = SModelRepository.getInstance().getModelDescriptors();
+          Iterable<SModel> allModels = Sequence.fromIterable(((Iterable<SModelDescriptor>) SModelRepository.getInstance().getModelDescriptors())).select(new ISelector<SModelDescriptor, SModel>() {
+            public SModel select(SModelDescriptor it) {
+              return (SModel) it;
+            }
+          });
           final ModelGenerationStatusManager mgsm = ModelGenerationStatusManager.getInstance();
-          models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(allModels).where(new IWhereFilter<SModelDescriptor>() {
-            public boolean accept(SModelDescriptor it) {
-              return it.isGeneratable() && mgsm.generationRequired(it, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+          models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(allModels).where(new IWhereFilter<SModel>() {
+            public boolean accept(SModel it) {
+              return mgsm.generationRequired(it);
             }
           }));
         }
       });
-
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models.value, null, null, null), true).executeAction();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RebuildRequiredModels", t);

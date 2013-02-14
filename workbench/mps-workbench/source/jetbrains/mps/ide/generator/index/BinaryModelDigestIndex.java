@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,28 +16,43 @@
 package jetbrains.mps.ide.generator.index;
 
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.util.indexing.FileBasedIndex.InputFilter;
+import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.persistence.BinaryModelPersistence;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
-public class LanguageModelDigestIndex extends BaseModelDigestIndex {
-  public static final ID<Integer, Map<String, String>> NAME = ID.create("LanguageModelDigest");
+/**
+ * evgeny, 2/12/13
+ */
+public class BinaryModelDigestIndex extends BaseModelDigestIndex {
+  public static final ID<Integer, Map<String, String>> NAME = ID.create("BinaryModelDigest");
 
+  @NotNull
+  @Override
   public ID<Integer, Map<String, String>> getName() {
     return NAME;
   }
 
-  public InputFilter getInputFilter() {
-    return new InputFilter() {
+  @Override
+  public FileBasedIndex.InputFilter getInputFilter() {
+    return new FileBasedIndex.InputFilter() {
+      @Override
       public boolean acceptInput(VirtualFile file) {
-        return file.getFileType().equals(MPSFileTypeFactory.LANGUAGE_FILE_TYPE);
+        return file.getFileType().equals(MPSFileTypeFactory.MODEL_BINARY_FILE_TYPE);
       }
     };
   }
 
+  @Override
   public int getVersion() {
-    return 1;
+    return 3;
+  }
+
+  @Override
+  protected Map<String, String> calculateDigest(byte[] content) {
+    return BinaryModelPersistence.getDigestMap(content);
   }
 }

@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.idea.core.psi.PsiListener;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModel;
 import java.util.Map;
 import com.intellij.psi.PsiJavaFile;
 import java.util.Set;
@@ -15,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -30,7 +30,6 @@ import com.intellij.psi.PsiElement;
 public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor implements PsiListener, DataSourceListener {
   private SModelReference myModelRef;
   private PsiJavaStubDataSource myDataSource;
-  private SModel myModel;
   private Map<PsiJavaFile, Set<SNode>> myRootsPerFile = MapSequence.fromMap(new HashMap<PsiJavaFile, Set<SNode>>());
   private Map<SNodeId, SNode> myRootsById = MapSequence.fromMap(new HashMap<SNodeId, SNode>());
 
@@ -59,7 +58,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   @Override
   protected SModel createModel() {
 
-    myModel = new SModel(myModelRef);
+    SModel ourModel = new SModel(myModelRef);
 
     ASTConverter converter = new ASTConverter();
 
@@ -70,7 +69,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
         SNode node = converter.convertClass(cls);
         // TODO check for duplicate ids (in java sources there may be 2 classes with the same name 
         //  which is an error but none the less) 
-        SModelOperations.addRootNode(myModel, node);
+        SModelOperations.addRootNode(ourModel, node);
         SetSequence.fromSet(roots).addElement(node);
         MapSequence.fromMap(myRootsById).put(node.getNodeId(), node);
       }
@@ -80,7 +79,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
       }
     }
 
-    return myModel;
+    return ourModel;
   }
 
   @Override
@@ -89,9 +88,10 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   }
 
   public void psiChanged(PsiListener.PsiEvent event) {
+    SModel ourModel = getCurrentModelInternal();
 
-    // already attached, but not createModel'd yet 
-    if (myModel == null) {
+    // already attached, but not createModel'd yet? 
+    if (ourModel == null) {
       return;
     }
 
@@ -115,7 +115,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
 
       for (PsiClass cls : ((PsiJavaFile) file).getClasses()) {
         SNode node = converter.convertClass(cls);
-        SModelOperations.addRootNode(myModel, node);
+        SModelOperations.addRootNode(ourModel, node);
         SetSequence.fromSet(roots).addElement(node);
       }
 
@@ -139,12 +139,12 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
 
           SNode node = converter.convertClass((PsiClass) e);
           SNodeId id = node.getNodeId();
-          SNode oldNode = myModel.getNodeById(id);
+          SNode oldNode = ourModel.getNodeById(id);
 
           if ((oldNode != null)) {
             SNodeOperations.replaceWithAnother(oldNode, node);
           } else {
-            SModelOperations.addRootNode(myModel, node);
+            SModelOperations.addRootNode(ourModel, node);
           }
         }
       }

@@ -5,13 +5,11 @@ package jetbrains.mps.lang.core.plugin;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.Map;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
-import jetbrains.mps.generator.ModelDigestHelper;
-import java.util.Collections;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 
 public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
   private final GenerationCacheContainer cache;
@@ -23,7 +21,7 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
   }
 
   @Override
-  public GenerationDependencies getDependencies(SModelDescriptor descriptor) {
+  public GenerationDependencies getDependencies(SModel descriptor) {
     return (isIncremental ?
       GenerationDependenciesCache.getInstance().get(descriptor) :
       null
@@ -36,25 +34,16 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
   }
 
   @Override
-  public Map<String, String> getModelHashes(SModelDescriptor md, IOperationContext context) {
-    if (!(md instanceof GeneratableSModelDescriptor)) {
+  public Map<String, String> getModelHashes(SModel md, IOperationContext context) {
+    if (!(md instanceof GeneratableSModel)) {
       return null;
     }
-    GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
+    GeneratableSModel sm = (GeneratableSModel) md;
     if (!(sm.isGeneratable())) {
       return null;
     }
 
-    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, context);
-    if (generationHashes != null) {
-      return generationHashes;
-    }
-
-    String hash = sm.getModelHash();
-    return (hash != null ?
-      Collections.singletonMap(ModelDigestHelper.FILE, hash) :
-      null
-    );
+    return sm.getGenerationHashes();
   }
 
   @Override

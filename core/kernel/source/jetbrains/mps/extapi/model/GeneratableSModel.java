@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,20 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.descriptor;
+package jetbrains.mps.extapi.model;
 
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+
+import java.util.Map;
 
 /**
- * evgeny, 11/8/12
+ * evgeny, 2/14/13
  */
-public interface GeneratableSModelDescriptor extends SModelDescriptor {
+public interface GeneratableSModel extends SModel {
+
+  static final String HEADER = "header";
+  static final String FILE = "model";
 
   boolean isGeneratable();
 
   boolean isGenerateIntoModelFolder();
 
   String getModelHash();
+
+  /**
+   *  rootId => root hash
+   *  HEADER => header hash
+   *  FILE => model hash
+   */
+  Map<String, String> getGenerationHashes();
 
   void setDoNotGenerate(boolean value);
 

@@ -18,13 +18,12 @@ package jetbrains.mps.nodeEditor.cells;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.util.LocalTimeCounter;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
-import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.CellSide;
-import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
@@ -34,6 +33,7 @@ import jetbrains.mps.nodeEditor.selection.MultipleSelection;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHelper;
@@ -774,7 +774,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
-  private class MoveLeft extends EditorCellAction {
+  private class MoveLeft extends AbstractCellAction {
     private boolean myWithSelection;
 
     private MoveLeft(boolean withSelection) {
@@ -792,7 +792,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
-  private class MoveRight extends EditorCellAction {
+  private class MoveRight extends AbstractCellAction {
     private boolean myWithSelection;
 
     private MoveRight(boolean withSelection) {
@@ -810,7 +810,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
-  private class SelectHome extends EditorCellAction {
+  private class SelectHome extends AbstractCellAction {
     public boolean canExecute(EditorContext context) {
       if (!isCaretPositionAllowed(0)) return false;
       return true;
@@ -823,7 +823,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
-  private class SelectEnd extends EditorCellAction {
+  private class SelectEnd extends AbstractCellAction {
     public boolean canExecute(EditorContext context) {
       if (!isCaretPositionAllowed(getText().length())) return false;
       return true;
@@ -836,7 +836,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
-  private class CopyLabelText extends EditorCellAction {
+  private class CopyLabelText extends AbstractCellAction {
     public boolean canExecute(EditorContext context) {
       SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
       if (selectionManager.getSelection() instanceof EditorCellLabelSelection) {
@@ -852,7 +852,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
-  private class LocalHome extends EditorCellAction {
+  private class LocalHome extends AbstractCellAction {
     private boolean mySelect;
 
     private LocalHome(boolean select) {
@@ -869,7 +869,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   }
 
-  private class LocalEnd extends EditorCellAction {
+  private class LocalEnd extends AbstractCellAction {
     private boolean mySelect;
 
     private LocalEnd(boolean select) {
@@ -897,7 +897,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
-  private class PasteIntoLabelText extends EditorCellAction {
+  private class PasteIntoLabelText extends AbstractCellAction {
     public boolean canExecute(EditorContext context) {
       if (!(context.getSelectedCell() instanceof EditorCell_Label)) return false;
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
@@ -914,7 +914,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
-  private class CutLabelText extends EditorCellAction {
+  private class CutLabelText extends AbstractCellAction {
     public boolean canExecute(EditorContext context) {
       SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
       if (selectionManager.getSelection() instanceof EditorCellLabelSelection) {

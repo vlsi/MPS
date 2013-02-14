@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def.v7;
 
-import jetbrains.mps.generator.ModelDigestHelper;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
@@ -28,18 +28,20 @@ import java.util.Map;
 public class HashProvider7 extends IHashProvider {
   private static final Logger LOG = Logger.getLogger(HashProvider7.class);
 
-  public String getHash(byte[] modelBytes){
-    return ModelDigestUtil.hash(modelBytes);
+  @Override
+  public String getHash(String content) {
+    return ModelDigestUtil.hashText(content);
   }
 
-  public Map<String, String> getRootHashes(byte[] modelBytes){
+  @Override
+  public Map<String, String> getRootHashes(String content) {
     Map<String, String> result = new HashMap<String, String>();
-    extractRootHashes(modelBytes, result);
+    extractRootHashes(content, result);
     return result;
   }
 
-  private static void extractRootHashes(byte[] content, Map<String, String> rootHashes) {
-    XmlFastScanner scanner = new XmlFastScanner(content);
+  private static void extractRootHashes(String content, Map<String, String> rootHashes) {
+    XmlFastScanner scanner = new XmlFastScanner(content.toCharArray());
     int depth = 0, token, rootStart = -1;
     String rootId = null;
 
@@ -69,7 +71,7 @@ public class HashProvider7 extends IHashProvider {
 
           if (depth == 2 && ModelPersistence.ROOTS.equals(scanner.getName())) {
             insideRoots = true;
-            rootHashes.put(ModelDigestHelper.HEADER, ModelDigestUtil.hash(scanner.getText(0, scanner.getTokenOffset())));
+            rootHashes.put(GeneratableSModel.HEADER, ModelDigestUtil.hashText(scanner.getText(0, scanner.getTokenOffset())));
           }
 
           if (insideRoots && ModelPersistence.NODE.equals(scanner.getName())) {
@@ -118,7 +120,7 @@ public class HashProvider7 extends IHashProvider {
       assert s != null;
       sb.append(s);
     }
-    String hash = ModelDigestUtil.hash(sb.toString());
+    String hash = ModelDigestUtil.hashText(sb.toString());
     rootHashes.put(rootId, hash);
   }
 }

@@ -30,7 +30,7 @@ import com.intellij.openapi.diff.DiffManager;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 
@@ -129,11 +129,11 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
   }
 
   private IFile getModelFile(final Map<String, Object> _params) {
-    return ((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getSource().getFile();
+    return ((BaseEditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getSource().getFile();
   }
 
   private String selectMineModel(String currentModel, String backUpModel, final Map<String, Object> _params) {
-    if (ModelDigestUtil.hash(currentModel).equals(ModelDigestUtil.hash(backUpModel))) {
+    if (ModelDigestUtil.hashText(currentModel).equals(ModelDigestUtil.hashText(backUpModel))) {
       return backUpModel;
     } else {
       String current = "Currently Loaded Model";

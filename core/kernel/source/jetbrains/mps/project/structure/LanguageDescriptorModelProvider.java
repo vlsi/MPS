@@ -16,12 +16,13 @@
 package jetbrains.mps.project.structure;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.model.SModelId;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -174,7 +175,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     return "component: Language Descriptor Models Provider";
   }
 
-  public class LanguageModelDescriptor extends BaseSpecialModelDescriptor implements GeneratableSModelDescriptor {
+  public class LanguageModelDescriptor extends BaseSpecialModelDescriptor implements GeneratableSModel {
     private final Language myModule;
     private String myHash;
 
@@ -209,10 +210,16 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       String hash = myHash;
       if (hash == null) {
         IFile descriptorFile = myModule.getDescriptorFile();
-        hash = ModelDigestUtil.hash(descriptorFile);
+        hash = ModelDigestUtil.hash(descriptorFile, true);
+        // TODO add existing aspects hash
         myHash = hash;
       }
       return hash;
+    }
+
+    @Override
+    public Map<String, String> getGenerationHashes() {
+      return Collections.singletonMap(GeneratableSModel.FILE, getModelHash());
     }
 
     @Override

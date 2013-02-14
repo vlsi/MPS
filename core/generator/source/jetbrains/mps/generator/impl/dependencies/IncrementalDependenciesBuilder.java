@@ -16,8 +16,8 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
-import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorMappings;
 import jetbrains.mps.generator.impl.cache.BrokenCacheException;
@@ -25,8 +25,12 @@ import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -72,12 +76,12 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     myParametersHash = parametersHash;
     myCache = cache;
     currentOutputModel = null;
-    myModelHash = generationHashes == null ? null : generationHashes.get(ModelDigestHelper.FILE);
+    myModelHash = generationHashes == null ? null : generationHashes.get(GeneratableSModel.FILE);
     initData(getRoots(originalInputModel), generationHashes);
   }
 
   private void initData(SNode[] roots, Map<String, String> generationHashes) {
-    myConditionalsBuilder = new RootDependenciesBuilder(null, this, generationHashes != null ? generationHashes.get(ModelDigestHelper.HEADER) : "");
+    myConditionalsBuilder = new RootDependenciesBuilder(null, this, generationHashes != null ? generationHashes.get(GeneratableSModel.HEADER) : "");
     currentToOriginalMap = new HashMap<SNode, SNode>(roots.length * 3 / 2);
     myAllBuilders = new RootDependenciesBuilder[roots.length + 1];
     int e = 0;
@@ -115,7 +119,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
       propagateDependencies(getRootBuilder(root), saved.getDependenciesFor(root.getNodeId().toString()), true);
     }
     if (conditionalsUnchanged || conditionalsRequired) {
-      propagateDependencies(getRootBuilder(null), saved.getDependenciesFor(ModelDigestHelper.HEADER), conditionalsRequired);
+      propagateDependencies(getRootBuilder(null), saved.getDependenciesFor(GeneratableSModel.HEADER), conditionalsRequired);
     }
   }
 

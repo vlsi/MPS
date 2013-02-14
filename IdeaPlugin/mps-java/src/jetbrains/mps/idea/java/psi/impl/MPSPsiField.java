@@ -45,6 +45,10 @@ import javax.swing.Icon;
 
 public class MPSPsiField extends MPSPsiNode implements PsiField {
 
+  class Z<T> {
+    T field;
+  }
+
   public MPSPsiField(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
     addChild(null, new MPSPsiMethodModifierList());

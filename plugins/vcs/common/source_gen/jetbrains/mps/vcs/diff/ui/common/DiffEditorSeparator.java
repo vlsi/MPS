@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.awt.Graphics;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import java.awt.Color;
 import javax.swing.JViewport;
 import java.awt.event.MouseEvent;
 import java.awt.Point;
@@ -95,7 +94,7 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
 
         g.setColor(ChangeColors.get(groupWithBounds.key().getChangeType()));
         g.fillPolygon(xx, yy, 4);
-        g.setColor(Color.GRAY);
+        g.setColor(ChangeColors.get(groupWithBounds.key().getChangeType()).darker());
         g.drawLine(0, (int) left.start(), getWidth() - 1, (int) right.start());
         g.drawLine(0, (int) left.end(), getWidth() - 1, (int) right.end());
       }

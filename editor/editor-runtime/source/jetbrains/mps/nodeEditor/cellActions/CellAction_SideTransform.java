@@ -15,18 +15,21 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.editor.runtime.impl.CellUtil;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.style.SideTransformTagUtils;
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.CellSide;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.model.SNode;
 
-public class CellAction_SideTransform extends EditorCellAction {
+public class CellAction_SideTransform extends AbstractCellAction {
   private CellSide mySide;
 
   public CellAction_SideTransform(CellSide side) {

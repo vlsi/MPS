@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-import jetbrains.mps.generator.ModelDigestHelper;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
@@ -155,7 +155,7 @@ public class ModelPersistence {
     loadDescriptor(result, file);
 
     // for old persistences try to load header from metadata
-    if(result.getPersistenceVersion() < 7) {
+    if (result.getPersistenceVersion() < 7) {
       Map<String, String> metadata = loadMetadata(file);
       if (metadata != null) {
         if (metadata.containsKey(SModelHeader.VERSION)) {
@@ -318,17 +318,17 @@ public class ModelPersistence {
     return ModelPersistence.LAST_VERSION;
   }
 
-  public static Map<String, String> calculateHashes(byte[] modelBytes) throws ModelReadException {
-    SModelHeader header = loadDescriptor(new InputSource(new ByteArrayInputStream(modelBytes)));
+  public static Map<String, String> calculateHashes(String content) throws ModelReadException {
+    SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
     IModelPersistence mp = getModelPersistence(header);
     Map<String, String> result;
     if (mp != null) {
       IHashProvider hashProvider = mp.getHashProvider();
-      result = hashProvider.getRootHashes(modelBytes);
-      result.put(ModelDigestHelper.FILE, hashProvider.getHash(modelBytes));
+      result = hashProvider.getRootHashes(content);
+      result.put(GeneratableSModel.FILE, hashProvider.getHash(content));
     } else {
       result = new HashMap<String, String>();
-      result.put(ModelDigestHelper.FILE, ModelDigestUtil.hash(modelBytes));
+      result.put(GeneratableSModel.FILE, ModelDigestUtil.hashText(content));
     }
     return result;
   }

@@ -16,6 +16,8 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.editor.colors.EditorColors;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
 import jetbrains.mps.nodeEditor.cellLayout.PunctuationUtil;
@@ -29,7 +31,6 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.search.AbstractSearchPanel;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.Color;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.util.*;
@@ -165,7 +166,7 @@ public class SearchPanel extends AbstractSearchPanel {
     mySearchEntries.clear();
     if (myText.getText().length() == 0) {
       myFindResult.setText("");
-      myText.setBackground(Color.white);
+      myText.setBackground(myDefaultBackground);
       if (requestFocus) {
         myText.requestFocus();
         myEditor.repaint();
@@ -329,7 +330,7 @@ public class SearchPanel extends AbstractSearchPanel {
     }
     myFindResult.setText("");
     myText.setText("");
-    myText.setBackground(Color.white);
+    myText.setBackground(myDefaultBackground);
     revalidate();
     myEditor.removeUpperComponent(this);
     myEditor.requestFocus();
@@ -359,7 +360,9 @@ public class SearchPanel extends AbstractSearchPanel {
     private EditorCell_Label myCell;
 
     public SearchPanelEditorMessage(@NotNull EditorCell_Label cell, @NotNull List<Pair> positions) {
-      super(cell.getSNode(), Color.yellow, "", SearchPanel.this.myOwner);
+      super(cell.getSNode(),
+        EditorColorsManager.getInstance().getGlobalScheme().getAttributes(EditorColors.SEARCH_RESULT_ATTRIBUTES).getBackgroundColor(),
+        "", SearchPanel.this.myOwner);
       myCell = cell;
       myPositions = positions;
     }
@@ -389,9 +392,7 @@ public class SearchPanel extends AbstractSearchPanel {
           int height = editorCell.getHeight();
           int width = metrics.stringWidth(text);
 
-          Color color = getColor();
-          color = new Color(color.getRed(), color.getGreen(), color.getBlue());//, color.getAlpha() / 4);
-          g.setColor(color);
+          g.setColor(getColor());
           // Filling smaller rectangle to not cover frames created by other nessages
           g.fillRect(x + 1, y + 1, width - 2, height - 2);
         }

@@ -18,6 +18,7 @@ package jetbrains.mps.generator.test;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
@@ -25,12 +26,11 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.generator.TransientModelsComponent;
+import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
@@ -42,14 +42,12 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
-import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -163,7 +161,7 @@ public class GenerationTestBase {
         }
       });
       List<String> hashes = new ArrayList<String>();
-      hashes.add(incrementalStrategy.getHash().get(ModelDigestHelper.FILE));
+      hashes.add(incrementalStrategy.getHash().get(GeneratableSModel.FILE));
 
       // Stage 1. Regenerate
 
@@ -174,7 +172,7 @@ public class GenerationTestBase {
         Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
         new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-      p.getComponent(TransientModelsComponent.class));
+        p.getComponent(TransientModelsComponent.class));
 
       Map<String, String> generated = replaceInContent(generationHandler.getGeneratedContent(), new String[]{randomName, originalModel.getModule().getModuleFqName()}, new String[]{randomId, originalModel.getModule().getModuleReference().getModuleId().toString()});
       assertNoDiff(generationHandler.getExistingContent(), generated);
@@ -204,7 +202,7 @@ public class GenerationTestBase {
             incrementalStrategy.buildHash();
           }
         });
-        hashes.add(incrementalStrategy.getHash().get(ModelDigestHelper.FILE));
+        hashes.add(incrementalStrategy.getHash().get(GeneratableSModel.FILE));
         Assert.assertNotNull(generationHandler.getLastDependencies());
         incrementalStrategy.setDependencies(generationHandler.getLastDependencies());
 
@@ -219,7 +217,7 @@ public class GenerationTestBase {
           Collections.singletonList(descr), ModuleContext.create(descr, p),
           generationHandler,
           new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-      p.getComponent(TransientModelsComponent.class));
+          p.getComponent(TransientModelsComponent.class));
         time.add(System.nanoTime() - start);
 
         incrementalGenerationResults = generationHandler.getGeneratedContent();
@@ -237,7 +235,7 @@ public class GenerationTestBase {
         Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
         new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-      p.getComponent(TransientModelsComponent.class));
+        p.getComponent(TransientModelsComponent.class));
       time.add(System.nanoTime() - start);
 
       assertNoDiff(incrementalGenerationResults, generationHandler.getGeneratedContent());
@@ -255,7 +253,7 @@ public class GenerationTestBase {
     } finally {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          MPSModuleRepository.getInstance().unregisterModule(tm,myOwner);
+          MPSModuleRepository.getInstance().unregisterModule(tm, myOwner);
         }
       });
     }
@@ -275,7 +273,7 @@ public class GenerationTestBase {
 
   protected static SModelDescriptor findModel(Project project, String fqName) {
     for (SModule m : project.getModules()) {
-      for (org.jetbrains.mps.openapi.model.SModel descr : m.getModels()) {
+      for (SModel descr : m.getModels()) {
         if (!(descr instanceof EditableSModelDescriptor)) {
           continue;
         }
@@ -307,7 +305,7 @@ public class GenerationTestBase {
     }
   }
 
-  private static Map<String, String> getHashes(SModel model) {
+  private static Map<String, String> getHashes(jetbrains.mps.smodel.SModel model) {
     Document m = ModelPersistence.saveModel(model);
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     try {
@@ -315,13 +313,13 @@ public class GenerationTestBase {
     } catch (IOException e) {
       Assert.fail(e.getMessage());
     }
-    return ModelDigestUtil.getDigestMap(os.toByteArray());
+    return DefaultModelPersistence.getDigestMap(new InputStreamReader(new ByteArrayInputStream(os.toByteArray()), FileUtil.DEFAULT_CHARSET));
   }
 
   private static Map<String, String> getEmptyDigest() {
     Map<String, String> result = new HashMap<String, String>();
-    result.put(ModelDigestHelper.FILE, ModelDigestUtil.hash(""));
-    result.put(ModelDigestHelper.HEADER, ModelDigestUtil.hash(""));
+    result.put(GeneratableSModel.FILE, ModelDigestUtil.hashText(""));
+    result.put(GeneratableSModel.HEADER, ModelDigestUtil.hashText(""));
     return result;
 
   }
@@ -395,8 +393,8 @@ public class GenerationTestBase {
     void buildHash() {
       Map<String, String> hashes = getHashes(myModel.getSModel());
       if (myHash != null) {
-        Assert.assertEquals("header's SHA1 shouldn't change after model change", myHash.get(ModelDigestHelper.HEADER), hashes.get(ModelDigestHelper.HEADER));
-        Assert.assertNotSame("file's SHA1 should change after model change", myHash.get(ModelDigestHelper.FILE), hashes.get(ModelDigestHelper.FILE));
+        Assert.assertEquals("header's SHA1 shouldn't change after model change", myHash.get(GeneratableSModel.HEADER), hashes.get(GeneratableSModel.HEADER));
+        Assert.assertNotSame("file's SHA1 should change after model change", myHash.get(GeneratableSModel.FILE), hashes.get(GeneratableSModel.FILE));
       }
       myHash = hashes;
     }
@@ -406,7 +404,7 @@ public class GenerationTestBase {
     }
 
     @Override
-    public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
+    public Map<String, String> getModelHashes(SModel sm, IOperationContext operationContext) {
       if (sm == myModel) {
         return myHash;
       }
@@ -419,7 +417,7 @@ public class GenerationTestBase {
     }
 
     @Override
-    public GenerationDependencies getDependencies(SModelDescriptor sm) {
+    public GenerationDependencies getDependencies(SModel sm) {
       if (myModel != sm) {
         return null;
       }
@@ -439,7 +437,7 @@ public class GenerationTestBase {
   private static class MyNonIncrementalGenerationStrategy implements IncrementalGenerationStrategy {
 
     @Override
-    public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
+    public Map<String, String> getModelHashes(SModel sm, IOperationContext operationContext) {
       return Collections.emptyMap();
     }
 
@@ -449,7 +447,7 @@ public class GenerationTestBase {
     }
 
     @Override
-    public GenerationDependencies getDependencies(SModelDescriptor sm) {
+    public GenerationDependencies getDependencies(SModel sm) {
       return null;
     }
 

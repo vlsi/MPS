@@ -24,9 +24,7 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
@@ -38,13 +36,13 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -54,12 +52,15 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.ListMap;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
@@ -93,7 +94,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private EditorCell_Collection myParent = null;
   private SNode myNode;
   private NodeSubstituteInfo mySubstituteInfo;
-  private Map<CellActionType, EditorCellAction> myActionMap = new ListMap<CellActionType, EditorCellAction>();
+  private Map<CellActionType, CellAction> myActionMap = new ListMap<CellActionType, CellAction>();
 
   private Style myStyle = new Style(this);
 
@@ -192,77 +193,24 @@ public abstract class EditorCell_Basic implements EditorCell {
     return getStyle().get(StyleAttributes.BRACKETS_COLOR);
   }
 
-  public EditorCellAction getAction(CellActionType type) {
+  public CellAction getAction(CellActionType type) {
     return myActionMap.get(type);
   }
 
-  public Set<CellActionType> getAvailableActions() {
+  public Collection<CellActionType> getAvailableActions() {
     return new HashSet<CellActionType>(myActionMap.keySet());
   }
 
-  public void setAction(CellActionType type, EditorCellAction action) {
+  /**
+   * should be removed after MPS 3.0
+   */
+  @Deprecated
+  public void setAction(jetbrains.mps.nodeEditor.CellActionType type, EditorCellAction action) {
+    setAction(CellActionType.valueOf(type.name()), action);
+  }
+
+  public void setAction(CellActionType type, CellAction action) {
     myActionMap.put(type, action);
-  }
-
-  public boolean canExecuteAction(final CellActionType type) {
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        return getApplicableCellAction(type) != null;
-      }
-    });
-  }
-
-  public boolean executeAction(final CellActionType type) {
-    final EditorCellAction action = ModelAccess.instance().runReadAction(new Computable<EditorCellAction>() {
-      public EditorCellAction compute() {
-        return getApplicableCellAction(type);
-      }
-    });
-
-
-    if (action == null) return false;
-
-    if (action.executeInCommand()) {
-      getContext().executeCommand(new Runnable() {
-        public void run() {
-          action.execute(getContext());
-        }
-      });
-    } else {
-      action.execute(getContext());
-    }
-    return true;
-  }
-
-  public EditorCellAction getApplicableCellAction(CellActionType type) {
-    EditorCell current = this;
-    while (current != null) {
-      EditorCellAction currentAction = current.getAction(type);
-      if (currentAction != null && currentAction.canExecute(getContext())) {
-        if (type == CellActionType.INSERT) {
-          return getInsertAction(current, type);
-        } else {
-          return currentAction;
-        }
-      }
-      current = (EditorCell) current.getParent();
-    }
-    EditorCellAction action = getEditor().getComponentAction(type);
-    if (action != null && action.canExecute(getContext())) {
-      return action;
-    }
-    return null;
-  }
-
-  private EditorCellAction getInsertAction(EditorCell current, CellActionType type) {
-    EditorCellAction cellAction = current.getAction(type);
-    while (current != null) {
-      if (current.getAction(type) != null && current.getLastLeaf() == this) {
-        cellAction = current.getAction(type);
-      }
-      current = (EditorCell) current.getParent();
-    }
-    return cellAction;
   }
 
   public void addKeyMap(KeyMap keyMap) {
@@ -742,6 +690,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     int effectiveWidth = getEffectiveWidth();
 
     if (isDrawBorder()) {
+      // COLORS: Remove hardcoded color
       g.setColor(Color.lightGray);
       g.drawRect(myX, myY, getWidth(), getHeight());
     }

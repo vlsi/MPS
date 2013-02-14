@@ -16,6 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
@@ -31,13 +32,12 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.progress.CancellationMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -66,18 +66,14 @@ public class GenerationFacade {
   public static Collection<SModelDescriptor> getModifiedModels(Collection<SModelDescriptor> models, IOperationContext context) {
     Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
-    for (SModelDescriptor md : models) {
-      if (!(md instanceof GeneratableSModelDescriptor)) continue;
-      GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
-      if (!sm.isGeneratable()) continue;
-
-      if (statusManager.generationRequired(sm, context)) {
+    for (SModelDescriptor sm : models) {
+      if (statusManager.generationRequired(sm)) {
         result.add(sm);
         continue;
       }
 
       // TODO regenerating all dependant models can be slow, option?
-      if (!(SModelStereotype.DESCRIPTOR.equals(sm.getStereotype()) || LanguageAspect.BEHAVIOR.is(sm) || LanguageAspect.CONSTRAINTS.is(sm))) {
+      if (!(SModelStereotype.DESCRIPTOR.equals(SModelStereotype.getStereotype(sm)) || LanguageAspect.BEHAVIOR.is(sm) || LanguageAspect.CONSTRAINTS.is(sm))) {
         // temporary solution: only descriptor/behavior/constraints models
         continue;
       }
@@ -101,7 +97,7 @@ public class GenerationFacade {
         if (oldHash == null) {
           continue;
         }
-        String newHash = ModelGenerationStatusManager.getInstance().currentHash(rmd, context);
+        String newHash = statusManager.currentHash(rmd);
         if (newHash == null || !oldHash.equals(newHash)) {
           result.add(sm);
           break;
@@ -129,7 +125,7 @@ public class GenerationFacade {
   }
 
   public static boolean canGenerate(org.jetbrains.mps.openapi.model.SModel sm) {
-    return sm instanceof GeneratableSModelDescriptor && ((GeneratableSModelDescriptor) sm).isGeneratable();
+    return sm instanceof GeneratableSModel && ((GeneratableSModel) sm).isGeneratable();
   }
 
   public static boolean generateModels(final Project p,

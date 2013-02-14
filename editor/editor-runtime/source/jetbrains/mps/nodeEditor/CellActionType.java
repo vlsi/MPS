@@ -15,6 +15,11 @@
  */
 package jetbrains.mps.nodeEditor;
 
+/**
+ * use jetbrains.mps.openapi.editor.cells.CellActionType instead
+ * Should be removed after MPS 3.0
+ */
+@Deprecated
 public enum CellActionType {
   INSERT,
   INSERT_BEFORE,

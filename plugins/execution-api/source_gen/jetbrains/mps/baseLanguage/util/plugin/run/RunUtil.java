@@ -13,15 +13,14 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
@@ -43,7 +42,7 @@ public class RunUtil {
     return makeBeforeRun(project, Sequence.fromIterable(Sequence.fromArray(nodes)).toListSequence());
   }
 
-  public static boolean makeBeforeRun(final Project project, final List<SNode> nodes) {
+  public static boolean makeBeforeRun(Project project, final List<SNode> nodes) {
     if (ThreadUtils.isEventDispatchThread()) {
       throw new RuntimeException("Can't run make from the event dispatch thread");
     }
@@ -51,13 +50,13 @@ public class RunUtil {
     final Wrappers._T<List<SModel>> descriptors = new Wrappers._T<List<SModel>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        descriptors.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), ListSequence.fromList(nodes).select(new ISelector<SNode, SModelDescriptor>() {
-          public SModelDescriptor select(SNode it) {
-            return SNodeOperations.getModel(it).getModelDescriptor();
+        descriptors.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), ListSequence.fromList(nodes).select(new ISelector<SNode, SModel>() {
+          public SModel select(SNode it) {
+            return (SModel) SNodeOperations.getModel(it).getModelDescriptor();
           }
-        }).distinct().where(new IWhereFilter<SModelDescriptor>() {
-          public boolean accept(SModelDescriptor it) {
-            return ModelGenerationStatusManager.getInstance().generationRequired(it, new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
+        }).distinct().where(new IWhereFilter<SModel>() {
+          public boolean accept(SModel it) {
+            return ModelGenerationStatusManager.getInstance().generationRequired(it);
           }
         }));
       }
@@ -65,7 +64,7 @@ public class RunUtil {
     return makeModels(project, descriptors.value);
   }
 
-  public static boolean makePointersBeforeRun(final Project project, List<SNodeReference> nodes) {
+  public static boolean makePointersBeforeRun(Project project, List<SNodeReference> nodes) {
     if (ThreadUtils.isEventDispatchThread()) {
       throw new RuntimeException("Can't run make from the event dispatch thread");
     }
@@ -73,13 +72,13 @@ public class RunUtil {
       public boolean accept(SNodeReference it) {
         return it != null;
       }
-    }).select(new ISelector<SNodeReference, SModelDescriptor>() {
-      public SModelDescriptor select(SNodeReference it) {
-        return ((SNodePointer) it).getModel();
+    }).select(new ISelector<SNodeReference, SModel>() {
+      public SModel select(SNodeReference it) {
+        return (SModel) ((SNodePointer) it).getModel();
       }
-    }).distinct().where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor it) {
-        return ModelGenerationStatusManager.getInstance().generationRequired(it, new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
+    }).distinct().where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return ModelGenerationStatusManager.getInstance().generationRequired(it);
       }
     })));
   }

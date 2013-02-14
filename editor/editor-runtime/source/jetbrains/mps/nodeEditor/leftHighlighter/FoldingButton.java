@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
+import com.intellij.openapi.editor.colors.EditorColors;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -79,7 +81,9 @@ class FoldingButton {
   }
 
   private Color getBorderColor() {
-    return myMouseOver ? Color.black : Color.gray;
+    return myMouseOver
+      ? EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTED_TEARLINE_COLOR)
+      : EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.TEARLINE_COLOR);
   }
 
   void paintFeedback(Graphics g) {

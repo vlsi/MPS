@@ -22,16 +22,14 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -91,12 +89,12 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
   }
 
   @Override
-  protected void saveCache(@NotNull GenerationDependencies cache, SModelDescriptor model, StreamHandler handler) {
+  protected void saveCache(@NotNull GenerationDependencies cache, SModel model, StreamHandler handler) {
     super.saveCache(cache, model, handler);
 
     if (InternalFlag.isInternalMode()) {
       String trace = cache.extractDependenciesTraces();
-      if(trace != null) {
+      if (trace != null) {
         handler.saveStream(getCacheFileName() + ".trace", trace, true);
       }
     }
@@ -111,8 +109,8 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
   }
 
   @Override
-  public SModelDescriptor invalidateCacheForFile(IFile file) {
-    SModelDescriptor md = super.invalidateCacheForFile(file);
+  public SModel invalidateCacheForFile(IFile file) {
+    SModel md = super.invalidateCacheForFile(file);
     if (md != null && md.getModule() != null) {
       ModelGenerationStatusManager.getInstance().invalidateData(Collections.singleton(md));
     }
@@ -130,7 +128,7 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
   }
 
   @Override
-  protected IFile getCachesDirInternal(IModule module, String outputPath) {
+  protected IFile getCachesDirInternal(SModule module, String outputPath) {
     IFile cachesPath = super.getCachesDirInternal(module, outputPath);
     if (cachesPath == null) {
       return null;

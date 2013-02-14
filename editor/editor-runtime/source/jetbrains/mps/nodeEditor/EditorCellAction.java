@@ -15,19 +15,15 @@
  */
 package jetbrains.mps.nodeEditor;
 
-public abstract class EditorCellAction {
-  public String getDescriptionText() {
-    return "no description : " + this.getClass().getName();
-  }
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.openapi.editor.cells.CellAction;
 
-  public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
-    return true;
-  }
-
-  public boolean executeInCommand() {
-    return true;
-  }
-
+/**
+ * was replaced with AbstractCellAction
+ * Remove after MPS 3.0
+ */
+@Deprecated
+public abstract class EditorCellAction extends AbstractCellAction implements CellAction {
   /**
    * Since MPS 3.0
    * should be transformed to abstract method in future
@@ -38,7 +34,7 @@ public abstract class EditorCellAction {
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>execute(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>execute(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
   protected void execute(EditorContext context) {

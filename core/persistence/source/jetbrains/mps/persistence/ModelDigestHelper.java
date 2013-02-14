@@ -13,23 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator;
+package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ModelDigestHelper {
-  public static final String HEADER = "header";
-  public static final String FILE = "model";
 
   private static ModelDigestHelper ourInstance = new ModelDigestHelper();
   private List<DigestProvider> myProviders = new CopyOnWriteArrayList<DigestProvider>();
@@ -46,34 +40,25 @@ public class ModelDigestHelper {
     myProviders.add(provider);
   }
 
-  public Map<String, String> getGenerationHashes(@NotNull SModelDescriptor descriptor, IOperationContext operationContext) {
-    DataSource source = descriptor.getSource();
+  public Map<String, String> getGenerationHashes(@NotNull FileDataSource source) {
     for (DigestProvider p : myProviders) {
-      Map<String, String> result = p.getGenerationHashes(operationContext, source);
+      Map<String, String> result = p.getGenerationHashes(source);
       if (result != null) return result;
     }
 
-    if (source instanceof FileDataSource && descriptor instanceof DefaultSModelDescriptor) {
-      return ModelDigestUtil.getDigestMap(((FileDataSource) source).getFile());
-    }
-
     return null;
   }
 
-  public String getModelHashFast(@NotNull SModelDescriptor descriptor, IOperationContext operationContext) {
-    DataSource source = descriptor.getSource();
+  public String getModelHash(@NotNull FileDataSource source) {
     for (DigestProvider p : myProviders) {
-      Map<String, String> result = p.getGenerationHashes(operationContext, source);
-      if (result != null) return result.get(FILE);
+      Map<String, String> result = p.getGenerationHashes(source);
+      if (result != null) return result.get(GeneratableSModel.FILE);
     }
-    if (descriptor instanceof GeneratableSModelDescriptor) {
-      return ((GeneratableSModelDescriptor) descriptor).getModelHash();
-    }
+
     return null;
   }
-
 
   public interface DigestProvider {
-    Map<String, String> getGenerationHashes(IOperationContext operationContext, @NotNull DataSource f);
+    Map<String, String> getGenerationHashes(@NotNull FileDataSource f);
   }
 }

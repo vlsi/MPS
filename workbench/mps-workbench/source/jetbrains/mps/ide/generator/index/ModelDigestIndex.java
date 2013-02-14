@@ -19,25 +19,40 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.persistence.DefaultModelPersistence;
+import jetbrains.mps.util.FileUtil;
+import org.jetbrains.annotations.NotNull;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStreamReader;
 import java.util.Map;
 
 public class ModelDigestIndex extends BaseModelDigestIndex {
   public static final ID<Integer, Map<String, String>> NAME = ID.create("ModelDigest");
 
+  @NotNull
+  @Override
   public ID<Integer, Map<String, String>> getName() {
     return NAME;
   }
 
+  @Override
   public InputFilter getInputFilter() {
     return new InputFilter() {
+      @Override
       public boolean acceptInput(VirtualFile file) {
         return file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
       }
     };
   }
 
+  @Override
   public int getVersion() {
     return 7;
+  }
+
+  @Override
+  protected Map<String, String> calculateDigest(byte[] content) {
+    return DefaultModelPersistence.getDigestMap(new InputStreamReader(new ByteArrayInputStream(content), FileUtil.DEFAULT_CHARSET));
   }
 }

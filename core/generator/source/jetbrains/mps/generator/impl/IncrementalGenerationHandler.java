@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
@@ -22,10 +23,11 @@ import jetbrains.mps.generator.impl.dependencies.*;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.DifflibFacade;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -117,7 +119,7 @@ public class IncrementalGenerationHandler {
       return null;
     }
 
-    String currentHash = myGenerationHashes.get(ModelDigestHelper.FILE);
+    String currentHash = myGenerationHashes.get(GeneratableSModel.FILE);
     ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, currentHash, true);
     if (cacheContainer == null) {
       LOG.error("cannot create cache for " + currentHash + ", " + myModel.getSModelReference().toString());
@@ -184,7 +186,7 @@ public class IncrementalGenerationHandler {
 
   private void analyzeDependencies(@NotNull GenerationDependencies oldDependencies) {
 
-    GenerationRootDependencies commonDeps = oldDependencies.getDependenciesFor(ModelDigestHelper.HEADER);
+    GenerationRootDependencies commonDeps = oldDependencies.getDependenciesFor(GeneratableSModel.HEADER);
     if (commonDeps == null) {
       if (myTracer != null) myTracer.report("Dependencies are incomplete. No info about header.");
       return;
@@ -193,7 +195,7 @@ public class IncrementalGenerationHandler {
     // check model header, rebuild all if changed
     {
       String oldHash = commonDeps.getHash();
-      String newHash = myGenerationHashes.get(ModelDigestHelper.HEADER);
+      String newHash = myGenerationHashes.get(GeneratableSModel.HEADER);
       if (oldHash == null || newHash == null || !newHash.equals(oldHash)) {
         if (myTracer != null) myTracer.report("Changes in model header, regenerating.");
         return;
@@ -231,7 +233,7 @@ public class IncrementalGenerationHandler {
         continue;
       }
       Map<String, String> map = myGenerationOptions.getIncrementalStrategy().getModelHashes(sm, myOperationContext);
-      String newHash = map != null ? map.get(ModelDigestHelper.FILE) : null;
+      String newHash = map != null ? map.get(GeneratableSModel.FILE) : null;
       if (newHash == null || !oldHash.equals(newHash)) {
         changedModels.add(modelReference);
       }
@@ -541,7 +543,7 @@ public class IncrementalGenerationHandler {
       }
       sb.append(";\n");
     }
-    return ModelDigestUtil.hash(sb.toString());
+    return ModelDigestUtil.hashText(sb.toString());
   }
 
   public DependenciesBuilder createDependenciesBuilder() {

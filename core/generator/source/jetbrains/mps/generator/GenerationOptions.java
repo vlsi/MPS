@@ -19,6 +19,7 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -185,8 +186,8 @@ public class GenerationOptions {
     private boolean myRebuildAll = true;
     private IncrementalGenerationStrategy myIncrementalStrategy = new IncrementalGenerationStrategy() {
       @Override
-      public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
-        return Collections.EMPTY_MAP;
+      public Map<String, String> getModelHashes(SModel sm, IOperationContext operationContext) {
+        return Collections.emptyMap();
       }
 
       @Override
@@ -195,7 +196,7 @@ public class GenerationOptions {
       }
 
       @Override
-      public GenerationDependencies getDependencies(SModelDescriptor sm) {
+      public GenerationDependencies getDependencies(SModel sm) {
         return null;
       }
 
