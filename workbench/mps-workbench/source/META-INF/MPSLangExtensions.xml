@@ -19,6 +19,8 @@
   <exportable serviceInterface="com.intellij.codeEditor.printing.PrintSettings"/>
   <projectService serviceInterface="com.intellij.psi.search.PsiSearchHelper"
                   serviceImplementation="jetbrains.mps.EmptyPsiSearchHelper"/>
+  <projectService serviceInterface="com.intellij.psi.search.PsiTodoSearchHelper"
+                  serviceImplementation="jetbrains.mps.EmptyPsiTodoSearchHelper"/>
 
   <applicationService serviceInterface="com.intellij.psi.statistics.StatisticsManager"
                       serviceImplementation="com.intellij.psi.statistics.impl.StatisticsManagerImpl"/>
