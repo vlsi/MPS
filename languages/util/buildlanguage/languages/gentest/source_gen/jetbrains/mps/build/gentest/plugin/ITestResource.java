@@ -4,9 +4,9 @@ package jetbrains.mps.build.gentest.plugin;
 
 import jetbrains.mps.make.resources.IResource;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public interface ITestResource extends IResource {
   public List<String> buildCommandLine();
-  public IModule getModule();
+  public SModule getModule();
 }
