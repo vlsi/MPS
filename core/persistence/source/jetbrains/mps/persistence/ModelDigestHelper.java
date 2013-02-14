@@ -13,20 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.persistence.def;
+package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.generator.ModelDigestUtil;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -48,44 +40,22 @@ public class ModelDigestHelper {
     myProviders.add(provider);
   }
 
-  public Map<String, String> getGenerationHashes(@NotNull DefaultSModelDescriptor descriptor) {
-    FileDataSource source = descriptor.getSource();
+  public Map<String, String> getGenerationHashes(@NotNull FileDataSource source) {
     for (DigestProvider p : myProviders) {
       Map<String, String> result = p.getGenerationHashes(source);
       if (result != null) return result;
     }
 
-    return getDigestMap(source.getFile());
+    return null;
   }
 
-  public String getModelHash(@NotNull DefaultSModelDescriptor descriptor) {
-    FileDataSource source = descriptor.getSource();
+  public String getModelHash(@NotNull FileDataSource source) {
     for (DigestProvider p : myProviders) {
       Map<String, String> result = p.getGenerationHashes(source);
       if (result != null) return result.get(GeneratableSModelDescriptor.FILE);
     }
-    return ModelDigestUtil.hash(descriptor.getSource().getFile(), true);
-  }
 
-  public static Map<String, String> getDigestMap(@NotNull IFile mpsFile) {
-    InputStream is = null;
-    try {
-      is = mpsFile.openInputStream();
-      return getDigestMap(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET));
-    } catch (IOException e) {
-      /* ignore */
-    } finally {
-      FileUtil.closeFileSafe(is);
-    }
     return null;
-  }
-
-  public static Map<String, String> getDigestMap(Reader input) {
-    try {
-      return ModelPersistence.calculateHashes(FileUtil.read(input));
-    } catch (ModelReadException e) {
-      return null;
-    }
   }
 
   public interface DigestProvider {
