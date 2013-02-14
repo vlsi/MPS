@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,16 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.cellMenu;
+package jetbrains.mps.openapi.editor.cells;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+/**
+ * User: shatalin
+ * Date: 2/14/13
+ */
+public interface SubstituteInfo {
+  // TODO: check if this method should be in API
+  void invalidateActions();
 
-import java.util.List;
+  void setOriginalText(String text);
 
-public interface NodeSubstituteInfo extends SubstituteInfo {
-  List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching);
+  String getOriginalText();
 
-  List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell);
+  boolean hasExactlyNActions(String pattern, boolean strictMatching, int n);
 }

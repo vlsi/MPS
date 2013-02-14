@@ -37,7 +37,6 @@ import java.util.Iterator;
 import java.util.List;
 
 public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cells.EditorCell {
-
   void paint(Graphics g);
   void paint(Graphics g, ParentSettings parentSettings);
   void paintSelection(Graphics g, Color c, boolean drawBorder);
