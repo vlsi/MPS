@@ -99,6 +99,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticMethod_CallExpression_Editor" file="ExtractStaticMethod_CallExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseMethodParameterInformationQuery" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />

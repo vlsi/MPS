@@ -47,8 +47,6 @@ class EditorSettingsPreferencesPage {
   private JComboBox myFontSizesComboBox;
   private JComboBox myVerticalBoundComboBox;
   private JComboBox myIndentSizeComboBox;
-  private MyColorComponent mySelectionBackgroundColorComponent;
-  private MyColorComponent mySelectionForegroundColorComponent;
   private JCheckBox myAntialiasingCheckBox;
   private JCheckBox myPowerSaveModeCheckBox;
   private JCheckBox myUseBraces;
@@ -139,21 +137,6 @@ class EditorSettingsPreferencesPage {
     Border border = BorderFactory.createEmptyBorder(5, 5, 0, 0);
     colorSettingsPanel.setBorder(border);
     colorSettingsPanel.setLayout(new BoxLayout(colorSettingsPanel, BoxLayout.Y_AXIS));
-    colorSettingsPanel.add(new JLabel("Selection Background:"));
-    mySelectionBackgroundColorComponent = new MyColorComponent(mySettings.getSelectionBackgroundColor()) {
-      protected Color getDefaultColor() {
-        return EditorSettings.getDefaultSelectionBackgroundColor();
-      }
-    };
-    colorSettingsPanel.add(mySelectionBackgroundColorComponent);
-
-    colorSettingsPanel.add(new JLabel("Selection Foreground:"));
-    mySelectionForegroundColorComponent = new MyColorComponent(mySettings.getSelectionForegroundColor()) {
-      protected Color getDefaultColor() {
-        return EditorSettings.getDefaultSelectionForegroundColor();
-      }
-    };
-    colorSettingsPanel.add(mySelectionForegroundColorComponent);
 
     colorSettingsPanel.add(new JLabel(" "));
     colorSettingsPanel.add(new JLabel("Caret Blinking Rate : "));
@@ -278,9 +261,6 @@ class EditorSettingsPreferencesPage {
           mySettings.getState().setLineSpacing(1.0);
         }
 
-        mySettings.getState().setSelectionBackground(mySelectionBackgroundColorComponent.getColor().getRGB());
-        mySettings.getState().setSelectionForeground(mySelectionForegroundColorComponent.getColor().getRGB());
-
         mySettings.getState().setShow( myTabPerAspect.isSelected() ||myTabPerNode.isSelected() || myAllTabs.isSelected());
         mySettings.getState().setShowPlain(myTabPerNode.isSelected() || myAllTabs.isSelected());
         mySettings.getState().setShowGrayed(myAllTabs.isSelected());
@@ -319,13 +299,11 @@ class EditorSettingsPreferencesPage {
     boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals("" + mySettings.getState().getFontSize());
     boolean sameFontFamily = myFontsComboBox.getSelectedItem().equals("" + mySettings.getState().getFontFamily());
     boolean sameLineSpacing = myLineSpacingField.getText().equals("" + mySettings.getState().getLineSpacing());
-    boolean sameBgColor = mySelectionBackgroundColorComponent.getColor().equals(EditorSettings.getDefaultSelectionBackgroundColor());
-    boolean sameFgColor = mySelectionForegroundColorComponent.getColor().equals(EditorSettings.getDefaultSelectionForegroundColor());
     boolean sameBlinkingRate = myBlinkingRateSlider.getValue() == (int) (SLIDER_RATIO / (long) CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis());
     boolean sameTabs = myFirstSelection.isSelected();
 
     return !(sameTextWidth && sameIndentSize && sameAntialiasing && sameUseBraces && samePowerSaveMode
-      && sameFontSize && sameFontFamily && sameLineSpacing && sameBgColor && sameFgColor && sameBlinkingRate && sameTabs);
+      && sameFontSize && sameFontFamily && sameLineSpacing && sameBlinkingRate && sameTabs);
   }
 
   public void reset() {
@@ -344,10 +322,6 @@ class EditorSettingsPreferencesPage {
     myFontsComboBox.setSelectedItem("" + mySettings.getState().getFontFamily());
 
     myLineSpacingField.setText("" + mySettings.getState().getLineSpacing());
-
-    mySelectionBackgroundColorComponent.setColor(EditorSettings.getDefaultSelectionBackgroundColor());
-
-    mySelectionForegroundColorComponent.setColor(EditorSettings.getDefaultSelectionForegroundColor());
 
     long value = CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis();
     int intMin = (SLIDER_RATIO / CaretBlinker.MAX_BLINKING_PERIOD);
@@ -369,91 +343,6 @@ class EditorSettingsPreferencesPage {
 
   public void dispose() {
     myTimer.stop();
-  }
-
-  private abstract static class MyColorComponent extends JPanel {
-    private JTextField myRedTextField = new JTextField(3);
-    private JTextField myGreenTextField = new JTextField(3);
-    private JTextField myBlueTextField = new JTextField(3);
-    private JTextField myAlphaTextField = new JTextField(3);
-
-    private JButton myResetButton = new JButton(new AbstractAction("Reset") {
-      public void actionPerformed(ActionEvent e) {
-        setColor(getDefaultColor());
-      }
-    });
-
-    private JButton myChooseButton = new JButton(new AbstractAction("Choose") {
-      public void actionPerformed(ActionEvent e) {
-        chooseColor();
-      }
-    });
-
-    private JLabel myLabel = new JLabel("Sample Text") {
-      public void paint(Graphics g) {
-        super.paint(g);
-        g.setColor(getColor());
-        g.fillRect(0, 0, getWidth(), getHeight());
-      }
-    };
-
-    MyColorComponent(Color c) {
-      prepareColorPartField(myRedTextField);
-      prepareColorPartField(myBlueTextField);
-      prepareColorPartField(myAlphaTextField);
-      prepareColorPartField(myGreenTextField);
-      setColor(c);
-      myAlphaTextField.setText(c.getAlpha() + "");
-      myLabel.setSize(40, 20);
-      myLabel.setBackground(Color.white);
-      setLayout(new FlowLayout(FlowLayout.LEFT));
-      add(myLabel);
-      add(myRedTextField);
-      add(myGreenTextField);
-      add(myBlueTextField);
-      add(myAlphaTextField);
-      add(myChooseButton);
-      add(myResetButton);
-    }
-
-    protected abstract Color getDefaultColor();
-
-    private void prepareColorPartField(JTextField field) {
-      ((AbstractDocument) field.getDocument()).setDocumentFilter(new IntegerValueDocumentFilter() {
-
-        protected boolean isValidText(String text) {
-          if (!(super.isValidText(text))) return false;
-          int i = Integer.parseInt(text);
-          return 0 <= i && i <= 255;
-        }
-
-        protected void textChanged() {
-          myLabel.repaint();
-        }
-      });
-    }
-
-    private void setColor(Color c) {
-      myRedTextField.setText(c.getRed() + "");
-      myGreenTextField.setText(c.getGreen() + "");
-      myBlueTextField.setText(c.getBlue() + "");
-    }
-
-    public Color getColor() {
-      int r = Integer.parseInt(myRedTextField.getText());
-      int g = Integer.parseInt(myGreenTextField.getText());
-      int b = Integer.parseInt(myBlueTextField.getText());
-      int a = Integer.parseInt(myAlphaTextField.getText());
-      return new Color(r, g, b, a);
-    }
-
-    private void chooseColor() {
-      Color c = JColorChooser.showDialog(this, "Choose color", getColor());
-      if (c != null) {
-        setColor(c);
-      }
-      myLabel.repaint();
-    }
   }
 
   private class EditorCell_Demo extends EditorCell_Constant {

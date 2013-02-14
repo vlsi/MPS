@@ -131,10 +131,12 @@ public abstract class CompletionTextField extends JTextField {
   public void setHideCompletionOnClick(boolean hide) {
     if (hide) {
       addMouseListener(myMouseListener);
-      getParent().addMouseListener(myMouseListener);
+      if(getParent() != null)
+        getParent().addMouseListener(myMouseListener);
     } else {
       removeMouseListener(myMouseListener);
-      getParent().removeMouseListener(myMouseListener);
+      if(getParent() != null)
+        getParent().removeMouseListener(myMouseListener);
     }
   }
 
@@ -178,12 +180,6 @@ public abstract class CompletionTextField extends JTextField {
   }
 
   private void updateCompletion() {
-    if (isValid()) {
-      setForeground(Color.BLACK);
-    } else {
-      setForeground(Color.RED);
-    }
-
     if (!isShowing()) {
       return;
     }

@@ -22,6 +22,8 @@ public class MPSColors extends Color {
     super(0);
   }
 
+  // COLORS: Remove hardcoded colors
+
   public static final Color LIGHT_BLUE = new Color(162, 184, 208);
 
   public static final Color DARK_BLUE = new Color(0, 0, 128);

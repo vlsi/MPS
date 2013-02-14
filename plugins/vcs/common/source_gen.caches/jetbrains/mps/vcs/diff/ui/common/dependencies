@@ -56,7 +56,9 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.util.EnumMap" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
@@ -239,7 +241,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator" file="DiffEditorSeparator.java">
-    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.Point" />

@@ -173,6 +173,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     if (myFoldedCell == null) {
       EditorCell_Constant foldedCell = new EditorCell_Constant(getContext(), getSNode(), FOLDED_TEXT);
       Style style = foldedCell.getStyle();
+      // COLORS: Remove hardcoded colors & font
       style.set(StyleAttributes.FONT_STYLE, Font.BOLD);
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, Color.lightGray);
       style.set(StyleAttributes.TEXT_COLOR, Color.darkGray);
@@ -312,6 +313,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     setBracesEnabled(true);
     myOpeningBrace.setEnabled(true);
     myClosingBrace.setEnabled(true);
+    // COLORS: Remove hardcoded color
     getEditor().leftHighlightCell(this, new Color(80, 0, 120));
   }
 
@@ -924,6 +926,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       String text = getBraceText();
 
       Style style = new StyleImpl();
+      // COLORS: Remove hardcoded color & font
       style.set(StyleAttributes.TEXT_COLOR, Color.BLUE);
       style.set(StyleAttributes.FONT_STYLE, Font.BOLD);
       style.set(StyleAttributes.PADDING_LEFT, new Padding(0.0));

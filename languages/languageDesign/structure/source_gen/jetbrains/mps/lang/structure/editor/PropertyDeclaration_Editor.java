@@ -27,8 +27,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IScope;
 
@@ -146,8 +146,8 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("TransactionalProperty_lnae77_a0");
       Style style = new StyleImpl();
+      BaseLanguageStyle_StyleSheet.applyField(style, editorCell);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<no name>");
       editorCell.setCommitInCommand(false);

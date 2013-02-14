@@ -21,6 +21,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
@@ -30,10 +32,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BracesHighlighter {
+  // COLORS: Remove hardcoded colors
   private static final Color BRACES_LEFT_HIGHTLIGHT_COLOR = new Color(107, 142, 178);
-  private static final Color BRACES_HIGHTLIGHT_COLOR = new Color(0x99CCFF);
+  private static Style ourMatchedBraceAttributes;
+  private static Style ourBraceAttributes;
 
-  private List<Pair<EditorCell, Color>> myHightLightedCells = new ArrayList<Pair<EditorCell, Color>>();
+  private List<EditorCell> myHightLightedCells = new ArrayList<EditorCell>();
   private EditorComponent myEditorComponent;
   private SelectionListener mySelectionListener = new SelectionListener() {
     @Override
@@ -77,7 +81,7 @@ public class BracesHighlighter {
           }
         }
       }
-    }     
+    }
     if (cellToSelect != null) {
       selectBraces(cellToSelect);
     }
@@ -96,9 +100,12 @@ public class BracesHighlighter {
 
   private void clearBracesSelection() {
     if (!myHightLightedCells.isEmpty()) {
-      for (Pair<EditorCell, Color> pair: myHightLightedCells) {
-        pair.o1.getStyle().set(StyleAttributes.TEXT_BACKGROUND_COLOR, pair.o2);
-        myEditorComponent.leftUnhighlightCell(pair.o1);
+      for (EditorCell editorCell: myHightLightedCells) {
+        //TODO: editorCell.getStyle().putAll(getBracesAttributes());
+        editorCell.getStyle().set(StyleAttributes.TEXT_COLOR, getBracesAttributes().get(StyleAttributes.TEXT_COLOR));
+        editorCell.getStyle().set(StyleAttributes.TEXT_BACKGROUND_COLOR, getBracesAttributes().get(StyleAttributes.TEXT_BACKGROUND_COLOR));
+        editorCell.getStyle().set(StyleAttributes.FONT_STYLE, getBracesAttributes().get(StyleAttributes.FONT_STYLE));
+        myEditorComponent.leftUnhighlightCell(editorCell);
       }
     }
     myHightLightedCells.clear();
@@ -127,8 +134,22 @@ public class BracesHighlighter {
   }
 
   private void hightlightCell(EditorCell editorCell) {
-    myHightLightedCells.add(new Pair(editorCell, editorCell.getStyle().get(StyleAttributes.TEXT_BACKGROUND_COLOR)));
-    editorCell.getStyle().set(StyleAttributes.TEXT_BACKGROUND_COLOR, BRACES_HIGHTLIGHT_COLOR);
+    myHightLightedCells.add(editorCell);
+    //TODO: editorCell.getStyle().putAll(getMatchedBraceAttributes());
+    editorCell.getStyle().set(StyleAttributes.TEXT_COLOR, getMatchedBraceAttributes().get(StyleAttributes.TEXT_COLOR));
+    editorCell.getStyle().set(StyleAttributes.TEXT_BACKGROUND_COLOR, getMatchedBraceAttributes().get(StyleAttributes.TEXT_BACKGROUND_COLOR));
+    editorCell.getStyle().set(StyleAttributes.FONT_STYLE, getMatchedBraceAttributes().get(StyleAttributes.FONT_STYLE));
   }
 
+
+  private static Style getMatchedBraceAttributes() {
+    if(ourMatchedBraceAttributes == null)
+      ourMatchedBraceAttributes = StyleRegistry.getInstance().getStyle("MATCHED_BRACE_ATTRIBUTES");
+    return ourMatchedBraceAttributes;
+  }
+  private static Style getBracesAttributes() {
+    if(ourBraceAttributes == null)
+      ourBraceAttributes = StyleRegistry.getInstance().getStyle("BRACES");
+    return ourBraceAttributes;
+  }
 }
