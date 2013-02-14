@@ -13,14 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 //module context without project
 public class ModuleOperationContext extends StandaloneMPSContext {
@@ -28,9 +29,9 @@ public class ModuleOperationContext extends StandaloneMPSContext {
 
   //we need to store module reference this way because generator are recreated on every reload
   //and if we store generator reference here it will be stale
-  private ModuleReference myModuleReference;
+  private SModuleReference myModuleReference;
 
-  public ModuleOperationContext(@NotNull final IModule module) {
+  public ModuleOperationContext(@NotNull final SModule module) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myModuleReference = module.getModuleReference();
@@ -44,7 +45,7 @@ public class ModuleOperationContext extends StandaloneMPSContext {
   }
 
   public IModule getModule() {
-    return MPSModuleRepository.getInstance().getModule(myModuleReference);
+    return ModuleRepositoryFacade.getInstance().getModule(myModuleReference);
   }
 
   public boolean isValid() {

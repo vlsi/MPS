@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,23 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator;
+package jetbrains.mps.extapi.model;
 
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 
-import java.util.Map;
-
 /**
- * Evgeny Gryaznov, Oct 7, 2010
+ * evgeny, 2/14/13
  */
-public interface IncrementalGenerationStrategy {
-  Map<String, String> getModelHashes(SModel sm, IOperationContext operationContext);
-
-  GenerationCacheContainer getContainer();
-
-  GenerationDependencies getDependencies(SModel sm);
-
-  boolean isIncrementalEnabled();
+public interface EditableSModel extends SModel {
 }

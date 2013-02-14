@@ -1,6 +1,7 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
@@ -8,7 +9,6 @@ import jetbrains.mps.persistence.binary.*;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.io.ModelOutputStream;
 import jetbrains.mps.vfs.IFile;
@@ -73,7 +73,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     try {
       BinarySModel model = BinaryPersistence.readModel(mpsFile.openInputStream());
       Map<String, String> result = getDigestMap(model);
-      result.put(GeneratableSModelDescriptor.FILE, ModelDigestUtil.hashBytes(mpsFile.openInputStream()));
+      result.put(GeneratableSModel.FILE, ModelDigestUtil.hashBytes(mpsFile.openInputStream()));
       return result;
     } catch (ModelReadException ignored) {
       /* ignore */
@@ -87,7 +87,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     try {
       BinarySModel model = BinaryPersistence.readModel(new ByteArrayInputStream(input));
       Map<String, String> result = getDigestMap(model);
-      result.put(GeneratableSModelDescriptor.FILE, ModelDigestUtil.hashBytes(input));
+      result.put(GeneratableSModel.FILE, ModelDigestUtil.hashBytes(input));
       return result;
 
     } catch (ModelReadException ignored) {
@@ -123,7 +123,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
       assert false;
       /* should never happen */
     }
-    result.put(GeneratableSModelDescriptor.HEADER, os.getResult());
+    result.put(GeneratableSModel.HEADER, os.getResult());
     return result;
   }
 }

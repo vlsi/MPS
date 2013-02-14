@@ -18,9 +18,9 @@ package jetbrains.mps.ide.generator.index;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
 import com.intellij.util.indexing.ID;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.generator.ModelDigestUtil;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -61,6 +61,6 @@ public class LanguageModelDigestIndex extends BaseModelDigestIndex {
       fileHash = ModelDigestUtil.hashText(new InputStreamReader(new ByteArrayInputStream(content), FileUtil.DEFAULT_CHARSET));
     } catch (IOException ignored) {
     }
-    return fileHash == null ? null : Collections.singletonMap(GeneratableSModelDescriptor.FILE, fileHash);
+    return fileHash == null ? null : Collections.singletonMap(GeneratableSModel.FILE, fileHash);
   }
 }

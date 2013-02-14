@@ -20,7 +20,7 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vfs.VirtualFileAdapter;
 import com.intellij.openapi.vfs.VirtualFileMoveEvent;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class ModelCacheReloader implements ApplicationComponent {
   private VirtualFileManager myVirtualFileManager;
@@ -83,7 +83,7 @@ public class ModelCacheReloader implements ApplicationComponent {
     }
   }
 
-  private static SModelDescriptor check_hmm83z_a1a7(BaseModelCache checkedDotOperand, IFile file) {
+  private static SModel check_hmm83z_a1a7(BaseModelCache checkedDotOperand, IFile file) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.invalidateCacheForFile(file);
     }

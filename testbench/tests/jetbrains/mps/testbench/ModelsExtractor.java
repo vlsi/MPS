@@ -15,23 +15,23 @@
  */
 package jetbrains.mps.testbench;
 
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class ModelsExtractor {
-  private Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
-  private final IModule module;
+  private Set<SModel> models = new HashSet<SModel>();
+  private final SModule module;
   private final boolean myIncludeDoNotGenerate;
 
-  public ModelsExtractor(IModule module, boolean includeDoNotGenerate) {
+  public ModelsExtractor(SModule module, boolean includeDoNotGenerate) {
     this.module = module;
     this.myIncludeDoNotGenerate = includeDoNotGenerate;
     extractModels(module);
@@ -46,21 +46,20 @@ public class ModelsExtractor {
     return this;
   }
 
-  public Collection<SModelDescriptor> getModels() {
+  public Collection<SModel> getModels() {
     return models;
   }
 
-  private void extractModels(IModule m) {
-    List<SModelDescriptor> ownedModels = m.getOwnModelDescriptors();
-    for (SModelDescriptor d : ownedModels) {
+  private void extractModels(SModule m) {
+    for (SModel d : m.getModels()) {
       if (includeModel(d)) {
         models.add(d);
       }
     }
   }
 
-  private boolean includeModel(SModelDescriptor modelDescriptor) {
-    return SModelStereotype.isUserModel(modelDescriptor) &&
-      (myIncludeDoNotGenerate || modelDescriptor.isGeneratable());
+  private boolean includeModel(SModel model) {
+    return SModelStereotype.isUserModel(model) &&
+      (myIncludeDoNotGenerate || model instanceof GeneratableSModel && ((GeneratableSModel) model).isGeneratable());
   }
 }
