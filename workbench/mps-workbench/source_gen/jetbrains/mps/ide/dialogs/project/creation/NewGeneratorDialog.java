@@ -11,9 +11,9 @@ import jetbrains.mps.smodel.Generator;
 import com.intellij.openapi.project.Project;
 import java.awt.HeadlessException;
 import java.awt.GridLayout;
+import java.awt.Dimension;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
-import java.awt.Dimension;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -55,6 +55,7 @@ public class NewGeneratorDialog extends DialogWrapper {
     setTitle("New Generator");
     mySourceLanguage = sourceLanguage;
     myContenetPane = new JPanel(new GridLayout(4, 1));
+    myContenetPane.setPreferredSize(new Dimension(600, 100));
     initContentPane();
 
     init();
@@ -62,7 +63,6 @@ public class NewGeneratorDialog extends DialogWrapper {
 
   @Nullable
   protected JComponent createCenterPanel() {
-    getWindow().setMinimumSize(new Dimension(600, 200));
     return myContenetPane;
   }
 

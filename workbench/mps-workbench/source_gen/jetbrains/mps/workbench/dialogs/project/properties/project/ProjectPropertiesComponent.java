@@ -60,7 +60,6 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
 
 
   private Object getGridConstraints(int row, boolean fill) {
-    // TODO: resolve problem with com.intellij.uiDesigner.core.GridLayoutManager & com.intellij.uiDesigner.core.GridConstraints in stubs 
     if (fill) {
       return new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null);
     }

@@ -12,6 +12,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
+import java.awt.Dimension;
 import javax.swing.tree.TreeSelectionModel;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
@@ -22,7 +23,6 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
-import java.awt.Dimension;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.ModuleContext;
@@ -56,6 +56,7 @@ public class MappingDialog extends DialogWrapper {
     myLanguage = language;
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myTree);
     myMainComponent.add(scrollPane, BorderLayout.CENTER);
+    myMainComponent.setPreferredSize(new Dimension(500, 400));
     myTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
     myTree.addTreeSelectionListener(new TreeSelectionListener() {
       public void valueChanged(TreeSelectionEvent e) {
@@ -91,7 +92,6 @@ public class MappingDialog extends DialogWrapper {
 
   @Nullable
   protected JComponent createCenterPanel() {
-    getWindow().setMinimumSize(new Dimension(500, 400));
     return myMainComponent;
   }
 

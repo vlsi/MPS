@@ -6856,8 +6856,8 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1186412603348">
-        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no query&gt;" />
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="3" />
+        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no query&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.1186403803051" />
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="1186412621877">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1186412621878">
@@ -10375,8 +10375,8 @@
         <property name="text" nameId="tpc2.1073389577007" value="apply condition:" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="8730965736661206334">
-        <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
         <property name="noTargetText" nameId="tpc2.1139852716018" value="allways" />
+        <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
         <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpc2.8730965736661186051" />
       </node>
