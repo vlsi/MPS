@@ -32,7 +32,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
@@ -95,7 +94,7 @@ public abstract class BaseModelCache<T> implements CoreComponent {
   }
 
   @Nullable
-  public T lookup(@NotNull IFile cacheFile) {
+  public final T lookup(@NotNull IFile cacheFile) {
     synchronized (myCache) {
       if (!cacheFile.exists()) {
         return null;
@@ -135,26 +134,6 @@ public abstract class BaseModelCache<T> implements CoreComponent {
     }
   }
 
-  public List<IFile> getCachesDirs(SModule m) {
-    List<IFile> result = new ArrayList<IFile>();
-
-    if (((IModule) m).getGeneratorOutputPath() != null) {
-      IFile file = getCachesDirInternal(m, ((IModule) m).getGeneratorOutputPath());
-      if (file != null) {
-        result.add(file);
-      }
-    }
-
-    if (((IModule) m).getTestsGeneratorOutputPath() != null) {
-      IFile file = getCachesDirInternal(m, ((IModule) m).getTestsGeneratorOutputPath());
-      if (file != null) {
-        result.add(file);
-      }
-    }
-
-    return result;
-  }
-
   @Nullable
   protected IFile getCachesDirInternal(SModule module, String outputPath) {
     return getCachesDir(module, outputPath);
@@ -183,6 +162,7 @@ public abstract class BaseModelCache<T> implements CoreComponent {
   }
 
   protected class MyCacheGenerator implements CacheGenerator {
+    @Override
     public void generateCache(GenerationStatus status, StreamHandler handler) {
       T cache = BaseModelCache.this.generateCache(status);
       if (cache == null) return;
@@ -203,7 +183,7 @@ public abstract class BaseModelCache<T> implements CoreComponent {
     }
   }
 
-  public void clean(SModel model) {
+  public final void clean(SModel model) {
     synchronized (myCache) {
       myCache.remove(model);
     }

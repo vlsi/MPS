@@ -77,6 +77,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   }
 
   @Nullable
+  @Override
   public DebugInfo get(@NotNull SModel model) {
     //  we do not want to acquire myModelsLock inside of myCache lock, so we get module here 
     //  see MPS-13899 
