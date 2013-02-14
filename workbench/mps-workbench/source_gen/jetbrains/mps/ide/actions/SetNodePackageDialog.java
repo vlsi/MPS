@@ -19,7 +19,6 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
-import java.awt.Dimension;
 
 public class SetNodePackageDialog extends DialogWrapper {
   private boolean myIsCancelled = true;
@@ -27,13 +26,15 @@ public class SetNodePackageDialog extends DialogWrapper {
   private JComboBox myCbPackage;
   private String myPackage;
 
-  public SetNodePackageDialog(Project project, String title, List<String> existingPackages) {
+  public SetNodePackageDialog(Project project, List<String> existingPackages) {
     super(project);
-    setTitle(title);
+    setTitle("Set Virtual Package");
+    setOKButtonText("&OK");
+    setCancelButtonText("Ca&ncel");
     setModal(true);
     myMainPanel = new JPanel();
     myMainPanel.setLayout(new GridBagLayout());
-    GridBagConstraints c = new GridBagConstraints(0, 0, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
+    GridBagConstraints c = new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, new Insets(0, 5, 5, 5), 0, 0);
     myMainPanel.add(new JLabel("Enter virtual package name:"), c);
     myCbPackage = new JComboBox();
     myCbPackage.setEditable(true);
@@ -52,16 +53,18 @@ public class SetNodePackageDialog extends DialogWrapper {
     });
     c.gridy = 1;
     myMainPanel.add(myCbPackage, c);
-    c.gridy = 2;
-    c.weighty = 1.0;
-    myMainPanel.add(new JPanel(), c);
 
     init();
   }
 
   @Nullable
+  @Override
+  public JComponent getPreferredFocusedComponent() {
+    return myCbPackage;
+  }
+
+  @Nullable
   protected JComponent createCenterPanel() {
-    getWindow().setMinimumSize(new Dimension(250, 150));
     return myMainPanel;
   }
 

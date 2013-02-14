@@ -109,7 +109,7 @@ public class SetNodePackage_Action extends BaseAction {
           oldPackage.value = SPropertyOperations.getString(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first(), "virtualPackage");
         }
       });
-      final SetNodePackageDialog dialog = new SetNodePackageDialog(((Project) MapSequence.fromMap(_params).get("project")), "Set Virtual Package", packages.value);
+      final SetNodePackageDialog dialog = new SetNodePackageDialog(((Project) MapSequence.fromMap(_params).get("project")), packages.value);
       dialog.setPackage(oldPackage.value);
       dialog.show();
       if (dialog.isCancelled()) {
