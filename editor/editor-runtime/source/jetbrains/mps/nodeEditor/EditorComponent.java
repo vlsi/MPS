@@ -98,10 +98,10 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.openapi.editor.cells.*;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.ActionHandler;
-import jetbrains.mps.openapi.editor.cells.CellAction;
-import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -491,8 +491,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.COMPLETE, new NodeEditorActions.Complete());
     myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.COMPLETE_SMART, new CompleteSmart());
 
-    myActionMap.put(CellActionType.SHOW_MESSAGE, new ShowMessage());
-    myActionMap.put(CellActionType.ESCAPE, new ClearSelection());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.SHOW_MESSAGE, new ShowMessage());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.CLEAR_SELECTION, new ClearSelection());
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {

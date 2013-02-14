@@ -13,7 +13,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.selection.Selection;
-import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class Escape_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -89,7 +89,7 @@ public class Escape_Action extends BaseAction {
 
   private static void check_h8krww_a0a0e0a(Selection checkedDotOperand) {
     if (null != checkedDotOperand) {
-      checkedDotOperand.executeAction(CellActionType.ESCAPE);
+      checkedDotOperand.executeAction(CellActionType.CLEAR_SELECTION);
     }
 
   }
