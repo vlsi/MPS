@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel.persistence.def.v4;
 
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.XmlFastScanner;
@@ -29,12 +29,12 @@ public class HashProvider4 extends IHashProvider {
   private static final Logger LOG = Logger.getLogger(HashProvider4.class);
 
   @Override
-  public String getHash(String content){
+  public String getHash(String content) {
     return ModelDigestUtil.hashText(content);
   }
 
   @Override
-  public Map<String, String> getRootHashes(String content){
+  public Map<String, String> getRootHashes(String content) {
     Map<String, String> result = new HashMap<String, String>();
     extractRootHashes(content, result);
     return result;
@@ -54,7 +54,7 @@ public class HashProvider4 extends IHashProvider {
             rootStart = scanner.getTokenOffset();
             rootId = extractId(scanner.token());
             if (rootId != null && isEmpty) {
-              rootHashes.put(GeneratableSModelDescriptor.HEADER, ModelDigestUtil.hashText(scanner.getText(0, rootStart)));
+              rootHashes.put(GeneratableSModel.HEADER, ModelDigestUtil.hashText(scanner.getText(0, rootStart)));
               isEmpty = false;
             }
           }
@@ -85,7 +85,7 @@ public class HashProvider4 extends IHashProvider {
       LOG.error("xml: bad data");
     }
     if (isEmpty) {
-      rootHashes.put(GeneratableSModelDescriptor.HEADER, ModelDigestUtil.hashText(content));
+      rootHashes.put(GeneratableSModel.HEADER, ModelDigestUtil.hashText(content));
     }
   }
 }

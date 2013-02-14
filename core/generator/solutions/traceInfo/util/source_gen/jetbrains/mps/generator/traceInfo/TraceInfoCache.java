@@ -12,8 +12,8 @@ import jetbrains.mps.cleanup.CleanupListener;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.GenerationStatus;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.net.URL;
 import jetbrains.mps.vfs.IFile;
 import java.io.InputStream;
@@ -22,6 +22,7 @@ import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 import java.net.MalformedURLException;
@@ -76,32 +77,33 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   }
 
   @Nullable
-  public DebugInfo get(@NotNull SModelDescriptor modelDescriptor) {
+  @Override
+  public DebugInfo get(@NotNull SModel model) {
     //  we do not want to acquire myModelsLock inside of myCache lock, so we get module here 
     //  see MPS-13899 
-    final IModule module = modelDescriptor.getModule();
+    final SModule module = model.getModule();
     synchronized (myCache) {
-      if (myCache.containsKey(modelDescriptor)) {
-        return myCache.get(modelDescriptor);
+      if (myCache.containsKey(model)) {
+        return myCache.get(model);
       }
-      DebugInfo cache = readCache(modelDescriptor, module);
-      myCache.put(modelDescriptor, cache);
+      DebugInfo cache = readCache(model, module);
+      myCache.put(model, cache);
       return cache;
     }
   }
 
   @Override
-  protected DebugInfo readCache(SModelDescriptor sm) {
+  protected DebugInfo readCache(SModel sm) {
     LOG.warning("Should not use readCache method since it may cause a deadlock.\nSee MPS-13899", new RuntimeException());
     return readCache(sm, sm.getModule());
   }
 
-  protected DebugInfo readCache(SModelDescriptor sm, IModule module) {
+  protected DebugInfo readCache(SModel sm, SModule module) {
     return loadCacheFromUrl(getCacheUrl(sm, module), sm);
   }
 
   @Nullable
-  private DebugInfo loadCacheFromUrl(@Nullable URL url, @NotNull SModelDescriptor sm) {
+  private DebugInfo loadCacheFromUrl(@Nullable URL url, @NotNull SModel sm) {
     if (url == null) {
       return null;
     }
@@ -144,7 +146,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   }
 
   @Nullable
-  private URL getCacheUrl(@NotNull SModelDescriptor sm, IModule module) {
+  private URL getCacheUrl(@NotNull SModel sm, SModule module) {
     String resourceName = traceInfoResourceName(sm);
     for (TraceInfoCache.TraceInfoResourceProvider provider : myProviders) {
       URL url = provider.getResource(module, resourceName);
@@ -157,7 +159,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   @Override
   @Nullable
-  protected IFile getCacheFile(@NotNull SModelDescriptor modelDescriptor) {
+  protected IFile getCacheFile(@NotNull SModel modelDescriptor) {
     URL cacheUrl = getCacheUrl(modelDescriptor, modelDescriptor.getModule());
     if (cacheUrl == null) {
       return null;
@@ -165,28 +167,33 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     return TraceInfoCache.getFileByURL(cacheUrl);
   }
 
-  private String traceInfoResourceName(SModelDescriptor sm) {
-    return sm.getLongName().replace(".", "/") + "/" + TRACE_FILE_NAME;
+  private String traceInfoResourceName(SModel sm) {
+    String longName = sm.getModelName();
+    int atIndex = longName.indexOf('@');
+    if (atIndex > 0) {
+      longName = longName.substring(0, atIndex);
+    }
+    return longName.replace(".", "/") + "/" + TRACE_FILE_NAME;
   }
 
   @Nullable
-  public DebugInfo getLastGeneratedDebugInfo(@NotNull SModelDescriptor descriptor) {
+  public DebugInfo getLastGeneratedDebugInfo(@NotNull SModel model) {
     String generatorOutputPath;
-    if (neq_xlaj1j_a0b0s(descriptor.getStereotype(), SModelStereotype.TESTS)) {
-      generatorOutputPath = descriptor.getModule().getGeneratorOutputPath();
+    if (neq_xlaj1j_a0b0s(SModelStereotype.getStereotype(model), SModelStereotype.TESTS)) {
+      generatorOutputPath = ((IModule) model.getModule()).getGeneratorOutputPath();
     } else {
-      generatorOutputPath = descriptor.getModule().getTestsGeneratorOutputPath();
+      generatorOutputPath = ((IModule) model.getModule()).getTestsGeneratorOutputPath();
     }
     if ((generatorOutputPath == null || generatorOutputPath.length() == 0)) {
       return null;
     }
-    IFile traceInfoFile = FileSystem.getInstance().getFileByPath(generatorOutputPath).getDescendant(traceInfoResourceName(descriptor));
+    IFile traceInfoFile = FileSystem.getInstance().getFileByPath(generatorOutputPath).getDescendant(traceInfoResourceName(model));
     if (!(traceInfoFile.exists())) {
       return null;
     }
     try {
       URL url = new File(traceInfoFile.getPath().replace("/", File.separator)).toURI().toURL();
-      return loadCacheFromUrl(url, descriptor);
+      return loadCacheFromUrl(url, model);
     } catch (MalformedURLException e) {
       return null;
     }
@@ -236,7 +243,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   }
 
   public static interface TraceInfoResourceProvider {
-    public URL getResource(IModule module, String resourceName);
+    public URL getResource(SModule module, String resourceName);
   }
 
   private static Logger LOG = Logger.getLogger(TraceInfoCache.class);

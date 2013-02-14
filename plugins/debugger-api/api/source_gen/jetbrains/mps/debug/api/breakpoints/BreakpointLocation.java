@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -42,7 +42,7 @@ public class BreakpointLocation {
 
   @Nullable
   public TraceablePositionInfo getTargetCodePosition() {
-    SModelDescriptor model = ((SNodePointer) myNodePointer).getModel();
+    SModel model = ((SNodePointer) myNodePointer).getModel();
     if (model == null) {
       return null;
     }

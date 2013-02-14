@@ -83,6 +83,15 @@ public class EditorCellModel_Behavior {
     }
   }
 
+  public static String call_getStyle_7730231143366568266(SNode thisNode) {
+    // TODO: apply seted style to cell in editor 
+    SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem");
+    if (item == null) {
+      return null;
+    }
+    return SPropertyOperations.getString(SLinkOperations.getTarget(item, "key", false), "value");
+  }
+
   public static Color call_getForegroundColor_1220960215403(SNode thisNode) {
     SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem");
     return EditorCellModel_Behavior.call_getColor_1225468825117(thisNode, item);

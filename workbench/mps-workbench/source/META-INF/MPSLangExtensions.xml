@@ -19,6 +19,8 @@
   <exportable serviceInterface="com.intellij.codeEditor.printing.PrintSettings"/>
   <projectService serviceInterface="com.intellij.psi.search.PsiSearchHelper"
                   serviceImplementation="jetbrains.mps.EmptyPsiSearchHelper"/>
+  <projectService serviceInterface="com.intellij.psi.search.PsiTodoSearchHelper"
+                  serviceImplementation="jetbrains.mps.EmptyPsiTodoSearchHelper"/>
 
   <applicationService serviceInterface="com.intellij.psi.statistics.StatisticsManager"
                       serviceImplementation="com.intellij.psi.statistics.impl.StatisticsManagerImpl"/>
@@ -122,9 +124,9 @@
   <editorCustomization implementation="com.intellij.ui.SoftWrapsEditorCustomization"/>
   <editorCustomization implementation="com.intellij.ui.HorizontalScrollBarEditorCustomization"/>
   <editorCustomization implementation="com.intellij.ui.AdditionalPageAtBottomEditorCustomization"/>
-  <editorCustomization implementation="com.intellij.ui.OneLineEditorCustomization"/>
-  &lt;!&ndash; Colors & Fonts&ndash;&gt;
-  <editorOptionsProvider instance="com.intellij.application.options.colors.ColorAndFontOptions" id="reference.settingsdialog.IDE.editor.colors"/>-->
+  <editorCustomization implementation="com.intellij.ui.OneLineEditorCustomization"/>-->
+  <!-- Colors & Fonts-->
+  <!--<editorOptionsProvider instance="com.intellij.application.options.colors.ColorAndFontOptions" id="reference.settingsdialog.IDE.editor.colors"/>-->
   <editorOptionsProvider instance="com.intellij.application.options.editor.EditorTabsConfigurable" id="editor.preferences.tabs" displayName="Editor Tabs"/>
   <!--<editorOptionsProvider instance="com.intellij.application.options.editor.CodeFoldingConfigurable" id="editor.preferences.folding" key="group.code.folding" bundle="messages.ApplicationBundle"/>
   <editorOptionsProvider instance="com.intellij.application.options.CodeCompletionOptions" id="editor.preferences.completion" key="title.code.completion" bundle="messages.ApplicationBundle"/>

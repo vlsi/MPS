@@ -17,7 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.Map;
 
@@ -25,11 +25,11 @@ import java.util.Map;
  * Evgeny Gryaznov, Oct 7, 2010
  */
 public interface IncrementalGenerationStrategy {
-  Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext);
+  Map<String, String> getModelHashes(SModel sm, IOperationContext operationContext);
 
   GenerationCacheContainer getContainer();
 
-  GenerationDependencies getDependencies(SModelDescriptor sm);
+  GenerationDependencies getDependencies(SModel sm);
 
   boolean isIncrementalEnabled();
 }

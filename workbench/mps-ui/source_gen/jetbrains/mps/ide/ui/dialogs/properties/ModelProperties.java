@@ -7,10 +7,10 @@ import jetbrains.mps.smodel.SModelReference;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
+import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
@@ -35,7 +35,6 @@ public class ModelProperties {
   private List<ModuleReference> myUsedDevKits = new ArrayList<ModuleReference>();
   private List<ModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<ModuleReference>();
   private SModelDescriptor myModelDescriptor;
-  private IOperationContext myContext;
   private boolean myDoNotGenerate;
   private boolean myGenerateIntoModelFolder;
 
@@ -46,21 +45,20 @@ public class ModelProperties {
     myUsedLanguages.addAll(model.importedLanguages());
     myUsedDevKits.addAll(model.importedDevkits());
     myLanguagesEngagedOnGeneration.addAll(model.engagedOnGenerationLanguages());
-    myDoNotGenerate = myModelDescriptor instanceof GeneratableSModelDescriptor && ((GeneratableSModelDescriptor) myModelDescriptor).isDoNotGenerate();
-    myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModelDescriptor && ((GeneratableSModelDescriptor) myModelDescriptor).isGenerateIntoModelFolder();
+    myDoNotGenerate = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isDoNotGenerate();
+    myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isGenerateIntoModelFolder();
   }
 
   @Deprecated
   public ModelProperties(SModelDescriptor modelDescriptor, IOperationContext context) {
     myModelDescriptor = modelDescriptor;
-    myContext = context;
     SModel model = myModelDescriptor.getSModel();
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
     myUsedLanguages.addAll(model.importedLanguages());
     myUsedDevKits.addAll(model.importedDevkits());
     myLanguagesEngagedOnGeneration.addAll(model.engagedOnGenerationLanguages());
-    myDoNotGenerate = myModelDescriptor instanceof GeneratableSModelDescriptor && ((GeneratableSModelDescriptor) myModelDescriptor).isDoNotGenerate();
-    myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModelDescriptor && ((GeneratableSModelDescriptor) myModelDescriptor).isGenerateIntoModelFolder();
+    myDoNotGenerate = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isDoNotGenerate();
+    myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isGenerateIntoModelFolder();
   }
 
   public SModelDescriptor getModelDescriptor() {
@@ -113,8 +111,8 @@ public class ModelProperties {
         removeUnusedDevKits();
         addNewEngagedOnGenerationLanguages();
         removeUnusedEngagedOnGenerationLanguages();
-        if (myModelDescriptor instanceof GeneratableSModelDescriptor) {
-          GeneratableSModelDescriptor dmd = (GeneratableSModelDescriptor) myModelDescriptor;
+        if (myModelDescriptor instanceof GeneratableSModel) {
+          GeneratableSModel dmd = (GeneratableSModel) myModelDescriptor;
           if (dmd.isDoNotGenerate() != myDoNotGenerate) {
             dmd.setDoNotGenerate(myDoNotGenerate);
           }

@@ -17,6 +17,7 @@ package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.editor.Document;
+import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.MementoPersistence;
@@ -123,10 +124,7 @@ public abstract class BaseNodeEditor implements Editor {
   private class EditorPanel extends JPanel implements DataProvider {
     private EditorPanel() {
       setLayout(new BorderLayout());
-      setBorder(new CompoundBorder(
-        new EmptyBorder(1, 1, 1, 1),
-        new LineBorder(Color.LIGHT_GRAY, 1)
-      ));
+      setBorder(new EmptyBorder(JBInsets.NONE));
     }
 
     @Nullable

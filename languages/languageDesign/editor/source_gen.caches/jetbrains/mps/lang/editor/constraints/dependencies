@@ -296,6 +296,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.ConceptEditorDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.EditorComponentDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.NavigatableReferenceStyleClassItem_Constraints" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.PreDefinedStyleSheetClass_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.RGBColor_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.StyleClassItem_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.StyleSheetClass_Constraints" />
@@ -335,6 +336,15 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.constraints.PreDefinedStyleSheetClass_Constraints" file="PreDefinedStyleSheetClass_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.RGBColor_Constraints" file="RGBColor_Constraints.java">
@@ -393,6 +403,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.StyleSheet_Constraints" file="StyleSheet_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
@@ -400,6 +411,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
 </dependenciesRoot>

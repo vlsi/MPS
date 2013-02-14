@@ -22,7 +22,6 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.persistence.BinaryModelPersistence;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.ByteArrayInputStream;
 import java.util.Map;
 
 /**
@@ -49,11 +48,11 @@ public class BinaryModelDigestIndex extends BaseModelDigestIndex {
 
   @Override
   public int getVersion() {
-    return 2;
+    return 3;
   }
 
   @Override
   protected Map<String, String> calculateDigest(byte[] content) {
-    return BinaryModelPersistence.getDigestMap(new ByteArrayInputStream(content));
+    return BinaryModelPersistence.getDigestMap(content);
   }
 }

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.editor.colors.EditorColorsManager;
+import com.intellij.openapi.editor.colors.TextAttributesKey;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
@@ -73,7 +75,9 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   private void paintDecorations(Graphics g, EditorCell cell) {
     if (cell == null) return;
     if (isWarning()) {
-      cell.paintSelection(g, new Color(246, 235, 188), false);
+      cell.paintSelection(g,
+        EditorColorsManager.getInstance().getGlobalScheme().getAttributes(TextAttributesKey.createTextAttributesKey("WARNING_ATTRIBUTES")).getBackgroundColor(),
+        false);
     } else {
       drawWaveUnderCell(g, getColor(), cell);
     }
