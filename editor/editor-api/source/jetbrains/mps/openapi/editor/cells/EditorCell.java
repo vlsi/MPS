@@ -20,6 +20,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.style.Style;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collection;
+
 /**
  * evgeny, 11/17/11
  */
@@ -127,4 +129,10 @@ public interface EditorCell {
   KeyMap getKeyMap();
 
   void addKeyMap(KeyMap keyMap);
+
+  CellAction getAction(CellActionType type);
+
+  void setAction(CellActionType type, CellAction action);
+
+  Collection<CellActionType> getAvailableActions();
 }

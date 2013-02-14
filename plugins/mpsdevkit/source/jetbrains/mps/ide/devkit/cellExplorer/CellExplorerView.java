@@ -27,16 +27,16 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
@@ -58,8 +58,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * @author Kostik
@@ -137,7 +135,7 @@ public class CellExplorerView extends BaseProjectTool {
     makeAvailable();
     openTool(true);
 
-    EditorComponent cellEditor = cell.getEditor();
+    EditorComponent cellEditor = (EditorComponent) cell.getEditorComponent();
     if (myCurrentEditor != cellEditor) {
       removeListeners();
       myCurrentEditor = cellEditor;
@@ -339,8 +337,7 @@ public class CellExplorerView extends BaseProjectTool {
 
     public CellActionsTreeNode(EditorCell cell, IOperationContext operationContext) {
       super(cell, operationContext);
-      Set<CellActionType> actions = new TreeSet<CellActionType>(cell.getAvailableActions());
-      for (CellActionType action : actions) {
+      for (CellActionType action : cell.getAvailableActions()) {
         add(new TextTreeNode(action + ""));
       }
       setNodeIdentifier("Actions");

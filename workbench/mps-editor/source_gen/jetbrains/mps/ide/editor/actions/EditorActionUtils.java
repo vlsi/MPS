@@ -9,11 +9,12 @@ import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import java.util.Iterator;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -55,6 +56,7 @@ public class EditorActionUtils {
    * Should be executed inside read action
    */
   public static void callInsertAction(@NotNull EditorCell cell) {
+    ActionHandler actionHandler = cell.getEditorComponent().getActionHandler();
     if (cell.isErrorState() && APICellAdapter.validate(cell, false, true)) {
       return;
     }
@@ -68,12 +70,11 @@ public class EditorActionUtils {
         cellWithRole = getSiblingCollectionForInsert(cell, true);
       }
 
-      if (cellWithRole != null && APICellAdapter.executeAction(cellWithRole, CellActionType.INSERT)) {
+      if (cellWithRole != null && actionHandler.executeAction(cellWithRole, CellActionType.INSERT)) {
         return;
       }
     }
-
-    APICellAdapter.executeAction(cell, CellActionType.INSERT);
+    actionHandler.executeAction(cell, CellActionType.INSERT);
   }
 
   public static EditorCell getSiblingCollectionForInsert(@NotNull EditorCell cell, boolean forward) {
@@ -97,6 +98,7 @@ public class EditorActionUtils {
    * Should be executed inside read action
    */
   public static void callInsertBeforeAction(@NotNull EditorCell cell) {
+    ActionHandler actionHandler = cell.getEditorComponent().getActionHandler();
     if (cell.isErrorState() && APICellAdapter.validate(cell, true, true)) {
       return;
     }
@@ -110,16 +112,16 @@ public class EditorActionUtils {
         cellWithRole = getSiblingCollectionForInsert(cell, false);
       }
 
-      if (cellWithRole != null && APICellAdapter.executeAction(cellWithRole, CellActionType.INSERT_BEFORE)) {
+      if (cellWithRole != null && actionHandler.executeAction(cellWithRole, CellActionType.INSERT_BEFORE)) {
         return;
       }
     }
 
-    APICellAdapter.executeAction(cell, CellActionType.INSERT_BEFORE);
+    actionHandler.executeAction(cell, CellActionType.INSERT_BEFORE);
   }
 
   /*package*/ static void runEditorComponentAction(EditorComponent editorComponent, CellActionType actionType) {
-    EditorCellAction action = editorComponent.getComponentAction(CellActionType.UP);
+    CellAction action = editorComponent.getComponentAction(CellActionType.UP);
     EditorContext editorContext = editorComponent.getEditorContext();
     if (action != null && action.canExecute(editorContext)) {
       action.execute(editorContext);

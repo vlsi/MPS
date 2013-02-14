@@ -16,8 +16,8 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -104,7 +104,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
           return EqualUtil.equals(s, getText());
         }
       }, node);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+      editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a0b0a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, false);
@@ -219,7 +219,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
           return EqualUtil.equals(s, getText());
         }
       }, node);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+      editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a0b1a");
       return editorCell;
     }
@@ -407,7 +407,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
         return EqualUtil.equals(s, getText());
       }
     }, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyLeftBracket(style, editorCell);
@@ -428,7 +428,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
         return EqualUtil.equals(s, getText());
       }
     }, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_c0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyRightBracket(style, editorCell);
@@ -450,7 +450,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
         return EqualUtil.equals(s, getText());
       }
     }, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NamedTupleType_Editor.ReplaceWith_NamedTupleType_cellMenu_a0a1a()}));
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a1a");
     return editorCell;

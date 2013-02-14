@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Graphics2D;
 import java.util.Collections;
@@ -165,7 +165,7 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
     if (type == CellActionType.DELETE && suppressDelete()) {
       return;
     }
-    myEditorCell.executeAction(type);
+    getEditorComponent().getActionHandler().executeAction(myEditorCell, type);
   }
 
   protected boolean suppressDelete() {

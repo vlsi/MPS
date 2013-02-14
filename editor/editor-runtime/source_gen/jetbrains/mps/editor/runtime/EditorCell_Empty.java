@@ -15,8 +15,8 @@ import jetbrains.mps.nodeEditor.CellSide;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class EditorCell_Empty extends EditorCell_Basic {
   private boolean myCaretVisible = false;
@@ -112,7 +112,7 @@ public class EditorCell_Empty extends EditorCell_Basic {
   }
 
   private boolean applyLeftTransform(EditorContext editorContext, EditorCell cellForNewNode, String text) {
-    EditorCellAction ltAction = cellForNewNode.getApplicableCellAction(CellActionType.LEFT_TRANSFORM);
+    CellAction ltAction = editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(cellForNewNode, CellActionType.LEFT_TRANSFORM);
     ltAction.execute(editorContext);
     cellForNewNode.getSTHintCell().changeText(text);
     cellForNewNode.getSTHintCell().end();
@@ -120,7 +120,7 @@ public class EditorCell_Empty extends EditorCell_Basic {
   }
 
   private boolean applyRightTransform(EditorContext editorContext, EditorCell cellForNewNode, String text) {
-    EditorCellAction ltAction = cellForNewNode.getApplicableCellAction(CellActionType.RIGHT_TRANSFORM);
+    CellAction ltAction = editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(cellForNewNode, CellActionType.RIGHT_TRANSFORM);
     ltAction.execute(editorContext);
     cellForNewNode.getSTHintCell().changeText(text);
     cellForNewNode.getSTHintCell().end();

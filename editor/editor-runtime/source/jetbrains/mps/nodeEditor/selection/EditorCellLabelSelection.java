@@ -15,9 +15,14 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.cells.CellConditions;
+import jetbrains.mps.nodeEditor.cells.CellInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -203,7 +208,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
         }
       })) return false;
 
-      return target.executeAction(CellActionType.DELETE);
+      return getEditorComponent().getActionHandler().executeAction(target, CellActionType.DELETE);
     }
 
     if (type == CellActionType.BACKSPACE && selectedCell.isFirstPositionInBigCell() && !selectedCell.isLastPositionInBigCell()) {
@@ -224,7 +229,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
         }
       })) return false;
       */
-      return target.executeAction(CellActionType.DELETE);
+      return getEditorComponent().getActionHandler().executeAction(target, CellActionType.DELETE);
     }
     return false;
   }

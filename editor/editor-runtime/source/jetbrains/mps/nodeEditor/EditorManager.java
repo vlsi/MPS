@@ -16,6 +16,9 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.ui.LightColors;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.editor.runtime.cells.KeyMapActionImpl;
+import jetbrains.mps.editor.runtime.cells.KeyMapImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
@@ -29,6 +32,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
@@ -46,7 +50,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashMap;
@@ -406,28 +409,28 @@ public class EditorManager {
     final CellInfo nodeCellInfo = getEditorComponent(context).getRecentlySelectedCellInfo();
 
     // delete the hint when pressed ctrl-delete, delete or backspace
-    sideTransformHintCell.setAction(CellActionType.DELETE, new EditorCellAction() {
+    sideTransformHintCell.setAction(jetbrains.mps.openapi.editor.cells.CellActionType.DELETE, new AbstractCellAction() {
       public void execute(final jetbrains.mps.openapi.editor.EditorContext context) {
         removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
     // delete the hint when double press 'space'
-    sideTransformHintCell.setAction(CellActionType.RIGHT_TRANSFORM, new EditorCellAction() {
+    sideTransformHintCell.setAction(jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM, new AbstractCellAction() {
       public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
         removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
 
-    sideTransformHintCell.setAction(CellActionType.LEFT_TRANSFORM, new EditorCellAction() {
+    sideTransformHintCell.setAction(jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM, new AbstractCellAction() {
       public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
         removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
 
     // delete the hint when double press 'esc'
-    EditorCellKeyMap keyMap = new EditorCellKeyMap();
-    keyMap.putAction(EditorCellKeyMap.KEY_MODIFIERS_NONE, "VK_ESCAPE", new EditorCellKeyMapAction() {
-      public void execute(KeyEvent keyEvent, final EditorContext context) {
+    KeyMap keyMap = new KeyMapImpl();
+    keyMap.putAction(KeyMap.KEY_MODIFIERS_NONE, "VK_ESCAPE", new KeyMapActionImpl() {
+      public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
         removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });

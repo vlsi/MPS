@@ -15,16 +15,16 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.EditorCellAction;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /**
  * Author: Sergey Dmitriev.
  * Time: Nov 5, 2003 1:03:02 PM
  */
-public class CellAction_DeleteReference extends EditorCellAction {
+public class CellAction_DeleteReference extends AbstractCellAction {
   private SNode mySource;
   private String myRole;
 

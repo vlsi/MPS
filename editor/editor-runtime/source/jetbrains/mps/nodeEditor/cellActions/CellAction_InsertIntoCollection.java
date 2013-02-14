@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 
-public class CellAction_InsertIntoCollection extends EditorCellAction {
+public class CellAction_InsertIntoCollection extends AbstractCellAction {
   private AbstractCellListHandler myListHandler;
   private boolean myInsertBefore;
 

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.folding;
 
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorComponent;
@@ -24,7 +24,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class CellAction_UnfoldAll extends EditorCellAction {
+public class CellAction_UnfoldAll extends AbstractCellAction {
 
 
   public boolean canExecute(EditorContext context) {
