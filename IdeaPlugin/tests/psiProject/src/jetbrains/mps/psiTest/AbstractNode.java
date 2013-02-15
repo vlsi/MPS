@@ -7,4 +7,6 @@ public abstract class AbstractNode {
     public void dump(StringBuilder sb) {
         sb.append("<abstract node>");
     }
+
+    public void abstractNodeMethod() {}
 }

@@ -32,7 +32,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 /**
  * evgeny, 1/25/13
  */
-public class MPSPsiRef extends MPSPsiNodeBase implements PsiReference {
+public class MPSPsiRef extends MPSPsiNodeBase {
 
   private String role;
   private SModelReference model;
@@ -54,16 +54,14 @@ public class MPSPsiRef extends MPSPsiNodeBase implements PsiReference {
     return role;
   }
 
-  @Override
-  public MPSPsiNode resolve() {
+  public PsiElement resolve() {
     // Note: we expect that PSI clients do take read lock to resolve references
     ApplicationManager.getApplication().assertReadAccessAllowed();
 
-    return ModelAccess.instance().runReadAction(new Computable<MPSPsiNode>() {
+    return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
       @Override
-      public MPSPsiNode compute() {
+      public PsiElement compute() {
         if (model != null && nodeId != null) {
-
           return MPSPsiProvider.getInstance(getProject()).getPsi(new SNodePointer((jetbrains.mps.smodel.SModelReference) model, nodeId));
         } else {
           // TODO dynamic ref
@@ -85,8 +83,9 @@ public class MPSPsiRef extends MPSPsiNodeBase implements PsiReference {
     return referenceText;
   }
 
-
-
+  @Override
+  public PsiReference getReference() {
+    return new PsiReference() {
       @Override
       public PsiElement getElement() {
         return MPSPsiRef.this;
@@ -94,16 +93,15 @@ public class MPSPsiRef extends MPSPsiNodeBase implements PsiReference {
 
       @Override
       public TextRange getRangeInElement() {
-        return null;
+        return new TextRange(0, 1);
       }
 
-//      @Nullable
-//      @Override
-//      public PsiElement resolve() {
-//        // TODO
-////        return null;
-//        return MPSPsiRef.this.resolve();
-//      }
+      @Nullable
+      @Override
+      public PsiElement resolve() {
+        // TODO
+        return null;
+      }
 
       @NotNull
       @Override
@@ -139,6 +137,8 @@ public class MPSPsiRef extends MPSPsiNodeBase implements PsiReference {
       public boolean isSoft() {
         return false;
       }
+    };
+  }
 
   @Override
   public String toString() {
