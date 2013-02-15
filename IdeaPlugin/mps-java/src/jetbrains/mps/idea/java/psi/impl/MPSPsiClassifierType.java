@@ -56,8 +56,8 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
 
       private void resolveRef() {
         if (resolved == null) {
-          MPSPsiClassifier clas = getReferenceTarget("classifier", MPSPsiClassifier.class);
-          resolved = clas == null ? null : clas.getRealPsiNode();
+          PsiClass clas = getReferenceTarget("classifier", PsiClass.class);
+          resolved = clas; // == null ? null : clas.getRealPsiNode();
         }
       }
 

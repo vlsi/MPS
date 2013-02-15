@@ -54,15 +54,13 @@ public class MPSPsiClass extends MPSPsiClassifier implements PsiClass {
   @NotNull
   @Override
   public PsiClassType[] getExtendsListTypes() {
-    return getTypes("superclass");
+    return getClassTypes("superclass");
   }
 
   @NotNull
   @Override
   public PsiClassType[] getImplementsListTypes() {
-    return getTypes("implementedInterface");
+    return getClassTypes("implementedInterface");
   }
-
-
 
 }

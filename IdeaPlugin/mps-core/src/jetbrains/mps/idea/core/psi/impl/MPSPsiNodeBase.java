@@ -16,10 +16,12 @@
 
 package jetbrains.mps.idea.core.psi.impl;
 
+import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiInvalidElementAccessException;
 import com.intellij.psi.PsiManager;
+import com.intellij.psi.PsiReference;
 import com.intellij.psi.impl.light.LightElement;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.SmartList;
@@ -103,7 +105,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
     return result;
   }
 
-  protected <T extends PsiElement> T[] getChildrenOfType(String role, @NotNull Class<T> aClass) {
+  public <T extends PsiElement> T[] getChildrenOfType(String role, @NotNull Class<T> aClass) {
     if (role == null) return null;
 
     List<T> result = null;
@@ -140,6 +142,16 @@ public abstract class MPSPsiNodeBase extends LightElement {
   @Override
   public PsiElement getParent() {
     return parent;
+  }
+
+  @Override
+  public PsiReference getReference() {
+    return null;
+  }
+
+  @Override
+  public PsiReference[] getReferences() {
+    return PsiReference.EMPTY_ARRAY;
   }
 
   public void addChild(MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
@@ -183,5 +195,11 @@ public abstract class MPSPsiNodeBase extends LightElement {
     }
     node.prev = node.next = null;
     node.parent = null;
+  }
+
+  @Override
+  public TextRange getTextRange() {
+    // should probably be a sub-class of TextRange, specific for MPS
+    return new TextRange(0, 1);
   }
 }

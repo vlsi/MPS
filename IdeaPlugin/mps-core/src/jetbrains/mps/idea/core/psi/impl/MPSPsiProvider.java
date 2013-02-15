@@ -18,8 +18,10 @@ package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiManager;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
+import jetbrains.mps.idea.core.psi.MPSPsiNodeFactoryStubAware;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -65,11 +67,20 @@ public class MPSPsiProvider extends AbstractProjectComponent implements MPSPsiNo
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myListener);
   }
 
-  public MPSPsiNode getPsi(SNodeReference nodeRef) {
+  public PsiElement getPsi(SNodeReference nodeRef) {
     if (nodeRef == null) return null;
 
     final SNode node = nodeRef.resolve(MPSModuleRepository.getInstance());
     if (node == null) return null;
+
+    // give chance to node factories to tell us what the PSI element is
+    for (MPSPsiNodeFactory factory : MPSPsiNodeFactory.EP_NAME.getExtensions()) {
+      if (!(factory instanceof MPSPsiNodeFactoryStubAware)) continue;
+      PsiElement psiElement = ((MPSPsiNodeFactoryStubAware) factory).getPsiSource(node);
+      if (psiElement != null) {
+        return psiElement;
+      }
+    }
 
     return getPsi(node);
   }

@@ -55,7 +55,7 @@ public class MPSPsiRefList extends MPSPsiNodeBase implements PsiReferenceList {
   @NotNull
   @Override
   public PsiJavaCodeReferenceElement[] getReferenceElements() {
-    return new PsiJavaCodeReferenceElement[0];  //To change body of implemented methods use File | Settings | File Templates.
+    return PsiJavaCodeReferenceElement.EMPTY_ARRAY;
   }
 
   @NotNull
@@ -66,10 +66,7 @@ public class MPSPsiRefList extends MPSPsiNodeBase implements PsiReferenceList {
     } else {
       ArrayList<PsiClassType> result = new ArrayList<PsiClassType>(myClasses.length);
       for (MPSPsiClassifierType c: myClasses) {
-
-        LightClassReference lcr = new LightClassReference(getManager(), /*c.getText()*/ c.getName(), c.getName(), GlobalSearchScope.projectScope(getManager().getProject()));
-        PsiClassType ct = new PsiClassReferenceType(lcr, LanguageLevel.JDK_1_7);
-        result.add(ct);
+        result.add(c.getPsiType());
       }
       return ArrayUtil.toObjectArray(result, PsiClassType.class);
     }
