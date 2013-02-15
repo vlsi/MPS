@@ -21,11 +21,13 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -50,12 +52,20 @@ public class JavaModuleOperations {
     return result;
   }
 
+  public static <T extends SModule> Set<String> collectCompileClasspath(T... modules) {
+    return collectCompileClasspath(new HashSet<SModule>(Arrays.asList(modules)), true);
+  }
+
   public static Set<String> collectExecuteClasspath(Set<? extends SModule> modules) {
     Set<String> result = new HashSet<String>();
     for (SModule module : getJavaModules(new GlobalModuleDependenciesManager(modules).getModules(Deptype.EXECUTE))) {
       result.addAll(getJavaFacet(module).getClassPath());
     }
     return result;
+  }
+
+  public static <T extends SModule> Set<String> collectExecuteClasspath(T... modules) {
+    return collectExecuteClasspath(new HashSet<SModule>(Arrays.asList(modules)));
   }
 
   public static CompositeClassPathItem createClassPathItem(Iterable<String> classPath, String requestor) {
