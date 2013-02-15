@@ -38,7 +38,11 @@ public class ModelTableCellRender extends ColoredTableCellRenderer {
       final SModelReference modelReference = (SModelReference) value;
       ModelPresentation modelPresentation = new ModelPresentation((jetbrains.mps.smodel.SModelReference)modelReference);
       setIcon(modelPresentation.doGetIcon());
-      append(modelPresentation.doGetPresentableText(), getDependencyCellState(modelReference).getTextAttributes());
+      DependencyCellState cellState = getDependencyCellState(modelReference);
+      append(modelPresentation.doGetPresentableText(), cellState.getTextAttributes());
+      if(cellState.equals(DependencyCellState.NOT_IN_SCOPE)) {
+        append(" (out of scope)", cellState.getTextAttributes());
+      }
     }
   }
 

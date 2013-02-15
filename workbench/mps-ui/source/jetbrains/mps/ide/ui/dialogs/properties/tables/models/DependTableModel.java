@@ -83,6 +83,10 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
     return super.getColumnClass(columnIndex);
   }
 
+  public DependenciesTableItem getValueAt(int rowIndex) {
+    return myTableItems.get(rowIndex);
+  }
+
   @Override
   public Object getValueAt(int rowIndex, int columnIndex) {
     DependenciesTableItem<?> item = myTableItems.get(rowIndex);

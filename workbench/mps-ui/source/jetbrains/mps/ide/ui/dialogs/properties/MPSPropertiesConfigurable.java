@@ -34,6 +34,8 @@ import com.intellij.ui.AnActionButtonRunnable;
 import com.intellij.ui.BooleanTableCellRenderer;
 import com.intellij.ui.EnumComboBoxModel;
 import com.intellij.ui.IdeBorderFactory;
+import com.intellij.ui.SpeedSearchBase;
+import com.intellij.ui.SpeedSearchComparator;
 import com.intellij.ui.TabbedPaneWrapper;
 import com.intellij.ui.TableUtil;
 import com.intellij.ui.ToolbarDecorator;
@@ -252,28 +254,37 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected abstract String getConfigItemName();
     protected abstract String getConfigItemPath();
     protected abstract JComponent getBottomComponent();
+    protected JComponent getTopComponent() {
+      return null;
+    }
 
     @Override
     public void init() {
+      JComponent topComponent = getTopComponent();
+      int rowCount = 0;
+
       JPanel sourcesTab = new JPanel();
-      sourcesTab.setLayout(new GridLayoutManager(3, 2, INSETS, -1, -1));
+      sourcesTab.setLayout(new GridLayoutManager(topComponent != null ? 4 : 3, 2, INSETS, -1, -1));
 
       JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.common.commontab.namelabel"));
-      sourcesTab.add(label, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      sourcesTab.add(label, new GridConstraints(rowCount++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       myTextFieldName = new JTextField();
       myTextFieldName.setText(getConfigItemName());
       sourcesTab.add(myTextFieldName, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
 
       label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.common.commontab.filepathlabel"));
-      sourcesTab.add(label, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      sourcesTab.add(label, new GridConstraints(rowCount, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       JTextField textField = new JTextField();
       textField.setEditable(false);
       textField.setText(getConfigItemPath());
-      sourcesTab.add(textField, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+      sourcesTab.add(textField, new GridConstraints(rowCount++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
 
-      sourcesTab.add(getBottomComponent(), new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+      if(topComponent != null)
+        sourcesTab.add(topComponent, new GridConstraints(rowCount++, 0, 1, 2, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+
+      sourcesTab.add(getBottomComponent(), new GridConstraints(rowCount, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
       setTabComponent(sourcesTab);
     }
 
@@ -407,6 +418,48 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       dependenciesTab.add(table, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       setTabComponent(dependenciesTab);
+
+      new SpeedSearchBase<JBTable>(tableDepend) {
+        @Override
+        public int getSelectedIndex() {
+          return tableDepend.getSelectedRow();
+        }
+
+        @Override
+        protected int convertIndexToModel(int viewIndex) {
+          return tableDepend.convertRowIndexToModel(viewIndex);
+        }
+
+        @Override
+        public Object[] getAllElements() {
+          final int count = myDependTableModel.getRowCount();
+          Object[] elements = new Object[count];
+          for (int idx = 0; idx < count; idx++) {
+            elements[idx] = myDependTableModel.getValueAt(idx);
+          }
+          return elements;
+        }
+
+        @Override
+        public String getElementText(Object element) {
+          if(!(element instanceof DependenciesTableItem))
+            return "";
+          return ((DependenciesTableItem)element).getItem().toString();
+        }
+
+        @Override
+        public void selectElement(Object element, String selectedText) {
+          final int count = myDependTableModel.getRowCount();
+          for (int row = 0; row < count; row++) {
+            if (element.equals(myDependTableModel.getValueAt(row))) {
+              final int viewRow = tableDepend.convertRowIndexToView(row);
+              tableDepend.getSelectionModel().setSelectionInterval(viewRow, viewRow);
+              TableUtil.scrollSelectionToVisible(tableDepend);
+              break;
+            }
+          }
+        }
+      }.setComparator(new SpeedSearchComparator(false, true));
     }
 
     protected TableCellRenderer getTableCellRender() {
@@ -539,6 +592,48 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       usedLangsTab.add(table, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       setTabComponent(usedLangsTab);
+
+      new SpeedSearchBase<JBTable>(usedLangsTable) {
+        @Override
+        public int getSelectedIndex() {
+          return usedLangsTable.getSelectedRow();
+        }
+
+        @Override
+        protected int convertIndexToModel(int viewIndex) {
+          return usedLangsTable.convertRowIndexToModel(viewIndex);
+        }
+
+        @Override
+        public Object[] getAllElements() {
+          final int count = myUsedLangsTableModel.getRowCount();
+          Object[] elements = new Object[count];
+          for (int idx = 0; idx < count; idx++) {
+            elements[idx] = myUsedLangsTableModel.getValueAt(idx, UsedLangsTableModel.ITEM_COLUMN);
+          }
+          return elements;
+        }
+
+        @Override
+        public String getElementText(Object element) {
+          if(!(element instanceof ModuleReference))
+            return "";
+          return ((ModuleReference)element).getModuleName();
+        }
+
+        @Override
+        public void selectElement(Object element, String selectedText) {
+          final int count = myUsedLangsTableModel.getRowCount();
+          for (int row = 0; row < count; row++) {
+            if (element.equals(myUsedLangsTableModel.getValueAt(row, UsedLangsTableModel.ITEM_COLUMN))) {
+              final int viewRow = usedLangsTable.convertRowIndexToView(row);
+              usedLangsTable.getSelectionModel().setSelectionInterval(viewRow, viewRow);
+              TableUtil.scrollSelectionToVisible(usedLangsTable);
+              break;
+            }
+          }
+        }
+      }.setComparator(new SpeedSearchComparator(false, true));
     }
 
     protected TableCellRenderer getTableCellRender() {
