@@ -143,7 +143,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
 
   @Override
   public TextRange getTextRange() {
-    // should probably be a sub-class of TextRange, specific for MPS
+    // TODO should probably be a sub-class of TextRange, specific for MPS
     return new TextRange(0, 1);
   }
   
