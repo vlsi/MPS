@@ -481,6 +481,16 @@ public class QueriesGenerated {
     return !(SNodeOperations.isInstanceOf(SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(_context.getNode()), "jetbrains.mps.lang.smodel.structure.AttributeAccess"));
   }
 
+  public static SNode sourceNodeQuery_4315511589508288005(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    if (SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", false, false), "type", true) != null) {
+      return SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", false, false), "type", true);
+    }
+    if (SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", false, false), "type", true) != null) {
+      return SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", false, false), "type", true);
+    }
+    return null;
+  }
+
   public static SNode sourceNodeQuery_1172253302099(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -535,16 +545,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1177353800103(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "query", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_5881771629279484726(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    if (SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", false, false), "type", true) != null) {
-      return SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", false, false), "type", true);
-    }
-    if (SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", false, false), "type", true) != null) {
-      return SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", false, false), "type", true);
-    }
-    return null;
   }
 
   public static SNode sourceNodeQuery_1201900835262(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
