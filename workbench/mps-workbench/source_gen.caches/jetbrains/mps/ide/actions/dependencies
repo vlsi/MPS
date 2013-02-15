@@ -3127,7 +3127,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.SetNodePackageDialog" file="SetNodePackageDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.Insets" />

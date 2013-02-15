@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.generator.impl.dependencies;
 
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorMappings;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Map;
 
@@ -37,7 +37,7 @@ public class NonIncrementalDependenciesBuilder implements DependenciesBuilder {
 
   public NonIncrementalDependenciesBuilder(@Nullable Map<String, String> generationHashes, String parametersHash) {
     myParametersHash = parametersHash;
-    myModelHash = generationHashes == null ? null : generationHashes.get(GeneratableSModelDescriptor.FILE);
+    myModelHash = generationHashes == null ? null : generationHashes.get(GeneratableSModel.FILE);
   }
 
   @Override

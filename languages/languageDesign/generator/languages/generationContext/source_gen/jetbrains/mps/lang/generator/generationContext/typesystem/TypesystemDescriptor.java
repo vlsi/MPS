@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_Base_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_CreateUniqueName_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -26,7 +26,19 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetInputModel_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetInvocationContext_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetOriginalCopiedInputByOutput_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetOriginalInputModel_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -46,7 +58,19 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetOutputModel_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetPrevInputByLabel_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetScope_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetTemplateNode_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -67,6 +91,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_ShowMessageBase_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_UserObjectAccessBase_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

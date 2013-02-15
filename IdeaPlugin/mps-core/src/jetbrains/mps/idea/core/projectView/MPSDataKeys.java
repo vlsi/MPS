@@ -18,6 +18,7 @@ package jetbrains.mps.idea.core.projectView;
 
 import com.intellij.openapi.actionSystem.DataKey;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.Set;
 

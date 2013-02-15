@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.smodel.descriptor;
 
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 
-public interface EditableSModelDescriptor extends SModelDescriptor {
+public interface EditableSModelDescriptor extends SModelDescriptor, EditableSModel {
 
   boolean isChanged();
 

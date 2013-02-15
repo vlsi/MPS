@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.persistence.binary;
 
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.persistence.BinaryModelPersistence;
@@ -24,7 +25,6 @@ import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -40,7 +40,7 @@ import static jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
  * <p/>
  * TODO FastFindSupportProvider
  */
-public class BinarySModelDescriptor extends BaseEditableSModelDescriptor implements GeneratableSModelDescriptor, RefactorableSModelDescriptor {
+public class BinarySModelDescriptor extends BaseEditableSModelDescriptor implements GeneratableSModel, RefactorableSModelDescriptor {
 
   private volatile BinarySModel myModel = null;
   private final BinaryModelHeader myHeader;

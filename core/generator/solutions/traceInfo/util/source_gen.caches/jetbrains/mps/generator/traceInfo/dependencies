@@ -8,6 +8,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.reloading.CommonPaths" />
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.generator.traceInfo.TraceInfoResourceProvider" />
   </dependency>
   <dependency className="jetbrains.mps.generator.traceInfo.TraceDown" file="TraceDown.java">
@@ -53,7 +54,6 @@
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.JavaTraceInfoResourceProvider" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.traceInfo.DebugInfo" />
@@ -65,6 +65,8 @@
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.generator.cache.XmlBasedModelCache" />
   </dependency>
   <dependency className="jetbrains.mps.generator.traceInfo.TraceInfoUtil" file="TraceInfoUtil.java">

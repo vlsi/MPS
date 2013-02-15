@@ -693,6 +693,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     int effectiveWidth = getEffectiveWidth();
 
     if (isDrawBorder()) {
+      // COLORS: Remove hardcoded color
       g.setColor(Color.lightGray);
       g.drawRect(myX, myY, getWidth(), getHeight());
     }

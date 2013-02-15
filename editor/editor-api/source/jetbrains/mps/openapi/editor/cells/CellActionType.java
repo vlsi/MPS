@@ -71,5 +71,6 @@ public enum CellActionType {
   UNFOLD_ALL,
   TOGGLE_FOLDING,
 
-  SHOW_MESSAGE
+  SHOW_MESSAGE,
+  CLEAR_SELECTION
 }

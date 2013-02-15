@@ -18,6 +18,7 @@ package jetbrains.mps.generator.test;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
@@ -31,7 +32,6 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.testbench.Testbench;
@@ -42,6 +42,7 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -160,7 +161,7 @@ public class GenerationTestBase {
         }
       });
       List<String> hashes = new ArrayList<String>();
-      hashes.add(incrementalStrategy.getHash().get(GeneratableSModelDescriptor.FILE));
+      hashes.add(incrementalStrategy.getHash().get(GeneratableSModel.FILE));
 
       // Stage 1. Regenerate
 
@@ -201,7 +202,7 @@ public class GenerationTestBase {
             incrementalStrategy.buildHash();
           }
         });
-        hashes.add(incrementalStrategy.getHash().get(GeneratableSModelDescriptor.FILE));
+        hashes.add(incrementalStrategy.getHash().get(GeneratableSModel.FILE));
         Assert.assertNotNull(generationHandler.getLastDependencies());
         incrementalStrategy.setDependencies(generationHandler.getLastDependencies());
 
@@ -272,7 +273,7 @@ public class GenerationTestBase {
 
   protected static SModelDescriptor findModel(Project project, String fqName) {
     for (SModule m : project.getModules()) {
-      for (org.jetbrains.mps.openapi.model.SModel descr : m.getModels()) {
+      for (SModel descr : m.getModels()) {
         if (!(descr instanceof EditableSModelDescriptor)) {
           continue;
         }
@@ -304,7 +305,7 @@ public class GenerationTestBase {
     }
   }
 
-  private static Map<String, String> getHashes(SModel model) {
+  private static Map<String, String> getHashes(jetbrains.mps.smodel.SModel model) {
     Document m = ModelPersistence.saveModel(model);
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     try {
@@ -317,8 +318,8 @@ public class GenerationTestBase {
 
   private static Map<String, String> getEmptyDigest() {
     Map<String, String> result = new HashMap<String, String>();
-    result.put(GeneratableSModelDescriptor.FILE, ModelDigestUtil.hashText(""));
-    result.put(GeneratableSModelDescriptor.HEADER, ModelDigestUtil.hashText(""));
+    result.put(GeneratableSModel.FILE, ModelDigestUtil.hashText(""));
+    result.put(GeneratableSModel.HEADER, ModelDigestUtil.hashText(""));
     return result;
 
   }
@@ -392,8 +393,8 @@ public class GenerationTestBase {
     void buildHash() {
       Map<String, String> hashes = getHashes(myModel.getSModel());
       if (myHash != null) {
-        Assert.assertEquals("header's SHA1 shouldn't change after model change", myHash.get(GeneratableSModelDescriptor.HEADER), hashes.get(GeneratableSModelDescriptor.HEADER));
-        Assert.assertNotSame("file's SHA1 should change after model change", myHash.get(GeneratableSModelDescriptor.FILE), hashes.get(GeneratableSModelDescriptor.FILE));
+        Assert.assertEquals("header's SHA1 shouldn't change after model change", myHash.get(GeneratableSModel.HEADER), hashes.get(GeneratableSModel.HEADER));
+        Assert.assertNotSame("file's SHA1 should change after model change", myHash.get(GeneratableSModel.FILE), hashes.get(GeneratableSModel.FILE));
       }
       myHash = hashes;
     }
@@ -403,7 +404,7 @@ public class GenerationTestBase {
     }
 
     @Override
-    public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
+    public Map<String, String> getModelHashes(SModel sm, IOperationContext operationContext) {
       if (sm == myModel) {
         return myHash;
       }
@@ -416,7 +417,7 @@ public class GenerationTestBase {
     }
 
     @Override
-    public GenerationDependencies getDependencies(SModelDescriptor sm) {
+    public GenerationDependencies getDependencies(SModel sm) {
       if (myModel != sm) {
         return null;
       }
@@ -436,7 +437,7 @@ public class GenerationTestBase {
   private static class MyNonIncrementalGenerationStrategy implements IncrementalGenerationStrategy {
 
     @Override
-    public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
+    public Map<String, String> getModelHashes(SModel sm, IOperationContext operationContext) {
       return Collections.emptyMap();
     }
 
@@ -446,7 +447,7 @@ public class GenerationTestBase {
     }
 
     @Override
-    public GenerationDependencies getDependencies(SModelDescriptor sm) {
+    public GenerationDependencies getDependencies(SModel sm) {
       return null;
     }
 

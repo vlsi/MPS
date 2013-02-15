@@ -124,7 +124,9 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
                   requestManager.deleteRequests(breakpoint);
                   //  todo enabling and disabling breakpoints should be symmetrical 
                 } else {
-                  breakpoint.createOrWaitPrepare(myEventsProcessor);
+                  if (breakpoint.isValid()) {
+                    breakpoint.createOrWaitPrepare(myEventsProcessor);
+                  }
                 }
               }
             }

@@ -24,6 +24,7 @@ import jetbrains.mps.generator.traceInfo.TraceInfoCache.TraceInfoResourceProvide
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.net.URL;
 
@@ -35,8 +36,9 @@ public class PluginsTraceInfoResourceProvider implements TraceInfoResourceProvid
   public PluginsTraceInfoResourceProvider(MPSCoreComponents coreComponents) {
   }
 
-  public URL getResource(IModule module, String resourceName) {
-    if (InternalFlag.isInternalMode() && !((module.isCompileInMPS()))) {
+  @Override
+  public URL getResource(SModule module, String resourceName) {
+    if (InternalFlag.isInternalMode() && !((((IModule)module).isCompileInMPS()))) {
       for (IdeaPluginDescriptor plugin : PluginManager.getPlugins()) {
         URL url = plugin.getPluginClassLoader().getResource(resourceName);
         if (url != null) {

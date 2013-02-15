@@ -21,6 +21,7 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
 import jetbrains.mps.logging.Logger;
 
@@ -56,9 +57,9 @@ public class TransformingGenerationHandler extends InMemoryJavaGenerationHandler
     jetbrains.mps.smodel.SModel model = status.getOutputModel();
     if (model != null) {
       final SNode evaluator = SModelOperations.getRootByName(model, Properties.EVALUATOR_NAME);
-
       if (evaluator != null) {
         try {
+          assert SNodeOperations.getModel(evaluator) != null;
           TransformatorBuilder.getInstance().build(evaluator, true).transformEvaluator();
           if (Properties.IS_DEVELOPER_MODE) {
             for (_FunctionTypes._void_P1_E0<? super SNode> listener : ListSequence.fromList(myGenerationListeners)) {

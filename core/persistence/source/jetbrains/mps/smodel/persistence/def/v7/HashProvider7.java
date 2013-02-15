@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel.persistence.def.v7;
 
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.XmlFastScanner;
@@ -29,12 +29,12 @@ public class HashProvider7 extends IHashProvider {
   private static final Logger LOG = Logger.getLogger(HashProvider7.class);
 
   @Override
-  public String getHash(String content){
+  public String getHash(String content) {
     return ModelDigestUtil.hashText(content);
   }
 
   @Override
-  public Map<String, String> getRootHashes(String content){
+  public Map<String, String> getRootHashes(String content) {
     Map<String, String> result = new HashMap<String, String>();
     extractRootHashes(content, result);
     return result;
@@ -71,7 +71,7 @@ public class HashProvider7 extends IHashProvider {
 
           if (depth == 2 && ModelPersistence.ROOTS.equals(scanner.getName())) {
             insideRoots = true;
-            rootHashes.put(GeneratableSModelDescriptor.HEADER, ModelDigestUtil.hashText(scanner.getText(0, scanner.getTokenOffset())));
+            rootHashes.put(GeneratableSModel.HEADER, ModelDigestUtil.hashText(scanner.getText(0, scanner.getTokenOffset())));
           }
 
           if (insideRoots && ModelPersistence.NODE.equals(scanner.getName())) {

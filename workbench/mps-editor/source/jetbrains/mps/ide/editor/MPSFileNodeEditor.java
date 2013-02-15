@@ -21,9 +21,12 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.DocumentsEditor;
+import com.intellij.openapi.fileEditor.FileEditorDataProviderManager;
 import com.intellij.openapi.fileEditor.FileEditorLocation;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
+import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.UserDataHolderBase;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -258,6 +261,12 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
         }
         if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
           return myProject;
+        }
+      }
+      else {
+        if (!myProject.isDisposed()) {
+          final Object data = FileEditorDataProviderManager.getInstance(myProject).getData(dataId, MPSFileNodeEditor.this, myFile);
+          if (data != null) return data;
         }
       }
       return null;

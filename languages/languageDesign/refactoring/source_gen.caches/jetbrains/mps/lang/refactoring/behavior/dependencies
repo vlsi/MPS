@@ -51,85 +51,46 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.AskBooleanExpression_Behavior" file="AskBooleanExpression_Behavior.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.AskBooleanExpression_BehaviorDescriptor" file="AskBooleanExpression_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.AskBooleanExpression_Behavior" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.AskExpression_Behavior" file="AskExpression_Behavior.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.AskExpression_BehaviorDescriptor" file="AskExpression_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.AskExpression_Behavior" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.AbstractMoveNodeExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.AffectedNodesClause_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.AskBooleanExpression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.AskExpression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.BooleanMPSParameterType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ChangeFeatureNameExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ChangeFeatureNameOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ChooseComponentClause_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ChooserRefactoringContext_ConceptFunctionParameter_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.CommitClause_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ComponentExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_Model_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_Module_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_RefactoringParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_SModel_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_SNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_UserArgument_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ContextType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.CreateRefactoringContext_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.CustomParameterChooser_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.DeleteFeatureExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.DeleteFeatureOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.DoRefactorClause_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.DoWhenDoneClause_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ErrorStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ExecuteFindersExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ExecuteRefactoringStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.FilterArgumentClause_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.FilterParameterClause_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.FinderReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.GetModelsToGenerateClause_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.GetModelsToUpdateClause_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.InitClause_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.InitialPropertyValueClause_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.InitialValueClause_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.IntMPSParameterType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.IsApplicableClause_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.IsApplicableToModelClause_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.IsApplicableToModuleClause_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.IsApplicableToNodeClause_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.IsRefactoringApplicable_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.MPSParameterChooser_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.MainProjectOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.MergeNodeWithAnotherNodeExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ModelDescriptorExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ModelDescriptorOperation_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ModelMPSParameterType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ModelTarget_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ModelsToGenerateByDefault_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ModelsToGenerateClause_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ModuleExpression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ModuleMPSParameterType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ModuleOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ModuleTarget_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.MoveNodeToModelExpression_BehaviorDescriptor" />
@@ -137,7 +98,6 @@
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.MoveNodesToModelExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.MoveNodesToNodeExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.NodeExpression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.NodeMPSParameterType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.NodeOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.NodeTarget_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.NodesExpression_BehaviorDescriptor" />
@@ -148,7 +108,6 @@
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.OperationContextOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ProjectExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ProjectOperation_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.RefactoringContextExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.RefactoringContext_ConceptFunctionParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.RefactoringFieldReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.RefactoringField_BehaviorDescriptor" />
@@ -160,21 +119,12 @@
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.RequiredUserEnteredArgument_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ScopeExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ScopeOperation_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.SetValueStatement_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.SettingsRefactoringContext_ConceptFunctionParameter_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.StringMPSParameterType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.UpdateModelByDefaultOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.UpdateModelClause_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.UpdateModelProcedure_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.BooleanMPSParameterType_BehaviorDescriptor" file="BooleanMPSParameterType_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.MPSParameterType_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.ChangeFeatureNameExpression_Behavior" file="ChangeFeatureNameExpression_Behavior.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
@@ -207,38 +157,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.ChooserRefactoringContext_ConceptFunctionParameter_BehaviorDescriptor" file="ChooserRefactoringContext_ConceptFunctionParameter_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.CommitClause_Behavior" file="CommitClause_Behavior.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.CommitClause_BehaviorDescriptor" file="CommitClause_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.CommitClause_Behavior" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.ComponentExpression_BehaviorDescriptor" file="ComponentExpression_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_Model_BehaviorDescriptor" file="ConceptFunctionParameter_Model_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -246,12 +164,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_Module_BehaviorDescriptor" file="ConceptFunctionParameter_Module_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.ConceptFunctionParameter_RefactoringParameter_BehaviorDescriptor" file="ConceptFunctionParameter_RefactoringParameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
@@ -306,12 +218,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.CustomParameterChooser_BehaviorDescriptor" file="CustomParameterChooser_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.RefactoringParameterChooser_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.DeleteFeatureExpression_Behavior" file="DeleteFeatureExpression_Behavior.java">
@@ -376,12 +282,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.ErrorStatement_BehaviorDescriptor" file="ErrorStatement_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.ExecuteFindersExpression_Behavior" file="ExecuteFindersExpression_Behavior.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -413,26 +313,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.FilterArgumentClause_Behavior" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.FilterParameterClause_Behavior" file="FilterParameterClause_Behavior.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.FilterParameterClause_BehaviorDescriptor" file="FilterParameterClause_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.FilterParameterClause_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
@@ -505,26 +385,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.InitialPropertyValueClause_Behavior" file="InitialPropertyValueClause_Behavior.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.InitialPropertyValueClause_BehaviorDescriptor" file="InitialPropertyValueClause_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.InitialPropertyValueClause_Behavior" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.InitialValueClause_Behavior" file="InitialValueClause_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -536,14 +396,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.InitialValueClause_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.IntMPSParameterType_BehaviorDescriptor" file="IntMPSParameterType_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.MPSParameterType_BehaviorDescriptor" />
-    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.IsApplicableClause_Behavior" file="IsApplicableClause_Behavior.java">
@@ -624,18 +476,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.MPSParameterChooser_BehaviorDescriptor" file="MPSParameterChooser_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.RefactoringParameterChooser_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.MPSParameterType_BehaviorDescriptor" file="MPSParameterType_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.MainProjectOperation_Behavior" file="MainProjectOperation_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
@@ -694,12 +534,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.ModelMPSParameterType_BehaviorDescriptor" file="ModelMPSParameterType_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.MPSParameterType_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.ModelTarget_BehaviorDescriptor" file="ModelTarget_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -736,12 +570,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.AbstractUIArgumentExpression_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.ModuleMPSParameterType_BehaviorDescriptor" file="ModuleMPSParameterType_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.MPSParameterType_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.ModuleOperation_Behavior" file="ModuleOperation_Behavior.java">
@@ -801,12 +629,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.AbstractUIArgumentExpression_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.NodeMPSParameterType_BehaviorDescriptor" file="NodeMPSParameterType_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.MPSParameterType_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.NodeOperation_Behavior" file="NodeOperation_Behavior.java">
@@ -963,12 +785,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.RefactoringArgument_BehaviorDescriptor" file="RefactoringArgument_BehaviorDescriptor.java" />
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.RefactoringContextExpression_BehaviorDescriptor" file="RefactoringContextExpression_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.RefactoringContext_ConceptFunctionParameter_BehaviorDescriptor" file="RefactoringContext_ConceptFunctionParameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -995,12 +811,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseVariableDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.RefactoringArgument_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.RefactoringParameterChooser_BehaviorDescriptor" file="RefactoringParameterChooser_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.RefactoringParameterReference_BehaviorDescriptor" file="RefactoringParameterReference_BehaviorDescriptor.java">
@@ -1114,24 +924,6 @@
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ContextMemberOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.ScopeOperation_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.SetValueStatement_BehaviorDescriptor" file="SetValueStatement_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.SettingsRefactoringContext_ConceptFunctionParameter_BehaviorDescriptor" file="SettingsRefactoringContext_ConceptFunctionParameter_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.refactoring.behavior.StringMPSParameterType_BehaviorDescriptor" file="StringMPSParameterType_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.refactoring.behavior.MPSParameterType_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.UpdateModelByDefaultOperation_BehaviorDescriptor" file="UpdateModelByDefaultOperation_BehaviorDescriptor.java">

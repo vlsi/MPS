@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -52,7 +52,7 @@ public class ModelDigestHelper {
   public String getModelHash(@NotNull FileDataSource source) {
     for (DigestProvider p : myProviders) {
       Map<String, String> result = p.getGenerationHashes(source);
-      if (result != null) return result.get(GeneratableSModelDescriptor.FILE);
+      if (result != null) return result.get(GeneratableSModel.FILE);
     }
 
     return null;

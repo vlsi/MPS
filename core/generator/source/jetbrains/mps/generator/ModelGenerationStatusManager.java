@@ -16,13 +16,13 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -72,15 +72,15 @@ public class ModelGenerationStatusManager implements CoreComponent {
     INSTANCE = null;
   }
 
-  public String currentHash(SModelDescriptor md) {
-    if (!(md instanceof GeneratableSModelDescriptor)) return null;
-    GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
+  public String currentHash(SModel md) {
+    if (!(md instanceof GeneratableSModel)) return null;
+    GeneratableSModel sm = (GeneratableSModel) md;
     return sm.getModelHash();
   }
 
-  public boolean generationRequired(SModelDescriptor md) {
-    if (!(md instanceof GeneratableSModelDescriptor)) return false;
-    GeneratableSModelDescriptor sm = (GeneratableSModelDescriptor) md;
+  public boolean generationRequired(SModel md) {
+    if (!(md instanceof GeneratableSModel)) return false;
+    GeneratableSModel sm = (GeneratableSModel) md;
     if (!sm.isGeneratable()) return false;
     if (sm instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) sm).isChanged()) return true;
 
@@ -93,7 +93,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     return !generatedHash.equals(currentHash);
   }
 
-  private String getGenerationHash(@NotNull SModelDescriptor sm) {
+  private String getGenerationHash(@NotNull GeneratableSModel sm) {
     return getLastGenerationHash(sm);
   }
 
@@ -122,7 +122,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     }
   }
 
-  public static String getLastGenerationHash(SModelDescriptor sm) {
+  public static String getLastGenerationHash(GeneratableSModel sm) {
     GenerationDependencies generationDependencies = GenerationDependenciesCache.getInstance().get(sm);
     if (generationDependencies == null) return null;
 

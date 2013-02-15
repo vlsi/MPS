@@ -54,13 +54,13 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     return role;
   }
 
-  public MPSPsiNode resolve() {
+  public PsiElement resolve() {
     // Note: we expect that PSI clients do take read lock to resolve references
     ApplicationManager.getApplication().assertReadAccessAllowed();
 
-    return ModelAccess.instance().runReadAction(new Computable<MPSPsiNode>() {
+    return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
       @Override
-      public MPSPsiNode compute() {
+      public PsiElement compute() {
         if (model != null && nodeId != null) {
           return MPSPsiProvider.getInstance(getProject()).getPsi(new SNodePointer((jetbrains.mps.smodel.SModelReference) model, nodeId));
         } else {
@@ -93,7 +93,7 @@ public class MPSPsiRef extends MPSPsiNodeBase {
 
       @Override
       public TextRange getRangeInElement() {
-        return null;
+        return new TextRange(0, 1);
       }
 
       @Nullable

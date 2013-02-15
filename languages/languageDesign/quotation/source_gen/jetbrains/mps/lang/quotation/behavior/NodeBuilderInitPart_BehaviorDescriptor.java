@@ -4,7 +4,7 @@ package jetbrains.mps.lang.quotation.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class NodeBuilderInitPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+public abstract class NodeBuilderInitPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public NodeBuilderInitPart_BehaviorDescriptor() {
   }
 

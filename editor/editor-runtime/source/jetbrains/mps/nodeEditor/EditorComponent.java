@@ -31,6 +31,8 @@ import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.editor.colors.EditorColors;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
@@ -59,6 +61,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.NodeEditorActions.ClearSelection;
 import jetbrains.mps.nodeEditor.NodeEditorActions.CompleteSmart;
 import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
 import jetbrains.mps.nodeEditor.actions.ActionHandlerImpl;
@@ -95,9 +98,10 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.openapi.editor.cells.*;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.ActionHandler;
-import jetbrains.mps.openapi.editor.cells.CellAction;
-import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -143,6 +147,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
@@ -151,7 +156,9 @@ import javax.swing.KeyStroke;
 import javax.swing.Scrollable;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.plaf.ScrollBarUI;
@@ -207,7 +214,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private static final Logger LOG = Logger.getLogger(EditorComponent.class);
   private static final boolean TRACE_ENABLED = false;
   public static final String EDITOR_POPUP_MENU_ACTIONS = MPSActions.EDITOR_POPUP_GROUP;
-  public static final Color CARET_ROW_COLOR = new Color(255, 255, 215);
+  public static final Color CARET_ROW_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.CARET_ROW_COLOR);
 
   private static final int SCROLL_GAP = 15;
 
@@ -364,7 +371,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myOperationContext = operationContext;
     setEditorContext(new EditorContext(this, null, operationContext));
 
-    setBackground(Color.white);
+    setBackground(StyleRegistry.getInstance().getEditorBackground());
 
     setFocusCycleRoot(true);
     setFocusTraversalPolicy(new FocusTraversalPolicy() {
@@ -429,7 +436,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myContainer.setLayout(new BorderLayout());
     myContainer.add(myScrollPane, BorderLayout.CENTER);
 
-    myScrollPane.setBorder(new LineBorder(Color.LIGHT_GRAY));
 
     if (showErrorsGutter) {
       getVerticalScrollBar().setPersistentUI(myMessagesGutter);
@@ -486,6 +492,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.COMPLETE_SMART, new CompleteSmart());
 
     myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.SHOW_MESSAGE, new ShowMessage());
+    myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.CLEAR_SELECTION, new ClearSelection());
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -2158,7 +2165,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       g.fillRect(0, deepestCell.getY(), getWidth(),
         deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
 
-      g.setColor(new Color(230, 230, 190));
+      g.setColor(EditorColorsManager.getInstance().getGlobalScheme().getAttributes(EditorColors.IDENTIFIER_UNDER_CARET_ATTRIBUTES).getBackgroundColor());
       g.fillRect(deepestCell.getX() + label.getLeftInset(),
         deepestCell.getY(),
         deepestCell.getWidth() - label.getLeftInset() - label.getRightInset(),
@@ -2174,7 +2181,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     if (myRootCell != null && g.hitClip(myRootCell.getX(), myRootCell.getY(), myRootCell.getWidth(), myRootCell.getHeight())) {
       EditorSettings setting = EditorSettings.getInstance();
-      g.setColor(Color.LIGHT_GRAY);
+      g.setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.RIGHT_MARGIN_COLOR));
       int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
       g.drawLine(boundPosition, 0, boundPosition, getHeight());
 
