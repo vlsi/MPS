@@ -46,6 +46,7 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
 
   public void createOrWaitPrepare(final EventsProcessor debugProcess) {
     String className = getClassNameToPrepare();
+    assert (className != null && className.length() > 0);
     // add requests for not prepared classes 
     debugProcess.getRequestManager().callbackOnPrepareClasses(this, className);
     // and get all already prepared classes for a SNode 

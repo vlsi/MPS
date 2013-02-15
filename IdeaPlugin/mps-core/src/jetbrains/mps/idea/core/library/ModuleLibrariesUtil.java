@@ -33,14 +33,18 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ModuleLibrariesUtil {
   private static final String AUTO_SUFFIX = "_auto";
@@ -84,16 +88,13 @@ public class ModuleLibrariesUtil {
     for (VirtualFile file : library.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML)) {
       moduleXmls.add(VirtualFileUtils.toIFile(file));
     }
-      ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        Collection<IModule> allModules = new HashSet<IModule>();
-        allModules.addAll(ModuleRepositoryFacade.getInstance().getAllModules(Solution.class));
-        allModules.addAll(ModuleRepositoryFacade.getInstance().getAllModules(Language.class));
-
-        for (IModule module : allModules) {
-          if (moduleXmls.contains(module.getDescriptorFile())) {
-            modules.add(module.getModuleReference());
+        for (IFile moduleDescriptor : moduleXmls) {
+          IModule moduleByFile = ModuleFileTracker.getInstance().getModuleByFile(moduleDescriptor);
+          if (moduleByFile != null) {
+            modules.add(moduleByFile.getModuleReference());
           }
         }
       }
