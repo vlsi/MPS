@@ -80,18 +80,6 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
     addChild(null, new MPSPsiParameterList());
   }
 
-  public void addChild(MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
-    if (node instanceof MPSPsiParameter) {
-      MPSPsiParameterList paramList = getChildOfType(MPSPsiParameterList.class);
-      if (paramList != null) {
-        paramList.addChild(paramList.getLastChild(), node);
-        return;
-      }
-    }
-
-    super.addChild(anchor, node);
-  }
-
   @Override
   public String toString() {
     return null;  //To change body of implemented methods use File | Settings | File Templates.

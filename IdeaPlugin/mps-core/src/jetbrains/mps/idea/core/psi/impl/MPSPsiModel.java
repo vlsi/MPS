@@ -32,10 +32,7 @@ import com.intellij.testFramework.LightVirtualFile;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.idea.core.projectView.MPSDataKeys;
 import jetbrains.mps.idea.core.psi.MPSKeys;
-import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
-import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.NonNls;
@@ -80,10 +77,10 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
     return nodes.get(nodeId);
   }
 
-  void reload(SModel model, MPSPsiNodeFactory factory) {
+  void reload(SModel model) {
     MPSPsiNode last = null;
     for (SNode root : model.getRootNodes()) {
-      MPSPsiNode psiRoot = convert(root, factory);
+      MPSPsiNode psiRoot = convert(root);
       addChild(last, psiRoot);
       last = psiRoot;
     }
@@ -98,8 +95,8 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
     }
   }
 
-  MPSPsiNode convert(SNode node, MPSPsiNodeFactory factory) {
-    MPSPsiNode psiNode = factory.create(node.getNodeId(), node.getConcept().getQualifiedName(), node.getRoleInParent());
+  MPSPsiNode convert(SNode node) {
+    MPSPsiNode psiNode = MPSPsiProvider.getInstance(getProject()).create(node.getNodeId(), node.getConcept().getQualifiedName(), node.getRoleInParent());
     psiNode.putUserData(MPSKeys.NODE_REFERENCE, node.getReference());
     nodes.put(node.getNodeId(), psiNode);
 
@@ -120,7 +117,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
     // children
     MPSPsiNode last = null;
     for (SNode root : node.getChildren()) {
-      MPSPsiNode psiChild = convert(root, factory);
+      MPSPsiNode psiChild = convert(root);
       psiNode.addChild(last, psiChild);
       last = psiChild;
     }

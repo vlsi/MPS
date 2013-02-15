@@ -24,6 +24,7 @@ import com.intellij.psi.impl.light.LightElement;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.SmartList;
 import jetbrains.mps.fileTypes.MPSLanguage;
+import jetbrains.mps.idea.core.psi.impl.NodeList.Entry;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -33,17 +34,16 @@ import java.util.List;
  */
 public abstract class MPSPsiNodeBase extends LightElement {
 
-  private MPSPsiNodeBase parent;
-  private MPSPsiNodeBase first;
-  private MPSPsiNodeBase next;  // == null only for the last child in the list
-  private MPSPsiNodeBase prev;  // notNull, myFirstChild.myLeftSibling = the last child
+  private NodeList children;
+  private NodeList.Entry listEntry;
 
   public MPSPsiNodeBase() {
-    super(null, MPSLanguage.INSTANCE);
+    this(null);
   }
 
   public MPSPsiNodeBase(PsiManager manager) {
     super(manager, MPSLanguage.INSTANCE);
+    this.children = new NodeList (this);
   }
 
   @Override
@@ -75,31 +75,19 @@ public abstract class MPSPsiNodeBase extends LightElement {
 
   @Override
   public MPSPsiNodeBase getFirstChild() {
-    return first;
+    return children.first();
   }
 
   @Override
   public MPSPsiNodeBase getLastChild() {
-    MPSPsiNodeBase firstChild = first;
-    return firstChild == null ? null : firstChild.prev;
+    return children.last();
   }
 
   @NotNull
   @Override
   public PsiElement[] getChildren() {
-    int count = 0;
-    MPSPsiNodeBase curr = first;
-    while (curr != null) {
-      curr = curr.next;
-      count++;
-    }
-    PsiElement[] result = new PsiElement[count];
-    curr = first;
-    count = 0;
-    while (curr != null) {
-      result[count++] = curr;
-      curr = curr.next;
-    }
+    PsiElement[] result = new PsiElement[children.size()];
+    children.toArray(result);
     return result;
   }
 
@@ -120,7 +108,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
   protected <T extends PsiElement> T getChildOfType(@NotNull Class<T> aClass) {
     for (PsiElement child = getFirstChild(); child != null; child = child.getNextSibling()) {
       if (child instanceof MPSPsiNodeBase && aClass.isInstance(child)) {
-        return (T) child;
+        return aClass.cast(child);
       }
     }
     return null;
@@ -128,60 +116,56 @@ public abstract class MPSPsiNodeBase extends LightElement {
 
   @Override
   public PsiElement getNextSibling() {
-    return next;
+    return listEntry != null && !listEntry.isLast() ? listEntry.list().next(this) : null;
   }
 
   @Override
   public PsiElement getPrevSibling() {
-    if (parent == null) return null;
-    return parent.first == this ? null : prev;
+    return listEntry != null && !listEntry.isFirst()? listEntry.list().prev(this) : null;
   }
 
   @Override
   public PsiElement getParent() {
-    return parent;
+    return listEntry != null ? listEntry.list().owner() : null;
   }
 
-  public void addChild(MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
-    MPSPsiNodeBase firstChild = first;
+  protected final void addChildFirst (@NotNull MPSPsiNodeBase node) {
+    children.addFirst(node);
+  }
+
+  protected final void addChildLast (@NotNull MPSPsiNodeBase node) {
+    children.addLast(node);
+  }
+
+  protected final void insertChildAfter(MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
+    children.insertAfter(anchor, node);
+  }
+
+  protected final void insertChildBefore(MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
+    children.insertBefore(anchor, node);
+  }
+
+  @Deprecated
+  protected final void addChild(MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
     if (anchor == null) {
-      if (firstChild != null) {
-        node.prev = firstChild.prev;
-        firstChild.prev = node;
-      } else {
-        node.prev = node;
-      }
-      node.next = firstChild;
-      first = node;
-    } else {
-      node.prev = anchor;
-      node.next = anchor.next;
-      if (anchor.next == null) {
-        firstChild.prev = node;
-      } else {
-        anchor.next.prev = node;
-      }
-      anchor.next = node;
+      children.addFirst(node);
     }
-    node.parent = this;
+    else {
+      children.insertAfter(anchor, node);
+    }
   }
 
-  public void removeChild(@NotNull MPSPsiNodeBase node) {
-    MPSPsiNodeBase firstChild = first;
-    if (firstChild == node) {
-      first = node.next;
-      if (first != null) {
-        first.prev = node.prev;
-      }
-    } else {
-      node.prev.next = node.next;
-      if (node.next != null) {
-        node.next.prev = node.prev;
-      } else {
-        firstChild.prev = node.prev;
-      }
-    }
-    node.prev = node.next = null;
-    node.parent = null;
+  protected final void removeChild(@NotNull MPSPsiNodeBase node) {
+    children.remove(node);
   }
+
+  /*package*/ void setEntry (Entry newEntry) {
+    assert (listEntry == null && newEntry != null) || (listEntry != null && newEntry == null);
+    listEntry =  newEntry;
+  }
+
+  /*package*/ Entry getEntry () {
+    return listEntry;
+  }
+
 }

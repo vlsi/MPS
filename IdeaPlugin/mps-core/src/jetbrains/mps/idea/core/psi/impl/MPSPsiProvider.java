@@ -28,16 +28,12 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.file.impl.FileManager;
-import com.intellij.psi.impl.file.impl.FileManagerImpl;
 import jetbrains.mps.idea.core.psi.MPSKeys;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
-import jetbrains.mps.idea.core.psi.impl.file.RootNodePsiElement;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.*;
@@ -53,7 +49,7 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * evgeny, 1/25/13
  */
-public class MPSPsiProvider extends AbstractProjectComponent implements MPSPsiNodeFactory {
+public class MPSPsiProvider extends AbstractProjectComponent {
 
   // TODO softReference..
   ConcurrentMap<SModelReference, MPSPsiModel> models = new ConcurrentHashMap<SModelReference, MPSPsiModel>();
@@ -108,36 +104,23 @@ public class MPSPsiProvider extends AbstractProjectComponent implements MPSPsiNo
     // TODO check GlobalSearchScope.projectScope(myProject).contains(modelFile)
 
     final SModelReference modelRef = model.getModelReference();
-    MPSPsiModel result = models.get(modelRef);
-    if (result != null) return result;
+    MPSPsiModel cached = models.get(modelRef);
+    if (cached != null) return cached;
 
-    result = new MPSPsiModel(modelRef, PsiManager.getInstance(myProject));
-    final MPSPsiModel existing = models.putIfAbsent(modelRef, result);
-    result.reload(model, this);
-    if (existing != null) {
-      result = existing;
-    }
-
-    return result;
+    return getMPSPsiModel(model, modelRef);
   }
 
   public MPSPsiModel getPsi(SModelReference modelRef) {
-    MPSPsiModel result = models.get(modelRef);
-    if (result != null) return result;
+    MPSPsiModel cached = models.get(modelRef);
+    if (cached != null) return cached;
 
     SModel model = modelRef.resolve(MPSModuleRepository.getInstance());
 
-    result = new MPSPsiModel(modelRef, PsiManager.getInstance(myProject));
-    final MPSPsiModel existing = models.putIfAbsent(modelRef, result);
-    result.reload(model, this);
-    if (existing != null) {
-      result = existing;
-    }
+    // TODO check if the model is valid
 
-    return result;
+    return getMPSPsiModel(model, modelRef);
   }
 
-  @Override
   public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
     for (MPSPsiNodeFactory factory : MPSPsiNodeFactory.EP_NAME.getExtensions()) {
       final MPSPsiNode psiNode = factory.create(id, concept, containingRole);
@@ -146,6 +129,17 @@ public class MPSPsiProvider extends AbstractProjectComponent implements MPSPsiNo
       }
     }
     return new MPSPsiNode(id, concept, containingRole);
+  }
+
+  private MPSPsiModel getMPSPsiModel(SModel model, SModelReference modelRef) {
+    MPSPsiModel result;
+    result = new MPSPsiModel(modelRef, PsiManager.getInstance(myProject));
+    final MPSPsiModel existing = models.putIfAbsent(modelRef, result);
+    result.reload(model);
+    if (existing != null) {
+      result = existing;
+    }
+    return result;
   }
 
   /**
