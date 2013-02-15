@@ -50,7 +50,7 @@ public class AbstractCellMenuPart_ApplySideTransforms implements SubstituteInfoP
     for (final INodeSubstituteAction action : list) {
       wrapperList.add(new NodeSubstituteActionWrapper(action) {
         @Override
-        public SNode substitute(@Nullable jetbrains.mps.openapi.editor.EditorContext context, String pattern) {
+        public SNode substitute(@Nullable EditorContext context, String pattern) {
           if (context != null) {
             EditorCell contextCell = context.getContextCell();
             if (contextCell instanceof EditorCell_Constant && contextCell.isErrorState()) {
