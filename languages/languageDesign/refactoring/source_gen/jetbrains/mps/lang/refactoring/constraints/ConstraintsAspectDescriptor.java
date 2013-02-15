@@ -12,41 +12,29 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 14:
+      case 9:
         return new RequiredAdditionalArgumentReference_Constraints();
-      case 8:
+      case 4:
         return new ExecuteFindersExpression_Constraints();
       case 0:
         return new AbstractUIArgumentExpression_Constraints();
-      case 10:
+      case 6:
         return new RefactoringAction_Constraints();
-      case 16:
+      case 10:
         return new UpdateModelByDefaultOperation_Constraints();
-      case 12:
+      case 7:
         return new RefactoringFieldReference_Constraints();
-      case 13:
+      case 8:
         return new RefactoringParameterReference_Constraints();
       case 2:
-        return new AskExpression_Constraints();
-      case 5:
         return new ContextMemberOperation_Constraints();
-      case 15:
-        return new SetValueStatement_Constraints();
-      case 7:
-        return new ErrorStatement_Constraints();
-      case 4:
-        return new ComponentExpression_Constraints();
-      case 11:
-        return new RefactoringContextExpression_Constraints();
-      case 6:
-        return new DeleteFeatureOperation_Constraints();
       case 3:
-        return new ChangeFeatureNameOperation_Constraints();
+        return new DeleteFeatureOperation_Constraints();
       case 1:
-        return new AskBooleanExpression_Constraints();
-      case 9:
+        return new ChangeFeatureNameOperation_Constraints();
+      case 5:
         return new ModelsToGenerateByDefault_Constraints();
-      case 17:
+      case 11:
         return new UpdateModelClause_Constraints();
       default:
         // todo: illegal in some cases? 
@@ -54,5 +42,5 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression", "jetbrains.mps.lang.refactoring.structure.AskBooleanExpression", "jetbrains.mps.lang.refactoring.structure.AskExpression", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", "jetbrains.mps.lang.refactoring.structure.ComponentExpression", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation", "jetbrains.mps.lang.refactoring.structure.ErrorStatement", "jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.RefactoringAction", "jetbrains.mps.lang.refactoring.structure.RefactoringContextExpression", "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", "jetbrains.mps.lang.refactoring.structure.SetValueStatement", "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelClause"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractUIArgumentExpression", "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation", "jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.RefactoringAction", "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelClause"};
 }

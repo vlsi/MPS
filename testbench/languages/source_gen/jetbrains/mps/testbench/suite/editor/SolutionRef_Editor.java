@@ -20,8 +20,8 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
 public class SolutionRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -78,7 +78,7 @@ public class SolutionRef_Editor extends DefaultNodeEditor {
         return EqualUtil.equals(s, getText());
       }
     }, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SolutionRef_Editor.ReplaceWith_SolutionRef_cellMenu_a0b0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_ns5ajd_b0");
     return editorCell;

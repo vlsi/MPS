@@ -263,7 +263,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
   }
 
-  public boolean clearForOwner(EditorMessageOwner owner, boolean repaintAndRebuild) {
+  public boolean  clearForOwner(EditorMessageOwner owner, boolean repaintAndRebuild) {
     boolean result = myEditor.getMessagesGutter().removeMessages(owner);
     synchronized (myMessagesLock) {
       if (myOwnerToMessages.containsKey(owner)) {

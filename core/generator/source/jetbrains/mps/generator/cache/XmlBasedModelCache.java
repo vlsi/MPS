@@ -19,7 +19,6 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
@@ -29,6 +28,8 @@ import org.jdom.JDOMException;
 import org.jdom.input.JDOMParseException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.xml.sax.SAXParseException;
 
 import java.io.FileNotFoundException;
@@ -48,7 +49,7 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
 
   @Override
   @Nullable
-  protected T readCache(SModelDescriptor sm) {
+  protected T readCache(SModel sm) {
     IFile cacheFile = getCacheFile(sm);
 
     if (cacheFile == null || !cacheFile.exists()) return null;
@@ -77,7 +78,7 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
   }
 
   @Override
-  protected void saveCache(@NotNull T cache, SModelDescriptor model, StreamHandler handler) {
+  protected void saveCache(@NotNull T cache, SModel model, StreamHandler handler) {
     handler.saveStream(getCacheFileName(), toXml(cache), isCache());
   }
 
@@ -97,10 +98,11 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
     }
   }
 
+  @Override
   @Nullable
-  protected IFile getCacheFile(SModelDescriptor modelDescriptor) {
-    IModule m = modelDescriptor.getModule();
-    IFile cachesModuleDir = getCachesDirInternal(m, m.getOutputFor(modelDescriptor));
+  protected IFile getCacheFile(SModel modelDescriptor) {
+    SModule m = modelDescriptor.getModule();
+    IFile cachesModuleDir = getCachesDirInternal(m, ((IModule) m).getOutputFor(modelDescriptor));
     if (cachesModuleDir == null) return null;
     IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, cachesModuleDir);
     if (cachesDir == null) return null;

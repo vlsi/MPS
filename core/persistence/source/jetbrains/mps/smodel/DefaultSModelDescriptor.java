@@ -15,15 +15,16 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.persistence.def.ModelDigestHelper;
-
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
+import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.DefaultModelPersistence;
+import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.refactoring.StructureModificationLog;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoader;
@@ -41,7 +42,7 @@ import java.util.Map;
 
 import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 
-public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implements GeneratableSModelDescriptor, RefactorableSModelDescriptor, FastFindSupportProvider {
+public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implements GeneratableSModel, RefactorableSModelDescriptor, FastFindSupportProvider {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
   public static String FAST_FIND_ID = "regular";
 
@@ -197,12 +198,18 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
   @Override
   public String getModelHash() {
-    return ModelDigestHelper.getInstance().getModelHash(this);
+    String modelHash = ModelDigestHelper.getInstance().getModelHash(getSource());
+    if (modelHash != null) return modelHash;
+
+    return ModelDigestUtil.hash(getSource().getFile(), true);
   }
 
   @Override
   public Map<String, String> getGenerationHashes() {
-    return ModelDigestHelper.getInstance().getGenerationHashes(this);
+    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource());
+    if (generationHashes != null) return generationHashes;
+
+    return DefaultModelPersistence.getDigestMap(getSource().getFile());
   }
 
   @Override

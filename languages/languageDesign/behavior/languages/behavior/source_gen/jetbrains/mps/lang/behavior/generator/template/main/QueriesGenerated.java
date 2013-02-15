@@ -184,14 +184,6 @@ public class QueriesGenerated {
     return ConceptMethodDeclaration_Behavior.call_getContainingConcept_1241074789565(_context.getNode());
   }
 
-  public static Object referenceMacro_GetReferent_5570334447680928666(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode enclosingMethod = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false);
-    return (((enclosingMethod != null) && SPropertyOperations.getBoolean(enclosingMethod, "isStatic")) ?
-      "thisConcept" :
-      "thisNode"
-    );
-  }
-
   public static Object referenceMacro_GetReferent_2061371070686517040(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return (SPropertyOperations.getBoolean(_context.getNode(), "isStatic") ?
       "thisConcept" :
@@ -225,6 +217,11 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_5212852298298917224(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(SuperNodeExpression_Behavior.call_isSuperMethodStatic_5212852298298945349(_context.getNode()));
+  }
+
+  public static boolean ifMacro_Condition_572350672214579331(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode enclosingMethod = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false);
+    return ((enclosingMethod != null) && SPropertyOperations.getBoolean(enclosingMethod, "isStatic"));
   }
 
   public static boolean ifMacro_Condition_2061371070686302345(final IOperationContext operationContext, final IfMacroContext _context) {

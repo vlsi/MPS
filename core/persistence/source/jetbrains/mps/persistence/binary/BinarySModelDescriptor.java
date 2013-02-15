@@ -15,12 +15,16 @@
  */
 package jetbrains.mps.persistence.binary;
 
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.persistence.BinaryModelPersistence;
+import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -33,10 +37,10 @@ import static jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
 
 /**
  * evgeny, 11/21/12
- *
+ * <p/>
  * TODO FastFindSupportProvider
  */
-public class BinarySModelDescriptor extends BaseEditableSModelDescriptor implements GeneratableSModelDescriptor, RefactorableSModelDescriptor {
+public class BinarySModelDescriptor extends BaseEditableSModelDescriptor implements GeneratableSModel, RefactorableSModelDescriptor {
 
   private volatile BinarySModel myModel = null;
   private final BinaryModelHeader myHeader;
@@ -147,15 +151,25 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
 
   @Override
   public String getModelHash() {
-    // TODO
-    return null;
+    String modelHash = ModelDigestHelper.getInstance().getModelHash(getSource());
+    if (modelHash != null) return modelHash;
+
+    return ModelDigestUtil.hash(getSource().getFile(), false);
   }
 
   @Override
   public Map<String, String> getGenerationHashes() {
-    // TODO
-    return null;
+    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource());
+    if (generationHashes != null) return generationHashes;
+
+    return BinaryModelPersistence.getDigestMap(getSource().getFile());
   }
+
+  @Override
+  public boolean isGeneratable() {
+    return !isDoNotGenerate() && !getSource().isReadOnly() && SModelStereotype.isUserModel(this);
+  }
+
 
   @Override
   public void setDoNotGenerate(boolean value) {

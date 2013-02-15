@@ -36,6 +36,12 @@ public class typeof_Node_IsInstanceOfOperation_InferenceRule extends AbstractInf
         typeCheckingContext.createComparableEquation((SNode) typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(op), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4101496941862450640", true), (SNode) _quotation_createNode_bsicn0_a0b0a1a1(SLinkOperations.getTarget(conceptReference, "conceptDeclaration", false)), false, _info_12389875345);
       }
     }
+
+    {
+      SNode _nodeToCheck_1029348928467 = op;
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "654553635095118770", 0, null);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "654553635095118775", true), (SNode) _quotation_createNode_bsicn0_a0d0b(), _info_12389875345);
+    }
   }
 
   public String getApplicableConceptFQName() {
@@ -64,5 +70,11 @@ public class typeof_Node_IsInstanceOfOperation_InferenceRule extends AbstractInf
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_bsicn0_a0d0b() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

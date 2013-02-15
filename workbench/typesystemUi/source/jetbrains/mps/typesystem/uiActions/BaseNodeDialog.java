@@ -37,16 +37,15 @@ public abstract class BaseNodeDialog extends DialogWrapper {
 
   protected BaseNodeDialog(String text, IOperationContext operationContext) {
     super(true);
-
+    setTitle(text);
     myOperationContext = operationContext;
+
     InspectorEditorComponent inspector = new InspectorEditorComponent();
     myEditorComponent = new UIEditorComponent(getOperationContext(), inspector);
 
     mySplitter = new Splitter(true, 0.6f);
     mySplitter.setFirstComponent(myEditorComponent.getExternalComponent());
     mySplitter.setSecondComponent(inspector.getExternalComponent());
-
-    setTitle(text);
   }
 
   protected abstract SNode getNode();
@@ -78,5 +77,10 @@ public abstract class BaseNodeDialog extends DialogWrapper {
     myDisposed = true;
     myEditorComponent.dispose();
     super.dispose();
+  }
+
+  @Override
+  protected String getDimensionServiceKey() {
+    return this.getClass().getCanonicalName();
   }
 }

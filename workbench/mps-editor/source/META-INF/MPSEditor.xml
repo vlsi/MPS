@@ -77,6 +77,10 @@
       <implementation-class>com.intellij.openapi.fileEditor.FileEditorDataProviderManager</implementation-class>
     </component>
 
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.editor.StyleRegistryIdeaImpl</implementation-class>
+    </component>
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">

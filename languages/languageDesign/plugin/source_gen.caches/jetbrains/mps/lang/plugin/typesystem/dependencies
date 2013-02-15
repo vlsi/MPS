@@ -81,12 +81,14 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_ActionParameterReferenceOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_ActionParameterReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_AddActionStatement_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_AddTabOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_BootstrapActionGroup_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_BootstrapExtentionPoint_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_ButtonCreator_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_CloseTabOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_ConceptFunctionParameter_PreferencePage_component_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_GetGroupOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_GetSelectedTabOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_GroupAccessOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_InstanceExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_KeyMapKeystroke_InferenceRule" />
@@ -209,6 +211,17 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.typesystem.typeof_AddTabOperation_InferenceRule" file="typeof_AddTabOperation_InferenceRule.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.plugin.typesystem.typeof_BootstrapActionGroup_InferenceRule" file="typeof_BootstrapActionGroup_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -275,6 +288,20 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.typesystem.typeof_GetGroupOperation_InferenceRule" file="typeof_GetGroupOperation_InferenceRule.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.typesystem.typeof_GetSelectedTabOperation_InferenceRule" file="typeof_GetSelectedTabOperation_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />

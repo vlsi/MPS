@@ -28,6 +28,7 @@ import java.awt.event.*;
 
 public abstract class AbstractNodeInformationDialog extends JDialog {
   private JTextArea myTextArea;
+  // COLORS: Remove hardcoded color
   private static final Color BACKGROUND_COLOR = new Color(253, 254, 226);
   private Component prevFocusOwner;
   private FocusListener myOwnerFocusListener = new FocusAdapter() {

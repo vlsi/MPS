@@ -15,19 +15,17 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
-import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Graphics2D;
-import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,9 +56,9 @@ public abstract class AbstractMultipleSelection extends AbstractSelection implem
   @Override
   public void executeAction(CellActionType type) {
     getEditorComponent().assertModelNotDisposed();
-    EditorCellAction action = getEditorComponent().getComponentAction(type);
+    CellAction action = getEditorComponent().getComponentAction(type);
     if (action != null && action.canExecute(getEditorComponent().getEditorContext())) {
-      action.execute((EditorContext) getEditorComponent().getEditorContext());
+      action.execute(getEditorComponent().getEditorContext());
     }
   }
 

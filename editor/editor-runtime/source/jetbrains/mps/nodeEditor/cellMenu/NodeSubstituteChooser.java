@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
+import com.intellij.openapi.editor.colors.EditorColors;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
 import jetbrains.mps.logging.Logger;
@@ -486,10 +489,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private class PopupWindow extends JWindow {
-    private final Color BACKGROUND_COLOR = new Color(235, 244, 254);
-    private final Color FOREGROUND_COLOR = Color.black;
-    private final Color SELECTED_BACKGROUND_COLOR = new Color(0, 82, 164);
-    private final Color SELECTED_FOREGROUND_COLOR = Color.white;
+    //COLORS: change after IDEA com.intellij.codeInsight.lookup.impl.LookupCellRenderer will be refactored to use Editor's Fonts & Colors settings
+    private final Color BACKGROUND_COLOR = UIUtil.isUnderDarcula() ? new Color(0x141D29) : new Color(235, 244, 254);
+    private final Color FOREGROUND_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getDefaultForeground();
+    private final Color SELECTED_BACKGROUND_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_BACKGROUND_COLOR);
+    private final Color SELECTED_FOREGROUND_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_FOREGROUND_COLOR);
     private JList myList = new JBList(new DefaultListModel()) {
       @Override
       public Dimension getPreferredScrollableViewportSize() {
@@ -522,6 +526,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       getOwner().addComponentListener(myComponentListener);
 
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+      //TODO: change to EditorColorManager default font
       myList.setFont(EditorSettings.getInstance().getDefaultEditorFont());
       myList.setBackground(BACKGROUND_COLOR);
       myList.setForeground(FOREGROUND_COLOR);

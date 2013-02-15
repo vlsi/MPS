@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import org.jetbrains.mps.openapi.model.SNode;
 
-public class CellAction_Insert extends EditorCellAction {
+public class CellAction_Insert extends AbstractCellAction {
   private SNode myNode;
   private String myRole;
 

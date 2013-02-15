@@ -23,6 +23,7 @@ import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import java.util.Map;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
@@ -113,7 +114,7 @@ public class GeneratorUtil {
     public MyIncrementalGenerationStrategy() {
     }
 
-    public Map<String, String> getModelHashes(SModelDescriptor p0, IOperationContext p1) {
+    public Map<String, String> getModelHashes(SModel p0, IOperationContext p1) {
       return Collections.emptyMap();
     }
 
@@ -121,7 +122,7 @@ public class GeneratorUtil {
       return null;
     }
 
-    public GenerationDependencies getDependencies(SModelDescriptor p0) {
+    public GenerationDependencies getDependencies(SModel p0) {
       return null;
     }
 

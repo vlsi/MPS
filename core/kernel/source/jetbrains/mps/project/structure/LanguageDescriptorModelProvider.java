@@ -16,11 +16,11 @@
 package jetbrains.mps.project.structure;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModelId;
 
@@ -175,7 +175,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     return "component: Language Descriptor Models Provider";
   }
 
-  public class LanguageModelDescriptor extends BaseSpecialModelDescriptor implements GeneratableSModelDescriptor {
+  public class LanguageModelDescriptor extends BaseSpecialModelDescriptor implements GeneratableSModel {
     private final Language myModule;
     private String myHash;
 
@@ -219,7 +219,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
     @Override
     public Map<String, String> getGenerationHashes() {
-      return Collections.singletonMap(GeneratableSModelDescriptor.FILE, getModelHash());
+      return Collections.singletonMap(GeneratableSModel.FILE, getModelHash());
     }
 
     @Override

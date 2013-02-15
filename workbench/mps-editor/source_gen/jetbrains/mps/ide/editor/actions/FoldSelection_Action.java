@@ -10,9 +10,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.logging.Logger;
 
 public class FoldSelection_Action extends BaseAction {
@@ -63,13 +63,13 @@ public class FoldSelection_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      FoldSelection_Action.this.getAction(_params).execute((EditorContext) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+      FoldSelection_Action.this.getAction(_params).execute(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FoldSelection", t);
     }
   }
 
-  /*package*/ EditorCellAction getAction(final Map<String, Object> _params) {
+  /*package*/ CellAction getAction(final Map<String, Object> _params) {
     return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getComponentAction(CellActionType.TOGGLE_FOLDING);
   }
 

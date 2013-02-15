@@ -19,7 +19,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Pair;
@@ -27,8 +26,11 @@ import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -61,6 +63,19 @@ public class BinaryPersistence {
       return loadModel(mref, mis);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, mref);
+    } finally {
+      FileUtil.closeFileSafe(mis);
+    }
+  }
+
+  @NotNull
+  public static BinarySModel readModel(@NotNull final InputStream content) throws ModelReadException {
+    ModelInputStream mis = null;
+    try {
+      mis = new ModelInputStream(content);
+      return loadModel(null, mis);
+    } catch (IOException e) {
+      throw new ModelReadException("Couldn't read model: " + e.getMessage(), e);
     } finally {
       FileUtil.closeFileSafe(mis);
     }
@@ -110,8 +125,12 @@ public class BinaryPersistence {
   }
 
   @NotNull
-  private static BinarySModel loadModel(SModelReference modelReference, ModelInputStream is) throws IOException {
+  private static BinarySModel loadModel(@Nullable SModelReference modelReference, ModelInputStream is) throws IOException {
     BinaryModelHeader modelHeader = loadHeader(is);
+    if (modelReference == null) {
+      modelReference = modelHeader.getReference();
+    }
+
     BinarySModel model = new BinarySModel(modelHeader);
 
     for (ModuleReference ref : loadModuleRefList(is)) model.addLanguage(ref);
@@ -139,6 +158,16 @@ public class BinaryPersistence {
   }
 
   private static void saveModel(SModel model, ModelOutputStream os) throws IOException {
+    saveModelProperties(model, os);
+
+    ArrayList<SNode> roots = new ArrayList<SNode>(model.rootsCount());
+    for (SNode root : model.roots()) {
+      roots.add(root);
+    }
+    new NodesWriter(model.getSModelReference()).writeNodes(roots, os);
+  }
+
+  public static void saveModelProperties(SModel model, ModelOutputStream os) throws IOException {
     // header
     os.writeInt(HEADER);
     os.writeInt(STREAM_ID);
@@ -156,12 +185,6 @@ public class BinaryPersistence {
     saveImports(model.getAdditionalModelVersions(), os);
 
     os.writeInt(0xbaba);
-
-    ArrayList<SNode> roots = new ArrayList<SNode>(model.rootsCount());
-    for (SNode root : model.roots()) {
-      roots.add(root);
-    }
-    new NodesWriter(model.getSModelReference()).writeNodes(roots, os);
   }
 
   private static void saveModuleRefList(Collection<ModuleReference> refs, ModelOutputStream os) throws IOException {

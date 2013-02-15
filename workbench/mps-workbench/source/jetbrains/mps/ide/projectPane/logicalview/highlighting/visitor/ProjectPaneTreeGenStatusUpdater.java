@@ -18,6 +18,7 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.DumbService;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -27,11 +28,11 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectOperationContext;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.tree.TreeNode;
@@ -46,6 +47,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     return (ProjectModuleTreeNode) node;
   }
 
+  @Override
   protected void visitModelNode(final SModelTreeNode modelNode) {
     if (!ProjectPane.isShowGenStatus()) return;
     if (IMakeService.INSTANCE.isSessionActive()) return;
@@ -53,8 +55,9 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     Application application = ApplicationManager.getApplication();
     if (application.isDisposed() || application.isDisposeInProgress()) return;
 
-    SModelDescriptor md = modelNode.getSModelDescriptor();
-    if (!(md instanceof EditableSModelDescriptor) && !(md.isGeneratable())) return;
+    SModel md = modelNode.getModel();
+    if (!(md instanceof EditableSModelDescriptor)) return;
+    if (!(md instanceof GeneratableSModel) || !(((GeneratableSModel) md).isGeneratable())) return;
     if (md.getModule() == null) return;
 
     TreeNode node = modelNode;
@@ -80,7 +83,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     GenerationStatus modelStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
       public GenerationStatus compute() {
         // extra check before read action
-        if (modelNode.getSModelDescriptor().getModule() == null) {
+        if (modelNode.getModel().getModule() == null) {
           return GenerationStatus.NOT_REQUIRED;
         }
         return getGenerationStatus(modelNode);
@@ -125,27 +128,27 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   }
 
   private GenerationStatus getGenerationStatus(SModelTreeNode node) {
-    if (node.getSModelDescriptor() == null) return GenerationStatus.NOT_REQUIRED;
+    if (node.getModel() == null) return GenerationStatus.NOT_REQUIRED;
     if (isPackaged(node)) return GenerationStatus.PACKAGED;
     if (isDoNotGenerate(node)) return GenerationStatus.DO_NOT_GENERATE;
 
     jetbrains.mps.project.Project project = node.getOperationContext().getProject();
     if (DumbService.getInstance(ProjectHelper.toIdeaProject(project)).isDumb()) return GenerationStatus.UPDATING;
 
-    boolean required = ModelGenerationStatusManager.getInstance().generationRequired(node.getSModelDescriptor());
+    boolean required = ModelGenerationStatusManager.getInstance().generationRequired(node.getModel());
     return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;
   }
 
   private boolean isPackaged(SModelTreeNode node) {
-    SModelDescriptor md = node.getSModelDescriptor();
+    SModel md = node.getModel();
     if (!(md instanceof EditableSModelDescriptor)) return false;
     return ((EditableSModelDescriptor) md).isReadOnly();
   }
 
   private boolean isDoNotGenerate(SModelTreeNode node) {
-    SModelDescriptor md = node.getSModelDescriptor();
-    if (!(md instanceof GeneratableSModelDescriptor)) return false;
-    return ((GeneratableSModelDescriptor) md).isDoNotGenerate();
+    SModel md = node.getModel();
+    if (!(md instanceof GeneratableSModel)) return false;
+    return ((GeneratableSModel) md).isDoNotGenerate();
   }
 
   public static enum GenerationStatus {

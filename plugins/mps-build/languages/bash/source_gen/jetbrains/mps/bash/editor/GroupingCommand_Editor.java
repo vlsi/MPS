@@ -17,8 +17,8 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -62,7 +62,7 @@ public class GroupingCommand_Editor extends DefaultNodeEditor {
         return EqualUtil.equals(s, getText());
       }
     }, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_ny89z6_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -83,7 +83,7 @@ public class GroupingCommand_Editor extends DefaultNodeEditor {
         return EqualUtil.equals(s, getText());
       }
     }, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_ny89z6_c0");
     return editorCell;
   }

@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiParameter;
 import com.intellij.psi.PsiParameterList;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
@@ -38,7 +39,13 @@ public class MPSPsiParameterList extends MPSPsiNodeBase implements PsiParameterL
   @NotNull
   @Override
   public PsiParameter[] getParameters() {
-    MPSPsiParameter[] params = getChildrenOfType("parameter", MPSPsiParameter.class);
+    PsiElement parent = getParent();
+    if (!(parent instanceof MPSPsiMethod)) {
+      return PsiParameter.EMPTY_ARRAY;
+    }
+
+    MPSPsiMethod mpsMethod = (MPSPsiMethod) parent;
+    MPSPsiParameter[] params = mpsMethod.getChildrenOfType("parameter", MPSPsiParameter.class);
     if (params == null) {
       return PsiParameter.EMPTY_ARRAY;
     } else {

@@ -138,6 +138,7 @@
     <classNode dependClassName="org.eclipse.jdt.core.compiler.CategorizedProblem" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.CompilationResult" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.compiler.CompilationResultAdapter" />
     <classNode extendsClassName="jetbrains.mps.generator.IncrementalGenerationStrategy" />
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />

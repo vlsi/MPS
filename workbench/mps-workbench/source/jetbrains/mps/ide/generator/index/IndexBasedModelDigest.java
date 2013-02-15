@@ -24,8 +24,8 @@ import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.persistence.def.ModelDigestHelper;
-import jetbrains.mps.smodel.persistence.def.ModelDigestHelper.DigestProvider;
+import jetbrains.mps.persistence.ModelDigestHelper;
+import jetbrains.mps.persistence.ModelDigestHelper.DigestProvider;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 

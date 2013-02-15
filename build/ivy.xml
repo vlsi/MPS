@@ -423,7 +423,7 @@
     <dependency org="lib" name="resolver.jar" rev="${idea.platform.version}">
       <artifact name="resolver.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="resources.jar" rev="${idea.platform.version}">
+    <dependency org="lib" name="resources.jar" rev="123.123.1">
       <artifact name="resources.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="resources_en.jar" rev="${idea.platform.version}">

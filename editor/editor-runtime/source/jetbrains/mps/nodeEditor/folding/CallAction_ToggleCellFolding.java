@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.folding;
 
-import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -26,7 +26,7 @@ import jetbrains.mps.util.Condition;
  * User: Alexander Shatalin
  * Date: 05.10.2010
  */
-public class CallAction_ToggleCellFolding extends EditorCellAction {
+public class CallAction_ToggleCellFolding extends AbstractCellAction {
   @Override
   public boolean canExecute(EditorContext context) {
     return findCell(((EditorComponent) context.getEditorComponent()).getSelectedCell()) != null;

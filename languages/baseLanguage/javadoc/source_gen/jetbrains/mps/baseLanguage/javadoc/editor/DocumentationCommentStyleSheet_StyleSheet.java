@@ -8,6 +8,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class DocumentationCommentStyleSheet_StyleSheet {
   @Deprecated
@@ -21,10 +22,7 @@ public class DocumentationCommentStyleSheet_StyleSheet {
   @Deprecated
   public static Style getCommentTag(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.putAll(DocumentationCommentStyleSheet_StyleSheet.getComment(editorCell));
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-    style.set(StyleAttributes.UNDERLINED, true);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.putAll(BaseLanguageStyle_StyleSheet.getJavaDocTag(editorCell));
     return style;
   }
 
@@ -42,10 +40,7 @@ public class DocumentationCommentStyleSheet_StyleSheet {
   }
 
   public static void applyCommentTag(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    DocumentationCommentStyleSheet_StyleSheet.applyComment(style, editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-    style.set(StyleAttributes.UNDERLINED, true);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    BaseLanguageStyle_StyleSheet.applyJavaDocTag(style, editorCell);
   }
 
   public static void applyCommentHTMLTag(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {

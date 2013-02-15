@@ -5,17 +5,21 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BaseLanguageStyle_StyleSheet {
   @Deprecated
   public static Style getKeyWord(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.putAll(StyleRegistry.getInstance().getStyle("KEYWORD"));
     return style;
   }
 
@@ -29,67 +33,93 @@ public class BaseLanguageStyle_StyleSheet {
   @Deprecated
   public static Style getComment(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.putAll(StyleRegistry.getInstance().getStyle("LINE_COMMENT"));
+    return style;
+  }
+
+  @Deprecated
+  public static Style getTODO(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getComment(editorCell));
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0d((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ))) {
+      style.putAll(StyleRegistry.getInstance().getStyle("TODO"));
+    }
+    return style;
+  }
+
+  @Deprecated
+  public static Style getBlockComment(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("BLOCK_COMMENT"));
     return style;
   }
 
   @Deprecated
   public static Style getJavaDoc(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-    style.set(StyleAttributes.UNDERLINED, true);
+    style.putAll(StyleRegistry.getInstance().getStyle("DOC_COMMENT"));
+    return style;
+  }
+
+  @Deprecated
+  public static Style getJavaDocTag(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("DOC_TAG"));
     return style;
   }
 
   @Deprecated
   public static Style getField(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.putAll(StyleRegistry.getInstance().getStyle("INSTANCE_FIELD"));
     return style;
   }
 
   @Deprecated
   public static Style getLocalVariable(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("LOCAL_VARIABLE"));
     return style;
   }
 
   @Deprecated
   public static Style getParameter(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("PARAMETER"));
     return style;
   }
 
   @Deprecated
   public static Style getStaticField(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.putAll(BaseLanguageStyle_StyleSheet.getVariableName(editorCell));
     return style;
   }
 
   @Deprecated
   public static Style getStringLiteral(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.putAll(StyleRegistry.getInstance().getStyle("STRING"));
     return style;
   }
 
   @Deprecated
   public static Style getNumericLiteral(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    style.putAll(StyleRegistry.getInstance().getStyle("NUMBER"));
     return style;
   }
 
   @Deprecated
   public static Style getEmptyCell(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.putAll(StyleRegistry.getInstance().getStyle("NOT_USED_ELEMENT"));
     return style;
   }
 
@@ -102,21 +132,21 @@ public class BaseLanguageStyle_StyleSheet {
   @Deprecated
   public static Style getStaticMethod(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.putAll(StyleRegistry.getInstance().getStyle("STATIC_METHOD"));
     return style;
   }
 
   @Deprecated
   public static Style getAnnotation(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.putAll(StyleRegistry.getInstance().getStyle("ANNOTATION"));
     return style;
   }
 
   @Deprecated
   public static Style getOperator(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.putAll(StyleRegistry.getInstance().getStyle("OPERATION_SIGN"));
     return style;
   }
 
@@ -132,6 +162,7 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getParenthesis(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(editorCell));
+    style.putAll(StyleRegistry.getInstance().getStyle("PARENTH"));
     style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
     return style;
   }
@@ -164,6 +195,7 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getBrace(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(editorCell));
+    style.putAll(StyleRegistry.getInstance().getStyle("BRACES"));
     style.set(StyleAttributes.MATCHING_LABEL, "brace");
     return style;
   }
@@ -186,6 +218,7 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getBracket(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(editorCell));
+    style.putAll(StyleRegistry.getInstance().getStyle("BRACKETS"));
     style.set(StyleAttributes.MATCHING_LABEL, "bracket");
     return style;
   }
@@ -234,24 +267,86 @@ public class BaseLanguageStyle_StyleSheet {
   @Deprecated
   public static Style getMethodName(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("METHOD_DECLARATION"));
+    return style;
+  }
+
+  @Deprecated
+  public static Style getMPSMethodCall(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("METHOD_CALL"));
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1hb((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ))) {
+      style.putAll(StyleRegistry.getInstance().getStyle("STATIC_METHOD"));
+    }
     return style;
   }
 
   @Deprecated
   public static Style getVariableName(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0ib((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ))) {
+      style.putAll(StyleRegistry.getInstance().getStyle("STATIC_FINAL_FIELD"));
+    }
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1ib((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ))) {
+      style.putAll(StyleRegistry.getInstance().getStyle("STATIC_FIELD"));
+    }
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a2ib((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ))) {
+      style.putAll(StyleRegistry.getInstance().getStyle("INSTANCE_FIELD"));
+    }
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a3ib((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ))) {
+      style.putAll(StyleRegistry.getInstance().getStyle("LOCAL_VARIABLE"));
+    }
     return style;
   }
 
   @Deprecated
   public static Style getClassName(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getConceptName(editorCell));
+    return style;
+  }
+
+  @Deprecated
+  public static Style getConceptName(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("CLASS_NAME"));
     return style;
   }
 
   @Deprecated
   public static Style getSemicolon(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("SEMICOLON"));
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     return style;
@@ -260,6 +355,7 @@ public class BaseLanguageStyle_StyleSheet {
   @Deprecated
   public static Style getDot(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("DOT"));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.SELECTABLE, false);
@@ -283,8 +379,14 @@ public class BaseLanguageStyle_StyleSheet {
   @Deprecated
   public static Style getFoldedCell(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(15790320));
-    style.set(StyleAttributes.TEXT_COLOR, new Color(12829635));
+    style.putAll(StyleRegistry.getInstance().getStyle("FOLDED_TEXT"));
+    return style;
+  }
+
+  @Deprecated
+  public static Style getUrl(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("URL"));
     return style;
   }
 
@@ -296,8 +398,7 @@ public class BaseLanguageStyle_StyleSheet {
   }
 
   public static void applyKeyWord(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.putAll(StyleRegistry.getInstance().getStyle("KEYWORD"));
   }
 
   public static void applyCompactKeyWord(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
@@ -305,58 +406,75 @@ public class BaseLanguageStyle_StyleSheet {
   }
 
   public static void applyComment(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.putAll(StyleRegistry.getInstance().getStyle("LINE_COMMENT"));
+  }
+
+  public static void applyTODO(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    BaseLanguageStyle_StyleSheet.applyComment(style, editorCell);
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0d((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ))) {
+      style.putAll(StyleRegistry.getInstance().getStyle("TODO"));
+    }
+  }
+
+  public static void applyBlockComment(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    style.putAll(StyleRegistry.getInstance().getStyle("BLOCK_COMMENT"));
   }
 
   public static void applyJavaDoc(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-    style.set(StyleAttributes.UNDERLINED, true);
+    style.putAll(StyleRegistry.getInstance().getStyle("DOC_COMMENT"));
+  }
+
+  public static void applyJavaDocTag(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    style.putAll(StyleRegistry.getInstance().getStyle("DOC_TAG"));
   }
 
   public static void applyField(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.putAll(StyleRegistry.getInstance().getStyle("INSTANCE_FIELD"));
   }
 
   public static void applyLocalVariable(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    style.putAll(StyleRegistry.getInstance().getStyle("LOCAL_VARIABLE"));
   }
 
   public static void applyParameter(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    style.putAll(StyleRegistry.getInstance().getStyle("PARAMETER"));
   }
 
   public static void applyStaticField(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
   }
 
   public static void applyStringLiteral(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.putAll(StyleRegistry.getInstance().getStyle("STRING"));
   }
 
   public static void applyNumericLiteral(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    style.putAll(StyleRegistry.getInstance().getStyle("NUMBER"));
   }
 
   public static void applyEmptyCell(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.putAll(StyleRegistry.getInstance().getStyle("NOT_USED_ELEMENT"));
   }
 
   public static void applyInstanceMethod(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
   }
 
   public static void applyStaticMethod(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.putAll(StyleRegistry.getInstance().getStyle("STATIC_METHOD"));
   }
 
   public static void applyAnnotation(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.putAll(StyleRegistry.getInstance().getStyle("ANNOTATION"));
   }
 
   public static void applyOperator(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.putAll(StyleRegistry.getInstance().getStyle("OPERATION_SIGN"));
   }
 
   public static void applyAnyBracket(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
@@ -366,6 +484,7 @@ public class BaseLanguageStyle_StyleSheet {
 
   public static void applyParenthesis(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     BaseLanguageStyle_StyleSheet.applyAnyBracket(style, editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("PARENTH"));
     style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
   }
 
@@ -386,6 +505,7 @@ public class BaseLanguageStyle_StyleSheet {
 
   public static void applyBrace(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     BaseLanguageStyle_StyleSheet.applyAnyBracket(style, editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("BRACES"));
     style.set(StyleAttributes.MATCHING_LABEL, "brace");
   }
 
@@ -399,6 +519,7 @@ public class BaseLanguageStyle_StyleSheet {
 
   public static void applyBracket(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     BaseLanguageStyle_StyleSheet.applyAnyBracket(style, editorCell);
+    style.putAll(StyleRegistry.getInstance().getStyle("BRACKETS"));
     style.set(StyleAttributes.MATCHING_LABEL, "bracket");
   }
 
@@ -429,20 +550,77 @@ public class BaseLanguageStyle_StyleSheet {
   }
 
   public static void applyMethodName(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    style.putAll(StyleRegistry.getInstance().getStyle("METHOD_DECLARATION"));
+  }
+
+  public static void applyMPSMethodCall(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    style.putAll(StyleRegistry.getInstance().getStyle("METHOD_CALL"));
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1hb((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ))) {
+      style.putAll(StyleRegistry.getInstance().getStyle("STATIC_METHOD"));
+    }
   }
 
   public static void applyVariableName(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0ib((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ))) {
+      style.putAll(StyleRegistry.getInstance().getStyle("STATIC_FINAL_FIELD"));
+    }
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1ib((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ))) {
+      style.putAll(StyleRegistry.getInstance().getStyle("STATIC_FIELD"));
+    }
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a2ib((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ))) {
+      style.putAll(StyleRegistry.getInstance().getStyle("INSTANCE_FIELD"));
+    }
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a3ib((editorCell == null ?
+      null :
+      editorCell.getContext()
+    ), (editorCell == null ?
+      null :
+      editorCell.getSNode()
+    ))) {
+      style.putAll(StyleRegistry.getInstance().getStyle("LOCAL_VARIABLE"));
+    }
   }
 
   public static void applyClassName(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    BaseLanguageStyle_StyleSheet.applyConceptName(style, editorCell);
+  }
+
+  public static void applyConceptName(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    style.putAll(StyleRegistry.getInstance().getStyle("CLASS_NAME"));
   }
 
   public static void applySemicolon(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    style.putAll(StyleRegistry.getInstance().getStyle("SEMICOLON"));
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
   }
 
   public static void applyDot(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    style.putAll(StyleRegistry.getInstance().getStyle("DOT"));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.SELECTABLE, false);
@@ -457,11 +635,60 @@ public class BaseLanguageStyle_StyleSheet {
   }
 
   public static void applyFoldedCell(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(15790320));
-    style.set(StyleAttributes.TEXT_COLOR, new Color(12829635));
+    style.putAll(StyleRegistry.getInstance().getStyle("FOLDED_TEXT"));
+  }
+
+  public static void applyUrl(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    style.putAll(StyleRegistry.getInstance().getStyle("URL"));
   }
 
   public static void applyLabel(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_the604_a0d(EditorContext editorContext, SNode node) {
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.TextCommentPart") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.as(node, "jetbrains.mps.baseLanguage.structure.TextCommentPart"), "virtual_isToDo_7236590470026152831", new Object[]{});
+  }
+
+  private static boolean _StyleParameter_QueryFunction_the604_a1hb(EditorContext editorContext, SNode node) {
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+  }
+
+  private static boolean _StyleParameter_QueryFunction_the604_a0ib(EditorContext editorContext, SNode node) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_7405920559687241224", new Object[]{})) {
+        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration") && SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "isFinal")) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  private static boolean _StyleParameter_QueryFunction_the604_a1ib(EditorContext editorContext, SNode node) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_7405920559687241224", new Object[]{})) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration") && SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "isFinal"))) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  private static boolean _StyleParameter_QueryFunction_the604_a2ib(EditorContext editorContext, SNode node) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+      if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_7405920559687241224", new Object[]{}))) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private static boolean _StyleParameter_QueryFunction_the604_a3ib(EditorContext editorContext, SNode node) {
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
+      return true;
+    }
+    return false;
   }
 }

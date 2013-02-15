@@ -589,20 +589,20 @@ public class ConceptPropertiesHelper {
         modelComponent = _quotation_createNode_azpnkk_a0a0a0a2a03(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)", "6639471181490591356"));
       }
     }
-    if (method == null) {
-      return;
-    }
     if (modelComponent == null) {
+      if (method == null) {
+        return;
+      }
       SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
       SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", method, false);
 
-      SNode cellModel_ReadOnlyModelAccessor = _quotation_createNode_azpnkk_a0d0e0eb();
+      SNode cellModel_ReadOnlyModelAccessor = _quotation_createNode_azpnkk_a0e0d0eb();
       SNode conceptFunctionParameter_node = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node", null);
       SNode returnStatement;
-      if (conceptNode == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept") && eq_azpnkk_a0a6a4a03(SPropertyOperations.getString(SLinkOperations.getTarget(cell, "relationDeclaration", false), "name"), dontSubstituteName)) {
-        returnStatement = _quotation_createNode_azpnkk_a0a0g0e0eb(conceptFunctionParameter_node);
+      if (conceptNode == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept") && eq_azpnkk_a0a7a3a03(SPropertyOperations.getString(SLinkOperations.getTarget(cell, "relationDeclaration", false), "name"), dontSubstituteName)) {
+        returnStatement = _quotation_createNode_azpnkk_a0a0h0d0eb(conceptFunctionParameter_node);
       } else {
-        returnStatement = _quotation_createNode_azpnkk_a0a0a6a4a03(methodCall, conceptFunctionParameter_node);
+        returnStatement = _quotation_createNode_azpnkk_a0a0a7a3a03(methodCall, conceptFunctionParameter_node);
       }
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(cellModel_ReadOnlyModelAccessor, "modelAccessor", true), "getter", true), "body", true), "statement", true)).addElement(returnStatement);
       modelComponent = cellModel_ReadOnlyModelAccessor;
@@ -1254,7 +1254,7 @@ public class ConceptPropertiesHelper {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_azpnkk_a0d0e0eb() {
+  private static SNode _quotation_createNode_azpnkk_a0e0d0eb() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1269,7 +1269,7 @@ public class ConceptPropertiesHelper {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_azpnkk_a0a0g0e0eb(Object parameter_1) {
+  private static SNode _quotation_createNode_azpnkk_a0a0h0d0eb(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -1292,7 +1292,7 @@ public class ConceptPropertiesHelper {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_azpnkk_a0a0a6a4a03(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_azpnkk_a0a0a7a3a03(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -1445,7 +1445,7 @@ public class ConceptPropertiesHelper {
     );
   }
 
-  private static boolean eq_azpnkk_a0a6a4a03(Object a, Object b) {
+  private static boolean eq_azpnkk_a0a7a3a03(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

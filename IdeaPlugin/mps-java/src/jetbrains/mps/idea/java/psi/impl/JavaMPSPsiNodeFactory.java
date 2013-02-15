@@ -16,13 +16,20 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.psi.PsiElement;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
+import jetbrains.mps.idea.core.psi.MPSPsiNodeFactoryStubAware;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+
+import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +37,7 @@ import java.util.Map;
 /**
  * evgeny, 1/28/13
  */
-public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
+public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactoryStubAware {
 
   private static final Map<String, MPSPsiNodeFactory> factories = new HashMap<String, MPSPsiNodeFactory>();
 
@@ -126,5 +133,23 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
     }
 
     return null;
+  }
+
+  @Override
+  public PsiElement getPsiSource(SNode node) {
+    return getPsiSourceOf(node);
+  }
+
+  public static PsiElement getPsiSourceOf(SNode node) {
+    // old SModel, non-openapi
+    SModel model = node.getModel();
+    if (model == null) return null;
+    SModelDescriptor mDesc = model.getModelDescriptor();
+    if (mDesc == null || !(mDesc instanceof PsiJavaStubModelDescriptor)) {
+      return null;
+    }
+
+    PsiJavaStubModelDescriptor psiStubs = (PsiJavaStubModelDescriptor) mDesc;
+    return psiStubs.getPsiSource(node);
   }
 }

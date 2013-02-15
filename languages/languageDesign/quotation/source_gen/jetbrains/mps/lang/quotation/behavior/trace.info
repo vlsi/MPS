@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="AbstractAntiquotation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.AbstractAntiquotation_BehaviorDescriptor" />
   <unitInfo fileName="Antiquotation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.Antiquotation_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ListAntiquotation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.ListAntiquotation_BehaviorDescriptor" />
   <unitInfo fileName="NodeBuilderExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.NodeBuilderExpression_BehaviorDescriptor" />
   <unitInfo fileName="NodeBuilderInitLink_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitLink_BehaviorDescriptor" />
