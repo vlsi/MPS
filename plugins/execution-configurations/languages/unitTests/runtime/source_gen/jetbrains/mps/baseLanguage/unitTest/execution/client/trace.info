@@ -884,8 +884,8 @@
     <nodeInfo nodeId="5881102044690179245" fileName="AbstractTestWrapper.java" startLine="114" startPosition="5" endLine="115" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5881102044690179265" fileName="AbstractTestWrapper.java" startLine="121" startPosition="27" endLine="122" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5881102044690179269" fileName="AbstractTestWrapper.java" startLine="125" startPosition="5" endLine="126" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6504487988305050411" fileName="AbstractTestWrapper.java" startLine="129" startPosition="89" endLine="130" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3310779261129582176" fileName="AbstractTestWrapper.java" startLine="130" startPosition="173" endLine="131" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6504487988305050411" fileName="AbstractTestWrapper.java" startLine="129" startPosition="89" endLine="130" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3310779261129582176" fileName="AbstractTestWrapper.java" startLine="130" startPosition="167" endLine="131" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5881102044690179018" fileName="AbstractTestWrapper.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodePointer" />
     <nodeInfo nodeId="4055524022176337868" fileName="AbstractTestWrapper.java" startLine="97" startPosition="10" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4055524022176337847" fileName="AbstractTestWrapper.java" startLine="111" startPosition="12" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1522,265 +1522,264 @@
     <unitInfo nodeId="5881102044690784748" fileName="TestEventsDispatcher.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" />
   </root>
   <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/6062668769034832918">
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebuggerSettings_String" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualMachineParameter_String" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJrePath_String" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWorkingDirectory_File" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="45" startPosition="35" endLine="46" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="47" startPosition="5" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="52" startPosition="42" endLine="53" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="59" startPosition="26" endLine="60" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="61" startPosition="5" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="66" startPosition="35" endLine="67" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="68" startPosition="5" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034832975" fileName="Junit_Command.java" startLine="83" startPosition="24" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6062668769034832980" fileName="Junit_Command.java" startLine="85" startPosition="5" endLine="86" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034832997" fileName="Junit_Command.java" startLine="87" startPosition="59" endLine="88" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="96" startPosition="41" endLine="97" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833061" fileName="Junit_Command.java" startLine="100" startPosition="82" endLine="101" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034833068" fileName="Junit_Command.java" startLine="103" startPosition="25" endLine="104" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034833097" fileName="Junit_Command.java" startLine="109" startPosition="31" endLine="110" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034833102" fileName="Junit_Command.java" startLine="113" startPosition="7" endLine="114" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833113" fileName="Junit_Command.java" startLine="117" startPosition="192" endLine="118" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034833114" fileName="Junit_Command.java" startLine="118" startPosition="102" endLine="119" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034833122" fileName="Junit_Command.java" startLine="119" startPosition="146" endLine="120" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034833126" fileName="Junit_Command.java" startLine="120" startPosition="101" endLine="121" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034833138" fileName="Junit_Command.java" startLine="123" startPosition="50" endLine="124" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5603351415227423467" fileName="Junit_Command.java" startLine="127" startPosition="56" endLine="128" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5603351415227423477" fileName="Junit_Command.java" startLine="130" startPosition="27" endLine="131" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034833147" fileName="Junit_Command.java" startLine="133" startPosition="9" endLine="134" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833159" fileName="Junit_Command.java" startLine="137" startPosition="25" endLine="138" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034833176" fileName="Junit_Command.java" startLine="140" startPosition="54" endLine="141" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833194" fileName="Junit_Command.java" startLine="145" startPosition="54" endLine="146" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833205" fileName="Junit_Command.java" startLine="149" startPosition="53" endLine="150" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833216" fileName="Junit_Command.java" startLine="155" startPosition="49" endLine="156" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034833223" fileName="Junit_Command.java" startLine="157" startPosition="5" endLine="158" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833246" fileName="Junit_Command.java" startLine="161" startPosition="80" endLine="162" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034833258" fileName="Junit_Command.java" startLine="165" startPosition="49" endLine="166" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034833268" fileName="Junit_Command.java" startLine="166" startPosition="93" endLine="167" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034833276" fileName="Junit_Command.java" startLine="170" startPosition="7" endLine="171" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034833285" fileName="Junit_Command.java" startLine="172" startPosition="42" endLine="173" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034833297" fileName="Junit_Command.java" startLine="174" startPosition="5" endLine="175" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833308" fileName="Junit_Command.java" startLine="181" startPosition="57" endLine="182" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="185" startPosition="38" endLine="186" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="191" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="194" startPosition="36" endLine="195" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="196" startPosition="5" endLine="197" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="201" startPosition="36" endLine="202" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="203" startPosition="5" endLine="204" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="208" startPosition="36" endLine="209" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="210" startPosition="5" endLine="211" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034832956" fileName="Junit_Command.java" startLine="214" startPosition="63" endLine="215" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833222" fileName="Junit_Command.java" startLine="232" startPosition="61" endLine="233" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="41" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Junit_Command#()V" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="44" startPosition="76" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="51" startPosition="90" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="58" startPosition="58" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="65" startPosition="72" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034832973" fileName="Junit_Command.java" startLine="82" startPosition="95" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034832995" fileName="Junit_Command.java" startLine="86" startPosition="147" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="96" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
-    <nodeInfo nodeId="6062668769034833136" fileName="Junit_Command.java" startLine="123" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
-    <nodeInfo nodeId="5603351415227423482" fileName="Junit_Command.java" startLine="130" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6062668769034833174" fileName="Junit_Command.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
-    <nodeInfo nodeId="6062668769034833192" fileName="Junit_Command.java" startLine="145" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
-    <nodeInfo nodeId="6062668769034833203" fileName="Junit_Command.java" startLine="149" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6062668769034833214" fileName="Junit_Command.java" startLine="154" startPosition="7" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034833283" fileName="Junit_Command.java" startLine="171" startPosition="77" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="185" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
-    <nodeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="193" startPosition="82" endLine="196" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="200" startPosition="84" endLine="203" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="207" startPosition="84" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034832956" fileName="Junit_Command.java" startLine="214" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_yo2c7x_a0a0a0a0a9#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="6062668769034833222" fileName="Junit_Command.java" startLine="232" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_yo2c7x_a0h0n#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="6062668769034833004" fileName="Junit_Command.java" startLine="89" startPosition="5" endLine="93" endPosition="424" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833081" fileName="Junit_Command.java" startLine="105" startPosition="68" endLine="109" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034833256" fileName="Junit_Command.java" startLine="164" startPosition="25" endLine="168" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="180" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDebuggerSettings#()Ljetbrains/mps/debug/api/IDebuggerSettings;" />
-    <nodeInfo nodeId="6062668769034833177" fileName="Junit_Command.java" startLine="218" startPosition="80" endLine="222" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833195" fileName="Junit_Command.java" startLine="225" startPosition="83" endLine="229" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833129" fileName="Junit_Command.java" startLine="121" startPosition="66" endLine="126" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5603351415227423481" fileName="Junit_Command.java" startLine="128" startPosition="159" endLine="133" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034833167" fileName="Junit_Command.java" startLine="138" startPosition="93" endLine="143" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDebuggerSettings_String#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/Junit_Command;" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualMachineParameter_String#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/Junit_Command;" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setJrePath_String#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/Junit_Command;" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="65" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setWorkingDirectory_File#(Ljava/io/File;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/Junit_Command;" />
-    <nodeInfo nodeId="6062668769034833254" fileName="Junit_Command.java" startLine="164" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="193" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_u7m9j_a1a0a0a#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="200" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_u7m9j_a0c0a0a0#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Z" />
-    <nodeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="207" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_u7m9j_a0a3a0a0a#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6062668769034833177" fileName="Junit_Command.java" startLine="218" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_yo2c7x_a0a0a0a0a0a0b0a0a0a0g0n#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6062668769034833195" fileName="Junit_Command.java" startLine="225" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_yo2c7x_a0a0a0a0a0a0a2a0a0a0a6a31#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6062668769034832927" fileName="Junit_Command.java" startLine="72" startPosition="132" endLine="79" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833077" fileName="Junit_Command.java" startLine="104" startPosition="116" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6062668769034833253" fileName="Junit_Command.java" startLine="162" startPosition="83" endLine="170" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="72" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProcess#(Ljava/util/List;Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Lcom/intellij/execution/process/ProcessHandler;" />
-    <nodeInfo nodeId="6062668769034833145" fileName="Junit_Command.java" startLine="126" startPosition="24" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034833185" fileName="Junit_Command.java" startLine="143" startPosition="28" endLine="152" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034833066" fileName="Junit_Command.java" startLine="103" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="178" startPosition="67" endLine="188" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034833065" fileName="Junit_Command.java" startLine="101" startPosition="87" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="178" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebuggerConfiguration#()Ljetbrains/mps/debug/api/run/IDebuggerConfiguration;" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="82" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProcess#(Ljava/util/List;)Lcom/intellij/execution/process/ProcessHandler;" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="100" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getProgramParameters#(Ljava/util/List;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="161" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClasspath#(Ljava/util/List;)Ljava/util/List;" />
-    <nodeInfo nodeId="6062668769034833157" fileName="Junit_Command.java" startLine="137" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6062668769034833156" fileName="Junit_Command.java" startLine="135" startPosition="5" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="117" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTestsToRunWithParameters#(Ljava/util/List;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="41" startPosition="26" endLine="41" endPosition="26" />
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="45" startPosition="35" endLine="46" endPosition="51" />
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="52" startPosition="42" endLine="53" endPosition="65" />
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="59" startPosition="26" endLine="60" endPosition="33" />
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="66" startPosition="35" endLine="67" endPosition="49" />
-    <scopeInfo nodeId="6062668769034832974" fileName="Junit_Command.java" startLine="83" startPosition="24" endLine="84" endPosition="61" />
-    <scopeInfo nodeId="6062668769034832996" fileName="Junit_Command.java" startLine="87" startPosition="59" endLine="88" endPosition="67" />
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="96" startPosition="41" endLine="97" endPosition="52" />
-    <scopeInfo nodeId="6062668769034833137" fileName="Junit_Command.java" startLine="123" startPosition="50" endLine="124" endPosition="26" />
-    <scopeInfo nodeId="5603351415227423483" fileName="Junit_Command.java" startLine="130" startPosition="27" endLine="131" endPosition="85" />
-    <scopeInfo nodeId="6062668769034833175" fileName="Junit_Command.java" startLine="140" startPosition="54" endLine="141" endPosition="97" />
-    <scopeInfo nodeId="6062668769034833193" fileName="Junit_Command.java" startLine="145" startPosition="54" endLine="146" endPosition="100" />
-    <scopeInfo nodeId="6062668769034833204" fileName="Junit_Command.java" startLine="149" startPosition="53" endLine="150" endPosition="32" />
-    <scopeInfo nodeId="6062668769034833215" fileName="Junit_Command.java" startLine="155" startPosition="49" endLine="156" endPosition="88" />
-    <scopeInfo nodeId="6062668769034833284" fileName="Junit_Command.java" startLine="172" startPosition="42" endLine="173" endPosition="113" />
-    <scopeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="181" startPosition="57" endLine="182" endPosition="49" />
-    <scopeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="185" startPosition="38" endLine="186" endPosition="65" />
-    <scopeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="194" startPosition="36" endLine="195" endPosition="43" />
-    <scopeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="201" startPosition="36" endLine="202" endPosition="61" />
-    <scopeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="208" startPosition="36" endLine="209" endPosition="50" />
-    <scopeInfo nodeId="6062668769034832956" fileName="Junit_Command.java" startLine="214" startPosition="63" endLine="215" endPosition="44" />
-    <scopeInfo nodeId="6062668769034833222" fileName="Junit_Command.java" startLine="232" startPosition="61" endLine="233" endPosition="43" />
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="41" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="6062668769034833257" fileName="Junit_Command.java" startLine="165" startPosition="49" endLine="167" endPosition="64">
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebuggerSettings_String" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualMachineParameter_String" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJrePath_String" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWorkingDirectory_File" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="46" startPosition="35" endLine="47" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="48" startPosition="5" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="53" startPosition="42" endLine="54" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="55" startPosition="5" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="60" startPosition="26" endLine="61" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="62" startPosition="5" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="67" startPosition="35" endLine="68" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="69" startPosition="5" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034832975" fileName="Junit_Command.java" startLine="84" startPosition="24" endLine="85" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6062668769034832980" fileName="Junit_Command.java" startLine="86" startPosition="5" endLine="87" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034832997" fileName="Junit_Command.java" startLine="88" startPosition="59" endLine="89" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="97" startPosition="41" endLine="98" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833061" fileName="Junit_Command.java" startLine="101" startPosition="82" endLine="102" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034833068" fileName="Junit_Command.java" startLine="104" startPosition="25" endLine="105" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034833097" fileName="Junit_Command.java" startLine="110" startPosition="31" endLine="111" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034833102" fileName="Junit_Command.java" startLine="114" startPosition="7" endLine="115" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833113" fileName="Junit_Command.java" startLine="118" startPosition="192" endLine="119" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034833114" fileName="Junit_Command.java" startLine="119" startPosition="102" endLine="120" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034833122" fileName="Junit_Command.java" startLine="120" startPosition="146" endLine="121" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034833126" fileName="Junit_Command.java" startLine="121" startPosition="101" endLine="122" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034833138" fileName="Junit_Command.java" startLine="124" startPosition="50" endLine="125" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5603351415227423467" fileName="Junit_Command.java" startLine="128" startPosition="56" endLine="129" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5603351415227423477" fileName="Junit_Command.java" startLine="131" startPosition="27" endLine="132" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034833147" fileName="Junit_Command.java" startLine="134" startPosition="9" endLine="135" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833159" fileName="Junit_Command.java" startLine="138" startPosition="25" endLine="139" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034833176" fileName="Junit_Command.java" startLine="141" startPosition="54" endLine="142" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833194" fileName="Junit_Command.java" startLine="146" startPosition="54" endLine="147" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833205" fileName="Junit_Command.java" startLine="150" startPosition="53" endLine="151" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833216" fileName="Junit_Command.java" startLine="156" startPosition="49" endLine="157" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034833223" fileName="Junit_Command.java" startLine="158" startPosition="5" endLine="159" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833246" fileName="Junit_Command.java" startLine="162" startPosition="80" endLine="163" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034833258" fileName="Junit_Command.java" startLine="166" startPosition="49" endLine="167" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034833268" fileName="Junit_Command.java" startLine="167" startPosition="93" endLine="168" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2796391569760724000" fileName="Junit_Command.java" startLine="173" startPosition="53" endLine="174" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833308" fileName="Junit_Command.java" startLine="182" startPosition="57" endLine="183" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="186" startPosition="38" endLine="187" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="192" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="195" startPosition="36" endLine="196" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="197" startPosition="5" endLine="198" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="202" startPosition="36" endLine="203" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="204" startPosition="5" endLine="205" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="209" startPosition="36" endLine="210" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="211" startPosition="5" endLine="212" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034832956" fileName="Junit_Command.java" startLine="215" startPosition="63" endLine="216" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833222" fileName="Junit_Command.java" startLine="233" startPosition="61" endLine="234" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="42" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Junit_Command#()V" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="45" startPosition="76" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="52" startPosition="90" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="59" startPosition="58" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="66" startPosition="72" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034832973" fileName="Junit_Command.java" startLine="83" startPosition="95" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034832995" fileName="Junit_Command.java" startLine="87" startPosition="147" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
+    <nodeInfo nodeId="6062668769034833136" fileName="Junit_Command.java" startLine="124" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
+    <nodeInfo nodeId="5603351415227423482" fileName="Junit_Command.java" startLine="131" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6062668769034833174" fileName="Junit_Command.java" startLine="141" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
+    <nodeInfo nodeId="6062668769034833192" fileName="Junit_Command.java" startLine="146" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
+    <nodeInfo nodeId="6062668769034833203" fileName="Junit_Command.java" startLine="150" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6062668769034833214" fileName="Junit_Command.java" startLine="155" startPosition="7" endLine="158" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2796391569760721297" fileName="Junit_Command.java" startLine="173" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="186" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
+    <nodeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="194" startPosition="82" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="201" startPosition="84" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="208" startPosition="84" endLine="211" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034832956" fileName="Junit_Command.java" startLine="215" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_yo2c7x_a0a0a0a0a9#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="6062668769034833222" fileName="Junit_Command.java" startLine="233" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_yo2c7x_a0h0n#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="6062668769034833004" fileName="Junit_Command.java" startLine="90" startPosition="5" endLine="94" endPosition="424" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833081" fileName="Junit_Command.java" startLine="106" startPosition="68" endLine="110" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034833256" fileName="Junit_Command.java" startLine="165" startPosition="25" endLine="169" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="181" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDebuggerSettings#()Ljetbrains/mps/debug/api/IDebuggerSettings;" />
+    <nodeInfo nodeId="6062668769034833177" fileName="Junit_Command.java" startLine="219" startPosition="80" endLine="223" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833195" fileName="Junit_Command.java" startLine="226" startPosition="83" endLine="230" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833129" fileName="Junit_Command.java" startLine="122" startPosition="66" endLine="127" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5603351415227423481" fileName="Junit_Command.java" startLine="129" startPosition="159" endLine="134" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034833167" fileName="Junit_Command.java" startLine="139" startPosition="93" endLine="144" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034833297" fileName="Junit_Command.java" startLine="171" startPosition="7" endLine="176" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="45" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDebuggerSettings_String#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/Junit_Command;" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualMachineParameter_String#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/Junit_Command;" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setJrePath_String#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/Junit_Command;" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setWorkingDirectory_File#(Ljava/io/File;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/Junit_Command;" />
+    <nodeInfo nodeId="6062668769034833254" fileName="Junit_Command.java" startLine="165" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="194" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_u7m9j_a1a0a0a#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="201" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_u7m9j_a0c0a0a0#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Z" />
+    <nodeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="208" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_u7m9j_a0a3a0a0a#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6062668769034833177" fileName="Junit_Command.java" startLine="219" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_yo2c7x_a0a0a0a0a0a0b0a0a0a0g0n#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6062668769034833195" fileName="Junit_Command.java" startLine="226" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_yo2c7x_a0a0a0a0a0a0a2a0a0a0a6a31#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6062668769034832927" fileName="Junit_Command.java" startLine="73" startPosition="132" endLine="80" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833077" fileName="Junit_Command.java" startLine="105" startPosition="116" endLine="112" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6062668769034833253" fileName="Junit_Command.java" startLine="163" startPosition="83" endLine="171" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="73" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProcess#(Ljava/util/List;Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Lcom/intellij/execution/process/ProcessHandler;" />
+    <nodeInfo nodeId="6062668769034833145" fileName="Junit_Command.java" startLine="127" startPosition="24" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034833185" fileName="Junit_Command.java" startLine="144" startPosition="28" endLine="153" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034833066" fileName="Junit_Command.java" startLine="104" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="179" startPosition="67" endLine="189" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034833065" fileName="Junit_Command.java" startLine="102" startPosition="87" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="179" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebuggerConfiguration#()Ljetbrains/mps/debug/api/run/IDebuggerConfiguration;" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="83" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProcess#(Ljava/util/List;)Lcom/intellij/execution/process/ProcessHandler;" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="101" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getProgramParameters#(Ljava/util/List;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="162" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClasspath#(Ljava/util/List;)Ljava/util/List;" />
+    <nodeInfo nodeId="6062668769034833157" fileName="Junit_Command.java" startLine="138" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6062668769034833156" fileName="Junit_Command.java" startLine="136" startPosition="5" endLine="155" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="118" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTestsToRunWithParameters#(Ljava/util/List;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="42" startPosition="26" endLine="42" endPosition="26" />
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="46" startPosition="35" endLine="47" endPosition="51" />
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="53" startPosition="42" endLine="54" endPosition="65" />
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="60" startPosition="26" endLine="61" endPosition="33" />
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="67" startPosition="35" endLine="68" endPosition="49" />
+    <scopeInfo nodeId="6062668769034832974" fileName="Junit_Command.java" startLine="84" startPosition="24" endLine="85" endPosition="61" />
+    <scopeInfo nodeId="6062668769034832996" fileName="Junit_Command.java" startLine="88" startPosition="59" endLine="89" endPosition="67" />
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="97" startPosition="41" endLine="98" endPosition="52" />
+    <scopeInfo nodeId="6062668769034833137" fileName="Junit_Command.java" startLine="124" startPosition="50" endLine="125" endPosition="26" />
+    <scopeInfo nodeId="5603351415227423483" fileName="Junit_Command.java" startLine="131" startPosition="27" endLine="132" endPosition="85" />
+    <scopeInfo nodeId="6062668769034833175" fileName="Junit_Command.java" startLine="141" startPosition="54" endLine="142" endPosition="97" />
+    <scopeInfo nodeId="6062668769034833193" fileName="Junit_Command.java" startLine="146" startPosition="54" endLine="147" endPosition="100" />
+    <scopeInfo nodeId="6062668769034833204" fileName="Junit_Command.java" startLine="150" startPosition="53" endLine="151" endPosition="32" />
+    <scopeInfo nodeId="6062668769034833215" fileName="Junit_Command.java" startLine="156" startPosition="49" endLine="157" endPosition="88" />
+    <scopeInfo nodeId="2796391569760721298" fileName="Junit_Command.java" startLine="173" startPosition="53" endLine="174" endPosition="45" />
+    <scopeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="182" startPosition="57" endLine="183" endPosition="49" />
+    <scopeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="186" startPosition="38" endLine="187" endPosition="65" />
+    <scopeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="195" startPosition="36" endLine="196" endPosition="43" />
+    <scopeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="202" startPosition="36" endLine="203" endPosition="61" />
+    <scopeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="209" startPosition="36" endLine="210" endPosition="50" />
+    <scopeInfo nodeId="6062668769034832956" fileName="Junit_Command.java" startLine="215" startPosition="63" endLine="216" endPosition="44" />
+    <scopeInfo nodeId="6062668769034833222" fileName="Junit_Command.java" startLine="233" startPosition="61" endLine="234" endPosition="43" />
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="42" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="6062668769034833257" fileName="Junit_Command.java" startLine="166" startPosition="49" endLine="168" endPosition="64">
       <varInfo nodeId="6062668769034833259" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="96" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="6062668769034833136" fileName="Junit_Command.java" startLine="123" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="97" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="6062668769034833136" fileName="Junit_Command.java" startLine="124" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="6062668769034833136" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5603351415227423482" fileName="Junit_Command.java" startLine="130" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="6062668769034833174" fileName="Junit_Command.java" startLine="140" startPosition="0" endLine="143" endPosition="0">
+    <scopeInfo nodeId="5603351415227423482" fileName="Junit_Command.java" startLine="131" startPosition="0" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="6062668769034833174" fileName="Junit_Command.java" startLine="141" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="6062668769034833174" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833192" fileName="Junit_Command.java" startLine="145" startPosition="0" endLine="148" endPosition="0">
+    <scopeInfo nodeId="6062668769034833192" fileName="Junit_Command.java" startLine="146" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="6062668769034833192" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833203" fileName="Junit_Command.java" startLine="149" startPosition="0" endLine="152" endPosition="0">
+    <scopeInfo nodeId="6062668769034833203" fileName="Junit_Command.java" startLine="150" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="6062668769034833203" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833283" fileName="Junit_Command.java" startLine="171" startPosition="77" endLine="174" endPosition="5">
-      <varInfo nodeId="6062668769034833295" varName="module" />
+    <scopeInfo nodeId="2796391569760721297" fileName="Junit_Command.java" startLine="173" startPosition="0" endLine="176" endPosition="0">
+      <varInfo nodeId="2796391569760721297" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="185" startPosition="0" endLine="188" endPosition="0" />
-    <scopeInfo nodeId="6062668769034832956" fileName="Junit_Command.java" startLine="214" startPosition="0" endLine="217" endPosition="0">
+    <scopeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="186" startPosition="0" endLine="189" endPosition="0" />
+    <scopeInfo nodeId="6062668769034832956" fileName="Junit_Command.java" startLine="215" startPosition="0" endLine="218" endPosition="0">
       <varInfo nodeId="6062668769034832956" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833222" fileName="Junit_Command.java" startLine="232" startPosition="0" endLine="235" endPosition="0">
+    <scopeInfo nodeId="6062668769034833222" fileName="Junit_Command.java" startLine="233" startPosition="0" endLine="236" endPosition="0">
       <varInfo nodeId="6062668769034833222" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="44" startPosition="76" endLine="48" endPosition="16" />
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="51" startPosition="90" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="58" startPosition="58" endLine="62" endPosition="16" />
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="65" startPosition="72" endLine="69" endPosition="16" />
-    <scopeInfo nodeId="6062668769034833255" fileName="Junit_Command.java" startLine="164" startPosition="25" endLine="168" endPosition="9" />
-    <scopeInfo nodeId="6062668769034833256" fileName="Junit_Command.java" startLine="164" startPosition="25" endLine="168" endPosition="9">
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="45" startPosition="76" endLine="49" endPosition="16" />
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="52" startPosition="90" endLine="56" endPosition="16" />
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="59" startPosition="58" endLine="63" endPosition="16" />
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="66" startPosition="72" endLine="70" endPosition="16" />
+    <scopeInfo nodeId="6062668769034833255" fileName="Junit_Command.java" startLine="165" startPosition="25" endLine="169" endPosition="9" />
+    <scopeInfo nodeId="6062668769034833256" fileName="Junit_Command.java" startLine="165" startPosition="25" endLine="169" endPosition="9">
       <varInfo nodeId="6062668769034833274" varName="testable" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="180" startPosition="0" endLine="184" endPosition="0" />
-    <scopeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="193" startPosition="82" endLine="197" endPosition="16" />
-    <scopeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="200" startPosition="84" endLine="204" endPosition="17" />
-    <scopeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="207" startPosition="84" endLine="211" endPosition="16" />
-    <scopeInfo nodeId="6062668769034833177" fileName="Junit_Command.java" startLine="218" startPosition="80" endLine="222" endPosition="6" />
-    <scopeInfo nodeId="6062668769034833195" fileName="Junit_Command.java" startLine="225" startPosition="83" endLine="229" endPosition="7" />
-    <scopeInfo nodeId="6062668769034833080" fileName="Junit_Command.java" startLine="105" startPosition="68" endLine="110" endPosition="107">
+    <scopeInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="181" startPosition="0" endLine="185" endPosition="0" />
+    <scopeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="194" startPosition="82" endLine="198" endPosition="16" />
+    <scopeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="201" startPosition="84" endLine="205" endPosition="17" />
+    <scopeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="208" startPosition="84" endLine="212" endPosition="16" />
+    <scopeInfo nodeId="6062668769034833177" fileName="Junit_Command.java" startLine="219" startPosition="80" endLine="223" endPosition="6" />
+    <scopeInfo nodeId="6062668769034833195" fileName="Junit_Command.java" startLine="226" startPosition="83" endLine="230" endPosition="7" />
+    <scopeInfo nodeId="6062668769034833080" fileName="Junit_Command.java" startLine="106" startPosition="68" endLine="111" endPosition="107">
       <varInfo nodeId="6062668769034833082" varName="parametersPart" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="44" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="45" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="6062668769034832918" varName="debuggerSettings" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="51" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="52" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="6062668769034832918" varName="virtualMachineParameter" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="6062668769034832918" varName="jrePath" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="65" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="6062668769034832918" varName="workingDirectory" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833254" fileName="Junit_Command.java" startLine="164" startPosition="0" endLine="170" endPosition="0" />
-    <scopeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="193" startPosition="0" endLine="199" endPosition="0">
+    <scopeInfo nodeId="6062668769034833254" fileName="Junit_Command.java" startLine="165" startPosition="0" endLine="171" endPosition="0" />
+    <scopeInfo nodeId="6062668769034832932" fileName="Junit_Command.java" startLine="194" startPosition="0" endLine="200" endPosition="0">
       <varInfo nodeId="6062668769034832932" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="200" startPosition="0" endLine="206" endPosition="0">
+    <scopeInfo nodeId="6062668769034832937" fileName="Junit_Command.java" startLine="201" startPosition="0" endLine="207" endPosition="0">
       <varInfo nodeId="6062668769034832937" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="207" startPosition="0" endLine="213" endPosition="0">
+    <scopeInfo nodeId="6062668769034832953" fileName="Junit_Command.java" startLine="208" startPosition="0" endLine="214" endPosition="0">
       <varInfo nodeId="6062668769034832953" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833177" fileName="Junit_Command.java" startLine="218" startPosition="0" endLine="224" endPosition="0">
+    <scopeInfo nodeId="6062668769034833177" fileName="Junit_Command.java" startLine="219" startPosition="0" endLine="225" endPosition="0">
       <varInfo nodeId="6062668769034833177" varName="a" />
       <varInfo nodeId="6062668769034833177" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833195" fileName="Junit_Command.java" startLine="225" startPosition="0" endLine="231" endPosition="0">
+    <scopeInfo nodeId="6062668769034833195" fileName="Junit_Command.java" startLine="226" startPosition="0" endLine="232" endPosition="0">
       <varInfo nodeId="6062668769034833195" varName="a" />
       <varInfo nodeId="6062668769034833195" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034832926" fileName="Junit_Command.java" startLine="72" startPosition="132" endLine="79" endPosition="82" />
-    <scopeInfo nodeId="6062668769034833077" fileName="Junit_Command.java" startLine="104" startPosition="116" endLine="111" endPosition="9">
+    <scopeInfo nodeId="6062668769034832926" fileName="Junit_Command.java" startLine="73" startPosition="132" endLine="80" endPosition="82" />
+    <scopeInfo nodeId="6062668769034833077" fileName="Junit_Command.java" startLine="105" startPosition="116" endLine="112" endPosition="9">
       <varInfo nodeId="6062668769034833078" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833146" fileName="Junit_Command.java" startLine="127" startPosition="56" endLine="134" endPosition="185">
+    <scopeInfo nodeId="6062668769034833146" fileName="Junit_Command.java" startLine="128" startPosition="56" endLine="135" endPosition="185">
       <varInfo nodeId="5603351415227423468" varName="defaultRunParameters" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833067" fileName="Junit_Command.java" startLine="103" startPosition="25" endLine="111" endPosition="9" />
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="72" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="6062668769034833067" fileName="Junit_Command.java" startLine="104" startPosition="25" endLine="112" endPosition="9" />
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="73" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="6062668769034832918" varName="javaRunParameters" />
       <varInfo nodeId="6062668769034832918" varName="tests" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833066" fileName="Junit_Command.java" startLine="103" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="178" startPosition="67" endLine="188" endPosition="6" />
-    <scopeInfo nodeId="6062668769034832972" fileName="Junit_Command.java" startLine="82" startPosition="95" endLine="93" endPosition="424">
+    <scopeInfo nodeId="6062668769034833066" fileName="Junit_Command.java" startLine="104" startPosition="0" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="179" startPosition="67" endLine="189" endPosition="6" />
+    <scopeInfo nodeId="6062668769034832972" fileName="Junit_Command.java" startLine="83" startPosition="95" endLine="94" endPosition="424">
       <varInfo nodeId="6062668769034832981" varName="testsToRun" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="178" startPosition="0" endLine="190" endPosition="0" />
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="82" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="179" startPosition="0" endLine="191" endPosition="0" />
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="83" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="6062668769034832918" varName="tests" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833060" fileName="Junit_Command.java" startLine="100" startPosition="82" endLine="114" endPosition="82">
+    <scopeInfo nodeId="6062668769034833060" fileName="Junit_Command.java" startLine="101" startPosition="82" endLine="115" endPosition="82">
       <varInfo nodeId="6062668769034833062" varName="testsCommandLine" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833245" fileName="Junit_Command.java" startLine="161" startPosition="80" endLine="175" endPosition="59">
-      <varInfo nodeId="6062668769034833277" varName="classpath" />
+    <scopeInfo nodeId="6062668769034833245" fileName="Junit_Command.java" startLine="162" startPosition="80" endLine="176" endPosition="35">
       <varInfo nodeId="6062668769034833247" varName="uniqueModules" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833158" fileName="Junit_Command.java" startLine="137" startPosition="25" endLine="152" endPosition="17" />
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="100" startPosition="0" endLine="116" endPosition="0">
+    <scopeInfo nodeId="6062668769034833158" fileName="Junit_Command.java" startLine="138" startPosition="25" endLine="153" endPosition="17" />
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="101" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="6062668769034833108" varName="tests" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="161" startPosition="0" endLine="177" endPosition="0">
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="162" startPosition="0" endLine="178" endPosition="0">
       <varInfo nodeId="6062668769034833301" varName="tests" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034833157" fileName="Junit_Command.java" startLine="137" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="6062668769034833113" fileName="Junit_Command.java" startLine="117" startPosition="192" endLine="158" endPosition="132">
+    <scopeInfo nodeId="6062668769034833157" fileName="Junit_Command.java" startLine="138" startPosition="0" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="6062668769034833113" fileName="Junit_Command.java" startLine="118" startPosition="192" endLine="159" endPosition="132">
       <varInfo nodeId="6062668769034833113" varName="_tests" />
       <varInfo nodeId="6062668769034833115" varName="runParams" />
       <varInfo nodeId="6062668769034833127" varName="skipped" />
       <varInfo nodeId="6062668769034833123" varName="testsToRun" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="117" startPosition="0" endLine="160" endPosition="0">
+    <scopeInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="118" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="6062668769034833236" varName="tests" />
     </scopeInfo>
-    <unitInfo nodeId="6062668769034833136" fileName="Junit_Command.java" startLine="122" startPosition="65" endLine="126" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$2" />
-    <unitInfo nodeId="5603351415227423482" fileName="Junit_Command.java" startLine="129" startPosition="47" endLine="133" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$3" />
-    <unitInfo nodeId="6062668769034833174" fileName="Junit_Command.java" startLine="139" startPosition="73" endLine="143" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$5" />
-    <unitInfo nodeId="6062668769034833192" fileName="Junit_Command.java" startLine="144" startPosition="89" endLine="148" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$5" />
-    <unitInfo nodeId="6062668769034833203" fileName="Junit_Command.java" startLine="148" startPosition="22" endLine="152" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$5" />
-    <unitInfo nodeId="6062668769034833254" fileName="Junit_Command.java" startLine="163" startPosition="45" endLine="170" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$5" />
-    <unitInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="179" startPosition="15" endLine="188" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$6" />
-    <unitInfo nodeId="6062668769034833066" fileName="Junit_Command.java" startLine="102" startPosition="45" endLine="113" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$1" />
-    <unitInfo nodeId="6062668769034833157" fileName="Junit_Command.java" startLine="136" startPosition="45" endLine="154" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$4" />
-    <unitInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="35" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command" />
+    <unitInfo nodeId="6062668769034833136" fileName="Junit_Command.java" startLine="123" startPosition="65" endLine="127" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$2" />
+    <unitInfo nodeId="5603351415227423482" fileName="Junit_Command.java" startLine="130" startPosition="47" endLine="134" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$3" />
+    <unitInfo nodeId="6062668769034833174" fileName="Junit_Command.java" startLine="140" startPosition="73" endLine="144" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$5" />
+    <unitInfo nodeId="6062668769034833192" fileName="Junit_Command.java" startLine="145" startPosition="89" endLine="149" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$5" />
+    <unitInfo nodeId="6062668769034833203" fileName="Junit_Command.java" startLine="149" startPosition="22" endLine="153" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$5" />
+    <unitInfo nodeId="2796391569760721297" fileName="Junit_Command.java" startLine="172" startPosition="60" endLine="176" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$6" />
+    <unitInfo nodeId="6062668769034833254" fileName="Junit_Command.java" startLine="164" startPosition="45" endLine="171" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$5" />
+    <unitInfo nodeId="6062668769034833304" fileName="Junit_Command.java" startLine="180" startPosition="15" endLine="189" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$7" />
+    <unitInfo nodeId="6062668769034833066" fileName="Junit_Command.java" startLine="103" startPosition="45" endLine="114" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$1" />
+    <unitInfo nodeId="6062668769034833157" fileName="Junit_Command.java" startLine="137" startPosition="45" endLine="155" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command$4" />
+    <unitInfo nodeId="6062668769034832918" fileName="Junit_Command.java" startLine="36" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command" />
   </root>
 </debugInfo>
 
