@@ -7,7 +7,8 @@ import jetbrains.mps.project.IModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
-import jetbrains.mps.reloading.ClasspathStringCollector;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.project.Solution;
@@ -38,9 +39,7 @@ public class DependencyUtil {
   public static Iterable<List<IModule>> findAllDependenciesContainigPatternInClasspath(final IModule rootModule, String path, final ModuleGraph g) {
     Set<IModule> modules = SetSequence.fromSet(new LinkedHashSet<IModule>());
     for (ModuleGraph.ModuleVertex vertex : SetSequence.fromSet(g.getData())) {
-      ClasspathStringCollector collector = new ClasspathStringCollector(false);
-      vertex.getModule().getClassPathItem().accept(collector);
-      for (String cp : SetSequence.fromSet(collector.getClasspath())) {
+      for (String cp : CollectionSequence.fromCollection(vertex.getModule().getFacet(JavaModuleFacet.class).getClassPath())) {
         if (cp.contains(path)) {
           SetSequence.fromSet(modules).addElement(vertex.getModule());
           break;
