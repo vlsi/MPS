@@ -863,11 +863,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellFactoryMethod");
   }
 
-  public static Object referenceMacro_GetReferent_1197572060712(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode generatedClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass");
-    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(generatedClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).first();
-  }
-
   public static Object referenceMacro_GetReferent_1176478910892(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "componentProvider", true), "jcomponent_query_method"), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
   }
@@ -989,7 +984,7 @@ public class QueriesGenerated {
     final String methodName = BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getMethodToGenerate_1262430001741492328", new Object[]{});
     return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.getNode("r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)", "6822392181927252916"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0b0nh(SPropertyOperations.getString(it, "name"), methodName);
+        return eq_x583g4_a0a0a0a0a0b0mh(SPropertyOperations.getString(it, "name"), methodName);
       }
     });
   }
@@ -1690,8 +1685,16 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
 
+  public static Iterable sourceNodesQuery_7301053825001940828(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", false, new String[]{});
+  }
+
   public static Iterable sourceNodesQuery_1182976528704(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "childCellModel", true);
+  }
+
+  public static Iterable sourceNodesQuery_7301053825002061769(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", false, new String[]{});
   }
 
   public static Iterable sourceNodesQuery_1187030511859(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1719,6 +1722,10 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1213036597501(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "menuDescriptor", true), "cellMenuPart", true);
+  }
+
+  public static Iterable sourceNodesQuery_7301053825001800654(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "menuDescriptor", true), "cellMenuPart", true);
   }
 
@@ -1812,58 +1819,6 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1210374656847891622(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "menuDescriptor", true), "cellMenuPart", true);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186772114084(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByContainingRoot(_context.getNode(), _context);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186772119137(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByContainingRoot(_context.getNode(), _context);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186772123596(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByContainingRoot(_context.getNode(), _context);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_5059448467922690238(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByContainingRoot(_context.getNode(), _context);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186772127680(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByContainingRoot(_context.getNode(), _context);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186772131920(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByContainingRoot(_context.getNode(), _context);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186772136254(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByContainingRoot(_context.getNode(), _context);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186772143542(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByContainingRoot(_context.getNode(), _context);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186772150891(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByContainingRoot(_context.getNode(), _context);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186772159225(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByContainingRoot(_context.getNode(), _context);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186772163872(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByContainingRoot(_context.getNode(), _context);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186772168050(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByContainingRoot(_context.getNode(), _context);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186772172009(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByContainingRoot(_context.getNode(), _context);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1186776452138(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
@@ -2208,7 +2163,7 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0b0nh(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0b0mh(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
