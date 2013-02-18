@@ -10,20 +10,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.reloading.ClassPathFactory;
-import java.io.IOException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
-import jetbrains.mps.logging.Logger;
 
 public class TransformingGenerationHandler extends InMemoryJavaGenerationHandler {
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
@@ -36,20 +29,6 @@ public class TransformingGenerationHandler extends InMemoryJavaGenerationHandler
   @Override
   public boolean canHandle(SModel inputModel) {
     return inputModel != null;
-  }
-
-  @Override
-  protected CompositeClassPathItem getClassPath(Set<SModule> contextModules) {
-    CompositeClassPathItem result = super.getClassPath(contextModules);
-
-    String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.") + "tools.jar";
-    try {
-      result.add(ClassPathFactory.getInstance().createFromPath(path, this.getClass().getName()));
-    } catch (IOException e) {
-      LOG_938810776.error("Cant create cpitem from path " + path, e);
-    }
-
-    return result;
   }
 
   @Override
@@ -74,6 +53,4 @@ public class TransformingGenerationHandler extends InMemoryJavaGenerationHandler
     }
     return super.handleOutput(module, inputModel, status, context, monitor);
   }
-
-  private static Logger LOG_938810776 = Logger.getLogger(TransformingGenerationHandler.class);
 }
