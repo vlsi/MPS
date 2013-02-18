@@ -56,7 +56,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.SModuleOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
@@ -1653,7 +1653,7 @@ __switch__:
           _context.showErrorMessage(module, "Missing module " + SPropertyOperations.getString(module, "name") + ".");
           continue;
         }
-        if ((imodule instanceof DevKit) || (imodule.getFacet(JavaModuleFacet.class) == null) || !(imodule.getFacet(JavaModuleFacet.class).isCompileInMps())) {
+        if ((imodule instanceof DevKit) || !(SModuleOperations.isCompileInMps(imodule))) {
           continue;
         }
         List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
