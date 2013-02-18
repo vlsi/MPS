@@ -29,10 +29,11 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.*;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -182,7 +183,7 @@ public class TestMakeOnRealProject {
 
 
   private void checkModuleCompiled(IModule module) {
-    IFile classesGen = module.getClassesGen();
+    IFile classesGen = module.getFacet(JavaModuleFacet.class).getClassesGen();
     List<File> classes = collectSpecificFilesFromDir(new File(classesGen.getPath()), "class");
     List<File> sources = new ArrayList<File>();
     for (String path : module.getSourcePaths()) {

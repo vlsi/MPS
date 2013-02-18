@@ -19,14 +19,14 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.project.ReferenceUpdater;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 public class LanguageRenamer {
@@ -42,10 +42,10 @@ public class LanguageRenamer {
   }
 
   public void rename(boolean deleteOldFiles) {
-    String oldFqName = myLanguage.getModuleFqName();
-    IFile oldOutputDir = FileSystem.getInstance().getFileByPath(myLanguage.getGeneratorOutputPath());
+    String oldFqName = myLanguage.getModuleName();
+    IFile oldOutputDir = myLanguage.getOutputPath();
     IFile oldCachesDir = FileGenerationUtil.getCachesDir(oldOutputDir);
-    IFile oldClassesGen = myLanguage.getClassesGen();
+    IFile oldClassesGen = myLanguage.getFacet(JavaModuleFacet.class).getClassesGen();
 
     renameLanguage(oldFqName);
     renameGenerators(oldFqName);

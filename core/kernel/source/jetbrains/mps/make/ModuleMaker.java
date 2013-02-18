@@ -26,13 +26,13 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -90,18 +90,18 @@ public class ModuleMaker {
     myLevel = level;
   }
 
-  public void clean(final Set<IModule> modules, @NotNull final ProgressMonitor monitor) {
+  public void clean(final Set<? extends SModule> modules, @NotNull final ProgressMonitor monitor) {
     monitor.start("Cleaning...", modules.size());
     try {
-      for (IModule m : modules) {
+      for (SModule m : modules) {
         if (isExcluded(m)) {
           monitor.advance(1);
           continue;
         }
         if (monitor.isCanceled()) break;
 
-        monitor.step(m.getModuleFqName());
-        String path = m.getClassesGen().getPath();
+        monitor.step(m.getModuleName());
+        String path = m.getFacet(JavaModuleFacet.class).getClassesGen().getPath();
         FileUtil.delete(new File(path));
         ClassPathFactory.getInstance().invalidate(Collections.singleton(path));
         monitor.advance(1);
@@ -393,11 +393,7 @@ public class ModuleMaker {
   }
 
   private boolean isExcluded(SModule m) {
-    if (!(m instanceof Solution) && !(m instanceof Language)) return true;
-    if (m.isPackaged()) return true;
-    if (!getJavaFacet(m).isCompileInMps()) return true;
-
-    return false;
+    return m.isPackaged() || !SModuleOperations.isCompileInMps(m);
   }
 
   private class MyCompilationResultAdapter extends CompilationResultAdapter {
