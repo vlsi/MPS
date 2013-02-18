@@ -20,6 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.runtime.ModuleClassLoader;
@@ -29,15 +30,12 @@ import jetbrains.mps.vfs.IFile;
 import java.net.URL;
 import java.util.Set;
 
-import static jetbrains.mps.project.facets.JavaModuleOperations.createClassPathItem;
-
 public abstract class ClassLoadingModule extends AbstractModule implements IClassLoadingModule {
   private static Logger LOG = Logger.getLogger(ClassLoadingModule.class);
 
   private static final Object LOADING_LOCK = new Object();
   private ModuleClassLoader myClassLoader = null;
   private Set<IClassLoadingModule> myClassLoadingDepsCache = null;
-  private IClassPathItem myClassPath;
   private final Object LOCK = new Object();
 
   protected ClassLoadingModule() {
@@ -81,7 +79,6 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
 
   public void invalidateClasses() {
     // todo: field should be volatile?
-    myClassPath = null;
     if (myClassLoader != null) {
       myClassLoader.dispose();
     }
@@ -94,15 +91,15 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   }
 
   public boolean canFindClass(String name) {
-    return getCachedClassPath().hasClass(name);
+    return createClassPathItem().hasClass(name);
   }
 
   public byte[] findClassBytes(String name) {
-    return getCachedClassPath().getClass(name);
+    return createClassPathItem().getClass(name);
   }
 
   public URL findResource(String name) {
-    return getCachedClassPath().getResource(name);
+    return createClassPathItem().getResource(name);
   }
 
   public String findLibrary(String name) {
@@ -123,13 +120,8 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     }
   }
 
-  private IClassPathItem getCachedClassPath() {
-    synchronized (LOCK) {
-      if (myClassPath == null) {
-        myClassPath = createClassPathItem(getFacet(JavaModuleFacet.class).getClassPath(), ClassLoadingModule.class.getName());
-      }
-      return myClassPath;
-    }
+  private IClassPathItem createClassPathItem() {
+    return JavaModuleOperations.createClassPathItem(getFacet(JavaModuleFacet.class).getClassPath(), ClassLoadingModule.class.getName());
   }
 
   public boolean canLoadFromSelf() {
