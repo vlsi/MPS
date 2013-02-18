@@ -222,6 +222,11 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     //todo
   }
 
+  @NotNull
+  public String toString() {
+    return getSModelReference().toString();
+  }
+
   //--------------IMPLEMENTATION-------------------
 
   //todo get rid of, try to cast, show an error if not casted
@@ -267,6 +272,23 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   protected boolean canFireReadEvent() {
     return canFireEvent();
+  }
+
+  public void dispose() {
+    ModelChange.assertLegalChange(this);
+    if (myDisposed) return;
+
+    myDisposed = true;
+    myDisposedStacktrace = new Throwable().getStackTrace();
+    disposeFastNodeFinder();
+    myIdToNodeMap = null;
+    myRoots.clear();
+    if (myModelDependenciesManager != null) myModelDependenciesManager.dispose();
+  }
+
+  private void checkNotDisposed() {
+    if (!myDisposed) return;
+    LOG.error(new IllegalModelAccessError("accessing disposed model"));
   }
 
 //---------listeners--------
@@ -951,30 +973,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
       }
     }
     return changed;
-  }
-
-  //--------- stuff --------
-
-  @NotNull
-  public String toString() {
-    return getSModelReference().toString();
-  }
-
-  public void dispose() {
-    ModelChange.assertLegalChange(this);
-    if (myDisposed) return;
-
-    myDisposed = true;
-    myDisposedStacktrace = new Throwable().getStackTrace();
-    disposeFastNodeFinder();
-    myIdToNodeMap = null;
-    myRoots.clear();
-    if (myModelDependenciesManager != null) myModelDependenciesManager.dispose();
-  }
-
-  private void checkNotDisposed() {
-    if (!myDisposed) return;
-    LOG.error(new IllegalModelAccessError("accessing disposed model"));
   }
 
   //--------------DEPRECATED-------------------
