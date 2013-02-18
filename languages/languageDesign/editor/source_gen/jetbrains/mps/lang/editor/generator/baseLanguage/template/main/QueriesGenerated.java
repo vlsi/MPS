@@ -1866,10 +1866,6 @@ public class QueriesGenerated {
     return QueriesUtil.getGeneratedClassByContainingRoot(_context.getNode(), _context);
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186781749325(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass");
-  }
-
   public static SNode weaving_MappingRule_ContextNodeQuery_1186776452138(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return QueriesUtil.getGeneratedClassByAncestor(_context.getNode(), _context);
   }
