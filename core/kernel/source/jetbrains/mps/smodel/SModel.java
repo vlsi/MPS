@@ -1013,7 +1013,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
    * @Deprecated in 3.0
    */
   public SModelFqName getSModelFqName() {
-    return getSModelReference().getSModelFqName();
+    return ((SModelReference) getReference()).getSModelFqName();
   }
 
 
