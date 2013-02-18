@@ -28,9 +28,9 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -149,39 +149,43 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   protected boolean compileModuleInMPS(SModule module, ProgressMonitor monitor) throws IOException, GenerationCanceledException {
+    JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+
+    if (facet == null) {
+      return true;
+    }
+
+    if (!facet.isCompileInMPS()) {
+      error("Module is compiled in IntelliJ IDEA, can't compile it.");
+      return false;
+    }
+
     boolean compiledSuccessfully = true;
 
-    if (module instanceof AbstractModule) {
-      if (!((AbstractModule) module).isCompileInMPS()) {
-        error("Module is compiled in IntelliJ IDEA, can't compile it.");
+    checkMonitorCanceled(monitor);
+    String info = "compiling in JetBrains MPS...";
+    try {
+      monitor.start(info, 10);
+      info(info);
+      MPSCompilationResult compilationResult = new ModuleMaker().make(CollectionUtil.set(module), new EmptyProgressMonitor());
+      if (compilationResult == null || compilationResult.getErrors() > 0) {
         compiledSuccessfully = false;
-      } else {
-        checkMonitorCanceled(monitor);
-        String info = "compiling in JetBrains MPS...";
-        try {
-          monitor.start(info, 10);
-          info(info);
-          MPSCompilationResult compilationResult = new ModuleMaker().make(CollectionUtil.set(module), new EmptyProgressMonitor());
-          if (compilationResult == null || compilationResult.getErrors() > 0) {
-            compiledSuccessfully = false;
-          }
-
-          if (compilationResult != null) {
-            if (compilationResult.getErrors() > 0) {
-              error("" + compilationResult);
-            } else if (compilationResult.getWarnings() > 0) {
-              warning("" + compilationResult);
-            } else {
-              info("" + compilationResult);
-            }
-          }
-        } finally {
-          monitor.done();
-        }
       }
 
-      checkMonitorCanceled(monitor);
+      if (compilationResult != null) {
+        if (compilationResult.getErrors() > 0) {
+          error("" + compilationResult);
+        } else if (compilationResult.getWarnings() > 0) {
+          warning("" + compilationResult);
+        } else {
+          info("" + compilationResult);
+        }
+      }
+    } finally {
+      monitor.done();
     }
+    checkMonitorCanceled(monitor);
+
     return compiledSuccessfully;
   }
 

@@ -23,6 +23,7 @@ import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache.TraceInfoResourceProvider;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.jetbrains.annotations.NotNull;
 
 import java.net.URL;
@@ -36,7 +37,9 @@ public class PluginsTraceInfoResourceProvider implements TraceInfoResourceProvid
   }
 
   public URL getResource(IModule module, String resourceName) {
-    if (InternalFlag.isInternalMode() && !((module.isCompileInMPS()))) {
+    JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+
+    if (InternalFlag.isInternalMode() && (facet != null) && !(facet.isCompileInMPS())) {
       for (IdeaPluginDescriptor plugin : PluginManager.getPlugins()) {
         URL url = plugin.getPluginClassLoader().getResource(resourceName);
         if (url != null) {
@@ -44,6 +47,7 @@ public class PluginsTraceInfoResourceProvider implements TraceInfoResourceProvid
         }
       }
     }
+
     return null;
   }
 
