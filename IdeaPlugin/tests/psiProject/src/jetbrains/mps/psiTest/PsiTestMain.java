@@ -17,9 +17,13 @@ public class PsiTestMain {
         try {
             node3.newMethod();
         } catch (IOException e) {
-
+            // checking resolve of classes from libs
+            // (MPSClassStubPsiSourceFinder)
         } catch (MPSException e) {
-
+            // checking resolve of classes from MPS code
+        } catch (JavaException e) {
+            // checking resolve of classes from Java project code
+            // (JavaMPSPsiNodeFactory implements MPSNodePsiSourceFinder)
         }
         System.out.println(sb.toString());
 
