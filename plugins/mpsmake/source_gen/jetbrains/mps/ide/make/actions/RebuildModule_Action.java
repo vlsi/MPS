@@ -6,6 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +33,8 @@ public class RebuildModule_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((IModule) MapSequence.fromMap(_params).get("module")).isCompileInMPS();
+    JavaModuleFacet facet = ((IModule) MapSequence.fromMap(_params).get("module")).getFacet(JavaModuleFacet.class);
+    return facet != null && facet.isCompileInMps();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

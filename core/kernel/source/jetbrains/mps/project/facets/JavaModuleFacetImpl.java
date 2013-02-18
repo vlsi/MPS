@@ -36,7 +36,7 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
   }
 
   @Override
-  public boolean isCompileInMPS() {
+  public boolean isCompileInMps() {
     return true;
   }
 
@@ -57,7 +57,7 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
     }
 
     // add classes folder for modules compiled outside MPS
-    if (!isCompileInMPS()) {
+    if (!isCompileInMps()) {
       // todo: remove this logic?
       IFile classes = ProjectPathUtil.getClassesFolder(module.getDescriptorFile());
       if (classes != null && classes.exists()) {

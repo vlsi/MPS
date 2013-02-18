@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project.facets;
 
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
@@ -24,7 +23,7 @@ import java.util.Collection;
 
 public interface JavaModuleFacet extends SModuleFacet {
   // for "generate" task
-  boolean isCompileInMPS();
+  boolean isCompileInMps();
 
   // for "generate" task if isCompileInMPS == true
   @Nullable

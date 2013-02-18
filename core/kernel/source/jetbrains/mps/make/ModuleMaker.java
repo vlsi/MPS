@@ -192,7 +192,7 @@ public class ModuleMaker {
     List<MyMessage> messages = new ArrayList<MyMessage>();
 
     for (SModule m : modules) {
-      if (getJavaFacet(m).isCompileInMPS()) {
+      if (getJavaFacet(m).isCompileInMps()) {
         hasAnythingToCompile = true;
       }
     }
@@ -210,7 +210,7 @@ public class ModuleMaker {
     for (SModule m : modules) {
       if (areClassesUpToDate(m)) continue;
 
-      if (!getJavaFacet(m).isCompileInMPS()) {
+      if (!getJavaFacet(m).isCompileInMps()) {
         String text = "Module which compiled in IDEA depend on module which has to be compiled in MPS:" + m.getModuleName();
         messages.add(new MyMessage(MessageKind.WARNING, text, m));
         LOG.debug(text, m);
@@ -378,7 +378,7 @@ public class ModuleMaker {
 
   private boolean areClassesUpToDate(SModule m) {
     if (isExcluded(m)) return true;
-    if (!getJavaFacet(m).isCompileInMPS()) return true;
+    if (!getJavaFacet(m).isCompileInMps()) return true;
 
     return getModuleSources(m).isUpToDate();
   }
@@ -395,7 +395,7 @@ public class ModuleMaker {
   private boolean isExcluded(SModule m) {
     if (!(m instanceof Solution) && !(m instanceof Language)) return true;
     if (m.isPackaged()) return true;
-    if (!getJavaFacet(m).isCompileInMPS()) return true;
+    if (!getJavaFacet(m).isCompileInMps()) return true;
 
     return false;
   }

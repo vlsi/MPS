@@ -155,7 +155,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
       return true;
     }
 
-    if (!facet.isCompileInMPS()) {
+    if (!facet.isCompileInMps()) {
       error("Module is compiled in IntelliJ IDEA, can't compile it.");
       return false;
     }

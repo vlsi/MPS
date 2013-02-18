@@ -809,7 +809,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   @Override
   @Deprecated
   public final boolean isCompileInMPS() {
-    return getJavaFacet(this).isCompileInMPS();
+    return SModuleOperations.isCompileInMps(this);
   }
 
   @Override

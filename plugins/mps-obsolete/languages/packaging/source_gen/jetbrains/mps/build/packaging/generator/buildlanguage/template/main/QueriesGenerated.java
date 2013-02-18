@@ -56,6 +56,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
@@ -1652,7 +1653,7 @@ __switch__:
           _context.showErrorMessage(module, "Missing module " + SPropertyOperations.getString(module, "name") + ".");
           continue;
         }
-        if ((imodule instanceof DevKit) || (!(imodule.isCompileInMPS()))) {
+        if ((imodule instanceof DevKit) || (imodule.getFacet(JavaModuleFacet.class) == null) || !(imodule.getFacet(JavaModuleFacet.class).isCompileInMps())) {
           continue;
         }
         List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
@@ -1667,7 +1668,7 @@ __switch__:
       Set<IModule> modulesCopy = SetSequence.fromSet(new LinkedHashSet<IModule>());
       SetSequence.fromSet(modulesCopy).addSequence(SetSequence.fromSet(modulesToProcess).sort(new ISelector<IModule, String>() {
         public String select(IModule it) {
-          return it.getModuleFqName();
+          return it.getModuleName();
         }
       }, true));
       List<Set<IModule>> sm = (List<Set<IModule>>) StronglyConnectedModules.getInstance().getStronglyConnectedComponents(modulesCopy);
@@ -1686,16 +1687,16 @@ __switch__:
         lastCycle = cycle;
         Iterable<IModule> sortedModuleSet = SetSequence.fromSet(moduleSet).sort(new ISelector<IModule, String>() {
           public String select(IModule it) {
-            return it.getModuleFqName();
+            return it.getModuleName();
           }
         }, true);
-        SPropertyOperations.set(cycle, "name", _context.createUniqueName("cycle." + Sequence.fromIterable(sortedModuleSet).first().getModuleFqName(), layout));
+        SPropertyOperations.set(cycle, "name", _context.createUniqueName("cycle." + Sequence.fromIterable(sortedModuleSet).first().getModuleName(), layout));
         for (IModule imodule : Sequence.fromIterable(sortedModuleSet)) {
           List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
           for (SNode module : ListSequence.fromList(modulesForIModule)) {
             SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.NewModuleReference", null);
             SLinkOperations.setTarget(ref, "module", module, false);
-            SLinkOperations.addChild(cycle, "moduleReference", ref);
+            ListSequence.fromList(SLinkOperations.getTargets(cycle, "moduleReference", true)).addElement(ref);
           }
         }
       }

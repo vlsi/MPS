@@ -170,7 +170,7 @@ public class Solution extends ClassLoadingModule {
     List<SModuleFacet> facets = new ArrayList<SModuleFacet>();
     facets.add(new JavaModuleFacetImpl(this) {
       @Override
-      public boolean isCompileInMPS() {
+      public boolean isCompileInMps() {
         ModuleDescriptor descriptor = getModuleDescriptor();
         return descriptor != null && descriptor.getCompileInMPS();
       }

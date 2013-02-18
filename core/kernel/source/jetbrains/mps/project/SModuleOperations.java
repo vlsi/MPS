@@ -89,6 +89,16 @@ public class SModuleOperations {
     }
   }
 
+  public static boolean isCompileInMps(SModule module) {
+    JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+    return facet != null && facet.isCompileInMps();
+  }
+
+  public static boolean isCompileInIdea(SModule module) {
+    JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+    return facet != null && !facet.isCompileInMps();
+  }
+
   // deprecated methods
   @Deprecated
   public static IClassPathItem getModuleWithDependenciesClassPathItem(IModule module) {

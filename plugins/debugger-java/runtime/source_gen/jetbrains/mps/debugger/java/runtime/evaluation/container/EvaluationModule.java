@@ -39,7 +39,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
     }
 
     @Override
-    public boolean isCompileInMPS() {
+    public boolean isCompileInMps() {
       throw new UnsupportedOperationException();
     }
   };

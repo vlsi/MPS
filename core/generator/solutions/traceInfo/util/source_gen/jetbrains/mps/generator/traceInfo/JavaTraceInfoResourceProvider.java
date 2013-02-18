@@ -22,7 +22,7 @@ public class JavaTraceInfoResourceProvider implements TraceInfoCache.TraceInfoRe
 
     IClassPathItem classPathItem;
     ModuleDescriptor descriptor = module.getModuleDescriptor();
-    if (facet.isCompileInMPS() || descriptor != null && !(descriptor.getAdditionalJavaStubPaths().isEmpty())) {
+    if (facet.isCompileInMps() || descriptor != null && !(descriptor.getAdditionalJavaStubPaths().isEmpty())) {
       classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), JavaTraceInfoResourceProvider.class.getName());
     } else {
       // todo: looks wrong. just go to classes gen in this case too 
