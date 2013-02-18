@@ -16,9 +16,10 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
+import jetbrains.mps.idea.core.psi.MPSNodePsiSourceFinder;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
-import jetbrains.mps.idea.core.psi.MPSPsiNodeFactoryStubAware;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.SModel;
@@ -37,7 +38,7 @@ import java.util.Map;
 /**
  * evgeny, 1/28/13
  */
-public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactoryStubAware {
+public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPSNodePsiSourceFinder {
 
   private static final Map<String, MPSPsiNodeFactory> factories = new HashMap<String, MPSPsiNodeFactory>();
 
@@ -136,7 +137,7 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactoryStubAware {
   }
 
   @Override
-  public PsiElement getPsiSource(SNode node) {
+  public PsiElement getPsiSource(SNode node, Project project) {
     return getPsiSourceOf(node);
   }
 

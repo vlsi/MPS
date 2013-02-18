@@ -19,12 +19,14 @@ import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.undo.UndoableAction;
 import com.intellij.openapi.command.undo.UnexpectedUndoException;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 class SNodeIdeaUndoableAction implements UndoableAction {
   private boolean myIsGlobal;
@@ -57,7 +59,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   }
 
   public final void undo() throws UnexpectedUndoException {
-    ModelAccess.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
       public void run() {
         List<SNodeUndoableAction> rev = new LinkedList<SNodeUndoableAction>(myWrapped);
         Collections.reverse(rev);
@@ -65,17 +67,17 @@ class SNodeIdeaUndoableAction implements UndoableAction {
           a.undo();
         }
       }
-    }, null /* TODO? */);
+    }, null);
   }
 
   public final void redo() throws UnexpectedUndoException {
-    ModelAccess.instance().executeCommand(new Runnable() {
+    ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
       public void run() {
         for (SNodeUndoableAction a : myWrapped) {
           a.redo();
         }
       }
-    }, null /* TODO? */);
+    }, null);
   }
 
   public DocumentReference[] getAffectedDocuments() {

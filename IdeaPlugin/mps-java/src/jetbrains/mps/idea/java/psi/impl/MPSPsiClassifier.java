@@ -327,20 +327,6 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
     return ArrayUtil.toObjectArray(result, PsiClassType.class);
   }
 
-  /**
-   * Check if this classifier is built on top of java psi.
-   * In this case return the real, underlying, psi node, not this one.
-   */
-  @NotNull
-  public PsiClass getRealPsiNode() {
-    MPSPsiModel model = getContainingModel();
-    String modelName = model.getQualifiedName();
-    if (modelName.endsWith("@java_stub")) {
-      return JavaPsiFacade.getInstance(getProject()).findClass(getQualifiedName(), GlobalSearchScope.allScope(getProject()));
-    }
-    return this;
-  }
-
   class ClassTypeParameterList extends MPSPsiNodeBase implements PsiTypeParameterList {
 
     @Override
