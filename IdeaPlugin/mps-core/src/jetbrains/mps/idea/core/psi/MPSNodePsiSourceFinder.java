@@ -16,6 +16,8 @@
 
 package jetbrains.mps.idea.core.psi;
 
+import com.intellij.openapi.extensions.ExtensionPointName;
+import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -24,8 +26,10 @@ import org.jetbrains.mps.openapi.model.SNode;
  * danilla 2/13/13
  */
 
-public interface MPSPsiNodeFactoryStubAware extends MPSPsiNodeFactory {
+public interface MPSNodePsiSourceFinder {
+
+  public static final ExtensionPointName<MPSNodePsiSourceFinder> EP_NAME = ExtensionPointName.create("com.intellij.mps.psiSourceFinder");
 
   @Nullable
-  PsiElement getPsiSource(SNode node);
+  PsiElement getPsiSource(SNode node, Project project);
 }
