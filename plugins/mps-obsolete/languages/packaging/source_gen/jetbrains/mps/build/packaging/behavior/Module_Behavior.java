@@ -4,8 +4,9 @@ package jetbrains.mps.build.packaging.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import java.util.List;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -48,7 +49,7 @@ public class Module_Behavior {
   }
 
   public static boolean call_isCompiledInMPS_1213877514774(SNode thisNode) {
-    return check_835h7m_a0a1(Module_Behavior.call_getModule_1213877515148(thisNode).getFacet(JavaModuleFacet.class));
+    return SModuleOperations.isCompileInMps(Module_Behavior.call_getModule_1213877515148(thisNode));
   }
 
   public static SNode call_getModuleBaseDirectory_6863060912307757632(SNode thisNode) {
@@ -96,7 +97,7 @@ public class Module_Behavior {
     ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, true)));
 
     final AbstractModule module = (AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode);
-    if (!(module.isCompileInMPS())) {
+    if (!(SModuleOperations.isCompileInMps(module))) {
       // todo hack in order to make plugin modules know their classes location 
       final String plugins = "plugins";
       final String classes = "classes";
@@ -312,13 +313,6 @@ public class Module_Behavior {
 
   public static String replaceBadCharacters_1235487831795(String name) {
     return name.replace("/", "_").replace("\\", "_");
-  }
-
-  private static boolean check_835h7m_a0a1(JavaModuleFacet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.isCompileInMPS();
-    }
-    return false;
   }
 
   private static String check_835h7m_a0a0e(IFile checkedDotOperand) {
