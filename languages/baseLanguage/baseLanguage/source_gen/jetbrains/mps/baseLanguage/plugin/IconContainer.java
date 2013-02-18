@@ -6,11 +6,11 @@ import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 
 public class IconContainer {
-  protected static Icon ICON_a0 = AllIcons.Nodes.FinalMark;
-  protected static Icon ICON_a1 = AllIcons.Nodes.StaticMark;
-  protected static Icon ICON_a2 = AllIcons.Nodes.RunnableMark;
-  protected static Icon ICON_a0_0 = AllIcons.Nodes.C_plocal;
-  protected static Icon ICON_a1_0 = AllIcons.Nodes.C_public;
-  protected static Icon ICON_a2_0 = AllIcons.Nodes.C_private;
+  protected static Icon ICON_a0 = AllIcons.Nodes.C_plocal;
+  protected static Icon ICON_a1 = AllIcons.Nodes.C_public;
+  protected static Icon ICON_a2 = AllIcons.Nodes.C_private;
   protected static Icon ICON_a3 = AllIcons.Nodes.C_protected;
+  protected static Icon ICON_a0_0 = AllIcons.Nodes.FinalMark;
+  protected static Icon ICON_a1_0 = AllIcons.Nodes.StaticMark;
+  protected static Icon ICON_a2_0 = AllIcons.Nodes.RunnableMark;
 }

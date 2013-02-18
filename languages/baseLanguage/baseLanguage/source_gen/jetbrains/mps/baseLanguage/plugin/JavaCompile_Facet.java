@@ -25,7 +25,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccess;
@@ -115,8 +115,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 }
               }).where(new IWhereFilter<IModule>() {
                 public boolean accept(IModule it) {
-                  JavaModuleFacet facet = check_wf1ya0_a0a0a0a0a0a2a0a0(it);
-                  return facet != null && facet.isCompileInMPS();
+                  return SModuleOperations.isCompileInMps(it);
                 }
               }).distinct());
               if ((int) SetSequence.fromSet(toCompile).count() == 0) {
@@ -252,13 +251,6 @@ public class JavaCompile_Facet extends IFacet.Stub {
         return (JavaCompile_Facet.Target_compile.Parameters) super.assign(from);
       }
     }
-
-    private static JavaModuleFacet check_wf1ya0_a0a0a0a0a0a2a0a0(IModule checkedDotOperand) {
-      if (null != checkedDotOperand) {
-        return checkedDotOperand.getFacet(JavaModuleFacet.class);
-      }
-      return null;
-    }
   }
 
   public static class Target_auxCompile implements ITargetEx2 {
@@ -295,8 +287,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
               // collect modules to compile 
               Iterable<TResource> toCompile = Sequence.fromIterable(input).where(new IWhereFilter<TResource>() {
                 public boolean accept(TResource it) {
-                  JavaModuleFacet facet = it.module().getFacet(JavaModuleFacet.class);
-                  return facet != null && !(facet.isCompileInMPS());
+                  return SModuleOperations.isCompileInIdea(it.module());
                 }
               });
 

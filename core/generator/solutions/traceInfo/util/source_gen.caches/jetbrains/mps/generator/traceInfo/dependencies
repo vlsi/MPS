@@ -5,11 +5,11 @@
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
     <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleFacet" />
     <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleOperations" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.reloading.CommonPaths" />
-    <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
     <classNode extendsClassName="jetbrains.mps.generator.traceInfo.TraceInfoResourceProvider" />
   </dependency>
   <dependency className="jetbrains.mps.generator.traceInfo.TraceDown" file="TraceDown.java">

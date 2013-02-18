@@ -4,10 +4,10 @@ package jetbrains.mps.generator.traceInfo;
 
 import java.net.URL;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.facets.JavaModuleOperations;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.reloading.CommonPaths;
 
 public class JavaTraceInfoResourceProvider implements TraceInfoCache.TraceInfoResourceProvider {
@@ -15,22 +15,13 @@ public class JavaTraceInfoResourceProvider implements TraceInfoCache.TraceInfoRe
   }
 
   public URL getResource(IModule module, String resourceName) {
-    JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
-    if (facet == null) {
-      return null;
-    }
-
-    IClassPathItem classPathItem;
     ModuleDescriptor descriptor = module.getModuleDescriptor();
-    if (facet.isCompileInMps() || descriptor != null && !(descriptor.getAdditionalJavaStubPaths().isEmpty())) {
-      classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), JavaTraceInfoResourceProvider.class.getName());
-    } else {
-      // todo: looks wrong. just go to classes gen in this case too 
-      classPathItem = CommonPaths.getMPSClassPath();
+    if (SModuleOperations.isCompileInMps(module) || (descriptor != null && !(descriptor.getAdditionalJavaStubPaths().isEmpty()))) {
+      return JavaModuleOperations.createClassPathItem(module.getFacet(JavaModuleFacet.class).getClassPath(), JavaTraceInfoResourceProvider.class.getName()).getResource(resourceName);
     }
-    if (classPathItem == null) {
-      return null;
+    if (SModuleOperations.isCompileInIdea(module)) {
+      return CommonPaths.getMPSClassPath().getResource(resourceName);
     }
-    return classPathItem.getResource(resourceName);
+    return null;
   }
 }

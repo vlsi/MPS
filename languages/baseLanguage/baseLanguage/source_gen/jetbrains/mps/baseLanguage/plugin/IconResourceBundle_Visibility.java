@@ -11,9 +11,9 @@ public class IconResourceBundle_Visibility implements IconResourceBundle {
   private static IconResourceBundle_Visibility INSTANCE = new IconResourceBundle_Visibility();
   private Map<String, Icon> icons = new HashMap<String, Icon>() {
     {
-      put("PACKAGE_LOCAL", IconContainer.ICON_a0_0);
-      put("PUBLIC", IconContainer.ICON_a1_0);
-      put("PRIVATE", IconContainer.ICON_a2_0);
+      put("PACKAGE_LOCAL", IconContainer.ICON_a0);
+      put("PUBLIC", IconContainer.ICON_a1);
+      put("PRIVATE", IconContainer.ICON_a2);
       put("PROTECTED", IconContainer.ICON_a3);
     }
   };
