@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9s7tn7r6i6ppg130pq11m1usnjxibg4">
+<dependencies version="2" modelHash="ej63zkm2v2w019cwuvq6wdn395rncoo">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-33tlavyfw081dpoo7kr33x973l53rit" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8qihjmmfail7boj2nvoucmp2h7pt51d" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-1hgw67n7yo5l7brit48ut40pjswrlji" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="3d2lxr8unjxvzzi6xlbsruq2a8tb63l" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-61t0ssclnq98watuhaxiooxslhpr5yv" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
   <common hash="-j3n3sz2cupfju4lgdjg2mrrno12hve">
@@ -154,7 +154,7 @@
   <source id="1174642900584" name="PatternCondition" hash="-8g6me8l4d8gayt9uo1shm4g9q9k5xt7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174643105530" name="InferenceRule" hash="-2tk8g9bw92shnu4wu7nar01tepynw89">
+  <source id="1174643105530" name="InferenceRule" hash="7bxdhrv1wa8qs8o5dr7jm6d3wydncpu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1174648085619" name="AbstractRule" hash="-2r2sfpy08355t8c6zbck1m90fivpdvn">
@@ -196,10 +196,10 @@
   <source id="1174989799417" name="PropertyPatternVariableReference" hash="-u8228v00qc9ohu9khohih87ejcbuji">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1175147569072" name="AbstractSubtypingRule" hash="xthq56e7bfowommoswivdsmj45px8r">
+  <source id="1175147569072" name="AbstractSubtypingRule" hash="b1rclseadf11l1lnbiyzxyrde0jn3vx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1175147670730" name="SubtypingRule" hash="7k1dptbkxq88tf0f0dyfwwlgcpp6gho">
+  <source id="1175147670730" name="SubtypingRule" hash="3ulox8f413v8fm99vpe4gjn5iw4cg6v">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1175517400280" name="AssertStatement" hash="4v3v8n1ww8cbw2x5twjkjn45b1qi2n4">
@@ -214,7 +214,7 @@
   <source id="1176543928247" name="IsSubtypeExpression" hash="dcvghzermlq5f06zvnrfx43y9hksnuh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1176544042499" name="Node_TypeOperation" hash="-d5qiemda4uxim12mmbb56zdi8wyx080">
+  <source id="1176544042499" name="Node_TypeOperation" hash="d4hxpaqr57w9erneq2cbveadfr2sicc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1176547808367" name="MultipleForeachLoop" hash="-d7eqhmvt0ypjk87zyruwsgqacuaoqch">
@@ -271,7 +271,7 @@
   <source id="1188473524530" name="MeetType" hash="-938jpfwh870rqncwpmpj9wey2hn79gq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1188811367543" name="ComparisonRule" hash="c7zfca38o848c83pb4divskdd7vtvhu">
+  <source id="1188811367543" name="ComparisonRule" hash="7be1gq4ciau7ws8940pbqdxg6v0pb7k">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1193662402729" name="EquationDirection_Enum" hash="7j5ehmh6tytsptmjuqagtkioqvzmxtp">
@@ -297,7 +297,7 @@
   <source id="1195213580585" name="AbstractCheckingRule" hash="ciryt1lnrvodqm0niv766f7cphfssxv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1195214364922" name="NonTypesystemRule" hash="dwk6dkiz6gioj5vyvdbxklfvj8ngima">
+  <source id="1195214364922" name="NonTypesystemRule" hash="9ovj2tvrpmxt33qwdr7gymfe3ev576e">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1201607707634" name="InequationReplacementRule" hash="-1y8g76ulw60572nf5owqnusc23cd8rd">
@@ -352,7 +352,7 @@
     <file name="RestrictionKind.java" />
     <file name="RestrictionKind_PropertySupport.java" />
   </source>
-  <source id="1216383170661" name="TypesystemQuickFix" hash="c183rsyd2r1e9j540oaku53z9rchx1v">
+  <source id="1216383170661" name="TypesystemQuickFix" hash="3cgxf4eb937s8t6c7z113hw2gn6xhxf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1216383287005" name="QuickFixExecuteBlock" hash="-6sbtfr7v7wk6b8o0e8tk5hp11tvgiia">
@@ -409,7 +409,7 @@
   <source id="1228482578363" name="VariableConverterItem_ConvertBlock" hash="3o38mxtbg5xh7l7pmhh2debvqsbx6pk">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1228482838236" name="VariableConvertersContainer" hash="8qrxon4r2tbf118olxukm5tu8rro9ww">
+  <source id="1228482838236" name="VariableConvertersContainer" hash="b1hqjd7ezsjl0fhw7t408a16kg3mrof">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1228487409934" name="ConceptFunctionParameter_Role" hash="3csyxzpx0uldijvivst84edizscpvzc">
@@ -442,7 +442,7 @@
   <source id="1236163200695" name="GetOperationType" hash="73ojjepyvxr3fqzi2gy1fa8buvqx26h">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1236165709895" name="OverloadedOpRulesContainer" hash="-8yzzdxoehqc0hkjl4r29w1rhzu301wa">
+  <source id="1236165709895" name="OverloadedOpRulesContainer" hash="-1z527memydvbsvfug2v1v3nrbcmu1kr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1238776677112" name="MeetContainer" hash="80ugadkbg585qi3e0wvafih49ggufuk">
@@ -475,13 +475,13 @@
   <source id="1320713984677695202" name="DefaultGroupReference" hash="3gn1n8xkx2zhdusm7s4voptfz3dxsjv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6359146168314178663" name="Node_InferTypeOperation" hash="-2lmxowlnaadnxf70ywaq3qfetekscgp">
+  <source id="6359146168314178663" name="Node_InferTypeOperation" hash="aacpczulxi8hk18382i2kx3zzmtni4j">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6773347515165533831" name="NodeInfo" hash="-4v3ejysvdhmqp7jlbo9nszlptoqfnas">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8058965347377019242" name="DependentComputationItem" hash="-191u8lyqjfy5qy4ihssy3zq19bvw9od">
+  <source id="8058965347377019242" name="DependentComputationItem" hash="69ywjcke72kz2p75ox5xqfokii0sjvi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8058965347377019245" name="ConceptFunctionParameter_DependentComputationNode" hash="cenc7sui8eojjsffrtq3wgzz2saqe2x">

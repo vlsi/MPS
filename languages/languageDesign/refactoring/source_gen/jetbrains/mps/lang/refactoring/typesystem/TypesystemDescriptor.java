@@ -17,14 +17,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_AskBooleanExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_AskExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_ChangeFeatureNameExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -33,15 +25,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ComponentExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_ConceptFunctionParameter_Module_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_ConceptFunctionParameter_RefactoringParameter_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -61,19 +45,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_CustomParameterChooser_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_DeleteFeatureExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_DeleteFeatureOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_ErrorStatement_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -85,15 +61,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_InitialPropertyValueClause_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_IsRefactoringApplicable_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_MPSParameterType_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -153,15 +121,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_RefactoringContextExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_RefactoringContext_ConceptFunctionParameter_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_RefactoringParameter_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -178,10 +138,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_ScopeExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_SetValueStatement_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

@@ -312,7 +312,7 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
     return PsiClassImplUtil.getClassIcon(flags, this);
   }
 
-  protected PsiClassType[] getTypes(String role) {
+  protected PsiClassType[] getClassTypes(String role) {
     final MPSPsiClassifierType[] classes = getChildrenOfType(role, MPSPsiClassifierType.class);
     if (classes == null || classes.length == 0) return PsiClassType.EMPTY_ARRAY;
 

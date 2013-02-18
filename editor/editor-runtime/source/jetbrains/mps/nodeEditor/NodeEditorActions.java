@@ -598,4 +598,11 @@ public class NodeEditorActions {
       ((EditorComponent) context.getEditorComponent()).showMessageTooltip();
     }
   }
+
+  public static class ClearSelection extends EditorCellAction {
+    @Override
+    public void execute(EditorContext context) {
+      ((EditorComponent) context.getEditorComponent()).getSelectionManager().clearSelection();
+    }
+  }
 }

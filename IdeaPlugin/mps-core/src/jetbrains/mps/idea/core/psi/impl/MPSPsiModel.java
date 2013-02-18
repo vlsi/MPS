@@ -18,6 +18,7 @@ package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.lang.FileASTNode;
 import com.intellij.openapi.fileTypes.FileType;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.FileViewProvider;
 import com.intellij.psi.PsiDirectory;
@@ -29,8 +30,9 @@ import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.psi.search.PsiElementProcessor;
 import com.intellij.testFramework.LightVirtualFile;
 import com.intellij.util.IncorrectOperationException;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
+import jetbrains.mps.idea.core.psi.MPSKeys;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.NonNls;
@@ -41,7 +43,9 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,6 +57,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
   private final SModelReference reference;
   private final Map<SNodeId, MPSPsiNode> nodes = new HashMap<SNodeId, MPSPsiNode>();
   private final FileViewProvider myViewProvider;
+  private VirtualFile mySourceVirtualFile;
 
   MPSPsiModel(SModelReference reference, PsiManager manager) {
     super(manager);
@@ -72,17 +77,27 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
     return nodes.get(nodeId);
   }
 
-  void reload(SModel model, MPSPsiNodeFactory factory) {
+  void reload(SModel model) {
     MPSPsiNode last = null;
     for (SNode root : model.getRootNodes()) {
-      MPSPsiNode psiRoot = convert(root, factory);
+      MPSPsiNode psiRoot = convert(root);
       addChild(last, psiRoot);
       last = psiRoot;
     }
+
+    // TODO use ModelUtil
+    DataSource source = model.getSource();
+    if (source instanceof FileDataSource) {
+      File file = new File(((FileDataSource) source).getFile().getPath());
+      VirtualFile vfile = LocalFileSystem.getInstance().findFileByIoFile(file);
+      this.mySourceVirtualFile =vfile;
+      vfile.putUserData(MPSKeys.MODEL_REFERENCE, reference);
+    }
   }
 
-  MPSPsiNode convert(SNode node, MPSPsiNodeFactory factory) {
-    MPSPsiNode psiNode = factory.create(node.getNodeId(), node.getConcept().getQualifiedName(), node.getRoleInParent());
+  MPSPsiNode convert(SNode node) {
+    MPSPsiNode psiNode = MPSPsiProvider.getInstance(getProject()).create(node.getNodeId(), node.getConcept().getQualifiedName(), node.getRoleInParent());
+    psiNode.putUserData(MPSKeys.NODE_REFERENCE, node.getReference());
     nodes.put(node.getNodeId(), psiNode);
 
     // properties
@@ -99,11 +114,10 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
       }
     }
 
-
     // children
     MPSPsiNode last = null;
     for (SNode root : node.getChildren()) {
-      MPSPsiNode psiChild = convert(root, factory);
+      MPSPsiNode psiChild = convert(root);
       psiNode.addChild(last, psiChild);
       last = psiChild;
     }
@@ -191,5 +205,9 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
   @Override
   public PsiElement setName(@NonNls @NotNull String name) throws IncorrectOperationException {
     throw new IncorrectOperationException("Not implemented");
+  }
+
+  public VirtualFile getSourceVirtualFile() {
+    return mySourceVirtualFile;
   }
 }

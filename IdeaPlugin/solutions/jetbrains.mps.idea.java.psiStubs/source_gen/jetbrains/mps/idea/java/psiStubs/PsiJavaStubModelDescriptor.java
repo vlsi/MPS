@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -25,13 +26,13 @@ import com.intellij.psi.PsiFileSystemItem;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiElement;
 
 public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor implements PsiListener, DataSourceListener {
   private SModelReference myModelRef;
   private PsiJavaStubDataSource myDataSource;
   private Map<PsiJavaFile, Set<SNode>> myRootsPerFile = MapSequence.fromMap(new HashMap<PsiJavaFile, Set<SNode>>());
   private Map<SNodeId, SNode> myRootsById = MapSequence.fromMap(new HashMap<SNodeId, SNode>());
+  private Map<SNodeId, PsiElement> myPsiSources;
 
   public PsiJavaStubModelDescriptor(SModelReference modelRef, PsiJavaStubDataSource dataSource) {
     super(modelRef);
@@ -59,8 +60,9 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   protected SModel createModel() {
 
     SModel ourModel = new SModel(myModelRef);
+    myPsiSources = MapSequence.fromMap(new HashMap<SNodeId, PsiElement>());
 
-    ASTConverter converter = new ASTConverter();
+    ASTConverter converter = new ASTConverter(myPsiSources);
 
     for (PsiJavaFile jf : Sequence.fromIterable(myDataSource.getJavaFiles())) {
       Set<SNode> roots = SetSequence.fromSet(new HashSet<SNode>());
@@ -95,7 +97,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
       return;
     }
 
-    ASTConverter converter = new ASTConverter();
+    ASTConverter converter = new ASTConverter(myPsiSources);
 
     // TODO Order can be important, be careful with class name changes (how to find old root node?) 
 
@@ -149,5 +151,9 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
         }
       }
     }
+  }
+
+  public PsiElement getPsiSource(SNode node) {
+    return MapSequence.fromMap(myPsiSources).get(node.getNodeId());
   }
 }

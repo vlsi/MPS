@@ -1,0 +1,213 @@
+/*
+ * Copyright 2003-2013 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package jetbrains.mps.idea.core.psi.impl;
+
+import com.intellij.psi.PsiElement;
+import org.jetbrains.annotations.NotNull;
+
+/**
+* Created with IntelliJ IDEA.
+* User: fyodor
+* Date: 2/14/13
+* Time: 12:53 PM
+* To change this template use File | Settings | File Templates.
+*/
+/*package*/ class NodeList {
+  private MPSPsiNodeBase owner;
+  private Entry head;
+  private int size = 0;
+
+  NodeList(MPSPsiNodeBase owner) {
+    this.owner = owner;
+  }
+
+  MPSPsiNodeBase owner() {
+    return owner;
+  }
+
+  MPSPsiNodeBase first() {
+    return head != null ? head.node : null;
+  }
+
+  MPSPsiNodeBase last() {
+    return head != null && head.prev != null ? head.prev.node : null;
+  }
+
+  MPSPsiNodeBase next(MPSPsiNodeBase prev) {
+    assert prev.getEntry().list() == this;
+
+    return prev.getEntry().next.node;
+  }
+
+  MPSPsiNodeBase prev(MPSPsiNodeBase prev) {
+    assert prev.getEntry().list() == this;
+
+    return prev.getEntry().prev.node;
+  }
+
+  int size () {
+    return size;
+  }
+
+  void toArray(PsiElement[] array) {
+    Entry e = head;
+    if (e == null) return;
+    int i = 0;
+    do {
+      array[i++] = e.node;
+      e = e.next;
+    } while (e != head);
+  }
+
+  void addFirst (@NotNull MPSPsiNodeBase node) {
+    Entry newHead = new Entry(node);
+
+    if (head == null) {
+      head = newHead;
+      head.next = head.prev = head;
+    }
+    else {
+      Entry oldHead = head;
+      head = newHead;
+      head.next = oldHead;
+      head.prev = oldHead.prev;
+      oldHead.prev = head;
+      if (oldHead.next == oldHead) {
+        oldHead.next = newHead;
+      }
+    }
+    size++;
+  }
+
+  void addLast (@NotNull MPSPsiNodeBase node) {
+    Entry newTail = new Entry(node);
+
+    if (head == null) {
+      head = newTail;
+      head.next = head.prev = head;
+    }
+    else {
+      Entry oldTail = head.prev;
+      head.prev = newTail;
+      head.prev.prev = oldTail;
+      head.prev.next = oldTail.next;
+      oldTail.next = newTail;
+      if (oldTail.prev == oldTail) {
+        oldTail.prev = newTail;
+      }
+    }
+    size++;
+  }
+
+  void insertAfter(@NotNull MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
+    assert anchor.getEntry() != null && anchor.getEntry().list() == this;
+
+    Entry toInsert = new Entry(node);
+
+    Entry prev = anchor.getEntry();
+    toInsert.next = prev.next;
+    toInsert.prev = prev;
+    prev.next = toInsert;
+    if (prev.prev == prev) {
+      prev.prev = toInsert;
+    }
+    size++;
+  }
+
+  void insertBefore(@NotNull MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
+    assert anchor.getEntry() != null && anchor.getEntry().list() == this;
+
+    Entry toInsert = new Entry(node);
+
+    Entry next = anchor.getEntry();
+    toInsert.next = next;
+    toInsert.prev = next.prev;
+    next.prev = toInsert;
+    if (next.next == next) {
+      next.next = toInsert;
+    }
+    size++;
+  }
+
+  void remove (@NotNull MPSPsiNodeBase node) {
+    assert node.getEntry().list() == this;
+
+    Entry toRemove = node.getEntry();
+
+    if (toRemove.next != toRemove) {
+      toRemove.next.prev = toRemove.prev;
+      toRemove.prev.next = toRemove.next;
+      if (head == toRemove) {
+        head = toRemove.next;
+      }
+    }
+    else {
+      assert head == toRemove;
+      head = null;
+    }
+
+    toRemove.clear();
+    size--;
+  }
+
+  void clear () {
+    Entry e = head;
+    if (e == null) return;
+    do {
+      Entry next = e.next;
+      e.clear();
+      e = next;
+    } while (e != head);
+    head = null;
+    size = 0;
+  }
+
+  class Entry {
+    private Entry next;
+    private Entry prev;
+    private MPSPsiNodeBase node;
+
+    Entry (MPSPsiNodeBase node) {
+      this.node = node;
+      node.setEntry(this);
+    }
+
+    void clear () {
+      node.setEntry(null);
+      node = null;
+      next = null;
+      prev = null;
+    }
+
+    public NodeList list() {
+      return NodeList.this;
+    }
+
+    boolean isFirst() {
+      return NodeList.this.head == this;
+    }
+
+    boolean isLast () {
+      return NodeList.this.head != null && NodeList.this.head.prev == this;
+    }
+
+    boolean isAttached () {
+      return NodeList.this.owner != null;
+    }
+  }
+
+}

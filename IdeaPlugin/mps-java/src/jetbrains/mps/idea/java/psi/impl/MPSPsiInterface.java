@@ -46,7 +46,7 @@ public class MPSPsiInterface extends MPSPsiClassifier {
   @NotNull
   @Override
   public PsiClassType[] getExtendsListTypes() {
-    return getTypes("extendedInterface");
+    return getClassTypes("extendedInterface");
   }
 
   @NotNull

@@ -20,6 +20,7 @@ import com.sun.jdi.ClassNotPreparedException;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InvalidLineNumberException;
 import com.sun.jdi.InternalException;
+import org.jetbrains.annotations.Nullable;
 
 public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = Logger.getLogger(LineBreakpoint.class);
@@ -67,6 +68,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
     }
   }
 
+  @Nullable
   protected String getClassNameToPrepare() {
     String className = myLocation.getTargetUnitName();
     if (className == null) {
@@ -74,8 +76,10 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
       String fileName = myLocation.getFileName();
       if (fileName != null && fileName.endsWith(".java")) {
         fileName = fileName.substring(0, fileName.length() - ".java".length());
+        className = myLocation.getNodePointer().getModelReference().getLongName() + "." + fileName;
+      } else {
+        return null;
       }
-      className = myLocation.getNodePointer().getModelReference().getLongName() + "." + fileName;
     }
     return className;
   }
@@ -88,7 +92,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
 
   @Override
   public boolean isValid() {
-    return myLocation.getTargetCodePosition() != null;
+    return myLocation.getTargetCodePosition() != null && (isNotEmpty_owwtjm_a0a0a0a7_0(myLocation.getTargetUnitName()) || isNotEmpty_owwtjm_a0a0a0a7(myLocation.getFileName()));
   }
 
   @Override
@@ -122,6 +126,14 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
       0
     ));
     return result;
+  }
+
+  public static boolean isNotEmpty_owwtjm_a0a0a0a7(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_owwtjm_a0a0a0a7_0(String str) {
+    return str != null && str.length() > 0;
   }
 
   private static boolean eq_owwtjm_a0d0k(Object a, Object b) {

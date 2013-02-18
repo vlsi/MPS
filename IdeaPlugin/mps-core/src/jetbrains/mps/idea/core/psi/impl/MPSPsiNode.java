@@ -30,6 +30,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -93,10 +94,9 @@ public class MPSPsiNode extends MPSPsiNodeBase {
   protected <T extends PsiElement> T getReferenceTarget(String role, @NotNull Class<T> aClass) {
     if (role == null) return null;
 
-    List<T> result = null;
     for (PsiElement child = getFirstChild(); child != null; child = child.getNextSibling()) {
       if (child instanceof MPSPsiRef && role.equals(((MPSPsiRef) child).getContainingRole())) {
-        MPSPsiNode refTarget = ((MPSPsiRef) child).resolve();
+        PsiElement refTarget = ((MPSPsiRef) child).resolve();
         if (aClass.isInstance(refTarget)) {
           return (T) refTarget;
         }
@@ -105,10 +105,21 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     return null;
   }
 
+  public MPSPsiRef[] getReferences(String role) {
+    if (role == null) return null;
+
+    List<MPSPsiRef> result = new ArrayList<MPSPsiRef>();
+    for (PsiElement child = getFirstChild(); child != null; child = child.getNextSibling()) {
+      if (child instanceof MPSPsiRef && role.equals(((MPSPsiRef) child).getContainingRole())) {
+        result.add((MPSPsiRef) child);
+      }
+    }
+    return ArrayUtil.toObjectArray(result, MPSPsiRef.class);
+  }
+
   public <T extends PsiElement> T getChildOfType(String role, @NotNull Class<T> aClass) {
     if (role == null) return null;
 
-    List<T> result = null;
     for (PsiElement child = getFirstChild(); child != null; child = child.getNextSibling()) {
       if (child instanceof MPSPsiNode && role.equals(((MPSPsiNode) child).getContainingRole()) && aClass.isInstance(child)) {
         return (T) child;

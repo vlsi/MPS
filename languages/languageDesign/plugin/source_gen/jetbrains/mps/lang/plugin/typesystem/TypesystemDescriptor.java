@@ -34,6 +34,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_AddTabOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_BootstrapActionGroup_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -55,6 +59,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_GetGroupOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_GetSelectedTabOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

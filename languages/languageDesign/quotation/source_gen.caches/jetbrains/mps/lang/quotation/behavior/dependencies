@@ -48,7 +48,6 @@
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.ListAntiquotation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitLink_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitProperty_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderList_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_BehaviorDescriptor" />
