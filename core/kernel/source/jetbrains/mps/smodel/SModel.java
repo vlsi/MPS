@@ -837,7 +837,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     }
   }
 
-  //---------persistance-related refactorings--------
+  //---------refactorings--------
 
   public int getVersion() {
     return -1;
@@ -860,25 +860,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     } else {
       addAdditionalModelVersion(sModelReference, currentVersion);
     }
-  }
-
-  //--------- stuff --------
-
-  @NotNull
-  public String toString() {
-    return getSModelReference().toString();
-  }
-
-  public void dispose() {
-    ModelChange.assertLegalChange(this);
-    if (myDisposed) return;
-
-    myDisposed = true;
-    myDisposedStacktrace = new Throwable().getStackTrace();
-    disposeFastNodeFinder();
-    myIdToNodeMap = null;
-    myRoots.clear();
-    if (myModelDependenciesManager != null) myModelDependenciesManager.dispose();
   }
 
   public boolean updateSModelReferences() {
@@ -970,6 +951,25 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
       }
     }
     return changed;
+  }
+
+  //--------- stuff --------
+
+  @NotNull
+  public String toString() {
+    return getSModelReference().toString();
+  }
+
+  public void dispose() {
+    ModelChange.assertLegalChange(this);
+    if (myDisposed) return;
+
+    myDisposed = true;
+    myDisposedStacktrace = new Throwable().getStackTrace();
+    disposeFastNodeFinder();
+    myIdToNodeMap = null;
+    myRoots.clear();
+    if (myModelDependenciesManager != null) myModelDependenciesManager.dispose();
   }
 
   private void checkNotDisposed() {
