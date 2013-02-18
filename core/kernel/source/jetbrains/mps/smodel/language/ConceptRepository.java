@@ -21,12 +21,13 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -45,11 +46,23 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
         String langName = NameUtil.namespaceFromConceptFQName(id);
         IModule module = MPSModuleRepository.getInstance().getModuleByFqName(langName);
         if (!(module instanceof Language)) {
-          LOG.error("Can't find language for concept " + id, new Throwable());
+          assert myConcepts.get(id) == null : "trying to add the second descriptor of a concept";
+          myConcepts.put(id, new SConceptNodeAdapter(id));
         } else {
           Language lang = (Language) module;
-          SModel strucModel = lang.getStructureModelDescriptor().getSModel();
-          for (SNode root : strucModel.roots()) {
+          SModelDescriptor smd = lang.getStructureModelDescriptor();
+          if (smd == null) {
+            assert myConcepts.get(id) == null : "trying to add the second descriptor of a concept";
+            SConceptNodeAdapter adapter = new SConceptNodeAdapter(id);
+            myConcepts.put(id, adapter);
+            return adapter;
+          }
+
+          SModel sm = smd.getSModel();
+          for (SNode root : sm.roots()) {
+            //do not change existing concept descriptor (required for == correctness)
+            if (myConcepts.get(id) != null) continue;
+
             myConcepts.put(id, new SConceptNodeAdapter(langName + "." + root.getProperty(SNodeUtil.property_INamedConcept_name)));
           }
 
