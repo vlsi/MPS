@@ -35,6 +35,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Generator;
@@ -843,6 +844,24 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   @Deprecated
   public final IClassPathItem getModuleWithDependenciesClassPathItem() {
     return SModuleOperations.getModuleWithDependenciesClassPathItem(this);
+  }
+
+  /**
+   * @see jetbrains.mps.runtime.IClassLoadingModule#canLoad()
+   */
+  @Override
+  @Deprecated
+  public final boolean reloadClassesAfterGeneration() {
+    return (this instanceof IClassLoadingModule) && ((IClassLoadingModule) this).canLoad();
+  }
+
+  /**
+   * @see jetbrains.mps.runtime.IClassLoadingModule#canLoad()
+   */
+  @Deprecated
+  @Override
+  public Class getClass(String className) {
+    throw new UnsupportedOperationException();
   }
 
   /**

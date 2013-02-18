@@ -182,11 +182,6 @@ public class Solution extends ClassLoadingModule {
     return facets;
   }
 
-  public boolean reloadClassesAfterGeneration() {
-    SolutionDescriptor descriptor = getModuleDescriptor();
-    return descriptor != null && descriptor.getKind() != SolutionKind.NONE;
-  }
-
   @Override
   protected SolutionDescriptor loadDescriptor() {
     IFile file = getDescriptorFile();

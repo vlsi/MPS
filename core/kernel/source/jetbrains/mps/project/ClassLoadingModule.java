@@ -131,8 +131,4 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   public boolean canLoad() {
     return true;
   }
-
-  public boolean reloadClassesAfterGeneration() {
-    return true;
-  }
 }

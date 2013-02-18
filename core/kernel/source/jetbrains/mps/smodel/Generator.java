@@ -318,11 +318,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   }
 
   @Override
-  public boolean reloadClassesAfterGeneration() {
-    return true;
-  }
-
-  @Override
   public IFile getOutputPath() {
     return mySourceLanguage.getOutputPath();
   }

@@ -28,10 +28,10 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.CollectionUtil;
@@ -128,7 +128,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
 
         for (Pair<SModule, List<SModel>> moduleListPair : input) {
           SModule module = moduleListPair.o1;
-          if (module instanceof ClassLoadingModule && ((ClassLoadingModule) module).reloadClassesAfterGeneration()) {
+          if (module instanceof IClassLoadingModule && ((IClassLoadingModule) module).canLoad()) {
             needToReload = true;
           }
           boolean compilationResult = compileModuleInMPS(module, monitor.subTask(4));

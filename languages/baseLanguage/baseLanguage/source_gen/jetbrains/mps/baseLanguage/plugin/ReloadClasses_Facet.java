@@ -80,7 +80,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
 
               if (nonEmptyCompilation && Sequence.fromIterable(input).any(new IWhereFilter<TResource>() {
                 public boolean accept(TResource in) {
-                  return ((IClassLoadingModule) in.module()).reloadClassesAfterGeneration();
+                  return ((IClassLoadingModule) in.module()).canLoad();
                 }
               })) {
                 monitor.currentProgress().beginWork("Reloading classes", 1, monitor.currentProgress().workLeft());
