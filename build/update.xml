@@ -6,7 +6,7 @@
              url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2">
-      <build number="117.9449" version="2.5.4">
+      <build number="117.9448" version="2.5.4">
         <message>JetBrains MPS 2.5.4 is available.</message>
       </build>
     </channel>
@@ -15,7 +15,7 @@
              url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2">
-      <build number="117.9449" version="2.5.4">
+      <build number="117.9448" version="2.5.4">
         <message>JetBrains MPS 2.5.4 is available.</message>
       </build>
     </channel>
@@ -24,7 +24,7 @@
              url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2" minorVersoin="5">
-      <build number="117.9449" version="2.5.4">
+      <build number="117.9448" version="2.5.4">
         <message>JetBrains MPS 2.5.4 is available.</message>
       </build>
     </channel>
@@ -33,7 +33,7 @@
              url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2" minorVersoin="5">
-      <build number="117.9449" version="2.5.4">
+      <build number="117.9448" version="2.5.4">
         <message>JetBrains MPS 2.5.4 is available.</message>
       </build>
     </channel>
