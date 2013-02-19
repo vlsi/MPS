@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -193,13 +194,17 @@ public class EditorCellLabelSelection extends EditorCellSelection {
     // TODO: review this logic - it was originally copied from EditorComponentKeyboardHandler
     final EditorCell selectedCell = getEditorCell();
     if (type == CellActionType.DELETE && selectedCell.isLastPositionInBigCell() && !selectedCell.isFirstPositionInBigCell()) {
-      final EditorCell target;
-      if (selectedCell.isLastPositionInBigCell() && selectedCell.getContainingBigCell().getNextSibling() != null) {
-        target = selectedCell.getContainingBigCell().getNextSibling();
-      } else if (selectedCell.getNextSibling() != null) {
-        target = selectedCell.getNextSibling();
+      final jetbrains.mps.openapi.editor.cells.EditorCell target;
+      jetbrains.mps.openapi.editor.cells.EditorCell bigCellNextSibling = APICellAdapter.getNextSibling(selectedCell.getContainingBigCell());
+      if (selectedCell.isLastPositionInBigCell() && bigCellNextSibling != null) {
+        target = bigCellNextSibling;
       } else {
-        target = selectedCell.getNextLeaf(CellConditions.SELECTABLE);
+        jetbrains.mps.openapi.editor.cells.EditorCell nextSibling = APICellAdapter.getNextSibling(selectedCell.getContainingBigCell());
+        if (nextSibling != null) {
+          target = nextSibling;
+        } else {
+          target = selectedCell.getNextLeaf(CellConditions.SELECTABLE);
+        }
       }
 
       if (target == null || ModelAccess.instance().runReadAction(new Computable<Boolean>() {
@@ -212,13 +217,17 @@ public class EditorCellLabelSelection extends EditorCellSelection {
     }
 
     if (type == CellActionType.BACKSPACE && selectedCell.isFirstPositionInBigCell() && !selectedCell.isLastPositionInBigCell()) {
-      final EditorCell target;
-      if (selectedCell.isFirstPositionInBigCell() && selectedCell.getContainingBigCell().getPrevSibling() != null) {
-        target = selectedCell.getContainingBigCell().getPrevSibling();
-      } else if (selectedCell.getPrevSibling() != null) {
-        target = selectedCell.getPrevSibling();
+      final jetbrains.mps.openapi.editor.cells.EditorCell target;
+      jetbrains.mps.openapi.editor.cells.EditorCell bigCellPrevSibling = APICellAdapter.getPrevSibling(selectedCell.getContainingBigCell());
+      if (selectedCell.isFirstPositionInBigCell() && bigCellPrevSibling != null) {
+        target = bigCellPrevSibling;
       } else {
-        target = selectedCell.getPrevLeaf(CellConditions.SELECTABLE);
+        jetbrains.mps.openapi.editor.cells.EditorCell prevSibling = APICellAdapter.getPrevSibling(selectedCell);
+        if (prevSibling != null) {
+          target = prevSibling;
+        } else {
+          target = selectedCell.getPrevLeaf(CellConditions.SELECTABLE);
+        }
       }
 
       if (target == null) return false;

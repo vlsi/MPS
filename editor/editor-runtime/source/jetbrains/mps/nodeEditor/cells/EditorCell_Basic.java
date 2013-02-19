@@ -35,6 +35,7 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.nodeEditor.DfsTraverser;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -992,7 +993,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public boolean isLastChild() {
-    return getNextSibling() == null && getParent() != null;
+    return getParent() != null && this.equals(getParent().lastCell());
   }
 
   public boolean isFirstChild() {
@@ -1251,37 +1252,29 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public EditorCell getFirstDescendant(Condition<EditorCell> condition) {
-    EditorCell current = getFirstChild();
-
-    if (current == this) return null;
-
-    while (current != null) {
-      if (condition.met(current)) return current;
-
-      EditorCell result = current.getFirstDescendant(condition);
-      if (result != null) {
-        return result;
+    DfsTraverser traverser = new DfsTraverser(this, true);
+    while (traverser.getCurrent() != null) {
+      if (condition.met((EditorCell) traverser.getCurrent())) {
+        return (EditorCell)traverser.getCurrent();
       }
-
-      current = current.getNextSibling();
+      traverser.next();
+      if (((EditorCell) traverser.getCurrent()).isAncestorOf(this) || this.equals(traverser.getCurrent())) {
+        return null;
+      }
     }
     return null;
   }
 
   public EditorCell getLastDescendant(Condition<EditorCell> condition) {
-    EditorCell current = getLastChild();
-
-    if (current == this) return null;
-
-    while (current != null) {
-      if (condition.met(current)) return current;
-
-      EditorCell result = current.getLastDescendant(condition);
-      if (result != null) {
-        return result;
+    DfsTraverser traverser = new DfsTraverser(this, false);
+    while (traverser.getCurrent() != null) {
+      if (condition.met((EditorCell) traverser.getCurrent())) {
+        return (EditorCell)traverser.getCurrent();
       }
-
-      current = current.getPrevSibling();
+      traverser.next();
+      if (((EditorCell) traverser.getCurrent()).isAncestorOf(this) || this.equals(traverser.getCurrent())) {
+        return null;
+      }
     }
     return null;
   }

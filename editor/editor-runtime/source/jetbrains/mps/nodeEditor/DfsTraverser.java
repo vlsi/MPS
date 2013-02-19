@@ -16,14 +16,13 @@
 package jetbrains.mps.nodeEditor;
 
 
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.util.containers.EmptyIterator;
 
 import java.util.Iterator;
 
-class DfsTraverser {
+public class DfsTraverser {
   private EditorCell myCurrent;
   private boolean myForward;
   private Iterator<EditorCell> myCellIterator;
