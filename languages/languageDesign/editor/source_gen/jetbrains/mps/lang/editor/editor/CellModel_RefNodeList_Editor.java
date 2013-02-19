@@ -6,9 +6,14 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -16,9 +21,6 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -34,8 +36,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior;
 
 public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -44,6 +44,38 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2v2794_a_0(editorContext, node);
+  }
+
+  private static boolean renderingCondition_2v2794_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node));
+  }
+
+  private static boolean renderingCondition_2v2794_a1b0c0(SNode node, EditorContext editorContext, IScope scope) {
+    return CellModel_ListWithRole_Behavior.call_isFoldingEnabled_4601216887035799532(node);
+  }
+
+  private static boolean renderingCondition_2v2794_a0c0(SNode node, EditorContext editorContext, IScope scope) {
+    return CellModel_ListWithRole_Behavior.call_isVertical_1239873472748(node);
+  }
+
+  private static boolean renderingCondition_2v2794_a5a1c0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "usesFolding");
+  }
+
+  private static boolean renderingCondition_2v2794_a1c0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(CellModel_ListWithRole_Behavior.call_isVertical_1239873472748(node));
+  }
+
+  private static boolean renderingCondition_2v2794_a1e3a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "usesFoldingCondition", true) == null);
+  }
+
+  private static boolean renderingCondition_2v2794_a1g3a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "separatorTextQuery", true) == null;
+  }
+
+  private static boolean renderingCondition_2v2794_a2g3a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "separatorTextQuery", true) != null;
   }
 
   public static class CellModel_RefNodeList_usesFolding_cellMenu_2v2794_a0a1e3a extends AbstractCellMenuPart_PropertyValues {
@@ -1190,37 +1222,5 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_2v2794_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node));
-  }
-
-  private static boolean renderingCondition_2v2794_a1b0c0(SNode node, EditorContext editorContext, IScope scope) {
-    return CellModel_ListWithRole_Behavior.call_isFoldingEnabled_4601216887035799532(node);
-  }
-
-  private static boolean renderingCondition_2v2794_a0c0(SNode node, EditorContext editorContext, IScope scope) {
-    return CellModel_ListWithRole_Behavior.call_isVertical_1239873472748(node);
-  }
-
-  private static boolean renderingCondition_2v2794_a5a1c0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "usesFolding");
-  }
-
-  private static boolean renderingCondition_2v2794_a1c0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(CellModel_ListWithRole_Behavior.call_isVertical_1239873472748(node));
-  }
-
-  private static boolean renderingCondition_2v2794_a1e3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "usesFoldingCondition", true) == null);
-  }
-
-  private static boolean renderingCondition_2v2794_a1g3a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "separatorTextQuery", true) == null;
-  }
-
-  private static boolean renderingCondition_2v2794_a2g3a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "separatorTextQuery", true) != null;
   }
 }

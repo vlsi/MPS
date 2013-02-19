@@ -6,9 +6,12 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.awt.Color;
+import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -39,9 +42,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.awt.Color;
 
 public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -50,6 +50,50 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cvgoyj_a(editorContext, node);
+  }
+
+  private static Color _StyleParameter_QueryFunction_cvgoyj_a0d0a0(EditorContext editorContext, SNode node) {
+    return _EditorUtil.grayIfNotSelectable(node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_cvgoyj_a0a0a(EditorContext editorContext, SNode node) {
+    return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_cvgoyj_a0d0a(EditorContext editorContext, SNode node) {
+    return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_cvgoyj_a1d0a(EditorContext editorContext, SNode node) {
+    return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
+  }
+
+  private static boolean renderingCondition_cvgoyj_a2a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
+  }
+
+  private static boolean renderingCondition_cvgoyj_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+    return CellModel_Collection_Behavior.call_isVertical_1237380214915(node);
+  }
+
+  private static boolean renderingCondition_cvgoyj_a2b0a(SNode node, EditorContext editorContext, IScope scope) {
+    return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
+  }
+
+  private static boolean renderingCondition_cvgoyj_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(CellModel_Collection_Behavior.call_isVertical_1237380214915(node)) && !(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(node));
+  }
+
+  private static boolean renderingCondition_cvgoyj_a0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(node));
+  }
+
+  private static boolean renderingCondition_cvgoyj_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+    return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
+  }
+
+  private static boolean renderingCondition_cvgoyj_a1c3a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "usesFoldingCondition", true) == null);
   }
 
   public static class CellModel_Collection_usesFolding_cellMenu_cvgoyj_a0a1c3a extends AbstractCellMenuPart_PropertyValues {
@@ -653,49 +697,5 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_cvgoyj_a2a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
-  }
-
-  private static boolean renderingCondition_cvgoyj_a0a0(SNode node, EditorContext editorContext, IScope scope) {
-    return CellModel_Collection_Behavior.call_isVertical_1237380214915(node);
-  }
-
-  private static boolean renderingCondition_cvgoyj_a2b0a(SNode node, EditorContext editorContext, IScope scope) {
-    return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
-  }
-
-  private static boolean renderingCondition_cvgoyj_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(CellModel_Collection_Behavior.call_isVertical_1237380214915(node)) && !(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(node));
-  }
-
-  private static boolean renderingCondition_cvgoyj_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(node));
-  }
-
-  private static boolean renderingCondition_cvgoyj_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
-  }
-
-  private static boolean renderingCondition_cvgoyj_a1c3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "usesFoldingCondition", true) == null);
-  }
-
-  private static boolean _StyleParameter_QueryFunction_cvgoyj_a0a0a(EditorContext editorContext, SNode node) {
-    return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
-  }
-
-  private static boolean _StyleParameter_QueryFunction_cvgoyj_a0d0a(EditorContext editorContext, SNode node) {
-    return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
-  }
-
-  private static boolean _StyleParameter_QueryFunction_cvgoyj_a1d0a(EditorContext editorContext, SNode node) {
-    return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
-  }
-
-  private static Color _StyleParameter_QueryFunction_cvgoyj_a0d0a0(EditorContext editorContext, SNode node) {
-    return _EditorUtil.grayIfNotSelectable(node);
   }
 }

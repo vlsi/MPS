@@ -6,15 +6,15 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -37,6 +37,14 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_azr75j_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_azr75j_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "query", true) == null;
+  }
+
+  private static boolean renderingCondition_azr75j_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "query", true) != null;
   }
 
   public static class ReplaceWith_StyleClassItem_cellMenu_azr75j_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
@@ -211,13 +219,5 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_azr75j_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "query", true) == null;
-  }
-
-  private static boolean renderingCondition_azr75j_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "query", true) != null;
   }
 }

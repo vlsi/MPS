@@ -141,10 +141,11 @@
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1143051457456">
       <property name="name" nameId="tpck.1169194664001" value="MAPPING_queryFunction" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Parameters" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1143052634969">
-      <property name="name" nameId="tpck.1169194664001" value="weave_QueryFunction_NodeCondition_MethodDeclaration" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_QueryFunction_NodeCondition" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1142886221719" resolveInfo="QueryFunction_NodeCondition" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1149851533317">
@@ -174,7 +175,8 @@
       <property name="name" nameId="tpck.1169194664001" value="class_CellMenuComponent" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1176476223559">
-      <property name="name" nameId="tpck.1169194664001" value="weave_QueryFunction_JComponent_MethodDeclaration" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_QueryFunction_JComponent" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1176474535556" resolveInfo="QueryFunction_JComponent" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1176476881461">
@@ -183,15 +185,16 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1176732010646">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ConceptFunctionParameter_oldText" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1176731909317" resolveInfo="ConceptFunctionParameter_oldText" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1176886006175">
-      <property name="name" nameId="tpck.1169194664001" value="weave_QueryFunction_MethodDeclaration" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_QueryFunction_StyleParameter" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1221059528506" resolveInfo="QueryFunction_StyleParameter" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184139379136">
-      <property name="name" nameId="tpck.1169194664001" value="weave_InlineEditorComponent" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_InlineEditorComponent" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1088185857835" resolveInfo="InlineEditorComponent" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184142154197">
@@ -200,81 +203,81 @@
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1073390211982" resolveInfo="CellModel_RefNodeList" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184143608362">
-      <property name="name" nameId="tpck.1169194664001" value="template_CellMenuPart_PropertyValues" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_CellMenuPart_PropertyValues" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1164833692343" resolveInfo="CellMenuPart_PropertyValues" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184143801020">
-      <property name="name" nameId="tpck.1169194664001" value="template_CellMenuPart_PropertyPostfixHints" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_CellMenuPart_PropertyPostfixHints" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1180615838666" resolveInfo="CellMenuPart_PropertyPostfixHints" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184144092414">
-      <property name="name" nameId="tpck.1169194664001" value="template_CellMenuPart_ReplaceNode_CustomNodeConcept" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_CellMenuPart_ReplaceNode_CustomNodeConcept" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1164914519156" resolveInfo="CellMenuPart_ReplaceNode_CustomNodeConcept" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184144431685">
-      <property name="name" nameId="tpck.1169194664001" value="template_CellMenuPart_ReplaceNode_Group" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_CellMenuPart_ReplaceNode_Group" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1165004207520" resolveInfo="CellMenuPart_ReplaceNode_Group" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184144527953">
-      <property name="name" nameId="tpck.1169194664001" value="template_CellMenuPart_ReferentPrimary" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_CellMenuPart_ReferentPrimary" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1164996492011" resolveInfo="CellMenuPart_ReferentPrimary" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184144810392">
-      <property name="name" nameId="tpck.1169194664001" value="template_CellMenuPart_ReplaceChildPrimary" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_CellMenuPart_ReplaceChildPrimary" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1174088067129" resolveInfo="CellMenuPart_ReplaceChildPrimary" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184144908080">
-      <property name="name" nameId="tpck.1169194664001" value="template_CellMenuPart_ReplaceChild_Group" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_CellMenuPart_ReplaceChild_Group" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1165270418989" resolveInfo="CellMenuPart_ReplaceChild_Group" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184144995846">
-      <property name="name" nameId="tpck.1169194664001" value="template_CellMenuPart_ReplaceChild_Item" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_CellMenuPart_ReplaceChild_Item" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1165339175678" resolveInfo="CellMenuPart_ReplaceChild_Item" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184145097536">
-      <property name="name" nameId="tpck.1169194664001" value="template_CellMenuPart_ReplaceChild_CustomChildConcept" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_CellMenuPart_ReplaceChild_CustomChildConcept" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1165280503630" resolveInfo="CellMenuPart_ReplaceChild_CustomChildConcept" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184145217087">
-      <property name="name" nameId="tpck.1169194664001" value="template_CellMenuPart_Generic_Group" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_CellMenuPart_Generic_Group" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1165420413719" resolveInfo="CellMenuPart_Generic_Group" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184145320988">
-      <property name="name" nameId="tpck.1169194664001" value="template_CellMenuPart_Generic_Item" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_CellMenuPart_Generic_Item" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1165424453110" resolveInfo="CellMenuPart_Generic_Item" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1184145395052">
-      <property name="name" nameId="tpck.1169194664001" value="template_CelllMenuPart_CellMenuComponent" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_CelllMenuPart_CellMenuComponent" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1166059625718" resolveInfo="CellMenuPart_CellMenuComponent" />
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1186404688558">
       <property name="name" nameId="tpck.1169194664001" value="StyleSheet" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleSheet" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="styles" />
       <property name="topPriorityGroup" nameId="tpf8.1184950341882" value="false" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1186404727331">
       <property name="name" nameId="tpck.1169194664001" value="StyleSheetClass" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleSheet" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="styles" />
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="1186404942965">
       <property name="name" nameId="tpck.1169194664001" value="StyleAttributeValue" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleClassItem" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="styles" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1186410990478">
       <property name="name" nameId="tpck.1169194664001" value="StyleSheetClass_Stub" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleClassItem" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="styles" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1198257250013">
       <property name="name" nameId="tpck.1169194664001" value="weave_CellModel_Indent" />
@@ -344,12 +347,9 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="sugar" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1073389214265" resolveInfo="EditorCellModel" />
     </node>
-    <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1236426340685">
-      <property name="name" nameId="tpck.1169194664001" value="weave_QueryFunction_Node_MethodDeclaration" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1236263696991" resolveInfo="QueryFunction_MatchingNode" />
-    </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1236442846524">
-      <property name="name" nameId="tpck.1169194664001" value="weave_QueryFunction_String_MethodDeclaration" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_QueryFunction_String" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1236443640684" resolveInfo="QueryFunction_String" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5170495790389304146">
@@ -392,17 +392,34 @@
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="6083395046987581465">
       <property name="name" nameId="tpck.1169194664001" value="StyleAttribute" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleClassItem" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="styles" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="7991857262602250026">
       <property name="name" nameId="tpck.1169194664001" value="template_StyleClassItemQueryCall" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="styleClassItem" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="styles" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1221059528506" resolveInfo="QueryFunction_StyleParameter" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="8233876857997955247">
-      <property name="name" nameId="tpck.1169194664001" value="template_CellMenuPart_ApplySideTransforms" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_CellMenuPart_ApplySideTransforms" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="cellMenu" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.8233876857994246075" resolveInfo="CellMenuPart_ApplySideTransforms" />
+    </node>
+    <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="2548761562328299818">
+      <property name="name" nameId="tpck.1169194664001" value="CellModelChildrenIterator" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="cellModel" />
+    </node>
+    <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="2548761562336829589">
+      <property name="name" nameId="tpck.1169194664001" value="CellModel" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="cellModel" />
+    </node>
+    <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="2548761562337839713">
+      <property name="name" nameId="tpck.1169194664001" value="template_EditorCellModel_CommonMethods" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="cellModel" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.1073389214265" resolveInfo="EditorCellModel" />
+    </node>
+    <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="2548761562342008913">
+      <property name="name" nameId="tpck.1169194664001" value="StyleClassItemQueryMethods" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="styles" />
     </node>
   </roots>
   <root id="1096630339736">
@@ -502,30 +519,39 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jsgz.~EditorCell" resolveInfo="EditorCell" />
       </node>
     </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7301053825001940826">
-      <property name="name" nameId="tpck.1169194664001" value="CellMenuPartClass" />
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
-      <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
-      <property name="isFinal" nameId="tpee.1221565133444" value="false" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="7301053825001940827">
-        <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="7301053825001940828">
-          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7301053825001940829">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7301053825001940830">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7301053825001976688">
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetDescendantsOperation" typeId="tp25.1171305280644" id="7301053825001976689">
-                  <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="7301053825001976690">
-                    <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="7301053825001991331">
-                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpc2.1164824854750" resolveInfo="CellMenuPart_Abstract" />
-                    </node>
-                  </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="2548761562328327860">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562328335509">
+        <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562336829589" resolveInfo="CellModel" />
+        <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562328349216">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328349217">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562328349333">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562328349891">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562328360830">
+                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1080736633877" />
                 </node>
-                <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7301053825001976692" />
+                <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562328349332" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7301053825001940836" />
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="2548761562328372985">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562328372986">
+        <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562336829589" resolveInfo="CellModel" />
+        <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562328372987">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328372988">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562328372989">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562328372990">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562328387798">
+                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1078153129734" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562328372992" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1096631626498">
       <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
@@ -1762,30 +1788,22 @@
         </node>
       </node>
     </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7301053825002061767">
-      <property name="name" nameId="tpck.1169194664001" value="CellMenuPartClass" />
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
-      <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
-      <property name="isFinal" nameId="tpee.1221565133444" value="false" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="7301053825002061768">
-        <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="7301053825002061769">
-          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7301053825002061770">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7301053825002061771">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7301053825002061772">
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetDescendantsOperation" typeId="tp25.1171305280644" id="7301053825002061773">
-                  <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="7301053825002061774">
-                    <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="7301053825002061775">
-                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpc2.1164824854750" resolveInfo="CellMenuPart_Abstract" />
-                    </node>
-                  </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="2548761562328397562">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562328402200">
+        <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562336829589" resolveInfo="CellModel" />
+        <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562328412804">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328412805">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562328412921">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562328413479">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562328424418">
+                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1080736633877" />
                 </node>
-                <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7301053825002061776" />
+                <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562328412920" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7301053825002061777" />
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1097143975423">
       <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
@@ -5873,79 +5891,79 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7301053825002748805">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1165420413719" resolveInfo="CellMenuPart_Generic_Group" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7301053825002803496">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184145217087" resolveInfo="template_CellMenuPart_Generic_Group" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184145217087" resolveInfo="reduce_CellMenuPart_Generic_Group" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7301053825002750027">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1165270418989" resolveInfo="CellMenuPart_ReplaceChild_Group" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7301053825002850924">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184144908080" resolveInfo="template_CellMenuPart_ReplaceChild_Group" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184144908080" resolveInfo="reduce_CellMenuPart_ReplaceChild_Group" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7301053825002750041">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1165004207520" resolveInfo="CellMenuPart_ReplaceNode_Group" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7301053825002869079">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184144431685" resolveInfo="template_CellMenuPart_ReplaceNode_Group" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184144431685" resolveInfo="reduce_CellMenuPart_ReplaceNode_Group" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7301053825002750057">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.8233876857994246075" resolveInfo="CellMenuPart_ApplySideTransforms" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7301053825002867205">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="8233876857997955247" resolveInfo="template_CellMenuPart_ApplySideTransforms" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="8233876857997955247" resolveInfo="reduce_CellMenuPart_ApplySideTransforms" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7301053825002750075">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1166059625718" resolveInfo="CellMenuPart_CellMenuComponent" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7301053825002813229">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184145395052" resolveInfo="template_CelllMenuPart_CellMenuComponent" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184145395052" resolveInfo="reduce_CelllMenuPart_CellMenuComponent" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7301053825002750095">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1165424453110" resolveInfo="CellMenuPart_Generic_Item" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7301053825002815481">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184145320988" resolveInfo="template_CellMenuPart_Generic_Item" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184145320988" resolveInfo="reduce_CellMenuPart_Generic_Item" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7301053825002750117">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1180615838666" resolveInfo="CellMenuPart_PropertyPostfixHints" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7301053825002871027">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184143801020" resolveInfo="template_CellMenuPart_PropertyPostfixHints" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184143801020" resolveInfo="reduce_CellMenuPart_PropertyPostfixHints" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7301053825002750141">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1164833692343" resolveInfo="CellMenuPart_PropertyValues" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7301053825002872535">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184143608362" resolveInfo="template_CellMenuPart_PropertyValues" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184143608362" resolveInfo="reduce_CellMenuPart_PropertyValues" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7301053825002750167">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1164996492011" resolveInfo="CellMenuPart_ReferentPrimary" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7301053825002854842">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184144527953" resolveInfo="template_CellMenuPart_ReferentPrimary" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184144527953" resolveInfo="reduce_CellMenuPart_ReferentPrimary" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7301053825002750195">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1174088067129" resolveInfo="CellMenuPart_ReplaceChildPrimary" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7301053825002853026">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184144810392" resolveInfo="template_CellMenuPart_ReplaceChildPrimary" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184144810392" resolveInfo="reduce_CellMenuPart_ReplaceChildPrimary" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7301053825002789861">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1165280503630" resolveInfo="CellMenuPart_ReplaceChild_CustomChildConcept" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7301053825002836529">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184145097536" resolveInfo="template_CellMenuPart_ReplaceChild_CustomChildConcept" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184145097536" resolveInfo="reduce_CellMenuPart_ReplaceChild_CustomChildConcept" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7301053825002791103">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1165339175678" resolveInfo="CellMenuPart_ReplaceChild_Item" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7301053825002839295">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184144995846" resolveInfo="template_CellMenuPart_ReplaceChild_Item" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184144995846" resolveInfo="reduce_CellMenuPart_ReplaceChild_Item" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7301053825002792347">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1164914519156" resolveInfo="CellMenuPart_ReplaceNode_CustomNodeConcept" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7301053825002865579">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184144092414" resolveInfo="template_CellMenuPart_ReplaceNode_CustomNodeConcept" />
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184144092414" resolveInfo="reduce_CellMenuPart_ReplaceNode_CustomNodeConcept" />
       </node>
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="1168478720055">
@@ -5979,6 +5997,31 @@
     </node>
   </root>
   <root id="1143051457456">
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562306538528">
+      <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="2548761562306539365">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1176886006175" resolveInfo="reduce_QueryFunction_StyleParameter" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562313888821">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1236443640684" resolveInfo="QueryFunction_String" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="2548761562313889188">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1236442846524" resolveInfo="reduce_QueryFunction_String" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562315532386">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1176474535556" resolveInfo="QueryFunction_JComponent" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="2548761562315532589">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1176476223559" resolveInfo="reduce_QueryFunction_JComponent" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562315790573">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1142886221719" resolveInfo="QueryFunction_NodeCondition" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="2548761562315791212">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1143052634969" resolveInfo="reduce_QueryFunction_NodeCondition" />
+      </node>
+    </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1167334408674">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1142886811589" resolveInfo="ConceptFunctionParameter_node" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1169687155683">
@@ -6002,97 +6045,6 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="893779103613740009">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5985783934031130541">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i5c6.6822392181927252916" resolveInfo="StyledTextPrinter" />
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="1167270396110">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1142886221719" resolveInfo="QueryFunction_NodeCondition" />
-      <node role="ruleConsequence" roleId="tpf8.1169570368028" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1169664923269">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1143052634969" resolveInfo="weave_QueryFunction_NodeCondition_MethodDeclaration" />
-      </node>
-      <node role="contextNodeQuery" roleId="tpf8.1184616230853" type="tpf8.Weaving_MappingRule_ContextNodeQuery" typeId="tpf8.1184616041890" id="1186776452138">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1186776452139">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1186776600132">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1186776613352">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpdo.1186775920903" resolveInfo="getGeneratedClassByAncestor" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpdo.1186771508849" resolveInfo="QueriesUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1186776626932" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1216921348470" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="1176476353424">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1176474535556" resolveInfo="QueryFunction_JComponent" />
-      <node role="ruleConsequence" roleId="tpf8.1169570368028" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1176476363494">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1176476223559" resolveInfo="weave_QueryFunction_JComponent_MethodDeclaration" />
-      </node>
-      <node role="contextNodeQuery" roleId="tpf8.1184616230853" type="tpf8.Weaving_MappingRule_ContextNodeQuery" typeId="tpf8.1184616041890" id="1186776638528">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1186776638529">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1186776638530">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1186776638531">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpdo.1186771508849" resolveInfo="QueriesUtil" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpdo.1186775920903" resolveInfo="getGeneratedClassByAncestor" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1186776638532" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1216921343860" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="1221048672178">
-      <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1221059528506" resolveInfo="QueryFunction_StyleParameter" />
-      <node role="ruleConsequence" roleId="tpf8.1169570368028" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1221061348962">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1176886006175" resolveInfo="weave_QueryFunction_MethodDeclaration" />
-      </node>
-      <node role="contextNodeQuery" roleId="tpf8.1184616230853" type="tpf8.Weaving_MappingRule_ContextNodeQuery" typeId="tpf8.1184616041890" id="1221048672180">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1221048672181">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1221048701371">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1221048709014">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpdo.1186775920903" resolveInfo="getGeneratedClassByAncestor" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpdo.1186771508849" resolveInfo="QueriesUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1221048711078" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1221048713267" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="1236426494458">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1236263696991" resolveInfo="QueryFunction_MatchingNode" />
-      <node role="ruleConsequence" roleId="tpf8.1169570368028" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1236426510791">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1236426340685" resolveInfo="weave_QueryFunction_Node_MethodDeclaration" />
-      </node>
-      <node role="contextNodeQuery" roleId="tpf8.1184616230853" type="tpf8.Weaving_MappingRule_ContextNodeQuery" typeId="tpf8.1184616041890" id="1236426494460">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236426494461">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1236426532048">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1236426532049">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpdo.1186771508849" resolveInfo="QueriesUtil" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpdo.1186775920903" resolveInfo="getGeneratedClassByAncestor" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1236426532050" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1236426532051" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="1236442926113">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1236443640684" resolveInfo="QueryFunction_String" />
-      <node role="ruleConsequence" roleId="tpf8.1169570368028" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1236442961896">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1236442846524" resolveInfo="weave_QueryFunction_String_MethodDeclaration" />
-      </node>
-      <node role="contextNodeQuery" roleId="tpf8.1184616230853" type="tpf8.Weaving_MappingRule_ContextNodeQuery" typeId="tpf8.1184616041890" id="1236442926115">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236442926116">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1236442968904">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1236442968905">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpdo.1186771508849" resolveInfo="QueriesUtil" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpdo.1186775920903" resolveInfo="getGeneratedClassByAncestor" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1236442968906" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1236442968907" />
-            </node>
-          </node>
         </node>
       </node>
     </node>
@@ -7538,6 +7490,23 @@
                         </node>
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="2548761562344091759">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562344091760">
+            <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562336829589" resolveInfo="CellModel" />
+            <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562344091761">
+              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562344091762">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562344091763">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562344091764">
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562344091765">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1080736633877" />
+                    </node>
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562344091766" />
                   </node>
                 </node>
               </node>
@@ -12403,6 +12372,36 @@
         </node>
       </node>
     </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="2548761562343263250">
+      <property name="name" nameId="tpck.1169194664001" value="styleClassItemQuery" />
+      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
+      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2548761562343263251" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2548761562343263252" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562343263253" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="2548761562343263255">
+        <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2548761562343263256">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562343263257">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562343263258">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562343418923">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkImplicitSelect" typeId="tp25.3562215692195599741" id="2548761562343452409">
+                  <link role="link" roleId="tp25.3562215692195600259" targetNodeId="tpc2.1219418656006" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562343263259">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="2548761562343397027">
+                    <link role="link" roleId="tp25.1138056546658" targetNodeId="tpc2.1186402402630" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562343263261" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562343263262">
+        <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562342008913" resolveInfo="StyleClassItemQueryMethods" />
+      </node>
+    </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1186404727332" />
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="1186404741005">
       <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tpc2.1186402211651" resolveInfo="StyleSheet" />
@@ -15894,61 +15893,6 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2732406307364786670" />
     </node>
   </root>
-  <root id="1236426340685">
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1236426340686">
-      <property name="name" nameId="tpck.1169194664001" value="_context_class_" />
-      <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1236426340687">
-        <property name="name" nameId="tpck.1169194664001" value="_query_method" />
-        <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1239575268522" />
-        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1767562947359158485" />
-        <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1236426340709">
-          <property name="name" nameId="tpck.1169194664001" value="node" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1239498049946" />
-        </node>
-        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236426340688">
-          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1236426340689">
-            <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1236426340690">
-              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236426340691">
-                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1236426340692">
-                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1236426340693">
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1236426340695">
-                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1137022507850" />
-                    </node>
-                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1236426340694" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1236426340696">
-            <node role="expression" roleId="tpee.1068581517676" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1236426472689" />
-          </node>
-        </node>
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1236426340699">
-          <link role="labelDeclaration" roleId="tpf8.1200916687663" targetNodeId="1215478113304" resolveInfo="query_method" />
-        </node>
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1236426340700">
-          <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
-          <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1236426340701">
-            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236426340702">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1236426340703">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1236426340704">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1236426340705" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_CreateUniqueName" typeId="tpf3.1218047638031" id="1236426340706">
-                    <node role="contextNode" roleId="tpf3.1218049772449" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1236426340708" />
-                    <node role="baseName" roleId="tpf3.1218047638032" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1236426340707">
-                      <property name="value" nameId="tpee.1070475926801" value="matchingNode" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1236426340716" />
-    </node>
-  </root>
   <root id="1236442846524">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1236442846525">
       <property name="name" nameId="tpck.1169194664001" value="_context_class_" />
@@ -17417,6 +17361,12 @@
     </node>
   </root>
   <root id="1096629760203">
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562343983823">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1088185857835" resolveInfo="InlineEditorComponent" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="2548761562343994794">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184139379136" resolveInfo="reduce_InlineEditorComponent" />
+      </node>
+    </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="1168474141361">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1071666914219" resolveInfo="ConceptEditorDeclaration" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="1096630339736" resolveInfo="class_ConceptEditorDeclaration" />
@@ -17504,24 +17454,6 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4f.1205752633985" resolveInfo="ThisClassifierExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="8814408727439494443">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="8814408727439494445" />
-      </node>
-    </node>
-    <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="1184139536715">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1088185857835" resolveInfo="InlineEditorComponent" />
-      <node role="ruleConsequence" roleId="tpf8.1169570368028" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1184139546689">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1184139379136" resolveInfo="weave_InlineEditorComponent" />
-      </node>
-      <node role="contextNodeQuery" roleId="tpf8.1184616230853" type="tpf8.Weaving_MappingRule_ContextNodeQuery" typeId="tpf8.1184616041890" id="1186771925799">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1186771925800">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1186772055337">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1186772056699">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpdo.1186771518038" resolveInfo="getGeneratedClassByContainingRoot" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpdo.1186771508849" resolveInfo="QueriesUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1186772062075" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1216919964321" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="1184142355281">
@@ -18743,6 +18675,771 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8233876857997955298" />
     </node>
+  </root>
+  <root id="2548761562328299818">
+    <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="2494753588868703445" />
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562328462004">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1140524381322" resolveInfo="CellModel_ListWithRole" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="2548761562328470340">
+        <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2548761562328470346">
+          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328470348">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562328478669">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562328478671" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562328478679">
+                <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562336829589" resolveInfo="CellModel" />
+                <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562328495323">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328495324">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562328495722">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562328496290">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562328519992">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1140524464359" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562328495721" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562328533146">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562328533147" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562328533148">
+                <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562336829589" resolveInfo="CellModel" />
+                <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562328533149">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328533150">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562328533151">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562328533152">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562328543834">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.6046489571270834038" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562328533154" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562328555705">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1088612959204" resolveInfo="CellModel_Alternation" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="2548761562328564068">
+        <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2548761562328564074">
+          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328564076">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562328564080">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562328564082" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562328564086">
+                <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562336829589" resolveInfo="CellModel" />
+                <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562328564090">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328564091">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562328573451">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562328573911">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562328579105">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1088612958265" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562328573450" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562328589224">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562328589225" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562328589226">
+                <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562336829589" resolveInfo="CellModel" />
+                <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562328589227">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328589228">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562328589229">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562328589230">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562328596122">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1088612973955" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562328589232" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562328607454">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1073389446423" resolveInfo="CellModel_Collection" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="2548761562328615881">
+        <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2548761562328615887">
+          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328615889">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562328654254">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562328654580" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="2548761562328655200">
+                <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2548761562328655202">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328655204">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562328661140">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562328661600">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="2548761562328685631">
+                          <link role="link" roleId="tp25.1138056546658" targetNodeId="tpc2.1073389446424" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562328661139" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562328657845">
+                <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562336829589" resolveInfo="CellModel" />
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562328647722">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562328647723" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562328647724">
+                <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562336829589" resolveInfo="CellModel" />
+                <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562328647725">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328647726">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562328647727">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562328647728">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562328647729">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.7723470090030138869" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562328647730" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562328737288">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1198489924438" resolveInfo="CellModel_Block" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="2548761562328737564">
+        <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2548761562328737570">
+          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328737572">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562328746014">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562328746016" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562328746020">
+                <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562336829589" resolveInfo="CellModel" />
+                <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562328746229">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328746230">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562328746372">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562328746832">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562328755196">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1198489985045" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562328746371" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562328756655">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562328756656" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562328756657">
+                <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562336829589" resolveInfo="CellModel" />
+                <node role="sourceNodeQuery" roleId="tpf8.1168380395224" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562328756658">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562328756659">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562328756660">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562328756661">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562328764382">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1198489993734" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562328756663" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="2548761562336829589">
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562338193912">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1073390211982" resolveInfo="CellModel_RefNodeList" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="2548761562338193916">
+        <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2548761562338193922">
+          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562338193924">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562343527001">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562343529087" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="2548761562343550452">
+                <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2548761562343550454">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562343550456">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562343553495">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562343575981">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="2548761562343583666">
+                          <link role="link" roleId="tp25.1138056546658" targetNodeId="tpc2.1219418656006" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562343554117">
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562343567894">
+                            <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1233141163694" />
+                          </node>
+                          <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562343553494" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562343585783">
+                <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562342008913" resolveInfo="StyleClassItemQueryMethods" />
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562338202359">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562338229985" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2548761562338238439">
+                <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2548761562338238441">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562338238443">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562338249605">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562338282711">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="2548761562338290487">
+                          <link role="link" roleId="tp25.1138056546658" targetNodeId="tpc2.1164824815888" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562338250227">
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562338268034">
+                            <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1165347032372" />
+                          </node>
+                          <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562338249604" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562338202380">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562338202381" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="2548761562338202382">
+                <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="2548761562337839713" resolveInfo="template_EditorCellModel_CommonMethods" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562343932151">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1088013125922" resolveInfo="CellModel_RefCell" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="2548761562343941959">
+        <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2548761562343950469">
+          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562343950471">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562343959318">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562343959320" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562343959324">
+                <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562343959326">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562343959328">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562343959387">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562343959955">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562343971148">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1088186146602" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562343959386" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2494753588870689780">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2494753588870689781" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="2494753588870689782">
+                <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="2548761562337839713" resolveInfo="template_EditorCellModel_CommonMethods" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562338497390">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1088612959204" resolveInfo="CellModel_Alternation" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="2548761562338506747">
+        <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2548761562338506753">
+          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562338506755">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562338506759">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562338506764" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562338515252">
+                <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562338515254">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562338515256">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562338515539">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562338515999">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562338533059">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1145918517974" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562338515538" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562338506784">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562338506785" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="2548761562338506786">
+                <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="2548761562337839713" resolveInfo="template_EditorCellModel_CommonMethods" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562338567802">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1073389446423" resolveInfo="CellModel_Collection" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="2548761562338568751">
+        <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2548761562338568757">
+          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562338568759">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562338568792">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562338568797" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562338568819">
+                <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562338568821">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562338568823">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562338569106">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562338569566">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562338578046">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.8709572687796959088" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562338569105" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562338568777">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562338568778" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="2548761562338568779">
+                <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="2548761562337839713" resolveInfo="template_EditorCellModel_CommonMethods" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562338593380">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1073390211982" resolveInfo="CellModel_RefNodeList" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="2548761562338594365">
+        <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2548761562338594371">
+          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562338594373">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562338594395">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562338594400" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562338594404">
+                <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562338594406">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562338594408">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562338603609">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562338604231">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562338617533">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.4601216887035799527" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562338603608" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562338594389">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562338594390" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="2548761562338594391">
+                <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="2548761562337839713" resolveInfo="template_EditorCellModel_CommonMethods" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562340569053">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1103016434866" resolveInfo="CellModel_JComponent" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="2548761562340570074">
+        <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2548761562340570080">
+          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562340570082">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562340570104">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562340570109" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562340570113">
+                <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562340570115">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562340570117">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562340587055">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562340587515">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562340595763">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1176475119347" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562340587054" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562340570098">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562340570099" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="2548761562340570100">
+                <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="2548761562337839713" resolveInfo="template_EditorCellModel_CommonMethods" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="2548761562337898781">
+      <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2548761562337898787">
+        <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562337898789">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562337898811">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562337907229" />
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="2548761562337907233">
+              <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="2548761562337839713" resolveInfo="template_EditorCellModel_CommonMethods" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="2548761562337839713">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2548761562337856541">
+      <property name="name" nameId="tpck.1169194664001" value="ContainerClass" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="2548761562342897135">
+        <property name="name" nameId="tpck.1169194664001" value="styleClassItemQuery" />
+        <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
+        <property name="isFinal" nameId="tpee.1181808852946" value="false" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2548761562342906349" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2548761562342897136" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562342897138" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562342897141" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="2548761562343052915">
+          <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2548761562343052923">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562343052931">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562343056654">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562343057060">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="2548761562343064440">
+                    <link role="link" roleId="tp25.1138056546658" targetNodeId="tpc2.1219418656006" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562343056653" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562343047242">
+          <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562342008913" resolveInfo="StyleClassItemQueryMethods" />
+        </node>
+      </node>
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="2548761562338734718">
+        <property name="name" nameId="tpck.1169194664001" value="renderingCondition" />
+        <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
+        <property name="isFinal" nameId="tpee.1181808852946" value="false" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2548761562338734719" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2548761562338734720" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562338734721">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2548761562338734722">
+            <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2548761562338734723">
+              <property name="value" nameId="tpee.1068580123138" value="true" />
+            </node>
+          </node>
+        </node>
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562338734724" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562338734725">
+          <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562338734726">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562338734727">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562338734728">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562338734729">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562338734730">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1142887637401" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562338734731" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="2548761562338699604">
+        <property name="name" nameId="tpck.1169194664001" value="focusPolicyApplicable" />
+        <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
+        <property name="isFinal" nameId="tpee.1181808852946" value="false" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2548761562338699605" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2548761562338699606" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562338699607">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2548761562338699608">
+            <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2548761562338699609">
+              <property name="value" nameId="tpee.1068580123138" value="true" />
+            </node>
+          </node>
+        </node>
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562338699610" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562338721568">
+          <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562338721582">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562338721596">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562338723753">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562338710581">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562338743479">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1198512004906" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562338710173" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2548761562337940471">
+        <property name="name" nameId="tpck.1169194664001" value="CellMenuPart" />
+        <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
+        <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
+        <property name="isFinal" nameId="tpee.1221565133444" value="false" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2548761562337940472" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562337940473" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2548761562337940474">
+          <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2548761562337940475">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562337940476">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562338018829">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562338037486">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="2548761562338057223">
+                    <link role="link" roleId="tp25.1138056546658" targetNodeId="tpc2.1164824815888" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562338019235">
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562338031629">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1164826688380" />
+                    </node>
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562338018827" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="2548761562338171016">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562338173036" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2548761562338175044">
+          <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="2548761562328299818" resolveInfo="CellModelChildrenIterator" />
+        </node>
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2548761562337856542" />
+    </node>
+  </root>
+  <root id="2548761562342008913">
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562342092064">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1236262245656" resolveInfo="MatchingLabelStyleClassItem" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2548761562342108858">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562342108864">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562342108869">
+            <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562342108871">
+              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562342108873">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562342109089">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562342109495">
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562342116309">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1236443321503" />
+                    </node>
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562342109088" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562342351929">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.4151393920404716535" resolveInfo="PreDefinedStyleClassItem" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplateWithContext_RuleConsequence" typeId="tpf8.8900764248744213868" id="2548761562342394296">
+        <node role="contentNode" roleId="tpf8.8900764248744213871" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="2548761562342394322">
+          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562342394324">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562342394328">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562342394330" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562342394334">
+                <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562342394336">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562342394338">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562342403620">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562342404026">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562342410686">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.8730965736661186051" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562342403619" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562342780472">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2548761562342780473" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562342780474">
+                <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562342780475">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562342780476">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562342780477">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562342780478">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562342790147">
+                          <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.3525058663444350845" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562342780480" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562342675985">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1186403751766" resolveInfo="FontStyleStyleClassItem" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2548761562342676687">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562342676693">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562342676698">
+            <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562342676700">
+              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562342676702">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562342677010">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562342677416">
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562342684230">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1220975211821" />
+                    </node>
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562342677009" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562342723401">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1186415722038" resolveInfo="FontSizeStyleClassItem" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2548761562342726029">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562342726030">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562342726031">
+            <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562342726032">
+              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562342726033">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562342726034">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562342726035">
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562342731446">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1221064706952" />
+                    </node>
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562342726037" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562342723638">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.7651593722933768974" resolveInfo="MaxWidthStyleClassItem" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2548761562342726381">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562342726382">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562342726383">
+            <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562342726384">
+              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562342726385">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562342726386">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562342726387">
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562342736346">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.7651593722933768976" />
+                    </node>
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562342726389" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562342747433">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.7597241200646296617" resolveInfo="NavigatableNodeStyleClassItem" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2548761562342748769">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562342748770">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562342748771">
+            <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562342748772">
+              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562342748773">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562342748774">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562342748775">
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562342766559">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.7597241200646296618" />
+                    </node>
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562342748777" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562342801059">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1186414999511" resolveInfo="UnderlinedStyleClassItem" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2548761562342802414">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562342802415">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562342802416">
+            <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562342802417">
+              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562342802418">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562342802419">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562342802420">
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562342808165">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1221219051630" />
+                    </node>
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562342802422" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562342342832">
+      <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1186414536763" resolveInfo="BooleanStyleSheetItem" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2548761562342371764">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562342371768">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562342371773">
+            <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562342371775">
+              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562342371777">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562342381239">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562342381645">
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562342385157">
+                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1223387335081" />
+                    </node>
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562342381238" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562342487430">
+      <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1186403694788" resolveInfo="ColorStyleClassItem" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2548761562342496048">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.Statement" typeId="tpee.1068580123157" id="2548761562342496054">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2548761562342496062">
+            <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2548761562342496064">
+              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2548761562342496066">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2548761562342574151">
+                  <node role="expression" roleId="tpee.1068580123156" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="2548761562342701515">
+                    <property name="asCast" nameId="tp25.1238684351431" value="true" />
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpc2.1176809959526" resolveInfo="QueryFunction_Color" />
+                    <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2548761562342632312">
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2548761562342639481">
+                        <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1186403803051" />
+                      </node>
+                      <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2548761562342631903" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="2494753588868998509" />
   </root>
 </model>
 

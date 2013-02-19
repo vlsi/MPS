@@ -6,6 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.awt.Color;
+import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -18,9 +21,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
-import java.awt.Color;
 
 public class CellModel_Constant_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -29,6 +29,42 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8hdu2g_a_0(editorContext, node);
+  }
+
+  private static Color _StyleParameter_QueryFunction_8hdu2g_a0b0(EditorContext editorContext, SNode node) {
+    return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
+  }
+
+  private static Color _StyleParameter_QueryFunction_8hdu2g_a1b0(EditorContext editorContext, SNode node) {
+    return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
+  }
+
+  private static Color _StyleParameter_QueryFunction_8hdu2g_a2b0(EditorContext editorContext, SNode node) {
+    return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
+  }
+
+  private static int _StyleParameter_QueryFunction_8hdu2g_a3b0(EditorContext editorContext, SNode node) {
+    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
+  }
+
+  private static int _StyleParameter_QueryFunction_8hdu2g_a4b0(EditorContext editorContext, SNode node) {
+    return EditorCellModel_Behavior.call_getFontSize_1221216397365(node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_8hdu2g_a5b0(EditorContext editorContext, SNode node) {
+    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_8hdu2g_a6b0(EditorContext editorContext, SNode node) {
+    return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
+  }
+
+  private static boolean renderingCondition_8hdu2g_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
+  }
+
+  private static boolean renderingCondition_8hdu2g_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node).length() > 0;
   }
 
   private EditorCell createCollection_8hdu2g_a(EditorContext editorContext, SNode node) {
@@ -273,41 +309,5 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_8hdu2g_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
-  }
-
-  private static boolean renderingCondition_8hdu2g_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node).length() > 0;
-  }
-
-  private static int _StyleParameter_QueryFunction_8hdu2g_a4b0(EditorContext editorContext, SNode node) {
-    return EditorCellModel_Behavior.call_getFontSize_1221216397365(node);
-  }
-
-  private static int _StyleParameter_QueryFunction_8hdu2g_a3b0(EditorContext editorContext, SNode node) {
-    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
-  }
-
-  private static boolean _StyleParameter_QueryFunction_8hdu2g_a6b0(EditorContext editorContext, SNode node) {
-    return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
-  }
-
-  private static boolean _StyleParameter_QueryFunction_8hdu2g_a5b0(EditorContext editorContext, SNode node) {
-    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
-  }
-
-  private static Color _StyleParameter_QueryFunction_8hdu2g_a0b0(EditorContext editorContext, SNode node) {
-    return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
-  }
-
-  private static Color _StyleParameter_QueryFunction_8hdu2g_a1b0(EditorContext editorContext, SNode node) {
-    return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
-  }
-
-  private static Color _StyleParameter_QueryFunction_8hdu2g_a2b0(EditorContext editorContext, SNode node) {
-    return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
 }
