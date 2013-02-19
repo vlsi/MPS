@@ -21,7 +21,9 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.progress.ProgressMonitor;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -52,7 +54,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myInputModel = inputModel;
     myOutputModel = outputModel;
     myShowBadChildWarning = showBadChildWarning;
-    myMappings = new GeneratorMappings(inputModel.registeredNodesCount());
+    myMappings = new GeneratorMappings(IterableUtil.asCollection(inputModel.getRootNodes()).size());
   }
 
   public IOperationContext getOperationContext() {
@@ -180,11 +182,11 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   public SNode findOutputNodeById(SNodeId nodeId) {
-    return myOutputModel.getNodeById(nodeId);
+    return myOutputModel.getNode(nodeId);
   }
 
   public SNode findInputNodeById(SNodeId nodeId) {
-    return myInputModel.getNodeById(nodeId);
+    return myInputModel.getNode(nodeId);
   }
 
 

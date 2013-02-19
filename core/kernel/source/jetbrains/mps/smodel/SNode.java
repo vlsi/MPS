@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelScope;
+import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -41,7 +43,6 @@ import org.jetbrains.mps.migration.annotations.ShortTermMigration;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -297,7 +298,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (p != null) {
       p.removeChild(this);
     } else if (myModel != null) {
-      myModel.removeRoot(this);
+      myModel.removeRootNode(this);
     }
   }
 
@@ -708,7 +709,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   void registerInModel(SModel model) {
     if (model != myModel) {
       if (myModel != null) {
-        LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
+        LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getReference() + "'");
         return;
       }
     }
@@ -851,7 +852,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     //actually, detached models should not be distinguishable by some "disposed" property
     if (myModel == null || !myModel.isDisposed()) return;
 
-    String modelName = myModel.getLongName();
+    String modelName = jetbrains.mps.util.SNodeOperations.getModelLongName(myModel);
     if (ourErroredModels.add(modelName)) {
       System.err.println("CRITICAL: INVALID OPERATION DETECTED");
       System.err.println("model: " + modelName);
@@ -1224,7 +1225,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     List<SNode> children = getChildren(role);
     int size = children.size();
     if (size > 1) {
-      String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getNodeId().toString() + "] " + getModel().getSModelReference() + "\n";
+      String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getNodeId().toString() + "] " + getModel().getReference() + "\n";
       errorMessage += "they are : " + getChildren(role);
       LOG.error(errorMessage, new Throwable(), this);
     }
@@ -1975,18 +1976,18 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     @Override
     public SModelId getModelId() {
-      return myModel.getSModelId();
+      return myModel.getModelId();
     }
 
     @Override
     public String getModelName() {
-      return getModelReference().getModelName();
+      return getReference().getModelName();
     }
 
     @NotNull
     @Override
-    public SModelReference getModelReference() {
-      return myModel.getSModelReference();
+    public SModelReference getReference() {
+      return myModel.getReference();
     }
 
     @Override
@@ -2005,18 +2006,28 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     @Override
-    public Iterable<? extends org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
-      return myModel.roots();
+    public boolean isReadOnly() {
+      return false;
+    }
+
+    @Override
+    public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
+      return myModel.getRootNodes();
+    }
+
+    @Override
+    public boolean isRoot(org.jetbrains.mps.openapi.model.SNode node) {
+      return myModel.isRoot(node);
     }
 
     @Override
     public void addRootNode(org.jetbrains.mps.openapi.model.SNode node) {
-      myModel.addRoot((SNode) node);
+      myModel.addRootNode((SNode) node);
     }
 
     @Override
     public void removeRootNode(org.jetbrains.mps.openapi.model.SNode node) {
-      myModel.removeRoot((SNode) node);
+      myModel.removeRootNode((SNode) node);
     }
 
     @Override
@@ -2024,20 +2035,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       return myModel.getNode(id);
     }
 
+    @Override
+    public SModelScope getModelScope() {
+      return myModel.getModelScope();
+    }
+
     @NotNull
     @Override
     public DataSource getSource() {
       return new NullDataSource();
-    }
-
-    @Override
-    public boolean isLoaded() {
-      return true;
-    }
-
-    @Override
-    public void load() throws IOException {
-
     }
 
     @Override

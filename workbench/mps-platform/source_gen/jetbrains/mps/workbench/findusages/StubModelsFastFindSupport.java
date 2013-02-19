@@ -124,7 +124,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
       for (IFile path : files) {
         final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
         if (vf == null) {
-          LOG.warning("File " + path + ", which belows to model source of model " + sm.getModelReference().toString() + ", was not found in VFS. Assuming no usages in this file.");
+          LOG.warning("File " + path + ", which belows to model source of model " + sm.getReference().toString() + ", was not found in VFS. Assuming no usages in this file.");
           continue;
         }
         VfsUtilCore.visitChildrenRecursively(vf, new VirtualFileVisitor() {

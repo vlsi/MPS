@@ -21,9 +21,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MigrationRefactoringAdapter extends BaseIntention {
   private AbstractMigrationRefactoring myRefactoring;
   private SNode myMigrationScript;  //todo: do we really need migration script i.e. a link to SNode here?
@@ -66,7 +63,7 @@ public class MigrationRefactoringAdapter extends BaseIntention {
   }
 
   public String getLocationString() {
-    return myMigrationScript.getModel().getLongName();
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(myMigrationScript.getModel());
   }
 
   public SNode getNodeByIntention() {

@@ -18,8 +18,8 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 
 public class GoToTypeErrorRuleUtil {
@@ -49,7 +49,9 @@ public class GoToTypeErrorRuleUtil {
       return;
     }
 
-    SNode rule = modelDescriptor.getSModel().getNodeById(ruleID);
+    jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(ruleID);
+    assert nodeId != null : "wrong node id string";
+    SNode rule = modelDescriptor.getSModel().getNode(nodeId);
     if (rule == null) {
       LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
       return;

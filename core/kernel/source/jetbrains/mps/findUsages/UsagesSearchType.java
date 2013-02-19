@@ -16,7 +16,6 @@
 package jetbrains.mps.findUsages;
 
 import gnu.trove.THashSet;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -60,7 +59,7 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
       Collection<SNode> nodes = e.getValue();
       Set<StaticReferenceInfo> srefs = new THashSet<StaticReferenceInfo>();
       for (SNode n : nodes) {
-        SModelReference mr = n.getModel().getSModelReference();
+        SModelReference mr = (SModelReference) n.getModel().getReference();
         srefs.add(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), ((SNodeId) n.getNodeId())));
       }
 

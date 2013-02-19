@@ -13,22 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;
-
-import jetbrains.mps.util.*;
-import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNode;
+package org.jetbrains.mps.openapi.model.util;
 
 import jetbrains.mps.util.containers.EmptyIterator;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
-class NodesIterator implements Iterator<SNode> {
+public class NodesIterator implements Iterator<SNode> {
   private Iterator<SNode> myRoots;
   private Iterator<SNode> myCurrent;
 
-  NodesIterator(Iterator<SNode> roots) {
+  public NodesIterator(Iterator<SNode> roots) {
     myRoots = roots;
     myCurrent = getIterForNextRoot(roots);
   }
@@ -58,8 +56,18 @@ class NodesIterator implements Iterator<SNode> {
 
   private Iterator<SNode> getIterForNextRoot(Iterator<SNode> roots) {
     if (!roots.hasNext()) return new EmptyIterator<SNode>();
+
     SNode next = roots.next();
-    Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(next), ((Iterable) SNodeOperations.getDescendants(next, null)));
-    return thisAndDesc.iterator();
+    List<SNode> res = new ArrayList<SNode>();
+    res.add(next);
+    collectDescendants(next, res);
+    return res.iterator();
+  }
+
+  private static void collectDescendants(SNode node, List<SNode> list) {
+    for (SNode child : node.getChildren()) {
+      list.add(child);
+      collectDescendants(child, list);
+    }
   }
 }

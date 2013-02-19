@@ -121,7 +121,7 @@ public class IntentionsSupport {
 
   private void checkAndShowMenu() {
     if (isInconsistentEditor()) return;
-    if (myEditor.isReadOnly() || myEditor.getSelectedNode().getModel().isNotEditable()) return;
+    if (myEditor.isReadOnly() || myEditor.getSelectedNode().getModel().isReadOnly()) return;
 
     showIntentionsMenu();
   }

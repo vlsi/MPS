@@ -27,22 +27,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
-import jetbrains.mps.smodel.BaseMPSModuleOwner;
-import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
-import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.FastNodeFinder;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -311,7 +296,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
                   select(new ISelector<org.jetbrains.mps.openapi.model.SModel, org.jetbrains.mps.openapi.model.SModelReference>() {
                     @Override
                     public org.jetbrains.mps.openapi.model.SModelReference select(org.jetbrains.mps.openapi.model.SModel o) {
-                      return o.getModelReference();
+                      return o.getReference();
                     }
                   });
               }
@@ -340,9 +325,12 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       }
     }
 
-    @Override
     public IModule getModule() {
       return myProjectStructureModule;
+    }
+
+    public boolean isReadOnly() {
+      return true;
     }
 
     @Override

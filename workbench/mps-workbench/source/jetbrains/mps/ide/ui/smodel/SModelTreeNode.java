@@ -21,10 +21,10 @@ import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
@@ -275,7 +275,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     org.jetbrains.mps.openapi.model.SModelReference reference;
 
     if (getModel() != null) {
-      reference = getModel().getModelReference();
+      reference = getModel().getReference();
     } else {
       return "";
     }
@@ -420,7 +420,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 
     final ArrayList<SNode> allRoots = new ArrayList<SNode>();
-    for (SNode root1 : getSModel().roots()) {
+    for (SNode root1 : getSModel().getRootNodes()) {
       allRoots.add(root1);
     }
     Collections.sort(allRoots, new ToStringComparator(true));

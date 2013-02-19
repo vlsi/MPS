@@ -23,8 +23,6 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -57,7 +55,7 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
           if (!sm.isRegistered()) {
             continue;
           }
-          for (SNode root : sm.getSModel().roots()) {
+          for (SNode root : sm.getSModel().getRootNodes()) {
             final MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(root);
             assert file.hasValidMPSNode() : "invalid file returned by MPS VFS for following model root: " + root;
             for (final Project p : myProjectManager.getOpenProjects()) {

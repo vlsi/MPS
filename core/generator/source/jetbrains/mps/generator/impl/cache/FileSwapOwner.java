@@ -99,7 +99,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     public boolean swapOut(TransientSModel model) {
       if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
 
-      String modelId = model.getSModelReference().getSModelId().toString();
+      String modelId = ((SModelReference) model.getReference()).getSModelId().toString();
       if (modelId == null || modelId.isEmpty()) {
         LOG.error("Bad model id <" + modelId + ">");
         return false;
@@ -113,14 +113,14 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       }
 
       ArrayList<SNode> roots = new ArrayList<SNode>();
-      for (Iterator<SNode> it = model.rootsIterator(); it.hasNext(); ) {
+      for (Iterator<SNode> it = model.getRootNodes().iterator(); it.hasNext(); ) {
         roots.add(it.next());
       }
       ModelOutputStream mos = null;
       IOException ioex = null;
       try {
         mos = new ModelOutputStream(new FileOutputStream(swapFile));
-        saveModel(model.getSModelReference(), roots, mos);
+        saveModel((SModelReference) model.getReference(), roots, mos);
       } catch (IOException e) {
         ioex = e;
         LOG.error(e);
@@ -193,7 +193,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
 
       List<Pair<String,SNode>> roots = new NodesReader(modelReference).readNodes(model, is);
       for (Pair<String,SNode> r : roots) {
-        model.addRoot(r.o2);
+        model.addRootNode(r.o2);
       }
 
       // ensure imports are back
@@ -211,13 +211,13 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
 
   // method created for testing
   public static SNode writeAndReadNode(SNode node) throws IOException {
-    NodesWriter writer = new NodesWriter(node.getModel().getSModelReference());
+    NodesWriter writer = new NodesWriter((SModelReference) node.getModel().getReference());
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     ModelOutputStream mos = new ModelOutputStream(os);
     writer.writeNode(node, mos);
     mos.close();
 
-    NodesReader reader = new NodesReader(node.getModel().getSModelReference());
+    NodesReader reader = new NodesReader((SModelReference) node.getModel().getReference());
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
 
     return reader.readNode(node.getModel(), new ModelInputStream(is)).o2;
@@ -230,11 +230,11 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     ModelOutputStream mos = new ModelOutputStream(os);
 
     ArrayList<SNode> roots = new ArrayList<SNode>();
-    for (Iterator<SNode> it = model.rootsIterator(); it.hasNext(); ) {
+    for (Iterator<SNode> it = model.getRootNodes().iterator(); it.hasNext(); ) {
       roots.add(it.next());
     }
     mos.writeInt(43);
-    new NodesWriter(model.getSModelReference()).writeNodes(roots, mos);
+    new NodesWriter((SModelReference) model.getReference()).writeNodes(roots, mos);
     mos.close();
 
     SModel resultModel = new SModel(new SModelReference("smodel.long.name.for.testing", ""));
@@ -246,9 +246,9 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     if (version != 43) {
       return null;
     }
-    List<Pair<String,SNode>> resultRoots = new NodesReader(resultModel.getSModelReference()).readNodes(resultModel, mis);
+    List<Pair<String,SNode>> resultRoots = new NodesReader((SModelReference) resultModel.getReference()).readNodes(resultModel, mis);
     for (Pair<String,SNode> root : resultRoots) {
-      resultModel.addRoot(root.o2);
+      resultModel.addRootNode(root.o2);
     }
 
     SModelOperations.validateLanguagesAndImports(resultModel, false, false);

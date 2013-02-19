@@ -15,28 +15,53 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;
-
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelDevKitEvent;
+import jetbrains.mps.smodel.event.SModelImportEvent;
+import jetbrains.mps.smodel.event.SModelLanguageEvent;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
+import jetbrains.mps.util.*;
+import jetbrains.mps.util.iterable.TranslatingIterator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelScope;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import org.jetbrains.mps.openapi.model.util.NodesIterator;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
+import java.io.IOException;
 import java.security.SecureRandom;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class SModel {
+public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
@@ -69,87 +94,48 @@ public class SModel {
     myIdToNodeMap = map;
   }
 
-  //---------common properties--------
-
-  @NotNull
-  public SModelReference getSModelReference() {
-    return myReference;
-  }
-
-  public SModelFqName getSModelFqName() {
-    return getSModelReference().getSModelFqName();
-  }
-
-  public SModelId getSModelId() {
+  public SModelId getModelId() {
     return getSModelReference().getSModelId();
   }
 
-  @NotNull
-  public String getStereotype() {
-    return myReference.getStereotype();
+  public String getModelName() {
+    return getReference().getModelName();
   }
 
   @NotNull
-  public String getLongName() {
-    return myReference.getLongName();
+  public org.jetbrains.mps.openapi.model.SModelReference getReference() {
+    return myReference;
   }
 
-  public boolean isTransient() {
-    return false;
+  public ModelRoot getModelRoot() {
+    return getModelDescriptor() == null ? null : getModelDescriptor().getModelRoot();
   }
 
-  @Deprecated   //todo get rid of it
-  public boolean isNotEditable() {
-    assert !isDisposed();
-    SModelDescriptor d = getModelDescriptor();
-    if (!(d instanceof EditableSModelDescriptor)) return true;
-    return ((EditableSModelDescriptor) d).isReadOnly();
+  public void setModelRoot(ModelRoot mr) {
+    if (getModelDescriptor() != null) {
+      getModelDescriptor().setModelRoot(mr);
+    }
   }
 
-  public boolean isDisposed() {
-    return myDisposed;
+  public SModule getModule() {
+    SModelDescriptor md = getModelDescriptor();
+    return md == null ? null : md.getModule();
   }
 
-  public StackTraceElement[] getDisposedStacktrace() {
-    return myDisposedStacktrace;
-  }
-
-  public SModelDescriptor getModelDescriptor() {
-    return myModelDescriptor;
-  }
-
-  public synchronized void setModelDescriptor(SModelDescriptor modelDescriptor) {
-    myModelDescriptor = modelDescriptor;
-  }
-
-  //---------incremental load--------
-
-  protected void enforceFullLoad() {
-    if (myModelDescriptor == null) return;
-    myModelDescriptor.forceLoad();
-  }
-
-  //---------roots manipulation--------
-
-  private void fireModelNodesReadAccess() {
-    if (!canFireEvent()) return;
-    NodeReadEventsCaster.fireModelNodesReadAccess(this);
-  }
-
-  public final Iterable<org.jetbrains.mps.openapi.model.SNode> roots() {
+  public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
+    fireModelNodesReadAccess();
     return new Iterable<org.jetbrains.mps.openapi.model.SNode>() {
       public Iterator<org.jetbrains.mps.openapi.model.SNode> iterator() {
-        return rootsIterator();
+        return (Iterator) myRoots.iterator();
       }
     };
   }
 
-  public Iterator<org.jetbrains.mps.openapi.model.SNode> rootsIterator() {
-    fireModelNodesReadAccess();
-    return ((Iterator) myRoots.iterator());
+  public boolean isRoot(@Nullable org.jetbrains.mps.openapi.model.SNode node) {
+    return myRoots.contains(node);
   }
 
-  public void addRoot(@NotNull final org.jetbrains.mps.openapi.model.SNode node) {
+  public void addRootNode(final org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
     ModelChange.assertLegalNodeRegistration(this, node);
     enforceFullLoad();
@@ -175,7 +161,7 @@ public class SModel {
     fireRootAddedEvent(sn);
   }
 
-  public void removeRoot(@NotNull final org.jetbrains.mps.openapi.model.SNode node) {
+  public void removeRootNode(final org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
     ModelChange.assertLegalNodeUnRegistration(this, node);
     enforceFullLoad();
@@ -192,8 +178,93 @@ public class SModel {
     }
   }
 
-  public int rootsCount() {
-    return myRoots.size();
+  @Nullable
+  public SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
+    checkNotDisposed();
+    if (myDisposed) return null;
+
+    org.jetbrains.mps.openapi.model.SNode node = myIdToNodeMap.get(nodeId);
+    if (node != null) return ((SNode) node);
+    enforceFullLoad();
+    return ((SNode) myIdToNodeMap.get(nodeId));
+  }
+
+  @Override
+  public SModelScope getModelScope() {
+    return new SModelScope() {
+      public Iterable<? extends org.jetbrains.mps.openapi.model.SModel> getModels() {
+        return new TranslatingIterator<ImportElement, org.jetbrains.mps.openapi.model.SModel>(myImports.iterator()) {
+          protected org.jetbrains.mps.openapi.model.SModel translate(ImportElement imp) {
+            return imp.getModelReference().resolve(MPSModuleRepository.getInstance());
+          }
+        };
+      }
+
+      public Iterable<SLanguage> getLanguages() {
+        return new TranslatingIterator<ModuleReference,SLanguage>(myLanguages.iterator()) {
+          protected SLanguage translate(ModuleReference ref) {
+            return new SLanguageLanguageAdapter(((Language) ref.resolve(MPSModuleRepository.getInstance())));
+          }
+        };
+      }
+    };
+  }
+
+  @NotNull
+  public DataSource getSource() {
+    SModelDescriptor md = getModelDescriptor();
+    return md == null ? new NullDataSource() : md.getSource();
+  }
+
+  @Override
+  public boolean isReadOnly() {
+    SModelDescriptor md = getModelDescriptor();
+    return md != null && md.isReadOnly();
+  }
+
+  public void save() throws IOException {
+    //todo
+  }
+
+  public void unload() {
+    //todo
+  }
+
+  @NotNull
+  public String toString() {
+    return getSModelReference().toString();
+  }
+
+  //--------------IMPLEMENTATION-------------------
+
+  //todo get rid of, try to cast, show an error if not casted
+  public boolean isDisposed() {
+    return myDisposed;
+  }
+
+  //todo cast if can be
+  public StackTraceElement[] getDisposedStacktrace() {
+    return myDisposedStacktrace;
+  }
+
+  //todo will migrate after SModelDescriptor is migrated
+  public SModelDescriptor getModelDescriptor() {
+    return myModelDescriptor;
+  }
+
+  //todo cast
+  public synchronized void setModelDescriptor(SModelDescriptor modelDescriptor) {
+    myModelDescriptor = modelDescriptor;
+  }
+
+  protected void enforceFullLoad() {
+    if (myModelDescriptor == null) return;
+    myModelDescriptor.forceLoad();
+  }
+
+  private void fireModelNodesReadAccess() {
+    if (!canFireEvent()) return;
+    NodeReadEventsCaster.fireModelNodesReadAccess(this);
   }
 
   protected void performUndoableAction(Computable<SNodeUndoableAction> action) {
@@ -202,33 +273,30 @@ public class SModel {
     UndoHelper.getInstance().addUndoableAction(action.compute());
   }
 
-  //---------nodes manipulation--------
-
-  public final Iterable<SNode> nodes() {
-    return new NodesIterable(this);
-  }
-
-  public Iterator<org.jetbrains.mps.openapi.model.SNode> nodesIterator() {
-    return new NodesIterator(rootsIterator());
-  }
-
-  public int registeredNodesCount() {
-    enforceFullLoad();
-    return myIdToNodeMap.size();
-  }
-
-  //---------loading state--------
-
+  //todo replace with isInRepository in public places
   public boolean canFireEvent() {
-    return isRegistered() && !isUpdateMode();
+    return myModelDescriptor != null && myModelDescriptor.isRegistered() && !isUpdateMode();
   }
 
   protected boolean canFireReadEvent() {
     return canFireEvent();
   }
 
-  public boolean isRegistered() {
-    return myModelDescriptor != null && myModelDescriptor.isRegistered();
+  public void dispose() {
+    ModelChange.assertLegalChange(this);
+    if (myDisposed) return;
+
+    myDisposed = true;
+    myDisposedStacktrace = new Throwable().getStackTrace();
+    disposeFastNodeFinder();
+    myIdToNodeMap = null;
+    myRoots.clear();
+    if (myModelDependenciesManager != null) myModelDependenciesManager.dispose();
+  }
+
+  private void checkNotDisposed() {
+    if (!myDisposed) return;
+    LOG.error(new IllegalModelAccessError("accessing disposed model"));
   }
 
 //---------listeners--------
@@ -399,6 +467,7 @@ public class SModel {
 
   //---------fast node finder--------
 
+  //todo this is an external functionality. Should be implemented externally
   public final synchronized FastNodeFinder getFastNodeFinder() {
     if (myFastNodeFinder == null) {
       myFastNodeFinder = createFastNodeFinder();
@@ -411,6 +480,7 @@ public class SModel {
     return new DefaultFastNodeFinder(this);
   }
 
+  //todo this is an external functionality. Should be implemented externally
   public synchronized void disposeFastNodeFinder() {
     if (myFastNodeFinder != null) {
       myFastNodeFinder.dispose();
@@ -439,33 +509,6 @@ public class SModel {
     return new jetbrains.mps.smodel.SNodeId.Regular(id);
   }
 
-  @Nullable
-  public org.jetbrains.mps.openapi.model.SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
-    checkNotDisposed();
-    if (myDisposed) return null;
-
-    org.jetbrains.mps.openapi.model.SNode node = myIdToNodeMap.get(nodeId);
-    if (node != null) return node;
-    enforceFullLoad();
-    return myIdToNodeMap.get(nodeId);
-  }
-
-  /**
-   * use getNode(SNodeId)
-   */
-  @Deprecated
-  @Nullable
-  public SNode getNodeById(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
-    checkNotDisposed();
-    if (myDisposed) return null;
-
-    org.jetbrains.mps.openapi.model.SNode node = myIdToNodeMap.get(nodeId);
-    if (node instanceof SNode) return (SNode) node;
-    enforceFullLoad();
-    node = myIdToNodeMap.get(nodeId);
-    return node instanceof SNode ? (SNode) node : null;
-  }
-
   //---------node registration--------
 
   void registerNode(@NotNull SNode node) {
@@ -486,7 +529,6 @@ public class SModel {
 
     if (existingNode != null && existingNode != node) {
       assignNewId(node);
-      return;
     }
   }
 
@@ -608,7 +650,8 @@ public class SModel {
 
   @NotNull
   private static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
-    for (SNode node : model.nodes()) {
+    for (org.jetbrains.mps.openapi.model.SNode n1 : model.nodes()) {
+      SNode node = ((SNode) n1);
       if (RoleIdsComponent.isEnabled()) {
         SNodeReference ptrConcept = RoleIdsComponent.getConceptPointer(node);
         if (ptrConcept == null) {
@@ -753,11 +796,9 @@ public class SModel {
     myImplicitImports.add(element);
   }
 
-  public boolean isUpdateMode() {
+  boolean isUpdateMode() {
     return false;
   }
-
-  //other
 
   public static class ImportElement {
     private SModelReference myModelReference;
@@ -826,13 +867,14 @@ public class SModel {
     }
   }
 
-  //---------persistance-related refactorings--------
+  //---------refactorings--------
 
   public int getVersion() {
     return -1;
   }
 
   public void setVersion(int version) {
+
   }
 
   public void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
@@ -848,25 +890,6 @@ public class SModel {
     } else {
       addAdditionalModelVersion(sModelReference, currentVersion);
     }
-  }
-
-  //--------- stuff --------
-
-  @NotNull
-  public String toString() {
-    return getSModelReference().toString();
-  }
-
-  public void dispose() {
-    ModelChange.assertLegalChange(this);
-    if (myDisposed) return;
-
-    myDisposed = true;
-    myDisposedStacktrace = new Throwable().getStackTrace();
-    disposeFastNodeFinder();
-    myIdToNodeMap = null;
-    myRoots.clear();
-    if (myModelDependenciesManager != null) myModelDependenciesManager.dispose();
   }
 
   public boolean updateSModelReferences() {
@@ -930,11 +953,6 @@ public class SModel {
     return changed;
   }
 
-
-  public boolean isRoot(@Nullable org.jetbrains.mps.openapi.model.SNode node) {
-    return myRoots.contains(node);
-  }
-
   void changeModelReference(SModelReference newModelReference) {
     enforceFullLoad();
     SModelReference oldReference = myReference;
@@ -965,15 +983,175 @@ public class SModel {
     return changed;
   }
 
-  private void checkNotDisposed() {
-    if (!myDisposed) return;
-    LOG.error(new IllegalModelAccessError("accessing disposed model"));
+  //--------------DEPRECATED-------------------
+  @Deprecated
+  /**
+   * Not supposed to be used. Inline
+   * @Deprecated in 3.0
+   */
+  public boolean isRegistered() {
+    return myModelDescriptor != null && myModelDescriptor.isRegistered();
   }
 
-  //---------deprecated--------
 
-  //why? @Deprecated
-  //to use in old persistence
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  @NotNull
+  public SModelReference getSModelReference() {
+    return ((SModelReference) getReference());
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SModelId getSModelId() {
+    return getModelId();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SModelFqName getSModelFqName() {
+    return ((SModelReference) getReference()).getSModelFqName();
+  }
+
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  @NotNull
+  public String getStereotype() {
+    return jetbrains.mps.util.SNodeOperations.getModelStereotype(this);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  @NotNull
+  public String getLongName() {
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(this);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean isTransient() {
+    return this instanceof TransientSModel;
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean isNotEditable() {
+    return isReadOnly();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public final Iterable<org.jetbrains.mps.openapi.model.SNode> roots() {
+    return getRootNodes();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public Iterator<org.jetbrains.mps.openapi.model.SNode> rootsIterator() {
+    return getRootNodes().iterator();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public void addRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+    addRootNode(node);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public void removeRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+    removeRootNode(node);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public int rootsCount() {
+    return IterableUtil.asCollection(getRootNodes()).size();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public final Iterable<org.jetbrains.mps.openapi.model.SNode> nodes() {
+    return new NodesIterable(this);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public Iterator<org.jetbrains.mps.openapi.model.SNode> nodesIterator() {
+    return new NodesIterator(getRootNodes().iterator());
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public int registeredNodesCount() {
+    return jetbrains.mps.util.SNodeOperations.nodesCount(this);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  @Nullable
+  public SNode getNodeById(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
+    return getNode(nodeId);
+  }
+
+  @Deprecated
+  @Nullable
+  public SNode getNodeById(String idString) {
+    SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(idString);
+    assert nodeId != null : "wrong node id string";
+    return getNodeById(nodeId);
+  }
+
+  @Deprecated
   public void addModelImport(ImportElement importElement) {
     ModelChange.assertLegalChange(this);
 
@@ -982,21 +1160,12 @@ public class SModel {
   }
 
   @Deprecated
-  //to use in old persistence
   public void setMaxImportIndex(int i) {
     myMaxImportIndex = i;
   }
 
   @Deprecated
-  //to use in old persistence
   public int getMaxImportIndex() {
     return myMaxImportIndex;
-  }
-
-  @Nullable
-  public SNode getNodeById(String idString) {
-    SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(idString);
-    assert nodeId != null : "wrong node id string";
-    return getNodeById(nodeId);
   }
 }

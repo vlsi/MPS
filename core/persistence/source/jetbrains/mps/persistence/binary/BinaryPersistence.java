@@ -146,7 +146,7 @@ public class BinaryPersistence {
 
     List<Pair<String, SNode>> roots = new NodesReader(modelReference).readNodes(model, is);
     for (Pair<String, SNode> r : roots) {
-      model.addRoot(r.o2);
+      model.addRootNode(r.o2);
     }
 
     // ensure imports are back
@@ -171,7 +171,7 @@ public class BinaryPersistence {
     // header
     os.writeInt(HEADER);
     os.writeInt(STREAM_ID);
-    os.writeModelReference(model.getSModelReference());
+    os.writeModelReference((SModelReference) model.getReference());
     os.writeInt(model.getVersion());
     os.writeBoolean(model instanceof BinarySModel && ((BinarySModel) model).getHeader().isDoNotGenerate());
     os.writeInt(0xabab);

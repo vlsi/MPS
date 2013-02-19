@@ -42,7 +42,6 @@ import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.LanguageAspect;
 import javax.lang.model.SourceVersion;
 import org.jetbrains.annotations.Nullable;
@@ -89,7 +88,7 @@ public class NewModelDialog extends DialogWrapper {
     mainPanel.add(myModelRoots);
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (ModelRoot root : myModule.getModelRoots()) {
-      if (!(root.isReadOnly())) {
+      if (!(root.canCreateModels())) {
         model.addElement(root);
       } else if (myModule instanceof Language && root instanceof FileBasedModelRoot) {
         // Can fix only FileBased model root (default for language) 
@@ -152,7 +151,7 @@ public class NewModelDialog extends DialogWrapper {
       return;
     }
 
-    if (((ModelRoot) myModelRoots.getSelectedItem()).isReadOnly()) {
+    if (((ModelRoot) myModelRoots.getSelectedItem()).canCreateModels()) {
       final FileBasedModelRoot selectedModelRoot = (FileBasedModelRoot) myModelRoots.getSelectedItem();
 
       Memento memento = new MementoImpl();
@@ -242,11 +241,6 @@ public class NewModelDialog extends DialogWrapper {
     }
 
     SModelFqName modelUID = new SModelFqName(modelName, myModelStereotype.getSelectedItem().toString());
-    if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
-      setErrorText("Model with an uid " + modelName + " already exists");
-      return false;
-    }
-
     if (modelName.lastIndexOf(".") == modelName.length()) {
       setErrorText("Empty model short name isn't allowed");
       return false;
@@ -267,7 +261,7 @@ public class NewModelDialog extends DialogWrapper {
       return false;
     }
 
-    if (!(mr.isReadOnly()) && !(mr.canCreateModel(getFqName()))) {
+    if (!(mr.canCreateModels()) && !(mr.canCreateModel(getFqName()))) {
       setErrorText("Can't create a model with this name under this model root");
       return false;
     }

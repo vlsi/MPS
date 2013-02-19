@@ -25,6 +25,8 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -60,8 +62,8 @@ public class MPSModelNavigationContributor implements NodeNavigationContributor,
     for (SModel sm : models) {
       if (!SModelStereotype.isUserModel(sm)) continue;
 
-      if (!(sm instanceof DefaultSModelDescriptor)) {
-        if (sm.isLoaded()) {
+      if (!(sm instanceof DefaultSModelDescriptor) && (sm instanceof SModelDescriptor)) {
+        if (((SModelDescriptor) sm).isLoaded()) {
           findDirectly.add(sm);
         }
         continue;
@@ -103,7 +105,7 @@ public class MPSModelNavigationContributor implements NodeNavigationContributor,
       for (SNode root : index.getRootsToIterate(((DefaultSModelDescriptor) sm).getSModel())) {
         String nodeName = (root.getName() == null) ? "null" : root.getName();
         NodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
-          nodeName, root.getConcept().getId(), root.getModel().getSModelReference(), root.getNodeId());
+          nodeName, root.getConcept().getId(), (SModelReference) root.getModel().getReference(), root.getNodeId());
         keys.add(nodeDescriptor);
       }
     }

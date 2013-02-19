@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,26 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
-class AddRootUndoableAction extends SNodeUndoableAction {
+public interface SModelScope {
+  Iterable<? extends SModel> getModels();
 
-  public AddRootUndoableAction(SNode root) {
-    super(root);
-  }
-
-  protected void doUndo() {
-    getAffectedNode().getModel().removeRootNode(getAffectedNode());
-  }
-
-  protected void doRedo() {
-    getAffectedNode().getModel().addRootNode(getAffectedNode());
-  }
-
-  @Override
-  public boolean isGlobal() {
-    return true;
-  }
+  Iterable<SLanguage> getLanguages();
 }

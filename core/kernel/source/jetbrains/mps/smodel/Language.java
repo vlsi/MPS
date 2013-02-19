@@ -13,19 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+
+import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.ClassLoadingModule;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.ModelsAutoImportsManager;
-import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
-import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.project.*;
+import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.facets.TestsFacet;
@@ -50,7 +48,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
@@ -288,7 +286,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
         //if not all the model is loaded, we try to look up the given concept only between root nodes first
         if (myNamesLoadingState.compareTo(ModelLoadingState.FULLY_LOADED) < 0) {
-          for (SNode root : structureModel.roots()) {
+          for (SNode root : structureModel.getRootNodes()) {
             String name = getConceptName(root);
             if (name == null) continue;
             myNameToConceptCache.putIfAbsent(name, root);
@@ -297,7 +295,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
         }
 
         //if we haven't found a root concept, then try to find in any node in the model
-        for (SNode node : structureModel.nodes()) {
+        for (SNode node : new NodesIterable(structureModel)) {
           String name = getConceptName(node);
           if (name == null) continue;
           myNameToConceptCache.putIfAbsent(name, node);
@@ -385,7 +383,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     SModule modelOwner = SModelRepository.getInstance().getOwner(sm);
     if (modelOwner instanceof Language) {
       Language l = (Language) modelOwner;
-      if (l.isAccessoryModel(sm.getModelReference())) {
+      if (l.isAccessoryModel(sm.getReference())) {
         return true;
       }
     }
@@ -465,7 +463,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return (Language) ModuleRepositoryFacade.createModule(handle, moduleOwner);
   }
 
-  private static class LanguageModelsAutoImports extends AutoImportsContributor<Language> {
+  private static class LanguageModelsAutoImports extends jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor<Language> {
     @Override
     public Class<Language> getApplicableSModuleClass() {
       return Language.class;

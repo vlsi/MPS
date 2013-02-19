@@ -17,7 +17,9 @@ package jetbrains.mps.ide.components;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
 /**
@@ -35,7 +37,7 @@ public class ComponentsUtil {
   public static Element nodeToElement(SNode node) {
     Element nodeElement = new Element(NODE);
     SModel model = node.getModel();
-    nodeElement.setAttribute(MODEL, model.getSModelReference().toString());
+    nodeElement.setAttribute(MODEL, model.getReference().toString());
     nodeElement.setAttribute(ID, node.getNodeId().toString());
     return nodeElement;
   }
@@ -51,7 +53,9 @@ public class ComponentsUtil {
     String id = nodeElement.getAttributeValue(ID);
     SModelDescriptor modelDescriptor = scope.getModelDescriptor(SModelReference.fromString(modelUID));
     if (modelDescriptor == null) return null;
-    return modelDescriptor.getSModel().getNodeById(id);
+    jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(id);
+    assert nodeId != null : "wrong node id string";
+    return modelDescriptor.getSModel().getNode(nodeId);
   }
 
   public static SNodeReference nodePointerFromElement(Element nodeElement) {

@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 
@@ -63,7 +65,7 @@ public abstract class ModelListener {
   private class RootRemovedAdapter extends SModelAdapter {
     public void rootRemoved(SModelRootEvent event) {
       SNode root = event.getRoot();
-      SModelReference modelRef = event.getModel().getSModelReference();
+      SModelReference modelRef = (SModelReference) event.getModel().getReference();
       SNodeReference nodePointer = new jetbrains.mps.smodel.SNodePointer(modelRef, root.getNodeId());
 
       if (!myImportantNodes.get(modelRef).contains(nodePointer)) return;

@@ -962,7 +962,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     setOperationContext(operationContext);
     editNode(node);
-    setReadOnly(node == null || node.getModel() == null || node.getModel().isNotEditable());
+    setReadOnly(node == null || node.getModel() == null || node.getModel().isReadOnly());
   }
 
   protected void editNode(final SNode node) {
@@ -972,8 +972,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         disposeTypeCheckingContext();
         clearModelDisposedTrace();
         myNode = node;
-        //todo this is because of type system nodes, which are not registered in models. This code should be removed ASAP
-        if (myNode != null && myNode.getModel() != null && myNode.getModel().isRegistered()) {
+        if (myNode != null) {
           myNodePointer = new jetbrains.mps.smodel.SNodePointer(myNode);
           myVirtualFile = !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
         } else {
@@ -1446,7 +1445,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myNode != null && myNode.getModel() != null) {
       SModel model = myNode.getModel();
       SModelDescriptor modelDescriptor = model.getModelDescriptor();
-      if (modelDescriptor != null && modelDescriptor.isRegistered() && !model.isUpdateMode()) {
+      if (modelDescriptor != null && modelDescriptor.isRegistered()) {
         assert myModelDescriptorsWithListener.contains(modelDescriptor) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
       }
     }
@@ -1485,7 +1484,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
       // Getting modelDescriptor via SModelRepository because sometimes
       // node.getModel().getModelDescriptor() == null while reloading models from disk.
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model.getSModelReference());
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model.getReference());
       if (modelDescriptor != null) {
         result.add(modelDescriptor);
       }
@@ -3167,10 +3166,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
         if (myNode != null) {
           assertModelNotDisposed();
-          if (myNode.getModel().getSModelReference().equals(descriptor.getSModelReference())) {
+          if (myNode.getModel().getReference().equals(descriptor.getSModelReference())) {
             clearModelDisposedTrace();
             SNodeId oldId = myNode.getNodeId();
-            myNode = descriptor.getSModel().getNodeById(oldId);
+            myNode = descriptor.getSModel().getNode(oldId);
             needToRebuild = true;
           }
         }
@@ -3185,7 +3184,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     @Override
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       if (myModelDescriptorsWithListener.contains(modelDescriptor)) {
-        if (myNode != null && myNode.getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
+        if (myNode != null && myNode.getModel().getReference().equals(modelDescriptor.getSModelReference())) {
           myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
         }
       }

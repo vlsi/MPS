@@ -20,7 +20,8 @@ import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.ModelUtil;
 import org.jetbrains.annotations.NonNls;
@@ -60,7 +61,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
           myPath = myNode.getModelReference().getSModelFqName() + "/" + myName;
         } else {
           myName = "" + node.getPresentation();
-          myPath = node.getModel().getSModelFqName() + "/" + myName;
+          myPath = ((SModelReference) node.getModel().getReference()).getSModelFqName() + "/" + myName;
         }
       }
     });

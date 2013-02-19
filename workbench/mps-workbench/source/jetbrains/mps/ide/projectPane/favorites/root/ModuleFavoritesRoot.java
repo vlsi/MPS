@@ -20,7 +20,8 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 
 import java.util.ArrayList;
@@ -52,7 +53,7 @@ class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
       });
       if (model == null) continue;
 
-      for (SNode node : model.roots()) {
+      for (SNode node : model.getRootNodes()) {
         result.add(node);
       }
     }

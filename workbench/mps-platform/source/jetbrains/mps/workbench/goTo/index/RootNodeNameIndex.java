@@ -78,8 +78,8 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
   }
 
   public Iterable<SNode> getRootsToIterate(SModel model) {
-    if (SModelStereotype.isStubModelStereotype(model.getStereotype())) return new EmptyIterable<SNode>();
-    return new ConditionalIterable<SNode>(model.roots(), new MyCondition());
+    if (SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(model))) return new EmptyIterable<SNode>();
+    return new ConditionalIterable<SNode>(model.getRootNodes(), new MyCondition());
   }
 
   @Override
@@ -137,7 +137,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
               String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
               String nodeName = (persistentName == null) ? "null" : persistentName;
               String conceptFqName = node.getConcept().getId();
-              SModelReference modelRef = model.getSModelReference();
+              SModelReference modelRef = (SModelReference) model.getReference();
               SNodeId id = node.getNodeId();
               SNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
               descriptors.add(value);

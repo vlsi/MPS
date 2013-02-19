@@ -50,7 +50,7 @@ public class JavaClassStubsModelRoot extends FolderModelRootBase {
     return result;
   }
 
-  public boolean isReadOnly() {
+  public boolean canCreateModels() {
     return true;
   }
 

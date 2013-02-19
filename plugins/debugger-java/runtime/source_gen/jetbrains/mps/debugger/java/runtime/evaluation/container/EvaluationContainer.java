@@ -69,7 +69,7 @@ public class EvaluationContainer implements IEvaluationContainer {
         BaseSModelDescriptor descriptor = ProjectModels.createDescriptorFor(true);
         SModule containerModule = myContainerModule.resolve(myDebuggerRepository);
         SModelRepository.getInstance().registerModelDescriptor(descriptor, containerModule);
-        myContainerModel = descriptor.getModelReference();
+        myContainerModel = descriptor.getReference();
         myContext = new ModuleContext(containerModule, ProjectHelper.toMPSProject(myProject));
       }
     });

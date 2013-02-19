@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SReference;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -31,14 +33,14 @@ public final class CopyUtil {
   }
 
   public static void copyModelContent(SModel from, SModel to) {
-    for (SNode root : from.roots()) {
-      to.addRoot(copy(root));
+    for (SNode root : from.getRootNodes()) {
+      to.addRootNode(copy(root));
     }
   }
 
   public static void copyModelContentAndPreserveIds(SModel from, SModel to) {
-    for (SNode root : from.roots()) {
-      to.addRoot(copyAndPreserveId(root, true));
+    for (SNode root : from.getRootNodes()) {
+      to.addRootNode(copyAndPreserveId(root, true));
     }
   }
 
@@ -86,7 +88,7 @@ public final class CopyUtil {
   }
 
   public static SModel copyModel(SModel model) {
-    SModel copy = new SModel(model.getSModelReference());
+    SModel copy = new SModel((SModelReference) model.getReference());
     copyModelContentAndPreserveIds(model, copy);
     copyModelProperties(model, copy);
     copy.setMaxImportIndex(model.getMaxImportIndex());

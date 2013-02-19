@@ -228,21 +228,21 @@ public class CheckProjectStructureHelper {
 
           SModule module = sm.getModule();
           if (module == null) {
-            errors.add("Model without a module: " + sm.getModelReference().toString());
+            errors.add("Model without a module: " + sm.getReference().toString());
             continue;
           }
           String genHash = ModelGenerationStatusManager.getLastGenerationHash(sm);
           if (genHash == null) {
-            errors.add("No generated hash for " + sm.getModelReference().toString());
+            errors.add("No generated hash for " + sm.getReference().toString());
             continue;
           }
           String realHash = sm.getModelHash();
           if (realHash == null) {
-            errors.add("cannot gen cache for " + sm.getModelReference().toString());
+            errors.add("cannot gen cache for " + sm.getReference().toString());
             continue;
           }
           if (!realHash.equals(genHash)) {
-            errors.add("model requires generation: " + sm.getModelReference().toString() + " last genHash:" + genHash + " modelHash:" + realHash);
+            errors.add("model requires generation: " + sm.getReference().toString() + " last genHash:" + genHash + " modelHash:" + realHash);
           }
         }
       }
@@ -370,7 +370,7 @@ public class CheckProjectStructureHelper {
       }
     });
     if (!validationResult.isEmpty()) {
-      errorMessages.append("errors in model: ").append(sm.getModelReference().toString()).append("\n");
+      errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
       for (String item : validationResult) {
         errorMessages.append("\t");
         errorMessages.append(item);

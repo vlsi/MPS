@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import java.util.Iterator;
 import java.util.Queue;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 public class SNodeOperations {
   public SNodeOperations() {
@@ -292,4 +293,28 @@ public class SNodeOperations {
       jetbrains.mps.smodel.SReference.enableLogging();
     }
   }
+
+  public static String getModelStereotype(org.jetbrains.mps.openapi.model.SModel model) {
+    String name = model.getModelName();
+    int index = name.indexOf("@");
+    return (index == -1 ?
+      name :
+      name.substring(index + 1)
+    );
+  }
+
+  public static String getModelLongName(org.jetbrains.mps.openapi.model.SModel model) {
+    String name = model.getModelName();
+    int index = name.indexOf("@");
+    return (index == -1 ?
+      name :
+      name.substring(0, index)
+    );
+  }
+
+  public static int nodesCount(org.jetbrains.mps.openapi.model.SModel model) {
+    return IterableUtil.asCollection(new NodesIterable(model)).size();
+  }
+
+
 }

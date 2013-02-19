@@ -24,7 +24,8 @@ import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -90,7 +91,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
               generator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
                 GeneratorUtil.describe(tNode, "template"),
                 GeneratorUtil.describe(templateContext.getInput(), "input"),
-                new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'"));
+                new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + ((SModelReference) generator.getGeneratorSessionContext().getOriginalInputModel().getReference()).getSModelFqName() + "'"));
             }
           }
         }
@@ -120,7 +121,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         generator.getLogger().error(child, "language of output node is '" + childLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
           GeneratorUtil.describe(tNode, "template"),
           GeneratorUtil.describe(templateContext.getInput(), "input"),
-          new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'"));
+          new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + ((SModelReference) generator.getGeneratorSessionContext().getOriginalInputModel().getReference()).getSModelFqName() + "'"));
       }
     }
 
@@ -136,7 +137,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   private void validateReferences(SNode node, final SNode inputNode) {
     for (SReference ref : node.getReferences()) {
       // reference to input model - illegal
-      if (generator.getInputModel().getSModelReference().equals(ref.getTargetSModelReference())) {
+      if (generator.getInputModel().getReference().equals(ref.getTargetSModelReference())) {
         // replace
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           ref.getRole(),

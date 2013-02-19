@@ -45,7 +45,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   private static String getRulePackage(SNode ruleNode) {
-    return JavaNameUtil.packageNameForModelUID(ruleNode.getModel().getSModelReference());
+    return JavaNameUtil.packageNameForModelUID(ruleNode.getModel().getReference());
   }
 
   private static String taskName(@NotNull String name, SNode ruleNode) {

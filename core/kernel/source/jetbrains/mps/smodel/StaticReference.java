@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -107,11 +107,11 @@ public final class StaticReference extends SReferenceBase {
       return null;
     }
 
-    SNode targetNode = targetModel.getNodeById(targetNodeId);
+    SNode targetNode = targetModel.getNode(targetNodeId);
     if (targetNode != null) return targetNode;
-    targetNode = UnregisteredNodes.instance().get(targetModel.getSModelReference(), targetNodeId);
+    targetNode = UnregisteredNodes.instance().get(targetModel.getReference(), targetNodeId);
     if (targetNode == null) {
-      error("target model '" + targetModel.getSModelReference() + "' doesn't contain node with id=" + getTargetNodeId());
+      error("target model '" + targetModel.getReference() + "' doesn't contain node with id=" + getTargetNodeId());
     }
 
     return targetNode;
@@ -119,7 +119,7 @@ public final class StaticReference extends SReferenceBase {
 
   public SModel getTargetSModel() {
     SModel current = getSourceNode().getModel();
-    if (current != null && current.getSModelReference().equals(getTargetSModelReference())) return current;
+    if (current != null && current.getReference().equals(getTargetSModelReference())) return current;
 
     // external
     SModelReference targetModelReference = getTargetSModelReference();

@@ -62,7 +62,7 @@ public interface SNode {
   SNodeReference getReference();
 
   /**
-   * The concept that this node represents. Concepts can be compared using the "==" operator. [not yet implemented]
+   * The concept that this node represents. Concepts can be compared using the "==" operator.
    */
   SConcept getConcept();
 

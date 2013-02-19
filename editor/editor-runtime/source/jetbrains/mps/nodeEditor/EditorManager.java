@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
@@ -96,7 +97,7 @@ public class EditorManager {
       } else if (event instanceof SModelPropertyEvent) {
         eventNode = ((SModelPropertyEvent) event).getNode();
       } else continue;
-      result.add(new Pair<SNode, SNodeReference>(eventNode, new jetbrains.mps.smodel.SNodePointer(event.getModel().getSModelReference(),eventNode.getNodeId()) {
+      result.add(new Pair<SNode, SNodeReference>(eventNode, new jetbrains.mps.smodel.SNodePointer((SModelReference) event.getModel().getReference(),eventNode.getNodeId()) {
         int myHashCode = -1;
         @Override
         public int hashCode() {

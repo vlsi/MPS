@@ -41,7 +41,7 @@ public class SNodeUtil {
       jetbrains.mps.smodel.SModel model = ((jetbrains.mps.smodel.SNode) node).getModel();
       if (model != null && model.isRoot((jetbrains.mps.smodel.SNode) node)) {
         node.delete();
-        model.addRoot((jetbrains.mps.smodel.SNode) replacer);
+        model.addRootNode((jetbrains.mps.smodel.SNode) replacer);
       }
       return replacer;
     }

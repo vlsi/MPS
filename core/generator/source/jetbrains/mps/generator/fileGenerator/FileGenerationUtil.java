@@ -36,12 +36,12 @@ public class FileGenerationUtil {
   }
 
   public static IFile getDefaultOutputDir(org.jetbrains.mps.openapi.model.SModel inputModelDescriptor, @NotNull IFile outputRootDir) {
-    SModelReference reference = inputModelDescriptor.getModelReference();
+    SModelReference reference = inputModelDescriptor.getReference();
     return getDefaultOutputDir(reference, outputRootDir);
   }
 
   public static IFile getDefaultOutputDir(SModel inputModel, IFile outputRootDir) {
-    return getDefaultOutputDir(inputModel.getSModelReference(), outputRootDir);
+    return getDefaultOutputDir(inputModel.getReference(), outputRootDir);
   }
 
   /**

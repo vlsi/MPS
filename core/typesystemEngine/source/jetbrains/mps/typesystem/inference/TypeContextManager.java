@@ -74,14 +74,14 @@ public class TypeContextManager implements CoreComponent {
     @Override
     public void beforeRootRemoved(SModelRootEvent event) {
       synchronized (myLock) {
-        removeContextForNode(new jetbrains.mps.smodel.SNodePointer(event.getModel().getSModelReference(), event.getRoot().getNodeId()));
+        removeContextForNode(new jetbrains.mps.smodel.SNodePointer((SModelReference) event.getModel().getReference(), event.getRoot().getNodeId()));
       }
     }
 
     public void beforeModelDisposed(SModel sm) {
       synchronized (myLock) {
         for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
-          if (sm.getSModelReference().equals(nodePointer.getModelReference())) {
+          if (sm.getReference().equals(nodePointer.getModelReference())) {
             removeContextForNode(nodePointer);
           }
         }
