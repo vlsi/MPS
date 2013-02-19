@@ -16,6 +16,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.vfs.IFile;
 import java.util.Collection;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -63,9 +65,19 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
     try {
       MPSProject mpsProject = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class);
       List<IModule> allModules = ListSequence.fromListWithValues(new ArrayList<IModule>(), mpsProject.getModules());
-      for (final IModule module : ListSequence.fromList(allModules)) {
+      for (IModule module : ListSequence.fromList(allModules)) {
         ModuleDescriptor descriptor = module.getModuleDescriptor();
         if (descriptor == null) {
+          continue;
+        }
+
+        JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+        if (facet == null) {
+          continue;
+        }
+
+        final IFile classesGen = facet.getClassesGen();
+        if (classesGen == null) {
           continue;
         }
 
@@ -81,14 +93,14 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
           }
         }).where(new IWhereFilter<ModelRoot>() {
           public boolean accept(ModelRoot it) {
-            return it != null && LanguageID.JAVA_MANAGER.equals(it.getManager()) && EqualUtil.equals(it.getPath(), module.getClassesGen().getPath());
+            return it != null && LanguageID.JAVA_MANAGER.equals(it.getManager()) && EqualUtil.equals(it.getPath(), classesGen.getPath());
           }
         }).isNotEmpty();
         if (exist) {
           continue;
         }
 
-        CollectionSequence.fromCollection(mrs).addElement(ModelRootDescriptor.getJavaStubsModelRoot(module.getClassesGen().getPath()));
+        CollectionSequence.fromCollection(mrs).addElement(ModelRootDescriptor.getJavaStubsModelRoot(classesGen.getPath()));
 
         module.setModuleDescriptor(descriptor, false);
         module.save();
