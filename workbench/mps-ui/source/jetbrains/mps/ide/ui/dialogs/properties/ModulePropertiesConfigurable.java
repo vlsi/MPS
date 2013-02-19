@@ -47,9 +47,11 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.IUsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.LDSChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyCellState;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModelTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
+import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem.ModuleType;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
@@ -94,16 +96,18 @@ import jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ContentEntriesEditor;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
-import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItemRole;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleDependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleUsedLangTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 
 import javax.swing.BorderFactory;
+import javax.swing.DefaultCellEditor;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -112,8 +116,10 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.io.File;
 import java.util.ArrayList;
@@ -134,9 +140,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     addTab(new ModuleCommonTab());
     if(!(myModule instanceof DevKit)) {
       addTab(new ModuleDependenciesTab());
+      addTab(new ModuleUsedLanguagesTab());
       if(myModule instanceof Language)
         addTab(new RuntimeTab());
-      addTab(new ModuleUsedLanguagesTab());
       if((myModule instanceof Language || myModule instanceof Solution) && dependOnBL())
         addTab((myTab = new LanguageAndSolutionAdvancedTab()));
       if(myModule instanceof Generator)
@@ -272,71 +278,59 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     @Override
-    protected List<AnActionButton> getAnActions() {
-      List<AnActionButton> list = new ArrayList<AnActionButton>();
-      list.add(new AnActionButton(PropertiesBundle.message("mps.properties.configurable.module.dependenciestab.actions.module"), null/*Icons.LOGICAL_VIEW_ICON*/) {
-        @Override
-        public void actionPerformed(AnActionEvent e) {
-          List<Dependency> list =
-            (new DependencyChooser()).compute();
-          for(Dependency dependency : list)
-            myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), DependenciesTableItemRole.DEPEND, dependency.isReexport()));
-        }
-      });
-      if(myModule instanceof Language) {
-        list.add(new AnActionButton(PropertiesBundle.message("mps.properties.configurable.module.dependenciestab.actions.extend"), IdeIcons.PROJECT_LANGUAGE_ICON) {
+    protected TableCellEditor getTableCellEditor() {
+      return new DependenciesTableCellEditor();
+    }
+
+    @Override
+    protected AnActionButtonRunnable getAnActionButtonRunnable() {
+      if(myModule instanceof Language || myModule instanceof Solution || myModule instanceof Generator) {
+        return new AnActionButtonRunnable() {
           @Override
-          public void actionPerformed(AnActionEvent e) {
-            List<ModuleReference> list =
-              (new LanguageChooser()).compute();
-            for(ModuleReference reference : list)
-              myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(reference, DependenciesTableItemRole.EXTEND));
+          public void run(AnActionButton anActionButton) {
+            final List<Dependency> list = (new DependencyChooser()).compute();
+            ModelAccess.instance().runReadAction(new Runnable() {
+              @Override
+              public void run() {
+                for(Dependency dependency : list) {
+                  ModuleReference moduleReference = dependency.getModuleRef();
+                  if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Language)
+                    myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.LANGUAGE));
+                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Generator)
+                    myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.GENERATOR));
+                  else
+                    myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()));
+                }
+              }
+            });
           }
-        });
-      } else if(myModule instanceof Solution) {
-      }
-      else if(myModule instanceof Generator) {
-        list.add(new AnActionButton(PropertiesBundle.message("mps.properties.configurable.module.dependenciestab.actions.dependongen"), IdeIcons.GENERATOR_ICON) {
-          @Override
-          public void actionPerformed(AnActionEvent e) {
-            List<ModuleReference> list =
-              (new GeneratorChooser()).compute();
-            for(ModuleReference reference : list)
-              myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(reference, DependenciesTableItemRole.EXTEND));
-          }
-        });
+        };
       }
       else if(myModule instanceof DevKit) {
-        list.clear();
-        list.add(new AnActionButton(DevKit.class.getSimpleName(), IdeIcons.DEVKIT_ICON) {
+        return new AnActionButtonRunnable() {
           @Override
-          public void actionPerformed(AnActionEvent e) {
-            List<ModuleReference> list =
-              (new DevKitChooser()).compute();
-            for(ModuleReference reference : list)
-              myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(reference, DependenciesTableItemRole.EXTEND));
+          public void run(AnActionButton anActionButton) {
+            final List<ModuleReference> list = (new LDSChooser()).compute();
+            ModelAccess.instance().runReadAction(new Runnable() {
+              @Override
+              public void run() {
+                for(ModuleReference moduleReference : list) {
+                  if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Language)
+                    myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.LANGUAGE));
+                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof DevKit)
+                    myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.DEVKIT));
+                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Solution)
+                    myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.SOLUTION));
+                }
+              }
+            });
           }
-        });
-        list.add(new AnActionButton(Language.class.getSimpleName(), IdeIcons.PROJECT_LANGUAGE_ICON) {
-          @Override
-          public void actionPerformed(AnActionEvent e) {
-            List<ModuleReference> list =
-              (new LanguageChooser()).compute();
-            for(ModuleReference reference : list)
-              myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(reference, DependenciesTableItemRole.EXPORT));
-          }
-        });
-        list.add(new AnActionButton(Solution.class.getSimpleName(), IdeIcons.SOLUTION_ICON) {
-          @Override
-          public void actionPerformed(AnActionEvent e) {
-            List<ModuleReference> list =
-              (new SolutionChooser()).compute();
-            for(ModuleReference reference : list)
-              myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(reference, DependenciesTableItemRole.EXPORT));
-          }
-        });
+        };
       }
-      return list;
+      return new AnActionButtonRunnable() {
+        @Override
+        public void run(AnActionButton anActionButton) {}
+      };
     }
 
     @Override
@@ -374,6 +368,44 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       IUsagesViewTool usagesViewTool = (IUsagesViewTool) ProjectHelper.toIdeaProject(myProject).getComponent("jetbrains.mps.ide.findusages.view.UsagesViewTool");
       usagesViewTool.findUsages(provider[0], query[0], true, true, true, "No usages found");
       forceCancelCloseDialog();
+    }
+
+    private class DependenciesTableCellEditor extends DefaultCellEditor {
+      public DependenciesTableCellEditor() {
+        super(new JComboBox());
+      }
+
+      @Override
+      public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+        JComboBox combo = (JComboBox) super.getTableCellEditorComponent(table, value, isSelected, row, column);
+        combo.removeAllItems();
+        if(row < 0 || row >= table.getModel().getRowCount())
+          return combo;
+
+        List items = getItemsForCell(row, column);
+        for (Object item: items) {
+          combo.addItem(item);
+        }
+        return combo;
+      }
+
+      private List getItemsForCell(int row, int column) {
+        List<SDependencyScope> scopes = new ArrayList<SDependencyScope>(Arrays.asList(SDependencyScope.DEFAULT));
+        if(isLangToLang(row) || isGenToGen(row)) {
+          scopes.addAll(Arrays.asList(SDependencyScope.EXTENDS));
+        }
+        return scopes;
+      }
+
+      private boolean isLangToLang(int row) {
+        DependenciesTableItem item = myDependTableModel.getValueAt(row);
+        return myDependTableModel.getItem() instanceof LanguageDescriptor && item.getModuleType().equals(ModuleType.LANGUAGE);
+      }
+
+      private boolean isGenToGen(int row) {
+        DependenciesTableItem item = myDependTableModel.getValueAt(row);
+        return myDependTableModel.getItem() instanceof GeneratorDescriptor && item.getModuleType().equals(ModuleType.GENERATOR);
+      }
     }
   }
 

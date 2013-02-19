@@ -24,10 +24,6 @@ import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.ui.ComboBoxTableRenderer;
 import com.intellij.openapi.ui.DialogWrapper;
-import com.intellij.openapi.ui.popup.JBPopup;
-import com.intellij.openapi.ui.popup.JBPopupFactory;
-import com.intellij.openapi.ui.popup.PopupStep;
-import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
@@ -46,21 +42,19 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageOrDevKitChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.DevKitChooser;
-import jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItemRole;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 
 import javax.swing.DefaultCellEditor;
 import javax.swing.Icon;
@@ -70,6 +64,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingUtilities;
+import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import java.awt.Dimension;
@@ -304,6 +299,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     }
 
     protected abstract DependTableModel getDependTableModel();
+    protected abstract TableCellEditor getTableCellEditor();
     protected abstract IScope getScope();
 
     @Override
@@ -323,6 +319,10 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
       tableDepend.setDefaultRenderer(DependenciesTableItem.class, getTableCellRender());
       tableDepend.setDefaultRenderer(Boolean.class, new BooleanTableCellRenderer());
+
+      tableDepend.setDefaultRenderer(SDependencyScope.class, new ComboBoxTableRenderer<SDependencyScope>(SDependencyScope.values()));
+      tableDepend.setDefaultEditor(SDependencyScope.class, getTableCellEditor());
+
 
       tableDepend.getSelectionModel().setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
@@ -351,50 +351,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       });
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(tableDepend);
-      decorator.setAddAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton button) {
-          final List<AnActionButton> list = getAnActions();
-          if(list.size() == 0) return;
-          else if(list.size() == 1) {
-            list.get(0).actionPerformed(null);
-          } else {
-            final JBPopup popup = JBPopupFactory.getInstance().createListPopup(
-              new BaseListPopupStep<AnActionButton>(null, getAnActions()) {
-                @Override
-                public Icon getIconFor(AnActionButton aValue) {
-                  return aValue.getTemplatePresentation().getIcon();
-                }
-
-                @Override
-                public boolean hasSubstep(AnActionButton selectedValue) {
-                  return false;
-                }
-
-                @Override
-                public boolean isMnemonicsNavigationEnabled() {
-                  return true;
-                }
-
-                @Override
-                public PopupStep onChosen(final AnActionButton selectedValue, final boolean finalChoice) {
-                  return doFinalStep(new Runnable() {
-                    public void run() {
-                      selectedValue.actionPerformed(null);
-                    }
-                  });
-                }
-
-                @Override
-                @NotNull
-                public String getTextFor(AnActionButton value) {
-                  return value.getTemplatePresentation().getText();
-                }
-              });
-            popup.show(button.getPreferredPopupPoint());
-          }
-        }
-      }).setRemoveAction(new AnActionButtonRunnable() {
+      decorator.setAddAction(getAnActionButtonRunnable()).setRemoveAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
           int first = tableDepend.getSelectionModel().getMinSelectionIndex();
@@ -466,8 +423,6 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       return new DependencyTableCellRender(getScope());
     }
 
-
-
     protected boolean confirmRemove(final Object value) {
       return true;
     }
@@ -485,7 +440,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       myDependTableModel.apply();
     }
 
-    protected abstract List<AnActionButton> getAnActions();
+    protected abstract AnActionButtonRunnable getAnActionButtonRunnable();
   }
 
   public abstract class UsedLanguagesTab extends Tab {
@@ -535,40 +490,10 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(usedLangsTable);
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
-        public void run(AnActionButton button) {
-          final JBPopup popup = JBPopupFactory.getInstance().createListPopup(
-            new BaseListPopupStep<AnActionButton>(null, getAnActions()) {
-              @Override
-              public Icon getIconFor(AnActionButton aValue) {
-                return aValue.getTemplatePresentation().getIcon();
-              }
-
-              @Override
-              public boolean hasSubstep(AnActionButton selectedValue) {
-                return false;
-              }
-
-              @Override
-              public boolean isMnemonicsNavigationEnabled() {
-                return true;
-              }
-
-              @Override
-              public PopupStep onChosen(final AnActionButton selectedValue, final boolean finalChoice) {
-                return doFinalStep(new Runnable() {
-                  public void run() {
-                    selectedValue.actionPerformed(null);
-                  }
-                });
-              }
-
-              @Override
-              @NotNull
-              public String getTextFor(AnActionButton value) {
-                return value.getTemplatePresentation().getText();
-              }
-            });
-          popup.show(button.getPreferredPopupPoint());
+        public void run(AnActionButton anActionButton) {
+          List<ModuleReference> list = (new LanguageOrDevKitChooser()).compute();
+          for(ModuleReference reference : list)
+            myUsedLangsTableModel.addItem(reference);
         }
       }).setRemoveAction(new AnActionButtonRunnable() {
         @Override
@@ -654,29 +579,6 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     @Override
     public void apply() {
       myUsedLangsTableModel.apply();
-    }
-
-    protected List<AnActionButton> getAnActions() {
-      List<AnActionButton> list = new ArrayList<AnActionButton>();
-      list.add(new AnActionButton(Language.class.getSimpleName(), IdeIcons.PROJECT_LANGUAGE_ICON){
-        @Override
-        public void actionPerformed(AnActionEvent e) {
-          List<ModuleReference> list =
-            (new LanguageChooser()).compute();
-          for(ModuleReference reference : list)
-            myUsedLangsTableModel.addItem(reference);
-        }
-      });
-      list.add(new AnActionButton(DevKit.class.getSimpleName(), IdeIcons.DEVKIT_ICON) {
-        @Override
-        public void actionPerformed(AnActionEvent e) {
-          List<ModuleReference> list =
-            (new DevKitChooser()).compute();
-          for(ModuleReference reference : list)
-            myUsedLangsTableModel.addItem(reference);
-        }
-      });
-      return list;
     }
   }
 

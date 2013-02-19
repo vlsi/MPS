@@ -20,6 +20,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.Modifiable;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItemRole;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
@@ -79,7 +80,7 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
     if(columnIndex == this.getExportColumnIndex())
       return Boolean.class;
     if(columnIndex == this.getRoleColumnIndex())
-      return String.class;
+      return SDependencyScope.class;
     return super.getColumnClass(columnIndex);
   }
 
@@ -105,15 +106,19 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
   public boolean isCellEditable(int rowIndex, int columnIndex) {
     final DependenciesTableItem<?> item = myTableItems.get(rowIndex);
     if(columnIndex == this.getExportColumnIndex())
-      return item != null && item.getRole() == DependenciesTableItemRole.DEPEND;
+      return item != null && item.getRole() == SDependencyScope.DEFAULT;
     return false;
   }
 
   @Override
   public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
     final DependenciesTableItem<?> item = myTableItems.get(rowIndex);
-    if (columnIndex == this.getExportColumnIndex() && aValue instanceof Boolean)
+    if (columnIndex == this.getExportColumnIndex() && aValue instanceof Boolean) {
       item.setReExport((Boolean)aValue);
+    }
+    else if (columnIndex == this.getRoleColumnIndex() && aValue instanceof SDependencyScope) {
+      item.setRole((SDependencyScope)aValue);
+    }
   }
 
   public int getExportColumnIndex() {return 0;}
