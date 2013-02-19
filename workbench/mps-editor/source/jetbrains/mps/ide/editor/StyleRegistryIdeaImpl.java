@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.editor;
 
+import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsListener;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.editor.colors.EditorColorsScheme;
@@ -47,7 +48,7 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
 
   @Override
   public Color getEditorForeground() {
-    return null;
+    return ourColorsScheme.getDefaultForeground();
   }
 
   @Override
@@ -105,6 +106,23 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
   }
 
   @Override
+  public Color getColor(String key) {
+    if(IDEAStylesMapping.containsKey(key))
+      key = IDEAStylesMapping.get(key);
+
+    Color color = super.getColor(key);
+
+    if(color == null) {
+      color = ourColorsScheme.getColor(ColorKey.find(key));
+      if(color == null) {
+        color = ourColorsScheme.getAttributes(TextAttributesKey.find(key)).getForegroundColor();
+      }
+    }
+
+    return color;
+  }
+
+  @Override
   public void setColor(String key, Color color) {
   }
 
@@ -144,6 +162,8 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
 
   private void fillIdeaMappings() {
     try {
+      addIdeaMappingsExt("DEFAULT_NULL_TEXT_COLOR","NOT_USED_ELEMENT_ATTRIBUTES");
+
       addIdeaMappingsExt("FOLDED_TEXT","FOLDED_TEXT_ATTRIBUTES");
       addIdeaMappingsExt("URL","HYPERLINK_ATTRIBUTES");
 
