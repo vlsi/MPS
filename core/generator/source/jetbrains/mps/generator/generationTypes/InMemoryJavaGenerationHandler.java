@@ -23,12 +23,15 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.util.Condition;
@@ -39,10 +42,15 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Keeps generation result in memory, compiles and optionally reloads.
@@ -215,7 +223,8 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
         notNullModules.add((IModule) m);
       }
     }
-    CompositeClassPathItem result = (CompositeClassPathItem) AbstractModule.getDependenciesClasspath(notNullModules, true);
+    Set<String> classpath = JavaModuleOperations.collectCompileClasspath(contextModules, true);
+    CompositeClassPathItem result = JavaModuleOperations.createClassPathItem(classpath, InMemoryJavaGenerationHandler.class.getName());
 
     StringBuffer sb = new StringBuffer();
     sb.append("compiling with classpath : ");

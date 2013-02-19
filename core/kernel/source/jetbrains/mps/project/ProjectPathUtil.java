@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.project.facets.TestsFacet;
+import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -24,11 +26,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
 
-/**
- * evgeny, 3/8/11
- */
 public class ProjectPathUtil {
-
   public static IFile getClassesGenFolder(IFile moduleDescriptor) {
     if (moduleDescriptor == null) {
       return null;
@@ -75,11 +73,10 @@ public class ProjectPathUtil {
     return null;
   }
 
+  @Deprecated
   public static IFile getGeneratorTestsOutputPath(IFile file, ModuleDescriptor descriptor) {
-    if (file != null && (descriptor instanceof SolutionDescriptor || descriptor instanceof LanguageDescriptor)) {
-      return file.getParent().getDescendant("test_gen");
-    }
-    return null;
+    TestsFacet testsFacet = TestsFacetImpl.fromModuleDescriptor(descriptor, file);
+    return testsFacet != null ? testsFacet.getTestsOutputPath() : null;
   }
 
   public static IFile getGeneratorOutputPath(SModule module) {
@@ -93,22 +90,6 @@ public class ProjectPathUtil {
     // todo: instance of Language | Solution?
     if (module instanceof IModule) {
       return getGeneratorOutputPath(((IModule) module).getDescriptorFile(), ((IModule) module).getModuleDescriptor());
-    } else {
-      return null;
-    }
-  }
-
-  public static IFile getGeneratorTestsOutputPath(SModule module) {
-    // todo: remove
-    if (module instanceof TestLanguage || module instanceof StubSolution) {
-      return null;
-    }
-    if (module instanceof Generator) {
-      return getGeneratorTestsOutputPath(((Generator) module).getSourceLanguage());
-    }
-    // todo: instance of Language | Solution?
-    if (module instanceof IModule) {
-      return getGeneratorTestsOutputPath(((IModule) module).getDescriptorFile(), ((IModule) module).getModuleDescriptor());
     } else {
       return null;
     }

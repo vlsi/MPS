@@ -20,6 +20,9 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.project.facets.JavaModuleFacetImpl;
+import jetbrains.mps.project.facets.TestsFacet;
+import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -32,11 +35,10 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 
-import java.util.Collection;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -164,36 +166,20 @@ public class Solution extends ClassLoadingModule {
 
 
   @Override
-  protected JavaModuleFacet createJavaModuleFacet() {
-    return new JavaModuleFacetImpl(this) {
+  protected List<SModuleFacet> createFacets() {
+    List<SModuleFacet> facets = new ArrayList<SModuleFacet>();
+    facets.add(new JavaModuleFacetImpl(this) {
       @Override
-      public Collection<String> getOwnClassPath() {
-        if (isPackaged()) {
-          return Collections.singletonList(FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());
-        }
-
-        if (!isCompileInMPS()) {
-          IFile classes = ProjectPathUtil.getClassesFolder(getDescriptorFile());
-          if (classes != null && classes.exists()) {
-            return Collections.singletonList(classes.getPath());
-          }
-          return Collections.emptyList();
-        }
-
-        return super.getOwnClassPath();
-      }
-
-      @Override
-      public boolean isCompileInMPS() {
+      public boolean isCompileInMps() {
         ModuleDescriptor descriptor = getModuleDescriptor();
         return descriptor != null && descriptor.getCompileInMPS();
       }
-    };
-  }
-
-  public boolean reloadClassesAfterGeneration() {
-    SolutionDescriptor descriptor = getModuleDescriptor();
-    return descriptor != null && descriptor.getKind() != SolutionKind.NONE;
+    });
+    TestsFacet testsFacet = TestsFacetImpl.fromModule(this);
+    if (testsFacet != null) {
+      facets.add(testsFacet);
+    }
+    return facets;
   }
 
   @Override

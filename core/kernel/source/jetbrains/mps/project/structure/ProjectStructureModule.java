@@ -27,16 +27,40 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BaseMPSModuleOwner;
+import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
+import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerAdapter;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -236,6 +260,11 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     return new ProjectStructureModuleScope();
   }
 
+  @Override
+  protected List<SModuleFacet> createFacets() {
+    return Collections.emptyList();
+  }
+
   public class ProjectStructureModuleScope extends ModuleScope {
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
@@ -321,7 +350,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       return myProjectStructureModule.myModels.get(reference);
     }
   }
-
 
   public static class ProjectStructureSModel extends SModel {
     public ProjectStructureSModel(@NotNull SModelReference modelReference) {

@@ -31,13 +31,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.reloading.ClasspathStringCollector;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
-import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -171,7 +171,7 @@ public class Java_Command {
       });
       throw new ExecutionException(text.value);
     }
-    return new Java_Command().setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setClassPath_ListString(Java_Command.getClasspath(module, true)).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(Java_Command.getClassName(nodePointer));
+    return new Java_Command().setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setClassPath_ListString(Java_Command.getClasspath(module)).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(Java_Command.getClassName(nodePointer));
   }
 
   public ProcessHandler createProcess(JavaRunParameters runParameters, SNodeReference nodePointer) throws ExecutionException {
@@ -236,42 +236,39 @@ public class Java_Command {
   }
 
   public static List<String> getClasspath(final SNode node) {
-    final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        module.value = SNodeOperations.getModel(node).getModelDescriptor().getModule();
+    // todo: node argument -> read action? 
+    return ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+      public List<String> compute() {
+        return Java_Command.getClasspath(SNodeOperations.getModel(node).getModelDescriptor().getModule());
       }
     });
-    return Java_Command.getClasspath(module.value, true);
   }
 
-  public static List<String> getClasspath(final IModule module, boolean withDependencies) {
-    final ClasspathStringCollector visitor = new ClasspathStringCollector();
-    module.getClassPathItem().accept(visitor);
-    if (withDependencies) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          for (IModule m : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE))) {
-            m.getClassPathItem().accept(visitor);
-          }
-        }
-      });
-    }
+  public static List<String> getClasspath(final SModule module) {
+    final Wrappers._T<Set<String>> classpath = new Wrappers._T<Set<String>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        classpath.value = JavaModuleOperations.collectExecuteClasspath(module);
+        classpath.value.removeAll(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")).getFacet(JavaModuleFacet.class).getClassPath());
+      }
+    });
+    return new ArrayList<String>(classpath.value);
+  }
 
-    Set<String> visited = visitor.getClasspath();
-    visited.removeAll(CommonPaths.getJDKPath());
-    return ListSequence.fromListWithValues(new ArrayList<String>(), visited);
+  public static List<String> getClasspath(IModule module, boolean withDependencies) {
+    if (withDependencies) {
+      return Java_Command.getClasspath(module);
+    } else {
+      return new ArrayList<String>(module.getFacet(JavaModuleFacet.class).getClassPath());
+    }
   }
 
   private static List<String> getClassRunnerClassPath() {
-    final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        module.value = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("5b247b59-8fd0-4475-a767-9e9ff6a9d01c"));
+    return ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+      public List<String> compute() {
+        return Java_Command.getClasspath(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("5b247b59-8fd0-4475-a767-9e9ff6a9d01c")));
       }
     });
-
-    return Java_Command.getClasspath(module.value, false);
   }
 
   public static File getJavaCommand(@Nullable String javaHome) throws ExecutionException {
@@ -305,7 +302,7 @@ public class Java_Command {
     if (systemJavaHome.endsWith("jre") && new File(systemJdkHome + File.separator + "bin").exists()) {
       ListSequence.fromList(homes).addElement(systemJdkHome);
     }
-    if (isNotEmpty_kk96hj_a0e0eb(System.getenv("JAVA_HOME"))) {
+    if (isNotEmpty_kk96hj_a0e0fb(System.getenv("JAVA_HOME"))) {
       ListSequence.fromList(homes).addElement(System.getenv("JAVA_HOME"));
     }
     ListSequence.fromList(homes).addElement(systemJavaHome);
@@ -457,7 +454,7 @@ public class Java_Command {
     );
   }
 
-  public static boolean isNotEmpty_kk96hj_a0e0eb(String str) {
+  public static boolean isNotEmpty_kk96hj_a0e0fb(String str) {
     return str != null && str.length() > 0;
   }
 }

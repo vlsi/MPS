@@ -94,53 +94,53 @@
     <unitInfo nodeId="3521790172251226878" fileName="ModuleVcsPathPresenter.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.vcs.integration.ModuleVcsPathPresenter" />
   </root>
   <root nodeRef="r:eec25685-8f1e-47c9-a9de-4a7ef6b504ec(jetbrains.mps.vcs.integration)/4093906047203397429">
-    <nodeInfo nodeId="4093906047203397439" fileName="GeneratedFilesExcludePolicy.java" startLine="20" startPosition="67" endLine="21" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4093906047203397453" fileName="GeneratedFilesExcludePolicy.java" startLine="27" startPosition="91" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203397455" fileName="GeneratedFilesExcludePolicy.java" startLine="29" startPosition="5" endLine="30" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203397469" fileName="GeneratedFilesExcludePolicy.java" startLine="31" startPosition="99" endLine="32" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203397480" fileName="GeneratedFilesExcludePolicy.java" startLine="33" startPosition="27" endLine="34" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203397492" fileName="GeneratedFilesExcludePolicy.java" startLine="35" startPosition="33" endLine="36" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203397499" fileName="GeneratedFilesExcludePolicy.java" startLine="36" startPosition="91" endLine="37" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203397514" fileName="GeneratedFilesExcludePolicy.java" startLine="38" startPosition="34" endLine="39" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203397511" fileName="GeneratedFilesExcludePolicy.java" startLine="40" startPosition="16" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4093906047203397526" fileName="GeneratedFilesExcludePolicy.java" startLine="42" startPosition="34" endLine="43" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203397523" fileName="GeneratedFilesExcludePolicy.java" startLine="44" startPosition="16" endLine="45" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4093906047203397531" fileName="GeneratedFilesExcludePolicy.java" startLine="48" startPosition="5" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203397432" fileName="GeneratedFilesExcludePolicy.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratedFilesExcludePolicy#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="4093906047203397446" fileName="GeneratedFilesExcludePolicy.java" startLine="26" startPosition="51" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203397507" fileName="GeneratedFilesExcludePolicy.java" startLine="37" startPosition="125" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203397519" fileName="GeneratedFilesExcludePolicy.java" startLine="41" startPosition="11" endLine="45" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203397487" fileName="GeneratedFilesExcludePolicy.java" startLine="34" startPosition="65" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203397475" fileName="GeneratedFilesExcludePolicy.java" startLine="32" startPosition="51" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203397462" fileName="GeneratedFilesExcludePolicy.java" startLine="30" startPosition="56" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4093906047203397441" fileName="GeneratedFilesExcludePolicy.java" startLine="24" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllExcludeRoots#()Ljava/util/Set;" />
-    <scopeInfo nodeId="4093906047203397512" fileName="GeneratedFilesExcludePolicy.java" startLine="40" startPosition="18" endLine="40" endPosition="18" />
-    <scopeInfo nodeId="4093906047203397524" fileName="GeneratedFilesExcludePolicy.java" startLine="44" startPosition="18" endLine="44" endPosition="18" />
-    <scopeInfo nodeId="4093906047203397438" fileName="GeneratedFilesExcludePolicy.java" startLine="20" startPosition="67" endLine="21" endPosition="19" />
-    <scopeInfo nodeId="4093906047203397452" fileName="GeneratedFilesExcludePolicy.java" startLine="27" startPosition="91" endLine="28" endPosition="35" />
-    <scopeInfo nodeId="4093906047203397513" fileName="GeneratedFilesExcludePolicy.java" startLine="38" startPosition="34" endLine="39" endPosition="33" />
-    <scopeInfo nodeId="4093906047203397525" fileName="GeneratedFilesExcludePolicy.java" startLine="42" startPosition="34" endLine="43" endPosition="33" />
-    <scopeInfo nodeId="4093906047203397432" fileName="GeneratedFilesExcludePolicy.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+    <nodeInfo nodeId="4093906047203397439" fileName="GeneratedFilesExcludePolicy.java" startLine="21" startPosition="67" endLine="22" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4093906047203397453" fileName="GeneratedFilesExcludePolicy.java" startLine="28" startPosition="91" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203397455" fileName="GeneratedFilesExcludePolicy.java" startLine="30" startPosition="5" endLine="31" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203397469" fileName="GeneratedFilesExcludePolicy.java" startLine="32" startPosition="99" endLine="33" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203397480" fileName="GeneratedFilesExcludePolicy.java" startLine="34" startPosition="27" endLine="35" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203397492" fileName="GeneratedFilesExcludePolicy.java" startLine="36" startPosition="33" endLine="37" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203397499" fileName="GeneratedFilesExcludePolicy.java" startLine="37" startPosition="91" endLine="38" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203397514" fileName="GeneratedFilesExcludePolicy.java" startLine="39" startPosition="34" endLine="40" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203397511" fileName="GeneratedFilesExcludePolicy.java" startLine="41" startPosition="16" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4093906047203397526" fileName="GeneratedFilesExcludePolicy.java" startLine="43" startPosition="34" endLine="44" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203397523" fileName="GeneratedFilesExcludePolicy.java" startLine="45" startPosition="16" endLine="46" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4093906047203397531" fileName="GeneratedFilesExcludePolicy.java" startLine="49" startPosition="5" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203397432" fileName="GeneratedFilesExcludePolicy.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratedFilesExcludePolicy#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="4093906047203397446" fileName="GeneratedFilesExcludePolicy.java" startLine="27" startPosition="51" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203397507" fileName="GeneratedFilesExcludePolicy.java" startLine="38" startPosition="125" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203397519" fileName="GeneratedFilesExcludePolicy.java" startLine="42" startPosition="11" endLine="46" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203397487" fileName="GeneratedFilesExcludePolicy.java" startLine="35" startPosition="90" endLine="47" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203397475" fileName="GeneratedFilesExcludePolicy.java" startLine="33" startPosition="51" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203397462" fileName="GeneratedFilesExcludePolicy.java" startLine="31" startPosition="56" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4093906047203397441" fileName="GeneratedFilesExcludePolicy.java" startLine="25" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllExcludeRoots#()Ljava/util/Set;" />
+    <scopeInfo nodeId="4093906047203397512" fileName="GeneratedFilesExcludePolicy.java" startLine="41" startPosition="18" endLine="41" endPosition="18" />
+    <scopeInfo nodeId="4093906047203397524" fileName="GeneratedFilesExcludePolicy.java" startLine="45" startPosition="18" endLine="45" endPosition="18" />
+    <scopeInfo nodeId="4093906047203397438" fileName="GeneratedFilesExcludePolicy.java" startLine="21" startPosition="67" endLine="22" endPosition="19" />
+    <scopeInfo nodeId="4093906047203397452" fileName="GeneratedFilesExcludePolicy.java" startLine="28" startPosition="91" endLine="29" endPosition="35" />
+    <scopeInfo nodeId="4093906047203397513" fileName="GeneratedFilesExcludePolicy.java" startLine="39" startPosition="34" endLine="40" endPosition="33" />
+    <scopeInfo nodeId="4093906047203397525" fileName="GeneratedFilesExcludePolicy.java" startLine="43" startPosition="34" endLine="44" endPosition="33" />
+    <scopeInfo nodeId="4093906047203397432" fileName="GeneratedFilesExcludePolicy.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="4093906047203397435" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203397491" fileName="GeneratedFilesExcludePolicy.java" startLine="35" startPosition="33" endLine="45" endPosition="11">
+    <scopeInfo nodeId="4093906047203397491" fileName="GeneratedFilesExcludePolicy.java" startLine="36" startPosition="33" endLine="46" endPosition="11">
       <varInfo nodeId="4093906047203397500" varName="cachesDir" />
       <varInfo nodeId="4093906047203397493" varName="outputDir" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203397479" fileName="GeneratedFilesExcludePolicy.java" startLine="33" startPosition="27" endLine="46" endPosition="9">
+    <scopeInfo nodeId="4093906047203397479" fileName="GeneratedFilesExcludePolicy.java" startLine="34" startPosition="27" endLine="47" endPosition="9">
       <varInfo nodeId="4093906047203397481" varName="outputPath" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203397468" fileName="GeneratedFilesExcludePolicy.java" startLine="31" startPosition="99" endLine="47" endPosition="7">
+    <scopeInfo nodeId="4093906047203397468" fileName="GeneratedFilesExcludePolicy.java" startLine="32" startPosition="99" endLine="48" endPosition="7">
       <varInfo nodeId="4093906047203397470" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203397462" fileName="GeneratedFilesExcludePolicy.java" startLine="30" startPosition="56" endLine="48" endPosition="5">
+    <scopeInfo nodeId="4093906047203397462" fileName="GeneratedFilesExcludePolicy.java" startLine="31" startPosition="56" endLine="49" endPosition="5">
       <varInfo nodeId="4093906047203397466" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203397445" fileName="GeneratedFilesExcludePolicy.java" startLine="26" startPosition="51" endLine="49" endPosition="17">
+    <scopeInfo nodeId="4093906047203397445" fileName="GeneratedFilesExcludePolicy.java" startLine="27" startPosition="51" endLine="50" endPosition="17">
       <varInfo nodeId="4093906047203397456" varName="roots" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203397441" fileName="GeneratedFilesExcludePolicy.java" startLine="24" startPosition="0" endLine="51" endPosition="0" />
-    <unitInfo nodeId="4093906047203397429" fileName="GeneratedFilesExcludePolicy.java" startLine="19" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.vcs.integration.GeneratedFilesExcludePolicy" />
+    <scopeInfo nodeId="4093906047203397441" fileName="GeneratedFilesExcludePolicy.java" startLine="25" startPosition="0" endLine="52" endPosition="0" />
+    <unitInfo nodeId="4093906047203397429" fileName="GeneratedFilesExcludePolicy.java" startLine="20" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.vcs.integration.GeneratedFilesExcludePolicy" />
   </root>
   <root nodeRef="r:eec25685-8f1e-47c9-a9de-4a7ef6b504ec(jetbrains.mps.vcs.integration)/6203974263416579308">
     <nodeInfo nodeId="6203974263416590491" fileName="GeneratedFileConflictResolving.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVcsManager" />

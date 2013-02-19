@@ -50,10 +50,9 @@ import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
 import jetbrains.mps.idea.core.library.ModuleLibraryType;
 import jetbrains.mps.idea.core.project.stubs.DifferentSdkException;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
-import jetbrains.mps.project.JavaModuleFacet;
-import jetbrains.mps.project.JavaModuleFacetImpl;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -63,6 +62,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -328,8 +328,8 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  protected JavaModuleFacet createJavaModuleFacet() {
-    return new JavaModuleFacetImpl(this) {
+  protected List<SModuleFacet> createFacets() {
+    return Collections.<SModuleFacet>singletonList(new JavaModuleFacetImpl(this) {
       @Override
       public IFile getClassesGen() {
         IFile descriptorFile = getDescriptorFile();
@@ -344,7 +344,7 @@ public class SolutionIdea extends Solution {
         }
         return FileSystem.getInstance().getFileByPath(compilerOutputPath.getPath());
       }
-    };
+    });
   }
 
   private void addLibs(SolutionDescriptor solutionDescriptor) {

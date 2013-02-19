@@ -19,10 +19,12 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -38,8 +40,11 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
-          IFile classesGen = module.getClassesGen();
+        for (SModule module : MPSModuleRepository.getInstance().getModules()) {
+          JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+          if (facet == null) continue;
+
+          IFile classesGen = facet.getClassesGen();
           if (classesGen == null) continue;
 
           //todo this trash should be removed after reconsidering language packaging. see MPS-11757 for details

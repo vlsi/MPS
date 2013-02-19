@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -47,8 +47,7 @@ public class MakeWorker extends MpsWorker {
     }
     final Set<SModule> finalToCompile = CollectionUtil.filter(toCompile, new Condition<SModule>() {
       public boolean met(SModule module) {
-        boolean compileInMps = !(module instanceof IModule) || ((IModule) module).isCompileInMPS();
-        return compileInMps && !(module.isPackaged());
+        return SModuleOperations.isCompileInMps(module) && !(module.isPackaged());
       }
     });
     if (finalToCompile.isEmpty()) {

@@ -7,6 +7,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ConceptMethodCallUtils {
@@ -29,7 +30,7 @@ public class ConceptMethodCallUtils {
       // so someone who uses it outside mps should have mps-core in dependencies 
       return true;
     }
-    return !(module.isCompileInMPS());
+    return !(SModuleOperations.isCompileInMps(module));
   }
 
   private static IModule check_bta47p_a0c0b(SModelDescriptor checkedDotOperand) {

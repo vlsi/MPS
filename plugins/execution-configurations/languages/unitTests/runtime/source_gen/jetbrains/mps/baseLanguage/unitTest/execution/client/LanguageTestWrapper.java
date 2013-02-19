@@ -26,8 +26,10 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.NonNls;
 
 public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
@@ -134,9 +136,10 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     }
     Language testsLanguage = (Language) SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase")).getModelDescriptor().getModule();
     for (ModuleReference dep : CollectionSequence.fromCollection(testsLanguage.getRuntimeModulesReferences())) {
-      AbstractModule module = (AbstractModule) MPSModuleRepository.getInstance().getModule(dep);
-      for (String path : CollectionSequence.fromCollection(module.getAdditionalClassPath())) {
-        ListSequence.fromList(result).addElement(path);
+      SModule module = dep.resolve(MPSModuleRepository.getInstance());
+      JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+      if (facet != null) {
+        ListSequence.fromList(result).addSequence(SetSequence.fromSet(facet.getClassPath()));
       }
     }
     ListSequence.fromList(result).addSequence(ListSequence.fromList(getPluginClasspath()));

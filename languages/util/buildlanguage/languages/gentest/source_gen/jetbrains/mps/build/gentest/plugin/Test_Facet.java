@@ -181,7 +181,7 @@ public class Test_Facet extends IFacet.Stub {
               }
               monitor.currentProgress().beginWork("Testing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
               for (ITestResource resource : Sequence.fromIterable(input)) {
-                String fqn = resource.getModule().getModuleFqName();
+                String fqn = resource.getModule().getModuleName();
                 monitor.currentProgress().advanceWork("Testing", 1, fqn);
                 ProcessBuilder pb = new ProcessBuilder(resource.buildCommandLine());
                 try {

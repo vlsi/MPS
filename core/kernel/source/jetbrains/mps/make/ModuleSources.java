@@ -15,21 +15,30 @@
  */
 package jetbrains.mps.make;
 
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 public class ModuleSources {
-  private final Map<IModule, ModuleSources> myAvailableSources;
+  private final Map<SModule, ModuleSources> myAvailableSources;
   private Dependencies myDependencies;
   private final IPerformanceTracer ttrace;
-  private IModule myModule;
+  private SModule myModule;
   private Map<String, JavaFile> myJavaFiles = new HashMap<String, JavaFile>();
   private Map<String, ResourceFile> myResourceFiles = new HashMap<String, ResourceFile>();
 
@@ -37,13 +46,19 @@ public class ModuleSources {
   private List<JavaFile> myFilesToCompile = new LinkedList<JavaFile>();
   private List<ResourceFile> myResourcesToCopy = new LinkedList<ResourceFile>();
 
-  ModuleSources(IModule module, Dependencies deps) {
-    this(module, Collections.<IModule, ModuleSources>emptyMap(), deps, new NullPerformanceTracer());
+  /**
+   * @param module Module with JavaModuleFacet
+   */
+  ModuleSources(SModule module, Dependencies deps) {
+    this(module, Collections.<SModule, ModuleSources>emptyMap(), deps, new NullPerformanceTracer());
   }
 
-  ModuleSources(IModule module, Map<IModule, ModuleSources> availableSources, Dependencies deps, IPerformanceTracer ttracer) {
+  /**
+   * @param module Module with JavaModuleFacet
+   */
+  ModuleSources(SModule module, Map<? extends SModule, ModuleSources> availableSources, Dependencies deps, IPerformanceTracer ttracer) {
     myModule = module;
-    myAvailableSources = availableSources;
+    myAvailableSources = (Map) availableSources;
     myDependencies = deps;
     ttrace = ttracer;
 
@@ -85,7 +100,7 @@ public class ModuleSources {
   }
 
   private void collectInputFilesInfo() {
-    for (String source : myModule.getSourcePaths()) {
+    for (String source : SModuleOperations.getAllSourcePaths(myModule)) {
       File dir = new File(source);
       collectInput(dir, dir.list(), new StringBuilder(), new StringBuilder());
     }
@@ -143,7 +158,7 @@ public class ModuleSources {
     myFilesToCompile.addAll(myJavaFiles.values());
     myResourcesToCopy.addAll(myResourceFiles.values());
 
-    IFile classesGen = myModule.getClassesGen();
+    IFile classesGen = SModuleOperations.getJavaFacet(myModule).getClassesGen();
     if (classesGen == null) return;
     File outputDir = new File(classesGen.getPath());
     collectOutput(outputDir, outputDir.list(), new StringBuilder(), new StringBuilder());
@@ -157,12 +172,12 @@ public class ModuleSources {
       }
 
       for (String fqName : myDependencies.getAllDependencies(javaFile.getClassName())) {
-        final IModule module = myDependencies.getModule(fqName);
+        final SModule module = myDependencies.getModule(fqName);
         if (module != null) {
           JavaFile file = myJavaFiles.get(fqName);
-          if(file == null) {
+          if (file == null) {
             final ModuleSources targetModule = myAvailableSources.get(module);
-            if(targetModule != null) {
+            if (targetModule != null) {
               file = targetModule.getJavaFile(fqName);
             }
           }
