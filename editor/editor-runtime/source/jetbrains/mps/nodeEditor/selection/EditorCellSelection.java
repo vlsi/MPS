@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.selection;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -166,7 +167,8 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
       return false;
     }
 
-    return getEditorComponent().getActionHandler().getApplicableCellAction(myEditorCell, type) != null;
+    CellAction applicableCellAction = getEditorComponent().getActionHandler().getApplicableCellAction(myEditorCell, type);
+    return applicableCellAction != null && applicableCellAction.canExecute(getEditorComponent().getEditorContext());
   }
 
 

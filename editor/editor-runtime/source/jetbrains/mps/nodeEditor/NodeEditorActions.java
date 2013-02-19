@@ -601,16 +601,4 @@ public class NodeEditorActions {
     }
   }
 
-  public static class ClearSelection extends AbstractCellAction {
-    @Override
-    public boolean canExecute(EditorContext context) {
-      return ((EditorComponent) context.getEditorComponent()).getSelectionManager().getSelectionStackSize() > 1;
-    }
-
-    @Override
-    public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
-      SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
-      selectionManager.setSelection(selectionManager.getDeepestSelection());
-    }
-  }
 }
