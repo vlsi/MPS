@@ -186,7 +186,7 @@ public class TestMakeOnRealProject {
     IFile classesGen = module.getFacet(JavaModuleFacet.class).getClassesGen();
     List<File> classes = collectSpecificFilesFromDir(new File(classesGen.getPath()), "class");
     List<File> sources = new ArrayList<File>();
-    for (String path : module.getSourcePaths()) {
+    for (String path : SModuleOperations.getAllSourcePaths(module)) {
       collectSpecificFilesFromDir(new File(path), "java", sources);
     }
     Assert.assertTrue("classes_gen should contain one class", sources.size() <= classes.size());

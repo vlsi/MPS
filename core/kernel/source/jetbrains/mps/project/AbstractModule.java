@@ -537,20 +537,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   public List<String> getSourcePaths() {
-    List<String> result = new ArrayList<String>();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      for (String p : descriptor.getSourcePaths()) {
-        result.add(p);
-      }
-    }
-    if (getGeneratorOutputPath() != null) {
-      result.add(getGeneratorOutputPath());
-    }
-    if (getTestsGeneratorOutputPath() != null) {
-      result.add(getTestsGeneratorOutputPath());
-    }
-    return result;
+    return new ArrayList<String>(SModuleOperations.getAllSourcePaths(this));
   }
 
   public void updateModelsSet() {

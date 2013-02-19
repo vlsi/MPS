@@ -146,8 +146,8 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   protected List<SModuleFacet> createFacets() {
     return Collections.<SModuleFacet>singletonList(new JavaModuleFacetImpl(this) {
       @Override
-      public Collection<String> getLibraryClassPath() {
-        return Collections.emptyList();
+      public Set<String> getLibraryClassPath() {
+        return Collections.emptySet();
       }
 
       @Override

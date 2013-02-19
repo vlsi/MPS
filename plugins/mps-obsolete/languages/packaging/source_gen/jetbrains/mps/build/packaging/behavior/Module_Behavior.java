@@ -8,7 +8,7 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
@@ -35,9 +36,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.PathManager;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.vfs.IFile;
+import java.util.Set;
 
 public class Module_Behavior {
   public static void init(SNode thisNode) {
@@ -65,11 +66,11 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getSourcesDirectories_1775602641704992067(SNode thisNode) {
-    IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
+    SModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
     if (module instanceof Solution && !(Module_Behavior.call_isCompiledInMPS_1213877514774(thisNode))) {
       return new ArrayList<SNode>();
     }
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<String>(), module.getSourcePaths())).select(new ISelector<String, String>() {
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<String>(), SModuleOperations.getAllSourcePaths(module))).select(new ISelector<String, String>() {
       public String select(String it) {
         return it.replace(File.separator, Util.SEPARATOR);
       }
@@ -308,7 +309,7 @@ public class Module_Behavior {
   }
 
   public static String extractModuleProperName_1235487584035(IModule module) {
-    return Module_Behavior.replaceBadCharacters_1235487831795(module.getModuleFqName());
+    return Module_Behavior.replaceBadCharacters_1235487831795(module.getModuleName());
   }
 
   public static String replaceBadCharacters_1235487831795(String name) {
@@ -329,7 +330,7 @@ public class Module_Behavior {
     return null;
   }
 
-  private static Collection<String> check_835h7m_a0a0a0a0g(JavaModuleFacet checkedDotOperand) {
+  private static Set<String> check_835h7m_a0a0a0a0g(JavaModuleFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getClassPath();
     }

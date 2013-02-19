@@ -37,6 +37,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -97,6 +98,27 @@ public class SModuleOperations {
   public static boolean isCompileInIdea(SModule module) {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     return facet != null && !facet.isCompileInMps();
+  }
+
+  public static Set<String> getAllSourcePaths(SModule module) {
+    // todo: get rid from source paths?
+    Set<String> paths = new HashSet<String>();
+    if (module instanceof AbstractModule) {
+      IFile path = ((AbstractModule) module).getOutputPath();
+      if (path != null) {
+        paths.add(path.getPath());
+      }
+    }
+    if (module.getFacet(TestsFacet.class) != null) {
+      IFile path = module.getFacet(TestsFacet.class).getTestsOutputPath();
+      if (path != null) {
+        paths.add(path.getPath());
+      }
+    }
+    if (module.getFacet(JavaModuleFacet.class) != null) {
+      paths.addAll(module.getFacet(JavaModuleFacet.class).getAdditionalSourcePaths());
+    }
+    return paths;
   }
 
   // deprecated methods

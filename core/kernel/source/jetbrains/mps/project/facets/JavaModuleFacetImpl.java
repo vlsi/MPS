@@ -21,7 +21,8 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -47,7 +48,7 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
   }
 
   @Override
-  public Collection<String> getLibraryClassPath() {
+  public Set<String> getLibraryClassPath() {
     Set<String> libraryClassPath = new LinkedHashSet<String>();
 
     // add additional java stub paths
@@ -69,7 +70,7 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
   }
 
   @Override
-  public final Collection<String> getClassPath() {
+  public final Set<String> getClassPath() {
     Set<String> result = new LinkedHashSet<String>();
     result.addAll(getLibraryClassPath());
     IFile classesGen = getClassesGen();
@@ -77,5 +78,16 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
       result.add(classesGen.getPath());
     }
     return result;
+  }
+
+  @Override
+  public Set<String> getAdditionalSourcePaths() {
+    ModuleDescriptor moduleDescriptor = module.getModuleDescriptor();
+
+    if (moduleDescriptor == null) {
+      return Collections.emptySet();
+    }
+
+    return new HashSet<String>(moduleDescriptor.getSourcePaths());
   }
 }

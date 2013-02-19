@@ -29,7 +29,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
   private final Set<String> myClassPaths = SetSequence.fromSet(new HashSet<String>());
   private final JavaModuleFacetImpl myJavaModuleFacet = new JavaModuleFacetImpl(this) {
     @Override
-    public Collection<String> getLibraryClassPath() {
+    public Set<String> getLibraryClassPath() {
       return myClassPaths;
     }
 

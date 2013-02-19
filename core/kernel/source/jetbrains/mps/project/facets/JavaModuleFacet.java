@@ -19,7 +19,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
-import java.util.Collection;
+import java.util.Set;
 
 public interface JavaModuleFacet extends SModuleFacet {
   // for "generate" task
@@ -31,8 +31,10 @@ public interface JavaModuleFacet extends SModuleFacet {
 
   // for "compilation" task
   // contains classes folder if isCompileInMPS == false && folder exists
-  Collection<String> getLibraryClassPath();
+  Set<String> getLibraryClassPath();
 
   // for "run" task, classpath == classes folder + library class path
-  Collection<String> getClassPath();
+  Set<String> getClassPath();
+
+  Set<String> getAdditionalSourcePaths();
 }

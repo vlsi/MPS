@@ -100,7 +100,7 @@ public class ModuleSources {
   }
 
   private void collectInputFilesInfo() {
-    for (String source : ((AbstractModule) myModule).getSourcePaths()) {
+    for (String source : SModuleOperations.getAllSourcePaths(myModule)) {
       File dir = new File(source);
       collectInput(dir, dir.list(), new StringBuilder(), new StringBuilder());
     }
@@ -172,7 +172,7 @@ public class ModuleSources {
       }
 
       for (String fqName : myDependencies.getAllDependencies(javaFile.getClassName())) {
-        final IModule module = myDependencies.getModule(fqName);
+        final SModule module = myDependencies.getModule(fqName);
         if (module != null) {
           JavaFile file = myJavaFiles.get(fqName);
           if (file == null) {

@@ -136,11 +136,6 @@ public interface IModule extends SModule {
   @NotNull
   IScope getScope();
 
-  // ???, to util, use model roots? what does it mean source paths?
-  // cast to AbstractModule for now
-  // use facet after generate before compile to add source paths
-  List<String> getSourcePaths();
-
   // should be do nothing, remove
   // should be listening
   void invalidateCaches();
@@ -195,6 +190,9 @@ public interface IModule extends SModule {
 
   @Deprecated
   boolean isCompileInMPS();
+
+  @Deprecated
+  List<String> getSourcePaths();
 
   /**
    * @see jetbrains.mps.project.facets.JavaModuleOperations#collectCompileClasspath instead
