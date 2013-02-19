@@ -19,7 +19,8 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.*;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -31,36 +32,109 @@ import java.util.List;
  */
 // TODO: Temporary adapter should be removed at the end of migration onto EditorCel API
 public class APICellAdapter {
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextSibling(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getNextSibling();
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextSibling(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    final EditorCell_Collection parent = cell.getParent();
+    if (parent == null) {
+      return null;
+    }
+
+    int index = parent.indexOf(cell);
+
+
+    //!!!!!
+    //if (parent.getCellAt(parent.indexOf(parent.firstCell())) != parent.firstCell());
+    //!!!!
+
+
+    if (index + 1 < parent.getCellsCount()) {
+      //getContentCell
+      return parent.getCellAt(index + 1);
+    }
+
+    return null;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevSibling(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getPrevSibling();
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevSibling(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    final EditorCell_Collection parent = cell.getParent();
+    if (parent == null) {
+      return null;
+    }
+
+    int index = parent.indexOf(cell);
+    if (index - 1 >= 0) {
+      //getContentCell
+      return parent.getCellAt(index - 1);
+    }
+
+    return null;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getNextLeaf();
+
+
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    jetbrains.mps.openapi.editor.cells.EditorCell next = getNextSibling(cell);
+    if (next != null){
+      return getFirstLeaf(next);
+    }
+
+    EditorCell_Collection parent = cell.getParent();
+    if (parent != null) {
+      return getNextLeaf(parent);
+    }
+
+    return null;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(EditorCell cell, Condition<jetbrains.mps.nodeEditor.cells.EditorCell> condition) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getNextLeaf(condition);
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(jetbrains.mps.openapi.editor.cells.EditorCell cell, Condition<jetbrains.mps.openapi.editor.cells.EditorCell> condition) {
+    jetbrains.mps.openapi.editor.cells.EditorCell current = getNextLeaf(cell);
+    while (current != null) {
+      if (condition.met(current)) {
+        return current;
+      }
+      current = getNextLeaf(current);
+    }
+    return null;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getPrevLeaf();
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    jetbrains.mps.openapi.editor.cells.EditorCell prev = getPrevSibling(cell);
+    if (prev != null){
+      return getLastLeaf(prev);
+    }
+
+    EditorCell_Collection parent = cell.getParent();
+    if (parent != null) {
+      return getPrevLeaf(parent);
+    }
+
+    return null;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(EditorCell cell, Condition<jetbrains.mps.nodeEditor.cells.EditorCell> condition) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getPrevLeaf(condition);
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(EditorCell cell, Condition<jetbrains.mps.openapi.editor.cells.EditorCell> condition) {
+    jetbrains.mps.openapi.editor.cells.EditorCell current = getNextLeaf(cell);
+    while (current != null) {
+      if (condition.met(current)) {
+        return current;
+      }
+      current = getPrevLeaf(current);
+    }
+    return null;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getFirstLeaf(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getFirstLeaf();
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getFirstLeaf(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    if (cell instanceof EditorCell_Collection) {
+      return ((EditorCell_Collection) cell).getCellsCount() > 0 ? getFirstLeaf(((EditorCell_Collection) cell).firstCell()) : cell;
+    } else {
+      return cell;
+    }
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getLastLeaf(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLastLeaf();
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getLastLeaf(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    if (cell instanceof EditorCell_Collection) {
+      return ((EditorCell_Collection) cell).getCellsCount() > 0 ? getLastLeaf(((EditorCell_Collection) cell).lastCell()) : cell;
+    } else {
+      return cell;
+    }
   }
 
   public static TextBuilder renderText(EditorCell cell) {
@@ -73,6 +147,7 @@ public class APICellAdapter {
 
   public static boolean hasErrorMessages(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).hasErrorMessages();
+    cell.getEditorComponent().getH
   }
 
   public static String getCellRole(EditorCell cell) {
