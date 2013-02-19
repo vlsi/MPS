@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -179,6 +180,11 @@ public class DevKit extends AbstractModule {
 
   public boolean isHidden() {
     return false;
+  }
+
+  @Override
+  protected List<SModuleFacet> createFacets() {
+    return Collections.emptyList();
   }
 
   @Deprecated
