@@ -29,6 +29,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.NonNls;
 
 public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
@@ -138,7 +139,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
       SModule module = dep.resolve(MPSModuleRepository.getInstance());
       JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
       if (facet != null) {
-        ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(facet.getClassPath()));
+        ListSequence.fromList(result).addSequence(SetSequence.fromSet(facet.getClassPath()));
       }
     }
     ListSequence.fromList(result).addSequence(ListSequence.fromList(getPluginClasspath()));

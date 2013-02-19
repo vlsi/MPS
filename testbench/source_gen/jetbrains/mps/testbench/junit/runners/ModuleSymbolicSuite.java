@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.facets.JavaModuleOperations;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import java.net.URL;
@@ -168,7 +167,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
     private static ClassLoader getTestClassLoaderForModule(SModule module) {
       List<String> paths = ListSequence.fromList(new ArrayList<String>());
       ListSequence.fromList(paths).addSequence(SetSequence.fromSet(JavaModuleOperations.collectExecuteClasspath(module)));
-      ListSequence.fromList(paths).removeSequence(CollectionSequence.fromCollection(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")).getFacet(JavaModuleFacet.class).getClassPath()));
+      ListSequence.fromList(paths).removeSequence(SetSequence.fromSet(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")).getFacet(JavaModuleFacet.class).getClassPath()));
       URL[] urls = ListSequence.fromList(paths).select(new ISelector<String, URL>() {
         public URL select(String it) {
           try {
