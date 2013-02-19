@@ -53,13 +53,27 @@ public abstract class AbstractMultipleSelection extends AbstractSelection implem
   public void deactivate() {
   }
 
+
+  @Override
+  public boolean canExecuteAction(CellActionType type) {
+    return canExecuteAction(getAction(type));
+  }
+
   @Override
   public void executeAction(CellActionType type) {
     getEditorComponent().assertModelNotDisposed();
-    CellAction action = getEditorComponent().getComponentAction(type);
-    if (action != null && action.canExecute(getEditorComponent().getEditorContext())) {
-      action.execute(getEditorComponent().getEditorContext());
+    CellAction action = getAction(type);
+    if (canExecuteAction(action)) {
+      getAction(type).execute(getEditorComponent().getEditorContext());
     }
+  }
+
+  private boolean canExecuteAction(CellAction action) {
+    return action != null && action.canExecute(getEditorComponent().getEditorContext());
+  }
+
+  private CellAction getAction(CellActionType type) {
+    return getEditorComponent().getComponentAction(type);
   }
 
   @NotNull

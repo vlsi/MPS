@@ -26,6 +26,8 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.SingularSelection.SideSelectDirection;
+import jetbrains.mps.openapi.editor.*;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -599,10 +601,16 @@ public class NodeEditorActions {
     }
   }
 
-  public static class ClearSelection extends EditorCellAction {
+  public static class ClearSelection extends AbstractCellAction {
     @Override
-    public void execute(EditorContext context) {
-      ((EditorComponent) context.getEditorComponent()).getSelectionManager().clearSelection();
+    public boolean canExecute(EditorContext context) {
+      return ((EditorComponent) context.getEditorComponent()).getSelectionManager().getSelectionStackSize() > 1;
+    }
+
+    @Override
+    public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
+      SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
+      selectionManager.setSelection(selectionManager.getDeepestSelection());
     }
   }
 }

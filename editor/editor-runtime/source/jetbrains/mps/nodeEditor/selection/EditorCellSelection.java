@@ -156,16 +156,30 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
   }
 
   @Override
-  public void executeAction(CellActionType type) {
-    getEditorComponent().assertModelNotDisposed();
-    // TODO: add separate handler for Backspace action.
+  public boolean canExecuteAction(CellActionType type) {
+
     if (type == CellActionType.BACKSPACE) {
       type = CellActionType.DELETE;
     }
+
     if (type == CellActionType.DELETE && suppressDelete()) {
-      return;
+      return false;
     }
-    getEditorComponent().getActionHandler().executeAction(myEditorCell, type);
+
+    return getEditorComponent().getActionHandler().getApplicableCellAction(myEditorCell, type) != null;
+  }
+
+
+
+  @Override
+  public void executeAction(CellActionType type) {
+    getEditorComponent().assertModelNotDisposed();
+    if (type == CellActionType.BACKSPACE) {
+      type = CellActionType.DELETE;
+    }
+    if (canExecuteAction(type)) {
+      getEditorComponent().getActionHandler().executeAction(myEditorCell, type);
+    }
   }
 
   protected boolean suppressDelete() {

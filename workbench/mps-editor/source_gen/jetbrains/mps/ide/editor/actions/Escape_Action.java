@@ -8,12 +8,12 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.selection.Selection;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class Escape_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -33,8 +33,8 @@ public class Escape_Action extends BaseAction {
     if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).hasNodeInformationDialog()) {
       return false;
     }
+    return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().canExecuteAction(CellActionType.CLEAR_SELECTION) || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().hasMessages(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner());
 
-    return true;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

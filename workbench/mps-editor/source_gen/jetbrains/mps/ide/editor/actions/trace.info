@@ -1877,8 +1877,8 @@
     <nodeInfo nodeId="6743831156946309831" fileName="Escape_Action.java" startLine="23" startPosition="35" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6743831156946309831" fileName="Escape_Action.java" startLine="28" startPosition="32" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2361149359400133413" fileName="Escape_Action.java" startLine="33" startPosition="223" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2526390656169712550" fileName="Escape_Action.java" startLine="35" startPosition="5" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7016078034825949736" fileName="Escape_Action.java" startLine="36" startPosition="0" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2526390656169714446" fileName="Escape_Action.java" startLine="35" startPosition="5" endLine="36" endPosition="477" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8780933209007240319" fileName="Escape_Action.java" startLine="36" startPosition="477" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6743831156946309831" fileName="Escape_Action.java" startLine="42" startPosition="7" endLine="43" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6743831156946309831" fileName="Escape_Action.java" startLine="43" startPosition="60" endLine="44" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6743831156946309831" fileName="Escape_Action.java" startLine="46" startPosition="27" endLine="47" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1949,7 +1949,7 @@
     <scopeInfo nodeId="6743831156946309831" fileName="Escape_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" />
     <scopeInfo nodeId="7016078034826670427" fileName="Escape_Action.java" startLine="90" startPosition="73" endLine="94" endPosition="0" />
     <scopeInfo nodeId="6743831156946309831" fileName="Escape_Action.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="7238523569671042612" fileName="Escape_Action.java" startLine="32" startPosition="87" endLine="37" endPosition="16" />
+    <scopeInfo nodeId="7238523569671042612" fileName="Escape_Action.java" startLine="32" startPosition="87" endLine="37" endPosition="0" />
     <scopeInfo nodeId="7016078034826670427" fileName="Escape_Action.java" startLine="90" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="7016078034826670427" varName="checkedDotOperand" />
     </scopeInfo>
