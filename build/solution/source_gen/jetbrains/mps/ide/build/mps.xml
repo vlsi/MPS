@@ -169,6 +169,20 @@
   </target>
   
   <target name="buildDependents">
+    <ant antfile="build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsDates.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsStandalone.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsDevKit.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsExperimental.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsPlugins.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsMakePlugin.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsObsolete.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
     <ant antfile="build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsDates.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />

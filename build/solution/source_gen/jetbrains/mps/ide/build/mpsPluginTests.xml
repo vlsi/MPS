@@ -82,6 +82,7 @@
   </target>
   
   <target name="buildDependents">
+    <ant antfile="IdeaPlugin/mpsPlugin.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
     <ant antfile="IdeaPlugin/mpsPlugin.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   

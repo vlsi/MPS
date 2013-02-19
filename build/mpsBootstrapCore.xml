@@ -2626,6 +2626,8 @@
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${version}</echo>
   </target>
   
+  <target name="buildDependents" />
+  
   <target name="fetchDependencies" />
   
   <target name="build" depends="assemble, check" />

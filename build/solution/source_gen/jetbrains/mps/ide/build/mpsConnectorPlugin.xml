@@ -38,6 +38,8 @@
     </jar>
   </target>
   
+  <target name="buildDependents" />
+  
   <target name="build" depends="assemble, check" />
   
   <target name="clean">
