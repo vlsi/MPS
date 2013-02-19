@@ -8,7 +8,6 @@
   </dependency>
   <dependency className="jetbrains.mps.editor.runtime.style.SideTransformTagUtils" file="SideTransformTagUtils.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
   </dependency>
   <dependency className="jetbrains.mps.editor.runtime.style.StyledTextPrinter" file="StyledTextPrinter.java">
     <classNode dependClassName="java.lang.String" />
