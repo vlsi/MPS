@@ -6,17 +6,17 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
-import java.util.List;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.nio.charset.Charset;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -38,6 +38,19 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_9mcqjq_a(editorContext, node);
   }
 
+  public static class ConceptTextGenDeclaration_generic_cellMenu_a0c8a extends AbstractCellMenuPart_Generic_Item {
+    public ConceptTextGenDeclaration_generic_cellMenu_a0c8a() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SLinkOperations.setNewChild(node, "encoding", "jetbrains.mps.lang.textGen.structure.EncodingDeclaration");
+    }
+
+    public String getMatchingText() {
+      return "<query>";
+    }
+  }
+
   public static class ConceptTextGenDeclaration_generic_cellMenu_b0c8a extends AbstractCellMenuPart_Generic_Group {
     public ConceptTextGenDeclaration_generic_cellMenu_b0c8a() {
     }
@@ -57,19 +70,6 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
 
     public boolean isReferentPresentation() {
       return false;
-    }
-  }
-
-  public static class ConceptTextGenDeclaration_generic_cellMenu_a0c8a extends AbstractCellMenuPart_Generic_Item {
-    public ConceptTextGenDeclaration_generic_cellMenu_a0c8a() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setNewChild(node, "encoding", "jetbrains.mps.lang.textGen.structure.EncodingDeclaration");
-    }
-
-    public String getMatchingText() {
-      return "<query>";
     }
   }
 

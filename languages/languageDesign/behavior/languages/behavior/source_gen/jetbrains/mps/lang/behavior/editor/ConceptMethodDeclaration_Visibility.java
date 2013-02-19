@@ -14,11 +14,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConceptMethodDeclaration_Visibility extends AbstractCellMenuComponent {
   public ConceptMethodDeclaration_Visibility() {
-    super(new SubstituteInfoPartExt[]{new ConceptMethodDeclaration_Visibility.ConceptMethodDeclaration_generic_cellMenu_a0_0(), new ConceptMethodDeclaration_Visibility.ConceptMethodDeclaration_generic_cellMenu_b0()});
+    super(new SubstituteInfoPartExt[]{new ConceptMethodDeclaration_Visibility.ConceptMethodDeclaration_generic_cellMenu_a0(), new ConceptMethodDeclaration_Visibility.ConceptMethodDeclaration_generic_cellMenu_b0()});
   }
 
-  public static class ConceptMethodDeclaration_generic_cellMenu_a0_0 extends AbstractCellMenuPart_Generic_Item {
-    public ConceptMethodDeclaration_generic_cellMenu_a0_0() {
+  public static class ConceptMethodDeclaration_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Item {
+    public ConceptMethodDeclaration_generic_cellMenu_a0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

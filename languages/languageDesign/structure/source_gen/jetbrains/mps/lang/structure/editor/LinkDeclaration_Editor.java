@@ -6,17 +6,17 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -53,6 +53,20 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_6h6dhy_a_0(editorContext, node);
   }
 
+  public static class LinkDeclaration_null_postfixCellMenu_a0b0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public LinkDeclaration_null_postfixCellMenu_a0b0() {
+    }
+
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      List<String> postfixes = ListSequence.fromList(new ArrayList<String>());
+      if ((SLinkOperations.getTarget(node, "target", false) != null)) {
+        String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "target", false), "name"));
+        ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(NameUtil.splitByCamels(name)));
+      }
+      return postfixes;
+    }
+  }
+
   public static class LinkDeclaration_sourceCardinality_cellMenu_a0c0 extends AbstractCellMenuPart_PropertyValues {
     public LinkDeclaration_sourceCardinality_cellMenu_a0c0() {
     }
@@ -68,20 +82,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "1")));
       }
       return result;
-    }
-  }
-
-  public static class LinkDeclaration_null_postfixCellMenu_a0b0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public LinkDeclaration_null_postfixCellMenu_a0b0() {
-    }
-
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      List<String> postfixes = ListSequence.fromList(new ArrayList<String>());
-      if ((SLinkOperations.getTarget(node, "target", false) != null)) {
-        String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "target", false), "name"));
-        ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(NameUtil.splitByCamels(name)));
-      }
-      return postfixes;
     }
   }
 

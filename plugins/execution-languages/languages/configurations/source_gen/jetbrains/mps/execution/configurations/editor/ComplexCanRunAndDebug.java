@@ -61,8 +61,8 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     }
   }
 
-  public static class RunConfigurationExecutor_generic_cellMenu_a0c1a_0 extends AbstractCellMenuPart_Generic_Item {
-    public RunConfigurationExecutor_generic_cellMenu_a0c1a_0() {
+  public static class RunConfigurationExecutor_generic_cellMenu_a0c1a extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_a0c1a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -183,7 +183,7 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0c1a_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0c1a()}));
     return editorCell;
   }
 

@@ -6,13 +6,13 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -39,21 +39,21 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return this.createCollection_689p1d_a(editorContext, node);
   }
 
-  public static class BooleanStyleSheetItem_flag_cellMenu_a0c0 extends AbstractCellMenuPart_PropertyValues {
-    public BooleanStyleSheetItem_flag_cellMenu_a0c0() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
-    }
-  }
-
   public static class ReplaceWith_StyleClassItem_cellMenu_a0a0_1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_StyleClassItem_cellMenu_a0a0_1() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
+    }
+  }
+
+  public static class BooleanStyleSheetItem_flag_cellMenu_a0c0 extends AbstractCellMenuPart_PropertyValues {
+    public BooleanStyleSheetItem_flag_cellMenu_a0c0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
     }
   }
 

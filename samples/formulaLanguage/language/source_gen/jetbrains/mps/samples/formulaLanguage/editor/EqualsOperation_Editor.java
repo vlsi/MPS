@@ -25,8 +25,8 @@ public class EqualsOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_mhwek2_a(editorContext, node);
   }
 
-  public static class ReplaceWith_Operation_cellMenu_a0b0_7 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_Operation_cellMenu_a0b0_7() {
+  public static class ReplaceWith_Operation_cellMenu_a0b0_8 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_Operation_cellMenu_a0b0_8() {
     }
 
     public String getReplacementConceptName() {
@@ -51,7 +51,7 @@ public class EqualsOperation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     Operation_symbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EqualsOperation_Editor.ReplaceWith_Operation_cellMenu_a0b0_7()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EqualsOperation_Editor.ReplaceWith_Operation_cellMenu_a0b0_8()}));
     return editorCell;
   }
 

@@ -26,8 +26,8 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_ehpdiz_a(editorContext, node);
   }
 
-  public static class ReplaceWith_Operation_cellMenu_a0b0_8 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_Operation_cellMenu_a0b0_8() {
+  public static class ReplaceWith_Operation_cellMenu_a0b0_7 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_Operation_cellMenu_a0b0_7() {
     }
 
     public String getReplacementConceptName() {
@@ -48,7 +48,7 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_ehpdiz_b0");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IsNullOperation_Editor.ReplaceWith_Operation_cellMenu_a0b0_8()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IsNullOperation_Editor.ReplaceWith_Operation_cellMenu_a0b0_7()}));
     return editorCell;
   }
 

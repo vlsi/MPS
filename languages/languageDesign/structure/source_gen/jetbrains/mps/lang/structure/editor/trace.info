@@ -1695,15 +1695,15 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)/1084189569969">
     <nodeInfo nodeId="1084189569969" fileName="LinkDeclaration_Editor.java" startLine="48" startPosition="79" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1084189569969" fileName="LinkDeclaration_Editor.java" startLine="52" startPosition="82" endLine="53" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1185271154474" fileName="LinkDeclaration_Editor.java" startLine="60" startPosition="134" endLine="61" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240589547720" fileName="LinkDeclaration_Editor.java" startLine="63" startPosition="206" endLine="64" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1185271271424" fileName="LinkDeclaration_Editor.java" startLine="66" startPosition="14" endLine="67" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1185271283324" fileName="LinkDeclaration_Editor.java" startLine="67" startPosition="246" endLine="68" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1185271295867" fileName="LinkDeclaration_Editor.java" startLine="69" startPosition="7" endLine="70" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1186997157547" fileName="LinkDeclaration_Editor.java" startLine="78" startPosition="129" endLine="79" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1186997464771" fileName="LinkDeclaration_Editor.java" startLine="80" startPosition="71" endLine="81" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1186997249027" fileName="LinkDeclaration_Editor.java" startLine="81" startPosition="133" endLine="82" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1186997179415" fileName="LinkDeclaration_Editor.java" startLine="83" startPosition="7" endLine="84" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1186997157547" fileName="LinkDeclaration_Editor.java" startLine="60" startPosition="129" endLine="61" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1186997464771" fileName="LinkDeclaration_Editor.java" startLine="62" startPosition="71" endLine="63" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1186997249027" fileName="LinkDeclaration_Editor.java" startLine="63" startPosition="133" endLine="64" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1186997179415" fileName="LinkDeclaration_Editor.java" startLine="65" startPosition="7" endLine="66" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1185271154474" fileName="LinkDeclaration_Editor.java" startLine="74" startPosition="134" endLine="75" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240589547720" fileName="LinkDeclaration_Editor.java" startLine="77" startPosition="206" endLine="78" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1185271271424" fileName="LinkDeclaration_Editor.java" startLine="80" startPosition="14" endLine="81" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1185271283324" fileName="LinkDeclaration_Editor.java" startLine="81" startPosition="246" endLine="82" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1185271295867" fileName="LinkDeclaration_Editor.java" startLine="83" startPosition="7" endLine="84" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197832374771" fileName="LinkDeclaration_Editor.java" startLine="89" startPosition="33" endLine="90" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1197832374771" fileName="LinkDeclaration_Editor.java" startLine="93" startPosition="69" endLine="94" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197832374771" fileName="LinkDeclaration_Editor.java" startLine="97" startPosition="81" endLine="98" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1887,13 +1887,13 @@
     <nodeInfo nodeId="1146605730972" fileName="LinkDeclaration_Editor.java" startLine="373" startPosition="111" endLine="374" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226075102141" fileName="LinkDeclaration_Editor.java" startLine="377" startPosition="111" endLine="378" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3236994869861848677" fileName="LinkDeclaration_Editor.java" startLine="381" startPosition="111" endLine="382" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1185271033481" fileName="LinkDeclaration_Editor.java" startLine="57" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LinkDeclaration_sourceCardinality_cellMenu_a0c0#()V" />
-    <nodeInfo nodeId="1186997093971" fileName="LinkDeclaration_Editor.java" startLine="75" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LinkDeclaration_null_postfixCellMenu_a0b0#()V" />
+    <nodeInfo nodeId="1186997093971" fileName="LinkDeclaration_Editor.java" startLine="57" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LinkDeclaration_null_postfixCellMenu_a0b0#()V" />
+    <nodeInfo nodeId="1185271033481" fileName="LinkDeclaration_Editor.java" startLine="71" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LinkDeclaration_sourceCardinality_cellMenu_a0c0#()V" />
     <nodeInfo nodeId="1226062528126" fileName="LinkDeclaration_Editor.java" startLine="229" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="1084189569969" fileName="LinkDeclaration_Editor.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1084189569969" fileName="LinkDeclaration_Editor.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1240589458329" fileName="LinkDeclaration_Editor.java" startLine="62" startPosition="88" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1185271224138" fileName="LinkDeclaration_Editor.java" startLine="66" startPosition="12" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240589458329" fileName="LinkDeclaration_Editor.java" startLine="76" startPosition="88" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1185271224138" fileName="LinkDeclaration_Editor.java" startLine="80" startPosition="12" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1197832374771" fileName="LinkDeclaration_Editor.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_6h6dhy_a0a#()V" />
     <nodeInfo nodeId="1197832374771" fileName="LinkDeclaration_Editor.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1197832374771" fileName="LinkDeclaration_Editor.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -1914,7 +1914,7 @@
     <nodeInfo nodeId="1146605728892" fileName="LinkDeclaration_Editor.java" startLine="373" startPosition="0" endLine="376" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_6h6dhy_a2a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
     <nodeInfo nodeId="1226075073645" fileName="LinkDeclaration_Editor.java" startLine="377" startPosition="0" endLine="380" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_6h6dhy_a3a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
     <nodeInfo nodeId="3236994869861848675" fileName="LinkDeclaration_Editor.java" startLine="381" startPosition="0" endLine="384" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_6h6dhy_a5a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="1186997182375" fileName="LinkDeclaration_Editor.java" startLine="79" startPosition="78" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1186997182375" fileName="LinkDeclaration_Editor.java" startLine="61" startPosition="78" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7972144475523810171" fileName="LinkDeclaration_Editor.java" startLine="261" startPosition="16" endLine="266" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5109811630748430360" fileName="LinkDeclaration_Editor.java" startLine="114" startPosition="61" endLine="120" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3129341680482022817" fileName="LinkDeclaration_Editor.java" startLine="147" startPosition="61" endLine="153" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1926,12 +1926,12 @@
     <nodeInfo nodeId="1084205682782" fileName="LinkDeclaration_Editor.java" startLine="346" startPosition="59" endLine="352" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3236994869861848658" fileName="LinkDeclaration_Editor.java" startLine="364" startPosition="59" endLine="370" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3236994869861848654" fileName="LinkDeclaration_Editor.java" startLine="190" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_6h6dhy_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1185271168704" fileName="LinkDeclaration_Editor.java" startLine="61" startPosition="75" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1186997093971" fileName="LinkDeclaration_Editor.java" startLine="78" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPostfixes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="1186997093971" fileName="LinkDeclaration_Editor.java" startLine="60" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPostfixes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="1185271168704" fileName="LinkDeclaration_Editor.java" startLine="75" startPosition="75" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1164661317302" fileName="LinkDeclaration_Editor.java" startLine="198" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_6h6dhy_a4a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1164661317301" fileName="LinkDeclaration_Editor.java" startLine="178" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_6h6dhy_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="7972144475523791561" fileName="LinkDeclaration_Editor.java" startLine="256" startPosition="80" endLine="267" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1185271033481" fileName="LinkDeclaration_Editor.java" startLine="60" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyValues#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="1185271033481" fileName="LinkDeclaration_Editor.java" startLine="74" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyValues#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
     <nodeInfo nodeId="1226062528126" fileName="LinkDeclaration_Editor.java" startLine="223" startPosition="113" endLine="235" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5109811630748430365" fileName="LinkDeclaration_Editor.java" startLine="256" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doCommitImpl#(Ljava/lang/String;Ljava/lang/String;)V" />
     <nodeInfo nodeId="3236994869861848658" fileName="LinkDeclaration_Editor.java" startLine="355" startPosition="0" endLine="372" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_6h6dhy_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -1945,12 +1945,12 @@
     <nodeInfo nodeId="1226062528126" fileName="LinkDeclaration_Editor.java" startLine="223" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReadOnlyModelAccessor_6h6dhy_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="5109811630748430365" fileName="LinkDeclaration_Editor.java" startLine="249" startPosition="42" endLine="280" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5109811630748430365" fileName="LinkDeclaration_Editor.java" startLine="246" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTransactionalProperty_6h6dhy_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="1185271033481" fileName="LinkDeclaration_Editor.java" startLine="57" startPosition="62" endLine="57" endPosition="62" />
-    <scopeInfo nodeId="1186997093971" fileName="LinkDeclaration_Editor.java" startLine="75" startPosition="56" endLine="75" endPosition="56" />
+    <scopeInfo nodeId="1186997093971" fileName="LinkDeclaration_Editor.java" startLine="57" startPosition="56" endLine="57" endPosition="56" />
+    <scopeInfo nodeId="1185271033481" fileName="LinkDeclaration_Editor.java" startLine="71" startPosition="62" endLine="71" endPosition="62" />
     <scopeInfo nodeId="1226062528126" fileName="LinkDeclaration_Editor.java" startLine="229" startPosition="37" endLine="229" endPosition="37" />
     <scopeInfo nodeId="1084189569969" fileName="LinkDeclaration_Editor.java" startLine="48" startPosition="79" endLine="49" endPosition="63" />
     <scopeInfo nodeId="1084189569969" fileName="LinkDeclaration_Editor.java" startLine="52" startPosition="82" endLine="53" endPosition="65" />
-    <scopeInfo nodeId="1240589458332" fileName="LinkDeclaration_Editor.java" startLine="63" startPosition="206" endLine="64" endPosition="95" />
+    <scopeInfo nodeId="1240589458332" fileName="LinkDeclaration_Editor.java" startLine="77" startPosition="206" endLine="78" endPosition="95" />
     <scopeInfo nodeId="1197832374771" fileName="LinkDeclaration_Editor.java" startLine="89" startPosition="33" endLine="90" endPosition="14" />
     <scopeInfo nodeId="1197832374771" fileName="LinkDeclaration_Editor.java" startLine="93" startPosition="69" endLine="94" endPosition="67" />
     <scopeInfo nodeId="1197832374771" fileName="LinkDeclaration_Editor.java" startLine="97" startPosition="81" endLine="98" endPosition="66" />
@@ -1975,12 +1975,12 @@
     <scopeInfo nodeId="1146605728893" fileName="LinkDeclaration_Editor.java" startLine="373" startPosition="111" endLine="374" endPosition="77" />
     <scopeInfo nodeId="1226075073646" fileName="LinkDeclaration_Editor.java" startLine="377" startPosition="111" endLine="378" endPosition="77" />
     <scopeInfo nodeId="3236994869861848676" fileName="LinkDeclaration_Editor.java" startLine="381" startPosition="111" endLine="382" endPosition="65" />
-    <scopeInfo nodeId="1185271033481" fileName="LinkDeclaration_Editor.java" startLine="57" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1185271224139" fileName="LinkDeclaration_Editor.java" startLine="66" startPosition="14" endLine="68" endPosition="243" />
-    <scopeInfo nodeId="1186997093971" fileName="LinkDeclaration_Editor.java" startLine="75" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="1186997182376" fileName="LinkDeclaration_Editor.java" startLine="80" startPosition="71" endLine="82" endPosition="106">
+    <scopeInfo nodeId="1186997093971" fileName="LinkDeclaration_Editor.java" startLine="57" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1186997182376" fileName="LinkDeclaration_Editor.java" startLine="62" startPosition="71" endLine="64" endPosition="106">
       <varInfo nodeId="1186997464772" varName="name" />
     </scopeInfo>
+    <scopeInfo nodeId="1185271033481" fileName="LinkDeclaration_Editor.java" startLine="71" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1185271224139" fileName="LinkDeclaration_Editor.java" startLine="80" startPosition="14" endLine="82" endPosition="243" />
     <scopeInfo nodeId="1226062528126" fileName="LinkDeclaration_Editor.java" startLine="229" startPosition="0" endLine="231" endPosition="0">
       <varInfo nodeId="1226062528126" varName="s" />
     </scopeInfo>
@@ -1992,8 +1992,8 @@
       <varInfo nodeId="1084189569969" varName="editorContext" />
       <varInfo nodeId="1084189569969" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1185271168705" fileName="LinkDeclaration_Editor.java" startLine="62" startPosition="88" endLine="65" endPosition="9" />
-    <scopeInfo nodeId="1240589458329" fileName="LinkDeclaration_Editor.java" startLine="62" startPosition="88" endLine="65" endPosition="9">
+    <scopeInfo nodeId="1185271168705" fileName="LinkDeclaration_Editor.java" startLine="76" startPosition="88" endLine="79" endPosition="9" />
+    <scopeInfo nodeId="1240589458329" fileName="LinkDeclaration_Editor.java" startLine="76" startPosition="88" endLine="79" endPosition="9">
       <varInfo nodeId="1240589458330" varName="member" />
     </scopeInfo>
     <scopeInfo nodeId="1197832374771" fileName="LinkDeclaration_Editor.java" startLine="89" startPosition="0" endLine="92" endPosition="0" />
@@ -2080,7 +2080,7 @@
       <varInfo nodeId="3236994869861848654" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="7972144475523791562" fileName="LinkDeclaration_Editor.java" startLine="261" startPosition="16" endLine="266" endPosition="15" />
-    <scopeInfo nodeId="1186997093973" fileName="LinkDeclaration_Editor.java" startLine="78" startPosition="129" endLine="84" endPosition="23">
+    <scopeInfo nodeId="1186997093973" fileName="LinkDeclaration_Editor.java" startLine="60" startPosition="129" endLine="66" endPosition="23">
       <varInfo nodeId="1186997157548" varName="postfixes" />
     </scopeInfo>
     <scopeInfo nodeId="3236994869861848674" fileName="LinkDeclaration_Editor.java" startLine="209" startPosition="0" endLine="215" endPosition="0">
@@ -2095,7 +2095,7 @@
       <varInfo nodeId="3236994869861848654" varName="editorContext" />
       <varInfo nodeId="3236994869861848654" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1186997093971" fileName="LinkDeclaration_Editor.java" startLine="78" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="1186997093971" fileName="LinkDeclaration_Editor.java" startLine="60" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="1186997093971" varName="editorContext" />
       <varInfo nodeId="1186997093971" varName="node" />
       <varInfo nodeId="1186997093971" varName="operationContext" />
@@ -2109,7 +2109,7 @@
       <varInfo nodeId="1164661317301" varName="editorCell" />
       <varInfo nodeId="1164661317301" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1185271033483" fileName="LinkDeclaration_Editor.java" startLine="60" startPosition="134" endLine="70" endPosition="20">
+    <scopeInfo nodeId="1185271033483" fileName="LinkDeclaration_Editor.java" startLine="74" startPosition="134" endLine="84" endPosition="20">
       <varInfo nodeId="1185271154475" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1164661317302" fileName="LinkDeclaration_Editor.java" startLine="198" startPosition="0" endLine="208" endPosition="0">
@@ -2121,7 +2121,7 @@
       <varInfo nodeId="1164661317301" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5109811630748430367" fileName="LinkDeclaration_Editor.java" startLine="256" startPosition="80" endLine="267" endPosition="11" />
-    <scopeInfo nodeId="1185271033481" fileName="LinkDeclaration_Editor.java" startLine="60" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="1185271033481" fileName="LinkDeclaration_Editor.java" startLine="74" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="1185271033481" varName="editorContext" />
       <varInfo nodeId="1185271033481" varName="node" />
       <varInfo nodeId="1185271033481" varName="operationContext" />
@@ -2228,8 +2228,8 @@
     <unitInfo nodeId="7972144475523791575" fileName="LinkDeclaration_Editor.java" startLine="257" startPosition="303" endLine="261" endPosition="11" unitName="jetbrains.mps.lang.structure.editor.LinkDeclaration_Editor$3" />
     <unitInfo nodeId="7972144475523810172" fileName="LinkDeclaration_Editor.java" startLine="262" startPosition="63" endLine="266" endPosition="13" unitName="jetbrains.mps.lang.structure.editor.LinkDeclaration_Editor$3" />
     <unitInfo nodeId="1226062528126" fileName="LinkDeclaration_Editor.java" startLine="224" startPosition="83" endLine="235" endPosition="5" unitName="jetbrains.mps.lang.structure.editor.LinkDeclaration_Editor$1" />
-    <unitInfo nodeId="1186997093971" fileName="LinkDeclaration_Editor.java" startLine="74" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.structure.editor.LinkDeclaration_Editor$LinkDeclaration_null_postfixCellMenu_a0b0" />
-    <unitInfo nodeId="1185271033481" fileName="LinkDeclaration_Editor.java" startLine="56" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.structure.editor.LinkDeclaration_Editor$LinkDeclaration_sourceCardinality_cellMenu_a0c0" />
+    <unitInfo nodeId="1186997093971" fileName="LinkDeclaration_Editor.java" startLine="56" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.structure.editor.LinkDeclaration_Editor$LinkDeclaration_null_postfixCellMenu_a0b0" />
+    <unitInfo nodeId="1185271033481" fileName="LinkDeclaration_Editor.java" startLine="70" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.structure.editor.LinkDeclaration_Editor$LinkDeclaration_sourceCardinality_cellMenu_a0c0" />
     <unitInfo nodeId="5109811630748430365" fileName="LinkDeclaration_Editor.java" startLine="251" startPosition="40" endLine="269" endPosition="7" unitName="jetbrains.mps.lang.structure.editor.LinkDeclaration_Editor$2" />
     <unitInfo nodeId="1164661343826" fileName="LinkDeclaration_Editor.java" startLine="124" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.lang.structure.editor.LinkDeclaration_Editor$_Inline_6h6dhy_a1e0" />
     <unitInfo nodeId="1197832374771" fileName="LinkDeclaration_Editor.java" startLine="88" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.structure.editor.LinkDeclaration_Editor$_Inline_6h6dhy_a0a" />

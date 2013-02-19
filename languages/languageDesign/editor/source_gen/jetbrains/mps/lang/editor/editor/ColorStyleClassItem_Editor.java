@@ -70,28 +70,6 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ColorStyleClassItem_generic_cellMenu_a0d0 extends AbstractCellMenuPart_Generic_Group {
-    public ColorStyleClassItem_generic_cellMenu_a0d0() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_Colors_Enum"));
-    }
-
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
-    }
-
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
-      SPropertyOperations.set(node, "color", SEnumOperations.getEnumMemberValue(parameterObject));
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
-  }
-
   public static class ColorStyleClassItem_generic_cellMenu_b0c0 extends AbstractCellMenuPart_Generic_Item {
     public ColorStyleClassItem_generic_cellMenu_b0c0() {
     }
@@ -115,6 +93,28 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
     public String getMatchingText() {
       return "query";
+    }
+  }
+
+  public static class ColorStyleClassItem_generic_cellMenu_a0d0 extends AbstractCellMenuPart_Generic_Group {
+    public ColorStyleClassItem_generic_cellMenu_a0d0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_Colors_Enum"));
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
+      SPropertyOperations.set(node, "color", SEnumOperations.getEnumMemberValue(parameterObject));
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
     }
   }
 
