@@ -29,8 +29,8 @@ public class FoldLeftOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_dtvh5y_a(editorContext, node);
   }
 
-  public static class ReplaceWith_SequenceOperation_cellMenu_a0a0_23 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SequenceOperation_cellMenu_a0a0_23() {
+  public static class ReplaceWith_SequenceOperation_cellMenu_a0a0_24 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SequenceOperation_cellMenu_a0a0_24() {
     }
 
     public String getReplacementConceptName() {
@@ -56,7 +56,7 @@ public class FoldLeftOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.applyOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FoldLeftOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_a0a0_23()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FoldLeftOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_a0a0_24()}));
     return editorCell;
   }
 

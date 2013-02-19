@@ -51,8 +51,8 @@ public class CustomMapCreator_component extends AbstractCellProvider {
     return createEditorCell((EditorContext) editorContext);
   }
 
-  public static class ReplaceWith_HashMapCreator_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_HashMapCreator_cellMenu_a0a0() {
+  public static class ReplaceWith_HashMapCreator_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_HashMapCreator_cellMenu_a0a0_0() {
     }
 
     public String getReplacementConceptName() {
@@ -177,7 +177,7 @@ public class CustomMapCreator_component extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CustomMapCreator_component.ReplaceWith_HashMapCreator_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CustomMapCreator_component.ReplaceWith_HashMapCreator_cellMenu_a0a0_0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_n2wc8f_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);

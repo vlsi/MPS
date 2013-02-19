@@ -421,7 +421,7 @@ public class QueriesGenerated {
     SNode editedProperty = CellMenuUtil.getEditedFeature(_context.getNode());
     String propertyName = editedProperty.getName();
     String result = name + "_" + propertyName + "_cellMenu";
-    return _context.createUniqueName(result, null);
+    return _context.createUniqueName(result, component);
   }
 
   public static Object propertyMacro_GetPropertyValue_1184144008723(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -429,13 +429,13 @@ public class QueriesGenerated {
     String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     SNode editedProperty = SNodeOperations.cast(CellMenuUtil.getEditedFeature(_context.getNode()), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
     String result = name + "_" + SPropertyOperations.getString(editedProperty, "name") + "_postfixCellMenu";
-    return _context.createUniqueName(result, null);
+    return _context.createUniqueName(result, component);
   }
 
   public static Object propertyMacro_GetPropertyValue_1210378721572(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String replacementName = SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "replacementConcept", false), "name");
     String result = "ReplaceWith_" + replacementName + "_cellMenu";
-    return _context.createUniqueName(result, null);
+    return _context.createUniqueName(result, SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1200443484298(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -447,7 +447,7 @@ public class QueriesGenerated {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
     String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     String result = name + "_customReplace_cellMenu";
-    return _context.createUniqueName(result, null);
+    return _context.createUniqueName(result, component);
   }
 
   public static Object propertyMacro_GetPropertyValue_1210380392692(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -455,7 +455,7 @@ public class QueriesGenerated {
     String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     SNode editedLink = SNodeOperations.cast(CellMenuUtil.getEditedFeature(_context.getNode()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     String result = name + "_" + SPropertyOperations.getString(editedLink, "role") + "_cellMenu";
-    return _context.createUniqueName(result, null);
+    return _context.createUniqueName(result, component);
   }
 
   public static Object propertyMacro_GetPropertyValue_1184144840586(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -463,7 +463,7 @@ public class QueriesGenerated {
     String editedConceptName = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     SNode editedLink = SNodeOperations.cast(CellMenuUtil.getEditedFeature(_context.getNode()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     String name = editedConceptName + "_" + SPropertyOperations.getString(editedLink, "role") + "_cellMenu";
-    return _context.createUniqueName(name, null);
+    return _context.createUniqueName(name, component);
   }
 
   public static Object propertyMacro_GetPropertyValue_1210380040272(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -471,7 +471,7 @@ public class QueriesGenerated {
     String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     SNode editedLink = SNodeOperations.cast(CellMenuUtil.getEditedFeature(_context.getNode()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     String result = name + "_" + SPropertyOperations.getString(editedLink, "role") + "_cellMenu";
-    return _context.createUniqueName(result, null);
+    return _context.createUniqueName(result, component);
   }
 
   public static Object propertyMacro_GetPropertyValue_1210380199307(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -479,7 +479,7 @@ public class QueriesGenerated {
     String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     SNode editedLink = SNodeOperations.cast(CellMenuUtil.getEditedFeature(_context.getNode()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     String result = name + "_" + SPropertyOperations.getString(editedLink, "role") + "_cellMenu";
-    return _context.createUniqueName(result, null);
+    return _context.createUniqueName(result, component);
   }
 
   public static Object propertyMacro_GetPropertyValue_1184145018718(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -495,21 +495,21 @@ public class QueriesGenerated {
     String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     SNode editedLink = SNodeOperations.cast(CellMenuUtil.getEditedFeature(_context.getNode()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     String result = name + "_" + SPropertyOperations.getString(editedLink, "role") + "_cellMenu";
-    return _context.createUniqueName(result, null);
+    return _context.createUniqueName(result, component);
   }
 
   public static Object propertyMacro_GetPropertyValue_1210379467196(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
     String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     String result = name + "_generic_cellMenu";
-    return _context.createUniqueName(result, null);
+    return _context.createUniqueName(result, component);
   }
 
   public static Object propertyMacro_GetPropertyValue_1210379574199(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
     String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     String result = name + "_generic_cellMenu";
-    return _context.createUniqueName(result, null);
+    return _context.createUniqueName(result, component);
   }
 
   public static Object propertyMacro_GetPropertyValue_1200439616211(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -520,7 +520,7 @@ public class QueriesGenerated {
     SNode component = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.editor.structure.AbstractComponent", false, false);
     String name = SPropertyOperations.getString(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), component, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), "name");
     String result = name + "_component_cellMenu";
-    return _context.createUniqueName(result, null);
+    return _context.createUniqueName(result, component);
   }
 
   public static Object propertyMacro_GetPropertyValue_3219221556189742958(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -733,7 +733,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_8233876857997955256(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String result = "ApplySideTransforms_" + SPropertyOperations.getString_def(_context.getNode(), "side", null) + "_cellMenu";
-    return _context.createUniqueName(result, null);
+    return _context.createUniqueName(result, SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object referenceMacro_GetReferent_1229561240559(final IOperationContext operationContext, final ReferenceMacroContext _context) {
