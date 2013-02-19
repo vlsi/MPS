@@ -25,10 +25,10 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     return this.createCollection_cjpy1b_a(editorContext, node);
   }
 
-  public static class VerticalAlignment_component_cellMenu_a0a0a implements SubstituteInfoPartExt {
+  public static class VerticalAlignment_component_cellMenu_cjpy1b_a0a0a implements SubstituteInfoPartExt {
     private VerticalAlignment_Chooser myComponent;
 
-    public VerticalAlignment_component_cellMenu_a0a0a() {
+    public VerticalAlignment_component_cellMenu_cjpy1b_a0a0a() {
       this.myComponent = new VerticalAlignment_Chooser();
     }
 
@@ -37,10 +37,10 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class VerticalAlignment_component_cellMenu_a0b0a implements SubstituteInfoPartExt {
+  public static class VerticalAlignment_component_cellMenu_cjpy1b_a0b0a implements SubstituteInfoPartExt {
     private VerticalAlignment_Chooser myComponent;
 
-    public VerticalAlignment_component_cellMenu_a0b0a() {
+    public VerticalAlignment_component_cellMenu_cjpy1b_a0b0a() {
       this.myComponent = new VerticalAlignment_Chooser();
     }
 
@@ -49,10 +49,10 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class VerticalAlignment_component_cellMenu_a0c0a implements SubstituteInfoPartExt {
+  public static class VerticalAlignment_component_cellMenu_cjpy1b_a0c0a implements SubstituteInfoPartExt {
     private VerticalAlignment_Chooser myComponent;
 
-    public VerticalAlignment_component_cellMenu_a0c0a() {
+    public VerticalAlignment_component_cellMenu_cjpy1b_a0c0a() {
       this.myComponent = new VerticalAlignment_Chooser();
     }
 
@@ -61,10 +61,10 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class VerticalAlignment_component_cellMenu_a0d0a implements SubstituteInfoPartExt {
+  public static class VerticalAlignment_component_cellMenu_cjpy1b_a0d0a implements SubstituteInfoPartExt {
     private VerticalAlignment_Chooser myComponent;
 
-    public VerticalAlignment_component_cellMenu_a0d0a() {
+    public VerticalAlignment_component_cellMenu_cjpy1b_a0d0a() {
       this.myComponent = new VerticalAlignment_Chooser();
     }
 
@@ -105,7 +105,7 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<-");
     editorCell.setCellId("Constant_cjpy1b_a0a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_a0a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_cjpy1b_a0a0a()}));
     return editorCell;
   }
 
@@ -113,7 +113,7 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ->");
     editorCell.setCellId("Constant_cjpy1b_b0a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_a0b0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_cjpy1b_a0b0a()}));
     return editorCell;
   }
 
@@ -121,7 +121,7 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " - ");
     editorCell.setCellId("Constant_cjpy1b_c0a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_a0c0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_cjpy1b_a0c0a()}));
     return editorCell;
   }
 
@@ -129,7 +129,7 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<->");
     editorCell.setCellId("Constant_cjpy1b_d0a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_a0d0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_cjpy1b_a0d0a()}));
     return editorCell;
   }
 

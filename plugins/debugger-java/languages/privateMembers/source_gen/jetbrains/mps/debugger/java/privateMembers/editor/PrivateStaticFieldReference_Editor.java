@@ -42,8 +42,8 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
     return this.createCollection_62ivzp_a(editorContext, node);
   }
 
-  public static class PrivateStaticFieldReference_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Item {
-    public PrivateStaticFieldReference_generic_cellMenu_a0c0() {
+  public static class PrivateStaticFieldReference_generic_cellMenu_62ivzp_a0c0 extends AbstractCellMenuPart_Generic_Item {
+    public PrivateStaticFieldReference_generic_cellMenu_62ivzp_a0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -57,13 +57,13 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_b0c0 extends PrimaryReferentMenuCellMenuPart {
-    public PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_b0c0() {
+  public static class PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_62ivzp_b0c0 extends PrimaryReferentMenuCellMenuPart {
+    public PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_62ivzp_b0c0() {
     }
   }
 
-  public static class PrivateStaticFieldReference_customReplace_cellMenu_c0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public PrivateStaticFieldReference_customReplace_cellMenu_c0c0() {
+  public static class PrivateStaticFieldReference_customReplace_cellMenu_62ivzp_c0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public PrivateStaticFieldReference_customReplace_cellMenu_62ivzp_c0c0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -215,7 +215,7 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
     StaticFieldReference_DeleteDot.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_generic_cellMenu_a0c0(), new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_b0c0(), new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_customReplace_cellMenu_c0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_generic_cellMenu_62ivzp_a0c0(), new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_62ivzp_b0c0(), new PrivateStaticFieldReference_Editor.PrivateStaticFieldReference_customReplace_cellMenu_62ivzp_c0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

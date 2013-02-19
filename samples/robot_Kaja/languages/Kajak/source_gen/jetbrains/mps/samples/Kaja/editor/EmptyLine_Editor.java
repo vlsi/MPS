@@ -20,8 +20,8 @@ public class EmptyLine_Editor extends DefaultNodeEditor {
     return this.createConstant_s23fc5_a(editorContext, node);
   }
 
-  public static class ReplaceWith_AbstractCommand_cellMenu_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractCommand_cellMenu_a0a() {
+  public static class ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0a() {
     }
 
     public String getReplacementConceptName() {
@@ -36,7 +36,7 @@ public class EmptyLine_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EmptyLine_Editor.ReplaceWith_AbstractCommand_cellMenu_a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EmptyLine_Editor.ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0a()}));
     return editorCell;
   }
 }

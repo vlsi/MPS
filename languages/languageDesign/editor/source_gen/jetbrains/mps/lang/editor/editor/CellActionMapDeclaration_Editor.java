@@ -41,8 +41,8 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_dnk0aj_a(editorContext, node);
   }
 
-  public static class CellActionMapDeclaration_name_cellMenu_a0b0a extends AbstractCellMenuPart_PropertyValues {
-    public CellActionMapDeclaration_name_cellMenu_a0b0a() {
+  public static class CellActionMapDeclaration_name_cellMenu_dnk0aj_a0b0a extends AbstractCellMenuPart_PropertyValues {
+    public CellActionMapDeclaration_name_cellMenu_dnk0aj_a0b0a() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -252,7 +252,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellActionMapDeclaration_Editor.CellActionMapDeclaration_name_cellMenu_a0b0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellActionMapDeclaration_Editor.CellActionMapDeclaration_name_cellMenu_dnk0aj_a0b0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

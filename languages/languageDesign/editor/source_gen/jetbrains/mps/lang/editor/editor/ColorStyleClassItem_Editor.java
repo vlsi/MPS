@@ -39,8 +39,8 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     return this.createCollection_azr75j_a(editorContext, node);
   }
 
-  public static class ReplaceWith_StyleClassItem_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_StyleClassItem_cellMenu_a0a0() {
+  public static class ReplaceWith_StyleClassItem_cellMenu_azr75j_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_StyleClassItem_cellMenu_azr75j_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -48,8 +48,8 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ColorStyleClassItem_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Group {
-    public ColorStyleClassItem_generic_cellMenu_a0c0() {
+  public static class ColorStyleClassItem_generic_cellMenu_azr75j_a0c0 extends AbstractCellMenuPart_Generic_Group {
+    public ColorStyleClassItem_generic_cellMenu_azr75j_a0c0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -70,8 +70,8 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ColorStyleClassItem_generic_cellMenu_b0c0 extends AbstractCellMenuPart_Generic_Item {
-    public ColorStyleClassItem_generic_cellMenu_b0c0() {
+  public static class ColorStyleClassItem_generic_cellMenu_azr75j_b0c0 extends AbstractCellMenuPart_Generic_Item {
+    public ColorStyleClassItem_generic_cellMenu_azr75j_b0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -83,8 +83,8 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ColorStyleClassItem_generic_cellMenu_c0c0 extends AbstractCellMenuPart_Generic_Item {
-    public ColorStyleClassItem_generic_cellMenu_c0c0() {
+  public static class ColorStyleClassItem_generic_cellMenu_azr75j_c0c0 extends AbstractCellMenuPart_Generic_Item {
+    public ColorStyleClassItem_generic_cellMenu_azr75j_c0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -96,8 +96,8 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ColorStyleClassItem_generic_cellMenu_a0d0 extends AbstractCellMenuPart_Generic_Group {
-    public ColorStyleClassItem_generic_cellMenu_a0d0() {
+  public static class ColorStyleClassItem_generic_cellMenu_azr75j_a0d0 extends AbstractCellMenuPart_Generic_Group {
+    public ColorStyleClassItem_generic_cellMenu_azr75j_a0d0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -118,8 +118,8 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ColorStyleClassItem_generic_cellMenu_b0d0 extends AbstractCellMenuPart_Generic_Item {
-    public ColorStyleClassItem_generic_cellMenu_b0d0() {
+  public static class ColorStyleClassItem_generic_cellMenu_azr75j_b0d0 extends AbstractCellMenuPart_Generic_Item {
+    public ColorStyleClassItem_generic_cellMenu_azr75j_b0d0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -131,8 +131,8 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ColorStyleClassItem_generic_cellMenu_c0d0 extends AbstractCellMenuPart_Generic_Item {
-    public ColorStyleClassItem_generic_cellMenu_c0d0() {
+  public static class ColorStyleClassItem_generic_cellMenu_azr75j_c0d0 extends AbstractCellMenuPart_Generic_Item {
+    public ColorStyleClassItem_generic_cellMenu_azr75j_c0d0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -164,7 +164,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.applyItem(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ColorStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ColorStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_azr75j_a0a0()}));
     return editorCell;
   }
 
@@ -184,7 +184,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_a0d0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_b0d0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_c0d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_azr75j_a0d0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_azr75j_b0d0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_azr75j_c0d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -202,7 +202,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_color");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_a0c0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_b0c0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_c0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_azr75j_a0c0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_azr75j_b0c0(), new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu_azr75j_c0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

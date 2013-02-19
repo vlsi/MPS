@@ -46,8 +46,8 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     return this.createCollection_2v2794_a_0(editorContext, node);
   }
 
-  public static class CellModel_RefNodeList_usesFolding_cellMenu_a0a1e3a extends AbstractCellMenuPart_PropertyValues {
-    public CellModel_RefNodeList_usesFolding_cellMenu_a0a1e3a() {
+  public static class CellModel_RefNodeList_usesFolding_cellMenu_2v2794_a0a1e3a extends AbstractCellMenuPart_PropertyValues {
+    public CellModel_RefNodeList_usesFolding_cellMenu_2v2794_a0a1e3a() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -55,8 +55,8 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class CellModel_RefNodeList_generic_cellMenu_b0a1e3a extends AbstractCellMenuPart_Generic_Item {
-    public CellModel_RefNodeList_generic_cellMenu_b0a1e3a() {
+  public static class CellModel_RefNodeList_generic_cellMenu_2v2794_b0a1e3a extends AbstractCellMenuPart_Generic_Item {
+    public CellModel_RefNodeList_generic_cellMenu_2v2794_b0a1e3a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -68,8 +68,8 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class CellModel_RefNodeList_generic_cellMenu_a0b6d0 extends AbstractCellMenuPart_Generic_Group {
-    public CellModel_RefNodeList_generic_cellMenu_a0b6d0() {
+  public static class CellModel_RefNodeList_generic_cellMenu_2v2794_a0b6d0 extends AbstractCellMenuPart_Generic_Group {
+    public CellModel_RefNodeList_generic_cellMenu_2v2794_a0b6d0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -99,8 +99,8 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class CellModel_RefNodeList_generic_cellMenu_a0c6d0 extends AbstractCellMenuPart_Generic_Group {
-    public CellModel_RefNodeList_generic_cellMenu_a0c6d0() {
+  public static class CellModel_RefNodeList_generic_cellMenu_2v2794_a0c6d0 extends AbstractCellMenuPart_Generic_Group {
+    public CellModel_RefNodeList_generic_cellMenu_2v2794_a0c6d0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -1007,7 +1007,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no separatorTextQuery>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_RefNodeList_Editor.CellModel_RefNodeList_generic_cellMenu_a0c6d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_RefNodeList_Editor.CellModel_RefNodeList_generic_cellMenu_2v2794_a0c6d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1118,7 +1118,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_usesFolding");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_RefNodeList_Editor.CellModel_RefNodeList_usesFolding_cellMenu_a0a1e3a(), new CellModel_RefNodeList_Editor.CellModel_RefNodeList_generic_cellMenu_b0a1e3a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_RefNodeList_Editor.CellModel_RefNodeList_usesFolding_cellMenu_2v2794_a0a1e3a(), new CellModel_RefNodeList_Editor.CellModel_RefNodeList_generic_cellMenu_2v2794_b0a1e3a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -1142,7 +1142,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.yellow);
     style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_RefNodeList_Editor.CellModel_RefNodeList_generic_cellMenu_a0b6d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_RefNodeList_Editor.CellModel_RefNodeList_generic_cellMenu_2v2794_a0b6d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

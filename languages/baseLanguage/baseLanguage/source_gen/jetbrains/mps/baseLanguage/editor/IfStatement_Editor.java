@@ -38,8 +38,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_eb7h0d_a(editorContext, node);
   }
 
-  public static class IfStatement_generic_cellMenu_a0a6a extends AbstractCellMenuPart_Generic_Item {
-    public IfStatement_generic_cellMenu_a0a6a() {
+  public static class IfStatement_generic_cellMenu_eb7h0d_a0a6a extends AbstractCellMenuPart_Generic_Item {
+    public IfStatement_generic_cellMenu_eb7h0d_a0a6a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -50,8 +50,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class IfStatement_generic_cellMenu_b0a6a extends AbstractCellMenuPart_Generic_Item {
-    public IfStatement_generic_cellMenu_b0a6a() {
+  public static class IfStatement_generic_cellMenu_eb7h0d_b0a6a extends AbstractCellMenuPart_Generic_Item {
+    public IfStatement_generic_cellMenu_eb7h0d_b0a6a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -233,7 +233,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     IfStatement_elseDelete_action.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IfStatement_Editor.IfStatement_generic_cellMenu_a0a6a(), new IfStatement_Editor.IfStatement_generic_cellMenu_b0a6a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IfStatement_Editor.IfStatement_generic_cellMenu_eb7h0d_a0a6a(), new IfStatement_Editor.IfStatement_generic_cellMenu_eb7h0d_b0a6a()}));
     return editorCell;
   }
 

@@ -29,8 +29,8 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     return this.createCollection_poez2y_a(editorContext, node);
   }
 
-  public static class XmlEntityRefValue_entityName_cellMenu_a0b0 extends AbstractCellMenuPart_PropertyValues {
-    public XmlEntityRefValue_entityName_cellMenu_a0b0() {
+  public static class XmlEntityRefValue_entityName_cellMenu_poez2y_a0b0 extends AbstractCellMenuPart_PropertyValues {
+    public XmlEntityRefValue_entityName_cellMenu_poez2y_a0b0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -96,7 +96,7 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     XmlSS_StyleSheet.applyXmlAttrEntityRefValue(style, editorCell);
     editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlEntityRefValue_Editor.XmlEntityRefValue_entityName_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlEntityRefValue_Editor.XmlEntityRefValue_entityName_cellMenu_poez2y_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -34,8 +34,8 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return this.createCollection_gl82dd_a(editorContext, node);
   }
 
-  public static class TreeNodeKindProperty_generic_cellMenu_a0a0 extends AbstractCellMenuPart_Generic_Group {
-    public TreeNodeKindProperty_generic_cellMenu_a0a0() {
+  public static class TreeNodeKindProperty_generic_cellMenu_gl82dd_a0a0 extends AbstractCellMenuPart_Generic_Group {
+    public TreeNodeKindProperty_generic_cellMenu_gl82dd_a0a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -87,7 +87,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
       editorCell = this.createConstant_gl82dd_a0a_0(editorContext, node);
     }
     TreeNodeKindProperty_default_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TreeNodeKindProperty_Editor.TreeNodeKindProperty_generic_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TreeNodeKindProperty_Editor.TreeNodeKindProperty_generic_cellMenu_gl82dd_a0a0()}));
     return editorCell;
   }
 

@@ -38,8 +38,8 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     return this.createAlternation_h096ql_a(editorContext, node);
   }
 
-  public static class HTMLElement_name_cellMenu_a0b0a extends AbstractCellMenuPart_PropertyValues {
-    public HTMLElement_name_cellMenu_a0b0a() {
+  public static class HTMLElement_name_cellMenu_h096ql_a0b0a extends AbstractCellMenuPart_PropertyValues {
+    public HTMLElement_name_cellMenu_h096ql_a0b0a() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -47,8 +47,8 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class HTMLElement_name_cellMenu_a0b0a_0 extends AbstractCellMenuPart_PropertyValues {
-    public HTMLElement_name_cellMenu_a0b0a_0() {
+  public static class HTMLElement_name_cellMenu_h096ql_a0b0a_0 extends AbstractCellMenuPart_PropertyValues {
+    public HTMLElement_name_cellMenu_h096ql_a0b0a_0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -218,7 +218,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     DocumentationCommentStyleSheet_StyleSheet.applyCommentHTMLTag(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "html-tag");
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new HTMLElement_Editor.HTMLElement_name_cellMenu_a0b0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new HTMLElement_Editor.HTMLElement_name_cellMenu_h096ql_a0b0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -262,7 +262,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     DocumentationCommentStyleSheet_StyleSheet.applyCommentHTMLTag(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "html-tag");
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new HTMLElement_Editor.HTMLElement_name_cellMenu_a0b0a_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new HTMLElement_Editor.HTMLElement_name_cellMenu_h096ql_a0b0a_0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

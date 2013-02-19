@@ -46,8 +46,8 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_4607in_a(editorContext, node);
   }
 
-  public static class UtilityMethodDeclaration_name_postfixCellMenu_a0e0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public UtilityMethodDeclaration_name_postfixCellMenu_a0e0() {
+  public static class UtilityMethodDeclaration_name_postfixCellMenu_4607in_a0e0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public UtilityMethodDeclaration_name_postfixCellMenu_4607in_a0e0() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -235,7 +235,7 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyMethodName(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new UtilityMethodDeclaration_Editor.UtilityMethodDeclaration_name_postfixCellMenu_a0e0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new UtilityMethodDeclaration_Editor.UtilityMethodDeclaration_name_postfixCellMenu_4607in_a0e0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

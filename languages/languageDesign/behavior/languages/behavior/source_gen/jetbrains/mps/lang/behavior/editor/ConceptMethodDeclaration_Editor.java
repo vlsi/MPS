@@ -56,10 +56,10 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_gmtuod_a_0(editorContext, node);
   }
 
-  public static class ConceptMethodDeclaration_component_cellMenu_a0f2a implements SubstituteInfoPartExt {
+  public static class ConceptMethodDeclaration_component_cellMenu_gmtuod_a0f2a implements SubstituteInfoPartExt {
     private ConceptMethodDeclaration_Menu myComponent;
 
-    public ConceptMethodDeclaration_component_cellMenu_a0f2a() {
+    public ConceptMethodDeclaration_component_cellMenu_gmtuod_a0f2a() {
       this.myComponent = new ConceptMethodDeclaration_Menu();
     }
 
@@ -654,7 +654,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyMethodName(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ConceptMethodDeclaration_Editor.ConceptMethodDeclaration_component_cellMenu_a0f2a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ConceptMethodDeclaration_Editor.ConceptMethodDeclaration_component_cellMenu_gmtuod_a0f2a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -23,8 +23,8 @@ public class EncodingLiteral_Editor extends DefaultNodeEditor {
     return this.createCollection_djrnp4_a(editorContext, node);
   }
 
-  public static class ReplaceWith_EncodingLiteral_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_EncodingLiteral_cellMenu_a0a0() {
+  public static class ReplaceWith_EncodingLiteral_cellMenu_djrnp4_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_EncodingLiteral_cellMenu_djrnp4_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -49,7 +49,7 @@ public class EncodingLiteral_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyStringLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new EncodingLiteral_Editor.ReplaceWith_EncodingLiteral_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new EncodingLiteral_Editor.ReplaceWith_EncodingLiteral_cellMenu_djrnp4_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

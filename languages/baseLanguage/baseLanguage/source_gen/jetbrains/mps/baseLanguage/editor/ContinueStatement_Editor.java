@@ -36,8 +36,8 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_vgxjtu_a(editorContext, node);
   }
 
-  public static class ContinueStatement_generic_cellMenu_a0a1a extends AbstractCellMenuPart_Generic_Group {
-    public ContinueStatement_generic_cellMenu_a0a1a() {
+  public static class ContinueStatement_generic_cellMenu_vgxjtu_a0a1a extends AbstractCellMenuPart_Generic_Group {
+    public ContinueStatement_generic_cellMenu_vgxjtu_a0a1a() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -188,7 +188,7 @@ __switch__:
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     ContinueStatement_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ContinueStatement_Editor.ContinueStatement_generic_cellMenu_a0a1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ContinueStatement_Editor.ContinueStatement_generic_cellMenu_vgxjtu_a0a1a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

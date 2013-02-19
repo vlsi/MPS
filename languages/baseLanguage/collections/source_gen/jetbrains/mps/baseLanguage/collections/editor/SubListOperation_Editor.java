@@ -28,8 +28,8 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_6usca9_a(editorContext, node);
   }
 
-  public static class ReplaceWith_SequenceOperation_cellMenu_a0a0_20 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SequenceOperation_cellMenu_a0a0_20() {
+  public static class ReplaceWith_SequenceOperation_cellMenu_6usca9_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SequenceOperation_cellMenu_6usca9_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -55,7 +55,7 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.applyOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SubListOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_a0a0_20()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SubListOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_6usca9_a0a0()}));
     return editorCell;
   }
 

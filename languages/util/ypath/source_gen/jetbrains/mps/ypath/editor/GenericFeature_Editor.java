@@ -47,8 +47,8 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     return this.createCollection_6zhae_a(editorContext, node);
   }
 
-  public static class GenericFeature_generic_cellMenu_a0a0a extends AbstractCellMenuPart_Generic_Group {
-    public GenericFeature_generic_cellMenu_a0a0a() {
+  public static class GenericFeature_generic_cellMenu_6zhae_a0a0a extends AbstractCellMenuPart_Generic_Group {
+    public GenericFeature_generic_cellMenu_6zhae_a0a0a() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -90,10 +90,10 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class GenericFeature_component_cellMenu_a0a0a2a0 implements SubstituteInfoPartExt {
+  public static class GenericFeature_component_cellMenu_6zhae_a0a0a2a0 implements SubstituteInfoPartExt {
     private menu_FeatureSetOpposite myComponent;
 
-    public GenericFeature_component_cellMenu_a0a0a2a0() {
+    public GenericFeature_component_cellMenu_6zhae_a0a0a2a0() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
@@ -102,10 +102,10 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class GenericFeature_component_cellMenu_a0a0a2a0_0 implements SubstituteInfoPartExt {
+  public static class GenericFeature_component_cellMenu_6zhae_a0a0a2a0_0 implements SubstituteInfoPartExt {
     private menu_FeatureSetOpposite myComponent;
 
-    public GenericFeature_component_cellMenu_a0a0a2a0_0() {
+    public GenericFeature_component_cellMenu_6zhae_a0a0a2a0_0() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
@@ -114,10 +114,10 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class GenericFeature_component_cellMenu_a0b0a2a0 implements SubstituteInfoPartExt {
+  public static class GenericFeature_component_cellMenu_6zhae_a0b0a2a0 implements SubstituteInfoPartExt {
     private menu_FeatureSetOpposite myComponent;
 
-    public GenericFeature_component_cellMenu_a0b0a2a0() {
+    public GenericFeature_component_cellMenu_6zhae_a0b0a2a0() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
@@ -172,7 +172,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
       editorCell = this.createConstant_6zhae_a0a0_0(editorContext, node);
     }
     IFeature_default_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericFeature_Editor.GenericFeature_generic_cellMenu_a0a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericFeature_Editor.GenericFeature_generic_cellMenu_6zhae_a0a0a()}));
     return editorCell;
   }
 
@@ -375,7 +375,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     stylesheet_Feature_StyleSheet.applyOPPOSITE(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericFeature_Editor.GenericFeature_component_cellMenu_a0a0a2a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericFeature_Editor.GenericFeature_component_cellMenu_6zhae_a0a0a2a0()}));
     return editorCell;
   }
 
@@ -387,7 +387,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericFeature_Editor.GenericFeature_component_cellMenu_a0a0a2a0_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericFeature_Editor.GenericFeature_component_cellMenu_6zhae_a0a0a2a0_0()}));
     return editorCell;
   }
 
@@ -399,7 +399,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericFeature_Editor.GenericFeature_component_cellMenu_a0b0a2a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericFeature_Editor.GenericFeature_component_cellMenu_6zhae_a0b0a2a0()}));
     return editorCell;
   }
 

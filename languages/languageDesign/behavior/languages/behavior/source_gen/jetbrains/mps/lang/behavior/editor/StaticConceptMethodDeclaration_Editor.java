@@ -49,10 +49,10 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_gggi92_a_0(editorContext, node);
   }
 
-  public static class StaticConceptMethodDeclaration_component_cellMenu_a0d2a implements SubstituteInfoPartExt {
+  public static class StaticConceptMethodDeclaration_component_cellMenu_gggi92_a0d2a implements SubstituteInfoPartExt {
     private ConceptMethodDeclaration_Menu myComponent;
 
-    public StaticConceptMethodDeclaration_component_cellMenu_a0d2a() {
+    public StaticConceptMethodDeclaration_component_cellMenu_gggi92_a0d2a() {
       this.myComponent = new ConceptMethodDeclaration_Menu();
     }
 
@@ -335,7 +335,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticConceptMethodDeclaration_Editor.StaticConceptMethodDeclaration_component_cellMenu_a0d2a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticConceptMethodDeclaration_Editor.StaticConceptMethodDeclaration_component_cellMenu_gggi92_a0d2a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -49,8 +49,8 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return this.createCollection_msf9u8_a(editorContext, node);
   }
 
-  public static class AnonymousClass_generic_cellMenu_a0a7c1a extends AbstractCellMenuPart_Generic_Item {
-    public AnonymousClass_generic_cellMenu_a0a7c1a() {
+  public static class AnonymousClass_generic_cellMenu_msf9u8_a0a7c1a extends AbstractCellMenuPart_Generic_Item {
+    public AnonymousClass_generic_cellMenu_msf9u8_a0a7c1a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -62,8 +62,8 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class AnonymousClass_generic_cellMenu_b0a7c1a extends AbstractCellMenuPart_Generic_Item {
-    public AnonymousClass_generic_cellMenu_b0a7c1a() {
+  public static class AnonymousClass_generic_cellMenu_msf9u8_b0a7c1a extends AbstractCellMenuPart_Generic_Item {
+    public AnonymousClass_generic_cellMenu_msf9u8_b0a7c1a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -75,8 +75,8 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class AnonymousClass_generic_cellMenu_c0a7c1a extends AbstractCellMenuPart_Generic_Item {
-    public AnonymousClass_generic_cellMenu_c0a7c1a() {
+  public static class AnonymousClass_generic_cellMenu_msf9u8_c0a7c1a extends AbstractCellMenuPart_Generic_Item {
+    public AnonymousClass_generic_cellMenu_msf9u8_c0a7c1a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -633,7 +633,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_msf9u8_a7c1a");
     editorCell.setDefaultText("<add members (ctrl+space)>");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_a0a7c1a(), new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_b0a7c1a(), new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_c0a7c1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_msf9u8_a0a7c1a(), new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_msf9u8_b0a7c1a(), new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_msf9u8_c0a7c1a()}));
     return editorCell;
   }
 

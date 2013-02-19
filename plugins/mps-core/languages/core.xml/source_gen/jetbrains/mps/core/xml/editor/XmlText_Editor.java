@@ -26,8 +26,8 @@ public class XmlText_Editor extends DefaultNodeEditor {
     return this.createCollection_crdhdg_a(editorContext, node);
   }
 
-  public static class ReplaceWith_XmlContent_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_XmlContent_cellMenu_a0a0() {
+  public static class ReplaceWith_XmlContent_cellMenu_crdhdg_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_XmlContent_cellMenu_crdhdg_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -74,7 +74,7 @@ public class XmlText_Editor extends DefaultNodeEditor {
     )));
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlText_Editor.ReplaceWith_XmlContent_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlText_Editor.ReplaceWith_XmlContent_cellMenu_crdhdg_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

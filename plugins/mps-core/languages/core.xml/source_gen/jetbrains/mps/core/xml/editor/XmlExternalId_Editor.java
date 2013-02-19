@@ -28,10 +28,10 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     return this.createCollection_dsthrr_a(editorContext, node);
   }
 
-  public static class XmlExternalId_component_cellMenu_a0a0a0 implements SubstituteInfoPartExt {
+  public static class XmlExternalId_component_cellMenu_dsthrr_a0a0a0 implements SubstituteInfoPartExt {
     private ExternalIdMenu myComponent;
 
-    public XmlExternalId_component_cellMenu_a0a0a0() {
+    public XmlExternalId_component_cellMenu_dsthrr_a0a0a0() {
       this.myComponent = new ExternalIdMenu();
     }
 
@@ -40,10 +40,10 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class XmlExternalId_component_cellMenu_a0a0a implements SubstituteInfoPartExt {
+  public static class XmlExternalId_component_cellMenu_dsthrr_a0a0a implements SubstituteInfoPartExt {
     private ExternalIdMenu myComponent;
 
-    public XmlExternalId_component_cellMenu_a0a0a() {
+    public XmlExternalId_component_cellMenu_dsthrr_a0a0a() {
       this.myComponent = new ExternalIdMenu();
     }
 
@@ -87,7 +87,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     XmlSS_StyleSheet.applyXmlTagName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new XmlExternalId_Editor.XmlExternalId_component_cellMenu_a0a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new XmlExternalId_Editor.XmlExternalId_component_cellMenu_dsthrr_a0a0a0()}));
     return editorCell;
   }
 
@@ -98,7 +98,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     XmlSS_StyleSheet.applyXmlTagName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new XmlExternalId_Editor.XmlExternalId_component_cellMenu_a0a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new XmlExternalId_Editor.XmlExternalId_component_cellMenu_dsthrr_a0a0a()}));
     return editorCell;
   }
 

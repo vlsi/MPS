@@ -45,10 +45,10 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_xfdsch_a(editorContext, node);
   }
 
-  public static class TargetDeclaration_component_cellMenu_a0b0b1h0 implements SubstituteInfoPartExt {
+  public static class TargetDeclaration_component_cellMenu_xfdsch_a0b0b1h0 implements SubstituteInfoPartExt {
     private TargetDeclaration_resourcesPolicy myComponent;
 
-    public TargetDeclaration_component_cellMenu_a0b0b1h0() {
+    public TargetDeclaration_component_cellMenu_xfdsch_a0b0b1h0() {
       this.myComponent = new TargetDeclaration_resourcesPolicy();
     }
 
@@ -551,7 +551,7 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyStaticField(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new TargetDeclaration_Editor.TargetDeclaration_component_cellMenu_a0b0b1h0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new TargetDeclaration_Editor.TargetDeclaration_component_cellMenu_xfdsch_a0b0b1h0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

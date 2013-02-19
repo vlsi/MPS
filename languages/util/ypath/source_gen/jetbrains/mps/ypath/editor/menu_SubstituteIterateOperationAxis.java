@@ -27,11 +27,11 @@ import jetbrains.mps.smodel.SModel;
 
 public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuComponent {
   public menu_SubstituteIterateOperationAxis() {
-    super(new SubstituteInfoPartExt[]{new menu_SubstituteIterateOperationAxis.IterateOperation_generic_cellMenu_a0_0()});
+    super(new SubstituteInfoPartExt[]{new menu_SubstituteIterateOperationAxis.IterateOperation_generic_cellMenu_ba2vpg_a0()});
   }
 
-  public static class IterateOperation_generic_cellMenu_a0_0 extends AbstractCellMenuPart_Generic_Group {
-    public IterateOperation_generic_cellMenu_a0_0() {
+  public static class IterateOperation_generic_cellMenu_ba2vpg_a0 extends AbstractCellMenuPart_Generic_Group {
+    public IterateOperation_generic_cellMenu_ba2vpg_a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

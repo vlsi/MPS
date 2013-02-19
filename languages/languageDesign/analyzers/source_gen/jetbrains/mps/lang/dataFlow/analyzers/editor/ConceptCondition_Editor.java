@@ -36,8 +36,8 @@ public class ConceptCondition_Editor extends DefaultNodeEditor {
     return this.createCollection_hrb2do_a(editorContext, node);
   }
 
-  public static class ConceptCondition_name_postfixCellMenu_a0e0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public ConceptCondition_name_postfixCellMenu_a0e0() {
+  public static class ConceptCondition_name_postfixCellMenu_hrb2do_a0e0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public ConceptCondition_name_postfixCellMenu_hrb2do_a0e0() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -152,7 +152,7 @@ public class ConceptCondition_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ConceptCondition_Editor.ConceptCondition_name_postfixCellMenu_a0e0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ConceptCondition_Editor.ConceptCondition_name_postfixCellMenu_hrb2do_a0e0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -29,8 +29,8 @@ public class LanguageRef_Editor extends DefaultNodeEditor {
     return this.createProperty_occ0mg_a(editorContext, node);
   }
 
-  public static class LanguageRef_generic_cellMenu_a0a extends AbstractCellMenuPart_Generic_Group {
-    public LanguageRef_generic_cellMenu_a0a() {
+  public static class LanguageRef_generic_cellMenu_occ0mg_a0a extends AbstractCellMenuPart_Generic_Group {
+    public LanguageRef_generic_cellMenu_occ0mg_a0a() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -70,7 +70,7 @@ public class LanguageRef_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_languageFqName");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LanguageRef_Editor.LanguageRef_generic_cellMenu_a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LanguageRef_Editor.LanguageRef_generic_cellMenu_occ0mg_a0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

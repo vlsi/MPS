@@ -33,8 +33,8 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     return this.createCollection_igyl5p_a(editorContext, node);
   }
 
-  public static class ReplaceWith_ParensRegexp_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_ParensRegexp_cellMenu_a0a0() {
+  public static class ReplaceWith_ParensRegexp_cellMenu_igyl5p_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_ParensRegexp_cellMenu_igyl5p_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -42,8 +42,8 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ParensRegexp_customReplace_cellMenu_b0a0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public ParensRegexp_customReplace_cellMenu_b0a0() {
+  public static class ParensRegexp_customReplace_cellMenu_igyl5p_b0a0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public ParensRegexp_customReplace_cellMenu_igyl5p_b0a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -87,7 +87,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     ParensRegexp_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ParensRegexp_Editor.ReplaceWith_ParensRegexp_cellMenu_a0a0(), new ParensRegexp_Editor.ParensRegexp_customReplace_cellMenu_b0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ParensRegexp_Editor.ReplaceWith_ParensRegexp_cellMenu_igyl5p_a0a0(), new ParensRegexp_Editor.ParensRegexp_customReplace_cellMenu_igyl5p_b0a0()}));
     return editorCell;
   }
 

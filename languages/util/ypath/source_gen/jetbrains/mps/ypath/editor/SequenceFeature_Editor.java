@@ -47,8 +47,8 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
     return this.createCollection_q0s13v_a(editorContext, node);
   }
 
-  public static class SequenceFeature_generic_cellMenu_a0a0a extends AbstractCellMenuPart_Generic_Group {
-    public SequenceFeature_generic_cellMenu_a0a0a() {
+  public static class SequenceFeature_generic_cellMenu_q0s13v_a0a0a extends AbstractCellMenuPart_Generic_Group {
+    public SequenceFeature_generic_cellMenu_q0s13v_a0a0a() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -90,10 +90,10 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class SequenceFeature_component_cellMenu_a0a0a2a0 implements SubstituteInfoPartExt {
+  public static class SequenceFeature_component_cellMenu_q0s13v_a0a0a2a0 implements SubstituteInfoPartExt {
     private menu_FeatureSetOpposite myComponent;
 
-    public SequenceFeature_component_cellMenu_a0a0a2a0() {
+    public SequenceFeature_component_cellMenu_q0s13v_a0a0a2a0() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
@@ -102,10 +102,10 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class SequenceFeature_component_cellMenu_a0a0a2a0_0 implements SubstituteInfoPartExt {
+  public static class SequenceFeature_component_cellMenu_q0s13v_a0a0a2a0_0 implements SubstituteInfoPartExt {
     private menu_FeatureSetOpposite myComponent;
 
-    public SequenceFeature_component_cellMenu_a0a0a2a0_0() {
+    public SequenceFeature_component_cellMenu_q0s13v_a0a0a2a0_0() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
@@ -114,10 +114,10 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class SequenceFeature_component_cellMenu_a0b0a2a0 implements SubstituteInfoPartExt {
+  public static class SequenceFeature_component_cellMenu_q0s13v_a0b0a2a0 implements SubstituteInfoPartExt {
     private menu_FeatureSetOpposite myComponent;
 
-    public SequenceFeature_component_cellMenu_a0b0a2a0() {
+    public SequenceFeature_component_cellMenu_q0s13v_a0b0a2a0() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
@@ -172,7 +172,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
       editorCell = this.createConstant_q0s13v_a0a0_0(editorContext, node);
     }
     IFeature_default_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SequenceFeature_Editor.SequenceFeature_generic_cellMenu_a0a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SequenceFeature_Editor.SequenceFeature_generic_cellMenu_q0s13v_a0a0a()}));
     return editorCell;
   }
 
@@ -398,7 +398,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
     stylesheet_Feature_StyleSheet.applyOPPOSITE(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SequenceFeature_Editor.SequenceFeature_component_cellMenu_a0a0a2a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SequenceFeature_Editor.SequenceFeature_component_cellMenu_q0s13v_a0a0a2a0()}));
     return editorCell;
   }
 
@@ -410,7 +410,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SequenceFeature_Editor.SequenceFeature_component_cellMenu_a0a0a2a0_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SequenceFeature_Editor.SequenceFeature_component_cellMenu_q0s13v_a0a0a2a0_0()}));
     return editorCell;
   }
 
@@ -422,7 +422,7 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SequenceFeature_Editor.SequenceFeature_component_cellMenu_a0b0a2a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SequenceFeature_Editor.SequenceFeature_component_cellMenu_q0s13v_a0b0a2a0()}));
     return editorCell;
   }
 

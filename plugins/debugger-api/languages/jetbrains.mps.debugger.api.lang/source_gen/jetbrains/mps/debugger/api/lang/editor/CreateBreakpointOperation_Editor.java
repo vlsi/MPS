@@ -39,8 +39,8 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_vi48ux_a(editorContext, node);
   }
 
-  public static class CreateBreakpointOperation_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Group {
-    public CreateBreakpointOperation_generic_cellMenu_a0c0() {
+  public static class CreateBreakpointOperation_generic_cellMenu_vi48ux_a0c0 extends AbstractCellMenuPart_Generic_Group {
+    public CreateBreakpointOperation_generic_cellMenu_vi48ux_a0c0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -188,7 +188,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CreateBreakpointOperation_Editor.CreateBreakpointOperation_generic_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CreateBreakpointOperation_Editor.CreateBreakpointOperation_generic_cellMenu_vi48ux_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

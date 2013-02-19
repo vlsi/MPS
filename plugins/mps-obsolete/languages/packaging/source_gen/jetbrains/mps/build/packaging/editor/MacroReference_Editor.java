@@ -31,10 +31,10 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     return this.createCollection_yfwtie_a(editorContext, node);
   }
 
-  public static class MacroReference_component_cellMenu_a0a0 implements SubstituteInfoPartExt {
+  public static class MacroReference_component_cellMenu_yfwtie_a0a0 implements SubstituteInfoPartExt {
     private MacroReference_MenuComponent myComponent;
 
-    public MacroReference_component_cellMenu_a0a0() {
+    public MacroReference_component_cellMenu_yfwtie_a0a0() {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
@@ -43,10 +43,10 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class MacroReference_component_cellMenu_a0b0 implements SubstituteInfoPartExt {
+  public static class MacroReference_component_cellMenu_yfwtie_a0b0 implements SubstituteInfoPartExt {
     private MacroReference_MenuComponent myComponent;
 
-    public MacroReference_component_cellMenu_a0b0() {
+    public MacroReference_component_cellMenu_yfwtie_a0b0() {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
@@ -55,10 +55,10 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class MacroReference_component_cellMenu_a0a implements SubstituteInfoPartExt {
+  public static class MacroReference_component_cellMenu_yfwtie_a0a implements SubstituteInfoPartExt {
     private MacroReference_MenuComponent myComponent;
 
-    public MacroReference_component_cellMenu_a0a() {
+    public MacroReference_component_cellMenu_yfwtie_a0a() {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
@@ -70,7 +70,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yfwtie_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yfwtie_a");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_yfwtie_a0a()}));
     if (renderingCondition_yfwtie_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createProperty_yfwtie_a0(editorContext, node));
     }
@@ -88,7 +88,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_yfwtie_a0b0()}));
     return editorCell;
   }
 
@@ -103,7 +103,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     PackagingStyles_StyleSheet.applyVariable(style, editorCell);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_yfwtie_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

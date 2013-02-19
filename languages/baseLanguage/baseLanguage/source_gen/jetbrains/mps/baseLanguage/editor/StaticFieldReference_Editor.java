@@ -35,8 +35,8 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     return this.createCollection_ji2wba_a(editorContext, node);
   }
 
-  public static class StaticFieldReference_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Item {
-    public StaticFieldReference_generic_cellMenu_a0c0() {
+  public static class StaticFieldReference_generic_cellMenu_ji2wba_a0c0 extends AbstractCellMenuPart_Generic_Item {
+    public StaticFieldReference_generic_cellMenu_ji2wba_a0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -50,13 +50,13 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class StaticFieldReference_staticFieldDeclaration_cellMenu_b0c0 extends PrimaryReferentMenuCellMenuPart {
-    public StaticFieldReference_staticFieldDeclaration_cellMenu_b0c0() {
+  public static class StaticFieldReference_staticFieldDeclaration_cellMenu_ji2wba_b0c0 extends PrimaryReferentMenuCellMenuPart {
+    public StaticFieldReference_staticFieldDeclaration_cellMenu_ji2wba_b0c0() {
     }
   }
 
-  public static class StaticFieldReference_customReplace_cellMenu_c0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public StaticFieldReference_customReplace_cellMenu_c0c0() {
+  public static class StaticFieldReference_customReplace_cellMenu_ji2wba_c0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public StaticFieldReference_customReplace_cellMenu_ji2wba_c0c0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -198,7 +198,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
     StaticFieldReference_DeleteDot.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticFieldReference_Editor.StaticFieldReference_generic_cellMenu_a0c0(), new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu_b0c0(), new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu_c0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticFieldReference_Editor.StaticFieldReference_generic_cellMenu_ji2wba_a0c0(), new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu_ji2wba_b0c0(), new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu_ji2wba_c0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

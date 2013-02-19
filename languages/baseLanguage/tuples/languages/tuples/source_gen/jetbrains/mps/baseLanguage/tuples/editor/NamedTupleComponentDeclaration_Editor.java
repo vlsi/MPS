@@ -35,8 +35,8 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_nmve34_a(editorContext, node);
   }
 
-  public static class NamedTupleComponentDeclaration_name_postfixCellMenu_a0d0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public NamedTupleComponentDeclaration_name_postfixCellMenu_a0d0() {
+  public static class NamedTupleComponentDeclaration_name_postfixCellMenu_nmve34_a0d0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public NamedTupleComponentDeclaration_name_postfixCellMenu_nmve34_a0d0() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -124,7 +124,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new NamedTupleComponentDeclaration_Editor.NamedTupleComponentDeclaration_name_postfixCellMenu_a0d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new NamedTupleComponentDeclaration_Editor.NamedTupleComponentDeclaration_name_postfixCellMenu_nmve34_a0d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

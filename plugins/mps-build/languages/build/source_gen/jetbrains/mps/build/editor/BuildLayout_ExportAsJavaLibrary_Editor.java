@@ -28,8 +28,8 @@ public class BuildLayout_ExportAsJavaLibrary_Editor extends DefaultNodeEditor {
     return this.createCollection_ge4r0w_a(editorContext, node);
   }
 
-  public static class ReplaceWith_BuildLayout_AbstractContainer_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BuildLayout_AbstractContainer_cellMenu_a0a0() {
+  public static class ReplaceWith_BuildLayout_AbstractContainer_cellMenu_ge4r0w_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BuildLayout_AbstractContainer_cellMenu_ge4r0w_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -96,7 +96,7 @@ public class BuildLayout_ExportAsJavaLibrary_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildLayout_ExportAsJavaLibrary_Editor.ReplaceWith_BuildLayout_AbstractContainer_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildLayout_ExportAsJavaLibrary_Editor.ReplaceWith_BuildLayout_AbstractContainer_cellMenu_ge4r0w_a0a0()}));
     return editorCell;
   }
 

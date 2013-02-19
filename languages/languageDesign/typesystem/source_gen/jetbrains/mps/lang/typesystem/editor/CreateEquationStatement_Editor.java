@@ -37,8 +37,8 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_mi4qyq_a_0(editorContext, node);
   }
 
-  public static class ReplaceWith_AbstractEquationStatement_cellMenu_a0d0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractEquationStatement_cellMenu_a0d0a() {
+  public static class ReplaceWith_AbstractEquationStatement_cellMenu_mi4qyq_a0d0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractEquationStatement_cellMenu_mi4qyq_a0d0a() {
     }
 
     public String getReplacementConceptName() {
@@ -46,8 +46,8 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ReplaceWith_AbstractEquationStatement_cellMenu_a0b1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractEquationStatement_cellMenu_a0b1a() {
+  public static class ReplaceWith_AbstractEquationStatement_cellMenu_mi4qyq_a0b1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractEquationStatement_cellMenu_mi4qyq_a0b1a() {
     }
 
     public String getReplacementConceptName() {
@@ -109,14 +109,14 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_mi4qyq_d0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CreateEquationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_a0d0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CreateEquationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_mi4qyq_a0d0a()}));
     return editorCell;
   }
 
   private EditorCell createComponent_mi4qyq_b1a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CreateEquationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_a0b1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CreateEquationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_mi4qyq_a0b1a()}));
     return editorCell;
   }
 

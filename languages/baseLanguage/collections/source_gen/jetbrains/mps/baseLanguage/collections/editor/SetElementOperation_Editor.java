@@ -27,8 +27,8 @@ public class SetElementOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_aqe0hb_a(editorContext, node);
   }
 
-  public static class ReplaceWith_SequenceOperation_cellMenu_a0a0_8 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SequenceOperation_cellMenu_a0a0_8() {
+  public static class ReplaceWith_SequenceOperation_cellMenu_aqe0hb_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SequenceOperation_cellMenu_aqe0hb_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -56,7 +56,7 @@ public class SetElementOperation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SetElementOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_a0a0_8()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SetElementOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_aqe0hb_a0a0()}));
     return editorCell;
   }
 

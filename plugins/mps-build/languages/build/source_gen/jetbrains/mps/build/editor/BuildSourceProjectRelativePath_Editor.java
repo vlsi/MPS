@@ -38,8 +38,8 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
     return this.createCollection_698n2d_a_0(editorContext, node);
   }
 
-  public static class ReplaceWith_BuildSourceMacroRelativePath_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BuildSourceMacroRelativePath_cellMenu_a0a0() {
+  public static class ReplaceWith_BuildSourceMacroRelativePath_cellMenu_698n2d_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BuildSourceMacroRelativePath_cellMenu_698n2d_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -84,7 +84,7 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildSourceProjectRelativePath_Editor.ReplaceWith_BuildSourceMacroRelativePath_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildSourceProjectRelativePath_Editor.ReplaceWith_BuildSourceMacroRelativePath_cellMenu_698n2d_a0a0()}));
     return editorCell;
   }
 

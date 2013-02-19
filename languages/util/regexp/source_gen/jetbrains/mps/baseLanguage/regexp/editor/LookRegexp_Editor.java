@@ -37,8 +37,8 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
     return this.createCollection_vwuy6a_a(editorContext, node);
   }
 
-  public static class ReplaceWith_LookRegexp_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_LookRegexp_cellMenu_a0a0() {
+  public static class ReplaceWith_LookRegexp_cellMenu_vwuy6a_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_LookRegexp_cellMenu_vwuy6a_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -46,8 +46,8 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class LookRegexp_customReplace_cellMenu_b0a0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public LookRegexp_customReplace_cellMenu_b0a0() {
+  public static class LookRegexp_customReplace_cellMenu_vwuy6a_b0a0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public LookRegexp_customReplace_cellMenu_vwuy6a_b0a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -87,7 +87,7 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     editorCell.getStyle().putAll(style);
     LookRegexp_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new LookRegexp_Editor.ReplaceWith_LookRegexp_cellMenu_a0a0(), new LookRegexp_Editor.LookRegexp_customReplace_cellMenu_b0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new LookRegexp_Editor.ReplaceWith_LookRegexp_cellMenu_vwuy6a_a0a0(), new LookRegexp_Editor.LookRegexp_customReplace_cellMenu_vwuy6a_b0a0()}));
     return editorCell;
   }
 

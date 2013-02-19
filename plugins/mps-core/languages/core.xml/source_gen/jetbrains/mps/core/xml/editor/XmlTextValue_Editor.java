@@ -26,8 +26,8 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     return this.createCollection_qyzwn3_a(editorContext, node);
   }
 
-  public static class ReplaceWith_XmlValuePart_cellMenu_a0a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_XmlValuePart_cellMenu_a0a0a() {
+  public static class ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a() {
     }
 
     public String getReplacementConceptName() {
@@ -35,8 +35,8 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ReplaceWith_XmlValuePart_cellMenu_a0a0a_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_XmlValuePart_cellMenu_a0a0a_0() {
+  public static class ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a_0() {
     }
 
     public String getReplacementConceptName() {
@@ -90,7 +90,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new XmlTextValue_text());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlTextValue_Editor.ReplaceWith_XmlValuePart_cellMenu_a0a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlTextValue_Editor.ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -113,7 +113,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     XmlSS_StyleSheet.applyXmlAttributeValue(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new XmlTextValue_text());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlTextValue_Editor.ReplaceWith_XmlValuePart_cellMenu_a0a0a_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlTextValue_Editor.ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a_0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

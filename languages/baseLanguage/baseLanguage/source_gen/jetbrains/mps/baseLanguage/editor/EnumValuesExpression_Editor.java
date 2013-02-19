@@ -30,8 +30,8 @@ public class EnumValuesExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_igwct4_a(editorContext, node);
   }
 
-  public static class EnumValuesExpression_customReplace_cellMenu_a0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public EnumValuesExpression_customReplace_cellMenu_a0c0() {
+  public static class EnumValuesExpression_customReplace_cellMenu_igwct4_a0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public EnumValuesExpression_customReplace_cellMenu_igwct4_a0c0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -110,7 +110,7 @@ public class EnumValuesExpression_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EnumValuesExpression_Editor.EnumValuesExpression_customReplace_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EnumValuesExpression_Editor.EnumValuesExpression_customReplace_cellMenu_igwct4_a0c0()}));
     return editorCell;
   }
 

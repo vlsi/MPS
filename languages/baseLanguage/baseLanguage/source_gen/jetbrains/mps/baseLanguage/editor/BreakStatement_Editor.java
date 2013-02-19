@@ -35,8 +35,8 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_xk0l2m_a(editorContext, node);
   }
 
-  public static class BreakStatement_generic_cellMenu_a0a1a extends AbstractCellMenuPart_Generic_Group {
-    public BreakStatement_generic_cellMenu_a0a1a() {
+  public static class BreakStatement_generic_cellMenu_xk0l2m_a0a1a extends AbstractCellMenuPart_Generic_Group {
+    public BreakStatement_generic_cellMenu_xk0l2m_a0a1a() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -186,7 +186,7 @@ __switch__:
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     BreakStatement_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BreakStatement_Editor.BreakStatement_generic_cellMenu_a0a1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BreakStatement_Editor.BreakStatement_generic_cellMenu_xk0l2m_a0a1a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -46,8 +46,8 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     return this.createCollection_2l0gvl_a(editorContext, node);
   }
 
-  public static class ReplaceWith_StyleClassItem_cellMenu_a0a0_5 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_StyleClassItem_cellMenu_a0a0_5() {
+  public static class ReplaceWith_StyleClassItem_cellMenu_2l0gvl_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_StyleClassItem_cellMenu_2l0gvl_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -55,8 +55,8 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     }
   }
 
-  public static class SideTransformAnchorTagStyleClassItem_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Group {
-    public SideTransformAnchorTagStyleClassItem_generic_cellMenu_a0c0() {
+  public static class SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_a0c0 extends AbstractCellMenuPart_Generic_Group {
+    public SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_a0c0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -77,8 +77,8 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     }
   }
 
-  public static class SideTransformAnchorTagStyleClassItem_generic_cellMenu_b0c0 extends AbstractCellMenuPart_Generic_Item {
-    public SideTransformAnchorTagStyleClassItem_generic_cellMenu_b0c0() {
+  public static class SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_b0c0 extends AbstractCellMenuPart_Generic_Item {
+    public SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_b0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -161,7 +161,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     Style style = new StyleImpl();
     Styles_StyleSheet.applyItem(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SideTransformAnchorTagStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_5()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SideTransformAnchorTagStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_2l0gvl_a0a0()}));
     return editorCell;
   }
 
@@ -188,7 +188,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_tag");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new SideTransformAnchorTagStyleClassItem_Editor.SideTransformAnchorTagStyleClassItem_generic_cellMenu_a0c0(), new SideTransformAnchorTagStyleClassItem_Editor.SideTransformAnchorTagStyleClassItem_generic_cellMenu_b0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new SideTransformAnchorTagStyleClassItem_Editor.SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_a0c0(), new SideTransformAnchorTagStyleClassItem_Editor.SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_b0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

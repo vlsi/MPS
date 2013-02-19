@@ -38,8 +38,8 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_9mcqjq_a(editorContext, node);
   }
 
-  public static class ConceptTextGenDeclaration_generic_cellMenu_a0c8a extends AbstractCellMenuPart_Generic_Item {
-    public ConceptTextGenDeclaration_generic_cellMenu_a0c8a() {
+  public static class ConceptTextGenDeclaration_generic_cellMenu_9mcqjq_a0c8a extends AbstractCellMenuPart_Generic_Item {
+    public ConceptTextGenDeclaration_generic_cellMenu_9mcqjq_a0c8a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -51,8 +51,8 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ConceptTextGenDeclaration_generic_cellMenu_b0c8a extends AbstractCellMenuPart_Generic_Group {
-    public ConceptTextGenDeclaration_generic_cellMenu_b0c8a() {
+  public static class ConceptTextGenDeclaration_generic_cellMenu_9mcqjq_b0c8a extends AbstractCellMenuPart_Generic_Group {
+    public ConceptTextGenDeclaration_generic_cellMenu_9mcqjq_b0c8a() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -336,7 +336,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("utf-8");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ConceptTextGenDeclaration_Editor.ConceptTextGenDeclaration_generic_cellMenu_a0c8a(), new ConceptTextGenDeclaration_Editor.ConceptTextGenDeclaration_generic_cellMenu_b0c8a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ConceptTextGenDeclaration_Editor.ConceptTextGenDeclaration_generic_cellMenu_9mcqjq_a0c8a(), new ConceptTextGenDeclaration_Editor.ConceptTextGenDeclaration_generic_cellMenu_9mcqjq_b0c8a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

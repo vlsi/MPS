@@ -44,8 +44,8 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     return this.createCollection_n78otj_a_0(editorContext, node);
   }
 
-  public static class BuildCompositePath_head_cellMenu_a0a0 extends AbstractCellMenuPart_PropertyValues {
-    public BuildCompositePath_head_cellMenu_a0a0() {
+  public static class BuildCompositePath_head_cellMenu_n78otj_a0a0 extends AbstractCellMenuPart_PropertyValues {
+    public BuildCompositePath_head_cellMenu_n78otj_a0a0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -156,7 +156,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
       editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildCompositePath_Editor.BuildCompositePath_head_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildCompositePath_Editor.BuildCompositePath_head_cellMenu_n78otj_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

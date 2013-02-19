@@ -16,11 +16,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class TargetDeclaration_resourcesPolicy extends AbstractCellMenuComponent {
   public TargetDeclaration_resourcesPolicy() {
-    super(new SubstituteInfoPartExt[]{new TargetDeclaration_resourcesPolicy.TargetDeclaration_generic_cellMenu_a0()});
+    super(new SubstituteInfoPartExt[]{new TargetDeclaration_resourcesPolicy.TargetDeclaration_generic_cellMenu_2gyyww_a0()});
   }
 
-  public static class TargetDeclaration_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Group {
-    public TargetDeclaration_generic_cellMenu_a0() {
+  public static class TargetDeclaration_generic_cellMenu_2gyyww_a0 extends AbstractCellMenuPart_Generic_Group {
+    public TargetDeclaration_generic_cellMenu_2gyyww_a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

@@ -49,8 +49,8 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     return this.createCollection_lqrwoi_a(editorContext, node);
   }
 
-  public static class InternalAnonymousClass_generic_cellMenu_a0a6b0 extends AbstractCellMenuPart_Generic_Item {
-    public InternalAnonymousClass_generic_cellMenu_a0a6b0() {
+  public static class InternalAnonymousClass_generic_cellMenu_lqrwoi_a0a6b0 extends AbstractCellMenuPart_Generic_Item {
+    public InternalAnonymousClass_generic_cellMenu_lqrwoi_a0a6b0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -62,8 +62,8 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class InternalAnonymousClass_generic_cellMenu_b0a6b0 extends AbstractCellMenuPart_Generic_Item {
-    public InternalAnonymousClass_generic_cellMenu_b0a6b0() {
+  public static class InternalAnonymousClass_generic_cellMenu_lqrwoi_b0a6b0 extends AbstractCellMenuPart_Generic_Item {
+    public InternalAnonymousClass_generic_cellMenu_lqrwoi_b0a6b0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -75,8 +75,8 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class InternalAnonymousClass_generic_cellMenu_c0a6b0 extends AbstractCellMenuPart_Generic_Item {
-    public InternalAnonymousClass_generic_cellMenu_c0a6b0() {
+  public static class InternalAnonymousClass_generic_cellMenu_lqrwoi_c0a6b0 extends AbstractCellMenuPart_Generic_Item {
+    public InternalAnonymousClass_generic_cellMenu_lqrwoi_c0a6b0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -526,7 +526,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_lqrwoi_a6b0");
     editorCell.setDefaultText("<add members (ctrl+space)>");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_a0a6b0(), new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_b0a6b0(), new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_c0a6b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_lqrwoi_a0a6b0(), new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_lqrwoi_b0a6b0(), new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_lqrwoi_c0a6b0()}));
     return editorCell;
   }
 

@@ -33,8 +33,8 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     return this.createComponent_ie6eqd_a(editorContext, node);
   }
 
-  public static class ReplaceWith_AbstractEquationStatement_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractEquationStatement_cellMenu_a0b0() {
+  public static class ReplaceWith_AbstractEquationStatement_cellMenu_ie6eqd_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractEquationStatement_cellMenu_ie6eqd_a0b0() {
     }
 
     public String getReplacementConceptName() {
@@ -64,7 +64,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
       editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractEquationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractEquationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_ie6eqd_a0b0()}));
     return editorCell;
   }
 

@@ -47,8 +47,8 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     return createEditorCell((EditorContext) editorContext);
   }
 
-  public static class VariableDeclaration_name_postfixCellMenu_a0a extends AbstractCellMenuPart_PropertyPostfixHints {
-    public VariableDeclaration_name_postfixCellMenu_a0a() {
+  public static class VariableDeclaration_name_postfixCellMenu_j36akn_a0a extends AbstractCellMenuPart_PropertyPostfixHints {
+    public VariableDeclaration_name_postfixCellMenu_j36akn_a0a() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -85,7 +85,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     if (renderingCondition_j36akn_a0(node, editorContext, editorContext.getScope())) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new VariableDeclaration_NameCellComponent.VariableDeclaration_name_postfixCellMenu_a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new VariableDeclaration_NameCellComponent.VariableDeclaration_name_postfixCellMenu_j36akn_a0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

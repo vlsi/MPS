@@ -39,8 +39,8 @@ public class AliasComponent extends AbstractCellProvider {
     return createEditorCell((EditorContext) editorContext);
   }
 
-  public static class ReplaceWith_SNodeOperation_cellMenu_a0a0_1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SNodeOperation_cellMenu_a0a0_1() {
+  public static class ReplaceWith_SNodeOperation_cellMenu_ezwpxy_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SNodeOperation_cellMenu_ezwpxy_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -66,7 +66,7 @@ public class AliasComponent extends AbstractCellProvider {
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AliasComponent.ReplaceWith_SNodeOperation_cellMenu_a0a0_1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AliasComponent.ReplaceWith_SNodeOperation_cellMenu_ezwpxy_a0a0()}));
     return editorCell;
   }
 

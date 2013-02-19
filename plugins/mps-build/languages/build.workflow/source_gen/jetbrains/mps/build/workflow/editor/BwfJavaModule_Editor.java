@@ -40,8 +40,8 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     return this.createCollection_y27sly_a_0(editorContext, node);
   }
 
-  public static class BwfJavaModule_compiler_cellMenu_a0h0 extends AbstractCellMenuPart_PropertyValues {
-    public BwfJavaModule_compiler_cellMenu_a0h0() {
+  public static class BwfJavaModule_compiler_cellMenu_y27sly_a0h0 extends AbstractCellMenuPart_PropertyValues {
+    public BwfJavaModule_compiler_cellMenu_y27sly_a0h0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -453,7 +453,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_compiler");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BwfJavaModule_Editor.BwfJavaModule_compiler_cellMenu_a0h0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BwfJavaModule_Editor.BwfJavaModule_compiler_cellMenu_y27sly_a0h0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

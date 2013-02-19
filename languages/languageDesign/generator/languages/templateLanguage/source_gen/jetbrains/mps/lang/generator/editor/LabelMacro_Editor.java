@@ -36,10 +36,10 @@ public class LabelMacro_Editor extends DefaultNodeEditor {
     return this.createCollection_x0em22_a_0(editorContext, node);
   }
 
-  public static class LabelMacro_component_cellMenu_a0a0 implements SubstituteInfoPartExt {
+  public static class LabelMacro_component_cellMenu_x0em22_a0a0 implements SubstituteInfoPartExt {
     private replace_node_macro myComponent;
 
-    public LabelMacro_component_cellMenu_a0a0() {
+    public LabelMacro_component_cellMenu_x0em22_a0a0() {
       this.myComponent = new replace_node_macro();
     }
 
@@ -157,7 +157,7 @@ public class LabelMacro_Editor extends DefaultNodeEditor {
     }
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new LabelMacro_Editor.LabelMacro_component_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new LabelMacro_Editor.LabelMacro_component_cellMenu_x0em22_a0a0()}));
     return editorCell;
   }
 

@@ -37,8 +37,8 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     return this.createCollection_cqz3y2_a(editorContext, node);
   }
 
-  public static class ReplaceWith_MatchParensRegexp_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_MatchParensRegexp_cellMenu_a0a0() {
+  public static class ReplaceWith_MatchParensRegexp_cellMenu_cqz3y2_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_MatchParensRegexp_cellMenu_cqz3y2_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -46,8 +46,8 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class MatchParensRegexp_customReplace_cellMenu_b0a0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public MatchParensRegexp_customReplace_cellMenu_b0a0() {
+  public static class MatchParensRegexp_customReplace_cellMenu_cqz3y2_b0a0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public MatchParensRegexp_customReplace_cellMenu_cqz3y2_b0a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -92,7 +92,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     RegexpStylesheet_StyleSheet.applyLeftRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MatchParensRegexp_Editor.ReplaceWith_MatchParensRegexp_cellMenu_a0a0(), new MatchParensRegexp_Editor.MatchParensRegexp_customReplace_cellMenu_b0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MatchParensRegexp_Editor.ReplaceWith_MatchParensRegexp_cellMenu_cqz3y2_a0a0(), new MatchParensRegexp_Editor.MatchParensRegexp_customReplace_cellMenu_cqz3y2_b0a0()}));
     return editorCell;
   }
 

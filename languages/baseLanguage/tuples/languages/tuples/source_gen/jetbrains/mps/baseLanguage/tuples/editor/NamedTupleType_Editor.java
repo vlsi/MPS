@@ -59,8 +59,8 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     return this.createCollection_2ojjgh_a_0(editorContext, node);
   }
 
-  public static class ReplaceWith_NamedTupleType_cellMenu_a0a1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_NamedTupleType_cellMenu_a0a1a() {
+  public static class ReplaceWith_NamedTupleType_cellMenu_2ojjgh_a0a1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_NamedTupleType_cellMenu_2ojjgh_a0a1a() {
     }
 
     public String getReplacementConceptName() {
@@ -451,7 +451,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NamedTupleType_Editor.ReplaceWith_NamedTupleType_cellMenu_a0a1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NamedTupleType_Editor.ReplaceWith_NamedTupleType_cellMenu_2ojjgh_a0a1a()}));
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a1a");
     return editorCell;
   }

@@ -39,8 +39,8 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
     return createEditorCell((EditorContext) editorContext);
   }
 
-  public static class ActionParameter_name_postfixCellMenu_a0a extends AbstractCellMenuPart_PropertyPostfixHints {
-    public ActionParameter_name_postfixCellMenu_a0a() {
+  public static class ActionParameter_name_postfixCellMenu_w0sqte_a0a extends AbstractCellMenuPart_PropertyPostfixHints {
+    public ActionParameter_name_postfixCellMenu_w0sqte_a0a() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -67,7 +67,7 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ActionParameter_NameCellComponent.ActionParameter_name_postfixCellMenu_a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ActionParameter_NameCellComponent.ActionParameter_name_postfixCellMenu_w0sqte_a0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

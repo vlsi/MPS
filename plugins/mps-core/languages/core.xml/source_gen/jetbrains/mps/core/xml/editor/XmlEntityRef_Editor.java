@@ -29,8 +29,8 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
     return this.createCollection_40aq2x_a(editorContext, node);
   }
 
-  public static class XmlEntityRef_entityName_cellMenu_a0b0 extends AbstractCellMenuPart_PropertyValues {
-    public XmlEntityRef_entityName_cellMenu_a0b0() {
+  public static class XmlEntityRef_entityName_cellMenu_40aq2x_a0b0 extends AbstractCellMenuPart_PropertyValues {
+    public XmlEntityRef_entityName_cellMenu_40aq2x_a0b0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -93,7 +93,7 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     XmlSS_StyleSheet.applyXmlEntityRef(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlEntityRef_Editor.XmlEntityRef_entityName_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlEntityRef_Editor.XmlEntityRef_entityName_cellMenu_40aq2x_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

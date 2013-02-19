@@ -39,8 +39,8 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_uy53zt_a_0(editorContext, node);
   }
 
-  public static class ModelReferenceExpression_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Group {
-    public ModelReferenceExpression_generic_cellMenu_a0c0() {
+  public static class ModelReferenceExpression_generic_cellMenu_uy53zt_a0c0 extends AbstractCellMenuPart_Generic_Group {
+    public ModelReferenceExpression_generic_cellMenu_uy53zt_a0c0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -166,7 +166,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_fqName");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ModelReferenceExpression_Editor.ModelReferenceExpression_generic_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ModelReferenceExpression_Editor.ModelReferenceExpression_generic_cellMenu_uy53zt_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

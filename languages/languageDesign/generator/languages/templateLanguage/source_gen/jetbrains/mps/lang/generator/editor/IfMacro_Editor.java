@@ -39,10 +39,10 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return this.createCollection_t4g6n2_a(editorContext, node);
   }
 
-  public static class IfMacro_component_cellMenu_a0a0a implements SubstituteInfoPartExt {
+  public static class IfMacro_component_cellMenu_t4g6n2_a0a0a implements SubstituteInfoPartExt {
     private replace_node_macro myComponent;
 
-    public IfMacro_component_cellMenu_a0a0a() {
+    public IfMacro_component_cellMenu_t4g6n2_a0a0a() {
       this.myComponent = new replace_node_macro();
     }
 
@@ -311,7 +311,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     }
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IfMacro_Editor.IfMacro_component_cellMenu_a0a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IfMacro_Editor.IfMacro_component_cellMenu_t4g6n2_a0a0a()}));
     return editorCell;
   }
 

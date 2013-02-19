@@ -34,8 +34,8 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return this.createCollection_uvxm5p_a(editorContext, node);
   }
 
-  public static class MatchingLabelStyleClassItem_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Item {
-    public MatchingLabelStyleClassItem_generic_cellMenu_a0c0() {
+  public static class MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0c0 extends AbstractCellMenuPart_Generic_Item {
+    public MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -47,8 +47,8 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class MatchingLabelStyleClassItem_generic_cellMenu_a0d0 extends AbstractCellMenuPart_Generic_Item {
-    public MatchingLabelStyleClassItem_generic_cellMenu_a0d0() {
+  public static class MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0d0 extends AbstractCellMenuPart_Generic_Item {
+    public MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0d0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -100,7 +100,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu_a0d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0d0()}));
     return editorCell;
   }
 
@@ -131,7 +131,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_labelName");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

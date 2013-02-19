@@ -29,8 +29,8 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     return this.createCollection_ivlr8m_a(editorContext, node);
   }
 
-  public static class AggregationConceptLink_target_cellMenu_a0c0 extends AbstractCellMenuPart_ReplaceChild_CustomChildConcept {
-    public AggregationConceptLink_target_cellMenu_a0c0() {
+  public static class AggregationConceptLink_target_cellMenu_ivlr8m_a0c0 extends AbstractCellMenuPart_ReplaceChild_CustomChildConcept {
+    public AggregationConceptLink_target_cellMenu_ivlr8m_a0c0() {
     }
 
     public SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -114,7 +114,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new AggregationConceptLink_Editor.AggregationConceptLink_target_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new AggregationConceptLink_Editor.AggregationConceptLink_target_cellMenu_ivlr8m_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

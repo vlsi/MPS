@@ -39,8 +39,8 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return this.createCollection_689p1d_a(editorContext, node);
   }
 
-  public static class ReplaceWith_StyleClassItem_cellMenu_a0a0_1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_StyleClassItem_cellMenu_a0a0_1() {
+  public static class ReplaceWith_StyleClassItem_cellMenu_689p1d_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_StyleClassItem_cellMenu_689p1d_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -48,8 +48,8 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class BooleanStyleSheetItem_flag_cellMenu_a0c0 extends AbstractCellMenuPart_PropertyValues {
-    public BooleanStyleSheetItem_flag_cellMenu_a0c0() {
+  public static class BooleanStyleSheetItem_flag_cellMenu_689p1d_a0c0 extends AbstractCellMenuPart_PropertyValues {
+    public BooleanStyleSheetItem_flag_cellMenu_689p1d_a0c0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -57,8 +57,8 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class BooleanStyleSheetItem_generic_cellMenu_b0c0 extends AbstractCellMenuPart_Generic_Item {
-    public BooleanStyleSheetItem_generic_cellMenu_b0c0() {
+  public static class BooleanStyleSheetItem_generic_cellMenu_689p1d_b0c0 extends AbstractCellMenuPart_Generic_Item {
+    public BooleanStyleSheetItem_generic_cellMenu_689p1d_b0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -90,7 +90,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.applyItem(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BooleanStyleSheetItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BooleanStyleSheetItem_Editor.ReplaceWith_StyleClassItem_cellMenu_689p1d_a0a0()}));
     return editorCell;
   }
 
@@ -131,7 +131,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_flag_cellMenu_a0c0(), new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_generic_cellMenu_b0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_flag_cellMenu_689p1d_a0c0(), new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_generic_cellMenu_689p1d_b0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

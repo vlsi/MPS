@@ -24,8 +24,8 @@ public class DefaultExcludes_Editor extends DefaultNodeEditor {
     return this.createCollection_bk11d5_a(editorContext, node);
   }
 
-  public static class DefaultExcludes_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Item {
-    public DefaultExcludes_generic_cellMenu_a0c0() {
+  public static class DefaultExcludes_generic_cellMenu_bk11d5_a0c0 extends AbstractCellMenuPart_Generic_Item {
+    public DefaultExcludes_generic_cellMenu_bk11d5_a0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -37,8 +37,8 @@ public class DefaultExcludes_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class DefaultExcludes_generic_cellMenu_b0c0 extends AbstractCellMenuPart_Generic_Item {
-    public DefaultExcludes_generic_cellMenu_b0c0() {
+  public static class DefaultExcludes_generic_cellMenu_bk11d5_b0c0 extends AbstractCellMenuPart_Generic_Item {
+    public DefaultExcludes_generic_cellMenu_bk11d5_b0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -59,7 +59,7 @@ public class DefaultExcludes_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createConstant_bk11d5_a2a_0(editorContext, node);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DefaultExcludes_Editor.DefaultExcludes_generic_cellMenu_a0c0(), new DefaultExcludes_Editor.DefaultExcludes_generic_cellMenu_b0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DefaultExcludes_Editor.DefaultExcludes_generic_cellMenu_bk11d5_a0c0(), new DefaultExcludes_Editor.DefaultExcludes_generic_cellMenu_bk11d5_b0c0()}));
     return editorCell;
   }
 

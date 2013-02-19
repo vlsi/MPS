@@ -36,8 +36,8 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     return this.createCollection_nphvgz_a(editorContext, node);
   }
 
-  public static class BuildSource_JavaOptions_compiler_cellMenu_a0h2a extends AbstractCellMenuPart_PropertyValues {
-    public BuildSource_JavaOptions_compiler_cellMenu_a0h2a() {
+  public static class BuildSource_JavaOptions_compiler_cellMenu_nphvgz_a0h2a extends AbstractCellMenuPart_PropertyValues {
+    public BuildSource_JavaOptions_compiler_cellMenu_nphvgz_a0h2a() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -326,7 +326,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildSource_JavaOptions_Editor.BuildSource_JavaOptions_compiler_cellMenu_a0h2a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildSource_JavaOptions_Editor.BuildSource_JavaOptions_compiler_cellMenu_nphvgz_a0h2a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

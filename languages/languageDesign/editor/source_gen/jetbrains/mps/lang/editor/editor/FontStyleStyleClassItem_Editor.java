@@ -36,8 +36,8 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return this.createCollection_n0gj60_a(editorContext, node);
   }
 
-  public static class ReplaceWith_StyleClassItem_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_StyleClassItem_cellMenu_a0a0_0() {
+  public static class ReplaceWith_StyleClassItem_cellMenu_n0gj60_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_StyleClassItem_cellMenu_n0gj60_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -45,8 +45,8 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class FontStyleStyleClassItem_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Group {
-    public FontStyleStyleClassItem_generic_cellMenu_a0c0() {
+  public static class FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0c0 extends AbstractCellMenuPart_Generic_Group {
+    public FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0c0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -76,8 +76,8 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class FontStyleStyleClassItem_generic_cellMenu_a0d0 extends AbstractCellMenuPart_Generic_Group {
-    public FontStyleStyleClassItem_generic_cellMenu_a0d0() {
+  public static class FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0d0 extends AbstractCellMenuPart_Generic_Group {
+    public FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0d0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -119,7 +119,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.applyItem(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FontStyleStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FontStyleStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_n0gj60_a0a0()}));
     return editorCell;
   }
 
@@ -139,7 +139,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu_a0d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -157,7 +157,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_style");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

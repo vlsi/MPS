@@ -38,8 +38,8 @@ public class BuildInputFolders_Editor extends DefaultNodeEditor {
     return this.createCollection_tclrnl_a(editorContext, node);
   }
 
-  public static class ReplaceWith_BuildInputResourceSet_cellMenu_a0a0_2 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BuildInputResourceSet_cellMenu_a0a0_2() {
+  public static class ReplaceWith_BuildInputResourceSet_cellMenu_tclrnl_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BuildInputResourceSet_cellMenu_tclrnl_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -116,7 +116,7 @@ public class BuildInputFolders_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildInputFolders_Editor.ReplaceWith_BuildInputResourceSet_cellMenu_a0a0_2()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildInputFolders_Editor.ReplaceWith_BuildInputResourceSet_cellMenu_tclrnl_a0a0()}));
     return editorCell;
   }
 

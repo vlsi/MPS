@@ -44,8 +44,8 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     return createEditorCell((EditorContext) editorContext);
   }
 
-  public static class BaseMethodDeclaration_name_postfixCellMenu_a0a0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public BaseMethodDeclaration_name_postfixCellMenu_a0a0() {
+  public static class BaseMethodDeclaration_name_postfixCellMenu_8989zw_a0a0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public BaseMethodDeclaration_name_postfixCellMenu_8989zw_a0a0() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -87,7 +87,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
       editorCell.getSNode()
     )));
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BaseMethodDeclaration_NameCellComponent.BaseMethodDeclaration_name_postfixCellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BaseMethodDeclaration_NameCellComponent.BaseMethodDeclaration_name_postfixCellMenu_8989zw_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

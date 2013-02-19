@@ -35,8 +35,8 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return this.createCollection_xqkmqp_a(editorContext, node);
   }
 
-  public static class ReplaceWith_StyleClassItem_cellMenu_a0a0_2 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_StyleClassItem_cellMenu_a0a0_2() {
+  public static class ReplaceWith_StyleClassItem_cellMenu_xqkmqp_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_StyleClassItem_cellMenu_xqkmqp_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -44,8 +44,8 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class FontSizeStyleClassItem_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Item {
-    public FontSizeStyleClassItem_generic_cellMenu_a0c0() {
+  public static class FontSizeStyleClassItem_generic_cellMenu_xqkmqp_a0c0 extends AbstractCellMenuPart_Generic_Item {
+    public FontSizeStyleClassItem_generic_cellMenu_xqkmqp_a0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -77,7 +77,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.applyItem(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FontSizeStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_2()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FontSizeStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_xqkmqp_a0a0()}));
     return editorCell;
   }
 
@@ -118,7 +118,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyNumericLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new FontSizeStyleClassItem_Editor.FontSizeStyleClassItem_generic_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new FontSizeStyleClassItem_Editor.FontSizeStyleClassItem_generic_cellMenu_xqkmqp_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

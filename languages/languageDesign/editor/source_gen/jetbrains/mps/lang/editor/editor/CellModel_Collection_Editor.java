@@ -52,8 +52,8 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return this.createCollection_cvgoyj_a(editorContext, node);
   }
 
-  public static class CellModel_Collection_usesFolding_cellMenu_a0a1c3a extends AbstractCellMenuPart_PropertyValues {
-    public CellModel_Collection_usesFolding_cellMenu_a0a1c3a() {
+  public static class CellModel_Collection_usesFolding_cellMenu_cvgoyj_a0a1c3a extends AbstractCellMenuPart_PropertyValues {
+    public CellModel_Collection_usesFolding_cellMenu_cvgoyj_a0a1c3a() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -61,8 +61,8 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class CellModel_Collection_generic_cellMenu_b0a1c3a extends AbstractCellMenuPart_Generic_Item {
-    public CellModel_Collection_generic_cellMenu_b0a1c3a() {
+  public static class CellModel_Collection_generic_cellMenu_cvgoyj_b0a1c3a extends AbstractCellMenuPart_Generic_Item {
+    public CellModel_Collection_generic_cellMenu_cvgoyj_b0a1c3a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -644,7 +644,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_usesFolding");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_Collection_Editor.CellModel_Collection_usesFolding_cellMenu_a0a1c3a(), new CellModel_Collection_Editor.CellModel_Collection_generic_cellMenu_b0a1c3a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_Collection_Editor.CellModel_Collection_usesFolding_cellMenu_cvgoyj_a0a1c3a(), new CellModel_Collection_Editor.CellModel_Collection_generic_cellMenu_cvgoyj_b0a1c3a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

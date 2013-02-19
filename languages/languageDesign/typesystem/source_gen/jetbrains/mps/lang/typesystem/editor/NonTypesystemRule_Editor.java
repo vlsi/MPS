@@ -37,8 +37,8 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return this.createCollection_tg6zfx_a(editorContext, node);
   }
 
-  public static class NonTypesystemRule_name_cellMenu_a0c0a extends AbstractCellMenuPart_PropertyValues {
-    public NonTypesystemRule_name_cellMenu_a0c0a() {
+  public static class NonTypesystemRule_name_cellMenu_tg6zfx_a0c0a extends AbstractCellMenuPart_PropertyValues {
+    public NonTypesystemRule_name_cellMenu_tg6zfx_a0c0a() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -317,7 +317,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new NonTypesystemRule_Editor.NonTypesystemRule_name_cellMenu_a0c0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new NonTypesystemRule_Editor.NonTypesystemRule_name_cellMenu_tg6zfx_a0c0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -49,10 +49,10 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_wgzfn3_a_0(editorContext, node);
   }
 
-  public static class IterateOperation_component_cellMenu_a0b1a implements SubstituteInfoPartExt {
+  public static class IterateOperation_component_cellMenu_wgzfn3_a0b1a implements SubstituteInfoPartExt {
     private menu_SubstituteFeatureAndParameter myComponent;
 
-    public IterateOperation_component_cellMenu_a0b1a() {
+    public IterateOperation_component_cellMenu_wgzfn3_a0b1a() {
       this.myComponent = new menu_SubstituteFeatureAndParameter();
     }
 
@@ -61,10 +61,10 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class IterateOperation_component_cellMenu_a0c1a implements SubstituteInfoPartExt {
+  public static class IterateOperation_component_cellMenu_wgzfn3_a0c1a implements SubstituteInfoPartExt {
     private menu_SubstituteFeatureAndParameter myComponent;
 
-    public IterateOperation_component_cellMenu_a0c1a() {
+    public IterateOperation_component_cellMenu_wgzfn3_a0c1a() {
       this.myComponent = new menu_SubstituteFeatureAndParameter();
     }
 
@@ -73,10 +73,10 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class IterateOperation_component_cellMenu_a0d1a implements SubstituteInfoPartExt {
+  public static class IterateOperation_component_cellMenu_wgzfn3_a0d1a implements SubstituteInfoPartExt {
     private menu_SubstituteFeatureAndParameter myComponent;
 
-    public IterateOperation_component_cellMenu_a0d1a() {
+    public IterateOperation_component_cellMenu_wgzfn3_a0d1a() {
       this.myComponent = new menu_SubstituteFeatureAndParameter();
     }
 
@@ -250,7 +250,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     IterateOperation_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_a0b1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_wgzfn3_a0b1a()}));
     return editorCell;
   }
 
@@ -324,7 +324,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new IterateOperation_Editor._Inline_wgzfn3_a2b0());
     editorCell = provider.createEditorCell(editorContext);
     IterateOperation_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_a0c1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_wgzfn3_a0c1a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -364,7 +364,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     editorCell.getStyle().putAll(style);
     IterateOperation_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_a0d1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_wgzfn3_a0d1a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

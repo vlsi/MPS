@@ -26,8 +26,8 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
     return this.createCollection_pvt1sb_a(editorContext, node);
   }
 
-  public static class ReplaceWith_StyleClassItem_cellMenu_a0a0_7 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_StyleClassItem_cellMenu_a0a0_7() {
+  public static class ReplaceWith_StyleClassItem_cellMenu_pvt1sb_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_StyleClassItem_cellMenu_pvt1sb_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -50,7 +50,7 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.applyItem(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FloatStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_7()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FloatStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_pvt1sb_a0a0()}));
     return editorCell;
   }
 

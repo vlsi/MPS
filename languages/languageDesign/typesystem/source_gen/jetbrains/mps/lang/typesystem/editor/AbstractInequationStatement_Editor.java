@@ -39,8 +39,8 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_ka3b3c_a_0(editorContext, node);
   }
 
-  public static class ReplaceWith_AbstractEquationStatement_cellMenu_a0d0a_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractEquationStatement_cellMenu_a0d0a_0() {
+  public static class ReplaceWith_AbstractEquationStatement_cellMenu_ka3b3c_a0d0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractEquationStatement_cellMenu_ka3b3c_a0d0a() {
     }
 
     public String getReplacementConceptName() {
@@ -48,8 +48,8 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ReplaceWith_AbstractEquationStatement_cellMenu_a0c1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractEquationStatement_cellMenu_a0c1a() {
+  public static class ReplaceWith_AbstractEquationStatement_cellMenu_ka3b3c_a0c1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractEquationStatement_cellMenu_ka3b3c_a0c1a() {
     }
 
     public String getReplacementConceptName() {
@@ -129,7 +129,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_ka3b3c_d0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractInequationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_a0d0a_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractInequationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_ka3b3c_a0d0a()}));
     return editorCell;
   }
 
@@ -139,7 +139,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, (Color) null);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractInequationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_a0c1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractInequationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_ka3b3c_a0c1a()}));
     return editorCell;
   }
 

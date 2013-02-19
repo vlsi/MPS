@@ -44,8 +44,8 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     return this.createCollection_pa0pfb_a_0(editorContext, node);
   }
 
-  public static class ReplaceWith_BuildProjectPart_cellMenu_a0a0_1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BuildProjectPart_cellMenu_a0a0_1() {
+  public static class ReplaceWith_BuildProjectPart_cellMenu_pa0pfb_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BuildProjectPart_cellMenu_pa0pfb_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -366,7 +366,7 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
     buildStyles_StyleSheet.applyProjectPartKeyword(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildMps_DevKit_Editor.ReplaceWith_BuildProjectPart_cellMenu_a0a0_1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildMps_DevKit_Editor.ReplaceWith_BuildProjectPart_cellMenu_pa0pfb_a0a0()}));
     return editorCell;
   }
 

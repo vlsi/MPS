@@ -24,8 +24,8 @@ public class ScriptKindClassItem_Editor extends DefaultNodeEditor {
     return this.createCollection_8gq3xs_a(editorContext, node);
   }
 
-  public static class ReplaceWith_StyleClassItem_cellMenu_a0a0_12 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_StyleClassItem_cellMenu_a0a0_12() {
+  public static class ReplaceWith_StyleClassItem_cellMenu_8gq3xs_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_StyleClassItem_cellMenu_8gq3xs_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -49,7 +49,7 @@ public class ScriptKindClassItem_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.applyItem(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ScriptKindClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_12()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ScriptKindClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_8gq3xs_a0a0()}));
     return editorCell;
   }
 

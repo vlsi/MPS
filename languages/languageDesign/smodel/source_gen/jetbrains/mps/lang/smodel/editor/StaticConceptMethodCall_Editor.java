@@ -36,8 +36,8 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
     return this.createCollection_fn54i1_a(editorContext, node);
   }
 
-  public static class StaticConceptMethodCall_customReplace_cellMenu_a0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public StaticConceptMethodCall_customReplace_cellMenu_a0c0() {
+  public static class StaticConceptMethodCall_customReplace_cellMenu_fn54i1_a0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public StaticConceptMethodCall_customReplace_cellMenu_fn54i1_a0c0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -186,7 +186,7 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new StaticConceptMethodCall_Editor._Inline_fn54i1_a2a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticConceptMethodCall_Editor.StaticConceptMethodCall_customReplace_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticConceptMethodCall_Editor.StaticConceptMethodCall_customReplace_cellMenu_fn54i1_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

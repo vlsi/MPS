@@ -53,8 +53,8 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_6h6dhy_a_0(editorContext, node);
   }
 
-  public static class LinkDeclaration_null_postfixCellMenu_a0b0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public LinkDeclaration_null_postfixCellMenu_a0b0() {
+  public static class LinkDeclaration_null_postfixCellMenu_6h6dhy_a0b0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public LinkDeclaration_null_postfixCellMenu_6h6dhy_a0b0() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -67,8 +67,8 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class LinkDeclaration_sourceCardinality_cellMenu_a0c0 extends AbstractCellMenuPart_PropertyValues {
-    public LinkDeclaration_sourceCardinality_cellMenu_a0c0() {
+  public static class LinkDeclaration_sourceCardinality_cellMenu_6h6dhy_a0c0 extends AbstractCellMenuPart_PropertyValues {
+    public LinkDeclaration_sourceCardinality_cellMenu_6h6dhy_a0c0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -275,7 +275,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.DRAW_BORDER, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<no role>");
-      editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkDeclaration_Editor.LinkDeclaration_null_postfixCellMenu_a0b0()}));
+      editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkDeclaration_Editor.LinkDeclaration_null_postfixCellMenu_6h6dhy_a0b0()}));
       editorCell.setCommitInCommand(false);
     }
     SNode attributeConcept = provider.getRoleAttribute();
@@ -341,7 +341,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyNumericLiteral(style, editorCell);
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkDeclaration_Editor.LinkDeclaration_sourceCardinality_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkDeclaration_Editor.LinkDeclaration_sourceCardinality_cellMenu_6h6dhy_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
