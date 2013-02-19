@@ -27,6 +27,12 @@
     <node role="parts" roleId="8xvf.7306485738221391508" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="398731435597652957">
       <property name="name" nameId="tpck.1169194664001" value="declare-mps-tasks" />
     </node>
+    <node role="parts" roleId="8xvf.7306485738221391508" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="6354776497094852969">
+      <link role="task" roleId="8xvf.3961775458390032825" targetNodeId="tnlc.4701820937132277082" resolveInfo="assemble" />
+      <node role="additionalDependencies" roleId="8xvf.3961775458390352322" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="6354776497094852993">
+        <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="398731435597652957" resolveInfo="declare-mps-tasks" />
+      </node>
+    </node>
     <node role="imports" roleId="8xvf.7306485738221455030" type="8xvf.BwfTaskLibraryDependency" typeId="8xvf.7306485738221471031" id="6354776497041189990">
       <link role="target" roleId="8xvf.7306485738221471032" targetNodeId="tnlc.7306485738221408315" resolveInfo="common" />
     </node>

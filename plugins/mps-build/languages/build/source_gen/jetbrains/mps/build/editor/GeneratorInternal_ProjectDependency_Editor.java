@@ -13,33 +13,33 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class GeneratorInternal_String_Editor extends DefaultNodeEditor {
+public class GeneratorInternal_ProjectDependency_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_g2v6ye_a(editorContext, node);
+    return this.createCollection_15vmy3_a(editorContext, node);
   }
 
-  private EditorCell createCollection_g2v6ye_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_15vmy3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_g2v6ye_a");
-    editorCell.addEditorCell(this.createConstant_g2v6ye_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_g2v6ye_b0(editorContext, node));
+    editorCell.setCellId("Collection_15vmy3_a");
+    editorCell.addEditorCell(this.createConstant_15vmy3_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_15vmy3_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_g2v6ye_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_15vmy3_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "string");
-    editorCell.setCellId("Constant_g2v6ye_a0");
+    editorCell.setCellId("Constant_15vmy3_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_g2v6ye_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_15vmy3_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("string");
-    provider.setNoTargetText("<no string>");
+    provider.setRole("path");
+    provider.setNoTargetText("<no path>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_string");
+    editorCell.setCellId("property_path");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

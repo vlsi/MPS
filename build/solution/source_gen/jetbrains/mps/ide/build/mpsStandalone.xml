@@ -11,7 +11,7 @@
   <property file="${artifacts.mpsBootstrapCore}/build.properties" prefix="import.mpsBootstrapCore" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBootstrapCore.mpsBootstrapCore.version}" />
   
-  <target name="assemble" depends="classes, fetchDependencies">
+  <target name="assemble" depends="classes, declare-mps-tasks, fetchDependencies">
     <mkdir dir="${build.layout}/bin" />
     <copy todir="${build.layout}/bin">
       <fileset file="${basedir}/bin/idea.properties" />
@@ -73,6 +73,12 @@
   <target name="buildDependents">
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
+  </target>
+  
+  <target name="prepareDependents">
     <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" target="prepare" />
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" target="prepare" />
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" target="prepare" />
@@ -81,7 +87,7 @@
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
-  <target name="prepare" depends="generate" />
+  <target name="prepare" depends="prepareDependents, generate" />
   
   <target name="fetchDependencies" />
   

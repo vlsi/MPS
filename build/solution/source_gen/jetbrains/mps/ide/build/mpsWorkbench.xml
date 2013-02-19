@@ -328,6 +328,12 @@
   <target name="buildDependents">
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
     <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
+    <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
+  </target>
+  
+  <target name="prepareDependents">
     <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" target="prepare" />
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" target="prepare" />
     <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" target="prepare" />
@@ -336,7 +342,7 @@
     <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
-  <target name="prepare" depends="generate" />
+  <target name="prepare" depends="prepareDependents, generate" />
   
   <target name="fetchDependencies" />
   
@@ -357,7 +363,7 @@
   
   <target name="check" depends="test" />
   
-  <target name="generate" depends="declare-mps-tasks, fetchDependencies">
+  <target name="generate" depends="declare-mps-tasks, fetchDependencies, prepareDependents">
     <echo message="generating" />
     <generate parallelMode="true" fork="true">
       <plugin path="${artifacts.mpsTesting}/mps-testing" />

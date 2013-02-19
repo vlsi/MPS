@@ -2036,7 +2036,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.build.editor.GeneratorInternal_String_Editor" file="GeneratorInternal_String_Editor.java">
+  <dependency className="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_Editor" file="GeneratorInternal_ProjectDependency_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
