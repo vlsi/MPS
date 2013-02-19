@@ -53,12 +53,6 @@ public interface IModule extends SModule {
   // invalidate something if only current != prev
   void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses);
 
-  // ?, move to AbstractModule, remove usages as much as possible
-  IFile getDescriptorFile();
-  // IFile getModuleRoot() <- clash with model root // to SModuleOperations / maybe SModule
-  // IFile getModuleFolder() ?
-  // use as much as possible
-
   //----deps
 
   // review SDependency part in SModule
@@ -113,24 +107,9 @@ public interface IModule extends SModule {
 
   //----
 
-  // AbstractModule#createModel
-  // ModelAdjuster? WTF? something between creating and registration I think
-  // talk with Evgeny
-  SModelDescriptor createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
-
   // SModule#getModels. But how to migrate? ModuleOperations.getOwnModelDescriptors with unchecked cast?
   // When is it safe to migrate method call? calc expected type?
   List<SModelDescriptor> getOwnModelDescriptors();
-
-  // wtf? If it home for module descriptor just use module descriptor dir!
-  // ooups. for packaged modules it's jar file
-  // so check usages of method! why we need it?
-  // -> getModuleFolder()
-  // so getModuleFolder() is ${module} getter and should be open
-  // getModuleFile() is ok, but with cast
-  // other things is forbidden
-  // !!! to be notice: 2 jars: src and compiled classes
-  IFile getBundleHome();
 
   // SModule#getModuleScope
   @NotNull
@@ -174,12 +153,35 @@ public interface IModule extends SModule {
   // ModuleSource (@see DataSource, maybe abstract from files?)
   boolean needReloading();
 
-  // dislike it =(
+  // ----- deprecated part
+  // model creation stuff
+
+  // AbstractModule#createModel
+  // ModelAdjuster? WTF? something between creating and registration I think
+  // talk with Evgeny
+  SModelDescriptor createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
+
   public static interface ModelAdjuster {
     void adjust(SModelDescriptor model);
   }
 
-  // ----- deprecated part
+  // module source path stuff
+
+  // wtf? If it home for module descriptor just use module descriptor dir!
+  // ooups. for packaged modules it's jar file
+  // so check usages of method! why we need it?
+  // -> getModuleFolder()
+  // so getModuleFolder() is ${module} getter and should be open
+  // getModuleFile() is ok, but with cast
+  // other things is forbidden
+  // !!! to be notice: 2 jars: src and compiled classes
+  IFile getBundleHome();
+
+  // ?, move to AbstractModule, remove usages as much as possible
+  IFile getDescriptorFile();
+  // IFile getModuleRoot() <- clash with model root // to SModuleOperations / maybe SModule
+  // IFile getModuleFolder() ?
+  // use as much as possible
 
   // JavaModuleFacet part. Use module.getFacet(JavaModuleFacet.class).{method}
   @Deprecated
