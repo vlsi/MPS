@@ -19,15 +19,43 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.util.containers.EmptyIterator;
+
+import java.util.Iterator;
 
 class DfsTraverser {
   private EditorCell myCurrent;
   private boolean myForward;
+  private Iterator<EditorCell> myCellIterator;
 
   public DfsTraverser(EditorCell start, boolean forward) {
     myCurrent = start;
     myForward = forward;
+    setIteratorFor(myCurrent);
     next();
+  }
+
+  private void setIteratorFor(EditorCell cell) {
+    if (cell == null) {
+      myCellIterator = new EmptyIterator<EditorCell>();
+      return;
+    }
+
+    EditorCell_Collection collection = cell.getParent();
+    if (collection == null ) {
+      myCellIterator = new EmptyIterator<EditorCell>();
+      return;
+    }
+
+    myCellIterator = getCellIterator(collection);
+
+    if (!cell.equals(collection)) {
+      while (myCellIterator.hasNext()) {
+        if (myCellIterator.next().equals(cell)){
+          break;
+        }
+      }
+    }
   }
 
   public EditorCell getCurrent() {
@@ -43,19 +71,26 @@ class DfsTraverser {
       EditorCell child = getChild((EditorCell_Collection) myCurrent);
       if (child != null) {
         myCurrent = child;
+        myCellIterator = getCellIterator((EditorCell_Collection) myCurrent);
+        myCellIterator.next();
         return;
       }
     }
 
     EditorCell current = myCurrent;
+
     while (current != null) {
-      EditorCell sibling = getSibling(current);
-      if (sibling != null) {
-        myCurrent = sibling;
-        return;
+      while (myCellIterator.hasNext()) {
+        EditorCell next = myCellIterator.next();
+        if (next != null) {
+          myCurrent = next;
+          return;
+        }
       }
       current = current.getParent();
+      setIteratorFor(current);
     }
+
     myCurrent = null;
   }
 
@@ -63,8 +98,8 @@ class DfsTraverser {
     return myForward ? cell.firstCell() : cell.lastCell();
   }
 
-  private EditorCell getSibling(EditorCell cell) {
-    return myForward ? APICellAdapter.getNextSibling(cell) : APICellAdapter.getPrevSibling(cell);
+  private Iterator<EditorCell> getCellIterator(EditorCell_Collection cell) {
+    return myForward ? cell.iterator() : cell.reverseIterator();
   }
 
 }

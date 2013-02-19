@@ -24,6 +24,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -32,38 +33,32 @@ import java.util.List;
  */
 // TODO: Temporary adapter should be removed at the end of migration onto EditorCel API
 public class APICellAdapter {
+
+
   public static jetbrains.mps.openapi.editor.cells.EditorCell getNextSibling(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    final EditorCell_Collection parent = cell.getParent();
-    if (parent == null) {
-      return null;
-    }
-
-    int index = parent.indexOf(cell);
-
-
     //!!!!!
     //if (parent.getCellAt(parent.indexOf(parent.firstCell())) != parent.firstCell());
     //!!!!
-
-
-    if (index + 1 < parent.getCellsCount()) {
-      //getContentCell
-      return parent.getCellAt(index + 1);
-    }
-
-    return null;
+    return getSibling(cell, true);
   }
 
   public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevSibling(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    return getSibling(cell, false);
+  }
+
+  private static jetbrains.mps.openapi.editor.cells.EditorCell getSibling(jetbrains.mps.openapi.editor.cells.EditorCell cell,
+                                                                          boolean forward) {
     final EditorCell_Collection parent = cell.getParent();
     if (parent == null) {
       return null;
     }
 
-    int index = parent.indexOf(cell);
-    if (index - 1 >= 0) {
-      //getContentCell
-      return parent.getCellAt(index - 1);
+    Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> cellIterator = forward ? parent.iterator() : parent.reverseIterator();
+
+    while (cellIterator.hasNext()) {
+      if (cellIterator.next().equals(cell) && cellIterator.hasNext()) {
+        return cellIterator.next();
+      }
     }
 
     return null;
@@ -111,7 +106,7 @@ public class APICellAdapter {
   }
 
   public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(EditorCell cell, Condition<jetbrains.mps.openapi.editor.cells.EditorCell> condition) {
-    jetbrains.mps.openapi.editor.cells.EditorCell current = getNextLeaf(cell);
+    jetbrains.mps.openapi.editor.cells.EditorCell current = getPrevLeaf(cell);
     while (current != null) {
       if (condition.met(current)) {
         return current;
@@ -147,7 +142,6 @@ public class APICellAdapter {
 
   public static boolean hasErrorMessages(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).hasErrorMessages();
-    cell.getEditorComponent().getH
   }
 
   public static String getCellRole(EditorCell cell) {
