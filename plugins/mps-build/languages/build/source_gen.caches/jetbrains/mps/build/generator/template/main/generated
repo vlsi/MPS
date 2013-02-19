@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1n4phpt4jifo1ecr0d4vaj5hvplralc">
+<dependencies version="2" modelHash="-2x0cadcqpetavm0j045q8mz59ksnp0d">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -35,7 +35,7 @@
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="dtt7wsqvomsqa4dnrx887ciou0ozjba" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
-  <common hash="daidch7i3bw2yc994ovr62nd97t4sqs">
+  <common hash="agzf2a6w4d5km17cceqays283l4on5q">
     <dep root="1117643560963351146" />
     <dep root="342830306171239717" />
     <dep root="3595702787188034883" />
@@ -87,10 +87,10 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="3595702787188034883" name="main" hash="-ex3jt07g0m0xgx9znrcyi7ezpf20cme">
+  <source id="3595702787188034883" name="main" hash="9lv2ge1dtuzbgea82b9jdrmsp3yv84d">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="3595702787188038546" name="build" hash="4v2ee7l5gwl36ecv190lvm19xm2flcu">
+  <source id="3595702787188038546" name="build" hash="-iwapb38czsplcp9v9txviyjs8jnb7u">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1117643560963351146" name="reduce_FileSet" hash="-dhwz2q9c6hjmipdayopqzkoyeav0emh">

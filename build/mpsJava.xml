@@ -38,9 +38,11 @@
   
   <target name="buildDependents">
     <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents" />
-    <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" target="generate" />
+    <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" target="prepare" />
     <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
+  
+  <target name="prepare" depends="generate" />
   
   <target name="fetchDependencies" />
   

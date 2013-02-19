@@ -4,14 +4,14 @@
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="-6mluyvjpspgwwrgvx0ub3ncybg26c5y" />
   <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" hash="3d7fws9rwjukj1wrlb9t9fm5mlpy01k" />
-  <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="-c43zqtt9d06mvin05pt4or876hvs2vk" />
+  <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="8x8f6ilc5qc1v8l50vt4p5ltllt7osz" />
   <dep model="r:9eaefcec-a5af-4365-b04c-b6940eebe416(jetbrains.mps.build.startup.generator.template.main@generator)" hash="e7n1h68u49w8fqwtv21le78034e49hu" />
   <dep model="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
   <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-8cg3incxiljk3bq8078a2fws9395rb0" />
   <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" hash="-b7r3b4cgril6sx37jph3jmc98p148at" />
   <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="eowb99uzat1lg2hph15kl2nzk4c3rig" />
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="dtt7wsqvomsqa4dnrx887ciou0ozjba" />
-  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="1n4phpt4jifo1ecr0d4vaj5hvplralc" />
+  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="-2x0cadcqpetavm0j045q8mz59ksnp0d" />
   <common hash="-d2u3w504hf5qgdjqpcn14v564yxxte4" />
   <source id="7926701909975931624" name="mpsBootstrapCore" hash="-555agt4ps2cn0sp6thl92v95rzdmyiq">
     <dep root="7181125477683264500" />
