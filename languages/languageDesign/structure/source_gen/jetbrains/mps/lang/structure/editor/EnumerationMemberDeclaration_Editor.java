@@ -6,6 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -17,14 +21,18 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior;
 
 public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_n0n6wp_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_n0n6wp_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberIdentifierPolicy", "custom", "derive_from_presentation");
+  }
+
+  private static boolean renderingCondition_n0n6wp_a5a(SNode node, EditorContext editorContext, IScope scope) {
+    return node == EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
   }
 
   private EditorCell createCollection_n0n6wp_a(EditorContext editorContext, SNode node) {
@@ -175,13 +183,5 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_n0n6wp_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberIdentifierPolicy", "custom", "derive_from_presentation");
-  }
-
-  private static boolean renderingCondition_n0n6wp_a5a(SNode node, EditorContext editorContext, IScope scope) {
-    return node == EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
   }
 }

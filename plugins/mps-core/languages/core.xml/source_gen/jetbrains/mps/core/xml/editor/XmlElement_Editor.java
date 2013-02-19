@@ -6,6 +6,11 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.core.xml.behavior.XmlElement_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -21,7 +26,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -29,14 +33,22 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.core.xml.behavior.XmlElement_Behavior;
 
 public class XmlElement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_vc3gub_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_vc3gub_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "attributes", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_vc3gub_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "content", true)).isEmpty() && SPropertyOperations.getBoolean(node, "shortEmptyNotation");
+  }
+
+  private static boolean renderingCondition_vc3gub_a0a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return XmlElement_Behavior.call_isMultiline_8886258982030574875(node);
   }
 
   private static class attributesListHandler_vc3gub_a2a extends RefNodeListHandler {
@@ -446,17 +458,5 @@ public class XmlElement_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_vc3gub_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "attributes", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_vc3gub_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "content", true)).isEmpty() && SPropertyOperations.getBoolean(node, "shortEmptyNotation");
-  }
-
-  private static boolean renderingCondition_vc3gub_a0a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return XmlElement_Behavior.call_isMultiline_8886258982030574875(node);
   }
 }

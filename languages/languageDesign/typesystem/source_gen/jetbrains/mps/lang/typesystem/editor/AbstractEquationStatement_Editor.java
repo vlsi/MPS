@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.awt.Color;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -21,8 +23,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import java.awt.Color;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -31,6 +31,14 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createComponent_ie6eqd_a(editorContext, node);
+  }
+
+  private static Color _StyleParameter_QueryFunction_ie6eqd_a0b0(EditorContext editorContext, SNode node) {
+    if (SPropertyOperations.getBoolean(node, "checkOnly")) {
+      return Color.GRAY;
+    } else {
+      return Color.BLACK;
+    }
   }
 
   public static class ReplaceWith_AbstractEquationStatement_cellMenu_ie6eqd_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
@@ -113,13 +121,5 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static Color _StyleParameter_QueryFunction_ie6eqd_a0b0(EditorContext editorContext, SNode node) {
-    if (SPropertyOperations.getBoolean(node, "checkOnly")) {
-      return Color.GRAY;
-    } else {
-      return Color.BLACK;
-    }
   }
 }

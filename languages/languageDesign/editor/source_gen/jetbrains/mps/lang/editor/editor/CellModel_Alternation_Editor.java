@@ -34,12 +34,12 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_zgm7s3_a1c0(EditorContext editorContext, SNode node) {
-    return _EditorUtil.grayIfNotSelectable(node);
-  }
-
   private static boolean renderingCondition_zgm7s3_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "vertical");
+  }
+
+  private static Color _StyleParameter_QueryFunction_zgm7s3_a1c0(EditorContext editorContext, SNode node) {
+    return _EditorUtil.grayIfNotSelectable(node);
   }
 
   private static boolean renderingCondition_zgm7s3_a2a(SNode node, EditorContext editorContext, IScope scope) {

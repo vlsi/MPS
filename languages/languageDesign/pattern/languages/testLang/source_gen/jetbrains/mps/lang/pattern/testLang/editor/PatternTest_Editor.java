@@ -6,6 +6,11 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -24,15 +29,26 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class PatternTest_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kasahx_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_kasahx_a8a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, "matches", true), "value") == true;
+  }
+
+  private static boolean renderingCondition_kasahx_a0i0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{})).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_kasahx_a1i0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{})).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_kasahx_a2i0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.lang.pattern.structure.ListPattern", false, new String[]{})).isNotEmpty();
   }
 
   private static class variableListHandler_kasahx_c0i0 extends RefNodeListHandler {
@@ -425,21 +441,5 @@ public class PatternTest_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_kasahx_a0i0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{})).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_kasahx_a1i0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{})).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_kasahx_a2i0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.lang.pattern.structure.ListPattern", false, new String[]{})).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_kasahx_a8a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, "matches", true), "value") == true;
   }
 }

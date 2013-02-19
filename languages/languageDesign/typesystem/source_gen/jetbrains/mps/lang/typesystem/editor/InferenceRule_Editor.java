@@ -66,6 +66,14 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_robprv_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_robprv_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
+  }
+
   private static class dependencyListHandler_robprv_b0 extends RefNodeListHandler {
     public dependencyListHandler_robprv_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -414,13 +422,5 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_robprv_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_robprv_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
   }
 }

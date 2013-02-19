@@ -6,10 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -36,14 +36,6 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return this.createCollection_n0gj60_a(editorContext, node);
   }
 
-  private static boolean renderingCondition_n0gj60_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return neq_n0gj60_a0a0b(SPropertyOperations.getString_def(node, "style", "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
-  }
-
-  private static boolean renderingCondition_n0gj60_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return eq_n0gj60_a0a0c(SPropertyOperations.getString_def(node, "style", "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
-  }
-
   public static class ReplaceWith_StyleClassItem_cellMenu_n0gj60_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_StyleClassItem_cellMenu_n0gj60_a0a0() {
     }
@@ -51,6 +43,10 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
     }
+  }
+
+  private static boolean renderingCondition_n0gj60_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return neq_n0gj60_a0a0c(SPropertyOperations.getString_def(node, "style", "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
   }
 
   public static class FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0c0 extends AbstractCellMenuPart_Generic_Group {
@@ -67,7 +63,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "style", SEnumOperations.getEnumMemberValue(parameterObject));
-      if (eq_n0gj60_a0b0d4(parameterObject, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))) {
+      if (eq_n0gj60_a0b0d3(parameterObject, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))) {
         SLinkOperations.setTarget(node, "query", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", null), true);
       }
     }
@@ -76,12 +72,16 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
       return false;
     }
 
-    private static boolean eq_n0gj60_a0b0d4(Object a, Object b) {
+    private static boolean eq_n0gj60_a0b0d3(Object a, Object b) {
       return (a != null ?
         a.equals(b) :
         a == b
       );
     }
+  }
+
+  private static boolean renderingCondition_n0gj60_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return eq_n0gj60_a0a0e(SPropertyOperations.getString_def(node, "style", "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
   }
 
   public static class FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0d0 extends AbstractCellMenuPart_Generic_Group {
@@ -176,14 +176,14 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean neq_n0gj60_a0a0b(Object a, Object b) {
+  private static boolean neq_n0gj60_a0a0c(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_n0gj60_a0a0c(Object a, Object b) {
+  private static boolean eq_n0gj60_a0a0e(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

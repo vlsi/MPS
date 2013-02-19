@@ -11,6 +11,8 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -22,8 +24,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior;
 
 public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -65,6 +65,14 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_g7zihj_a1c0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(RunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(node));
+  }
+
+  private static boolean renderingCondition_g7zihj_a2c0(SNode node, EditorContext editorContext, IScope scope) {
+    return RunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(node);
   }
 
   private EditorCell createCollection_g7zihj_a(EditorContext editorContext, SNode node) {
@@ -305,13 +313,5 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_g7zihj_a1c0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(RunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(node));
-  }
-
-  private static boolean renderingCondition_g7zihj_a2c0(SNode node, EditorContext editorContext, IScope scope) {
-    return RunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(node);
   }
 }

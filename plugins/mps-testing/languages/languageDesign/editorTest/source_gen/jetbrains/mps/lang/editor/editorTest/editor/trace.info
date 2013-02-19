@@ -738,133 +738,133 @@
   </root>
   <root nodeRef="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)/5110219550149792115">
     <nodeInfo nodeId="5110219550149792115" fileName="SideTranformWrapper_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="26" startPosition="89" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="27" startPosition="96" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="28" startPosition="48" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="28" startPosition="48" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="31" startPosition="109" endLine="32" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="33" startPosition="5" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="33" startPosition="5" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="34" startPosition="81" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="38" startPosition="90" endLine="39" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="39" startPosition="96" endLine="40" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="40" startPosition="49" endLine="41" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="41" startPosition="34" endLine="42" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="42" startPosition="49" endLine="43" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="43" startPosition="40" endLine="44" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="43" startPosition="40" endLine="44" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="44" startPosition="82" endLine="45" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="48" startPosition="88" endLine="49" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="49" startPosition="87" endLine="50" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="50" startPosition="47" endLine="51" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="51" startPosition="34" endLine="52" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="52" startPosition="55" endLine="53" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="53" startPosition="40" endLine="54" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="54" startPosition="34" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5110219550149792137" fileName="SideTranformWrapper_Editor.java" startLine="58" startPosition="89" endLine="59" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5110219550149792137" fileName="SideTranformWrapper_Editor.java" startLine="59" startPosition="91" endLine="60" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792137" fileName="SideTranformWrapper_Editor.java" startLine="60" startPosition="48" endLine="61" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792137" fileName="SideTranformWrapper_Editor.java" startLine="61" startPosition="34" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="65" startPosition="88" endLine="66" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="66" startPosition="87" endLine="67" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="67" startPosition="47" endLine="68" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="68" startPosition="34" endLine="69" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="69" startPosition="54" endLine="70" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="70" startPosition="40" endLine="71" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="71" startPosition="34" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="75" startPosition="87" endLine="76" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="76" startPosition="81" endLine="77" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="77" startPosition="30" endLine="78" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="78" startPosition="43" endLine="79" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="79" startPosition="26" endLine="80" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="80" startPosition="58" endLine="81" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="81" startPosition="82" endLine="82" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="82" startPosition="73" endLine="83" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="83" startPosition="57" endLine="84" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="85" startPosition="35" endLine="86" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="86" startPosition="72" endLine="87" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="87" startPosition="78" endLine="88" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="89" startPosition="10" endLine="90" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5110219550149792149" fileName="SideTranformWrapper_Editor.java" startLine="93" startPosition="111" endLine="94" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5110219550149792149" fileName="SideTranformWrapper_Editor.java" startLine="26" startPosition="111" endLine="27" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="30" startPosition="89" endLine="31" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="31" startPosition="96" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="35" startPosition="109" endLine="36" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="37" startPosition="5" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="37" startPosition="5" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="38" startPosition="81" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="42" startPosition="90" endLine="43" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="43" startPosition="96" endLine="44" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="44" startPosition="49" endLine="45" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="45" startPosition="34" endLine="46" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="46" startPosition="49" endLine="47" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="47" startPosition="40" endLine="48" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="47" startPosition="40" endLine="48" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="48" startPosition="82" endLine="49" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="52" startPosition="88" endLine="53" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="53" startPosition="87" endLine="54" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="54" startPosition="47" endLine="55" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="55" startPosition="34" endLine="56" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="56" startPosition="55" endLine="57" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="57" startPosition="40" endLine="58" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="58" startPosition="34" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5110219550149792137" fileName="SideTranformWrapper_Editor.java" startLine="62" startPosition="89" endLine="63" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5110219550149792137" fileName="SideTranformWrapper_Editor.java" startLine="63" startPosition="91" endLine="64" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792137" fileName="SideTranformWrapper_Editor.java" startLine="64" startPosition="48" endLine="65" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792137" fileName="SideTranformWrapper_Editor.java" startLine="65" startPosition="34" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="69" startPosition="88" endLine="70" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="70" startPosition="87" endLine="71" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="71" startPosition="47" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="72" startPosition="34" endLine="73" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="73" startPosition="54" endLine="74" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="74" startPosition="40" endLine="75" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="75" startPosition="34" endLine="76" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="79" startPosition="87" endLine="80" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="80" startPosition="81" endLine="81" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="81" startPosition="30" endLine="82" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="82" startPosition="43" endLine="83" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="83" startPosition="26" endLine="84" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="84" startPosition="58" endLine="85" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="85" startPosition="82" endLine="86" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="86" startPosition="73" endLine="87" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="87" startPosition="57" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="89" startPosition="35" endLine="90" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="90" startPosition="72" endLine="91" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="91" startPosition="78" endLine="92" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="93" startPosition="10" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5110219550149792115" fileName="SideTranformWrapper_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="30" startPosition="80" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="30" startPosition="80" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5110219550149792147" fileName="SideTranformWrapper_Editor.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_6v8cz3_a2a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="5110219550149792137" fileName="SideTranformWrapper_Editor.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_6v8cz3_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="84" startPosition="59" endLine="90" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="38" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_6v8cz3_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="48" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_6v8cz3_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="65" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_6v8cz3_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="26" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_6v8cz3_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="75" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_6v8cz3_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5110219550149792147" fileName="SideTranformWrapper_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_6v8cz3_a2a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="34" startPosition="80" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="34" startPosition="80" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5110219550149792137" fileName="SideTranformWrapper_Editor.java" startLine="62" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_6v8cz3_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="88" startPosition="59" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="42" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_6v8cz3_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="52" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_6v8cz3_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="69" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_6v8cz3_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="30" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_6v8cz3_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="79" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_6v8cz3_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="5110219550149792115" fileName="SideTranformWrapper_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" />
-    <scopeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="28" startPosition="48" endLine="29" endPosition="81" />
-    <scopeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="80" />
-    <scopeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="31" startPosition="109" endLine="32" endPosition="85" />
-    <scopeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="33" startPosition="5" endLine="34" endPosition="81" />
-    <scopeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="43" startPosition="40" endLine="44" endPosition="82" />
-    <scopeInfo nodeId="5110219550149792148" fileName="SideTranformWrapper_Editor.java" startLine="93" startPosition="111" endLine="94" endPosition="61" />
+    <scopeInfo nodeId="5110219550149792148" fileName="SideTranformWrapper_Editor.java" startLine="26" startPosition="111" endLine="27" endPosition="61" />
+    <scopeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="81" />
+    <scopeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" />
+    <scopeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="35" startPosition="109" endLine="36" endPosition="85" />
+    <scopeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="37" startPosition="5" endLine="38" endPosition="81" />
+    <scopeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="47" startPosition="40" endLine="48" endPosition="82" />
     <scopeInfo nodeId="5110219550149792115" fileName="SideTranformWrapper_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="5110219550149792115" varName="editorContext" />
       <varInfo nodeId="5110219550149792115" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="30" startPosition="80" endLine="33" endPosition="5" />
-    <scopeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="85" startPosition="35" endLine="88" endPosition="105">
-      <varInfo nodeId="5110219550149792130" varName="manager" />
-      <varInfo nodeId="5110219550149792130" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5110219550149792147" fileName="SideTranformWrapper_Editor.java" startLine="93" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="5110219550149792147" fileName="SideTranformWrapper_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="5110219550149792147" varName="editorContext" />
       <varInfo nodeId="5110219550149792147" varName="node" />
       <varInfo nodeId="5110219550149792147" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="5110219550149792137" fileName="SideTranformWrapper_Editor.java" startLine="58" startPosition="89" endLine="62" endPosition="22">
+    <scopeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="34" startPosition="80" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="89" startPosition="35" endLine="92" endPosition="105">
+      <varInfo nodeId="5110219550149792130" varName="manager" />
+      <varInfo nodeId="5110219550149792130" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5110219550149792137" fileName="SideTranformWrapper_Editor.java" startLine="62" startPosition="89" endLine="66" endPosition="22">
       <varInfo nodeId="5110219550149792137" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5110219550149792137" fileName="SideTranformWrapper_Editor.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="5110219550149792137" fileName="SideTranformWrapper_Editor.java" startLine="62" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="5110219550149792137" varName="editorContext" />
       <varInfo nodeId="5110219550149792137" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="38" startPosition="90" endLine="45" endPosition="22">
+    <scopeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="42" startPosition="90" endLine="49" endPosition="22">
       <varInfo nodeId="5110219550149792132" varName="editorCell" />
       <varInfo nodeId="5110219550149792132" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="48" startPosition="88" endLine="55" endPosition="22">
+    <scopeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="52" startPosition="88" endLine="59" endPosition="22">
       <varInfo nodeId="5110219550150227188" varName="editorCell" />
       <varInfo nodeId="5110219550150227188" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="65" startPosition="88" endLine="72" endPosition="22">
+    <scopeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="69" startPosition="88" endLine="76" endPosition="22">
       <varInfo nodeId="5110219550150227190" varName="editorCell" />
       <varInfo nodeId="5110219550150227190" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="26" startPosition="89" endLine="35" endPosition="22">
+    <scopeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="30" startPosition="89" endLine="39" endPosition="22">
       <varInfo nodeId="5110219550149792122" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="38" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="5110219550149792132" fileName="SideTranformWrapper_Editor.java" startLine="42" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="5110219550149792132" varName="editorContext" />
       <varInfo nodeId="5110219550149792132" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="48" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="5110219550150227188" fileName="SideTranformWrapper_Editor.java" startLine="52" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="5110219550150227188" varName="editorContext" />
       <varInfo nodeId="5110219550150227188" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="65" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="5110219550150227190" fileName="SideTranformWrapper_Editor.java" startLine="69" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="5110219550150227190" varName="editorContext" />
       <varInfo nodeId="5110219550150227190" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="26" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="5110219550149792122" fileName="SideTranformWrapper_Editor.java" startLine="30" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="5110219550149792122" varName="editorContext" />
       <varInfo nodeId="5110219550149792122" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="75" startPosition="87" endLine="90" endPosition="22">
+    <scopeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="79" startPosition="87" endLine="94" endPosition="22">
       <varInfo nodeId="5110219550149792130" varName="attributeConcept" />
       <varInfo nodeId="5110219550149792130" varName="attributeKind" />
       <varInfo nodeId="5110219550149792130" varName="editorCell" />
       <varInfo nodeId="5110219550149792130" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="75" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="5110219550149792130" fileName="SideTranformWrapper_Editor.java" startLine="79" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="5110219550149792130" varName="editorContext" />
       <varInfo nodeId="5110219550149792130" varName="node" />
     </scopeInfo>

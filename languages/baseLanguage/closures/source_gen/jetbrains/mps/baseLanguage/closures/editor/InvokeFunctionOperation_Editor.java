@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -26,11 +27,18 @@ import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.smodel.IScope;
 
 public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9wclje_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_9wclje_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return false;
+  }
+
+  private static boolean renderingCondition_9wclje_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return false;
   }
 
   private static class parameterListHandler_9wclje_c0 extends RefNodeListHandler {
@@ -150,13 +158,5 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
-  }
-
-  private static boolean renderingCondition_9wclje_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return false;
-  }
-
-  private static boolean renderingCondition_9wclje_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return false;
   }
 }

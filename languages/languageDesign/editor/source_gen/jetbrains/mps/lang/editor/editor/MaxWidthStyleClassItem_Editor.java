@@ -6,9 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
@@ -35,14 +35,6 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
     return this.createCollection_7mrjrs_a(editorContext, node);
   }
 
-  private static boolean renderingCondition_7mrjrs_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "query", true) == null;
-  }
-
-  private static boolean renderingCondition_7mrjrs_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "query", true) != null);
-  }
-
   public static class ReplaceWith_StyleClassItem_cellMenu_7mrjrs_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_StyleClassItem_cellMenu_7mrjrs_a0a0() {
     }
@@ -50,6 +42,10 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
     }
+  }
+
+  private static boolean renderingCondition_7mrjrs_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "query", true) == null;
   }
 
   public static class MaxWidthStyleClassItem_generic_cellMenu_7mrjrs_a0c0 extends AbstractCellMenuPart_Generic_Item {
@@ -63,6 +59,10 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "query";
     }
+  }
+
+  private static boolean renderingCondition_7mrjrs_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "query", true) != null);
   }
 
   private EditorCell createCollection_7mrjrs_a(EditorContext editorContext, SNode node) {

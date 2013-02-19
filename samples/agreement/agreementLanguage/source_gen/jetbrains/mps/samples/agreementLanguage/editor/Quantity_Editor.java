@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -17,12 +19,18 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Quantity_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_e4lyhc_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_e4lyhc_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(node, "unit", "USD", "USD_KWH");
+  }
+
+  private static boolean renderingCondition_e4lyhc_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "unit", "USD", "USD_KWH"));
   }
 
   private EditorCell createCollection_e4lyhc_a(EditorContext editorContext, SNode node) {
@@ -97,13 +105,5 @@ public class Quantity_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_e4lyhc_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "unit", "USD", "USD_KWH");
-  }
-
-  private static boolean renderingCondition_e4lyhc_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.hasValue(node, "unit", "USD", "USD_KWH"));
   }
 }

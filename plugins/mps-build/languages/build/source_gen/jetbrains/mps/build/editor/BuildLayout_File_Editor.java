@@ -7,6 +7,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.build.behavior.BuildLayout_File_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -30,11 +35,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.build.behavior.BuildLayout_File_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BuildLayout_File_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -48,6 +48,14 @@ public class BuildLayout_File_Editor extends DefaultNodeEditor {
     public String getReplacementConceptName() {
       return "jetbrains.mps.build.structure.BuildLayout_Node";
     }
+  }
+
+  private static boolean renderingCondition_1ol6d0_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return isNotEmpty_1ol6d0_a0a0a2(SPropertyOperations.getString(node, "filemode")) || BuildLayout_File_Behavior.call_canHaveFilemode_9126048691955221297(node);
+  }
+
+  private static boolean renderingCondition_1ol6d0_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameters", true)).isEmpty();
   }
 
   private static class parametersListHandler_1ol6d0_a3a extends RefNodeListHandler {
@@ -262,15 +270,7 @@ public class BuildLayout_File_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_1ol6d0_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_1ol6d0_a0a0a41(SPropertyOperations.getString(node, "filemode")) || BuildLayout_File_Behavior.call_canHaveFilemode_9126048691955221297(node);
-  }
-
-  private static boolean renderingCondition_1ol6d0_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameters", true)).isEmpty();
-  }
-
-  public static boolean isNotEmpty_1ol6d0_a0a0a41(String str) {
+  public static boolean isNotEmpty_1ol6d0_a0a0a2(String str) {
     return str != null && str.length() > 0;
   }
 }

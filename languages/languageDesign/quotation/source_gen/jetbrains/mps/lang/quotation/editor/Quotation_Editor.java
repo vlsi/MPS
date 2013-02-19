@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -24,7 +26,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
@@ -34,7 +35,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
 
 public class Quotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -43,6 +43,14 @@ public class Quotation_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_29llnk_a_0(editorContext, node);
+  }
+
+  private static boolean renderingCondition_29llnk_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "modelToCreate", true) != null;
+  }
+
+  private static boolean renderingCondition_29llnk_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "quotedNode", true) != null;
   }
 
   public static class Quotation_component_cellMenu_29llnk_a0b0a implements SubstituteInfoPartExt {
@@ -55,6 +63,10 @@ public class Quotation_Editor extends DefaultNodeEditor {
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
+  }
+
+  private static boolean renderingCondition_29llnk_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "quotedNode", true) == null;
   }
 
   public static class Quotation_component_cellMenu_29llnk_a0c0a implements SubstituteInfoPartExt {
@@ -265,17 +277,5 @@ public class Quotation_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_29llnk_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "modelToCreate", true) != null;
-  }
-
-  private static boolean renderingCondition_29llnk_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "quotedNode", true) != null;
-  }
-
-  private static boolean renderingCondition_29llnk_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "quotedNode", true) == null;
   }
 }

@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -25,12 +27,14 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.InternalFlag;
 
 public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bmlzqh_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_bmlzqh_a21a(SNode node, EditorContext editorContext, IScope scope) {
+    return InternalFlag.isInternalMode();
   }
 
   private static class dependencyListHandler_bmlzqh_b1j0 extends RefNodeListHandler {
@@ -531,9 +535,5 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_bmlzqh_a21a(SNode node, EditorContext editorContext, IScope scope) {
-    return InternalFlag.isInternalMode();
   }
 }

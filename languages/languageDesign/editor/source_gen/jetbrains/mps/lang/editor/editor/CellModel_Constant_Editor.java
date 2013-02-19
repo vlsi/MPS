@@ -6,9 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.awt.Color;
-import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -29,6 +29,10 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8hdu2g_a_0(editorContext, node);
+  }
+
+  private static boolean renderingCondition_8hdu2g_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
   }
 
   private static Color _StyleParameter_QueryFunction_8hdu2g_a0b0(EditorContext editorContext, SNode node) {
@@ -57,10 +61,6 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static boolean _StyleParameter_QueryFunction_8hdu2g_a6b0(EditorContext editorContext, SNode node) {
     return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
-  }
-
-  private static boolean renderingCondition_8hdu2g_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
   }
 
   private static boolean renderingCondition_8hdu2g_a2a(SNode node, EditorContext editorContext, IScope scope) {

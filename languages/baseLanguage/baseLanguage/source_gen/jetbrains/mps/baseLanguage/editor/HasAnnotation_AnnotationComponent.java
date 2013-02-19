@@ -6,6 +6,9 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -19,9 +22,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class HasAnnotation_AnnotationComponent extends AbstractCellProvider {
   public HasAnnotation_AnnotationComponent(SNode node) {
@@ -40,6 +40,10 @@ public class HasAnnotation_AnnotationComponent extends AbstractCellProvider {
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);
+  }
+
+  private static boolean renderingCondition_85xxz0_a0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static class annotationListHandler_85xxz0_a0 extends RefNodeListHandler {
@@ -121,9 +125,5 @@ public class HasAnnotation_AnnotationComponent extends AbstractCellProvider {
     editorCell.setFoldedCell(this.createConstant_85xxz0_a0a(editorContext, node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
-  }
-
-  private static boolean renderingCondition_85xxz0_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 }

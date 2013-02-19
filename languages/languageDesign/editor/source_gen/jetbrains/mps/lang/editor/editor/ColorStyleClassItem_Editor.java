@@ -6,9 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -39,14 +39,6 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     return this.createCollection_azr75j_a(editorContext, node);
   }
 
-  private static boolean renderingCondition_azr75j_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "query", true) == null;
-  }
-
-  private static boolean renderingCondition_azr75j_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "query", true) != null;
-  }
-
   public static class ReplaceWith_StyleClassItem_cellMenu_azr75j_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_StyleClassItem_cellMenu_azr75j_a0a0() {
     }
@@ -54,6 +46,10 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
     }
+  }
+
+  private static boolean renderingCondition_azr75j_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "query", true) == null;
   }
 
   public static class ColorStyleClassItem_generic_cellMenu_azr75j_a0c0 extends AbstractCellMenuPart_Generic_Group {
@@ -102,6 +98,10 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "query";
     }
+  }
+
+  private static boolean renderingCondition_azr75j_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "query", true) != null;
   }
 
   public static class ColorStyleClassItem_generic_cellMenu_azr75j_a0d0 extends AbstractCellMenuPart_Generic_Group {

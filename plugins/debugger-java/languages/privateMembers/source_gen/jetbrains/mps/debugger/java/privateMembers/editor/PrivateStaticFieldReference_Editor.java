@@ -6,10 +6,19 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -20,15 +29,6 @@ import jetbrains.mps.baseLanguage.editor.QueriesUtil;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.StaticFieldReference_DeleteDot;
@@ -40,57 +40,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_62ivzp_a(editorContext, node);
-  }
-
-  public static class PrivateStaticFieldReference_generic_cellMenu_62ivzp_a0c0 extends AbstractCellMenuPart_Generic_Item {
-    public PrivateStaticFieldReference_generic_cellMenu_62ivzp_a0c0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SNode expr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null);
-      SLinkOperations.setTarget(expr, "classifier", SLinkOperations.getTarget(node, "classifier", false), false);
-      SNodeOperations.replaceWithAnother(node, expr);
-    }
-
-    public String getMatchingText() {
-      return "class";
-    }
-  }
-
-  public static class PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_62ivzp_b0c0 extends PrimaryReferentMenuCellMenuPart {
-    public PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_62ivzp_b0c0() {
-    }
-  }
-
-  public static class PrivateStaticFieldReference_customReplace_cellMenu_62ivzp_c0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public PrivateStaticFieldReference_customReplace_cellMenu_62ivzp_c0c0() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return QueriesUtil.replaceNodeMenu_parameterObjects(new ClassifierVisibleStaticMembersScope(SLinkOperations.getTarget(node, "classifier", false), node, IClassifiersSearchScope.STATIC_MEMBER) {
-        @Override
-        protected boolean isVisible(SNode member) {
-          return true;
-        }
-      }, SLinkOperations.getTarget(node, "classifier", false));
-    }
-
-    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
-    }
-
-    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") && !(VisibilityUtil.isVisible(node, SNodeOperations.cast(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
-        SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall", null);
-        return QueriesUtil.fillStaticMethodCall(newNode, parameterObject, SLinkOperations.getTarget(node, "classifier", false), node);
-
-      }
-      return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "classifier", false), parameterObject, node);
-    }
-
-    public boolean isReferentPresentation() {
-      return true;
-    }
   }
 
   public static class _Inline_62ivzp_a0a extends InlineCellProvider {
@@ -162,6 +111,57 @@ public class PrivateStaticFieldReference_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
+    }
+  }
+
+  public static class PrivateStaticFieldReference_generic_cellMenu_62ivzp_a0c0 extends AbstractCellMenuPart_Generic_Item {
+    public PrivateStaticFieldReference_generic_cellMenu_62ivzp_a0c0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SNode expr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null);
+      SLinkOperations.setTarget(expr, "classifier", SLinkOperations.getTarget(node, "classifier", false), false);
+      SNodeOperations.replaceWithAnother(node, expr);
+    }
+
+    public String getMatchingText() {
+      return "class";
+    }
+  }
+
+  public static class PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_62ivzp_b0c0 extends PrimaryReferentMenuCellMenuPart {
+    public PrivateStaticFieldReference_staticFieldDeclaration_cellMenu_62ivzp_b0c0() {
+    }
+  }
+
+  public static class PrivateStaticFieldReference_customReplace_cellMenu_62ivzp_c0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public PrivateStaticFieldReference_customReplace_cellMenu_62ivzp_c0c0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return QueriesUtil.replaceNodeMenu_parameterObjects(new ClassifierVisibleStaticMembersScope(SLinkOperations.getTarget(node, "classifier", false), node, IClassifiersSearchScope.STATIC_MEMBER) {
+        @Override
+        protected boolean isVisible(SNode member) {
+          return true;
+        }
+      }, SLinkOperations.getTarget(node, "classifier", false));
+    }
+
+    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") && !(VisibilityUtil.isVisible(node, SNodeOperations.cast(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
+        SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall", null);
+        return QueriesUtil.fillStaticMethodCall(newNode, parameterObject, SLinkOperations.getTarget(node, "classifier", false), node);
+
+      }
+      return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "classifier", false), parameterObject, node);
+    }
+
+    public boolean isReferentPresentation() {
+      return true;
     }
   }
 

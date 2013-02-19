@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -17,12 +19,14 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class VerticalAlignment_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cjpy1b_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_cjpy1b_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+    return "TOP".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
   }
 
   public static class VerticalAlignment_component_cellMenu_cjpy1b_a0a0a implements SubstituteInfoPartExt {
@@ -37,6 +41,10 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_cjpy1b_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+    return "BOTTOM".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
+  }
+
   public static class VerticalAlignment_component_cellMenu_cjpy1b_a0b0a implements SubstituteInfoPartExt {
     private VerticalAlignment_Chooser myComponent;
 
@@ -49,6 +57,10 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_cjpy1b_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+    return "MIDDLE".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
+  }
+
   public static class VerticalAlignment_component_cellMenu_cjpy1b_a0c0a implements SubstituteInfoPartExt {
     private VerticalAlignment_Chooser myComponent;
 
@@ -59,6 +71,10 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
+  }
+
+  private static boolean renderingCondition_cjpy1b_a3a0(SNode node, EditorContext editorContext, IScope scope) {
+    return "FILL".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
   }
 
   public static class VerticalAlignment_component_cellMenu_cjpy1b_a0d0a implements SubstituteInfoPartExt {
@@ -131,21 +147,5 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_cjpy1b_a0d0a()}));
     return editorCell;
-  }
-
-  private static boolean renderingCondition_cjpy1b_a0a0(SNode node, EditorContext editorContext, IScope scope) {
-    return "TOP".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
-  }
-
-  private static boolean renderingCondition_cjpy1b_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return "BOTTOM".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
-  }
-
-  private static boolean renderingCondition_cjpy1b_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return "MIDDLE".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
-  }
-
-  private static boolean renderingCondition_cjpy1b_a3a0(SNode node, EditorContext editorContext, IScope scope) {
-    return "FILL".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
   }
 }

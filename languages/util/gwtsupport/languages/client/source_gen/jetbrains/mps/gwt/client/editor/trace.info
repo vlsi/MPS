@@ -152,401 +152,401 @@
   </root>
   <root nodeRef="r:cfa67b95-96eb-4cda-8630-cfa01b12e5be(jetbrains.mps.gwt.client.editor)/1572321421811299586">
     <nodeInfo nodeId="1572321421811299586" fileName="PatternFilter_Editor.java" startLine="35" startPosition="79" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="40" startPosition="97" endLine="41" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="44" startPosition="66" endLine="45" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="45" startPosition="41" endLine="46" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="49" startPosition="86" endLine="50" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="50" startPosition="80" endLine="51" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="51" startPosition="95" endLine="52" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="55" startPosition="68" endLine="56" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="56" startPosition="34" endLine="57" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="57" startPosition="80" endLine="58" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="58" startPosition="87" endLine="59" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="62" startPosition="89" endLine="63" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="67" startPosition="96" endLine="68" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="69" startPosition="34" endLine="70" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="72" startPosition="131" endLine="73" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="78" startPosition="92" endLine="79" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="79" startPosition="89" endLine="80" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="80" startPosition="51" endLine="81" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="81" startPosition="36" endLine="82" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="82" startPosition="48" endLine="83" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="83" startPosition="42" endLine="84" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="84" startPosition="36" endLine="85" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="90" startPosition="100" endLine="91" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="94" startPosition="66" endLine="95" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="95" startPosition="41" endLine="96" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="99" startPosition="86" endLine="100" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="100" startPosition="80" endLine="101" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="101" startPosition="95" endLine="102" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="105" startPosition="68" endLine="106" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="106" startPosition="34" endLine="107" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="107" startPosition="80" endLine="108" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="108" startPosition="87" endLine="109" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="112" startPosition="89" endLine="113" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="117" startPosition="96" endLine="118" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="119" startPosition="34" endLine="120" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="122" startPosition="131" endLine="123" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="128" startPosition="92" endLine="129" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="129" startPosition="89" endLine="130" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="130" startPosition="51" endLine="131" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="131" startPosition="36" endLine="132" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="132" startPosition="48" endLine="133" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="133" startPosition="42" endLine="134" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="134" startPosition="36" endLine="135" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="139" startPosition="89" endLine="140" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="140" startPosition="97" endLine="141" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="141" startPosition="48" endLine="142" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="141" startPosition="48" endLine="142" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="142" startPosition="83" endLine="143" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="142" startPosition="83" endLine="143" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="143" startPosition="83" endLine="144" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="143" startPosition="83" endLine="144" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="144" startPosition="83" endLine="145" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="148" startPosition="90" endLine="149" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="149" startPosition="96" endLine="150" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="150" startPosition="49" endLine="151" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="151" startPosition="34" endLine="152" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="152" startPosition="49" endLine="153" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="153" startPosition="40" endLine="154" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="153" startPosition="40" endLine="154" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="155" startPosition="110" endLine="156" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="158" startPosition="110" endLine="159" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="160" startPosition="5" endLine="161" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="160" startPosition="5" endLine="161" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="161" startPosition="85" endLine="162" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="161" startPosition="85" endLine="162" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="162" startPosition="82" endLine="163" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="166" startPosition="90" endLine="167" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="167" startPosition="99" endLine="168" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="168" startPosition="49" endLine="169" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="169" startPosition="34" endLine="170" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="170" startPosition="49" endLine="171" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="171" startPosition="40" endLine="172" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="171" startPosition="40" endLine="172" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="172" startPosition="84" endLine="173" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="172" startPosition="84" endLine="173" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="173" startPosition="85" endLine="174" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="177" startPosition="90" endLine="178" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="178" startPosition="99" endLine="179" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="179" startPosition="49" endLine="180" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="180" startPosition="34" endLine="181" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="181" startPosition="49" endLine="182" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="182" startPosition="40" endLine="183" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="182" startPosition="40" endLine="183" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="183" startPosition="82" endLine="184" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2886182022232400623" fileName="PatternFilter_Editor.java" startLine="187" startPosition="90" endLine="188" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2886182022232400623" fileName="PatternFilter_Editor.java" startLine="188" startPosition="67" endLine="189" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2886182022232400623" fileName="PatternFilter_Editor.java" startLine="189" startPosition="69" endLine="190" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="193" startPosition="89" endLine="194" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="194" startPosition="91" endLine="195" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="195" startPosition="48" endLine="196" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="196" startPosition="34" endLine="197" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="197" startPosition="65" endLine="198" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="198" startPosition="46" endLine="199" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="199" startPosition="40" endLine="200" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="200" startPosition="49" endLine="201" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="201" startPosition="34" endLine="202" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421813074648" fileName="PatternFilter_Editor.java" startLine="205" startPosition="89" endLine="206" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421813074648" fileName="PatternFilter_Editor.java" startLine="206" startPosition="87" endLine="207" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421813074648" fileName="PatternFilter_Editor.java" startLine="207" startPosition="48" endLine="208" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421813074648" fileName="PatternFilter_Editor.java" startLine="208" startPosition="34" endLine="209" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421813074654" fileName="PatternFilter_Editor.java" startLine="212" startPosition="89" endLine="213" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421813074654" fileName="PatternFilter_Editor.java" startLine="213" startPosition="87" endLine="214" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421813074654" fileName="PatternFilter_Editor.java" startLine="214" startPosition="48" endLine="215" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421813074654" fileName="PatternFilter_Editor.java" startLine="215" startPosition="34" endLine="216" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="219" startPosition="92" endLine="220" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="220" startPosition="119" endLine="221" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="221" startPosition="106" endLine="222" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="222" startPosition="45" endLine="223" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="223" startPosition="49" endLine="224" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="227" startPosition="92" endLine="228" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="228" startPosition="125" endLine="229" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="229" startPosition="108" endLine="230" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="230" startPosition="48" endLine="231" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="231" startPosition="49" endLine="232" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811299616" fileName="PatternFilter_Editor.java" startLine="235" startPosition="91" endLine="236" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299616" fileName="PatternFilter_Editor.java" startLine="236" startPosition="74" endLine="237" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="240" startPosition="88" endLine="241" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="241" startPosition="81" endLine="242" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="242" startPosition="29" endLine="243" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="243" startPosition="42" endLine="244" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="244" startPosition="26" endLine="245" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="245" startPosition="58" endLine="246" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="246" startPosition="73" endLine="247" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="247" startPosition="57" endLine="248" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="249" startPosition="35" endLine="250" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="250" startPosition="72" endLine="251" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="251" startPosition="78" endLine="252" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="253" startPosition="10" endLine="254" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421812766994" fileName="PatternFilter_Editor.java" startLine="257" startPosition="112" endLine="258" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421812922615" fileName="PatternFilter_Editor.java" startLine="261" startPosition="112" endLine="262" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421812766994" fileName="PatternFilter_Editor.java" startLine="39" startPosition="112" endLine="40" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421812922615" fileName="PatternFilter_Editor.java" startLine="43" startPosition="112" endLine="44" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="48" startPosition="97" endLine="49" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="52" startPosition="66" endLine="53" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="53" startPosition="41" endLine="54" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="57" startPosition="86" endLine="58" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="58" startPosition="80" endLine="59" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="59" startPosition="95" endLine="60" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="63" startPosition="68" endLine="64" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="64" startPosition="34" endLine="65" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="65" startPosition="80" endLine="66" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="66" startPosition="87" endLine="67" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="70" startPosition="89" endLine="71" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="75" startPosition="96" endLine="76" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="77" startPosition="34" endLine="78" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="80" startPosition="131" endLine="81" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="86" startPosition="92" endLine="87" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="87" startPosition="89" endLine="88" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="88" startPosition="51" endLine="89" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="89" startPosition="36" endLine="90" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="90" startPosition="48" endLine="91" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="91" startPosition="42" endLine="92" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="92" startPosition="36" endLine="93" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="98" startPosition="100" endLine="99" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="102" startPosition="66" endLine="103" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="103" startPosition="41" endLine="104" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="107" startPosition="86" endLine="108" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="108" startPosition="80" endLine="109" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="109" startPosition="95" endLine="110" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="113" startPosition="68" endLine="114" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="114" startPosition="34" endLine="115" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="115" startPosition="80" endLine="116" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="116" startPosition="87" endLine="117" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="120" startPosition="89" endLine="121" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="125" startPosition="96" endLine="126" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="127" startPosition="34" endLine="128" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="130" startPosition="131" endLine="131" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="136" startPosition="92" endLine="137" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="137" startPosition="89" endLine="138" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="138" startPosition="51" endLine="139" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="139" startPosition="36" endLine="140" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="140" startPosition="48" endLine="141" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="141" startPosition="42" endLine="142" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="142" startPosition="36" endLine="143" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="147" startPosition="89" endLine="148" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="148" startPosition="97" endLine="149" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="149" startPosition="48" endLine="150" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="149" startPosition="48" endLine="150" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="150" startPosition="83" endLine="151" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="150" startPosition="83" endLine="151" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="151" startPosition="83" endLine="152" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="151" startPosition="83" endLine="152" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="152" startPosition="83" endLine="153" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="156" startPosition="90" endLine="157" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="157" startPosition="96" endLine="158" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="158" startPosition="49" endLine="159" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="159" startPosition="34" endLine="160" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="160" startPosition="49" endLine="161" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="161" startPosition="40" endLine="162" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="161" startPosition="40" endLine="162" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="163" startPosition="110" endLine="164" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="166" startPosition="110" endLine="167" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="168" startPosition="5" endLine="169" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="168" startPosition="5" endLine="169" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="169" startPosition="85" endLine="170" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="169" startPosition="85" endLine="170" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="170" startPosition="82" endLine="171" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="174" startPosition="90" endLine="175" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="175" startPosition="99" endLine="176" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="176" startPosition="49" endLine="177" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="177" startPosition="34" endLine="178" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="178" startPosition="49" endLine="179" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="179" startPosition="40" endLine="180" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="179" startPosition="40" endLine="180" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="180" startPosition="84" endLine="181" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="180" startPosition="84" endLine="181" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="181" startPosition="85" endLine="182" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="185" startPosition="90" endLine="186" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="186" startPosition="99" endLine="187" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="187" startPosition="49" endLine="188" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="188" startPosition="34" endLine="189" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="189" startPosition="49" endLine="190" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="190" startPosition="40" endLine="191" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="190" startPosition="40" endLine="191" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="191" startPosition="82" endLine="192" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400623" fileName="PatternFilter_Editor.java" startLine="195" startPosition="90" endLine="196" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400623" fileName="PatternFilter_Editor.java" startLine="196" startPosition="67" endLine="197" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400623" fileName="PatternFilter_Editor.java" startLine="197" startPosition="69" endLine="198" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="201" startPosition="89" endLine="202" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="202" startPosition="91" endLine="203" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="203" startPosition="48" endLine="204" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="204" startPosition="34" endLine="205" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="205" startPosition="65" endLine="206" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="206" startPosition="46" endLine="207" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="207" startPosition="40" endLine="208" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="208" startPosition="49" endLine="209" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="209" startPosition="34" endLine="210" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421813074648" fileName="PatternFilter_Editor.java" startLine="213" startPosition="89" endLine="214" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421813074648" fileName="PatternFilter_Editor.java" startLine="214" startPosition="87" endLine="215" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421813074648" fileName="PatternFilter_Editor.java" startLine="215" startPosition="48" endLine="216" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421813074648" fileName="PatternFilter_Editor.java" startLine="216" startPosition="34" endLine="217" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421813074654" fileName="PatternFilter_Editor.java" startLine="220" startPosition="89" endLine="221" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421813074654" fileName="PatternFilter_Editor.java" startLine="221" startPosition="87" endLine="222" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421813074654" fileName="PatternFilter_Editor.java" startLine="222" startPosition="48" endLine="223" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421813074654" fileName="PatternFilter_Editor.java" startLine="223" startPosition="34" endLine="224" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="227" startPosition="92" endLine="228" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="228" startPosition="119" endLine="229" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="229" startPosition="106" endLine="230" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="230" startPosition="45" endLine="231" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="231" startPosition="49" endLine="232" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="235" startPosition="92" endLine="236" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="236" startPosition="125" endLine="237" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="237" startPosition="108" endLine="238" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="238" startPosition="48" endLine="239" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="239" startPosition="49" endLine="240" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421811299616" fileName="PatternFilter_Editor.java" startLine="243" startPosition="91" endLine="244" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299616" fileName="PatternFilter_Editor.java" startLine="244" startPosition="74" endLine="245" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="248" startPosition="88" endLine="249" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="249" startPosition="81" endLine="250" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="250" startPosition="29" endLine="251" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="251" startPosition="42" endLine="252" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="252" startPosition="26" endLine="253" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="253" startPosition="58" endLine="254" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="254" startPosition="73" endLine="255" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="255" startPosition="57" endLine="256" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="257" startPosition="35" endLine="258" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="258" startPosition="72" endLine="259" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="259" startPosition="78" endLine="260" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="261" startPosition="10" endLine="262" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1572321421811299586" fileName="PatternFilter_Editor.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="attrListHandler_qer7ma_d0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="68" startPosition="134" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="71" startPosition="9" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="patternListHandler_qer7ma_b1a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="112" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="118" startPosition="134" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="121" startPosition="9" endLine="124" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="154" startPosition="83" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="154" startPosition="83" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="157" startPosition="5" endLine="160" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="157" startPosition="5" endLine="160" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1572321421812661234" fileName="PatternFilter_Editor.java" startLine="257" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_qer7ma_a1a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="1572321421812919007" fileName="PatternFilter_Editor.java" startLine="261" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_qer7ma_a2a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1572321421811299616" fileName="PatternFilter_Editor.java" startLine="235" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_qer7ma_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="99" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2886182022232400623" fileName="PatternFilter_Editor.java" startLine="187" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_qer7ma_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="55" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="105" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1572321421813074648" fileName="PatternFilter_Editor.java" startLine="205" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_qer7ma_e0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1572321421813074654" fileName="PatternFilter_Editor.java" startLine="212" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_qer7ma_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="248" startPosition="59" endLine="254" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="219" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_qer7ma_d0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="227" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_qer7ma_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="139" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_qer7ma_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="66" startPosition="132" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="78" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_qer7ma_a3a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="116" startPosition="132" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="128" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_qer7ma_a1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="177" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_qer7ma_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="166" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_qer7ma_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="66" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="116" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="193" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_qer7ma_c0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="240" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_qer7ma_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="148" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_qer7ma_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421812661234" fileName="PatternFilter_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_qer7ma_a1a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="1572321421812919007" fileName="PatternFilter_Editor.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_qer7ma_a2a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="attrListHandler_qer7ma_d0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="76" startPosition="134" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="79" startPosition="9" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="98" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="patternListHandler_qer7ma_b1a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="126" startPosition="134" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="129" startPosition="9" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="162" startPosition="83" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="162" startPosition="83" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="165" startPosition="5" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="165" startPosition="5" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1572321421811299616" fileName="PatternFilter_Editor.java" startLine="243" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_qer7ma_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="107" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2886182022232400623" fileName="PatternFilter_Editor.java" startLine="195" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_qer7ma_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="113" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421813074648" fileName="PatternFilter_Editor.java" startLine="213" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_qer7ma_e0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421813074654" fileName="PatternFilter_Editor.java" startLine="220" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_qer7ma_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="256" startPosition="59" endLine="262" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="227" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_qer7ma_d0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="235" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_qer7ma_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="147" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_qer7ma_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="74" startPosition="132" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="86" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_qer7ma_a3a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="124" startPosition="132" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="136" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_qer7ma_a1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="185" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_qer7ma_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="174" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_qer7ma_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="74" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="124" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="201" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_qer7ma_c0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="248" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_qer7ma_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="156" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_qer7ma_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="1572321421811299586" fileName="PatternFilter_Editor.java" startLine="35" startPosition="79" endLine="36" endPosition="63" />
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="40" startPosition="97" endLine="41" endPosition="50" />
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="62" startPosition="89" endLine="63" endPosition="66" />
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="69" startPosition="34" endLine="70" endPosition="95" />
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="72" startPosition="131" endLine="73" endPosition="139" />
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="90" startPosition="100" endLine="91" endPosition="50" />
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="112" startPosition="89" endLine="113" endPosition="66" />
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="119" startPosition="34" endLine="120" endPosition="95" />
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="122" startPosition="131" endLine="123" endPosition="139" />
-    <scopeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="141" startPosition="48" endLine="142" endPosition="83" />
-    <scopeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="142" startPosition="83" endLine="143" endPosition="83" />
-    <scopeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="143" startPosition="83" endLine="144" endPosition="83" />
-    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="153" startPosition="40" endLine="154" endPosition="83" />
-    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="155" startPosition="110" endLine="156" endPosition="83" />
-    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="158" startPosition="110" endLine="159" endPosition="84" />
-    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="160" startPosition="5" endLine="161" endPosition="85" />
-    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="161" startPosition="85" endLine="162" endPosition="82" />
-    <scopeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="171" startPosition="40" endLine="172" endPosition="84" />
-    <scopeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="172" startPosition="84" endLine="173" endPosition="85" />
-    <scopeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="182" startPosition="40" endLine="183" endPosition="82" />
-    <scopeInfo nodeId="1572321421812661235" fileName="PatternFilter_Editor.java" startLine="257" startPosition="112" endLine="258" endPosition="67" />
-    <scopeInfo nodeId="1572321421812919008" fileName="PatternFilter_Editor.java" startLine="261" startPosition="112" endLine="262" endPosition="67" />
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="44" startPosition="66" endLine="46" endPosition="93">
+    <scopeInfo nodeId="1572321421812661235" fileName="PatternFilter_Editor.java" startLine="39" startPosition="112" endLine="40" endPosition="67" />
+    <scopeInfo nodeId="1572321421812919008" fileName="PatternFilter_Editor.java" startLine="43" startPosition="112" endLine="44" endPosition="67" />
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="48" startPosition="97" endLine="49" endPosition="50" />
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="70" startPosition="89" endLine="71" endPosition="66" />
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="77" startPosition="34" endLine="78" endPosition="95" />
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="80" startPosition="131" endLine="81" endPosition="139" />
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="98" startPosition="100" endLine="99" endPosition="50" />
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="120" startPosition="89" endLine="121" endPosition="66" />
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="127" startPosition="34" endLine="128" endPosition="95" />
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="130" startPosition="131" endLine="131" endPosition="139" />
+    <scopeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="149" startPosition="48" endLine="150" endPosition="83" />
+    <scopeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="150" startPosition="83" endLine="151" endPosition="83" />
+    <scopeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="151" startPosition="83" endLine="152" endPosition="83" />
+    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="161" startPosition="40" endLine="162" endPosition="83" />
+    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="163" startPosition="110" endLine="164" endPosition="83" />
+    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="166" startPosition="110" endLine="167" endPosition="84" />
+    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="168" startPosition="5" endLine="169" endPosition="85" />
+    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="169" startPosition="85" endLine="170" endPosition="82" />
+    <scopeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="179" startPosition="40" endLine="180" endPosition="84" />
+    <scopeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="180" startPosition="84" endLine="181" endPosition="85" />
+    <scopeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="190" startPosition="40" endLine="191" endPosition="82" />
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="52" startPosition="66" endLine="54" endPosition="93">
       <varInfo nodeId="2968360207537240238" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="94" startPosition="66" endLine="96" endPosition="93">
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="102" startPosition="66" endLine="104" endPosition="93">
       <varInfo nodeId="2968360207537240241" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811299616" fileName="PatternFilter_Editor.java" startLine="235" startPosition="91" endLine="237" endPosition="18">
+    <scopeInfo nodeId="1572321421811299616" fileName="PatternFilter_Editor.java" startLine="243" startPosition="91" endLine="245" endPosition="18">
       <varInfo nodeId="1572321421811299616" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1572321421811299586" fileName="PatternFilter_Editor.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1572321421811299586" varName="editorContext" />
       <varInfo nodeId="1572321421811299586" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="2968360207537240238" varName="childRole" />
-      <varInfo nodeId="2968360207537240238" varName="context" />
-      <varInfo nodeId="2968360207537240238" varName="ownerNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="49" startPosition="86" endLine="52" endPosition="25">
-      <varInfo nodeId="2968360207537240238" varName="elementCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="2968360207537240238" varName="editorContext" />
-      <varInfo nodeId="2968360207537240238" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="90" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="2968360207537240241" varName="childRole" />
-      <varInfo nodeId="2968360207537240241" varName="context" />
-      <varInfo nodeId="2968360207537240241" varName="ownerNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="99" startPosition="86" endLine="102" endPosition="25">
-      <varInfo nodeId="2968360207537240241" varName="elementCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="112" startPosition="0" endLine="115" endPosition="0">
-      <varInfo nodeId="2968360207537240241" varName="editorContext" />
-      <varInfo nodeId="2968360207537240241" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="154" startPosition="83" endLine="157" endPosition="5" />
-    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="157" startPosition="5" endLine="160" endPosition="5" />
-    <scopeInfo nodeId="2886182022232400623" fileName="PatternFilter_Editor.java" startLine="187" startPosition="90" endLine="190" endPosition="22">
-      <varInfo nodeId="2886182022232400623" varName="editorCell" />
-      <varInfo nodeId="2886182022232400623" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="249" startPosition="35" endLine="252" endPosition="105">
-      <varInfo nodeId="1572321421811299610" varName="manager" />
-      <varInfo nodeId="1572321421811299610" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572321421812661234" fileName="PatternFilter_Editor.java" startLine="257" startPosition="0" endLine="260" endPosition="0">
+    <scopeInfo nodeId="1572321421812661234" fileName="PatternFilter_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1572321421812661234" varName="editorContext" />
       <varInfo nodeId="1572321421812661234" varName="node" />
       <varInfo nodeId="1572321421812661234" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421812919007" fileName="PatternFilter_Editor.java" startLine="261" startPosition="0" endLine="264" endPosition="0">
+    <scopeInfo nodeId="1572321421812919007" fileName="PatternFilter_Editor.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1572321421812919007" varName="editorContext" />
       <varInfo nodeId="1572321421812919007" varName="node" />
       <varInfo nodeId="1572321421812919007" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="2968360207537240238" varName="editorContext" />
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="2968360207537240238" varName="childRole" />
+      <varInfo nodeId="2968360207537240238" varName="context" />
+      <varInfo nodeId="2968360207537240238" varName="ownerNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="55" startPosition="68" endLine="59" endPosition="23">
-      <varInfo nodeId="2968360207537240238" varName="emptyCell" />
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="57" startPosition="86" endLine="60" endPosition="25">
+      <varInfo nodeId="2968360207537240238" varName="elementCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="94" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="2968360207537240241" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="105" startPosition="68" endLine="109" endPosition="23">
-      <varInfo nodeId="2968360207537240241" varName="emptyCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572321421813074648" fileName="PatternFilter_Editor.java" startLine="205" startPosition="89" endLine="209" endPosition="22">
-      <varInfo nodeId="1572321421813074648" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572321421813074654" fileName="PatternFilter_Editor.java" startLine="212" startPosition="89" endLine="216" endPosition="22">
-      <varInfo nodeId="1572321421813074654" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572321421811299616" fileName="PatternFilter_Editor.java" startLine="235" startPosition="0" endLine="239" endPosition="0">
-      <varInfo nodeId="1572321421811299616" varName="editorContext" />
-      <varInfo nodeId="1572321421811299616" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="49" startPosition="0" endLine="54" endPosition="0">
-      <varInfo nodeId="2968360207537240238" varName="editorContext" />
-      <varInfo nodeId="2968360207537240238" varName="elementNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="99" startPosition="0" endLine="104" endPosition="0">
-      <varInfo nodeId="2968360207537240241" varName="editorContext" />
-      <varInfo nodeId="2968360207537240241" varName="elementNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2886182022232400623" fileName="PatternFilter_Editor.java" startLine="187" startPosition="0" endLine="192" endPosition="0">
-      <varInfo nodeId="2886182022232400623" varName="editorContext" />
-      <varInfo nodeId="2886182022232400623" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="219" startPosition="92" endLine="224" endPosition="22">
-      <varInfo nodeId="2968360207537240238" varName="editorCell" />
-      <varInfo nodeId="2968360207537240238" varName="handler" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="227" startPosition="92" endLine="232" endPosition="22">
-      <varInfo nodeId="2968360207537240241" varName="editorCell" />
-      <varInfo nodeId="2968360207537240241" varName="handler" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="55" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="2968360207537240238" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="105" startPosition="0" endLine="111" endPosition="0">
-      <varInfo nodeId="2968360207537240241" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="139" startPosition="89" endLine="145" endPosition="22">
-      <varInfo nodeId="1572321421811299596" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572321421813074648" fileName="PatternFilter_Editor.java" startLine="205" startPosition="0" endLine="211" endPosition="0">
-      <varInfo nodeId="1572321421813074648" varName="editorContext" />
-      <varInfo nodeId="1572321421813074648" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572321421813074654" fileName="PatternFilter_Editor.java" startLine="212" startPosition="0" endLine="218" endPosition="0">
-      <varInfo nodeId="1572321421813074654" varName="editorContext" />
-      <varInfo nodeId="1572321421813074654" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="67" startPosition="96" endLine="74" endPosition="9" />
-    <scopeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="78" startPosition="92" endLine="85" endPosition="24">
-      <varInfo nodeId="2968360207537478793" varName="editorCell" />
-      <varInfo nodeId="2968360207537478793" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="117" startPosition="96" endLine="124" endPosition="9" />
-    <scopeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="128" startPosition="92" endLine="135" endPosition="24">
-      <varInfo nodeId="2968360207537614794" varName="editorCell" />
-      <varInfo nodeId="2968360207537614794" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="177" startPosition="90" endLine="184" endPosition="22">
-      <varInfo nodeId="1572321421813074650" varName="editorCell" />
-      <varInfo nodeId="1572321421813074650" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="219" startPosition="0" endLine="226" endPosition="0">
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="2968360207537240238" varName="editorContext" />
       <varInfo nodeId="2968360207537240238" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="227" startPosition="0" endLine="234" endPosition="0">
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="98" startPosition="0" endLine="101" endPosition="0">
+      <varInfo nodeId="2968360207537240241" varName="childRole" />
+      <varInfo nodeId="2968360207537240241" varName="context" />
+      <varInfo nodeId="2968360207537240241" varName="ownerNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="107" startPosition="86" endLine="110" endPosition="25">
+      <varInfo nodeId="2968360207537240241" varName="elementCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="120" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="2968360207537240241" varName="editorContext" />
       <varInfo nodeId="2968360207537240241" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="139" startPosition="0" endLine="147" endPosition="0">
+    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="162" startPosition="83" endLine="165" endPosition="5" />
+    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="165" startPosition="5" endLine="168" endPosition="5" />
+    <scopeInfo nodeId="2886182022232400623" fileName="PatternFilter_Editor.java" startLine="195" startPosition="90" endLine="198" endPosition="22">
+      <varInfo nodeId="2886182022232400623" varName="editorCell" />
+      <varInfo nodeId="2886182022232400623" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="257" startPosition="35" endLine="260" endPosition="105">
+      <varInfo nodeId="1572321421811299610" varName="manager" />
+      <varInfo nodeId="1572321421811299610" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="2968360207537240238" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="63" startPosition="68" endLine="67" endPosition="23">
+      <varInfo nodeId="2968360207537240238" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="102" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="2968360207537240241" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="113" startPosition="68" endLine="117" endPosition="23">
+      <varInfo nodeId="2968360207537240241" varName="emptyCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1572321421813074648" fileName="PatternFilter_Editor.java" startLine="213" startPosition="89" endLine="217" endPosition="22">
+      <varInfo nodeId="1572321421813074648" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1572321421813074654" fileName="PatternFilter_Editor.java" startLine="220" startPosition="89" endLine="224" endPosition="22">
+      <varInfo nodeId="1572321421813074654" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1572321421811299616" fileName="PatternFilter_Editor.java" startLine="243" startPosition="0" endLine="247" endPosition="0">
+      <varInfo nodeId="1572321421811299616" varName="editorContext" />
+      <varInfo nodeId="1572321421811299616" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="57" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="2968360207537240238" varName="editorContext" />
+      <varInfo nodeId="2968360207537240238" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="107" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="2968360207537240241" varName="editorContext" />
+      <varInfo nodeId="2968360207537240241" varName="elementNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2886182022232400623" fileName="PatternFilter_Editor.java" startLine="195" startPosition="0" endLine="200" endPosition="0">
+      <varInfo nodeId="2886182022232400623" varName="editorContext" />
+      <varInfo nodeId="2886182022232400623" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="227" startPosition="92" endLine="232" endPosition="22">
+      <varInfo nodeId="2968360207537240238" varName="editorCell" />
+      <varInfo nodeId="2968360207537240238" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="235" startPosition="92" endLine="240" endPosition="22">
+      <varInfo nodeId="2968360207537240241" varName="editorCell" />
+      <varInfo nodeId="2968360207537240241" varName="handler" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="63" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="2968360207537240238" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="113" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="2968360207537240241" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="147" startPosition="89" endLine="153" endPosition="22">
+      <varInfo nodeId="1572321421811299596" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1572321421813074648" fileName="PatternFilter_Editor.java" startLine="213" startPosition="0" endLine="219" endPosition="0">
+      <varInfo nodeId="1572321421813074648" varName="editorContext" />
+      <varInfo nodeId="1572321421813074648" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1572321421813074654" fileName="PatternFilter_Editor.java" startLine="220" startPosition="0" endLine="226" endPosition="0">
+      <varInfo nodeId="1572321421813074654" varName="editorContext" />
+      <varInfo nodeId="1572321421813074654" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="75" startPosition="96" endLine="82" endPosition="9" />
+    <scopeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="86" startPosition="92" endLine="93" endPosition="24">
+      <varInfo nodeId="2968360207537478793" varName="editorCell" />
+      <varInfo nodeId="2968360207537478793" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="125" startPosition="96" endLine="132" endPosition="9" />
+    <scopeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="136" startPosition="92" endLine="143" endPosition="24">
+      <varInfo nodeId="2968360207537614794" varName="editorCell" />
+      <varInfo nodeId="2968360207537614794" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="185" startPosition="90" endLine="192" endPosition="22">
+      <varInfo nodeId="1572321421813074650" varName="editorCell" />
+      <varInfo nodeId="1572321421813074650" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="227" startPosition="0" endLine="234" endPosition="0">
+      <varInfo nodeId="2968360207537240238" varName="editorContext" />
+      <varInfo nodeId="2968360207537240238" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="235" startPosition="0" endLine="242" endPosition="0">
+      <varInfo nodeId="2968360207537240241" varName="editorContext" />
+      <varInfo nodeId="2968360207537240241" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1572321421811299596" fileName="PatternFilter_Editor.java" startLine="147" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="1572321421811299596" varName="editorContext" />
       <varInfo nodeId="1572321421811299596" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="166" startPosition="90" endLine="174" endPosition="22">
+    <scopeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="174" startPosition="90" endLine="182" endPosition="22">
       <varInfo nodeId="1572321421811299612" varName="editorCell" />
       <varInfo nodeId="1572321421811299612" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="66" startPosition="132" endLine="75" endPosition="7" />
-    <scopeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="78" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="74" startPosition="132" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="2968360207537478793" fileName="PatternFilter_Editor.java" startLine="86" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="2968360207537478793" varName="editorContext" />
       <varInfo nodeId="2968360207537478793" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="116" startPosition="132" endLine="125" endPosition="7" />
-    <scopeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="128" startPosition="0" endLine="137" endPosition="0">
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="124" startPosition="132" endLine="133" endPosition="7" />
+    <scopeInfo nodeId="2968360207537614794" fileName="PatternFilter_Editor.java" startLine="136" startPosition="0" endLine="145" endPosition="0">
       <varInfo nodeId="2968360207537614794" varName="editorContext" />
       <varInfo nodeId="2968360207537614794" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="177" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="1572321421813074650" fileName="PatternFilter_Editor.java" startLine="185" startPosition="0" endLine="194" endPosition="0">
       <varInfo nodeId="1572321421813074650" varName="editorContext" />
       <varInfo nodeId="1572321421813074650" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="193" startPosition="89" endLine="202" endPosition="22">
+    <scopeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="201" startPosition="89" endLine="210" endPosition="22">
       <varInfo nodeId="1572321421812788367" varName="editorCell" />
       <varInfo nodeId="1572321421812788367" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="166" startPosition="0" endLine="176" endPosition="0">
+    <scopeInfo nodeId="1572321421811299612" fileName="PatternFilter_Editor.java" startLine="174" startPosition="0" endLine="184" endPosition="0">
       <varInfo nodeId="1572321421811299612" varName="editorContext" />
       <varInfo nodeId="1572321421811299612" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="66" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="74" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="2968360207537240238" varName="editorContext" />
       <varInfo nodeId="2968360207537240238" varName="elementCell" />
       <varInfo nodeId="2968360207537240238" varName="elementNode" />
       <varInfo nodeId="2968360207537240238" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="116" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="124" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="2968360207537240241" varName="editorContext" />
       <varInfo nodeId="2968360207537240241" varName="elementCell" />
       <varInfo nodeId="2968360207537240241" varName="elementNode" />
       <varInfo nodeId="2968360207537240241" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="193" startPosition="0" endLine="204" endPosition="0">
+    <scopeInfo nodeId="1572321421812788367" fileName="PatternFilter_Editor.java" startLine="201" startPosition="0" endLine="212" endPosition="0">
       <varInfo nodeId="1572321421812788367" varName="editorContext" />
       <varInfo nodeId="1572321421812788367" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="240" startPosition="88" endLine="254" endPosition="22">
+    <scopeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="248" startPosition="88" endLine="262" endPosition="22">
       <varInfo nodeId="1572321421811299610" varName="attributeConcept" />
       <varInfo nodeId="1572321421811299610" varName="attributeKind" />
       <varInfo nodeId="1572321421811299610" varName="editorCell" />
       <varInfo nodeId="1572321421811299610" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="148" startPosition="90" endLine="163" endPosition="22">
+    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="156" startPosition="90" endLine="171" endPosition="22">
       <varInfo nodeId="1572321421811299599" varName="editorCell" />
       <varInfo nodeId="1572321421811299599" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="240" startPosition="0" endLine="256" endPosition="0">
+    <scopeInfo nodeId="1572321421811299610" fileName="PatternFilter_Editor.java" startLine="248" startPosition="0" endLine="264" endPosition="0">
       <varInfo nodeId="1572321421811299610" varName="editorContext" />
       <varInfo nodeId="1572321421811299610" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="148" startPosition="0" endLine="165" endPosition="0">
+    <scopeInfo nodeId="1572321421811299599" fileName="PatternFilter_Editor.java" startLine="156" startPosition="0" endLine="173" endPosition="0">
       <varInfo nodeId="1572321421811299599" varName="editorContext" />
       <varInfo nodeId="1572321421811299599" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="39" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.gwt.client.editor.PatternFilter_Editor$attrListHandler_qer7ma_d0a" />
-    <unitInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="89" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.gwt.client.editor.PatternFilter_Editor$patternListHandler_qer7ma_b1a" />
+    <unitInfo nodeId="2968360207537240238" fileName="PatternFilter_Editor.java" startLine="47" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.gwt.client.editor.PatternFilter_Editor$attrListHandler_qer7ma_d0a" />
+    <unitInfo nodeId="2968360207537240241" fileName="PatternFilter_Editor.java" startLine="97" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.gwt.client.editor.PatternFilter_Editor$patternListHandler_qer7ma_b1a" />
     <unitInfo nodeId="1572321421811299586" fileName="PatternFilter_Editor.java" startLine="34" startPosition="0" endLine="265" endPosition="0" unitName="jetbrains.mps.gwt.client.editor.PatternFilter_Editor" />
   </root>
   <root nodeRef="r:cfa67b95-96eb-4cda-8630-cfa01b12e5be(jetbrains.mps.gwt.client.editor)/1572321421811299590">
@@ -750,144 +750,144 @@
   </root>
   <root nodeRef="r:cfa67b95-96eb-4cda-8630-cfa01b12e5be(jetbrains.mps.gwt.client.editor)/1572321421811299639">
     <nodeInfo nodeId="1572321421811299639" fileName="DefaultExcludes_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811416437" fileName="DefaultExcludes_Editor.java" startLine="31" startPosition="135" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="35" startPosition="37" endLine="36" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811416452" fileName="DefaultExcludes_Editor.java" startLine="44" startPosition="135" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="48" startPosition="37" endLine="49" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="53" startPosition="91" endLine="54" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="54" startPosition="40" endLine="55" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="55" startPosition="149" endLine="56" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="57" startPosition="31" endLine="58" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="59" startPosition="12" endLine="60" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="61" startPosition="5" endLine="62" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="62" startPosition="284" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="66" startPosition="89" endLine="67" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="67" startPosition="99" endLine="68" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="68" startPosition="48" endLine="69" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="68" startPosition="48" endLine="69" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="69" startPosition="82" endLine="70" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="69" startPosition="82" endLine="70" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="70" startPosition="81" endLine="71" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="70" startPosition="81" endLine="71" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="71" startPosition="84" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2886182022232400466" fileName="DefaultExcludes_Editor.java" startLine="75" startPosition="89" endLine="76" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2886182022232400466" fileName="DefaultExcludes_Editor.java" startLine="76" startPosition="67" endLine="77" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2886182022232400466" fileName="DefaultExcludes_Editor.java" startLine="77" startPosition="69" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811299647" fileName="DefaultExcludes_Editor.java" startLine="81" startPosition="88" endLine="82" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811299647" fileName="DefaultExcludes_Editor.java" startLine="82" startPosition="87" endLine="83" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299647" fileName="DefaultExcludes_Editor.java" startLine="83" startPosition="47" endLine="84" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811299647" fileName="DefaultExcludes_Editor.java" startLine="84" startPosition="34" endLine="85" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811416431" fileName="DefaultExcludes_Editor.java" startLine="88" startPosition="89" endLine="89" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811416431" fileName="DefaultExcludes_Editor.java" startLine="89" startPosition="89" endLine="90" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811416431" fileName="DefaultExcludes_Editor.java" startLine="90" startPosition="48" endLine="91" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811416431" fileName="DefaultExcludes_Editor.java" startLine="91" startPosition="34" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811416432" fileName="DefaultExcludes_Editor.java" startLine="95" startPosition="91" endLine="96" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572321421811416432" fileName="DefaultExcludes_Editor.java" startLine="96" startPosition="88" endLine="97" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811416432" fileName="DefaultExcludes_Editor.java" startLine="97" startPosition="50" endLine="98" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572321421811416432" fileName="DefaultExcludes_Editor.java" startLine="98" startPosition="34" endLine="99" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811395064" fileName="DefaultExcludes_Editor.java" startLine="102" startPosition="111" endLine="103" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultExcludes_generic_cellMenu_bk11d5_a0c0#()V" />
-    <nodeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="41" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultExcludes_generic_cellMenu_bk11d5_b0c0#()V" />
-    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="59" startPosition="10" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421811395064" fileName="DefaultExcludes_Editor.java" startLine="27" startPosition="111" endLine="28" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421811416437" fileName="DefaultExcludes_Editor.java" startLine="35" startPosition="135" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="39" startPosition="37" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421811416452" fileName="DefaultExcludes_Editor.java" startLine="48" startPosition="135" endLine="49" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="52" startPosition="37" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="57" startPosition="91" endLine="58" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="58" startPosition="40" endLine="59" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="59" startPosition="149" endLine="60" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="61" startPosition="31" endLine="62" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="63" startPosition="12" endLine="64" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="65" startPosition="5" endLine="66" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="66" startPosition="284" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="70" startPosition="89" endLine="71" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="71" startPosition="99" endLine="72" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="72" startPosition="48" endLine="73" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="72" startPosition="48" endLine="73" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="73" startPosition="82" endLine="74" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="73" startPosition="82" endLine="74" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="74" startPosition="81" endLine="75" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="74" startPosition="81" endLine="75" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="75" startPosition="84" endLine="76" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400466" fileName="DefaultExcludes_Editor.java" startLine="79" startPosition="89" endLine="80" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400466" fileName="DefaultExcludes_Editor.java" startLine="80" startPosition="67" endLine="81" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400466" fileName="DefaultExcludes_Editor.java" startLine="81" startPosition="69" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421811299647" fileName="DefaultExcludes_Editor.java" startLine="85" startPosition="88" endLine="86" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811299647" fileName="DefaultExcludes_Editor.java" startLine="86" startPosition="87" endLine="87" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299647" fileName="DefaultExcludes_Editor.java" startLine="87" startPosition="47" endLine="88" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811299647" fileName="DefaultExcludes_Editor.java" startLine="88" startPosition="34" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421811416431" fileName="DefaultExcludes_Editor.java" startLine="92" startPosition="89" endLine="93" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811416431" fileName="DefaultExcludes_Editor.java" startLine="93" startPosition="89" endLine="94" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811416431" fileName="DefaultExcludes_Editor.java" startLine="94" startPosition="48" endLine="95" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811416431" fileName="DefaultExcludes_Editor.java" startLine="95" startPosition="34" endLine="96" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421811416432" fileName="DefaultExcludes_Editor.java" startLine="99" startPosition="91" endLine="100" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572321421811416432" fileName="DefaultExcludes_Editor.java" startLine="100" startPosition="88" endLine="101" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811416432" fileName="DefaultExcludes_Editor.java" startLine="101" startPosition="50" endLine="102" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572321421811416432" fileName="DefaultExcludes_Editor.java" startLine="102" startPosition="34" endLine="103" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultExcludes_generic_cellMenu_bk11d5_a0c0#()V" />
+    <nodeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="45" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultExcludes_generic_cellMenu_bk11d5_b0c0#()V" />
+    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="63" startPosition="10" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1572321421811299639" fileName="DefaultExcludes_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1572321421811299652" fileName="DefaultExcludes_Editor.java" startLine="102" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_bk11d5_a2a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="56" startPosition="33" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2886182022232400466" fileName="DefaultExcludes_Editor.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_bk11d5_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1572321421811299647" fileName="DefaultExcludes_Editor.java" startLine="81" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_bk11d5_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1572321421811416431" fileName="DefaultExcludes_Editor.java" startLine="88" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_bk11d5_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1572321421811416432" fileName="DefaultExcludes_Editor.java" startLine="95" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_bk11d5_a2a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="66" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_bk11d5_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="53" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAlternation_bk11d5_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="28" startPosition="59" endLine="28" endPosition="59" />
-    <scopeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="41" startPosition="59" endLine="41" endPosition="59" />
+    <nodeInfo nodeId="1572321421811299652" fileName="DefaultExcludes_Editor.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_bk11d5_a2a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="60" startPosition="33" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2886182022232400466" fileName="DefaultExcludes_Editor.java" startLine="79" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_bk11d5_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421811299647" fileName="DefaultExcludes_Editor.java" startLine="85" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_bk11d5_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421811416431" fileName="DefaultExcludes_Editor.java" startLine="92" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_bk11d5_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421811416432" fileName="DefaultExcludes_Editor.java" startLine="99" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_bk11d5_a2a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="70" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_bk11d5_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="57" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAlternation_bk11d5_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="32" startPosition="59" endLine="32" endPosition="59" />
+    <scopeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="45" startPosition="59" endLine="45" endPosition="59" />
     <scopeInfo nodeId="1572321421811299639" fileName="DefaultExcludes_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" />
-    <scopeInfo nodeId="1572321421811416436" fileName="DefaultExcludes_Editor.java" startLine="31" startPosition="135" endLine="32" endPosition="58" />
-    <scopeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="35" startPosition="37" endLine="36" endPosition="19" />
-    <scopeInfo nodeId="1572321421811416451" fileName="DefaultExcludes_Editor.java" startLine="44" startPosition="135" endLine="45" endPosition="59" />
-    <scopeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="48" startPosition="37" endLine="49" endPosition="18" />
-    <scopeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="57" startPosition="31" endLine="58" endPosition="71" />
-    <scopeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="59" startPosition="12" endLine="60" endPosition="73" />
-    <scopeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="68" startPosition="48" endLine="69" endPosition="82" />
-    <scopeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="69" startPosition="82" endLine="70" endPosition="81" />
-    <scopeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="70" startPosition="81" endLine="71" endPosition="84" />
-    <scopeInfo nodeId="1572321421811299653" fileName="DefaultExcludes_Editor.java" startLine="102" startPosition="111" endLine="103" endPosition="57" />
-    <scopeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="41" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1572321421811299653" fileName="DefaultExcludes_Editor.java" startLine="27" startPosition="111" endLine="28" endPosition="57" />
+    <scopeInfo nodeId="1572321421811416436" fileName="DefaultExcludes_Editor.java" startLine="35" startPosition="135" endLine="36" endPosition="58" />
+    <scopeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="39" startPosition="37" endLine="40" endPosition="19" />
+    <scopeInfo nodeId="1572321421811416451" fileName="DefaultExcludes_Editor.java" startLine="48" startPosition="135" endLine="49" endPosition="59" />
+    <scopeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="52" startPosition="37" endLine="53" endPosition="18" />
+    <scopeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="61" startPosition="31" endLine="62" endPosition="71" />
+    <scopeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="63" startPosition="12" endLine="64" endPosition="73" />
+    <scopeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="72" startPosition="48" endLine="73" endPosition="82" />
+    <scopeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="73" startPosition="82" endLine="74" endPosition="81" />
+    <scopeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="74" startPosition="81" endLine="75" endPosition="84" />
+    <scopeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="32" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="45" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="1572321421811299639" fileName="DefaultExcludes_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1572321421811299639" varName="editorContext" />
       <varInfo nodeId="1572321421811299639" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="1572321421811299652" fileName="DefaultExcludes_Editor.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1572321421811299652" varName="editorContext" />
+      <varInfo nodeId="1572321421811299652" varName="node" />
+      <varInfo nodeId="1572321421811299652" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1572321421811416434" varName="editorContext" />
       <varInfo nodeId="1572321421811416434" varName="model" />
       <varInfo nodeId="1572321421811416434" varName="node" />
       <varInfo nodeId="1572321421811416434" varName="operationContext" />
       <varInfo nodeId="1572321421811416434" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1572321421811416449" varName="editorContext" />
       <varInfo nodeId="1572321421811416449" varName="model" />
       <varInfo nodeId="1572321421811416449" varName="node" />
       <varInfo nodeId="1572321421811416449" varName="operationContext" />
       <varInfo nodeId="1572321421811416449" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="2886182022232400466" fileName="DefaultExcludes_Editor.java" startLine="75" startPosition="89" endLine="78" endPosition="22">
+    <scopeInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="2886182022232400466" fileName="DefaultExcludes_Editor.java" startLine="79" startPosition="89" endLine="82" endPosition="22">
       <varInfo nodeId="2886182022232400466" varName="editorCell" />
       <varInfo nodeId="2886182022232400466" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811299652" fileName="DefaultExcludes_Editor.java" startLine="102" startPosition="0" endLine="105" endPosition="0">
-      <varInfo nodeId="1572321421811299652" varName="editorContext" />
-      <varInfo nodeId="1572321421811299652" varName="node" />
-      <varInfo nodeId="1572321421811299652" varName="scope" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572321421811299647" fileName="DefaultExcludes_Editor.java" startLine="81" startPosition="88" endLine="85" endPosition="22">
+    <scopeInfo nodeId="1572321421811299647" fileName="DefaultExcludes_Editor.java" startLine="85" startPosition="88" endLine="89" endPosition="22">
       <varInfo nodeId="1572321421811299647" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811416431" fileName="DefaultExcludes_Editor.java" startLine="88" startPosition="89" endLine="92" endPosition="22">
+    <scopeInfo nodeId="1572321421811416431" fileName="DefaultExcludes_Editor.java" startLine="92" startPosition="89" endLine="96" endPosition="22">
       <varInfo nodeId="1572321421811416431" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811416432" fileName="DefaultExcludes_Editor.java" startLine="95" startPosition="91" endLine="99" endPosition="22">
+    <scopeInfo nodeId="1572321421811416432" fileName="DefaultExcludes_Editor.java" startLine="99" startPosition="91" endLine="103" endPosition="22">
       <varInfo nodeId="1572321421811416432" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2886182022232400466" fileName="DefaultExcludes_Editor.java" startLine="75" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="2886182022232400466" fileName="DefaultExcludes_Editor.java" startLine="79" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="2886182022232400466" varName="editorContext" />
       <varInfo nodeId="2886182022232400466" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="66" startPosition="89" endLine="72" endPosition="22">
+    <scopeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="70" startPosition="89" endLine="76" endPosition="22">
       <varInfo nodeId="1572321421811299641" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811299647" fileName="DefaultExcludes_Editor.java" startLine="81" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="1572321421811299647" fileName="DefaultExcludes_Editor.java" startLine="85" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="1572321421811299647" varName="editorContext" />
       <varInfo nodeId="1572321421811299647" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811416431" fileName="DefaultExcludes_Editor.java" startLine="88" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="1572321421811416431" fileName="DefaultExcludes_Editor.java" startLine="92" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="1572321421811416431" varName="editorContext" />
       <varInfo nodeId="1572321421811416431" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811416432" fileName="DefaultExcludes_Editor.java" startLine="95" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="1572321421811416432" fileName="DefaultExcludes_Editor.java" startLine="99" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="1572321421811416432" varName="editorContext" />
       <varInfo nodeId="1572321421811416432" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="66" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="1572321421811299641" fileName="DefaultExcludes_Editor.java" startLine="70" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="1572321421811299641" varName="editorContext" />
       <varInfo nodeId="1572321421811299641" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="53" startPosition="91" endLine="63" endPosition="22">
+    <scopeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="57" startPosition="91" endLine="67" endPosition="22">
       <varInfo nodeId="1572321421811299650" varName="alternationCondition" />
       <varInfo nodeId="1572321421811299650" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="53" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="1572321421811299650" fileName="DefaultExcludes_Editor.java" startLine="57" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1572321421811299650" varName="editorContext" />
       <varInfo nodeId="1572321421811299650" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.gwt.client.editor.DefaultExcludes_Editor$DefaultExcludes_generic_cellMenu_bk11d5_a0c0" />
-    <unitInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="40" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.gwt.client.editor.DefaultExcludes_Editor$DefaultExcludes_generic_cellMenu_bk11d5_b0c0" />
+    <unitInfo nodeId="1572321421811416434" fileName="DefaultExcludes_Editor.java" startLine="31" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.gwt.client.editor.DefaultExcludes_Editor$DefaultExcludes_generic_cellMenu_bk11d5_a0c0" />
+    <unitInfo nodeId="1572321421811416449" fileName="DefaultExcludes_Editor.java" startLine="44" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.gwt.client.editor.DefaultExcludes_Editor$DefaultExcludes_generic_cellMenu_bk11d5_b0c0" />
     <unitInfo nodeId="1572321421811299639" fileName="DefaultExcludes_Editor.java" startLine="22" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.gwt.client.editor.DefaultExcludes_Editor" />
   </root>
   <root nodeRef="r:cfa67b95-96eb-4cda-8630-cfa01b12e5be(jetbrains.mps.gwt.client.editor)/1572321421811416467">

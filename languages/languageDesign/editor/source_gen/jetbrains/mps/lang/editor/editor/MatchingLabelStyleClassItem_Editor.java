@@ -38,14 +38,6 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "query", true) == null && !(SPropertyOperations.getBoolean(node, "hasNoLabel"));
   }
 
-  private static boolean renderingCondition_uvxm5p_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "query", true) == null) && SPropertyOperations.getBoolean(node, "hasNoLabel");
-  }
-
-  private static boolean renderingCondition_uvxm5p_a4a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "query", true) != null;
-  }
-
   public static class MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0c0 extends AbstractCellMenuPart_Generic_Item {
     public MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0c0() {
     }
@@ -59,6 +51,10 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_uvxm5p_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "query", true) == null) && SPropertyOperations.getBoolean(node, "hasNoLabel");
+  }
+
   public static class MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0d0 extends AbstractCellMenuPart_Generic_Item {
     public MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0d0() {
     }
@@ -70,6 +66,10 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "label name";
     }
+  }
+
+  private static boolean renderingCondition_uvxm5p_a4a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "query", true) != null;
   }
 
   private EditorCell createCollection_uvxm5p_a(EditorContext editorContext, SNode node) {

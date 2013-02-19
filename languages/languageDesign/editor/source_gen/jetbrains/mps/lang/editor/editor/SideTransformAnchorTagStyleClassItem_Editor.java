@@ -6,10 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -46,14 +46,6 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     return this.createCollection_2l0gvl_a(editorContext, node);
   }
 
-  private static boolean renderingCondition_2l0gvl_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).isEmpty();
-  }
-
-  private static boolean renderingCondition_2l0gvl_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).isNotEmpty();
-  }
-
   public static class ReplaceWith_StyleClassItem_cellMenu_2l0gvl_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_StyleClassItem_cellMenu_2l0gvl_a0a0() {
     }
@@ -61,6 +53,10 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
     }
+  }
+
+  private static boolean renderingCondition_2l0gvl_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).isEmpty();
   }
 
   public static class SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_a0c0 extends AbstractCellMenuPart_Generic_Group {
@@ -99,6 +95,10 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     public String getMatchingText() {
       return "Composite tag";
     }
+  }
+
+  private static boolean renderingCondition_2l0gvl_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).isNotEmpty();
   }
 
   private static class tagsListHandler_2l0gvl_d0 extends RefNodeListHandler {

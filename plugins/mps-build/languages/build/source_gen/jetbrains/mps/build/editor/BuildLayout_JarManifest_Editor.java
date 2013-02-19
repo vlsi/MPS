@@ -6,6 +6,11 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.build.behavior.BuildLayout_JarManifest_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -26,15 +31,18 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.build.behavior.BuildLayout_JarManifest_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class BuildLayout_JarManifest_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gnweac_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_gnweac_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(BuildLayout_JarManifest_Behavior.call_isInJar_6837653846148477885(node)) || (SLinkOperations.getTarget(node, "name", true) != null);
+  }
+
+  private static boolean renderingCondition_gnweac_a1c0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(node, "parts", true)).last(), "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section"));
   }
 
   private static class partsListHandler_gnweac_a2a extends RefNodeListHandler {
@@ -159,13 +167,5 @@ public class BuildLayout_JarManifest_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_gnweac_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(BuildLayout_JarManifest_Behavior.call_isInJar_6837653846148477885(node)) || (SLinkOperations.getTarget(node, "name", true) != null);
-  }
-
-  private static boolean renderingCondition_gnweac_a1c0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(node, "parts", true)).last(), "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section"));
   }
 }

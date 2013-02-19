@@ -10,6 +10,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
@@ -23,12 +25,26 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MacroReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_yfwtie_a(editorContext, node);
+  }
+
+  public static class MacroReference_component_cellMenu_yfwtie_a0a implements SubstituteInfoPartExt {
+    private MacroReference_MenuComponent myComponent;
+
+    public MacroReference_component_cellMenu_yfwtie_a0a() {
+      this.myComponent = new MacroReference_MenuComponent();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
+  private static boolean renderingCondition_yfwtie_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return isNotEmpty_yfwtie_a0a0c(SPropertyOperations.getString(node, "name"));
   }
 
   public static class MacroReference_component_cellMenu_yfwtie_a0a0 implements SubstituteInfoPartExt {
@@ -43,22 +59,14 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_yfwtie_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return isEmpty_yfwtie_a0a0e(SPropertyOperations.getString(node, "name"));
+  }
+
   public static class MacroReference_component_cellMenu_yfwtie_a0b0 implements SubstituteInfoPartExt {
     private MacroReference_MenuComponent myComponent;
 
     public MacroReference_component_cellMenu_yfwtie_a0b0() {
-      this.myComponent = new MacroReference_MenuComponent();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-  }
-
-  public static class MacroReference_component_cellMenu_yfwtie_a0a implements SubstituteInfoPartExt {
-    private MacroReference_MenuComponent myComponent;
-
-    public MacroReference_component_cellMenu_yfwtie_a0a() {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
@@ -114,19 +122,11 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_yfwtie_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_yfwtie_a0a0h(SPropertyOperations.getString(node, "name"));
-  }
-
-  private static boolean renderingCondition_yfwtie_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return isEmpty_yfwtie_a0a0i(SPropertyOperations.getString(node, "name"));
-  }
-
-  public static boolean isNotEmpty_yfwtie_a0a0h(String str) {
+  public static boolean isNotEmpty_yfwtie_a0a0c(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_yfwtie_a0a0i(String str) {
+  public static boolean isEmpty_yfwtie_a0a0e(String str) {
     return str == null || str.length() == 0;
   }
 }

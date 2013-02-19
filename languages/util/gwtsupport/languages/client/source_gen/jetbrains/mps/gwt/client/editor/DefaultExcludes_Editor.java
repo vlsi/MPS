@@ -6,11 +6,11 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -22,6 +22,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 public class DefaultExcludes_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bk11d5_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_bk11d5_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "value");
   }
 
   public static class DefaultExcludes_generic_cellMenu_bk11d5_a0c0 extends AbstractCellMenuPart_Generic_Item {
@@ -97,9 +101,5 @@ public class DefaultExcludes_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_bk11d5_a2a_0");
     editorCell.setDefaultText("");
     return editorCell;
-  }
-
-  private static boolean renderingCondition_bk11d5_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "value");
   }
 }

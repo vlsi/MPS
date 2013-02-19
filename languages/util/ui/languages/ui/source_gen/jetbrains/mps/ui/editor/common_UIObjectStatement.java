@@ -6,6 +6,11 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -21,11 +26,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 public class common_UIObjectStatement extends AbstractCellProvider {
   public common_UIObjectStatement(SNode node) {
@@ -44,6 +44,14 @@ public class common_UIObjectStatement extends AbstractCellProvider {
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);
+  }
+
+  private static boolean renderingCondition_cz3bck_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(node, "uiObject", false))).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode uio) {
+        return SLinkOperations.getTargets(uio, "compartment", true);
+      }
+    }).isNotEmpty();
   }
 
   private static class aspectListHandler_cz3bck_a0a extends RefNodeListHandler {
@@ -354,13 +362,5 @@ public class common_UIObjectStatement extends AbstractCellProvider {
     editorCell.setCellId("refNodeList_compartment");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
-  }
-
-  private static boolean renderingCondition_cz3bck_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(node, "uiObject", false))).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode uio) {
-        return SLinkOperations.getTargets(uio, "compartment", true);
-      }
-    }).isNotEmpty();
   }
 }

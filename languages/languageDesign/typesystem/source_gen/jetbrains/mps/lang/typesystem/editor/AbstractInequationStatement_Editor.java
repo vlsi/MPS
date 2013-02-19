@@ -6,7 +6,12 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -17,7 +22,6 @@ import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -25,10 +29,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.MPSColors;
 
 public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -37,6 +37,18 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ka3b3c_a_0(editorContext, node);
+  }
+
+  private static boolean renderingCondition_ka3b3c_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "checkOnly");
+  }
+
+  private static Color _StyleParameter_QueryFunction_ka3b3c_a0a0a(EditorContext editorContext, SNode node) {
+    return MPSColors.DARK_BLUE;
+  }
+
+  private static Color _StyleParameter_QueryFunction_ka3b3c_a0b0a(EditorContext editorContext, SNode node) {
+    return MPSColors.DARK_BLUE;
   }
 
   public static class ReplaceWith_AbstractEquationStatement_cellMenu_ka3b3c_a0d0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
@@ -48,6 +60,18 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static Color _StyleParameter_QueryFunction_ka3b3c_a0f0a(EditorContext editorContext, SNode node) {
+    return MPSColors.DARK_BLUE;
+  }
+
+  private static boolean renderingCondition_ka3b3c_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "checkOnly"));
+  }
+
+  private static Color _StyleParameter_QueryFunction_ka3b3c_a0a1a(EditorContext editorContext, SNode node) {
+    return MPSColors.DARK_BLUE;
+  }
+
   public static class ReplaceWith_AbstractEquationStatement_cellMenu_ka3b3c_a0c1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractEquationStatement_cellMenu_ka3b3c_a0c1a() {
     }
@@ -55,6 +79,10 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
     }
+  }
+
+  private static boolean renderingCondition_ka3b3c_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", false, false) != null;
   }
 
   private EditorCell createCollection_ka3b3c_a(EditorContext editorContext, SNode node) {
@@ -402,33 +430,5 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_ka3b3c_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "checkOnly");
-  }
-
-  private static boolean renderingCondition_ka3b3c_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "checkOnly"));
-  }
-
-  private static boolean renderingCondition_ka3b3c_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", false, false) != null;
-  }
-
-  private static Color _StyleParameter_QueryFunction_ka3b3c_a0a0a(EditorContext editorContext, SNode node) {
-    return MPSColors.DARK_BLUE;
-  }
-
-  private static Color _StyleParameter_QueryFunction_ka3b3c_a0b0a(EditorContext editorContext, SNode node) {
-    return MPSColors.DARK_BLUE;
-  }
-
-  private static Color _StyleParameter_QueryFunction_ka3b3c_a0f0a(EditorContext editorContext, SNode node) {
-    return MPSColors.DARK_BLUE;
-  }
-
-  private static Color _StyleParameter_QueryFunction_ka3b3c_a0a1a(EditorContext editorContext, SNode node) {
-    return MPSColors.DARK_BLUE;
   }
 }

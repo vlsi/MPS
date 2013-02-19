@@ -6,6 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -21,14 +25,34 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ClassifierDocComment_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_q2jz9e_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_q2jz9e_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}));
+  }
+
+  private static boolean renderingCondition_q2jz9e_a1c0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_q2jz9e_a2c0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "since", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_q2jz9e_a3c0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "version", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_q2jz9e_a4c0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "see", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_q2jz9e_a5c0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty();
   }
 
   private static class bodyListHandler_q2jz9e_b0 extends RefNodeListHandler {
@@ -416,29 +440,5 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
-  }
-
-  private static boolean renderingCondition_q2jz9e_a1c0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_q2jz9e_a2c0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "since", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_q2jz9e_a3c0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "version", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_q2jz9e_a4c0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "see", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_q2jz9e_a5c0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_q2jz9e_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}));
   }
 }

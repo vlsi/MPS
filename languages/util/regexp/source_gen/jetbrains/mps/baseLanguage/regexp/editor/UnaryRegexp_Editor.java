@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -23,12 +25,18 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior;
 
 public class UnaryRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xoe8gq_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_xoe8gq_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
+  }
+
+  private static boolean renderingCondition_xoe8gq_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
   }
 
   public static class ReplaceWith_UnaryRegexp_cellMenu_xoe8gq_a0d0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
@@ -107,13 +115,5 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_xoe8gq_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
-  }
-
-  private static boolean renderingCondition_xoe8gq_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
   }
 }

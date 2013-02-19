@@ -6,13 +6,13 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -48,6 +48,10 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     return createEditorCell((EditorContext) editorContext);
   }
 
+  private static boolean renderingCondition_2konf7_a1b0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "canRun");
+  }
+
   public static class RunConfigurationExecutor_generic_cellMenu_2konf7_a0b1a extends AbstractCellMenuPart_Generic_Item {
     public RunConfigurationExecutor_generic_cellMenu_2konf7_a0b1a() {
     }
@@ -59,6 +63,10 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     public String getMatchingText() {
       return "can't run";
     }
+  }
+
+  private static boolean renderingCondition_2konf7_a2b0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "canRun"));
   }
 
   public static class RunConfigurationExecutor_generic_cellMenu_2konf7_a0c1a extends AbstractCellMenuPart_Generic_Item {
@@ -74,6 +82,10 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     }
   }
 
+  private static boolean renderingCondition_2konf7_a1c0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "debuggerConfiguration", true) != null);
+  }
+
   public static class RunConfigurationExecutor_generic_cellMenu_2konf7_a0a1c0 extends AbstractCellMenuPart_Generic_Item {
     public RunConfigurationExecutor_generic_cellMenu_2konf7_a0a1c0() {
     }
@@ -85,6 +97,10 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
     public String getMatchingText() {
       return "can't debug";
     }
+  }
+
+  private static boolean renderingCondition_2konf7_a2c0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "debuggerConfiguration", true) == null);
   }
 
   public static class RunConfigurationExecutor_generic_cellMenu_2konf7_a0c2a extends AbstractCellMenuPart_Generic_Item {
@@ -234,21 +250,5 @@ public class ComplexCanRunAndDebug extends AbstractCellProvider {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_2konf7_a1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "canRun");
-  }
-
-  private static boolean renderingCondition_2konf7_a2b0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "canRun"));
-  }
-
-  private static boolean renderingCondition_2konf7_a1c0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "debuggerConfiguration", true) != null);
-  }
-
-  private static boolean renderingCondition_2konf7_a2c0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "debuggerConfiguration", true) == null);
   }
 }
