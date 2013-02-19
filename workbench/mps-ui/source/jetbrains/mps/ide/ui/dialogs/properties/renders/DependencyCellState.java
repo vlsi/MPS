@@ -22,7 +22,7 @@ import java.awt.Color;
 public enum DependencyCellState {
   NORMAL(SimpleTextAttributes.SIMPLE_CELL_ATTRIBUTES),
   NOT_AVALIABLE(SimpleTextAttributes.ERROR_ATTRIBUTES),
-  NOT_IN_SCOPE(new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, new Color(255,145,0))), //"ff4500"
+  NOT_IN_SCOPE(SimpleTextAttributes.ERROR_ATTRIBUTES), //new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, new Color(255,145,0))
   UNUSED(SimpleTextAttributes.GRAYED_ATTRIBUTES);
 
   private final SimpleTextAttributes myTextAttributes;

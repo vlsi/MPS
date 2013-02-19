@@ -4,9 +4,11 @@ package jetbrains.mps.build.packaging.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,15 +27,18 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.PathManager;
+import java.util.Collections;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.vfs.IFile;
+import java.util.Set;
 
 public class Module_Behavior {
   public static void init(SNode thisNode) {
@@ -45,7 +50,7 @@ public class Module_Behavior {
   }
 
   public static boolean call_isCompiledInMPS_1213877514774(SNode thisNode) {
-    return Module_Behavior.call_getModule_1213877515148(thisNode).isCompileInMPS();
+    return SModuleOperations.isCompileInMps(Module_Behavior.call_getModule_1213877515148(thisNode));
   }
 
   public static SNode call_getModuleBaseDirectory_6863060912307757632(SNode thisNode) {
@@ -57,15 +62,15 @@ public class Module_Behavior {
   }
 
   public static SNode call_getClassesGen_3315989002810564857(SNode thisNode) {
-    return PathHolder_Behavior.createPathHolder_7235580512916878209(Module_Behavior.call_getModule_1213877515148(thisNode).getClassesGen().getPath(), thisNode);
+    return PathHolder_Behavior.createPathHolder_7235580512916878209(check_835h7m_a0a0e(check_835h7m_a0a0a4(Module_Behavior.call_getModule_1213877515148(thisNode).getFacet(JavaModuleFacet.class))), thisNode);
   }
 
   public static List<SNode> call_getSourcesDirectories_1775602641704992067(SNode thisNode) {
-    IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
-    if (module instanceof Solution && !(module.isCompileInMPS())) {
+    SModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
+    if (module instanceof Solution && !(Module_Behavior.call_isCompiledInMPS_1213877514774(thisNode))) {
       return new ArrayList<SNode>();
     }
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<String>(), module.getSourcePaths())).select(new ISelector<String, String>() {
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<String>(), SModuleOperations.getAllSourcePaths(module))).select(new ISelector<String, String>() {
       public String select(String it) {
         return it.replace(File.separator, Util.SEPARATOR);
       }
@@ -73,7 +78,7 @@ public class Module_Behavior {
   }
 
   public static boolean call_needsOwnStubs_8177148268721488524(SNode thisNode) {
-    return Sequence.fromIterable(((Iterable<String>) ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getClassPath())).where(new IWhereFilter<String>() {
+    return Sequence.fromIterable(((Iterable<String>) check_835h7m_a0a0a0a0g(((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getFacet(JavaModuleFacet.class)))).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
         return !(it.endsWith(".jar"));
       }
@@ -93,7 +98,7 @@ public class Module_Behavior {
     ListSequence.fromList(result).addSequence(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, true)));
 
     final AbstractModule module = (AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode);
-    if (!(module.isCompileInMPS())) {
+    if (!(SModuleOperations.isCompileInMps(module))) {
       // todo hack in order to make plugin modules know their classes location 
       final String plugins = "plugins";
       final String classes = "classes";
@@ -210,21 +215,21 @@ public class Module_Behavior {
 
   public static String call_getModuleSourcesJarPath_1986682148700597281(SNode thisNode) {
     if (Module_Behavior.call_needsSeparateFolder_1902360454496029008(thisNode)) {
-      return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + Util.SEPARATOR + Module_Behavior.call_getModule_1213877515148(thisNode).getModuleFqName() + "-src.jar";
+      return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + Util.SEPARATOR + Module_Behavior.call_getModule_1213877515148(thisNode).getModuleName() + "-src.jar";
     }
     return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + "-src.jar";
   }
 
   public static String call_getRuntimeJarPath_1213877515126(SNode thisNode) {
     if (Module_Behavior.call_needsSeparateFolder_1902360454496029008(thisNode)) {
-      return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + Util.SEPARATOR + Module_Behavior.call_getModule_1213877515148(thisNode).getModuleFqName() + "-runtime.jar";
+      return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + Util.SEPARATOR + Module_Behavior.call_getModule_1213877515148(thisNode).getModuleName() + "-runtime.jar";
     }
     return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + "-runtime.jar";
   }
 
   public static String call_getModuleJarPath_1213877515137(SNode thisNode) {
     if (Module_Behavior.call_needsSeparateFolder_1902360454496029008(thisNode)) {
-      return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + Util.SEPARATOR + Module_Behavior.call_getModule_1213877515148(thisNode).getModuleFqName() + ".jar";
+      return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + Util.SEPARATOR + Module_Behavior.call_getModule_1213877515148(thisNode).getModuleName() + ".jar";
     }
     return Module_Behavior.call_getModuleFolderPath_2850282874221203279(thisNode) + ".jar";
   }
@@ -282,9 +287,10 @@ public class Module_Behavior {
   }
 
   public static Collection<String> call_getClassPathExcludingIdea_2000252915626233691(SNode thisNode, AbstractModule module) {
-    return (module.isCompileInMPS() ?
-      module.getClassPath() :
-      module.getAdditionalClassPath()
+    JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+    return (facet == null ?
+      Collections.<String>emptyList() :
+      facet.getClassPath()
     );
   }
 
@@ -303,11 +309,32 @@ public class Module_Behavior {
   }
 
   public static String extractModuleProperName_1235487584035(IModule module) {
-    return Module_Behavior.replaceBadCharacters_1235487831795(module.getModuleFqName());
+    return Module_Behavior.replaceBadCharacters_1235487831795(module.getModuleName());
   }
 
   public static String replaceBadCharacters_1235487831795(String name) {
     return name.replace("/", "_").replace("\\", "_");
+  }
+
+  private static String check_835h7m_a0a0e(IFile checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getPath();
+    }
+    return null;
+  }
+
+  private static IFile check_835h7m_a0a0a4(JavaModuleFacet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getClassesGen();
+    }
+    return null;
+  }
+
+  private static Set<String> check_835h7m_a0a0a0a0g(JavaModuleFacet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getClassPath();
+    }
+    return null;
   }
 
   private static String check_835h7m_a0a91(String checkedDotOperand, String separator, String SEPARATOR) {

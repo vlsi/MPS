@@ -31,6 +31,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.Collections;
+import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.project.facets.JavaModuleOperations;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.quickQueryLanguage.runtime.QueryExecutor;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
@@ -119,7 +122,7 @@ public class FindInstancesDialog extends BaseDialog {
       }
     });
     // <node> 
-    myEditor.make(Collections.singleton(language.value.getClassPathItem()));
+    myEditor.make(Collections.<IClassPathItem>singleton(JavaModuleOperations.createClassPathItem(language.value.getFacet(JavaModuleFacet.class).getClassPath(), FindInstancesDialog.class.getName())));
   }
 
   private void doProcessClassesData(final IClassesData cd) {

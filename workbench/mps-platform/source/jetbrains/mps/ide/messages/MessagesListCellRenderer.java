@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.ide.messages;
 
+import com.intellij.execution.ui.ConsoleViewContentType;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
+import com.intellij.openapi.editor.markup.TextAttributes;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.smodel.ModelAccess;
@@ -29,13 +32,21 @@ import java.awt.Component;
 
 public class MessagesListCellRenderer extends DefaultListCellRenderer {
   private static final EmptyBorder EMPTY_BORDER = new EmptyBorder(0, 0, 0, 0);
+  private static final TextAttributes INFO_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.SYSTEM_OUTPUT_KEY);
+  private static final TextAttributes ERROR_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.LOG_ERROR_OUTPUT_KEY);
+  private static final TextAttributes WARNING_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.LOG_WARNING_OUTPUT_KEY);
+  private static final TextAttributes EXPIRED_ATTRIBUTES = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(ConsoleViewContentType.LOG_EXPIRED_ENTRY);
+  private static final Color CONSOLE_BACKGROUND = EditorColorsManager.getInstance().getGlobalScheme().getColor(ConsoleViewContentType.CONSOLE_BACKGROUND_KEY);
+
 
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
     JLabel component = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 
     final IMessage message = (IMessage) value;
 
-    component.setBackground(isSelected ? Color.LIGHT_GRAY : Color.WHITE);
+    component.setBackground(isSelected
+      ? CONSOLE_BACKGROUND.darker()
+      : CONSOLE_BACKGROUND);
     component.setBorder(EMPTY_BORDER);
 
     String text = (message instanceof Message) ?
@@ -50,13 +61,24 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
     });
 
     if (ns == NavStatus.NO) {
-      component.setForeground(Color.BLACK);
+      component.setForeground(INFO_ATTRIBUTES.getForegroundColor());
       component.setText(text);
     } else if (ns == NavStatus.OUTDATED) {
-      component.setForeground(Color.BLACK);
+      component.setForeground(EXPIRED_ATTRIBUTES.getForegroundColor());
       component.setText("[outdated] " + message.getHintObject().toString() + ":" + text);
     } else if (ns == NavStatus.YES) {
       component.setForeground(Color.BLUE);
+      switch (message.getKind()) {
+        case WARNING:
+          component.setForeground(WARNING_ATTRIBUTES.getForegroundColor());
+          break;
+        case ERROR:
+          component.setForeground(ERROR_ATTRIBUTES.getForegroundColor());
+          break;
+        default:
+          component.setForeground(INFO_ATTRIBUTES.getForegroundColor());
+          break;
+      }
       component.setText(text);
     }
 

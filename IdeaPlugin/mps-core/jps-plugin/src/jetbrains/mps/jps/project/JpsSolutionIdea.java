@@ -6,14 +6,14 @@ import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import jetbrains.mps.jps.build.MPSCompilerUtil;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
-import jetbrains.mps.project.JavaModuleFacet;
-import jetbrains.mps.project.JavaModuleFacetImpl;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.facets.JavaModuleFacetImpl;
+import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -30,11 +30,13 @@ import org.jetbrains.jps.model.module.JpsModuleDependency;
 import org.jetbrains.jps.model.module.JpsSdkDependency;
 import org.jetbrains.jps.service.JpsServiceManager;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -136,8 +138,8 @@ public class JpsSolutionIdea extends Solution {
   }
 
   @Override
-  protected JavaModuleFacet createJavaModuleFacet() {
-    return new JavaModuleFacetImpl(this) {
+  protected List<SModuleFacet> createFacets() {
+    JavaModuleFacet javaFacet = new JavaModuleFacetImpl(this) {
       @Override
       public IFile getClassesGen() {
         IFile descriptorFile = getDescriptorFile();
@@ -154,17 +156,15 @@ public class JpsSolutionIdea extends Solution {
         else return null;
       }
     };
-  }
-
-  @Override
-  public String getOutputFor(SModel model) {
-    if (SModelStereotype.isTestModel(model)) {
-      // Needed only for ReducedGenerationWorker
-      //return ""; // just not null
-      return getClassesGen().getPath();
-    } else {
-      return super.getOutputFor(model);
-    }
+    TestsFacet testsFacet = new TestsFacet() {
+      @Override
+      public IFile getTestsOutputPath() {
+        // Needed only for ReducedGenerationWorker
+        //return ""; // just not null
+        return getClassesGen();
+      }
+    };
+    return Arrays.asList(javaFacet, testsFacet);
   }
 
   @Override

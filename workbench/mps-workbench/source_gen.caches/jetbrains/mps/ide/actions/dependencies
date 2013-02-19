@@ -242,6 +242,7 @@
     <classNode dependClassName="javax.swing.JTextArea" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.TextPasteUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>

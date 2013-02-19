@@ -11,11 +11,9 @@ import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.reloading.ClasspathStringCollector;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.util.CollectionUtil;
 import java.util.Set;
+import jetbrains.mps.project.facets.JavaModuleOperations;
+import java.util.Collections;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -72,24 +70,16 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
   @NotNull
   public List<String> getClassPath() {
-    final IModule locationModule = getLocationModule();
+    IModule locationModule = getLocationModule();
     if (locationModule == null) {
       return super.getClassPath();
     }
 
     // todo duplication between this method and java.getClasspath 
     // but java command is in execution.configurations plugin, so the dependency is backward 
-    final ClasspathStringCollector visitor = new ClasspathStringCollector();
-    locationModule.getClassPathItem().accept(visitor);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        AbstractModule.getDependenciesClasspath(CollectionUtil.set(locationModule), false).accept(visitor);
-      }
-    });
-
-    Set<String> visited = visitor.getClasspath();
-    visited.removeAll(CommonPaths.getJDKPath());
-    return ListSequence.fromListWithValues(new ArrayList<String>(), visited);
+    Set<String> classpath = JavaModuleOperations.collectExecuteClasspath(Collections.singleton(locationModule));
+    classpath.removeAll(CommonPaths.getJDKPath());
+    return ListSequence.fromListWithValues(new ArrayList<String>(), classpath);
   }
 
   @NotNull

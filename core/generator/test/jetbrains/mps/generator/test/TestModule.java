@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.test;
 
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -27,6 +28,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -53,12 +55,9 @@ public class TestModule extends ClassLoadingModule {
     super.dispose();
   }
 
-  public String getOutputFor(org.jetbrains.mps.openapi.model.SModel model) {
-    if (myOriginalModels.containsKey(model)) {
-      model = myOriginalModels.get(model);
-      return ((IModule) model.getModule()).getOutputFor(model);
-    }
-    return super.getOutputFor(model);
+  @Override
+  public IFile getOutputPath() {
+    return ((AbstractModule) myPeer).getOutputPath();
   }
 
   public Class getClass(String fqName) {

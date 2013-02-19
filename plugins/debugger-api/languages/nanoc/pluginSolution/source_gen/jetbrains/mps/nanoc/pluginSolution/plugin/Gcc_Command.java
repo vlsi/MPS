@@ -14,6 +14,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.traceInfo.TraceDown;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.vfs.FileSystem;
 
@@ -85,7 +86,7 @@ public class Gcc_Command {
         packageName.value = SNodeOperations.getModel(file).getLongName().replace(".", "/");
       }
     });
-    return module.value.getClassesGen().getDescendant(packageName.value).getDescendant(sourceName.value + Gcc_Command.getOutputExtension());
+    return module.value.getFacet(JavaModuleFacet.class).getClassesGen().getDescendant(packageName.value).getDescendant(sourceName.value + Gcc_Command.getOutputExtension());
   }
 
   public static IFile getSourceFile(final SNode file) {

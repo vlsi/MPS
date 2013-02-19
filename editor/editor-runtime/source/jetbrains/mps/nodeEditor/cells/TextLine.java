@@ -210,7 +210,7 @@ public class TextLine {
     myUnderlined = myStyle.get(StyleAttributes.UNDERLINED);
 
     myTextColor = myStyle.get(StyleAttributes.TEXT_COLOR);
-    myNullTextColor = EditorColorsManager.getInstance().getGlobalScheme().getDefaultForeground();
+    myNullTextColor = myStyle.get(StyleAttributes.NULL_TEXT_COLOR);
     myTextBackground = myStyle.get(StyleAttributes.TEXT_BACKGROUND_COLOR);
     myNullTextBackground = myStyle.get(StyleAttributes.NULL_TEXT_BACKGROUND_COLOR);
     mySelectedTextBackground = myStyle.get(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR);
@@ -352,8 +352,7 @@ public class TextLine {
   public Color getTextColor() {
     init();
     if (myControlOvered) {
-      // COLORS: Remove hardcoded color
-      return Color.BLUE;
+      return EditorColorsManager.getInstance().getGlobalScheme().getAttributes(EditorColors.REFERENCE_HYPERLINK_COLOR).getForegroundColor();
     }
 
     if (!myNull && myTextColor != null) {

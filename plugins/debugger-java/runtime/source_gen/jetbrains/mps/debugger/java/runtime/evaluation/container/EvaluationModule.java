@@ -8,6 +8,8 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.project.facets.JavaModuleFacetImpl;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -17,13 +19,29 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.JavaModuleFacet;
-import jetbrains.mps.project.JavaModuleFacetImpl;
-import java.util.Collection;
+import java.util.List;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
+import java.util.Collections;
 
 public class EvaluationModule extends AbstractModule implements SModule {
   private final ModuleDescriptor myDescriptor;
   private final Set<String> myClassPaths = SetSequence.fromSet(new HashSet<String>());
+  private final JavaModuleFacetImpl myJavaModuleFacet = new JavaModuleFacetImpl(this) {
+    @Override
+    public Set<String> getLibraryClassPath() {
+      return myClassPaths;
+    }
+
+    @Override
+    public IFile getClassesGen() {
+      return null;
+    }
+
+    @Override
+    public boolean isCompileInMps() {
+      throw new UnsupportedOperationException();
+    }
+  };
 
   public EvaluationModule() {
     ModuleReference reference = new ModuleReference("Evaluation Container Module", ModuleId.regular());
@@ -57,7 +75,6 @@ public class EvaluationModule extends AbstractModule implements SModule {
     } else {
       SetSequence.fromSet(myClassPaths).addElement(path);
     }
-    invalidateClassPath();
     MPSModuleRepository.getInstance().fireModuleChanged(this);
     return path;
   }
@@ -68,12 +85,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
   }
 
   @Override
-  protected JavaModuleFacet createJavaModuleFacet() {
-    return new JavaModuleFacetImpl(this) {
-      @Override
-      public Collection<String> getAdditionalClassPath() {
-        return myClassPaths;
-      }
-    };
+  protected List<SModuleFacet> createFacets() {
+    return Collections.<SModuleFacet>singletonList(myJavaModuleFacet);
   }
 }

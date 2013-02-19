@@ -13,26 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.project.facets;
 
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
-import java.util.Collection;
-
-public interface JavaModuleFacet extends SModuleFacet {
-  IClassPathItem getClassPathItem();
-
-  IFile getClassesGen();
-
-  boolean isCompileInMPS();
-
-  Collection<String> getClassPath();
-
-  Collection<String> getAdditionalClassPath();
-
-  Collection<String> getOwnClassPath();
-
-  void invalidateClassPath();
+public interface TestsFacet extends SModuleFacet {
+  IFile getTestsOutputPath();
 }

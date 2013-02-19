@@ -15,29 +15,33 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.facets.JavaModuleOperations;
+import jetbrains.mps.project.facets.TestsFacet;
+import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
 public class SModuleOperations {
-  // todo: all args should be SModule
-  public static IClassPathItem getModuleWithDependenciesClassPathItem(IModule module) {
-    return getDependenciesClasspath(Collections.singleton(module), false);
-  }
-
-  public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
-    return new ClasspathCollector(modules).collect(includeStubSolutions);
-  }
-
   public static Collection<String> getIndexablePaths(SModule module) {
     // todo: maybe move getIndexablePaths method to FileBasedModelRoot, or even in ModelRoot classes?
     Set<String> result = new TreeSet<String>();
@@ -60,6 +64,85 @@ public class SModuleOperations {
       // todo: obsolete model root type
       if (modelRoot instanceof FolderModelRootBase) {
         result.add(exposePath(((FolderModelRootBase) modelRoot).getPath()));
+      }
+    }
+
+    return result;
+  }
+
+  public static IFile getOutputPathFor(SModel model) {
+    // todo: move to SModelOperations?
+    SModule module = model.getModule();
+    if (SModelStereotype.isTestModel(model) && module.getFacet(TestsFacet.class) != null) {
+      return module.getFacet(TestsFacet.class).getTestsOutputPath();
+    } else {
+      return ((AbstractModule) module).getOutputPath();
+    }
+  }
+
+  @NotNull
+  public static JavaModuleFacet getJavaFacet(SModule module) {
+    JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+    if (facet != null) {
+      return facet;
+    } else {
+      throw new IllegalArgumentException();
+    }
+  }
+
+  public static boolean isCompileInMps(SModule module) {
+    JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+    return facet != null && facet.isCompileInMps();
+  }
+
+  public static boolean isCompileInIdea(SModule module) {
+    JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+    return facet != null && !facet.isCompileInMps();
+  }
+
+  public static Set<String> getAllSourcePaths(SModule module) {
+    // todo: get rid from source paths?
+    Set<String> paths = new HashSet<String>();
+    if (module instanceof AbstractModule) {
+      IFile path = ((AbstractModule) module).getOutputPath();
+      if (path != null) {
+        paths.add(path.getPath());
+      }
+    }
+    if (module.getFacet(TestsFacet.class) != null) {
+      IFile path = module.getFacet(TestsFacet.class).getTestsOutputPath();
+      if (path != null) {
+        paths.add(path.getPath());
+      }
+    }
+    if (module.getFacet(JavaModuleFacet.class) != null) {
+      paths.addAll(module.getFacet(JavaModuleFacet.class).getAdditionalSourcePaths());
+    }
+    return paths;
+  }
+
+  // deprecated methods
+  @Deprecated
+  public static IClassPathItem getModuleWithDependenciesClassPathItem(IModule module) {
+    return getDependenciesClasspath(Collections.singleton(module), false);
+  }
+
+  @Deprecated
+  public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
+    Set<String> classpath = JavaModuleOperations.collectCompileClasspath(modules, true);
+
+    CompositeClassPathItem result = new CompositeClassPathItem();
+    result.add(JavaModuleOperations.createClassPathItem(classpath, SModuleOperations.class.getName()));
+    if (includeStubSolutions) {
+      //this is needed because we can use this class before these stub solutions are loaded
+      result.add(CommonPaths.getJDKClassPath());
+      result.add(CommonPaths.getMPSClassPath());
+      for (String s : CommonPaths.getMPSPaths(ClasspathReader.ClassType.TEST)) {
+        try {
+          result.add(ClassPathFactory.getInstance().createFromPath(s, null));
+        } catch (IOException e) {
+          // LOG?
+        }
       }
     }
 

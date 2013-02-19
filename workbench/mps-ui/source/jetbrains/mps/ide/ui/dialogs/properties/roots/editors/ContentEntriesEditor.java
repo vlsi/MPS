@@ -146,7 +146,7 @@ public class ContentEntriesEditor {
 
   public void initUI() {
     myMainPanel = new JBPanel(new BorderLayout());
-    myMainPanel.setBorder(BorderFactory.createEmptyBorder(6, 6, 6, 6));
+    myMainPanel.setPreferredSize(new Dimension(300,300));
 
     final JBPanel entriesPanel = new JBPanel(new BorderLayout());
 

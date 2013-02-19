@@ -33,6 +33,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.tools.BaseProjectTool;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -93,7 +94,7 @@ public class ClassPathViewerTool extends BaseProjectTool {
       for (IClassPathItem item : items) {
         TextTreeNode itemNode = new TextTreeNode(item.toString());
         root.add(itemNode);
-        for (IModule pathItem : collector.getPathFor(item)) {
+        for (SModule pathItem : collector.getPathFor(item)) {
           itemNode.add(new ModuleTreeNode(pathItem));
         }
       }
@@ -102,15 +103,15 @@ public class ClassPathViewerTool extends BaseProjectTool {
     }
 
     private class ModuleTreeNode extends MPSTreeNode {
-      private IModule myModule;
+      private SModule myModule;
 
-      private ModuleTreeNode(IModule module) {
+      private ModuleTreeNode(SModule module) {
         super(null);
         myModule = module;
 
-        setNodeIdentifier(myModule.getModuleFqName());
+        setNodeIdentifier(myModule.getModuleName());
 
-        setText(myModule.getModuleFqName());
+        setText(myModule.getModuleName());
         setIcon(IconManager.getIconFor(myModule));
       }
 

@@ -19,6 +19,9 @@ import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.facets.JavaModuleOperations;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.util.InternUtil;
@@ -75,6 +78,7 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   }
 
   public void invalidateClasses() {
+    // todo: field should be volatile?
     if (myClassLoader != null) {
       myClassLoader.dispose();
     }
@@ -87,15 +91,15 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   }
 
   public boolean canFindClass(String name) {
-    return getClassPathItem().hasClass(name);
+    return createClassPathItem().hasClass(name);
   }
 
   public byte[] findClassBytes(String name) {
-    return getClassPathItem().getClass(name);
+    return createClassPathItem().getClass(name);
   }
 
   public URL findResource(String name) {
-    return getClassPathItem().getResource(name);
+    return createClassPathItem().getResource(name);
   }
 
   public String findLibrary(String name) {
@@ -116,15 +120,15 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     }
   }
 
+  private IClassPathItem createClassPathItem() {
+    return JavaModuleOperations.createClassPathItem(getFacet(JavaModuleFacet.class).getClassPath(), ClassLoadingModule.class.getName());
+  }
+
   public boolean canLoadFromSelf() {
     return true;
   }
 
   public boolean canLoad() {
-    return true;
-  }
-
-  public boolean reloadClassesAfterGeneration() {
     return true;
   }
 }
