@@ -30,21 +30,31 @@ package org.jetbrains.mps.openapi.module;
  */
 public enum SDependencyScope {
   /* all types of modules */
-  DEFAULT,
-  DESIGN,
-  COMPILE,
-  RUNTIME,
-  PROVIDED,
+  DEFAULT("Default"),
+  DESIGN("Design"),
+  COMPILE("Compile"),
+  RUNTIME("Runtime"),
+  PROVIDED("Provided"),
 
   /* only between language modules  */
 
   /**
    * Applicable only between two language modules
    */
-  EXTENDS,
+  EXTENDS("Extends"),
 
   /**
    * Applicable only between two language modules
    */
-  GENERATES_INTO
+  GENERATES_INTO("Generates into");
+
+  private final String myPresentation;
+  private SDependencyScope(String presentation) {
+    myPresentation = presentation;
+  }
+
+  @Override
+  public String toString() {
+    return myPresentation;
+  }
 }

@@ -15,20 +15,32 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.tables.items;
 
+import org.jetbrains.mps.openapi.module.SDependencyScope;
+
 public class DependenciesTableItem<T> {
   protected T myItem;
-  protected DependenciesTableItemRole myRole;
+  protected SDependencyScope myRole;
   protected Boolean myReExport = null;
+  protected ModuleType myModuleType = ModuleType.UNSPECIFIED;
 
-  public DependenciesTableItem(T value, DependenciesTableItemRole role) {
+  public DependenciesTableItem(T value, SDependencyScope role) {
     myItem = value;
     myRole = role;
   }
 
-  public DependenciesTableItem(T value, DependenciesTableItemRole role, boolean reExport) {
+  public DependenciesTableItem(T value, SDependencyScope role, boolean reExport) {
     myItem = value;
     myRole = role;
     myReExport = reExport;
+  }
+
+  public DependenciesTableItem setModuleType(ModuleType type) {
+    myModuleType = type;
+    return this;
+  }
+
+  public ModuleType getModuleType() {
+    return myModuleType;
   }
 
   public T getItem() {
@@ -39,11 +51,11 @@ public class DependenciesTableItem<T> {
   public boolean equals(Object obj) {
     if(!(obj instanceof DependenciesTableItem)) return false;
     DependenciesTableItem item = (DependenciesTableItem)obj;
-    return (isReExportable() ? myReExport.equals(item.myReExport) : !item.isReExportable())  && myItem.equals(item.myItem);
+    return myItem.equals(item.myItem);
   }
 
   public boolean isReExportable() {
-    return myRole == DependenciesTableItemRole.DEPEND;
+    return myRole == SDependencyScope.DEFAULT;
   }
 
   public boolean isReExport() {
@@ -54,15 +66,23 @@ public class DependenciesTableItem<T> {
     myReExport = reExport;
   }
 
-  public DependenciesTableItemRole getRole() {
+  public SDependencyScope getRole() {
     return myRole;
   }
 
-  public void setRole(DependenciesTableItemRole role) {
+  public void setRole(SDependencyScope role) {
     myRole = role;
-    if(myRole != DependenciesTableItemRole.DEPEND)
+    if(myRole != SDependencyScope.DEFAULT)
       myReExport = null;
     else if(myReExport == null)
       myReExport = false;
+  }
+
+  public enum ModuleType {
+    UNSPECIFIED,
+    LANGUAGE,
+    GENERATOR,
+    SOLUTION,
+    DEVKIT;
   }
 }

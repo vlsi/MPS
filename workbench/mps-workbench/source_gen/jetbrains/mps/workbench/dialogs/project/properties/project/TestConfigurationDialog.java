@@ -104,12 +104,12 @@ public class TestConfigurationDialog extends DialogWrapper {
 
   @Nullable
   protected JComponent createCenterPanel() {
-    getWindow().setMinimumSize(new Dimension(400, 300));
     return myMainComponent;
   }
 
   private void initUI() {
     myMainComponent = new JPanel();
+    myMainComponent.setPreferredSize(new Dimension(400, 300));
     GridBagLayout bagLayout = new GridBagLayout();
     myMainComponent.setLayout(bagLayout);
     GridBagConstraints cName = new GridBagConstraints(0, 0, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(5, 5, 0, 5), 0, 0);
