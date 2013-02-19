@@ -18,7 +18,9 @@
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="2txq" modelUID="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)" version="-1" />
   <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
-  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
+  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <import index="g07" modelUID="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" version="0" />
+  <import index="8xvf" modelUID="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" version="0" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="-1" implicit="yes" />
@@ -29,9 +31,9 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="2" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
-  <import index="8xvf" modelUID="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" version="0" implicit="yes" />
   <import index="tnlc" modelUID="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" version="-1" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
+  <import index="zwni" modelUID="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" version="-1" implicit="yes" />
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="3189788309732033980">
       <property name="name" nameId="tpck.1169194664001" value="main" />
@@ -77,6 +79,13 @@
       <property name="name" nameId="tpck.1169194664001" value="weave_Tasks" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="3ior.5617550519002745363" resolveInfo="BuildProject" />
     </node>
+    <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="2932559035948717550">
+      <property name="name" nameId="tpck.1169194664001" value="reduce_MpsLibraryImport" />
+      <link role="modifiedSwitch" roleId="tpf8.1112820671508" targetNodeId="g07.6647099934206970606" resolveInfo="reduce_PluginToImport" />
+    </node>
+    <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="6354776497035427841">
+      <property name="name" nameId="tpck.1169194664001" value="workflow" />
+    </node>
   </roots>
   <root id="3189788309732033980">
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="185021013914641135">
@@ -106,10 +115,6 @@
       <property name="name" nameId="tpck.1169194664001" value="javaModule" />
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="3ior.7389400916848073784" resolveInfo="BuildSource_JavaModule" />
       <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="kdzh.5253498789149381388" resolveInfo="BuildMps_Module" />
-    </node>
-    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="6647099934206970631">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="kdzh.868032131020265945" resolveInfo="BuildMPSPlugin" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="868032131020265960" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="3189788309732041615">
       <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
@@ -9342,9 +9347,9 @@
             </node>
           </node>
         </node>
-        <node role="parts" roleId="3ior.4701820937132281260" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="2529023923283121105">
-          <property name="name" nameId="tpck.1169194664001" value="declare-mps-tasks" />
-          <node role="subTasks" roleId="8xvf.2769948622284546679" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="2529023923283121107">
+        <node role="parts" roleId="3ior.4701820937132281260" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="398731435598048777">
+          <link role="task" roleId="8xvf.3961775458390032825" targetNodeId="zwni.398731435597652957" resolveInfo="declare-mps-tasks" />
+          <node role="subTasks" roleId="8xvf.3961775458390032826" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="2529023923283121107">
             <property name="name" nameId="tpck.1169194664001" value="default" />
             <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfProjectPartStatement" typeId="8xvf.2529023923283121115" id="2529023923283142900">
               <node role="part" roleId="8xvf.2529023923283121117" type="8xvf.BwfAntTaskBundleDeclaration" typeId="8xvf.2529023923283158037" id="2529023923283178970">
@@ -9354,8 +9359,11 @@
             </node>
           </node>
         </node>
+        <node role="parts" roleId="3ior.4701820937132281260" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="2529023923283121105">
+          <property name="name" nameId="tpck.1169194664001" value="declare-mps-tasks" />
+        </node>
         <node role="parts" roleId="3ior.4701820937132281260" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="288299486408300884">
-          <link role="task" roleId="8xvf.3961775458390032825" targetNodeId="2529023923283121105" resolveInfo="declare-mps-tasks" />
+          <link role="task" roleId="8xvf.3961775458390032825" targetNodeId="zwni.398731435597652957" resolveInfo="declare-mps-tasks" />
           <node role="additionalDependencies" roleId="8xvf.3961775458390352322" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="288299486410485623">
             <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="tnlc.7306485738221390868" resolveInfo="classes" />
           </node>
@@ -9562,7 +9570,7 @@
         <node role="parts" roleId="3ior.4701820937132281260" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="288299486407473680">
           <link role="task" roleId="8xvf.3961775458390032825" targetNodeId="tnlc.4701820937132277082" resolveInfo="assemble" />
           <node role="additionalDependencies" roleId="8xvf.3961775458390352322" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="288299486407480549">
-            <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="2529023923283121105" resolveInfo="declare-mps-tasks" />
+            <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="zwni.398731435597652957" resolveInfo="declare-mps-tasks" />
           </node>
         </node>
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2529023923283121092" />
@@ -9609,9 +9617,9 @@
         </node>
       </node>
       <node role="aspects" roleId="3ior.3542413272732620719" type="3ior.BuildCustomWorkflow" typeId="3ior.4701820937132281259" id="185021013914641154">
-        <node role="parts" roleId="3ior.4701820937132281260" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="185021013914641155">
-          <property name="name" nameId="tpck.1169194664001" value="generate" />
-          <node role="subTasks" roleId="8xvf.2769948622284546679" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="6503355885715163205">
+        <node role="parts" roleId="3ior.4701820937132281260" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="398731435599814552">
+          <link role="task" roleId="8xvf.3961775458390032825" targetNodeId="zwni.398731435597203639" resolveInfo="generate" />
+          <node role="subTasks" roleId="8xvf.3961775458390032826" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="6503355885715163205">
             <property name="name" nameId="tpck.1169194664001" value="genModules" />
             <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="6503355885715163229">
               <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6503355885715163231">
@@ -10096,8 +10104,8 @@
                                                 <property name="asCast" nameId="tp25.1238684351431" value="true" />
                                                 <link role="concept" roleId="tp25.1140138128738" targetNodeId="kdzh.322010710375871467" resolveInfo="BuildMps_AbstractModule" />
                                                 <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5970181360960937950">
-                                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="o3n2.4640279023716659260" resolveInfo="DependenciesHelper" />
                                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o3n2.6547494638219491288" resolveInfo="getOriginalNode" />
+                                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="o3n2.4640279023716659260" resolveInfo="DependenciesHelper" />
                                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5970181360961717839">
                                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5970181360961717835" resolveInfo="module" />
                                                   </node>
@@ -10643,33 +10651,30 @@
             </node>
             <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfStatement" typeId="8xvf.2769948622284605979" id="6503355885715275747" />
           </node>
-          <node role="dependencies" roleId="8xvf.2769948622284574302" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="5970181360961964342">
+          <node role="additionalDependencies" roleId="8xvf.3961775458390352322" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="398731435600772372">
             <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="tnlc.7128123785277844790" resolveInfo="fetchDependencies" />
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="5970181360961964345">
-              <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="5970181360961964346">
-                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5970181360961964347">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5970181360961964372">
-                    <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5970181360961964447">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5970181360961964421">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5970181360961964394">
-                          <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="5970181360961964373" />
-                          <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_VarRef" typeId="tpf3.2721957369897614808" id="5970181360961964399">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="398731435601112750">
+              <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="398731435601112752">
+                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="398731435601112754">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="398731435601473232">
+                    <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="398731435601473233">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="398731435601473234">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="398731435601473235">
+                          <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="398731435601473236" />
+                          <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_VarRef" typeId="tpf3.2721957369897614808" id="398731435601473237">
                             <link role="varmacro" roleId="tpf3.2721957369897614810" targetNodeId="5970181360963001548" resolveInfo="closure" />
                           </node>
                         </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5970181360961964426">
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="398731435601473238">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tken.5970181360960745050" resolveInfo="getExternal" />
                         </node>
                       </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tp2q.IsNotEmptyOperation" typeId="tp2q.1176501494711" id="5970181360961964452" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tp2q.IsNotEmptyOperation" typeId="tp2q.1176501494711" id="398731435601473239" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-          </node>
-          <node role="dependencies" roleId="8xvf.2769948622284574302" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="2529023923283178974">
-            <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="2529023923283121105" resolveInfo="declare-mps-tasks" />
           </node>
         </node>
         <node role="parts" roleId="3ior.4701820937132281260" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="5273009634657540837">
@@ -11658,6 +11663,50 @@
           </node>
           <node role="type" roleId="tpf8.5015072279636624635" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5970181360963001558">
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tken.2761855734069308238" resolveInfo="MPSModulesPartitioner" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="2932559035948717550">
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2932559035948737461">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="kdzh.868032131020265945" resolveInfo="BuildMPSPlugin" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2932559035948737465">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="8xvf.BwfTaskLibraryDependency" typeId="8xvf.7306485738221471031" id="2932559035948740408">
+          <link role="target" roleId="8xvf.7306485738221471032" targetNodeId="zwni.398731435597190701" resolveInfo="mps" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="6354776497035427841">
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="6647099934206970631">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="kdzh.868032131020265945" resolveInfo="BuildMPSPlugin" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="868032131020265960" />
+      <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="6354776497032587571">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6354776497032587572">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6354776497032588006">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.AndExpression" typeId="tpee.1080120340718" id="6354776497032775097">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NPENotEqualsExpression" typeId="tpee.1225271221393" id="6354776497032790894">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tp25.LinkNameRefExpression" typeId="tp25.5253134957341697434" id="6354776497032791392">
+                  <link role="linkDeclaration" roleId="tp25.5253134957341833006" targetNodeId="3ior.6647099934206700656" />
+                  <link role="conceptDeclaration" roleId="tp25.5253134957341833005" targetNodeId="3ior.5617550519002745363" resolveInfo="BuildProject" />
+                </node>
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6354776497032776036">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetContainingRoleOperation" typeId="tp25.1960721196051541146" id="6354776497032784438" />
+                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="6354776497032775576" />
+                </node>
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NPENotEqualsExpression" typeId="tpee.1225271221393" id="6354776497032771333">
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6354776497032588466">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetContainingRoleOperation" typeId="tp25.1960721196051541146" id="6354776497032596831" />
+                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="6354776497032588005" />
+                </node>
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tp25.LinkNameRefExpression" typeId="tp25.5253134957341697434" id="6354776497032771790">
+                  <link role="linkDeclaration" roleId="tp25.5253134957341833006" targetNodeId="8xvf.7306485738221455031" />
+                  <link role="conceptDeclaration" roleId="tp25.5253134957341833005" targetNodeId="8xvf.2769948622284546673" resolveInfo="BwfProject" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/1392391688312941958">
-    <unitInfo nodeId="1392391688312941958" fileName="mpsStandalone.xml" startLine="1" startPosition="0" endLine="100" endPosition="10" unitName="jetbrains.mps.ide.build.mpsStandalone" />
+    <unitInfo nodeId="1392391688312941958" fileName="mpsStandalone.xml" startLine="1" startPosition="0" endLine="104" endPosition="10" unitName="jetbrains.mps.ide.build.mpsStandalone" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/1545517825663017278">
     <unitInfo nodeId="1545517825663017278" fileName="mpsVcs.xml" startLine="1" startPosition="0" endLine="325" endPosition="10" unitName="jetbrains.mps.ide.build.mpsVcs" />
@@ -49,7 +49,7 @@
     <unitInfo nodeId="618786790401812237" fileName="mpsTesting.xml" startLine="1" startPosition="0" endLine="785" endPosition="10" unitName="jetbrains.mps.ide.build.mpsTesting" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/6265574260762011003">
-    <unitInfo nodeId="6265574260762011003" fileName="mpsMakePlugin.xml" startLine="1" startPosition="0" endLine="109" endPosition="10" unitName="jetbrains.mps.ide.build.mpsMakePlugin" />
+    <unitInfo nodeId="6265574260762011003" fileName="mpsMakePlugin.xml" startLine="1" startPosition="0" endLine="113" endPosition="10" unitName="jetbrains.mps.ide.build.mpsMakePlugin" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/6361939271669846483">
     <unitInfo nodeId="6361939271669846483" fileName="mpsExecutionPlugin.xml" startLine="1" startPosition="0" endLine="1162" endPosition="10" unitName="jetbrains.mps.ide.build.mpsExecutionPlugin" />

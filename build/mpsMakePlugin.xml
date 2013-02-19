@@ -70,6 +70,10 @@
   
   <target name="check" depends="test" />
   
+  <target name="generate" depends="declare-mps-tasks" />
+  
+  <target name="declare-mps-tasks" />
+  
   <target name="java.compile.mps-make" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-make" />
     <javac2 destdir="${build.tmp}/java/out/mps-make" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">

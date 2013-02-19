@@ -97,4 +97,8 @@
   <target name="test" depends="classes" />
   
   <target name="check" depends="test" />
+  
+  <target name="generate" depends="declare-mps-tasks" />
+  
+  <target name="declare-mps-tasks" />
 </project>
